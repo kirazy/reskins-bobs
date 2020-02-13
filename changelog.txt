@@ -1,0 +1,8 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.18.1
+Date: X.X.2020
+  Features:
+    - Initial Release
+    - Reskins structures in all of Bob's mods to a unified, colored tier system.
+    - Includes appropriate icons for differentiability, with configuration options.
+    - Adds remnants and explosive particle effects on structure death to all Bob's structures.

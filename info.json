@@ -1,0 +1,11 @@
+{
+  "name": "reskin-series-bobs-structures",
+  "version": "0.18.1",
+  "factorio_version": "0.18",
+  "title": "Reskin Series: Bob's Structures",
+  "author": "Kirazy",
+  "contact": "kirazy@live.com",
+  "description": "Reskins structures in all of Bob's mods to a unified, colored tier system with appropriate icons for differentiability. Part of the Reskin Series set of mods.",
+  "dependencies": [	"base >= 0.18.0",
+    "? bobpower >= 0.18.0"]
+}
