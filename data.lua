@@ -5,3 +5,4 @@
 
 require("prototypes.functions")
 require("prototypes.entity.boiler")
+require("prototypes.entity.steam-engine")
