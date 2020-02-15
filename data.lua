@@ -5,4 +5,5 @@
 
 require("prototypes.functions")
 require("prototypes.entity.boiler")
+require("prototypes.entity.solar-panel")
 require("prototypes.entity.steam-engine")
