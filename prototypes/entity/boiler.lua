@@ -3,6 +3,10 @@
 --     
 -- See LICENSE.md in the project directory for license information.
 
+-- Check to see if reskinning needs to be done.
+if not mods["bobpower"] then return end
+if settings.startup["bobmods-power-steam"].value == false then return end
+
 -- Set parameters
 local type = "boiler"
 local subtype = "boiler"
@@ -10,6 +14,7 @@ local size = 64
 local mipmaps = 4
 local particles = {"big"}
 local mapping = false
+local remnants = true
 local tier_map =
 {
     ["boiler"]   = 1,
@@ -21,10 +26,17 @@ local tier_map =
 
 -- Reskin entities, create and assign extra details
 for name, tier in pairs(tier_map) do
-    reskin_functions.setup_common_attributes(name, type, subtype, tier, size, mipmaps, particles, mapping)
+    -- Initialize table address 
+    entity = data.raw[type][name]
+
+    -- Check if entity exists, if not, skip this iteration
+    if not entity then
+        goto continue
+    end
+
+    reskin_functions.setup_common_attributes(name, type, subtype, tier, size, mipmaps, particles, mapping, remnants)
 
     -- Initialize table addresses
-    entity = data.raw[type][name]
     remnant = data.raw["corpse"][name.."-remnants"]
     explosion = data.raw["explosion"][name.."-explosion"]
     
@@ -44,4 +56,7 @@ for name, tier in pairs(tier_map) do
     entity.structure.east.layers[1].hr_version.filename = reskin_functions.mod_directory.."/graphics/entity/"..subtype.."/"..name.."/hr-"..name.."-E-idle.png"
     entity.structure.south.layers[1].hr_version.filename = reskin_functions.mod_directory.."/graphics/entity/"..subtype.."/"..name.."/hr-"..name.."-S-idle.png"
     entity.structure.west.layers[1].hr_version.filename = reskin_functions.mod_directory.."/graphics/entity/"..subtype.."/"..name.."/hr-"..name.."-W-idle.png"
+
+    -- Label to skip to next iteration
+    ::continue::
 end

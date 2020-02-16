@@ -18,14 +18,7 @@ reskin_functions.tint_index =
 }
 
 -- Set icons for each of the four main types
-function reskin_functions.setup_common_attributes(name, type, subtype, tier, size, mipmaps, particles, mapping)
-
-    -- Initialize local table paths
-    local entity = data.raw[type][name]
-    local item = data.raw["item"][name]
-    local remnant = data.raw["corpse"][name.."-remnants"]
-    local explosion = data.raw["explosion"][name.."-explosion"]
-
+function reskin_functions.setup_common_attributes(name, type, subtype, tier, size, mipmaps, particles, mapping, remnants, subname)
     local labeled_icon = {}
     local unlabeled_icon = {}
 
@@ -48,12 +41,15 @@ function reskin_functions.setup_common_attributes(name, type, subtype, tier, siz
         labeled_icon = 
         {
             {
-                icon = reskin_functions.mod_directory.."/graphics/icons/"..subtype.."/"..subtype.."-"..tier..".png"
+                icon = reskin_functions.mod_directory.."/graphics/icons/"..subtype.."/"..subname.."-"..tier..".png"
             },
             {
                 icon = reskin_functions.mod_directory.."/graphics/icons/tiers/"..size.."/tier-"..tier..".png"
             }
         }
+
+        -- Setup icon without tier labeling
+        unlabeled_icon = reskin_functions.mod_directory.."/graphics/icons/"..subtype.."/"..subname.."-"..tier..".png"
     end
 
     -- Make particles and explosions   
@@ -85,11 +81,11 @@ function reskin_functions.setup_common_attributes(name, type, subtype, tier, siz
     local explosion = table.deepcopy(data.raw["explosion"][subtype.."-explosion"])
     explosion.name = name.."-explosion"
     data:extend({explosion})
-
-    -- Make remnants
-    local remnant = table.deepcopy(data.raw["corpse"][subtype.."-remnants"])
-    remnant.name = name.."-remnants"
-    data:extend({remnant}) 
+  
+    -- Initialize local table paths
+    local entity = data.raw[type][name]
+    local item = data.raw["item"][name]
+    explosion = data.raw["explosion"][name.."-explosion"]
 
     -- Create icons with tier markings
     if settings.startup["reskin-series-icon-tier-labeling"].value == true and tier > 0 then
@@ -97,10 +93,7 @@ function reskin_functions.setup_common_attributes(name, type, subtype, tier, siz
         entity.icons = labeled_icon        
 
         item.icon = nil
-        item.icons = labeled_icon
-        
-        remnant.icon = nil
-        remnant.icons = labeled_icon
+        item.icons = labeled_icon        
 
         explosion.icon = nil        
         explosion.icons = labeled_icon        
@@ -111,23 +104,40 @@ function reskin_functions.setup_common_attributes(name, type, subtype, tier, siz
 
         item.icons = nil        
         item.icon = unlabeled_icon
-
-        remnant.icons = nil
-        remnant.icon = unlabeled_icon
     end
 
     -- Make assignments
     entity.icon_size = size
-    entity.icon_mipmaps = mipmaps
-    entity.corpse = remnant.name
+    entity.icon_mipmaps = mipmaps  
     entity.dying_explosion = explosion.name
 
     item.icon_size = size
-    item.icon_mipmaps = mipmaps
-    
-    remnant.icon_size = size
-    remnant.icon_mipmaps = mipmaps
+    item.icon_mipmaps = mipmaps 
 
     explosion.icon_size = size
     explosion.icon_mipmaps = mipmaps
+
+    -- Create and assign remnants, if called for
+    if remnants == true then
+    -- Make remnants
+        local remnant = table.deepcopy(data.raw["corpse"][subtype.."-remnants"])
+        remnant.name = name.."-remnants"
+        data:extend({remnant}) 
+
+        remnant = data.raw["corpse"][name.."-remnants"]
+
+        if settings.startup["reskin-series-icon-tier-labeling"].value == true and tier > 0 then
+            remnant.icon = nil
+            remnant.icons = labeled_icon
+        else
+            remnant.icons = nil
+            remnant.icon = unlabeled_icon
+        end
+
+        entity.corpse = remnant.name
+
+        remnant.icon_size = size
+        remnant.icon_mipmaps = mipmaps        
+    end
+
 end

@@ -6,6 +6,21 @@
   "author": "Kirazy",
   "contact": "kirazy@live.com",
   "description": "Reskins structures in all of Bob's mods to a unified, colored tier system with appropriate icons for differentiability. Part of the Reskin Series set of mods.",
-  "dependencies": [	"base >= 0.18.0",
-    "? bobpower >= 0.18.0"]
+  "dependencies": 
+  [	
+    "base >= 0.18.0",
+    "? bobassembly >= 0.18.0",
+    "? bobelectronics >= 0.18.0",
+    "? bobgreenhouse >= 0.18.0",
+    "? bobinserters >= 0.18.0",
+    "? boblibrary >= 0.18.0",
+    "? boblogistics >= 0.18.0",
+    "? bobmining >= 0.18.0",
+    "? bobmodules >= 0.18.0",
+    "? bobplates >= 0.18.0",
+    "? bobpower >= 0.18.0",
+    "? bobrevamp >= 0.18.0",
+    "? bobtech >= 0.18.0",
+    "? bobwarfare >= 0.18.0"    
+  ]
 }
