@@ -15,12 +15,13 @@ local flags = {
     folder = "assembling-machine",
     particles = {"medium","big"},
     make_remnants   = false,
-    make_explosions = false,
-    make_icons      = false
+    make_explosions = false
+    --make_icons      = false
 }
 
 local tier_map =
 {
+    ["assembling-machine-1"] = 0,
     ["assembling-machine-2"] = 1,
     ["assembling-machine-3"] = 2,
     ["assembling-machine-4"] = 3,
@@ -50,7 +51,7 @@ for name, tier in pairs(tier_map) do
         goto continue
     end
     
-    -- reskins.lib.setup_common_attributes(name, type, tier, flags)
+    reskins.lib.setup_common_attributes(name, type, tier, flags)
 
     -- Initialize table addresses    
     -- remnant = data.raw["corpse"][name.."-remnants"]

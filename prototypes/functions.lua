@@ -52,14 +52,13 @@ function reskins.lib.setup_common_attributes(name, type, tier, flags)
     local mipmaps         = flags.icon_mipmaps    or 4     -- Number of mipmaps present in the icon image file       
     local particles       = flags.particles       or nil   -- Array of particles to create; default nil. Valid entries: "small", "medium", "big"
     local remap_tiers     = flags.remap_tiers     or false -- If true, use special handling for icon creation
-    local make_remnants   = flags.make_remnants   or true  -- Create remnant entities; default true
-    local make_explosions = flags.make_explosions or true  -- Create explosion entities and associated particles; default true
-    local make_icons      = flags.make_icons      or true  -- Create icons; default true
+    local make_remnants   = (flags.make_remnants   ~= false)  -- Create remnant entities; default true
+    local make_explosions = (flags.make_explosions ~= false)  -- Create explosion entities and associated particles; default true
+    local make_icons      = (flags.make_icons      ~= false)  -- Create icons; default true
 
     -- Ensure no attempt to make explosions if particles are not defined
     if not particles then
         make_explosions = false
-        error("We didn't detect particles.")
     end
     
     local labeled_icon, unlabled_icon
@@ -126,6 +125,9 @@ function reskins.lib.setup_common_attributes(name, type, tier, flags)
         data:extend({explosion})
     end
   
+    if flags.basename == "assembling-machine" and flags.make_remnants == true then
+        error("Make_remnants is true for some god forsaken reason")
+    end
     -- Create remnants
     if make_remnants == true then
         local remnant = table.deepcopy(data.raw["corpse"][baseentity.."-remnants"])
@@ -171,7 +173,7 @@ function reskins.lib.setup_common_attributes(name, type, tier, flags)
 
             if explosion then
                 explosion.icons = nil        
-                explosion.icon = labeled_icon
+                explosion.icon = unlabeled_icon
             end
 
             if remnant then
