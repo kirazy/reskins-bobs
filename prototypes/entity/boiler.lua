@@ -9,13 +9,16 @@ if settings.startup["bobmods-power-steam"].value == false then return end
 
 -- Set parameters
 local type = "boiler"
-local subtype = "boiler"
-local size = 64
-local mipmaps = 4
-local particles = {"big"}
-local mapping = false
-local remnants = true
-local tier_map =
+local flags = 
+{
+    basename = "boiler",
+    baseentity = "boiler",
+    directory = reskins.bobs_structures.directory,
+    folder = "boiler",
+    particles = {"big"}
+}
+
+local tier_map = 
 {
     ["boiler"]   = 1,
     ["boiler-2"] = 2,
@@ -34,9 +37,9 @@ for name, tier in pairs(tier_map) do
         goto continue
     end
 
-    reskin_functions.setup_common_attributes(name, type, subtype, tier, size, mipmaps, particles, mapping, remnants)
+    reskins.lib.setup_common_attributes(name, type, tier, flags)
 
-    -- Initialize table addresses
+    -- Initialize paths
     remnant = data.raw["corpse"][name.."-remnants"]
     explosion = data.raw["explosion"][name.."-explosion"]
     
@@ -44,18 +47,18 @@ for name, tier in pairs(tier_map) do
     explosion.created_effect.action_delivery.target_effects[3].particle_name = name.."-metal-particle-big-tinted"
 
     -- Create remnants
-    remnant.animation.filename = reskin_functions.mod_directory.."/graphics/entity/"..subtype.."/"..name.."/remnants/"..name.."-remnants.png"
-    remnant.animation.hr_version.filename = reskin_functions.mod_directory.."/graphics/entity/"..subtype.."/"..name.."/remnants/hr-"..name.."-remnants.png"
+    remnant.animation.filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/remnants/"..name.."-remnants.png"
+    remnant.animation.hr_version.filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/remnants/hr-"..name.."-remnants.png"
     
     -- Reskin entities
-    entity.structure.north.layers[1].filename = reskin_functions.mod_directory.."/graphics/entity/"..subtype.."/"..name.."/"..name.."-N-idle.png"
-    entity.structure.east.layers[1].filename = reskin_functions.mod_directory.."/graphics/entity/"..subtype.."/"..name.."/"..name.."-E-idle.png"
-    entity.structure.south.layers[1].filename = reskin_functions.mod_directory.."/graphics/entity/"..subtype.."/"..name.."/"..name.."-S-idle.png"
-    entity.structure.west.layers[1].filename = reskin_functions.mod_directory.."/graphics/entity/"..subtype.."/"..name.."/"..name.."-W-idle.png"
-    entity.structure.north.layers[1].hr_version.filename = reskin_functions.mod_directory.."/graphics/entity/"..subtype.."/"..name.."/hr-"..name.."-N-idle.png"
-    entity.structure.east.layers[1].hr_version.filename = reskin_functions.mod_directory.."/graphics/entity/"..subtype.."/"..name.."/hr-"..name.."-E-idle.png"
-    entity.structure.south.layers[1].hr_version.filename = reskin_functions.mod_directory.."/graphics/entity/"..subtype.."/"..name.."/hr-"..name.."-S-idle.png"
-    entity.structure.west.layers[1].hr_version.filename = reskin_functions.mod_directory.."/graphics/entity/"..subtype.."/"..name.."/hr-"..name.."-W-idle.png"
+    entity.structure.north.layers[1].filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/"..name.."-N-idle.png"
+    entity.structure.east.layers[1].filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/"..name.."-E-idle.png"
+    entity.structure.south.layers[1].filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/"..name.."-S-idle.png"
+    entity.structure.west.layers[1].filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/"..name.."-W-idle.png"
+    entity.structure.north.layers[1].hr_version.filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/hr-"..name.."-N-idle.png"
+    entity.structure.east.layers[1].hr_version.filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/hr-"..name.."-E-idle.png"
+    entity.structure.south.layers[1].hr_version.filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/hr-"..name.."-S-idle.png"
+    entity.structure.west.layers[1].hr_version.filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/hr-"..name.."-W-idle.png"
 
     -- Label to skip to next iteration
     ::continue::

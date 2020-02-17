@@ -8,12 +8,17 @@ if not mods["bobassembly"] then return end
 
 -- Set parameters
 local type = "assembling-machine"
-local subtype = "assembling-machine-1"
-local size = 64
-local mipmaps = 4
-local particles = {"medium","big"}
-local mapping = false
-local remnants = false
+local flags = {
+    basename = "assembling-machine",
+    baseentity = "assembling-machine-1",
+    directory = reskins.bobs_structures.directory,
+    folder = "assembling-machine",
+    particles = {"medium","big"},
+    make_remnants   = false,
+    make_explosions = false,
+    make_icons      = false
+}
+
 local tier_map =
 {
     ["assembling-machine-2"] = 1,
@@ -44,20 +49,20 @@ for name, tier in pairs(tier_map) do
     if not entity then
         goto continue
     end
+    
+    -- reskins.lib.setup_common_attributes(name, type, tier, flags)
 
-    reskin_functions.setup_common_attributes(name, type, subtype, tier, size, mipmaps, particles, mapping, remnants)
-
-    -- Initialize table addresses
-    remnant = data.raw["corpse"][name.."-remnants"]
-    explosion = data.raw["explosion"][name.."-explosion"]
+    -- Initialize table addresses    
+    -- remnant = data.raw["corpse"][name.."-remnants"]
+    -- explosion = data.raw["explosion"][name.."-explosion"]
 
     -- Create explosions
-    explosion.created_effect.action_delivery.target_effects[1].particle_name = name.."-metal-particle-big-tinted"
-    explosion.created_effect.action_delivery.target_effects[2].particle_name = name.."-metal-particle-medium-tinted"
+    -- explosion.created_effect.action_delivery.target_effects[1].particle_name = name.."-metal-particle-big-tinted"
+    -- explosion.created_effect.action_delivery.target_effects[2].particle_name = name.."-metal-particle-medium-tinted"
 
     -- Create remnants
-    -- remnant.animation[1].filename = reskin_functions.mod_directory.."/graphics/entity/"..subtype.."/"..name.."/remnants/"..name.."-remnants.png"
-    -- remnant.animation[1].hr_version.filename = reskin_functions.mod_directory.."/graphics/entity/"..subtype.."/"..name.."/remnants/hr-"..name.."-remnants.png"
+    -- remnant.animation[1].filename = reskin_functions.directory.."/graphics/entity/"..subtype.."/"..name.."/remnants/"..name.."-remnants.png"
+    -- remnant.animation[1].hr_version.filename = reskin_functions.directory.."/graphics/entity/"..subtype.."/"..name.."/remnants/hr-"..name.."-remnants.png"
 
     -- Reskin entities
     entity.animation =
@@ -74,7 +79,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(0, 2),
                 hr_version =
                 {
-                    filename = reskin_functions.mod_directory.."/graphics/entity/"..type.."/"..name.."/hr-"..name..".png",
+                    filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/hr-"..name..".png",
                     priority="high",
                     width = 214,
                     height = 237,

@@ -9,12 +9,15 @@ if settings.startup["bobmods-power-steam"].value == false then return end
 
 -- Set parameters
 local type = "generator"
-local subtype = "steam-engine"
-local size = 64
-local mipmaps = 4
-local particles = {"medium","big"}
-local mapping = false
-local remnants = true
+local flags = 
+{
+    basename = "steam-engine",
+    baseentity = "steam-engine",
+    directory = reskins.bobs_structures.directory,
+    folder = "steam-engine",
+    particles = {"medium","big"}
+}
+
 local tier_map =
 {
     ["steam-engine"]   = 1,
@@ -34,25 +37,25 @@ for name, tier in pairs(tier_map) do
         goto continue
     end
 
-    reskin_functions.setup_common_attributes(name, type, subtype, tier, size, mipmaps, particles, mapping, remnants)
+    reskins.lib.setup_common_attributes(name, type, tier, flags)
 
-    -- Initialize table addresses
+    -- Initialize paths
     remnant = data.raw["corpse"][name.."-remnants"]
     explosion = data.raw["explosion"][name.."-explosion"]
-
+    
     -- Create explosions
     explosion.created_effect.action_delivery.target_effects[1].particle_name = name.."-metal-particle-big-tinted"
     explosion.created_effect.action_delivery.target_effects[2].particle_name = name.."-metal-particle-medium-tinted"
 
     -- Create remnants
-    remnant.animation[1].filename = reskin_functions.mod_directory.."/graphics/entity/"..subtype.."/"..name.."/remnants/"..name.."-remnants.png"
-    remnant.animation[1].hr_version.filename = reskin_functions.mod_directory.."/graphics/entity/"..subtype.."/"..name.."/remnants/hr-"..name.."-remnants.png"
+    remnant.animation[1].filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/remnants/"..name.."-remnants.png"
+    remnant.animation[1].hr_version.filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/remnants/hr-"..name.."-remnants.png"
     
     -- Reskin entities
-    entity.horizontal_animation.layers[1].filename = reskin_functions.mod_directory.."/graphics/entity/"..subtype.."/"..name.."/"..name.."-H.png"
-    entity.horizontal_animation.layers[1].hr_version.filename = reskin_functions.mod_directory.."/graphics/entity/"..subtype.."/"..name.."/hr-"..name.."-H.png"
-    entity.vertical_animation.layers[1].filename = reskin_functions.mod_directory.."/graphics/entity/"..subtype.."/"..name.."/"..name.."-V.png"
-    entity.vertical_animation.layers[1].hr_version.filename = reskin_functions.mod_directory.."/graphics/entity/"..subtype.."/"..name.."/hr-"..name.."-V.png"
+    entity.horizontal_animation.layers[1].filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/"..name.."-H.png"
+    entity.horizontal_animation.layers[1].hr_version.filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/hr-"..name.."-H.png"
+    entity.vertical_animation.layers[1].filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/"..name.."-V.png"
+    entity.vertical_animation.layers[1].hr_version.filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/hr-"..name.."-V.png"
 
     -- Label to skip to next iteration
     ::continue::    

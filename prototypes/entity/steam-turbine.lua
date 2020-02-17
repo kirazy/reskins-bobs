@@ -9,14 +9,17 @@ if settings.startup["bobmods-power-steam"].value == false then return end
 
 -- Set parameters
 local type = "generator"
-local subtype = "steam-turbine"
-local size = 64
-local mipmaps = 4
-local particles = {"medium","big"}
-local mapping = false
-local remnants = true
-local tier_map = {}
+local flags = 
+{
+    basename = "steam-turbine",
+    baseentity = "steam-turbine",
+    directory = reskins.bobs_structures.directory,
+    folder = "steam-turbine",
+    particles = {"medium","big"}
+}
 
+-- Steam turbines have two different sets of tiers; determine which we are using
+local tier_map
 if settings.startup["reskin-series-tier-mapping"].value == "name-map" then
     tier_map =
     {
@@ -31,7 +34,7 @@ else
         ["steam-turbine-2"] = 4,
         ["steam-turbine-3"] = 5
     }
-    mapping = true
+    flags.remap_tiers = true
 end
 
 -- Reskin entities, create and assign extra details
@@ -44,19 +47,16 @@ for name, tier in pairs(tier_map) do
         goto continue
     end
 
-    -- Initialize subname
-    subname = {}
-
-    -- Handle subname, used when ingredient-mapping tiers
+    -- Handle basename, used when ingredient-mapping tiers
     if name == "steam-turbine" then
-        subname = name
+        flags.basename = name
     else
-        subname = string.sub(name, 1, string.len(name)-2)
+        flags.basename = string.sub(name, 1, string.len(name)-2)
     end
+    
+    reskins.lib.setup_common_attributes(name, type, tier, flags)
 
-    reskin_functions.setup_common_attributes(name, type, subtype, tier, size, mipmaps, particles, mapping, remnants, subname)
-
-    -- Initialize table addresses
+    -- Initialize table addresses    
     remnant = data.raw["corpse"][name.."-remnants"]
     explosion = data.raw["explosion"][name.."-explosion"]
 
@@ -66,19 +66,19 @@ for name, tier in pairs(tier_map) do
 
      -- Handle tier mapping settings, overwrite name with mapped name
      -- Caution: name beyond this point if remapping occurs no longer corresponds to the entity name
-    if mapping == true then     
-        name = subname.."-"..tier
+    if flags.remap_tiers == true then     
+        name = flags.basename.."-"..tier
     end
 
     -- Create remnants
-    remnant.animation[1].filename = reskin_functions.mod_directory.."/graphics/entity/"..subtype.."/"..name.."/remnants/"..name.."-remnants.png"
-    remnant.animation[1].hr_version.filename = reskin_functions.mod_directory.."/graphics/entity/"..subtype.."/"..name.."/remnants/hr-"..name.."-remnants.png"
+    remnant.animation[1].filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/remnants/"..name.."-remnants.png"
+    remnant.animation[1].hr_version.filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/remnants/hr-"..name.."-remnants.png"
 
     -- Reskin entities
-    entity.horizontal_animation.layers[1].filename = reskin_functions.mod_directory.."/graphics/entity/"..subtype.."/"..name.."/"..name.."-H.png"
-    entity.horizontal_animation.layers[1].hr_version.filename = reskin_functions.mod_directory.."/graphics/entity/"..subtype.."/"..name.."/hr-"..name.."-H.png"
-    entity.vertical_animation.layers[1].filename = reskin_functions.mod_directory.."/graphics/entity/"..subtype.."/"..name.."/"..name.."-V.png"
-    entity.vertical_animation.layers[1].hr_version.filename = reskin_functions.mod_directory.."/graphics/entity/"..subtype.."/"..name.."/hr-"..name.."-V.png"
+    entity.horizontal_animation.layers[1].filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/"..name.."-H.png"
+    entity.horizontal_animation.layers[1].hr_version.filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/hr-"..name.."-H.png"
+    entity.vertical_animation.layers[1].filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/"..name.."-V.png"
+    entity.vertical_animation.layers[1].hr_version.filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/hr-"..name.."-V.png"
 
     -- Label to skip to next iteration
     ::continue::
