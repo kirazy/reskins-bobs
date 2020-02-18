@@ -46,13 +46,6 @@ for name, tier in pairs(tier_map) do
     if not entity then
         goto continue
     end
-
-    -- Handle basename, used when ingredient-mapping tiers
-    if name == "steam-turbine" then
-        flags.basename = name
-    else
-        flags.basename = string.sub(name, 1, string.len(name)-2)
-    end
     
     reskins.lib.setup_common_attributes(name, type, tier, flags)
 
@@ -64,8 +57,8 @@ for name, tier in pairs(tier_map) do
     explosion.created_effect.action_delivery.target_effects[1].particle_name = name.."-metal-particle-big-tinted"
     explosion.created_effect.action_delivery.target_effects[2].particle_name = name.."-metal-particle-medium-tinted"
 
-     -- Handle tier mapping settings, overwrite name with mapped name
-     -- Caution: name beyond this point if remapping occurs no longer corresponds to the entity name
+    -- Handle tier mapping settings, overwrite name with mapped name
+    -- Caution: name beyond this point if remapping occurs no longer corresponds to the entity name
     if flags.remap_tiers == true then     
         name = flags.basename.."-"..tier
     end

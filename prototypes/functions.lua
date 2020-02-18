@@ -59,6 +59,7 @@ function reskins.lib.setup_common_attributes(name, type, tier, flags)
     -- Ensure no attempt to make explosions if particles are not defined
     if not particles then
         make_explosions = false
+        error(name.." did not detect partciles properly.")
     end
     
     local labeled_icon, unlabled_icon
@@ -116,6 +117,13 @@ function reskins.lib.setup_common_attributes(name, type, tier, flags)
                 particle_big.pictures.sheet.tint = reskins.lib.tint_index["tier-"..tier]
                 particle_big.pictures.sheet.hr_version.tint = reskins.lib.tint_index["tier-"..tier]
                 data:extend({particle_big})
+
+            elseif value == "medium-long" then
+                particle_medium_long = table.deepcopy(data.raw["optimized-particle"][baseentity.."-long-metal-particle-medium"])
+                particle_medium_long.name = name.."-long-metal-particle-medium-tinted"
+                particle_medium_long.pictures.sheet.tint = reskins.lib.tint_index["tier-"..tier]
+                particle_medium_long.pictures.sheet.hr_version.tint = reskins.lib.tint_index["tier-"..tier]
+                data:extend({particle_medium_long})
             end
         end
 
@@ -123,18 +131,17 @@ function reskins.lib.setup_common_attributes(name, type, tier, flags)
         local explosion = table.deepcopy(data.raw["explosion"][baseentity.."-explosion"])
         explosion.name = name.."-explosion"
         data:extend({explosion})
+
+        data.raw[type][name]["dying_explosion"] = explosion.name
     end
   
-    if flags.basename == "assembling-machine" and flags.make_remnants == true then
-        error("Make_remnants is true for some god forsaken reason")
-    end
     -- Create remnants
     if make_remnants == true then
         local remnant = table.deepcopy(data.raw["corpse"][baseentity.."-remnants"])
         remnant.name = name.."-remnants"
-        data:extend({remnant}) 
+        data:extend({remnant})      
 
-        remnant = data.raw["corpse"][name.."-remnants"]            
+        data.raw[type][name]["corpse"] = remnant.name
     end
 
     -- Create icons
@@ -190,13 +197,13 @@ function reskins.lib.setup_common_attributes(name, type, tier, flags)
         item.icon_mipmaps = mipmaps 
 
         if explosion then
-            entity.dying_explosion = explosion.name
+            -- entity.dying_explosion = explosion.name
             explosion.icon_size = size
             explosion.icon_mipmaps = mipmaps
         end
         
         if remnant then
-            entity.corpse = remnant.name
+            -- entity.corpse = remnant.name
             remnant.icon_size = size
             remnant.icon_mipmaps = mipmaps
         end

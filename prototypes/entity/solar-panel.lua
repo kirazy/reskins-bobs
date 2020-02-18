@@ -52,7 +52,7 @@ for name, tier in pairs(tier_map) do
         goto continue
     end
 
-    -- Handle the three types of basenames, used when ingredient-mapping tiers
+    -- Handle the three types of basenames
     if name == "solar-panel-small" or name == "solar-panel" or name == "solar-panel-large" then
         flags.basename = name
     else
