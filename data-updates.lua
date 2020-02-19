@@ -6,3 +6,4 @@
 -- Special cases
 require("prototypes.entity.assembling-machine")
 require("prototypes.entity.chemical-plant")
+require("prototypes.entity.nuclear-reactor")

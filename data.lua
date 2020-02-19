@@ -12,6 +12,7 @@ reskins.bobs_structures = {directory = "__reskin-series-bobs-structures__"}
 -- Entities
 require("prototypes.entity.big-electric-pole")
 require("prototypes.entity.boiler")
+require("prototypes.entity.heat-pipe")
 require("prototypes.entity.medium-electric-pole")
 require("prototypes.entity.solar-panel")
 require("prototypes.entity.steam-engine")
