@@ -19,193 +19,222 @@ reskins.lib.tint_index =
     ["tier-5"] = {r = 74,  g = 239, b = 119}
 }
 
--- Set icons for each of the four main types
+reskins.lib.particle_index = 
+{
+    ["small"] = "-metal-particle-small",
+    ["medium"] = "-metal-particle-medium",
+    ["medium-long"] = "-long-metal-particle-medium",
+    ["big"] = "-metal-particle-big"
+}
+
+reskins.lib.type = type
+
+-- Most entities have a common process for reskinning, so consolidate the other functions under one superfunction for ease of use
 function reskins.lib.setup_common_attributes(name, type, tier, flags)
-    --[[FLAG STRUCTURE:
-        Place in each lua file calling this function; optional flags can be omitted
-        
-        require("prototypes.functions")
-
-        local flags = 
-        {
-            basename = "entity-name-without-tier-numbering",
-            baseentity = "source-entity",
-            directory   = "__mod_directory__",
-            folder = "image-folder",
-            icon_size = 64,
-            icon_mipmaps = 4,
-            particles = {"small","medium","big"},
-            remap_tiers     = false,
-            make_remnants   = false,
-            make_explosions = false,
-            make_icons      = false
-        }]]
-
-    -- Required flags
-    local basename    = flags.basename   -- Root common name for tiered entities
-    local baseentity  = flags.baseentity -- Source entity in base Factorio
-    local directory   = flags.directory  -- Mod directory of the mod calling this function 
-    local folder      = flags.folder     -- Image folder within icons or entity folders containing entity-segregated subfolders with sprites
+    -- Parse flags
+    reskins.lib.parse_flags(flags)    
     
-    -- Optional flags
-    local size            = flags.icon_size       or 64    -- Pixel size of icons
-    local mipmaps         = flags.icon_mipmaps    or 4     -- Number of mipmaps present in the icon image file       
-    local particles       = flags.particles       or nil   -- Array of particles to create; default nil. Valid entries: "small", "medium", "big"
-    local remap_tiers     = flags.remap_tiers     or false -- If true, use special handling for icon creation
-    local make_remnants   = (flags.make_remnants   ~= false)  -- Create remnant entities; default true
-    local make_explosions = (flags.make_explosions ~= false)  -- Create explosion entities and associated particles; default true
-    local make_icons      = (flags.make_icons      ~= false)  -- Create icons; default true
-
-    -- Ensure no attempt to make explosions if particles are not defined
-    if not particles then
-        make_explosions = false
-        error(name.." did not detect partciles properly.")
-    end
-    
-    local labeled_icon, unlabled_icon
-    if remap_tiers == false then
-        -- Setup icon with name-mapped tier labeling
-        labeled_icon = 
-        {
-            {
-                icon = directory.."/graphics/icons/"..folder.."/"..name..".png"
-            },
-            {
-                icon = directory.."/graphics/icons/tiers/"..size.."/tier-"..tier..".png"
-            }
-        }
-
-        -- Setup icon without tier labeling
-        unlabeled_icon = directory.."/graphics/icons/"..folder.."/"..name..".png"
-    else
-        -- Setup icon with ingredient-mapped tier labeling
-        labeled_icon = 
-        {
-            {
-                icon = directory.."/graphics/icons/"..folder.."/"..basename.."-"..tier..".png"
-            },
-            {
-                icon = directory.."/graphics/icons/tiers/"..size.."/tier-"..tier..".png"
-            }
-        }
-
-        -- Setup icon without tier labeling
-        unlabeled_icon = directory.."/graphics/icons/"..folder.."/"..basename.."-"..tier..".png"
-    end
-
-     -- Create particles and explosions   
-    if make_explosions == true then   
+    -- Create particles and explosions   
+    if flags.make_explosions == true then   
         -- Create needed particles with appropriate tints
-        for key, value in pairs(particles) do 
+        for key, value in pairs(flags.particles) do 
             if value == "small" then
-                particle_small = table.deepcopy(data.raw["optimized-particle"][baseentity.."-metal-particle-small"])
-                particle_small.name = name.."-metal-particle-small-tinted"
-                particle_small.pictures.sheet.tint = reskins.lib.tint_index["tier-"..tier]
-                particle_small.pictures.sheet.hr_version.tint = reskins.lib.tint_index["tier-"..tier]
-                data:extend({particle_small})
-
+                reskins.lib.create_particle(name, flags.baseentity, reskins.lib.particle_index[value], reskins.lib.tint_index["tier-"..tier])
             elseif value == "medium" then
-                particle_medium = table.deepcopy(data.raw["optimized-particle"][baseentity.."-metal-particle-medium"])
-                particle_medium.name = name.."-metal-particle-medium-tinted"
-                particle_medium.pictures.sheet.tint = reskins.lib.tint_index["tier-"..tier]
-                particle_medium.pictures.sheet.hr_version.tint = reskins.lib.tint_index["tier-"..tier]
-                data:extend({particle_medium})
-
+                reskins.lib.create_particle(name, flags.baseentity, reskins.lib.particle_index[value], reskins.lib.tint_index["tier-"..tier])
             elseif value == "big" then
-                particle_big = table.deepcopy(data.raw["optimized-particle"][baseentity.."-metal-particle-big"])
-                particle_big.name = name.."-metal-particle-big-tinted"
-                particle_big.pictures.sheet.tint = reskins.lib.tint_index["tier-"..tier]
-                particle_big.pictures.sheet.hr_version.tint = reskins.lib.tint_index["tier-"..tier]
-                data:extend({particle_big})
-
+                reskins.lib.create_particle(name, flags.baseentity, reskins.lib.particle_index[value], reskins.lib.tint_index["tier-"..tier])
             elseif value == "medium-long" then
-                particle_medium_long = table.deepcopy(data.raw["optimized-particle"][baseentity.."-long-metal-particle-medium"])
-                particle_medium_long.name = name.."-long-metal-particle-medium-tinted"
-                particle_medium_long.pictures.sheet.tint = reskins.lib.tint_index["tier-"..tier]
-                particle_medium_long.pictures.sheet.hr_version.tint = reskins.lib.tint_index["tier-"..tier]
-                data:extend({particle_medium_long})
+                reskins.lib.create_particle(name, flags.baseentity, reskins.lib.particle_index[value], reskins.lib.tint_index["tier-"..tier])
             end
         end
 
         -- Create explosions. Big ones. The biggest explosions. Make Michael Bay proud!
-        local explosion = table.deepcopy(data.raw["explosion"][baseentity.."-explosion"])
-        explosion.name = name.."-explosion"
-        data:extend({explosion})
-
-        data.raw[type][name]["dying_explosion"] = explosion.name
+        reskins.lib.create_explosion(name, type, flags.baseentity)
+        
     end
   
     -- Create remnants
-    if make_remnants == true then
-        local remnant = table.deepcopy(data.raw["corpse"][baseentity.."-remnants"])
-        remnant.name = name.."-remnants"
-        data:extend({remnant})      
-
-        data.raw[type][name]["corpse"] = remnant.name
+    if flags.make_remnants == true then
+        reskins.lib.create_remnant(name, type, flags.baseentity)
     end
 
     -- Create icons
-    if make_icons == true then
-        -- Initialize paths
-        local entity = data.raw[type][name]
-        local item = data.raw["item"][name]
-        local explosion = data.raw["explosion"][name.."-explosion"]
-        local remnant = data.raw["corpse"][name.."-remnants"]
-
-        -- Check whether icon or icons, ensure the key we're not using is erased
-        if settings.startup["reskin-series-icon-tier-labeling"].value == true and tier > 0 then
-            -- Create icons with tier labels
-            entity.icon = nil        
-            entity.icons = labeled_icon     
-
-            item.icon = nil
-            item.icons = labeled_icon        
-
-            if explosion then 
-                explosion.icon = nil        
-                explosion.icons = labeled_icon
-            end
-
-            if remnant then
-                remnant.icon = nil
-                remnant.icons = labeled_icon
+    if flags.make_icons == true then
+        if flags.remap_tiers == false then
+            if settings.startup["reskin-series-icon-tier-labeling"].value == true and tier > 0 then
+                -- Setup icon with name-mapped tier labeling
+                flags.icon = 
+                {
+                    {
+                        icon = flags.directory.."/graphics/icons/"..flags.folder.."/"..name..".png"
+                    },
+                    {
+                        icon = flags.directory.."/graphics/icons/tiers/"..flags.icon_size.."/tier-"..tier..".png"
+                    }
+                }
+            else
+                -- Setup icon without tier labeling
+                flags.icon = flags.directory.."/graphics/icons/"..flags.folder.."/"..name..".png"
             end
         else
-            -- Create icons without tier labels
-            entity.icons = nil
-            entity.icon = unlabeled_icon
-
-            item.icons = nil        
-            item.icon = unlabeled_icon
-
-            if explosion then
-                explosion.icons = nil        
-                explosion.icon = unlabeled_icon
+            if settings.startup["reskin-series-icon-tier-labeling"].value == true and tier > 0 then
+                -- Setup icon with ingredient-mapped tier labeling
+                flags.icon = 
+                {
+                    {
+                        icon = flags.directory.."/graphics/icons/"..flags.folder.."/"..flags.basename.."-"..tier..".png"
+                    },
+                    {
+                        icon = flags.directory.."/graphics/icons/tiers/"..flags.icon_size.."/tier-"..tier..".png"
+                    }
+                }
+            else
+                -- Setup icon without tier labeling
+                flags.icon = flags.directory.."/graphics/icons/"..flags.folder.."/"..flags.basename.."-"..tier..".png"
             end
+        end    
+        
+        -- Assign icons
+        reskins.lib.assign_icons(name, type, flags)
+    end
+end
 
-            if remnant then
-                remnant.icons = nil
-                remnant.icon = unlabeled_icon
-            end
+-- Parses the main flags table of parameters
+function reskins.lib.parse_flags(flags)
+    --[[Flags required by this function, unless specifically indicated optional
+        basename        - Name of entity to be worked on
+        baseentity      - Name of base-Factorio entity to copy features from
+        directory       - Top-level mod directory, e.g. "__mod_directory__"
+        folder          - Name of folder located within icon or entity folders containing entity graphics
+        particles       - Particles to be created, accepted values: "small", "medium", "medium-long", "big"
+        icon_size       - Pixel size of icons; optional; default 64
+        icon_mipmaps    - Number of mipmaps present in the icon image file; optional; default 4
+        remap_tiers     - Whether tiers were remapped from name-based to ingredient-based; optional; default false
+        make_remnants   - Create remnants; optional; default true
+        make_explosions - Create explosions; optional; default true
+        make_icons      - Create icons; optional; default true]]
+  
+    -- Optional flags
+    flags.icon_size       = flags.icon_size        or 64    -- Pixel size of icons
+    flags.icon_mipmaps    = flags.icon_mipmaps     or 4     -- Number of mipmaps present in the icon image file       
+    flags.remap_tiers     = flags.remap_tiers      or false -- If true, use special handling for icon creation
+
+    -- These optional parameters are intended for debugging and prototype creation
+    flags.make_remnants   = (flags.make_remnants   ~= false)  -- Create remnant entities; default true
+    flags.make_explosions = (flags.make_explosions ~= false)  -- Create explosion entities and associated particles; default true
+    flags.make_icons      = (flags.make_icons      ~= false)  -- Create icons; default true
+
+    -- Ensure no attempt to make explosions if particles are not defined
+    if not flags.particles then
+        flags.make_explosions = false
+    end
+
+    return flags
+end
+
+function reskins.lib.assign_icons(name, type, flags)
+    --[[ Flags required by this function
+        icon            - Table or string defining icon
+        icon_size       - Pixel size of icons
+        icon_mipmaps    - Number of mipmaps present in the icon image file]]
+
+    -- Initialize paths
+    local entity = data.raw[type][name]
+    local item = data.raw["item"][name]
+    local explosion = data.raw["explosion"][name.."-explosion"]
+    local remnant = data.raw["corpse"][name.."-remnants"]
+
+    -- Check whether icon or icons, ensure the key we're not using is erased
+    if reskins.lib.type(flags.icon) == "table" then
+        -- Create icons that have multiple layers
+        if entity then
+            entity.icon = nil        
+            entity.icons = flags.icon
         end
 
-        -- Make assignments common to all cases
-        entity.icon_size = size
-        entity.icon_mipmaps = mipmaps          
+        if item then
+            item.icon = nil
+            item.icons = flags.icon
+        end
 
-        item.icon_size = size
-        item.icon_mipmaps = mipmaps 
+        if explosion then 
+            explosion.icon = nil        
+            explosion.icons = flags.icon
+        end
+
+        if remnant then
+            remnant.icon = nil
+            remnant.icons = flags.icon
+        end
+    else
+        -- Create icons that do not have multiple layers
+        if entity then
+            entity.icons = nil
+            entity.icon = flags.icon
+        end
+
+        if item then
+            item.icons = nil        
+            item.icon = flags.icon
+        end
 
         if explosion then
-            -- entity.dying_explosion = explosion.name
-            explosion.icon_size = size
-            explosion.icon_mipmaps = mipmaps
+            explosion.icons = nil        
+            explosion.icon = flags.icon
         end
-        
+
         if remnant then
-            -- entity.corpse = remnant.name
-            remnant.icon_size = size
-            remnant.icon_mipmaps = mipmaps
+            remnant.icons = nil
+            remnant.icon = flags.icon
         end
     end
+
+    -- Make assignments common to all cases
+    if entity then
+        entity.icon_size = flags.icon_size
+        entity.icon_mipmaps = flags.icon_mipmaps          
+    end
+
+    if item then
+        item.icon_size = flags.icon_size
+        item.icon_mipmaps = flags.icon_mipmaps 
+    end
+
+    if explosion then
+        explosion.icon_size = flags.icon_size
+        explosion.icon_mipmaps = flags.icon_mipmaps
+    end
+    
+    if remnant then
+        remnant.icon_size = flags.icon_size
+        remnant.icon_mipmaps = flags.icon_mipmaps
+    end
+end
+
+-- Create remnant entity; assign filenames after calling this function
+function reskins.lib.create_remnant(name, type, source)
+    local remnant = table.deepcopy(data.raw["corpse"][source.."-remnants"])
+    remnant.name = name.."-remnants"
+    data:extend({remnant})      
+
+    data.raw[type][name]["corpse"] = remnant.name
+end
+
+-- Create explosion entity; assign particles after calling this function
+function reskins.lib.create_explosion(name, type, source)
+    local explosion = table.deepcopy(data.raw["explosion"][source.."-explosion"])
+    explosion.name = name.."-explosion"
+    data:extend({explosion})
+
+    data.raw[type][name]["dying_explosion"] = explosion.name
+end
+
+-- Create particle entity
+function reskins.lib.create_particle(name, source, particle, tint)
+    local particle_entity = table.deepcopy(data.raw["optimized-particle"][source..particle])
+    particle_entity.name = name..particle.."-tinted"
+    particle_entity.pictures.sheet.tint = tint
+    particle_entity.pictures.sheet.hr_version.tint = tint
+    data:extend({particle_entity})
 end
