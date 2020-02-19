@@ -271,7 +271,7 @@ local function skin_reactor_remnants(name, type, flags)
                 }
             },
             {
-                    filename = flags.directory.."/graphics/entity/nuclear-reactor/remnants/shells/"..flags.reactor.."shell-remnants.png",
+                    filename = flags.directory.."/graphics/entity/nuclear-reactor/remnants/shells/"..flags.reactor.."-shell-remnants.png",
                     line_length = 1,
                     width = 206,
                     height = 198,
