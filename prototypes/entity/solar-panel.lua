@@ -84,9 +84,9 @@ for name, tier in pairs(tier_map) do
                 {
                     filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/"..name..".png",
                     priority = "high",
-                    width = 116,
-                    height = 112,
-                    shift = util.by_pixel(-3, 3),
+                    width = 90,
+                    height = 75,
+                    shift = util.by_pixel(2.5, 0.25),
                     hr_version =
                     {
                         filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/hr-"..name..".png",
@@ -100,9 +100,9 @@ for name, tier in pairs(tier_map) do
                 {
                     filename = flags.directory.."/graphics/entity/solar-panel/solar-panel-small/solar-panel-small-shadow.png",
                     priority = "high",
-                    width = 112,
-                    height = 90,
-                    shift = util.by_pixel(10, 6),
+                    width = 90,
+                    height = 75,
+                    shift = util.by_pixel(2.5, 0.25),
                     draw_as_shadow = true,
                     hr_version =
                     {
@@ -126,9 +126,9 @@ for name, tier in pairs(tier_map) do
                 {
                     filename = flags.directory.."/graphics/entity/solar-panel/solar-panel-small/solar-panel-small-shadow-overlay.png",
                     priority = "high",
-                    width = 108,
-                    height = 90,
-                    shift = util.by_pixel(11, 6),
+                    width = 90,
+                    height = 75,
+                    shift = util.by_pixel(2.5, 0.25),
                     hr_version =
                     {
                         filename = flags.directory.."/graphics/entity/solar-panel/solar-panel-small/hr-solar-panel-small-shadow-overlay.png",
