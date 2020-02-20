@@ -66,20 +66,108 @@ for name, tier in pairs(tier_map) do
     end
 
     -- Create remnants
-    for i = 1, 4, 1 do
-        remnant.animation[i].layers[1].filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/remnants/"..name.."-base-remnants.png"
-        remnant.animation[i].layers[1].hr_version.filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/remnants/hr-"..name.."-base-remnants.png"
-        remnant.animation_overlay[i].layers[1].filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/remnants/"..name.."-top-remnants.png"
-        remnant.animation_overlay[i].layers[1].hr_version.filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/remnants/hr-"..name.."-top-remnants.png"
-    end
+    remnant.animation = make_rotated_animation_variations_from_sheet (4,
+    {
+        layers =
+        {
+            {
+                filename = flags.directory.."/graphics/entity/big-electric-pole/base/remnants/big-electric-pole-base-remnants.png",
+                line_length = 1,
+                width = 184,
+                height = 94,
+                frame_count = 1,
+                direction_count = 1,
+                shift = util.by_pixel(44, 0),
+                hr_version =
+                {
+                filename = flags.directory.."/graphics/entity/big-electric-pole/base/remnants/hr-big-electric-pole-base-remnants.png",
+                line_length = 1,
+                width = 366,
+                height = 188,
+                frame_count = 1,
+                direction_count = 1,
+                shift = util.by_pixel(43, 0.5),
+                scale = 0.5,
+                }
+            },
+            {
+                filename = flags.directory.."/graphics/entity/big-electric-pole/"..name.."/remnants/"..name.."-base-remnants-mask.png",
+                line_length = 1,
+                width = 184,
+                height = 94,
+                frame_count = 1,
+                direction_count = 1,
+                shift = util.by_pixel(44, 0),
+                hr_version =
+                {
+                filename = flags.directory.."/graphics/entity/big-electric-pole/"..name.."/remnants/hr-"..name.."-base-remnants-mask.png",
+                line_length = 1,
+                width = 366,
+                height = 188,
+                frame_count = 1,
+                direction_count = 1,
+                shift = util.by_pixel(43, 0.5),
+                scale = 0.5,
+                }
+            }
+        },
+    })
 
+    remnant.animation_overlay = make_rotated_animation_variations_from_sheet (4,
+    {
+        layers =
+        {
+            {
+                filename = flags.directory.."/graphics/entity/big-electric-pole/base/remnants/big-electric-pole-top-remnants.png",
+                line_length = 1,
+                width = 76,
+                height = 126,
+                frame_count = 1,
+                direction_count = 1,
+                shift = util.by_pixel(-1, -48),
+                hr_version =
+                {
+                    filename = flags.directory.."/graphics/entity/big-electric-pole/base/remnants/hr-big-electric-pole-top-remnants.png",
+                    line_length = 1,
+                    width = 148,
+                    height = 252,
+                    frame_count = 1,
+                    direction_count = 1,
+                    shift = util.by_pixel(-1.5, -48),
+                    scale = 0.5,
+                }
+            },
+            {
+                filename = flags.directory.."/graphics/entity/big-electric-pole/"..name.."/remnants/"..name.."-top-remnants-mask.png",
+                line_length = 1,
+                width = 76,
+                height = 126,
+                frame_count = 1,
+                direction_count = 1,
+                shift = util.by_pixel(-1, -48),
+                hr_version =
+                {
+                    filename = flags.directory.."/graphics/entity/big-electric-pole/"..name.."/remnants/hr-"..name.."-top-remnants-mask.png",
+                    line_length = 1,
+                    width = 148,
+                    height = 252,
+                    frame_count = 1,
+                    direction_count = 1,
+                    shift = util.by_pixel(-1.5, -48),
+                    scale = 0.5,
+                }
+            },
+        }
+    })
+
+    -- Create entities
     entity.pictures =
     {
         layers =
         {
 
             {
-                filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/"..name..".png",
+                filename = flags.directory.."/graphics/entity/big-electric-pole/base/big-electric-pole-base.png",
                 priority = "extra-high",
                 width = 76,
                 height = 156,
@@ -87,7 +175,25 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(1, -51),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/hr-"..name..".png",
+                    filename = flags.directory.."/graphics/entity/big-electric-pole/base/hr-big-electric-pole-base.png",
+                    priority = "extra-high",
+                    width = 148,
+                    height = 312,
+                    direction_count = 4,
+                    shift = util.by_pixel(0, -51),
+                    scale = 0.5
+                }
+            },
+            {
+                filename = flags.directory.."/graphics/entity/big-electric-pole/"..name.."/"..name.."-mask.png",
+                priority = "extra-high",
+                width = 76,
+                height = 156,
+                direction_count = 4,
+                shift = util.by_pixel(1, -51),
+                hr_version =
+                {
+                    filename = flags.directory.."/graphics/entity/big-electric-pole/"..name.."/hr-"..name.."-mask.png",
                     priority = "extra-high",
                     width = 148,
                     height = 312,

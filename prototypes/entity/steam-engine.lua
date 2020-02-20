@@ -28,6 +28,7 @@ local tier_map =
     ["steam-engine-5"] = 5
 }
 
+-- Collect base entity settings we're not changing and want to integrate
 local base = 
 {
     ["remnants"] = table.deepcopy(data.raw["corpse"][flags.baseentity.."-remnants"].animation[1]),

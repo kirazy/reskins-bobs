@@ -66,20 +66,108 @@ for name, tier in pairs(tier_map) do
     end
 
     -- Create remnants
-    for i = 1, 3, 1 do
-        remnant.animation[i].layers[1].filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/remnants/"..name.."-base-remnants.png"
-        remnant.animation[i].layers[1].hr_version.filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/remnants/hr-"..name.."-base-remnants.png"
-        remnant.animation_overlay[i].layers[1].filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/remnants/"..name.."-top-remnants.png"
-        remnant.animation_overlay[i].layers[1].hr_version.filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/remnants/hr-"..name.."-top-remnants.png"
-    end
+    remnant.animation = make_rotated_animation_variations_from_sheet(3,
+    {
+        layers =
+        {
+            {
+                filename = "__base__/graphics/entity/medium-electric-pole/remnants/medium-electric-pole-base-remnants.png",
+                line_length = 1,
+                width = 142,
+                height = 70,
+                frame_count = 1,
+                direction_count = 1,
+                shift = util.by_pixel(35, -5),
+                hr_version =
+                {
+                    filename = "__base__/graphics/entity/medium-electric-pole/remnants/hr-medium-electric-pole-base-remnants.png",
+                    line_length = 1,
+                    width = 284,
+                    height = 140,
+                    frame_count = 1,
+                    direction_count = 1,
+                    shift = util.by_pixel(35, -5),
+                    scale = 0.5,
+                }
+            },
+            {
+                filename = flags.directory.."/graphics/entity/medium-electric-pole/"..name.."/remnants/"..name.."-base-remnants-mask.png",
+                line_length = 1,
+                width = 142,
+                height = 70,
+                frame_count = 1,
+                direction_count = 1,
+                shift = util.by_pixel(35, -5),
+                hr_version =
+                {
+                    filename = flags.directory.."/graphics/entity/medium-electric-pole/"..name.."/remnants/hr-"..name.."-base-remnants-mask.png",
+                    line_length = 1,
+                    width = 284,
+                    height = 140,
+                    frame_count = 1,
+                    direction_count = 1,
+                    shift = util.by_pixel(35, -5),
+                    scale = 0.5,
+                }
+            }
+        }
+    })
 
+    remnant.animation_overlay = make_rotated_animation_variations_from_sheet(3,
+    {
+        layers =
+        {
+            {
+                filename = "__base__/graphics/entity/medium-electric-pole/remnants/medium-electric-pole-top-remnants.png",
+                line_length = 1,
+                width = 50,
+                height = 92,
+                frame_count = 1,
+                direction_count = 1,
+                shift = util.by_pixel(0 , -39),
+                hr_version =
+                {
+                    filename = "__base__/graphics/entity/medium-electric-pole/remnants/hr-medium-electric-pole-top-remnants.png",
+                    line_length = 1,
+                    width = 100,
+                    height = 184,
+                    frame_count = 1,
+                    direction_count = 1,
+                    shift = util.by_pixel(0, -38.5),
+                    scale = 0.5,
+                }
+            },
+            {
+                filename = flags.directory.."/graphics/entity/medium-electric-pole/"..name.."/remnants/"..name.."-top-remnants-mask.png",
+                line_length = 1,
+                width = 50,
+                height = 92,
+                frame_count = 1,
+                direction_count = 1,
+                shift = util.by_pixel(0 , -39),
+                hr_version =
+                {
+                    filename = flags.directory.."/graphics/entity/medium-electric-pole/"..name.."/remnants/hr-"..name.."-top-remnants-mask.png",
+                    line_length = 1,
+                    width = 100,
+                    height = 184,
+                    frame_count = 1,
+                    direction_count = 1,
+                    shift = util.by_pixel(0, -38.5),
+                    scale = 0.5,
+                }
+            }
+        }
+    })
+
+    -- Create entities
     entity.pictures =
     {
         layers =
         {
 
             {
-                filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/"..name..".png",
+                filename = "__base__/graphics/entity/medium-electric-pole/medium-electric-pole.png",
                 priority = "extra-high",
                 width = 40,
                 height = 124,
@@ -87,7 +175,25 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(4, -44),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/hr-"..name..".png",
+                    filename = "__base__/graphics/entity/medium-electric-pole/hr-medium-electric-pole.png",
+                    priority = "extra-high",
+                    width = 84,
+                    height = 252,
+                    direction_count = 4,
+                    shift = util.by_pixel(3.5, -44),
+                    scale = 0.5
+                }
+            },
+            {
+                filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/"..name.."-mask.png",
+                priority = "extra-high",
+                width = 40,
+                height = 124,
+                direction_count = 4,
+                shift = util.by_pixel(4, -44),
+                hr_version =
+                {
+                    filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/hr-"..name.."-mask.png",
                     priority = "extra-high",
                     width = 84,
                     height = 252,
