@@ -73,9 +73,54 @@ for name, tier in pairs(tier_map) do
     end
 
     -- Create remnants
-    remnant.animation.filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/remnants/"..name.."-remnants.png"
-    remnant.animation.hr_version.filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/remnants/hr-"..name.."-remnants.png"
+    remnant.animation = 
+    {
+        layers =
+        {
+            {
+                filename = "__base__/graphics/entity/chemical-plant/remnants/chemical-plant-remnants.png",
+                line_length = 1,
+                width = 224,
+                height = 172,
+                frame_count = 1,
+                direction_count = 1,
+                shift = util.by_pixel(16, -5),
+                hr_version =
+                {
+                    filename = "__base__/graphics/entity/chemical-plant/remnants/hr-chemical-plant-remnants.png",
+                    line_length = 1,
+                    width = 446,
+                    height = 342,
+                    frame_count = 1,
+                    direction_count = 1,
+                    shift = util.by_pixel(16, -5.5),
+                    scale = 0.5,
+                }
+            },
+            {
+                filename = flags.directory.."/graphics/entity/chemical-plant/"..name.."/remnants/"..name.."-remnants-mask.png",
+                line_length = 1,
+                width = 224,
+                height = 172,
+                frame_count = 1,
+                direction_count = 1,
+                shift = util.by_pixel(16, -5),
+                hr_version =
+                {
+                    filename = flags.directory.."/graphics/entity/chemical-plant/"..name.."/remnants/hr-"..name.."-remnants-mask.png",
+                    line_length = 1,
+                    width = 446,
+                    height = 342,
+                    frame_count = 1,
+                    direction_count = 1,
+                    shift = util.by_pixel(16, -5.5),
+                    scale = 0.5,
+                }
+            }
+        }
+    }
 
+    -- Create entities
     entity.animation = make_4way_animation_from_spritesheet(
     { 
         layers =
@@ -89,7 +134,25 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(1, -9),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/hr-"..name..".png",
+                    filename = "__base__/graphics/entity/chemical-plant/hr-chemical-plant.png",
+                    width = 220,
+                    height = 292,
+                    frame_count = 24,
+                    line_length = 12,
+                    shift = util.by_pixel(0.5, -9),
+                    scale = 0.5
+                }
+            },
+            {
+                filename = flags.directory.."/graphics/entity/chemical-plant/"..name.."/"..name.."-mask.png",
+                width = 108,
+                height = 148,
+                frame_count = 24,
+                line_length = 12,
+                shift = util.by_pixel(1, -9),
+                hr_version =
+                {
+                    filename = flags.directory.."/graphics/entity/chemical-plant/"..name.."/hr-"..name.."-mask.png",
                     width = 220,
                     height = 292,
                     frame_count = 24,
