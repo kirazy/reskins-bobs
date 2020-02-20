@@ -5,6 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobpower"] then return end
+if settings.startup["reskin-series-do-bobpower"].value == false then return end 
 
 -- Set parameters
 local type = "heat-pipe"
