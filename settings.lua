@@ -26,3 +26,15 @@ if mods["bobpower"] then
         }
     })
 end
+
+if mods["bobwarfare"] then
+    data:extend(
+    {
+        {
+            type = "bool-setting",
+            name = "reskin-series-do-bobwarfare",
+            setting_type = "startup",
+            default_value = true,
+        }
+    })
+end
