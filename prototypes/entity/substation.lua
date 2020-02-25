@@ -56,7 +56,7 @@ for name, tier in pairs(tier_map) do
     remnant = data.raw["corpse"][name.."-remnants"]
     explosion = data.raw["explosion"][name.."-explosion"]
 
-    -- Create explosions
+    -- Tint explosions
     explosion.created_effect.action_delivery.target_effects[1].particle_name = name.."-metal-particle-big-tinted"
     explosion.created_effect.action_delivery.target_effects[2].particle_name = name.."-metal-particle-big-tinted"
 
@@ -66,17 +66,69 @@ for name, tier in pairs(tier_map) do
         name = flags.basename.."-"..tier
     end
 
-    -- Create remnants
-    remnant.animation[1].filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/remnants/"..name.."-remnants.png"
-    remnant.animation[1].hr_version.filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/remnants/hr-"..name.."-remnants.png"
+    -- Reskin remnants
+    remnant.animation = make_rotated_animation_variations_from_sheet (1,
+    {
+        layers = 
+        {
+            {
+                filename = flags.directory.."/graphics/entity/substation/base/remnants/substation-remnants-base.png",
+                line_length = 1,
+                width = 92,
+                height = 68,
+                frame_count = 1,
+                variation_count = 1,
+                axially_symmetrical = false,
+                direction_count = 1,
+                shift = util.by_pixel(3, 1),
+                hr_version =
+                {
+                    filename = flags.directory.."/graphics/entity/substation/base/remnants/hr-substation-remnants-base.png",
+                    line_length = 1,
+                    width = 182,
+                    height = 134,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 1,
+                    shift = util.by_pixel(2.5, 0.5),
+                    scale = 0.5,
+                },
+            },
+            {
+                filename = flags.directory.."/graphics/entity/substation/mask/"..name.."/remnants/"..name.."-remnants-mask.png",
+                line_length = 1,
+                width = 92,
+                height = 68,
+                frame_count = 1,
+                variation_count = 1,
+                axially_symmetrical = false,
+                direction_count = 1,
+                shift = util.by_pixel(3, 1),
+                hr_version =
+                {
+                    filename = flags.directory.."/graphics/entity/substation/mask/"..name.."/remnants/hr-"..name.."-remnants-mask.png",
+                    line_length = 1,
+                    width = 182,
+                    height = 134,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 1,
+                    shift = util.by_pixel(2.5, 0.5),
+                    scale = 0.5,
+                },
+            }
+        }
+    })
 
+    -- Reskin entities
     entity.pictures =
     {
         layers =
         {
-
             {
-                filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/"..name..".png",
+                filename = flags.directory.."/graphics/entity/substation/base/substation-base.png",
                 priority = "high",
                 width = 70,
                 height = 136,
@@ -84,7 +136,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(0, 1-32),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/hr-"..name..".png",
+                    filename = flags.directory.."/graphics/entity/substation/base/hr-substation-base.png",
                     priority = "high",
                     width = 138,
                     height = 270,
@@ -94,7 +146,25 @@ for name, tier in pairs(tier_map) do
                 }
             },
             {
-                filename = "__base__/graphics/entity/substation/substation-shadow.png",
+                filename = flags.directory.."/graphics/entity/substation/mask/"..name.."/"..name.."-mask.png",
+                priority = "high",
+                width = 70,
+                height = 136,
+                direction_count = 4,
+                shift = util.by_pixel(0, 1-32),
+                hr_version =
+                {
+                    filename = flags.directory.."/graphics/entity/substation/mask/"..name.."/hr-"..name.."-mask.png",
+                    priority = "high",
+                    width = 138,
+                    height = 270,
+                    direction_count = 4,
+                    shift = util.by_pixel(0, 1-32),
+                    scale = 0.5
+                }
+            },
+            {
+                filename = flags.directory.."/graphics/entity/substation/base/substation-shadow.png",
                 priority = "high",
                 width = 186,
                 height = 52,
@@ -103,7 +173,7 @@ for name, tier in pairs(tier_map) do
                 draw_as_shadow = true,
                 hr_version =
                 {
-                    filename = "__base__/graphics/entity/substation/hr-substation-shadow.png",
+                    filename = flags.directory.."/graphics/entity/substation/base/hr-substation-shadow.png",
                     priority = "high",
                     width = 370,
                     height = 104,
