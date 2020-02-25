@@ -80,7 +80,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(35, -5),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/medium-electric-pole/remnants/hr-medium-electric-pole-base-remnants.png",
+                    filename = flags.directory.."/graphics/entity/medium-electric-pole/base/remnants/hr-medium-electric-pole-base-remnants.png",
                     line_length = 1,
                     width = 284,
                     height = 140,
