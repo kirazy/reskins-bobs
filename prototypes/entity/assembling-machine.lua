@@ -12,7 +12,7 @@ local flags = {
     basename = "assembling-machine",
     baseentity = "assembling-machine-1",
     directory = reskins.bobs_structures.directory,
-    folder = "assembling-machine",
+    icon_subfolder = "assembling-machine",
     particles = {"medium","big"},
     make_remnants   = false,
     make_explosions = false
@@ -80,7 +80,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(0, 2),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/hr-"..name..".png",
+                    filename = flags.directory.."/graphics/entity/assembling-machine/"..name.."/hr-"..name..".png",
                     priority="high",
                     width = 214,
                     height = 237,

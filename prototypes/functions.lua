@@ -67,7 +67,7 @@ function reskins.lib.setup_common_attributes(name, type, tier, flags)
                 flags.icon = 
                 {
                     {
-                        icon = flags.directory.."/graphics/icons/"..flags.folder.."/"..name..".png"
+                        icon = flags.directory.."/graphics/icons/"..flags.icon_subfolder.."/"..name..".png"
                     },
                     {
                         icon = flags.directory.."/graphics/icons/tiers/"..flags.icon_size.."/tier-"..tier..".png"
@@ -75,7 +75,7 @@ function reskins.lib.setup_common_attributes(name, type, tier, flags)
                 }
             else
                 -- Setup icon without tier labeling
-                flags.icon = flags.directory.."/graphics/icons/"..flags.folder.."/"..name..".png"
+                flags.icon = flags.directory.."/graphics/icons/"..flags.icon_subfolder.."/"..name..".png"
             end
         else
             if settings.startup["reskin-series-icon-tier-labeling"].value == true and tier > 0 then
@@ -83,7 +83,7 @@ function reskins.lib.setup_common_attributes(name, type, tier, flags)
                 flags.icon = 
                 {
                     {
-                        icon = flags.directory.."/graphics/icons/"..flags.folder.."/"..flags.basename.."-"..tier..".png"
+                        icon = flags.directory.."/graphics/icons/"..flags.icon_subfolder.."/"..flags.basename.."-"..tier..".png"
                     },
                     {
                         icon = flags.directory.."/graphics/icons/tiers/"..flags.icon_size.."/tier-"..tier..".png"
@@ -91,7 +91,7 @@ function reskins.lib.setup_common_attributes(name, type, tier, flags)
                 }
             else
                 -- Setup icon without tier labeling
-                flags.icon = flags.directory.."/graphics/icons/"..flags.folder.."/"..flags.basename.."-"..tier..".png"
+                flags.icon = flags.directory.."/graphics/icons/"..flags.icon_subfolder.."/"..flags.basename.."-"..tier..".png"
             end
         end    
         
@@ -106,7 +106,7 @@ function reskins.lib.parse_flags(flags)
         basename        - Name of entity to be worked on
         baseentity      - Name of base-Factorio entity to copy features from
         directory       - Top-level mod directory, e.g. "__mod_directory__"
-        folder          - Name of folder located within icon or entity folders containing entity graphics
+        icon_subfolder  - Name of folder located within graphics/icons containing icon graphics
         particles       - Particles to be created, accepted values: "small", "medium", "medium-long", "big"
         icon_size       - Pixel size of icons; optional; default 64
         icon_mipmaps    - Number of mipmaps present in the icon image file; optional; default 4
