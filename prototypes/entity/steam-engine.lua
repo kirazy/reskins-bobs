@@ -53,51 +53,53 @@ for name, tier in pairs(tier_map) do
     {
         layers = 
         {
-            filename = flags.directory.."/graphics/entity/steam-engine/base/remnants/steam-engine-remnants.png",
-            line_length = 1,
-            width = 232,
-            height = 194,
-            frame_count = 1,
-            variation_count = 1,
-            axially_symmetrical = false,
-            direction_count = 4,
-            shift = util.by_pixel(17, 7),
-            hr_version =
             {
-                filename = flags.directory.."/graphics/entity/steam-engine/base/remnants/hr-steam-engine-remnants.png",
+                filename = flags.directory.."/graphics/entity/steam-engine/base/remnants/steam-engine-remnants.png",
                 line_length = 1,
-                width = 462,
-                height = 386,
+                width = 232,
+                height = 194,
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
                 direction_count = 4,
-                shift = util.by_pixel(17, 6.5),
-                scale = 0.5,
-            }
-        },
-        {
-            filename = flags.directory.."/graphics/entity/steam-engine/mask/"..name.."/remnants/"..name.."-remnants.png",
-            line_length = 1,
-            width = 232,
-            height = 194,
-            frame_count = 1,
-            variation_count = 1,
-            axially_symmetrical = false,
-            direction_count = 4,
-            shift = util.by_pixel(17, 7),
-            hr_version =
+                shift = util.by_pixel(17, 7),
+                hr_version =
+                {
+                    filename = flags.directory.."/graphics/entity/steam-engine/base/remnants/hr-steam-engine-remnants.png",
+                    line_length = 1,
+                    width = 462,
+                    height = 386,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 4,
+                    shift = util.by_pixel(17, 6.5),
+                    scale = 0.5,
+                }
+            },
             {
-                filename = flags.directory.."/graphics/entity/steam-engine/mask/"..name.."/remnants/hr-"..name.."-remnants.png",
+                filename = flags.directory.."/graphics/entity/steam-engine/mask/"..name.."/remnants/"..name.."-remnants.png",
                 line_length = 1,
-                width = 462,
-                height = 386,
+                width = 232,
+                height = 194,
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
                 direction_count = 4,
-                shift = util.by_pixel(17, 6.5),
-                scale = 0.5,
+                shift = util.by_pixel(17, 7),
+                hr_version =
+                {
+                    filename = flags.directory.."/graphics/entity/steam-engine/mask/"..name.."/remnants/hr-"..name.."-remnants.png",
+                    line_length = 1,
+                    width = 462,
+                    height = 386,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 4,
+                    shift = util.by_pixel(17, 6.5),
+                    scale = 0.5,
+                }
             }
         }
     })

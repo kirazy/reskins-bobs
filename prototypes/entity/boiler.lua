@@ -52,52 +52,54 @@ for name, tier in pairs(tier_map) do
     {
         layers = 
         {
-            filename = flags.directory.."/graphics/entity/boiler/base/remnants/boiler-remnants.png",
-            line_length = 1,
-            width = 138,
-            height = 110,
-            frame_count = 1,
-            variation_count = 1,
-            axially_symmetrical = false,
-            direction_count = 4,
-            shift = util.by_pixel(0, -3),
-            hr_version =
             {
-                filename = flags.directory.."/graphics/entity/boiler/base/remnants/hr-boiler-remnants.png",
+                filename = flags.directory.."/graphics/entity/boiler/base/remnants/boiler-remnants.png",
                 line_length = 1,
-                width = 274,
-                height = 220,
+                width = 138,
+                height = 110,
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
                 direction_count = 4,
-                shift = util.by_pixel(-0.5, -3),
-                scale = 0.5,
+                shift = util.by_pixel(0, -3),
+                hr_version =
+                {
+                    filename = flags.directory.."/graphics/entity/boiler/base/remnants/hr-boiler-remnants.png",
+                    line_length = 1,
+                    width = 274,
+                    height = 220,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 4,
+                    shift = util.by_pixel(-0.5, -3),
+                    scale = 0.5,
+                }
+            },
+            {
+                filename = flags.directory.."/graphics/entity/boiler/mask/"..name.."/remnants/"..name.."-remnants.png",
+                line_length = 1,
+                width = 138,
+                height = 110,
+                frame_count = 1,
+                variation_count = 1,
+                axially_symmetrical = false,
+                direction_count = 4,
+                shift = util.by_pixel(0, -3),
+                hr_version =
+                {
+                    filename = flags.directory.."/graphics/entity/boiler/mask/"..name.."/remnants/hr-"..name.."-remnants.png",
+                    line_length = 1,
+                    width = 274,
+                    height = 220,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 4,
+                    shift = util.by_pixel(-0.5, -3),
+                    scale = 0.5,
+                }           
             }
-        },
-        {
-            filename = flags.directory.."/graphics/entity/boiler/mask/"..name.."/remnants/"..name.."-remnants.png",
-            line_length = 1,
-            width = 138,
-            height = 110,
-            frame_count = 1,
-            variation_count = 1,
-            axially_symmetrical = false,
-            direction_count = 4,
-            shift = util.by_pixel(0, -3),
-            hr_version =
-            {
-                filename = flags.directory.."/graphics/entity/boiler/mask/"..name.."/remnants/hr-"..name.."-remnants.png",
-                line_length = 1,
-                width = 274,
-                height = 220,
-                frame_count = 1,
-                variation_count = 1,
-                axially_symmetrical = false,
-                direction_count = 4,
-                shift = util.by_pixel(-0.5, -3),
-                scale = 0.5,
-            }           
         }
     }
     
