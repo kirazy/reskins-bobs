@@ -15,7 +15,7 @@ local flags =
     basename = "big-electric-pole",
     baseentity = "big-electric-pole",
     directory = reskins.bobs_structures.directory,
-    folder = "big-electric-pole",
+    icon_subfolder = "big-electric-pole",
     particles = {"medium-long"}
 }
 
@@ -91,7 +91,7 @@ for name, tier in pairs(tier_map) do
                 }
             },
             {
-                filename = flags.directory.."/graphics/entity/big-electric-pole/"..name.."/remnants/"..name.."-base-remnants-mask.png",
+                filename = flags.directory.."/graphics/entity/big-electric-pole/mask/"..name.."/remnants/"..name.."-base-remnants.png",
                 line_length = 1,
                 width = 184,
                 height = 94,
@@ -100,7 +100,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(44, 0),
                 hr_version =
                 {
-                filename = flags.directory.."/graphics/entity/big-electric-pole/"..name.."/remnants/hr-"..name.."-base-remnants-mask.png",
+                filename = flags.directory.."/graphics/entity/big-electric-pole/mask/"..name.."/remnants/hr-"..name.."-base-remnants.png",
                 line_length = 1,
                 width = 366,
                 height = 188,
@@ -138,7 +138,7 @@ for name, tier in pairs(tier_map) do
                 }
             },
             {
-                filename = flags.directory.."/graphics/entity/big-electric-pole/"..name.."/remnants/"..name.."-top-remnants-mask.png",
+                filename = flags.directory.."/graphics/entity/big-electric-pole/mask/"..name.."/remnants/"..name.."-top-remnants.png",
                 line_length = 1,
                 width = 76,
                 height = 126,
@@ -147,7 +147,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(-1, -48),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/big-electric-pole/"..name.."/remnants/hr-"..name.."-top-remnants-mask.png",
+                    filename = flags.directory.."/graphics/entity/big-electric-pole/mask/"..name.."/remnants/hr-"..name.."-top-remnants.png",
                     line_length = 1,
                     width = 148,
                     height = 252,
@@ -167,7 +167,7 @@ for name, tier in pairs(tier_map) do
         {
 
             {
-                filename = flags.directory.."/graphics/entity/big-electric-pole/base/big-electric-pole-base.png",
+                filename = flags.directory.."/graphics/entity/big-electric-pole/base/big-electric-pole.png",
                 priority = "extra-high",
                 width = 76,
                 height = 156,
@@ -175,7 +175,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(1, -51),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/big-electric-pole/base/hr-big-electric-pole-base.png",
+                    filename = flags.directory.."/graphics/entity/big-electric-pole/base/hr-big-electric-pole.png",
                     priority = "extra-high",
                     width = 148,
                     height = 312,
@@ -185,7 +185,7 @@ for name, tier in pairs(tier_map) do
                 }
             },
             {
-                filename = flags.directory.."/graphics/entity/big-electric-pole/"..name.."/"..name.."-mask.png",
+                filename = flags.directory.."/graphics/entity/big-electric-pole/mask/"..name.."/"..name..".png",
                 priority = "extra-high",
                 width = 76,
                 height = 156,
@@ -193,7 +193,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(1, -51),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/big-electric-pole/"..name.."/hr-"..name.."-mask.png",
+                    filename = flags.directory.."/graphics/entity/big-electric-pole/mask/"..name.."/hr-"..name..".png",
                     priority = "extra-high",
                     width = 148,
                     height = 312,
@@ -203,7 +203,7 @@ for name, tier in pairs(tier_map) do
                 }
             },
             {
-                filename = "__base__/graphics/entity/big-electric-pole/big-electric-pole-shadow.png",
+                filename = flags.directory.."/graphics/entity/big-electric-pole/base/big-electric-pole-shadow.png",
                 priority = "extra-high",
                 width = 188,
                 height = 48,
@@ -212,7 +212,7 @@ for name, tier in pairs(tier_map) do
                 draw_as_shadow = true,
                 hr_version =
                 {
-                    filename = "__base__/graphics/entity/big-electric-pole/hr-big-electric-pole-shadow.png",
+                    filename = flags.directory.."/graphics/entity/big-electric-pole/base/hr-big-electric-pole-shadow.png",
                     priority = "extra-high",
                     width = 374,
                     height = 94,

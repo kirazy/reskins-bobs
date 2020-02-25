@@ -14,7 +14,7 @@ local flags =
     basename = "heat-pipe",
     baseentity = "heat-pipe",
     directory = reskins.bobs_structures.directory,
-    folder = "heat-pipe",
+    icon_subfolder = "heat-pipe",
     particles = {"big"},
     make_icons = false,
     make_explosions = false,
@@ -56,16 +56,16 @@ for name, tier in pairs(tier_map) do
     -- remnant = data.raw["corpse"][name.."-remnants"]
     -- explosion = data.raw["explosion"][name.."-explosion"]
     
-    -- Create explosions
+    -- Tint explosions
     -- explosion.created_effect.action_delivery.target_effects[3].particle_name = name.."-metal-particle-big-tinted"
 
-    -- Create remnants
+    -- Reskin remnants
     -- remnant.animation.filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/remnants/"..name.."-remnants.png"
     -- remnant.animation.hr_version.filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/remnants/hr-"..name.."-remnants.png"
     
     -- Reskin entities
     if name ~= "heat-pipe" then
-        entity.connection_sprites = make_heat_pipe_pictures(flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/", name,
+        entity.connection_sprites = make_heat_pipe_pictures(flags.directory.."/graphics/entity/heat-pipe/"..name.."/", name,
         {
             single = { name = "straight-vertical-single", ommit_number = true },
             straight_vertical = { variations = 6 },

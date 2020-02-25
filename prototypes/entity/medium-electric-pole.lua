@@ -15,7 +15,7 @@ local flags =
     basename = "medium-electric-pole",
     baseentity = "medium-electric-pole",
     directory = reskins.bobs_structures.directory,
-    folder = "medium-electric-pole",
+    icon_subfolder = "medium-electric-pole",
     particles = {"medium-long"}
 }
 
@@ -56,7 +56,7 @@ for name, tier in pairs(tier_map) do
     remnant = data.raw["corpse"][name.."-remnants"]
     explosion = data.raw["explosion"][name.."-explosion"]
 
-    -- Create explosions
+    -- Tint explosions
     explosion.created_effect.action_delivery.target_effects[1].particle_name = name.."-long-metal-particle-medium-tinted"
 
     -- Handle tier mapping settings, overwrite name with mapped name
@@ -65,13 +65,13 @@ for name, tier in pairs(tier_map) do
         name = flags.basename.."-"..tier
     end
 
-    -- Create remnants
+    -- Reskin remnants
     remnant.animation = make_rotated_animation_variations_from_sheet(3,
     {
         layers =
         {
             {
-                filename = "__base__/graphics/entity/medium-electric-pole/remnants/medium-electric-pole-base-remnants.png",
+                filename = flags.directory.."/graphics/entity/medium-electric-pole/base/remnants/medium-electric-pole-base-remnants.png",
                 line_length = 1,
                 width = 142,
                 height = 70,
@@ -80,7 +80,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(35, -5),
                 hr_version =
                 {
-                    filename = "__base__/graphics/entity/medium-electric-pole/remnants/hr-medium-electric-pole-base-remnants.png",
+                    filename = flags.directory.."/graphics/entity/medium-electric-pole/remnants/hr-medium-electric-pole-base-remnants.png",
                     line_length = 1,
                     width = 284,
                     height = 140,
@@ -91,7 +91,7 @@ for name, tier in pairs(tier_map) do
                 }
             },
             {
-                filename = flags.directory.."/graphics/entity/medium-electric-pole/"..name.."/remnants/"..name.."-base-remnants-mask.png",
+                filename = flags.directory.."/graphics/entity/medium-electric-pole/mask/"..name.."/remnants/"..name.."-base-remnants.png",
                 line_length = 1,
                 width = 142,
                 height = 70,
@@ -100,7 +100,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(35, -5),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/medium-electric-pole/"..name.."/remnants/hr-"..name.."-base-remnants-mask.png",
+                    filename = flags.directory.."/graphics/entity/medium-electric-pole/mask/"..name.."/remnants/hr-"..name.."-base-remnants.png",
                     line_length = 1,
                     width = 284,
                     height = 140,
@@ -118,7 +118,7 @@ for name, tier in pairs(tier_map) do
         layers =
         {
             {
-                filename = "__base__/graphics/entity/medium-electric-pole/remnants/medium-electric-pole-top-remnants.png",
+                filename = flags.directory.."/graphics/entity/medium-electric-pole/base/remnants/medium-electric-pole-top-remnants.png",
                 line_length = 1,
                 width = 50,
                 height = 92,
@@ -127,7 +127,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(0 , -39),
                 hr_version =
                 {
-                    filename = "__base__/graphics/entity/medium-electric-pole/remnants/hr-medium-electric-pole-top-remnants.png",
+                    filename = flags.directory.."/graphics/entity/medium-electric-pole/base/remnants/hr-medium-electric-pole-top-remnants.png",
                     line_length = 1,
                     width = 100,
                     height = 184,
@@ -138,7 +138,7 @@ for name, tier in pairs(tier_map) do
                 }
             },
             {
-                filename = flags.directory.."/graphics/entity/medium-electric-pole/"..name.."/remnants/"..name.."-top-remnants-mask.png",
+                filename = flags.directory.."/graphics/entity/medium-electric-pole/mask/"..name.."/remnants/"..name.."-top-remnants.png",
                 line_length = 1,
                 width = 50,
                 height = 92,
@@ -147,7 +147,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(0 , -39),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/medium-electric-pole/"..name.."/remnants/hr-"..name.."-top-remnants-mask.png",
+                    filename = flags.directory.."/graphics/entity/medium-electric-pole/mask/"..name.."/remnants/hr-"..name.."-top-remnants.png",
                     line_length = 1,
                     width = 100,
                     height = 184,
@@ -160,14 +160,14 @@ for name, tier in pairs(tier_map) do
         }
     })
 
-    -- Create entities
+    -- Reskin entities
     entity.pictures =
     {
         layers =
         {
 
             {
-                filename = "__base__/graphics/entity/medium-electric-pole/medium-electric-pole.png",
+                filename = flags.directory.."/graphics/entity/medium-electric-pole/base/medium-electric-pole.png",
                 priority = "extra-high",
                 width = 40,
                 height = 124,
@@ -175,7 +175,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(4, -44),
                 hr_version =
                 {
-                    filename = "__base__/graphics/entity/medium-electric-pole/hr-medium-electric-pole.png",
+                    filename = flags.directory.."/graphics/entity/medium-electric-pole/base/hr-medium-electric-pole.png",
                     priority = "extra-high",
                     width = 84,
                     height = 252,
@@ -185,7 +185,7 @@ for name, tier in pairs(tier_map) do
                 }
             },
             {
-                filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/"..name.."-mask.png",
+                filename = flags.directory.."/graphics/entity/medium-electric-pole/mask/"..name.."/"..name..".png",
                 priority = "extra-high",
                 width = 40,
                 height = 124,
@@ -193,7 +193,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(4, -44),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/hr-"..name.."-mask.png",
+                    filename = flags.directory.."/graphics/entity/medium-electric-pole/mask/"..name.."/hr-"..name..".png",
                     priority = "extra-high",
                     width = 84,
                     height = 252,
@@ -203,7 +203,7 @@ for name, tier in pairs(tier_map) do
                 }
             },
             {
-                filename = "__base__/graphics/entity/medium-electric-pole/medium-electric-pole-shadow.png",
+                filename = flags.directory.."/graphics/entity/medium-electric-pole/base/medium-electric-pole-shadow.png",
                 priority = "extra-high",
                 width = 140,
                 height = 32,
@@ -212,7 +212,7 @@ for name, tier in pairs(tier_map) do
                 draw_as_shadow = true,
                 hr_version =
                 {
-                    filename = "__base__/graphics/entity/medium-electric-pole/hr-medium-electric-pole-shadow.png",
+                    filename = flags.directory.."/graphics/entity/medium-electric-pole/base/hr-medium-electric-pole-shadow.png",
                     priority = "extra-high",
                     width = 280,
                     height = 64,

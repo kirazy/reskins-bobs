@@ -14,7 +14,7 @@ local flags =
     basename = "chemical-plant",
     baseentity = "chemical-plant",
     directory = reskins.bobs_structures.directory,
-    folder = "chemical-plant",
+    icon_subfolder = "chemical-plant",
     particles = {"medium","big"},
 }
 
@@ -62,7 +62,7 @@ for name, tier in pairs(tier_map) do
     remnant = data.raw["corpse"][name.."-remnants"]
     explosion = data.raw["explosion"][name.."-explosion"]
 
-    -- Create explosions
+    -- Tint explosions
     explosion.created_effect.action_delivery.target_effects[1].particle_name = name.."-metal-particle-big-tinted"
     explosion.created_effect.action_delivery.target_effects[2].particle_name = name.."-metal-particle-medium-tinted"
 
@@ -72,13 +72,13 @@ for name, tier in pairs(tier_map) do
         name = flags.basename.."-"..tier
     end
 
-    -- Create remnants
+    -- Reskin remnants
     remnant.animation = 
     {
         layers =
         {
             {
-                filename = "__base__/graphics/entity/chemical-plant/remnants/chemical-plant-remnants.png",
+                filename = flags.directory.."/graphics/entity/chemical-plant/base/remnants/chemical-plant-remnants.png",
                 line_length = 1,
                 width = 224,
                 height = 172,
@@ -87,7 +87,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(16, -5),
                 hr_version =
                 {
-                    filename = "__base__/graphics/entity/chemical-plant/remnants/hr-chemical-plant-remnants.png",
+                    filename = flags.directory.."/graphics/entity/chemical-plant/base/remnants/hr-chemical-plant-remnants.png",
                     line_length = 1,
                     width = 446,
                     height = 342,
@@ -98,7 +98,7 @@ for name, tier in pairs(tier_map) do
                 }
             },
             {
-                filename = flags.directory.."/graphics/entity/chemical-plant/"..name.."/remnants/"..name.."-remnants-mask.png",
+                filename = flags.directory.."/graphics/entity/chemical-plant/mask/"..name.."/remnants/"..name.."-remnants.png",
                 line_length = 1,
                 width = 224,
                 height = 172,
@@ -107,7 +107,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(16, -5),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/chemical-plant/"..name.."/remnants/hr-"..name.."-remnants-mask.png",
+                    filename = flags.directory.."/graphics/entity/chemical-plant/mask/"..name.."/remnants/hr-"..name.."-remnants.png",
                     line_length = 1,
                     width = 446,
                     height = 342,
@@ -120,13 +120,13 @@ for name, tier in pairs(tier_map) do
         }
     }
 
-    -- Create entities
+    -- Reskin entities
     entity.animation = make_4way_animation_from_spritesheet(
     { 
         layers =
         {
             {
-                filename = "__base__/graphics/entity/chemical-plant/chemical-plant.png",
+                filename = flags.directory.."/graphics/entity/chemical-plant/base/chemical-plant.png",
                 width = 108,
                 height = 148,
                 frame_count = 24,
@@ -134,7 +134,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(1, -9),
                 hr_version =
                 {
-                    filename = "__base__/graphics/entity/chemical-plant/hr-chemical-plant.png",
+                    filename = flags.directory.."/graphics/entity/chemical-plant/base/hr-chemical-plant.png",
                     width = 220,
                     height = 292,
                     frame_count = 24,
@@ -144,7 +144,7 @@ for name, tier in pairs(tier_map) do
                 }
             },
             {
-                filename = flags.directory.."/graphics/entity/chemical-plant/"..name.."/"..name.."-mask.png",
+                filename = flags.directory.."/graphics/entity/chemical-plant/mask/"..name.."/"..name..".png",
                 width = 108,
                 height = 148,
                 frame_count = 24,
@@ -152,7 +152,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(1, -9),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/chemical-plant/"..name.."/hr-"..name.."-mask.png",
+                    filename = flags.directory.."/graphics/entity/chemical-plant/mask/"..name.."/hr-"..name..".png",
                     width = 220,
                     height = 292,
                     frame_count = 24,
@@ -162,7 +162,7 @@ for name, tier in pairs(tier_map) do
                 }
             },
             {
-                filename = "__base__/graphics/entity/chemical-plant/chemical-plant-shadow.png",
+                filename = flags.directory.."/graphics/entity/chemical-plant/base/chemical-plant-shadow.png",
                 width = 154,
                 height = 112,
                 repeat_count = 24,
@@ -171,7 +171,7 @@ for name, tier in pairs(tier_map) do
                 draw_as_shadow = true,
                 hr_version =
                 {
-                    filename = "__base__/graphics/entity/chemical-plant/hr-chemical-plant-shadow.png",
+                    filename = flags.directory.."/graphics/entity/chemical-plant/base/hr-chemical-plant-shadow.png",
                     width = 312,
                     height = 222,
                     repeat_count = 24,
@@ -190,7 +190,7 @@ for name, tier in pairs(tier_map) do
             apply_recipe_tint = "primary",
             north_animation =
             {
-                filename = "__base__/graphics/entity/chemical-plant/chemical-plant-liquid-north.png",
+                filename = flags.directory.."/graphics/entity/chemical-plant/base/chemical-plant-liquid-north.png",
                 frame_count = 24,
                 line_length = 6,
                 width = 32,
@@ -198,7 +198,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(24, 14),
                 hr_version =
                 {
-                    filename = "__base__/graphics/entity/chemical-plant/hr-chemical-plant-liquid-north.png",
+                    filename = flags.directory.."/graphics/entity/chemical-plant/base/hr-chemical-plant-liquid-north.png",
                     frame_count = 24,
                     line_length = 6,
                     width = 66,
@@ -209,7 +209,7 @@ for name, tier in pairs(tier_map) do
             },
             east_animation =
             {
-                filename = "__base__/graphics/entity/chemical-plant/chemical-plant-liquid-east.png",
+                filename = flags.directory.."/graphics/entity/chemical-plant/base/chemical-plant-liquid-east.png",
                 frame_count = 24,
                 line_length = 6,
                 width = 36,
@@ -217,7 +217,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(0, 22),
                 hr_version =
                 {
-                    filename = "__base__/graphics/entity/chemical-plant/hr-chemical-plant-liquid-east.png",
+                    filename = flags.directory.."/graphics/entity/chemical-plant/base/hr-chemical-plant-liquid-east.png",
                     frame_count = 24,
                     line_length = 6,
                     width = 70,
@@ -228,7 +228,7 @@ for name, tier in pairs(tier_map) do
             },
             south_animation =
             {
-                filename = "__base__/graphics/entity/chemical-plant/chemical-plant-liquid-south.png",
+                filename = flags.directory.."/graphics/entity/chemical-plant/base/chemical-plant-liquid-south.png",
                 frame_count = 24,
                 line_length = 6,
                 width = 34,
@@ -236,7 +236,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(0, 16),
                 hr_version =
                 {
-                    filename = "__base__/graphics/entity/chemical-plant/hr-chemical-plant-liquid-south.png",
+                    filename = flags.directory.."/graphics/entity/chemical-plant/base/hr-chemical-plant-liquid-south.png",
                     frame_count = 24,
                     line_length = 6,
                     width = 66,
@@ -247,7 +247,7 @@ for name, tier in pairs(tier_map) do
             },
             west_animation =
             {
-                filename = "__base__/graphics/entity/chemical-plant/chemical-plant-liquid-west.png",
+                filename = flags.directory.."/graphics/entity/chemical-plant/base/chemical-plant-liquid-west.png",
                 frame_count = 24,
                 line_length = 6,
                 width = 38,
@@ -255,7 +255,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(-10, 12),
                 hr_version =
                 {
-                    filename = "__base__/graphics/entity/chemical-plant/hr-chemical-plant-liquid-west.png",
+                    filename = flags.directory.."/graphics/entity/chemical-plant/base/hr-chemical-plant-liquid-west.png",
                     frame_count = 24,
                     line_length = 6,
                     width = 74,
@@ -269,7 +269,7 @@ for name, tier in pairs(tier_map) do
             apply_recipe_tint = "secondary",
             north_animation =
             {
-                filename = "__base__/graphics/entity/chemical-plant/chemical-plant-foam-north.png",
+                filename = flags.directory.."/graphics/entity/chemical-plant/base/chemical-plant-foam-north.png",
                 frame_count = 24,
                 line_length = 6,
                 width = 32,
@@ -277,7 +277,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(24, 14),
                 hr_version =
                 {
-                    filename = "__base__/graphics/entity/chemical-plant/hr-chemical-plant-foam-north.png",
+                    filename = flags.directory.."/graphics/entity/chemical-plant/base/hr-chemical-plant-foam-north.png",
                     frame_count = 24,
                     line_length = 6,
                     width = 62,
@@ -288,7 +288,7 @@ for name, tier in pairs(tier_map) do
             },
             east_animation =
             {
-                filename = "__base__/graphics/entity/chemical-plant/chemical-plant-foam-east.png",
+                filename = flags.directory.."/graphics/entity/chemical-plant/base/chemical-plant-foam-east.png",
                 frame_count = 24,
                 line_length = 6,
                 width = 34,
@@ -296,7 +296,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(0, 22),
                 hr_version =
                 {
-                filename = "__base__/graphics/entity/chemical-plant/hr-chemical-plant-foam-east.png",
+                filename = flags.directory.."/graphics/entity/chemical-plant/base/hr-chemical-plant-foam-east.png",
                     frame_count = 24,
                     line_length = 6,
                     width = 68,
@@ -307,7 +307,7 @@ for name, tier in pairs(tier_map) do
             },
             south_animation =
             {
-                filename = "__base__/graphics/entity/chemical-plant/chemical-plant-foam-south.png",
+                filename = flags.directory.."/graphics/entity/chemical-plant/base/chemical-plant-foam-south.png",
                 frame_count = 24,
                 line_length = 6,
                 width = 32,
@@ -315,7 +315,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(0, 18),
                 hr_version =
                 {
-                    filename = "__base__/graphics/entity/chemical-plant/hr-chemical-plant-foam-south.png",
+                    filename = flags.directory.."/graphics/entity/chemical-plant/base/hr-chemical-plant-foam-south.png",
                     frame_count = 24,
                     line_length = 6,
                     width = 60,
@@ -326,7 +326,7 @@ for name, tier in pairs(tier_map) do
             },
             west_animation =
             {
-                filename = "__base__/graphics/entity/chemical-plant/chemical-plant-foam-west.png",
+                filename = flags.directory.."/graphics/entity/chemical-plant/base/chemical-plant-foam-west.png",
                 frame_count = 24,
                 line_length = 6,
                 width = 36,
@@ -334,7 +334,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(-10, 14),
                 hr_version =
                 {
-                    filename = "__base__/graphics/entity/chemical-plant/hr-chemical-plant-foam-west.png",
+                    filename = flags.directory.."/graphics/entity/chemical-plant/base/hr-chemical-plant-foam-west.png",
                     frame_count = 24,
                     line_length = 6,
                     width = 68,
@@ -355,7 +355,7 @@ for name, tier in pairs(tier_map) do
             render_layer = "wires",
             animation =
             {
-                filename = "__base__/graphics/entity/chemical-plant/chemical-plant-smoke-outer.png",
+                filename = flags.directory.."/graphics/entity/chemical-plant/base/chemical-plant-smoke-outer.png",
                 frame_count = 47,
                 line_length = 16,
                 width = 46,
@@ -364,7 +364,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(-2, -40),
                 hr_version =
                 {
-                    filename = "__base__/graphics/entity/chemical-plant/hr-chemical-plant-smoke-outer.png",
+                    filename = flags.directory.."/graphics/entity/chemical-plant/base/hr-chemical-plant-smoke-outer.png",
                     frame_count = 47,
                     line_length = 16,
                     width = 90,
@@ -386,7 +386,7 @@ for name, tier in pairs(tier_map) do
             render_layer = "wires",
             animation =
             {
-                filename = "__base__/graphics/entity/chemical-plant/chemical-plant-smoke-inner.png",
+                filename = flags.directory.."/graphics/entity/chemical-plant/base/chemical-plant-smoke-inner.png",
                 frame_count = 47,
                 line_length = 16,
                 width = 20,
@@ -395,7 +395,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(0, -14),
                 hr_version =
                 {
-                    filename = "__base__/graphics/entity/chemical-plant/hr-chemical-plant-smoke-inner.png",
+                    filename = flags.directory.."/graphics/entity/chemical-plant/base/hr-chemical-plant-smoke-inner.png",
                     frame_count = 47,
                     line_length = 16,
                     width = 40,

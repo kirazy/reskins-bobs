@@ -15,7 +15,6 @@ local flags =
     basename = "nuclear-reactor",
     baseentity = "nuclear-reactor",
     directory = reskins.bobs_structures.directory,
-    folder = "nuclear-reactor",
     particles = {"medium","big"}
 }
 
@@ -129,13 +128,13 @@ local function skin_reactor_entity(name, type, flags)
         {
             -- Base
             {
-                filename = "__base__/graphics/entity/nuclear-reactor/reactor.png",
+                filename = flags.directory.."/graphics/entity/nuclear-reactor/base/reactor.png",
                 width = 154,
                 height = 158,
                 shift = util.by_pixel(-6, -6),
                 hr_version =
                 {
-                    filename = "__base__/graphics/entity/nuclear-reactor/hr-reactor.png",
+                    filename = flags.directory.."/graphics/entity/nuclear-reactor/base/hr-reactor.png",
                     width = 302,
                     height = 318,
                     scale = 0.5,
@@ -174,14 +173,14 @@ local function skin_reactor_entity(name, type, flags)
             },
             -- Shadow
             {
-                filename = "__base__/graphics/entity/nuclear-reactor/reactor-shadow.png",
+                filename = flags.directory.."/graphics/entity/nuclear-reactor/base/reactor-shadow.png",
                 width = 263,
                 height = 162,
                 shift = { 1.625 , 0 },
                 draw_as_shadow = true,
                 hr_version =
                 {
-                    filename = "__base__/graphics/entity/nuclear-reactor/hr-reactor-shadow.png",
+                    filename = flags.directory.."/graphics/entity/nuclear-reactor/base/hr-reactor-shadow.png",
                     width = 525,
                     height = 323,
                     scale = 0.5,
@@ -248,7 +247,7 @@ local function skin_reactor_remnants(name, type, flags)
         layers =
         {
             {
-                filename = "__base__/graphics/entity/nuclear-reactor/remnants/nuclear-reactor-remnants.png",
+                filename = flags.directory.."/graphics/entity/nuclear-reactor/base/remnants/nuclear-reactor-remnants.png",
                 line_length = 1,
                 width = 206,
                 height = 198,
@@ -259,7 +258,7 @@ local function skin_reactor_remnants(name, type, flags)
                 shift = util.by_pixel(7, 4),
                 hr_version =
                 {
-                    filename = "__base__/graphics/entity/nuclear-reactor/remnants/hr-nuclear-reactor-remnants.png",
+                    filename = flags.directory.."/graphics/entity/nuclear-reactor/base/remnants/hr-nuclear-reactor-remnants.png",
                     line_length = 1,
                     width = 410,
                     height = 396,

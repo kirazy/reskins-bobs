@@ -15,7 +15,7 @@ local flags =
     basename = "steam-turbine",
     baseentity = "steam-turbine",
     directory = reskins.bobs_structures.directory,
-    folder = "steam-turbine",
+    icon_subfolder = "steam-turbine",
     particles = {"medium","big"}
 }
 
@@ -54,7 +54,7 @@ for name, tier in pairs(tier_map) do
     remnant = data.raw["corpse"][name.."-remnants"]
     explosion = data.raw["explosion"][name.."-explosion"]
 
-    -- Create explosions
+    -- Tint explosions
     explosion.created_effect.action_delivery.target_effects[1].particle_name = name.."-metal-particle-big-tinted"
     explosion.created_effect.action_delivery.target_effects[2].particle_name = name.."-metal-particle-medium-tinted"
 
@@ -64,15 +64,192 @@ for name, tier in pairs(tier_map) do
         name = flags.basename.."-"..tier
     end
 
-    -- Create remnants
-    remnant.animation[1].filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/remnants/"..name.."-remnants.png"
-    remnant.animation[1].hr_version.filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/remnants/hr-"..name.."-remnants.png"
+    -- Reskin remnants
+    remnant.animation = make_rotated_animation_variations_from_sheet (1,
+    {
+        layers = 
+        {
+            {
+                filename = flags.directory.."/graphics/entity/steam-turbine/base/remnants/steam-turbine-remnants.png",
+                line_length = 1,
+                width = 230,
+                height = 204,
+                frame_count = 1,
+                variation_count = 1,
+                axially_symmetrical = false,
+                direction_count = 4,
+                shift = util.by_pixel(6, 0),
+                hr_version =
+                {
+                    filename = flags.directory.."/graphics/entity/steam-turbine/base/remnants/hr-steam-turbine-remnants.png",
+                    line_length = 1,
+                    width = 460,
+                    height = 408,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 4,
+                    shift = util.by_pixel(6, 0),
+                    scale = 0.5,
+                }
+            },
+            {
+                filename = flags.directory.."/graphics/entity/steam-turbine/mask/"..name.."/remnants/"..name.."-remnants.png",
+                line_length = 1,
+                width = 230,
+                height = 204,
+                frame_count = 1,
+                variation_count = 1,
+                axially_symmetrical = false,
+                direction_count = 4,
+                shift = util.by_pixel(6, 0),
+                hr_version =
+                {
+                    filename = flags.directory.."/graphics/entity/steam-turbine/mask/"..name.."/remnants/hr-"..name.."-remnants.png",
+                    line_length = 1,
+                    width = 460,
+                    height = 408,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 4,
+                    shift = util.by_pixel(6, 0),
+                    scale = 0.5,
+                }
+            }
+        }        
+    })
 
     -- Reskin entities
-    entity.horizontal_animation.layers[1].filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/"..name.."-H.png"
-    entity.horizontal_animation.layers[1].hr_version.filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/hr-"..name.."-H.png"
-    entity.vertical_animation.layers[1].filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/"..name.."-V.png"
-    entity.vertical_animation.layers[1].hr_version.filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/hr-"..name.."-V.png"
+    entity.horizontal_animation =
+    {
+        layers =
+        {
+            {
+                filename = flags.directory.."/graphics/entity/steam-turbine/base/steam-turbine-H.png",
+                width = 160,
+                height = 123,
+                frame_count = 8,
+                line_length = 4,
+                shift = util.by_pixel(0, -2.5),
+                hr_version =
+                {
+                    filename = flags.directory.."/graphics/entity/steam-turbine/base/hr-steam-turbine-H.png",
+                    width = 320,
+                    height = 245,
+                    frame_count = 8,
+                    line_length = 4,
+                    shift = util.by_pixel(0, -2.75),
+                    scale = 0.5
+                }
+            },
+            {
+                filename = flags.directory.."/graphics/entity/steam-turbine/mask/"..name.."/"..name.."-H.png",
+                width = 160,
+                height = 123,
+                frame_count = 8,
+                line_length = 4,
+                shift = util.by_pixel(0, -2.5),
+                hr_version =
+                {
+                    filename = flags.directory.."/graphics/entity/steam-turbine/mask/"..name.."/hr-"..name.."-H.png",
+                    width = 320,
+                    height = 245,
+                    frame_count = 8,
+                    line_length = 4,
+                    shift = util.by_pixel(0, -2.75),
+                    scale = 0.5
+                }
+            },
+            {
+                filename = flags.directory.."/graphics/entity/steam-turbine/base/steam-turbine-H-shadow.png",
+                width = 217,
+                height = 74,
+                repeat_count = 8,
+                frame_count = 1,
+                line_length = 1,
+                draw_as_shadow = true,
+                shift = util.by_pixel(28.75, 18),
+                hr_version =
+                {
+                    filename = flags.directory.."/graphics/entity/steam-turbine/base/hr-steam-turbine-H-shadow.png",
+                    width = 435,
+                    height = 150,
+                    repeat_count = 8,
+                    frame_count = 1,
+                    line_length = 1,
+                    draw_as_shadow = true,
+                    shift = util.by_pixel(28.5, 18),
+                    scale = 0.5
+                }
+            }
+        }
+    }
+    
+    entity.vertical_animation =
+    {
+        layers =
+        {
+            {
+                filename = flags.directory.."/graphics/entity/steam-turbine/base/steam-turbine-V.png",
+                width = 108,
+                height = 173,
+                frame_count = 8,
+                line_length = 4,
+                shift = util.by_pixel(5, 6.5),
+                hr_version =
+                {
+                    filename = flags.directory.."/graphics/entity/steam-turbine/base/hr-steam-turbine-V.png",
+                    width = 217,
+                    height = 347,
+                    frame_count = 8,
+                    line_length = 4,
+                    shift = util.by_pixel(4.75, 6.75),
+                    scale = 0.5
+                }
+            },
+            {
+                filename = flags.directory.."/graphics/entity/steam-turbine/mask/"..name.."/"..name.."-V.png",
+                width = 108,
+                height = 173,
+                frame_count = 8,
+                line_length = 4,
+                shift = util.by_pixel(5, 6.5),
+                hr_version =
+                {
+                    filename = flags.directory.."/graphics/entity/steam-turbine/mask/"..name.."/hr-"..name.."-V.png",
+                    width = 217,
+                    height = 347,
+                    frame_count = 8,
+                    line_length = 4,
+                    shift = util.by_pixel(4.75, 6.75),
+                    scale = 0.5
+                }
+            },
+            {
+                filename = flags.directory.."/graphics/entity/steam-turbine/base/steam-turbine-V-shadow.png",
+                width = 151,
+                height = 131,
+                repeat_count = 8,
+                frame_count = 1,
+                line_length = 1,
+                draw_as_shadow = true,
+                shift = util.by_pixel(39.5, 24.5),
+                hr_version =
+                {
+                    filename = flags.directory.."/graphics/entity/steam-turbine/base/hr-steam-turbine-V-shadow.png",
+                    width = 302,
+                    height = 260,
+                    repeat_count = 8,
+                    frame_count = 1,
+                    line_length = 1,
+                    draw_as_shadow = true,
+                    shift = util.by_pixel(39.5, 24.5),
+                    scale = 0.5
+                }
+            }
+        }
+    }
 
     -- Label to skip to next iteration
     ::continue::
