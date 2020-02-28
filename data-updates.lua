@@ -8,4 +8,6 @@
 -- Bob's Assembly
 require("prototypes.entity.assembling-machine")
 require("prototypes.entity.chemical-plant")
+
+-- Bob's Power
 require("prototypes.entity.nuclear-reactor")
