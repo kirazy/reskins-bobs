@@ -16,7 +16,6 @@ require("prototypes.entity.big-electric-pole")
 require("prototypes.entity.boiler")
 require("prototypes.entity.heat-pipe")
 require("prototypes.entity.medium-electric-pole")
-require("prototypes.entity.nuclear-reactor")
 require("prototypes.entity.solar-panel")
 require("prototypes.entity.steam-engine")
 require("prototypes.entity.steam-turbine")
@@ -24,3 +23,4 @@ require("prototypes.entity.substation")
 
 -- Bob's Warfare
 require("prototypes.entity.gun-turret")
+
