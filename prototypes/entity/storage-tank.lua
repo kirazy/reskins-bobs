@@ -16,7 +16,6 @@ local flags =
     directory = reskins.bobs_structures.directory,
     icon_subfolder = "storage-tank",
     particles = {"big"},
-    make_icons = false
 }
 
 -- Storage tanks have two different sets of tiers; determine which we are using

@@ -11,12 +11,11 @@ if settings.startup["reskin-series-do-boblogistics"].value == false then return 
 local type = "storage-tank"
 local flags = 
 {
-    basename = "storage-tank-all-corners",
+    basename = "bob-storage-tank-all-corners",
     baseentity = "storage-tank",
     directory = reskins.bobs_structures.directory,
-    icon_subfolder = "storage-tank-all-corners",
+    icon_subfolder = "storage-tank",
     particles = {"big"},
-    make_icons = false
 }
 
 -- Storage tanks have two different sets of tiers; determine which we are using
@@ -63,10 +62,10 @@ for name, tier in pairs(tier_map) do
     -- Strip out "bob-" from name, handle dependency on storage-tank assets
     -- Caution: name beyond this point no longer corresponds to the entity name
     if tier > 1 then
-        name = flags.basename.."-"..tier
+        name = "storage-tank-all-corners".."-"..tier
         remnant_name = flags.baseentity.."-"..tier
     else
-        name = flags.basename
+        name = "storage-tank-all-corners"
         remnant_name = flags.baseentity
     end
 
