@@ -27,6 +27,18 @@ if mods["bobpower"] then
     })
 end
 
+if mods["boblogistics"] then
+    data:extend(
+    {
+        {
+            type = "bool-setting",
+            name = "reskin-series-do-boblogistics",
+            setting_type = "startup",
+            default_value = true,
+        }
+    })
+end
+
 if mods["bobwarfare"] then
     data:extend(
     {

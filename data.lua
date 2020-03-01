@@ -21,6 +21,10 @@ require("prototypes.entity.steam-engine")
 require("prototypes.entity.steam-turbine")
 require("prototypes.entity.substation")
 
+-- Bob's Logistics
+require("prototypes.entity.storage-tank-all-corners")
+require("prototypes.entity.storage-tank")
+
 -- Bob's Warfare
 require("prototypes.entity.gun-turret")
 
