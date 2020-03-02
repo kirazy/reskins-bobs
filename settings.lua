@@ -15,24 +15,36 @@ data:extend(
     }
 })
 
-if mods["bobpower"] then
-    data:extend(
-    {
-        {
-            type = "bool-setting",
-            name = "reskin-series-do-bobpower",
-            setting_type = "startup",
-            default_value = true,
-        }
-    })
-end
-
 if mods["boblogistics"] then
     data:extend(
     {
         {
             type = "bool-setting",
             name = "reskin-series-do-boblogistics",
+            setting_type = "startup",
+            default_value = true,
+        }
+    })
+end
+
+if mods["bobmining"] then
+    data:extend(
+    {
+        {
+            type = "bool-setting",
+            name = "reskin-series-do-bobmining",
+            setting_type = "startup",
+            default_value = true,
+        }
+    })
+end
+
+if mods["bobpower"] then
+    data:extend(
+    {
+        {
+            type = "bool-setting",
+            name = "reskin-series-do-bobpower",
             setting_type = "startup",
             default_value = true,
         }

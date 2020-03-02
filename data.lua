@@ -11,6 +11,12 @@ reskins.bobs_structures = {directory = "__reskin-series-bobs-structures__"}
 
 -- Entities
 
+-- Bob's Logistics
+require("prototypes.entity.storage-tank-all-corners")
+require("prototypes.entity.storage-tank")
+
+
+
 -- Bob's Power
 require("prototypes.entity.big-electric-pole")
 require("prototypes.entity.boiler")
@@ -20,10 +26,6 @@ require("prototypes.entity.solar-panel")
 require("prototypes.entity.steam-engine")
 require("prototypes.entity.steam-turbine")
 require("prototypes.entity.substation")
-
--- Bob's Logistics
-require("prototypes.entity.storage-tank-all-corners")
-require("prototypes.entity.storage-tank")
 
 -- Bob's Warfare
 require("prototypes.entity.gun-turret")

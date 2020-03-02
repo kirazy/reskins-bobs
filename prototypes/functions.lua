@@ -103,7 +103,7 @@ end
 -- Parses the main flags table of parameters
 function reskins.lib.parse_flags(flags)
     --[[Flags required by this function, unless specifically indicated optional
-        basename        - Name of entity to be worked on
+        basename        - Name of entity to be worked on when processing remapped tier icons
         baseentity      - Name of base-Factorio entity to copy features from
         directory       - Top-level mod directory, e.g. "__mod_directory__"
         icon_subfolder  - Name of folder located within graphics/icons containing icon graphics
