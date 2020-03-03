@@ -333,7 +333,7 @@ local fuel_index =
 }
 
 -- Nucelar reactors have two modes, revamped or standard; determine which we are using
-if mods["bobrevamp"] and settings.startup["bobmods-revamp-nuclear"].value == true then
+if mods["bobrevamp"] and settings.startup["bobmods-revamp-nuclear"].value == true and settings.startup["reskin-series-do-bobrevamp"].value == true then
     -- Map fuel type to reactor entity name
     fuel_index["nuclear-reactor-2"] = "thorium"
 
@@ -368,7 +368,7 @@ for name, tier in pairs(tier_map) do
     flags.pipe_tier = heatpipe_index[name]
     flags.fuel = fuel_index[name]
 
-    if mods["bobrevamp"] and settings.startup["bobmods-revamp-nuclear"].value == true then
+    if mods["bobrevamp"] and settings.startup["bobmods-revamp-nuclear"].value == true and settings.startup["reskin-series-do-bobrevamp"].value == true then
         flags.reactor = fuel_index[name]
 
         -- Create particles

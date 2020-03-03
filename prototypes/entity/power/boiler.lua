@@ -29,6 +29,11 @@ local tier_map =
     ["boiler-5"] = 5
 }
 
+-- oil-boiler
+-- oil-boiler-2
+-- oil-boiler-3
+-- oil-boiler-4
+
 -- Reskin entities, create and assign extra details
 for name, tier in pairs(tier_map) do
     -- Initialize table address 

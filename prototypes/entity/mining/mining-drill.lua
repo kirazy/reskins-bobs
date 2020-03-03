@@ -5,7 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobmining"] then return end
-if settings.startup["reskin-series-do-bobmining"].value == false then return end 
+if settings.startup["reskin-series-do-bobmining"].value == false then return end
 
 -- Set parameters
 local type = "mining-drill"

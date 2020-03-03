@@ -5,6 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobassembly"] then return end
+if settings.startup["reskin-series-do-bobassembly"].value == false then return end
 
 -- Set parameters
 local type = "assembling-machine"
@@ -30,17 +31,21 @@ local tier_map =
     ["assembling-machine-6"] = 5
 }
 
---[[ Not ready for these yet
-if settings.startup["reskin-series-tier-mapping"].value == "name-map" then
-    tier_map["electronics-machine-1"] = 1
-    tier_map["electronics-machine-2"] = 2
-    tier_map["electronics-machine-3"] = 3
-else
-    tier_map["electronics-machine-1"] = 1
-    tier_map["electronics-machine-2"] = 2
-    tier_map["electronics-machine-3"] = 4
-    mapping = true
-end]]
+-- Not ready for these yet
+-- if settings.startup["reskin-series-tier-mapping"].value == "name-map" then
+--     tier_map["electronics-machine-1"] = 1
+--     tier_map["electronics-machine-2"] = 2
+--     tier_map["electronics-machine-3"] = 3
+-- else
+--     tier_map["electronics-machine-1"] = 1
+--     tier_map["electronics-machine-2"] = 2
+--     tier_map["electronics-machine-3"] = 4
+--     mapping = true
+-- end
+
+-- Additional miscellaneous assembling machines
+-- burner-assembling-machine
+-- steam-assembling-machine
 
 -- Reskin entities, create and assign extra details
 for name, tier in pairs(tier_map) do
