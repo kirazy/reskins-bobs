@@ -1,3 +1,4 @@
+-- Settings to be exported to Reskin Series: Library
 data:extend(
 {
     {
@@ -14,6 +15,31 @@ data:extend(
         allowed_values = {"ingredients-map","name-map"}
     }
 })
+
+-- Settings to disable select reskins by mod
+if mods["bobassembly"] then
+    data:extend(
+    {
+        {
+            type = "bool-setting",
+            name = "reskin-series-do-bobassembly",
+            setting_type = "startup",
+            default_value = true,
+        }
+    })
+end
+
+if mods["bobgreenhouse"] then
+    data:extend(
+    {
+        {
+            type = "bool-setting",
+            name = "reskin-series-do-bobgreenhouse",
+            setting_type = "startup",
+            default_value = true,
+        }
+    })
+end
 
 if mods["boblogistics"] then
     data:extend(
@@ -39,12 +65,60 @@ if mods["bobmining"] then
     })
 end
 
+if mods["bobmodules"] then
+    data:extend(
+    {
+        {
+            type = "bool-setting",
+            name = "reskin-series-do-bobmodules",
+            setting_type = "startup",
+            default_value = true,
+        }
+    })
+end
+
+if mods["bobplates"] then
+    data:extend(
+    {
+        {
+            type = "bool-setting",
+            name = "reskin-series-do-bobplates",
+            setting_type = "startup",
+            default_value = true,
+        }
+    })
+end
+
 if mods["bobpower"] then
     data:extend(
     {
         {
             type = "bool-setting",
             name = "reskin-series-do-bobpower",
+            setting_type = "startup",
+            default_value = true,
+        }
+    })
+end
+
+if mods["bobrevamp"] then
+    data:extend(
+    {
+        {
+            type = "bool-setting",
+            name = "reskin-series-do-bobrevamp",
+            setting_type = "startup",
+            default_value = true,
+        }
+    })
+end
+
+if mods["bobtech"] then
+    data:extend(
+    {
+        {
+            type = "bool-setting",
+            name = "reskin-series-do-bobtech",
             setting_type = "startup",
             default_value = true,
         }
