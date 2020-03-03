@@ -14,6 +14,7 @@ local flags =
 {
     basename = "boiler",
     baseentity = "boiler",
+    mod_folder = "power",
     directory = reskins.bobs_structures.directory,
     icon_subfolder = "boiler",
     particles = {"big"}
@@ -53,7 +54,7 @@ for name, tier in pairs(tier_map) do
         layers = 
         {
             {
-                filename = flags.directory.."/graphics/entity/boiler/base/remnants/boiler-remnants.png",
+                filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/boiler/base/remnants/boiler-remnants.png",
                 line_length = 1,
                 width = 138,
                 height = 110,
@@ -64,7 +65,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(0, -3),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/boiler/base/remnants/hr-boiler-remnants.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/boiler/base/remnants/hr-boiler-remnants.png",
                     line_length = 1,
                     width = 274,
                     height = 220,
@@ -77,7 +78,7 @@ for name, tier in pairs(tier_map) do
                 }
             },
             {
-                filename = flags.directory.."/graphics/entity/boiler/mask/"..name.."/remnants/"..name.."-remnants.png",
+                filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/boiler/mask/"..name.."/remnants/"..name.."-remnants.png",
                 line_length = 1,
                 width = 138,
                 height = 110,
@@ -88,7 +89,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(0, -3),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/boiler/mask/"..name.."/remnants/hr-"..name.."-remnants.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/boiler/mask/"..name.."/remnants/hr-"..name.."-remnants.png",
                     line_length = 1,
                     width = 274,
                     height = 220,
@@ -111,14 +112,14 @@ for name, tier in pairs(tier_map) do
             layers =
             {
                 {
-                    filename = flags.directory.."/graphics/entity/boiler/base/boiler-N-idle.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/boiler/base/boiler-N-idle.png",
                     priority = "extra-high",
                     width = 131,
                     height = 108,
                     shift = util.by_pixel(-0.5, 4),
                     hr_version =
                     {
-                        filename = flags.directory.."/graphics/entity/boiler/base/hr-boiler-N-idle.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/boiler/base/hr-boiler-N-idle.png",
                         priority = "extra-high",
                         width = 269,
                         height = 221,
@@ -127,14 +128,14 @@ for name, tier in pairs(tier_map) do
                     }
                 },
                 {
-                    filename = flags.directory.."/graphics/entity/boiler/mask/"..name.."/"..name.."-N-idle.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/boiler/mask/"..name.."/"..name.."-N-idle.png",
                     priority = "extra-high",
                     width = 131,
                     height = 108,
                     shift = util.by_pixel(-0.5, 4),
                     hr_version =
                     {
-                        filename = flags.directory.."/graphics/entity/boiler/mask/"..name.."/hr-"..name.."-N-idle.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/boiler/mask/"..name.."/hr-"..name.."-N-idle.png",
                         priority = "extra-high",
                         width = 269,
                         height = 221,
@@ -143,7 +144,7 @@ for name, tier in pairs(tier_map) do
                     }
                 },
                 {
-                    filename = flags.directory.."/graphics/entity/boiler/base/boiler-N-shadow.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/boiler/base/boiler-N-shadow.png",
                     priority = "extra-high",
                     width = 137,
                     height = 82,
@@ -151,7 +152,7 @@ for name, tier in pairs(tier_map) do
                     draw_as_shadow = true,
                     hr_version =
                     {
-                        filename = flags.directory.."/graphics/entity/boiler/base/hr-boiler-N-shadow.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/boiler/base/hr-boiler-N-shadow.png",
                         priority = "extra-high",
                         width = 274,
                         height = 164,
@@ -167,14 +168,14 @@ for name, tier in pairs(tier_map) do
             layers =
             {
                 {
-                    filename = flags.directory.."/graphics/entity/boiler/base/boiler-E-idle.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/boiler/base/boiler-E-idle.png",
                     priority = "extra-high",
                     width = 105,
                     height = 147,
                     shift = util.by_pixel(-3.5, -0.5),
                     hr_version =
                     {
-                        filename = flags.directory.."/graphics/entity/boiler/base/hr-boiler-E-idle.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/boiler/base/hr-boiler-E-idle.png",
                         priority = "extra-high",
                         width = 216,
                         height = 301,
@@ -183,14 +184,14 @@ for name, tier in pairs(tier_map) do
                     }
                 },
                 {
-                    filename = flags.directory.."/graphics/entity/boiler/mask/"..name.."/"..name.."-E-idle.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/boiler/mask/"..name.."/"..name.."-E-idle.png",
                     priority = "extra-high",
                     width = 105,
                     height = 147,
                     shift = util.by_pixel(-3.5, -0.5),
                     hr_version =
                     {
-                        filename = flags.directory.."/graphics/entity/boiler/mask/"..name.."/hr-"..name.."-E-idle.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/boiler/mask/"..name.."/hr-"..name.."-E-idle.png",
                         priority = "extra-high",
                         width = 216,
                         height = 301,
@@ -199,7 +200,7 @@ for name, tier in pairs(tier_map) do
                     }
                 },
                 {
-                    filename = flags.directory.."/graphics/entity/boiler/base/boiler-E-shadow.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/boiler/base/boiler-E-shadow.png",
                     priority = "extra-high",
                     width = 92,
                     height = 97,
@@ -207,7 +208,7 @@ for name, tier in pairs(tier_map) do
                     draw_as_shadow = true,
                     hr_version =
                     {
-                        filename = flags.directory.."/graphics/entity/boiler/base/hr-boiler-E-shadow.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/boiler/base/hr-boiler-E-shadow.png",
                         priority = "extra-high",
                         width = 184,
                         height = 194,
@@ -223,14 +224,14 @@ for name, tier in pairs(tier_map) do
             layers =
             {
                 {
-                    filename = flags.directory.."/graphics/entity/boiler/base/boiler-S-idle.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/boiler/base/boiler-S-idle.png",
                     priority = "extra-high",
                     width = 128,
                     height = 95,
                     shift = util.by_pixel(3, 12.5),
                     hr_version =
                     {
-                        filename = flags.directory.."/graphics/entity/boiler/base/hr-boiler-S-idle.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/boiler/base/hr-boiler-S-idle.png",
                         priority = "extra-high",
                         width = 260,
                         height = 192,
@@ -239,14 +240,14 @@ for name, tier in pairs(tier_map) do
                     }
                 },
                 {
-                    filename = flags.directory.."/graphics/entity/boiler/mask/"..name.."/"..name.."-S-idle.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/boiler/mask/"..name.."/"..name.."-S-idle.png",
                     priority = "extra-high",
                     width = 128,
                     height = 95,
                     shift = util.by_pixel(3, 12.5),
                     hr_version =
                     {
-                        filename = flags.directory.."/graphics/entity/boiler/mask/"..name.."/hr-"..name.."-S-idle.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/boiler/mask/"..name.."/hr-"..name.."-S-idle.png",
                         priority = "extra-high",
                         width = 260,
                         height = 192,
@@ -255,7 +256,7 @@ for name, tier in pairs(tier_map) do
                     }
                 },
                 {
-                    filename = flags.directory.."/graphics/entity/boiler/base/boiler-S-shadow.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/boiler/base/boiler-S-shadow.png",
                     priority = "extra-high",
                     width = 156,
                     height = 66,
@@ -263,7 +264,7 @@ for name, tier in pairs(tier_map) do
                     draw_as_shadow = true,
                     hr_version =
                     {
-                        filename = flags.directory.."/graphics/entity/boiler/base/hr-boiler-S-shadow.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/boiler/base/hr-boiler-S-shadow.png",
                         priority = "extra-high",
                         width = 311,
                         height = 131,
@@ -279,14 +280,14 @@ for name, tier in pairs(tier_map) do
             layers =
             {
                 {
-                    filename = flags.directory.."/graphics/entity/boiler/base/boiler-W-idle.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/boiler/base/boiler-W-idle.png",
                     priority = "extra-high",
                     width = 96,
                     height = 132,
                     shift = util.by_pixel(1, 5),
                     hr_version =
                     {
-                        filename = flags.directory.."/graphics/entity/boiler/base/hr-boiler-W-idle.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/boiler/base/hr-boiler-W-idle.png",
                         priority = "extra-high",
                         width = 196,
                         height = 273,
@@ -295,14 +296,14 @@ for name, tier in pairs(tier_map) do
                     }
                 },
                 {
-                    filename = flags.directory.."/graphics/entity/boiler/mask/"..name.."/"..name.."-W-idle.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/boiler/mask/"..name.."/"..name.."-W-idle.png",
                     priority = "extra-high",
                     width = 96,
                     height = 132,
                     shift = util.by_pixel(1, 5),
                     hr_version =
                     {
-                        filename = flags.directory.."/graphics/entity/boiler/mask/"..name.."/hr-"..name.."-W-idle.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/boiler/mask/"..name.."/hr-"..name.."-W-idle.png",
                         priority = "extra-high",
                         width = 196,
                         height = 273,
@@ -311,7 +312,7 @@ for name, tier in pairs(tier_map) do
                     }
                 },
                 {
-                    filename = flags.directory.."/graphics/entity/boiler/base/boiler-W-shadow.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/boiler/base/boiler-W-shadow.png",
                     priority = "extra-high",
                     width = 103,
                     height = 109,
@@ -319,7 +320,7 @@ for name, tier in pairs(tier_map) do
                     draw_as_shadow = true,
                     hr_version =
                     {
-                        filename = flags.directory.."/graphics/entity/boiler/base/hr-boiler-W-shadow.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/boiler/base/hr-boiler-W-shadow.png",
                         priority = "extra-high",
                         width = 206,
                         height = 218,

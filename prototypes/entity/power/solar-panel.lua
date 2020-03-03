@@ -13,6 +13,7 @@ local type = "solar-panel"
 local flags = 
 {
     baseentity = "solar-panel",
+    mod_folder = "power",
     directory = reskins.bobs_structures.directory,
     icon_subfolder = "solar-panel",
     particles = {"small"}
@@ -82,10 +83,10 @@ for name, tier in pairs(tier_map) do
     end
 
     -- Reskin remnants
-    -- remnant.animation[1].filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/remnants/"..name.."-remnants.png"
-    -- remnant.animation[1].hr_version.filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/remnants/hr-"..name.."-remnants.png"
-    -- remnant.animation[2].filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/remnants/"..name.."-remnants.png"
-    -- remnant.animation[2].hr_version.filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/remnants/hr-"..name.."-remnants.png"
+    -- remnant.animation[1].filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/"..flags.folder.."/"..name.."/remnants/"..name.."-remnants.png"
+    -- remnant.animation[1].hr_version.filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/"..flags.folder.."/"..name.."/remnants/hr-"..name.."-remnants.png"
+    -- remnant.animation[2].filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/"..flags.folder.."/"..name.."/remnants/"..name.."-remnants.png"
+    -- remnant.animation[2].hr_version.filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/"..flags.folder.."/"..name.."/remnants/hr-"..name.."-remnants.png"
     
     -- Reskin entities
     if flags.basename == "solar-panel-small" then
@@ -95,14 +96,14 @@ for name, tier in pairs(tier_map) do
             layers =
             {
                 {
-                    filename = flags.directory.."/graphics/entity/solar-panel-small/base/solar-panel-small.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel-small/base/solar-panel-small.png",
                     priority = "high",
                     width = 90,
                     height = 75,
                     shift = util.by_pixel(2.5, 0.25),
                     hr_version =
                     {
-                        filename = flags.directory.."/graphics/entity/solar-panel-small/base/hr-solar-panel-small.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel-small/base/hr-solar-panel-small.png",
                         priority = "high",
                         width = 180,
                         height = 150,
@@ -111,14 +112,14 @@ for name, tier in pairs(tier_map) do
                     }
                 },
                 {
-                    filename = flags.directory.."/graphics/entity/solar-panel-small/mask/"..name.."/"..name..".png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel-small/mask/"..name.."/"..name..".png",
                     priority = "high",
                     width = 90,
                     height = 75,
                     shift = util.by_pixel(2.5, 0.25),
                     hr_version =
                     {
-                        filename = flags.directory.."/graphics/entity/solar-panel-small/mask/"..name.."/hr-"..name..".png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel-small/mask/"..name.."/hr-"..name..".png",
                         priority = "high",
                         width = 180,
                         height = 150,
@@ -127,7 +128,7 @@ for name, tier in pairs(tier_map) do
                     }
                 },
                 {
-                    filename = flags.directory.."/graphics/entity/solar-panel-small/base/solar-panel-small-shadow.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel-small/base/solar-panel-small-shadow.png",
                     priority = "high",
                     width = 90,
                     height = 75,
@@ -135,7 +136,7 @@ for name, tier in pairs(tier_map) do
                     draw_as_shadow = true,
                     hr_version =
                     {
-                        filename = flags.directory.."/graphics/entity/solar-panel-small/base/hr-solar-panel-small-shadow.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel-small/base/hr-solar-panel-small-shadow.png",
                         priority = "high",
                         width = 180,
                         height = 150,
@@ -153,14 +154,14 @@ for name, tier in pairs(tier_map) do
             layers =
             {
                 {
-                    filename = flags.directory.."/graphics/entity/solar-panel-small/base/solar-panel-small-shadow-overlay.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel-small/base/solar-panel-small-shadow-overlay.png",
                     priority = "high",
                     width = 90,
                     height = 75,
                     shift = util.by_pixel(2.5, 0.25),
                     hr_version =
                     {
-                        filename = flags.directory.."/graphics/entity/solar-panel-small/base/hr-solar-panel-small-shadow-overlay.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel-small/base/hr-solar-panel-small-shadow-overlay.png",
                         priority = "high",
                         width = 180,
                         height = 150,
@@ -173,8 +174,8 @@ for name, tier in pairs(tier_map) do
 
         -- -- Handle tier mapping settings
         -- if flags.remap_tiers == true then
-        --     entity.picture.layers[2].filename = flags.directory.."/graphics/entity/solar-panel-small/mask/"..flags.basename.."-"..tier.."/"..flags.basename.."-"..tier..".png"
-        --     entity.picture.layers[2].hr_version.filename = flags.directory.."/graphics/entity/solar-panel-small/mask/"..flags.basename.."-"..tier.."/hr-"..flags.basename.."-"..tier..".png"
+        --     entity.picture.layers[2].filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel-small/mask/"..flags.basename.."-"..tier.."/"..flags.basename.."-"..tier..".png"
+        --     entity.picture.layers[2].hr_version.filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel-small/mask/"..flags.basename.."-"..tier.."/hr-"..flags.basename.."-"..tier..".png"
         -- end
 
     elseif flags.basename == "solar-panel" then
@@ -184,14 +185,14 @@ for name, tier in pairs(tier_map) do
             layers =
             {
                 {
-                    filename = flags.directory.."/graphics/entity/solar-panel/base/solar-panel.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel/base/solar-panel.png",
                     priority = "high",
                     width = 116,
                     height = 112,
                     shift = util.by_pixel(-3, 3),
                     hr_version =
                     {
-                        filename = flags.directory.."/graphics/entity/solar-panel/base/hr-solar-panel.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel/base/hr-solar-panel.png",
                         priority = "high",
                         width = 230,
                         height = 224,
@@ -200,14 +201,14 @@ for name, tier in pairs(tier_map) do
                     }
                 },
                 {
-                    filename = flags.directory.."/graphics/entity/solar-panel/mask/"..name.."/"..name..".png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel/mask/"..name.."/"..name..".png",
                     priority = "high",
                     width = 116,
                     height = 112,
                     shift = util.by_pixel(-3, 3),
                     hr_version =
                     {
-                        filename = flags.directory.."/graphics/entity/solar-panel/mask/"..name.."/hr-"..name..".png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel/mask/"..name.."/hr-"..name..".png",
                         priority = "high",
                         width = 230,
                         height = 224,
@@ -216,7 +217,7 @@ for name, tier in pairs(tier_map) do
                     }
                 },
                 {
-                    filename = flags.directory.."/graphics/entity/solar-panel/base/solar-panel-shadow.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel/base/solar-panel-shadow.png",
                     priority = "high",
                     width = 112,
                     height = 90,
@@ -224,7 +225,7 @@ for name, tier in pairs(tier_map) do
                     draw_as_shadow = true,
                     hr_version =
                     {
-                        filename = flags.directory.."/graphics/entity/solar-panel/base/hr-solar-panel-shadow.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel/base/hr-solar-panel-shadow.png",
                         priority = "high",
                         width = 220,
                         height = 180,
@@ -242,14 +243,14 @@ for name, tier in pairs(tier_map) do
             layers =
             {
                 {
-                    filename = flags.directory.."/graphics/entity/solar-panel/base/solar-panel-shadow-overlay.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel/base/solar-panel-shadow-overlay.png",
                     priority = "high",
                     width = 108,
                     height = 90,
                     shift = util.by_pixel(11, 6),
                     hr_version =
                     {
-                        filename = flags.directory.."/graphics/entity/solar-panel/base/hr-solar-panel-shadow-overlay.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel/base/hr-solar-panel-shadow-overlay.png",
                         priority = "high",
                         width = 214,
                         height = 180,
@@ -262,8 +263,8 @@ for name, tier in pairs(tier_map) do
 
         -- -- Handle tier mapping settings
         -- if flags.remap_tiers == true then
-        --     entity.picture.layers[2].filename = flags.directory.."/graphics/entity/solar-panel/mask/"..flags.basename.."-"..tier.."/"..flags.basename.."-"..tier..".png"
-        --     entity.picture.layers[2].hr_version.filename = flags.directory.."/graphics/entity/solar-panel/mask/"..flags.basename.."-"..tier.."/hr-"..flags.basename.."-"..tier..".png"
+        --     entity.picture.layers[2].filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel/mask/"..flags.basename.."-"..tier.."/"..flags.basename.."-"..tier..".png"
+        --     entity.picture.layers[2].hr_version.filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel/mask/"..flags.basename.."-"..tier.."/hr-"..flags.basename.."-"..tier..".png"
         -- end
 
     elseif flags.basename == "solar-panel-large" then
@@ -273,14 +274,14 @@ for name, tier in pairs(tier_map) do
             layers =
             {
                 {
-                    filename = flags.directory.."/graphics/entity/solar-panel-large/base/solar-panel-large.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel-large/base/solar-panel-large.png",
                     priority = "high",
                     width = 154,
                     height = 137,
                     shift = util.by_pixel(2.5, 1.75),
                     hr_version =
                     {
-                        filename = flags.directory.."/graphics/entity/solar-panel-large/base/hr-solar-panel-large.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel-large/base/hr-solar-panel-large.png",
                         priority = "high",
                         width = 308,
                         height = 274,
@@ -289,14 +290,14 @@ for name, tier in pairs(tier_map) do
                     }
                 },
                 {
-                    filename = flags.directory.."/graphics/entity/solar-panel-large/mask/"..name.."/"..name..".png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel-large/mask/"..name.."/"..name..".png",
                     priority = "high",
                     width = 154,
                     height = 137,
                     shift = util.by_pixel(2.5, 1.75),
                     hr_version =
                     {
-                        filename = flags.directory.."/graphics/entity/solar-panel-large/mask/"..name.."/hr-"..name..".png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel-large/mask/"..name.."/hr-"..name..".png",
                         priority = "high",
                         width = 308,
                         height = 274,
@@ -305,7 +306,7 @@ for name, tier in pairs(tier_map) do
                     }
                 },
                 {
-                    filename = flags.directory.."/graphics/entity/solar-panel-large/base/solar-panel-large-shadow.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel-large/base/solar-panel-large-shadow.png",
                     priority = "high",
                     width = 154,
                     height = 137,
@@ -313,7 +314,7 @@ for name, tier in pairs(tier_map) do
                     draw_as_shadow = true,
                     hr_version =
                     {
-                        filename = flags.directory.."/graphics/entity/solar-panel-large/base/hr-solar-panel-large-shadow.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel-large/base/hr-solar-panel-large-shadow.png",
                         priority = "high",
                         width = 308,
                         height = 274,
@@ -331,14 +332,14 @@ for name, tier in pairs(tier_map) do
             layers =
             {
                 {
-                    filename = flags.directory.."/graphics/entity/solar-panel-large/base/solar-panel-large-shadow-overlay.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel-large/base/solar-panel-large-shadow-overlay.png",
                     priority = "high",
                     width = 154,
                     height = 137,
                     shift = util.by_pixel(2.5, 1.75),
                     hr_version =
                     {
-                        filename = flags.directory.."/graphics/entity/solar-panel-large/base/hr-solar-panel-large-shadow-overlay.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel-large/base/hr-solar-panel-large-shadow-overlay.png",
                         priority = "high",
                         width = 308,
                         height = 274,
@@ -351,8 +352,8 @@ for name, tier in pairs(tier_map) do
 
         -- -- Handle tier mapping settings
         -- if flags.remap_tiers == true then
-        --     entity.picture.layers[2].filename = flags.directory.."/graphics/entity/solar-panel-large/mask/"..flags.basename.."-"..tier.."/"..flags.basename.."-"..tier..".png"
-        --     entity.picture.layers[2].hr_version.filename = flags.directory.."/graphics/entity/solar-panel-large/mask/"..flags.folder.."/"..flags.basename.."-"..tier.."/hr-"..flags.basename.."-"..tier..".png"
+        --     entity.picture.layers[2].filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel-large/mask/"..flags.basename.."-"..tier.."/"..flags.basename.."-"..tier..".png"
+        --     entity.picture.layers[2].hr_version.filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/solar-panel-large/mask/"..flags.folder.."/"..flags.basename.."-"..tier.."/hr-"..flags.basename.."-"..tier..".png"
         -- end
     end
 

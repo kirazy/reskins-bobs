@@ -12,6 +12,7 @@ local type = "mining-drill"
 local flags = 
 {
     baseentity = "electric-mining-drill",
+    mod_folder = "mining",
     directory = reskins.bobs_structures.directory,
     icon_subfolder = "mining-drill",
     particles = {"medium-long"},
@@ -116,7 +117,7 @@ for name, tier in pairs(tier_map) do
                 {
                     {
                         priority = "high",
-                        filename = flags.directory.."/graphics/entity/mining-drill/base/mining-drill-N.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/base/mining-drill-N.png",
                         line_length = 8,
                         width = 98,
                         height = 113,
@@ -128,7 +129,7 @@ for name, tier in pairs(tier_map) do
                         hr_version =
                         {
                             priority = "high",
-                            filename = flags.directory.."/graphics/entity/mining-drill/base/hr-mining-drill-N.png",
+                            filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/base/hr-mining-drill-N.png",
                             line_length = 8,
                             width = 196,
                             height = 226,
@@ -142,7 +143,7 @@ for name, tier in pairs(tier_map) do
                     },
                     {
                         priority = "high",
-                        filename = flags.directory.."/graphics/entity/mining-drill/mask/mining-drill-"..tier.."/mining-drill-"..tier.."-N.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/mask/mining-drill-"..tier.."/mining-drill-"..tier.."-N.png",
                         line_length = 8,
                         width = 98,
                         height = 113,
@@ -154,7 +155,7 @@ for name, tier in pairs(tier_map) do
                         hr_version =
                         {
                             priority = "high",
-                            filename = flags.directory.."/graphics/entity/mining-drill/mask/mining-drill-"..tier.."/hr-mining-drill-"..tier.."-N.png",
+                            filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/mask/mining-drill-"..tier.."/hr-mining-drill-"..tier.."-N.png",
                             line_length = 8,
                             width = 196,
                             height = 226,
@@ -174,7 +175,7 @@ for name, tier in pairs(tier_map) do
                 {
                     {
                         priority = "high",
-                        filename = flags.directory.."/graphics/entity/mining-drill/base/mining-drill-E.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/base/mining-drill-E.png",
                         line_length = 8,
                         width = 105,
                         height = 98,
@@ -186,7 +187,7 @@ for name, tier in pairs(tier_map) do
                         hr_version =
                         {
                             priority = "high",
-                            filename = flags.directory.."/graphics/entity/mining-drill/base/hr-mining-drill-E.png",
+                            filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/base/hr-mining-drill-E.png",
                             line_length = 8,
                             width = 211,
                             height = 197,
@@ -200,7 +201,7 @@ for name, tier in pairs(tier_map) do
                     },
                     {
                         priority = "high",
-                        filename = flags.directory.."/graphics/entity/mining-drill/mask/mining-drill-"..tier.."/mining-drill-"..tier.."-E.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/mask/mining-drill-"..tier.."/mining-drill-"..tier.."-E.png",
                         line_length = 8,
                         width = 105,
                         height = 98,
@@ -212,7 +213,7 @@ for name, tier in pairs(tier_map) do
                         hr_version =
                         {
                             priority = "high",
-                            filename = flags.directory.."/graphics/entity/mining-drill/mask/mining-drill-"..tier.."/hr-mining-drill-"..tier.."-E.png",
+                            filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/mask/mining-drill-"..tier.."/hr-mining-drill-"..tier.."-E.png",
                             line_length = 8,
                             width = 211,
                             height = 197,
@@ -232,7 +233,7 @@ for name, tier in pairs(tier_map) do
                 {
                     {
                         priority = "high",
-                        filename = flags.directory.."/graphics/entity/mining-drill/base/mining-drill-S.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/base/mining-drill-S.png",
                         line_length = 8,
                         width = 98,
                         height = 109,
@@ -244,7 +245,7 @@ for name, tier in pairs(tier_map) do
                         hr_version =
                         {
                             priority = "high",
-                            filename = flags.directory.."/graphics/entity/mining-drill/base/hr-mining-drill-S.png",
+                            filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/base/hr-mining-drill-S.png",
                             line_length = 8,
                             width = 196,
                             height = 219,
@@ -258,7 +259,7 @@ for name, tier in pairs(tier_map) do
                     },
                     {
                         priority = "high",
-                        filename = flags.directory.."/graphics/entity/mining-drill/mask/mining-drill-"..tier.."/mining-drill-"..tier.."-S.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/mask/mining-drill-"..tier.."/mining-drill-"..tier.."-S.png",
                         line_length = 8,
                         width = 98,
                         height = 109,
@@ -270,7 +271,7 @@ for name, tier in pairs(tier_map) do
                         hr_version =
                         {
                             priority = "high",
-                            filename = flags.directory.."/graphics/entity/mining-drill/mask/mining-drill-"..tier.."/hr-mining-drill-"..tier.."-S.png",
+                            filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/mask/mining-drill-"..tier.."/hr-mining-drill-"..tier.."-S.png",
                             line_length = 8,
                             width = 196,
                             height = 219,
@@ -290,7 +291,7 @@ for name, tier in pairs(tier_map) do
                 {
                     {
                         priority = "high",
-                        filename = flags.directory.."/graphics/entity/mining-drill/base/mining-drill-W.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/base/mining-drill-W.png",
                         line_length = 8,
                         width = 105,
                         height = 98,
@@ -302,7 +303,7 @@ for name, tier in pairs(tier_map) do
                         hr_version =
                         {
                             priority = "high",
-                            filename = flags.directory.."/graphics/entity/mining-drill/base/hr-mining-drill-W.png",
+                            filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/base/hr-mining-drill-W.png",
                             line_length = 8,
                             width = 211,
                             height = 197,
@@ -316,7 +317,7 @@ for name, tier in pairs(tier_map) do
                     },
                     {
                         priority = "high",
-                        filename = flags.directory.."/graphics/entity/mining-drill/mask/mining-drill-"..tier.."/mining-drill-"..tier.."-W.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/mask/mining-drill-"..tier.."/mining-drill-"..tier.."-W.png",
                         line_length = 8,
                         width = 105,
                         height = 98,
@@ -328,7 +329,7 @@ for name, tier in pairs(tier_map) do
                         hr_version =
                         {
                             priority = "high",
-                            filename = flags.directory.."/graphics/entity/mining-drill/mask/mining-drill-"..tier.."/hr-mining-drill-"..tier.."-W.png",
+                            filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/mask/mining-drill-"..tier.."/hr-mining-drill-"..tier.."-W.png",
                             line_length = 8,
                             width = 211,
                             height = 197,
@@ -352,7 +353,7 @@ for name, tier in pairs(tier_map) do
                 {
                     {
                         priority = "high",
-                        filename = flags.directory.."/graphics/entity/mining-drill/base/mining-drill-N.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/base/mining-drill-N.png",
                         line_length = 8,
                         width = 98,
                         height = 113,
@@ -364,7 +365,7 @@ for name, tier in pairs(tier_map) do
                         hr_version =
                         {
                             priority = "high",
-                            filename = flags.directory.."/graphics/entity/mining-drill/base/hr-mining-drill-N.png",
+                            filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/base/hr-mining-drill-N.png",
                             line_length = 8,
                             width = 196,
                             height = 226,
@@ -378,7 +379,7 @@ for name, tier in pairs(tier_map) do
                     },
                     {
                         priority = "high",
-                        filename = flags.directory.."/graphics/entity/mining-drill/mask/area-drill-N.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/mask/area-drill-N.png",
                         line_length = 8,
                         width = 98,
                         height = 113,
@@ -390,7 +391,7 @@ for name, tier in pairs(tier_map) do
                         hr_version =
                         {
                             priority = "high",
-                            filename = flags.directory.."/graphics/entity/mining-drill/mask/hr-area-drill-N.png",
+                            filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/mask/hr-area-drill-N.png",
                             line_length = 8,
                             width = 196,
                             height = 226,
@@ -404,7 +405,7 @@ for name, tier in pairs(tier_map) do
                     },
                     {
                         priority = "high",
-                        filename = flags.directory.."/graphics/entity/mining-drill/mask/mining-drill-"..tier.."/mining-drill-"..tier.."-N.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/mask/mining-drill-"..tier.."/mining-drill-"..tier.."-N.png",
                         line_length = 8,
                         width = 98,
                         height = 113,
@@ -416,7 +417,7 @@ for name, tier in pairs(tier_map) do
                         hr_version =
                         {
                             priority = "high",
-                            filename = flags.directory.."/graphics/entity/mining-drill/mask/mining-drill-"..tier.."/hr-mining-drill-"..tier.."-N.png",
+                            filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/mask/mining-drill-"..tier.."/hr-mining-drill-"..tier.."-N.png",
                             line_length = 8,
                             width = 196,
                             height = 226,
@@ -436,7 +437,7 @@ for name, tier in pairs(tier_map) do
                 {
                     {
                         priority = "high",
-                        filename = flags.directory.."/graphics/entity/mining-drill/base/mining-drill-E.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/base/mining-drill-E.png",
                         line_length = 8,
                         width = 105,
                         height = 98,
@@ -448,7 +449,7 @@ for name, tier in pairs(tier_map) do
                         hr_version =
                         {
                             priority = "high",
-                            filename = flags.directory.."/graphics/entity/mining-drill/base/hr-mining-drill-E.png",
+                            filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/base/hr-mining-drill-E.png",
                             line_length = 8,
                             width = 211,
                             height = 197,
@@ -462,7 +463,7 @@ for name, tier in pairs(tier_map) do
                     },
                     {
                         priority = "high",
-                        filename = flags.directory.."/graphics/entity/mining-drill/mask/area-drill-E.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/mask/area-drill-E.png",
                         line_length = 8,
                         width = 105,
                         height = 98,
@@ -474,7 +475,7 @@ for name, tier in pairs(tier_map) do
                         hr_version =
                         {
                             priority = "high",
-                            filename = flags.directory.."/graphics/entity/mining-drill/mask/hr-area-drill-E.png",
+                            filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/mask/hr-area-drill-E.png",
                             line_length = 8,
                             width = 211,
                             height = 197,
@@ -488,7 +489,7 @@ for name, tier in pairs(tier_map) do
                     },
                     {
                         priority = "high",
-                        filename = flags.directory.."/graphics/entity/mining-drill/mask/mining-drill-"..tier.."/mining-drill-"..tier.."-E.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/mask/mining-drill-"..tier.."/mining-drill-"..tier.."-E.png",
                         line_length = 8,
                         width = 105,
                         height = 98,
@@ -500,7 +501,7 @@ for name, tier in pairs(tier_map) do
                         hr_version =
                         {
                             priority = "high",
-                            filename = flags.directory.."/graphics/entity/mining-drill/mask/mining-drill-"..tier.."/hr-mining-drill-"..tier.."-E.png",
+                            filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/mask/mining-drill-"..tier.."/hr-mining-drill-"..tier.."-E.png",
                             line_length = 8,
                             width = 211,
                             height = 197,
@@ -520,7 +521,7 @@ for name, tier in pairs(tier_map) do
                 {
                     {
                         priority = "high",
-                        filename = flags.directory.."/graphics/entity/mining-drill/base/mining-drill-S.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/base/mining-drill-S.png",
                         line_length = 8,
                         width = 98,
                         height = 109,
@@ -532,7 +533,7 @@ for name, tier in pairs(tier_map) do
                         hr_version =
                         {
                             priority = "high",
-                            filename = flags.directory.."/graphics/entity/mining-drill/base/hr-mining-drill-S.png",
+                            filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/base/hr-mining-drill-S.png",
                             line_length = 8,
                             width = 196,
                             height = 219,
@@ -546,7 +547,7 @@ for name, tier in pairs(tier_map) do
                     },
                     {
                         priority = "high",
-                        filename = flags.directory.."/graphics/entity/mining-drill/mask/area-drill-S.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/mask/area-drill-S.png",
                         line_length = 8,
                         width = 98,
                         height = 109,
@@ -558,7 +559,7 @@ for name, tier in pairs(tier_map) do
                         hr_version =
                         {
                             priority = "high",
-                            filename = flags.directory.."/graphics/entity/mining-drill/mask/hr-area-drill-S.png",
+                            filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/mask/hr-area-drill-S.png",
                             line_length = 8,
                             width = 196,
                             height = 219,
@@ -572,7 +573,7 @@ for name, tier in pairs(tier_map) do
                     },
                     {
                         priority = "high",
-                        filename = flags.directory.."/graphics/entity/mining-drill/mask/mining-drill-"..tier.."/mining-drill-"..tier.."-S.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/mask/mining-drill-"..tier.."/mining-drill-"..tier.."-S.png",
                         line_length = 8,
                         width = 98,
                         height = 109,
@@ -584,7 +585,7 @@ for name, tier in pairs(tier_map) do
                         hr_version =
                         {
                             priority = "high",
-                            filename = flags.directory.."/graphics/entity/mining-drill/mask/mining-drill-"..tier.."/hr-mining-drill-"..tier.."-S.png",
+                            filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/mask/mining-drill-"..tier.."/hr-mining-drill-"..tier.."-S.png",
                             line_length = 8,
                             width = 196,
                             height = 219,
@@ -604,7 +605,7 @@ for name, tier in pairs(tier_map) do
                 {
                     {
                         priority = "high",
-                        filename = flags.directory.."/graphics/entity/mining-drill/base/mining-drill-W.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/base/mining-drill-W.png",
                         line_length = 8,
                         width = 105,
                         height = 98,
@@ -616,7 +617,7 @@ for name, tier in pairs(tier_map) do
                         hr_version =
                         {
                             priority = "high",
-                            filename = flags.directory.."/graphics/entity/mining-drill/base/hr-mining-drill-W.png",
+                            filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/base/hr-mining-drill-W.png",
                             line_length = 8,
                             width = 211,
                             height = 197,
@@ -630,7 +631,7 @@ for name, tier in pairs(tier_map) do
                     },
                     {
                         priority = "high",
-                        filename = flags.directory.."/graphics/entity/mining-drill/mask/area-drill-W.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/mask/area-drill-W.png",
                         line_length = 8,
                         width = 105,
                         height = 98,
@@ -642,7 +643,7 @@ for name, tier in pairs(tier_map) do
                         hr_version =
                         {
                             priority = "high",
-                            filename = flags.directory.."/graphics/entity/mining-drill/mask/hr-area-drill-W.png",
+                            filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/mask/hr-area-drill-W.png",
                             line_length = 8,
                             width = 211,
                             height = 197,
@@ -656,7 +657,7 @@ for name, tier in pairs(tier_map) do
                     },
                     {
                         priority = "high",
-                        filename = flags.directory.."/graphics/entity/mining-drill/mask/mining-drill-"..tier.."/mining-drill-"..tier.."-W.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/mask/mining-drill-"..tier.."/mining-drill-"..tier.."-W.png",
                         line_length = 8,
                         width = 105,
                         height = 98,
@@ -668,7 +669,7 @@ for name, tier in pairs(tier_map) do
                         hr_version =
                         {
                             priority = "high",
-                            filename = flags.directory.."/graphics/entity/mining-drill/mask/mining-drill-"..tier.."/hr-mining-drill-"..tier.."-W.png",
+                            filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/mining-drill/mask/mining-drill-"..tier.."/hr-mining-drill-"..tier.."-W.png",
                             line_length = 8,
                             width = 211,
                             height = 197,

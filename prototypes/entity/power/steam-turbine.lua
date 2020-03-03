@@ -14,6 +14,7 @@ local flags =
 {
     basename = "steam-turbine",
     baseentity = "steam-turbine",
+    mod_folder = "power",
     directory = reskins.bobs_structures.directory,
     icon_subfolder = "steam-turbine",
     particles = {"medium","big"}
@@ -70,7 +71,7 @@ for name, tier in pairs(tier_map) do
         layers = 
         {
             {
-                filename = flags.directory.."/graphics/entity/steam-turbine/base/remnants/steam-turbine-remnants.png",
+                filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/steam-turbine/base/remnants/steam-turbine-remnants.png",
                 line_length = 1,
                 width = 230,
                 height = 204,
@@ -81,7 +82,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(6, 0),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/steam-turbine/base/remnants/hr-steam-turbine-remnants.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/steam-turbine/base/remnants/hr-steam-turbine-remnants.png",
                     line_length = 1,
                     width = 460,
                     height = 408,
@@ -94,7 +95,7 @@ for name, tier in pairs(tier_map) do
                 }
             },
             {
-                filename = flags.directory.."/graphics/entity/steam-turbine/mask/"..name.."/remnants/"..name.."-remnants.png",
+                filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/steam-turbine/mask/"..name.."/remnants/"..name.."-remnants.png",
                 line_length = 1,
                 width = 230,
                 height = 204,
@@ -105,7 +106,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(6, 0),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/steam-turbine/mask/"..name.."/remnants/hr-"..name.."-remnants.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/steam-turbine/mask/"..name.."/remnants/hr-"..name.."-remnants.png",
                     line_length = 1,
                     width = 460,
                     height = 408,
@@ -126,7 +127,7 @@ for name, tier in pairs(tier_map) do
         layers =
         {
             {
-                filename = flags.directory.."/graphics/entity/steam-turbine/base/steam-turbine-H.png",
+                filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/steam-turbine/base/steam-turbine-H.png",
                 width = 160,
                 height = 123,
                 frame_count = 8,
@@ -134,7 +135,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(0, -2.5),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/steam-turbine/base/hr-steam-turbine-H.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/steam-turbine/base/hr-steam-turbine-H.png",
                     width = 320,
                     height = 245,
                     frame_count = 8,
@@ -144,7 +145,7 @@ for name, tier in pairs(tier_map) do
                 }
             },
             {
-                filename = flags.directory.."/graphics/entity/steam-turbine/mask/"..name.."/"..name.."-H.png",
+                filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/steam-turbine/mask/"..name.."/"..name.."-H.png",
                 width = 160,
                 height = 123,
                 frame_count = 8,
@@ -152,7 +153,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(0, -2.5),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/steam-turbine/mask/"..name.."/hr-"..name.."-H.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/steam-turbine/mask/"..name.."/hr-"..name.."-H.png",
                     width = 320,
                     height = 245,
                     frame_count = 8,
@@ -162,7 +163,7 @@ for name, tier in pairs(tier_map) do
                 }
             },
             {
-                filename = flags.directory.."/graphics/entity/steam-turbine/base/steam-turbine-H-shadow.png",
+                filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/steam-turbine/base/steam-turbine-H-shadow.png",
                 width = 217,
                 height = 74,
                 repeat_count = 8,
@@ -172,7 +173,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(28.75, 18),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/steam-turbine/base/hr-steam-turbine-H-shadow.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/steam-turbine/base/hr-steam-turbine-H-shadow.png",
                     width = 435,
                     height = 150,
                     repeat_count = 8,
@@ -191,7 +192,7 @@ for name, tier in pairs(tier_map) do
         layers =
         {
             {
-                filename = flags.directory.."/graphics/entity/steam-turbine/base/steam-turbine-V.png",
+                filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/steam-turbine/base/steam-turbine-V.png",
                 width = 108,
                 height = 173,
                 frame_count = 8,
@@ -199,7 +200,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(5, 6.5),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/steam-turbine/base/hr-steam-turbine-V.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/steam-turbine/base/hr-steam-turbine-V.png",
                     width = 217,
                     height = 347,
                     frame_count = 8,
@@ -209,7 +210,7 @@ for name, tier in pairs(tier_map) do
                 }
             },
             {
-                filename = flags.directory.."/graphics/entity/steam-turbine/mask/"..name.."/"..name.."-V.png",
+                filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/steam-turbine/mask/"..name.."/"..name.."-V.png",
                 width = 108,
                 height = 173,
                 frame_count = 8,
@@ -217,7 +218,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(5, 6.5),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/steam-turbine/mask/"..name.."/hr-"..name.."-V.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/steam-turbine/mask/"..name.."/hr-"..name.."-V.png",
                     width = 217,
                     height = 347,
                     frame_count = 8,
@@ -227,7 +228,7 @@ for name, tier in pairs(tier_map) do
                 }
             },
             {
-                filename = flags.directory.."/graphics/entity/steam-turbine/base/steam-turbine-V-shadow.png",
+                filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/steam-turbine/base/steam-turbine-V-shadow.png",
                 width = 151,
                 height = 131,
                 repeat_count = 8,
@@ -237,7 +238,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(39.5, 24.5),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/steam-turbine/base/hr-steam-turbine-V-shadow.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/steam-turbine/base/hr-steam-turbine-V-shadow.png",
                     width = 302,
                     height = 260,
                     repeat_count = 8,

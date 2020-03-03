@@ -13,6 +13,7 @@ local flags =
 {
     basename = "storage-tank",
     baseentity = "storage-tank",
+    mod_folder = "logistics",
     directory = reskins.bobs_structures.directory,
     icon_subfolder = "storage-tank",
     particles = {"big"},
@@ -71,7 +72,7 @@ for name, tier in pairs(tier_map) do
         layers = 
         {
             {
-                filename = flags.directory.."/graphics/entity/storage-tank/base/remnants/storage-tank-remnants.png",
+                filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/storage-tank/base/remnants/storage-tank-remnants.png",
                 line_length = 1,
                 width = 214,
                 height = 142,
@@ -80,7 +81,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(27, 21),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/storage-tank/base/remnants/hr-storage-tank-remnants.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/storage-tank/base/remnants/hr-storage-tank-remnants.png",
                     line_length = 1,
                     width = 426,
                     height = 282,
@@ -91,7 +92,7 @@ for name, tier in pairs(tier_map) do
                 }
             },
             {
-                filename = flags.directory.."/graphics/entity/storage-tank/mask/"..name.."/remnants/"..name.."-remnants.png",
+                filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/storage-tank/mask/"..name.."/remnants/"..name.."-remnants.png",
                 line_length = 1,
                 width = 214,
                 height = 142,
@@ -100,7 +101,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(27, 21),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/storage-tank/mask/"..name.."/remnants/hr-"..name.."-remnants.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/storage-tank/mask/"..name.."/remnants/hr-"..name.."-remnants.png",
                     line_length = 1,
                     width = 426,
                     height = 282,
@@ -121,7 +122,7 @@ for name, tier in pairs(tier_map) do
             sheets =
             {
                 {
-                    filename = flags.directory.."/graphics/entity/storage-tank/base/storage-tank.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/storage-tank/base/storage-tank.png",
                     priority = "extra-high",
                     frames = 2,
                     width = 110,
@@ -129,7 +130,7 @@ for name, tier in pairs(tier_map) do
                     shift = util.by_pixel(0, 4),
                     hr_version =
                     {
-                        filename = flags.directory.."/graphics/entity/storage-tank/base/hr-storage-tank.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/storage-tank/base/hr-storage-tank.png",
                         priority = "extra-high",
                         frames = 2,
                         width = 219,
@@ -139,7 +140,7 @@ for name, tier in pairs(tier_map) do
                     }
                 },
                 {
-                    filename = flags.directory.."/graphics/entity/storage-tank/mask/"..name.."/"..name..".png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/storage-tank/mask/"..name.."/"..name..".png",
                     priority = "extra-high",
                     frames = 2,
                     width = 110,
@@ -147,7 +148,7 @@ for name, tier in pairs(tier_map) do
                     shift = util.by_pixel(0, 4),
                     hr_version =
                     {
-                        filename = flags.directory.."/graphics/entity/storage-tank/mask/"..name.."/hr-"..name..".png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/storage-tank/mask/"..name.."/hr-"..name..".png",
                         priority = "extra-high",
                         frames = 2,
                         width = 219,
@@ -157,7 +158,7 @@ for name, tier in pairs(tier_map) do
                     }
                 },
                 {
-                    filename = flags.directory.."/graphics/entity/storage-tank/base/storage-tank-shadow.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/storage-tank/base/storage-tank-shadow.png",
                     priority = "extra-high",
                     frames = 2,
                     width = 146,
@@ -166,7 +167,7 @@ for name, tier in pairs(tier_map) do
                     draw_as_shadow = true,
                     hr_version =
                     {
-                        filename = flags.directory.."/graphics/entity/storage-tank/base/hr-storage-tank-shadow.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/storage-tank/base/hr-storage-tank-shadow.png",
                         priority = "extra-high",
                         frames = 2,
                         width = 291,
@@ -180,20 +181,20 @@ for name, tier in pairs(tier_map) do
         },
         fluid_background =
         {
-            filename = flags.directory.."/graphics/entity/storage-tank/base/fluid-background.png",
+            filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/storage-tank/base/fluid-background.png",
             priority = "extra-high",
             width = 32,
             height = 15
         },
         window_background =
         {
-            filename = flags.directory.."/graphics/entity/storage-tank/base/window-background.png",
+            filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/storage-tank/base/window-background.png",
             priority = "extra-high",
             width = 17,
             height = 24,
             hr_version =
             {
-            filename = flags.directory.."/graphics/entity/storage-tank/base/hr-window-background.png",
+            filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/storage-tank/base/hr-window-background.png",
             priority = "extra-high",
             width = 34,
             height = 48,
@@ -202,14 +203,14 @@ for name, tier in pairs(tier_map) do
         },
         flow_sprite =
         {
-            filename = flags.directory.."/graphics/entity/pipe/base/animations/fluid-flow-low-temperature.png",
+            filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/pipe/base/animations/fluid-flow-low-temperature.png",
             priority = "extra-high",
             width = 160,
             height = 20
         },
         gas_flow =
         {
-            filename = flags.directory.."/graphics/entity/pipe/base/animations/steam.png",
+            filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/pipe/base/animations/steam.png",
             priority = "extra-high",
             line_length = 10,
             width = 24,
@@ -220,7 +221,7 @@ for name, tier in pairs(tier_map) do
             animation_speed = 0.25,
             hr_version =
             {
-                filename = flags.directory.."/graphics/entity/pipe/base/animations/hr-steam.png",
+                filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/pipe/base/animations/hr-steam.png",
                 priority = "extra-high",
                 line_length = 10,
                 width = 48,

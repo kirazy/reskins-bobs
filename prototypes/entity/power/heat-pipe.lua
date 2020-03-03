@@ -13,6 +13,7 @@ local flags =
 {
     basename = "heat-pipe",
     baseentity = "heat-pipe",
+    mod_folder = "power",
     directory = reskins.bobs_structures.directory,
     icon_subfolder = "heat-pipe",
     particles = {"big"},
@@ -60,12 +61,12 @@ for name, tier in pairs(tier_map) do
     -- explosion.created_effect.action_delivery.target_effects[3].particle_name = name.."-metal-particle-big-tinted"
 
     -- Reskin remnants
-    -- remnant.animation.filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/remnants/"..name.."-remnants.png"
-    -- remnant.animation.hr_version.filename = flags.directory.."/graphics/entity/"..flags.folder.."/"..name.."/remnants/hr-"..name.."-remnants.png"
+    -- remnant.animation.filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/"..flags.folder.."/"..name.."/remnants/"..name.."-remnants.png"
+    -- remnant.animation.hr_version.filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/"..flags.folder.."/"..name.."/remnants/hr-"..name.."-remnants.png"
     
     -- Reskin entities
     if name ~= "heat-pipe" then
-        entity.connection_sprites = make_heat_pipe_pictures(flags.directory.."/graphics/entity/heat-pipe/"..name.."/", name,
+        entity.connection_sprites = make_heat_pipe_pictures(flags.directory.."/graphics/entity/"..flags.mod_folder.."/heat-pipe/"..name.."/", name,
         {
             single = { name = "straight-vertical-single", ommit_number = true },
             straight_vertical = { variations = 6 },

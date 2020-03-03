@@ -14,6 +14,7 @@ local flags =
 {
     basename = "nuclear-reactor",
     baseentity = "nuclear-reactor",
+    mod_folder = "power",
     directory = reskins.bobs_structures.directory,
     particles = {"medium","big"}
 }
@@ -58,16 +59,16 @@ local function skin_reactor_icon(name, type, tier, flags)
         flags.icon = 
         {
             {
-                icon = flags.directory.."/graphics/icons/nuclear-reactor/bases/icon-"..flags.fuel.."-base.png"
+                icon = flags.directory.."/graphics/icons/"..flags.mod_folder.."/nuclear-reactor/bases/icon-"..flags.fuel.."-base.png"
             },
             {
-                icon = flags.directory.."/graphics/icons/nuclear-reactor/shells/icon-"..flags.reactor.."-shell.png"
+                icon = flags.directory.."/graphics/icons/"..flags.mod_folder.."/nuclear-reactor/shells/icon-"..flags.reactor.."-shell.png"
             },
             {
-                icon = flags.directory.."/graphics/icons/nuclear-reactor/piping/icon-piping-"..flags.pipe_tier..".png"
+                icon = flags.directory.."/graphics/icons/"..flags.mod_folder.."/nuclear-reactor/piping/icon-piping-"..flags.pipe_tier..".png"
             },
             {
-                icon = flags.directory.."/graphics/icons/nuclear-reactor/glows/icon-"..flags.fuel.."-glow.png"
+                icon = flags.directory.."/graphics/icons/"..flags.mod_folder.."/nuclear-reactor/glows/icon-"..flags.fuel.."-glow.png"
             },
             {
                 icon = flags.directory.."/graphics/icons/tiers/"..flags.icon_size.."/tier-"..tier..".png"
@@ -78,16 +79,16 @@ local function skin_reactor_icon(name, type, tier, flags)
         flags.icon = 
         {
             {
-                icon = flags.directory.."/graphics/icons/nuclear-reactor/bases/icon-"..flags.fuel.."-base.png"
+                icon = flags.directory.."/graphics/icons/"..flags.mod_folder.."/nuclear-reactor/bases/icon-"..flags.fuel.."-base.png"
             },
             {
-                icon = flags.directory.."/graphics/icons/nuclear-reactor/shells/icon-"..flags.reactor.."-shell.png"
+                icon = flags.directory.."/graphics/icons/"..flags.mod_folder.."/nuclear-reactor/shells/icon-"..flags.reactor.."-shell.png"
             },
             {
-                icon = flags.directory.."/graphics/icons/nuclear-reactor/piping/icon-piping-"..flags.pipe_tier..".png"
+                icon = flags.directory.."/graphics/icons/"..flags.mod_folder.."/nuclear-reactor/piping/icon-piping-"..flags.pipe_tier..".png"
             },
             {
-                icon = flags.directory.."/graphics/icons/nuclear-reactor/glows/icon-"..flags.fuel.."-glow.png"
+                icon = flags.directory.."/graphics/icons/"..flags.mod_folder.."/nuclear-reactor/glows/icon-"..flags.fuel.."-glow.png"
             }
         }
     end
@@ -108,13 +109,13 @@ local function skin_reactor_entity(name, type, flags)
 
     entity.lower_layer_picture =
     {
-        filename = flags.directory.."/graphics/entity/nuclear-reactor/pipes/reactor-base-pipes-"..flags.pipe_tier..".png",
+        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/nuclear-reactor/pipes/reactor-base-pipes-"..flags.pipe_tier..".png",
         width = 156,
         height = 156,
         shift = util.by_pixel(-2, -4),
         hr_version =
         {
-            filename = flags.directory.."/graphics/entity/nuclear-reactor/pipes/hr-reactor-base-pipes-"..flags.pipe_tier..".png",
+            filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/nuclear-reactor/pipes/hr-reactor-base-pipes-"..flags.pipe_tier..".png",
             width = 320,
             height = 316,
             scale = 0.5,
@@ -128,13 +129,13 @@ local function skin_reactor_entity(name, type, flags)
         {
             -- Base
             {
-                filename = flags.directory.."/graphics/entity/nuclear-reactor/base/reactor.png",
+                filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/nuclear-reactor/base/reactor.png",
                 width = 154,
                 height = 158,
                 shift = util.by_pixel(-6, -6),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/nuclear-reactor/base/hr-reactor.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/nuclear-reactor/base/hr-reactor.png",
                     width = 302,
                     height = 318,
                     scale = 0.5,
@@ -143,13 +144,13 @@ local function skin_reactor_entity(name, type, flags)
             },
             -- Reactor shell
             {
-                filename = flags.directory.."/graphics/entity/nuclear-reactor/shells/"..flags.reactor.."-shell.png",
+                filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/nuclear-reactor/shells/"..flags.reactor.."-shell.png",
                 width = 154,
                 height = 158,
                 shift = util.by_pixel(-6, -6),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/nuclear-reactor/shells/hr-"..flags.reactor.."-shell.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/nuclear-reactor/shells/hr-"..flags.reactor.."-shell.png",
                     width = 302,
                     height = 318,
                     scale = 0.5,
@@ -158,13 +159,13 @@ local function skin_reactor_entity(name, type, flags)
             },
             -- Reactor piping
             {
-                filename = flags.directory.."/graphics/entity/nuclear-reactor/pipes/reactor-piping-"..flags.pipe_tier..".png",
+                filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/nuclear-reactor/pipes/reactor-piping-"..flags.pipe_tier..".png",
                 width = 154,
                 height = 158,
                 shift = util.by_pixel(-6, -6),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/nuclear-reactor/pipes/hr-reactor-piping-"..flags.pipe_tier..".png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/nuclear-reactor/pipes/hr-reactor-piping-"..flags.pipe_tier..".png",
                     width = 302,
                     height = 318,
                     scale = 0.5,
@@ -173,14 +174,14 @@ local function skin_reactor_entity(name, type, flags)
             },
             -- Shadow
             {
-                filename = flags.directory.."/graphics/entity/nuclear-reactor/base/reactor-shadow.png",
+                filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/nuclear-reactor/base/reactor-shadow.png",
                 width = 263,
                 height = 162,
                 shift = { 1.625 , 0 },
                 draw_as_shadow = true,
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/nuclear-reactor/base/hr-reactor-shadow.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/nuclear-reactor/base/hr-reactor-shadow.png",
                     width = 525,
                     height = 323,
                     scale = 0.5,
@@ -195,13 +196,13 @@ local function skin_reactor_entity(name, type, flags)
     {
         sheet =
         {
-            filename = flags.directory.."/graphics/entity/nuclear-reactor/pipes/reactor-connect-patches-"..flags.pipe_tier..".png",
+            filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/nuclear-reactor/pipes/reactor-connect-patches-"..flags.pipe_tier..".png",
             width = 32,
             height = 32,
             variation_count = 12,
             hr_version =
             {
-                filename = flags.directory.."/graphics/entity/nuclear-reactor/pipes/hr-reactor-connect-patches-"..flags.pipe_tier..".png",
+                filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/nuclear-reactor/pipes/hr-reactor-connect-patches-"..flags.pipe_tier..".png",
                 width = 64,
                 height = 64,
                 variation_count = 12,
@@ -214,14 +215,14 @@ local function skin_reactor_entity(name, type, flags)
     {
         sheet =
         {
-            filename = flags.directory.."/graphics/entity/nuclear-reactor/pipes/reactor-connect-patches-"..flags.pipe_tier..".png",
+            filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/nuclear-reactor/pipes/reactor-connect-patches-"..flags.pipe_tier..".png",
             width = 32,
             height = 32,
             variation_count = 12,
             y = 32,
             hr_version =
             {
-                filename = flags.directory.."/graphics/entity/nuclear-reactor/pipes/hr-reactor-connect-patches-"..flags.pipe_tier..".png",
+                filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/nuclear-reactor/pipes/hr-reactor-connect-patches-"..flags.pipe_tier..".png",
                 width = 64,
                 height = 64,
                 variation_count = 12,
@@ -247,7 +248,7 @@ local function skin_reactor_remnants(name, type, flags)
         layers =
         {
             {
-                filename = flags.directory.."/graphics/entity/nuclear-reactor/base/remnants/nuclear-reactor-remnants.png",
+                filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/nuclear-reactor/base/remnants/nuclear-reactor-remnants.png",
                 line_length = 1,
                 width = 206,
                 height = 198,
@@ -258,7 +259,7 @@ local function skin_reactor_remnants(name, type, flags)
                 shift = util.by_pixel(7, 4),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/nuclear-reactor/base/remnants/hr-nuclear-reactor-remnants.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/nuclear-reactor/base/remnants/hr-nuclear-reactor-remnants.png",
                     line_length = 1,
                     width = 410,
                     height = 396,
@@ -271,7 +272,7 @@ local function skin_reactor_remnants(name, type, flags)
                 }
             },
             {
-                    filename = flags.directory.."/graphics/entity/nuclear-reactor/remnants/shells/"..flags.reactor.."-shell-remnants.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/nuclear-reactor/remnants/shells/"..flags.reactor.."-shell-remnants.png",
                     line_length = 1,
                     width = 206,
                     height = 198,
@@ -282,7 +283,7 @@ local function skin_reactor_remnants(name, type, flags)
                     shift = util.by_pixel(7, 4),
                     hr_version =
                     {
-                        filename = flags.directory.."/graphics/entity/nuclear-reactor/remnants/shells/hr-"..flags.reactor.."-shell-remnants.png",
+                        filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/nuclear-reactor/remnants/shells/hr-"..flags.reactor.."-shell-remnants.png",
                         line_length = 1,
                         width = 410,
                         height = 396,
@@ -295,7 +296,7 @@ local function skin_reactor_remnants(name, type, flags)
                     }
             },
             {
-                filename = flags.directory.."/graphics/entity/nuclear-reactor/remnants/pipes/reactor-piping-"..flags.pipe_tier.."-remnants.png",
+                filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/nuclear-reactor/remnants/pipes/reactor-piping-"..flags.pipe_tier.."-remnants.png",
                 line_length = 1,
                 width = 206,
                 height = 198,
@@ -306,7 +307,7 @@ local function skin_reactor_remnants(name, type, flags)
                 shift = util.by_pixel(7, 4),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/nuclear-reactor/remnants/pipes/hr-reactor-piping-"..flags.pipe_tier.."-remnants.png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/nuclear-reactor/remnants/pipes/hr-reactor-piping-"..flags.pipe_tier.."-remnants.png",
                     line_length = 1,
                     width = 410,
                     height = 396,

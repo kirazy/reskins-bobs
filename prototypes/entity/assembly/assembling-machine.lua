@@ -11,6 +11,7 @@ local type = "assembling-machine"
 local flags = {
     basename = "assembling-machine",
     baseentity = "assembling-machine-1",
+    mod_folder = "assembly",
     directory = reskins.bobs_structures.directory,
     icon_subfolder = "assembling-machine",
     particles = {"medium","big"},
@@ -62,8 +63,8 @@ for name, tier in pairs(tier_map) do
     -- explosion.created_effect.action_delivery.target_effects[2].particle_name = name.."-metal-particle-medium-tinted"
 
     -- Create remnants
-    -- remnant.animation[1].filename = reskin_functions.directory.."/graphics/entity/"..subtype.."/"..name.."/remnants/"..name.."-remnants.png"
-    -- remnant.animation[1].hr_version.filename = reskin_functions.directory.."/graphics/entity/"..subtype.."/"..name.."/remnants/hr-"..name.."-remnants.png"
+    -- remnant.animation[1].filename = reskin_functions.directory.."/graphics/entity/"..flags.mod_folder.."/"..subtype.."/"..name.."/remnants/"..name.."-remnants.png"
+    -- remnant.animation[1].hr_version.filename = reskin_functions.directory.."/graphics/entity/"..flags.mod_folder.."/"..subtype.."/"..name.."/remnants/hr-"..name.."-remnants.png"
 
     -- Reskin entities
     entity.animation =
@@ -80,7 +81,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(0, 2),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/assembling-machine/"..name.."/hr-"..name..".png",
+                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/assembling-machine/"..name.."/hr-"..name..".png",
                     priority="high",
                     width = 214,
                     height = 237,
