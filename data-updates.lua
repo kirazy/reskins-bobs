@@ -3,14 +3,8 @@
 --     
 -- See LICENSE.md in the project directory for license information.
 
--- Special cases
-
 -- Bob's Assembling Machines
-require("prototypes.entity.assembly.assembling-machine")
-require("prototypes.entity.assembly.chemical-plant")
-
--- Bob's Mining
-require("prototypes.entity.mining.mining-drill")
+require("prototypes.entity.assembly.chemical-plant")  -- bobassembly reskins in data-updates
 
 -- Bob's Power
-require("prototypes.entity.power.nuclear-reactor")
+require("prototypes.entity.power.nuclear-reactor")  -- bobrevamp skins reactor icons in data-updates

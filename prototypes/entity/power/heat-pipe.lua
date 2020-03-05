@@ -7,16 +7,14 @@
 if not mods["bobpower"] then return end
 if settings.startup["reskin-series-do-bobpower"].value == false then return end 
 
--- Set parameters
-local type = "heat-pipe"
-local flags = 
+-- Set input parameters
+local inputs = 
 {
-    basename = "heat-pipe",
-    baseentity = "heat-pipe",
-    mod_folder = "power",
+    type = "heat-pipe",
+    root_name = "heat-pipe",
+    base_entity = "heat-pipe",
     directory = reskins.bobs_structures.directory,
-    icon_subfolder = "heat-pipe",
-    particles = {"big"},
+    group = "power",
     make_icons = false,
     make_explosions = false,
     make_remnants = false,
@@ -38,35 +36,36 @@ else
         ["heat-pipe-2"] = 4,
         ["heat-pipe-3"] = 5
     }
-    flags.remap_tiers = true
 end
 
 -- Reskin entities, create and assign extra details
 for name, tier in pairs(tier_map) do
-    -- Initialize table address 
-    entity = data.raw[type][name]
+    -- Fetch entity
+    entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then
         goto continue
     end
 
-    reskins.lib.setup_common_attributes(name, type, tier, flags)
+    -- Map entity to name used internally
+    inputs.internal_name = inputs.root_name.."-"..tier
 
-    -- Initialize paths
+    reskins.lib.setup_common_attributes(name, tier, inputs)
+
+    -- Fetch remnant
     -- remnant = data.raw["corpse"][name.."-remnants"]
-    -- explosion = data.raw["explosion"][name.."-explosion"]
     
-    -- Tint explosions
-    -- explosion.created_effect.action_delivery.target_effects[3].particle_name = name.."-metal-particle-big-tinted"
+    -- Explosion particles needs to be handled special on account of non-tier coloring.
+    -- For reference, heat-pipe has 15 small, 9 medium particles.
 
     -- Reskin remnants
-    -- remnant.animation.filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/"..flags.folder.."/"..name.."/remnants/"..name.."-remnants.png"
-    -- remnant.animation.hr_version.filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/"..flags.folder.."/"..name.."/remnants/hr-"..name.."-remnants.png"
+    -- remnant.animation.filename = inputs.directory.."/graphics/entity/power/"..inputs.folder.."/"..inputs.internal_name.."/remnants/"..inputs.internal_name.."-remnants.png"
+    -- remnant.animation.hr_version.filename = inputs.directory.."/graphics/entity/power/"..inputs.folder.."/"..inputs.internal_name.."/remnants/hr-"..inputs.internal_name.."-remnants.png"
     
     -- Reskin entities
     if name ~= "heat-pipe" then
-        entity.connection_sprites = make_heat_pipe_pictures(flags.directory.."/graphics/entity/"..flags.mod_folder.."/heat-pipe/"..name.."/", name,
+        entity.connection_sprites = make_heat_pipe_pictures(inputs.directory.."/graphics/entity/power/heat-pipe/"..inputs.internal_name.."/", name,
         {
             single = { name = "straight-vertical-single", ommit_number = true },
             straight_vertical = { variations = 6 },

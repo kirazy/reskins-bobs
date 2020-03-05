@@ -8,16 +8,15 @@ if not mods["bobpower"] then return end
 if settings.startup["bobmods-power-poles"].value == false then return end
 if settings.startup["reskin-series-do-bobpower"].value == false then return end 
 
--- Set parameters
-local type = "electric-pole"
-local flags = 
+-- Set input parameters
+local inputs = 
 {
-    basename = "substation",
-    baseentity = "substation",
-    mod_folder = "power",
+    type = "electric-pole",
+    root_name = "substation",
+    base_entity = "substation",
     directory = reskins.bobs_structures.directory,
-    icon_subfolder = "substation",
-    particles = {"big"},
+    group = "power",
+    particles = {["big"] = 2},
 }
 
 -- Substations have two different sets of tiers; determine which we are using
@@ -38,34 +37,25 @@ else
         ["substation-3"] = 4,
         ["substation-4"] = 5
     }
-    flags.remap_tiers = true
 end
 
 -- Reskin entities, create and assign extra details
 for name, tier in pairs(tier_map) do
     -- Initialize table address 
-    entity = data.raw[type][name]
+    entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then
         goto continue
     end
   
-    reskins.lib.setup_common_attributes(name, type, tier, flags)
+    -- Map entity to name used internally
+    inputs.internal_name = inputs.root_name.."-"..tier
+
+    reskins.lib.setup_common_attributes(name, tier, inputs)
 
     -- Initialize table addresses    
     remnant = data.raw["corpse"][name.."-remnants"]
-    explosion = data.raw["explosion"][name.."-explosion"]
-
-    -- Tint explosions
-    explosion.created_effect.action_delivery.target_effects[1].particle_name = name.."-metal-particle-big-tinted"
-    explosion.created_effect.action_delivery.target_effects[2].particle_name = name.."-metal-particle-big-tinted"
-
-    -- Handle tier mapping settings, overwrite name with mapped name
-    -- Caution: name beyond this point if remapping occurs no longer corresponds to the entity name
-    if flags.remap_tiers == true then     
-        name = flags.basename.."-"..tier
-    end
 
     -- Reskin remnants
     remnant.animation = make_rotated_animation_variations_from_sheet (1,
@@ -73,7 +63,7 @@ for name, tier in pairs(tier_map) do
         layers = 
         {
             {
-                filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/substation/base/remnants/substation-remnants.png",
+                filename = inputs.directory.."/graphics/entity/power/substation/base/remnants/substation-remnants.png",
                 line_length = 1,
                 width = 92,
                 height = 68,
@@ -84,7 +74,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(3, 1),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/substation/base/remnants/hr-substation-remnants.png",
+                    filename = inputs.directory.."/graphics/entity/power/substation/base/remnants/hr-substation-remnants.png",
                     line_length = 1,
                     width = 182,
                     height = 134,
@@ -97,7 +87,7 @@ for name, tier in pairs(tier_map) do
                 },
             },
             {
-                filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/substation/mask/"..name.."/remnants/"..name.."-remnants.png",
+                filename = inputs.directory.."/graphics/entity/power/substation/mask/"..inputs.internal_name.."/remnants/"..inputs.internal_name.."-remnants.png",
                 line_length = 1,
                 width = 92,
                 height = 68,
@@ -108,7 +98,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(3, 1),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/substation/mask/"..name.."/remnants/hr-"..name.."-remnants.png",
+                    filename = inputs.directory.."/graphics/entity/power/substation/mask/"..inputs.internal_name.."/remnants/hr-"..inputs.internal_name.."-remnants.png",
                     line_length = 1,
                     width = 182,
                     height = 134,
@@ -129,7 +119,7 @@ for name, tier in pairs(tier_map) do
         layers =
         {
             {
-                filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/substation/base/substation.png",
+                filename = inputs.directory.."/graphics/entity/power/substation/base/substation.png",
                 priority = "high",
                 width = 70,
                 height = 136,
@@ -137,7 +127,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(0, 1-32),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/substation/base/hr-substation.png",
+                    filename = inputs.directory.."/graphics/entity/power/substation/base/hr-substation.png",
                     priority = "high",
                     width = 138,
                     height = 270,
@@ -147,7 +137,7 @@ for name, tier in pairs(tier_map) do
                 }
             },
             {
-                filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/substation/mask/"..name.."/"..name..".png",
+                filename = inputs.directory.."/graphics/entity/power/substation/mask/"..inputs.internal_name.."/"..inputs.internal_name..".png",
                 priority = "high",
                 width = 70,
                 height = 136,
@@ -155,7 +145,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(0, 1-32),
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/substation/mask/"..name.."/hr-"..name..".png",
+                    filename = inputs.directory.."/graphics/entity/power/substation/mask/"..inputs.internal_name.."/hr-"..inputs.internal_name..".png",
                     priority = "high",
                     width = 138,
                     height = 270,
@@ -165,7 +155,7 @@ for name, tier in pairs(tier_map) do
                 }
             },
             {
-                filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/substation/base/substation-shadow.png",
+                filename = inputs.directory.."/graphics/entity/power/substation/base/substation-shadow.png",
                 priority = "high",
                 width = 186,
                 height = 52,
@@ -174,7 +164,7 @@ for name, tier in pairs(tier_map) do
                 draw_as_shadow = true,
                 hr_version =
                 {
-                    filename = flags.directory.."/graphics/entity/"..flags.mod_folder.."/substation/base/hr-substation-shadow.png",
+                    filename = inputs.directory.."/graphics/entity/power/substation/base/hr-substation-shadow.png",
                     priority = "high",
                     width = 370,
                     height = 104,

@@ -12,3 +12,6 @@ if settings.startup["reskin-series-do-bobmining"].value == false then return end
 -- bob-pumpjack-2
 -- bob-pumpjack-3
 -- bob-pumpjack-4
+
+
+-- particles: big 1, medium 2, small 3
