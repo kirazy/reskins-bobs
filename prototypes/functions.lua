@@ -74,10 +74,16 @@ end
 
 -- Parses the main inputs table of parameters
 function reskins.lib.parse_inputs(inputs)
+    -- Check that we have a particles table
+    if not inputs.particles then
+        input.make_explosions = false
+    end
+    
     -- Constructs defaults for optional input parameters.
     inputs.icon_size       = inputs.icon_size        or 64      -- Pixel size of icons
     inputs.icon_mipmaps    = inputs.icon_mipmaps     or 4       -- Number of mipmaps present in the icon image file       
-    inputs.make_remnants   = (inputs.make_remnants   ~= false)  -- Create remnant entities; default true
+    inputs.make_explosions = (inputs.make_explosions ~= false)  -- Create explosions; default true
+    inputs.make_remnants   = (inputs.make_remnants   ~= false)  -- Create remnant; default true
     inputs.make_icons      = (inputs.make_icons      ~= false)  -- Create icons; default true
 
     return inputs
