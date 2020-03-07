@@ -48,8 +48,8 @@ for name, tier in pairs(tier_map) do
         goto continue
     end
 
-    -- Map entity to name used internally
-    inputs.internal_name = inputs.root_name.."-"..tier
+    -- Map entity to name used internally; for heat-pipe this needs to be specified for use with icon generation
+    inputs.internal_name = name
 
     reskins.lib.setup_common_attributes(name, tier, inputs)
 
@@ -65,7 +65,7 @@ for name, tier in pairs(tier_map) do
     
     -- Reskin entities
     if name ~= "heat-pipe" then
-        entity.connection_sprites = make_heat_pipe_pictures(inputs.directory.."/graphics/entity/power/heat-pipe/"..inputs.internal_name.."/", name,
+        entity.connection_sprites = make_heat_pipe_pictures(inputs.directory.."/graphics/entity/power/heat-pipe/"..inputs.internal_name.."/", inputs.internal_name,
         {
             single = { name = "straight-vertical-single", ommit_number = true },
             straight_vertical = { variations = 6 },
