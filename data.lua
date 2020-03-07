@@ -38,7 +38,7 @@ reskins.bobs_structures =
 -- require("prototypes.entity.logistics.pipe")
 require("prototypes.entity.logistics.pump")
 -- require("prototypes.entity.logistics.robo-charge-port")
--- require("prototypes.entity.logistics.roboport")
+require("prototypes.entity.logistics.roboport")
 require("prototypes.entity.logistics.storage-tank-all-corners")
 require("prototypes.entity.logistics.storage-tank")
 

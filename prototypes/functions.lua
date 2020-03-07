@@ -76,7 +76,7 @@ end
 function reskins.lib.parse_inputs(inputs)
     -- Check that we have a particles table
     if not inputs.particles then
-        input.make_explosions = false
+        inputs.make_explosions = false
     end
     
     -- Constructs defaults for optional input parameters.
