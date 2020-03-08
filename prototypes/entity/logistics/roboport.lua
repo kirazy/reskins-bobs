@@ -166,6 +166,7 @@ for name, map in pairs(tier_map) do
     })
 
     -- Reskin entities
+    entity.spawn_and_station_height = -0.1
     entity.base =
     {
         layers =
@@ -289,6 +290,7 @@ for name, map in pairs(tier_map) do
         {
             {
                 filename = inputs.directory.."/graphics/entity/logistics/roboport/base/doors/roboport-"..subtier.."-door-up.png",
+                -- filename = inputs.directory.."/graphics/entity/logistics/roboport/base/alt-door/roboport-door-up-"..subtier..".png",
                 priority = "medium",
                 width = 52,
                 height = 20,
@@ -297,6 +299,7 @@ for name, map in pairs(tier_map) do
                 hr_version =
                 {
                     filename = inputs.directory.."/graphics/entity/logistics/roboport/base/doors/hr-roboport-"..subtier.."-door-up.png",
+                    -- filename = inputs.directory.."/graphics/entity/logistics/roboport/base/alt-door/hr-roboport-door-up-"..subtier..".png",
                     priority = "medium",
                     width = 97,
                     height = 38,
@@ -311,6 +314,7 @@ for name, map in pairs(tier_map) do
     entity.door_animation_down =
     {
         filename = inputs.directory.."/graphics/entity/logistics/roboport/base/doors/roboport-"..subtier.."-door-down.png",
+        -- filename = inputs.directory.."/graphics/entity/logistics/roboport/base/alt-door/roboport-door-down-"..subtier..".png",
         priority = "medium",
         width = 52,
         height = 22,
@@ -319,6 +323,7 @@ for name, map in pairs(tier_map) do
         hr_version =
         {
             filename = inputs.directory.."/graphics/entity/logistics/roboport/base/doors/hr-roboport-"..subtier.."-door-down.png",
+            -- filename = inputs.directory.."/graphics/entity/logistics/roboport/base/alt-door/hr-roboport-door-down-"..subtier..".png",
             priority = "medium",
             width = 97,
             height = 41,

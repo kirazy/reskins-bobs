@@ -42,6 +42,15 @@ local heatpipe_index =
     ["nuclear-reactor-3"] = 3
 }
 
+-- Nuclear fuel tints
+local nuclear_tint_index = 
+{
+    ["uranium"]        = {r = 58,  g = 204, b = 11 },
+    ["thorium"]        = {r = 204, g = 165, b = 0  },
+    ["deuterium-blue"] = {r = 0,   g = 142, b = 208},
+    ["deuterium-pink"] = {r = 208, g = 0,   b = 73 }
+}
+
 local function skin_reactor_icon(name, tier, inputs)
     -- Inputs required by this function:
     -- directory   - Top-level mod directory, e.g. "__mod_directory__"
@@ -349,14 +358,14 @@ for name, tier in pairs(tier_map) do
         inputs.reactor = fuel_index[name]
 
         -- Create particles
-        reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["big"], 1, reskins.bobs_structures.tint_index[inputs.fuel])
-        reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["medium"], 2, reskins.bobs_structures.tint_index[inputs.fuel])
+        reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["big"], 1, nuclear_tint_index[inputs.fuel])
+        reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["medium"], 2, nuclear_tint_index[inputs.fuel])
     else
         inputs.reactor = "reactor-"..tier
 
         -- Create particles
-        reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["big"], 1, reskins.bobs_structures.tint_index["tier-"..tier])
-        reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["medium"], 2, reskins.bobs_structures.tint_index["tier-"..tier])
+        reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["big"], 1, reskins.lib.tint_index["tier-"..tier])
+        reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["medium"], 2, reskins.lib.tint_index["tier-"..tier])
     end
 
     -- Create remnants

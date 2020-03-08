@@ -9,14 +9,7 @@ require("prototypes.functions")
 -- Populate bobs_structures with information
 reskins.bobs_structures = 
 {
-    directory = "__reskin-series-bobs-structures__",
-    tint_index = 
-    {
-        ["uranium"]        = {r = 58,  g = 204, b = 11 },
-        ["thorium"]        = {r = 204, g = 165, b = 0  },
-        ["deuterium-blue"] = {r = 0,   g = 142, b = 208},
-        ["deuterium-pink"] = {r = 208, g = 0,   b = 73 }
-    }
+    directory = "__reskin-series-bobs-structures__"
 }
 
 -- General Icons
@@ -33,7 +26,7 @@ reskins.bobs_structures =
 
 -- Bob's Logistics
 -- require("prototypes.entity.logistics.chest")
--- require("prototypes.entity.logistics.inserter")
+require("prototypes.entity.logistics.inserter")
 -- require("prototypes.entity.logistics.logistic-zone-expander")
 -- require("prototypes.entity.logistics.pipe")
 require("prototypes.entity.logistics.pump")
@@ -78,6 +71,6 @@ require("prototypes.entity.power.substation")
 require("prototypes.entity.warfare.gun-turret")
 -- require("prototypes.entity.warfare.laser-turret")
 -- require("prototypes.entity.warfare.plasma-turret")
--- require("prototypes.entity.warfare.radar")
+require("prototypes.entity.warfare.radar")
 -- require("prototypes.entity.warfare.sniper-turret")
 -- require("prototypes.entity.warfare.wall")
