@@ -21,10 +21,15 @@ reskins.lib.tint_index =
 
 reskins.lib.particle_index = 
 {
+    ["tiny-stone"] = "stone-particle-tiny",
     ["small"] = "metal-particle-small",
+    ["small-stone"] = "stone-particle-small",
     ["medium"] = "metal-particle-medium",
     ["medium-long"] = "long-metal-particle-medium",
-    ["big"] = "metal-particle-big"
+    ["medium-stone"] = "stone-particle-medium",
+    ["big"] = "metal-particle-big",
+    ["big-stone"] = "stone-particle-big"
+
 }
 
 -- Most entities have a common process for reskinning, so consolidate the other functions under one superfunction for ease of use
@@ -40,15 +45,7 @@ function reskins.lib.setup_common_attributes(name, tier, inputs)
         -- Create and assign needed particles with appropriate tints
         for particle, key in pairs(inputs.particles) do 
             -- Create and assign the particle
-            if particle == "small" then
-                reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index[particle], key, reskins.lib.tint_index["tier-"..tier])
-            elseif particle == "medium" then
-                reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index[particle], key, reskins.lib.tint_index["tier-"..tier])
-            elseif particle == "big" then
-                reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index[particle], key, reskins.lib.tint_index["tier-"..tier])
-            elseif particle == "medium-long" then
-                reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index[particle], key, reskins.lib.tint_index["tier-"..tier])
-            end
+            reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index[particle], key, reskins.lib.tint_index["tier-"..tier])
         end
     end
   
