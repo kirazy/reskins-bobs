@@ -26,7 +26,7 @@ reskins.bobs_structures =
 
 -- Bob's Logistics
 -- require("prototypes.entity.logistics.chest")
-require("prototypes.entity.logistics.inserter")
+-- require("prototypes.entity.logistics.inserter")
 -- require("prototypes.entity.logistics.logistic-zone-expander")
 -- require("prototypes.entity.logistics.pipe")
 require("prototypes.entity.logistics.pump")
