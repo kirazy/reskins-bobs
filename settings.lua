@@ -8,6 +8,14 @@ data:extend(
         default_value = true,
     },
     {
+        type = "int-setting",
+        name = "reskin-series-target-drone-health",
+        setting_type = "startup",
+        default_value = 50000000,
+        maximum_value = 2147483648,
+        minimum_value = 1000
+    },
+    {
         type = "string-setting",
         name = "reskin-series-tier-mapping",
         setting_type = "startup",

@@ -68,10 +68,14 @@ require("prototypes.entity.power.substation")
 
 -- Bob's Warfare
 -- require("prototypes.entity.warfare.artillery-turret")
+require("prototypes.entity.warfare.beam")
 require("prototypes.entity.warfare.gun-turret")
--- require("prototypes.entity.warfare.laser-turret")
+require("prototypes.entity.warfare.laser-turret")
 -- require("prototypes.entity.warfare.plasma-turret")
 require("prototypes.entity.warfare.radar")
 -- require("prototypes.entity.warfare.sniper-turret")
 require("prototypes.entity.warfare.wall")
 require("prototypes.entity.warfare.gate")
+
+-- For testing purposes, do not ship
+require("prototypes.target-drone")
