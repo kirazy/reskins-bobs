@@ -447,7 +447,7 @@ for name, tier in pairs(tier_map) do
     remnant = data.raw["corpse"][name.."-remnants"]
 
     -- Reskin remnants
-    entity.animation = make_rotated_animation_variations_from_sheet (3,
+    remnant.animation = make_rotated_animation_variations_from_sheet (3,
     {
         layers =
         {
@@ -476,7 +476,7 @@ for name, tier in pairs(tier_map) do
                 }
             },
             {
-                filename = inputs.directory.."/graphics/entity/warfare/gun-turret/"..inputs.internal_name.."/remnants/"..inputs.internal_name.."-remnants.png",
+                filename = inputs.directory.."/graphics/entity/warfare/gun-turret/mask/"..inputs.internal_name.."/remnants/"..inputs.internal_name.."-remnants.png",
                 line_length = 1,
                 width = 126,
                 height = 122,
@@ -487,7 +487,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(3, -1),
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/warfare/gun-turret/"..inputs.internal_name.."/remnants/hr-"..inputs.internal_name.."-remnants.png",
+                    filename = inputs.directory.."/graphics/entity/warfare/gun-turret/mask/"..inputs.internal_name.."/remnants/hr-"..inputs.internal_name.."-remnants.png",
                     line_length = 1,
                     width = 252,
                     height = 242,
