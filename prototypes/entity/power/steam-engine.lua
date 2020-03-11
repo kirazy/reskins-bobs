@@ -54,7 +54,7 @@ for name, tier in pairs(tier_map) do
             -- Base
             {
                 -- filenmae = inputs.directory.."/graphics/entity/power/steam-engine/base/remnants/steam-engine-remnants.png",
-                filename = "__base__/graphics/entity/power/steam-engine/base/remnants/steam-engine-remnants.png",
+                filename = "__base__/graphics/entity/steam-engine/remnants/steam-engine-remnants.png",
                 line_length = 1,
                 width = 232,
                 height = 194,
@@ -299,7 +299,7 @@ for name, tier in pairs(tier_map) do
             -- Shadow
             {
                 -- filename = inputs.directory.."/graphics/entity/power/steam-engine/base/steam-engine-V-shadow.png",
-                "__base__/graphics/entity/steam-engine/steam-engine-V-shadow.png",
+                filename = "__base__/graphics/entity/steam-engine/steam-engine-V-shadow.png",
                 width = 165,
                 height = 153,
                 frame_count = 32,
