@@ -11,12 +11,19 @@ if not reskins.lib then reskins.lib = {} end
 
 reskins.lib.tint_index =
 {
-    ["tier-0"]         = {r = 197, g = 197, b = 197},
-    ["tier-1"]         = {r = 242, g = 177, b = 46 },
-    ["tier-2"]         = {r = 220, g = 48,  b = 41 },
-    ["tier-3"]         = {r = 71,  g = 168, b = 219},
-    ["tier-4"]         = {r = 203, g = 28,  b = 229},
-    ["tier-5"]         = {r = 74,  g = 239, b = 119}
+    -- ["tier-0"]         = {r = 197, g = 197, b = 197},
+    -- ["tier-1"]         = {r = 242, g = 177, b = 46 },
+    -- ["tier-2"]         = {r = 220, g = 48,  b = 41 },
+    -- ["tier-3"]         = {r = 71,  g = 168, b = 219},
+    -- ["tier-4"]         = {r = 203, g = 28,  b = 229},
+    -- ["tier-5"]         = {r = 74,  g = 239, b = 119},
+    ["tier-0"]         = {r = 125, g = 125, b = 125},
+    ["tier-1"]         = {r = 222, g = 148, b =   0}, -- de9400
+    ["tier-2"]         = {r = 194, g =   6, b =   0}, -- c20600
+    ["tier-3"]         = {r =  27, g = 135, b = 194}, -- 1b87c2
+    ["tier-4"]         = {r = 166, g =   0, b = 191}, -- a600bf
+    -- ["tier-4"]         = {r = 101, g =   0, b = 217}, -- 6500d9 (More purple, less pink)
+    ["tier-5"]         = {r =  35, g = 222, b =  85}  -- 23de55
 }
 
 reskins.lib.particle_index = 
@@ -207,4 +214,9 @@ function reskins.lib.create_particle(name, base_entity, base_particle, key, tint
 
     -- Assign particle to originating explosion
     data.raw["explosion"][name.."-explosion"]["created_effect"]["action_delivery"]["target_effects"][key].particle_name = particle.name
+end
+
+function reskins.lib.adjust_alpha(tint, alpha)
+    adjusted_tint = {r = tint["r"],g = tint["g"], b = tint["b"], a = alpha*255}
+    return adjusted_tint
 end

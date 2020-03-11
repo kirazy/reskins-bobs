@@ -170,6 +170,7 @@ for name, tier in pairs(tier_map) do
         {
             layers =
             {
+                -- Base
                 {
                     filename = inputs.directory.."/graphics/entity/power/boiler/base/boiler-E-idle.png",
                     priority = "extra-high",
@@ -186,6 +187,7 @@ for name, tier in pairs(tier_map) do
                         scale = 0.5
                     }
                 },
+                -- Color mask
                 {
                     filename = inputs.directory.."/graphics/entity/power/boiler/mask/"..inputs.internal_name.."/"..inputs.internal_name.."-E-idle.png",
                     priority = "extra-high",
@@ -194,14 +196,34 @@ for name, tier in pairs(tier_map) do
                     shift = util.by_pixel(-3.5, -0.5),
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/power/boiler/mask/"..inputs.internal_name.."/hr-"..inputs.internal_name.."-E-idle.png",
+                        filename = inputs.directory.."/graphics/entity/power/boiler/hr-boiler-E-idle-mask.png",
                         priority = "extra-high",
                         width = 216,
                         height = 301,
                         shift = util.by_pixel(-3, 1.25),
+                        tint = reskins.lib.tint_index["tier-"..tier],
                         scale = 0.5
                     }
                 },
+                -- Highlights
+                {
+                    filename = inputs.directory.."/graphics/entity/power/boiler/mask/"..inputs.internal_name.."/"..inputs.internal_name.."-E-idle.png",
+                    priority = "extra-high",
+                    width = 105,
+                    height = 147,
+                    shift = util.by_pixel(-3.5, -0.5),
+                    hr_version =
+                    {
+                        filename = inputs.directory.."/graphics/entity/power/boiler/hr-boiler-E-idle-highlights.png",
+                        priority = "extra-high",
+                        width = 216,
+                        height = 301,
+                        shift = util.by_pixel(-3, 1.25),
+                        blend_mode = "additive",
+                        scale = 0.5
+                    }
+                },
+                -- Shadow
                 {
                     filename = inputs.directory.."/graphics/entity/power/boiler/base/boiler-E-shadow.png",
                     priority = "extra-high",
