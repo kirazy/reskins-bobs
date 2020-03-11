@@ -53,7 +53,6 @@ for name, tier in pairs(tier_map) do
         {
             -- Base
             {
-                -- filenmae = inputs.directory.."/graphics/entity/power/steam-engine/base/remnants/steam-engine-remnants.png",
                 filename = "__base__/graphics/entity/steam-engine/remnants/steam-engine-remnants.png",
                 line_length = 1,
                 width = 232,
@@ -65,7 +64,6 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(17, 7),
                 hr_version =
                 {
-                    -- filename = inputs.directory.."/graphics/entity/power/steam-engine/base/remnants/hr-steam-engine-remnants.png",
                     filename = "__base__/graphics/entity/steam-engine/remnants/hr-steam-engine-remnants.png",
                     line_length = 1,
                     width = 462,
@@ -80,7 +78,7 @@ for name, tier in pairs(tier_map) do
             },
             -- Color Mask
             {
-                filename = inputs.directory.."/graphics/entity/power/steam-engine/mask/remnants/steam-engine-remnants-mask.png",
+                filename = inputs.directory.."/graphics/entity/power/steam-engine/remnants/steam-engine-remnants-mask.png",
                 line_length = 1,
                 width = 232,
                 height = 194,
@@ -92,7 +90,7 @@ for name, tier in pairs(tier_map) do
                 tint = reskins.lib.tint_index["tier-"..tier],
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/power/steam-engine/mask/remnants/hr-steam-engine-remnants-mask.png",
+                    filename = inputs.directory.."/graphics/entity/power/steam-engine/remnants/hr-steam-engine-remnants-mask.png",
                     line_length = 1,
                     width = 462,
                     height = 386,
@@ -107,7 +105,7 @@ for name, tier in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/entity/power/steam-engine/mask/remnants/steam-engine-remnants-highlights.png",
+                filename = inputs.directory.."/graphics/entity/power/steam-engine/remnants/steam-engine-remnants-highlights.png",
                 line_length = 1,
                 width = 232,
                 height = 194,
@@ -119,7 +117,7 @@ for name, tier in pairs(tier_map) do
                 blend_mode = "additive",
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/power/steam-engine/mask/remnants/hr-steam-engine-remnants-highlights.png",
+                    filename = inputs.directory.."/graphics/entity/power/steam-engine/remnants/hr-steam-engine-remnants-highlights.png",
                     line_length = 1,
                     width = 462,
                     height = 386,
@@ -142,7 +140,6 @@ for name, tier in pairs(tier_map) do
         {
             -- Base
             {
-                -- filename = inputs.directory.."/graphics/entity/power/steam-engine/base/steam-engine-H.png",
                 filename = "__base__/graphics/entity/steam-engine/steam-engine-H.png",
                 width = 176,
                 height = 128,
@@ -151,7 +148,6 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(1, -5),
                 hr_version =
                 {
-                    -- filename = inputs.directory.."/graphics/entity/power/steam-engine/base/hr-steam-engine-H.png",
                     filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-H.png",
                     width = 352,
                     height = 257,
@@ -163,7 +159,7 @@ for name, tier in pairs(tier_map) do
             },
             -- Color Mask
             {
-                filename = inputs.directory.."/graphics/entity/power/steam-engine/mask/steam-engine-H-mask.png",
+                filename = inputs.directory.."/graphics/entity/power/steam-engine/steam-engine-H-mask.png",
                 width = 176,
                 height = 128,
                 frame_count = 32,
@@ -172,7 +168,7 @@ for name, tier in pairs(tier_map) do
                 tint = reskins.lib.tint_index["tier-"..tier],
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/power/steam-engine/mask/hr-steam-engine-H-mask.png",
+                    filename = inputs.directory.."/graphics/entity/power/steam-engine/hr-steam-engine-H-mask.png",
                     width = 352,
                     height = 257,
                     frame_count = 32,
@@ -184,7 +180,7 @@ for name, tier in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/entity/power/steam-engine/mask/steam-engine-H-highlights.png",
+                filename = inputs.directory.."/graphics/entity/power/steam-engine/steam-engine-H-highlights.png",
                 width = 176,
                 height = 128,
                 frame_count = 32,
@@ -193,7 +189,7 @@ for name, tier in pairs(tier_map) do
                 blend_mode = "additive",
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/power/steam-engine/mask/hr-steam-engine-H-highlights.png",
+                    filename = inputs.directory.."/graphics/entity/power/steam-engine/hr-steam-engine-H-highlights.png",
                     width = 352,
                     height = 257,
                     frame_count = 32,
@@ -205,7 +201,6 @@ for name, tier in pairs(tier_map) do
             },
             -- Shadow
             {
-                -- filename = inputs.directory.."/graphics/entity/power/steam-engine/base/steam-engine-H-shadow.png",
                 filename = "__base__/graphics/entity/steam-engine/steam-engine-H-shadow.png",
                 width = 254,
                 height = 80,
@@ -215,7 +210,6 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(48, 24),
                 hr_version =
                 {
-                    -- filename = inputs.directory.."/graphics/entity/power/steam-engine/base/hr-steam-engine-H-shadow.png",
                     filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-H-shadow.png",
                     width = 508,
                     height = 160,
@@ -235,7 +229,6 @@ for name, tier in pairs(tier_map) do
         {
             -- Base
             {
-                -- filename = inputs.directory.."/graphics/entity/power/steam-engine/base/steam-engine-V.png",
                 filename = "__base__/graphics/entity/steam-engine/steam-engine-V.png",
                 width = 112,
                 height = 195,
@@ -244,7 +237,6 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(5, -6.5),
                 hr_version =
                 {
-                    -- filename = inputs.directory.."/graphics/entity/power/steam-engine/base/hr-steam-engine-V.png",
                     filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-V.png",
                     width = 225,
                     height = 391,
@@ -256,7 +248,7 @@ for name, tier in pairs(tier_map) do
             },
             -- Color mask
             {
-                filename = inputs.directory.."/graphics/entity/power/steam-engine/mask/steam-engine-V-mask.png",
+                filename = inputs.directory.."/graphics/entity/power/steam-engine/steam-engine-V-mask.png",
                 width = 112,
                 height = 195,
                 frame_count = 32,
@@ -265,7 +257,7 @@ for name, tier in pairs(tier_map) do
                 tint = reskins.lib.tint_index["tier-"..tier],
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/power/steam-engine/mask/hr-steam-engine-V-mask.png",
+                    filename = inputs.directory.."/graphics/entity/power/steam-engine/hr-steam-engine-V-mask.png",
                     width = 225,
                     height = 391,
                     frame_count = 32,
@@ -277,7 +269,7 @@ for name, tier in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/entity/power/steam-engine/mask/steam-engine-V-highlights.png",
+                filename = inputs.directory.."/graphics/entity/power/steam-engine/steam-engine-V-highlights.png",
                 width = 112,
                 height = 195,
                 frame_count = 32,
@@ -286,7 +278,7 @@ for name, tier in pairs(tier_map) do
                 blend_mode = "additive",
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/power/steam-engine/mask/hr-steam-engine-V-highlights.png",
+                    filename = inputs.directory.."/graphics/entity/power/steam-engine/hr-steam-engine-V-highlights.png",
                     width = 225,
                     height = 391,
                     frame_count = 32,
@@ -298,7 +290,6 @@ for name, tier in pairs(tier_map) do
             },
             -- Shadow
             {
-                -- filename = inputs.directory.."/graphics/entity/power/steam-engine/base/steam-engine-V-shadow.png",
                 filename = "__base__/graphics/entity/steam-engine/steam-engine-V-shadow.png",
                 width = 165,
                 height = 153,
@@ -308,7 +299,6 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(40.5, 9.5),
                 hr_version =
                 {
-                    -- filename = inputs.directory.."/graphics/entity/power/steam-engine/base/hr-steam-engine-V-shadow.png",
                     filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-V-shadow.png",
                     width = 330,
                     height = 307,
