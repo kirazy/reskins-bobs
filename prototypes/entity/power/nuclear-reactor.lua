@@ -52,27 +52,31 @@ local nuclear_tint_index =
 }
 
 local function skin_reactor_icon(name, tier, inputs)
-    -- Inputs required by this function:
-    -- directory   - Top-level mod directory, e.g. "__mod_directory__"
+    -- Inputs required by this funciton:
+    -- tint        - rgb table to tint the reactor, e.g. {0.5, 0.5, 0.5}
     -- fuel        - Color of glow/base layers, accepted values: "deuterium-pink", "deuterium-blue", "thorium", "uranium"
     -- pipe_tier   - Heatpipe to use, accepted values: 1 (base), 2 (silver), 3 (gold)
-    -- reactor     - Color of shell, accepted values: "deuterium-pink", "deuterium-blue", "thorium", "uranium", "reactor-#" where # is 1-5 inclusive
     -- icon_size   - Size of the icon, e.g. 32, 64, etc
 
     -- Create icons
     inputs.icon = 
     {
         {
-            icon = inputs.directory.."/graphics/icons/power/nuclear-reactor/bases/icon-"..inputs.fuel.."-base.png"
+            icon = inputs.directory.."/graphics/icons/power/nuclear-reactor/base/icon-"..inputs.fuel.."-base.png"
         },
         {
-            icon = inputs.directory.."/graphics/icons/power/nuclear-reactor/shells/icon-"..inputs.reactor.."-shell.png"
+            icon = inputs.directory.."/graphics/icons/power/nuclear-reactor/reactor-icon-mask.png",
+            tint = inputs.tint
         },
         {
-            icon = inputs.directory.."/graphics/icons/power/nuclear-reactor/piping/icon-piping-"..inputs.pipe_tier..".png"
+            icon = inputs.directory.."/graphics/icons/power/nuclear-reactor/reactor-icon-highlights.png",
+            blend_mode = "additive",
         },
         {
-            icon = inputs.directory.."/graphics/icons/power/nuclear-reactor/glows/icon-"..inputs.fuel.."-glow.png"
+            icon = inputs.directory.."/graphics/icons/power/nuclear-reactor/pipes/icon-piping-"..inputs.pipe_tier..".png"
+        },
+        {
+            icon = inputs.directory.."/graphics/icons/power/nuclear-reactor/fuel/icon-"..inputs.fuel.."-glow.png"
         }        
     }
 
@@ -86,31 +90,12 @@ local function skin_reactor_icon(name, tier, inputs)
 end
 
 local function skin_reactor_entity(name, inputs)
-    -- Inputs required by this function:
-    -- type        - Entity type
-    -- directory   - Top-level mod directory, e.g. "__mod_directory__"
-    -- fuel        - Color of glow/base layers, accepted values: "deuterium-pink", "deuterium-blue", "thorium", "uranium"
+    -- Inputs required by this funciton:
+    -- tint        - rgb table to tint the reactor, e.g. {0.5, 0.5, 0.5}
     -- pipe_tier   - Heatpipe to use, accepted values: 1 (base), 2 (silver), 3 (gold)
-    -- reactor     - Color of shell, accepted values: "deuterium-pink", "deuterium-blue", "thorium", "uranium", "reactor-#" where # is 1-5 inclusive
 
     -- Reskin reactor entities
-    local entity = data.raw[inputs.type][name]
-
-    entity.lower_layer_picture =
-    {
-        filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/pipes/reactor-base-pipes-"..inputs.pipe_tier..".png",
-        width = 156,
-        height = 156,
-        shift = util.by_pixel(-2, -4),
-        hr_version =
-        {
-            filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/pipes/hr-reactor-base-pipes-"..inputs.pipe_tier..".png",
-            width = 320,
-            height = 316,
-            scale = 0.5,
-            shift = util.by_pixel(-1, -5),
-        }
-    }
+    local entity = data.raw["reactor"][name]
 
     entity.picture =
     {
@@ -118,35 +103,54 @@ local function skin_reactor_entity(name, inputs)
         {
             -- Base
             {
-                filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/base/reactor.png",
+                filename = "__base__/graphics/entity/nuclear-reactor/reactor.png",
                 width = 154,
                 height = 158,
                 shift = util.by_pixel(-6, -6),
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/base/hr-reactor.png",
+                    filename = "__base__/graphics/entity/nuclear-reactor/hr-reactor.png",
                     width = 302,
                     height = 318,
                     scale = 0.5,
                     shift = util.by_pixel(-5, -7),
                 }
             },
-            -- Reactor shell
+            -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/shells/"..inputs.reactor.."-shell.png",
+                filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/reactor-mask.png",
                 width = 154,
                 height = 158,
                 shift = util.by_pixel(-6, -6),
+                tint = inputs.tint,
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/shells/hr-"..inputs.reactor.."-shell.png",
+                    filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/hr-reactor-mask.png",
                     width = 302,
                     height = 318,
                     scale = 0.5,
                     shift = util.by_pixel(-5, -7),
+                    tint = inputs.tint
                 }
             },
-            -- Reactor piping
+            -- Highlights
+            {
+                filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/reactor-highlights.png",
+                width = 154,
+                height = 158,
+                shift = util.by_pixel(-6, -6),
+                blend_mode = "additive",
+                hr_version =
+                {
+                    filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/hr-reactor-highlights.png",
+                    width = 302,
+                    height = 318,
+                    scale = 0.5,
+                    shift = util.by_pixel(-5, -7),
+                    blend_mode = "additive"
+                }
+            },
+            -- Pipes
             {
                 filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/pipes/reactor-piping-"..inputs.pipe_tier..".png",
                 width = 154,
@@ -163,14 +167,14 @@ local function skin_reactor_entity(name, inputs)
             },
             -- Shadow
             {
-                filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/base/reactor-shadow.png",
+                filename = "__base__/graphics/entity/nuclear-reactor/reactor-shadow.png",
                 width = 263,
                 height = 162,
                 shift = { 1.625 , 0 },
                 draw_as_shadow = true,
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/base/hr-reactor-shadow.png",
+                    filename = "__base__/graphics/entity/nuclear-reactor/hr-reactor-shadow.png",
                     width = 525,
                     height = 323,
                     scale = 0.5,
@@ -178,6 +182,23 @@ local function skin_reactor_entity(name, inputs)
                     draw_as_shadow = true
                 }
             }
+        }
+    }
+
+    -- Pipes
+    entity.lower_layer_picture =
+    {
+        filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/pipes/reactor-base-pipes-"..inputs.pipe_tier..".png",
+        width = 156,
+        height = 156,
+        shift = util.by_pixel(-2, -4),
+        hr_version =
+        {
+            filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/pipes/hr-reactor-base-pipes-"..inputs.pipe_tier..".png",
+            width = 320,
+            height = 316,
+            scale = 0.5,
+            shift = util.by_pixel(-1, -5),
         }
     }
 
@@ -223,11 +244,9 @@ local function skin_reactor_entity(name, inputs)
 end
 
 local function skin_reactor_remnants(name, inputs)
-    -- inputs required by this function
-    -- directory   - Top-level mod directory, e.g. "__mod_directory__"
-    -- fuel        - Color of glow/base layers, accepted values: "deuterium-pink", "deuterium-blue", "thorium", "uranium"
+    -- Inputs required by this funciton:
+    -- tint        - rgb table to tint the reactor, e.g. {0.5, 0.5, 0.5}
     -- pipe_tier   - Heatpipe to use, accepted values: 1 (base), 2 (silver), 3 (gold)
-    -- reactor     - Color of shell, accepted values: "deuterium-pink", "deuterium-blue", "thorium", "uranium", "reactor-#" where # is 1-5 inclusive
 
     -- Reskin reactor remnants
     local remnant = data.raw["corpse"][name.."-remnants"]
@@ -236,8 +255,9 @@ local function skin_reactor_remnants(name, inputs)
     {
         layers =
         {
+            -- Base
             {
-                filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/base/remnants/nuclear-reactor-remnants.png",
+                filename = "__base__/graphics/entity/nuclear-reactor/remnants/nuclear-reactor-remnants.png",
                 line_length = 1,
                 width = 206,
                 height = 198,
@@ -248,7 +268,7 @@ local function skin_reactor_remnants(name, inputs)
                 shift = util.by_pixel(7, 4),
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/base/remnants/hr-nuclear-reactor-remnants.png",
+                    filename = "__base__/graphics/entity/nuclear-reactor/remnants/hr-nuclear-reactor-remnants.png",
                     line_length = 1,
                     width = 410,
                     height = 396,
@@ -260,8 +280,9 @@ local function skin_reactor_remnants(name, inputs)
                     scale = 0.5,
                 }
             },
+            -- Mask
             {
-                    filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/remnants/shells/"..inputs.reactor.."-shell-remnants.png",
+                    filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/remnants/nuclear-reactor-remnants-mask.png",
                     line_length = 1,
                     width = 206,
                     height = 198,
@@ -270,9 +291,10 @@ local function skin_reactor_remnants(name, inputs)
                     axially_symmetrical = false,
                     direction_count = 1,
                     shift = util.by_pixel(7, 4),
+                    tint = inputs.tint,
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/remnants/shells/hr-"..inputs.reactor.."-shell-remnants.png",
+                        filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/remnants/hr-nuclear-reactor-remnants-mask.png",
                         line_length = 1,
                         width = 410,
                         height = 396,
@@ -281,9 +303,38 @@ local function skin_reactor_remnants(name, inputs)
                         axially_symmetrical = false,
                         direction_count = 1,
                         shift = util.by_pixel(7, 4),
+                        tint = inputs.tint,
                         scale = 0.5,
                     }
             },
+            -- Highlights
+            {
+                filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/remnants/nuclear-reactor-remnants-highlights.png",
+                line_length = 1,
+                width = 206,
+                height = 198,
+                frame_count = 1,
+                variation_count = 1,
+                axially_symmetrical = false,
+                direction_count = 1,
+                shift = util.by_pixel(7, 4),
+                blend_mode = "additive",
+                hr_version =
+                {
+                    filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/remnants/hr-nuclear-reactor-remnants-highlights.png",
+                    line_length = 1,
+                    width = 410,
+                    height = 396,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 1,
+                    shift = util.by_pixel(7, 4),
+                    blend_mode = "additive",
+                    scale = 0.5,
+                }
+            },
+            -- Pipes
             {
                 filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/remnants/pipes/reactor-piping-"..inputs.pipe_tier.."-remnants.png",
                 line_length = 1,
@@ -356,16 +407,18 @@ for name, tier in pairs(tier_map) do
 
     if mods["bobrevamp"] and settings.startup["bobmods-revamp-nuclear"].value == true and settings.startup["reskin-series-do-bobrevamp"].value == true then
         inputs.reactor = fuel_index[name]
+        inputs.tint = nuclear_tint_index[inputs.fuel]
 
         -- Create particles
-        reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["big"], 1, nuclear_tint_index[inputs.fuel])
-        reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["medium"], 2, nuclear_tint_index[inputs.fuel])
+        reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["big"], 1, inputs.tint)
+        reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["medium"], 2, inputs.tint)
     else
         inputs.reactor = "reactor-"..tier
+        inputs.tint = reskins.lib.tint_index["tier-"..tier]
 
         -- Create particles
-        reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["big"], 1, reskins.lib.tint_index["tier-"..tier])
-        reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["medium"], 2, reskins.lib.tint_index["tier-"..tier])
+        reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["big"], 1, inputs.tint)
+        reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["medium"], 2, inputs.tint)
     end
 
     -- Create remnants
