@@ -9,36 +9,6 @@
 if not reskins then reskins = {} end
 if not reskins.lib then reskins.lib = {} end
 
-reskins.lib.tint_index =
-{
-    -- ["tier-0"]         = {r = 197, g = 197, b = 197},
-    -- ["tier-1"]         = {r = 242, g = 177, b = 46 },
-    -- ["tier-2"]         = {r = 220, g = 48,  b = 41 },
-    -- ["tier-3"]         = {r = 71,  g = 168, b = 219},
-    -- ["tier-4"]         = {r = 203, g = 28,  b = 229},
-    -- ["tier-5"]         = {r = 74,  g = 239, b = 119},
-    ["tier-0"]         = {r = 125, g = 125, b = 125},
-    ["tier-1"]         = {r = 222, g = 148, b =   0}, -- de9400
-    ["tier-2"]         = {r = 194, g =   6, b =   0}, -- c20600
-    ["tier-3"]         = {r =  27, g = 135, b = 194}, -- 1b87c2
-    ["tier-4"]         = {r = 166, g =   0, b = 191}, -- a600bf
-    -- ["tier-4"]         = {r = 101, g =   0, b = 217}, -- 6500d9 (More purple, less pink)
-    ["tier-5"]         = {r =  35, g = 222, b =  85}  -- 23de55
-}
-
-reskins.lib.particle_index = 
-{
-    ["tiny-stone"] = "stone-particle-tiny",
-    ["small"] = "metal-particle-small",
-    ["small-stone"] = "stone-particle-small",
-    ["medium"] = "metal-particle-medium",
-    ["medium-long"] = "long-metal-particle-medium",
-    ["medium-stone"] = "stone-particle-medium",
-    ["big"] = "metal-particle-big",
-    ["big-stone"] = "stone-particle-big"
-
-}
-
 -- Most entities have a common process for reskinning, so consolidate the other functions under one superfunction for ease of use
 function reskins.lib.setup_common_attributes(name, tier, inputs)
     -- Parse inputs
@@ -220,3 +190,44 @@ function reskins.lib.adjust_alpha(tint, alpha)
     adjusted_tint = {r = tint["r"],g = tint["g"], b = tint["b"], a = alpha*255}
     return adjusted_tint
 end
+
+function reskins.lib.tint_hex_to_rgb(hex)
+    hex = hex:gsub("#","")
+    tint = {tonumber("0x"..hex:sub(1,2)), tonumber("0x"..hex:sub(3,4)), tonumber("0x"..hex:sub(5,6))}
+    return tint
+end
+
+if settings.startup["reskin-series-customize-tier-colors"].value == true then
+    reskins.lib.tint_index =
+    {
+        ["tier-0"] = reskins.lib.tint_hex_to_rgb(settings.startup["reskin-series-custom-colors-tier-0"].value),
+        ["tier-1"] = reskins.lib.tint_hex_to_rgb(settings.startup["reskin-series-custom-colors-tier-1"].value),
+        ["tier-2"] = reskins.lib.tint_hex_to_rgb(settings.startup["reskin-series-custom-colors-tier-2"].value),
+        ["tier-3"] = reskins.lib.tint_hex_to_rgb(settings.startup["reskin-series-custom-colors-tier-3"].value),
+        ["tier-4"] = reskins.lib.tint_hex_to_rgb(settings.startup["reskin-series-custom-colors-tier-4"].value),
+        ["tier-5"] = reskins.lib.tint_hex_to_rgb(settings.startup["reskin-series-custom-colors-tier-5"].value),
+    }
+else
+    reskins.lib.tint_index =
+    {
+        ["tier-0"] = reskins.lib.tint_hex_to_rgb("7d7d7d"),
+        ["tier-1"] = reskins.lib.tint_hex_to_rgb("de9400"),
+        ["tier-2"] = reskins.lib.tint_hex_to_rgb("c20600"),
+        ["tier-3"] = reskins.lib.tint_hex_to_rgb("1b87c2"),
+        ["tier-4"] = reskins.lib.tint_hex_to_rgb("a600bf"),
+        ["tier-5"] = reskins.lib.tint_hex_to_rgb("23de55"),
+    }
+end
+
+reskins.lib.particle_index = 
+{
+    ["tiny-stone"] = "stone-particle-tiny",
+    ["small"] = "metal-particle-small",
+    ["small-stone"] = "stone-particle-small",
+    ["medium"] = "metal-particle-medium",
+    ["medium-long"] = "long-metal-particle-medium",
+    ["medium-stone"] = "stone-particle-medium",
+    ["big"] = "metal-particle-big",
+    ["big-stone"] = "stone-particle-big"
+
+}

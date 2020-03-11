@@ -1,3 +1,8 @@
+-- Copyright (c) 2020 Kirazy
+-- Part of Reskin Series: Bob's Structures
+--     
+-- See LICENSE.md in the project directory for license information.
+
 -- Settings to be exported to Reskin Series: Library
 data:extend(
 {
@@ -6,6 +11,12 @@ data:extend(
         name = "reskin-series-icon-tier-labeling",
         setting_type = "startup",
         default_value = true,
+    },
+    {
+        type = "bool-setting",
+        name = "reskin-series-customize-tier-colors",
+        setting_type = "startup",
+        default_value = false,
     },
     {
         type = "int-setting",
@@ -21,6 +32,47 @@ data:extend(
         setting_type = "startup",
         default_value = "name-map",
         allowed_values = {"ingredients-map","name-map"}
+    }
+})
+
+-- Customize tier coloring settings
+data:extend(
+{
+    {
+        type = "string-setting",
+        name = "reskin-series-custom-colors-tier-0",
+        setting_type ="startup",
+        default_value = "#7d7d7d",
+    },
+    {
+        type = "string-setting",
+        name = "reskin-series-custom-colors-tier-1",
+        setting_type ="startup",
+        default_value = "#de9400",
+    },
+    {
+        type = "string-setting",
+        name = "reskin-series-custom-colors-tier-2",
+        setting_type ="startup",
+        default_value = "#c20600",
+    },
+    {
+        type = "string-setting",
+        name = "reskin-series-custom-colors-tier-3",
+        setting_type ="startup",
+        default_value = "#1b87c2",
+    },
+    {
+        type = "string-setting",
+        name = "reskin-series-custom-colors-tier-4",
+        setting_type ="startup",
+        default_value = "#a600bf",
+    },
+    {
+        type = "string-setting",
+        name = "reskin-series-custom-colors-tier-5",
+        setting_type ="startup",
+        default_value = "#23de55",
     }
 })
 
