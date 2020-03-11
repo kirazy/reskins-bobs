@@ -51,8 +51,10 @@ for name, tier in pairs(tier_map) do
     {
         layers = 
         {
+            -- Base
             {
-                filename = inputs.directory.."/graphics/entity/power/steam-engine/base/remnants/steam-engine-remnants.png",
+                -- filenmae = inputs.directory.."/graphics/entity/power/steam-engine/base/remnants/steam-engine-remnants.png",
+                filename = "__base__/graphics/entity/power/steam-engine/base/remnants/steam-engine-remnants.png",
                 line_length = 1,
                 width = 232,
                 height = 194,
@@ -63,7 +65,8 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(17, 7),
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/power/steam-engine/base/remnants/hr-steam-engine-remnants.png",
+                    -- filename = inputs.directory.."/graphics/entity/power/steam-engine/base/remnants/hr-steam-engine-remnants.png",
+                    filename = "__base__/graphics/entity/steam-engine/remnants/hr-steam-engine-remnants.png",
                     line_length = 1,
                     width = 462,
                     height = 386,
@@ -75,6 +78,7 @@ for name, tier in pairs(tier_map) do
                     scale = 0.5,
                 }
             },
+            -- Color Mask
             {
                 filename = inputs.directory.."/graphics/entity/power/steam-engine/mask/remnants/steam-engine-remnants-mask.png",
                 line_length = 1,
@@ -101,6 +105,7 @@ for name, tier in pairs(tier_map) do
                     scale = 0.5,
                 }
             },
+            -- Highlights
             {
                 filename = inputs.directory.."/graphics/entity/power/steam-engine/mask/remnants/steam-engine-remnants-highlights.png",
                 line_length = 1,
@@ -135,8 +140,10 @@ for name, tier in pairs(tier_map) do
     {
         layers =
         {
+            -- Base
             {
-                filename = inputs.directory.."/graphics/entity/power/steam-engine/base/steam-engine-H.png",
+                -- filename = inputs.directory.."/graphics/entity/power/steam-engine/base/steam-engine-H.png",
+                filename = "__base__/graphics/entity/steam-engine/steam-engine-H.png",
                 width = 176,
                 height = 128,
                 frame_count = 32,
@@ -144,7 +151,8 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(1, -5),
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/power/steam-engine/base/hr-steam-engine-H.png",
+                    -- filename = inputs.directory.."/graphics/entity/power/steam-engine/base/hr-steam-engine-H.png",
+                    filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-H.png",
                     width = 352,
                     height = 257,
                     frame_count = 32,
@@ -197,7 +205,8 @@ for name, tier in pairs(tier_map) do
             },
             -- Shadow
             {
-                filename = inputs.directory.."/graphics/entity/power/steam-engine/base/steam-engine-H-shadow.png",
+                -- filename = inputs.directory.."/graphics/entity/power/steam-engine/base/steam-engine-H-shadow.png",
+                filename = "__base__/graphics/entity/steam-engine/steam-engine-H-shadow.png",
                 width = 254,
                 height = 80,
                 frame_count = 32,
@@ -206,7 +215,8 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(48, 24),
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/power/steam-engine/base/hr-steam-engine-H-shadow.png",
+                    -- filename = inputs.directory.."/graphics/entity/power/steam-engine/base/hr-steam-engine-H-shadow.png",
+                    filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-H-shadow.png",
                     width = 508,
                     height = 160,
                     frame_count = 32,
@@ -225,7 +235,8 @@ for name, tier in pairs(tier_map) do
         {
             -- Base
             {
-                filename = inputs.directory.."/graphics/entity/power/steam-engine/base/steam-engine-V.png",
+                -- filename = inputs.directory.."/graphics/entity/power/steam-engine/base/steam-engine-V.png",
+                filename = "__base__/graphics/entity/steam-engine/steam-engine-V.png",
                 width = 112,
                 height = 195,
                 frame_count = 32,
@@ -233,7 +244,8 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(5, -6.5),
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/power/steam-engine/base/hr-steam-engine-V.png",
+                    -- filename = inputs.directory.."/graphics/entity/power/steam-engine/base/hr-steam-engine-V.png",
+                    filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-V.png",
                     width = 225,
                     height = 391,
                     frame_count = 32,
@@ -286,7 +298,8 @@ for name, tier in pairs(tier_map) do
             },
             -- Shadow
             {
-                filename = inputs.directory.."/graphics/entity/power/steam-engine/base/steam-engine-V-shadow.png",
+                -- filename = inputs.directory.."/graphics/entity/power/steam-engine/base/steam-engine-V-shadow.png",
+                "__base__/graphics/entity/steam-engine/steam-engine-V-shadow.png",
                 width = 165,
                 height = 153,
                 frame_count = 32,
@@ -295,7 +308,8 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(40.5, 9.5),
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/power/steam-engine/base/hr-steam-engine-V-shadow.png",
+                    -- filename = inputs.directory.."/graphics/entity/power/steam-engine/base/hr-steam-engine-V-shadow.png",
+                    filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-V-shadow.png",
                     width = 330,
                     height = 307,
                     frame_count = 32,
