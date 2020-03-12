@@ -38,7 +38,19 @@ function reskins.lib.setup_common_attributes(name, tier, inputs)
 
         -- Setup icon with tier label
         if settings.startup["reskin-series-icon-tier-labeling"].value == true and tier > 0 then
-            inputs.icon = {{icon = inputs.icon},{icon = inputs.directory.."/graphics/icons/tiers/"..inputs.icon_size.."/tier-"..tier..".png"}}
+            inputs.icon = 
+            {
+                {
+                    icon = inputs.icon
+                },
+                {
+                    icon = inputs.directory.."/graphics/icons/tiers/"..inputs.icon_size.."/tier-"..tier..".png",
+                },
+                {
+                    icon = inputs.directory.."/graphics/icons/tiers/"..inputs.icon_size.."/tier-"..tier..".png",
+                    tint = reskins.lib.adjust_alpha(reskins.lib.tint_index["tier-"..tier], 0.75),
+                }
+            }
         end
         
         -- Assign icons
@@ -187,7 +199,7 @@ function reskins.lib.create_particle(name, base_entity, base_particle, key, tint
 end
 
 function reskins.lib.adjust_alpha(tint, alpha)
-    adjusted_tint = {r = tint["r"],g = tint["g"], b = tint["b"], a = alpha*255}
+    adjusted_tint = {tint[1], tint[2], tint[3], alpha*255}
     return adjusted_tint
 end
 
@@ -210,7 +222,7 @@ if settings.startup["reskin-series-customize-tier-colors"].value == true then
 else
     reskins.lib.tint_index =
     {
-        ["tier-0"] = reskins.lib.tint_hex_to_rgb("7d7d7d"),
+        ["tier-0"] = reskins.lib.tint_hex_to_rgb("4d4d4d"),
         ["tier-1"] = reskins.lib.tint_hex_to_rgb("de9400"),
         ["tier-2"] = reskins.lib.tint_hex_to_rgb("c20600"),
         ["tier-3"] = reskins.lib.tint_hex_to_rgb("1b87c2"),

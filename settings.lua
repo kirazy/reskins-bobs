@@ -42,37 +42,37 @@ data:extend(
         type = "string-setting",
         name = "reskin-series-custom-colors-tier-0",
         setting_type ="startup",
-        default_value = "#7d7d7d",
+        default_value = "4d4d4d",
     },
     {
         type = "string-setting",
         name = "reskin-series-custom-colors-tier-1",
         setting_type ="startup",
-        default_value = "#de9400",
+        default_value = "de9400",
     },
     {
         type = "string-setting",
         name = "reskin-series-custom-colors-tier-2",
         setting_type ="startup",
-        default_value = "#c20600",
+        default_value = "c20600",
     },
     {
         type = "string-setting",
         name = "reskin-series-custom-colors-tier-3",
         setting_type ="startup",
-        default_value = "#1b87c2",
+        default_value = "1b87c2",
     },
     {
         type = "string-setting",
         name = "reskin-series-custom-colors-tier-4",
         setting_type ="startup",
-        default_value = "#a600bf",
+        default_value = "a600bf",
     },
     {
         type = "string-setting",
         name = "reskin-series-custom-colors-tier-5",
         setting_type ="startup",
-        default_value = "#23de55",
+        default_value = "23de55",
     }
 })
 
