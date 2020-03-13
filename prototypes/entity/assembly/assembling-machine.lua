@@ -436,6 +436,7 @@ for name, map in pairs(tier_map) do
         }
     }
 
+    -- Handle pipes
     if has_fluids then
         entity.fluid_boxes =
         {
