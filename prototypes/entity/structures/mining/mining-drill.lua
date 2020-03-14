@@ -98,6 +98,9 @@ for name, tier in pairs(tier_map) do
 
     -- Map entity to name used internally
     inputs.internal_name = inputs.root_name.."-"..tier
+
+    -- Determine what tint we're using
+    inputs.tint = reskins.lib.tint_index["tier-"..tier]
     
     reskins.lib.setup_common_attributes(name, tier, inputs)
 
@@ -106,580 +109,484 @@ for name, tier in pairs(tier_map) do
                           + ((max_speed/(max_speed-min_speed)) - (entity.mining_speed/(max_speed-min_speed)))*min_playback
 
     -- Reskin entities
-    if inputs.root_name == "mining-drill" then
-        entity.animations =
+    entity.animations =
+    {
+        north =
         {
-            north =
+            layers = 
             {
-                layers = 
+                -- Base
                 {
+                    priority = "high",
+                    filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N.png",
+                    line_length = 8,
+                    width = 98,
+                    height = 113,
+                    frame_count = 64,
+                    animation_speed = playback_speed,
+                    direction_count = 1,
+                    shift = util.by_pixel(0, -8.5),
+                    run_mode = "forward-then-backward",
+                    hr_version =
                     {
                         priority = "high",
-                        filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/base/mining-drill-N.png",
+                        filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-N.png",
                         line_length = 8,
-                        width = 98,
-                        height = 113,
+                        width = 196,
+                        height = 226,
                         frame_count = 64,
                         animation_speed = playback_speed,
                         direction_count = 1,
-                        shift = util.by_pixel(0, -8.5),
+                        shift = util.by_pixel(0, -8),
                         run_mode = "forward-then-backward",
-                        hr_version =
-                        {
-                            priority = "high",
-                            filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/base/hr-mining-drill-N.png",
-                            line_length = 8,
-                            width = 196,
-                            height = 226,
-                            frame_count = 64,
-                            animation_speed = playback_speed,
-                            direction_count = 1,
-                            shift = util.by_pixel(0, -8),
-                            run_mode = "forward-then-backward",
-                            scale = 0.5
-                        }
-                    },
-                    {
-                        priority = "high",
-                        filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mask/mining-drill-"..tier.."/mining-drill-"..tier.."-N.png",
-                        line_length = 8,
-                        width = 98,
-                        height = 113,
-                        frame_count = 64,
-                        animation_speed = playback_speed,
-                        direction_count = 1,
-                        shift = util.by_pixel(0, -8.5),
-                        run_mode = "forward-then-backward",
-                        hr_version =
-                        {
-                            priority = "high",
-                            filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mask/mining-drill-"..tier.."/hr-mining-drill-"..tier.."-N.png",
-                            line_length = 8,
-                            width = 196,
-                            height = 226,
-                            frame_count = 64,
-                            animation_speed = playback_speed,
-                            direction_count = 1,
-                            shift = util.by_pixel(0, -8),
-                            run_mode = "forward-then-backward",
-                            scale = 0.5
-                        }
+                        scale = 0.5
                     }
-                }
-            },
-            east =
-            {
-                layers =
+                },
+                -- Mask
                 {
+                    priority = "high",
+                    filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mining-drill-N-mask.png",
+                    line_length = 8,
+                    width = 98,
+                    height = 113,
+                    frame_count = 64,
+                    animation_speed = playback_speed,
+                    direction_count = 1,
+                    shift = util.by_pixel(0, -8.5),
+                    run_mode = "forward-then-backward",
+                    tint = inputs.tint,
+                    hr_version =
                     {
                         priority = "high",
-                        filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/base/mining-drill-E.png",
+                        filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/hr-mining-drill-N-mask.png",
                         line_length = 8,
-                        width = 105,
-                        height = 98,
+                        width = 196,
+                        height = 226,
                         frame_count = 64,
                         animation_speed = playback_speed,
                         direction_count = 1,
-                        shift = util.by_pixel(3.5, -1),
+                        shift = util.by_pixel(0, -8),
                         run_mode = "forward-then-backward",
-                        hr_version =
-                        {
-                            priority = "high",
-                            filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/base/hr-mining-drill-E.png",
-                            line_length = 8,
-                            width = 211,
-                            height = 197,
-                            frame_count = 64,
-                            animation_speed = playback_speed,
-                            direction_count = 1,
-                            shift = util.by_pixel(3.75, -1.25),
-                            run_mode = "forward-then-backward",
-                            scale = 0.5
-                        }
-                    },
-                    {
-                        priority = "high",
-                        filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mask/mining-drill-"..tier.."/mining-drill-"..tier.."-E.png",
-                        line_length = 8,
-                        width = 105,
-                        height = 98,
-                        frame_count = 64,
-                        animation_speed = playback_speed,
-                        direction_count = 1,
-                        shift = util.by_pixel(3.5, -1),
-                        run_mode = "forward-then-backward",
-                        hr_version =
-                        {
-                            priority = "high",
-                            filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mask/mining-drill-"..tier.."/hr-mining-drill-"..tier.."-E.png",
-                            line_length = 8,
-                            width = 211,
-                            height = 197,
-                            frame_count = 64,
-                            animation_speed = playback_speed,
-                            direction_count = 1,
-                            shift = util.by_pixel(3.75, -1.25),
-                            run_mode = "forward-then-backward",
-                            scale = 0.5
-                        }
-                    },
-                }
-            },
-            south =
-            {
-                layers =
+                        tint = inputs.tint,
+                        scale = 0.5
+                    }
+                },
+                -- Highlights
                 {
+                    priority = "high",
+                    filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mining-drill-N-highlights.png",
+                    line_length = 8,
+                    width = 98,
+                    height = 113,
+                    frame_count = 64,
+                    animation_speed = playback_speed,
+                    direction_count = 1,
+                    shift = util.by_pixel(0, -8.5),
+                    run_mode = "forward-then-backward",
+                    blend_mode = "additive",
+                    hr_version =
                     {
                         priority = "high",
-                        filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/base/mining-drill-S.png",
+                        filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/hr-mining-drill-N-highlights.png",
                         line_length = 8,
-                        width = 98,
-                        height = 109,
+                        width = 196,
+                        height = 226,
                         frame_count = 64,
                         animation_speed = playback_speed,
                         direction_count = 1,
-                        shift = util.by_pixel(0, -1.5),
+                        shift = util.by_pixel(0, -8),
                         run_mode = "forward-then-backward",
-                        hr_version =
-                        {
-                            priority = "high",
-                            filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/base/hr-mining-drill-S.png",
-                            line_length = 8,
-                            width = 196,
-                            height = 219,
-                            frame_count = 64,
-                            animation_speed = playback_speed,
-                            direction_count = 1,
-                            shift = util.by_pixel(0, -1.25),
-                            run_mode = "forward-then-backward",
-                            scale = 0.5
-                        }
-                    },
-                    {
-                        priority = "high",
-                        filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mask/mining-drill-"..tier.."/mining-drill-"..tier.."-S.png",
-                        line_length = 8,
-                        width = 98,
-                        height = 109,
-                        frame_count = 64,
-                        animation_speed = playback_speed,
-                        direction_count = 1,
-                        shift = util.by_pixel(0, -1.5),
-                        run_mode = "forward-then-backward",
-                        hr_version =
-                        {
-                            priority = "high",
-                            filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mask/mining-drill-"..tier.."/hr-mining-drill-"..tier.."-S.png",
-                            line_length = 8,
-                            width = 196,
-                            height = 219,
-                            frame_count = 64,
-                            animation_speed = playback_speed,
-                            direction_count = 1,
-                            shift = util.by_pixel(0, -1.25),
-                            run_mode = "forward-then-backward",
-                            scale = 0.5
-                        }
-                    },
-                }
-            },
-            west =
-            {
-                layers = 
-                {
-                    {
-                        priority = "high",
-                        filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/base/mining-drill-W.png",
-                        line_length = 8,
-                        width = 105,
-                        height = 98,
-                        frame_count = 64,
-                        animation_speed = playback_speed,
-                        direction_count = 1,
-                        shift = util.by_pixel(-3.5, -1),
-                        run_mode = "forward-then-backward",
-                        hr_version =
-                        {
-                            priority = "high",
-                            filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/base/hr-mining-drill-W.png",
-                            line_length = 8,
-                            width = 211,
-                            height = 197,
-                            frame_count = 64,
-                            animation_speed = playback_speed,
-                            direction_count = 1,
-                            shift = util.by_pixel(-3.75, -0.75),
-                            run_mode = "forward-then-backward",
-                            scale = 0.5
-                        }
-                    },
-                    {
-                        priority = "high",
-                        filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mask/mining-drill-"..tier.."/mining-drill-"..tier.."-W.png",
-                        line_length = 8,
-                        width = 105,
-                        height = 98,
-                        frame_count = 64,
-                        animation_speed = playback_speed,
-                        direction_count = 1,
-                        shift = util.by_pixel(-3.5, -1),
-                        run_mode = "forward-then-backward",
-                        hr_version =
-                        {
-                            priority = "high",
-                            filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mask/mining-drill-"..tier.."/hr-mining-drill-"..tier.."-W.png",
-                            line_length = 8,
-                            width = 211,
-                            height = 197,
-                            frame_count = 64,
-                            animation_speed = playback_speed,
-                            direction_count = 1,
-                            shift = util.by_pixel(-3.75, -0.75),
-                            run_mode = "forward-then-backward",
-                            scale = 0.5
-                        }
-                    },
+                        blend_mode = "additive",
+                        scale = 0.5
+                    }
                 }
             }
-        }
-    elseif inputs.root_name == "area-mining-drill" then
-        entity.animations =
+        },
+        east =
         {
-            north =
+            layers =
             {
-                layers = 
+                -- Base
                 {
+                    priority = "high",
+                    filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E.png",
+                    line_length = 8,
+                    width = 105,
+                    height = 98,
+                    frame_count = 64,
+                    animation_speed = playback_speed,
+                    direction_count = 1,
+                    shift = util.by_pixel(3.5, -1),
+                    run_mode = "forward-then-backward",
+                    hr_version =
                     {
                         priority = "high",
-                        filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/base/mining-drill-N.png",
+                        filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E.png",
                         line_length = 8,
-                        width = 98,
-                        height = 113,
+                        width = 211,
+                        height = 197,
                         frame_count = 64,
                         animation_speed = playback_speed,
                         direction_count = 1,
-                        shift = util.by_pixel(0, -8.5),
+                        shift = util.by_pixel(3.75, -1.25),
                         run_mode = "forward-then-backward",
-                        hr_version =
-                        {
-                            priority = "high",
-                            filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/base/hr-mining-drill-N.png",
-                            line_length = 8,
-                            width = 196,
-                            height = 226,
-                            frame_count = 64,
-                            animation_speed = playback_speed,
-                            direction_count = 1,
-                            shift = util.by_pixel(0, -8),
-                            run_mode = "forward-then-backward",
-                            scale = 0.5
-                        }
-                    },
-                    {
-                        priority = "high",
-                        filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mask/area-drill-N.png",
-                        line_length = 8,
-                        width = 98,
-                        height = 113,
-                        frame_count = 64,
-                        animation_speed = playback_speed,
-                        direction_count = 1,
-                        shift = util.by_pixel(0, -8.5),
-                        run_mode = "forward-then-backward",
-                        hr_version =
-                        {
-                            priority = "high",
-                            filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mask/hr-area-drill-N.png",
-                            line_length = 8,
-                            width = 196,
-                            height = 226,
-                            frame_count = 64,
-                            animation_speed = playback_speed,
-                            direction_count = 1,
-                            shift = util.by_pixel(0, -8),
-                            run_mode = "forward-then-backward",
-                            scale = 0.5
-                        }
-                    },
-                    {
-                        priority = "high",
-                        filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mask/mining-drill-"..tier.."/mining-drill-"..tier.."-N.png",
-                        line_length = 8,
-                        width = 98,
-                        height = 113,
-                        frame_count = 64,
-                        animation_speed = playback_speed,
-                        direction_count = 1,
-                        shift = util.by_pixel(0, -8.5),
-                        run_mode = "forward-then-backward",
-                        hr_version =
-                        {
-                            priority = "high",
-                            filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mask/mining-drill-"..tier.."/hr-mining-drill-"..tier.."-N.png",
-                            line_length = 8,
-                            width = 196,
-                            height = 226,
-                            frame_count = 64,
-                            animation_speed = playback_speed,
-                            direction_count = 1,
-                            shift = util.by_pixel(0, -8),
-                            run_mode = "forward-then-backward",
-                            scale = 0.5
-                        }
+                        scale = 0.5
                     }
-                }
-            },
-            east =
-            {
-                layers =
+                },
+                -- Mask
                 {
+                    priority = "high",
+                    filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mining-drill-E-mask.png",
+                    line_length = 8,
+                    width = 105,
+                    height = 98,
+                    frame_count = 64,
+                    animation_speed = playback_speed,
+                    direction_count = 1,
+                    shift = util.by_pixel(3.5, -1),
+                    tint = inputs.tint,
+                    run_mode = "forward-then-backward",
+                    hr_version =
                     {
                         priority = "high",
-                        filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/base/mining-drill-E.png",
+                        filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/hr-mining-drill-E-mask.png",
                         line_length = 8,
-                        width = 105,
-                        height = 98,
+                        width = 211,
+                        height = 197,
                         frame_count = 64,
                         animation_speed = playback_speed,
                         direction_count = 1,
-                        shift = util.by_pixel(3.5, -1),
+                        shift = util.by_pixel(3.75, -1.25),
+                        tint = inputs.tint,
                         run_mode = "forward-then-backward",
-                        hr_version =
-                        {
-                            priority = "high",
-                            filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/base/hr-mining-drill-E.png",
-                            line_length = 8,
-                            width = 211,
-                            height = 197,
-                            frame_count = 64,
-                            animation_speed = playback_speed,
-                            direction_count = 1,
-                            shift = util.by_pixel(3.75, -1.25),
-                            run_mode = "forward-then-backward",
-                            scale = 0.5
-                        }
-                    },
-                    {
-                        priority = "high",
-                        filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mask/area-drill-E.png",
-                        line_length = 8,
-                        width = 105,
-                        height = 98,
-                        frame_count = 64,
-                        animation_speed = playback_speed,
-                        direction_count = 1,
-                        shift = util.by_pixel(3.5, -1),
-                        run_mode = "forward-then-backward",
-                        hr_version =
-                        {
-                            priority = "high",
-                            filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mask/hr-area-drill-E.png",
-                            line_length = 8,
-                            width = 211,
-                            height = 197,
-                            frame_count = 64,
-                            animation_speed = playback_speed,
-                            direction_count = 1,
-                            shift = util.by_pixel(3.75, -1.25),
-                            run_mode = "forward-then-backward",
-                            scale = 0.5
-                        }
-                    },
-                    {
-                        priority = "high",
-                        filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mask/mining-drill-"..tier.."/mining-drill-"..tier.."-E.png",
-                        line_length = 8,
-                        width = 105,
-                        height = 98,
-                        frame_count = 64,
-                        animation_speed = playback_speed,
-                        direction_count = 1,
-                        shift = util.by_pixel(3.5, -1),
-                        run_mode = "forward-then-backward",
-                        hr_version =
-                        {
-                            priority = "high",
-                            filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mask/mining-drill-"..tier.."/hr-mining-drill-"..tier.."-E.png",
-                            line_length = 8,
-                            width = 211,
-                            height = 197,
-                            frame_count = 64,
-                            animation_speed = playback_speed,
-                            direction_count = 1,
-                            shift = util.by_pixel(3.75, -1.25),
-                            run_mode = "forward-then-backward",
-                            scale = 0.5
-                        }
-                    },
-                }
-            },
-            south =
-            {
-                layers =
+                        scale = 0.5
+                    }
+                },
+                -- Highlights
                 {
+                    priority = "high",
+                    filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mining-drill-E-highlights.png",
+                    line_length = 8,
+                    width = 105,
+                    height = 98,
+                    frame_count = 64,
+                    animation_speed = playback_speed,
+                    direction_count = 1,
+                    shift = util.by_pixel(3.5, -1),
+                    run_mode = "forward-then-backward",
+                    blend_mode = "additive",
+                    hr_version =
                     {
                         priority = "high",
-                        filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/base/mining-drill-S.png",
+                        filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/hr-mining-drill-E-highlights.png",
                         line_length = 8,
-                        width = 98,
-                        height = 109,
+                        width = 211,
+                        height = 197,
                         frame_count = 64,
                         animation_speed = playback_speed,
                         direction_count = 1,
-                        shift = util.by_pixel(0, -1.5),
+                        shift = util.by_pixel(3.75, -1.25),
                         run_mode = "forward-then-backward",
-                        hr_version =
-                        {
-                            priority = "high",
-                            filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/base/hr-mining-drill-S.png",
-                            line_length = 8,
-                            width = 196,
-                            height = 219,
-                            frame_count = 64,
-                            animation_speed = playback_speed,
-                            direction_count = 1,
-                            shift = util.by_pixel(0, -1.25),
-                            run_mode = "forward-then-backward",
-                            scale = 0.5
-                        }
-                    },
-                    {
-                        priority = "high",
-                        filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mask/area-drill-S.png",
-                        line_length = 8,
-                        width = 98,
-                        height = 109,
-                        frame_count = 64,
-                        animation_speed = playback_speed,
-                        direction_count = 1,
-                        shift = util.by_pixel(0, -1.5),
-                        run_mode = "forward-then-backward",
-                        hr_version =
-                        {
-                            priority = "high",
-                            filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mask/hr-area-drill-S.png",
-                            line_length = 8,
-                            width = 196,
-                            height = 219,
-                            frame_count = 64,
-                            animation_speed = playback_speed,
-                            direction_count = 1,
-                            shift = util.by_pixel(0, -1.25),
-                            run_mode = "forward-then-backward",
-                            scale = 0.5
-                        }
-                    },
-                    {
-                        priority = "high",
-                        filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mask/mining-drill-"..tier.."/mining-drill-"..tier.."-S.png",
-                        line_length = 8,
-                        width = 98,
-                        height = 109,
-                        frame_count = 64,
-                        animation_speed = playback_speed,
-                        direction_count = 1,
-                        shift = util.by_pixel(0, -1.5),
-                        run_mode = "forward-then-backward",
-                        hr_version =
-                        {
-                            priority = "high",
-                            filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mask/mining-drill-"..tier.."/hr-mining-drill-"..tier.."-S.png",
-                            line_length = 8,
-                            width = 196,
-                            height = 219,
-                            frame_count = 64,
-                            animation_speed = playback_speed,
-                            direction_count = 1,
-                            shift = util.by_pixel(0, -1.25),
-                            run_mode = "forward-then-backward",
-                            scale = 0.5
-                        }
-                    },
-                }
-            },
-            west =
+                        blend_mode = "additive",
+                        scale = 0.5
+                    }
+                },
+            }
+        },
+        south =
+        {
+            layers =
             {
-                layers = 
+                -- Base
                 {
+                    priority = "high",
+                    filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S.png",
+                    line_length = 8,
+                    width = 98,
+                    height = 109,
+                    frame_count = 64,
+                    animation_speed = playback_speed,
+                    direction_count = 1,
+                    shift = util.by_pixel(0, -1.5),
+                    run_mode = "forward-then-backward",
+                    hr_version =
                     {
                         priority = "high",
-                        filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/base/mining-drill-W.png",
+                        filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S.png",
                         line_length = 8,
-                        width = 105,
-                        height = 98,
+                        width = 196,
+                        height = 219,
                         frame_count = 64,
                         animation_speed = playback_speed,
                         direction_count = 1,
-                        shift = util.by_pixel(-3.5, -1),
+                        shift = util.by_pixel(0, -1.25),
                         run_mode = "forward-then-backward",
-                        hr_version =
-                        {
-                            priority = "high",
-                            filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/base/hr-mining-drill-W.png",
-                            line_length = 8,
-                            width = 211,
-                            height = 197,
-                            frame_count = 64,
-                            animation_speed = playback_speed,
-                            direction_count = 1,
-                            shift = util.by_pixel(-3.75, -0.75),
-                            run_mode = "forward-then-backward",
-                            scale = 0.5
-                        }
-                    },
+                        scale = 0.5
+                    }
+                },
+                -- Mask
+                {
+                    priority = "high",
+                    filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mining-drill-S-mask.png",
+                    line_length = 8,
+                    width = 98,
+                    height = 109,
+                    frame_count = 64,
+                    animation_speed = playback_speed,
+                    direction_count = 1,
+                    shift = util.by_pixel(0, -1.5),
+                    run_mode = "forward-then-backward",
+                    tint = inputs.tint,
+                    hr_version =
                     {
                         priority = "high",
-                        filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mask/area-drill-W.png",
+                        filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/hr-mining-drill-S-mask.png",
                         line_length = 8,
-                        width = 105,
-                        height = 98,
+                        width = 196,
+                        height = 219,
                         frame_count = 64,
                         animation_speed = playback_speed,
                         direction_count = 1,
-                        shift = util.by_pixel(-3.5, -1),
+                        shift = util.by_pixel(0, -1.25),
                         run_mode = "forward-then-backward",
-                        hr_version =
-                        {
-                            priority = "high",
-                            filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mask/hr-area-drill-W.png",
-                            line_length = 8,
-                            width = 211,
-                            height = 197,
-                            frame_count = 64,
-                            animation_speed = playback_speed,
-                            direction_count = 1,
-                            shift = util.by_pixel(-3.75, -0.75),
-                            run_mode = "forward-then-backward",
-                            scale = 0.5
-                        }
-                    },
+                        tint = inputs.tint,
+                        scale = 0.5
+                    }
+                },
+                -- Highlights
+                {
+                    priority = "high",
+                    filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mining-drill-S-highlights.png",
+                    line_length = 8,
+                    width = 98,
+                    height = 109,
+                    frame_count = 64,
+                    animation_speed = playback_speed,
+                    direction_count = 1,
+                    shift = util.by_pixel(0, -1.5),
+                    run_mode = "forward-then-backward",
+                    blend_mode = "additive",
+                    hr_version =
                     {
                         priority = "high",
-                        filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mask/mining-drill-"..tier.."/mining-drill-"..tier.."-W.png",
+                        filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/hr-mining-drill-S-highlights.png",
                         line_length = 8,
-                        width = 105,
-                        height = 98,
+                        width = 196,
+                        height = 219,
                         frame_count = 64,
                         animation_speed = playback_speed,
                         direction_count = 1,
-                        shift = util.by_pixel(-3.5, -1),
+                        shift = util.by_pixel(0, -1.25),
                         run_mode = "forward-then-backward",
-                        hr_version =
-                        {
-                            priority = "high",
-                            filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mask/mining-drill-"..tier.."/hr-mining-drill-"..tier.."-W.png",
-                            line_length = 8,
-                            width = 211,
-                            height = 197,
-                            frame_count = 64,
-                            animation_speed = playback_speed,
-                            direction_count = 1,
-                            shift = util.by_pixel(-3.75, -0.75),
-                            run_mode = "forward-then-backward",
-                            scale = 0.5
-                        }
-                    },
-                }
+                        blend_mode = "additive",
+                        scale = 0.5
+                    }
+                },
+            }
+        },
+        west =
+        {
+            layers = 
+            {
+                -- Base
+                {
+                    priority = "high",
+                    filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W.png",
+                    line_length = 8,
+                    width = 105,
+                    height = 98,
+                    frame_count = 64,
+                    animation_speed = playback_speed,
+                    direction_count = 1,
+                    shift = util.by_pixel(-3.5, -1),
+                    run_mode = "forward-then-backward",
+                    hr_version =
+                    {
+                        priority = "high",
+                        filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W.png",
+                        line_length = 8,
+                        width = 211,
+                        height = 197,
+                        frame_count = 64,
+                        animation_speed = playback_speed,
+                        direction_count = 1,
+                        shift = util.by_pixel(-3.75, -0.75),
+                        run_mode = "forward-then-backward",
+                        scale = 0.5
+                    }
+                },
+                -- Mask
+                {
+                    priority = "high",
+                    filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mining-drill-W-mask.png",
+                    line_length = 8,
+                    width = 105,
+                    height = 98,
+                    frame_count = 64,
+                    animation_speed = playback_speed,
+                    direction_count = 1,
+                    shift = util.by_pixel(-3.5, -1),
+                    run_mode = "forward-then-backward",
+                    tint = inputs.tint,
+                    hr_version =
+                    {
+                        priority = "high",
+                        filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/hr-mining-drill-W-mask.png",
+                        line_length = 8,
+                        width = 211,
+                        height = 197,
+                        frame_count = 64,
+                        animation_speed = playback_speed,
+                        direction_count = 1,
+                        shift = util.by_pixel(-3.75, -0.75),
+                        run_mode = "forward-then-backward",
+                        tint = inputs.tint,
+                        scale = 0.5
+                    }
+                },
+                -- Highlights
+                {
+                    priority = "high",
+                    filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/mining-drill-W-highlights.png",
+                    line_length = 8,
+                    width = 105,
+                    height = 98,
+                    frame_count = 64,
+                    animation_speed = playback_speed,
+                    direction_count = 1,
+                    shift = util.by_pixel(-3.5, -1),
+                    run_mode = "forward-then-backward",
+                    blend_mode = "additive",
+                    hr_version =
+                    {
+                        priority = "high",
+                        filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/hr-mining-drill-W-highlights.png",
+                        line_length = 8,
+                        width = 211,
+                        height = 197,
+                        frame_count = 64,
+                        animation_speed = playback_speed,
+                        direction_count = 1,
+                        shift = util.by_pixel(-3.75, -0.75),
+                        run_mode = "forward-then-backward",
+                        blend_mode = "additive",
+                        scale = 0.5
+                    }
+                },
+            }
+        }
+    }
+    
+    if inputs.root_name == "area-mining-drill" then
+        entity.animations.north.layers[#entity.animations.north.layers+1] = 
+        {
+            priority = "high",
+            filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/area-end/area-drill-N.png",
+            line_length = 8,
+            width = 98,
+            height = 113,
+            frame_count = 64,
+            animation_speed = playback_speed,
+            direction_count = 1,
+            shift = util.by_pixel(0, -8.5),
+            run_mode = "forward-then-backward",
+            hr_version =
+            {
+                priority = "high",
+                filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/area-end/hr-area-drill-N.png",
+                line_length = 8,
+                width = 196,
+                height = 226,
+                frame_count = 64,
+                animation_speed = playback_speed,
+                direction_count = 1,
+                shift = util.by_pixel(0, -8),
+                run_mode = "forward-then-backward",
+                scale = 0.5
+            }
+        }
+
+        entity.animations.east.layers[#entity.animations.east.layers+1] = 
+        {
+            priority = "high",
+            filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/area-end/area-drill-E.png",
+            line_length = 8,
+            width = 105,
+            height = 98,
+            frame_count = 64,
+            animation_speed = playback_speed,
+            direction_count = 1,
+            shift = util.by_pixel(3.5, -1),
+            run_mode = "forward-then-backward",
+            hr_version =
+            {
+                priority = "high",
+                filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/area-end/hr-area-drill-E.png",
+                line_length = 8,
+                width = 211,
+                height = 197,
+                frame_count = 64,
+                animation_speed = playback_speed,
+                direction_count = 1,
+                shift = util.by_pixel(3.75, -1.25),
+                run_mode = "forward-then-backward",
+                scale = 0.5
+            }
+        }
+
+        entity.animations.south.layers[#entity.animations.south.layers+1] = 
+        {
+            priority = "high",
+            filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/area-end/area-drill-S.png",
+            line_length = 8,
+            width = 98,
+            height = 109,
+            frame_count = 64,
+            animation_speed = playback_speed,
+            direction_count = 1,
+            shift = util.by_pixel(0, -1.5),
+            run_mode = "forward-then-backward",
+            hr_version =
+            {
+                priority = "high",
+                filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/area-end/hr-area-drill-S.png",
+                line_length = 8,
+                width = 196,
+                height = 219,
+                frame_count = 64,
+                animation_speed = playback_speed,
+                direction_count = 1,
+                shift = util.by_pixel(0, -1.25),
+                run_mode = "forward-then-backward",
+                scale = 0.5
+            }
+        }
+
+        entity.animations.west.layers[#entity.animations.west.layers+1] = 
+        {
+            priority = "high",
+            filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/area-end/area-drill-W.png",
+            line_length = 8,
+            width = 105,
+            height = 98,
+            frame_count = 64,
+            animation_speed = playback_speed,
+            direction_count = 1,
+            shift = util.by_pixel(-3.5, -1),
+            run_mode = "forward-then-backward",
+            hr_version =
+            {
+                priority = "high",
+                filename = inputs.directory.."/graphics/entity/structures/mining/mining-drill/area-end/hr-area-drill-W.png",
+                line_length = 8,
+                width = 211,
+                height = 197,
+                frame_count = 64,
+                animation_speed = playback_speed,
+                direction_count = 1,
+                shift = util.by_pixel(-3.75, -0.75),
+                run_mode = "forward-then-backward",
+                scale = 0.5
             }
         }
     end
