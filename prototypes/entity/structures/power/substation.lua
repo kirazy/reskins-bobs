@@ -52,6 +52,9 @@ for name, tier in pairs(tier_map) do
     -- Map entity to name used internally
     inputs.internal_name = inputs.root_name.."-"..tier
 
+    -- Determine what tint we're using
+    inputs.tint = reskins.lib.tint_index["tier-"..tier]
+
     reskins.lib.setup_common_attributes(name, tier, inputs)
 
     -- Initialize table addresses    
@@ -62,6 +65,7 @@ for name, tier in pairs(tier_map) do
     {
         layers = 
         {
+            -- Base
             {
                 filename = inputs.directory.."/graphics/entity/structures/power/substation/base/remnants/substation-remnants.png",
                 line_length = 1,
@@ -86,8 +90,9 @@ for name, tier in pairs(tier_map) do
                     scale = 0.5,
                 },
             },
+            -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/structures/power/substation/mask/"..inputs.internal_name.."/remnants/"..inputs.internal_name.."-remnants.png",
+                filename = inputs.directory.."/graphics/entity/structures/power/substation/remnants/substation-remnants-mask.png",
                 line_length = 1,
                 width = 92,
                 height = 68,
@@ -96,9 +101,10 @@ for name, tier in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(3, 1),
+                tint = inputs.tint,
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/power/substation/mask/"..inputs.internal_name.."/remnants/hr-"..inputs.internal_name.."-remnants.png",
+                    filename = inputs.directory.."/graphics/entity/structures/power/substation/remnants/hr-substation-remnants-mask.png",
                     line_length = 1,
                     width = 182,
                     height = 134,
@@ -107,6 +113,33 @@ for name, tier in pairs(tier_map) do
                     axially_symmetrical = false,
                     direction_count = 1,
                     shift = util.by_pixel(2.5, 0.5),
+                    tint = inputs.tint,
+                    scale = 0.5,
+                },
+            },
+            {
+                filename = inputs.directory.."/graphics/entity/structures/power/substation/remnants/substation-remnants-highlights.png",
+                line_length = 1,
+                width = 92,
+                height = 68,
+                frame_count = 1,
+                variation_count = 1,
+                axially_symmetrical = false,
+                direction_count = 1,
+                shift = util.by_pixel(3, 1),
+                blend_mode = "additive",
+                hr_version =
+                {
+                    filename = inputs.directory.."/graphics/entity/structures/power/substation/remnants/hr-substation-remnants-highlights.png",
+                    line_length = 1,
+                    width = 182,
+                    height = 134,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 1,
+                    shift = util.by_pixel(2.5, 0.5),
+                    blend_mode = "additive",
                     scale = 0.5,
                 },
             }
@@ -118,6 +151,7 @@ for name, tier in pairs(tier_map) do
     {
         layers =
         {
+            -- Base
             {
                 filename = inputs.directory.."/graphics/entity/structures/power/substation/base/substation.png",
                 priority = "high",
@@ -136,24 +170,49 @@ for name, tier in pairs(tier_map) do
                     scale = 0.5
                 }
             },
+            -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/structures/power/substation/mask/"..inputs.internal_name.."/"..inputs.internal_name..".png",
+                filename = inputs.directory.."/graphics/entity/structures/power/substation/substation-mask.png",
                 priority = "high",
                 width = 70,
                 height = 136,
                 direction_count = 4,
                 shift = util.by_pixel(0, 1-32),
+                tint = inputs.tint,
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/power/substation/mask/"..inputs.internal_name.."/hr-"..inputs.internal_name..".png",
+                    filename = inputs.directory.."/graphics/entity/structures/power/substation/hr-substation-mask.png",
                     priority = "high",
                     width = 138,
                     height = 270,
                     direction_count = 4,
                     shift = util.by_pixel(0, 1-32),
+                    tint = inputs.tint,
                     scale = 0.5
                 }
             },
+            -- Highlights
+            {
+                filename = inputs.directory.."/graphics/entity/structures/power/substation/substation-highlights.png",
+                priority = "high",
+                width = 70,
+                height = 136,
+                direction_count = 4,
+                shift = util.by_pixel(0, 1-32),
+                blend_mode = "additive",
+                hr_version =
+                {
+                    filename = inputs.directory.."/graphics/entity/structures/power/substation/hr-substation-highlights.png",
+                    priority = "high",
+                    width = 138,
+                    height = 270,
+                    direction_count = 4,
+                    shift = util.by_pixel(0, 1-32),
+                    blend_mode = "additive",
+                    scale = 0.5
+                }
+            },
+            -- Shadow
             {
                 filename = inputs.directory.."/graphics/entity/structures/power/substation/base/substation-shadow.png",
                 priority = "high",

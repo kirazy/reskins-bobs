@@ -52,6 +52,9 @@ for name, tier in pairs(tier_map) do
 
     -- Map entity to name used internally
     inputs.internal_name = inputs.root_name.."-"..tier
+
+    -- Determine what tint we're using
+    inputs.tint = reskins.lib.tint_index["tier-"..tier]
     
     reskins.lib.setup_common_attributes(name, tier, inputs)
 
@@ -63,6 +66,7 @@ for name, tier in pairs(tier_map) do
     {
         layers =
         {
+            -- Base
             {
                 filename = inputs.directory.."/graphics/entity/structures/power/big-electric-pole/base/remnants/big-electric-pole-base-remnants.png",
                 line_length = 1,
@@ -83,26 +87,52 @@ for name, tier in pairs(tier_map) do
                 scale = 0.5,
                 }
             },
+            -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/structures/power/big-electric-pole/mask/"..inputs.internal_name.."/remnants/"..inputs.internal_name.."-base-remnants.png",
+                filename = inputs.directory.."/graphics/entity/structures/power/big-electric-pole/remnants/big-electric-pole-base-remnants-mask.png",
                 line_length = 1,
                 width = 184,
                 height = 94,
                 frame_count = 1,
                 direction_count = 1,
                 shift = util.by_pixel(44, 0),
+                tint = inputs.tint,
                 hr_version =
                 {
-                filename = inputs.directory.."/graphics/entity/structures/power/big-electric-pole/mask/"..inputs.internal_name.."/remnants/hr-"..inputs.internal_name.."-base-remnants.png",
+                filename = inputs.directory.."/graphics/entity/structures/power/big-electric-pole/remnants/hr-big-electric-pole-base-remnants-mask.png",
                 line_length = 1,
                 width = 366,
                 height = 188,
                 frame_count = 1,
                 direction_count = 1,
                 shift = util.by_pixel(43, 0.5),
+                tint = inputs.tint,
                 scale = 0.5,
                 }
-            }
+            },
+            -- Highlights
+            {
+                filename = inputs.directory.."/graphics/entity/structures/power/big-electric-pole/remnants/big-electric-pole-base-remnants-highlights.png",
+                line_length = 1,
+                width = 184,
+                height = 94,
+                frame_count = 1,
+                direction_count = 1,
+                shift = util.by_pixel(44, 0),
+                blend_mode = "additive",
+                hr_version =
+                {
+                filename = inputs.directory.."/graphics/entity/structures/power/big-electric-pole/remnants/hr-big-electric-pole-base-remnants-highlights.png",
+                line_length = 1,
+                width = 366,
+                height = 188,
+                frame_count = 1,
+                direction_count = 1,
+                shift = util.by_pixel(43, 0.5),
+                blend_mode = "additive",
+                scale = 0.5,
+                }
+            },
         },
     })
 
@@ -110,6 +140,7 @@ for name, tier in pairs(tier_map) do
     {
         layers =
         {
+            -- Base
             {
                 filename = inputs.directory.."/graphics/entity/structures/power/big-electric-pole/base/remnants/big-electric-pole-top-remnants.png",
                 line_length = 1,
@@ -130,23 +161,49 @@ for name, tier in pairs(tier_map) do
                     scale = 0.5,
                 }
             },
+            -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/structures/power/big-electric-pole/mask/"..inputs.internal_name.."/remnants/"..inputs.internal_name.."-top-remnants.png",
+                filename = inputs.directory.."/graphics/entity/structures/power/big-electric-pole/remnants/big-electric-pole-top-remnants-mask.png",
                 line_length = 1,
                 width = 76,
                 height = 126,
                 frame_count = 1,
                 direction_count = 1,
                 shift = util.by_pixel(-1, -48),
+                tint = inputs.tint,
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/power/big-electric-pole/mask/"..inputs.internal_name.."/remnants/hr-"..inputs.internal_name.."-top-remnants.png",
+                    filename = inputs.directory.."/graphics/entity/structures/power/big-electric-pole/remnants/hr-big-electric-pole-top-remnants-mask.png",
                     line_length = 1,
                     width = 148,
                     height = 252,
                     frame_count = 1,
                     direction_count = 1,
                     shift = util.by_pixel(-1.5, -48),
+                    tint = inputs.tint,
+                    scale = 0.5,
+                }
+            },
+            -- Highlights
+            {
+                filename = inputs.directory.."/graphics/entity/structures/power/big-electric-pole/remnants/big-electric-pole-top-remnants-highlights.png",
+                line_length = 1,
+                width = 76,
+                height = 126,
+                frame_count = 1,
+                direction_count = 1,
+                shift = util.by_pixel(-1, -48),
+                blend_mode = "additive",
+                hr_version =
+                {
+                    filename = inputs.directory.."/graphics/entity/structures/power/big-electric-pole/remnants/hr-big-electric-pole-top-remnants-highlights.png",
+                    line_length = 1,
+                    width = 148,
+                    height = 252,
+                    frame_count = 1,
+                    direction_count = 1,
+                    shift = util.by_pixel(-1.5, -48),
+                    blend_mode = "additive",
                     scale = 0.5,
                 }
             },
@@ -158,7 +215,7 @@ for name, tier in pairs(tier_map) do
     {
         layers =
         {
-
+            -- Base
             {
                 filename = inputs.directory.."/graphics/entity/structures/power/big-electric-pole/base/big-electric-pole.png",
                 priority = "extra-high",
@@ -177,24 +234,49 @@ for name, tier in pairs(tier_map) do
                     scale = 0.5
                 }
             },
+            -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/structures/power/big-electric-pole/mask/"..inputs.internal_name.."/"..inputs.internal_name..".png",
+                filename = inputs.directory.."/graphics/entity/structures/power/big-electric-pole/big-electric-pole-mask.png",
                 priority = "extra-high",
                 width = 76,
                 height = 156,
                 direction_count = 4,
                 shift = util.by_pixel(1, -51),
+                tint = inputs.tint,
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/power/big-electric-pole/mask/"..inputs.internal_name.."/hr-"..inputs.internal_name..".png",
+                    filename = inputs.directory.."/graphics/entity/structures/power/big-electric-pole/hr-big-electric-pole-mask.png",
                     priority = "extra-high",
                     width = 148,
                     height = 312,
                     direction_count = 4,
                     shift = util.by_pixel(0, -51),
+                    tint = inputs.tint,
                     scale = 0.5
                 }
             },
+            -- Highlights
+            {
+                filename = inputs.directory.."/graphics/entity/structures/power/big-electric-pole/big-electric-pole-highlights.png",
+                priority = "extra-high",
+                width = 76,
+                height = 156,
+                direction_count = 4,
+                shift = util.by_pixel(1, -51),
+                blend_mode = "additive",
+                hr_version =
+                {
+                    filename = inputs.directory.."/graphics/entity/structures/power/big-electric-pole/hr-big-electric-pole-highlights.png",
+                    priority = "extra-high",
+                    width = 148,
+                    height = 312,
+                    direction_count = 4,
+                    shift = util.by_pixel(0, -51),
+                    blend_mode = "additive",
+                    scale = 0.5
+                }
+            },
+            -- Shadow
             {
                 filename = inputs.directory.."/graphics/entity/structures/power/big-electric-pole/base/big-electric-pole-shadow.png",
                 priority = "extra-high",

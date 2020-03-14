@@ -23,35 +23,33 @@ local tier_map
 if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
     tier_map = 
     {
-        ["boiler"]   = 1,
-        ["boiler-2"] = 2,
-        ["boiler-3"] = 3,
-        ["boiler-4"] = 4,
-        ["boiler-5"] = 5,
-        ["oil-boiler"] = 1,
-        ["oil-boiler-2"] = 2,
-        ["oil-boiler-3"] = 3,
-        ["oil-boiler-4"] = 4,
+        ["boiler"]   = {1},
+        ["boiler-2"] = {2},
+        ["boiler-3"] = {3},
+        ["boiler-4"] = {4},
+        ["boiler-5"] = {5},
+        ["oil-boiler"] = {1, true},
+        ["oil-boiler-2"] = {2, true},
+        ["oil-boiler-3"] = {3, true},
+        ["oil-boiler-4"] = {4, true},
     }
 else
     tier_map = 
     {
-        ["boiler"]   = 1,
-        ["boiler-2"] = 2,
-        ["boiler-3"] = 3,
-        ["boiler-4"] = 4,
-        ["boiler-5"] = 5,
-        ["oil-boiler"] = 2,
-        ["oil-boiler-2"] = 3,
-        ["oil-boiler-3"] = 4,
-        ["oil-boiler-4"] = 5,
+        ["boiler"]   = {1},
+        ["boiler-2"] = {2},
+        ["boiler-3"] = {3},
+        ["boiler-4"] = {4},
+        ["boiler-5"] = {5},
+        ["oil-boiler"] = {2, true},
+        ["oil-boiler-2"] = {3, true},
+        ["oil-boiler-3"] = {4, true},
+        ["oil-boiler-4"] = {5, true},
     }
 end
 
-
-
 -- Reskin entities, create and assign extra details
-for name, tier in pairs(tier_map) do
+for name, map in pairs(tier_map) do
     -- Fetch entity
     entity = data.raw[inputs.type][name]
 
@@ -60,8 +58,15 @@ for name, tier in pairs(tier_map) do
         goto continue
     end
 
+    -- Parse map
+    tier = map[1]
+    has_fluids = map[2]
+
     -- Map entity to name used internally
     inputs.internal_name = inputs.root_name.."-"..tier    
+
+    -- Determine what tint we're using
+    inputs.tint = reskins.lib.tint_index["tier-"..tier]
 
     reskins.lib.setup_common_attributes(name, tier, inputs)
 
@@ -109,7 +114,7 @@ for name, tier in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 4,
                 shift = util.by_pixel(0, -3),
-                tint = reskins.lib.tint_index["tier-"..tier],
+                tint = inputs.tint,
                 hr_version =
                 {
                     filename = inputs.directory.."/graphics/entity/structures/power/boiler/remnants/hr-boiler-remnants-mask.png",
@@ -121,7 +126,7 @@ for name, tier in pairs(tier_map) do
                     axially_symmetrical = false,
                     direction_count = 4,
                     shift = util.by_pixel(-0.5, -3),
-                    tint = reskins.lib.tint_index["tier-"..tier],
+                    tint = inputs.tint,
                     scale = 0.5,
                 }           
             },
@@ -186,7 +191,7 @@ for name, tier in pairs(tier_map) do
                     width = 131,
                     height = 108,
                     shift = util.by_pixel(-0.5, 4),
-                    tint = reskins.lib.tint_index["tier-"..tier],
+                    tint = inputs.tint,
                     hr_version =
                     {
                         filename = inputs.directory.."/graphics/entity/structures/power/boiler/hr-boiler-N-idle-mask.png",
@@ -194,7 +199,7 @@ for name, tier in pairs(tier_map) do
                         width = 269,
                         height = 221,
                         shift = util.by_pixel(-1.25, 5.25),
-                        tint = reskins.lib.tint_index["tier-"..tier],
+                        tint = inputs.tint,
                         scale = 0.5
                     }
                 },
@@ -266,7 +271,7 @@ for name, tier in pairs(tier_map) do
                     width = 105,
                     height = 147,
                     shift = util.by_pixel(-3.5, -0.5),
-                    tint = reskins.lib.tint_index["tier-"..tier],
+                    tint = inputs.tint,
                     hr_version =
                     {
                         filename = inputs.directory.."/graphics/entity/structures/power/boiler/hr-boiler-E-idle-mask.png",
@@ -274,7 +279,7 @@ for name, tier in pairs(tier_map) do
                         width = 216,
                         height = 301,
                         shift = util.by_pixel(-3, 1.25),
-                        tint = reskins.lib.tint_index["tier-"..tier],
+                        tint = inputs.tint,
                         scale = 0.5
                     }
                 },
@@ -346,7 +351,7 @@ for name, tier in pairs(tier_map) do
                     width = 128,
                     height = 95,
                     shift = util.by_pixel(3, 12.5),
-                    tint = reskins.lib.tint_index["tier-"..tier],
+                    tint = inputs.tint,
                     hr_version =
                     {
                         filename = inputs.directory.."/graphics/entity/structures/power/boiler/hr-boiler-S-idle-mask.png",
@@ -354,7 +359,7 @@ for name, tier in pairs(tier_map) do
                         width = 260,
                         height = 192,
                         shift = util.by_pixel(4, 13),
-                        tint = reskins.lib.tint_index["tier-"..tier],
+                        tint = inputs.tint,
                         scale = 0.5
                     }
                 },
@@ -426,7 +431,7 @@ for name, tier in pairs(tier_map) do
                     width = 96,
                     height = 132,
                     shift = util.by_pixel(1, 5),
-                    tint = reskins.lib.tint_index["tier-"..tier],
+                    tint = inputs.tint,
                     hr_version =
                     {
                         filename = inputs.directory.."/graphics/entity/structures/power/boiler/hr-boiler-W-idle-mask.png",
@@ -434,7 +439,7 @@ for name, tier in pairs(tier_map) do
                         width = 196,
                         height = 273,
                         shift = util.by_pixel(1.5, 7.75),
-                        tint = reskins.lib.tint_index["tier-"..tier],
+                        tint = inputs.tint,
                         scale = 0.5
                     }
                 },
@@ -479,6 +484,23 @@ for name, tier in pairs(tier_map) do
             }
         }
     }
+
+    -- Handle pipes
+    if has_fluids then
+        entity.energy_source.fluid_box =
+        {
+            base_area = 1,
+            height = 2,
+            base_level = -1,
+            pipe_connections =
+            {
+                {type = "input", position = {0, 1.5}}
+            },
+            pipe_covers = pipecoverspictures(),
+            pipe_picture = reskins.bobs.pipe_pictures(inputs.tint),
+            production_type = "input",
+        }
+    end
 
     -- Label to skip to next iteration
     ::continue::

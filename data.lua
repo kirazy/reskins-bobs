@@ -10,6 +10,9 @@ require("prototypes.functions")
 -- General Icons
 -- require("prototypes.entity.structures.icons-only")
 
+-- Pipe pictures
+require("prototypes.entity.structures.pipe-pictures")
+
 -- Bob's Assembly
 -- require("prototypes.entity.structures.assembly.distillery")
 -- require("prototypes.entity.structures.assembly.electrolyser")
