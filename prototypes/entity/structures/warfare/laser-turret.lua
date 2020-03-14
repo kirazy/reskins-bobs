@@ -31,7 +31,7 @@ local tier_map =
 local function turret_extension(parameters)
     return
     {
-        filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/base/animations/laser-turret-raising.png",
+        filename = "__base__/graphics/entity/laser-turret/laser-turret-raising.png",
         priority = "medium",
         width = 66,
         height = 64,
@@ -43,7 +43,7 @@ local function turret_extension(parameters)
         shift = util.by_pixel(0, -32),
         hr_version =
         {
-            filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/base/animations/hr-laser-turret-raising.png",
+            filename = "__base__/graphics/entity/laser-turret/hr-laser-turret-raising.png",
             priority = "medium",
             width = 130,
             height = 126,
@@ -58,40 +58,10 @@ local function turret_extension(parameters)
     }
 end
 
--- local function turret_extension_tint(name, parameters)
---     return
---     {
---         filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/mask/"..name.."/animations/"..name.."-raising.png",
---         priority = "medium",
---         width = 66,
---         height = 64,
---         frame_count = parameters.frame_count and parameters.frame_count or 15,
---         line_length = parameters.line_length and parameters.line_length or 0,
---         run_mode = parameters.run_mode and parameters.run_mode or "forward",
---         axially_symmetrical = false,
---         direction_count = 4,
---         shift = util.by_pixel(0, -32),
---         hr_version =
---         {
---             filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/mask/"..name.."/animations/hr-"..name.."-raising.png",
---             priority = "medium",
---             width = 130,
---             height = 126,
---             frame_count = parameters.frame_count and parameters.frame_count or 15,
---             line_length = parameters.line_length and parameters.line_length or 0,
---             run_mode = parameters.run_mode and parameters.run_mode or "forward",
---             axially_symmetrical = false,
---             direction_count = 4,
---             shift = util.by_pixel(0, -32.5),
---             scale = 0.5
---         }
---     }
--- end
-
 local function turret_extension_mask(parameters)
     return
     {
-        filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/base/masks/laser-turret-raising-mask.png",
+        filename = "__base__/graphics/entity/laser-turret/laser-turret-raising-mask.png",
         flags = { "mask" },
         width = 44,
         height = 40,
@@ -104,7 +74,7 @@ local function turret_extension_mask(parameters)
         shift = util.by_pixel(0, -43),
         hr_version =
         {
-            filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/base/masks/hr-laser-turret-raising-mask.png",
+            filename = "__base__/graphics/entity/laser-turret/hr-laser-turret-raising-mask.png",
             flags = { "mask" },
             width = 86,
             height = 80,
@@ -123,7 +93,7 @@ end
 local function turret_extension_shadow(parameters)
     return
     {
-        filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/base/shadows/laser-turret-raising-shadow.png",
+        filename = "__base__/graphics/entity/laser-turret/laser-turret-raising-shadow.png",
         width = 92,
         height = 50,
         frame_count = parameters.frame_count and parameters.frame_count or 15,
@@ -135,7 +105,7 @@ local function turret_extension_shadow(parameters)
         shift = util.by_pixel(47, 3),
         hr_version =
         {
-            filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/base/shadows/hr-laser-turret-raising-shadow.png",
+            filename = "__base__/graphics/entity/laser-turret/hr-laser-turret-raising-shadow.png",
             width = 182,
             height = 96,
             frame_count = parameters.frame_count and parameters.frame_count or 15,
@@ -153,7 +123,7 @@ end
 local function turret_shooting()
     return
     {
-        filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/base/animations/laser-turret-shooting.png",
+        filename = "__base__/graphics/entity/laser-turret/laser-turret-shooting.png",
         line_length = 8,
         width = 64,
         height = 60,
@@ -162,7 +132,7 @@ local function turret_shooting()
         shift = util.by_pixel(0, -35),
         hr_version =
         {
-            filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/base/animations/hr-laser-turret-shooting.png",
+            filename = "__base__/graphics/entity/laser-turret/hr-laser-turret-shooting.png",
             line_length = 8,
             width = 126,
             height = 120,
@@ -174,34 +144,10 @@ local function turret_shooting()
     }
 end
 
--- local function turret_shooting_tint(name)
---     return
---     {
---         filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/mask/"..name.."/animations/"..name.."-shooting.png",
---         line_length = 8,
---         width = 64,
---         height = 60,
---         frame_count = 1,
---         direction_count = 64,
---         shift = util.by_pixel(0, -35),
---         hr_version =
---         {
---             filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/mask/"..name.."/animations/hr-"..name.."-shooting.png",
---             line_length = 8,
---             width = 126,
---             height = 120,
---             frame_count = 1,
---             direction_count = 64,
---             shift = util.by_pixel(0, -35),
---             scale = 0.5
---         }
---     }
--- end
-
 local function turret_shooting_mask()
     return
     {
-        filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/base/masks/laser-turret-shooting-mask.png",
+        filename = "__base__/graphics/entity/laser-turret/laser-turret-shooting-mask.png",
         flags = { "mask" },
         line_length = 8,
         width = 46,
@@ -212,7 +158,7 @@ local function turret_shooting_mask()
         shift = util.by_pixel(0, -43),
         hr_version =
         {
-            filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/base/masks/hr-laser-turret-shooting-mask.png",
+            filename = "__base__/graphics/entity/laser-turret/hr-laser-turret-shooting-mask.png",
             flags = { "mask" },
             line_length = 8,
             width = 92,
@@ -229,7 +175,7 @@ end
 local function turret_shooting_shadow()
     return
     {
-        filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/base/shadows/laser-turret-shooting-shadow.png",
+        filename = "__base__/graphics/entity/laser-turret/laser-turret-shooting-shadow.png",
         line_length = 8,
         width = 86,
         height = 46,
@@ -239,7 +185,7 @@ local function turret_shooting_shadow()
         shift = util.by_pixel(51, 2),
         hr_version =
         {
-            filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/base/shadows/hr-laser-turret-shooting-shadow.png",
+            filename = "__base__/graphics/entity/laser-turret/hr-laser-turret-shooting-shadow.png",
             line_length = 8,
             width = 170,
             height = 92,
@@ -295,6 +241,9 @@ for name, map in pairs(tier_map) do
     -- Map entity to name used internally
     inputs.internal_name = inputs.root_name.."-"..tier
 
+    -- Determine what tint we're using
+    inputs.tint = reskins.lib.tint_index["tier-"..tier]
+
     reskins.lib.setup_common_attributes(name, tier, inputs)
 
     -- Fetch remnant
@@ -305,8 +254,9 @@ for name, map in pairs(tier_map) do
     {
         layers =
         {
+            -- Base
             {
-                filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/base/remnants/laser-turret-remnants.png",
+                filename = "__base__/graphics/entity/laser-turret/remnants/laser-turret-remnants.png",
                 line_length = 1,
                 width = 100,
                 height = 98,
@@ -317,7 +267,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(3, -2),
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/base/remnants/hr-laser-turret-remnants.png",
+                    filename = "__base__/graphics/entity/laser-turret/remnants/hr-laser-turret-remnants.png",
                     line_length = 1,
                     width = 198,
                     height = 194,
@@ -329,8 +279,9 @@ for name, map in pairs(tier_map) do
                     scale = 0.5,
                 }
             },
+            -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/mask/"..inputs.internal_name.."/remnants/"..inputs.internal_name.."-remnants.png",
+                filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/remnants/laser-turret-remnants-mask.png",
                 line_length = 1,
                 width = 100,
                 height = 98,
@@ -339,9 +290,10 @@ for name, map in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(3, -2),
+                tint = inputs.tint,
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/mask/"..inputs.internal_name.."/remnants/hr-"..inputs.internal_name.."-remnants.png",
+                    filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/remnants/hr-laser-turret-remnants-mask.png",
                     line_length = 1,
                     width = 198,
                     height = 194,
@@ -350,12 +302,41 @@ for name, map in pairs(tier_map) do
                     axially_symmetrical = false,
                     direction_count = 1,
                     shift = util.by_pixel(2.5, -2),
+                    tint = inputs.tint,
                     scale = 0.5,
                 }
             },
+            -- Highlights
+            {
+                filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/remnants/laser-turret-remnants-highlights.png",
+                line_length = 1,
+                width = 100,
+                height = 98,
+                frame_count = 1,
+                variation_count = 1,
+                axially_symmetrical = false,
+                direction_count = 1,
+                shift = util.by_pixel(3, -2),
+                blend_mode = "additive",
+                hr_version =
+                {
+                    filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/remnants/hr-laser-turret-remnants-highlights.png",
+                    line_length = 1,
+                    width = 198,
+                    height = 194,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 1,
+                    shift = util.by_pixel(2.5, -2),
+                    blend_mode = "additive",
+                    scale = 0.5,
+                }
+            },
+            -- Runtime Mask
             {
                 priority = "low",
-                filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/base/remnants/mask/laser-turret-remnants-mask.png",
+                filename = "__base__/graphics/entity/laser-turret/remnants/mask/laser-turret-remnants-mask.png",
                 width = 58,
                 height = 48,
                 frame_count = 1,
@@ -365,7 +346,7 @@ for name, map in pairs(tier_map) do
                 hr_version=
                 {
                     priority = "low",
-                    filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/base/remnants/mask/hr-laser-turret-remnants-mask.png",
+                    filename = "__base__/graphics/entity/laser-turret/remnants/mask/hr-laser-turret-remnants-mask.png",
                     width = 114,
                     height = 94,
                     frame_count = 1,
@@ -384,7 +365,6 @@ for name, map in pairs(tier_map) do
         layers =
         {
             turret_extension({frame_count=1, line_length = 1}),
-            -- turret_extension_tint(inputs.internal_name, {frame_count=1, line_length = 1}),            
             turret_extension_mask({frame_count=1, line_length=1}),
             turret_extension_shadow({frame_count=1, line_length=1})
         }
@@ -395,7 +375,6 @@ for name, map in pairs(tier_map) do
         layers =
         {
             turret_extension({}),
-            -- turret_extension_tint(inputs.internal_name, {}),
             turret_extension_mask({}),
             turret_extension_shadow({})
         }
@@ -406,7 +385,6 @@ for name, map in pairs(tier_map) do
         layers =
         {
             turret_shooting(),
-            -- turret_shooting_tint(inputs.internal_name),
             turret_shooting_shadow(),
             turret_shooting_mask()
         }
@@ -427,7 +405,6 @@ for name, map in pairs(tier_map) do
         layers =
         {
             turret_extension({run_mode = "backward"}),
-            -- turret_extension_tint(inputs.internal_name, {run_mode = "backward"}),
             turret_extension_mask({run_mode = "backward"}),
             turret_extension_shadow({run_mode = "backward"}),
         }
@@ -437,8 +414,9 @@ for name, map in pairs(tier_map) do
     {
         layers =
         {
+            -- Base
             {
-                filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/base/laser-turret-base.png",
+                filename = "__base__/graphics/entity/laser-turret/laser-turret-base.png",
                 priority = "high",
                 width = 70,
                 height = 52,
@@ -447,7 +425,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(0, 2),
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/base/hr-laser-turret-base.png",
+                    filename = "__base__/graphics/entity/laser-turret/hr-laser-turret-base.png",
                     priority = "high",
                     width = 138,
                     height = 104,
@@ -457,28 +435,55 @@ for name, map in pairs(tier_map) do
                     scale = 0.5
                 }
             },
+            -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/mask/"..inputs.internal_name.."/"..inputs.internal_name.."-base.png",
+                filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/laser-turret-base-mask.png",
                 priority = "high",
                 width = 70,
                 height = 52,
                 direction_count = 1,
                 frame_count = 1,
                 shift = util.by_pixel(0, 2),
+                tint = inputs.tint,
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/mask/"..inputs.internal_name.."/hr-"..inputs.internal_name.."-base.png",
+                    filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/hr-laser-turret-base-mask.png",
                     priority = "high",
                     width = 138,
                     height = 104,
                     direction_count = 1,
                     frame_count = 1,
                     shift = util.by_pixel(-0.5, 2),
+                    tint = inputs.tint,
                     scale = 0.5
                 }
             },
+            -- Highlights
             {
-                filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/base/shadows/laser-turret-base-shadow.png",
+                filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/laser-turret-base-highlights.png",
+                priority = "high",
+                width = 70,
+                height = 52,
+                direction_count = 1,
+                frame_count = 1,
+                shift = util.by_pixel(0, 2),
+                blend_mode = "additive",
+                hr_version =
+                {
+                    filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/hr-laser-turret-base-highlights.png",
+                    priority = "high",
+                    width = 138,
+                    height = 104,
+                    direction_count = 1,
+                    frame_count = 1,
+                    shift = util.by_pixel(-0.5, 2),
+                    blend_mode = "additive",
+                    scale = 0.5
+                }
+            },
+            -- Shadow
+            {
+                filename = "__base__/graphics/entity/laser-turret/laser-turret-base-shadow.png",
                 line_length = 1,
                 width = 66,
                 height = 42,
@@ -488,7 +493,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(6, 3),
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/warfare/laser-turret/base/shadows/hr-laser-turret-base-shadow.png",
+                    filename = "__base__/graphics/entity/laser-turret/hr-laser-turret-base-shadow.png",
                     line_length = 1,
                     width = 132,
                     height = 82,
