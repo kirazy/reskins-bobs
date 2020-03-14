@@ -1,88 +1,15 @@
 -- Copyright (c) 2020 Kirazy
--- Part of Reskin Series: Bob's Structures
+-- Part of Reskins: Bob's Mods
 --     
 -- See LICENSE.md in the project directory for license information.
 
--- Settings to be exported to Reskin Series: Library
-data:extend(
-{
-    {
-        type = "bool-setting",
-        name = "reskin-series-icon-tier-labeling",
-        setting_type = "startup",
-        default_value = true,
-    },
-    {
-        type = "bool-setting",
-        name = "reskin-series-customize-tier-colors",
-        setting_type = "startup",
-        default_value = false,
-    },
-    {
-        type = "int-setting",
-        name = "reskin-series-target-drone-health",
-        setting_type = "startup",
-        default_value = 50000000,
-        maximum_value = 2147483648,
-        minimum_value = 1000
-    },
-    {
-        type = "string-setting",
-        name = "reskin-series-tier-mapping",
-        setting_type = "startup",
-        default_value = "name-map",
-        allowed_values = {"ingredients-map","name-map"}
-    }
-})
-
--- Customize tier coloring settings
-data:extend(
-{
-    {
-        type = "string-setting",
-        name = "reskin-series-custom-colors-tier-0",
-        setting_type ="startup",
-        default_value = "4d4d4d",
-    },
-    {
-        type = "string-setting",
-        name = "reskin-series-custom-colors-tier-1",
-        setting_type ="startup",
-        default_value = "de9400",
-    },
-    {
-        type = "string-setting",
-        name = "reskin-series-custom-colors-tier-2",
-        setting_type ="startup",
-        default_value = "c20600",
-    },
-    {
-        type = "string-setting",
-        name = "reskin-series-custom-colors-tier-3",
-        setting_type ="startup",
-        default_value = "1b87c2",
-    },
-    {
-        type = "string-setting",
-        name = "reskin-series-custom-colors-tier-4",
-        setting_type ="startup",
-        default_value = "a600bf",
-    },
-    {
-        type = "string-setting",
-        name = "reskin-series-custom-colors-tier-5",
-        setting_type ="startup",
-        default_value = "23de55",
-    }
-})
-
--- Settings to disable select reskins by mod
+-- Settings to disable select Reskins by mod
 if mods["bobassembly"] then
     data:extend(
     {
         {
             type = "bool-setting",
-            name = "reskin-series-do-bobassembly",
+            name = "reskins-bobs-do-bobassembly",
             setting_type = "startup",
             default_value = true,
         }
@@ -94,7 +21,7 @@ if mods["bobgreenhouse"] then
     {
         {
             type = "bool-setting",
-            name = "reskin-series-do-bobgreenhouse",
+            name = "reskins-bobs-do-bobgreenhouse",
             setting_type = "startup",
             default_value = true,
         }
@@ -106,7 +33,7 @@ if mods["boblogistics"] then
     {
         {
             type = "bool-setting",
-            name = "reskin-series-do-boblogistics",
+            name = "reskins-bobs-do-boblogistics",
             setting_type = "startup",
             default_value = true,
         }
@@ -118,7 +45,7 @@ if mods["bobmining"] then
     {
         {
             type = "bool-setting",
-            name = "reskin-series-do-bobmining",
+            name = "reskins-bobs-do-bobmining",
             setting_type = "startup",
             default_value = true,
         }
@@ -130,7 +57,7 @@ if mods["bobmodules"] then
     {
         {
             type = "bool-setting",
-            name = "reskin-series-do-bobmodules",
+            name = "reskins-bobs-do-bobmodules",
             setting_type = "startup",
             default_value = true,
         }
@@ -142,7 +69,7 @@ if mods["bobplates"] then
     {
         {
             type = "bool-setting",
-            name = "reskin-series-do-bobplates",
+            name = "reskins-bobs-do-bobplates",
             setting_type = "startup",
             default_value = true,
         }
@@ -154,7 +81,7 @@ if mods["bobpower"] then
     {
         {
             type = "bool-setting",
-            name = "reskin-series-do-bobpower",
+            name = "reskins-bobs-do-bobpower",
             setting_type = "startup",
             default_value = true,
         }
@@ -166,7 +93,7 @@ if mods["bobrevamp"] then
     {
         {
             type = "bool-setting",
-            name = "reskin-series-do-bobrevamp",
+            name = "reskins-bobs-do-bobrevamp",
             setting_type = "startup",
             default_value = true,
         }
@@ -178,7 +105,7 @@ if mods["bobtech"] then
     {
         {
             type = "bool-setting",
-            name = "reskin-series-do-bobtech",
+            name = "reskins-bobs-do-bobtech",
             setting_type = "startup",
             default_value = true,
         }
@@ -190,7 +117,7 @@ if mods["bobwarfare"] then
     {
         {
             type = "bool-setting",
-            name = "reskin-series-do-bobwarfare",
+            name = "reskins-bobs-do-bobwarfare",
             setting_type = "startup",
             default_value = true,
         }

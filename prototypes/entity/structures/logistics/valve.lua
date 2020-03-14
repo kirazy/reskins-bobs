@@ -3,6 +3,6 @@
 --     
 -- See LICENSE.md in the project directory for license information.
 
--- Add this mod to the reskins function host.
-if not reskins.bobs then reskins.bobs = {} end
-reskins.bobs.directory = "__reskins-bobs__"
+-- bob-valve
+-- bob-overflow-valve
+-- bob-topup-valve

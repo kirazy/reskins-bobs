@@ -1,5 +1,5 @@
 -- Copyright (c) 2020 Kirazy
--- Part of Reskin Series: Bob's Structures
+-- Part of Reskins: Bob's Mods
 --     
 -- See LICENSE.md in the project directory for license information.
 
@@ -7,7 +7,7 @@
 
 -- Check to see if reskinning needs to be done.
 -- if not mods["boblogistics"] then return end
--- if settings.startup["reskin-series-do-boblogistics"].value == false then return end
+-- if settings.startup["reskins-bobs-do-boblogistics"].value == false then return end
 
 -- This will be icons only; Belt Reskin will continue to handle belts and be brought under the Reskin Series umbrella.
 
