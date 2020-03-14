@@ -50,6 +50,9 @@ for name, tier in pairs(tier_map) do
     
     -- Map entity to name used internally
     inputs.internal_name = inputs.root_name.."-"..tier
+
+    -- Determine what tint we're using
+    inputs.tint = reskins.lib.tint_index["tier-"..tier]
     
     reskins.lib.setup_common_attributes(name, tier, inputs)
 
@@ -61,8 +64,9 @@ for name, tier in pairs(tier_map) do
     {
         layers = 
         {
+            -- Base
             {
-                filename = inputs.directory.."/graphics/entity/structures/logistics/storage-tank/base/remnants/storage-tank-remnants.png",
+                filename = "__base__/graphics/entity/storage-tank/remnants/storage-tank-remnants.png",
                 line_length = 1,
                 width = 214,
                 height = 142,
@@ -71,7 +75,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(27, 21),
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/logistics/storage-tank/base/remnants/hr-storage-tank-remnants.png",
+                    filename = "__base__/graphics/entity/storage-tank/remnants/hr-storage-tank-remnants.png",
                     line_length = 1,
                     width = 426,
                     height = 282,
@@ -81,23 +85,49 @@ for name, tier in pairs(tier_map) do
                     scale = 0.5,
                 }
             },
+            -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/structures/logistics/storage-tank/mask/"..inputs.internal_name.."/remnants/"..inputs.internal_name.."-remnants.png",
+                filename = inputs.directory.."/graphics/entity/structures/logistics/storage-tank/remnants/storage-tank-remnants-mask.png",
                 line_length = 1,
                 width = 214,
                 height = 142,
                 frame_count = 1,
                 direction_count = 1,
                 shift = util.by_pixel(27, 21),
+                tint = inputs.tint,
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/logistics/storage-tank/mask/"..inputs.internal_name.."/remnants/hr-"..inputs.internal_name.."-remnants.png",
+                    filename = inputs.directory.."/graphics/entity/structures/logistics/storage-tank/remnants/hr-storage-tank-remnants-mask.png",
                     line_length = 1,
                     width = 426,
                     height = 282,
                     frame_count = 1,
                     direction_count = 1,
                     shift = util.by_pixel(27, 21),
+                    tint = inputs.tint,
+                    scale = 0.5,
+                }
+            },
+            -- Highlights
+            {
+                filename = inputs.directory.."/graphics/entity/structures/logistics/storage-tank/remnants/storage-tank-remnants-highlights.png",
+                line_length = 1,
+                width = 214,
+                height = 142,
+                frame_count = 1,
+                direction_count = 1,
+                shift = util.by_pixel(27, 21),
+                blend_mode = "additive",
+                hr_version =
+                {
+                    filename = inputs.directory.."/graphics/entity/structures/logistics/storage-tank/remnants/hr-storage-tank-remnants-highlights.png",
+                    line_length = 1,
+                    width = 426,
+                    height = 282,
+                    frame_count = 1,
+                    direction_count = 1,
+                    shift = util.by_pixel(27, 21),
+                    blend_mode = "additive",
                     scale = 0.5,
                 }
             }
@@ -111,8 +141,9 @@ for name, tier in pairs(tier_map) do
         {
             sheets =
             {
+                -- Base
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/logistics/storage-tank/base/storage-tank.png",
+                    filename = "__base__/graphics/entity/storage-tank/storage-tank.png",
                     priority = "extra-high",
                     frames = 2,
                     width = 110,
@@ -120,7 +151,7 @@ for name, tier in pairs(tier_map) do
                     shift = util.by_pixel(0, 4),
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/logistics/storage-tank/base/hr-storage-tank.png",
+                        filename = "__base__/graphics/entity/storage-tank/hr-storage-tank.png",
                         priority = "extra-high",
                         frames = 2,
                         width = 219,
@@ -129,26 +160,51 @@ for name, tier in pairs(tier_map) do
                         scale = 0.5
                     }
                 },
+                -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/logistics/storage-tank/mask/"..inputs.internal_name.."/"..inputs.internal_name..".png",
+                    filename = inputs.directory.."/graphics/entity/structures/logistics/storage-tank/storage-tank-mask.png",
                     priority = "extra-high",
                     frames = 2,
                     width = 110,
                     height = 108,
                     shift = util.by_pixel(0, 4),
+                    tint = inputs.tint,
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/logistics/storage-tank/mask/"..inputs.internal_name.."/hr-"..inputs.internal_name..".png",
+                        filename = inputs.directory.."/graphics/entity/structures/logistics/storage-tank/hr-storage-tank-mask.png",
                         priority = "extra-high",
                         frames = 2,
                         width = 219,
                         height = 215,
                         shift = util.by_pixel(-0.25, 3.75),
+                        tint = inputs.tint,
                         scale = 0.5
                     }
                 },
+                -- Highlights
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/logistics/storage-tank/base/storage-tank-shadow.png",
+                    filename = inputs.directory.."/graphics/entity/structures/logistics/storage-tank/storage-tank-highlights.png",
+                    priority = "extra-high",
+                    frames = 2,
+                    width = 110,
+                    height = 108,
+                    shift = util.by_pixel(0, 4),
+                    blend_mode = "additive",
+                    hr_version =
+                    {
+                        filename = inputs.directory.."/graphics/entity/structures/logistics/storage-tank/hr-storage-tank-highlights.png",
+                        priority = "extra-high",
+                        frames = 2,
+                        width = 219,
+                        height = 215,
+                        shift = util.by_pixel(-0.25, 3.75),
+                        blend_mode = "additive",
+                        scale = 0.5
+                    }
+                },
+                -- Shadow
+                {
+                    filename = "__base__/graphics/entity/storage-tank/storage-tank-shadow.png",
                     priority = "extra-high",
                     frames = 2,
                     width = 146,
@@ -157,7 +213,7 @@ for name, tier in pairs(tier_map) do
                     draw_as_shadow = true,
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/logistics/storage-tank/base/hr-storage-tank-shadow.png",
+                        filename = "__base__/graphics/entity/storage-tank/hr-storage-tank-shadow.png",
                         priority = "extra-high",
                         frames = 2,
                         width = 291,
@@ -171,20 +227,20 @@ for name, tier in pairs(tier_map) do
         },
         fluid_background =
         {
-            filename = inputs.directory.."/graphics/entity/structures/logistics/storage-tank/base/fluid-background.png",
+            filename = "__base__/graphics/entity/storage-tank/fluid-background.png",
             priority = "extra-high",
             width = 32,
             height = 15
         },
         window_background =
         {
-            filename = inputs.directory.."/graphics/entity/structures/logistics/storage-tank/base/window-background.png",
+            filename = "__base__/graphics/entity/storage-tank/window-background.png",
             priority = "extra-high",
             width = 17,
             height = 24,
             hr_version =
             {
-            filename = inputs.directory.."/graphics/entity/structures/logistics/storage-tank/base/hr-window-background.png",
+            filename = "__base__/graphics/entity/storage-tank/hr-window-background.png",
             priority = "extra-high",
             width = 34,
             height = 48,
@@ -193,14 +249,14 @@ for name, tier in pairs(tier_map) do
         },
         flow_sprite =
         {
-            filename = inputs.directory.."/graphics/entity/structures/logistics/pipe/base/animations/fluid-flow-low-temperature.png",
+            filename = "__base__/graphics/entity/pipe/fluid-flow-low-temperature.png",
             priority = "extra-high",
             width = 160,
             height = 20
         },
         gas_flow =
         {
-            filename = inputs.directory.."/graphics/entity/structures/logistics/pipe/base/animations/steam.png",
+            filename = "__base__/graphics/entity/pipe/steam.png",
             priority = "extra-high",
             line_length = 10,
             width = 24,
@@ -211,7 +267,7 @@ for name, tier in pairs(tier_map) do
             animation_speed = 0.25,
             hr_version =
             {
-                filename = inputs.directory.."/graphics/entity/structures/logistics/pipe/base/animations/hr-steam.png",
+                filename = "__base__/graphics/entity/pipe/hr-steam.png",
                 priority = "extra-high",
                 line_length = 10,
                 width = 48,
@@ -224,6 +280,7 @@ for name, tier in pairs(tier_map) do
             }
         }
     }
+
     -- Label to skip to next iteration
     ::continue::
 end

@@ -55,6 +55,9 @@ for name, map in pairs(tier_map) do
 
     -- Map entity to name used internally
     inputs.internal_name = inputs.root_name.."-"..tier
+
+    -- Determine what tint we're using
+    inputs.tint = reskins.lib.tint_index["tier-"..tier]
     
     reskins.lib.setup_common_attributes(name, tier, inputs)
 
@@ -66,6 +69,7 @@ for name, map in pairs(tier_map) do
     {
         layers =
         {
+            -- Base
             {
                 filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/base/remnants/roboport-remnants.png",
                 line_length = 1,
@@ -90,8 +94,9 @@ for name, map in pairs(tier_map) do
                     scale = 0.5,
                 }
             },
+            -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/mask/"..inputs.internal_name.."/remnants/"..inputs.internal_name.."-remnants.png",
+                filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/remnants/roboport-remnants-mask.png",
                 line_length = 1,
                 width = 182,
                 height = 180,
@@ -100,9 +105,10 @@ for name, map in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(2, 8),
+                tint = inputs.tint,
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/mask/"..inputs.internal_name.."/remnants/hr-"..inputs.internal_name.."-remnants.png",
+                    filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/remnants/hr-roboport-remnants-mask.png",
                     line_length = 1,
                     width = 364,
                     height = 358,
@@ -111,9 +117,38 @@ for name, map in pairs(tier_map) do
                     axially_symmetrical = false,
                     direction_count = 1,
                     shift = util.by_pixel(2, 8),
+                    tint = inputs.tint,
                     scale = 0.5,
                 }
             },
+            -- Highlights
+            {
+                filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/remnants/roboport-remnants-highlights.png",
+                line_length = 1,
+                width = 182,
+                height = 180,
+                frame_count = 1,
+                variation_count = 1,
+                axially_symmetrical = false,
+                direction_count = 1,
+                shift = util.by_pixel(2, 8),
+                blend_mode = "additive",
+                hr_version =
+                {
+                    filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/remnants/hr-roboport-remnants-highlights.png",
+                    line_length = 1,
+                    width = 364,
+                    height = 358,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 1,
+                    shift = util.by_pixel(2, 8),
+                    blend_mode = "additive",
+                    scale = 0.5,
+                }
+            },
+            -- Antenna
             {
                 filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/base/remnants/antennas/roboport-"..subtier.."-antenna-remnants.png",
                 line_length = 1,
@@ -138,6 +173,7 @@ for name, map in pairs(tier_map) do
                     scale = 0.5,
                 }
             },
+            -- Door
             {
                 filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/base/remnants/doors/roboport-"..subtier.."-door-remnants.png",
                 line_length = 1,
@@ -171,6 +207,7 @@ for name, map in pairs(tier_map) do
     {
         layers =
         {
+            -- Base
             {
                 filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/base/roboport-base.png",
                 width = 143,
@@ -185,20 +222,41 @@ for name, map in pairs(tier_map) do
                     scale = 0.5
                 }
             },
+            -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/mask/"..inputs.internal_name.."/"..inputs.internal_name.."-base.png",
+                filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/roboport-base-mask.png",
                 width = 143,
                 height = 135,
                 shift = {0.5, 0.25},
+                tint = inputs.tint,
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/mask/"..inputs.internal_name.."/hr-"..inputs.internal_name.."-base.png",
+                    filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/hr-roboport-base-mask.png",
                     width = 228,
                     height = 277,
                     shift = util.by_pixel(2, 7.75),
+                    tint = inputs.tint,
                     scale = 0.5
                 }
             },
+            -- Highlights
+            {
+                filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/roboport-base-highlights.png",
+                width = 143,
+                height = 135,
+                shift = {0.5, 0.25},
+                blend_mode = "additive",
+                hr_version =
+                {
+                    filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/hr-roboport-base-highlights.png",
+                    width = 228,
+                    height = 277,
+                    shift = util.by_pixel(2, 7.75),
+                    blend_mode = "additive",
+                    scale = 0.5
+                }
+            },
+            -- Shadow
             {
                 filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/base/roboport-shadow.png",
                 width = 147,
@@ -223,6 +281,7 @@ for name, map in pairs(tier_map) do
     {
         layers =
         {
+            -- Base
             {
                 filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/base/roboport-base-patch.png",
                 priority = "medium",
@@ -241,21 +300,45 @@ for name, map in pairs(tier_map) do
                     scale = 0.5
                 }
             },
+            -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/mask/"..inputs.internal_name.."/"..inputs.internal_name.."-base-patch.png",
+                filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/roboport-base-patch-mask.png",
                 priority = "medium",
                 width = 69,
                 height = 50,
                 frame_count = 1,
                 shift = {0.03125, 0.203125},
+                tint = inputs.tint,
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/mask/"..inputs.internal_name.."/hr-"..inputs.internal_name.."-base-patch.png",
+                    filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/hr-roboport-base-patch-mask.png",
                     priority = "medium",
                     width = 138,
                     height = 100,
                     frame_count = 1,
                     shift = util.by_pixel(1.5, 5),
+                    tint = inputs.tint,
+                    scale = 0.5
+                }
+            },
+            -- Highlights
+            {
+                filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/roboport-base-patch-highlights.png",
+                priority = "medium",
+                width = 69,
+                height = 50,
+                frame_count = 1,
+                shift = {0.03125, 0.203125},
+                blend_mode = "additive",
+                hr_version =
+                {
+                    filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/hr-roboport-base-patch-highlights.png",
+                    priority = "medium",
+                    width = 138,
+                    height = 100,
+                    frame_count = 1,
+                    shift = util.by_pixel(1.5, 5),
+                    blend_mode = "additive",
                     scale = 0.5
                 }
             }
@@ -290,7 +373,6 @@ for name, map in pairs(tier_map) do
         {
             {
                 filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/base/doors/roboport-"..subtier.."-door-up.png",
-                -- filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/base/alt-door/roboport-door-up-"..subtier..".png",
                 priority = "medium",
                 width = 52,
                 height = 20,
@@ -299,7 +381,6 @@ for name, map in pairs(tier_map) do
                 hr_version =
                 {
                     filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/base/doors/hr-roboport-"..subtier.."-door-up.png",
-                    -- filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/base/alt-door/hr-roboport-door-up-"..subtier..".png",
                     priority = "medium",
                     width = 97,
                     height = 38,
@@ -314,7 +395,6 @@ for name, map in pairs(tier_map) do
     entity.door_animation_down =
     {
         filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/base/doors/roboport-"..subtier.."-door-down.png",
-        -- filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/base/alt-door/roboport-door-down-"..subtier..".png",
         priority = "medium",
         width = 52,
         height = 22,
@@ -323,7 +403,6 @@ for name, map in pairs(tier_map) do
         hr_version =
         {
             filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/base/doors/hr-roboport-"..subtier.."-door-down.png",
-            -- filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/base/alt-door/hr-roboport-door-down-"..subtier..".png",
             priority = "medium",
             width = 97,
             height = 41,

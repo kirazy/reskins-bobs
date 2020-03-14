@@ -51,6 +51,9 @@ for name, tier in pairs(tier_map) do
 
     -- Map entity to name used internally
     inputs.internal_name = inputs.root_name.."-"..tier
+
+    -- Determine what tint we're using
+    inputs.tint = reskins.lib.tint_index["tier-"..tier]
     
     reskins.lib.setup_common_attributes(name, tier, inputs)
 
@@ -62,8 +65,9 @@ for name, tier in pairs(tier_map) do
     {
         layers =
         {
+            -- Base
             {
-                filename = inputs.directory.."/graphics/entity/structures/logistics/pump/base/remnants/pump-remnants.png",
+                filename = "__base__/graphics/entity/pump/remnants/pump-remnants.png",
                 line_length = 1,
                 width = 94,
                 height = 94,
@@ -74,7 +78,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(2, 2),
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/logistics/pump/base/remnants/hr-pump-remnants.png",
+                    filename = "__base__/graphics/entity/pump/remnants/hr-pump-remnants.png",
                     line_length = 1,
                     width = 188,
                     height = 186,
@@ -86,8 +90,9 @@ for name, tier in pairs(tier_map) do
                     scale = 0.5,
                 }
             },
+            -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/structures/logistics/pump/mask/"..inputs.internal_name.."/remnants/"..inputs.internal_name.."-remnants.png",
+                filename = inputs.directory.."/graphics/entity/structures/logistics/pump/remnants/pump-remnants-mask.png",
                 line_length = 1,
                 width = 94,
                 height = 94,
@@ -96,9 +101,10 @@ for name, tier in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 4,
                 shift = util.by_pixel(2, 2),
+                tint = inputs.tint,
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/logistics/pump/mask/"..inputs.internal_name.."/remnants/hr-"..inputs.internal_name.."-remnants.png",
+                    filename = inputs.directory.."/graphics/entity/structures/logistics/pump/remnants/hr-pump-remnants-mask.png",
                     line_length = 1,
                     width = 188,
                     height = 186,
@@ -107,6 +113,34 @@ for name, tier in pairs(tier_map) do
                     axially_symmetrical = false,
                     direction_count = 4,
                     shift = util.by_pixel(2, 2),
+                    tint = inputs.tint,
+                    scale = 0.5,
+                }
+            },
+            -- Highlights
+            {
+                filename = inputs.directory.."/graphics/entity/structures/logistics/pump/remnants/pump-remnants-highlights.png",
+                line_length = 1,
+                width = 94,
+                height = 94,
+                frame_count = 1,
+                variation_count = 1,
+                axially_symmetrical = false,
+                direction_count = 4,
+                shift = util.by_pixel(2, 2),
+                blend_mode = "additive",
+                hr_version =
+                {
+                    filename = inputs.directory.."/graphics/entity/structures/logistics/pump/remnants/hr-pump-remnants-highlights.png",
+                    line_length = 1,
+                    width = 188,
+                    height = 186,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 4,
+                    shift = util.by_pixel(2, 2),
+                    blend_mode = "additive",
                     scale = 0.5,
                 }
             }
@@ -120,8 +154,9 @@ for name, tier in pairs(tier_map) do
         {
             layers = 
             {
+                -- Base
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/logistics/pump/base/pump-north.png",
+                    filename = "__base__/graphics/entity/pump/pump-north.png",
                     width = 53,
                     height = 79,
                     line_length =8,
@@ -130,7 +165,7 @@ for name, tier in pairs(tier_map) do
                     shift = util.by_pixel(8.000, 7.500),
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/logistics/pump/base/hr-pump-north.png",
+                        filename = "__base__/graphics/entity/pump/hr-pump-north.png",
                         width = 103,
                         height = 164,
                         scale = 0.5,
@@ -140,24 +175,50 @@ for name, tier in pairs(tier_map) do
                         shift = util.by_pixel(8, 3.5)
                     }
                 },
+                -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/logistics/pump/mask/"..inputs.internal_name.."/"..inputs.internal_name.."-north.png",
+                    filename = inputs.directory.."/graphics/entity/structures/logistics/pump/pump-north-mask.png",
                     width = 53,
                     height = 79,
                     line_length =8,
                     frame_count =32,
                     animation_speed = 0.5,
                     shift = util.by_pixel(8.000, 7.500),
+                    tint = inputs.tint,
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/logistics/pump/mask/"..inputs.internal_name.."/hr-"..inputs.internal_name.."-north.png",
+                        filename = inputs.directory.."/graphics/entity/structures/logistics/pump/hr-pump-north-mask.png",
                         width = 103,
                         height = 164,
                         scale = 0.5,
                         line_length =8,
                         frame_count =32,
                         animation_speed = 0.5,
-                        shift = util.by_pixel(8, 3.5)
+                        shift = util.by_pixel(8, 3.5),
+                        tint = inputs.tint,
+                    }
+                },
+                -- Highlights
+                {
+                    filename = inputs.directory.."/graphics/entity/structures/logistics/pump/pump-north-highlights.png",
+                    width = 53,
+                    height = 79,
+                    line_length =8,
+                    frame_count =32,
+                    animation_speed = 0.5,
+                    shift = util.by_pixel(8.000, 7.500),
+                    blend_mode = "additive",
+                    hr_version =
+                    {
+                        filename = inputs.directory.."/graphics/entity/structures/logistics/pump/hr-pump-north-highlights.png",
+                        width = 103,
+                        height = 164,
+                        scale = 0.5,
+                        line_length =8,
+                        frame_count =32,
+                        animation_speed = 0.5,
+                        shift = util.by_pixel(8, 3.5),
+                        blend_mode = "additive",
                     }
                 }
             }
@@ -166,8 +227,9 @@ for name, tier in pairs(tier_map) do
         {
             layers = 
             {
+                -- Base
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/logistics/pump/base/pump-east.png",
+                    filename = "__base__/graphics/entity/pump/pump-east.png",
                     width = 66,
                     height = 60,
                     line_length =8,
@@ -176,7 +238,7 @@ for name, tier in pairs(tier_map) do
                     shift = util.by_pixel(0, 4),
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/logistics/pump/base/hr-pump-east.png",
+                        filename = "__base__/graphics/entity/pump/hr-pump-east.png",
                         width = 130,
                         height = 109,
                         scale = 0.5,
@@ -186,24 +248,50 @@ for name, tier in pairs(tier_map) do
                         shift = util.by_pixel(-0.5, 1.75)
                     }
                 },
+                -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/logistics/pump/mask/"..inputs.internal_name.."/"..inputs.internal_name.."-east.png",
+                    filename = inputs.directory.."/graphics/entity/structures/logistics/pump/pump-east-mask.png",
                     width = 66,
                     height = 60,
                     line_length =8,
                     frame_count =32,
                     animation_speed = 0.5,
                     shift = util.by_pixel(0, 4),
+                    tint = inputs.tint,
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/logistics/pump/mask/"..inputs.internal_name.."/hr-"..inputs.internal_name.."-east.png",
+                        filename = inputs.directory.."/graphics/entity/structures/logistics/pump/hr-pump-east-mask.png",
                         width = 130,
                         height = 109,
                         scale = 0.5,
                         line_length =8,
                         frame_count =32,
                         animation_speed = 0.5,
-                        shift = util.by_pixel(-0.5, 1.75)
+                        shift = util.by_pixel(-0.5, 1.75),
+                        tint = inputs.tint,
+                    }
+                },
+                -- Highlights
+                {
+                    filename = inputs.directory.."/graphics/entity/structures/logistics/pump/pump-east-highlights.png",
+                    width = 66,
+                    height = 60,
+                    line_length =8,
+                    frame_count =32,
+                    animation_speed = 0.5,
+                    shift = util.by_pixel(0, 4),
+                    blend_mode = "additive",
+                    hr_version =
+                    {
+                        filename = inputs.directory.."/graphics/entity/structures/logistics/pump/hr-pump-east-highlights.png",
+                        width = 130,
+                        height = 109,
+                        scale = 0.5,
+                        line_length =8,
+                        frame_count =32,
+                        animation_speed = 0.5,
+                        shift = util.by_pixel(-0.5, 1.75),
+                        blend_mode = "additive",
                     }
                 }
             }
@@ -212,8 +300,9 @@ for name, tier in pairs(tier_map) do
         {
             layers = 
             {
+                -- Base
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/logistics/pump/base/pump-south.png",
+                    filename = "__base__/graphics/entity/pump/pump-south.png",
                     width = 62,
                     height = 87,
                     line_length =8,
@@ -222,7 +311,7 @@ for name, tier in pairs(tier_map) do
                     shift = util.by_pixel(13.5, 0.5),
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/logistics/pump/base/hr-pump-south.png",
+                        filename = "__base__/graphics/entity/pump/hr-pump-south.png",
                         width = 114,
                         height = 160,
                         scale = 0.5,
@@ -232,24 +321,50 @@ for name, tier in pairs(tier_map) do
                         shift = util.by_pixel(12.5, -8)
                     }
                 },
+                -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/logistics/pump/mask/"..inputs.internal_name.."/"..inputs.internal_name.."-south.png",
+                    filename = inputs.directory.."/graphics/entity/structures/logistics/pump/pump-south-mask.png",
                     width = 62,
                     height = 87,
                     line_length =8,
                     frame_count =32,
                     animation_speed = 0.5,
                     shift = util.by_pixel(13.5, 0.5),
+                    tint = inputs.tint,
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/logistics/pump/mask/"..inputs.internal_name.."/hr-"..inputs.internal_name.."-south.png",
+                        filename = inputs.directory.."/graphics/entity/structures/logistics/pump/hr-pump-south-mask.png",
                         width = 114,
                         height = 160,
                         scale = 0.5,
                         line_length =8,
                         frame_count =32,
                         animation_speed = 0.5,
-                        shift = util.by_pixel(12.5, -8)
+                        shift = util.by_pixel(12.5, -8),
+                        tint = inputs.tint,
+                    }
+                },
+                -- Highlights
+                {
+                    filename = inputs.directory.."/graphics/entity/structures/logistics/pump/pump-south-highlights.png",
+                    width = 62,
+                    height = 87,
+                    line_length =8,
+                    frame_count =32,
+                    animation_speed = 0.5,
+                    shift = util.by_pixel(13.5, 0.5),
+                    blend_mode = "additive",
+                    hr_version =
+                    {
+                        filename = inputs.directory.."/graphics/entity/structures/logistics/pump/hr-pump-south-highlights.png",
+                        width = 114,
+                        height = 160,
+                        scale = 0.5,
+                        line_length =8,
+                        frame_count =32,
+                        animation_speed = 0.5,
+                        shift = util.by_pixel(12.5, -8),
+                        blend_mode = "additive",
                     }
                 }
             }
@@ -258,8 +373,9 @@ for name, tier in pairs(tier_map) do
         {
             layers = 
             {
+                -- Base
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/logistics/pump/base/pump-west.png",
+                    filename = "__base__/graphics/entity/pump/pump-west.png",
                     width = 69,
                     height = 51,
                     line_length =8,
@@ -268,7 +384,7 @@ for name, tier in pairs(tier_map) do
                     shift = util.by_pixel(0.5, -0.5),
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/logistics/pump/base/hr-pump-west.png",
+                        filename = "__base__/graphics/entity/pump/hr-pump-west.png",
                         width = 131,
                         height = 111,
                         scale = 0.5,
@@ -278,24 +394,50 @@ for name, tier in pairs(tier_map) do
                         shift = util.by_pixel(-0.25, 1.25)
                     }
                 },
+                -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/logistics/pump/mask/"..inputs.internal_name.."/"..inputs.internal_name.."-west.png",
+                    filename = inputs.directory.."/graphics/entity/structures/logistics/pump/pump-west-mask.png",
                     width = 69,
                     height = 51,
                     line_length =8,
                     frame_count =32,
                     animation_speed = 0.5,
                     shift = util.by_pixel(0.5, -0.5),
+                    tint = inputs.tint,
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/logistics/pump/mask/"..inputs.internal_name.."/hr-"..inputs.internal_name.."-west.png",
+                        filename = inputs.directory.."/graphics/entity/structures/logistics/pump/hr-pump-west-mask.png",
                         width = 131,
                         height = 111,
                         scale = 0.5,
                         line_length =8,
                         frame_count =32,
                         animation_speed = 0.5,
-                        shift = util.by_pixel(-0.25, 1.25)
+                        shift = util.by_pixel(-0.25, 1.25),
+                        tint = inputs.tint,
+                    }
+                },
+                -- Highlights
+                {
+                    filename = inputs.directory.."/graphics/entity/structures/logistics/pump/pump-west-highlights.png",
+                    width = 69,
+                    height = 51,
+                    line_length =8,
+                    frame_count =32,
+                    animation_speed = 0.5,
+                    shift = util.by_pixel(0.5, -0.5),
+                    blend_mode = "additive",
+                    hr_version =
+                    {
+                        filename = inputs.directory.."/graphics/entity/structures/logistics/pump/hr-pump-west-highlights.png",
+                        width = 131,
+                        height = 111,
+                        scale = 0.5,
+                        line_length =8,
+                        frame_count =32,
+                        animation_speed = 0.5,
+                        shift = util.by_pixel(-0.25, 1.25),
+                        blend_mode = "additive",
                     }
                 }
             }
