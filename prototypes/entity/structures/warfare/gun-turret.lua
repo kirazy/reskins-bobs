@@ -32,7 +32,7 @@ local tier_map =
 local function turret_extension(inputs, parameters)
     return
     {
-        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/animations/gun-turret-raising.png",
+        filename = "__base__/graphics/entity/gun-turret/gun-turret-raising.png",
         priority = "medium",
         width = 66,
         height = 64,
@@ -44,7 +44,7 @@ local function turret_extension(inputs, parameters)
         axially_symmetrical = false,
         hr_version =
         {
-            filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/animations/hr-gun-turret-raising.png",
+            filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-raising.png",
             priority = "medium",
             width = 130,
             height = 126,
@@ -62,7 +62,7 @@ end
 local function turret_extension_tint(inputs, parameters)
     return
     {
-        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/mask/"..inputs.internal_name.."/"..inputs.internal_name.."-raising.png",
+        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/gun-turret-raising-mask.png",
         priority = "medium",
         width = 66,
         height = 64,
@@ -71,10 +71,11 @@ local function turret_extension_tint(inputs, parameters)
         line_length = parameters.line_length or 0,
         run_mode = parameters.run_mode or "forward",
         shift = util.by_pixel(0, -26),
+        tint = inputs.tint,
         axially_symmetrical = false,
         hr_version =
         {
-            filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/mask/"..inputs.internal_name.."/hr-"..inputs.internal_name.."-raising.png",
+            filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/hr-gun-turret-raising-mask.png",
             priority = "medium",
             width = 130,
             height = 126,
@@ -83,6 +84,39 @@ local function turret_extension_tint(inputs, parameters)
             line_length = parameters.line_length or 0,
             run_mode = parameters.run_mode or "forward",
             shift = util.by_pixel(0, -26.5),
+            tint = inputs.tint,
+            axially_symmetrical = false,
+            scale = 0.5
+        }
+    }
+end
+
+local function turret_extension_highlights(inputs, parameters)
+    return
+    {
+        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/gun-turret-raising-highlights.png",
+        priority = "medium",
+        width = 66,
+        height = 64,
+        direction_count = 4,
+        frame_count = parameters.frame_count or 5,
+        line_length = parameters.line_length or 0,
+        run_mode = parameters.run_mode or "forward",
+        shift = util.by_pixel(0, -26),
+        blend_mode = "additive",
+        axially_symmetrical = false,
+        hr_version =
+        {
+            filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/hr-gun-turret-raising-highlights.png",
+            priority = "medium",
+            width = 130,
+            height = 126,
+            direction_count = 4,
+            frame_count = parameters.frame_count or 5,
+            line_length = parameters.line_length or 0,
+            run_mode = parameters.run_mode or "forward",
+            shift = util.by_pixel(0, -26.5),
+            blend_mode = "additive",
             axially_symmetrical = false,
             scale = 0.5
         }
@@ -92,7 +126,7 @@ end
 local function turret_extension_mask(inputs, parameters)
     return
     {
-        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/masks/gun-turret-raising-mask.png",
+        filename = "__base__/graphics/entity/gun-turret/gun-turret-raising-mask.png",
         inputs = { "mask" },
         width = 24,
         height = 32,
@@ -105,7 +139,7 @@ local function turret_extension_mask(inputs, parameters)
         apply_runtime_tint = true,
         hr_version =
         {
-            filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/masks/hr-gun-turret-raising-mask.png",
+            filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-raising-mask.png",
             inputs = { "mask" },
             width = 48,
             height = 62,
@@ -124,7 +158,7 @@ end
 local function turret_extension_shadow(inputs, parameters)
     return
     {
-        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/shadows/gun-turret-raising-shadow.png",
+        filename = "__base__/graphics/entity/gun-turret/gun-turret-raising-shadow.png",
         width = 126,
         height = 62,
         direction_count = 4,
@@ -136,7 +170,7 @@ local function turret_extension_shadow(inputs, parameters)
         draw_as_shadow = true,
         hr_version =
         {
-            filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/shadows/hr-gun-turret-raising-shadow.png",
+            filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-raising-shadow.png",
             width = 250,
             height = 124,
             direction_count = 4,
@@ -167,22 +201,22 @@ local function turret_attack(inputs, parameters)
                 stripes =
                 {
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/animations/gun-turret-shooting-1.png",
+                        filename = "__base__/graphics/entity/gun-turret/gun-turret-shooting-1.png",
                         width_in_frames = parameters.frame_count or 2,
                         height_in_frames = 16
                     },
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/animations/gun-turret-shooting-2.png",
+                        filename = "__base__/graphics/entity/gun-turret/gun-turret-shooting-2.png",
                         width_in_frames = parameters.frame_count or 2,
                         height_in_frames = 16
                     },
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/animations/gun-turret-shooting-3.png",
+                        filename = "__base__/graphics/entity/gun-turret/gun-turret-shooting-3.png",
                         width_in_frames = parameters.frame_count or 2,
                         height_in_frames = 16
                     },
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/animations/gun-turret-shooting-4.png",
+                        filename = "__base__/graphics/entity/gun-turret/gun-turret-shooting-4.png",
                         width_in_frames = parameters.frame_count or 2,
                         height_in_frames = 16
                     }
@@ -198,22 +232,22 @@ local function turret_attack(inputs, parameters)
                     stripes =
                     {
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/animations/hr-gun-turret-shooting-1.png",
+                        filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-shooting-1.png",
                         width_in_frames = parameters.frame_count or 2,
                         height_in_frames = 16
                     },
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/animations/hr-gun-turret-shooting-2.png",
+                        filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-shooting-2.png",
                         width_in_frames = parameters.frame_count or 2,
                         height_in_frames = 16
                     },
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/animations/hr-gun-turret-shooting-3.png",
+                        filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-shooting-3.png",
                         width_in_frames = parameters.frame_count or 2,
                         height_in_frames = 16
                     },
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/animations/hr-gun-turret-shooting-4.png",
+                        filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-shooting-4.png",
                         width_in_frames = parameters.frame_count or 2,
                         height_in_frames = 16
                     }
@@ -221,7 +255,7 @@ local function turret_attack(inputs, parameters)
                     scale = 0.5
                 }
             },
-            -- Tier Mask            
+            -- Mask            
             {
                 width = 66,
                 height = 66,
@@ -229,25 +263,26 @@ local function turret_attack(inputs, parameters)
                 axially_symmetrical = false,
                 direction_count = 64,
                 shift = util.by_pixel(0, -27),
+                tint = inputs.tint,
                 stripes =
                 {
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/mask/"..inputs.internal_name.."/"..inputs.internal_name.."-shooting-1.png",
+                        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/gun-turret-shooting-1-mask.png",
                         width_in_frames = parameters.frame_count or 2,
                         height_in_frames = 16
                     },
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/mask/"..inputs.internal_name.."/"..inputs.internal_name.."-shooting-2.png",
+                        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/gun-turret-shooting-2-mask.png",
                         width_in_frames = parameters.frame_count or 2,
                         height_in_frames = 16
                     },
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/mask/"..inputs.internal_name.."/"..inputs.internal_name.."-shooting-3.png",
+                        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/gun-turret-shooting-3-mask.png",
                         width_in_frames = parameters.frame_count or 2,
                         height_in_frames = 16
                     },
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/mask/"..inputs.internal_name.."/"..inputs.internal_name.."-shooting-4.png",
+                        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/gun-turret-shooting-4-mask.png",
                         width_in_frames = parameters.frame_count or 2,
                         height_in_frames = 16
                     }
@@ -260,33 +295,101 @@ local function turret_attack(inputs, parameters)
                     axially_symmetrical = false,
                     direction_count = 64,
                     shift = util.by_pixel(0, -27.5),
+                    tint = inputs.tint,
                     stripes =
                     {
-                    {
-                        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/mask/"..inputs.internal_name.."/hr-"..inputs.internal_name.."-shooting-1.png",
-                        width_in_frames = parameters.frame_count or 2,
-                        height_in_frames = 16
-                    },
-                    {
-                        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/mask/"..inputs.internal_name.."/hr-"..inputs.internal_name.."-shooting-2.png",
-                        width_in_frames = parameters.frame_count or 2,
-                        height_in_frames = 16
-                    },
-                    {
-                        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/mask/"..inputs.internal_name.."/hr-"..inputs.internal_name.."-shooting-3.png",
-                        width_in_frames = parameters.frame_count or 2,
-                        height_in_frames = 16
-                    },
-                    {
-                        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/mask/"..inputs.internal_name.."/hr-"..inputs.internal_name.."-shooting-4.png",
-                        width_in_frames = parameters.frame_count or 2,
-                        height_in_frames = 16
-                    }
+                        {
+                            filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/hr-gun-turret-shooting-1-mask.png",
+                            width_in_frames = parameters.frame_count or 2,
+                            height_in_frames = 16
+                        },
+                        {
+                            filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/hr-gun-turret-shooting-2-mask.png",
+                            width_in_frames = parameters.frame_count or 2,
+                            height_in_frames = 16
+                        },
+                        {
+                            filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/hr-gun-turret-shooting-3-mask.png",
+                            width_in_frames = parameters.frame_count or 2,
+                            height_in_frames = 16
+                        },
+                        {
+                            filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/hr-gun-turret-shooting-4-mask.png",
+                            width_in_frames = parameters.frame_count or 2,
+                            height_in_frames = 16
+                        }
                     },
                     scale = 0.5
                 }
             },
-            -- Player Color Mask
+            -- Highlights
+            {
+                width = 66,
+                height = 66,
+                frame_count = parameters.frame_count or 2,
+                axially_symmetrical = false,
+                direction_count = 64,
+                shift = util.by_pixel(0, -27),
+                blend_mode = "additive",
+                stripes =
+                {
+                    {
+                        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/gun-turret-shooting-1-highlights.png",
+                        width_in_frames = parameters.frame_count or 2,
+                        height_in_frames = 16
+                    },
+                    {
+                        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/gun-turret-shooting-2-highlights.png",
+                        width_in_frames = parameters.frame_count or 2,
+                        height_in_frames = 16
+                    },
+                    {
+                        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/gun-turret-shooting-3-highlights.png",
+                        width_in_frames = parameters.frame_count or 2,
+                        height_in_frames = 16
+                    },
+                    {
+                        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/gun-turret-shooting-4-highlights.png",
+                        width_in_frames = parameters.frame_count or 2,
+                        height_in_frames = 16
+                    }
+                },
+                hr_version =
+                {
+                    width = 132,
+                    height = 130,
+                    frame_count = parameters.frame_count and parameters.frame_count or 2,
+                    axially_symmetrical = false,
+                    direction_count = 64,
+                    shift = util.by_pixel(0, -27.5),
+                    blend_mode = "additive",
+                    stripes =
+                    {
+                        {
+                            filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/hr-gun-turret-shooting-1-highlights.png",
+                            width_in_frames = parameters.frame_count or 2,
+                            height_in_frames = 16
+                        },
+                        {
+                            filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/hr-gun-turret-shooting-2-highlights.png",
+                            width_in_frames = parameters.frame_count or 2,
+                            height_in_frames = 16
+                        },
+                        {
+                            filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/hr-gun-turret-shooting-3-highlights.png",
+                            width_in_frames = parameters.frame_count or 2,
+                            height_in_frames = 16
+                        },
+                        {
+                            filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/hr-gun-turret-shooting-4-highlights.png",
+                            width_in_frames = parameters.frame_count or 2,
+                            height_in_frames = 16
+                        }
+                    },
+                    scale = 0.5
+                }
+            },
+            -- Runtime Mask
             {
                 inputs = { "mask" },
                 line_length = parameters.frame_count or 2,
@@ -300,22 +403,22 @@ local function turret_attack(inputs, parameters)
                 stripes =
                 {
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/masks/gun-turret-shooting-mask-1.png",
+                        filename = "__base__/graphics/entity/gun-turret/gun-turret-shooting-mask-1.png",
                         width_in_frames = parameters.frame_count or 2,
                         height_in_frames = 16
                     },
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/masks/gun-turret-shooting-mask-2.png",
+                        filename = "__base__/graphics/entity/gun-turret/gun-turret-shooting-mask-2.png",
                         width_in_frames = parameters.frame_count or 2,
                         height_in_frames = 16
                     },
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/masks/gun-turret-shooting-mask-3.png",
+                        filename = "__base__/graphics/entity/gun-turret/gun-turret-shooting-mask-3.png",
                         width_in_frames = parameters.frame_count or 2,
                         height_in_frames = 16
                     },
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/masks/gun-turret-shooting-mask-4.png",
+                        filename = "__base__/graphics/entity/gun-turret/gun-turret-shooting-mask-4.png",
                         width_in_frames = parameters.frame_count or 2,
                         height_in_frames = 16
                     }
@@ -334,22 +437,22 @@ local function turret_attack(inputs, parameters)
                     stripes =
                     {
                         {
-                            filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/masks/hr-gun-turret-shooting-mask-1.png",
+                            filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-shooting-mask-1.png",
                             width_in_frames = parameters.frame_count and parameters.frame_count or 2,
                             height_in_frames = 16
                         },
                         {
-                            filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/masks/hr-gun-turret-shooting-mask-2.png",
+                            filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-shooting-mask-2.png",
                             width_in_frames = parameters.frame_count and parameters.frame_count or 2,
                             height_in_frames = 16
                         },
                         {
-                            filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/masks/hr-gun-turret-shooting-mask-3.png",
+                            filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-shooting-mask-3.png",
                             width_in_frames = parameters.frame_count and parameters.frame_count or 2,
                             height_in_frames = 16
                         },
                         {
-                            filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/masks/hr-gun-turret-shooting-mask-4.png",
+                            filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-shooting-mask-4.png",
                             width_in_frames = parameters.frame_count and parameters.frame_count or 2,
                             height_in_frames = 16
                         }
@@ -369,22 +472,22 @@ local function turret_attack(inputs, parameters)
                 stripes =
                 {
                     {
-                    filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/shadows/gun-turret-shooting-shadow-1.png",
+                    filename = "__base__/graphics/entity/gun-turret/gun-turret-shooting-shadow-1.png",
                     width_in_frames = parameters.frame_count or 2,
                     height_in_frames = 16
                     },
                     {
-                    filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/shadows/gun-turret-shooting-shadow-2.png",
+                    filename = "__base__/graphics/entity/gun-turret/gun-turret-shooting-shadow-2.png",
                     width_in_frames = parameters.frame_count or 2,
                     height_in_frames = 16
                     },
                     {
-                    filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/shadows/gun-turret-shooting-shadow-3.png",
+                    filename = "__base__/graphics/entity/gun-turret/gun-turret-shooting-shadow-3.png",
                     width_in_frames = parameters.frame_count or 2,
                     height_in_frames = 16
                     },
                     {
-                    filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/shadows/gun-turret-shooting-shadow-4.png",
+                    filename = "__base__/graphics/entity/gun-turret/gun-turret-shooting-shadow-4.png",
                     width_in_frames = parameters.frame_count or 2,
                     height_in_frames = 16
                     }
@@ -401,22 +504,22 @@ local function turret_attack(inputs, parameters)
                     stripes =
                     {
                         {
-                            filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/shadows/hr-gun-turret-shooting-shadow-1.png",
+                            filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-shooting-shadow-1.png",
                             width_in_frames = parameters.frame_count and parameters.frame_count or 2,
                             height_in_frames = 16
                         },
                         {
-                            filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/shadows/hr-gun-turret-shooting-shadow-2.png",
+                            filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-shooting-shadow-2.png",
                             width_in_frames = parameters.frame_count and parameters.frame_count or 2,
                             height_in_frames = 16
                         },
                         {
-                            filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/shadows/hr-gun-turret-shooting-shadow-3.png",
+                            filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-shooting-shadow-3.png",
                             width_in_frames = parameters.frame_count and parameters.frame_count or 2,
                             height_in_frames = 16
                         },
                         {
-                            filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/shadows/hr-gun-turret-shooting-shadow-4.png",
+                            filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-shooting-shadow-4.png",
                             width_in_frames = parameters.frame_count and parameters.frame_count or 2,
                             height_in_frames = 16
                         }
@@ -441,6 +544,9 @@ for name, tier in pairs(tier_map) do
     -- Map entity to name used internally
     inputs.internal_name = inputs.root_name.."-"..tier
 
+    -- Determine what tint we're using
+    inputs.tint = reskins.lib.tint_index["tier-"..tier]
+
     reskins.lib.setup_common_attributes(name, tier, inputs)
 
     -- Fetch remnant
@@ -451,8 +557,9 @@ for name, tier in pairs(tier_map) do
     {
         layers =
         {
+            -- Base
             {
-                filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/remnants/gun-turret-remnants.png",
+                filename = "__base__/graphics/entity/gun-turret/remnants/gun-turret-remnants.png",
                 line_length = 1,
                 width = 126,
                 height = 122,
@@ -463,7 +570,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(3, -1),
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/remnants/hr-gun-turret-remnants.png",
+                    filename = "__base__/graphics/entity/gun-turret/remnants/hr-gun-turret-remnants.png",
                     line_length = 1,
                     width = 252,
                     height = 242,
@@ -475,8 +582,9 @@ for name, tier in pairs(tier_map) do
                     scale = 0.5,
                 }
             },
+            -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/mask/"..inputs.internal_name.."/remnants/"..inputs.internal_name.."-remnants.png",
+                filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/remnants/gun-turret-remnants-mask.png",
                 line_length = 1,
                 width = 126,
                 height = 122,
@@ -485,9 +593,10 @@ for name, tier in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(3, -1),
+                tint = inputs.tint,
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/mask/"..inputs.internal_name.."/remnants/hr-"..inputs.internal_name.."-remnants.png",
+                    filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/remnants/hr-gun-turret-remnants-mask.png",
                     line_length = 1,
                     width = 252,
                     height = 242,
@@ -496,12 +605,41 @@ for name, tier in pairs(tier_map) do
                     axially_symmetrical = false,
                     direction_count = 1,
                     shift = util.by_pixel(3, -1.5),
+                    tint = inputs.tint,
                     scale = 0.5,
                 }
             },
+            -- Highlights
+            {
+                filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/remnants/gun-turret-remnants-highlights.png",
+                line_length = 1,
+                width = 126,
+                height = 122,
+                frame_count = 1,
+                variation_count = 1,
+                axially_symmetrical = false,
+                direction_count = 1,
+                shift = util.by_pixel(3, -1),
+                blend_mode = "additive",
+                hr_version =
+                {
+                    filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/remnants/hr-gun-turret-remnants-highlights.png",
+                    line_length = 1,
+                    width = 252,
+                    height = 242,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 1,
+                    shift = util.by_pixel(3, -1.5),
+                    blend_mode = "additive",
+                    scale = 0.5,
+                }
+            },
+            -- Runtime Mask
             {
                 priority = "low",
-                filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/remnants/mask/gun-turret-remnants-mask.png",
+                filename = "__base__/graphics/entity/gun-turret/remnants/mask/gun-turret-remnants-mask.png",
                 width = 34,
                 height = 32,
                 frame_count = 1,
@@ -511,7 +649,7 @@ for name, tier in pairs(tier_map) do
                 hr_version=
                 {
                     priority = "low",
-                    filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/remnants/mask/hr-gun-turret-remnants-mask.png",
+                    filename = "__base__/graphics/entity/gun-turret/remnants/mask/hr-gun-turret-remnants-mask.png",
                     width = 68,
                     height = 64,
                     frame_count = 1,
@@ -531,6 +669,7 @@ for name, tier in pairs(tier_map) do
         {
             turret_extension(inputs, {frame_count = 1, line_length = 1}),
             turret_extension_tint(inputs, {frame_count = 1, line_length = 1}),
+            turret_extension_highlights(inputs, {frame_count = 1, line_length = 1}),
             turret_extension_mask(inputs, {frame_count = 1, line_length = 1}),
             turret_extension_shadow(inputs, {frame_count = 1, line_length = 1})
         }
@@ -541,7 +680,8 @@ for name, tier in pairs(tier_map) do
         {
             turret_extension(inputs, {}),
             turret_extension_tint(inputs, {}),
-            turret_extension_mask(inputs, {}),
+            turret_extension_highlights(inputs, {}),
+            turret_extension_mask(inputs, {}),            
             turret_extension_shadow(inputs, {})
         }
     }
@@ -553,7 +693,8 @@ for name, tier in pairs(tier_map) do
         {
             turret_extension(inputs, {run_mode = "backward"}),
             turret_extension_tint(inputs, {run_mode = "backward"}),
-            turret_extension_mask(inputs, {run_mode = "backward"}),
+            turret_extension_highlights(inputs, {run_mode = "backward"}),
+            turret_extension_mask(inputs, {run_mode = "backward"}),            
             turret_extension_shadow(inputs, {run_mode = "backward"})
         }
     }
@@ -562,7 +703,7 @@ for name, tier in pairs(tier_map) do
         layers =
         {
             {
-                filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/gun-turret-base.png",
+                filename = "__base__/graphics/entity/gun-turret/gun-turret-base.png",
                 priority = "high",
                 width = 76,
                 height = 60,
@@ -572,7 +713,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(1, -1),
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/hr-gun-turret-base.png",
+                    filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-base.png",
                     priority = "high",
                     width = 150,
                     height = 118,
@@ -584,7 +725,7 @@ for name, tier in pairs(tier_map) do
                 }
             },
             {
-                filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/masks/gun-turret-base-mask.png",
+                filename = "__base__/graphics/entity/gun-turret/gun-turret-base-mask.png",
                 inputs = { "mask", "low-object" },
                 line_length = 1,
                 width = 62,
@@ -596,7 +737,7 @@ for name, tier in pairs(tier_map) do
                 apply_runtime_tint = true,
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/masks/hr-gun-turret-base-mask.png",
+                    filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-base-mask.png",
                     inputs = { "mask", "low-object" },
                     line_length = 1,
                     width = 122,

@@ -31,7 +31,7 @@ entity = data.raw["ammo-turret"]["bob-sniper-turret-1"]
 
 entity.base_picture.layers[1].hr_version =
 {
-    filename = inputs.directory.."/graphics/entity/structures/warfare/gun-turret/base/hr-gun-turret-base.png",
+    filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-base.png",
     priority = "high",
     width = 150,
     height = 118,
