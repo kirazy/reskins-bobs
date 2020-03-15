@@ -7,6 +7,7 @@
 require("prototypes.loaders") -- vanilla-loaders-hd reskins loaders here
 
 -- Bob's Assembling Machines
+require("prototypes.entity.structures.assembly.assembling-machine") -- bobassembly does some work in data-updates
 require("prototypes.entity.structures.assembly.chemical-plant")  -- bobassembly reskins in data-updates
 
 -- Bob's Power
