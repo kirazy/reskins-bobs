@@ -15,7 +15,8 @@ local inputs =
     base_entity = "solar-panel",
     directory = reskins.bobs.directory,
     mod = "power",
-    particles = {["small"] = 2}
+    particles = {["small"] = 2},
+    make_remnants = false
 }
 
 -- Solar panels have two different sets of tiers; determine which we are using
@@ -69,6 +70,9 @@ for name, tier in pairs(tier_map) do
 
     -- Map entity to name used internally
     inputs.internal_name = inputs.root_name.."-"..tier
+
+    -- Determine what tint we're using
+    inputs.tint = reskins.lib.tint_index["tier-"..tier]
     
     reskins.lib.setup_common_attributes(name, tier, inputs)
 
@@ -88,6 +92,7 @@ for name, tier in pairs(tier_map) do
         {
             layers =
             {
+                -- Base
                 {
                     filename = inputs.directory.."/graphics/entity/structures/power/solar-panel-small/base/solar-panel-small.png",
                     priority = "high",
@@ -104,22 +109,45 @@ for name, tier in pairs(tier_map) do
                         scale = 0.5
                     }
                 },
+                -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/power/solar-panel-small/mask/"..inputs.internal_name.."/"..inputs.internal_name..".png",
+                    filename = inputs.directory.."/graphics/entity/structures/power/solar-panel-small/solar-panel-small-mask.png",
                     priority = "high",
                     width = 90,
                     height = 75,
                     shift = util.by_pixel(2.5, 0.25),
+                    tint = inputs.tint,
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/power/solar-panel-small/mask/"..inputs.internal_name.."/hr-"..inputs.internal_name..".png",
+                        filename = inputs.directory.."/graphics/entity/structures/power/solar-panel-small/hr-solar-panel-small-mask.png",
                         priority = "high",
                         width = 180,
                         height = 150,
                         shift = util.by_pixel(5, 0.5),
+                        tint = inputs.tint,
                         scale = 0.5
                     }
                 },
+                -- Highlights
+                {
+                    filename = inputs.directory.."/graphics/entity/structures/power/solar-panel-small/solar-panel-small-highlights.png",
+                    priority = "high",
+                    width = 90,
+                    height = 75,
+                    shift = util.by_pixel(2.5, 0.25),
+                    blend_mode = "additive",
+                    hr_version =
+                    {
+                        filename = inputs.directory.."/graphics/entity/structures/power/solar-panel-small/hr-solar-panel-small-highlights.png",
+                        priority = "high",
+                        width = 180,
+                        height = 150,
+                        shift = util.by_pixel(5, 0.5),
+                        blend_mode = "additive",
+                        scale = 0.5
+                    }
+                },
+                -- Shadow
                 {
                     filename = inputs.directory.."/graphics/entity/structures/power/solar-panel-small/base/solar-panel-small-shadow.png",
                     priority = "high",
@@ -170,15 +198,16 @@ for name, tier in pairs(tier_map) do
         {
             layers =
             {
+                -- Base
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/power/solar-panel/base/solar-panel.png",
+                    filename = "__base__/graphics/entity/solar-panel/solar-panel.png",
                     priority = "high",
                     width = 116,
                     height = 112,
                     shift = util.by_pixel(-3, 3),
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/power/solar-panel/base/hr-solar-panel.png",
+                        filename = "__base__/graphics/entity/solar-panel/hr-solar-panel.png",
                         priority = "high",
                         width = 230,
                         height = 224,
@@ -186,24 +215,47 @@ for name, tier in pairs(tier_map) do
                         scale = 0.5
                     }
                 },
+                -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/power/solar-panel/mask/"..inputs.internal_name.."/"..inputs.internal_name..".png",
+                    filename = inputs.directory.."/graphics/entity/structures/power/solar-panel/solar-panel-mask.png",
                     priority = "high",
                     width = 116,
                     height = 112,
                     shift = util.by_pixel(-3, 3),
+                    tint = inputs.tint,
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/power/solar-panel/mask/"..inputs.internal_name.."/hr-"..inputs.internal_name..".png",
+                        filename = inputs.directory.."/graphics/entity/structures/power/solar-panel/hr-solar-panel-mask.png",
                         priority = "high",
                         width = 230,
                         height = 224,
                         shift = util.by_pixel(-3, 3.5),
+                        tint = inputs.tint,
                         scale = 0.5
                     }
                 },
+                -- Highlights
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/power/solar-panel/base/solar-panel-shadow.png",
+                    filename = inputs.directory.."/graphics/entity/structures/power/solar-panel/solar-panel-highlights.png",
+                    priority = "high",
+                    width = 116,
+                    height = 112,
+                    shift = util.by_pixel(-3, 3),
+                    blend_mode = "additive",
+                    hr_version =
+                    {
+                        filename = inputs.directory.."/graphics/entity/structures/power/solar-panel/hr-solar-panel-highlights.png",
+                        priority = "high",
+                        width = 230,
+                        height = 224,
+                        shift = util.by_pixel(-3, 3.5),
+                        blend_mode = "additive",
+                        scale = 0.5
+                    }
+                },
+                -- Shadow
+                {
+                    filename = "__base__/graphics/entity/solar-panel/solar-panel-shadow.png",
                     priority = "high",
                     width = 112,
                     height = 90,
@@ -211,7 +263,7 @@ for name, tier in pairs(tier_map) do
                     draw_as_shadow = true,
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/power/solar-panel/base/hr-solar-panel-shadow.png",
+                        filename = "__base__/graphics/entity/solar-panel/hr-solar-panel-shadow.png",
                         priority = "high",
                         width = 220,
                         height = 180,
@@ -229,14 +281,14 @@ for name, tier in pairs(tier_map) do
             layers =
             {
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/power/solar-panel/base/solar-panel-shadow-overlay.png",
+                    filename = "__base__/graphics/entity/solar-panel/solar-panel-shadow-overlay.png",
                     priority = "high",
                     width = 108,
                     height = 90,
                     shift = util.by_pixel(11, 6),
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/power/solar-panel/base/hr-solar-panel-shadow-overlay.png",
+                        filename = "__base__/graphics/entity/solar-panel/hr-solar-panel-shadow-overlay.png",
                         priority = "high",
                         width = 214,
                         height = 180,
@@ -252,6 +304,7 @@ for name, tier in pairs(tier_map) do
         {
             layers =
             {
+                -- Base
                 {
                     filename = inputs.directory.."/graphics/entity/structures/power/solar-panel-large/base/solar-panel-large.png",
                     priority = "high",
@@ -268,22 +321,45 @@ for name, tier in pairs(tier_map) do
                         scale = 0.5
                     }
                 },
+                -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/structures/power/solar-panel-large/mask/"..inputs.internal_name.."/"..inputs.internal_name..".png",
+                    filename = inputs.directory.."/graphics/entity/structures/power/solar-panel-large/solar-panel-large-mask.png",
                     priority = "high",
                     width = 154,
                     height = 137,
                     shift = util.by_pixel(2.5, 1.75),
+                    tint = inputs.tint,
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/structures/power/solar-panel-large/mask/"..inputs.internal_name.."/hr-"..inputs.internal_name..".png",
+                        filename = inputs.directory.."/graphics/entity/structures/power/solar-panel-large/hr-solar-panel-large-mask.png",
                         priority = "high",
                         width = 308,
                         height = 274,
                         shift = util.by_pixel(5, 3.5),
+                        tint = inputs.tint,
                         scale = 0.5
                     }
                 },
+                -- Highlights
+                {
+                    filename = inputs.directory.."/graphics/entity/structures/power/solar-panel-large/solar-panel-large-highlights.png",
+                    priority = "high",
+                    width = 154,
+                    height = 137,
+                    shift = util.by_pixel(2.5, 1.75),
+                    blend_mode = "additive",
+                    hr_version =
+                    {
+                        filename = inputs.directory.."/graphics/entity/structures/power/solar-panel-large/hr-solar-panel-large-highlights.png",
+                        priority = "high",
+                        width = 308,
+                        height = 274,
+                        shift = util.by_pixel(5, 3.5),
+                        blend_mode = "additive",
+                        scale = 0.5
+                    }
+                },
+                -- Shadow
                 {
                     filename = inputs.directory.."/graphics/entity/structures/power/solar-panel-large/base/solar-panel-large-shadow.png",
                     priority = "high",
