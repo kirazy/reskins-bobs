@@ -3,6 +3,9 @@
 --     
 -- See LICENSE.md in the project directory for license information.
 
+-- Vanilla Loaders HD
+require("prototypes.loaders") -- vanilla-loaders-hd reskins loaders here
+
 -- Bob's Assembling Machines
 require("prototypes.entity.structures.assembly.chemical-plant")  -- bobassembly reskins in data-updates
 

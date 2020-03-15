@@ -14,6 +14,7 @@ require("prototypes.functions")
 require("prototypes.entity.structures.pipe-pictures")
 
 -- Bob's Assembly
+require("prototypes.entity.structures.assembly.assembling-machine") 
 -- require("prototypes.entity.structures.assembly.distillery")
 -- require("prototypes.entity.structures.assembly.electrolyser")
 -- require("prototypes.entity.structures.assembly.furnace")
@@ -25,7 +26,7 @@ require("prototypes.entity.structures.pipe-pictures")
 -- Bob's Logistics
 -- require("prototypes.entity.structures.logistics.chest")
 -- require("prototypes.entity.structures.logistics.inserter")
--- require("prototypes.entity.structures.logistics.logistic-zone-expander")
+require("prototypes.entity.structures.logistics.logistic-zone-expander")
 -- require("prototypes.entity.structures.logistics.pipe")
 require("prototypes.entity.structures.logistics.pump")
 -- require("prototypes.entity.structures.logistics.robo-charge-port")

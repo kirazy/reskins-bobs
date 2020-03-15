@@ -23,6 +23,6 @@
     "? bobrevamp >= 0.18.0",
     "? bobtech >= 0.18.0",
     "? bobwarfare >= 0.18.0",
-    "! mini-machines >= 7.0.0"
+    "? vanilla-loaders-hd >= 0.18.7"
   ]
 }
