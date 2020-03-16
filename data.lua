@@ -17,7 +17,7 @@ require("prototypes.entity.structures.pipe-pictures")
 -- require("prototypes.entity.structures.assembly.distillery")
 -- require("prototypes.entity.structures.assembly.electrolyser")
 -- require("prototypes.entity.structures.assembly.furnace")
--- require("prototypes.entity.structures.assembly.oil-refinery")
+require("prototypes.entity.structures.assembly.oil-refinery")
 
 -- Bob's Greenhouse
 -- require("prototypes.entity.structures.greenhouse.greenhouse")
@@ -25,7 +25,7 @@ require("prototypes.entity.structures.pipe-pictures")
 -- Bob's Logistics
 -- require("prototypes.entity.structures.logistics.chest")
 -- require("prototypes.entity.structures.logistics.inserter")
-require("prototypes.entity.structures.logistics.logistic-zone-expander")
+-- require("prototypes.entity.structures.logistics.logistic-zone-expander")
 -- require("prototypes.entity.structures.logistics.pipe")
 require("prototypes.entity.structures.logistics.pump")
 -- require("prototypes.entity.structures.logistics.robo-charge-port")
@@ -48,7 +48,7 @@ require("prototypes.entity.structures.mining.mining-drill")
 -- require("prototypes.entity.structures.plates.water-pump")
 
 -- Bob's Power
--- require("prototypes.entity.structures.power.accumulator")
+require("prototypes.entity.structures.power.accumulator")
 require("prototypes.entity.structures.power.big-electric-pole")
 require("prototypes.entity.structures.power.boiler")
 -- require("prototypes.entity.structures.power.generator")
