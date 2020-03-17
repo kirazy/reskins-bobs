@@ -25,7 +25,7 @@ require("prototypes.entity.structures.assembly.oil-refinery")
 -- Bob's Logistics
 -- require("prototypes.entity.structures.logistics.chest")
 -- require("prototypes.entity.structures.logistics.inserter")
--- require("prototypes.entity.structures.logistics.logistic-zone-expander")
+require("prototypes.entity.structures.logistics.logistic-zone-expander")
 -- require("prototypes.entity.structures.logistics.pipe")
 require("prototypes.entity.structures.logistics.pump")
 -- require("prototypes.entity.structures.logistics.robo-charge-port")

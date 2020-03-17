@@ -70,8 +70,8 @@ for name, map in pairs(tier_map) do
             -- Base
             {
                 filename = inputs.directory.."/graphics/entity/structures/logistics/zone-expander/zone-expander-base.png",
-                width = 32,
-                height = 96,
+                width = 28,
+                height = 71,
                 shift = util.by_pixel(0, -25.5),
                 hr_version =
                 {
@@ -85,8 +85,8 @@ for name, map in pairs(tier_map) do
             -- Grid
             {
                 filename = inputs.directory.."/graphics/entity/structures/logistics/zone-expander/grids/grid-"..subtier..".png",
-                width = 32,
-                height = 96,
+                width = 28,
+                height = 71,
                 shift = util.by_pixel(0, -25.5),
                 hr_version =
                 {
@@ -100,8 +100,8 @@ for name, map in pairs(tier_map) do
             -- Metal
             {
                 filename = inputs.directory.."/graphics/entity/structures/logistics/zone-expander/metal/metal-"..subtier..".png",
-                width = 32,
-                height = 96,
+                width = 28,
+                height = 71,
                 shift = util.by_pixel(0, -25.5),
                 hr_version =
                 {
@@ -115,8 +115,8 @@ for name, map in pairs(tier_map) do
             -- Mask
             {
                 filename = inputs.directory.."/graphics/entity/structures/logistics/zone-expander/zone-expander-mask.png",
-                width = 32,
-                height = 96,
+                width = 28,
+                height = 71,
                 shift = util.by_pixel(0, -25.5),
                 tint = inputs.tint,
                 hr_version =
@@ -132,8 +132,8 @@ for name, map in pairs(tier_map) do
             -- Highlights
             {
                 filename = inputs.directory.."/graphics/entity/structures/logistics/zone-expander/zone-expander-highlights.png",
-                width = 32,
-                height = 96,
+                width = 28,
+                height = 71,
                 shift = util.by_pixel(0, -25.5),
                 blend_mode = "additive",
                 hr_version =
@@ -149,8 +149,8 @@ for name, map in pairs(tier_map) do
             -- Shadow Fix (we'll do a proper fix later...)
             {
                 filename = inputs.directory.."/graphics/entity/structures/logistics/zone-expander/zone-expander-shadow-fix.png",
-                width = 32,
-                height = 96,
+                width = 28,
+                height = 71,
                 shift = util.by_pixel(0, -25.5),
                 draw_as_shadow = true,
                 hr_version =
@@ -179,7 +179,7 @@ for name, map in pairs(tier_map) do
                 height = 31,
                 frame_count = 8,
                 animation_speed = 0.5,
-                shift = {0, -60},
+                shift = util.by_pixel(0, -60),
                 hr_version =
                 {
                     filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/base/antennas/hr-roboport-"..subtier.."-base-animation.png",
