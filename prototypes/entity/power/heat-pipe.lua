@@ -51,7 +51,7 @@ for name, tier in pairs(tier_map) do
     -- Map entity to name used internally; for heat-pipe this needs to be specified for use with icon generation
     inputs.internal_name = name
 
-    reskins.lib.setup_common_attributes(name, tier, inputs)
+    reskins.lib.setup_standard_structure(name, tier, inputs)
 
     -- Fetch remnant
     -- remnant = data.raw["corpse"][name.."-remnants"]
