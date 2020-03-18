@@ -58,7 +58,7 @@ entity.base_animation =
             height = 31,
             frame_count = 8,
             animation_speed = 0.5,
-            shift = util.by_pixel(0, -20.5),
+            shift = util.by_pixel(0.5, -21),
             hr_version =
             {
                 filename = inputs.directory.."/graphics/entity/structures/logistics/roboport/base/antennas/hr-roboport-1-base-animation.png",
@@ -67,7 +67,7 @@ entity.base_animation =
                 height = 59,
                 frame_count = 8,
                 animation_speed = 0.5,
-                shift = util.by_pixel(0, -20.5),
+                shift = util.by_pixel(1, -21),
                 scale = 0.5
             }
         },
@@ -78,7 +78,7 @@ entity.base_animation =
             height = 35,
             frame_count = 8,
             animation_speed = 0.5,
-            shift = util.by_pixel(11.5, 1.5),
+            shift = util.by_pixel(13, 3),
             draw_as_shadow = true,
             hr_version =
             {
