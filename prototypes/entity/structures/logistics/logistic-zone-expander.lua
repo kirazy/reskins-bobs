@@ -216,6 +216,9 @@ for name, map in pairs(tier_map) do
         }
     }
 
+    -- Set drawing box so the entity appears properly within the GUI
+    entity.drawing_box = {{-0.5, -2.5}, {0.5, 0.5}}
+
     -- Label to skip to next iteration
     ::continue::
 end

@@ -95,3 +95,6 @@ entity.base_animation =
         },
     }
 }
+
+-- Set drawing box so the entity appears properly within the GUI
+entity.drawing_box = {{-0.5, -1.5}, {0.5, 0.5}}
