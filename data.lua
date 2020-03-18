@@ -24,7 +24,9 @@ require("prototypes.entity.assembly.oil-refinery")
 
 -- Bob's Logistics
 -- require("prototypes.entity.logistics.chest")
+require("prototypes.entity.logistics.construction-robots")
 -- require("prototypes.entity.logistics.inserter")
+require("prototypes.entity.logistics.logistic-robots")
 require("prototypes.entity.logistics.logistic-zone-expander")
 require("prototypes.entity.logistics.logistic-zone-interface")
 -- require("prototypes.entity.logistics.pipe")

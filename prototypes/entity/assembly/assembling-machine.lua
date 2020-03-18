@@ -189,7 +189,7 @@ for name, map in pairs(tier_map) do
         {
             {
                 production_type = "input",
-                pipe_picture = reskins.bobs.pipe_pictures(inputs.tint),
+                pipe_picture = reskins.bobs.assembly_pipe_pictures(inputs.tint),
                 pipe_covers = pipecoverspictures(),
                 base_area = 10,
                 base_level = -1,
@@ -198,7 +198,7 @@ for name, map in pairs(tier_map) do
             },
             {
                 production_type = "output",
-                pipe_picture = reskins.bobs.pipe_pictures(inputs.tint),
+                pipe_picture = reskins.bobs.assembly_pipe_pictures(inputs.tint),
                 pipe_covers = pipecoverspictures(),
                 base_area = 10,
                 base_level = 1,

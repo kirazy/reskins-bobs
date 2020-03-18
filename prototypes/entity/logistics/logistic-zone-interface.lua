@@ -7,6 +7,7 @@
 if not mods["boblogistics"] then return end
 if settings.startup["reskins-bobs-do-boblogistics"].value == false then return end
 
+-- Set input parameters
 local inputs =
 {
     type = "roboport",

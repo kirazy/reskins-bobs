@@ -3,7 +3,7 @@
 --     
 -- See LICENSE.md in the project directory for license information.
 
-function reskins.bobs.pipe_pictures(tint)
+function reskins.bobs.assembly_pipe_pictures(tint)
     return
     {
         north =
