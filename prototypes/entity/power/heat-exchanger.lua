@@ -6,45 +6,35 @@
 -- Check to see if reskinning needs to be done.
 if not mods["bobpower"] then return end
 if settings.startup["bobmods-power-steam"].value == false then return end
-if settings.startup["reskins-bobs-do-bobpower"].value == false then return end 
+if settings.startup["reskins-bobs-do-bobpower"].value == false then return end
 
 -- Set input parameters
 local inputs = 
 {
     type = "boiler",
-    root_name = "boiler",
-    base_entity = "boiler",
+    root_name = "heat-exchanger",
+    base_entity = "heat-exchanger",
     directory = reskins.bobs.directory,
     mod = "power",
-    particles = {["big"] = 3}
+    particles = {["big"] = 3},
+    make_icons = false,
 }
 
+-- Heat exchangers have two different sets of tiers; determine which we are using
 local tier_map
 if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
-    tier_map = 
+    tier_map =
     {
-        ["boiler"]   = {1},
-        ["boiler-2"] = {2},
-        ["boiler-3"] = {3},
-        ["boiler-4"] = {4},
-        ["boiler-5"] = {5},
-        ["oil-boiler"] = {1, true},
-        ["oil-boiler-2"] = {2, true},
-        ["oil-boiler-3"] = {3, true},
-        ["oil-boiler-4"] = {4, true},
+        ["heat-exchanger"]   = {1, 1},
+        ["heat-exchanger-2"] = {2, 2},
+        ["heat-exchanger-3"] = {3, 3},
     }
 else
-    tier_map = 
+    tier_map =
     {
-        ["boiler"]   = {1},
-        ["boiler-2"] = {2},
-        ["boiler-3"] = {3},
-        ["boiler-4"] = {4},
-        ["boiler-5"] = {5},
-        ["oil-boiler"] = {2, true},
-        ["oil-boiler-2"] = {3, true},
-        ["oil-boiler-3"] = {4, true},
-        ["oil-boiler-4"] = {5, true},
+        ["heat-exchanger"]   = {3, 1},
+        ["heat-exchanger-2"] = {4, 2},
+        ["heat-exchanger-3"] = {5, 3},
     }
 end
 
@@ -53,21 +43,21 @@ for name, map in pairs(tier_map) do
     -- Fetch entity
     entity = data.raw[inputs.type][name]
 
+    -- Parse map
+    tier = map[1]
+    pipe = map[2]
+
     -- Check if entity exists, if not, skip this iteration
     if not entity then
         goto continue
     end
 
-    -- Parse map
-    tier = map[1]
-    has_fluids = map[2]
-
     -- Map entity to name used internally
-    inputs.internal_name = inputs.root_name.."-"..tier    
+    inputs.internal_name = inputs.root_name.."-"..tier
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
-
+    
     reskins.lib.setup_common_attributes(name, tier, inputs)
 
     -- Fetch remnant
@@ -80,86 +70,112 @@ for name, map in pairs(tier_map) do
         {
             -- Base
             {
-                filename = "__base__/graphics/entity/boiler/remnants/boiler-remnants.png",
+                filename = "__base__/graphics/entity/heat-exchanger/remnants/heat-exchanger-remnants.png",
                 line_length = 1,
-                width = 138,
-                height = 110,
+                width = 136,
+                height = 132,
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
                 direction_count = 4,
-                shift = util.by_pixel(0, -3),
+                shift = util.by_pixel(0, 8),
                 hr_version =
                 {
-                    filename = "__base__/graphics/entity/boiler/remnants/hr-boiler-remnants.png",
+                    filename = "__base__/graphics/entity/heat-exchanger/remnants/hr-heat-exchanger-remnants.png",
                     line_length = 1,
-                    width = 274,
-                    height = 220,
+                    width = 272,
+                    height = 262,
                     frame_count = 1,
                     variation_count = 1,
                     axially_symmetrical = false,
                     direction_count = 4,
-                    shift = util.by_pixel(-0.5, -3),
+                    shift = util.by_pixel(0.5, 8),
                     scale = 0.5,
-                }
+                },
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/power/boiler/remnants/boiler-remnants-mask.png",
+                filename = inputs.directory.."/graphics/entity/power/heat-exchanger/remnants/heatex-remnants-mask.png",
                 line_length = 1,
-                width = 138,
-                height = 110,
+                width = 136,
+                height = 132,
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
                 direction_count = 4,
-                shift = util.by_pixel(0, -3),
+                shift = util.by_pixel(0, 8),
                 tint = inputs.tint,
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/power/boiler/remnants/hr-boiler-remnants-mask.png",
+                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/remnants/hr-heatex-remnants-mask.png",
                     line_length = 1,
-                    width = 274,
-                    height = 220,
+                    width = 272,
+                    height = 262,
                     frame_count = 1,
                     variation_count = 1,
                     axially_symmetrical = false,
                     direction_count = 4,
-                    shift = util.by_pixel(-0.5, -3),
+                    shift = util.by_pixel(0.5, 8),
                     tint = inputs.tint,
                     scale = 0.5,
-                }           
+                },
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/entity/power/boiler/remnants/boiler-remnants-highlights.png",
+                filename = inputs.directory.."/graphics/entity/power/heat-exchanger/remnants/heatex-remnants-highlights.png",
                 line_length = 1,
-                width = 138,
-                height = 110,
+                width = 136,
+                height = 132,
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
                 direction_count = 4,
-                shift = util.by_pixel(0, -3),
+                shift = util.by_pixel(0, 8),
                 blend_mode = "additive",
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/power/boiler/remnants/hr-boiler-remnants-highlights.png",
+                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/remnants/hr-heatex-remnants-highlights.png",
                     line_length = 1,
-                    width = 274,
-                    height = 220,
+                    width = 272,
+                    height = 262,
                     frame_count = 1,
                     variation_count = 1,
                     axially_symmetrical = false,
                     direction_count = 4,
-                    shift = util.by_pixel(-0.5, -3),
+                    shift = util.by_pixel(0.5, 8),
                     blend_mode = "additive",
                     scale = 0.5,
-                }           
+                },
+            },
+            -- Pipes
+            {
+                filename = inputs.directory.."/graphics/entity/power/heat-exchanger/remnants/pipes/heatex-pipe-"..pipe.."-remnants.png",
+                line_length = 1,
+                width = 136,
+                height = 132,
+                frame_count = 1,
+                variation_count = 1,
+                axially_symmetrical = false,
+                direction_count = 4,
+                shift = util.by_pixel(0, 8),
+                hr_version =
+                {
+                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/remnants/pipes/hr-heatex-pipe-"..pipe.."-remnants.png",
+                    line_length = 1,
+                    width = 272,
+                    height = 262,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 4,
+                    shift = util.by_pixel(0.5, 8),
+                    scale = 0.5,
+                },
             }
         }
     }
-    
+
+
     -- Reskin entities
     entity.structure =
     {
@@ -169,14 +185,14 @@ for name, map in pairs(tier_map) do
             {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/boiler/boiler-N-idle.png",
+                    filename = "__base__/graphics/entity/heat-exchanger/heatex-N-idle.png",
                     priority = "extra-high",
                     width = 131,
                     height = 108,
                     shift = util.by_pixel(-0.5, 4),
                     hr_version =
                     {
-                        filename = "__base__/graphics/entity/boiler/hr-boiler-N-idle.png",
+                        filename = "__base__/graphics/entity/heat-exchanger/hr-heatex-N-idle.png",
                         priority = "extra-high",
                         width = 269,
                         height = 221,
@@ -186,7 +202,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/power/boiler/boiler-N-idle-mask.png",
+                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/heatex-N-idle-mask.png",
                     priority = "extra-high",
                     width = 131,
                     height = 108,
@@ -194,7 +210,7 @@ for name, map in pairs(tier_map) do
                     tint = inputs.tint,
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/power/boiler/hr-boiler-N-idle-mask.png",
+                        filename = inputs.directory.."/graphics/entity/power/heat-exchanger/hr-heatex-N-idle-mask.png",
                         priority = "extra-high",
                         width = 269,
                         height = 221,
@@ -205,7 +221,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Highlights
                 {
-                    filename = inputs.directory.."/graphics/entity/power/boiler/boiler-N-idle-highlights.png",
+                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/heatex-N-idle-highlights.png",
                     priority = "extra-high",
                     width = 131,
                     height = 108,
@@ -213,12 +229,29 @@ for name, map in pairs(tier_map) do
                     blend_mode = "additive",
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/power/boiler/hr-boiler-N-idle-highlights.png",
+                        filename = inputs.directory.."/graphics/entity/power/heat-exchanger/hr-heatex-N-idle-highlights.png",
                         priority = "extra-high",
                         width = 269,
                         height = 221,
                         shift = util.by_pixel(-1.25, 5.25),
                         blend_mode = "additive",
+                        scale = 0.5
+                    }
+                },
+                -- Pipes
+                {
+                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/pipes/heatex-N-pipe-"..pipe..".png",
+                    priority = "extra-high",
+                    width = 131,
+                    height = 108,
+                    shift = util.by_pixel(-0.5, 4),
+                    hr_version =
+                    {
+                        filename = inputs.directory.."/graphics/entity/power/heat-exchanger/pipes/hr-heatex-N-pipe-"..pipe..".png",
+                        priority = "extra-high",
+                        width = 269,
+                        height = 221,
+                        shift = util.by_pixel(-1.25, 5.25),
                         scale = 0.5
                     }
                 },
@@ -249,56 +282,73 @@ for name, map in pairs(tier_map) do
             {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/boiler/boiler-E-idle.png",
+                    filename = "__base__/graphics/entity/heat-exchanger/heatex-E-idle.png",
                     priority = "extra-high",
-                    width = 105,
+                    width = 102,
                     height = 147,
-                    shift = util.by_pixel(-3.5, -0.5),
+                    shift = util.by_pixel(-2, -0.5),
                     hr_version =
                     {
-                        filename = "__base__/graphics/entity/boiler/hr-boiler-E-idle.png",
+                        filename = "__base__/graphics/entity/heat-exchanger/hr-heatex-E-idle.png",
                         priority = "extra-high",
-                        width = 216,
+                        width = 211,
                         height = 301,
-                        shift = util.by_pixel(-3, 1.25),
+                        shift = util.by_pixel(-1.75, 1.25),
                         scale = 0.5
                     }
                 },
-                -- Color mask
+                -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/power/boiler/boiler-E-idle-mask.png",
+                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/heatex-E-idle-mask.png",
                     priority = "extra-high",
-                    width = 105,
+                    width = 102,
                     height = 147,
-                    shift = util.by_pixel(-3.5, -0.5),
+                    shift = util.by_pixel(-2, -0.5),
                     tint = inputs.tint,
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/power/boiler/hr-boiler-E-idle-mask.png",
+                        filename = inputs.directory.."/graphics/entity/power/heat-exchanger/hr-heatex-E-idle-mask.png",
                         priority = "extra-high",
-                        width = 216,
+                        width = 211,
                         height = 301,
-                        shift = util.by_pixel(-3, 1.25),
+                        shift = util.by_pixel(-1.75, 1.25),
                         tint = inputs.tint,
                         scale = 0.5
                     }
                 },
                 -- Highlights
                 {
-                    filename = inputs.directory.."/graphics/entity/power/boiler/boiler-E-idle-highlights.png",
+                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/heatex-E-idle-highlights.png",
                     priority = "extra-high",
-                    width = 105,
+                    width = 102,
                     height = 147,
-                    shift = util.by_pixel(-3.5, -0.5),
+                    shift = util.by_pixel(-2, -0.5),
                     blend_mode = "additive",
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/power/boiler/hr-boiler-E-idle-highlights.png",
+                        filename = inputs.directory.."/graphics/entity/power/heat-exchanger/hr-heatex-E-idle-highlights.png",
                         priority = "extra-high",
-                        width = 216,
+                        width = 211,
                         height = 301,
-                        shift = util.by_pixel(-3, 1.25),
+                        shift = util.by_pixel(-1.75, 1.25),
                         blend_mode = "additive",
+                        scale = 0.5
+                    }
+                },
+                -- Pipes
+                {
+                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/pipes/heatex-E-pipe-"..pipe..".png",
+                    priority = "extra-high",
+                    width = 102,
+                    height = 147,
+                    shift = util.by_pixel(-2, -0.5),
+                    hr_version =
+                    {
+                        filename = inputs.directory.."/graphics/entity/power/heat-exchanger/pipes/hr-heatex-E-pipe-"..pipe..".png",
+                        priority = "extra-high",
+                        width = 211,
+                        height = 301,
+                        shift = util.by_pixel(-1.75, 1.25),
                         scale = 0.5
                     }
                 },
@@ -329,56 +379,73 @@ for name, map in pairs(tier_map) do
             {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/boiler/boiler-S-idle.png",
+                    filename = "__base__/graphics/entity/heat-exchanger/heatex-S-idle.png",
                     priority = "extra-high",
                     width = 128,
-                    height = 95,
-                    shift = util.by_pixel(3, 12.5),
+                    height = 100,
+                    shift = util.by_pixel(3, 10),
                     hr_version =
                     {
-                        filename = "__base__/graphics/entity/boiler/hr-boiler-S-idle.png",
+                        filename = "__base__/graphics/entity/heat-exchanger/hr-heatex-S-idle.png",
                         priority = "extra-high",
                         width = 260,
-                        height = 192,
-                        shift = util.by_pixel(4, 13),
+                        height = 201,
+                        shift = util.by_pixel(4, 10.75),
                         scale = 0.5
                     }
                 },
                 -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/power/boiler/boiler-S-idle-mask.png",
+                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/heatex-S-idle-mask.png",
                     priority = "extra-high",
                     width = 128,
-                    height = 95,
-                    shift = util.by_pixel(3, 12.5),
+                    height = 100,
+                    shift = util.by_pixel(3, 10),
                     tint = inputs.tint,
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/power/boiler/hr-boiler-S-idle-mask.png",
+                        filename = inputs.directory.."/graphics/entity/power/heat-exchanger/hr-heatex-S-idle-mask.png",
                         priority = "extra-high",
                         width = 260,
-                        height = 192,
-                        shift = util.by_pixel(4, 13),
+                        height = 201,
+                        shift = util.by_pixel(4, 10.75),
                         tint = inputs.tint,
                         scale = 0.5
                     }
                 },
                 -- Highlights
                 {
-                    filename = inputs.directory.."/graphics/entity/power/boiler/boiler-S-idle-highlights.png",
+                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/heatex-S-idle-highlights.png",
                     priority = "extra-high",
                     width = 128,
-                    height = 95,
-                    shift = util.by_pixel(3, 12.5),
+                    height = 100,
+                    shift = util.by_pixel(3, 10),
                     blend_mode = "additive",
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/power/boiler/hr-boiler-S-idle-highlights.png",
+                        filename = inputs.directory.."/graphics/entity/power/heat-exchanger/hr-heatex-S-idle-highlights.png",
                         priority = "extra-high",
                         width = 260,
-                        height = 192,
-                        shift = util.by_pixel(4, 13),
+                        height = 201,
+                        shift = util.by_pixel(4, 10.75),
                         blend_mode = "additive",
+                        scale = 0.5
+                    }
+                },
+                -- Pipes
+                {
+                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/pipes/heatex-S-pipe-"..pipe..".png",
+                    priority = "extra-high",
+                    width = 128,
+                    height = 100,
+                    shift = util.by_pixel(3, 10),
+                    hr_version =
+                    {
+                        filename = inputs.directory.."/graphics/entity/power/heat-exchanger/pipes/hr-heatex-S-pipe-"..pipe..".png",
+                        priority = "extra-high",
+                        width = 260,
+                        height = 201,
+                        shift = util.by_pixel(4, 10.75),
                         scale = 0.5
                     }
                 },
@@ -409,14 +476,14 @@ for name, map in pairs(tier_map) do
             {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/boiler/boiler-W-idle.png",
+                    filename = "__base__/graphics/entity/heat-exchanger/heatex-W-idle.png",
                     priority = "extra-high",
                     width = 96,
                     height = 132,
                     shift = util.by_pixel(1, 5),
                     hr_version =
                     {
-                        filename = "__base__/graphics/entity/boiler/hr-boiler-W-idle.png",
+                        filename = "__base__/graphics/entity/heat-exchanger/hr-heatex-W-idle.png",
                         priority = "extra-high",
                         width = 196,
                         height = 273,
@@ -426,7 +493,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/power/boiler/boiler-W-idle-mask.png",
+                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/heatex-W-idle-mask.png",
                     priority = "extra-high",
                     width = 96,
                     height = 132,
@@ -434,7 +501,7 @@ for name, map in pairs(tier_map) do
                     tint = inputs.tint,
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/power/boiler/hr-boiler-W-idle-mask.png",
+                        filename = inputs.directory.."/graphics/entity/power/heat-exchanger/hr-heatex-W-idle-mask.png",
                         priority = "extra-high",
                         width = 196,
                         height = 273,
@@ -445,7 +512,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Highlights
                 {
-                    filename = inputs.directory.."/graphics/entity/power/boiler/boiler-W-idle-highlights.png",
+                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/heatex-W-idle-highlights.png",
                     priority = "extra-high",
                     width = 96,
                     height = 132,
@@ -453,12 +520,29 @@ for name, map in pairs(tier_map) do
                     blend_mode = "additive",
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/power/boiler/hr-boiler-W-idle-highlights.png",
+                        filename = inputs.directory.."/graphics/entity/power/heat-exchanger/hr-heatex-W-idle-highlights.png",
                         priority = "extra-high",
                         width = 196,
                         height = 273,
                         shift = util.by_pixel(1.5, 7.75),
                         blend_mode = "additive",
+                        scale = 0.5
+                    }
+                },
+                -- Pipes
+                {
+                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/pipes/heatex-W-pipe-"..pipe..".png",
+                    priority = "extra-high",
+                    width = 96,
+                    height = 132,
+                    shift = util.by_pixel(1, 5),
+                    hr_version =
+                    {
+                        filename = inputs.directory.."/graphics/entity/power/heat-exchanger/pipes/hr-heatex-W-pipe-"..pipe..".png",
+                        priority = "extra-high",
+                        width = 196,
+                        height = 273,
+                        shift = util.by_pixel(1.5, 7.75),
                         scale = 0.5
                     }
                 },
@@ -485,22 +569,21 @@ for name, map in pairs(tier_map) do
         }
     }
 
-    -- Handle pipes
-    if has_fluids then
-        entity.energy_source.fluid_box =
+    entity.energy_source.pipe_covers = make_4way_animation_from_spritesheet(
+    {
+        filename = inputs.directory.."/graphics/entity/power/heat-exchanger/base/heatex-endings-"..pipe..".png",
+        width = 32,
+        height = 32,
+        direction_count = 4,
+        hr_version =
         {
-            base_area = 1,
-            height = 2,
-            base_level = -1,
-            pipe_connections =
-            {
-                {type = "input", position = {0, 1.5}}
-            },
-            pipe_covers = pipecoverspictures(),
-            pipe_picture = reskins.bobs.pipe_pictures(inputs.tint),
-            production_type = "input",
+            filename = inputs.directory.."/graphics/entity/power/heat-exchanger/base/hr-heatex-endings-"..pipe..".png",
+            width = 64,
+            height = 64,
+            direction_count = 4,
+            scale = 0.5
         }
-    end
+    })
 
     -- Label to skip to next iteration
     ::continue::
