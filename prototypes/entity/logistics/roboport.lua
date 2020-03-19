@@ -281,6 +281,22 @@ for name, map in pairs(tier_map) do
     {
         layers =
         {
+            -- Padding
+            {
+                filename = inputs.directory.."/graphics/empty.png",
+                priority = "medium",
+                width = 1,
+                height = 1,
+                frame_count = 1,
+                hr_version =
+                {
+                    filename = inputs.directory.."/graphics/empty.png",
+                    priority = "medium",
+                    width = 1,
+                    height = 1,
+                    frame_count = 1,
+                }
+            },
             -- Base
             {
                 filename = inputs.directory.."/graphics/entity/logistics/roboport/base/roboport-base-patch.png",
