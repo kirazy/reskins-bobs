@@ -9,20 +9,20 @@
   "dependencies": 
   [	
     "base >= 0.18.0",
-    "? reskins-library >= 0.18.1",
-    "? bobassembly >= 0.18.0",
-    "? bobelectronics >= 0.18.0",
-    "? bobgreenhouse >= 0.18.0",
-    "? bobinserters >= 0.18.0",
-    "? boblibrary >= 0.18.0",
-    "? boblogistics >= 0.18.0",
-    "? bobmining >= 0.18.0",
-    "? bobmodules >= 0.18.0",
-    "? bobplates >= 0.18.0",
-    "? bobpower >= 0.18.0",
-    "? bobrevamp >= 0.18.0",
-    "? bobtech >= 0.18.0",
-    "? bobwarfare >= 0.18.0",
-    "? vanilla-loaders-hd >= 0.18.7"
+    "reskins-library >= 0.18.1",
+    "(?) bobassembly >= 0.18.0",
+    "(?) bobelectronics >= 0.18.0",
+    "(?) bobgreenhouse >= 0.18.0",
+    "(?) bobinserters >= 0.18.0",
+    "(?) boblibrary >= 0.18.0",
+    "(?) boblogistics >= 0.18.0",
+    "(?) bobmining >= 0.18.0",
+    "(?) bobmodules >= 0.18.0",
+    "(?) bobplates >= 0.18.0",
+    "(?) bobpower >= 0.18.0",
+    "(?) bobrevamp >= 0.18.0",
+    "(?) bobtech >= 0.18.0",
+    "(?) bobwarfare >= 0.18.0",
+    "(?) vanilla-loaders-hd >= 0.18.7"
   ]
 }
