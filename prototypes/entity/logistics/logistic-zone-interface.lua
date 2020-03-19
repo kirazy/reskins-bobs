@@ -29,7 +29,7 @@ if not entity then return end
 
 inputs.internal_name = "logistic-zone-interface"
 
-reskins.lib.setup_standard_structure(name, tier, inputs)
+reskins.lib.setup_standard_entity(name, tier, inputs)
 
 -- Reskin entity
 entity.base =

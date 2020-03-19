@@ -12,9 +12,10 @@ local inputs =
 {
     type = "logistic-robot",
     root_name = "logistic-robot",
+    base_entity = "logistic-robot",    
     directory = reskins.bobs.directory,
     mod = "logistics",
-    make_icons = false
+    make_icons = false,
 }
 
 local tier_map =
@@ -479,9 +480,6 @@ local function generate_robot_animations(tint)
     }
 end
 
--- Setup defaults
-reskins.lib.parse_inputs(inputs)
-
 -- Reskin entities, create and assign extra details
 for name, tier in pairs(tier_map) do
     -- Fetch entity
@@ -498,10 +496,116 @@ for name, tier in pairs(tier_map) do
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
 
+    reskins.lib.setup_standard_entity(name, tier, inputs)
+
     -- Generate robot animations
     animations = generate_robot_animations(inputs.tint)
 
+    -- Fetch remnant
+    remnant = data.raw["corpse"][name.."-remnants"]
+
+    -- Reskin remnants
+    remnant.animation = make_rotated_animation_variations_from_sheet (3,
+    {
+        layers = 
+        {
+            -- Base
+            {
+                filename = "__base__/graphics/entity/logistic-robot/remnants/logistic-robot-remnants.png",
+                line_length = 1,
+                width = 58,
+                height = 58,
+                frame_count = 1,
+                variation_count = 1,
+                axially_symmetrical = false,
+                direction_count = 1,
+                shift = util.by_pixel(1, 1),
+                hr_version =
+                {
+                    filename = "__base__/graphics/entity/logistic-robot/remnants/hr-logistic-robot-remnants.png",
+                    line_length = 1,
+                    width = 116,
+                    height = 114,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 1,
+                    shift = util.by_pixel(1, 1),
+                    scale = 0.5,
+                }
+            },
+            -- Mask
+            {
+                filename = inputs.directory.."/graphics/entity/logistics/logistic-robot/remnants/logistic-robot-remnants-mask.png",
+                line_length = 1,
+                width = 58,
+                height = 58,
+                frame_count = 1,
+                variation_count = 1,
+                axially_symmetrical = false,
+                direction_count = 1,
+                shift = util.by_pixel(1, 1),
+                tint = inputs.tint,
+                hr_version =
+                {
+                    filename = inputs.directory.."/graphics/entity/logistics/logistic-robot/remnants/hr-logistic-robot-remnants-mask.png",
+                    line_length = 1,
+                    width = 116,
+                    height = 114,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 1,
+                    shift = util.by_pixel(1, 1),
+                    tint = inputs.tint,
+                    scale = 0.5,
+                }
+            },
+            -- Highlights
+            {
+                filename = inputs.directory.."/graphics/entity/logistics/logistic-robot/remnants/logistic-robot-remnants-highlights.png",
+                line_length = 1,
+                width = 58,
+                height = 58,
+                frame_count = 1,
+                variation_count = 1,
+                axially_symmetrical = false,
+                direction_count = 1,
+                shift = util.by_pixel(1, 1),
+                blend_mode = "additive",
+                hr_version =
+                {
+                    filename = inputs.directory.."/graphics/entity/logistics/logistic-robot/remnants/hr-logistic-robot-remnants-highlights.png",
+                    line_length = 1,
+                    width = 116,
+                    height = 114,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 1,
+                    shift = util.by_pixel(1, 1),
+                    blend_mode = "additive",
+                    scale = 0.5,
+                }
+            }
+        }
+    })
+
+    -- Clear this, logistic robots do not generate the corpse directly
+    entity.corpse = nil
+
     -- Reskin entities
+    entity.idle = animations.idle
+    entity.idle_with_cargo = animations.idle_with_cargo
+    entity.in_motion = animations.in_motion
+    entity.in_motion_with_cargo = animations.in_motion_with_cargo
+    entity.shadow_idle = animations.shadow_idle
+    entity.shadow_idle_with_cargo = animations.shadow_idle_with_cargo
+    entity.shadow_in_motion = animations.shadow_in_motion
+    entity.shadow_in_motion_with_cargo = animations.shadow_in_motion_with_cargo
+
+    -- Setup remnants and destruction animation
+    reskins.bobs.make_robot_particle(entity)
 
     -- Label to skip to next iteration
     ::continue::

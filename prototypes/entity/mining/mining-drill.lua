@@ -102,7 +102,7 @@ for name, tier in pairs(tier_map) do
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
     
-    reskins.lib.setup_standard_structure(name, tier, inputs)
+    reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Calculate new animation playback speed
     playback_speed = ((entity.mining_speed/(max_speed-min_speed)) - (min_speed/(max_speed-min_speed)))*max_playback

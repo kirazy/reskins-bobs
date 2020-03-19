@@ -55,7 +55,7 @@ for name, tier in pairs(tier_map) do
         goto continue
     end
     
-    reskins.lib.setup_standard_structure(name, tier, inputs)
+    reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Fetch remnant
     remnant = data.raw["corpse"][name.."-remnants"]
