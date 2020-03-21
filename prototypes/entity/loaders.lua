@@ -24,6 +24,16 @@ local tier_map =
     ["green-loader"]   = 5,
 }
 
+local loader_color_map_adjustments =
+{
+    ["basic-loader"] = {0, 0, 0},
+    ["loader"] = {33, 47, 64},
+    ["fast-loader"] = {33, 17, 23},
+    ["express-loader"] = {40, 57, 56},
+    ["purple-loader"] = {57, 30, 38},
+    ["green-loader"] = {-13, 20, 14},
+}
+
 -- Reskin entities
 for name, tier in pairs(tier_map) do
     -- Fetch entity
@@ -36,12 +46,25 @@ for name, tier in pairs(tier_map) do
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
+
+    -- Tint adjustment
+    local adjusted_tint = reskins.lib.adjust_alpha(inputs.tint, 0.82)
+    for n = 1, 3 do
+        adjusted_tint[n] = loader_color_map_adjustments[name][n] + adjusted_tint[n]
+
+        if adjusted_tint[n] > 255 then
+            adjusted_tint[n] = 255
+        elseif adjusted_tint[n] < 0 then
+            adjusted_tint[n] = 0
+        end
+
+    end
     
     -- Retint the mask
-    entity.structure.direction_in.sheets[2].tint = reskins.lib.adjust_alpha(inputs.tint, 0.82)
-    entity.structure.direction_in.sheets[2].hr_version.tint = reskins.lib.adjust_alpha(inputs.tint, 0.82)
-    entity.structure.direction_out.sheets[2].tint = reskins.lib.adjust_alpha(inputs.tint, 0.82)
-    entity.structure.direction_out.sheets[2].hr_version.tint = reskins.lib.adjust_alpha(inputs.tint, 0.82)
+    entity.structure.direction_in.sheets[2].tint = adjusted_tint
+    entity.structure.direction_in.sheets[2].hr_version.tint = adjusted_tint
+    entity.structure.direction_out.sheets[2].tint = adjusted_tint
+    entity.structure.direction_out.sheets[2].hr_version.tint = adjusted_tint
 
     -- Label to skip to next iteration
     ::continue::

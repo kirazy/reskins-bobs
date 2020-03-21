@@ -193,7 +193,7 @@ local function generate_robot_animations(tint)
                         y = 76,
                         scale = 0.5
                     }
-                },
+                }
             }
         },
 

@@ -15,7 +15,7 @@ require("prototypes.entity.pipe-pictures")
 
 -- Bob's Assembly
 -- require("prototypes.entity.assembly.distillery")
--- require("prototypes.entity.assembly.electrolyser")
+require("prototypes.entity.assembly.electrolyser")
 -- require("prototypes.entity.assembly.furnace")
 require("prototypes.entity.assembly.oil-refinery")
 
