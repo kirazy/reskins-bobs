@@ -38,7 +38,7 @@ require("prototypes.entity.logistics.storage-tank")
 
 -- Bob's Mining
 require("prototypes.entity.mining.mining-drill")
--- require("prototypes.entity.mining.pumpjack")
+require("prototypes.entity.mining.pumpjack")
 -- require("prototypes.entity.mining.water-miner")
 
 -- Bob's Modules
