@@ -15,6 +15,7 @@ local inputs =
     base_entity = "logistic-robot",    
     directory = reskins.bobs.directory,
     mod = "logistics",
+    particles = {["medium"] = 2},
     make_icons = false,
 }
 
