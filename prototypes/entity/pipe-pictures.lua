@@ -616,4 +616,70 @@ function reskins.bobs.pipe_pictures(inputs)
             }
         }
     }
-  end
+end
+
+function reskins.bobs.underground_pipe_pictures(inputs)
+    return
+    {
+        up =
+        {
+            filename = inputs.directory.."/graphics/entity/logistics/pipe-to-ground/"..inputs.material.."/pipe-to-ground-up.png",
+            priority = "high",
+            width = 64,
+            height = 64,
+            hr_version =
+            {
+                filename = inputs.directory.."/graphics/entity/logistics/pipe-to-ground/"..inputs.material.."/hr-pipe-to-ground-up.png",
+                priority = "extra-high",
+                width = 128,
+                height = 128,
+                scale = 0.5
+            }
+        },
+        down =
+        {
+            filename = inputs.directory.."/graphics/entity/logistics/pipe-to-ground/"..inputs.material.."/pipe-to-ground-down.png",
+            priority = "high",
+            width = 64,
+            height = 64,
+            hr_version =
+            {
+                filename = inputs.directory.."/graphics/entity/logistics/pipe-to-ground/"..inputs.material.."/hr-pipe-to-ground-down.png",
+                priority = "extra-high",
+                width = 128,
+                height = 128,
+                scale = 0.5
+            }
+        },
+        left =
+        {
+            filename = inputs.directory.."/graphics/entity/logistics/pipe-to-ground/"..inputs.material.."/pipe-to-ground-left.png",
+            priority = "high",
+            width = 64,
+            height = 64,
+            hr_version =
+            {
+                filename = inputs.directory.."/graphics/entity/logistics/pipe-to-ground/"..inputs.material.."/hr-pipe-to-ground-left.png",
+                priority = "extra-high",
+                width = 128,
+                height = 128,
+                scale = 0.5
+            }
+        },
+        right =
+        {
+            filename = inputs.directory.."/graphics/entity/logistics/pipe-to-ground/"..inputs.material.."/pipe-to-ground-right.png",
+            priority = "high",
+            width = 64,
+            height = 64,
+            hr_version =
+            {
+                filename = inputs.directory.."/graphics/entity/logistics/pipe-to-ground/"..inputs.material.."/hr-pipe-to-ground-right.png",
+                priority = "extra-high",
+                width = 128,
+                height = 128,
+                scale = 0.5
+            }
+        }
+    }
+end

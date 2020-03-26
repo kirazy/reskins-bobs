@@ -20,25 +20,14 @@ local inputs =
     make_icons = false,
 }
 
--- Electrolysers have two different sets of tiers; determine which we are using
-local tier_map
-if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
-    tier_map =
+local tier_map =
     {
         ["electrolyser"]   = {1, 1, 1},
         ["electrolyser-2"] = {2, 2, 2},
         ["electrolyser-3"] = {3, 3, 3},
-        ["electrolyser-4"] = {4, 4, 3}
+        ["electrolyser-4"] = {4, 4, 3},
+        ["electrolyser-5"] = {5, 5, 5}
     }
-else
-    tier_map =
-    {
-        ["electrolyser"]   = {2, 1, 1},
-        ["electrolyser-2"] = {3, 2, 2},
-        ["electrolyser-3"] = {4, 3, 3},
-        ["electrolyser-4"] = {5, 4, 3}
-    }
-end
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do

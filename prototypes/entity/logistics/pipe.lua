@@ -82,7 +82,6 @@ local inputs = {
     make_icons = false,
 }
 
--- type = "pipe"
 local pipe_map =
 {
 ["copper-pipe"]          = {1, "copper"},
@@ -99,21 +98,23 @@ local pipe_map =
 ["copper-tungsten-pipe"] = {5, "copper-tungsten"},
 }
 
--- type = "pipe-to-ground"
--- copper-pipe-to-ground
--- pipe-to-ground
--- stone-pipe-to-ground
--- bronze-pipe-to-ground
--- steel-pipe-to-ground
--- plastic-pipe-to-ground
--- brass-pipe-to-ground
--- titanium-pipe-to-ground
--- ceramic-pipe-to-ground
--- tungsten-pipe-to-ground
--- nitinol-pipe-to-ground
--- copper-tungsten-pipe-to-ground
+local underground_pipe_map =
+{
+["copper-pipe-to-ground"]          = {1, "copper"},
+-- ["pipe-to-ground"]                 = {1, "iron"},
+["stone-pipe-to-ground"]           = {1, "stone"},
+["bronze-pipe-to-ground"]          = {2, "bronze"},
+["steel-pipe-to-ground"]           = {2, "steel"},
+["plastic-pipe-to-ground"]         = {3, "plastic"},
+["brass-pipe-to-ground"]           = {3, "brass"},
+["titanium-pipe-to-ground"]        = {4, "titanium"},
+["ceramic-pipe-to-ground"]         = {4, "ceramic"},
+["tungsten-pipe-to-ground"]        = {4, "tungsten"},
+["nitinol-pipe-to-ground"]         = {5, "nitinol"},
+["copper-tungsten-pipe-to-ground"] = {5, "copper-tungsten"},
+}
 
--- Reskin entities, create and assign extra details
+-- Reskin pipes, create and assign extra details
 for name, map in pairs(pipe_map) do
     -- Set core inputs
     inputs.type = "pipe"
@@ -142,101 +143,42 @@ for name, map in pairs(pipe_map) do
     -- reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- entity.pictures = reskins.bobs.pipe_pictures(inputs)
-    entity.pictures.straight_horizontal =
-    {
-        filename = inputs.directory.."/graphics/entity/logistics/pipe/"..inputs.material.."/pipe-straight-horizontal.png",
-        priority = "extra-high",
-        width = 64,
-        height = 64,
-        hr_version =
-        {
-            filename = inputs.directory.."/graphics/entity/logistics/pipe/"..inputs.material.."/hr-pipe-straight-horizontal.png",
-            priority = "extra-high",
-            width = 128,
-            height = 128,
-            scale = 0.5
-        }
-    }
+    entity.pictures = reskins.bobs.pipe_pictures(inputs)
 
-    entity.pictures.straight_horizontal_window =
-    {
-        filename = inputs.directory.."/graphics/entity/logistics/pipe/"..inputs.material.."/pipe-straight-horizontal-window.png",
-        priority = "extra-high",
-        width = 64,
-        height = 64,
-        hr_version =
-        {
-            filename = inputs.directory.."/graphics/entity/logistics/pipe/"..inputs.material.."/hr-pipe-straight-horizontal-window.png",
-            priority = "extra-high",
-            width = 128,
-            height = 128,
-            scale = 0.5
-        }
-    }
+    -- Label to skip to next iteration
+    ::continue::    
+end
 
-    entity.pictures.horizontal_window_background =
-    {
-        filename =  inputs.directory.."/graphics/entity/logistics/pipe/"..inputs.material.."/pipe-horizontal-window-background.png",
-        priority = "extra-high",
-        width = 64,
-        height = 64,
-        hr_version =
-        {
-            filename =  inputs.directory.."/graphics/entity/logistics/pipe/"..inputs.material.."/hr-pipe-horizontal-window-background.png",
-            priority = "extra-high",
-            width = 128,
-            height = 128,
-            scale = 0.5
-        }
-    }
+-- Reskin pipe-to-grounds, create and assign extra details
+for name, map in pairs(underground_pipe_map) do
+    -- Set core inputs
+    inputs.type = "pipe-to-ground"
+    inputs.root_name = "pipe-to-ground"
+    inputs.base_entity = "pipe-to-ground"
+    -- inputs.particles = {["blah"] = 1}
 
-    entity.pictures.cross =
-    {
-        filename = inputs.directory.."/graphics/entity/logistics/pipe/"..inputs.material.."/pipe-cross.png",
-        priority = "extra-high",
-        width = 64,
-        height = 64,
-        hr_version =
-        {
-            filename = inputs.directory.."/graphics/entity/logistics/pipe/"..inputs.material.."/hr-pipe-cross.png",
-            priority = "extra-high",
-            width = 128,
-            height = 128,
-            scale = 0.5
-        }
-    }
+    -- Fetch entity
+    entity = data.raw[inputs.type][name]
+
+    -- Check if entity exists, if not, skip this iteration
+    if not entity then
+        goto continue
+    end
+
+    -- Parse map
+    tier = map[1]
+    inputs.material = map[2]
+
+    -- Map entity to name used internally
+    -- inputs.internal_name = inputs.root_name.."-"..tier
     
-    entity.pictures.corner_down_left =
-    {
-        filename = inputs.directory.."/graphics/entity/logistics/pipe/"..inputs.material.."/pipe-corner-down-left.png",
-        priority = "extra-high",
-        width = 64,
-        height = 64,
-        hr_version =
-        {
-            filename = inputs.directory.."/graphics/entity/logistics/pipe/"..inputs.material.."/hr-pipe-corner-down-left.png",
-            priority = "extra-high",
-            width = 128,
-            height = 128,
-            scale = 0.5
-        }
-    }
+    -- Determine what tint we're using
+    -- inputs.tint = reskins.lib.tint_index["tier-"..tier]
 
-    entity.pictures.corner_down_right =
-    {
-        filename = inputs.directory.."/graphics/entity/logistics/pipe/"..inputs.material.."/pipe-corner-down-right.png",
-        priority = "extra-high",
-        width = 64,
-        height = 64,
-        hr_version =
-        {
-            filename = inputs.directory.."/graphics/entity/logistics/pipe/"..inputs.material.."/hr-pipe-corner-down-right.png",
-            priority = "extra-high",
-            width = 128,
-            height = 128,
-            scale = 0.5
-        }
-    }
+    -- reskins.lib.setup_standard_entity(name, tier, inputs)
+
+    -- entity.pictures = reskins.bobs.pipe_pictures(inputs)
+    entity.pictures = reskins.bobs.underground_pipe_pictures(inputs)
 
     -- Label to skip to next iteration
     ::continue::    
