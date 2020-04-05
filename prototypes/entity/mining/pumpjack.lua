@@ -253,51 +253,55 @@ for name, map in pairs(tier_map) do
             {
                 animations_base_layer(variant, playback_speed),
                 -- Mask
-                -- {
-                --     priority = "high",
-                --     filename = inputs.directory.."/graphics/entity/mining/pumpjack/water-pumpjack-horsehead.png",
-                --     line_length = 8,
-                --     width = 104,
-                --     height = 102,
-                --     frame_count = 40,
-                --     shift = util.by_pixel(-4, -24),
-                --     animation_speed = 0.5,
-                --     hr_version =
-                --     {
-                --         priority = "high",
-                --         filename = inputs.directory.."/graphics/entity/mining/pumpjack/hr-water-pumpjack-horsehead.png",
-                --         animation_speed = 0.5,
-                --         scale = 0.5,
-                --         line_length = 8,
-                --         width = 206,
-                --         height = 202,
-                --         frame_count = 40,
-                --         shift = util.by_pixel(-4, -24)
-                --     }
-                -- },
-                -- -- Highlights
-                -- {
-                --     priority = "high",
-                --     filename = inputs.directory.."/graphics/entity/mining/pumpjack/water-pumpjack-horsehead.png",
-                --     line_length = 8,
-                --     width = 104,
-                --     height = 102,
-                --     frame_count = 40,
-                --     shift = util.by_pixel(-4, -24),
-                --     animation_speed = 0.5,
-                --     hr_version =
-                --     {
-                --         priority = "high",
-                --         filename = inputs.directory.."/graphics/entity/mining/pumpjack/hr-water-pumpjack-horsehead.png",
-                --         animation_speed = 0.5,
-                --         scale = 0.5,
-                --         line_length = 8,
-                --         width = 206,
-                --         height = 202,
-                --         frame_count = 40,
-                --         shift = util.by_pixel(-4, -24)
-                --     }
-                -- },
+                {
+                    priority = "high",
+                    filename = inputs.directory.."/graphics/entity/mining/pumpjack/pumpjack-horsehead-mask.png",
+                    line_length = 8,
+                    width = 104,
+                    height = 102,
+                    frame_count = 40,
+                    shift = util.by_pixel(-4, -24),
+                    tint = inputs.tint,
+                    animation_speed = playback_speed,
+                    hr_version =
+                    {
+                        priority = "high",
+                        filename = inputs.directory.."/graphics/entity/mining/pumpjack/hr-pumpjack-horsehead-mask.png",
+                        animation_speed = playback_speed,
+                        scale = 0.5,
+                        line_length = 8,
+                        width = 206,
+                        height = 202,
+                        frame_count = 40,
+                        shift = util.by_pixel(-4, -24),
+                        tint = inputs.tint,
+                    }
+                },
+                -- Highlights
+                {
+                    priority = "high",
+                    filename = inputs.directory.."/graphics/entity/mining/pumpjack/pumpjack-horsehead-highlights.png",
+                    line_length = 8,
+                    width = 104,
+                    height = 102,
+                    frame_count = 40,
+                    shift = util.by_pixel(-4, -24),
+                    blend_mode = "additive",
+                    animation_speed = playback_speed,
+                    hr_version =
+                    {
+                        priority = "high",
+                        filename = inputs.directory.."/graphics/entity/mining/pumpjack/hr-pumpjack-horsehead-highlights.png",
+                        animation_speed = playback_speed,
+                        scale = 0.5,
+                        line_length = 8,
+                        width = 206,
+                        height = 202,
+                        frame_count = 40,
+                        shift = util.by_pixel(-4, -24),
+                        blend_mode = "additive",
+                    }
+                },
                 -- Shadow
                 {
                     priority = "high",
