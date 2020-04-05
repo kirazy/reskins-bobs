@@ -40,7 +40,6 @@ require("prototypes.entity.logistics.valve")
 -- Bob's Mining
 require("prototypes.entity.mining.mining-drill")
 require("prototypes.entity.mining.pumpjack")
--- require("prototypes.entity.mining.water-miner")
 
 -- Bob's Modules
 -- require("prototypes.entity.modules.beacon")
@@ -66,7 +65,7 @@ require("prototypes.entity.power.steam-turbine")
 require("prototypes.entity.power.substation")
 
 -- Bob's Technology
--- require("prototypes.entity.technology.lab")
+require("prototypes.entity.technology.lab")
 
 -- Bob's Warfare
 -- require("prototypes.entity.warfare.artillery-turret")
