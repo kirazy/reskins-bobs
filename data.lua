@@ -39,7 +39,7 @@ require("prototypes.entity.logistics.valve")
 
 -- Bob's Mining
 require("prototypes.entity.mining.mining-drill")
--- require("prototypes.entity.mining.pumpjack") -- THIS ENTRY IS NOT COMPLETE IN STANDARD RESOLUTION
+require("prototypes.entity.mining.pumpjack") -- THIS ENTRY IS NOT COMPLETE IN STANDARD RESOLUTION
 
 -- Bob's Modules
 -- require("prototypes.entity.modules.beacon")

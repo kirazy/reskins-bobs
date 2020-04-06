@@ -189,40 +189,6 @@ for name, map in pairs(tier_map) do
         {
             -- Base
             base_picture_base_layer(variant),
-            -- Mask
-            -- {
-            --     filename = "__base__/graphics/entity/pumpjack/pumpjack-base.png",
-            --     priority = "extra-high",
-            --     width = 131,
-            --     height = 137,
-            --     shift = util.by_pixel(-2.5, -4.5),
-            --     hr_version =
-            --     {
-            --         filename = "__base__/graphics/entity/pumpjack/hr-pumpjack-base.png",
-            --         priority = "extra-high",
-            --         width = 261,
-            --         height = 273,
-            --         shift = util.by_pixel(-2.25, -4.75),
-            --         scale = 0.5
-            --     }
-            -- },
-            -- -- Highlights
-            -- {
-            --     filename = "__base__/graphics/entity/pumpjack/pumpjack-base.png",
-            --     priority = "extra-high",
-            --     width = 131,
-            --     height = 137,
-            --     shift = util.by_pixel(-2.5, -4.5),
-            --     hr_version =
-            --     {
-            --         filename = "__base__/graphics/entity/pumpjack/hr-pumpjack-base.png",
-            --         priority = "extra-high",
-            --         width = 261,
-            --         height = 273,
-            --         shift = util.by_pixel(-2.25, -4.75),
-            --         scale = 0.5
-            --     }
-            -- },
             -- Shadow
             {
                 filename = "__base__/graphics/entity/pumpjack/pumpjack-base-shadow.png",
