@@ -6,6 +6,9 @@
 -- Core functions
 require("prototypes.functions")
 
+-- Compatiblity
+require("prototypes.compatibility.miniloader")
+
 -- ########## STRUCTURES ##########
 -- General Icons
 -- require("prototypes.entity.icons-only")

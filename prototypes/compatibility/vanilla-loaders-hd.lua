@@ -26,12 +26,12 @@ local tier_map =
 
 local loader_color_map_adjustments =
 {
-    ["basic-loader"] = {0, 0, 0},
-    ["loader"] = {33, 47, 64},
-    ["fast-loader"] = {33, 17, 23},
-    ["express-loader"] = {40, 57, 56},
-    ["purple-loader"] = {57, 30, 38},
-    ["green-loader"] = {-13, 20, 14},
+    ["basic-loader"] = {40, 40, 40},
+    ["loader"] = {40, 40, 40},--{33, 47, 64},
+    ["fast-loader"] = {40, 40, 40},--{33, 17, 23},
+    ["express-loader"] = {40, 40, 40},--{40, 57, 56},
+    ["purple-loader"] = {40, 40, 40},--{57, 30, 38},
+    ["green-loader"] = {40, 40, 40},--{-13, 20, 14},
 }
 
 -- Reskin entities
