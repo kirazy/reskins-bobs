@@ -40,15 +40,7 @@ local tier_map =
     ["ultimate-filter-miniloader-inserter"] = 5,
 }
 
-local tier_color_adjustments =
-{
-    ["tier-0"] = {0, 0, 0},
-    ["tier-1"] = {33, 47, 64},
-    ["tier-2"] = {33, 17, 23},
-    ["tier-3"] = {40, 57, 56},
-    ["tier-4"] = {57, 30, 38},
-    ["tier-5"] = {-13, 20, 14},
-}
+local color_adjustment = 40
 
 -- Reskin entities
 for name, tier in pairs(tier_map) do
@@ -72,7 +64,7 @@ for name, tier in pairs(tier_map) do
     -- Tint adjustment
     local adjusted_tint = reskins.lib.adjust_alpha(inputs.tint, 0.82)
     for n = 1, 3 do
-        adjusted_tint[n] = tier_color_adjustments["tier-"..tier][n] + adjusted_tint[n]
+        adjusted_tint[n] = color_adjustment + adjusted_tint[n]
 
         if adjusted_tint[n] > 255 then
             adjusted_tint[n] = 255

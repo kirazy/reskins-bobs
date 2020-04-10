@@ -24,15 +24,7 @@ local tier_map =
     ["green-loader"]   = 5,
 }
 
-local loader_color_map_adjustments =
-{
-    ["basic-loader"] = {40, 40, 40},
-    ["loader"] = {40, 40, 40},--{33, 47, 64},
-    ["fast-loader"] = {40, 40, 40},--{33, 17, 23},
-    ["express-loader"] = {40, 40, 40},--{40, 57, 56},
-    ["purple-loader"] = {40, 40, 40},--{57, 30, 38},
-    ["green-loader"] = {40, 40, 40},--{-13, 20, 14},
-}
+local color_adjustment = 40
 
 -- Reskin entities
 for name, tier in pairs(tier_map) do
@@ -50,7 +42,7 @@ for name, tier in pairs(tier_map) do
     -- Tint adjustment
     local adjusted_tint = reskins.lib.adjust_alpha(inputs.tint, 0.82)
     for n = 1, 3 do
-        adjusted_tint[n] = loader_color_map_adjustments[name][n] + adjusted_tint[n]
+        adjusted_tint[n] = color_adjustment + adjusted_tint[n]
 
         if adjusted_tint[n] > 255 then
             adjusted_tint[n] = 255
