@@ -16,34 +16,39 @@ local inputs = {}
 
 local tier_map =
 {
-    ["basic-miniloader-loader"] = 0,
-    ["miniloader-loader"] = 1,
-    ["fast-miniloader-loader"] = 2,
-    ["express-miniloader-loader"] = 3,
-    ["turbo-miniloader-loader"] = 4,
-    ["ultimate-miniloader-loader"] = 5,
-    ["filter-miniloader-loader"] = 1,
-    ["fast-filter-miniloader-loader"] = 2,
-    ["express-filter-miniloader-loader"] = 3,
-    ["turbo-filter-miniloader-loader"] = 4,
-    ["ultimate-filter-miniloader-loader"] = 5,
-    ["basic-miniloader-inserter"] = 0,
-    ["miniloader-inserter"] = 1,
-    ["fast-miniloader-inserter"] = 2,
-    ["express-miniloader-inserter"] = 3,
-    ["turbo-miniloader-inserter"] = 4,
-    ["ultimate-miniloader-inserter"] = 5,
-    ["filter-miniloader-inserter"] = 1,
-    ["fast-filter-miniloader-inserter"] = 2,
-    ["express-filter-miniloader-inserter"] = 3,
-    ["turbo-filter-miniloader-inserter"] = 4,
-    ["ultimate-filter-miniloader-inserter"] = 5,
+    -- 1x1 Loader Entities
+    ["basic-miniloader-loader"]           = {0, 1},
+    ["chute-miniloader-loader"]           = {0, 1},
+    ["miniloader-loader"]                 = {1, 1},
+    ["fast-miniloader-loader"]            = {2, 2},
+    ["express-miniloader-loader"]         = {3, 2},
+    ["turbo-miniloader-loader"]           = {4, 2},
+    ["ultimate-miniloader-loader"]        = {5, 2},
+    ["filter-miniloader-loader"]          = {1, 1},
+    ["fast-filter-miniloader-loader"]     = {2, 2},
+    ["express-filter-miniloader-loader"]  = {3, 2},
+    ["turbo-filter-miniloader-loader"]    = {4, 2},
+    ["ultimate-filter-miniloader-loader"] = {5, 2},
+
+    -- Inserter Entities
+    ["basic-miniloader-inserter"]           = {0},
+    ["chute-miniloader-inserter"]           = {0},
+    ["miniloader-inserter"]                 = {1},
+    ["fast-miniloader-inserter"]            = {2},
+    ["express-miniloader-inserter"]         = {3},
+    ["turbo-miniloader-inserter"]           = {4},
+    ["ultimate-miniloader-inserter"]        = {5},
+    ["filter-miniloader-inserter"]          = {1},
+    ["fast-filter-miniloader-inserter"]     = {2},
+    ["express-filter-miniloader-inserter"]  = {3},
+    ["turbo-filter-miniloader-inserter"]    = {4},
+    ["ultimate-filter-miniloader-inserter"] = {5},
 }
 
 local color_adjustment = 40
 
 -- Reskin entities
-for name, tier in pairs(tier_map) do
+for name, map in pairs(tier_map) do
     if not string.find(name, "inserter") then
         inputs.type = "loader-1x1"
     else
@@ -57,6 +62,10 @@ for name, tier in pairs(tier_map) do
     if not entity then
         goto continue
     end
+
+    -- Parse map
+    tier = map[1]
+    variant = map[2] or nil
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
@@ -83,6 +92,11 @@ for name, tier in pairs(tier_map) do
     else
         entity.platform_picture.sheets[2].tint = adjusted_tint
         entity.platform_picture.sheets[2].hr_version.tint = adjusted_tint
+    end
+
+    -- Apply belt set
+    if variant then
+        entity.belt_animation_set = reskins.bobs.transport_belt_animation_set(adjusted_tint, variant)
     end
 
     -- Label to skip to next iteration

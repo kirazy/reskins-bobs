@@ -38,6 +38,8 @@ require("prototypes.entity.logistics.pump")
 require("prototypes.entity.logistics.roboport")
 require("prototypes.entity.logistics.storage-tank-all-corners")
 require("prototypes.entity.logistics.storage-tank")
+require("prototypes.entity.logistics.transport-belt")
+require("prototypes.entity.logistics.underground-belt")
 require("prototypes.entity.logistics.valve")
 
 -- Bob's Mining

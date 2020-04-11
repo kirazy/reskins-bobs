@@ -4,24 +4,28 @@
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not mods["vanilla-loaders-hd"] then return end
+if not mods["boblogistics"] then return end
+if settings.startup["reskins-bobs-do-boblogistics"].value == false then return end
 if settings.startup["reskins-lib-customize-tier-colors"].value == false then return end
 
 -- Set input parameters
 local inputs = 
 {
-    type = "loader",
-    directory = "__vanilla-loaders-hd__",
+    type = "transport-belt",
+    root_name = "transport-belt",
+    directory = reskins.bobs.directory,
+    mod = "logistics",
+    -- particles = {["medium"] = 3, ["small"] = 2}
 }
 
 local tier_map =
 {
-    ["basic-loader"]   = {0, 1},
-    ["loader"]         = {1, 1},
-    ["fast-loader"]    = {2, 2},
-    ["express-loader"] = {3, 2},
-    ["purple-loader"]  = {4, 2},
-    ["green-loader"]   = {5, 2},
+    ["basic-transport-belt"]    = {0, 1},
+    ["transport-belt"]          = {1, 1},
+    ["fast-transport-belt"]     = {2, 2},
+    ["express-transport-belt"]  = {3, 2},
+    ["turbo-transport-belt"]    = {4, 2},
+    ["ultimate-transport-belt"] = {5, 2},
 }
 
 local color_adjustment = 40
@@ -53,16 +57,9 @@ for name, map in pairs(tier_map) do
         elseif adjusted_tint[n] < 0 then
             adjusted_tint[n] = 0
         end
-
     end
     
-    -- Retint the mask
-    entity.structure.direction_in.sheets[2].tint = adjusted_tint
-    entity.structure.direction_in.sheets[2].hr_version.tint = adjusted_tint
-    entity.structure.direction_out.sheets[2].tint = adjusted_tint
-    entity.structure.direction_out.sheets[2].hr_version.tint = adjusted_tint
-
-    -- Apply belt set
+    -- Reskin entities
     entity.belt_animation_set = reskins.bobs.transport_belt_animation_set(adjusted_tint, variant)
 
     -- Label to skip to next iteration

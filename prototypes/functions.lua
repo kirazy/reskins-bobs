@@ -137,3 +137,100 @@ function reskins.bobs.make_robot_particle(prototype)
         }
     }  
 end
+
+-- TRANSPORT BELT PICTURES
+function reskins.bobs.transport_belt_animation_set(tint, variant)
+    local transport_belt_animation_set
+    if variant == 1 then
+        transport_belt_animation_set = {
+            animation_set = {
+                layers = {
+                    -- Base
+                    {
+                        filename = reskins.bobs.directory.."/graphics/entity/logistics/transport-belt/transport-belt-1-base.png",
+                        priority = "extra-high",
+                        width = 64,
+                        height = 64,
+                        frame_count = 16,
+                        direction_count = 20,
+                        hr_version = {
+                            filename = reskins.bobs.directory.."/graphics/entity/logistics/transport-belt/hr-transport-belt-1-base.png",
+                            priority = "extra-high",
+                            width = 128,
+                            height = 128,
+                            scale = 0.5,
+                            frame_count = 16,
+                            direction_count = 20
+                        }
+                    },
+                    -- Mask
+                    {
+                        filename = reskins.bobs.directory.."/graphics/entity/logistics/transport-belt/transport-belt-1-mask.png",
+                        priority = "extra-high",
+                        width = 64,
+                        height = 64,
+                        frame_count = 16,
+                        tint = tint,
+                        direction_count = 20,
+                        hr_version = {
+                            filename = reskins.bobs.directory.."/graphics/entity/logistics/transport-belt/hr-transport-belt-1-mask.png",
+                            priority = "extra-high",
+                            width = 128,
+                            height = 128,
+                            scale = 0.5,
+                            frame_count = 16,
+                            tint = tint,
+                            direction_count = 20
+                        }
+                    },
+                }                
+            }
+        }
+    else
+        transport_belt_animation_set = {
+            animation_set = {
+                layers = {
+                    -- Base
+                    {
+                        filename = reskins.bobs.directory.."/graphics/entity/logistics/transport-belt/transport-belt-2-base.png",
+                        priority = "extra-high",
+                        width = 64,
+                        height = 64,
+                        frame_count = 32,
+                        direction_count = 20,
+                        hr_version = {
+                            filename = reskins.bobs.directory.."/graphics/entity/logistics/transport-belt/hr-transport-belt-2-base.png",
+                            priority = "extra-high",
+                            width = 128,
+                            height = 128,
+                            scale = 0.5,
+                            frame_count = 32,
+                            direction_count = 20
+                        }
+                    },
+                    -- Mask
+                    {
+                        filename = reskins.bobs.directory.."/graphics/entity/logistics/transport-belt/transport-belt-2-mask.png",
+                        priority = "extra-high",
+                        width = 64,
+                        height = 64,
+                        frame_count = 32,
+                        tint = tint,
+                        direction_count = 20,
+                        hr_version = {
+                            filename = reskins.bobs.directory.."/graphics/entity/logistics/transport-belt/hr-transport-belt-2-mask.png",
+                            priority = "extra-high",
+                            width = 128,
+                            height = 128,
+                            scale = 0.5,
+                            frame_count = 32,
+                            tint = tint,
+                            direction_count = 20
+                        }
+                    },
+                }
+            }
+        }
+    end
+    return transport_belt_animation_set
+end
