@@ -37,11 +37,11 @@ require("prototypes.entity.logistics.pipe")
 require("prototypes.entity.logistics.pump")
 -- require("prototypes.entity.logistics.robo-charge-port")
 require("prototypes.entity.logistics.roboport")
-require("prototypes.entity.logistics.splitter")
+require("prototypes.entity.logistics.splitter") -- THIS ENTRY IS NOT COMPLETE IN STANDARD RESOLUTION
 require("prototypes.entity.logistics.storage-tank-all-corners")
 require("prototypes.entity.logistics.storage-tank")
-require("prototypes.entity.logistics.transport-belt")
-require("prototypes.entity.logistics.underground-belt")
+require("prototypes.entity.logistics.transport-belt") -- THIS ENTRY IS NOT COMPLETE IN STANDARD RESOLUTION
+require("prototypes.entity.logistics.underground-belt") -- THIS ENTRY IS NOT COMPLETE IN STANDARD RESOLUTION
 require("prototypes.entity.logistics.valve")
 
 -- Bob's Mining
@@ -72,7 +72,7 @@ require("prototypes.entity.power.steam-turbine")
 require("prototypes.entity.power.substation")
 
 -- Bob's Technology
--- require("prototypes.entity.technology.lab") -- THIS ENTRY IS NOT COMPLETE IN STANDARD RESOLUTION
+require("prototypes.entity.technology.lab") -- THIS ENTRY IS NOT COMPLETE IN STANDARD RESOLUTION
 
 -- Bob's Warfare
 -- require("prototypes.entity.warfare.artillery-turret")

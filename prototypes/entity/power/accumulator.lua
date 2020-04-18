@@ -33,7 +33,7 @@ if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
         ["slow-accumulator-3"]  = {3, 2, "slow"},
         ["fast-accumulator"]    = {1, 3, "fast"},
         ["fast-accumulator-2"]  = {2, 3, "fast"},
-        ["fast-accumulator-3"]  = {1, 3, "fast"},
+        ["fast-accumulator-3"]  = {3, 3, "fast"},
     }
 else
     tier_map =
