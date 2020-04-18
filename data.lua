@@ -17,6 +17,7 @@ require("prototypes.compatibility.miniloader")
 require("prototypes.entity.pipe-pictures")
 
 -- Bob's Assembly
+require("prototypes.entity.assembly.centrifuge")
 -- require("prototypes.entity.assembly.distillery")
 require("prototypes.entity.assembly.electrolyser")
 -- require("prototypes.entity.assembly.furnace")
