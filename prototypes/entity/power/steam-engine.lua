@@ -16,7 +16,8 @@ local inputs =
     base_entity = "steam-engine",
     directory = reskins.bobs.directory,
     mod = "power",
-    particles = {["medium"] = 2,["big"] = 1}
+    particles = {["medium"] = 2,["big"] = 1},
+    make_icons = false,
 }
 
 local tier_map =

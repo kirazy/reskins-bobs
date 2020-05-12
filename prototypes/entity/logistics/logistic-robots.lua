@@ -11,12 +11,12 @@ if settings.startup["reskins-bobs-do-boblogistics"].value == false then return e
 local inputs = 
 {
     type = "logistic-robot",
-    root_name = "logistic-robot",
+    icon_name = "logistic-robot",
     base_entity = "logistic-robot",    
     directory = reskins.bobs.directory,
     mod = "logistics",
     particles = {["medium"] = 2},
-    make_icons = false,
+    -- make_icons = false,
 }
 
 local tier_map =
@@ -490,9 +490,6 @@ for name, tier in pairs(tier_map) do
     if not entity then
         goto continue
     end
-
-    -- Map entity to name used internally
-    inputs.internal_name = inputs.root_name.."-"..tier
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]

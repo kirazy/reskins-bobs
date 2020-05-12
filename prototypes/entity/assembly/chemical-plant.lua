@@ -16,7 +16,8 @@ local inputs =
     base_entity = "chemical-plant",
     directory = reskins.bobs.directory,
     mod = "assembly",
-    particles = {["big"] = 1, ["medium"] = 2}
+    particles = {["big"] = 1, ["medium"] = 2},
+    make_icons = false,
 }
 
 -- Chemical plants have two different sets of tiers; determine which we are using

@@ -16,7 +16,8 @@ local inputs =
     base_entity = "medium-electric-pole",
     directory = reskins.bobs.directory,
     mod = "power",
-    particles = {["medium-long"] = 1}
+    particles = {["medium-long"] = 1},
+    make_icons = false,
 }
 
 -- Medium electric poles have two different sets of tiers; determine which we are using

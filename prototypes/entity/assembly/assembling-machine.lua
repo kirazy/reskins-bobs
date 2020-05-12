@@ -15,7 +15,8 @@ local inputs = {
     directory = reskins.bobs.directory,
     mod = "assembly",
     particles = {["big"] = 1, ["medium"] = 2},
-    make_remnants   = false
+    make_icons = false,
+    make_remnants   = false,
 }
 
 local tier_map =

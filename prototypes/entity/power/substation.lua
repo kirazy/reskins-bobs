@@ -17,6 +17,7 @@ local inputs =
     directory = reskins.bobs.directory,
     mod = "power",
     particles = {["big"] = 2},
+    make_icons = false,
 }
 
 -- Substations have two different sets of tiers; determine which we are using

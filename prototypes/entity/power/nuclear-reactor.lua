@@ -439,7 +439,7 @@ for name, tier in pairs(tier_map) do
     skin_reactor_entity(name, inputs)
 
     -- Reskin icons
-    skin_reactor_icon(name, tier, inputs)
+    -- skin_reactor_icon(name, tier, inputs)
 
     -- Label to skip to next iteration
     ::continue::

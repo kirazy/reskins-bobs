@@ -17,7 +17,8 @@ local inputs =
     directory = reskins.bobs.directory,
     mod = "power",
     icon_subfolder = "big-electric-pole",
-    particles = {["medium-long"] = 1}
+    particles = {["medium-long"] = 1},
+    make_icons = false,
 }
 
 -- Big electric poles have two different sets of tiers; determine which we are using

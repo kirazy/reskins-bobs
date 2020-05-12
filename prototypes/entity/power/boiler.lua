@@ -16,7 +16,8 @@ local inputs =
     base_entity = "boiler",
     directory = reskins.bobs.directory,
     mod = "power",
-    particles = {["big"] = 3}
+    particles = {["big"] = 3},
+    make_icons = false,
 }
 
 local tier_map

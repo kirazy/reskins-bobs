@@ -16,7 +16,8 @@ local inputs =
     directory = reskins.bobs.directory,
     mod = "power",
     particles = {["small"] = 2},
-    make_remnants = false
+    make_remnants = false,
+    make_icons = false,
 }
 
 -- Solar panels have two different sets of tiers; determine which we are using

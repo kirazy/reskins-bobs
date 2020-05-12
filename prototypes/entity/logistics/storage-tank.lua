@@ -16,6 +16,7 @@ local inputs =
     directory = reskins.bobs.directory,
     mod = "logistics",
     particles = {["big"] = 1},
+    make_icons = false,
 }
 
 -- Storage tanks have two different sets of tiers; determine which we are using

@@ -16,7 +16,8 @@ local inputs =
     base_entity = "steam-turbine",
     directory = reskins.bobs.directory,
     mod = "power",
-    particles = {["medium"] = 2,["big"] = 1}
+    particles = {["medium"] = 2,["big"] = 1},
+    make_icons = false,
 }
 
 -- Steam turbines have two different sets of tiers; determine which we are using
