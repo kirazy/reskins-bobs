@@ -4,21 +4,36 @@
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not mods["boblogistics"] then return end
+if not mods["boblogistics"] then 
+    -- Reskin the iron pipe icon
+    local iron_pipe_inputs = {
+        type = "pipe",
+        icon = reskins.bobs.directory.."/graphics/icons/logistics/pipe/iron-pipe-icon.png",
+        icon_size = 64,
+        icon_mipmaps = 4,
+    }
+    reskins.lib.assign_icons("pipe", iron_pipe_inputs)
+
+    local iron_pipe_to_ground_inputs = {
+        type = "pipe-to-ground",
+        icon = reskins.bobs.directory.."/graphics/icons/logistics/pipe-to-ground/iron-pipe-to-ground-icon.png",
+        icon_size = 64,
+        icon_mipmaps = 4,
+    }
+    reskins.lib.assign_icons("pipe-to-ground", iron_pipe_to_ground_inputs)
+    return 
+end
 if settings.startup["reskins-bobs-do-boblogistics"].value == false then return end
 
 -- Restore vanilla pipes to their proper glory
 data.raw["pipe"]["pipe"].pictures = pipepictures()
-data.raw["pipe-to-ground"]["pipe-to-ground"].pictures =
-{
-    up =
-    {
+data.raw["pipe-to-ground"]["pipe-to-ground"].pictures = {
+    up = {
         filename = "__base__/graphics/entity/pipe-to-ground/pipe-to-ground-up.png",
         priority = "high",
         width = 64,
         height = 64,
-        hr_version =
-        {
+        hr_version = {
             filename = "__base__/graphics/entity/pipe-to-ground/hr-pipe-to-ground-up.png",
             priority = "extra-high",
             width = 128,
@@ -26,14 +41,12 @@ data.raw["pipe-to-ground"]["pipe-to-ground"].pictures =
             scale = 0.5
         }
     },
-    down =
-    {
+    down = {
         filename = "__base__/graphics/entity/pipe-to-ground/pipe-to-ground-down.png",
         priority = "high",
         width = 64,
         height = 64,
-        hr_version =
-        {
+        hr_version = {
             filename = "__base__/graphics/entity/pipe-to-ground/hr-pipe-to-ground-down.png",
             priority = "extra-high",
             width = 128,
@@ -41,14 +54,12 @@ data.raw["pipe-to-ground"]["pipe-to-ground"].pictures =
             scale = 0.5
         }
     },
-    left =
-    {
+    left = {
         filename = "__base__/graphics/entity/pipe-to-ground/pipe-to-ground-left.png",
         priority = "high",
         width = 64,
         height = 64,
-        hr_version =
-        {
+        hr_version = {
             filename = "__base__/graphics/entity/pipe-to-ground/hr-pipe-to-ground-left.png",
             priority = "extra-high",
             width = 128,
@@ -56,14 +67,12 @@ data.raw["pipe-to-ground"]["pipe-to-ground"].pictures =
             scale = 0.5
         }
     },
-    right =
-    {
+    right = {
         filename = "__base__/graphics/entity/pipe-to-ground/pipe-to-ground-right.png",
         priority = "high",
         width = 64,
         height = 64,
-        hr_version =
-        {
+        hr_version = {
             filename = "__base__/graphics/entity/pipe-to-ground/hr-pipe-to-ground-right.png",
             priority = "extra-high",
             width = 128,
@@ -74,14 +83,9 @@ data.raw["pipe-to-ground"]["pipe-to-ground"].pictures =
 }
 
 -- Set input parameters
-local inputs = 
-{
-    directory = reskins.bobs.directory,
-    mod = "logistics",
-}
+local inputs = {directory = reskins.bobs.directory}
 
-local material_map = 
-{
+local material_map = {
     ["copper"] = {1, "d45539"},
     ["iron"] = {1},
     ["stone"] = {1, "cfcfcf"},
@@ -98,6 +102,9 @@ local material_map =
 
 -- Reskin pipes, create and assign extra details
 for material, map in pairs(material_map) do
+    -- This needs to be done earlier
+    inputs.material = material
+
     -- Check if we're trying to work with iron, skip for now
     if material == "iron" then
         goto do_icons
@@ -105,8 +112,7 @@ for material, map in pairs(material_map) do
 
     -- Parse map
     tier = map[1]
-    inputs.material = material
-    inputs.tint = util.color(map[2])
+    tint = util.color(map[2])
 
     -- Fetch entities
     pipe_entity = data.raw["pipe"][material.."-pipe"]
@@ -118,26 +124,25 @@ for material, map in pairs(material_map) do
     end
 
     -- Create explosions
-    reskins.lib.create_explosion(material.."-pipe", {type = "pipe", base_entity = "pipe"})
-    reskins.lib.create_explosion(material.."-pipe-to-ground", {type = "pipe-to-ground", base_entity = "pipe-to-ground"})
+    reskins.lib.create_explosion(inputs.material.."-pipe", {type = "pipe", base_entity = "pipe"})
+    reskins.lib.create_explosion(inputs.material.."-pipe-to-ground", {type = "pipe-to-ground", base_entity = "pipe-to-ground"})
 
     -- Create particles
-    reskins.lib.create_particle(material.."-pipe", "pipe", reskins.lib.particle_index["medium"], 1, inputs.tint)
-    reskins.lib.create_particle(material.."-pipe", "pipe", reskins.lib.particle_index["small"], 2, inputs.tint)
-    reskins.lib.create_particle(material.."-pipe-to-ground", "pipe-to-ground", reskins.lib.particle_index["medium"], 1, inputs.tint)
-    reskins.lib.create_particle(material.."-pipe-to-ground", "pipe-to-ground", reskins.lib.particle_index["small"], 2, inputs.tint)
+    reskins.lib.create_particle(inputs.material.."-pipe", "pipe", reskins.lib.particle_index["medium"], 1, tint)
+    reskins.lib.create_particle(inputs.material.."-pipe", "pipe", reskins.lib.particle_index["small"], 2, tint)
+    reskins.lib.create_particle(inputs.material.."-pipe-to-ground", "pipe-to-ground", reskins.lib.particle_index["medium"], 1, tint)
+    reskins.lib.create_particle(inputs.material.."-pipe-to-ground", "pipe-to-ground", reskins.lib.particle_index["small"], 2, tint)
 
     -- Create remnants
-    reskins.lib.create_remnant(material.."-pipe", {type = "pipe", base_entity = "pipe"})
-    reskins.lib.create_remnant(material.."-pipe-to-ground", {type = "pipe-to-ground", base_entity = "pipe-to-ground"})
+    reskins.lib.create_remnant(inputs.material.."-pipe", {type = "pipe", base_entity = "pipe"})
+    reskins.lib.create_remnant(inputs.material.."-pipe-to-ground", {type = "pipe-to-ground", base_entity = "pipe-to-ground"})
 
     -- Fetch remnant
-    pipe_remnant = data.raw["corpse"][material.."-pipe-remnants"]
-    underground_pipe_remnant = data.raw["corpse"][material.."-pipe-to-ground-remnants"]
+    pipe_remnant = data.raw["corpse"][inputs.material.."-pipe-remnants"]
+    underground_pipe_remnant = data.raw["corpse"][inputs.material.."-pipe-to-ground-remnants"]
 
     -- Reskin remnants
-    pipe_remnant.animation = make_rotated_animation_variations_from_sheet(2,
-    {
+    pipe_remnant.animation = make_rotated_animation_variations_from_sheet(2, {
         filename = inputs.directory.."/graphics/entity/logistics/pipe/"..inputs.material.."/remnants/pipe-remnants.png",
         width = 61,
         height = 60,
@@ -145,8 +150,7 @@ for material, map in pairs(material_map) do
         frame_count = 1,
         direction_count = 2,
         shift = util.by_pixel(1.5, 2.5),
-        hr_version =
-        {
+        hr_version = {
             filename = inputs.directory.."/graphics/entity/logistics/pipe/"..inputs.material.."/remnants/hr-pipe-remnants.png",
             width = 122,
             height = 120,
@@ -166,8 +170,7 @@ for material, map in pairs(material_map) do
         frame_count = 1,
         direction_count = 1,
         shift = util.by_pixel(0.5, -3),
-        hr_version =
-        {
+        hr_version = {
             filename = inputs.directory.."/graphics/entity/logistics/pipe-to-ground/"..inputs.material.."/remnants/hr-pipe-to-ground-remnants.png",
             width = 90,
             height = 80,
@@ -183,8 +186,65 @@ for material, map in pairs(material_map) do
     pipe_entity.pictures = reskins.bobs.pipe_pictures(inputs)
     underground_pipe_entity.pictures = reskins.bobs.underground_pipe_pictures(inputs)
 
-    -- Label to make icons
+    -- Label to work icons
     ::do_icons::
+
+    -- Setup Icons
+    local pipe_icon_inputs = {
+        icon = inputs.directory.."/graphics/icons/logistics/pipe/"..inputs.material.."-pipe-icon.png",
+        icon_picture = {
+            filename = inputs.directory.."/graphics/icons/logistics/pipe/"..inputs.material.."-pipe-icon.png",
+            size = 64,
+            mipmaps = 4,
+            scale = 0.25
+        },
+        icon_size = 64,
+        icon_mipmaps = 4,
+        type = "pipe"
+    }
+
+    local pipe_to_ground_icon_inputs = {
+        icon = inputs.directory.."/graphics/icons/logistics/pipe-to-ground/"..inputs.material.."-pipe-to-ground-icon.png",
+        icon_picture = {
+            filename = inputs.directory.."/graphics/icons/logistics/pipe-to-ground/"..inputs.material.."-pipe-to-ground-icon.png",
+            size = 64,
+            mipmaps = 4,
+            scale = 0.25
+        },
+        icon_size = 64,
+        icon_mipmaps = 4,
+        type = "pipe-to-ground"
+    }
+
+    -- Setup tier labels
+    if settings.startup["reskins-lib-icon-tier-labeling"].value == true and tier > 0 then
+        pipe_icon_inputs.icon = {{icon = pipe_icon_inputs.icon}}
+        pipe_to_ground_icon_inputs.icon = {{icon = pipe_to_ground_icon_inputs.icon}}
+        table.insert(pipe_icon_inputs.icon, {icon = reskins.lib.directory.."/graphics/icons/tiers/64/tier-"..tier..".png"})
+        table.insert(pipe_to_ground_icon_inputs.icon, {icon = reskins.lib.directory.."/graphics/icons/tiers/64/tier-"..tier..".png"})
+        table.insert(pipe_icon_inputs.icon, {
+            icon = reskins.lib.directory.."/graphics/icons/tiers/64/tier-"..tier..".png",
+            tint = reskins.lib.adjust_alpha(reskins.lib.tint_index["tier-"..tier], 0.75)
+        })
+        table.insert(pipe_to_ground_icon_inputs.icon, {
+            icon = reskins.lib.directory.."/graphics/icons/tiers/64/tier-"..tier..".png",
+            tint = reskins.lib.adjust_alpha(reskins.lib.tint_index["tier-"..tier], 0.75)
+        })
+    end
+
+    local pipe_icon_name, pipe_to_ground_icon_name
+    -- Handle naming
+    if material ~= "iron" then
+        pipe_icon_name = inputs.material.."-pipe"
+        pipe_to_ground_icon_name = inputs.material.."-pipe-to-ground"
+    else
+        pipe_icon_name = "pipe"
+        pipe_to_ground_icon_name = "pipe-to-ground"
+    end
+
+    reskins.lib.assign_icons(pipe_icon_name, pipe_icon_inputs)
+
+    reskins.lib.assign_icons(pipe_to_ground_icon_name, pipe_to_ground_icon_inputs)
 
     -- Label to skip to next iteration
     ::continue::    
