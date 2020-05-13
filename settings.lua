@@ -36,6 +36,12 @@ if mods["boblogistics"] then
             name = "reskins-bobs-do-boblogistics",
             setting_type = "startup",
             default_value = true,
+        },
+        {
+            type = "bool-setting",
+            name = "reskins-bobs-do-pipe-tier-labeling",
+            setting_type = "startup",
+            default_value = true,
         }
     })
 end

@@ -217,7 +217,7 @@ for material, map in pairs(material_map) do
     }
 
     -- Setup tier labels
-    if settings.startup["reskins-lib-icon-tier-labeling"].value == true and tier > 0 then
+    if settings.startup["reskins-lib-icon-tier-labeling"].value == true and settings.startup["reskins-bobs-do-pipe-tier-labeling"].value == true and tier > 0 then
         pipe_icon_inputs.icon = {{icon = pipe_icon_inputs.icon}}
         pipe_to_ground_icon_inputs.icon = {{icon = pipe_to_ground_icon_inputs.icon}}
         table.insert(pipe_icon_inputs.icon, {icon = reskins.lib.directory.."/graphics/icons/tiers/64/tier-"..tier..".png"})
