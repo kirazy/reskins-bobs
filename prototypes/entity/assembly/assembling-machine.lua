@@ -10,17 +10,14 @@ if settings.startup["reskins-bobs-do-bobassembly"].value == false then return en
 -- Set input parameters
 local inputs = {
     type = "assembling-machine",
-    root_name = "assembling-machine",
     base_entity = "assembling-machine-1",
     directory = reskins.bobs.directory,
-    mod = "assembly",
     particles = {["big"] = 1, ["medium"] = 2},
     make_icons = false,
-    make_remnants   = false,
+    make_remnants = false,
 }
 
-local tier_map =
-{
+local tier_map = {
     ["assembling-machine-1"] = {0, 0, false},
     ["assembling-machine-2"] = {1, 1, true},
     ["assembling-machine-3"] = {2, 2, true},
@@ -56,13 +53,10 @@ for name, map in pairs(tier_map) do
     tier = map[1]
     shadow = map[2]  
     has_fluids = map[3]  
-    
-    -- Map entity to name used internally
-    inputs.internal_name = inputs.root_name.."-"..tier
-    
+       
     -- Determine what tint we're using
     if map[4] then
-        inputs.tint = reskins.lib.tint_hex_to_rgb(map[4]) 
+        inputs.tint = util.color(map[4])
     else
         inputs.tint = reskins.lib.tint_index["tier-"..tier]
     end
@@ -201,16 +195,11 @@ for name, map in pairs(tier_map) do
 
     -- Setup tier labels
     if settings.startup["reskins-lib-icon-tier-labeling"].value == true and tier > 0 then
-        local tier_label = {
-            icon = reskins.lib.directory.."/graphics/icons/tiers/"..inputs.icon_size.."/tier-"..tier..".png"
-        }
-
-        local tier_label_tinted = {
+        table.insert(inputs.icon, {icon = reskins.lib.directory.."/graphics/icons/tiers/"..inputs.icon_size.."/tier-"..tier..".png"})
+        table.insert(inputs.icon, {
             icon = reskins.lib.directory.."/graphics/icons/tiers/"..inputs.icon_size.."/tier-"..tier..".png",
             tint = reskins.lib.adjust_alpha(reskins.lib.tint_index["tier-"..tier], 0.75)
-        }
-        table.insert(inputs.icon, tier_labe)
-        table.insert(inputs.icon, tier_label_tinted)
+        })
     end
 
     -- Assign the icon
@@ -334,8 +323,11 @@ for name, map in pairs(tier_map) do
         }
     }
 
+    -- Insert the electronics assembling machine decoratives
     if string.find(name, "electronics") then
-        entity.animation.layers[6] = {
+        table.insert(entity.animation.layers, 
+        -- Base
+        {
             filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/electronics/electronics-base.png",
             priority="high",
             width = 108,
@@ -344,8 +336,7 @@ for name, map in pairs(tier_map) do
             line_length = 1,
             repeat_count = 32,
             shift = util.by_pixel(0, -0.5),
-            hr_version =
-            {
+            hr_version = {
                 filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/electronics/hr-electronics-base.png",
                 priority="high",
                 width = 214,
@@ -356,8 +347,9 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(0, -0.75),
                 scale = 0.5
             }
-        }
-        entity.animation.layers[7] =
+        })
+        table.insert(entity.animation.layers, 
+        -- Mask
         {
             filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/electronics/electronics-mask.png",
             priority="high",
@@ -368,8 +360,7 @@ for name, map in pairs(tier_map) do
             repeat_count = 32,
             shift = util.by_pixel(0, -0.5),
             tint = inputs.tint,
-            hr_version =
-            {
+            hr_version = {
                 filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/electronics/hr-electronics-mask.png",
                 priority="high",
                 width = 214,
@@ -381,9 +372,9 @@ for name, map in pairs(tier_map) do
                 tint = inputs.tint,
                 scale = 0.5
             }
-        }
-
-        entity.animation.layers[8] = 
+        })
+        table.insert(entity.animation.layers, 
+        -- Highlights
         {
             filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/electronics/electronics-highlights.png",
             priority="high",
@@ -394,8 +385,7 @@ for name, map in pairs(tier_map) do
             repeat_count = 32,
             shift = util.by_pixel(0, -0.5),
             blend_mode = "additive",
-            hr_version =
-            {
+            hr_version = {
                 filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/electronics/hr-electronics-highlights.png",
                 priority="high",
                 width = 214,
@@ -407,9 +397,9 @@ for name, map in pairs(tier_map) do
                 blend_mode = "additive",
                 scale = 0.5
             }
-        }
-
-        entity.animation.layers[9] = 
+        })
+        table.insert(entity.animation.layers, 
+        -- Shadow
         {
             filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/electronics/electronics-shadow.png",
             priority="high",
@@ -420,8 +410,7 @@ for name, map in pairs(tier_map) do
             repeat_count = 32,
             draw_as_shadow = true,
             shift = util.by_pixel(27, 5),
-            hr_version =
-            {
+            hr_version = {
                 filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/electronics/hr-electronics-shadow.png",
                 priority="high",
                 width = 264,
@@ -433,7 +422,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(27, 5),
                 scale = 0.5
             }
-        } 
+        })
     end
     
     -- Rescale for electronics and burner assembling machines
@@ -443,8 +432,7 @@ for name, map in pairs(tier_map) do
 
     -- Handle pipes
     if has_fluids then
-        entity.fluid_boxes =
-        {
+        entity.fluid_boxes = {
             {
                 production_type = "input",
                 pipe_picture = reskins.bobs.assembly_pipe_pictures(inputs.tint),
@@ -468,13 +456,11 @@ for name, map in pairs(tier_map) do
     end
 
     if name == "steam-assembling-machine" then
-        entity.energy_source.fluid_box =
-        {
+        entity.energy_source.fluid_box = {
             base_area = 1,
             height = 2,
             base_level = -1,
-            pipe_connections =
-            {
+            pipe_connections = {
                 {type = "input-output", position = { 2, 0}},
                 {type = "input-output", position = {-2, 0}}
             },
