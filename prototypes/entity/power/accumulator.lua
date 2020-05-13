@@ -3,19 +3,25 @@
 --     
 -- See LICENSE.md in the project directory for license information.
 
+-- Reskin the base accumulator icon
+local standard_accumulator = {
+    type = "accumulator",
+    icon = reskins.bobs.directory.."/graphics/icons/power/accumulator/accumulator-standard-icon.png",
+    icon_size = 64,
+    icon_mipmaps = 4,
+}
+reskins.lib.assign_icons("accumulator", standard_accumulator)
+
 -- Check to see if reskinning needs to be done.
 if not mods["bobpower"] then return end
 if settings.startup["bobmods-power-accumulators"].value == false then return end
 if settings.startup["reskins-bobs-do-bobpower"].value == false then return end 
 
 -- Set input parameters
-local inputs = 
-{
+local inputs = {
     type = "accumulator",
-    root_name = "accumulator",
     base_entity = "accumulator",
     directory = reskins.bobs.directory,
-    mod = "power",
     particles = {["medium"] = 2, ["small"] = 3},
     make_icons = false
 }
@@ -23,38 +29,35 @@ local inputs =
 -- Accumulators have two different sets of tiers; determine which we are using
 local tier_map
 if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
-    tier_map =
-    {
-        ["large-accumulator"]   = {1, 1, "large"},
+    tier_map = {
+        ["large-accumulator"] = {1, 1, "large"},
         ["large-accumulator-2"] = {2, 1, "large"},
         ["large-accumulator-3"] = {3, 1, "large"},
-        ["slow-accumulator"]    = {1, 2, "slow"},
-        ["slow-accumulator-2"]  = {2, 2, "slow"},
-        ["slow-accumulator-3"]  = {3, 2, "slow"},
-        ["fast-accumulator"]    = {1, 3, "fast"},
-        ["fast-accumulator-2"]  = {2, 3, "fast"},
-        ["fast-accumulator-3"]  = {3, 3, "fast"},
+        ["slow-accumulator"] = {1, 2, "slow"},
+        ["slow-accumulator-2"] = {2, 2, "slow"},
+        ["slow-accumulator-3"] = {3, 2, "slow"},
+        ["fast-accumulator"] = {1, 3, "fast"},
+        ["fast-accumulator-2"] = {2, 3, "fast"},
+        ["fast-accumulator-3"] = {3, 3, "fast"},
     }
 else
-    tier_map =
-    {
-        ["large-accumulator"]   = {2, 1, "large"},
+    tier_map = {
+        ["large-accumulator"] = {2, 1, "large"},
         ["large-accumulator-2"] = {3, 1, "large"},
         ["large-accumulator-3"] = {4, 1, "large"},
-        ["slow-accumulator"]    = {2, 2, "slow"},
-        ["slow-accumulator-2"]  = {3, 2, "slow"},
-        ["slow-accumulator-3"]  = {4, 2, "slow"},
-        ["fast-accumulator"]    = {2, 3, "fast"},
-        ["fast-accumulator-2"]  = {3, 3, "fast"},
-        ["fast-accumulator-3"]  = {4, 3, "fast"},
+        ["slow-accumulator"] = {2, 2, "slow"},
+        ["slow-accumulator-2"] = {3, 2, "slow"},
+        ["slow-accumulator-3"] = {4, 2, "slow"},
+        ["fast-accumulator"] = {2, 3, "fast"},
+        ["fast-accumulator-2"] = {3, 3, "fast"},
+        ["fast-accumulator-3"] = {4, 3, "fast"},
     }
 end
 
 local function accumulator_picture_tinted(inputs, repeat_count)
     return
     {
-        layers =
-        {
+        layers = {
             -- Base
             {
                 filename = inputs.directory.."/graphics/entity/power/accumulator/wires/accumulator-"..inputs.wire..".png",
@@ -64,8 +67,7 @@ local function accumulator_picture_tinted(inputs, repeat_count)
                 repeat_count = repeat_count,
                 shift = util.by_pixel(0, -10),
                 animation_speed = 0.5,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/accumulator/wires/hr-accumulator-"..inputs.wire..".png",
                     priority = "high",
                     width = 130,
@@ -86,8 +88,7 @@ local function accumulator_picture_tinted(inputs, repeat_count)
                 shift = util.by_pixel(0, -10),
                 tint = inputs.tint,
                 animation_speed = 0.5,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/accumulator/hr-accumulator-mask.png",
                     priority = "high",
                     width = 130,
@@ -109,8 +110,7 @@ local function accumulator_picture_tinted(inputs, repeat_count)
                 shift = util.by_pixel(0, -10),
                 blend_mode = "additive",
                 animation_speed = 0.5,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/accumulator/hr-accumulator-highlights.png",
                     priority = "high",
                     width = 130,
@@ -131,8 +131,7 @@ local function accumulator_picture_tinted(inputs, repeat_count)
                 repeat_count = repeat_count,
                 shift = util.by_pixel(28, 6),
                 draw_as_shadow = true,
-                hr_version =
-                {
+                hr_version = {
                     filename = "__base__/graphics/entity/accumulator/hr-accumulator-shadow.png",
                     priority = "high",
                     width = 234,
@@ -150,8 +149,7 @@ end
 local function accumulator_charge_tinted(inputs)
     return
     {
-        layers =
-        {
+        layers = {
             accumulator_picture_tinted(inputs, 24),
             {
                 filename = "__base__/graphics/entity/accumulator/accumulator-charge.png",
@@ -162,8 +160,7 @@ local function accumulator_charge_tinted(inputs)
                 frame_count = 24,
                 blend_mode = "additive",
                 shift = util.by_pixel(0, -22),
-                hr_version =
-                {
+                hr_version = {
                     filename = "__base__/graphics/entity/accumulator/hr-accumulator-charge.png",
                     priority = "high",
                     width = 178,
@@ -182,8 +179,7 @@ end
 local function accumulator_discharge_tinted(inputs)
     return
     {
-        layers =
-        {
+        layers = {
             accumulator_picture_tinted(inputs, 24),
             {
                 filename = "__base__/graphics/entity/accumulator/accumulator-discharge.png",
@@ -194,8 +190,7 @@ local function accumulator_discharge_tinted(inputs)
                 frame_count = 24,
                 blend_mode = "additive",
                 shift = util.by_pixel(-2, -22),
-                hr_version =
-                {
+                hr_version = {
                     filename = "__base__/graphics/entity/accumulator/hr-accumulator-discharge.png",
                     priority = "high",
                     width = 170,
@@ -225,23 +220,95 @@ for name, map in pairs(tier_map) do
     -- Parse map
     tier = map[1]
     inputs.wire = map[2]
-    
-    -- Map entity to name used internally
-    inputs.internal_name = inputs.root_name.."-"..map[3].."-"..tier
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
     
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
+    -- Setup Icons
+    inputs.icon = {        
+        -- Base
+        {
+            icon = inputs.directory.."/graphics/icons/power/accumulator/accumulator-"..inputs.wire.."-icon-base.png"
+        },
+        -- Mask
+        {
+            icon = inputs.directory.."/graphics/icons/power/accumulator/accumulator-icon-mask.png",
+            tint = inputs.tint
+        },
+        -- Highlights
+        {
+            icon = inputs.directory.."/graphics/icons/power/accumulator/accumulator-icon-highlights.png",
+            tint = {1,1,1,0}
+        },
+        -- Glow
+        {
+            icon = inputs.directory.."/graphics/icons/power/accumulator/accumulator-charge.png",
+        },
+        -- Type indicator
+        {
+            icon = inputs.directory.."/graphics/icons/power/accumulator/accumulator-type-"..inputs.wire.."-icon.png"
+        },
+        {
+            icon = inputs.directory.."/graphics/icons/power/accumulator/accumulator-type-"..inputs.wire.."-icon.png",
+            tint = reskins.lib.adjust_alpha(reskins.lib.tint_index["tier-"..tier], 0.75)
+        }
+    }
+
+    inputs.icon_picture = {
+        layers = {
+            -- Base
+            {
+                filename = inputs.directory.."/graphics/icons/power/accumulator/accumulator-"..inputs.wire.."-icon-base.png",
+                size = inputs.icon_size,
+                mipmaps = inputs.icon_mipmaps,
+                scale = 0.25
+            },
+            -- Mask
+            {
+                filename = inputs.directory.."/graphics/icons/power/accumulator/accumulator-icon-mask.png",
+                size = inputs.icon_size,
+                mipmaps = inputs.icon_mipmaps,
+                scale = 0.25,
+                tint = inputs.tint
+            },
+            -- Highlights
+            {
+                filename = inputs.directory.."/graphics/icons/power/accumulator/accumulator-icon-highlights.png",
+                size = inputs.icon_size,
+                mipmaps = inputs.icon_mipmaps,
+                scale = 0.25,
+                blend_mode = "additive"
+            },
+            -- Glow
+            {
+                filename = inputs.directory.."/graphics/icons/power/accumulator/accumulator-charge.png",
+                size = inputs.icon_size,
+                mipmaps = inputs.icon_mipmaps,
+                scale = 0.25,
+            }
+        }
+    }
+    
+    -- Setup tier labels
+    if settings.startup["reskins-lib-icon-tier-labeling"].value == true and tier > 0 then
+        table.insert(inputs.icon, {icon = reskins.lib.directory.."/graphics/icons/tiers/"..inputs.icon_size.."/tier-"..tier..".png"})
+        table.insert(inputs.icon, {
+            icon = reskins.lib.directory.."/graphics/icons/tiers/"..inputs.icon_size.."/tier-"..tier..".png",
+            tint = reskins.lib.adjust_alpha(reskins.lib.tint_index["tier-"..tier], 0.75)
+        })
+    end
+
+    -- Assign the icon
+    reskins.lib.assign_icons(name, inputs)
+    
     -- Fetch remnant
     remnant = data.raw["corpse"][name.."-remnants"]    
 
     -- Reskin remnants
-    remnant.animation = make_rotated_animation_variations_from_sheet(1,
-    {
-        layers =
-        {
+    remnant.animation = make_rotated_animation_variations_from_sheet(1, {
+        layers = {
             -- Base
             {
                 filename = inputs.directory.."/graphics/entity/power/accumulator/remnants/wires/accumulator-"..inputs.wire.."-remnants.png",
@@ -253,8 +320,7 @@ for name, map in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(2, 4),
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/accumulator/remnants/wires/hr-accumulator-"..inputs.wire.."-remnants.png",
                     line_length = 1,
                     width = 172,
@@ -279,8 +345,7 @@ for name, map in pairs(tier_map) do
                 direction_count = 1,
                 shift = util.by_pixel(2, 4),
                 tint = inputs.tint,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/accumulator/remnants/hr-accumulator-remnants-mask.png",
                     line_length = 1,
                     width = 172,
@@ -306,8 +371,7 @@ for name, map in pairs(tier_map) do
                 direction_count = 1,
                 shift = util.by_pixel(2, 4),
                 blend_mode = "additive",
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/accumulator/remnants/hr-accumulator-remnants-highlights.png",
                     line_length = 1,
                     width = 172,
