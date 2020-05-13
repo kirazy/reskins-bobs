@@ -8,8 +8,7 @@ if not mods["boblogistics"] then return end
 if settings.startup["reskins-bobs-do-boblogistics"].value == false then return end
 
 -- Set input parameters
-local inputs = 
-{
+local inputs = {
     type = "logistic-robot",
     icon_name = "logistic-robot",
     base_entity = "logistic-robot",    
@@ -19,8 +18,7 @@ local inputs =
     -- make_icons = false,
 }
 
-local tier_map =
-{
+local tier_map = {
     ["logistic-robot"]       = 1,
     ["bob-logistic-robot-2"] = 2,
     ["bob-logistic-robot-3"] = 3,
@@ -32,10 +30,8 @@ local tier_map =
 local function generate_robot_animations(tint)
     return
     {
-        idle =
-        {
-            layers =
-            {
+        idle = {
+            layers = {
                 -- Base
                 {
                     filename = "__base__/graphics/entity/logistic-robot/logistic-robot.png",
@@ -47,8 +43,7 @@ local function generate_robot_animations(tint)
                     shift = util.by_pixel(0, -3),
                     direction_count = 16,
                     y = 42,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = "__base__/graphics/entity/logistic-robot/hr-logistic-robot.png",
                         priority = "high",
                         line_length = 16,
@@ -73,8 +68,7 @@ local function generate_robot_animations(tint)
                     tint = tint,
                     direction_count = 16,
                     y = 42,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/logistics/logistic-robot/hr-logistic-robot-mask.png",
                         priority = "high",
                         line_length = 16,
@@ -100,8 +94,7 @@ local function generate_robot_animations(tint)
                     blend_mode = "additive",
                     direction_count = 16,
                     y = 42,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/logistics/logistic-robot/hr-logistic-robot-highlights.png",
                         priority = "high",
                         line_length = 16,
@@ -114,14 +107,12 @@ local function generate_robot_animations(tint)
                         y = 84,
                         scale = 0.5
                     }
-                },
+                }
             }
         },
 
-        idle_with_cargo =
-        {
-            layers =
-            {
+        idle_with_cargo = {
+            layers = {
                 -- Base
                 {
                     filename = "__base__/graphics/entity/logistic-robot/logistic-robot.png",
@@ -132,8 +123,7 @@ local function generate_robot_animations(tint)
                     frame_count = 1,
                     shift = util.by_pixel(0, -3),
                     direction_count = 16,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = "__base__/graphics/entity/logistic-robot/hr-logistic-robot.png",
                         priority = "high",
                         line_length = 16,
@@ -156,8 +146,7 @@ local function generate_robot_animations(tint)
                     shift = util.by_pixel(0, -3),
                     tint = tint,
                     direction_count = 16,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/logistics/logistic-robot/hr-logistic-robot-mask.png",
                         priority = "high",
                         line_length = 16,
@@ -181,8 +170,7 @@ local function generate_robot_animations(tint)
                     shift = util.by_pixel(0, -3),
                     blend_mode = "additive",
                     direction_count = 16,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/logistics/logistic-robot/hr-logistic-robot-highlights.png",
                         priority = "high",
                         line_length = 16,
@@ -194,14 +182,12 @@ local function generate_robot_animations(tint)
                         direction_count = 16,
                         scale = 0.5
                     }
-                },
+                }
             }
         },
         
-        in_motion =
-        {
-            layers =
-            {
+        in_motion = {
+            layers = {
                 -- Base
                 {
                     filename = "__base__/graphics/entity/logistic-robot/logistic-robot.png",
@@ -213,8 +199,7 @@ local function generate_robot_animations(tint)
                     shift = util.by_pixel(0, -3),
                     direction_count = 16,
                     y = 126,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = "__base__/graphics/entity/logistic-robot/hr-logistic-robot.png",
                         priority = "high",
                         line_length = 16,
@@ -239,8 +224,7 @@ local function generate_robot_animations(tint)
                     tint = tint,
                     direction_count = 16,
                     y = 126,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/logistics/logistic-robot/hr-logistic-robot-mask.png",
                         priority = "high",
                         line_length = 16,
@@ -266,8 +250,7 @@ local function generate_robot_animations(tint)
                     blend_mode = "additive",
                     direction_count = 16,
                     y = 126,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/logistics/logistic-robot/hr-logistic-robot-highlights.png",
                         priority = "high",
                         line_length = 16,
@@ -280,14 +263,12 @@ local function generate_robot_animations(tint)
                         y = 252,
                         scale = 0.5
                     }
-                },
+                }
             }
         },
         
-        in_motion_with_cargo =
-        {
-            layers =
-            {
+        in_motion_with_cargo = {
+            layers = {
                 -- Base
                 {
                     filename = "__base__/graphics/entity/logistic-robot/logistic-robot.png",
@@ -299,8 +280,7 @@ local function generate_robot_animations(tint)
                     shift = util.by_pixel(0, -3),
                     direction_count = 16,
                     y = 84,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = "__base__/graphics/entity/logistic-robot/hr-logistic-robot.png",
                         priority = "high",
                         line_length = 16,
@@ -325,8 +305,7 @@ local function generate_robot_animations(tint)
                     tint = tint,
                     direction_count = 16,
                     y = 84,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/logistics/logistic-robot/hr-logistic-robot-mask.png",
                         priority = "high",
                         line_length = 16,
@@ -352,8 +331,7 @@ local function generate_robot_animations(tint)
                     blend_mode = "additive",
                     direction_count = 16,
                     y = 84,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/logistics/logistic-robot/hr-logistic-robot-highlights.png",
                         priority = "high",
                         line_length = 16,
@@ -366,12 +344,11 @@ local function generate_robot_animations(tint)
                         y = 168,
                         scale = 0.5
                     }
-                },
+                }
             }
         },
         
-        shadow_idle =
-        {
+        shadow_idle = {
             filename = "__base__/graphics/entity/logistic-robot/logistic-robot-shadow.png",
             priority = "high",
             line_length = 16,
@@ -382,8 +359,7 @@ local function generate_robot_animations(tint)
             direction_count = 16,
             y = 29,
             draw_as_shadow = true,
-            hr_version =
-            {
+            hr_version = {
                 filename = "__base__/graphics/entity/logistic-robot/hr-logistic-robot-shadow.png",
                 priority = "high",
                 line_length = 16,
@@ -395,11 +371,10 @@ local function generate_robot_animations(tint)
                 y = 57,
                 scale = 0.5,
                 draw_as_shadow = true
-            },
+            }
         },
 
-        shadow_idle_with_cargo =
-        {
+        shadow_idle_with_cargo = {
             filename = "__base__/graphics/entity/logistic-robot/logistic-robot-shadow.png",
             priority = "high",
             line_length = 16,
@@ -409,8 +384,7 @@ local function generate_robot_animations(tint)
             shift = util.by_pixel(32, 19.5),
             direction_count = 16,
             draw_as_shadow = true,
-            hr_version =
-            {
+            hr_version = {
                 filename = "__base__/graphics/entity/logistic-robot/hr-logistic-robot-shadow.png",
                 priority = "high",
                 line_length = 16,
@@ -421,11 +395,10 @@ local function generate_robot_animations(tint)
                 direction_count = 16,
                 scale = 0.5,
                 draw_as_shadow = true
-            },
+            }
         },
 
-        shadow_in_motion =
-        {
+        shadow_in_motion = {
             filename = "__base__/graphics/entity/logistic-robot/logistic-robot-shadow.png",
             priority = "high",
             line_length = 16,
@@ -436,8 +409,7 @@ local function generate_robot_animations(tint)
             direction_count = 16,
             y = 29,
             draw_as_shadow = true,
-            hr_version =
-            {
+            hr_version = {
                 filename = "__base__/graphics/entity/logistic-robot/hr-logistic-robot-shadow.png",
                 priority = "high",
                 line_length = 16,
@@ -449,11 +421,10 @@ local function generate_robot_animations(tint)
                 y = 57*3,
                 scale = 0.5,
                 draw_as_shadow = true
-            },
+            }
         },
 
-        shadow_in_motion_with_cargo =
-        {
+        shadow_in_motion_with_cargo = {
             filename = "__base__/graphics/entity/logistic-robot/logistic-robot-shadow.png",
             priority = "high",
             line_length = 16,
@@ -463,8 +434,7 @@ local function generate_robot_animations(tint)
             shift = util.by_pixel(32, 19.5),
             direction_count = 16,
             draw_as_shadow = true,
-            hr_version =
-            {
+            hr_version = {
                 filename = "__base__/graphics/entity/logistic-robot/hr-logistic-robot-shadow.png",
                 priority = "high",
                 line_length = 16,
@@ -476,7 +446,7 @@ local function generate_robot_animations(tint)
                 y = 114,
                 scale = 0.5,
                 draw_as_shadow = true
-            },
+            }
         }
     }
 end
@@ -503,10 +473,8 @@ for name, tier in pairs(tier_map) do
     remnant = data.raw["corpse"][name.."-remnants"]
 
     -- Reskin remnants
-    remnant.animation = make_rotated_animation_variations_from_sheet (3,
-    {
-        layers = 
-        {
+    remnant.animation = make_rotated_animation_variations_from_sheet (3, {
+        layers = {
             -- Base
             {
                 filename = "__base__/graphics/entity/logistic-robot/remnants/logistic-robot-remnants.png",
@@ -518,8 +486,7 @@ for name, tier in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(1, 1),
-                hr_version =
-                {
+                hr_version = {
                     filename = "__base__/graphics/entity/logistic-robot/remnants/hr-logistic-robot-remnants.png",
                     line_length = 1,
                     width = 116,
@@ -544,8 +511,7 @@ for name, tier in pairs(tier_map) do
                 direction_count = 1,
                 shift = util.by_pixel(1, 1),
                 tint = inputs.tint,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/logistic-robot/remnants/hr-logistic-robot-remnants-mask.png",
                     line_length = 1,
                     width = 116,
@@ -571,8 +537,7 @@ for name, tier in pairs(tier_map) do
                 direction_count = 1,
                 shift = util.by_pixel(1, 1),
                 blend_mode = "additive",
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/logistic-robot/remnants/hr-logistic-robot-remnants-highlights.png",
                     line_length = 1,
                     width = 116,

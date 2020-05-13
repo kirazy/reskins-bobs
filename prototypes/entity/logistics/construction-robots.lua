@@ -8,8 +8,7 @@ if not mods["boblogistics"] then return end
 if settings.startup["reskins-bobs-do-boblogistics"].value == false then return end
 
 -- Set input parameters
-local inputs = 
-{
+local inputs = {
     type = "construction-robot",
     icon_name = "construction-robot",
     base_entity = "construction-robot",    
@@ -19,8 +18,7 @@ local inputs =
     -- make_icons = false,
 }
 
-local tier_map =
-{
+local tier_map = {
     ["construction-robot"]       = 1,
     ["bob-construction-robot-2"] = 2,
     ["bob-construction-robot-3"] = 3,
@@ -32,10 +30,8 @@ local tier_map =
 local function generate_robot_animations(tint)
     return
     {
-        idle =
-        {
-            layers =
-            {
+        idle = {
+            layers = {
                 -- Base
                 {
                     filename = "__base__/graphics/entity/construction-robot/construction-robot.png",
@@ -46,8 +42,7 @@ local function generate_robot_animations(tint)
                     frame_count = 1,
                     shift = util.by_pixel(0,-4.5),
                     direction_count = 16,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = "__base__/graphics/entity/construction-robot/hr-construction-robot.png",
                         priority = "high",
                         line_length = 16,
@@ -70,8 +65,7 @@ local function generate_robot_animations(tint)
                     shift = util.by_pixel(0,-4.5),
                     tint = tint,
                     direction_count = 16,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/logistics/construction-robot/hr-construction-robot-mask.png",
                         priority = "high",
                         line_length = 16,
@@ -95,8 +89,7 @@ local function generate_robot_animations(tint)
                     shift = util.by_pixel(0,-4.5),
                     blend_mode = "additive",
                     direction_count = 16,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/logistics/construction-robot/hr-construction-robot-highlights.png",
                         priority = "high",
                         line_length = 16,
@@ -108,14 +101,12 @@ local function generate_robot_animations(tint)
                         direction_count = 16,
                         scale = 0.5
                     }
-                },
+                }
             }
         },
         
-        in_motion =
-        {
-            layers =
-            {
+        in_motion = {
+            layers = {
                 -- Base
                 {
                     filename = "__base__/graphics/entity/construction-robot/construction-robot.png",
@@ -127,8 +118,7 @@ local function generate_robot_animations(tint)
                     shift = util.by_pixel(0, -4.5),
                     direction_count = 16,
                     y = 36,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = "__base__/graphics/entity/construction-robot/hr-construction-robot.png",
                         priority = "high",
                         line_length = 16,
@@ -153,8 +143,7 @@ local function generate_robot_animations(tint)
                     tint = tint,
                     direction_count = 16,
                     y = 36,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/logistics/construction-robot/hr-construction-robot-mask.png",
                         priority = "high",
                         line_length = 16,
@@ -180,8 +169,7 @@ local function generate_robot_animations(tint)
                     blend_mode = "additive",
                     direction_count = 16,
                     y = 36,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/logistics/construction-robot/hr-construction-robot-highlights.png",
                         priority = "high",
                         line_length = 16,
@@ -198,10 +186,8 @@ local function generate_robot_animations(tint)
             }
         },
 
-        working =
-        {
-            layers = 
-            {
+        working = {
+            layers = {
                 -- Base
                 {
                     filename = "__base__/graphics/entity/construction-robot/construction-robot-working.png",
@@ -213,8 +199,7 @@ local function generate_robot_animations(tint)
                     shift = util.by_pixel(-0.25, -5),
                     direction_count = 16,
                     animation_speed = 0.3,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = "__base__/graphics/entity/construction-robot/hr-construction-robot-working.png",
                         priority = "high",
                         line_length = 2,
@@ -239,8 +224,7 @@ local function generate_robot_animations(tint)
                     tint = tint,
                     direction_count = 16,
                     animation_speed = 0.3,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/logistics/construction-robot/hr-construction-robot-working-mask.png",
                         priority = "high",
                         line_length = 2,
@@ -266,8 +250,7 @@ local function generate_robot_animations(tint)
                     blend_mode = "additive",
                     direction_count = 16,
                     animation_speed = 0.3,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/logistics/construction-robot/hr-construction-robot-working-highlights.png",
                         priority = "high",
                         line_length = 2,
@@ -280,12 +263,11 @@ local function generate_robot_animations(tint)
                         animation_speed = 0.3,
                         scale = 0.5
                     }
-                },
+                }
             }
         },
 
-        shadow_idle =
-        {
+        shadow_idle = {
             filename = "__base__/graphics/entity/construction-robot/construction-robot-shadow.png",
             priority = "high",
             line_length = 16,
@@ -295,8 +277,7 @@ local function generate_robot_animations(tint)
             shift = util.by_pixel(33.5, 18.5),
             direction_count = 16,
             draw_as_shadow = true,
-            hr_version =
-            {
+            hr_version = {
                 filename = "__base__/graphics/entity/construction-robot/hr-construction-robot-shadow.png",
                 priority = "high",
                 line_length = 16,
@@ -307,11 +288,10 @@ local function generate_robot_animations(tint)
                 direction_count = 16,
                 scale = 0.5,
                 draw_as_shadow = true
-            },
+            }
         },
 
-        shadow_in_motion =
-        {
+        shadow_in_motion = {
             filename = "__base__/graphics/entity/construction-robot/construction-robot-shadow.png",
             priority = "high",
             line_length = 16,
@@ -321,8 +301,7 @@ local function generate_robot_animations(tint)
             shift = util.by_pixel(33.5, 18.5),
             direction_count = 16,
             draw_as_shadow = true,
-            hr_version =
-            {
+            hr_version = {
                 filename = "__base__/graphics/entity/construction-robot/hr-construction-robot-shadow.png",
                 priority = "high",
                 line_length = 16,
@@ -333,11 +312,10 @@ local function generate_robot_animations(tint)
                 direction_count = 16,
                 scale = 0.5,
                 draw_as_shadow = true
-            },
+            }
         },
 
-        shadow_working =
-        {
+        shadow_working = {
             filename = "__base__/graphics/entity/construction-robot/construction-robot-shadow.png",
             priority = "high",
             line_length = 16,
@@ -348,8 +326,7 @@ local function generate_robot_animations(tint)
             shift = util.by_pixel(33.5, 18.5),
             direction_count = 16,
             draw_as_shadow = true,
-            hr_version =
-            {
+            hr_version = {
                 filename = "__base__/graphics/entity/construction-robot/hr-construction-robot-shadow.png",
                 priority = "high",
                 line_length = 16,
@@ -361,7 +338,7 @@ local function generate_robot_animations(tint)
                 direction_count = 16,
                 scale = 0.5,
                 draw_as_shadow = true
-            },
+            }
         }
     }
 end
@@ -388,10 +365,8 @@ for name, tier in pairs(tier_map) do
     remnant = data.raw["corpse"][name.."-remnants"]
 
     -- Reskin remnants
-    remnant.animation = make_rotated_animation_variations_from_sheet (3,
-    {
-        layers = 
-        {
+    remnant.animation = make_rotated_animation_variations_from_sheet (3, {
+        layers = {
             -- Base
             {
                 filename = "__base__/graphics/entity/construction-robot/remnants/construction-robot-remnants.png",
@@ -403,8 +378,7 @@ for name, tier in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(2, 1),
-                hr_version =
-                {
+                hr_version = {
                   filename = "__base__/graphics/entity/construction-robot/remnants/hr-construction-robot-remnants.png",
                   line_length = 1,
                   width = 120,
@@ -415,7 +389,7 @@ for name, tier in pairs(tier_map) do
                   direction_count = 1,
                   shift = util.by_pixel(2, 1),
                   scale = 0.5,
-                },
+                }
             },
             -- Mask
             {
@@ -429,8 +403,7 @@ for name, tier in pairs(tier_map) do
                 direction_count = 1,
                 shift = util.by_pixel(2, 1),
                 tint = inputs.tint,
-                hr_version =
-                {
+                hr_version = {
                   filename = inputs.directory.."/graphics/entity/logistics/construction-robot/remnants/hr-construction-robot-remnants-mask.png",
                   line_length = 1,
                   width = 120,
@@ -442,7 +415,7 @@ for name, tier in pairs(tier_map) do
                   shift = util.by_pixel(2, 1),
                   tint = inputs.tint,
                   scale = 0.5,
-                },
+                }
             },
             -- Highlights
             {
@@ -456,8 +429,7 @@ for name, tier in pairs(tier_map) do
                 direction_count = 1,
                 shift = util.by_pixel(2, 1),
                 blend_mode = "additive",
-                hr_version =
-                {
+                hr_version = {
                   filename = inputs.directory.."/graphics/entity/logistics/construction-robot/remnants/hr-construction-robot-remnants-highlights.png",
                   line_length = 1,
                   width = 120,
@@ -469,7 +441,7 @@ for name, tier in pairs(tier_map) do
                   shift = util.by_pixel(2, 1),
                   blend_mode = "additive",
                   scale = 0.5,
-                },
+                }
             }
         }
     })
