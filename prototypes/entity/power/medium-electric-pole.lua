@@ -9,30 +9,26 @@ if settings.startup["bobmods-power-poles"].value == false then return end
 if settings.startup["reskins-bobs-do-bobpower"].value == false then return end 
 
 -- Set input parameters
-local inputs = 
-{
+local inputs = {
     type = "electric-pole",
-    root_name = "medium-electric-pole",
+    icon_name = "medium-electric-pole",
     base_entity = "medium-electric-pole",
     directory = reskins.bobs.directory,
     mod = "power",
     particles = {["medium-long"] = 1},
-    make_icons = false,
 }
 
 -- Medium electric poles have two different sets of tiers; determine which we are using
 local tier_map
 if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
-    tier_map =
-    {
+    tier_map = {
         ["medium-electric-pole"]   = 1,
         ["medium-electric-pole-2"] = 2,
         ["medium-electric-pole-3"] = 3,
         ["medium-electric-pole-4"] = 4
     }
 else
-    tier_map =
-    {
+    tier_map = {
         ["medium-electric-pole"]   = 2,
         ["medium-electric-pole-2"] = 3,
         ["medium-electric-pole-3"] = 4,
@@ -44,9 +40,6 @@ end
 for name, tier in pairs(tier_map) do
     -- Fetch entity
     entity = data.raw[inputs.type][name]
-
-    -- Map entity to name used internally
-    inputs.internal_name = inputs.root_name.."-"..tier
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
@@ -62,10 +55,8 @@ for name, tier in pairs(tier_map) do
     remnant = data.raw["corpse"][name.."-remnants"]
 
     -- Reskin remnants
-    remnant.animation = make_rotated_animation_variations_from_sheet(3,
-    {
-        layers =
-        {
+    remnant.animation = make_rotated_animation_variations_from_sheet(3, {
+        layers = {
             -- Base
             {
                 filename = "__base__/graphics/entity/medium-electric-pole/remnants/medium-electric-pole-base-remnants.png",
@@ -75,8 +66,7 @@ for name, tier in pairs(tier_map) do
                 frame_count = 1,
                 direction_count = 1,
                 shift = util.by_pixel(35, -5),
-                hr_version =
-                {
+                hr_version = {
                     filename = "__base__/graphics/entity/medium-electric-pole/remnants/hr-medium-electric-pole-base-remnants.png",
                     line_length = 1,
                     width = 284,
@@ -97,8 +87,7 @@ for name, tier in pairs(tier_map) do
                 direction_count = 1,
                 shift = util.by_pixel(35, -5),
                 tint = inputs.tint,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/medium-electric-pole/remnants/hr-medium-electric-pole-base-remnants-mask.png",
                     line_length = 1,
                     width = 284,
@@ -120,8 +109,7 @@ for name, tier in pairs(tier_map) do
                 direction_count = 1,
                 shift = util.by_pixel(35, -5),
                 blend_mode = "additive",
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/medium-electric-pole/remnants/hr-medium-electric-pole-base-remnants-highlights.png",
                     line_length = 1,
                     width = 284,
@@ -136,10 +124,8 @@ for name, tier in pairs(tier_map) do
         }
     })
 
-    remnant.animation_overlay = make_rotated_animation_variations_from_sheet(3,
-    {
-        layers =
-        {
+    remnant.animation_overlay = make_rotated_animation_variations_from_sheet(3, {
+        layers = {
             -- Base
             {
                 filename = "__base__/graphics/entity/medium-electric-pole/remnants/medium-electric-pole-top-remnants.png",
@@ -149,8 +135,7 @@ for name, tier in pairs(tier_map) do
                 frame_count = 1,
                 direction_count = 1,
                 shift = util.by_pixel(0 , -39),
-                hr_version =
-                {
+                hr_version = {
                     filename = "__base__/graphics/entity/medium-electric-pole/remnants/hr-medium-electric-pole-top-remnants.png",
                     line_length = 1,
                     width = 100,
@@ -171,8 +156,7 @@ for name, tier in pairs(tier_map) do
                 direction_count = 1,
                 shift = util.by_pixel(0 , -39),
                 tint = inputs.tint,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/medium-electric-pole/remnants/hr-medium-electric-pole-top-remnants-mask.png",
                     line_length = 1,
                     width = 100,
@@ -194,8 +178,7 @@ for name, tier in pairs(tier_map) do
                 direction_count = 1,
                 shift = util.by_pixel(0 , -39),
                 blend_mode = "additive",
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/medium-electric-pole/remnants/hr-medium-electric-pole-top-remnants-highlights.png",
                     line_length = 1,
                     width = 100,
@@ -211,10 +194,8 @@ for name, tier in pairs(tier_map) do
     })
 
     -- Reskin entities
-    entity.pictures =
-    {
-        layers =
-        {
+    entity.pictures = {
+        layers = {
             -- Base
             {
                 filename = "__base__/graphics/entity/medium-electric-pole/medium-electric-pole.png",
@@ -223,8 +204,7 @@ for name, tier in pairs(tier_map) do
                 height = 124,
                 direction_count = 4,
                 shift = util.by_pixel(4, -44),
-                hr_version =
-                {
+                hr_version = {
                     filename = "__base__/graphics/entity/medium-electric-pole/hr-medium-electric-pole.png",
                     priority = "extra-high",
                     width = 84,
@@ -243,8 +223,7 @@ for name, tier in pairs(tier_map) do
                 direction_count = 4,
                 shift = util.by_pixel(4, -44),
                 tint = inputs.tint,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/medium-electric-pole/hr-medium-electric-pole-mask.png",
                     priority = "extra-high",
                     width = 84,
@@ -264,8 +243,7 @@ for name, tier in pairs(tier_map) do
                 direction_count = 4,
                 shift = util.by_pixel(4, -44),
                 blend_mode = "additive",
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/medium-electric-pole/hr-medium-electric-pole-highlights.png",
                     priority = "extra-high",
                     width = 84,
@@ -285,8 +263,7 @@ for name, tier in pairs(tier_map) do
                 direction_count = 4,
                 shift = util.by_pixel(56, -1),
                 draw_as_shadow = true,
-                hr_version =
-                {
+                hr_version = {
                     filename = "__base__/graphics/entity/medium-electric-pole/hr-medium-electric-pole-shadow.png",
                     priority = "extra-high",
                     width = 280,
@@ -303,6 +280,3 @@ for name, tier in pairs(tier_map) do
     -- Label to skip to next iteration
     ::continue::
 end
-
-
-

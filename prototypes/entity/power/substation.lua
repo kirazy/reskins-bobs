@@ -9,31 +9,27 @@ if settings.startup["bobmods-power-poles"].value == false then return end
 if settings.startup["reskins-bobs-do-bobpower"].value == false then return end 
 
 -- Set input parameters
-local inputs = 
-{
+local inputs = {
     type = "electric-pole",
-    root_name = "substation",
+    icon_name = "substation",
     base_entity = "substation",
     directory = reskins.bobs.directory,
     mod = "power",
     particles = {["big"] = 2},
-    make_icons = false,
 }
 
 -- Substations have two different sets of tiers; determine which we are using
 local tier_map
 if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
-    tier_map =
-    {
-        ["substation"]   = 1,
+    tier_map = {
+        ["substation"] = 1,
         ["substation-2"] = 2,
         ["substation-3"] = 3,
         ["substation-4"] = 4
     }
 else
-    tier_map =
-    {
-        ["substation"]   = 2,
+    tier_map = {
+        ["substation"] = 2,
         ["substation-2"] = 3,
         ["substation-3"] = 4,
         ["substation-4"] = 5
@@ -49,9 +45,6 @@ for name, tier in pairs(tier_map) do
     if not entity then
         goto continue
     end
-  
-    -- Map entity to name used internally
-    inputs.internal_name = inputs.root_name.."-"..tier
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
@@ -62,10 +55,8 @@ for name, tier in pairs(tier_map) do
     remnant = data.raw["corpse"][name.."-remnants"]
 
     -- Reskin remnants
-    remnant.animation = make_rotated_animation_variations_from_sheet (1,
-    {
-        layers = 
-        {
+    remnant.animation = make_rotated_animation_variations_from_sheet (1, {
+        layers = {
             -- Base
             {
                 filename = inputs.directory.."/graphics/entity/power/substation/base/remnants/substation-remnants.png",
@@ -77,8 +68,7 @@ for name, tier in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(3, 1),
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/substation/base/remnants/hr-substation-remnants.png",
                     line_length = 1,
                     width = 182,
@@ -89,7 +79,7 @@ for name, tier in pairs(tier_map) do
                     direction_count = 1,
                     shift = util.by_pixel(2.5, 0.5),
                     scale = 0.5,
-                },
+                }
             },
             -- Mask
             {
@@ -103,8 +93,7 @@ for name, tier in pairs(tier_map) do
                 direction_count = 1,
                 shift = util.by_pixel(3, 1),
                 tint = inputs.tint,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/substation/remnants/hr-substation-remnants-mask.png",
                     line_length = 1,
                     width = 182,
@@ -116,7 +105,7 @@ for name, tier in pairs(tier_map) do
                     shift = util.by_pixel(2.5, 0.5),
                     tint = inputs.tint,
                     scale = 0.5,
-                },
+                }
             },
             {
                 filename = inputs.directory.."/graphics/entity/power/substation/remnants/substation-remnants-highlights.png",
@@ -129,8 +118,7 @@ for name, tier in pairs(tier_map) do
                 direction_count = 1,
                 shift = util.by_pixel(3, 1),
                 blend_mode = "additive",
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/substation/remnants/hr-substation-remnants-highlights.png",
                     line_length = 1,
                     width = 182,
@@ -142,16 +130,14 @@ for name, tier in pairs(tier_map) do
                     shift = util.by_pixel(2.5, 0.5),
                     blend_mode = "additive",
                     scale = 0.5,
-                },
+                }
             }
         }
     })
 
     -- Reskin entities
-    entity.pictures =
-    {
-        layers =
-        {
+    entity.pictures = {
+        layers = {
             -- Base
             {
                 filename = inputs.directory.."/graphics/entity/power/substation/base/substation.png",
@@ -160,8 +146,7 @@ for name, tier in pairs(tier_map) do
                 height = 136,
                 direction_count = 4,
                 shift = util.by_pixel(0, 1-32),
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/substation/base/hr-substation.png",
                     priority = "high",
                     width = 138,
@@ -180,8 +165,7 @@ for name, tier in pairs(tier_map) do
                 direction_count = 4,
                 shift = util.by_pixel(0, 1-32),
                 tint = inputs.tint,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/substation/hr-substation-mask.png",
                     priority = "high",
                     width = 138,
@@ -201,8 +185,7 @@ for name, tier in pairs(tier_map) do
                 direction_count = 4,
                 shift = util.by_pixel(0, 1-32),
                 blend_mode = "additive",
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/substation/hr-substation-highlights.png",
                     priority = "high",
                     width = 138,
@@ -222,8 +205,7 @@ for name, tier in pairs(tier_map) do
                 direction_count = 4,
                 shift = util.by_pixel(62, 42-32),
                 draw_as_shadow = true,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/substation/base/hr-substation-shadow.png",
                     priority = "high",
                     width = 370,
