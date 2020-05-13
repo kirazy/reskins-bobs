@@ -106,7 +106,7 @@ for material, map in pairs(material_map) do
     -- Parse map
     tier = map[1]
     inputs.material = material
-    inputs.tint = reskins.lib.tint_hex_to_rgb(map[2])
+    inputs.tint = util.color(map[2])
 
     -- Fetch entities
     pipe_entity = data.raw["pipe"][material.."-pipe"]

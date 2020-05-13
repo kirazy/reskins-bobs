@@ -9,13 +9,8 @@ if settings.startup["reskins-lib-customize-tier-colors"].value == false then ret
 
 -- Set input parameters
 local inputs = {}
--- {
---     type = "loader-1x1",
---     -- directory = "__vanilla-loaders-hd__",
--- }
 
-local tier_map =
-{
+local tier_map = {
     -- 1x1 Loader Entities
     ["basic-miniloader-loader"]           = {0, 1},
     ["chute-miniloader-loader"]           = {0, 1},
@@ -45,7 +40,7 @@ local tier_map =
     ["ultimate-filter-miniloader-inserter"] = {5},
 }
 
-local color_adjustment = 40
+local color_adjustment = 40/255
 
 -- Reskin entities
 for name, map in pairs(tier_map) do
@@ -71,17 +66,7 @@ for name, map in pairs(tier_map) do
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
 
     -- Tint adjustment
-    local adjusted_tint = reskins.lib.adjust_alpha(inputs.tint, 0.82)
-    for n = 1, 3 do
-        adjusted_tint[n] = color_adjustment + adjusted_tint[n]
-
-        if adjusted_tint[n] > 255 then
-            adjusted_tint[n] = 255
-        elseif adjusted_tint[n] < 0 then
-            adjusted_tint[n] = 0
-        end
-
-    end
+    adjusted_tint = reskins.lib.adjust_tint(inputs.tint, color_adjustment, 0.82)
     
     -- Retint the mask
     if not string.find(name, "inserter") then

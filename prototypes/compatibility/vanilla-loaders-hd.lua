@@ -8,14 +8,12 @@ if not mods["vanilla-loaders-hd"] then return end
 if settings.startup["reskins-lib-customize-tier-colors"].value == false then return end
 
 -- Set input parameters
-local inputs = 
-{
+local inputs = {
     type = "loader",
     directory = "__vanilla-loaders-hd__",
 }
 
-local tier_map =
-{
+local tier_map = {
     ["basic-loader"]   = {0, 1},
     ["loader"]         = {1, 1},
     ["fast-loader"]    = {2, 2},
@@ -24,7 +22,7 @@ local tier_map =
     ["green-loader"]   = {5, 2},
 }
 
-local color_adjustment = 40
+local color_adjustment = 40/255
 
 -- Reskin entities
 for name, map in pairs(tier_map) do
@@ -44,17 +42,7 @@ for name, map in pairs(tier_map) do
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
 
     -- Tint adjustment
-    local adjusted_tint = reskins.lib.adjust_alpha(inputs.tint, 0.82)
-    for n = 1, 3 do
-        adjusted_tint[n] = color_adjustment + adjusted_tint[n]
-
-        if adjusted_tint[n] > 255 then
-            adjusted_tint[n] = 255
-        elseif adjusted_tint[n] < 0 then
-            adjusted_tint[n] = 0
-        end
-
-    end
+    adjusted_tint = reskins.lib.adjust_tint(inputs.tint, color_adjustment, 0.82)
     
     -- Retint the mask
     entity.structure.direction_in.sheets[2].tint = adjusted_tint

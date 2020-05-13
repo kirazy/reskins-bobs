@@ -19,9 +19,9 @@ local inputs =
 
 local tint_map = 
 {
-    ["bob-valve"] = {reskins.lib.tint_hex_to_rgb("2ac0ff"), "basic"},
-    ["bob-overflow-valve"] = {reskins.lib.tint_hex_to_rgb("ff3b29"), "overflow"},
-    ["bob-topup-valve"] = {reskins.lib.tint_hex_to_rgb("4dff2a"), "top-up"},
+    ["bob-valve"] = {util.color("2ac0ff"), "basic"},
+    ["bob-overflow-valve"] = {util.color("ff3b29"), "overflow"},
+    ["bob-topup-valve"] = {util.color("4dff2a"), "top-up"},
 }
 
 local function cardinal_pictures(x, tint)

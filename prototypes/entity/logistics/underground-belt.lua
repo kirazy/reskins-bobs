@@ -28,7 +28,7 @@ local tier_map =
     ["ultimate-underground-belt"] = {5, 2},
 }
 
-local color_adjustment = 40
+local color_adjustment = 40/255
 
 -- Reskin entities
 for name, map in pairs(tier_map) do
@@ -48,17 +48,7 @@ for name, map in pairs(tier_map) do
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
 
     -- Tint adjustment
-    local adjusted_tint = reskins.lib.adjust_alpha(inputs.tint, 0.82)
-    for n = 1, 3 do
-        adjusted_tint[n] = color_adjustment + adjusted_tint[n]
-
-        if adjusted_tint[n] > 255 then
-            adjusted_tint[n] = 255
-        elseif adjusted_tint[n] < 0 then
-            adjusted_tint[n] = 0
-        end
-
-    end
+    adjusted_tint = reskins.lib.adjust_tint(inputs.tint, color_adjustment, 0.82)
     
     -- Reskin entities
     entity.structure = {

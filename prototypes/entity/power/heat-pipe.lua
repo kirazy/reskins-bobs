@@ -61,7 +61,7 @@ for name, map in pairs(tier_map) do
     if pipe_tier == 1 then goto continue end
 
     -- Create particles and explosions
-    particle_tints = {reskins.lib.tint_hex_to_rgb(map[3][1]), reskins.lib.tint_hex_to_rgb(map[3][2])}
+    particle_tints = {util.color(map[3][1]), util.color(map[3][2])}
     reskins.lib.create_explosion(name, inputs)
     reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["small"], 1, particle_tints[1])
     reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["medium"], 2, particle_tints[2])
