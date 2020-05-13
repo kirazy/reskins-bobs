@@ -69,11 +69,156 @@ for name, map in pairs(tier_map) do
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
-    -- Reskin entities
-    entity.animation =
-    {
-        layers =
+    -- Setup Icons
+    inputs.icon = {        
+        -- Base
         {
+            icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/standard/assembling-machine-"..tier.."-icon-base.png"
+        },
+        -- Mask
+        {
+            icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/standard/assembling-machine-"..tier.."-icon-mask.png",
+            tint = inputs.tint
+        },
+        -- Highlights
+        {
+            icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/standard/assembling-machine-"..tier.."-icon-highlights.png",
+            tint = {1,1,1,0}
+        }
+    }
+
+    inputs.icon_picture = {
+        layers = {
+            -- Base
+            {
+                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/standard/assembling-machine-"..tier.."-icon-base.png",
+                size = inputs.icon_size,
+                mipmaps = inputs.icon_mipmaps,
+                scale = 0.25
+            },
+            -- Mask
+            {
+                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/standard/assembling-machine-"..tier.."-icon-mask.png",
+                size = inputs.icon_size,
+                mipmaps = inputs.icon_mipmaps,
+                scale = 0.25,
+                tint = inputs.tint
+            },
+            -- Highlights
+            {
+                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/standard/assembling-machine-"..tier.."-icon-highlights.png",
+                size = inputs.icon_size,
+                mipmaps = inputs.icon_mipmaps,
+                scale = 0.25,
+                blend_mode = "additive"
+            }
+        }
+    }
+
+    if string.find(name, "electronics") then
+        -- Switch to small variant
+        for i = 1, 3, 1 do
+            inputs.icon[i].icon = string.gsub(inputs.icon[i].icon, "standard", "small")
+            inputs.icon_picture.layers[i].filename = string.gsub(inputs.icon_picture.layers[i].filename, "standard", "small")
+        end
+
+        -- Add the electrical decoratives
+        -- Base
+        table.insert(inputs.icon, {icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/small/electrical-base.png"})
+        table.insert(inputs.icon_picture.layers, {
+            filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/small/electrical-base.png",
+            size = inputs.icon_size,
+            mipmaps = inputs.icon_mipmaps,
+            scale = 0.25
+        })
+        -- Mask
+        table.insert(inputs.icon, {
+            icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/small/electrical-mask.png",
+            tint = inputs.tint
+        })
+        table.insert(inputs.icon_picture.layers, {
+            filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/small/electrical-mask.png",
+            tint = inputs.tint,
+            size = inputs.icon_size,
+            mipmaps = inputs.icon_mipmaps,
+            scale = 0.25
+        })
+        -- Highlights
+        table.insert(inputs.icon, {
+            icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/small/electrical-highlights.png",
+            tint = {1,1,1,0}
+        })
+        table.insert(inputs.icon_picture.layers, {
+            filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/small/electrical-highlights.png",
+            blend_mode = "additive",
+            size = inputs.icon_size,
+            mipmaps = inputs.icon_mipmaps,
+            scale = 0.25
+        })
+        -- Circuit
+        table.insert(inputs.icon, {icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/small/electrical-circuit.png"})
+        table.insert(inputs.icon_picture.layers, {
+            filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/small/electrical-circuit.png",
+            size = inputs.icon_size,
+            mipmaps = inputs.icon_mipmaps,
+            scale = 0.25
+        })
+
+    elseif name == "burner-assembling-machine" then
+        -- Switch to small variant
+        for i = 1, 3, 1 do
+            inputs.icon[i].icon = string.gsub(inputs.icon[i].icon, "standard", "small")
+            inputs.icon_picture.layers[i].filename = string.gsub(inputs.icon_picture.layers[i].filename, "standard", "small")
+        end
+        
+        -- Add coal
+        table.insert(inputs.icon, {icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/small/coal.png"})
+        table.insert(inputs.icon_picture.layers, {
+            filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/small/coal.png",
+            size = inputs.icon_size,
+            mipmaps = inputs.icon_mipmaps,
+            scale = 0.25
+        })
+    elseif name == "steam-assembling-machine" then
+        -- Add steam
+        table.insert(inputs.icon, {icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/standard/steam.png"})
+        table.insert(inputs.icon_picture.layers, {
+            filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/standard/steam.png",
+            size = inputs.icon_size,
+            mipmaps = inputs.icon_mipmaps,
+            scale = 0.25
+        })
+    else
+        -- Standard assembling machine
+        table.insert(inputs.icon, {icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/standard/gear-"..tier..".png"})
+        table.insert(inputs.icon_picture.layers, {
+            filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/standard/gear-"..tier..".png",
+            size = inputs.icon_size,
+            mipmaps = inputs.icon_mipmaps,
+            scale = 0.25
+        })
+    end
+
+    -- Setup tier labels
+    if settings.startup["reskins-lib-icon-tier-labeling"].value == true and tier > 0 then
+        local tier_label = {
+            icon = reskins.lib.directory.."/graphics/icons/tiers/"..inputs.icon_size.."/tier-"..tier..".png"
+        }
+
+        local tier_label_tinted = {
+            icon = reskins.lib.directory.."/graphics/icons/tiers/"..inputs.icon_size.."/tier-"..tier..".png",
+            tint = reskins.lib.adjust_alpha(reskins.lib.tint_index["tier-"..tier], 0.75)
+        }
+        table.insert(inputs.icon, tier_labe)
+        table.insert(inputs.icon, tier_label_tinted)
+    end
+
+    -- Assign the icon
+    reskins.lib.assign_icons(name, inputs)
+
+    -- Reskin entities
+    entity.animation = {
+        layers = {
             -- Base
             {
                 filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/base/assembling-machine-base.png",
@@ -84,8 +229,7 @@ for name, map in pairs(tier_map) do
                 line_length = 1,
                 repeat_count = 32,
                 shift = util.by_pixel(0, -0.5),
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/base/hr-assembling-machine-base.png",
                     priority="high",
                     width = 214,
@@ -108,8 +252,7 @@ for name, map in pairs(tier_map) do
                 repeat_count = 32,
                 shift = util.by_pixel(0, -0.5),
                 tint = inputs.tint,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/base/hr-assembling-machine-base-mask.png",
                     priority="high",
                     width = 214,
@@ -133,8 +276,7 @@ for name, map in pairs(tier_map) do
                 repeat_count = 32,
                 shift = util.by_pixel(0, -0.5),
                 blend_mode = "additive",
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/base/hr-assembling-machine-base-highlights.png",
                     priority="high",
                     width = 214,
@@ -156,8 +298,7 @@ for name, map in pairs(tier_map) do
                 frame_count = 32,
                 line_length = 8,
                 shift = util.by_pixel(0, -0.5),
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/animations/hr-assembling-machine-animation-"..tier..".png",
                     priority="high",
                     width = 214,
@@ -178,8 +319,7 @@ for name, map in pairs(tier_map) do
                 line_length = 8,
                 draw_as_shadow = true,
                 shift = util.by_pixel(27, 5),
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/shadows/hr-assembling-machine-"..shadow.."-shadow.png",
                     priority="high",
                     width = 264,
@@ -195,8 +335,7 @@ for name, map in pairs(tier_map) do
     }
 
     if string.find(name, "electronics") then
-        entity.animation.layers[6] =
-        {
+        entity.animation.layers[6] = {
             filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/electronics/electronics-base.png",
             priority="high",
             width = 108,
@@ -301,8 +440,6 @@ for name, map in pairs(tier_map) do
     if string.find(name, "electronics") or name == "burner-assembling-machine" then
         reskins.lib.rescale_entity(entity.animation, 2/3)
     end
-        
-
 
     -- Handle pipes
     if has_fluids then
