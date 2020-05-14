@@ -10,10 +10,11 @@ if settings.startup["reskins-bobs-do-bobassembly"].value == false then return en
 -- Set input parameters
 local inputs = {
     type = "assembling-machine",
+    icon_name = "assembling-machine",
     base_entity = "assembling-machine-1",
     directory = reskins.bobs.directory,
     particles = {["big"] = 1, ["medium"] = 2},
-    make_icons = false,
+    mod = "assembly",
     make_remnants = false,
 }
 
@@ -61,149 +62,133 @@ for name, map in pairs(tier_map) do
         inputs.tint = reskins.lib.tint_index["tier-"..tier]
     end
 
-    reskins.lib.setup_standard_entity(name, tier, inputs)
+    -- Setup icon details
+    if string.find(name, "electronics") then
+        -- Use mini assembling machine sprites
+        inputs.icon_base = "mini-assembling-machine-"..tier
+        inputs.icon_mask = inputs.icon_base
+        inputs.icon_highlights = inputs.icon_base
 
-    -- Setup Icons
-    inputs.icon = {        
-        -- Base
-        {
-            icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/standard/assembling-machine-"..tier.."-icon-base.png"
-        },
-        -- Mask
-        {
-            icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/standard/assembling-machine-"..tier.."-icon-mask.png",
-            tint = inputs.tint
-        },
-        -- Highlights
-        {
-            icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/standard/assembling-machine-"..tier.."-icon-highlights.png",
-            tint = {1,1,1,0}
-        }
-    }
-
-    inputs.icon_picture = {
-        layers = {
+        -- Add the electrical decoratives
+        inputs.icon_extras = {
             -- Base
             {
-                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/standard/assembling-machine-"..tier.."-icon-base.png",
-                size = inputs.icon_size,
-                mipmaps = inputs.icon_mipmaps,
-                scale = 0.25
+                icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/electrical-base.png"
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/standard/assembling-machine-"..tier.."-icon-mask.png",
-                size = inputs.icon_size,
-                mipmaps = inputs.icon_mipmaps,
-                scale = 0.25,
+                icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/electrical-mask.png",
                 tint = inputs.tint
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/standard/assembling-machine-"..tier.."-icon-highlights.png",
-                size = inputs.icon_size,
-                mipmaps = inputs.icon_mipmaps,
-                scale = 0.25,
-                blend_mode = "additive"
+                icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/electrical-highlights.png",
+                tint = {1,1,1,0}
+            },
+            -- Circuit
+            {
+                icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/electrical-circuit.png"
             }
         }
-    }
 
-    if string.find(name, "electronics") then
-        -- Switch to small variant
-        for i = 1, 3, 1 do
-            inputs.icon[i].icon = string.gsub(inputs.icon[i].icon, "standard", "small")
-            inputs.icon_picture.layers[i].filename = string.gsub(inputs.icon_picture.layers[i].filename, "standard", "small")
-        end
-
-        -- Add the electrical decoratives
-        -- Base
-        table.insert(inputs.icon, {icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/small/electrical-base.png"})
-        table.insert(inputs.icon_picture.layers, {
-            filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/small/electrical-base.png",
-            size = inputs.icon_size,
-            mipmaps = inputs.icon_mipmaps,
-            scale = 0.25
-        })
-        -- Mask
-        table.insert(inputs.icon, {
-            icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/small/electrical-mask.png",
-            tint = inputs.tint
-        })
-        table.insert(inputs.icon_picture.layers, {
-            filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/small/electrical-mask.png",
-            tint = inputs.tint,
-            size = inputs.icon_size,
-            mipmaps = inputs.icon_mipmaps,
-            scale = 0.25
-        })
-        -- Highlights
-        table.insert(inputs.icon, {
-            icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/small/electrical-highlights.png",
-            tint = {1,1,1,0}
-        })
-        table.insert(inputs.icon_picture.layers, {
-            filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/small/electrical-highlights.png",
-            blend_mode = "additive",
-            size = inputs.icon_size,
-            mipmaps = inputs.icon_mipmaps,
-            scale = 0.25
-        })
-        -- Circuit
-        table.insert(inputs.icon, {icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/small/electrical-circuit.png"})
-        table.insert(inputs.icon_picture.layers, {
-            filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/small/electrical-circuit.png",
-            size = inputs.icon_size,
-            mipmaps = inputs.icon_mipmaps,
-            scale = 0.25
-        })
-
+        inputs.icon_picture_extras = {
+            -- Base
+            {
+                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/electrical-base.png",
+                size = 64,
+                mipmaps = 4,
+                scale = 0.25
+            },
+            -- Mask
+            {
+                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/electrical-mask.png",
+                tint = inputs.tint,
+                size = 64,
+                mipmaps = 4,
+                scale = 0.25
+            },
+            -- Highlights
+            {
+                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/electrical-highlights.png",
+                blend_mode = "additive",
+                size = 64,
+                mipmaps = 4,
+                scale = 0.25
+            },
+            -- Circuit
+            {
+                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/electrical-circuit.png",
+                size = 64,
+                mipmaps = 4,
+                scale = 0.25
+            }
+        }
     elseif name == "burner-assembling-machine" then
-        -- Switch to small variant
-        for i = 1, 3, 1 do
-            inputs.icon[i].icon = string.gsub(inputs.icon[i].icon, "standard", "small")
-            inputs.icon_picture.layers[i].filename = string.gsub(inputs.icon_picture.layers[i].filename, "standard", "small")
-        end
-        
+        -- Use mini assembling machine sprites
+        inputs.icon_base = "mini-assembling-machine-"..tier
+        inputs.icon_mask = inputs.icon_base
+        inputs.icon_highlights = inputs.icon_base
+
         -- Add coal
-        table.insert(inputs.icon, {icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/small/coal.png"})
-        table.insert(inputs.icon_picture.layers, {
-            filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/small/coal.png",
-            size = inputs.icon_size,
-            mipmaps = inputs.icon_mipmaps,
-            scale = 0.25
-        })
+        inputs.icon_extras = {
+            {
+                icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/coal.png"
+            }
+        }
+
+        inputs.icon_picture_extras = {
+            {
+                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/coal.png",
+                size = 64,
+                mipmaps = 4,
+                scale = 0.25
+            }
+        }
     elseif name == "steam-assembling-machine" then
+        -- Use standard assembling machine sprites
+        inputs.icon_base = "assembling-machine-"..tier
+        inputs.icon_mask = inputs.icon_base
+        inputs.icon_highlights = inputs.icon_base
+
         -- Add steam
-        table.insert(inputs.icon, {icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/standard/steam.png"})
-        table.insert(inputs.icon_picture.layers, {
-            filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/standard/steam.png",
-            size = inputs.icon_size,
-            mipmaps = inputs.icon_mipmaps,
-            scale = 0.25
-        })
+        inputs.icon_extras = {
+            {
+                icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/steam.png"
+            }
+        }
+
+        inputs.icon_picture_extras = {
+            {
+                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/steam.png",
+                size = 64,
+                mipmaps = 4,
+                scale = 0.25
+            }
+        }
     else
-        -- Standard assembling machine
-        table.insert(inputs.icon, {icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/standard/gear-"..tier..".png"})
-        table.insert(inputs.icon_picture.layers, {
-            filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/standard/gear-"..tier..".png",
-            size = inputs.icon_size,
-            mipmaps = inputs.icon_mipmaps,
-            scale = 0.25
-        })
+        -- Use standard assembling machine sprites
+        inputs.icon_base = "assembling-machine-"..tier
+        inputs.icon_mask = inputs.icon_base
+        inputs.icon_highlights = inputs.icon_base
+
+        -- Add gears
+        inputs.icon_extras = {
+            {
+                icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/gear-"..tier..".png"
+            }
+        }
+
+        inputs.icon_picture_extras = {
+            {
+                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/gear-"..tier..".png",
+                size = 64,
+                mipmaps = 4,
+                scale = 0.25
+            }
+        }
     end
 
-    -- Setup tier labels
-    if settings.startup["reskins-lib-icon-tier-labeling"].value == true and tier > 0 then
-        table.insert(inputs.icon, {icon = reskins.lib.directory.."/graphics/icons/tiers/"..inputs.icon_size.."/tier-"..tier..".png"})
-        table.insert(inputs.icon, {
-            icon = reskins.lib.directory.."/graphics/icons/tiers/"..inputs.icon_size.."/tier-"..tier..".png",
-            tint = reskins.lib.adjust_alpha(reskins.lib.tint_index["tier-"..tier], 0.75)
-        })
-    end
-
-    -- Assign the icon
-    reskins.lib.assign_icons(name, inputs)
+    reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Reskin entities
     entity.animation = {
