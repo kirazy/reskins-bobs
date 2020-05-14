@@ -3,84 +3,75 @@
 --     
 -- See LICENSE.md in the project directory for license information.
 
--- Check to see if reskinning needs to be done.
-if not mods["boblogistics"] then 
-    -- Reskin the iron pipe icon
-    local iron_pipe_inputs = {
-        type = "pipe",
-        icon = reskins.bobs.directory.."/graphics/icons/logistics/pipe/iron-pipe-icon.png",
-        icon_size = 64,
-        icon_mipmaps = 4,
-    }
-    reskins.lib.assign_icons("pipe", iron_pipe_inputs)
-
-    local iron_pipe_to_ground_inputs = {
-        type = "pipe-to-ground",
-        icon = reskins.bobs.directory.."/graphics/icons/logistics/pipe-to-ground/iron-pipe-to-ground-icon.png",
-        icon_size = 64,
-        icon_mipmaps = 4,
-    }
-    reskins.lib.assign_icons("pipe-to-ground", iron_pipe_to_ground_inputs)
-    return 
+-- Function to reskin the base pipe
+local function reskin_pipe_icon()
+    reskins.lib.generate_basic_icon("pipe", false, "pipe", reskins.bobs.directory.."/graphics/icons/logistics/pipe/iron-pipe-icon.png")
+    reskins.lib.generate_basic_icon("pipe-to-ground", false, "pipe-to-ground", reskins.bobs.directory.."/graphics/icons/logistics/pipe-to-ground/iron-pipe-to-ground-icon.png")
 end
-if settings.startup["reskins-bobs-do-boblogistics"].value == false then return end
 
--- Restore vanilla pipes to their proper glory
-data.raw["pipe"]["pipe"].pictures = pipepictures()
-data.raw["pipe-to-ground"]["pipe-to-ground"].pictures = {
-    up = {
-        filename = "__base__/graphics/entity/pipe-to-ground/pipe-to-ground-up.png",
-        priority = "high",
-        width = 64,
-        height = 64,
-        hr_version = {
-            filename = "__base__/graphics/entity/pipe-to-ground/hr-pipe-to-ground-up.png",
-            priority = "extra-high",
-            width = 128,
-            height = 128,
-            scale = 0.5
-        }
-    },
-    down = {
-        filename = "__base__/graphics/entity/pipe-to-ground/pipe-to-ground-down.png",
-        priority = "high",
-        width = 64,
-        height = 64,
-        hr_version = {
-            filename = "__base__/graphics/entity/pipe-to-ground/hr-pipe-to-ground-down.png",
-            priority = "extra-high",
-            width = 128,
-            height = 128,
-            scale = 0.5
-        }
-    },
-    left = {
-        filename = "__base__/graphics/entity/pipe-to-ground/pipe-to-ground-left.png",
-        priority = "high",
-        width = 64,
-        height = 64,
-        hr_version = {
-            filename = "__base__/graphics/entity/pipe-to-ground/hr-pipe-to-ground-left.png",
-            priority = "extra-high",
-            width = 128,
-            height = 128,
-            scale = 0.5
-        }
-    },
-    right = {
-        filename = "__base__/graphics/entity/pipe-to-ground/pipe-to-ground-right.png",
-        priority = "high",
-        width = 64,
-        height = 64,
-        hr_version = {
-            filename = "__base__/graphics/entity/pipe-to-ground/hr-pipe-to-ground-right.png",
-            priority = "extra-high",
-            width = 128,
-            height = 128,
-            scale = 0.5
+-- Restore vanilla pipes to their proper glory, since Bob's sprites are pre-color-correction
+local function reskin_pipe_entity()
+    
+    data.raw["pipe"]["pipe"].pictures = pipepictures()
+    data.raw["pipe-to-ground"]["pipe-to-ground"].pictures = {
+        up = {
+            filename = "__base__/graphics/entity/pipe-to-ground/pipe-to-ground-up.png",
+            priority = "high",
+            width = 64,
+            height = 64,
+            hr_version = {
+                filename = "__base__/graphics/entity/pipe-to-ground/hr-pipe-to-ground-up.png",
+                priority = "extra-high",
+                width = 128,
+                height = 128,
+                scale = 0.5
+            }
+        },
+        down = {
+            filename = "__base__/graphics/entity/pipe-to-ground/pipe-to-ground-down.png",
+            priority = "high",
+            width = 64,
+            height = 64,
+            hr_version = {
+                filename = "__base__/graphics/entity/pipe-to-ground/hr-pipe-to-ground-down.png",
+                priority = "extra-high",
+                width = 128,
+                height = 128,
+                scale = 0.5
+            }
+        },
+        left = {
+            filename = "__base__/graphics/entity/pipe-to-ground/pipe-to-ground-left.png",
+            priority = "high",
+            width = 64,
+            height = 64,
+            hr_version = {
+                filename = "__base__/graphics/entity/pipe-to-ground/hr-pipe-to-ground-left.png",
+                priority = "extra-high",
+                width = 128,
+                height = 128,
+                scale = 0.5
+            }
+        },
+        right = {
+            filename = "__base__/graphics/entity/pipe-to-ground/pipe-to-ground-right.png",
+            priority = "high",
+            width = 64,
+            height = 64,
+            hr_version = {
+                filename = "__base__/graphics/entity/pipe-to-ground/hr-pipe-to-ground-right.png",
+                priority = "extra-high",
+                width = 128,
+                height = 128,
+                scale = 0.5
+            }
         }
     }
-}
+end
+
+-- Check to see if reskinning needs to be done
+if not mods["boblogistics"] then reskin_pipe_icon() return else reskin_pipe_entity() end
+if settings.startup["reskins-bobs-do-boblogistics"].value == false then return end
 
 -- Set input parameters
 local inputs = {directory = reskins.bobs.directory}
@@ -105,7 +96,7 @@ for material, map in pairs(material_map) do
     -- This needs to be done earlier
     inputs.material = material
 
-    -- Check if we're trying to work with iron, skip for now
+    -- Check if we're trying to work with iron
     if material == "iron" then
         goto do_icons
     end

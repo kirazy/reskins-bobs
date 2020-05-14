@@ -66,3 +66,15 @@ local assemblers = {
 for mini, origin in pairs(assemblers) do
     rescale_minimachines_icon(mini, origin, "assembling-machine", "assembling%-machine", "assembling-machine")
 end
+
+-- Chemical plants
+local chemplants = {
+    ["mini-chemplant-1"] = "chemical-plant",
+    ["mini-chemplant-2"] = "chemical-plant-2",
+    ["mini-chemplant-3"] = "chemical-plant-3",
+    ["mini-chemplant-4"] = "chemical-plant-4",
+}
+
+for mini, origin in pairs(chemplants) do
+    rescale_minimachines_icon(mini, origin, "assembling-machine", "chemical%-plant", "chemical-plant")
+end

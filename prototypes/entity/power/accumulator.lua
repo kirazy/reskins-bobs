@@ -4,13 +4,7 @@
 -- See LICENSE.md in the project directory for license information.
 
 -- Reskin the base accumulator icon
-local standard_accumulator = {
-    type = "accumulator",
-    icon = reskins.bobs.directory.."/graphics/icons/power/accumulator/accumulator-standard-icon.png",
-    icon_size = 64,
-    icon_mipmaps = 4,
-}
-reskins.lib.assign_icons("accumulator", standard_accumulator)
+reskins.lib.generate_basic_icon("accumulator", {1,2}, "accumulator", reskins.bobs.directory.."/graphics/icons/power/accumulator/accumulator-standard-icon.png")
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobpower"] then return end
