@@ -9,22 +9,18 @@ if settings.startup["bobmods-power-steam"].value == false then return end
 if settings.startup["reskins-bobs-do-bobpower"].value == false then return end 
 
 -- Set input parameters
-local inputs = 
-{
+local inputs = {
     type = "boiler",
-    root_name = "boiler",
     base_entity = "boiler",
     directory = reskins.bobs.directory,
     mod = "power",
     particles = {["big"] = 3},
-    make_icons = false,
 }
 
 local tier_map
 if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
-    tier_map = 
-    {
-        ["boiler"]   = {1},
+    tier_map = {
+        ["boiler"] = {1},
         ["boiler-2"] = {2},
         ["boiler-3"] = {3},
         ["boiler-4"] = {4},
@@ -35,9 +31,8 @@ if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
         ["oil-boiler-4"] = {4, true},
     }
 else
-    tier_map = 
-    {
-        ["boiler"]   = {1},
+    tier_map = {
+        ["boiler"] = {1},
         ["boiler-2"] = {2},
         ["boiler-3"] = {3},
         ["boiler-4"] = {4},
@@ -63,11 +58,34 @@ for name, map in pairs(tier_map) do
     tier = map[1]
     has_fluids = map[2]
 
-    -- Map entity to name used internally
-    inputs.internal_name = inputs.root_name.."-"..tier    
-
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
+
+    -- Setup icon details
+    if has_fluids == true then
+        inputs.icon_name = "oil-boiler"
+    else
+        inputs.icon_name = "boiler"
+    end
+
+    inputs.icon_extras = {
+        -- Light
+        {
+            icon = inputs.directory.."/graphics/icons/power/"..inputs.icon_name.."/"..inputs.icon_name.."-icon-light.png",
+            tint = {1,1,1,0}
+        }
+    }
+
+    inputs.icon_picture_extras = {
+        -- Light
+        {
+            filename = inputs.directory.."/graphics/icons/power/"..inputs.icon_name.."/"..inputs.icon_name.."-icon-light.png",
+            blend_mode = "additive",
+            size = 64,
+            mipmaps = 4,
+            scale = 0.25
+        }
+    }
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
@@ -75,10 +93,8 @@ for name, map in pairs(tier_map) do
     remnant = data.raw["corpse"][name.."-remnants"]
 
     -- Reskin remnants
-    remnant.animation =
-    {
-        layers = 
-        {
+    remnant.animation = {
+        layers = {
             -- Base
             {
                 filename = "__base__/graphics/entity/boiler/remnants/boiler-remnants.png",
@@ -90,8 +106,7 @@ for name, map in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 4,
                 shift = util.by_pixel(0, -3),
-                hr_version =
-                {
+                hr_version = {
                     filename = "__base__/graphics/entity/boiler/remnants/hr-boiler-remnants.png",
                     line_length = 1,
                     width = 274,
@@ -116,8 +131,7 @@ for name, map in pairs(tier_map) do
                 direction_count = 4,
                 shift = util.by_pixel(0, -3),
                 tint = inputs.tint,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/boiler/remnants/hr-boiler-remnants-mask.png",
                     line_length = 1,
                     width = 274,
@@ -143,8 +157,7 @@ for name, map in pairs(tier_map) do
                 direction_count = 4,
                 shift = util.by_pixel(0, -3),
                 blend_mode = "additive",
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/boiler/remnants/hr-boiler-remnants-highlights.png",
                     line_length = 1,
                     width = 274,
@@ -162,12 +175,9 @@ for name, map in pairs(tier_map) do
     }
     
     -- Reskin entities
-    entity.structure =
-    {
-        north =
-        {
-            layers =
-            {
+    entity.structure = {
+        north = {
+            layers = {
                 -- Base
                 {
                     filename = "__base__/graphics/entity/boiler/boiler-N-idle.png",
@@ -175,8 +185,7 @@ for name, map in pairs(tier_map) do
                     width = 131,
                     height = 108,
                     shift = util.by_pixel(-0.5, 4),
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = "__base__/graphics/entity/boiler/hr-boiler-N-idle.png",
                         priority = "extra-high",
                         width = 269,
@@ -193,8 +202,7 @@ for name, map in pairs(tier_map) do
                     height = 108,
                     shift = util.by_pixel(-0.5, 4),
                     tint = inputs.tint,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/boiler/hr-boiler-N-idle-mask.png",
                         priority = "extra-high",
                         width = 269,
@@ -212,8 +220,7 @@ for name, map in pairs(tier_map) do
                     height = 108,
                     shift = util.by_pixel(-0.5, 4),
                     blend_mode = "additive",
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/boiler/hr-boiler-N-idle-highlights.png",
                         priority = "extra-high",
                         width = 269,
@@ -231,8 +238,7 @@ for name, map in pairs(tier_map) do
                     height = 82,
                     shift = util.by_pixel(20.5, 9),
                     draw_as_shadow = true,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = "__base__/graphics/entity/boiler/hr-boiler-N-shadow.png",
                         priority = "extra-high",
                         width = 274,
@@ -244,10 +250,8 @@ for name, map in pairs(tier_map) do
                 }
             }
         },
-        east =
-        {
-            layers =
-            {
+        east = {
+            layers = {
                 -- Base
                 {
                     filename = "__base__/graphics/entity/boiler/boiler-E-idle.png",
@@ -255,8 +259,7 @@ for name, map in pairs(tier_map) do
                     width = 105,
                     height = 147,
                     shift = util.by_pixel(-3.5, -0.5),
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = "__base__/graphics/entity/boiler/hr-boiler-E-idle.png",
                         priority = "extra-high",
                         width = 216,
@@ -273,8 +276,7 @@ for name, map in pairs(tier_map) do
                     height = 147,
                     shift = util.by_pixel(-3.5, -0.5),
                     tint = inputs.tint,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/boiler/hr-boiler-E-idle-mask.png",
                         priority = "extra-high",
                         width = 216,
@@ -292,8 +294,7 @@ for name, map in pairs(tier_map) do
                     height = 147,
                     shift = util.by_pixel(-3.5, -0.5),
                     blend_mode = "additive",
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/boiler/hr-boiler-E-idle-highlights.png",
                         priority = "extra-high",
                         width = 216,
@@ -311,8 +312,7 @@ for name, map in pairs(tier_map) do
                     height = 97,
                     shift = util.by_pixel(30, 9.5),
                     draw_as_shadow = true,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = "__base__/graphics/entity/boiler/hr-boiler-E-shadow.png",
                         priority = "extra-high",
                         width = 184,
@@ -324,10 +324,8 @@ for name, map in pairs(tier_map) do
                 }
             }
         },
-        south =
-        {
-            layers =
-            {
+        south = {
+            layers = {
                 -- Base
                 {
                     filename = "__base__/graphics/entity/boiler/boiler-S-idle.png",
@@ -335,8 +333,7 @@ for name, map in pairs(tier_map) do
                     width = 128,
                     height = 95,
                     shift = util.by_pixel(3, 12.5),
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = "__base__/graphics/entity/boiler/hr-boiler-S-idle.png",
                         priority = "extra-high",
                         width = 260,
@@ -353,8 +350,7 @@ for name, map in pairs(tier_map) do
                     height = 95,
                     shift = util.by_pixel(3, 12.5),
                     tint = inputs.tint,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/boiler/hr-boiler-S-idle-mask.png",
                         priority = "extra-high",
                         width = 260,
@@ -372,8 +368,7 @@ for name, map in pairs(tier_map) do
                     height = 95,
                     shift = util.by_pixel(3, 12.5),
                     blend_mode = "additive",
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/boiler/hr-boiler-S-idle-highlights.png",
                         priority = "extra-high",
                         width = 260,
@@ -391,8 +386,7 @@ for name, map in pairs(tier_map) do
                     height = 66,
                     shift = util.by_pixel(30, 16),
                     draw_as_shadow = true,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = "__base__/graphics/entity/boiler/hr-boiler-S-shadow.png",
                         priority = "extra-high",
                         width = 311,
@@ -404,10 +398,8 @@ for name, map in pairs(tier_map) do
                 }
             }
         },
-        west =
-        {
-            layers =
-            {
+        west = {
+            layers = {
                 -- Base
                 {
                     filename = "__base__/graphics/entity/boiler/boiler-W-idle.png",
@@ -415,8 +407,7 @@ for name, map in pairs(tier_map) do
                     width = 96,
                     height = 132,
                     shift = util.by_pixel(1, 5),
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = "__base__/graphics/entity/boiler/hr-boiler-W-idle.png",
                         priority = "extra-high",
                         width = 196,
@@ -433,8 +424,7 @@ for name, map in pairs(tier_map) do
                     height = 132,
                     shift = util.by_pixel(1, 5),
                     tint = inputs.tint,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/boiler/hr-boiler-W-idle-mask.png",
                         priority = "extra-high",
                         width = 196,
@@ -452,8 +442,7 @@ for name, map in pairs(tier_map) do
                     height = 132,
                     shift = util.by_pixel(1, 5),
                     blend_mode = "additive",
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/boiler/hr-boiler-W-idle-highlights.png",
                         priority = "extra-high",
                         width = 196,
@@ -471,8 +460,7 @@ for name, map in pairs(tier_map) do
                     height = 109,
                     shift = util.by_pixel(19.5, 6.5),
                     draw_as_shadow = true,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = "__base__/graphics/entity/boiler/hr-boiler-W-shadow.png",
                         priority = "extra-high",
                         width = 206,
@@ -488,13 +476,11 @@ for name, map in pairs(tier_map) do
 
     -- Handle pipes
     if has_fluids then
-        entity.energy_source.fluid_box =
-        {
+        entity.energy_source.fluid_box = {
             base_area = 1,
             height = 2,
             base_level = -1,
-            pipe_connections =
-            {
+            pipe_connections = {
                 {type = "input", position = {0, 1.5}}
             },
             pipe_covers = pipecoverspictures(),

@@ -9,42 +9,37 @@ if settings.startup["bobmods-power-solar"].value == false then return end
 if settings.startup["reskins-bobs-do-bobpower"].value == false then return end 
 
 -- Set input parameters
-local inputs = 
-{
+local inputs = {
     type = "solar-panel",
     base_entity = "solar-panel",
     directory = reskins.bobs.directory,
     mod = "power",
     particles = {["small"] = 2},
-    make_remnants = false,
-    make_icons = false,
 }
 
 -- Solar panels have two different sets of tiers; determine which we are using
 local tier_map
 if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
-    tier_map =
-    {
-        ["solar-panel-small"]   = 1,
+    tier_map = {
+        ["solar-panel-small"] = 1,
         ["solar-panel-small-2"] = 2,
         ["solar-panel-small-3"] = 3,
-        ["solar-panel"]   = 1,
+        ["solar-panel"] = 1,
         ["solar-panel-2"] = 2,
         ["solar-panel-3"] = 3,
-        ["solar-panel-large"]   = 1,
+        ["solar-panel-large"] = 1,
         ["solar-panel-large-2"] = 2,
         ["solar-panel-large-3"] = 3
     }
 else
-    tier_map =
-    {
-        ["solar-panel-small"]   = 2,
+    tier_map = {
+        ["solar-panel-small"] = 2,
         ["solar-panel-small-2"] = 3,
         ["solar-panel-small-3"] = 4,
-        ["solar-panel"]   = 2,
+        ["solar-panel"] = 2,
         ["solar-panel-2"] = 3,
         ["solar-panel-3"] = 4,
-        ["solar-panel-large"]   = 2,
+        ["solar-panel-large"] = 2,
         ["solar-panel-large-2"] = 3,
         ["solar-panel-large-3"] = 4
     }
@@ -60,17 +55,26 @@ for name, tier in pairs(tier_map) do
         goto continue
     end
 
-    -- Handle the three types of root_names
+    -- Setup icon name details
     if string.find(name, "small", 1, true) then
-        inputs.root_name = "solar-panel-small"
+        inputs.icon_name = "solar-panel-small"
     elseif string.find(name, "large", 1, true) then
-        inputs.root_name = "solar-panel-large"
+        inputs.icon_name = "solar-panel-large"
     else
-        inputs.root_name = "solar-panel"
+        inputs.icon_name = "solar-panel"
     end
 
-    -- Map entity to name used internally
-    inputs.internal_name = inputs.root_name.."-"..tier
+    -- Setup additional icon details
+    inputs.icon_extras = {
+        -- Type indicator
+        {
+            icon = inputs.directory.."/graphics/icons/power/"..inputs.icon_name.."/"..inputs.icon_name.."-icon-type.png"
+        },
+        {
+            icon = inputs.directory.."/graphics/icons/power/"..inputs.icon_name.."/"..inputs.icon_name.."-icon-type.png",
+            tint = reskins.lib.adjust_alpha(reskins.lib.tint_index["tier-"..tier], 0.75)
+        }
+    }
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
@@ -81,18 +85,16 @@ for name, tier in pairs(tier_map) do
     remnant = data.raw["corpse"][name.."-remnants"]
 
     -- Reskin remnants
-    -- remnant.animation[1].filename = inputs.directory.."/graphics/entity/power/"..inputs.root_name.."/"..inputs.internal_name.."/remnants/"..inputs.internal_name.."-remnants.png"
-    -- remnant.animation[1].hr_version.filename = inputs.directory.."/graphics/entity/power/"..inputs.root_name.."/"..inputs.internal_name.."/remnants/hr-"..inputs.internal_name.."-remnants.png"
-    -- remnant.animation[2].filename = inputs.directory.."/graphics/entity/power/"..inputs.root_name.."/"..inputs.internal_name.."/remnants/"..inputs.internal_name.."-remnants.png"
-    -- remnant.animation[2].hr_version.filename = inputs.directory.."/graphics/entity/power/"..inputs.root_name.."/"..inputs.internal_name.."/remnants/hr-"..inputs.internal_name.."-remnants.png"
+    -- remnant.animation[1].filename = inputs.directory.."/graphics/entity/power/"..inputs.icon_name.."/"..inputs.internal_name.."/remnants/"..inputs.internal_name.."-remnants.png"
+    -- remnant.animation[1].hr_version.filename = inputs.directory.."/graphics/entity/power/"..inputs.icon_name.."/"..inputs.internal_name.."/remnants/hr-"..inputs.internal_name.."-remnants.png"
+    -- remnant.animation[2].filename = inputs.directory.."/graphics/entity/power/"..inputs.icon_name.."/"..inputs.internal_name.."/remnants/"..inputs.internal_name.."-remnants.png"
+    -- remnant.animation[2].hr_version.filename = inputs.directory.."/graphics/entity/power/"..inputs.icon_name.."/"..inputs.internal_name.."/remnants/hr-"..inputs.internal_name.."-remnants.png"
     
     -- Reskin entities
-    if inputs.root_name == "solar-panel-small" then
+    if inputs.icon_name == "solar-panel-small" then
         -- Overwrite picture table in target entity
-        entity.picture =
-        {
-            layers =
-            {
+        entity.picture = {
+            layers = {
                 -- Base
                 {
                     filename = inputs.directory.."/graphics/entity/power/solar-panel-small/base/solar-panel-small.png",
@@ -100,8 +102,7 @@ for name, tier in pairs(tier_map) do
                     width = 90,
                     height = 75,
                     shift = util.by_pixel(2.5, 0.25),
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/solar-panel-small/base/hr-solar-panel-small.png",
                         priority = "high",
                         width = 180,
@@ -118,8 +119,7 @@ for name, tier in pairs(tier_map) do
                     height = 75,
                     shift = util.by_pixel(2.5, 0.25),
                     tint = inputs.tint,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/solar-panel-small/hr-solar-panel-small-mask.png",
                         priority = "high",
                         width = 180,
@@ -137,8 +137,7 @@ for name, tier in pairs(tier_map) do
                     height = 75,
                     shift = util.by_pixel(2.5, 0.25),
                     blend_mode = "additive",
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/solar-panel-small/hr-solar-panel-small-highlights.png",
                         priority = "high",
                         width = 180,
@@ -156,8 +155,7 @@ for name, tier in pairs(tier_map) do
                     height = 75,
                     shift = util.by_pixel(2.5, 0.25),
                     draw_as_shadow = true,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/solar-panel-small/base/hr-solar-panel-small-shadow.png",
                         priority = "high",
                         width = 180,
@@ -171,18 +169,15 @@ for name, tier in pairs(tier_map) do
         }
 
         -- Overwrite or create overlay table in target entity
-        entity.overlay = 
-        {
-            layers =
-            {
+        entity.overlay = {
+            layers = {
                 {
                     filename = inputs.directory.."/graphics/entity/power/solar-panel-small/base/solar-panel-small-shadow-overlay.png",
                     priority = "high",
                     width = 90,
                     height = 75,
                     shift = util.by_pixel(2.5, 0.25),
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/solar-panel-small/base/hr-solar-panel-small-shadow-overlay.png",
                         priority = "high",
                         width = 180,
@@ -193,12 +188,10 @@ for name, tier in pairs(tier_map) do
                 }
             }
         }
-    elseif inputs.root_name == "solar-panel" then
+    elseif inputs.icon_name == "solar-panel" then
         -- Overwrite picture table in target entity
-        entity.picture =
-        {
-            layers =
-            {
+        entity.picture = {
+            layers = {
                 -- Base
                 {
                     filename = "__base__/graphics/entity/solar-panel/solar-panel.png",
@@ -206,8 +199,7 @@ for name, tier in pairs(tier_map) do
                     width = 116,
                     height = 112,
                     shift = util.by_pixel(-3, 3),
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = "__base__/graphics/entity/solar-panel/hr-solar-panel.png",
                         priority = "high",
                         width = 230,
@@ -224,8 +216,7 @@ for name, tier in pairs(tier_map) do
                     height = 112,
                     shift = util.by_pixel(-3, 3),
                     tint = inputs.tint,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/solar-panel/hr-solar-panel-mask.png",
                         priority = "high",
                         width = 230,
@@ -243,8 +234,7 @@ for name, tier in pairs(tier_map) do
                     height = 112,
                     shift = util.by_pixel(-3, 3),
                     blend_mode = "additive",
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/solar-panel/hr-solar-panel-highlights.png",
                         priority = "high",
                         width = 230,
@@ -262,8 +252,7 @@ for name, tier in pairs(tier_map) do
                     height = 90,
                     shift = util.by_pixel(10, 6),
                     draw_as_shadow = true,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = "__base__/graphics/entity/solar-panel/hr-solar-panel-shadow.png",
                         priority = "high",
                         width = 220,
@@ -277,18 +266,15 @@ for name, tier in pairs(tier_map) do
         }
 
         -- Overwrite or create overlay table in target entity
-        entity.overlay = 
-        {
-            layers =
-            {
+        entity.overlay = {
+            layers = {
                 {
                     filename = "__base__/graphics/entity/solar-panel/solar-panel-shadow-overlay.png",
                     priority = "high",
                     width = 108,
                     height = 90,
                     shift = util.by_pixel(11, 6),
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = "__base__/graphics/entity/solar-panel/hr-solar-panel-shadow-overlay.png",
                         priority = "high",
                         width = 214,
@@ -299,12 +285,10 @@ for name, tier in pairs(tier_map) do
                 }
             }
         }
-    elseif inputs.root_name == "solar-panel-large" then
+    elseif inputs.icon_name == "solar-panel-large" then
         -- Overwrite picture table in target entity
-        entity.picture =
-        {
-            layers =
-            {
+        entity.picture = {
+            layers = {
                 -- Base
                 {
                     filename = inputs.directory.."/graphics/entity/power/solar-panel-large/base/solar-panel-large.png",
@@ -312,8 +296,7 @@ for name, tier in pairs(tier_map) do
                     width = 154,
                     height = 137,
                     shift = util.by_pixel(2.5, 1.75),
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/solar-panel-large/base/hr-solar-panel-large.png",
                         priority = "high",
                         width = 308,
@@ -330,8 +313,7 @@ for name, tier in pairs(tier_map) do
                     height = 137,
                     shift = util.by_pixel(2.5, 1.75),
                     tint = inputs.tint,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/solar-panel-large/hr-solar-panel-large-mask.png",
                         priority = "high",
                         width = 308,
@@ -349,8 +331,7 @@ for name, tier in pairs(tier_map) do
                     height = 137,
                     shift = util.by_pixel(2.5, 1.75),
                     blend_mode = "additive",
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/solar-panel-large/hr-solar-panel-large-highlights.png",
                         priority = "high",
                         width = 308,
@@ -368,8 +349,7 @@ for name, tier in pairs(tier_map) do
                     height = 137,
                     shift = util.by_pixel(2.5, 1.75),
                     draw_as_shadow = true,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/solar-panel-large/base/hr-solar-panel-large-shadow.png",
                         priority = "high",
                         width = 308,
@@ -383,18 +363,15 @@ for name, tier in pairs(tier_map) do
         }
 
         -- Overwrite or create overlay table in target entity
-        entity.overlay = 
-        {
-            layers =
-            {
+        entity.overlay = {
+            layers = {
                 {
                     filename = inputs.directory.."/graphics/entity/power/solar-panel-large/base/solar-panel-large-shadow-overlay.png",
                     priority = "high",
                     width = 154,
                     height = 137,
                     shift = util.by_pixel(2.5, 1.75),
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/solar-panel-large/base/hr-solar-panel-large-shadow-overlay.png",
                         priority = "high",
                         width = 308,
