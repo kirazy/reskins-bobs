@@ -20,10 +20,11 @@ if settings.startup["reskins-bobs-do-bobpower"].value == false then return end
 -- Set input parameters
 local inputs = {
     type = "accumulator",
+    icon_name = "accumulator",
     base_entity = "accumulator",
     directory = reskins.bobs.directory,
+    mod = "power",
     particles = {["medium"] = 2, ["small"] = 3},
-    make_icons = false
 }
 
 -- Accumulators have two different sets of tiers; determine which we are using
@@ -223,25 +224,12 @@ for name, map in pairs(tier_map) do
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
-    
-    reskins.lib.setup_standard_entity(name, tier, inputs)
 
-    -- Setup Icons
-    inputs.icon = {        
-        -- Base
-        {
-            icon = inputs.directory.."/graphics/icons/power/accumulator/accumulator-"..inputs.wire.."-icon-base.png"
-        },
-        -- Mask
-        {
-            icon = inputs.directory.."/graphics/icons/power/accumulator/accumulator-icon-mask.png",
-            tint = inputs.tint
-        },
-        -- Highlights
-        {
-            icon = inputs.directory.."/graphics/icons/power/accumulator/accumulator-icon-highlights.png",
-            tint = {1,1,1,0}
-        },
+    -- Setup icon base details
+    inputs.icon_base = "accumulator-"..inputs.wire
+
+    -- Setup additional icon details
+    inputs.icon_extras = {
         -- Glow
         {
             icon = inputs.directory.."/graphics/icons/power/accumulator/accumulator-charge.png",
@@ -256,53 +244,18 @@ for name, map in pairs(tier_map) do
         }
     }
 
-    inputs.icon_picture = {
-        layers = {
-            -- Base
-            {
-                filename = inputs.directory.."/graphics/icons/power/accumulator/accumulator-"..inputs.wire.."-icon-base.png",
-                size = inputs.icon_size,
-                mipmaps = inputs.icon_mipmaps,
-                scale = 0.25
-            },
-            -- Mask
-            {
-                filename = inputs.directory.."/graphics/icons/power/accumulator/accumulator-icon-mask.png",
-                size = inputs.icon_size,
-                mipmaps = inputs.icon_mipmaps,
-                scale = 0.25,
-                tint = inputs.tint
-            },
-            -- Highlights
-            {
-                filename = inputs.directory.."/graphics/icons/power/accumulator/accumulator-icon-highlights.png",
-                size = inputs.icon_size,
-                mipmaps = inputs.icon_mipmaps,
-                scale = 0.25,
-                blend_mode = "additive"
-            },
-            -- Glow
-            {
-                filename = inputs.directory.."/graphics/icons/power/accumulator/accumulator-charge.png",
-                size = inputs.icon_size,
-                mipmaps = inputs.icon_mipmaps,
-                scale = 0.25,
-            }
+    inputs.icon_picture_extras = {
+        -- Glow
+        {
+            filename = inputs.directory.."/graphics/icons/power/accumulator/accumulator-charge.png",
+            size = 64,
+            mipmaps = 4,
+            scale = 0.25,
         }
     }
     
-    -- Setup tier labels
-    if settings.startup["reskins-lib-icon-tier-labeling"].value == true and tier > 0 then
-        table.insert(inputs.icon, {icon = reskins.lib.directory.."/graphics/icons/tiers/"..inputs.icon_size.."/tier-"..tier..".png"})
-        table.insert(inputs.icon, {
-            icon = reskins.lib.directory.."/graphics/icons/tiers/"..inputs.icon_size.."/tier-"..tier..".png",
-            tint = reskins.lib.adjust_alpha(reskins.lib.tint_index["tier-"..tier], 0.75)
-        })
-    end
-
-    -- Assign the icon
-    reskins.lib.assign_icons(name, inputs)
-    
+    reskins.lib.setup_standard_entity(name, tier, inputs)    
+        
     -- Fetch remnant
     remnant = data.raw["corpse"][name.."-remnants"]    
 
