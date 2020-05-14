@@ -8,30 +8,28 @@ if not mods["bobmining"] then return end
 if settings.startup["reskins-bobs-do-bobmining"].value == false then return end
 
 -- Set input parameters
-local inputs = 
-{
+local inputs = {
     type = "mining-drill",
+    icon_name = "pumpjack",
     base_entity = "pumpjack",
     directory = reskins.bobs.directory,
     mod = "mining",
     -- particles = {["medium-long"] = 3}, -- particles: big 1, medium 2, small 3
     make_explosions = false,
     make_remnants = false,
-    make_icons = false
 }
 
-local tier_map =
-{
-    ["pumpjack"]       = {1},
+local tier_map = {
+    ["pumpjack"] = {1},
     ["bob-pumpjack-1"] = {2},
     ["bob-pumpjack-2"] = {3},
     ["bob-pumpjack-3"] = {4},
     ["bob-pumpjack-4"] = {5},
-    ["water-miner-1"]  = {1, true},
-    ["water-miner-2"]  = {2, true},
-    ["water-miner-3"]  = {3, true},
-    ["water-miner-4"]  = {4, true},
-    ["water-miner-5"]  = {5, true},
+    ["water-miner-1"] = {1, true},
+    ["water-miner-2"] = {2, true},
+    ["water-miner-3"] = {3, true},
+    ["water-miner-4"] = {4, true},
+    ["water-miner-5"] = {5, true},
 }
 
 local function base_picture_base_layer(variant)
@@ -43,8 +41,7 @@ local function base_picture_base_layer(variant)
             width = 131,
             height = 137,
             shift = util.by_pixel(-2.5, -4.5),
-            hr_version =
-            {
+            hr_version = {
                 filename = "__base__/graphics/entity/pumpjack/hr-pumpjack-base.png",
                 priority = "extra-high",
                 width = 261,
@@ -61,8 +58,7 @@ local function base_picture_base_layer(variant)
             width = 131,
             height = 137,
             shift = util.by_pixel(-2.5, -4.5),
-            hr_version =
-            {
+            hr_version = {
                 filename = inputs.directory.."/graphics/entity/mining/pumpjack/hr-water-pumpjack-base.png",
                 priority = "extra-high",
                 width = 261,
@@ -86,8 +82,7 @@ local function animations_base_layer(variant, playback_speed)
             frame_count = 40,
             shift = util.by_pixel(-4, -24),
             animation_speed = playback_speed,
-            hr_version =
-            {
+            hr_version = {
                 priority = "high",
                 filename = "__base__/graphics/entity/pumpjack/hr-pumpjack-horsehead.png",
                 animation_speed = playback_speed,
@@ -110,8 +105,7 @@ local function animations_base_layer(variant, playback_speed)
             frame_count = 40,
             shift = util.by_pixel(-4, -24),
             animation_speed = playback_speed,
-            hr_version =
-            {
+            hr_version = {
                 priority = "high",
                 filename = inputs.directory.."/graphics/entity/mining/pumpjack/hr-water-pumpjack-horsehead.png",
                 animation_speed = playback_speed,
@@ -170,11 +164,15 @@ for name, map in pairs(tier_map) do
     tier = map[1]
     variant = map[2] or false
 
-    -- Map entity to name used internally
-    -- inputs.internal_name = inputs.root_name.."-"..tier
-
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
+
+    -- Setup icon base details
+    if variant then
+        inputs.icon_base = "water-pumpjack"
+    else
+        inputs.icon_base = "pumpjack"
+    end
     
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
@@ -183,10 +181,8 @@ for name, map in pairs(tier_map) do
                           + ((max_speed/(max_speed-min_speed)) - (entity.mining_speed/(max_speed-min_speed)))*min_playback
 
     -- Reskin entities
-    entity.base_picture = 
-    {
-        sheets =
-        {
+    entity.base_picture = {
+        sheets = {
             -- Base
             base_picture_base_layer(variant),
             -- Shadow
@@ -197,8 +193,7 @@ for name, map in pairs(tier_map) do
                 height = 111,
                 draw_as_shadow = true,
                 shift = util.by_pixel(6, 0.5),
-                hr_version =
-                {
+                hr_version = {
                   filename = "__base__/graphics/entity/pumpjack/hr-pumpjack-base-shadow.png",
                   width = 220,
                   height = 220,
@@ -211,12 +206,9 @@ for name, map in pairs(tier_map) do
         }
     }
 
-    entity.animations =
-    {
-        north = 
-        {
-            layers =
-            {
+    entity.animations = {
+        north = {
+            layers = {
                 animations_base_layer(variant, playback_speed),
                 -- Mask
                 {
@@ -229,8 +221,7 @@ for name, map in pairs(tier_map) do
                     shift = util.by_pixel(-4, -24),
                     tint = inputs.tint,
                     animation_speed = playback_speed,
-                    hr_version =
-                    {
+                    hr_version = {
                         priority = "high",
                         filename = inputs.directory.."/graphics/entity/mining/pumpjack/hr-pumpjack-horsehead-mask.png",
                         animation_speed = playback_speed,
@@ -254,8 +245,7 @@ for name, map in pairs(tier_map) do
                     shift = util.by_pixel(-4, -24),
                     blend_mode = "additive",
                     animation_speed = playback_speed,
-                    hr_version =
-                    {
+                    hr_version = {
                         priority = "high",
                         filename = inputs.directory.."/graphics/entity/mining/pumpjack/hr-pumpjack-horsehead-highlights.png",
                         animation_speed = playback_speed,
@@ -279,8 +269,7 @@ for name, map in pairs(tier_map) do
                     height = 41,
                     frame_count = 40,
                     shift = util.by_pixel(17.5, 14.5),
-                    hr_version =
-                    {
+                    hr_version = {
                         priority = "high",
                         filename = "__base__/graphics/entity/pumpjack/hr-pumpjack-horsehead-shadow.png",
                         animation_speed = playback_speed,

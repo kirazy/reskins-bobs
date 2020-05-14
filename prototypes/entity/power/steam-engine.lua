@@ -9,20 +9,17 @@ if settings.startup["bobmods-power-steam"].value == false then return end
 if settings.startup["reskins-bobs-do-bobpower"].value == false then return end 
 
 -- Set input parameters
-local inputs = 
-{
+local inputs = {
     type = "generator",
-    root_name = "steam-engine",
+    icon_name = "steam-engine",
     base_entity = "steam-engine",
     directory = reskins.bobs.directory,
     mod = "power",
     particles = {["medium"] = 2,["big"] = 1},
-    make_icons = false,
 }
 
-local tier_map =
-{
-    ["steam-engine"]   = 1,
+local tier_map = {
+    ["steam-engine"] = 1,
     ["steam-engine-2"] = 2,
     ["steam-engine-3"] = 3,
     ["steam-engine-4"] = 4,
@@ -39,8 +36,8 @@ for name, tier in pairs(tier_map) do
         goto continue
     end
 
-    -- Map entity to name used internally
-    inputs.internal_name = inputs.root_name.."-"..tier
+    -- Determine what tint we're using
+    inputs.tint = reskins.lib.tint_index["tier-"..tier]
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
@@ -48,10 +45,8 @@ for name, tier in pairs(tier_map) do
     remnant = data.raw["corpse"][name.."-remnants"]
 
     -- Reskin remnants
-    remnant.animation = make_rotated_animation_variations_from_sheet (1,
-    {
-        layers = 
-        {
+    remnant.animation = make_rotated_animation_variations_from_sheet (1, {
+        layers = {
             -- Base
             {
                 filename = "__base__/graphics/entity/steam-engine/remnants/steam-engine-remnants.png",
@@ -63,8 +58,7 @@ for name, tier in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 4,
                 shift = util.by_pixel(17, 7),
-                hr_version =
-                {
+                hr_version = {
                     filename = "__base__/graphics/entity/steam-engine/remnants/hr-steam-engine-remnants.png",
                     line_length = 1,
                     width = 462,
@@ -88,9 +82,8 @@ for name, tier in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 4,
                 shift = util.by_pixel(17, 7),
-                tint = reskins.lib.tint_index["tier-"..tier],
-                hr_version =
-                {
+                tint = inputs.tint,
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/steam-engine/remnants/hr-steam-engine-remnants-mask.png",
                     line_length = 1,
                     width = 462,
@@ -100,7 +93,7 @@ for name, tier in pairs(tier_map) do
                     axially_symmetrical = false,
                     direction_count = 4,
                     shift = util.by_pixel(17, 6.5),
-                    tint = reskins.lib.tint_index["tier-"..tier],
+                    tint = inputs.tint,
                     scale = 0.5,
                 }
             },
@@ -116,8 +109,7 @@ for name, tier in pairs(tier_map) do
                 direction_count = 4,
                 shift = util.by_pixel(17, 7),
                 blend_mode = "additive",
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/steam-engine/remnants/hr-steam-engine-remnants-highlights.png",
                     line_length = 1,
                     width = 462,
@@ -135,10 +127,8 @@ for name, tier in pairs(tier_map) do
     })
     
     -- Reskin entities
-    entity.horizontal_animation =
-    {
-        layers =
-        {
+    entity.horizontal_animation = {
+        layers = {
             -- Base
             {
                 filename = "__base__/graphics/entity/steam-engine/steam-engine-H.png",
@@ -147,8 +137,7 @@ for name, tier in pairs(tier_map) do
                 frame_count = 32,
                 line_length = 8,
                 shift = util.by_pixel(1, -5),
-                hr_version =
-                {
+                hr_version = {
                     filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-H.png",
                     width = 352,
                     height = 257,
@@ -166,16 +155,15 @@ for name, tier in pairs(tier_map) do
                 frame_count = 32,
                 line_length = 8,
                 shift = util.by_pixel(1, -5),
-                tint = reskins.lib.tint_index["tier-"..tier],
-                hr_version =
-                {
+                tint = inputs.tint,
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/steam-engine/hr-steam-engine-H-mask.png",
                     width = 352,
                     height = 257,
                     frame_count = 32,
                     line_length = 8,
                     shift = util.by_pixel(1, -4.75),
-                    tint = reskins.lib.tint_index["tier-"..tier],
+                    tint = inputs.tint,
                     scale = 0.5
                 }
             },
@@ -188,8 +176,7 @@ for name, tier in pairs(tier_map) do
                 line_length = 8,
                 shift = util.by_pixel(1, -5),
                 blend_mode = "additive",
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/steam-engine/hr-steam-engine-H-highlights.png",
                     width = 352,
                     height = 257,
@@ -209,8 +196,7 @@ for name, tier in pairs(tier_map) do
                 line_length = 8,
                 draw_as_shadow = true,
                 shift = util.by_pixel(48, 24),
-                hr_version =
-                {
+                hr_version = {
                     filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-H-shadow.png",
                     width = 508,
                     height = 160,
@@ -224,10 +210,8 @@ for name, tier in pairs(tier_map) do
         }
     }
 
-    entity.vertical_animation =
-    {
-        layers =
-        {
+    entity.vertical_animation = {
+        layers = {
             -- Base
             {
                 filename = "__base__/graphics/entity/steam-engine/steam-engine-V.png",
@@ -236,8 +220,7 @@ for name, tier in pairs(tier_map) do
                 frame_count = 32,
                 line_length = 8,
                 shift = util.by_pixel(5, -6.5),
-                hr_version =
-                {
+                hr_version = {
                     filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-V.png",
                     width = 225,
                     height = 391,
@@ -255,16 +238,15 @@ for name, tier in pairs(tier_map) do
                 frame_count = 32,
                 line_length = 8,
                 shift = util.by_pixel(5, -6.5),
-                tint = reskins.lib.tint_index["tier-"..tier],
-                hr_version =
-                {
+                tint = inputs.tint,
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/steam-engine/hr-steam-engine-V-mask.png",
                     width = 225,
                     height = 391,
                     frame_count = 32,
                     line_length = 8,
                     shift = util.by_pixel(4.75, -6.25),
-                    tint = reskins.lib.tint_index["tier-"..tier],
+                    tint = inputs.tint,
                     scale = 0.5
                 }
             },
@@ -277,8 +259,7 @@ for name, tier in pairs(tier_map) do
                 line_length = 8,
                 shift = util.by_pixel(5, -6.5),
                 blend_mode = "additive",
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/steam-engine/hr-steam-engine-V-highlights.png",
                     width = 225,
                     height = 391,
@@ -298,8 +279,7 @@ for name, tier in pairs(tier_map) do
                 line_length = 8,
                 draw_as_shadow = true,
                 shift = util.by_pixel(40.5, 9.5),
-                hr_version =
-                {
+                hr_version = {
                     filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-V-shadow.png",
                     width = 330,
                     height = 307,
