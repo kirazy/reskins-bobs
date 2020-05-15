@@ -11,12 +11,11 @@ if settings.startup["reskins-bobs-do-boblogistics"].value == false then return e
 local inputs = 
 {
     type = "pump",
-    root_name = "pump",
+    icon_name = "pump",
     base_entity = "pump",
     directory = reskins.bobs.directory,
     mod = "logistics",
     particles = {["medium"] = 3},
-    make_icons = false
 }
 
 -- Pumps have two different sets of tiers; determine which we are using
@@ -48,9 +47,6 @@ for name, tier in pairs(tier_map) do
     if not entity then
         goto continue
     end
-
-    -- Map entity to name used internally
-    inputs.internal_name = inputs.root_name.."-"..tier
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]

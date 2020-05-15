@@ -6,7 +6,7 @@
 -- Check for mini-machines
 if not mods["mini-machines"] then return end
 
-local function rescale_minimachines_icon(name, source_name, type, pattern, replacement)
+local function use_mini_icon(name, source_name, type, pattern, replacement)
     -- Initialize paths
     local destination = data.raw["item"][name]
     local source = data.raw["item"][source_name]
@@ -40,6 +40,12 @@ local function rescale_minimachines_icon(name, source_name, type, pattern, repla
     reskins.lib.assign_icons(name, inputs)
 end
 
+local function rescale_minimachine(table, type, pattern, replacement)
+    for minimachine, source in pairs(table) do
+        use_mini_icon(minimachine, source, type, pattern, replacement)
+    end
+end
+
 -- Electrolysers
 local electrolysers = {
     ["mini-electro-1"] = "electrolyser",
@@ -49,9 +55,7 @@ local electrolysers = {
     ["mini-electro-5"] = "electrolyser-5",
 }
 
-for mini, origin in pairs(electrolysers) do
-    rescale_minimachines_icon(mini, origin, "assembling-machine", "electrolyser", "electrolyser")
-end
+rescale_minimachine(electrolysers, "assembling-machine", "electrolyser", "electrolyser")
 
 -- Assembling machines
 local assemblers = {
@@ -63,9 +67,7 @@ local assemblers = {
     ["mini-assembler-6"] = "assembling-machine-6",
 }
 
-for mini, origin in pairs(assemblers) do
-    rescale_minimachines_icon(mini, origin, "assembling-machine", "assembling%-machine", "assembling-machine")
-end
+rescale_minimachine(assemblers, "assembling-machine", "assembling%-machine", "assembling-machine")
 
 -- Chemical plants
 local chemplants = {
@@ -75,6 +77,26 @@ local chemplants = {
     ["mini-chemplant-4"] = "chemical-plant-4",
 }
 
-for mini, origin in pairs(chemplants) do
-    rescale_minimachines_icon(mini, origin, "assembling-machine", "chemical%-plant", "chemical-plant")
-end
+rescale_minimachine(chemplants, "assembling-machine", "chemical%-plant", "chemical-plant")
+
+-- Mining drills
+local miners = {
+    ["mini-miner-1"] = "electric-mining-drill",
+    ["mini-miner-2"] = "bob-mining-drill-1",
+    ["mini-miner-3"] = "bob-mining-drill-2",
+    ["mini-miner-4"] = "bob-mining-drill-3",
+    ["mini-miner-5"] = "bob-mining-drill-4",
+}
+
+rescale_minimachine(miners, "mining-drill", "electric%-mining%-drill", "electric-mining-drill")
+
+-- Radars
+local radars = {
+    ["mini-radar-1"] = "radar",
+    ["mini-radar-2"] = "radar-2",
+    ["mini-radar-3"] = "radar-3",
+    ["mini-radar-4"] = "radar-4",
+    ["mini-radar-5"] = "radar-5",
+}
+
+rescale_minimachine(radars, "radar", "radar", "radar")

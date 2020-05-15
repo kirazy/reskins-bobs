@@ -68,25 +68,6 @@ for name, map in pairs(tier_map) do
         inputs.icon_name = "boiler"
     end
 
-    inputs.icon_extras = {
-        -- Light
-        {
-            icon = inputs.directory.."/graphics/icons/power/"..inputs.icon_name.."/"..inputs.icon_name.."-icon-light.png",
-            tint = {1,1,1,0}
-        }
-    }
-
-    inputs.icon_picture_extras = {
-        -- Light
-        {
-            filename = inputs.directory.."/graphics/icons/power/"..inputs.icon_name.."/"..inputs.icon_name.."-icon-light.png",
-            blend_mode = "additive",
-            size = 64,
-            mipmaps = 4,
-            scale = 0.25
-        }
-    }
-
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Fetch remnant

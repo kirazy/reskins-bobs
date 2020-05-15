@@ -8,22 +8,20 @@ if not mods["bobmining"] then return end
 if settings.startup["reskins-bobs-do-bobmining"].value == false then return end
 
 -- Set input parameters
-local inputs = 
-{
+local inputs = {
     type = "mining-drill",
+    icon_name = "electric-mining-drill",
     base_entity = "electric-mining-drill",
     directory = reskins.bobs.directory,
     mod = "mining",
     particles = {["medium-long"] = 3},
     make_remnants = false,
-    make_icons = false
 }
 
 -- Storage tanks have two different sets of tiers; determine which we are using
 local tier_map
 if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
-    tier_map =
-    {
+    tier_map = {
         ["electric-mining-drill"] = 1,
         ["bob-mining-drill-1"] = 2,
         ["bob-mining-drill-2"] = 3,
@@ -35,8 +33,7 @@ if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
         ["bob-area-mining-drill-4"] = 4
     }
 else
-    tier_map =
-    {
+    tier_map = {
         ["electric-mining-drill"] = 1,
         ["bob-mining-drill-1"] = 2,
         ["bob-mining-drill-2"] = 3,
@@ -89,15 +86,12 @@ for name, tier in pairs(tier_map) do
         goto continue
     end
 
-    -- Handle inputs.root_name
+    -- Handle icon base 
     if string.find(name, "electric", 1, true) or string.find(name, "bob-mining", 1, true) then
-        inputs.root_name = "mining-drill"
+        inputs.icon_base = "electric-mining-drill"
     elseif string.find(name, "bob-area", 1, true) then
-        inputs.root_name = "area-mining-drill"
+        inputs.icon_base = "large-area-electric-mining-drill"
     end
-
-    -- Map entity to name used internally
-    inputs.internal_name = inputs.root_name.."-"..tier
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
@@ -109,12 +103,9 @@ for name, tier in pairs(tier_map) do
                           + ((max_speed/(max_speed-min_speed)) - (entity.mining_speed/(max_speed-min_speed)))*min_playback
 
     -- Reskin entities
-    entity.animations =
-    {
-        north =
-        {
-            layers = 
-            {
+    entity.animations = {
+        north = {
+            layers = {
                 -- Base
                 {
                     priority = "high",
@@ -127,8 +118,7 @@ for name, tier in pairs(tier_map) do
                     direction_count = 1,
                     shift = util.by_pixel(0, -8.5),
                     run_mode = "forward-then-backward",
-                    hr_version =
-                    {
+                    hr_version = {
                         priority = "high",
                         filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-N.png",
                         line_length = 8,
@@ -155,8 +145,7 @@ for name, tier in pairs(tier_map) do
                     shift = util.by_pixel(0, -8.5),
                     run_mode = "forward-then-backward",
                     tint = inputs.tint,
-                    hr_version =
-                    {
+                    hr_version = {
                         priority = "high",
                         filename = inputs.directory.."/graphics/entity/mining/mining-drill/hr-mining-drill-N-mask.png",
                         line_length = 8,
@@ -184,8 +173,7 @@ for name, tier in pairs(tier_map) do
                     shift = util.by_pixel(0, -8.5),
                     run_mode = "forward-then-backward",
                     blend_mode = "additive",
-                    hr_version =
-                    {
+                    hr_version = {
                         priority = "high",
                         filename = inputs.directory.."/graphics/entity/mining/mining-drill/hr-mining-drill-N-highlights.png",
                         line_length = 8,
@@ -202,10 +190,8 @@ for name, tier in pairs(tier_map) do
                 }
             }
         },
-        east =
-        {
-            layers =
-            {
+        east = {
+            layers = {
                 -- Base
                 {
                     priority = "high",
@@ -218,8 +204,7 @@ for name, tier in pairs(tier_map) do
                     direction_count = 1,
                     shift = util.by_pixel(3.5, -1),
                     run_mode = "forward-then-backward",
-                    hr_version =
-                    {
+                    hr_version = {
                         priority = "high",
                         filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E.png",
                         line_length = 8,
@@ -246,8 +231,7 @@ for name, tier in pairs(tier_map) do
                     shift = util.by_pixel(3.5, -1),
                     tint = inputs.tint,
                     run_mode = "forward-then-backward",
-                    hr_version =
-                    {
+                    hr_version = {
                         priority = "high",
                         filename = inputs.directory.."/graphics/entity/mining/mining-drill/hr-mining-drill-E-mask.png",
                         line_length = 8,
@@ -275,8 +259,7 @@ for name, tier in pairs(tier_map) do
                     shift = util.by_pixel(3.5, -1),
                     run_mode = "forward-then-backward",
                     blend_mode = "additive",
-                    hr_version =
-                    {
+                    hr_version = {
                         priority = "high",
                         filename = inputs.directory.."/graphics/entity/mining/mining-drill/hr-mining-drill-E-highlights.png",
                         line_length = 8,
@@ -293,10 +276,8 @@ for name, tier in pairs(tier_map) do
                 },
             }
         },
-        south =
-        {
-            layers =
-            {
+        south = {
+            layers = {
                 -- Base
                 {
                     priority = "high",
@@ -309,8 +290,7 @@ for name, tier in pairs(tier_map) do
                     direction_count = 1,
                     shift = util.by_pixel(0, -1.5),
                     run_mode = "forward-then-backward",
-                    hr_version =
-                    {
+                    hr_version = {
                         priority = "high",
                         filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S.png",
                         line_length = 8,
@@ -337,8 +317,7 @@ for name, tier in pairs(tier_map) do
                     shift = util.by_pixel(0, -1.5),
                     run_mode = "forward-then-backward",
                     tint = inputs.tint,
-                    hr_version =
-                    {
+                    hr_version = {
                         priority = "high",
                         filename = inputs.directory.."/graphics/entity/mining/mining-drill/hr-mining-drill-S-mask.png",
                         line_length = 8,
@@ -366,8 +345,7 @@ for name, tier in pairs(tier_map) do
                     shift = util.by_pixel(0, -1.5),
                     run_mode = "forward-then-backward",
                     blend_mode = "additive",
-                    hr_version =
-                    {
+                    hr_version = {
                         priority = "high",
                         filename = inputs.directory.."/graphics/entity/mining/mining-drill/hr-mining-drill-S-highlights.png",
                         line_length = 8,
@@ -384,10 +362,8 @@ for name, tier in pairs(tier_map) do
                 },
             }
         },
-        west =
-        {
-            layers = 
-            {
+        west = {
+            layers = {
                 -- Base
                 {
                     priority = "high",
@@ -400,8 +376,7 @@ for name, tier in pairs(tier_map) do
                     direction_count = 1,
                     shift = util.by_pixel(-3.5, -1),
                     run_mode = "forward-then-backward",
-                    hr_version =
-                    {
+                    hr_version = {
                         priority = "high",
                         filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W.png",
                         line_length = 8,
@@ -428,8 +403,7 @@ for name, tier in pairs(tier_map) do
                     shift = util.by_pixel(-3.5, -1),
                     run_mode = "forward-then-backward",
                     tint = inputs.tint,
-                    hr_version =
-                    {
+                    hr_version = {
                         priority = "high",
                         filename = inputs.directory.."/graphics/entity/mining/mining-drill/hr-mining-drill-W-mask.png",
                         line_length = 8,
@@ -457,8 +431,7 @@ for name, tier in pairs(tier_map) do
                     shift = util.by_pixel(-3.5, -1),
                     run_mode = "forward-then-backward",
                     blend_mode = "additive",
-                    hr_version =
-                    {
+                    hr_version = {
                         priority = "high",
                         filename = inputs.directory.."/graphics/entity/mining/mining-drill/hr-mining-drill-W-highlights.png",
                         line_length = 8,
@@ -477,9 +450,8 @@ for name, tier in pairs(tier_map) do
         }
     }
     
-    if inputs.root_name == "area-mining-drill" then
-        entity.animations.north.layers[#entity.animations.north.layers+1] = 
-        {
+    if inputs.icon_base == "large-area-electric-mining-drill" then
+        entity.animations.north.layers[#entity.animations.north.layers+1] = {
             priority = "high",
             filename = inputs.directory.."/graphics/entity/mining/mining-drill/area-end/area-drill-N.png",
             line_length = 8,
@@ -490,8 +462,7 @@ for name, tier in pairs(tier_map) do
             direction_count = 1,
             shift = util.by_pixel(0, -8.5),
             run_mode = "forward-then-backward",
-            hr_version =
-            {
+            hr_version = {
                 priority = "high",
                 filename = inputs.directory.."/graphics/entity/mining/mining-drill/area-end/hr-area-drill-N.png",
                 line_length = 8,
@@ -506,8 +477,7 @@ for name, tier in pairs(tier_map) do
             }
         }
 
-        entity.animations.east.layers[#entity.animations.east.layers+1] = 
-        {
+        entity.animations.east.layers[#entity.animations.east.layers+1] = {
             priority = "high",
             filename = inputs.directory.."/graphics/entity/mining/mining-drill/area-end/area-drill-E.png",
             line_length = 8,
@@ -518,8 +488,7 @@ for name, tier in pairs(tier_map) do
             direction_count = 1,
             shift = util.by_pixel(3.5, -1),
             run_mode = "forward-then-backward",
-            hr_version =
-            {
+            hr_version = {
                 priority = "high",
                 filename = inputs.directory.."/graphics/entity/mining/mining-drill/area-end/hr-area-drill-E.png",
                 line_length = 8,
@@ -534,8 +503,7 @@ for name, tier in pairs(tier_map) do
             }
         }
 
-        entity.animations.south.layers[#entity.animations.south.layers+1] = 
-        {
+        entity.animations.south.layers[#entity.animations.south.layers+1] = {
             priority = "high",
             filename = inputs.directory.."/graphics/entity/mining/mining-drill/area-end/area-drill-S.png",
             line_length = 8,
@@ -546,8 +514,7 @@ for name, tier in pairs(tier_map) do
             direction_count = 1,
             shift = util.by_pixel(0, -1.5),
             run_mode = "forward-then-backward",
-            hr_version =
-            {
+            hr_version = {
                 priority = "high",
                 filename = inputs.directory.."/graphics/entity/mining/mining-drill/area-end/hr-area-drill-S.png",
                 line_length = 8,
@@ -562,8 +529,7 @@ for name, tier in pairs(tier_map) do
             }
         }
 
-        entity.animations.west.layers[#entity.animations.west.layers+1] = 
-        {
+        entity.animations.west.layers[#entity.animations.west.layers+1] = {
             priority = "high",
             filename = inputs.directory.."/graphics/entity/mining/mining-drill/area-end/area-drill-W.png",
             line_length = 8,
@@ -574,8 +540,7 @@ for name, tier in pairs(tier_map) do
             direction_count = 1,
             shift = util.by_pixel(-3.5, -1),
             run_mode = "forward-then-backward",
-            hr_version =
-            {
+            hr_version = {
                 priority = "high",
                 filename = inputs.directory.."/graphics/entity/mining/mining-drill/area-end/hr-area-drill-W.png",
                 line_length = 8,

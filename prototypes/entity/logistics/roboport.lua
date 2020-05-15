@@ -8,31 +8,27 @@ if not mods["boblogistics"] then return end
 if settings.startup["reskins-bobs-do-boblogistics"].value == false then return end
 
 -- Set input parameters
-local inputs = 
-{
+local inputs = {
     type = "roboport",
-    root_name = "roboport",
+    icon_name = "roboport",
     base_entity = "roboport",
     directory = reskins.bobs.directory,
     mod = "logistics",
     particles = {["medium"] = 2},
-    make_icons = false
 }
 
 -- Roboports have two different sets of tiers; determine which we are using
 local tier_map
 if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
-    tier_map =
-    {
-        ["roboport"]       = {1,1},
+    tier_map = {
+        ["roboport"] = {1,1},
         ["bob-roboport-2"] = {2,2},
         ["bob-roboport-3"] = {3,3},
         ["bob-roboport-4"] = {4,4}
     }
 else
-    tier_map =
-    {
-        ["roboport"]       = {2,1},
+    tier_map = {
+        ["roboport"] = {2,1},
         ["bob-roboport-2"] = {3,2},
         ["bob-roboport-3"] = {4,3},
         ["bob-roboport-4"] = {5,4}
@@ -53,11 +49,11 @@ for name, map in pairs(tier_map) do
     tier = map[1]
     subtier = map[2]
 
-    -- Map entity to name used internally
-    inputs.internal_name = inputs.root_name.."-"..tier
-
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
+
+    -- Setup icon details
+    inputs.icon_base = "roboport-"..subtier
     
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
@@ -65,10 +61,8 @@ for name, map in pairs(tier_map) do
     remnant = data.raw["corpse"][name.."-remnants"]    
 
     -- Reskin remnants
-    remnant.animation = make_rotated_animation_variations_from_sheet (2,
-    {
-        layers =
-        {
+    remnant.animation = make_rotated_animation_variations_from_sheet (2, {
+        layers = {
             -- Base
             {
                 filename = inputs.directory.."/graphics/entity/logistics/roboport/base/remnants/roboport-remnants.png",
@@ -80,8 +74,7 @@ for name, map in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(2, 8),
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/roboport/base/remnants/hr-roboport-remnants.png",
                     line_length = 1,
                     width = 364,
@@ -106,8 +99,7 @@ for name, map in pairs(tier_map) do
                 direction_count = 1,
                 shift = util.by_pixel(2, 8),
                 tint = inputs.tint,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/roboport/remnants/hr-roboport-remnants-mask.png",
                     line_length = 1,
                     width = 364,
@@ -133,8 +125,7 @@ for name, map in pairs(tier_map) do
                 direction_count = 1,
                 shift = util.by_pixel(2, 8),
                 blend_mode = "additive",
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/roboport/remnants/hr-roboport-remnants-highlights.png",
                     line_length = 1,
                     width = 364,
@@ -159,8 +150,7 @@ for name, map in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(2, 8),
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/roboport/base/remnants/antennas/hr-roboport-"..subtier.."-antenna-remnants.png",
                     line_length = 1,
                     width = 364,
@@ -184,8 +174,7 @@ for name, map in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(2, 8),
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/roboport/base/remnants/doors/hr-roboport-"..subtier.."-door-remnants.png",
                     line_length = 1,
                     width = 364,
@@ -203,18 +192,15 @@ for name, map in pairs(tier_map) do
 
     -- Reskin entities
     entity.spawn_and_station_height = -0.1
-    entity.base =
-    {
-        layers =
-        {
+    entity.base = {
+        layers = {
             -- Base
             {
                 filename = inputs.directory.."/graphics/entity/logistics/roboport/base/roboport-base.png",
                 width = 143,
                 height = 135,
                 shift = {0.5, 0.25},
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/roboport/base/hr-roboport-base.png",
                     width = 228,
                     height = 277,
@@ -229,8 +215,7 @@ for name, map in pairs(tier_map) do
                 height = 135,
                 shift = {0.5, 0.25},
                 tint = inputs.tint,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/roboport/hr-roboport-base-mask.png",
                     width = 228,
                     height = 277,
@@ -246,8 +231,7 @@ for name, map in pairs(tier_map) do
                 height = 135,
                 shift = {0.5, 0.25},
                 blend_mode = "additive",
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/roboport/hr-roboport-base-highlights.png",
                     width = 228,
                     height = 277,
@@ -263,8 +247,7 @@ for name, map in pairs(tier_map) do
                 height = 101,
                 draw_as_shadow = true,
                 shift = util.by_pixel(28.5, 19.25),
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/roboport/base/hr-roboport-shadow.png",
                     width = 294,
                     height = 201,
@@ -277,10 +260,8 @@ for name, map in pairs(tier_map) do
         }
     }
     
-    entity.base_patch =
-    {
-        layers =
-        {
+    entity.base_patch = {
+        layers = {
             -- Padding
             {
                 filename = inputs.directory.."/graphics/empty.png",
@@ -288,8 +269,7 @@ for name, map in pairs(tier_map) do
                 width = 1,
                 height = 1,
                 frame_count = 1,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/empty.png",
                     priority = "medium",
                     width = 1,
@@ -305,8 +285,7 @@ for name, map in pairs(tier_map) do
                 height = 50,
                 frame_count = 1,
                 shift = {0.03125, 0.203125},
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/roboport/base/hr-roboport-base-patch.png",
                     priority = "medium",
                     width = 138,
@@ -325,8 +304,7 @@ for name, map in pairs(tier_map) do
                 frame_count = 1,
                 shift = {0.03125, 0.203125},
                 tint = inputs.tint,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/roboport/hr-roboport-base-patch-mask.png",
                     priority = "medium",
                     width = 138,
@@ -346,8 +324,7 @@ for name, map in pairs(tier_map) do
                 frame_count = 1,
                 shift = {0.03125, 0.203125},
                 blend_mode = "additive",
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/roboport/hr-roboport-base-patch-highlights.png",
                     priority = "medium",
                     width = 138,
@@ -361,8 +338,7 @@ for name, map in pairs(tier_map) do
         }
     }
 
-    entity.base_animation =
-    {
+    entity.base_animation = {
         filename = inputs.directory.."/graphics/entity/logistics/roboport/base/antennas/roboport-"..subtier.."-base-animation.png",
         priority = "medium",
         width = 42,
@@ -370,8 +346,7 @@ for name, map in pairs(tier_map) do
         frame_count = 8,
         animation_speed = 0.5,
         shift = {-0.5315, -1.9375},
-        hr_version =
-        {
+        hr_version = {
             filename = inputs.directory.."/graphics/entity/logistics/roboport/base/antennas/hr-roboport-"..subtier.."-base-animation.png",
             priority = "medium",
             width = 83,
@@ -383,8 +358,7 @@ for name, map in pairs(tier_map) do
         }
     }
     
-    entity.door_animation_up =
-    {
+    entity.door_animation_up = {
         layers =
         {
             {
@@ -394,8 +368,7 @@ for name, map in pairs(tier_map) do
                 height = 20,
                 frame_count = 16,
                 shift = {0.015625, -0.890625},
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/roboport/base/doors/hr-roboport-"..subtier.."-door-up.png",
                     priority = "medium",
                     width = 97,
@@ -408,16 +381,14 @@ for name, map in pairs(tier_map) do
         }
     }
     
-    entity.door_animation_down =
-    {
+    entity.door_animation_down = {
         filename = inputs.directory.."/graphics/entity/logistics/roboport/base/doors/roboport-"..subtier.."-door-down.png",
         priority = "medium",
         width = 52,
         height = 22,
         frame_count = 16,
         shift = {0.015625, -0.234375},
-        hr_version =
-        {
+        hr_version = {
             filename = inputs.directory.."/graphics/entity/logistics/roboport/base/doors/hr-roboport-"..subtier.."-door-down.png",
             priority = "medium",
             width = 97,
@@ -428,8 +399,7 @@ for name, map in pairs(tier_map) do
         }
     }
     
-    entity.recharging_animation =
-    {
+    entity.recharging_animation = {
         filename = inputs.directory.."/graphics/entity/logistics/roboport/base/roboport-recharging.png",
         priority = "high",
         width = 37,

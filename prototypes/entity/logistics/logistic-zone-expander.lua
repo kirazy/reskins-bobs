@@ -8,32 +8,28 @@ if not mods["boblogistics"] then return end
 if settings.startup["reskins-bobs-do-boblogistics"].value == false then return end
 
 -- Set input parameters
-local inputs = 
-{
+local inputs = {
     type = "roboport",
-    root_name = "logistic-zone-expander",
+    icon_name = "zone-expander",
     base_entity = "roboport",
     directory = reskins.bobs.directory,
     mod = "logistics",
     particles = {["medium"] = 2},
-    make_icons = false,
     make_remnants = false,
 }
 
 -- Logistic Zone Expanders have two different sets of tiers; determine which we are using
 local tier_map
 if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
-    tier_map = 
-    {
-        ["bob-logistic-zone-expander"]   = {1, 1},
+    tier_map = {
+        ["bob-logistic-zone-expander"] = {1, 1},
         ["bob-logistic-zone-expander-2"] = {2, 2},
         ["bob-logistic-zone-expander-3"] = {3, 3},
         ["bob-logistic-zone-expander-4"] = {4, 4},
     }
 else
-    tier_map =
-    {
-        ["bob-logistic-zone-expander"]   = {2, 1},
+    tier_map = {
+        ["bob-logistic-zone-expander"] = {2, 1},
         ["bob-logistic-zone-expander-2"] = {3, 2},
         ["bob-logistic-zone-expander-3"] = {4, 3},
         ["bob-logistic-zone-expander-4"] = {5, 4},
@@ -54,8 +50,8 @@ for name, map in pairs(tier_map) do
     tier = map[1]
     subtier = map[2]
 
-    -- Map entity to name used internally
-    inputs.internal_name = inputs.root_name.."-"..tier
+    -- Setup icon details
+    inputs.icon_base = "zone-expander-"..subtier
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
@@ -63,18 +59,15 @@ for name, map in pairs(tier_map) do
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Reskin entities
-    entity.base =
-    {
-        layers =
-        {
+    entity.base = {
+        layers = {
             -- Base
             {
                 filename = inputs.directory.."/graphics/entity/logistics/zone-expander/zone-expander-base.png",
                 width = 28,
                 height = 71,
                 shift = util.by_pixel(0, -25.5),
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/zone-expander/hr-zone-expander-base.png",
                     width = 56,
                     height = 142,
@@ -88,8 +81,7 @@ for name, map in pairs(tier_map) do
                 width = 28,
                 height = 71,
                 shift = util.by_pixel(0, -25.5),
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/zone-expander/grids/hr-grid-"..subtier..".png",
                     width = 56,
                     height = 142,
@@ -103,8 +95,7 @@ for name, map in pairs(tier_map) do
                 width = 28,
                 height = 71,
                 shift = util.by_pixel(0, -25.5),
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/zone-expander/metal/hr-metal-"..subtier..".png",
                     width = 56,
                     height = 142,
@@ -119,8 +110,7 @@ for name, map in pairs(tier_map) do
                 height = 71,
                 shift = util.by_pixel(0, -25.5),
                 tint = inputs.tint,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/zone-expander/hr-zone-expander-mask.png",
                     width = 56,
                     height = 142,
@@ -136,8 +126,7 @@ for name, map in pairs(tier_map) do
                 height = 71,
                 shift = util.by_pixel(0, -25.5),
                 blend_mode = "additive",
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/zone-expander/hr-zone-expander-highlights.png",
                     width = 56,
                     height = 142,
@@ -153,8 +142,7 @@ for name, map in pairs(tier_map) do
                 height = 71,
                 shift = util.by_pixel(0, -25.5),
                 draw_as_shadow = true,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/zone-expander/hr-zone-expander-shadow-fix.png",
                     width = 56,
                     height = 142,
@@ -167,10 +155,8 @@ for name, map in pairs(tier_map) do
 
     }
 
-    entity.base_animation =
-    {
-        layers = 
-        {
+    entity.base_animation = {
+        layers = {
             -- Antenna
             {            
                 filename = inputs.directory.."/graphics/entity/logistics/roboport/base/antennas/roboport-"..subtier.."-base-animation.png",
@@ -180,8 +166,7 @@ for name, map in pairs(tier_map) do
                 frame_count = 8,
                 animation_speed = 0.5,
                 shift = util.by_pixel(0, -60),
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/roboport/base/antennas/hr-roboport-"..subtier.."-base-animation.png",
                     priority = "medium",
                     width = 83,
@@ -201,8 +186,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(48, 0),
                 draw_as_shadow = true,
                 run_mode = "backward", -- (Lawd, we'll fix this later...)
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/zone-expander/hr-zone-expander-shadow.png",
                     width = 190,
                     height = 60,
