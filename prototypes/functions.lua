@@ -243,7 +243,7 @@ function reskins.bobs.transport_belt_animation_set(tint, variant)
 end
 
 -- Determine belt-related entity tints with special handling for basic belt entity types
-function reskins.bobs.belt_tint_handling(name)
+function reskins.bobs.belt_tint_handling(name, tier)
     local tint
     if string.find(name, "basic") then
         tint = reskins.lib.belt_mask_tint(reskins.bobs.basic_belt_tint)
