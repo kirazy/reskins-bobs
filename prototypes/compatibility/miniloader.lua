@@ -138,6 +138,27 @@ for name, tier in pairs(item_map) do
 
     reskins.lib.setup_belt_entity_icon(name, tier, inputs)
 
+    -- Handle grouping and ordering in the UI
+    if name ~= "chute-miniloader" then
+        base_item = data.raw["item"][string.gsub(string.gsub(name, "filter%-", ""), "miniloader", "transport-belt")]
+    elseif data.raw["item"]["basic-transport-belt"] then
+        base_item = data.raw["item"]["basic-transport-belt"]
+    end
+
+    if base_item then
+        inputs.sort_order = string.gsub(string.gsub(item.order,"^[a-z]","d"),"transport%-belt","miniloader")
+        inputs.sort_group = base_item.group
+        inputs.sort_subgroup = base_item.subgroup
+
+        if string.find(name, "filter") then
+            inputs.sort_order = string.gsub(inputs.sort_order, "filter", "n-filter")
+        elseif name == "chute-miniloader" then
+            inputs.sort_order = string.gsub(inputs.sort_order, "miniloader", "z-miniloader")
+        end
+
+        reskins.lib.assign_order(name, inputs)
+    end
+
     -- Label to skip to next iteration
     ::continue::
 end
