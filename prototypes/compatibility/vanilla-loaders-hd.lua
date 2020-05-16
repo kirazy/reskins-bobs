@@ -5,7 +5,12 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["vanilla-loaders-hd"] then return end
-if settings.startup["reskins-lib-customize-tier-colors"].value == false then return end
+
+-- We reskin the base entities only if we're doing custom colors
+local custom_colors = true
+if settings.startup["reskins-lib-customize-tier-colors"].value == false then
+    custom_colors = false
+end
 
 -- Set input parameters
 local inputs = {
@@ -21,12 +26,12 @@ local inputs = {
 }
 
 local tier_map = {
-    ["basic-loader"] = {0, 1},
-    ["loader"] = {1, 1},
-    ["fast-loader"] = {2, 2},
-    ["express-loader"] = {3, 2},
-    ["purple-loader"] = {4, 2},
-    ["green-loader"] = {5, 2},
+    ["basic-loader"] = {0, 1, true},
+    ["loader"] = {1, 1, custom_colors},
+    ["fast-loader"] = {2, 2, custom_colors},
+    ["express-loader"] = {3, 2, custom_colors},
+    ["purple-loader"] = {4, 2, true},
+    ["green-loader"] = {5, 2, true},
 }
 
 -- Reskin entities
@@ -42,20 +47,27 @@ for name, map in pairs(tier_map) do
     -- Parse map
     tier = map[1]
     variant = map[2]
+    do_reskin = map[3]
 
-    -- Determine what tint we're using
-    inputs.tint = reskins.lib.belt_mask_tint(reskins.lib.tint_index["tier-"..tier])
+    -- Determine what tint we're using, with special handling for the basic belts to replicate the color from Bob's Logistics Belt Reskin
+    if string.find(name, "basic") then
+        inputs.tint = reskins.lib.belt_mask_tint(reskins.bobs.basic_belt_tint)
+    else
+        inputs.tint = reskins.lib.belt_mask_tint(reskins.lib.tint_index["tier-"..tier])
+    end
 
     reskins.lib.setup_standard_entity(name, tier, inputs)    
     
-    -- Retint the entity mask
-    entity.structure.direction_in.sheets[2].tint = inputs.tint
-    entity.structure.direction_in.sheets[2].hr_version.tint = inputs.tint
-    entity.structure.direction_out.sheets[2].tint = inputs.tint
-    entity.structure.direction_out.sheets[2].hr_version.tint = inputs.tint
+    if do_reskin then
+        -- Retint the entity mask
+        entity.structure.direction_in.sheets[2].tint = inputs.tint
+        entity.structure.direction_in.sheets[2].hr_version.tint = inputs.tint
+        entity.structure.direction_out.sheets[2].tint = inputs.tint
+        entity.structure.direction_out.sheets[2].hr_version.tint = inputs.tint
 
-    -- Apply belt set
-    entity.belt_animation_set = reskins.bobs.transport_belt_animation_set(inputs.tint, variant)
+        -- Apply belt set
+        entity.belt_animation_set = reskins.bobs.transport_belt_animation_set(inputs.tint, variant)
+    end
 
     -- Label to skip to next iteration
     ::continue::

@@ -41,19 +41,36 @@ if mods["boblogistics"] then
             type = "bool-setting",
             name = "reskins-bobs-do-pipe-tier-labeling",
             setting_type = "startup",
+            order = "x",
             default_value = true,
         },
         {
             type = "bool-setting",
             name = "reskins-bobs-do-belt-entity-tier-labeling",
             setting_type = "startup",
+            order = "x",
             default_value = true,
         },
         {
             type = "bool-setting",
             name = "reskins-bobs-do-inserter-tier-labeling",
             setting_type = "startup",
+            order = "x",
             default_value = true,
+        },
+        {
+            type = "bool-setting",
+            name = "reskins-bobs-do-basic-belts-separately",
+            setting_type = "startup",
+            order = "y",
+            default_value = true,
+        },
+        {
+            type = "string-setting",
+            name = "reskins-bobs-basic-belts-color",
+            setting_type ="startup",
+            order = "yy",
+            default_value = "bfbfbf",
         }
     })
 end

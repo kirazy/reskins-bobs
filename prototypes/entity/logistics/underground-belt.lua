@@ -26,7 +26,7 @@ local inputs = {
 
 local tier_map =
 {
-    ["basic-underground-belt"] = {0, 1, true},
+    ["basic-underground-belt"] = {0, 1, true, true},
     ["underground-belt"] = {1, 1, custom_colors},
     ["fast-underground-belt"] = {2, 2, custom_colors},
     ["express-underground-belt"] = {3, 2, custom_colors},
@@ -48,9 +48,14 @@ for name, map in pairs(tier_map) do
     tier = map[1]
     variant = map[2]
     do_reskin = map[3]
+    
 
-    -- Determine what tint we're using
-    inputs.tint = reskins.lib.belt_mask_tint(reskins.lib.tint_index["tier-"..tier])
+    -- Determine what tint we're using, with special handling for the basic belts to replicate the color from Bob's Logistics Belt Reskin
+    if string.find(name, "basic") then
+        inputs.tint = reskins.lib.belt_mask_tint(reskins.bobs.basic_belt_tint)
+    else
+        inputs.tint = reskins.lib.belt_mask_tint(reskins.lib.tint_index["tier-"..tier])
+    end
     
     reskins.lib.setup_standard_entity(name, tier, inputs)    
 

@@ -7,6 +7,13 @@
 if not reskins.bobs then reskins.bobs = {} end
 reskins.bobs.directory = "__reskins-bobs__"
 
+-- CONSTANTS
+if settings.startup["reskins-bobs-do-basic-belts-separately"].value == true then
+    reskins.bobs.basic_belt_tint = util.color(settings.startup["reskins-bobs-basic-belts-color"].value)
+else
+    reskins.bobs.basic_belt_tint = reskins.lib.tint_index["tier-0"]
+end
+
 -- ROBOT PARTICLE AND DEATH ANIMATIONS
 local function adjust_animation(animation, shift)
 

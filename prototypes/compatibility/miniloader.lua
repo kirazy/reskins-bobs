@@ -5,7 +5,12 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["miniloader"] then return end
--- if settings.startup["reskins-lib-customize-tier-colors"].value == false then return end -- disabled, since miniloader doesn't add explosions natively
+
+-- We reskin the base entities only if we're doing custom colors
+local custom_colors = true
+if settings.startup["reskins-lib-customize-tier-colors"].value == false then
+    custom_colors = false
+end
 
 -- Set input parameters
 local inputs = {
@@ -21,18 +26,18 @@ local inputs = {
 
 local tier_map = {
     -- 1x1 Loader Entities
-    ["basic-miniloader-loader"] = {0, 1},
-    ["chute-miniloader-loader"] = {0, 1},
-    ["miniloader-loader"] = {1, 1},
-    ["fast-miniloader-loader"] = {2, 2},
-    ["express-miniloader-loader"] = {3, 2},
-    ["turbo-miniloader-loader"] = {4, 2},
-    ["ultimate-miniloader-loader"] = {5, 2},
-    ["filter-miniloader-loader"] = {1, 1},
-    ["fast-filter-miniloader-loader"] = {2, 2},
-    ["express-filter-miniloader-loader"] = {3, 2},
-    ["turbo-filter-miniloader-loader"] = {4, 2},
-    ["ultimate-filter-miniloader-loader"] = {5, 2},
+    ["basic-miniloader-loader"] = {0, 1, true},
+    ["chute-miniloader-loader"] = {0, 1, true},
+    ["miniloader-loader"] = {1, 1, custom_colors},
+    ["fast-miniloader-loader"] = {2, 2, custom_colors},
+    ["express-miniloader-loader"] = {3, 2, custom_colors},
+    ["turbo-miniloader-loader"] = {4, 2, true},
+    ["ultimate-miniloader-loader"] = {5, 2, true},
+    ["filter-miniloader-loader"] = {1, 1, custom_colors},
+    ["fast-filter-miniloader-loader"] = {2, 2, custom_colors},
+    ["express-filter-miniloader-loader"] = {3, 2, custom_colors},
+    ["turbo-filter-miniloader-loader"] = {4, 2, true},
+    ["ultimate-filter-miniloader-loader"] = {5, 2, true},
 
     -- Inserter Entities
     ["basic-miniloader-inserter"] = {0},
@@ -85,15 +90,20 @@ for name, map in pairs(tier_map) do
     -- Parse map
     tier = map[1]
     variant = map[2] or nil
+    do_reskin = map[3] or nil
 
-    -- Determine what tint we're using
-    inputs.tint = reskins.lib.belt_mask_tint(reskins.lib.tint_index["tier-"..tier])
-
-    -- Setup icon details
-    if string.find(name, "filter") then
-        inputs.icon_base = "filter-miniloader"
+    -- Determine what tint we're using, with special handling for the basic belts to replicate the color from Bob's Logistics Belt Reskin
+    if settings.startup["reskins-lib-customize-tier-colors"].value == false and string.find(name, "basic") then
+        inputs.tint = reskins.lib.belt_mask_tint(reskins.bobs.basic_belt_tint)
     else
-        inputs.icon_base = "miniloader"
+        inputs.tint = reskins.lib.belt_mask_tint(reskins.lib.tint_index["tier-"..tier])
+    end
+
+    -- Determine what tint we're using, with special handling for the basic belts to replicate the color from Bob's Logistics Belt Reskin
+    if string.find(name, "basic") then
+        inputs.tint = reskins.lib.belt_mask_tint(reskins.bobs.basic_belt_tint)
+    else
+        inputs.tint = reskins.lib.belt_mask_tint(reskins.lib.tint_index["tier-"..tier])
     end
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
@@ -110,7 +120,7 @@ for name, map in pairs(tier_map) do
     end
 
     -- Apply belt set
-    if variant then
+    if variant and do_reskin then
         entity.belt_animation_set = reskins.bobs.transport_belt_animation_set(inputs.tint, variant)
     end
 
@@ -134,8 +144,12 @@ for name, tier in pairs(item_map) do
         inputs.icon_base = "miniloader"
     end
 
-    -- Determine what tint we're using
-    inputs.tint = reskins.lib.belt_mask_tint(reskins.lib.tint_index["tier-"..tier])
+    -- Determine what tint we're using, with special handling for the basic belts to replicate the color from Bob's Logistics Belt Reskin
+    if settings.startup["reskins-lib-customize-tier-colors"].value == false and string.find(name, "basic") then
+        inputs.tint = reskins.lib.belt_mask_tint(reskins.bobs.basic_belt_tint)
+    else
+        inputs.tint = reskins.lib.belt_mask_tint(reskins.lib.tint_index["tier-"..tier])
+    end
 
     reskins.lib.setup_belt_entity_icon(name, tier, inputs)
 
