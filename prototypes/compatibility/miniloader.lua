@@ -93,7 +93,7 @@ for name, map in pairs(tier_map) do
     do_reskin = map[3] or nil
 
     -- Determine what tint we're using
-    input.tint = reskins.bobs.belt_tint_handling(name)
+    inputs.tint = reskins.bobs.belt_tint_handling(name)
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
@@ -134,7 +134,7 @@ for name, tier in pairs(item_map) do
     end
 
     -- Determine what tint we're using
-    input.tint = reskins.bobs.belt_tint_handling(name)
+    inputs.tint = reskins.bobs.belt_tint_handling(name)
 
     reskins.lib.setup_belt_entity_icon(name, tier, inputs)
 

@@ -50,7 +50,7 @@ for name, map in pairs(tier_map) do
     do_reskin = map[3]
 
     -- Determine what tint we're using
-    input.tint = reskins.bobs.belt_tint_handling(name)
+    inputs.tint = reskins.bobs.belt_tint_handling(name)
 
     reskins.lib.setup_standard_entity(name, tier, inputs)    
     
