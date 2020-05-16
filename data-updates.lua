@@ -3,22 +3,23 @@
 --     
 -- See LICENSE.md in the project directory for license information.
 
--- Temporary to work with ShinyGFX?
 -- Core functions
 require("prototypes.functions")
 
--- Compatiblity
-require("prototypes.compatibility.miniloader")
-
--- ########## STRUCTURES ##########
 -- General Icons
 -- require("prototypes.entity.icons-only")
+
+-- Compatiblity
+require("prototypes.compatibility.miniloader")
+require("prototypes.compatibility.vanilla-loaders-hd")
 
 -- Pipe pictures
 require("prototypes.entity.pipe-pictures")
 
 -- Bob's Assembly
+require("prototypes.entity.assembly.assembling-machine")
 require("prototypes.entity.assembly.centrifuge")
+require("prototypes.entity.assembly.chemical-plant")
 -- require("prototypes.entity.assembly.distillery")
 require("prototypes.entity.assembly.electrolyser")
 -- require("prototypes.entity.assembly.furnace")
@@ -65,6 +66,7 @@ require("prototypes.entity.power.boiler")
 -- require("prototypes.entity.power.generator")
 require("prototypes.entity.power.heat-exchanger")
 require("prototypes.entity.power.heat-pipe")
+require("prototypes.entity.power.nuclear-reactor")
 -- require("prototypes.entity.power.heat-source")
 require("prototypes.entity.power.medium-electric-pole")
 require("prototypes.entity.power.solar-panel")
@@ -85,31 +87,3 @@ require("prototypes.entity.warfare.radar")
 require("prototypes.entity.warfare.sniper-turret")
 require("prototypes.entity.warfare.wall")
 require("prototypes.entity.warfare.gate")
-
-
-
-
-
-
-
-
-
-
-
-
--- Compatibility
-require("prototypes.compatibility.vanilla-loaders-hd") -- vanilla-loaders-hd reskins loaders here
-
-
--- Bob's Assembling Machines
-require("prototypes.entity.assembly.assembling-machine") -- bobassembly does some work in data-updates
-require("prototypes.entity.assembly.chemical-plant")  -- bobassembly reskins in data-updates
-
--- Bob's Logistics
-
-
--- Bob's Power
-require("prototypes.entity.power.nuclear-reactor")  -- bobrevamp skins reactor icons in data-updates
-
-
-
