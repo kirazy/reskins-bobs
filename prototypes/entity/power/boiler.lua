@@ -13,7 +13,7 @@ local inputs = {
     type = "boiler",
     base_entity = "boiler",
     directory = reskins.bobs.directory,
-    mod = "power",
+    group = "power",
     particles = {["big"] = 3},
 }
 

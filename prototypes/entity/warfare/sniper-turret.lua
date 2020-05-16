@@ -8,30 +8,26 @@ if not mods["bobwarfare"] then return end
 if settings.startup["reskins-bobs-do-bobwarfare"].value == false then return end 
 
 -- Set input parameters
-local inputs = 
-{
+local inputs = {
     type = "ammo-turret",
-    root_name = "sniper-turret",
+    icon_name = "sniper-turret",
     base_entity = "gun-turret",
     directory = reskins.bobs.directory,
-    mod = "warfare",
+    group = "warfare",
     particles = {["medium"] = 2},
     make_remnants = false,
-    make_icons = false
 }
 
 -- Sniper turrets have two different sets of tiers; determine which we are using
 local tier_map
 if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
-    tier_map =
-    {
+    tier_map = {
         ["bob-sniper-turret-1"] = 1,
         ["bob-sniper-turret-2"] = 2,
         ["bob-sniper-turret-3"] = 3
     }
 else
-    tier_map =
-    {
+    tier_map = {
         ["bob-sniper-turret-1"] = 1,
         ["bob-sniper-turret-2"] = 3,
         ["bob-sniper-turret-3"] = 5
@@ -51,8 +47,7 @@ local function sniper_turret_extension(parameters)
         line_length = parameters.line_length or 0,
         run_mode = parameters.run_mode or "forward",
         shift = util.by_pixel(0, -30.5),
-        hr_version =
-        {
+        hr_version = {
             filename = inputs.directory.."/graphics/entity/warfare/sniper-turret/hr-sniper-turret-raising.png",
             priority = "medium",
             width = 238,
@@ -81,8 +76,7 @@ local function sniper_turret_extension_tint(parameters)
         shift = util.by_pixel(0, -30.5),
         flags = {"mask"},
         apply_runtime_tint = true,
-        hr_version =
-        {
+        hr_version = {
             filename = inputs.directory.."/graphics/entity/warfare/sniper-turret/hr-sniper-turret-raising-tint.png",
             priority = "medium",
             width = 238,
@@ -112,8 +106,7 @@ local function sniper_turret_extension_mask(inputs, parameters)
         run_mode = parameters.run_mode or "forward",
         shift = util.by_pixel(0, -30.5),
         tint = inputs.tint,
-        hr_version =
-        {
+        hr_version = {
             filename = inputs.directory.."/graphics/entity/warfare/sniper-turret/hr-sniper-turret-raising-mask.png",
             priority = "medium",
             width = 238,
@@ -142,8 +135,7 @@ local function sniper_turret_extension_highlights(parameters)
         run_mode = parameters.run_mode or "forward",
         shift = util.by_pixel(0, -30.5),
         blend_mode = "additive",
-        hr_version =
-        {
+        hr_version = {
             filename = inputs.directory.."/graphics/entity/warfare/sniper-turret/hr-sniper-turret-raising-highlights.png",
             priority = "medium",
             width = 238,
@@ -171,8 +163,7 @@ local function sniper_turret_extension_shadow(parameters)
         run_mode = parameters.run_mode or "forward",
         shift = util.by_pixel(21.5, 2),
         draw_as_shadow = true,
-        hr_version =
-        {
+        hr_version = {
             filename = inputs.directory.."/graphics/entity/warfare/sniper-turret/hr-sniper-turret-raising-shadow.png",
             width = 246,
             height = 178,
@@ -197,8 +188,7 @@ local function sniper_turret_shooting()
         frame_count = 1,
         direction_count = 64,
         shift = util.by_pixel(0, -30.5),
-        hr_version =
-        {
+        hr_version = {
             filename = inputs.directory.."/graphics/entity/warfare/sniper-turret/hr-sniper-turret-shooting.png",
             line_length = 8,
             width = 238,
@@ -223,8 +213,7 @@ local function sniper_turret_shooting_tint()
         apply_runtime_tint = true,
         direction_count = 64,
         shift = util.by_pixel(0, -30.5),
-        hr_version =
-        {
+        hr_version = {
             filename = inputs.directory.."/graphics/entity/warfare/sniper-turret/hr-sniper-turret-shooting-tint.png",
             flags = { "mask" },
             line_length = 8,
@@ -250,8 +239,7 @@ local function sniper_turret_shooting_mask(inputs)
         tint = inputs.tint,
         direction_count = 64,
         shift = util.by_pixel(0, -30.5),
-        hr_version =
-        {
+        hr_version = {
             filename = inputs.directory.."/graphics/entity/warfare/sniper-turret/hr-sniper-turret-shooting-mask.png",
             line_length = 8,
             width = 238,
@@ -276,8 +264,7 @@ local function sniper_turret_shooting_highlights()
         blend_mode = "additive",
         direction_count = 64,
         shift = util.by_pixel(0, -30.5),
-        hr_version =
-        {
+        hr_version = {
             filename = inputs.directory.."/graphics/entity/warfare/sniper-turret/hr-sniper-turret-shooting-highlights.png",
             line_length = 8,
             width = 238,
@@ -302,8 +289,7 @@ local function sniper_turret_shooting_shadow()
         direction_count = 64,
         draw_as_shadow = true,
         shift = util.by_pixel(21.5, 2),
-        hr_version =
-        {
+        hr_version = {
             filename = inputs.directory.."/graphics/entity/warfare/sniper-turret/hr-sniper-turret-shooting-shadow.png",
             line_length = 8,
             width = 246,
@@ -327,9 +313,6 @@ for name, tier in pairs(tier_map) do
         goto continue
     end
 
-    -- Map entity to name used internally
-    inputs.internal_name = inputs.root_name.."-"..tier
-
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
 
@@ -343,10 +326,8 @@ for name, tier in pairs(tier_map) do
     entity.attack_parameters.shell_particle.direction = -0.25
 
     -- Reskin entities
-    entity.folded_animation =
-    {
-        layers =
-        {
+    entity.folded_animation = {
+        layers = {
             sniper_turret_extension({frame_count = 1, line_length = 1}),
             sniper_turret_extension_tint({frame_count = 1, line_length = 1}),
             sniper_turret_extension_mask(inputs, {frame_count = 1, line_length = 1}),
@@ -354,10 +335,8 @@ for name, tier in pairs(tier_map) do
             sniper_turret_extension_shadow({frame_count = 1, line_length = 1})
         }
     }
-    entity.preparing_animation = 
-    {
-        layers =
-        {
+    entity.preparing_animation = {
+        layers = {
             sniper_turret_extension({}),
             sniper_turret_extension_tint({}),
             sniper_turret_extension_mask(inputs, {}),
@@ -365,10 +344,8 @@ for name, tier in pairs(tier_map) do
             sniper_turret_extension_shadow({})
         }
     }
-    entity.prepared_animation =
-    {
-        layers =
-        {
+    entity.prepared_animation = {
+        layers = {
             sniper_turret_shooting(),
             sniper_turret_shooting_tint(),
             sniper_turret_shooting_mask(inputs),
@@ -376,10 +353,8 @@ for name, tier in pairs(tier_map) do
             sniper_turret_shooting_shadow(),
         }
     }
-    entity.attacking_animation =
-    {
-        layers =
-        {
+    entity.attacking_animation = {
+        layers = {
             sniper_turret_shooting(),
             sniper_turret_shooting_tint(),
             sniper_turret_shooting_mask(inputs),
@@ -387,10 +362,8 @@ for name, tier in pairs(tier_map) do
             sniper_turret_shooting_shadow(),
         }
     }
-    entity.folding_animation = 
-    {
-        layers =
-        {
+    entity.folding_animation = {
+        layers = {
             sniper_turret_extension({run_mode = "backward"}),
             sniper_turret_extension_tint({run_mode = "backward"}),
             sniper_turret_extension_mask(inputs, {run_mode = "backward"}),
@@ -398,10 +371,8 @@ for name, tier in pairs(tier_map) do
             sniper_turret_extension_shadow({run_mode = "backward"})
         }
     }
-    entity.base_picture =
-    {
-        layers =
-        {
+    entity.base_picture = {
+        layers = {
             -- Base
             {
                 filename = inputs.directory.."/graphics/entity/warfare/sniper-turret/sniper-turret-base.png",
@@ -411,8 +382,7 @@ for name, tier in pairs(tier_map) do
                 direction_count = 1,
                 frame_count = 1,
                 shift = util.by_pixel(2, 0),
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/sniper-turret/hr-sniper-turret-base.png",
                     priority = "high",
                     width = 150,
@@ -434,8 +404,7 @@ for name, tier in pairs(tier_map) do
                 frame_count = 1,
                 shift = util.by_pixel(2, 0),
                 apply_runtime_tint = true,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/sniper-turret/hr-sniper-turret-base-runtime-mask.png",
                     priority = "high",
                     width = 150,
@@ -458,8 +427,7 @@ for name, tier in pairs(tier_map) do
                 direction_count = 1,
                 frame_count = 1,
                 shift = util.by_pixel(2, 0),
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/sniper-turret/hr-sniper-turret-base-shadow.png",
                     priority = "high",
                     width = 150,

@@ -14,7 +14,7 @@ local inputs =
     root_name = "storage-tank-all-corners",
     base_entity = "storage-tank",
     directory = reskins.bobs.directory,
-    mod = "logistics",
+    group = "logistics",
     particles = {["big"] = 1},
     make_icons = false,
 }

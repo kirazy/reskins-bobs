@@ -13,7 +13,7 @@ local inputs = {
     type = "solar-panel",
     base_entity = "solar-panel",
     directory = reskins.bobs.directory,
-    mod = "power",
+    group = "power",
     particles = {["small"] = 2},
 }
 

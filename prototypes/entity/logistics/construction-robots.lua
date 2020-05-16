@@ -13,7 +13,7 @@ local inputs = {
     icon_name = "construction-robot",
     base_entity = "construction-robot",    
     directory = reskins.bobs.directory,
-    mod = "logistics",
+    group = "logistics",
     particles = {["medium"] = 2},
     -- make_icons = false,
 }

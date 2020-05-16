@@ -14,7 +14,7 @@ local inputs = {
     base_entity = "assembling-machine-1",
     directory = reskins.bobs.directory,
     particles = {["big"] = 1, ["medium"] = 2},
-    mod = "assembly",
+    group = "assembly",
     make_remnants = false,
 }
 

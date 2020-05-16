@@ -14,7 +14,7 @@ local inputs = {
     icon_name = "chemical-plant",
     base_entity = "chemical-plant",
     directory = reskins.bobs.directory,
-    mod = "assembly",
+    group = "assembly",
     particles = {["big"] = 1, ["medium"] = 2},
 }
 

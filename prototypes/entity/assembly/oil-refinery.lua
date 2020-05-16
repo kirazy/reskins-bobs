@@ -14,7 +14,7 @@ local inputs =
     root_name = "oil-refinery",
     base_entity = "oil-refinery",
     directory = reskins.bobs.directory,
-    mod = "assembly",
+    group = "assembly",
     particles = {["big-tint"] = 5, ["medium"] = 2},
     make_icons = false
 }
@@ -136,7 +136,7 @@ for name, tier in pairs(tier_map) do
     })
 
     -- Reskin entity
-    entity.animation = reskins.lib.make_4way_animation_from_spritesheet(
+    entity.animation = make_4way_animation_from_spritesheet(
     {
         layers =
         {

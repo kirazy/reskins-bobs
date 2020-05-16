@@ -10,7 +10,7 @@ local inputs =
     root_name = "valve",
     base_entity = "pipe", -- Electrolyser will use Chemical Plant as a reference for explosion
     directory = reskins.bobs.directory,
-    mod = "logistics",
+    group = "logistics",
     -- particles = {["big"] = 1, ["medium"] = 2},
     make_explosions = false,
     make_remnants = false,

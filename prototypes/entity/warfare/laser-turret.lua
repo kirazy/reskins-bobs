@@ -13,7 +13,7 @@ local inputs = {
     icon_name = "laser-turret",
     base_entity = "laser-turret",
     directory = reskins.bobs.directory,
-    mod = "warfare",
+    group = "warfare",
     particles = {["medium"] = 2},
 }
 

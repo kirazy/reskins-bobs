@@ -24,7 +24,7 @@
     "? bobtech >= 0.18.0",
     "? bobwarfare >= 0.18.0",
     "? vanilla-loaders-hd >= 0.18.7",
-    "? minilaoder >= 1.11.0",
+    "? miniloader >= 1.11.0",
     "(?) ShinyBobGFX >= 0.18.0",
     "? minimachines >= 7.1.7"
   ]

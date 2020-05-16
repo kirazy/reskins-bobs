@@ -14,7 +14,7 @@ local inputs = {
     icon_name = "steam-turbine",
     base_entity = "steam-turbine",
     directory = reskins.bobs.directory,
-    mod = "power",
+    group = "power",
     particles = {["medium"] = 2,["big"] = 1},
 }
 

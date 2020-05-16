@@ -13,7 +13,7 @@ local inputs = {
     icon_name = "electric-mining-drill",
     base_entity = "electric-mining-drill",
     directory = reskins.bobs.directory,
-    mod = "mining",
+    group = "mining",
     particles = {["medium-long"] = 3},
     make_remnants = false,
 }

@@ -13,7 +13,7 @@ local inputs = {
     icon_name = "radar",
     base_entity = "radar",
     directory = reskins.bobs.directory,
-    mod = "warfare",
+    group = "warfare",
     particles = {["medium"] = 2},
 }
 

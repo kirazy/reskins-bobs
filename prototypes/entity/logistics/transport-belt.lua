@@ -6,26 +6,31 @@
 -- Check to see if reskinning needs to be done.
 if not mods["boblogistics"] then return end
 if settings.startup["reskins-bobs-do-boblogistics"].value == false then return end
-if settings.startup["reskins-lib-customize-tier-colors"].value == false then return end
+
+-- We reskin the base entities only if we're doing custom colors
+local custom_colors = true
+if settings.startup["reskins-lib-customize-tier-colors"].value == false then
+    custom_colors = false
+end
 
 -- Set input parameters
-local inputs = 
-{
+local inputs = {
     type = "transport-belt",
-    root_name = "transport-belt",
+    icon_name = "transport-belt",
+    base_entity = "transport-belt",
     directory = reskins.bobs.directory,
-    mod = "logistics",
-    -- particles = {["medium"] = 3, ["small"] = 2}
+    group = "logistics",
+    particles = {["medium"] = 1, ["small"] = 2},
+    make_belt_icon = true,
 }
 
-local tier_map =
-{
-    ["basic-transport-belt"]    = {0, 1},
-    ["transport-belt"]          = {1, 1},
-    ["fast-transport-belt"]     = {2, 2},
-    ["express-transport-belt"]  = {3, 2},
-    ["turbo-transport-belt"]    = {4, 2},
-    ["ultimate-transport-belt"] = {5, 2},
+local tier_map = {
+    ["basic-transport-belt"] = {0, 1, true},
+    ["transport-belt"] = {1, 1, custom_colors},
+    ["fast-transport-belt"] = {2, 2, custom_colors},
+    ["express-transport-belt"] = {3, 2, custom_colors},
+    ["turbo-transport-belt"] = {4, 2, true},
+    ["ultimate-transport-belt"] = {5, 2, true},
 }
 
 local color_adjustment = 40/255
@@ -43,15 +48,19 @@ for name, map in pairs(tier_map) do
     -- Parse map
     tier = map[1]
     variant = map[2]
+    do_reskin = map[3]
 
     -- Determine what tint we're using
-    inputs.tint = reskins.lib.tint_index["tier-"..tier]
-
-    -- Tint adjustment
-    adjusted_tint = reskins.lib.adjust_tint(inputs.tint, color_adjustment, 0.82)
+    inputs.tint = reskins.lib.belt_mask_tint(reskins.lib.tint_index["tier-"..tier])
     
-    -- Reskin entities
-    entity.belt_animation_set = reskins.bobs.transport_belt_animation_set(adjusted_tint, variant)
+    reskins.lib.setup_standard_entity(name, tier, inputs)    
+
+    if do_reskin then
+        -- Reskin remnants
+    
+        -- Reskin entities
+        entity.belt_animation_set = reskins.bobs.transport_belt_animation_set(inputs.tint, variant)
+    end
 
     -- Label to skip to next iteration
     ::continue::

@@ -14,7 +14,7 @@ local inputs = {
     icon_name = "big-electric-pole",
     base_entity = "big-electric-pole",
     directory = reskins.bobs.directory,
-    mod = "power",
+    group = "power",
     particles = {["medium-long"] = 1},
 }
 

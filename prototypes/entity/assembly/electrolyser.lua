@@ -13,7 +13,7 @@ local inputs = {
     icon_name = "electrolyser",
     base_entity = "chemical-plant", -- Electrolyser will use Chemical Plant as a reference for explosion
     directory = reskins.bobs.directory,
-    mod = "assembly",
+    group = "assembly",
     particles = {["big"] = 1, ["medium"] = 2},
     make_remnants = false,
 }

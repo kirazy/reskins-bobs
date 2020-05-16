@@ -13,7 +13,7 @@ local inputs = {
     root_name = "small-storage-tank",
     base_entity = "storage-tank",
     directory = reskins.bobs.directory,
-    mod = "plates",
+    group = "plates",
     particles = {["big"] = 1},
     make_remnants = false,
 }

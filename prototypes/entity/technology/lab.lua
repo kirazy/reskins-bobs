@@ -14,7 +14,7 @@ local inputs =
     root_name = "lab",
     base_entity = "lab",
     directory = reskins.bobs.directory,
-    mod = "technology",
+    group = "technology",
     -- particles = {["big"] = 3}
 }
 

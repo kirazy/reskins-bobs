@@ -14,7 +14,7 @@ local inputs = {
     icon_name = "heat-exchanger",
     base_entity = "heat-exchanger",
     directory = reskins.bobs.directory,
-    mod = "power",
+    group = "power",
     particles = {["big"] = 3},
 }
 

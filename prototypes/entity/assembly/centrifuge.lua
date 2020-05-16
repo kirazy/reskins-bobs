@@ -10,12 +10,11 @@ if settings.startup["reskins-bobs-do-bobassembly"].value == false then return en
 -- Set input parameters
 local inputs = {
     type = "assembling-machine",
-    root_name = "centrifuge",
+    icon_name = "centrifuge",
     base_entity = "centrifuge",
     directory = reskins.bobs.directory,
-    mod = "assembly",
+    group = "assembly",
     particles = {["big"] = 1, ["medium"] = 2},
-    make_icons = false,
 }
 
 -- Centrifuges have two different sets of tiers; determine which we are using
@@ -44,9 +43,6 @@ for name, tier in pairs(tier_map) do
         goto continue
     end
 
-    -- Map entity to name used internally
-    inputs.internal_name = inputs.root_name.."-"..tier
-
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
   
@@ -56,8 +52,7 @@ for name, tier in pairs(tier_map) do
     remnant = data.raw["corpse"][name.."-remnants"]
 
     -- Reskin remnants
-    remnant.animation = make_rotated_animation_variations_from_sheet(1,
-    {
+    remnant.animation = make_rotated_animation_variations_from_sheet(1, {
         layers = {
             -- Base
             {

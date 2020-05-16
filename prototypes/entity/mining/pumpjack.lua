@@ -13,7 +13,7 @@ local inputs = {
     icon_name = "pumpjack",
     base_entity = "pumpjack",
     directory = reskins.bobs.directory,
-    mod = "mining",
+    group = "mining",
     -- particles = {["medium-long"] = 3}, -- particles: big 1, medium 2, small 3
     make_explosions = false,
     make_remnants = false,

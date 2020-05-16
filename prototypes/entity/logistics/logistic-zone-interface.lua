@@ -13,7 +13,7 @@ local inputs =
     type = "roboport",
     base_entity = "roboport",
     directory = reskins.bobs.directory,
-    mod = "logistics",
+    group = "logistics",
     particles = {["medium"] = 2},
     make_icons = false,
     make_remnants = false,

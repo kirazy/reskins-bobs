@@ -13,7 +13,7 @@ local inputs = {
     icon_name = "zone-expander",
     base_entity = "roboport",
     directory = reskins.bobs.directory,
-    mod = "logistics",
+    group = "logistics",
     particles = {["medium"] = 2},
     make_remnants = false,
 }
