@@ -92,19 +92,8 @@ for name, map in pairs(tier_map) do
     variant = map[2] or nil
     do_reskin = map[3] or nil
 
-    -- Determine what tint we're using, with special handling for the basic belts to replicate the color from Bob's Logistics Belt Reskin
-    if settings.startup["reskins-lib-customize-tier-colors"].value == false and string.find(name, "basic") then
-        inputs.tint = reskins.lib.belt_mask_tint(reskins.bobs.basic_belt_tint)
-    else
-        inputs.tint = reskins.lib.belt_mask_tint(reskins.lib.tint_index["tier-"..tier])
-    end
-
-    -- Determine what tint we're using, with special handling for the basic belts to replicate the color from Bob's Logistics Belt Reskin
-    if string.find(name, "basic") then
-        inputs.tint = reskins.lib.belt_mask_tint(reskins.bobs.basic_belt_tint)
-    else
-        inputs.tint = reskins.lib.belt_mask_tint(reskins.lib.tint_index["tier-"..tier])
-    end
+    -- Determine what tint we're using
+    input.tint = reskins.bobs.belt_tint_handling(name)
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
@@ -144,12 +133,8 @@ for name, tier in pairs(item_map) do
         inputs.icon_base = "miniloader"
     end
 
-    -- Determine what tint we're using, with special handling for the basic belts to replicate the color from Bob's Logistics Belt Reskin
-    if string.find(name, "basic") then
-        inputs.tint = reskins.lib.belt_mask_tint(reskins.bobs.basic_belt_tint)
-    else
-        inputs.tint = reskins.lib.belt_mask_tint(reskins.lib.tint_index["tier-"..tier])
-    end
+    -- Determine what tint we're using
+    input.tint = reskins.bobs.belt_tint_handling(name)
 
     reskins.lib.setup_belt_entity_icon(name, tier, inputs)
 

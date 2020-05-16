@@ -49,12 +49,8 @@ for name, map in pairs(tier_map) do
     variant = map[2]
     do_reskin = map[3]
 
-    -- Determine what tint we're using, with special handling for the basic belts to replicate the color from Bob's Logistics Belt Reskin
-    if string.find(name, "basic") then
-        inputs.tint = reskins.lib.belt_mask_tint(reskins.bobs.basic_belt_tint)
-    else
-        inputs.tint = reskins.lib.belt_mask_tint(reskins.lib.tint_index["tier-"..tier])
-    end
+    -- Determine what tint we're using
+    input.tint = reskins.bobs.belt_tint_handling(name)
 
     reskins.lib.setup_standard_entity(name, tier, inputs)    
     
