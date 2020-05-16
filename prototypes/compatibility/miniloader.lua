@@ -145,7 +145,7 @@ for name, tier in pairs(item_map) do
     end
 
     -- Determine what tint we're using, with special handling for the basic belts to replicate the color from Bob's Logistics Belt Reskin
-    if settings.startup["reskins-lib-customize-tier-colors"].value == false and string.find(name, "basic") then
+    if string.find(name, "basic") then
         inputs.tint = reskins.lib.belt_mask_tint(reskins.bobs.basic_belt_tint)
     else
         inputs.tint = reskins.lib.belt_mask_tint(reskins.lib.tint_index["tier-"..tier])
