@@ -211,16 +211,8 @@ for material, map in pairs(material_map) do
     if settings.startup["reskins-lib-icon-tier-labeling"].value == true and settings.startup["reskins-bobs-do-pipe-tier-labeling"].value == true and tier > 0 then
         pipe_icon_inputs.icon = {{icon = pipe_icon_inputs.icon}}
         pipe_to_ground_icon_inputs.icon = {{icon = pipe_to_ground_icon_inputs.icon}}
-        table.insert(pipe_icon_inputs.icon, {icon = reskins.lib.directory.."/graphics/icons/tiers/64/tier-"..tier..".png"})
-        table.insert(pipe_to_ground_icon_inputs.icon, {icon = reskins.lib.directory.."/graphics/icons/tiers/64/tier-"..tier..".png"})
-        table.insert(pipe_icon_inputs.icon, {
-            icon = reskins.lib.directory.."/graphics/icons/tiers/64/tier-"..tier..".png",
-            tint = reskins.lib.adjust_alpha(reskins.lib.tint_index["tier-"..tier], 0.75)
-        })
-        table.insert(pipe_to_ground_icon_inputs.icon, {
-            icon = reskins.lib.directory.."/graphics/icons/tiers/64/tier-"..tier..".png",
-            tint = reskins.lib.adjust_alpha(reskins.lib.tint_index["tier-"..tier], 0.75)
-        })
+        reskins.lib.append_tier_labels(tier, pipe_icon_inputs)
+        reskins.lib.append_tier_labels(tier, pipe_to_ground_icon_inputs)
     end
 
     local pipe_icon_name, pipe_to_ground_icon_name

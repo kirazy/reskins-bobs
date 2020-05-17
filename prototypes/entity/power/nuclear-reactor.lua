@@ -81,17 +81,7 @@ local function skin_reactor_icon(name, tier, inputs)
     }
 
     -- Tack on a tier label if we're doing those
-    if settings.startup["reskins-lib-icon-tier-labeling"].value == true then
-        inputs.icon[#inputs.icon+1] = 
-        {
-            icon = reskins.lib.directory.."/graphics/icons/tiers/"..inputs.icon_size.."/tier-"..tier..".png",
-        }
-        inputs.icon[#inputs.icon+1] = 
-        {
-            icon = reskins.lib.directory.."/graphics/icons/tiers/"..inputs.icon_size.."/tier-"..tier..".png",
-            tint = reskins.lib.adjust_alpha(reskins.lib.tint_index["tier-"..tier], 0.75)
-        }        
-    end
+    reskins.lib.append_tier_labels(tier, inputs)
 
     -- Assign icons
     reskins.lib.assign_icons(name, inputs)
