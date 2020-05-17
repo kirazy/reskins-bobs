@@ -31,11 +31,13 @@ end
 if mods["boblogistics"] or mods["bobpower"] then
     data:extend(
     {
-        type = "bool-setting",
-        name = "reskins-bobs-do-pipe-tier-labeling",
-        setting_type = "startup",
-        order = "x",
-        default_value = true,
+        {
+            type = "bool-setting",
+            name = "reskins-bobs-do-pipe-tier-labeling",
+            setting_type = "startup",
+            order = "x",
+            default_value = true,
+        }
     })
 end
 
