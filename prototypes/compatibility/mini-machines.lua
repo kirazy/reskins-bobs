@@ -100,3 +100,13 @@ local radars = {
 }
 
 rescale_minimachine(radars, "radar", "radar", "radar")
+
+-- Oil refineries
+local chemplants = {
+    ["mini-refinery-1"] = "oil-refinery",
+    ["mini-refinery-2"] = "oil-refinery-2",
+    ["mini-refinery-3"] = "oil-refinery-3",
+    ["mini-refinery-4"] = "oil-refinery-4",
+}
+
+rescale_minimachine(chemplants, "assembling-machine", "oil%-refinery", "oil-refinery")

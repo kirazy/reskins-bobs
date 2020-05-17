@@ -8,31 +8,27 @@ if not mods["bobassembly"] then return end
 if settings.startup["reskins-bobs-do-bobassembly"].value == false then return end
 
 -- Set input parameters
-local inputs = 
-{
+local inputs = {
     type = "assembling-machine",
-    root_name = "oil-refinery",
+    icon_name = "oil-refinery",
     base_entity = "oil-refinery",
     directory = reskins.bobs.directory,
     group = "assembly",
     particles = {["big-tint"] = 5, ["medium"] = 2},
-    make_icons = false
 }
 
 -- oil-refinerys have two different sets of tiers; determine which we are using
 local tier_map
 if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
-    tier_map =
-    {
-        ["oil-refinery"]   = 1,
+    tier_map = {
+        ["oil-refinery"] = 1,
         ["oil-refinery-2"] = 2,
         ["oil-refinery-3"] = 3,
         ["oil-refinery-4"] = 4
     }
 else
-    tier_map =
-    {
-        ["oil-refinery"]   = 2,
+    tier_map = {
+        ["oil-refinery"] = 2,
         ["oil-refinery-2"] = 3,
         ["oil-refinery-3"] = 4,
         ["oil-refinery-4"] = 5
@@ -49,9 +45,6 @@ for name, tier in pairs(tier_map) do
         goto continue
     end
 
-    -- Map entity to name used internally
-    inputs.internal_name = inputs.root_name.."-"..tier
-
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
     
@@ -61,10 +54,8 @@ for name, tier in pairs(tier_map) do
     remnant = data.raw["corpse"][name.."-remnants"]
 
     -- Reskin remnants
-    remnant.animation = make_rotated_animation_variations_from_sheet(1,
-    {
-        layers = 
-        {
+    remnant.animation = make_rotated_animation_variations_from_sheet(1, {
+        layers = {
             -- Base
             {
                 filename = "__base__/graphics/entity/oil-refinery/remnants/refinery-remnants.png",
@@ -74,8 +65,7 @@ for name, tier in pairs(tier_map) do
                 frame_count = 1,
                 direction_count = 1,
                 shift = util.by_pixel(0, 0), --moved from -8.5 to -4.5
-                hr_version =
-                {
+                hr_version = {
                   filename = "__base__/graphics/entity/oil-refinery/remnants/hr-refinery-remnants.png",
                   line_length = 1,
                   width = 467,
@@ -96,8 +86,7 @@ for name, tier in pairs(tier_map) do
                 direction_count = 1,
                 shift = util.by_pixel(0, 0),
                 tint = inputs.tint,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/assembly/oil-refinery/remnants/hr-refinery-remnants-mask.png",
                     line_length = 1,
                     width = 467,
@@ -119,8 +108,7 @@ for name, tier in pairs(tier_map) do
                 direction_count = 1,
                 shift = util.by_pixel(0, 0),
                 blend_mode = "additive",
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/assembly/oil-refinery/remnants/hr-refinery-remnants-highlights.png",
                     line_length = 1,
                     width = 467,
@@ -136,10 +124,8 @@ for name, tier in pairs(tier_map) do
     })
 
     -- Reskin entity
-    entity.animation = make_4way_animation_from_spritesheet(
-    {
-        layers =
-        {
+    entity.animation = make_4way_animation_from_spritesheet({
+        layers = {
             -- Base
             {
                 filename = "__base__/graphics/entity/oil-refinery/oil-refinery.png",
@@ -147,8 +133,7 @@ for name, tier in pairs(tier_map) do
                 height = 255,
                 frame_count = 1,
                 shift = {2.515625, 0.484375},
-                hr_version =
-                {
+                hr_version = {
                 filename = "__base__/graphics/entity/oil-refinery/hr-oil-refinery.png",
                 width = 386,
                 height = 430,
@@ -165,8 +150,7 @@ for name, tier in pairs(tier_map) do
                 frame_count = 1,
                 shift = {2.515625, 0.484375},
                 tint = inputs.tint,
-                hr_version =
-                {
+                hr_version = {
                 filename = inputs.directory.."/graphics/entity/assembly/oil-refinery/hr-oil-refinery-mask.png",
                 width = 386,
                 height = 430,
@@ -184,8 +168,7 @@ for name, tier in pairs(tier_map) do
                 frame_count = 1,
                 shift = {2.515625, 0.484375},
                 blend_mode = "additive",
-                hr_version =
-                {
+                hr_version = {
                 filename = inputs.directory.."/graphics/entity/assembly/oil-refinery/hr-oil-refinery-highlights.png",
                 width = 386,
                 height = 430,
@@ -203,8 +186,7 @@ for name, tier in pairs(tier_map) do
                 frame_count = 1,
                 shift = util.by_pixel(82.5, 26.5),
                 draw_as_shadow = true,
-                hr_version =
-                {
+                hr_version = {
                 filename = "__base__/graphics/entity/oil-refinery/hr-oil-refinery-shadow.png",
                 width = 674,
                 height = 426,
