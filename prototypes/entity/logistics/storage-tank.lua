@@ -8,31 +8,27 @@ if not mods["boblogistics"] then return end
 if settings.startup["reskins-bobs-do-boblogistics"].value == false then return end 
 
 -- Set input parameters
-local inputs = 
-{
+local inputs = {
     type = "storage-tank",
-    root_name = "storage-tank",
+    icon_name = "storage-tank",
     base_entity = "storage-tank",
     directory = reskins.bobs.directory,
     group = "logistics",
     particles = {["big"] = 1},
-    make_icons = false,
 }
 
 -- Storage tanks have two different sets of tiers; determine which we are using
 local tier_map
 if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
-    tier_map =
-    {
-        ["storage-tank"]   = 1,
+    tier_map = {
+        ["storage-tank"] = 1,
         ["storage-tank-2"] = 2,
         ["storage-tank-3"] = 3,
         ["storage-tank-4"] = 4
     }
 else
-    tier_map =
-    {
-        ["storage-tank"]   = 2,
+    tier_map = {
+        ["storage-tank"] = 2,
         ["storage-tank-2"] = 3,
         ["storage-tank-3"] = 4,
         ["storage-tank-4"] = 5
@@ -48,9 +44,6 @@ for name, tier in pairs(tier_map) do
     if not entity then
         goto continue
     end
-    
-    -- Map entity to name used internally
-    inputs.internal_name = inputs.root_name.."-"..tier
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
@@ -61,10 +54,8 @@ for name, tier in pairs(tier_map) do
     remnant = data.raw["corpse"][name.."-remnants"]
     
     -- Reskin remnants
-    remnant.animation = 
-    {
-        layers = 
-        {
+    remnant.animation = {
+        layers = {
             -- Base
             {
                 filename = "__base__/graphics/entity/storage-tank/remnants/storage-tank-remnants.png",
@@ -74,8 +65,7 @@ for name, tier in pairs(tier_map) do
                 frame_count = 1,
                 direction_count = 1,
                 shift = util.by_pixel(27, 21),
-                hr_version =
-                {
+                hr_version = {
                     filename = "__base__/graphics/entity/storage-tank/remnants/hr-storage-tank-remnants.png",
                     line_length = 1,
                     width = 426,
@@ -96,8 +86,7 @@ for name, tier in pairs(tier_map) do
                 direction_count = 1,
                 shift = util.by_pixel(27, 21),
                 tint = inputs.tint,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/storage-tank/remnants/hr-storage-tank-remnants-mask.png",
                     line_length = 1,
                     width = 426,
@@ -119,8 +108,7 @@ for name, tier in pairs(tier_map) do
                 direction_count = 1,
                 shift = util.by_pixel(27, 21),
                 blend_mode = "additive",
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/storage-tank/remnants/hr-storage-tank-remnants-highlights.png",
                     line_length = 1,
                     width = 426,
@@ -136,12 +124,9 @@ for name, tier in pairs(tier_map) do
     }
 
     -- Reskin entities
-    entity.pictures =
-    {
-        picture =
-        {
-            sheets =
-            {
+    entity.pictures = {
+        picture = {
+            sheets = {
                 -- Base
                 {
                     filename = "__base__/graphics/entity/storage-tank/storage-tank.png",
@@ -150,8 +135,7 @@ for name, tier in pairs(tier_map) do
                     width = 110,
                     height = 108,
                     shift = util.by_pixel(0, 4),
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = "__base__/graphics/entity/storage-tank/hr-storage-tank.png",
                         priority = "extra-high",
                         frames = 2,
@@ -170,8 +154,7 @@ for name, tier in pairs(tier_map) do
                     height = 108,
                     shift = util.by_pixel(0, 4),
                     tint = inputs.tint,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/logistics/storage-tank/hr-storage-tank-mask.png",
                         priority = "extra-high",
                         frames = 2,
@@ -191,8 +174,7 @@ for name, tier in pairs(tier_map) do
                     height = 108,
                     shift = util.by_pixel(0, 4),
                     blend_mode = "additive",
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = inputs.directory.."/graphics/entity/logistics/storage-tank/hr-storage-tank-highlights.png",
                         priority = "extra-high",
                         frames = 2,
@@ -212,8 +194,7 @@ for name, tier in pairs(tier_map) do
                     height = 77,
                     shift = util.by_pixel(30, 22.5),
                     draw_as_shadow = true,
-                    hr_version =
-                    {
+                    hr_version = {
                         filename = "__base__/graphics/entity/storage-tank/hr-storage-tank-shadow.png",
                         priority = "extra-high",
                         frames = 2,
@@ -226,21 +207,18 @@ for name, tier in pairs(tier_map) do
                 }
             }
         },
-        fluid_background =
-        {
+        fluid_background = {
             filename = "__base__/graphics/entity/storage-tank/fluid-background.png",
             priority = "extra-high",
             width = 32,
             height = 15
         },
-        window_background =
-        {
+        window_background = {
             filename = "__base__/graphics/entity/storage-tank/window-background.png",
             priority = "extra-high",
             width = 17,
             height = 24,
-            hr_version =
-            {
+            hr_version = {
             filename = "__base__/graphics/entity/storage-tank/hr-window-background.png",
             priority = "extra-high",
             width = 34,
@@ -248,15 +226,13 @@ for name, tier in pairs(tier_map) do
             scale = 0.5
             }
         },
-        flow_sprite =
-        {
+        flow_sprite = {
             filename = "__base__/graphics/entity/pipe/fluid-flow-low-temperature.png",
             priority = "extra-high",
             width = 160,
             height = 20
         },
-        gas_flow =
-        {
+        gas_flow = {
             filename = "__base__/graphics/entity/pipe/steam.png",
             priority = "extra-high",
             line_length = 10,
@@ -266,8 +242,7 @@ for name, tier in pairs(tier_map) do
             axially_symmetrical = false,
             direction_count = 1,
             animation_speed = 0.25,
-            hr_version =
-            {
+            hr_version = {
                 filename = "__base__/graphics/entity/pipe/hr-steam.png",
                 priority = "extra-high",
                 line_length = 10,

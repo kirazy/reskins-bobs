@@ -102,11 +102,21 @@ local radars = {
 rescale_minimachine(radars, "radar", "radar", "radar")
 
 -- Oil refineries
-local chemplants = {
+local refineries = {
     ["mini-refinery-1"] = "oil-refinery",
     ["mini-refinery-2"] = "oil-refinery-2",
     ["mini-refinery-3"] = "oil-refinery-3",
     ["mini-refinery-4"] = "oil-refinery-4",
 }
 
-rescale_minimachine(chemplants, "assembling-machine", "oil%-refinery", "oil-refinery")
+rescale_minimachine(refineries, "assembling-machine", "oil%-refinery", "oil-refinery")
+
+-- Storage tanks
+local storage_tanks = {
+    ["mini-tank-1"] = "storage-tank",
+    ["mini-tank-2"] = "storage-tank-2",
+    ["mini-tank-3"] = "storage-tank-3",
+    ["mini-tank-4"] = "storage-tank-4",
+}
+
+rescale_minimachine(storage_tanks, "storage-tank", "storage%-tank", "storage-tank")

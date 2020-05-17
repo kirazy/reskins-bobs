@@ -226,7 +226,6 @@ for material, map in pairs(material_map) do
     end
 
     reskins.lib.assign_icons(pipe_icon_name, pipe_icon_inputs)
-
     reskins.lib.assign_icons(pipe_to_ground_icon_name, pipe_to_ground_icon_inputs)
 
     -- Label to skip to next iteration
