@@ -57,7 +57,6 @@ for name, map in pairs(tier_map) do
     if do_reskin then
         -- Reskin remnants
 
-        
         -- Reskin entities
         entity.structure = {
             direction_in = {

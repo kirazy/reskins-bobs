@@ -156,6 +156,7 @@ function reskins.bobs.transport_belt_animation_set(tint, variant)
                     {
                         filename = reskins.bobs.directory.."/graphics/entity/logistics/transport-belt/transport-belt-1-base.png",
                         priority = "extra-high",
+                        flags = { "no-crop" },
                         width = 64,
                         height = 64,
                         frame_count = 16,
@@ -163,6 +164,7 @@ function reskins.bobs.transport_belt_animation_set(tint, variant)
                         hr_version = {
                             filename = reskins.bobs.directory.."/graphics/entity/logistics/transport-belt/hr-transport-belt-1-base.png",
                             priority = "extra-high",
+                            flags = { "no-crop" },
                             width = 128,
                             height = 128,
                             scale = 0.5,
@@ -174,6 +176,7 @@ function reskins.bobs.transport_belt_animation_set(tint, variant)
                     {
                         filename = reskins.bobs.directory.."/graphics/entity/logistics/transport-belt/transport-belt-1-mask.png",
                         priority = "extra-high",
+                        flags = { "no-crop" },
                         width = 64,
                         height = 64,
                         frame_count = 16,
@@ -182,6 +185,7 @@ function reskins.bobs.transport_belt_animation_set(tint, variant)
                         hr_version = {
                             filename = reskins.bobs.directory.."/graphics/entity/logistics/transport-belt/hr-transport-belt-1-mask.png",
                             priority = "extra-high",
+                            flags = { "no-crop" },
                             width = 128,
                             height = 128,
                             scale = 0.5,
@@ -201,6 +205,7 @@ function reskins.bobs.transport_belt_animation_set(tint, variant)
                     {
                         filename = reskins.bobs.directory.."/graphics/entity/logistics/transport-belt/transport-belt-2-base.png",
                         priority = "extra-high",
+                        flags = { "no-crop" },
                         width = 64,
                         height = 64,
                         frame_count = 32,
@@ -208,6 +213,7 @@ function reskins.bobs.transport_belt_animation_set(tint, variant)
                         hr_version = {
                             filename = reskins.bobs.directory.."/graphics/entity/logistics/transport-belt/hr-transport-belt-2-base.png",
                             priority = "extra-high",
+                            flags = { "no-crop" },
                             width = 128,
                             height = 128,
                             scale = 0.5,
@@ -219,6 +225,7 @@ function reskins.bobs.transport_belt_animation_set(tint, variant)
                     {
                         filename = reskins.bobs.directory.."/graphics/entity/logistics/transport-belt/transport-belt-2-mask.png",
                         priority = "extra-high",
+                        flags = { "no-crop" },
                         width = 64,
                         height = 64,
                         frame_count = 32,
@@ -227,6 +234,7 @@ function reskins.bobs.transport_belt_animation_set(tint, variant)
                         hr_version = {
                             filename = reskins.bobs.directory.."/graphics/entity/logistics/transport-belt/hr-transport-belt-2-mask.png",
                             priority = "extra-high",
+                            flags = { "no-crop" },
                             width = 128,
                             height = 128,
                             scale = 0.5,
