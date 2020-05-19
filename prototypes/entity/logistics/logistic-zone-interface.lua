@@ -31,6 +31,9 @@ inputs.internal_name = "logistic-zone-interface"
 
 reskins.lib.setup_standard_entity(name, tier, inputs)
 
+-- Setup icon
+reskins.lib.generate_basic_icon(name, false, inputs.type, inputs.directory.."/graphics/icons/logistics/zone-interface/zone-interface-icon-base.png")
+
 -- Reskin entity
 entity.base =
 {

@@ -242,8 +242,7 @@ for name, map in pairs(inserter_map) do
         icon_tier = {tier, tier}
     end
 
-    icon_filename = inputs.directory.."/graphics/icons/logistics/inserter/standard/"..name.."-icon.png"
-    reskins.lib.generate_basic_icon(name, icon_tier, inputs.type, icon_filename, inputs.icon_size, inputs.icon_mipmaps)
+    reskins.lib.generate_basic_icon(name, icon_tier, inputs.type, inputs.directory.."/graphics/icons/logistics/inserter/standard/"..name.."-icon.png")
 
     -- Handle the type of inserter we're dealing with
     local inserter_type, hand_name
