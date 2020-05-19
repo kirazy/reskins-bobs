@@ -21,6 +21,7 @@ local inserter_map
 if settings.startup["bobmods-logistics-inserteroverhaul"].value == false then
     inserter_map = {
         -- Standard inserters
+        ["burner-inserter"] = {0, false},
         ["inserter"] = {1, false},
         ["long-handed-inserter"] = {2, false},
         ["fast-inserter"] = {3, false},
@@ -37,6 +38,10 @@ if settings.startup["bobmods-logistics-inserteroverhaul"].value == false then
         -- Stack filter inserters
         ["stack-filter-inserter"] = {3, false},
         ["express-stack-filter-inserter"] = {4, true, "7e7e7e"},
+    }
+else
+    inserter_map = {
+        ["burner-inserter"] = {0, false},
     }
 end
 
@@ -228,6 +233,17 @@ for name, map in pairs(inserter_map) do
     end
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
+
+    -- Handle icons
+    local icon_tier
+    if settings.startup["reskins-bobs-do-inserter-tier-labeling"].value == false then
+        icon_tier = false
+    else
+        icon_tier = {tier, tier}
+    end
+
+    icon_filename = inputs.directory.."/graphics/icons/logistics/inserter/standard/"..name.."-icon.png"
+    reskins.lib.generate_basic_icon(name, icon_tier, inputs.type, icon_filename, inputs.icon_size, inputs.icon_mipmaps)
 
     -- Handle the type of inserter we're dealing with
     local inserter_type, hand_name

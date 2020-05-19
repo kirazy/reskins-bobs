@@ -10,11 +10,9 @@ if settings.startup["reskins-bobs-do-boblogistics"].value == false then return e
 -- Set input parameters
 local inputs = {
     type = "inserter",
-    icon_name = "inserter",
     directory = reskins.bobs.directory,
     group = "logistics",
     particles = {["medium"] = 1},
-    make_icons = false
 }
 
 local inserter_map
@@ -23,6 +21,7 @@ if settings.startup["bobmods-logistics-inserteroverhaul"].value == true then
         -- Standard inserters
         ["inserter"] = 1,
         ["red-inserter"] = 2,
+        ["long-handed-inserter"] = 2,
         ["fast-inserter"] = 3,
         ["turbo-inserter"] = 4,
         ["express-inserter"] = 5,
@@ -453,22 +452,34 @@ for name, tier in pairs(inserter_map) do
         inputs.platform_tint = inputs.tint
     end
 
-    reskins.lib.setup_standard_entity(name, tier, inputs)
-
-    -- Handle the type of inserter we're dealing with
+    -- Handle entity reskin parameters
     local inserter_type
     if string.find(name, "stack") then
         inserter_type = "stack-inserter"
+        inputs.icon_name = "stack-inserter"
     elseif mods["bobsinserters"] or settings.startup["bobmods-logistics-inserteroverhaul"].value == true then
         inserter_type = "long-inserter"
+        inputs.icon_name = "inserter"
     else
         inserter_type = "inserter"
+        inputs.icon_name = "inserter"
     end
 
     local inserter_filter = false
     if string.find(name, "filter") then
         inserter_filter = true
+        inputs.icon_mask = "filter-"..inputs.icon_name
+        inputs.icon_highlights = "filter-"..inputs.icon_name
+    else
+        inputs.icon_mask = nil
+        inputs.icon_highlights = nil
     end
+
+    if settings.startup["reskins-bobs-do-inserter-tier-labeling"].value == false then
+        inputs.tier_labels = false
+    end
+
+    reskins.lib.setup_standard_entity(name, tier, inputs)    
 
     -- Fetch remnant
     remnant = data.raw["corpse"][name.."-remnants"]

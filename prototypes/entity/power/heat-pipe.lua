@@ -61,8 +61,9 @@ for name, map in pairs(tier_map) do
     }
 
     -- Setup tier labels
-    if settings.startup["reskins-lib-icon-tier-labeling"].value == true and settings.startup["reskins-bobs-do-pipe-tier-labeling"].value == true and tier > 0 then
+    if settings.startup["reskins-bobs-do-pipe-tier-labeling"].value == true then
         heat_pipe_icon_inputs.icon = {{icon = heat_pipe_icon_inputs.icon}}
+        heat_pipe_icon_inputs.tier_labels = true
         reskins.lib.append_tier_labels(tier, heat_pipe_icon_inputs)
     end
 

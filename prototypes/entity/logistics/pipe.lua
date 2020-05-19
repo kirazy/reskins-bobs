@@ -112,7 +112,7 @@ for material, map in pairs(material_map) do
     -- Check if entity exists, if not, skip this iteration; assume if we have one we have both
     if not pipe_entity then
         goto continue
-    end
+    end  
 
     -- Create explosions
     reskins.lib.create_explosion(inputs.material.."-pipe", {type = "pipe", base_entity = "pipe"})
@@ -208,12 +208,14 @@ for material, map in pairs(material_map) do
     }
 
     -- Setup tier labels
-    if settings.startup["reskins-lib-icon-tier-labeling"].value == true and settings.startup["reskins-bobs-do-pipe-tier-labeling"].value == true and tier > 0 then
+    if settings.startup["reskins-bobs-do-pipe-tier-labeling"].value == true then
         pipe_icon_inputs.icon = {{icon = pipe_icon_inputs.icon}}
         pipe_to_ground_icon_inputs.icon = {{icon = pipe_to_ground_icon_inputs.icon}}
+        pipe_icon_inputs.tier_labels = true
+        pipe_to_ground_icon_inputs.tier_labels = true
         reskins.lib.append_tier_labels(tier, pipe_icon_inputs)
         reskins.lib.append_tier_labels(tier, pipe_to_ground_icon_inputs)
-    end
+    end    
 
     local pipe_icon_name, pipe_to_ground_icon_name
     -- Handle naming
