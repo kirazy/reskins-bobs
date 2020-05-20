@@ -6,8 +6,8 @@
 -- Core functions
 require("prototypes.functions")
 
--- General Icons
--- require("prototypes.entity.icons-only")
+-- Icons
+require("prototypes.icon.logistics")
 
 -- Compatiblity
 require("prototypes.compatibility.miniloader")
