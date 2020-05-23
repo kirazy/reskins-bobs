@@ -22,7 +22,7 @@ require("prototypes.entity.assembly.centrifuge")
 require("prototypes.entity.assembly.chemical-plant")
 -- require("prototypes.entity.assembly.distillery")
 require("prototypes.entity.assembly.electrolyser")
--- require("prototypes.entity.assembly.furnace")
+require("prototypes.entity.assembly.furnace")
 require("prototypes.entity.assembly.oil-refinery")
 
 -- Bob's Greenhouse
