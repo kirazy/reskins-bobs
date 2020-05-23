@@ -131,14 +131,6 @@ for name, map in pairs(stone_furnace_map) do
     if name == "chemical-boiler" then
         entity.animation = make_4way_animation_from_spritesheet(stone_furnace_entities("stone-chemical-furnace", "stone-chemical-furnace"))
 
-        -- Correct smoke position
-        entity.energy_source.smoke = table.deepcopy(entity_source.energy_source.smoke)
-        entity.energy_source.smoke[1].position = nil
-        entity.energy_source.smoke[1].north_position = {0, -0.8}
-        entity.energy_source.smoke[1].east_position = {0, -0.8}
-        entity.energy_source.smoke[1].south_position = {0, -0.8}
-        entity.energy_source.smoke[1].west_position = {0, -0.8}
-
         -- Handle working_visualisations
         entity.working_visualisations = {
             {
@@ -346,14 +338,6 @@ for name, map in pairs(steel_furnace_map) do
     -- Reskin entities and remnants
     if has_4way == true then
         entity.animation = make_4way_animation_from_spritesheet(steel_furnace_entity_skin(sprite_name, shadow))
-
-        -- Fix smoke
-        entity.energy_source.smoke = table.deepcopy(entity_source.energy_source.smoke)
-        entity.energy_source.smoke[1].position = nil
-        entity.energy_source.smoke[1].north_position = {0.7, -1.2}
-        entity.energy_source.smoke[1].east_position = {0.7, -1.2}
-        entity.energy_source.smoke[1].south_position = {0.7, -1.2}
-        entity.energy_source.smoke[1].west_position = {0.7, -1.2}
     else
         entity.animation = steel_furnace_entity_skin(sprite_name, shadow)
     end
