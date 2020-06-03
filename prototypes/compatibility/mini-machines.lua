@@ -6,43 +6,17 @@
 -- Check for mini-machines
 if not mods["mini-machines"] then return end
 
-local function use_mini_icon(name, source_name, type, pattern, replacement)
-    -- Initialize paths
-    local destination = data.raw["item"][name]
-    local source = data.raw["item"][source_name]
-
-    -- Check to make sure this entity is valid
-    if not destination then return end
-
-    -- Transcribe icons and pictures
-    local working_icons = table.deepcopy(source.icons)
-    local working_pictures = table.deepcopy(source.pictures)
-
-    -- Retarget image location
-    for n = 1, #working_icons do
-        working_icons[n].icon = string.gsub(working_icons[n].icon, "/"..pattern.."/", "/"..replacement.."/mini-")
-    end
-
-    for m = 1, #working_pictures.layers do
-        working_pictures.layers[m].filename = string.gsub(working_pictures.layers[m].filename, "/"..pattern.."/", "/"..replacement.."/mini-")
-    end
-
-    -- Prepare for icon assignment
+local function rescale_minimachine(table, type)
+    -- Prepare a basic inputs table
     local inputs = {
-        type = type,
         icon_size = 64,
         icon_mipmaps = 4,
-        icon = working_icons,
-        icon_picture = working_pictures
+        type = type,
     }
 
-    -- Assign icons
-    reskins.lib.assign_icons(name, inputs)
-end
-
-local function rescale_minimachine(table, type, pattern, replacement)
-    for minimachine, source in pairs(table) do
-        use_mini_icon(minimachine, source, type, pattern, replacement)
+    -- Shrink the icon
+    for name, source in pairs(table) do
+        reskins.lib.shrink_icon(name, source, 0.85, inputs)
     end
 end
 
@@ -55,7 +29,7 @@ local electrolysers = {
     ["mini-electro-5"] = "electrolyser-5",
 }
 
-rescale_minimachine(electrolysers, "assembling-machine", "electrolyser", "electrolyser")
+rescale_minimachine(electrolysers, "assembling-machine")
 
 -- Assembling machines
 local assemblers = {
@@ -67,7 +41,7 @@ local assemblers = {
     ["mini-assembler-6"] = "assembling-machine-6",
 }
 
-rescale_minimachine(assemblers, "assembling-machine", "assembling%-machine", "assembling-machine")
+rescale_minimachine(assemblers, "assembling-machine")
 
 -- Chemical plants
 local chemplants = {
@@ -77,7 +51,7 @@ local chemplants = {
     ["mini-chemplant-4"] = "chemical-plant-4",
 }
 
-rescale_minimachine(chemplants, "assembling-machine", "chemical%-plant", "chemical-plant")
+rescale_minimachine(chemplants, "assembling-machine")
 
 -- Mining drills
 local miners = {
@@ -88,7 +62,7 @@ local miners = {
     ["mini-miner-5"] = "bob-mining-drill-4",
 }
 
-rescale_minimachine(miners, "mining-drill", "electric%-mining%-drill", "electric-mining-drill")
+rescale_minimachine(miners, "mining-drill")
 
 -- Radars
 local radars = {
@@ -99,7 +73,7 @@ local radars = {
     ["mini-radar-5"] = "radar-5",
 }
 
-rescale_minimachine(radars, "radar", "radar", "radar")
+rescale_minimachine(radars, "radar")
 
 -- Oil refineries
 local refineries = {
@@ -109,7 +83,7 @@ local refineries = {
     ["mini-refinery-4"] = "oil-refinery-4",
 }
 
-rescale_minimachine(refineries, "assembling-machine", "oil%-refinery", "oil-refinery")
+rescale_minimachine(refineries, "assembling-machine")
 
 -- Storage tanks
 local storage_tanks = {
@@ -119,4 +93,4 @@ local storage_tanks = {
     ["mini-tank-4"] = "storage-tank-4",
 }
 
-rescale_minimachine(storage_tanks, "storage-tank", "storage%-tank", "storage-tank")
+rescale_minimachine(storage_tanks, "storage-tank")
