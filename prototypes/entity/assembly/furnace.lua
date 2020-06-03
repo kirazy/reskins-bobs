@@ -14,8 +14,8 @@ local chemical_furnace_tint = util.color("ff0000")
 -- STONE FURNACES
 local stone_furnace_map = {
     ["stone-furnace"] = {1, "furnace", stone_furnace_tint},
-    ["mixing-furnace"] = {1, "assembling-machine", mixing_furnace_tint},
-    ["chemical-boiler"] = {1, "assembling-machine", chemical_furnace_tint},
+    ["stone-mixing-furnace"] = {1, "assembling-machine", mixing_furnace_tint},
+    ["stone-chemical-furnace"] = {1, "assembling-machine", chemical_furnace_tint},
 }
 
 local function stone_furnace_entities(name, shadow)
@@ -122,13 +122,13 @@ for name, map in pairs(stone_furnace_map) do
         entity.animation = stone_furnace_entities("stone-furnace", "stone-furnace")
     end
 
-    if name == "mixing-furnace" then
+    if name == "stone-mixing-furnace" then
         entity.animation = stone_furnace_entities("stone-metal-mixing-furnace", "stone-furnace")
         entity.energy_source.smoke = entity_source.energy_source.smoke
         entity.working_visualisations = entity_source.working_visualisations
     end
 
-    if name == "chemical-boiler" then
+    if name == "stone-chemical-furnace" then
         entity.animation = make_4way_animation_from_spritesheet(stone_furnace_entities("stone-chemical-furnace", "stone-chemical-furnace"))
 
         -- Handle working_visualisations
@@ -155,11 +155,11 @@ end
 -- STEEL FURNACES
 local steel_furnace_map = {
     ["steel-furnace"] = {2, "furnace", stone_furnace_tint, false},
-    ["mixing-steel-furnace"] = {2, "assembling-machine", mixing_furnace_tint, false},
-    ["chemical-steel-furnace"] = {2, "assembling-machine", chemical_furnace_tint, true},
-    ["oil-steel-furnace"] = {2, "furnace", stone_furnace_tint, true},
-    ["oil-mixing-steel-furnace"] = {2, "assembling-machine", mixing_furnace_tint, true},
-    ["oil-chemical-steel-furnace"] = {2, "assembling-machine", chemical_furnace_tint, true},
+    ["steel-mixing-furnace"] = {2, "assembling-machine", mixing_furnace_tint, false},
+    ["steel-chemical-furnace"] = {2, "assembling-machine", chemical_furnace_tint, true},
+    ["fluid-furnace"] = {2, "furnace", stone_furnace_tint, true},
+    ["fluid-mixing-furnace"] = {2, "assembling-machine", mixing_furnace_tint, true},
+    ["fluid-chemical-furnace"] = {2, "assembling-machine", chemical_furnace_tint, true},
 }
 
 local function steel_furnace_entity_skin(name, shadow)
@@ -323,8 +323,8 @@ for name, map in pairs(steel_furnace_map) do
         shadow = sprite_name
     end
 
-    -- Prepend oil prefix when working with oil-based furnaces
-    if string.find(name, "oil") then
+    -- Prepend oil prefix when working with fluid-based furnaces
+    if string.find(name, "fluid") then
         sprite_name = "oil-"..sprite_name
         shadow = "oil-"..shadow
 
@@ -347,8 +347,8 @@ for name, map in pairs(steel_furnace_map) do
     end
 
     if string.find(name, "chemical") then
-        if string.find(name, "oil") then
-            -- Skin the oil-based chemical furnace working visualization
+        if string.find(name, "fluid") then
+            -- Skin the fluid-based chemical furnace working visualization
             entity.working_visualisations = {
                 -- Fire effect
                 {
@@ -410,8 +410,8 @@ for name, map in pairs(steel_furnace_map) do
                 }
             }
         end
-    elseif string.find(name, "oil") then
-        -- Skin the oil-based non-chemical furncace working visualizations
+    elseif string.find(name, "fluid") then
+        -- Skin the fluid-based non-chemical furncace working visualizations
         entity.working_visualisations = {
             -- Fire effect
             {
@@ -451,7 +451,7 @@ end
 -- electric-furnace
 -- electric-furnace-2
 -- electric-furnace-3
--- chemical-furnace                        -- Chemical Electric
+-- electric-chemical-furnace               -- Chemical Electric
 -- electric-mixing-furnace                 -- Metal-Mixing Electric
 -- electric-chemical-mixing-furnace        -- Multi Purpose 1
 -- electric-chemical-mixing-furnace-2      -- Multi Purpose 2
