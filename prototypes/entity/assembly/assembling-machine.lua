@@ -64,6 +64,11 @@ for name, map in pairs(tier_map) do
 
     -- Setup icon details
     if string.find(name, "electronics") then
+        -- Use the small assets
+        inputs.icon_base = "mini-assembling-machine"
+        inputs.icon_mask = inputs.icon_base
+        inputs.icon_highlights = inputs.icon_base
+
         -- Add the indicator lights
         inputs.icon_extras = {
             {
@@ -80,7 +85,12 @@ for name, map in pairs(tier_map) do
             }
         }
     elseif name == "burner-assembling-machine" then
-        -- Add coal
+        -- Use the small assets
+        inputs.icon_base = "mini-assembling-machine"
+        inputs.icon_mask = inputs.icon_base
+        inputs.icon_highlights = inputs.icon_base
+
+        -- Smoke stack
         inputs.icon_extras = {
             {
                 icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/smoke-stack.png"
@@ -96,6 +106,11 @@ for name, map in pairs(tier_map) do
             }
         }
     elseif name == "steam-assembling-machine" then
+        -- Use the standard assets
+        inputs.icon_base = nil
+        inputs.icon_mask = nil
+        inputs.icon_highlights = nil
+
         -- Add steam
         inputs.icon_extras = {
             {
@@ -112,6 +127,11 @@ for name, map in pairs(tier_map) do
             }
         }
     else
+        -- Use the standard assets
+        inputs.icon_base = nil
+        inputs.icon_mask = nil
+        inputs.icon_highlights = nil
+
         -- Add gears
         inputs.icon_extras = {
             {
@@ -354,7 +374,6 @@ for name, map in pairs(tier_map) do
     -- Rescale for electronics and burner assembling machines
     if string.find(name, "electronics") or name == "burner-assembling-machine" then
         reskins.lib.rescale_entity(entity.animation, 2/3)
-        reskins.lib.shrink_icon(name, name, 0.85, inputs)
     end
 
     -- Handle pipes
