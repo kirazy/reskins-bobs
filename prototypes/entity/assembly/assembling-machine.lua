@@ -64,113 +64,54 @@ for name, map in pairs(tier_map) do
 
     -- Setup icon details
     if string.find(name, "electronics") then
-        -- Use mini assembling machine sprites
-        inputs.icon_base = "mini-assembling-machine-"..tier
-        inputs.icon_mask = inputs.icon_base
-        inputs.icon_highlights = inputs.icon_base
-
-        -- Add the electrical decoratives
+        -- Add the indicator lights
         inputs.icon_extras = {
-            -- Base
             {
-                icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/electrical-base.png"
-            },
-            -- Mask
-            {
-                icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/electrical-mask.png",
-                tint = inputs.tint
-            },
-            -- Highlights
-            {
-                icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/electrical-highlights.png",
-                tint = {1,1,1,0}
-            },
-            -- Circuit
-            {
-                icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/electrical-circuit.png"
+                icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/"..name..".png"
             }
         }
 
         inputs.icon_picture_extras = {
-            -- Base
             {
-                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/electrical-base.png",
-                size = 64,
-                mipmaps = 4,
-                scale = 0.25
-            },
-            -- Mask
-            {
-                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/electrical-mask.png",
-                tint = inputs.tint,
-                size = 64,
-                mipmaps = 4,
-                scale = 0.25
-            },
-            -- Highlights
-            {
-                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/electrical-highlights.png",
-                blend_mode = "additive",
-                size = 64,
-                mipmaps = 4,
-                scale = 0.25
-            },
-            -- Circuit
-            {
-                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/electrical-circuit.png",
+                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/"..name..".png",
                 size = 64,
                 mipmaps = 4,
                 scale = 0.25
             }
         }
     elseif name == "burner-assembling-machine" then
-        -- Use mini assembling machine sprites
-        inputs.icon_base = "mini-assembling-machine-"..tier
-        inputs.icon_mask = inputs.icon_base
-        inputs.icon_highlights = inputs.icon_base
-
         -- Add coal
         inputs.icon_extras = {
             {
-                icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/coal.png"
+                icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/smoke-stack.png"
             }
         }
 
         inputs.icon_picture_extras = {
             {
-                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/coal.png",
+                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/smoke-stack.png",
                 size = 64,
                 mipmaps = 4,
                 scale = 0.25
             }
         }
     elseif name == "steam-assembling-machine" then
-        -- Use standard assembling machine sprites
-        inputs.icon_base = "assembling-machine-"..tier
-        inputs.icon_mask = inputs.icon_base
-        inputs.icon_highlights = inputs.icon_base
-
         -- Add steam
         inputs.icon_extras = {
             {
-                icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/steam.png"
+                icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/steam-smoke-stack.png"
             }
         }
 
         inputs.icon_picture_extras = {
             {
-                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/steam.png",
+                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/steam-smoke-stack.png",
                 size = 64,
                 mipmaps = 4,
                 scale = 0.25
             }
         }
     else
-        -- Use standard assembling machine sprites
-        inputs.icon_base = "assembling-machine-"..tier
-        inputs.icon_mask = inputs.icon_base
-        inputs.icon_highlights = inputs.icon_base
-
         -- Add gears
         inputs.icon_extras = {
             {
@@ -413,6 +354,7 @@ for name, map in pairs(tier_map) do
     -- Rescale for electronics and burner assembling machines
     if string.find(name, "electronics") or name == "burner-assembling-machine" then
         reskins.lib.rescale_entity(entity.animation, 2/3)
+        reskins.lib.shrink_icon(name, name, 0.85, inputs)
     end
 
     -- Handle pipes
