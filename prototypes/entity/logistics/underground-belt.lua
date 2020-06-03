@@ -51,6 +51,13 @@ for name, map in pairs(tier_map) do
 
     -- Determine what tint we're using
     inputs.tint = reskins.bobs.belt_tint_handling(name, tier)
+
+    if do_reskin then
+        inputs.make_icons = true
+    else
+        inputs.make_icons = false
+        reskins.lib.append_tier_labels_to_vanilla_icon(name, tier, inputs)
+    end
     
     reskins.lib.setup_standard_entity(name, tier, inputs)    
 
