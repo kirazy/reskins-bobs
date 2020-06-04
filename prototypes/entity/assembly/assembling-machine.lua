@@ -114,16 +114,38 @@ for name, map in pairs(tier_map) do
         -- Add steam
         inputs.icon_extras = {
             {
-                icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/steam-smoke-stack.png"
+                icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/steam-smoke-stack-base.png"
+            },
+            {
+                icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/steam-smoke-stack-mask.png",
+                tint = inputs.tint,
+            },
+            {
+                icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/steam-smoke-stack-highlights.png",
+                tint = {1,1,1,0}
             }
         }
 
         inputs.icon_picture_extras = {
             {
-                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/steam-smoke-stack.png",
+                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/steam-smoke-stack-base.png",
                 size = 64,
                 mipmaps = 4,
                 scale = 0.25
+            },
+            {
+                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/steam-smoke-stack-mask.png",
+                size = 64,
+                mipmaps = 4,
+                scale = 0.25,
+                tint = inputs.tint
+            },
+            {
+                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/steam-smoke-stack-highlights.png",
+                size = 64,
+                mipmaps = 4,
+                scale = 0.25,
+                blend_mode = "additive"
             }
         }
     else
