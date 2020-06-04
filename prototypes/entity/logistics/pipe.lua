@@ -3,12 +3,6 @@
 --     
 -- See LICENSE.md in the project directory for license information.
 
--- Function to reskin the base pipe
-local function reskin_pipe_icon()
-    reskins.lib.generate_basic_icon("pipe", false, "pipe", reskins.bobs.directory.."/graphics/icons/logistics/pipe/iron-pipe-icon.png")
-    reskins.lib.generate_basic_icon("pipe-to-ground", false, "pipe-to-ground", reskins.bobs.directory.."/graphics/icons/logistics/pipe-to-ground/iron-pipe-to-ground-icon.png")
-end
-
 -- Restore vanilla pipes to their proper glory, since Bob's sprites are pre-color-correction
 local function reskin_pipe_entity()
     
@@ -96,14 +90,15 @@ for material, map in pairs(material_map) do
     -- This needs to be done earlier
     inputs.material = material
 
+    -- Parse map
+    tier = map[1]
+
     -- Check if we're trying to work with iron
     if material == "iron" then
         goto do_icons
     end
 
-    -- Parse map
-    tier = map[1]
-    tint = util.color(map[2])
+    tint = util.color(map[2])  
 
     -- Fetch entities
     pipe_entity = data.raw["pipe"][material.."-pipe"]
@@ -179,7 +174,7 @@ for material, map in pairs(material_map) do
 
     -- Label to work icons
     ::do_icons::
-
+   
     -- Setup Icons
     local pipe_icon_inputs = {
         icon = inputs.directory.."/graphics/icons/logistics/pipe/"..inputs.material.."-pipe-icon.png",
@@ -215,6 +210,9 @@ for material, map in pairs(material_map) do
         pipe_to_ground_icon_inputs.tier_labels = true
         reskins.lib.append_tier_labels(tier, pipe_icon_inputs)
         reskins.lib.append_tier_labels(tier, pipe_to_ground_icon_inputs)
+    else
+        pipe_icon_inputs.tier_labels = false
+        pipe_to_ground_icon_inputs.tier_labels = false
     end    
 
     local pipe_icon_name, pipe_to_ground_icon_name
@@ -222,13 +220,12 @@ for material, map in pairs(material_map) do
     if material ~= "iron" then
         pipe_icon_name = inputs.material.."-pipe"
         pipe_to_ground_icon_name = inputs.material.."-pipe-to-ground"
+        reskins.lib.assign_icons(pipe_icon_name, pipe_icon_inputs)
+        reskins.lib.assign_icons(pipe_to_ground_icon_name, pipe_to_ground_icon_inputs)
     else
-        pipe_icon_name = "pipe"
-        pipe_to_ground_icon_name = "pipe-to-ground"
-    end
-
-    reskins.lib.assign_icons(pipe_icon_name, pipe_icon_inputs)
-    reskins.lib.assign_icons(pipe_to_ground_icon_name, pipe_to_ground_icon_inputs)
+        reskins.lib.append_tier_labels_to_vanilla_icon("pipe", tier, pipe_icon_inputs)
+        reskins.lib.append_tier_labels_to_vanilla_icon("pipe-to-ground", tier, pipe_to_ground_icon_inputs)
+    end    
 
     -- Label to skip to next iteration
     ::continue::    
