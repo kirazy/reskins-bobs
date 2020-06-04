@@ -66,6 +66,13 @@ if mods["boblogistics"] then
         },
         {
             type = "bool-setting",
+            name = "reskins-bobs-do-furnace-tier-labeling",
+            setting_type = "startup",
+            order = "x",
+            default_value = true,
+        },
+        {
+            type = "bool-setting",
             name = "reskins-bobs-do-basic-belts-separately",
             setting_type = "startup",
             order = "y",

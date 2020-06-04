@@ -236,13 +236,13 @@ for name, map in pairs(inserter_map) do
 
     -- Handle icons
     local icon_tier
-    if settings.startup["reskins-bobs-do-inserter-tier-labeling"].value == false then
-        icon_tier = false
+    if settings.startup["reskins-bobs-do-inserter-tier-labeling"].value == true then
+        inputs.tier_labels = true
     else
-        icon_tier = {tier, tier}
+        inputs.tier_labels = false
     end
 
-    reskins.lib.generate_basic_icon(name, icon_tier, inputs.type, inputs.directory.."/graphics/icons/logistics/inserter/standard/"..name.."-icon.png")
+    reskins.lib.setup_flat_icon(name, {tier, tier}, inputs.directory.."/graphics/icons/logistics/inserter/standard/"..name.."-icon.png", inputs)
 
     -- Handle the type of inserter we're dealing with
     local inserter_type, hand_name

@@ -41,7 +41,7 @@ end
 reskins.lib.create_remnant("reinforced-wall", inputs)
 
 -- Create icons
--- ONE DAY, BUT IT IS NOT THIS DAY...!
+reskins.lib.setup_flat_icon("reinforced-wall", false, inputs.directory.."/graphics/icons/warfare/reinforced-wall/wall.png", inputs)
 
 -- Reskin the gate
 remnant = data.raw["corpse"]["reinforced-wall-remnants"]

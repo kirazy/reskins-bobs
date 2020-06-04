@@ -388,23 +388,7 @@ for name, tier in pairs(tier_map) do
     skin_reactor_entity(name, inputs)
 
     -- Reskin icons
-    inputs.icon_base = "nuclear-reactor-"..inputs.pipe_tier
-    inputs.icon_extras = {
-        {
-            icon = inputs.directory.."/graphics/icons/power/nuclear-reactor/nuclear-reactor-"..inputs.fuel.."-fuel-glow.png",
-            tint = {1,1,1,0}
-        }
-    }
-    inputs.icon_picture_extras = {
-        {
-            filename = inputs.directory.."/graphics/icons/power/nuclear-reactor/nuclear-reactor-"..inputs.fuel.."-fuel-glow.png",
-            size = inputs.icon_size,
-            mipmaps = inputs.icon_mipmaps,
-            scale = 0.25,
-            blend_mode = "additive"
-
-        }
-    }
+    inputs.icon_base = "nuclear-reactor-"..inputs.reactor.."-"..inputs.pipe_tier
     reskins.lib.setup_standard_icon(name, tier, inputs)
 
     -- Label to skip to next iteration
