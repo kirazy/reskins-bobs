@@ -3,9 +3,6 @@
 --     
 -- See LICENSE.md in the project directory for license information.
 
--- Reskin the base accumulator icon
-reskins.lib.generate_basic_icon("accumulator", {1,2}, "accumulator", reskins.bobs.directory.."/graphics/icons/power/accumulator/accumulator-standard-icon.png")
-
 -- Check to see if reskinning needs to be done.
 if not mods["bobpower"] then return end
 if settings.startup["bobmods-power-accumulators"].value == false then return end
@@ -21,33 +18,18 @@ local inputs = {
     particles = {["medium"] = 2, ["small"] = 3},
 }
 
--- Accumulators have two different sets of tiers; determine which we are using
-local tier_map
-if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
-    tier_map = {
-        ["large-accumulator"] = {1, 1, "large"},
-        ["large-accumulator-2"] = {2, 1, "large"},
-        ["large-accumulator-3"] = {3, 1, "large"},
-        ["slow-accumulator"] = {1, 2, "slow"},
-        ["slow-accumulator-2"] = {2, 2, "slow"},
-        ["slow-accumulator-3"] = {3, 2, "slow"},
-        ["fast-accumulator"] = {1, 3, "fast"},
-        ["fast-accumulator-2"] = {2, 3, "fast"},
-        ["fast-accumulator-3"] = {3, 3, "fast"},
-    }
-else
-    tier_map = {
-        ["large-accumulator"] = {2, 1, "large"},
-        ["large-accumulator-2"] = {3, 1, "large"},
-        ["large-accumulator-3"] = {4, 1, "large"},
-        ["slow-accumulator"] = {2, 2, "slow"},
-        ["slow-accumulator-2"] = {3, 2, "slow"},
-        ["slow-accumulator-3"] = {4, 2, "slow"},
-        ["fast-accumulator"] = {2, 3, "fast"},
-        ["fast-accumulator-2"] = {3, 3, "fast"},
-        ["fast-accumulator-3"] = {4, 3, "fast"},
-    }
-end
+local tier_map = {
+    ["accumulator"] = {1, 2},
+    ["large-accumulator"] = {1, 2, 1},
+    ["large-accumulator-2"] = {2, 3, 1},
+    ["large-accumulator-3"] = {3, 4, 1},
+    ["slow-accumulator"] = {1, 2, 2},
+    ["slow-accumulator-2"] = {2, 3, 2},
+    ["slow-accumulator-3"] = {3, 4, 2},
+    ["fast-accumulator"] = {1, 2, 3},
+    ["fast-accumulator-2"] = {2, 3, 3},
+    ["fast-accumulator-3"] = {3, 4, 3},
+}
 
 local function accumulator_picture_tinted(inputs, repeat_count)
     return
@@ -201,7 +183,6 @@ local function accumulator_discharge_tinted(inputs)
     }
 end
 
-
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
     -- Fetch entity
@@ -213,8 +194,18 @@ for name, map in pairs(tier_map) do
     end
 
     -- Parse map
-    tier = map[1]
-    inputs.wire = map[2]
+    if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
+        tier = map[1]
+    else
+        tier = map[2]
+    end
+    inputs.wire = map[3]
+
+    -- Stick tier labels on the vanilla accumulator
+    if name == "accumulator" then
+        reskins.lib.append_tier_labels_to_vanilla_icon(name, tier, inputs)
+        goto continue
+    end
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
