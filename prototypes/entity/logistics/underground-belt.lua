@@ -21,7 +21,7 @@ local inputs = {
     directory = reskins.bobs.directory,
     group = "logistics",
     particles = {["medium"] = 3, ["small"] = 2},
-    make_belt_icon = true,
+    make_masked_icon = true,
 }
 
 local tier_map =

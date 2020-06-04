@@ -125,7 +125,7 @@ for name, tier in pairs(tier_map) do
     }
 
     -- Reskin entities
-    entity.animation = make_4way_animation_from_spritesheet({ 
+    entity.animation = make_4way_animation_from_spritesheet({
         layers = {
             -- Base
             {

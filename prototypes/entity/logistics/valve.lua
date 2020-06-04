@@ -7,14 +7,14 @@
 local inputs = 
 {
     type = "storage-tank",
-    root_name = "valve",
-    base_entity = "pipe", -- Electrolyser will use Chemical Plant as a reference for explosion
+    icon_name = "valve",
+    base_entity = "pipe",
     directory = reskins.bobs.directory,
     group = "logistics",
-    -- particles = {["big"] = 1, ["medium"] = 2},
-    make_explosions = false,
+    particles = {["small"] = 2},
+    make_masked_icon = true,
+    tier_labels = false,
     make_remnants = false,
-    make_icons = false,
 }
 
 local tint_map = 
@@ -87,22 +87,16 @@ for name, map in pairs(tint_map) do
     end
 
     -- Parse map
-    tint = map[1]
+    inputs.tint = map[1]
     variant = map[2]
 
-    -- Map entity to name used internally
-    inputs.internal_name = inputs.root_name.."-"..variant
-
-    reskins.lib.setup_standard_entity(name, tier, inputs)
+    reskins.lib.setup_standard_entity(name, 3, inputs)
 
     -- Reskin entities
-    entity.pictures.picture.north = cardinal_pictures(0, tint)
-    entity.pictures.picture.east  = cardinal_pictures(1, tint)
-    entity.pictures.picture.south = cardinal_pictures(2, tint)
-    entity.pictures.picture.west  = cardinal_pictures(3, tint)
-
-    -- Kill the north-facing pipe cover and shadow
-    -- entity.fluid_box.pipe_covers.north = util.empty_sprite()
+    entity.pictures.picture.north = cardinal_pictures(0, inputs.tint)
+    entity.pictures.picture.east  = cardinal_pictures(1, inputs.tint)
+    entity.pictures.picture.south = cardinal_pictures(2, inputs.tint)
+    entity.pictures.picture.west  = cardinal_pictures(3, inputs.tint)
 
     -- Label to skip to next iteration
     ::continue::

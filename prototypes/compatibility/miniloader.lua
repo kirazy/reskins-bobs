@@ -20,7 +20,7 @@ local inputs = {
     group = "compatibility",
     subgroup = "miniloader",
     particles = {["medium"] = 1, ["big"] = 4},
-    make_belt_icon = true,
+    make_masked_icon = true,
     make_remnants = false,
 }
 
@@ -136,7 +136,7 @@ for name, tier in pairs(item_map) do
     -- Determine what tint we're using
     inputs.tint = reskins.bobs.belt_tint_handling(name, tier)
 
-    reskins.lib.setup_belt_entity_icon(name, tier, inputs)
+    reskins.lib.setup_masked_icon(name, tier, inputs)
 
     -- Handle grouping and ordering in the UI
     if name ~= "chute-miniloader" then

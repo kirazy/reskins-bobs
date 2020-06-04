@@ -215,8 +215,8 @@ for material, map in pairs(material_map) do
         pipe_to_ground_icon_inputs.tier_labels = false
     end    
 
-    local pipe_icon_name, pipe_to_ground_icon_name
     -- Handle naming
+    local pipe_icon_name, pipe_to_ground_icon_name    
     if material ~= "iron" then
         pipe_icon_name = inputs.material.."-pipe"
         pipe_to_ground_icon_name = inputs.material.."-pipe-to-ground"

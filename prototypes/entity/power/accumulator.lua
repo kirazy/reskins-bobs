@@ -215,10 +215,6 @@ for name, map in pairs(tier_map) do
 
     -- Setup additional icon details
     inputs.icon_extras = {
-        -- Glow
-        {
-            icon = inputs.directory.."/graphics/icons/power/accumulator/accumulator-charge.png",
-        },
         -- Type indicator
         {
             icon = inputs.directory.."/graphics/icons/power/accumulator/accumulator-type-"..inputs.wire.."-icon.png"
@@ -226,16 +222,6 @@ for name, map in pairs(tier_map) do
         {
             icon = inputs.directory.."/graphics/icons/power/accumulator/accumulator-type-"..inputs.wire.."-icon.png",
             tint = reskins.lib.adjust_alpha(reskins.lib.tint_index["tier-"..tier], 0.75)
-        }
-    }
-
-    inputs.icon_picture_extras = {
-        -- Glow
-        {
-            filename = inputs.directory.."/graphics/icons/power/accumulator/accumulator-charge.png",
-            size = 64,
-            mipmaps = 4,
-            scale = 0.25,
         }
     }
     

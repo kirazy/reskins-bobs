@@ -21,7 +21,7 @@ local inputs = {
     group = "compatibility",
     subgroup = "vanilla-loaders-hd",
     particles = {["medium"] = 1, ["big"] = 4},
-    make_belt_icon = true,
+    make_masked_icon = true,
     make_remnants = false,
 }
 
