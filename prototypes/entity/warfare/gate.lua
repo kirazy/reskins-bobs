@@ -22,8 +22,8 @@ local inputs =
 
 local reinforced_tint_index = 
 {
-    ["big"] = {r = 111, g = 100, b = 125},
-    ["medium"] = {r = 166, g = 149, b = 186},
+    ["big"] = util.color("6f647d"),
+    ["medium"] = util.color("a695ba"),
 }
 
 -- Parse inputs

@@ -22,9 +22,9 @@ local inputs =
 
 local reinforced_tint_index = 
 {
-    ["tiny-stone"] = {r = 167, g = 147, b = 191},  -- a793bf
-    ["small-stone"] = {r = 167, g = 147, b = 191}, -- a793bf
-    ["medium-stone"] = {r = 149, g = 132, b = 171} -- 9584ab
+    ["tiny-stone"] = util.color("a793bf"),
+    ["small-stone"] = util.color("a793bf"),
+    ["medium-stone"] = util.color("9584ab")
 }
 
 -- Parse inputs
