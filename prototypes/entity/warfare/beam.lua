@@ -8,38 +8,35 @@ if not mods["bobwarfare"] then return end
 if settings.startup["reskins-bobs-do-bobwarfare"].value == false then return end 
 
 -- Set input parameters
-local inputs = 
-{
+local inputs = {
     type = "beam",
     directory = reskins.bobs.directory,
 }
 
-local beam_map =
-{
-    ["bob-laser-beam-glass"]         = "glass",
-    ["bob-laser-beam-sapphire"]      = "sapphire",
-    ["bob-laser-beam-emerald"]       = "emerald",
-    ["bob-laser-beam-amethyst"]      = "amethyst",
-    ["bob-laser-beam-topaz"]         = "topaz",
-    ["bob-laser-beam-diamond"]       = "diamond",
-    ["bob-laser-beam-glass-ammo"]    = "glass",
-    ["bob-laser-beam-ruby-ammo"]     = "ruby",
+local beam_map = {
+    ["bob-laser-beam-glass"] = "glass",
+    ["bob-laser-beam-sapphire"] = "sapphire",
+    ["bob-laser-beam-emerald"] = "emerald",
+    ["bob-laser-beam-amethyst"] = "amethyst",
+    ["bob-laser-beam-topaz"] = "topaz",
+    ["bob-laser-beam-diamond"] = "diamond",
+    ["bob-laser-beam-glass-ammo"] = "glass",
+    ["bob-laser-beam-ruby-ammo"] = "ruby",
     ["bob-laser-beam-sapphire-ammo"] = "sapphire",
-    ["bob-laser-beam-emerald-ammo"]  = "emerald",
+    ["bob-laser-beam-emerald-ammo"] = "emerald",
     ["bob-laser-beam-amethyst-ammo"] = "amethyst",
-    ["bob-laser-beam-topaz-ammo"]    = "topaz",
-    ["bob-laser-beam-diamond-ammo"]  = "diamond"
+    ["bob-laser-beam-topaz-ammo"] = "topaz",
+    ["bob-laser-beam-diamond-ammo"] = "diamond"
 }
 
-local light_tint_map =
-{
-    ["glass"]    = {r =  79, g =  79, b =  79},
-    ["ruby"]     = {r = 128, g =   2, b =  35},
-    ["emerald"]  = {r =  13, g = 128, b =  42},
-    ["sapphire"] = {r =   2, g =  59, b = 128},
-    ["topaz"]    = {r = 128, g =  89, b =  13},
-    ["amethyst"] = {r =  30, g =  13, b = 128},
-    ["diamond"]  = {r = 249, g = 249, b = 249}
+local light_tint_map = {
+    ["glass"] = util.color("4F4F4F"),
+    ["ruby"] = util.color("800223"),
+    ["emerald"] = util.color("0D802A"),
+    ["sapphire"] = util.color("023B80"),
+    ["topaz"] = util.color("80590D"),
+    ["amethyst"] = util.color("1E0D80"),
+    ["diamond"] = util.color("F9F9F9")
 }
 
 local laser_beam_blend_mode = "additive"
