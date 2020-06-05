@@ -58,7 +58,7 @@ require("prototypes.entity.mining.pumpjack")
 -- require("prototypes.entity.plates.air-pump")
 -- require("prototypes.entity.plates.small-storage-tank")
 -- require("prototypes.entity.plates.void-pump")
-require("prototypes.entity.plates.water-pump")
+-- require("prototypes.entity.plates.water-pump") -- Partially implemented
 
 -- Bob's Power
 require("prototypes.entity.power.accumulator")
@@ -76,7 +76,7 @@ require("prototypes.entity.power.steam-turbine")
 require("prototypes.entity.power.substation")
 
 -- Bob's Technology
-require("prototypes.entity.technology.lab") -- THIS ENTRY IS NOT COMPLETE IN STANDARD RESOLUTION
+-- require("prototypes.entity.technology.lab") -- THIS ENTRY IS NOT COMPLETE IN STANDARD RESOLUTION
 
 -- Bob's Warfare
 -- require("prototypes.entity.warfare.artillery-turret")
