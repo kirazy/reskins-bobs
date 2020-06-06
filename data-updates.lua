@@ -13,9 +13,6 @@ require("prototypes.icon.logistics")
 require("prototypes.compatibility.miniloader")
 require("prototypes.compatibility.vanilla-loaders-hd")
 
--- Pipe pictures
-require("prototypes.entity.pipe-pictures")
-
 -- Bob's Assembly
 require("prototypes.entity.assembly.assembling-machine")
 require("prototypes.entity.assembly.centrifuge")
@@ -64,6 +61,7 @@ require("prototypes.entity.mining.pumpjack")
 require("prototypes.entity.power.accumulator")
 require("prototypes.entity.power.big-electric-pole")
 require("prototypes.entity.power.boiler")
+require("prototypes.entity.power.burner-electric-generator")
 require("prototypes.entity.power.generator")
 require("prototypes.entity.power.heat-exchanger")
 require("prototypes.entity.power.heat-pipe")
