@@ -28,6 +28,8 @@ if not entity then return end
 
 reskins.lib.setup_standard_entity(name, 0, inputs)
 
+reskins.lib.setup_flat_icon(name, false, inputs.directory.."/graphics/icons/power/burner-electric-generator/burner-electric-generator.png", inputs)
+
 -- Reskin entity
 entity.animation = {
     layers = {
@@ -99,26 +101,75 @@ entity.animation = {
                 scale = 0.5
             }
         },
+        -- Shadow
+        {
+            filename = inputs.directory.."/graphics/entity/power/burner-electric-generator/burner-electric-generator-shadow.png",
+            width = 144,
+            height = 65,
+            frame_count = 32,
+            line_length = 8,
+            repeat_count = 3,
+            draw_as_shadow = true,
+            shift = util.by_pixel(30, 12),
+            hr_version = {
+                filename = inputs.directory.."/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator-shadow.png",
+                width = 288,
+                height = 170,
+                frame_count = 32,
+                line_length = 8,
+                repeat_count = 3,
+                draw_as_shadow = true,
+                shift = util.by_pixel(30, 12),
+                scale = 0.5
+            }
+        }
     }
 }
 
 entity.idle_animation = {
-    filename = inputs.directory.."/graphics/entity/power/burner-electric-generator/burner-electric-generator.png",
-    width = 106,
-    height = 136,
-    frame_count = 32,
-    line_length = 8,
-    repeat_count = 3,
-    shift = util.by_pixel(0, -12.5),
-    hr_version = {
-        filename = inputs.directory.."/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator.png",
-        width = 212,
-        height = 272,
-        frame_count = 32,
-        line_length = 8,
-        repeat_count = 3,
-        shift = util.by_pixel(0, -12.5),
-        scale = 0.5
+    layers = {
+        -- Base
+        {        
+            filename = inputs.directory.."/graphics/entity/power/burner-electric-generator/burner-electric-generator.png",
+            width = 106,
+            height = 136,
+            frame_count = 32,
+            line_length = 8,
+            repeat_count = 3,
+            shift = util.by_pixel(0, -12.5),
+            hr_version = {
+                filename = inputs.directory.."/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator.png",
+                width = 212,
+                height = 272,
+                frame_count = 32,
+                line_length = 8,
+                repeat_count = 3,
+                shift = util.by_pixel(0, -12.5),
+                scale = 0.5
+            }
+        },
+        -- Shadow
+        {
+            filename = inputs.directory.."/graphics/entity/power/burner-electric-generator/burner-electric-generator-shadow.png",
+            width = 144,
+            height = 65,
+            frame_count = 32,
+            line_length = 8,
+            repeat_count = 3,
+            draw_as_shadow = true,
+            shift = util.by_pixel(30, 12),
+            hr_version = {
+                filename = inputs.directory.."/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator-shadow.png",
+                width = 288,
+                height = 170,
+                frame_count = 32,
+                line_length = 8,
+                repeat_count = 3,
+                draw_as_shadow = true,
+                shift = util.by_pixel(30, 12),
+                scale = 0.5
+            }
+        }
     }
 }
 
