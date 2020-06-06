@@ -172,6 +172,9 @@ for material, map in pairs(material_map) do
     pipe_entity.pictures = reskins.bobs.pipe_pictures(inputs)
     underground_pipe_entity.pictures = reskins.bobs.underground_pipe_pictures(inputs)
 
+    -- Handle pipe covers for underground pipes
+    underground_pipe_entity.fluid_box.pipe_covers = reskins.bobs.pipe_covers(inputs)
+
     -- Label to work icons
     ::do_icons::
    
