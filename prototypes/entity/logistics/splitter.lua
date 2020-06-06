@@ -356,11 +356,13 @@ for name, map in pairs(tier_map) do
     -- Handle grouping and ordering in the UI
     base_item = data.raw["item"][string.gsub(name, "splitter", "transport-belt")]
 
-    inputs.sort_order = string.gsub(string.gsub(item.order,"^[a-z]","c"),"transport%-belt","splitter")
-    inputs.sort_group = base_item.group
-    inputs.sort_subgroup = base_item.subgroup
+    if base_item then
+        inputs.sort_order = string.gsub(string.gsub(item.order,"^[a-z]","c"),"transport%-belt","splitter")
+        inputs.sort_group = base_item.group
+        inputs.sort_subgroup = base_item.subgroup
 
-    reskins.lib.assign_order(name, inputs)
+        reskins.lib.assign_order(name, inputs)
+    end
 
     -- Label to skip to next iteration
     ::continue::
