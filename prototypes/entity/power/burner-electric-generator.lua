@@ -105,7 +105,7 @@ entity.animation = {
         {
             filename = inputs.directory.."/graphics/entity/power/burner-electric-generator/burner-electric-generator-shadow.png",
             width = 144,
-            height = 65,
+            height = 85,
             frame_count = 32,
             line_length = 8,
             repeat_count = 3,
@@ -152,7 +152,7 @@ entity.idle_animation = {
         {
             filename = inputs.directory.."/graphics/entity/power/burner-electric-generator/burner-electric-generator-shadow.png",
             width = 144,
-            height = 65,
+            height = 85,
             frame_count = 32,
             line_length = 8,
             repeat_count = 3,
