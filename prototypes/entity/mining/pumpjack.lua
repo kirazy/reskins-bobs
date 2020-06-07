@@ -184,8 +184,6 @@ for name, map in pairs(tier_map) do
                           + ((max_speed/(max_speed-min_speed)) - (entity.mining_speed/(max_speed-min_speed)))*min_playback
     end
 
-    -- if not playback_speed then playback_speed = 
-
     -- Reskin entities
     entity.base_picture = {
         sheets = {
