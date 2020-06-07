@@ -1,18 +1,18 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.00.3
-Date: 06.XX.2020
+Date: 2020.06.XX
   Changes:
     - Adjusted starting_vertical_speed for smoke particles for burner electric generator and fluid generators
   Bugfixes:
     - Something...
 ---------------------------------------------------------------------------------------------------
 Version: 0.00.2
-Date: 06.06.2020
+Date: 2020.06.06
   Bugfixes:
     - Fixed startup crash related to bad argument #1 of 4 to string.gsub
 ---------------------------------------------------------------------------------------------------
 Version: 0.00.1
-Date: 06.06.2020
+Date: 2020.06.06
   Features:
     - Initial Beta Release
     - Reskins structures in all of Bob's mods to a unified, colored tier system
