@@ -182,7 +182,7 @@ entity.burner.smoke = {
         south_position = util.by_pixel(72/2, -141/2),
         west_position = util.by_pixel(72/2, -141/2),
         frequency = 15,
-        starting_vertical_speed = 0,
+        starting_vertical_speed = 0.08,
         starting_frame_deviation = 60,
     }
 }

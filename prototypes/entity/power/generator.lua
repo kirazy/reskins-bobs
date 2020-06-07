@@ -146,7 +146,7 @@ for name, map in pairs(fluid_generators) do
                 north_position = util.by_pixel(-30, -44),
                 east_position = util.by_pixel(-30, -44),
                 frequency = frequency,
-                starting_vertical_speed = 0.04,
+                starting_vertical_speed = 0.08,
                 slow_down_factor = 1,
                 starting_frame_deviation = 60
             }
@@ -158,7 +158,7 @@ for name, map in pairs(fluid_generators) do
                 north_position = util.by_pixel(-30, -44),
                 east_position = util.by_pixel(-30, -44),
                 frequency = frequency,
-                starting_vertical_speed = 0.04,
+                starting_vertical_speed = 0.08,
                 slow_down_factor = 1,
                 starting_frame_deviation = 60
             }

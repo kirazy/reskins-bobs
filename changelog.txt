@@ -1,6 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.00.3
 Date: 06.XX.2020
+  Changes:
+    - Adjusted starting_vertical_speed for smoke particles for burner electric generator and fluid generators
   Bugfixes:
     - Something...
 ---------------------------------------------------------------------------------------------------
@@ -13,8 +15,8 @@ Version: 0.00.1
 Date: 06.06.2020
   Features:
     - Initial Beta Release
-    - Reskins structures in all of Bob's mods to a unified, colored tier system.
-    - Option for the way tiers are determined, either through ingredients or order received (default).
-    - Includes appropriate icons for differentiability, with configuration options.
-    - Adds remnants and explosive particle effects on structure death to all of Bob's structures.
-    - Supports Mini-Machines, Miniloaders, and Vanilla Loaders HD.
+    - Reskins structures in all of Bob's mods to a unified, colored tier system
+    - Option for the way tiers are determined, either through ingredients or order received (default)
+    - Includes appropriate icons for differentiability, with configuration options
+    - Adds remnants and explosive particle effects on structure death to all of Bob's structures
+    - Supports Mini-Machines, Miniloaders, and Vanilla Loaders HD
