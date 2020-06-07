@@ -45,6 +45,18 @@ local function rescale_minimachine(table, type, pattern, replacement)
     end
 end
 
+-- Chemical plants; only reskin when Mini-machines pulls from the vanilla chemical plants
+if settings.startup["angels-disable-bobs-chemical-plants"].value == false then
+    local chemplants = {
+        ["mini-chemplant-1"] = "chemical-plant",
+        ["mini-chemplant-2"] = "chemical-plant-2",
+        ["mini-chemplant-3"] = "chemical-plant-3",
+        ["mini-chemplant-4"] = "chemical-plant-4",
+    }
+
+    rescale_minimachine(chemplants, "assembling-machine", "chemical%-plant", "chemical-plant")
+end
+
 -- Electrolysers
 local electrolysers = {
     ["mini-electro-1"] = "electrolyser",
@@ -67,16 +79,6 @@ local assemblers = {
 }
 
 rescale_minimachine(assemblers, "assembling-machine", "assembling%-machine", "assembling-machine")
-
--- Chemical plants
-local chemplants = {
-    ["mini-chemplant-1"] = "chemical-plant",
-    ["mini-chemplant-2"] = "chemical-plant-2",
-    ["mini-chemplant-3"] = "chemical-plant-3",
-    ["mini-chemplant-4"] = "chemical-plant-4",
-}
-
-rescale_minimachine(chemplants, "assembling-machine", "chemical%-plant", "chemical-plant")
 
 -- Mining drills
 local miners = {

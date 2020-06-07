@@ -5,6 +5,9 @@ Date: 2020.06.XX
     - Added remnants for transport belt, underground belt, and splitter entities
   Changes:
     - Adjusted starting_vertical_speed for smoke particles for burner electric generator and fluid generators
+  Bugfixes:
+    - Fix mini-machines dependency
+    - Fix sprite-out-of-bounds error with mini-machines when Angel's mods disable Bob's mods chemical plants
 ---------------------------------------------------------------------------------------------------
 Version: 0.00.2
 Date: 2020.06.06
