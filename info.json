@@ -1,15 +1,15 @@
 {
   "name": "reskins-bobs",
-  "version": "0.18.1",
+  "version": "0.00.1",
   "factorio_version": "0.18",
-  "title": "Artisinal Reskins: Bob's Mods",
+  "title": "Artisanal Reskins: Bob's Mods",
   "author": "Kirazy",
   "contact": "kirazy@live.com",
-  "description": "Reskins items, entities, and structures within Bob's mods to add customizable tier coloring, hi-res icons, artisinal color masks, and other improvements. Part of the Artisinal Reskins series.",
+  "description": "[BETA] Reskins items, entities, and structures within Bob's mods to add customizable tier coloring, hi-res icons, artisanal color masks, and other improvements. Part of the Artisanal Reskins series.",
   "dependencies": 
   [	
     "base >= 0.18.0",
-    "reskins-library >= 0.18.1",
+    "reskins-library >= 0.00.1",
     "? bobassembly >= 0.18.0",
     "? bobelectronics >= 0.18.0",
     "? bobgreenhouse >= 0.18.0",
