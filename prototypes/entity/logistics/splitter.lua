@@ -353,16 +353,16 @@ for name, map in pairs(tier_map) do
         entity.belt_animation_set = reskins.bobs.transport_belt_animation_set(inputs.tint, variant)
     end
 
-    -- -- Handle grouping and ordering in the UI
-    -- base_item = data.raw["item"][string.gsub(name, "splitter", "transport-belt")]
+    -- Handle grouping and ordering in the UI
+    base_item = data.raw["item"][string.gsub(name, "splitter", "transport-belt")]
 
-    -- if base_item then
-    --     inputs.sort_order = string.gsub(string.gsub(base_item.order,"^[a-z]","c"),"transport%-belt","splitter")
-    --     inputs.sort_group = base_item.group
-    --     inputs.sort_subgroup = base_item.subgroup
+    if base_item then
+        inputs.sort_order = string.gsub(string.gsub(base_item.order,"^[a-z]","c"),"transport%-belt","splitter")
+        inputs.sort_group = base_item.group
+        inputs.sort_subgroup = base_item.subgroup
 
-    --     reskins.lib.assign_order(name, inputs)
-    -- end
+        reskins.lib.assign_order(name, inputs)
+    end
 
     -- Label to skip to next iteration
     ::continue::
