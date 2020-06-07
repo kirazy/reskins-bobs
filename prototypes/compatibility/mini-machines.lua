@@ -46,7 +46,7 @@ local function rescale_minimachine(table, type, pattern, replacement)
 end
 
 -- Chemical plants; only reskin when Mini-machines pulls from the vanilla chemical plants
-if settings.startup["angels-disable-bobs-chemical-plants"].value == false then
+if settings.startup["angels-disable-bobs-chemical-plants"] and settings.startup["angels-disable-bobs-chemical-plants"].value == false then
     local chemplants = {
         ["mini-chemplant-1"] = "chemical-plant",
         ["mini-chemplant-2"] = "chemical-plant-2",

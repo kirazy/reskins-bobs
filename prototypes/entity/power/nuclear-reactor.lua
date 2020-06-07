@@ -5,7 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobpower"] then return end
-if settings.startup["bobmods-power-nuclear"].value == false then return end
+if settings.startup["bobmods-power-nuclear"] and settings.startup["bobmods-power-nuclear"].value == false then return end
 if settings.startup["reskins-bobs-do-bobpower"].value == false then return end 
 
 -- Set input parameters
@@ -334,11 +334,11 @@ local fuel_index =
 }
 
 -- Nucelar reactors have two modes, revamped or standard; determine which we are using
-if mods["bobrevamp"] and settings.startup["bobmods-revamp-nuclear"].value == true then
+if settings.startup["bobmods-revamp-nuclear"] and settings.startup["bobmods-revamp-nuclear"].value == true then
     -- Map fuel type to reactor entity name
     fuel_index["nuclear-reactor-2"] = "thorium"
 
-    if mods["bobplates"] and settings.startup["bobmods-plates-bluedeuterium"].value == true then 
+    if settings.startup["bobmods-plates-bluedeuterium"] and settings.startup["bobmods-plates-bluedeuterium"].value == true then 
         fuel_index["nuclear-reactor-3"] = "deuterium-blue"        
     else
         fuel_index["nuclear-reactor-3"] = "deuterium-pink"        
@@ -362,7 +362,7 @@ for name, tier in pairs(tier_map) do
     -- Create explosions
     reskins.lib.create_explosion(name, inputs)
 
-    if mods["bobrevamp"] and settings.startup["bobmods-revamp-nuclear"].value == true and settings.startup["reskins-bobs-do-bobrevamp"].value == true then
+    if settings.startup["bobmods-revamp-nuclear"] and settings.startup["bobmods-revamp-nuclear"].value == true and settings.startup["reskins-bobs-do-bobrevamp"].value == true then
         inputs.reactor = fuel_index[name]
         inputs.tint = nuclear_tint_index[inputs.fuel]
 

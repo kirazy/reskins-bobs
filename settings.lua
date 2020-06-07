@@ -132,6 +132,12 @@ if mods["bobpower"] then
             name = "reskins-bobs-do-bobpower",
             setting_type = "startup",
             default_value = true,
+        },
+        {
+            type = "bool-setting",
+            name = "reskins-bobs-hydrazine-is-blue",
+            setting_type = "startup",
+            default_value = true,
         }
     })
 end

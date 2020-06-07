@@ -5,7 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobpower"] then return end
-if settings.startup["bobmods-power-fluidgenerator"].value == false then return end
+if settings.startup["bobmods-power-fluidgenerator"] and settings.startup["bobmods-power-fluidgenerator"].value == false then return end
 if settings.startup["reskins-bobs-do-bobpower"].value == false then return end 
 
 -- Set input parameters
@@ -99,12 +99,20 @@ local function setup_fluid_generator(tint)
     }
 end
 
+-- Determine which tint we're using for the hydrazine-generator
+local hydrazine_tint
+if settings.startup["reskins-bobs-hydrazine-is-blue"].value == true then
+    hydrazine_tint = util.color("7ac1de")
+else
+    hydrazine_tint = nil
+end
+
 -- Fluid generators have two sets of tiers; determine which we are using
 local fluid_generators = {
         ["fluid-generator"] = {1, 2, 2/16},
         ["fluid-generator-2"] = {2, 3, 3/16},
         ["fluid-generator-3"] = {3, 4, 4/16},
-        ["hydrazine-generator"] = {4, 5, 5/16, util.color("7ac1de")}
+        ["hydrazine-generator"] = {4, 5, 5/16, hydrazine_tint}
     }
 
 -- Reskin entities, create and assign extra details

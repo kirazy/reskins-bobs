@@ -16,7 +16,7 @@ local inputs = {
 }
 
 local inserter_map
-if settings.startup["bobmods-logistics-inserteroverhaul"].value == true then
+if settings.startup["bobmods-logistics-inserteroverhaul"] and settings.startup["bobmods-logistics-inserteroverhaul"].value == true then
     inserter_map = {
         -- Standard inserters
         ["inserter"] = 1,

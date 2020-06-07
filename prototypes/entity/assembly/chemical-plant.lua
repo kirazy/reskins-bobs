@@ -6,7 +6,7 @@
 -- Check to see if reskinning needs to be done.
 if not mods["bobassembly"] then return end
 if settings.startup["reskins-bobs-do-bobassembly"].value == false then return end
-if settings.startup["bobmods-assembly-chemicalplants"].value == false then return end
+if settings.startup["bobmods-assembly-chemicalplants"] and settings.startup["bobmods-assembly-chemicalplants"].value == false then return end
 
 -- Set input parameters
 local inputs = {
