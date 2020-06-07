@@ -1,5 +1,5 @@
 -- Copyright (c) 2020 Kirazy
--- Part of Reskins: Bob's Mods
+-- Part of Artisinal Reskins: Bob's Mods
 --     
 -- See LICENSE.md in the project directory for license information.
 
@@ -388,7 +388,7 @@ for name, tier in pairs(tier_map) do
     skin_reactor_entity(name, inputs)
 
     -- Reskin icons
-    inputs.icon_base = "nuclear-reactor-"..inputs.reactor.."-"..inputs.pipe_tier
+    inputs.icon_base = "nuclear-reactor-"..fuel_index[name].."-"..inputs.pipe_tier
     reskins.lib.setup_standard_icon(name, tier, inputs)
 
     -- Label to skip to next iteration

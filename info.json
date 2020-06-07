@@ -2,10 +2,10 @@
   "name": "reskins-bobs",
   "version": "0.18.1",
   "factorio_version": "0.18",
-  "title": "Reskins: Bob's Mods",
+  "title": "Artisinal Reskins: Bob's Mods",
   "author": "Kirazy",
   "contact": "kirazy@live.com",
-  "description": "Reskins items, entities, and structures within Bob's mods to add customizable tier coloring, hi-res icons, artisinal color masks, and other improvements. Part of the Reskins series.",
+  "description": "Reskins items, entities, and structures within Bob's mods to add customizable tier coloring, hi-res icons, artisinal color masks, and other improvements. Part of the Artisinal Reskins series.",
   "dependencies": 
   [	
     "base >= 0.18.0",
