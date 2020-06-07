@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.00.4
+Date: 2020.06.07
+  Bugfixes:
+    - Fix division by zero error when calculating animation playback speeds for mining drills and pumpjacks
+---------------------------------------------------------------------------------------------------
 Version: 0.00.3
 Date: 2020.06.07
   Features:
