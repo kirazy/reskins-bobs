@@ -1,10 +1,10 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.00.3
 Date: 2020.06.XX
+  Features:
+    - Added remnants for transport belt, underground belt, and splitter entities
   Changes:
     - Adjusted starting_vertical_speed for smoke particles for burner electric generator and fluid generators
-  Bugfixes:
-    - Something...
 ---------------------------------------------------------------------------------------------------
 Version: 0.00.2
 Date: 2020.06.06

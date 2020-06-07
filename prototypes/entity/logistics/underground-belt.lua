@@ -52,209 +52,263 @@ for name, map in pairs(tier_map) do
     -- Determine what tint we're using
     inputs.tint = reskins.bobs.belt_tint_handling(name, tier)
 
-    if do_reskin then
-        inputs.make_icons = true
-    else
-        inputs.make_icons = false
+    -- Check if we're doing reskin operations on the vanilla splitters
+    if do_reskin == false then 
         reskins.lib.append_tier_labels_to_vanilla_icon(name, tier, inputs)
+        goto continue
     end
     
-    reskins.lib.setup_standard_entity(name, tier, inputs)    
+    reskins.lib.setup_standard_entity(name, tier, inputs)
 
-    if do_reskin then
-        -- Reskin remnants
+    -- Fetch remnant
+    remnant = data.raw["corpse"][name.."-remnants"]
 
-        -- Reskin entities
-        entity.structure = {
-            direction_in = {
-                sheets = {
-                    -- Base
-                    {
-                        filename = inputs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure.png",
-                        priority = "extra-high",
-                        width = 96,
-                        height = 96,
-                        y = 96,
-                        hr_version = {
-                            filename = inputs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure.png",
-                            priority = "extra-high",
-                            width = 192,
-                            height = 192,
-                            y = 192,
-                            scale = 0.5
-                        }
-                    },
-                    -- Mask
-                    {
-                        filename = inputs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure-mask.png",
-                        priority = "extra-high",
-                        width = 96,
-                        height = 96,
-                        y = 96,
-                        tint = inputs.tint,
-                        hr_version = {
-                            filename = inputs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure-mask.png",
-                            priority = "extra-high",
-                            width = 192,
-                            height = 192,
-                            y = 192,
-                            tint = inputs.tint,
-                            scale = 0.5
-                        }
-                    }
-                }
+    -- Reskin remnants
+    remnant.animation = {
+        layers= {
+            -- Base
+            {
+                filename = inputs.directory.."/graphics/entity/logistics/underground-belt/remnants/underground-belt-remnants-base.png",
+                line_length = 1,
+                width = 78,
+                height = 72,
+                frame_count = 1,
+                variation_count = 1,
+                axially_symmetrical = false,
+                direction_count = 8,
+                shift = util.by_pixel(10, 3),
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/logistics/underground-belt/remnants/hr-underground-belt-remnants-base.png",
+                    line_length = 1,
+                    width = 156,
+                    height = 144,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 8,
+                    shift = util.by_pixel(10.5, 3),
+                    scale = 0.5,
+                },
             },
-            direction_out = {
-                sheets = {
-                    -- Base
-                    {
-                        filename = inputs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure.png",
-                        priority = "extra-high",
-                        width = 96,
-                        height = 96,
-                        hr_version = {
-                            filename = inputs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure.png",
-                            priority = "extra-high",
-                            width = 192,
-                            height =192,
-                            scale = 0.5
-                        }
-                    },
-                    -- Mask
-                    {
-                        filename = inputs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure-mask.png",
-                        priority = "extra-high",
-                        width = 96,
-                        height = 96,
-                        tint = inputs.tint,
-                        hr_version = {
-                            filename = inputs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure-mask.png",
-                            priority = "extra-high",
-                            width = 192,
-                            height =192,
-                            tint = inputs.tint,
-                            scale = 0.5
-                        }
-                    }
-                }
-            },
-            direction_in_side_loading = {
-                sheets = {
-                    -- Base
-                    {
-                        filename = inputs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure.png",
-                        priority = "extra-high",
-                        width = 96,
-                        height = 96,
-                        y = 96*3,
-                        hr_version =
-                        {
-                            filename = inputs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure.png",
-                            priority = "extra-high",
-                            width = 192,
-                            height = 192,
-                            y = 192*3,
-                            scale = 0.5
-                        }
-                    },
-                    -- Mask
-                    {
-                        filename = inputs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure-mask.png",
-                        priority = "extra-high",
-                        width = 96,
-                        height = 96,
-                        y = 96*3,
-                        tint = inputs.tint,
-                        hr_version =
-                        {
-                            filename = inputs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure-mask.png",
-                            priority = "extra-high",
-                            width = 192,
-                            height = 192,
-                            y = 192*3,
-                            tint = inputs.tint,
-                            scale = 0.5
-                        }
-                    }
-                }
-            },
-            direction_out_side_loading = {
-                sheets = {
-                    -- Base
-                    {
-                        filename = inputs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure.png",
-                        priority = "extra-high",
-                        width = 96,
-                        height = 96,
-                        y = 96*2,
-                        hr_version =
-                        {
-                            filename = inputs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure.png",
-                            priority = "extra-high",
-                            width = 192,
-                            height = 192,
-                            y = 192*2,
-                            scale = 0.5
-                        }
-                    },
-                    -- Mask
-                    {
-                        filename = inputs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure-mask.png",
-                        priority = "extra-high",
-                        width = 96,
-                        height = 96,
-                        y = 96*2,
-                        tint = inputs.tint,
-                        hr_version =
-                        {
-                            filename = inputs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure-mask.png",
-                            priority = "extra-high",
-                            width = 192,
-                            height = 192,
-                            y = 192*2,
-                            tint = inputs.tint,
-                            scale = 0.5
-                        }
-                    }
-                }
-            },
-            back_patch = {
-                sheet = {
-                    filename = "__base__/graphics/entity/express-underground-belt/express-underground-belt-structure-back-patch.png",
+            -- Mask
+            {
+                filename = inputs.directory.."/graphics/entity/logistics/underground-belt/remnants/underground-belt-remnants-mask.png",
+                line_length = 1,
+                width = 78,
+                height = 72,
+                frame_count = 1,
+                variation_count = 1,
+                axially_symmetrical = false,
+                direction_count = 8,
+                tint = inputs.tint,
+                shift = util.by_pixel(10, 3),
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/logistics/underground-belt/remnants/hr-underground-belt-remnants-mask.png",
+                    line_length = 1,
+                    width = 156,
+                    height = 144,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 8,
+                    tint = inputs.tint,
+                    shift = util.by_pixel(10.5, 3),
+                    scale = 0.5,
+                },
+            }
+        }
+    }
+
+    -- Reskin entities
+    entity.structure = {
+        direction_in = {
+            sheets = {
+                -- Base
+                {
+                    filename = inputs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure.png",
                     priority = "extra-high",
                     width = 96,
                     height = 96,
-                    hr_version =
-                    {
-                        filename = "__base__/graphics/entity/express-underground-belt/hr-express-underground-belt-structure-back-patch.png",
+                    y = 96,
+                    hr_version = {
+                        filename = inputs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure.png",
                         priority = "extra-high",
                         width = 192,
                         height = 192,
+                        y = 192,
                         scale = 0.5
                     }
-                }
-            },
-            front_patch = {
-                sheet = {
-                    filename = "__base__/graphics/entity/express-underground-belt/express-underground-belt-structure-front-patch.png",
+                },
+                -- Mask
+                {
+                    filename = inputs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure-mask.png",
                     priority = "extra-high",
                     width = 96,
                     height = 96,
-                    hr_version =
-                    {
-                        filename = "__base__/graphics/entity/express-underground-belt/hr-express-underground-belt-structure-front-patch.png",
+                    y = 96,
+                    tint = inputs.tint,
+                    hr_version = {
+                        filename = inputs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure-mask.png",
                         priority = "extra-high",
                         width = 192,
                         height = 192,
+                        y = 192,
+                        tint = inputs.tint,
                         scale = 0.5
                     }
                 }
             }
+        },
+        direction_out = {
+            sheets = {
+                -- Base
+                {
+                    filename = inputs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure.png",
+                    priority = "extra-high",
+                    width = 96,
+                    height = 96,
+                    hr_version = {
+                        filename = inputs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure.png",
+                        priority = "extra-high",
+                        width = 192,
+                        height =192,
+                        scale = 0.5
+                    }
+                },
+                -- Mask
+                {
+                    filename = inputs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure-mask.png",
+                    priority = "extra-high",
+                    width = 96,
+                    height = 96,
+                    tint = inputs.tint,
+                    hr_version = {
+                        filename = inputs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure-mask.png",
+                        priority = "extra-high",
+                        width = 192,
+                        height =192,
+                        tint = inputs.tint,
+                        scale = 0.5
+                    }
+                }
+            }
+        },
+        direction_in_side_loading = {
+            sheets = {
+                -- Base
+                {
+                    filename = inputs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure.png",
+                    priority = "extra-high",
+                    width = 96,
+                    height = 96,
+                    y = 96*3,
+                    hr_version =
+                    {
+                        filename = inputs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure.png",
+                        priority = "extra-high",
+                        width = 192,
+                        height = 192,
+                        y = 192*3,
+                        scale = 0.5
+                    }
+                },
+                -- Mask
+                {
+                    filename = inputs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure-mask.png",
+                    priority = "extra-high",
+                    width = 96,
+                    height = 96,
+                    y = 96*3,
+                    tint = inputs.tint,
+                    hr_version =
+                    {
+                        filename = inputs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure-mask.png",
+                        priority = "extra-high",
+                        width = 192,
+                        height = 192,
+                        y = 192*3,
+                        tint = inputs.tint,
+                        scale = 0.5
+                    }
+                }
+            }
+        },
+        direction_out_side_loading = {
+            sheets = {
+                -- Base
+                {
+                    filename = inputs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure.png",
+                    priority = "extra-high",
+                    width = 96,
+                    height = 96,
+                    y = 96*2,
+                    hr_version =
+                    {
+                        filename = inputs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure.png",
+                        priority = "extra-high",
+                        width = 192,
+                        height = 192,
+                        y = 192*2,
+                        scale = 0.5
+                    }
+                },
+                -- Mask
+                {
+                    filename = inputs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure-mask.png",
+                    priority = "extra-high",
+                    width = 96,
+                    height = 96,
+                    y = 96*2,
+                    tint = inputs.tint,
+                    hr_version =
+                    {
+                        filename = inputs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure-mask.png",
+                        priority = "extra-high",
+                        width = 192,
+                        height = 192,
+                        y = 192*2,
+                        tint = inputs.tint,
+                        scale = 0.5
+                    }
+                }
+            }
+        },
+        back_patch = {
+            sheet = {
+                filename = "__base__/graphics/entity/express-underground-belt/express-underground-belt-structure-back-patch.png",
+                priority = "extra-high",
+                width = 96,
+                height = 96,
+                hr_version =
+                {
+                    filename = "__base__/graphics/entity/express-underground-belt/hr-express-underground-belt-structure-back-patch.png",
+                    priority = "extra-high",
+                    width = 192,
+                    height = 192,
+                    scale = 0.5
+                }
+            }
+        },
+        front_patch = {
+            sheet = {
+                filename = "__base__/graphics/entity/express-underground-belt/express-underground-belt-structure-front-patch.png",
+                priority = "extra-high",
+                width = 96,
+                height = 96,
+                hr_version =
+                {
+                    filename = "__base__/graphics/entity/express-underground-belt/hr-express-underground-belt-structure-front-patch.png",
+                    priority = "extra-high",
+                    width = 192,
+                    height = 192,
+                    scale = 0.5
+                }
+            }
         }
+    }
 
-        -- Apply belt set
-        entity.belt_animation_set = reskins.bobs.transport_belt_animation_set(inputs.tint, variant)
-    end
+    -- Apply belt set
+    entity.belt_animation_set = reskins.bobs.transport_belt_animation_set(inputs.tint, variant)
 
     -- Label to skip to next iteration
     ::continue::

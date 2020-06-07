@@ -51,318 +51,361 @@ for name, map in pairs(tier_map) do
     -- Determine what tint we're using
     inputs.tint = reskins.bobs.belt_tint_handling(name, tier)
 
-    if do_reskin then
-        inputs.make_icons = true
-    else
-        inputs.make_icons = false
+    -- Check if we're doing reskin operations on the vanilla splitters
+    if do_reskin == false then 
         reskins.lib.append_tier_labels_to_vanilla_icon(name, tier, inputs)
+        goto continue
     end
 
     reskins.lib.setup_standard_entity(name, tier, inputs)    
 
-    if do_reskin then
-        -- Reskin remnants
+    -- Fetch remnant
+    remnant = data.raw["corpse"][name.."-remnants"]
 
-        -- Reskin entities
-        entity.structure = {
-            north = {
-                layers = {
-                    -- Base
-                    {
-                        filename = inputs.directory.."/graphics/entity/logistics/splitter/north/splitter-north.png",
+    -- Reskin remnants
+    remnant.animation = {
+        layers = {
+            -- Base
+            {
+                filename = inputs.directory.."/graphics/entity/logistics/splitter/remnants/splitter-remnants-base.png",
+                line_length = 1,
+                width = 96,
+                height = 96,
+                frame_count = 1,
+                variation_count = 1,
+                axially_symmetrical = false,
+                direction_count = 4,
+                shift = util.by_pixel(4, 1.5),
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/logistics/splitter/remnants/hr-splitter-remnants-base.png",
+                    line_length = 1,
+                    width = 190,
+                    height = 190,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 4,
+                    shift = util.by_pixel(3.5, 1.5),
+                    scale = 0.5,
+                },
+            },
+            -- Mask
+            {
+                filename = inputs.directory.."/graphics/entity/logistics/splitter/remnants/splitter-remnants-mask.png",
+                line_length = 1,
+                width = 96,
+                height = 96,
+                frame_count = 1,
+                variation_count = 1,
+                axially_symmetrical = false,
+                direction_count = 4,
+                tint = inputs.tint,
+                shift = util.by_pixel(4, 1.5),
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/logistics/splitter/remnants/hr-splitter-remnants-mask.png",
+                    line_length = 1,
+                    width = 190,
+                    height = 190,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 4,
+                    tint = inputs.tint,
+                    shift = util.by_pixel(3.5, 1.5),
+                    scale = 0.5,
+                },
+            }
+        }
+    }
+
+    -- Reskin entities
+    entity.structure = {
+        north = {
+            layers = {
+                -- Base
+                {
+                    filename = inputs.directory.."/graphics/entity/logistics/splitter/north/splitter-north.png",
+                    frame_count = 32,
+                    line_length = 8,
+                    priority = "extra-high",
+                    width = 82,
+                    height = 36,
+                    shift = util.by_pixel(6, 0),
+                    hr_version = {
+                        filename = inputs.directory.."/graphics/entity/logistics/splitter/north/hr-splitter-north.png",
                         frame_count = 32,
                         line_length = 8,
                         priority = "extra-high",
-                        width = 82,
-                        height = 36,
-                        shift = util.by_pixel(6, 0),
-                        hr_version = {
-                            filename = inputs.directory.."/graphics/entity/logistics/splitter/north/hr-splitter-north.png",
-                            frame_count = 32,
-                            line_length = 8,
-                            priority = "extra-high",
-                            width = 160,
-                            height = 70,
-                            shift = util.by_pixel(7, 0),
-                            scale = 0.5
-                        }
-                    },
-                    -- Mask
-                    {
-                        filename = inputs.directory.."/graphics/entity/logistics/splitter/north/splitter-north-mask.png",
+                        width = 160,
+                        height = 70,
+                        shift = util.by_pixel(7, 0),
+                        scale = 0.5
+                    }
+                },
+                -- Mask
+                {
+                    filename = inputs.directory.."/graphics/entity/logistics/splitter/north/splitter-north-mask.png",
+                    frame_count = 32,
+                    line_length = 8,
+                    priority = "extra-high",
+                    width = 82,
+                    height = 36,
+                    shift = util.by_pixel(6, 0),
+                    tint = inputs.tint,
+                    hr_version = {
+                        filename = inputs.directory.."/graphics/entity/logistics/splitter/north/hr-splitter-north-mask.png",
                         frame_count = 32,
                         line_length = 8,
                         priority = "extra-high",
-                        width = 82,
-                        height = 36,
-                        shift = util.by_pixel(6, 0),
+                        width = 160,
+                        height = 70,
+                        shift = util.by_pixel(7, 0),
                         tint = inputs.tint,
-                        hr_version = {
-                            filename = inputs.directory.."/graphics/entity/logistics/splitter/north/hr-splitter-north-mask.png",
-                            frame_count = 32,
-                            line_length = 8,
-                            priority = "extra-high",
-                            width = 160,
-                            height = 70,
-                            shift = util.by_pixel(7, 0),
-                            tint = inputs.tint,
-                            scale = 0.5
-                        }
+                        scale = 0.5
                     }
                 }
-            },
-            east = {
-                layers = {
-                    -- Base
-                    {
-                        filename = inputs.directory.."/graphics/entity/logistics/splitter/east/splitter-east.png",
+            }
+        },
+        east = {
+            layers = {
+                -- Base
+                {
+                    filename = inputs.directory.."/graphics/entity/logistics/splitter/east/splitter-east.png",
+                    frame_count = 32,
+                    line_length = 8,
+                    priority = "extra-high",
+                    width = 46,
+                    height = 44,
+                    shift = util.by_pixel(4, 12),
+                    hr_version = {
+                        filename = inputs.directory.."/graphics/entity/logistics/splitter/east/hr-splitter-east.png",
                         frame_count = 32,
                         line_length = 8,
                         priority = "extra-high",
-                        width = 46,
-                        height = 44,
-                        shift = util.by_pixel(4, 12),
-                        hr_version = {
-                            filename = inputs.directory.."/graphics/entity/logistics/splitter/east/hr-splitter-east.png",
-                            frame_count = 32,
-                            line_length = 8,
-                            priority = "extra-high",
-                            width = 90,
-                            height = 84,
-                            shift = util.by_pixel(4, 13),
-                            scale = 0.5
-                        }
-                    },
-                    -- Mask
-                    {
-                        filename = inputs.directory.."/graphics/entity/logistics/splitter/east/splitter-east-mask.png",
+                        width = 90,
+                        height = 84,
+                        shift = util.by_pixel(4, 13),
+                        scale = 0.5
+                    }
+                },
+                -- Mask
+                {
+                    filename = inputs.directory.."/graphics/entity/logistics/splitter/east/splitter-east-mask.png",
+                    frame_count = 32,
+                    line_length = 8,
+                    priority = "extra-high",
+                    width = 46,
+                    height = 44,
+                    shift = util.by_pixel(4, 12),
+                    tint = inputs.tint,
+                    hr_version = {
+                        filename = inputs.directory.."/graphics/entity/logistics/splitter/east/hr-splitter-east-mask.png",
                         frame_count = 32,
                         line_length = 8,
                         priority = "extra-high",
-                        width = 46,
-                        height = 44,
-                        shift = util.by_pixel(4, 12),
+                        width = 90,
+                        height = 84,
+                        shift = util.by_pixel(4, 13),
                         tint = inputs.tint,
-                        hr_version = {
-                            filename = inputs.directory.."/graphics/entity/logistics/splitter/east/hr-splitter-east-mask.png",
-                            frame_count = 32,
-                            line_length = 8,
-                            priority = "extra-high",
-                            width = 90,
-                            height = 84,
-                            shift = util.by_pixel(4, 13),
-                            tint = inputs.tint,
-                            scale = 0.5
-                        }
+                        scale = 0.5
                     }
                 }
-            },
-            south = {
-                layers = {
-                    -- Base
-                    {
-                        filename = inputs.directory.."/graphics/entity/logistics/splitter/south/splitter-south.png",
+            }
+        },
+        south = {
+            layers = {
+                -- Base
+                {
+                    filename = inputs.directory.."/graphics/entity/logistics/splitter/south/splitter-south.png",
+                    frame_count = 32,
+                    line_length = 8,
+                    priority = "extra-high",
+                    width = 82,
+                    height = 32,
+                    shift = util.by_pixel(4, 0),
+                    hr_version = {
+                        filename = inputs.directory.."/graphics/entity/logistics/splitter/south/hr-splitter-south.png",
                         frame_count = 32,
                         line_length = 8,
                         priority = "extra-high",
-                        width = 82,
-                        height = 32,
+                        width = 164,
+                        height = 64,
                         shift = util.by_pixel(4, 0),
-                        hr_version = {
-                            filename = inputs.directory.."/graphics/entity/logistics/splitter/south/hr-splitter-south.png",
-                            frame_count = 32,
-                            line_length = 8,
-                            priority = "extra-high",
-                            width = 164,
-                            height = 64,
-                            shift = util.by_pixel(4, 0),
-                            scale = 0.5
-                        }
-                    },
-                    -- Mask
-                    {
-                        filename = inputs.directory.."/graphics/entity/logistics/splitter/south/splitter-south-mask.png",
+                        scale = 0.5
+                    }
+                },
+                -- Mask
+                {
+                    filename = inputs.directory.."/graphics/entity/logistics/splitter/south/splitter-south-mask.png",
+                    frame_count = 32,
+                    line_length = 8,
+                    priority = "extra-high",
+                    width = 82,
+                    height = 32,
+                    shift = util.by_pixel(4, 0),
+                    tint = inputs.tint,
+                    hr_version = {
+                        filename = inputs.directory.."/graphics/entity/logistics/splitter/south/hr-splitter-south-mask.png",
                         frame_count = 32,
                         line_length = 8,
                         priority = "extra-high",
-                        width = 82,
-                        height = 32,
+                        width = 164,
+                        height = 64,
                         shift = util.by_pixel(4, 0),
                         tint = inputs.tint,
-                        hr_version = {
-                            filename = inputs.directory.."/graphics/entity/logistics/splitter/south/hr-splitter-south-mask.png",
-                            frame_count = 32,
-                            line_length = 8,
-                            priority = "extra-high",
-                            width = 164,
-                            height = 64,
-                            shift = util.by_pixel(4, 0),
-                            tint = inputs.tint,
-                            scale = 0.5
-                        }
+                        scale = 0.5
                     }
                 }
-            },
-            west = {
-                layers = {
-                    -- Base
-                    {
-                        filename = inputs.directory.."/graphics/entity/logistics/splitter/west/splitter-west.png",
+            }
+        },
+        west = {
+            layers = {
+                -- Base
+                {
+                    filename = inputs.directory.."/graphics/entity/logistics/splitter/west/splitter-west.png",
+                    frame_count = 32,
+                    line_length = 8,
+                    priority = "extra-high",
+                    width = 46,
+                    height = 44,
+                    shift = util.by_pixel(6, 12),
+                    hr_version = {
+                        filename = inputs.directory.."/graphics/entity/logistics/splitter/west/hr-splitter-west.png",
                         frame_count = 32,
                         line_length = 8,
                         priority = "extra-high",
-                        width = 46,
-                        height = 44,
-                        shift = util.by_pixel(6, 12),
-                        hr_version = {
-                            filename = inputs.directory.."/graphics/entity/logistics/splitter/west/hr-splitter-west.png",
-                            frame_count = 32,
-                            line_length = 8,
-                            priority = "extra-high",
-                            width = 94,
-                            height = 86,
-                            shift = util.by_pixel(5, 12),
-                            scale = 0.5
-                        }
-                    },
-                    -- Mask
-                    {
-                        filename = inputs.directory.."/graphics/entity/logistics/splitter/west/splitter-west-mask.png",
+                        width = 94,
+                        height = 86,
+                        shift = util.by_pixel(5, 12),
+                        scale = 0.5
+                    }
+                },
+                -- Mask
+                {
+                    filename = inputs.directory.."/graphics/entity/logistics/splitter/west/splitter-west-mask.png",
+                    frame_count = 32,
+                    line_length = 8,
+                    priority = "extra-high",
+                    width = 46,
+                    height = 44,
+                    shift = util.by_pixel(6, 12),
+                    tint = inputs.tint,
+                    hr_version = {
+                        filename = inputs.directory.."/graphics/entity/logistics/splitter/west/hr-splitter-west-mask.png",
                         frame_count = 32,
                         line_length = 8,
                         priority = "extra-high",
-                        width = 46,
-                        height = 44,
-                        shift = util.by_pixel(6, 12),
+                        width = 94,
+                        height = 86,
+                        shift = util.by_pixel(5, 12),
                         tint = inputs.tint,
-                        hr_version = {
-                            filename = inputs.directory.."/graphics/entity/logistics/splitter/west/hr-splitter-west-mask.png",
-                            frame_count = 32,
-                            line_length = 8,
-                            priority = "extra-high",
-                            width = 94,
-                            height = 86,
-                            shift = util.by_pixel(5, 12),
-                            tint = inputs.tint,
-                            scale = 0.5 
-                        }
+                        scale = 0.5 
                     }
                 }
             }
         }
+    }
 
-        entity.structure_patch = 
-        {
-            north = util.empty_sprite(),
-            east = {
-                layers = {
-                    -- Base
-                    {
-                        filename = inputs.directory.."/graphics/entity/logistics/splitter/east/splitter-east-top_patch.png",
+    entity.structure_patch = 
+    {
+        north = util.empty_sprite(),
+        east = {
+            layers = {
+                -- Base
+                {
+                    filename = inputs.directory.."/graphics/entity/logistics/splitter/east/splitter-east-top_patch.png",
+                    frame_count = 32,
+                    line_length = 8,
+                    priority = "extra-high",
+                    width = 46,
+                    height = 52,
+                    shift = util.by_pixel(4, -20),
+                    hr_version = {
+                        filename = inputs.directory.."/graphics/entity/logistics/splitter/east/hr-splitter-east-top_patch.png",
                         frame_count = 32,
                         line_length = 8,
                         priority = "extra-high",
-                        width = 46,
-                        height = 52,
+                        width = 90,
+                        height = 104,
                         shift = util.by_pixel(4, -20),
-                        hr_version = {
-                            filename = inputs.directory.."/graphics/entity/logistics/splitter/east/hr-splitter-east-top_patch.png",
-                            frame_count = 32,
-                            line_length = 8,
-                            priority = "extra-high",
-                            width = 90,
-                            height = 104,
-                            shift = util.by_pixel(4, -20),
-                            scale = 0.5
-                        }
-                    },
-                    -- Mask
-                    {
-                        filename = inputs.directory.."/graphics/entity/logistics/splitter/east/splitter-east-top_patch-mask.png",
+                        scale = 0.5
+                    }
+                },
+                -- Mask
+                {
+                    filename = inputs.directory.."/graphics/entity/logistics/splitter/east/splitter-east-top_patch-mask.png",
+                    frame_count = 32,
+                    line_length = 8,
+                    priority = "extra-high",
+                    width = 46,
+                    height = 52,
+                    shift = util.by_pixel(4, -20),
+                    tint = inputs.tint,
+                    hr_version = {
+                        filename = inputs.directory.."/graphics/entity/logistics/splitter/east/hr-splitter-east-top_patch-mask.png",
                         frame_count = 32,
                         line_length = 8,
                         priority = "extra-high",
-                        width = 46,
-                        height = 52,
+                        width = 90,
+                        height = 104,
                         shift = util.by_pixel(4, -20),
                         tint = inputs.tint,
-                        hr_version = {
-                            filename = inputs.directory.."/graphics/entity/logistics/splitter/east/hr-splitter-east-top_patch-mask.png",
-                            frame_count = 32,
-                            line_length = 8,
-                            priority = "extra-high",
-                            width = 90,
-                            height = 104,
-                            shift = util.by_pixel(4, -20),
-                            tint = inputs.tint,
-                            scale = 0.5
-                        }
+                        scale = 0.5
                     }
                 }
-            },
-            south = util.empty_sprite(),
-            west = {
-                layers = {
-                    -- Base
-                    {
-                        filename = inputs.directory.."/graphics/entity/logistics/splitter/west/splitter-west-top_patch.png",
+            }
+        },
+        south = util.empty_sprite(),
+        west = {
+            layers = {
+                -- Base
+                {
+                    filename = inputs.directory.."/graphics/entity/logistics/splitter/west/splitter-west-top_patch.png",
+                    frame_count = 32,
+                    line_length = 8,
+                    priority = "extra-high",
+                    width = 46,
+                    height = 48,
+                    shift = util.by_pixel(6, -18),
+                    hr_version = {
+                        filename = inputs.directory.."/graphics/entity/logistics/splitter/west/hr-splitter-west-top_patch.png",
                         frame_count = 32,
                         line_length = 8,
                         priority = "extra-high",
-                        width = 46,
-                        height = 48,
-                        shift = util.by_pixel(6, -18),
-                        hr_version = {
-                            filename = inputs.directory.."/graphics/entity/logistics/splitter/west/hr-splitter-west-top_patch.png",
-                            frame_count = 32,
-                            line_length = 8,
-                            priority = "extra-high",
-                            width = 94,
-                            height = 96,
-                            shift = util.by_pixel(5, -18),
-                            scale = 0.5
-                        }
-                    },
-                    -- Mask
-                    {
-                        filename = inputs.directory.."/graphics/entity/logistics/splitter/west/splitter-west-top_patch-mask.png",
+                        width = 94,
+                        height = 96,
+                        shift = util.by_pixel(5, -18),
+                        scale = 0.5
+                    }
+                },
+                -- Mask
+                {
+                    filename = inputs.directory.."/graphics/entity/logistics/splitter/west/splitter-west-top_patch-mask.png",
+                    frame_count = 32,
+                    line_length = 8,
+                    priority = "extra-high",
+                    width = 46,
+                    height = 48,
+                    shift = util.by_pixel(6, -18),
+                    tint = inputs.tint,
+                    hr_version = {
+                        filename = inputs.directory.."/graphics/entity/logistics/splitter/west/hr-splitter-west-top_patch-mask.png",
                         frame_count = 32,
                         line_length = 8,
                         priority = "extra-high",
-                        width = 46,
-                        height = 48,
-                        shift = util.by_pixel(6, -18),
+                        width = 94,
+                        height = 96,
+                        shift = util.by_pixel(5, -18),
                         tint = inputs.tint,
-                        hr_version = {
-                            filename = inputs.directory.."/graphics/entity/logistics/splitter/west/hr-splitter-west-top_patch-mask.png",
-                            frame_count = 32,
-                            line_length = 8,
-                            priority = "extra-high",
-                            width = 94,
-                            height = 96,
-                            shift = util.by_pixel(5, -18),
-                            tint = inputs.tint,
-                            scale = 0.5
-                        }
+                        scale = 0.5
                     }
                 }
             }
         }
+    }
 
-        -- Apply belt set
-        entity.belt_animation_set = reskins.bobs.transport_belt_animation_set(inputs.tint, variant)
-    end
-
-    -- Handle grouping and ordering in the UI
-    base_item = data.raw["item"][string.gsub(name, "splitter", "transport-belt")]
-
-    if base_item then
-        inputs.sort_order = string.gsub(string.gsub(base_item.order,"^[a-z]","c"),"transport%-belt","splitter")
-        inputs.sort_group = base_item.group
-        inputs.sort_subgroup = base_item.subgroup
-
-        reskins.lib.assign_order(name, inputs)
-    end
+    -- Apply belt set
+    entity.belt_animation_set = reskins.bobs.transport_belt_animation_set(inputs.tint, variant)
 
     -- Label to skip to next iteration
     ::continue::

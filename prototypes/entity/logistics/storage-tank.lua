@@ -50,7 +50,7 @@ for name, tier in pairs(tier_map) do
     
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
-    -- Fetch remnant, create names for images/folders
+    -- Fetch remnant
     remnant = data.raw["corpse"][name.."-remnants"]
     
     -- Reskin remnants
