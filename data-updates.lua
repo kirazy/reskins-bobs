@@ -26,7 +26,7 @@ require("prototypes.entity.assembly.oil-refinery")
 -- require("prototypes.entity.greenhouse.greenhouse")
 
 -- Bob's Logistics
--- require("prototypes.entity.logistics.chest")
+require("prototypes.entity.logistics.chest")
 require("prototypes.entity.logistics.construction-robots")
 require("prototypes.entity.logistics.inserter")
 require("prototypes.entity.logistics.inserter-overhaul")

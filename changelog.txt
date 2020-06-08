@@ -2,7 +2,8 @@
 Version: 0.00.5
 Date: 2020.06.XX
   Features:
-    - Added setting "Hydrazine is Blue!" to control whether the Hydrazine generator is tinted according to tier, or by default according to fuel
+    - Added setting "Hydrazine is Blue!" to control whether the Hydrazine generator is tinted according to tier, or according to fuel (default)
+    - Implemented logistics chests
   Changes:
     - Changes go here
   Bugfixes:
