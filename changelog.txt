@@ -5,7 +5,7 @@ Date: 2020.06.XX
     - Added setting "Hydrazine is Blue!" to control whether the Hydrazine generator is tinted according to tier, or according to fuel (default)
     - Implemented logistics chests
   Changes:
-    - Changes go here
+    - Improved behavior of pumpjacks subject to speed module effectivity
   Bugfixes:
     - Fixed startup error related to absent Angel's Petrochem; all external mod setting checks now fail quietly
 ---------------------------------------------------------------------------------------------------
