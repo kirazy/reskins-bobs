@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.00.6
+Date: 2020.06.XX
+  Features:
+    - Added a toggleable filter indicator to filter-type inserter icons, on by default
+  Changes:
+    - Improved inserter icon masks
+---------------------------------------------------------------------------------------------------
 Version: 0.00.5
 Date: 2020.06.08
   Features:

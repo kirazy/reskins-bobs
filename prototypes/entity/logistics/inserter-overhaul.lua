@@ -457,7 +457,7 @@ for name, tier in pairs(inserter_map) do
     if string.find(name, "stack") then
         inserter_type = "stack-inserter"
         inputs.icon_name = "stack-inserter"
-    elseif mods["bobsinserters"] or settings.startup["bobmods-logistics-inserteroverhaul"].value == true then
+    elseif mods["bobsinserters"] or (settings.startup["bobmods-logistics-inserteroverhaul"] and settings.startup["bobmods-logistics-inserteroverhaul"].value == true) then
         inserter_type = "long-inserter"
         inputs.icon_name = "inserter"
     else
@@ -468,11 +468,20 @@ for name, tier in pairs(inserter_map) do
     local inserter_filter = false
     if string.find(name, "filter") then
         inserter_filter = true
-        inputs.icon_mask = "filter-"..inputs.icon_name
-        inputs.icon_highlights = "filter-"..inputs.icon_name
+        inputs.icon_name = "filter-"..inputs.icon_name
+        if settings.startup["reskins-bobs-do-inserter-filter-symbol"].value == true then
+            inputs.icon_extras = {
+                {
+                    icon = inputs.directory.."/graphics/icons/logistics/inserter/filter.png"
+                },
+                {
+                    icon = inputs.directory.."/graphics/icons/logistics/inserter/filter.png",
+                    tint = reskins.lib.adjust_alpha(reskins.lib.tint_index["tier-"..tier], 0.75)
+                },
+            }
+        end
     else
-        inputs.icon_mask = nil
-        inputs.icon_highlights = nil
+        inputs.icon_extras = nil
     end
 
     if settings.startup["reskins-bobs-do-inserter-tier-labeling"].value == false then

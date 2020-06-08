@@ -61,7 +61,14 @@ if mods["boblogistics"] then
             type = "bool-setting",
             name = "reskins-bobs-do-inserter-tier-labeling",
             setting_type = "startup",
-            order = "x",
+            order = "xx",
+            default_value = true,
+        },
+        {
+            type = "bool-setting",
+            name = "reskins-bobs-do-inserter-filter-symbol",
+            setting_type = "startup",
+            order = "xx",
             default_value = true,
         },
         {
