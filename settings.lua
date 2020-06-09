@@ -73,6 +73,13 @@ if mods["boblogistics"] then
         },
         {
             type = "bool-setting",
+            name = "reskins-bobs-flip-stack-inserter-icons",
+            setting_type = "startup",
+            order = "xx",
+            default_value = false,
+        },
+        {
+            type = "bool-setting",
             name = "reskins-bobs-do-furnace-tier-labeling",
             setting_type = "startup",
             order = "x",

@@ -456,7 +456,11 @@ for name, tier in pairs(inserter_map) do
     local inserter_type
     if string.find(name, "stack") then
         inserter_type = "stack-inserter"
-        inputs.icon_name = "stack-inserter"
+        if settings.startup["reskins-bobs-flip-stack-inserter-icons"].value == true then
+            inputs.icon_name = "flipped-stack-inserter"
+        else
+            inputs.icon_name = "stack-inserter"
+        end
     elseif mods["bobsinserters"] or (settings.startup["bobmods-logistics-inserteroverhaul"] and settings.startup["bobmods-logistics-inserteroverhaul"].value == true) then
         inserter_type = "long-inserter"
         inputs.icon_name = "inserter"
