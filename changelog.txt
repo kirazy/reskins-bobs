@@ -2,7 +2,8 @@
 Version: 0.00.6
 Date: 2020.06.XX
   Features:
-    - Added a toggleable filter indicator to filter-type inserter icons, on by default
+    - Added an option to display a filter symbol on filter-inserter and stack-filter-inserter icons (default on)
+    - Added compatability with Loader Redux
   Changes:
     - Improved inserter icon masks
 ---------------------------------------------------------------------------------------------------

@@ -12,6 +12,7 @@ require("prototypes.icon.logistics")
 -- Compatiblity
 require("prototypes.compatibility.miniloader")
 require("prototypes.compatibility.vanilla-loaders-hd")
+require("prototypes.compatibility.loaderredux")
 
 -- Bob's Assembly
 require("prototypes.entity.assembly.assembling-machine")
