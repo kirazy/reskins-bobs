@@ -455,6 +455,94 @@ for name, map in pairs(tier_map) do
         }
     }
 
+    -- Ensure the correct fire is on the boilers
+    entity.fire = {
+      north = {
+            filename = "__base__/graphics/entity/boiler/boiler-N-fire.png",
+            priority = "extra-high",
+            frame_count = 64,
+            line_length = 8,
+            width = 12,
+            height = 13,
+            animation_speed = 0.5,
+            shift = util.by_pixel(0, -8.5),
+            hr_version = {
+                filename = "__base__/graphics/entity/boiler/hr-boiler-N-fire.png",
+                priority = "extra-high",
+                frame_count = 64,
+                line_length = 8,
+                width = 26,
+                height = 26,
+                animation_speed = 0.5,
+                shift = util.by_pixel(0, -8.5),
+                scale = 0.5
+            }
+      },
+      east = {
+            filename = "__base__/graphics/entity/boiler/boiler-E-fire.png",
+            priority = "extra-high",
+            frame_count = 64,
+            line_length = 8,
+            width = 14,
+            height = 14,
+            animation_speed = 0.5,
+            shift = util.by_pixel(-10, -22),
+            hr_version = {
+                filename = "__base__/graphics/entity/boiler/hr-boiler-E-fire.png",
+                priority = "extra-high",
+                frame_count = 64,
+                line_length = 8,
+                width = 28,
+                height = 28,
+                animation_speed = 0.5,
+                shift = util.by_pixel(-9.5, -22),
+                scale = 0.5
+            }
+      },
+      south = {
+            filename = "__base__/graphics/entity/boiler/boiler-S-fire.png",
+            priority = "extra-high",
+            frame_count = 64,
+            line_length = 8,
+            width = 12,
+            height = 9,
+            animation_speed = 0.5,
+            shift = util.by_pixel(-1, -26.5),
+            hr_version = {
+                filename = "__base__/graphics/entity/boiler/hr-boiler-S-fire.png",
+                priority = "extra-high",
+                frame_count = 64,
+                line_length = 8,
+                width = 26,
+                height = 16,
+                animation_speed = 0.5,
+                shift = util.by_pixel(-1, -26.5),
+                scale = 0.5
+            }
+      },
+      west = {
+            filename = "__base__/graphics/entity/boiler/boiler-W-fire.png",
+            priority = "extra-high",
+            frame_count = 64,
+            line_length = 8,
+            width = 14,
+            height = 14,
+            animation_speed = 0.5,
+            shift = util.by_pixel(13, -23),
+            hr_version = {
+                filename = "__base__/graphics/entity/boiler/hr-boiler-W-fire.png",
+                priority = "extra-high",
+                frame_count = 64,
+                line_length = 8,
+                width = 30,
+                height = 29,
+                animation_speed = 0.5,
+                shift = util.by_pixel(13, -23.25),
+                scale = 0.5
+            }
+        }
+    }
+
     -- Handle pipes
     if has_fluids then
         entity.energy_source.fluid_box = {

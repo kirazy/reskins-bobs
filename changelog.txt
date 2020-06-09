@@ -7,6 +7,7 @@ Date: 2020.06.XX
     - Added support for Loader Redux
   Changes:
     - Improved inserter icon masks
+    - Ensured boilers use vanilla-boiler fire effects
 ---------------------------------------------------------------------------------------------------
 Version: 0.00.5
 Date: 2020.06.08
