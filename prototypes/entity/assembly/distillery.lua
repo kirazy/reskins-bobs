@@ -27,47 +27,6 @@ local tier_map = {
     ["bob-distillery-5"] = 5,
 }
 
-local function distillery_working_animation(direction, speed)
-    return
-    {
-        filename = inputs.directory.."/graphics/entity/assembly/distillery/animations/distillery-animation-"..direction..".png",
-        width = 64,
-        height = 96,
-        frame_count = 25,
-        line_length = 5,
-        shift = util.by_pixel(0, 0),
-        animation_speed = speed,
-        hr_version = {
-            filename = inputs.directory.."/graphics/entity/assembly/distillery/animations/hr-distillery-animation-"..direction..".png",
-            width = 128,
-            height = 192,
-            frame_count = 25,
-            line_length = 5,
-            shift = util.by_pixel(0, 0),
-            animation_speed = speed,
-            scale = 0.5,
-        }
-    }
-end
-
-local function distillery_working_light(direction)
-    return
-    {
-        filename = inputs.directory.."/graphics/entity/assembly/distillery/lights/distillery-light-"..direction..".png",
-        width = 64,
-        height = 96,
-        shift = util.by_pixel(0, 0),
-        hr_version = {
-            filename = inputs.directory.."/graphics/entity/assembly/distillery/lights/hr-distillery-light-"..direction..".png",
-            width = 128,
-            height = 192,
-            shift = util.by_pixel(0, 0),
-            scale = 0.5,
-        }
-    }
-
-end
-
 -- Reskin entities, create and assign extra details
 for name, tier in pairs(tier_map) do
     -- Fetch entity
@@ -157,70 +116,70 @@ for name, tier in pairs(tier_map) do
         }
     })
 
-    -- Fetch animation playback speed
-    -- local speed = entity.working_visualisation.north_animation
-
-    entity.working_visualisations = {{
-        effect = "uranium-glow",
-        light = {intensity = 0.5, size = 2, color = {r = 1.0, g = 1.0, b = 1.0}},
-        fadeout = true,
-        north_position = util.by_pixel(-7.5, -9),
-        east_position = util.by_pixel(10, -9),
-        south_position = util.by_pixel(8, 3.5),
-        west_position = util.by_pixel(-10, 3),
-        north_animation = {
-            filename = inputs.directory.."/graphics/entity/assembly/distillery/lights/distillery-light-north.png",
-            width = 33,
-            height = 31,
-            shift = util.by_pixel(0, 0),
-            hr_version = {
-                filename = inputs.directory.."/graphics/entity/assembly/distillery/lights/hr-distillery-light-north.png",
-                width = 66,
-                height = 62,
+    -- Handle Working Visualization
+    entity.working_visualisations = {
+        {
+            effect = "uranium-glow",
+            light = {intensity = 0.5, size = 2, color = {r = 1.0, g = 1.0, b = 1.0}},
+            fadeout = true,
+            north_position = util.by_pixel(-7.5, -9),
+            east_position = util.by_pixel(10, -9),
+            south_position = util.by_pixel(8, 3.5),
+            west_position = util.by_pixel(-10, 3),
+            north_animation = {
+                filename = inputs.directory.."/graphics/entity/assembly/distillery/lights/distillery-light-north.png",
+                width = 33,
+                height = 31,
                 shift = util.by_pixel(0, 0),
-                scale = 0.5,
-            }
-        },
-        east_animation = {
-            filename = inputs.directory.."/graphics/entity/assembly/distillery/lights/distillery-light-east.png",
-            width = 34,
-            height = 30,
-            shift = util.by_pixel(0, 0),
-            hr_version = {
-                filename = inputs.directory.."/graphics/entity/assembly/distillery/lights/hr-distillery-light-east.png",
-                width = 68,
-                height = 60,
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/assembly/distillery/lights/hr-distillery-light-north.png",
+                    width = 66,
+                    height = 62,
+                    shift = util.by_pixel(0, 0),
+                    scale = 0.5,
+                }
+            },
+            east_animation = {
+                filename = inputs.directory.."/graphics/entity/assembly/distillery/lights/distillery-light-east.png",
+                width = 34,
+                height = 30,
                 shift = util.by_pixel(0, 0),
-                scale = 0.5,
-            }
-        },
-        south_animation = {
-            filename = inputs.directory.."/graphics/entity/assembly/distillery/lights/distillery-light-south.png",
-            width = 33,
-            height = 32,
-            shift = util.by_pixel(0, 0),
-            hr_version = {
-                filename = inputs.directory.."/graphics/entity/assembly/distillery/lights/hr-distillery-light-south.png",
-                width = 66,
-                height = 64,
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/assembly/distillery/lights/hr-distillery-light-east.png",
+                    width = 68,
+                    height = 60,
+                    shift = util.by_pixel(0, 0),
+                    scale = 0.5,
+                }
+            },
+            south_animation = {
+                filename = inputs.directory.."/graphics/entity/assembly/distillery/lights/distillery-light-south.png",
+                width = 33,
+                height = 32,
                 shift = util.by_pixel(0, 0),
-                scale = 0.5,
-            }
-        },
-        west_animation = {
-            filename = inputs.directory.."/graphics/entity/assembly/distillery/lights/distillery-light-west.png",
-            width = 33,
-            height = 29,
-            shift = util.by_pixel(0, 0),
-            hr_version = {
-                filename = inputs.directory.."/graphics/entity/assembly/distillery/lights/hr-distillery-light-west.png",
-                width = 66,
-                height = 58,
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/assembly/distillery/lights/hr-distillery-light-south.png",
+                    width = 66,
+                    height = 64,
+                    shift = util.by_pixel(0, 0),
+                    scale = 0.5,
+                }
+            },
+            west_animation = {
+                filename = inputs.directory.."/graphics/entity/assembly/distillery/lights/distillery-light-west.png",
+                width = 33,
+                height = 29,
                 shift = util.by_pixel(0, 0),
-                scale = 0.5,
-            }
-        },
-    }}
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/assembly/distillery/lights/hr-distillery-light-west.png",
+                    width = 66,
+                    height = 58,
+                    shift = util.by_pixel(0, 0),
+                    scale = 0.5,
+                }
+            },
+        }
+    }
 
     -- Label to skip to next iteration
     ::continue::
