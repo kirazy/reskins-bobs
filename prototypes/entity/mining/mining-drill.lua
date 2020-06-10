@@ -2050,7 +2050,7 @@ end
 
 -- Rescale mining drill animation playback speed to something visually appealing
 local max_playback = 2   -- Maximum animation playback speed
-local min_playback = 0.4 -- Minimum animation playback speed
+local min_playback = 0.5 -- Minimum animation playback speed
 
 local mining_speeds = {}
 local index = 1
