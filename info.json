@@ -6,6 +6,7 @@
   "author": "Kirazy",
   "contact": "kirazy@live.com",
   "description": "[BETA] Reskins items, entities, and structures within Bob's mods to add customizable tier coloring, hi-res icons, artisanal color masks, and other improvements. Part of the Artisanal Reskins series.",
+  "homepage": "https://forums.factorio.com/viewtopic.php?f=51&t=85707",
   "dependencies": 
   [	
     "base >= 0.18.0",

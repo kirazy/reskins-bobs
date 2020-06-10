@@ -5,9 +5,13 @@ Date: 2020.06.XX
     - Added an option to display a filter symbol on filter-inserter and stack-filter-inserter icons when using Bob's Inserter Overhaul (default on)
     - Added an option to flip stack inserter icons when using Bob's Inserter Overhaul (default off)
     - Added support for Loader Redux
+    - Implemented distilleries
   Changes:
     - Improved inserter icon masks
     - Ensured boilers use vanilla-boiler fire effects
+    - Added "homepage" property to info.json
+  Bugfixes:
+    - Fixed pipe window bounding boxes
 ---------------------------------------------------------------------------------------------------
 Version: 0.00.5
 Date: 2020.06.08
