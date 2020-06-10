@@ -10,7 +10,7 @@ Date: 2020.06.10
     - Added an option to display a filter symbol on filter-inserter and stack-filter-inserter icons when using Bob's Inserter Overhaul (default on)
     - Added an option to flip stack inserter icons when using Bob's Inserter Overhaul (default off)
     - Added support for Loader Redux
-    - Added a symol to large area mining drill icons to better distinguish them from regular mining drill icons
+    - Added a symbol to large area mining drill icons to better distinguish them from regular mining drill icons
     - Preliminary implementation of new mining drills
     - Implemented distilleries
   Changes:
