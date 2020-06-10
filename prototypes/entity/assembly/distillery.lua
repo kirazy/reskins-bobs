@@ -16,7 +16,6 @@ local inputs = {
     group = "assembly",
     particles = {["medium"] = 2},
     make_remnants = false,
-    make_icons = false,
 }
 
 local tier_map = {
