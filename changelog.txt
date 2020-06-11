@@ -1,6 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.00.7
 Date: 2020.06.1XX
+  Changes:
+    - Icons are now assigned in data-final-fixes, ensuring more robust compatibility with other reskin mods
   Bugfixes:
     - Fix mining-drill animation skipping at low playback speeds
 ---------------------------------------------------------------------------------------------------
