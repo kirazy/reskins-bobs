@@ -5,7 +5,7 @@ Date: 2020.06.1XX
     - Icons are now assigned in data-final-fixes, ensuring more robust compatibility with other reskin mods
   Bugfixes:
     - Fix mining-drill animation skipping at low playback speeds
-    - Third try is the charm? Remove dependency on angelspetrochem to reskin Mini-Chemplants
+    - Remove dependency on angelspetrochem to reskin Mini-Chemplants icons
 ---------------------------------------------------------------------------------------------------
 Version: 0.00.6
 Date: 2020.06.10
