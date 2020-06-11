@@ -13,26 +13,17 @@ local inputs = {
     icon_name = "sniper-turret",
     base_entity = "gun-turret",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "warfare",
     particles = {["medium"] = 2},
     make_remnants = false,
 }
 
--- Sniper turrets have two different sets of tiers; determine which we are using
-local tier_map
-if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
-    tier_map = {
-        ["bob-sniper-turret-1"] = 1,
-        ["bob-sniper-turret-2"] = 2,
-        ["bob-sniper-turret-3"] = 3
-    }
-else
-    tier_map = {
-        ["bob-sniper-turret-1"] = 1,
-        ["bob-sniper-turret-2"] = 3,
-        ["bob-sniper-turret-3"] = 5
-    }
-end
+local tier_map = {
+    ["bob-sniper-turret-1"] = {1, 1},
+    ["bob-sniper-turret-2"] = {2, 3},
+    ["bob-sniper-turret-3"] = {3, 5},
+}
 
 -- Image layer functions
 local function sniper_turret_extension(parameters)
@@ -304,13 +295,18 @@ local function sniper_turret_shooting_shadow()
 end
 
 -- Reskin entities, create and assign extra details
-for name, tier in pairs(tier_map) do
+for name, map in pairs(tier_map) do
     -- Fetch entity
     entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
-    if not entity then
-        goto continue
+    if not entity then goto continue end
+
+    -- Parse map
+    if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
+        tier = map[1]
+    else
+        tier = map[2]
     end
 
     -- Determine what tint we're using

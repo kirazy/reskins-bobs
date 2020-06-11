@@ -11,6 +11,7 @@ if settings.startup["reskins-bobs-do-boblogistics"].value == false then return e
 local inputs = {
     type = "inserter",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "logistics",
     particles = {["medium"] = 1},
 }
@@ -433,9 +434,7 @@ for name, tier in pairs(inserter_map) do
     entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
-    if not entity then
-        goto continue
-    end
+    if not entity then goto continue end
  
     -- Handle base_entity
     if string.find(name, "stack%-inserter") then

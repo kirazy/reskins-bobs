@@ -11,6 +11,7 @@ local inputs = {
     icon_name = "burner-electric-generator",
     base_entity = "steam-engine",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "power",
     particles = {["medium"] = 2,["big"] = 1},
     tint = util.color("26262660"),

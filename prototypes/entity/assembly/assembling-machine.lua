@@ -13,6 +13,7 @@ local inputs = {
     icon_name = "assembling-machine",
     base_entity = "assembling-machine-1",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     particles = {["big"] = 1, ["medium"] = 2},
     group = "assembly",
     make_remnants = false,
@@ -46,9 +47,7 @@ for name, map in pairs(tier_map) do
     entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
-    if not entity then
-        goto continue
-    end
+    if not entity then goto continue end
 
     -- Extract tier, shadow, has_fluids from map
     tier = map[1]

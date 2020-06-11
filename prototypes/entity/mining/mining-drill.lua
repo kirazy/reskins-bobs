@@ -13,6 +13,7 @@ local inputs = {
     icon_name = "electric-mining-drill",
     base_entity = "electric-mining-drill",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "mining",
     particles = {["medium-long"] = 3},
     make_remnants = false,
@@ -2049,8 +2050,8 @@ local function drill_wet_working_visualisation(speed, inputs)
 end
 
 -- Rescale mining drill animation playback speed to something visually appealing
-local max_playback = 2   -- Maximum animation playback speed
-local min_playback = 0.5 -- Minimum animation playback speed
+local max_playback = 1.2   -- Maximum animation playback speed
+local min_playback = 0.4 -- Minimum animation playback speed
 
 local mining_speeds = {}
 local index = 1
@@ -2133,13 +2134,13 @@ for name, map in pairs(tier_map) do
     -- Reskin entities
     entity.graphics_set.drilling_vertical_movement_duration = 10 / speed
     entity.graphics_set.animation = drill_dry_animation(speed, inputs)
-    entity.graphics_set.shift_animation_waypoint_stop_duration = 195 / min_speed
+    entity.graphics_set.shift_animation_waypoint_stop_duration = 195 / speed
     entity.graphics_set.shift_animation_transition_duration = 30 / speed
     entity.graphics_set.working_visualisations = drill_dry_working_visualisation(speed, inputs)
 
     entity.wet_mining_graphics_set.drilling_vertical_movement_duration = 10 / speed
     entity.wet_mining_graphics_set.animation = drill_wet_animation(speed, inputs)
-    entity.wet_mining_graphics_set.shift_animation_waypoint_stop_duration = 195 / min_speed
+    entity.wet_mining_graphics_set.shift_animation_waypoint_stop_duration = 195 / speed
     entity.wet_mining_graphics_set.shift_animation_transition_duration = 30 / speed
     entity.wet_mining_graphics_set.working_visualisations = drill_wet_working_visualisation(speed, inputs)
     

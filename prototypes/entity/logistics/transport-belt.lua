@@ -18,6 +18,7 @@ local inputs = {
     type = "transport-belt",
     icon_name = "transport-belt",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "logistics",
     particles = {["medium"] = 1, ["small"] = 2},
     make_masked_icon = true,

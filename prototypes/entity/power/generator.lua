@@ -14,9 +14,25 @@ local inputs = {
     icon_name = "fluid-generator",
     base_entity = "steam-turbine",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "power",
     particles = {["medium"] = 2,["big"] = 1},
     make_remnants = false,
+}
+
+-- Determine which tint we're using for the hydrazine-generator
+local hydrazine_tint
+if settings.startup["reskins-bobs-hydrazine-is-blue"].value == true then
+    hydrazine_tint = util.color("7ac1de")
+else
+    hydrazine_tint = nil
+end
+
+local fluid_generators = {
+    ["fluid-generator"] = {1, 2, 2/16},
+    ["fluid-generator-2"] = {2, 3, 3/16},
+    ["fluid-generator-3"] = {3, 4, 4/16},
+    ["hydrazine-generator"] = {4, 5, 5/16, hydrazine_tint}
 }
 
 local function setup_fluid_generator(tint)
@@ -98,22 +114,6 @@ local function setup_fluid_generator(tint)
         }
     }
 end
-
--- Determine which tint we're using for the hydrazine-generator
-local hydrazine_tint
-if settings.startup["reskins-bobs-hydrazine-is-blue"].value == true then
-    hydrazine_tint = util.color("7ac1de")
-else
-    hydrazine_tint = nil
-end
-
--- Fluid generators have two sets of tiers; determine which we are using
-local fluid_generators = {
-        ["fluid-generator"] = {1, 2, 2/16},
-        ["fluid-generator-2"] = {2, 3, 3/16},
-        ["fluid-generator-3"] = {3, 4, 4/16},
-        ["hydrazine-generator"] = {4, 5, 5/16, hydrazine_tint}
-    }
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(fluid_generators) do

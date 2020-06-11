@@ -14,6 +14,7 @@ local inputs = {
     icon_name = "accumulator",
     base_entity = "accumulator",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "power",
     particles = {["medium"] = 2, ["small"] = 3},
 }

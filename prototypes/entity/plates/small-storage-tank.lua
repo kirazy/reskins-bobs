@@ -13,13 +13,14 @@ local inputs = {
     root_name = "small-storage-tank",
     base_entity = "storage-tank",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "plates",
     particles = {["big"] = 1},
     make_remnants = false,
 }
 
 local tier_map = {
-    ["bob-small-storage-tank"]   = 1,
+    ["bob-small-storage-tank"] = 1,
     ["bob-small-inline-storage-tank"] = 1,
 }
 

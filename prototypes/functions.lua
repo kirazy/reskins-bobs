@@ -6,6 +6,7 @@
 -- Add this mod to the reskins function host.
 if not reskins.bobs then reskins.bobs = {} end
 reskins.bobs.directory = "__reskins-bobs__"
+reskins.bobs.icons = {}
 
 -- CONSTANTS
 if settings.startup["reskins-bobs-do-basic-belts-separately"].value == true then

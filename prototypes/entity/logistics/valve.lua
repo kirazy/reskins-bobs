@@ -4,12 +4,12 @@
 -- See LICENSE.md in the project directory for license information.
 
 -- Set input parameters
-local inputs = 
-{
+local inputs = {
     type = "storage-tank",
     icon_name = "valve",
     base_entity = "pipe",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "logistics",
     particles = {["small"] = 2},
     make_masked_icon = true,
@@ -17,8 +17,7 @@ local inputs =
     make_remnants = false,
 }
 
-local tint_map = 
-{
+local tint_map = {
     ["bob-valve"] = {util.color("2ac0ff"), "basic"},
     ["bob-overflow-valve"] = {util.color("ff3b29"), "overflow"},
     ["bob-topup-valve"] = {util.color("4dff2a"), "top-up"},
@@ -94,9 +93,9 @@ for name, map in pairs(tint_map) do
 
     -- Reskin entities
     entity.pictures.picture.north = cardinal_pictures(0, inputs.tint)
-    entity.pictures.picture.east  = cardinal_pictures(1, inputs.tint)
+    entity.pictures.picture.east = cardinal_pictures(1, inputs.tint)
     entity.pictures.picture.south = cardinal_pictures(2, inputs.tint)
-    entity.pictures.picture.west  = cardinal_pictures(3, inputs.tint)
+    entity.pictures.picture.west = cardinal_pictures(3, inputs.tint)
 
     -- Label to skip to next iteration
     ::continue::

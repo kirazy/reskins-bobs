@@ -13,6 +13,7 @@ local inputs = {
     icon_name = "laser-turret",
     base_entity = "laser-turret",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "warfare",
     particles = {["medium"] = 2},
 }
@@ -220,9 +221,7 @@ for name, map in pairs(tier_map) do
     entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
-    if not entity then
-        goto continue
-    end
+    if not entity then goto continue end
 
     -- Parse map
     tier = map[1]

@@ -13,46 +13,36 @@ local inputs = {
     type = "solar-panel",
     base_entity = "solar-panel",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "power",
     particles = {["small"] = 2},
 }
 
--- Solar panels have two different sets of tiers; determine which we are using
-local tier_map
-if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
-    tier_map = {
-        ["solar-panel-small"] = 1,
-        ["solar-panel-small-2"] = 2,
-        ["solar-panel-small-3"] = 3,
-        ["solar-panel"] = 1,
-        ["solar-panel-2"] = 2,
-        ["solar-panel-3"] = 3,
-        ["solar-panel-large"] = 1,
-        ["solar-panel-large-2"] = 2,
-        ["solar-panel-large-3"] = 3
-    }
-else
-    tier_map = {
-        ["solar-panel-small"] = 2,
-        ["solar-panel-small-2"] = 3,
-        ["solar-panel-small-3"] = 4,
-        ["solar-panel"] = 2,
-        ["solar-panel-2"] = 3,
-        ["solar-panel-3"] = 4,
-        ["solar-panel-large"] = 2,
-        ["solar-panel-large-2"] = 3,
-        ["solar-panel-large-3"] = 4
-    }
-end
+local tier_map = {
+    ["solar-panel-small"] = {1, 2},
+    ["solar-panel-small-2"] = {2, 3},
+    ["solar-panel-small-3"] = {3, 4},
+    ["solar-panel"] = {1, 2},
+    ["solar-panel-2"] = {2, 3},
+    ["solar-panel-3"] = {3, 4},
+    ["solar-panel-large"] = {1, 2},
+    ["solar-panel-large-2"] = {2, 3},
+    ["solar-panel-large-3"] = {3, 4},
+}
 
 -- Reskin entities, create and assign extra details
-for name, tier in pairs(tier_map) do
+for name, map in pairs(tier_map) do
     -- Fetch entity
     entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
-    if not entity then
-        goto continue
+    if not entity then goto continue end
+
+    -- Parse map
+    if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
+        tier = map[1]
+    else
+        tier = map[2]
     end
 
     -- Setup icon name details
@@ -84,7 +74,7 @@ for name, tier in pairs(tier_map) do
     -- Initialize table addresses    
     remnant = data.raw["corpse"][name.."-remnants"]
 
-    -- Reskin remnants
+    -- TODO: Reskin remnants
     -- remnant.animation[1].filename = inputs.directory.."/graphics/entity/power/"..inputs.icon_name.."/"..inputs.internal_name.."/remnants/"..inputs.internal_name.."-remnants.png"
     -- remnant.animation[1].hr_version.filename = inputs.directory.."/graphics/entity/power/"..inputs.icon_name.."/"..inputs.internal_name.."/remnants/hr-"..inputs.internal_name.."-remnants.png"
     -- remnant.animation[2].filename = inputs.directory.."/graphics/entity/power/"..inputs.icon_name.."/"..inputs.internal_name.."/remnants/"..inputs.internal_name.."-remnants.png"

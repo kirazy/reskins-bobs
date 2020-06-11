@@ -12,16 +12,15 @@ entity = data.raw["wall"]["reinforced-wall"]
 if not entity then return end
 
 -- Set input parameters
-local inputs = 
-{
+local inputs = {
     type = "wall",
     base_entity = "wall",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     particles = {["tiny-stone"] = 3, ["small-stone"] = 2, ["medium-stone"] = 1},
 }
 
-local reinforced_tint_index = 
-{
+local reinforced_tint_index = {
     ["tiny-stone"] = util.color("a793bf"),
     ["small-stone"] = util.color("a793bf"),
     ["medium-stone"] = util.color("9584ab")
@@ -47,8 +46,7 @@ reskins.lib.setup_flat_icon("reinforced-wall", false, inputs.directory.."/graphi
 remnant = data.raw["corpse"]["reinforced-wall-remnants"]
 
 -- Reskin remnants
-remnant.animation = make_rotated_animation_variations_from_sheet(4,
-{
+remnant.animation = make_rotated_animation_variations_from_sheet(4, {
     filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/remnants/reinforced-wall-remnants.png",
     width = 60,
     height = 58,
@@ -56,8 +54,7 @@ remnant.animation = make_rotated_animation_variations_from_sheet(4,
     frame_count = 1,
     direction_count = 2,
     shift = util.by_pixel(3, 7.5),
-    hr_version =
-    {
+    hr_version = {
         filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/remnants/hr-reinforced-wall-remnants.png",
         width = 118,
         height = 114,
@@ -70,12 +67,9 @@ remnant.animation = make_rotated_animation_variations_from_sheet(4,
 })
 
 -- Reskin entity
-entity.pictures =
-{
-    single =
-    {
-        layers =
-        {
+entity.pictures = { 
+    single = {
+        layers = {
             {
                 filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/reinforced-wall-single.png",
                 priority = "extra-high",
@@ -84,16 +78,15 @@ entity.pictures =
                 variation_count = 2,
                 line_length = 2,
                 shift = util.by_pixel(0, -6),
-                hr_version =
-                {
-                filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/hr-reinforced-wall-single.png",
-                priority = "extra-high",
-                width = 64,
-                height = 86,
-                variation_count = 2,
-                line_length = 2,
-                shift = util.by_pixel(0, -5),
-                scale = 0.5
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/hr-reinforced-wall-single.png",
+                    priority = "extra-high",
+                    width = 64,
+                    height = 86,
+                    variation_count = 2,
+                    line_length = 2,
+                    shift = util.by_pixel(0, -5),
+                    scale = 0.5
                 }
             },
             {
@@ -104,24 +97,21 @@ entity.pictures =
                 repeat_count = 2,
                 shift = util.by_pixel(10, 16),
                 draw_as_shadow = true,
-                hr_version =
-                {
-                filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/shadows/hr-reinforced-wall-single-shadow.png",
-                priority = "extra-high",
-                width = 98,
-                height = 60,
-                repeat_count = 2,
-                shift = util.by_pixel(10, 17),
-                draw_as_shadow = true,
-                scale = 0.5
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/shadows/hr-reinforced-wall-single-shadow.png",
+                    priority = "extra-high",
+                    width = 98,
+                    height = 60,
+                    repeat_count = 2,
+                    shift = util.by_pixel(10, 17),
+                    draw_as_shadow = true,
+                    scale = 0.5
                 }
             }
         }
     },
-    straight_vertical =
-    {
-        layers =
-        {
+    straight_vertical = {
+        layers = {
             {
                 filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/reinforced-wall-vertical.png",
                 priority = "extra-high",
@@ -130,8 +120,7 @@ entity.pictures =
                 variation_count = 5,
                 line_length = 5,
                 shift = util.by_pixel(0, 8),
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/hr-reinforced-wall-vertical.png",
                     priority = "extra-high",
                     width = 64,
@@ -150,8 +139,7 @@ entity.pictures =
                 repeat_count = 5,
                 shift = util.by_pixel(10, 28),
                 draw_as_shadow = true,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/shadows/hr-reinforced-wall-vertical-shadow.png",
                     priority = "extra-high",
                     width = 98,
@@ -164,10 +152,8 @@ entity.pictures =
             }
         }
     },
-    straight_horizontal =
-    {
-        layers =
-        {
+    straight_horizontal = {
+        layers = {
             {
                 filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/reinforced-wall-horizontal.png",
                 priority = "extra-high",
@@ -176,8 +162,7 @@ entity.pictures =
                 variation_count = 6,
                 line_length = 6,
                 shift = util.by_pixel(0, -4),
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/hr-reinforced-wall-horizontal.png",
                     priority = "extra-high",
                     width = 64,
@@ -196,8 +181,7 @@ entity.pictures =
                 repeat_count = 6,
                 shift = util.by_pixel(14, 14),
                 draw_as_shadow = true,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/shadows/hr-reinforced-wall-horizontal-shadow.png",
                     priority = "extra-high",
                     width = 124,
@@ -210,10 +194,8 @@ entity.pictures =
             }
         }
     },
-    corner_right_down =
-    {
-        layers =
-        {
+    corner_right_down = {
+        layers = {
             {
                 filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/reinforced-wall-corner-right.png",
                 priority = "extra-high",
@@ -222,8 +204,7 @@ entity.pictures =
                 variation_count = 2,
                 line_length = 2,
                 shift = util.by_pixel(0, 6),
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/hr-reinforced-wall-corner-right.png",
                     priority = "extra-high",
                     width = 64,
@@ -242,8 +223,7 @@ entity.pictures =
                 repeat_count = 2,
                 shift = util.by_pixel(14, 28),
                 draw_as_shadow = true,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/shadows/hr-reinforced-wall-corner-right-shadow.png",
                     priority = "extra-high",
                     width = 124,
@@ -256,10 +236,8 @@ entity.pictures =
             }
         }
     },
-    corner_left_down =
-    {
-        layers =
-        {
+    corner_left_down = {
+        layers = {
             {
                 filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/reinforced-wall-corner-left.png",
                 priority = "extra-high",
@@ -268,8 +246,7 @@ entity.pictures =
                 variation_count = 2,
                 line_length = 2,
                 shift = util.by_pixel(0, 6),
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/hr-reinforced-wall-corner-left.png",
                     priority = "extra-high",
                     width = 64,
@@ -288,8 +265,7 @@ entity.pictures =
                 repeat_count = 2,
                 shift = util.by_pixel(8, 28),
                 draw_as_shadow = true,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/shadows/hr-reinforced-wall-corner-left-shadow.png",
                     priority = "extra-high",
                     width = 102,
@@ -302,10 +278,8 @@ entity.pictures =
             }
         }
     },
-    t_up =
-    {
-        layers =
-        {
+    t_up = {
+        layers = {
             {
                 filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/reinforced-wall-t.png",
                 priority = "extra-high",
@@ -314,8 +288,7 @@ entity.pictures =
                 variation_count = 4,
                 line_length = 4,
                 shift = util.by_pixel(0, 6),
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/hr-reinforced-wall-t.png",
                     priority = "extra-high",
                     width = 64,
@@ -334,8 +307,7 @@ entity.pictures =
                 repeat_count = 4,
                 shift = util.by_pixel(14, 28),
                 draw_as_shadow = true,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/shadows/hr-reinforced-wall-t-shadow.png",
                     priority = "extra-high",
                     width = 124,
@@ -348,10 +320,8 @@ entity.pictures =
             }
         }
     },
-    ending_right =
-    {
-        layers =
-        {
+    ending_right = {
+        layers = {
             {
                 filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/reinforced-wall-ending-right.png",
                 priority = "extra-high",
@@ -360,8 +330,7 @@ entity.pictures =
                 variation_count = 2,
                 line_length = 2,
                 shift = util.by_pixel(0, -4),
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/hr-reinforced-wall-ending-right.png",
                     priority = "extra-high",
                     width = 64,
@@ -380,8 +349,7 @@ entity.pictures =
                 repeat_count = 2,
                 shift = util.by_pixel(14, 14),
                 draw_as_shadow = true,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/shadows/hr-reinforced-wall-ending-right-shadow.png",
                     priority = "extra-high",
                     width = 124,
@@ -394,10 +362,8 @@ entity.pictures =
             }
         }
     },
-    ending_left =
-    {
-        layers =
-        {
+    ending_left = {
+        layers = {
             {
                 filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/reinforced-wall-ending-left.png",
                 priority = "extra-high",
@@ -406,8 +372,7 @@ entity.pictures =
                 variation_count = 2,
                 line_length = 2,
                 shift = util.by_pixel(0, -4),
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/hr-reinforced-wall-ending-left.png",
                     priority = "extra-high",
                     width = 64,
@@ -426,8 +391,7 @@ entity.pictures =
                 repeat_count = 2,
                 shift = util.by_pixel(8, 14),
                 draw_as_shadow = true,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/shadows/hr-reinforced-wall-ending-left-shadow.png",
                     priority = "extra-high",
                     width = 102,
@@ -440,8 +404,7 @@ entity.pictures =
             }
         }
     },
-    filling =
-    {
+    filling = {
         filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/reinforced-wall-filling.png",
         priority = "extra-high",
         width = 24,
@@ -449,8 +412,7 @@ entity.pictures =
         variation_count = 8,
         line_length = 8,
         shift = util.by_pixel(0, -2),
-        hr_version =
-        {
+        hr_version = {
             filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/hr-reinforced-wall-filling.png",
             priority = "extra-high",
             width = 48,
@@ -461,18 +423,15 @@ entity.pictures =
             scale = 0.5
         }
     },
-    water_connection_patch =
-    {
-        sheets =
-        {
+    water_connection_patch = {
+        sheets = {
             {
                 filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/reinforced-wall-patch.png",
                 priority = "extra-high",
                 width = 58,
                 height = 64,
                 shift = util.by_pixel(0, -2),
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/hr-reinforced-wall-patch.png",
                     priority = "extra-high",
                     width = 116,
@@ -488,8 +447,7 @@ entity.pictures =
                 height = 52,
                 shift = util.by_pixel(8, 14),
                 draw_as_shadow = true,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/shadows/hr-reinforced-wall-patch-shadow.png",
                     priority = "extra-high",
                     width = 144,
@@ -501,18 +459,15 @@ entity.pictures =
             }
         }
     },
-    gate_connection_patch =
-    {
-        sheets =
-        {
+    gate_connection_patch = {
+        sheets = {
             {
                 filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/reinforced-wall-gate.png",
                 priority = "extra-high",
                 width = 42,
                 height = 56,
                 shift = util.by_pixel(0, -8),
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/hr-reinforced-wall-gate.png",
                     priority = "extra-high",
                     width = 82,
@@ -528,8 +483,7 @@ entity.pictures =
                 height = 40,
                 shift = util.by_pixel(14, 18),
                 draw_as_shadow = true,
-                hr_version =
-                {
+                hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/reinforced-wall/shadows/hr-reinforced-wall-gate-shadow.png",
                     priority = "extra-high",
                     width = 130,

@@ -19,6 +19,7 @@ local inputs = {
     icon_name = "splitter",
     base_entity = "splitter",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "logistics",
     particles = {["medium"] = 1, ["big"] = 4},
     make_masked_icon = true,

@@ -13,36 +13,22 @@ local inputs = {
     type = "boiler",
     base_entity = "boiler",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "power",
     particles = {["big"] = 3},
 }
 
-local tier_map
-if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
-    tier_map = {
-        ["boiler"] = {1},
-        ["boiler-2"] = {2},
-        ["boiler-3"] = {3},
-        ["boiler-4"] = {4},
-        ["boiler-5"] = {5},
-        ["oil-boiler"] = {1, true},
-        ["oil-boiler-2"] = {2, true},
-        ["oil-boiler-3"] = {3, true},
-        ["oil-boiler-4"] = {4, true},
-    }
-else
-    tier_map = {
-        ["boiler"] = {1},
-        ["boiler-2"] = {2},
-        ["boiler-3"] = {3},
-        ["boiler-4"] = {4},
-        ["boiler-5"] = {5},
-        ["oil-boiler"] = {2, true},
-        ["oil-boiler-2"] = {3, true},
-        ["oil-boiler-3"] = {4, true},
-        ["oil-boiler-4"] = {5, true},
-    }
-end
+local tier_map = {
+    ["boiler"] = {1, 1},
+    ["boiler-2"] = {2, 2},
+    ["boiler-3"] = {3, 3},
+    ["boiler-4"] = {4, 4},
+    ["boiler-5"] = {5, 5},
+    ["oil-boiler"] = {1, 2, true},
+    ["oil-boiler-2"] = {2, 3, true},
+    ["oil-boiler-3"] = {3, 4, true},
+    ["oil-boiler-4"] = {4, 5, true},
+}
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
@@ -50,13 +36,15 @@ for name, map in pairs(tier_map) do
     entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
-    if not entity then
-        goto continue
-    end
+    if not entity then goto continue end
 
     -- Parse map
-    tier = map[1]
-    has_fluids = map[2]
+    if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
+        tier = map[1]
+    else
+        tier = map[2]
+    end
+    has_fluids = map[3]
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]

@@ -12,23 +12,14 @@ local inputs = {
     type = "heat-pipe",
     base_entity = "heat-pipe",
     directory = reskins.bobs.directory,
+    mod = "bobs",
 }
 
--- Heat pipes have two different sets of tiers; determine which we are using
-local tier_map
-if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
-    tier_map = {
-        ["heat-pipe"] = {1},
-        ["heat-pipe-2"] = {2, {"d4d4d4", "dff5ff"}},
-        ["heat-pipe-3"] = {3, {"d6b968", "ff7f3f"}},
-    }
-else
-    tier_map = {
-        ["heat-pipe"] = {3},
-        ["heat-pipe-2"] = {4, {"d4d4d4", "dff5ff"}},
-        ["heat-pipe-3"] = {5, {"d6b968", "ff7f3f"}},
-    }
-end
+local tier_map = {
+    ["heat-pipe"] = {1, 3},
+    ["heat-pipe-2"] = {2, 4, {"d4d4d4", "dff5ff"}},
+    ["heat-pipe-3"] = {3, 5, {"d6b968", "ff7f3f"}},
+}
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
@@ -36,18 +27,21 @@ for name, map in pairs(tier_map) do
     entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
-    if not entity then
-        goto continue
-    end
+    if not entity then goto continue end
 
     -- Parse map
-    tier = map[1]
+    if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
+        tier = map[1]
+    else
+        tier = map[2]
+    end
 
     -- Setup inputs defaults
     reskins.lib.parse_inputs(inputs)
 
     -- Setup icons
     local heat_pipe_icon_inputs = {
+        mod = "bobs",
         icon = inputs.directory.."/graphics/icons/power/heat-pipe/"..name.."-icon-base.png",
         icon_picture = {
             filename = inputs.directory.."/graphics/icons/power/heat-pipe/"..name.."-icon-base.png",
@@ -67,13 +61,13 @@ for name, map in pairs(tier_map) do
         reskins.lib.append_tier_labels(tier, heat_pipe_icon_inputs)
     end
 
-    reskins.lib.assign_icons(name, heat_pipe_icon_inputs)
+    reskins.lib.store_icons(name, heat_pipe_icon_inputs)
 
     --- Don't reskin the base pipes
     if name == "heat-pipe" then goto continue end
 
     -- Create particles and explosions
-    particle_tints = {util.color(map[2][1]), util.color(map[2][2])}
+    particle_tints = {util.color(map[3][1]), util.color(map[3][2])}
     reskins.lib.create_explosion(name, inputs)
     reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["small"], 1, particle_tints[1])
     reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["medium"], 2, particle_tints[2])

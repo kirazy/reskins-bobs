@@ -13,38 +13,23 @@ local inputs = {
     icon_name = "electric-mining-drill",
     base_entity = "electric-mining-drill",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "mining",
     particles = {["medium-long"] = 3},
     make_remnants = false,
 }
 
--- Storage tanks have two different sets of tiers; determine which we are using
-local tier_map
-if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
-    tier_map = {
-        ["electric-mining-drill"] = 1,
-        ["bob-mining-drill-1"] = 2,
-        ["bob-mining-drill-2"] = 3,
-        ["bob-mining-drill-3"] = 4,
-        ["bob-mining-drill-4"] = 5,
-        ["bob-area-mining-drill-1"] = 1,
-        ["bob-area-mining-drill-2"] = 2,
-        ["bob-area-mining-drill-3"] = 3,
-        ["bob-area-mining-drill-4"] = 4
-    }
-else
-    tier_map = {
-        ["electric-mining-drill"] = 1,
-        ["bob-mining-drill-1"] = 2,
-        ["bob-mining-drill-2"] = 3,
-        ["bob-mining-drill-3"] = 4,
-        ["bob-mining-drill-4"] = 5,
-        ["bob-area-mining-drill-1"] = 2,
-        ["bob-area-mining-drill-2"] = 3,
-        ["bob-area-mining-drill-3"] = 4,
-        ["bob-area-mining-drill-4"] = 5
-    }
-end
+local tier_map = {
+    ["electric-mining-drill"] = {1, 1},
+    ["bob-mining-drill-1"] = {2, 2},
+    ["bob-mining-drill-2"] = {3, 3},
+    ["bob-mining-drill-3"] = {4, 4},
+    ["bob-mining-drill-4"] = {5, 5},
+    ["bob-area-mining-drill-1"] = {1, 2},
+    ["bob-area-mining-drill-2"] = {2, 3},
+    ["bob-area-mining-drill-3"] = {3, 4},
+    ["bob-area-mining-drill-4"] = {4, 5},
+}
 
 -- Rescale mining drill animation playback speed to something visually appealing
 local max_playback = 2   -- Maximum animation playback speed
@@ -59,9 +44,7 @@ for name, tier in pairs(tier_map) do
     entity = data.raw[inputs.type][name]
     
     -- Check if entity exists, if not, skip this iteration
-    if not entity then
-        goto continue
-    end
+    if not entity then goto continue end
 
     -- Fetch mining speed
     mining_speeds[index] = data.raw[inputs.type][name].mining_speed
@@ -77,13 +60,18 @@ local max_speed = mining_speeds[#mining_speeds]
 local min_speed = mining_speeds[1]
 
 -- Reskin entities, create and assign extra details
-for name, tier in pairs(tier_map) do
+for name, map in pairs(tier_map) do
     -- Fetch entity
     entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
-    if not entity then
-        goto continue
+    if not entity then goto continue end
+
+    -- Parse map
+    if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
+        tier = map[1]
+    else
+        tier = map[2]
     end
 
     -- Handle icon base 

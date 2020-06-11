@@ -19,6 +19,7 @@ for name, inputs in pairs(tiered_item_list) do
     -- Parse map
     inputs.tint = inputs.tint or reskins.lib.tint_index["tier-"..inputs.tier]
     inputs.directory = reskins.bobs.directory
+    inputs.mod = "bobs"
 
     -- Setup input defaults
     reskins.lib.parse_inputs(inputs)

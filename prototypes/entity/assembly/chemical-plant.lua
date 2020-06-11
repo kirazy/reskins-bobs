@@ -14,36 +14,31 @@ local inputs = {
     icon_name = "chemical-plant",
     base_entity = "chemical-plant",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "assembly",
     particles = {["big"] = 1, ["medium"] = 2},
 }
 
--- Chemical plants have two different sets of tiers; determine which we are using
-local tier_map
-if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
-    tier_map = {
-        ["chemical-plant"]   = 1,
-        ["chemical-plant-2"] = 2,
-        ["chemical-plant-3"] = 3,
-        ["chemical-plant-4"] = 4
-    }
-else
-    tier_map = {
-        ["chemical-plant"]   = 2,
-        ["chemical-plant-2"] = 3,
-        ["chemical-plant-3"] = 4,
-        ["chemical-plant-4"] = 5
-    }
-end
+local tier_map = {
+    ["chemical-plant"] = {1, 2},
+    ["chemical-plant-2"] = {2, 3},
+    ["chemical-plant-3"] = {3, 4},
+    ["chemical-plant-4"] = {4, 5},
+}
 
 -- Reskin entities, create and assign extra details
-for name, tier in pairs(tier_map) do
+for name, map in pairs(tier_map) do
     -- Fetch entity
     entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
-    if not entity then
-        goto continue
+    if not entity then goto continue end
+
+    -- Parse map
+    if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
+        tier = map[1]
+    else
+        tier = map[2]
     end
 
     -- Determine what tint we're using

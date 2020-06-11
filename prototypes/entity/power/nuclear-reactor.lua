@@ -14,30 +14,14 @@ local inputs = {
     icon_name = "nuclear-reactor",
     base_entity = "nuclear-reactor",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "power"
 }
 
--- Nuclear reactors have two different sets of tiers; determine which we are using
-local tier_map
-if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
-    tier_map = {
-        ["nuclear-reactor"]   = 1,
-        ["nuclear-reactor-2"] = 2,
-        ["nuclear-reactor-3"] = 3
-    }
-else
-    tier_map = {
-        ["nuclear-reactor"]   = 3,
-        ["nuclear-reactor-2"] = 4,
-        ["nuclear-reactor-3"] = 5
-    }
-end
-
--- Map pipe type to reactor entity name
-local heatpipe_index = {
-    ["nuclear-reactor"] = 1,
-    ["nuclear-reactor-2"] = 2,
-    ["nuclear-reactor-3"] = 3
+local tier_map = {
+    ["nuclear-reactor"] = {1, 3},
+    ["nuclear-reactor-2"] = {2, 4},
+    ["nuclear-reactor-3"] = {3, 5},
 }
 
 -- Nuclear fuel tints
@@ -326,8 +310,7 @@ end
 reskins.lib.parse_inputs(inputs)
 
 -- Map fuel type to reactor entity name
-local fuel_index =
-{
+local fuel_index = {
     ["nuclear-reactor"] = "uranium",
     ["nuclear-reactor-2"] = "uranium",
     ["nuclear-reactor-3"] = "uranium"
@@ -346,17 +329,22 @@ if settings.startup["bobmods-revamp-nuclear"] and settings.startup["bobmods-reva
 end
 
 -- Reskin entities
-for name, tier in pairs(tier_map) do
+for name, map in pairs(tier_map) do
     -- Initialize table address
     entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
-    if not entity then
-        goto continue
+    if not entity then goto continue end
+
+    -- Parse map
+    if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
+        tier = map[1]
+    else
+        tier = map[2]
     end
 
     -- We need to assaign fuel, pipe-tier, and reactor inputs
-    inputs.pipe_tier = heatpipe_index[name]
+    inputs.pipe_tier = map[1]
     inputs.fuel = fuel_index[name]
 
     -- Create explosions

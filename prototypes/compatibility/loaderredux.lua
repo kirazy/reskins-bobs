@@ -13,6 +13,7 @@ local inputs = {
     icon_name = "loader",
     base_entity = "splitter",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "compatibility",
     subgroup = "loaderredux",
     particles = {["medium"] = 1, ["big"] = 4},

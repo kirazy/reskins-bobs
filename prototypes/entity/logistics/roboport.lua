@@ -13,27 +13,17 @@ local inputs = {
     icon_name = "roboport",
     base_entity = "roboport",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "logistics",
     particles = {["medium"] = 2},
 }
 
--- Roboports have two different sets of tiers; determine which we are using
-local tier_map
-if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
-    tier_map = {
-        ["roboport"] = {1,1},
-        ["bob-roboport-2"] = {2,2},
-        ["bob-roboport-3"] = {3,3},
-        ["bob-roboport-4"] = {4,4}
-    }
-else
-    tier_map = {
-        ["roboport"] = {2,1},
-        ["bob-roboport-2"] = {3,2},
-        ["bob-roboport-3"] = {4,3},
-        ["bob-roboport-4"] = {5,4}
-    }
-end
+local tier_map = {
+    ["roboport"] = {1, 2},
+    ["bob-roboport-2"] = {2, 3},
+    ["bob-roboport-3"] = {3, 4},
+    ["bob-roboport-4"] = {4, 5}
+}
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
@@ -46,8 +36,12 @@ for name, map in pairs(tier_map) do
     end
 
     -- Parse map
-    tier = map[1]
-    subtier = map[2]
+    if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
+        tier = map[1]
+    else
+        tier = map[2]
+    end
+    subtier = map[1]
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]

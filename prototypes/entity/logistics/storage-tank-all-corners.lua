@@ -13,36 +13,31 @@ local inputs = {
     icon_name = "storage-tank-all-corners",
     base_entity = "storage-tank",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "logistics",
     particles = {["big"] = 1},
 }
 
--- Storage tanks have two different sets of tiers; determine which we are using
-local tier_map
-if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
-    tier_map = {
-        ["bob-storage-tank-all-corners"] = 1,
-        ["bob-storage-tank-all-corners-2"] = 2,
-        ["bob-storage-tank-all-corners-3"] = 3,
-        ["bob-storage-tank-all-corners-4"] = 4
-    }
-else
-    tier_map = {
-        ["bob-storage-tank-all-corners"] = 2,
-        ["bob-storage-tank-all-corners-2"] = 3,
-        ["bob-storage-tank-all-corners-3"] = 4,
-        ["bob-storage-tank-all-corners-4"] = 5
-    }
-end
+local tier_map = {
+    ["bob-storage-tank-all-corners"] = {1, 2},
+    ["bob-storage-tank-all-corners-2"] = {2, 3},
+    ["bob-storage-tank-all-corners-3"] = {3, 4},
+    ["bob-storage-tank-all-corners-4"] = {4, 5},
+}
 
 -- Reskin entities, create and assign extra details
-for name, tier in pairs(tier_map) do
+for name, map in pairs(tier_map) do
     -- Fetch entity
     entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
-    if not entity then
-        goto continue
+    if not entity then goto continue end
+
+    -- Parse map
+    if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
+        tier = map[1]
+    else
+        tier = map[2]
     end
 
     -- Determine what tint we're using

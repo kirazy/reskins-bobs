@@ -14,30 +14,20 @@ local inputs = {
     icon_name = "medium-electric-pole",
     base_entity = "medium-electric-pole",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "power",
     particles = {["medium-long"] = 1},
 }
 
--- Medium electric poles have two different sets of tiers; determine which we are using
-local tier_map
-if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
-    tier_map = {
-        ["medium-electric-pole"]   = 1,
-        ["medium-electric-pole-2"] = 2,
-        ["medium-electric-pole-3"] = 3,
-        ["medium-electric-pole-4"] = 4
-    }
-else
-    tier_map = {
-        ["medium-electric-pole"]   = 2,
-        ["medium-electric-pole-2"] = 3,
-        ["medium-electric-pole-3"] = 4,
-        ["medium-electric-pole-4"] = 5
-    }
-end
+local tier_map = {
+    ["medium-electric-pole"] = {1, 2},
+    ["medium-electric-pole-2"] = {2, 3},
+    ["medium-electric-pole-3"] = {3, 4},
+    ["medium-electric-pole-4"] = {4, 5},
+}
 
 -- Reskin entities, create and assign extra details
-for name, tier in pairs(tier_map) do
+for name, map in pairs(tier_map) do
     -- Fetch entity
     entity = data.raw[inputs.type][name]
 
@@ -45,8 +35,13 @@ for name, tier in pairs(tier_map) do
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
 
     -- Check if entity exists, if not, skip this iteration
-    if not entity then
-        goto continue
+    if not entity then goto continue end
+
+    -- Parse map
+    if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
+        tier = map[1]
+    else
+        tier = map[2]
     end
     
     reskins.lib.setup_standard_entity(name, tier, inputs)

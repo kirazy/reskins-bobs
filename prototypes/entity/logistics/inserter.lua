@@ -12,6 +12,7 @@ local inputs = {
     type = "inserter",
     icon_name = "inserter",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "logistics",
     particles = {["medium"] = 1},
     make_icons = false

@@ -13,6 +13,7 @@ local inputs = {
     icon_name = "water-pump",
     base_entity = "chemical-plant",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "plates",
     particles = {["big"] = 1, ["medium"] = 2},
     make_remnants = false,
@@ -32,9 +33,7 @@ for name, tier in pairs(tier_map) do
     entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
-    if not entity then
-        goto continue
-    end
+    if not entity then goto continue end
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]

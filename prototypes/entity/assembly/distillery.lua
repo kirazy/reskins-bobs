@@ -13,6 +13,7 @@ local inputs = {
     icon_name = "distillery",
     base_entity = "steel-furnace",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "assembly",
     particles = {["medium"] = 2},
     make_remnants = false,

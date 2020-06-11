@@ -12,6 +12,7 @@ local inputs = {
     type = "logistic-container",
     icon_name = "logistic-chest",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "logistics",
     particles = {["medium"] = 1},
     make_masked_icon = true,

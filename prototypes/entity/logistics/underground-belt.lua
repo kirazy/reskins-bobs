@@ -19,13 +19,13 @@ local inputs = {
     icon_name = "underground-belt",
     base_entity = "underground-belt",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "logistics",
     particles = {["medium"] = 3, ["small"] = 2},
     make_masked_icon = true,
 }
 
-local tier_map =
-{
+local tier_map = {
     ["basic-underground-belt"] = {0, 1, true, true},
     ["underground-belt"] = {1, 1, custom_colors},
     ["fast-underground-belt"] = {2, 2, custom_colors},
@@ -40,9 +40,7 @@ for name, map in pairs(tier_map) do
     entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
-    if not entity then
-        goto continue
-    end
+    if not entity then goto continue end
 
     -- Parse map
     tier = map[1]

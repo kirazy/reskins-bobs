@@ -14,36 +14,31 @@ local inputs = {
     icon_name = "big-electric-pole",
     base_entity = "big-electric-pole",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "power",
     particles = {["medium-long"] = 1},
 }
 
--- Big electric poles have two different sets of tiers; determine which we are using
-local tier_map
-if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
-    tier_map = {
-        ["big-electric-pole"]   = 1,
-        ["big-electric-pole-2"] = 2,
-        ["big-electric-pole-3"] = 3,
-        ["big-electric-pole-4"] = 4
-    }
-else
-    tier_map = {
-        ["big-electric-pole"]   = 2,
-        ["big-electric-pole-2"] = 3,
-        ["big-electric-pole-3"] = 4,
-        ["big-electric-pole-4"] = 5
-    }
-end
+local tier_map = {
+    ["big-electric-pole"] = {1, 2},
+    ["big-electric-pole-2"] = {2, 3},
+    ["big-electric-pole-3"] = {3, 4},
+    ["big-electric-pole-4"] = {4, 5},
+}
 
 -- Reskin entities, create and assign extra details
-for name, tier in pairs(tier_map) do
+for name, map in pairs(tier_map) do
     -- Fetch entity
     entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
-    if not entity then
-        goto continue
+    if not entity then goto continue end
+
+    -- Parse map
+    if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
+        tier = map[1]
+    else
+        tier = map[2]
     end
 
     -- Determine what tint we're using
@@ -67,14 +62,14 @@ for name, tier in pairs(tier_map) do
                 direction_count = 1,
                 shift = util.by_pixel(44, 0),
                 hr_version = {
-                filename = inputs.directory.."/graphics/entity/power/big-electric-pole/base/remnants/hr-big-electric-pole-base-remnants.png",
-                line_length = 1,
-                width = 366,
-                height = 188,
-                frame_count = 1,
-                direction_count = 1,
-                shift = util.by_pixel(43, 0.5),
-                scale = 0.5,
+                    filename = inputs.directory.."/graphics/entity/power/big-electric-pole/base/remnants/hr-big-electric-pole-base-remnants.png",
+                    line_length = 1,
+                    width = 366,
+                    height = 188,
+                    frame_count = 1,
+                    direction_count = 1,
+                    shift = util.by_pixel(43, 0.5),
+                    scale = 0.5,
                 }
             },
             -- Mask
@@ -88,15 +83,15 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(44, 0),
                 tint = inputs.tint,
                 hr_version = {
-                filename = inputs.directory.."/graphics/entity/power/big-electric-pole/remnants/hr-big-electric-pole-base-remnants-mask.png",
-                line_length = 1,
-                width = 366,
-                height = 188,
-                frame_count = 1,
-                direction_count = 1,
-                shift = util.by_pixel(43, 0.5),
-                tint = inputs.tint,
-                scale = 0.5,
+                    filename = inputs.directory.."/graphics/entity/power/big-electric-pole/remnants/hr-big-electric-pole-base-remnants-mask.png",
+                    line_length = 1,
+                    width = 366,
+                    height = 188,
+                    frame_count = 1,
+                    direction_count = 1,
+                    shift = util.by_pixel(43, 0.5),
+                    tint = inputs.tint,
+                    scale = 0.5,
                 }
             },
             -- Highlights
@@ -110,15 +105,15 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(44, 0),
                 blend_mode = "additive",
                 hr_version = {
-                filename = inputs.directory.."/graphics/entity/power/big-electric-pole/remnants/hr-big-electric-pole-base-remnants-highlights.png",
-                line_length = 1,
-                width = 366,
-                height = 188,
-                frame_count = 1,
-                direction_count = 1,
-                shift = util.by_pixel(43, 0.5),
-                blend_mode = "additive",
-                scale = 0.5,
+                    filename = inputs.directory.."/graphics/entity/power/big-electric-pole/remnants/hr-big-electric-pole-base-remnants-highlights.png",
+                    line_length = 1,
+                    width = 366,
+                    height = 188,
+                    frame_count = 1,
+                    direction_count = 1,
+                    shift = util.by_pixel(43, 0.5),
+                    blend_mode = "additive",
+                    scale = 0.5,
                 }
             },
         },

@@ -13,13 +13,14 @@ local inputs = {
     icon_name = "construction-robot",
     base_entity = "construction-robot",    
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "logistics",
     particles = {["medium"] = 2},
     -- make_icons = false,
 }
 
 local tier_map = {
-    ["construction-robot"]       = 1,
+    ["construction-robot"] = 1,
     ["bob-construction-robot-2"] = 2,
     ["bob-construction-robot-3"] = 3,
     ["bob-construction-robot-4"] = 4,
@@ -349,9 +350,7 @@ for name, tier in pairs(tier_map) do
     entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
-    if not entity then
-        goto continue
-    end
+    if not entity then goto continue end
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]

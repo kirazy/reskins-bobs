@@ -11,20 +11,21 @@ if settings.startup["reskins-bobs-do-bobassembly"].value == false then return en
 local inputs = {
     type = "assembling-machine",
     icon_name = "electrolyser",
-    base_entity = "chemical-plant", -- Electrolyser will use Chemical Plant as a reference for explosion
+    base_entity = "chemical-plant",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "assembly",
     particles = {["big"] = 1, ["medium"] = 2},
     make_remnants = false,
 }
 
 local tier_map = {
-        ["electrolyser"] = {1, 1},
-        ["electrolyser-2"] = {2, 2},
-        ["electrolyser-3"] = {3, 3},
-        ["electrolyser-4"] = {4, 3},
-        ["electrolyser-5"] = {5, 5}
-    }
+    ["electrolyser"] = {1, 1},
+    ["electrolyser-2"] = {2, 2},
+    ["electrolyser-3"] = {3, 3},
+    ["electrolyser-4"] = {4, 3},
+    ["electrolyser-5"] = {5, 5}
+}
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
@@ -32,9 +33,7 @@ for name, map in pairs(tier_map) do
     entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
-    if not entity then
-        goto continue
-    end
+    if not entity then goto continue end
     
     -- Parse map
     tier = map[1]

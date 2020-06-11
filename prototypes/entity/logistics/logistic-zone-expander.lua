@@ -13,28 +13,18 @@ local inputs = {
     icon_name = "zone-expander",
     base_entity = "roboport",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "logistics",
     particles = {["medium"] = 2},
     make_remnants = false,
 }
 
--- Logistic Zone Expanders have two different sets of tiers; determine which we are using
-local tier_map
-if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
-    tier_map = {
-        ["bob-logistic-zone-expander"] = {1, 1},
-        ["bob-logistic-zone-expander-2"] = {2, 2},
-        ["bob-logistic-zone-expander-3"] = {3, 3},
-        ["bob-logistic-zone-expander-4"] = {4, 4},
-    }
-else
-    tier_map = {
-        ["bob-logistic-zone-expander"] = {2, 1},
-        ["bob-logistic-zone-expander-2"] = {3, 2},
-        ["bob-logistic-zone-expander-3"] = {4, 3},
-        ["bob-logistic-zone-expander-4"] = {5, 4},
-    }
-end
+local tier_map = {
+    ["bob-logistic-zone-expander"] = {1, 2},
+    ["bob-logistic-zone-expander-2"] = {2, 3},
+    ["bob-logistic-zone-expander-3"] = {3, 4},
+    ["bob-logistic-zone-expander-4"] = {4, 5},
+}
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
@@ -42,13 +32,15 @@ for name, map in pairs(tier_map) do
     entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
-    if not entity then
-        goto continue
-    end
+    if not entity then goto continue end
 
     -- Parse map
-    tier = map[1]
-    subtier = map[2]
+    if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
+        tier = map[1]
+    else
+        tier = map[2]
+    end
+    subtier = map[1]
 
     -- Setup icon details
     inputs.icon_base = "zone-expander-"..subtier

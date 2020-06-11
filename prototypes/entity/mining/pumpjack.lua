@@ -13,8 +13,9 @@ local inputs = {
     icon_name = "pumpjack",
     base_entity = "pumpjack",
     directory = reskins.bobs.directory,
+    mod = "bobs",
     group = "mining",
-    -- particles = {["medium-long"] = 3}, -- particles: big 1, medium 2, small 3
+    -- TODO: particles = {["medium-long"] = 3}, -- particles: big 1, medium 2, small 3
     make_explosions = false,
     make_remnants = false,
 }
@@ -187,6 +188,10 @@ for name, map in pairs(tier_map) do
         playback_speed = ((entity.mining_speed/(max_speed-min_speed)) - (min_speed/(max_speed-min_speed)))*max_playback
                           + ((max_speed/(max_speed-min_speed)) - (entity.mining_speed/(max_speed-min_speed)))*min_playback
     end
+
+    -- TODO: Fetch remnants
+
+    -- TODO: Reskin remnants
 
     -- Reskin entities
     entity.base_picture = {

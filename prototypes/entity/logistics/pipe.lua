@@ -68,7 +68,10 @@ if not mods["boblogistics"] then reskin_pipe_icon() return else reskin_pipe_enti
 if settings.startup["reskins-bobs-do-boblogistics"].value == false then return end
 
 -- Set input parameters
-local inputs = {directory = reskins.bobs.directory}
+local inputs = {
+    directory = reskins.bobs.directory,
+    mod = "bobs"
+}
 
 local material_map = {
     ["copper"] = {1, "d45539"},
@@ -105,9 +108,7 @@ for material, map in pairs(material_map) do
     underground_pipe_entity =  data.raw["pipe-to-ground"][material.."-pipe-to-ground"]
 
     -- Check if entity exists, if not, skip this iteration; assume if we have one we have both
-    if not pipe_entity then
-        goto continue
-    end  
+    if not pipe_entity then goto continue end  
 
     -- Create explosions
     reskins.lib.create_explosion(inputs.material.."-pipe", {type = "pipe", base_entity = "pipe"})
@@ -184,6 +185,7 @@ for material, map in pairs(material_map) do
    
     -- Setup Icons
     local pipe_icon_inputs = {
+        mod = "bobs",
         icon = inputs.directory.."/graphics/icons/logistics/pipe/"..inputs.material.."-pipe-icon.png",
         icon_picture = {
             filename = inputs.directory.."/graphics/icons/logistics/pipe/"..inputs.material.."-pipe-icon.png",
@@ -197,6 +199,7 @@ for material, map in pairs(material_map) do
     }
 
     local pipe_to_ground_icon_inputs = {
+        mod = "bobs",
         icon = inputs.directory.."/graphics/icons/logistics/pipe-to-ground/"..inputs.material.."-pipe-to-ground-icon.png",
         icon_picture = {
             filename = inputs.directory.."/graphics/icons/logistics/pipe-to-ground/"..inputs.material.."-pipe-to-ground-icon.png",
@@ -227,8 +230,8 @@ for material, map in pairs(material_map) do
     if material ~= "iron" then
         pipe_icon_name = inputs.material.."-pipe"
         pipe_to_ground_icon_name = inputs.material.."-pipe-to-ground"
-        reskins.lib.assign_icons(pipe_icon_name, pipe_icon_inputs)
-        reskins.lib.assign_icons(pipe_to_ground_icon_name, pipe_to_ground_icon_inputs)
+        reskins.lib.store_icons(pipe_icon_name, pipe_icon_inputs)
+        reskins.lib.store_icons(pipe_to_ground_icon_name, pipe_to_ground_icon_inputs)
     else
         reskins.lib.append_tier_labels_to_vanilla_icon("pipe", tier, pipe_icon_inputs)
         reskins.lib.append_tier_labels_to_vanilla_icon("pipe-to-ground", tier, pipe_to_ground_icon_inputs)
