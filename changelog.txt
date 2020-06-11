@@ -1,11 +1,14 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.00.7
-Date: 2020.06.1XX
+Date: 2020.06.11
+  Features:
+    - Fully implemented new mining drills
   Changes:
     - Icons are now assigned in data-final-fixes, ensuring more robust compatibility with other reskin mods
   Bugfixes:
-    - Fix mining-drill animation skipping at low playback speeds
-    - Remove dependency on angelspetrochem to reskin Mini-Chemplants icons
+    - Fix mining-drill animation skipping at various playback speeds
+    - Remove dependency on angelspetrochem to reskin Mini-Chemplants icons, for the last time...
+    - Fix startup error related to neglecting to include low-resolution versions of mining drill mask and highlights
 ---------------------------------------------------------------------------------------------------
 Version: 0.00.6
 Date: 2020.06.10

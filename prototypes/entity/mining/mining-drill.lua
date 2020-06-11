@@ -16,7 +16,6 @@ local inputs = {
     mod = "bobs",
     group = "mining",
     particles = {["medium-long"] = 3},
-    make_remnants = false,
 }
 
 local tier_map = {
@@ -2126,10 +2125,86 @@ for name, map in pairs(tier_map) do
     end
 
     -- Fetch remnant
-    -- remnant = data.raw["corpse"][name.."-remnants"]
+    remnant = data.raw["corpse"][name.."-remnants"]
 
-    -- -- Reskin remnants
-    -- remnant.animation = "remnants"
+    -- Reskin remnants
+    remnant.animation = make_rotated_animation_variations_from_sheet (4, {
+        layers = {
+            {
+                filename = "__base__/graphics/entity/electric-mining-drill/remnants/electric-mining-drill-remnants.png",
+                line_length = 1,
+                width = 178,
+                height = 166,
+                frame_count = 1,
+                variation_count = 1,
+                axially_symmetrical = false,
+                direction_count = 1,
+                shift = util.by_pixel(7, 0),
+                hr_version = {
+                    filename = "__base__/graphics/entity/electric-mining-drill/remnants/hr-electric-mining-drill-remnants.png",
+                    line_length = 1,
+                    width = 356,
+                    height = 328,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 1,
+                    shift = util.by_pixel(7, -0.5),
+                    scale = 0.5,
+                },
+            },
+            {
+                filename = inputs.directory.."/graphics/entity/mining/mining-drill/remnants/electric-mining-drill-remnants-mask.png",
+                line_length = 1,
+                width = 178,
+                height = 166,
+                frame_count = 1,
+                variation_count = 1,
+                axially_symmetrical = false,
+                direction_count = 1,
+                shift = util.by_pixel(7, 0),
+                tint = inputs.tint,
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/mining/mining-drill/remnants/hr-electric-mining-drill-remnants-mask.png",
+                    line_length = 1,
+                    width = 356,
+                    height = 328,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 1,
+                    shift = util.by_pixel(7, -0.5),
+                    tint = inputs.tint,
+                    scale = 0.5,
+                },
+            },
+            {
+                filename = inputs.directory.."/graphics/entity/mining/mining-drill/remnants/electric-mining-drill-remnants-highlights.png",
+                line_length = 1,
+                width = 178,
+                height = 166,
+                frame_count = 1,
+                variation_count = 1,
+                axially_symmetrical = false,
+                direction_count = 1,
+                shift = util.by_pixel(7, 0),
+                blend_mode = "additive",
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/mining/mining-drill/remnants/hr-electric-mining-drill-remnants-highlights.png",
+                    line_length = 1,
+                    width = 356,
+                    height = 328,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 1,
+                    shift = util.by_pixel(7, -0.5),
+                    blend_mode = "additive",
+                    scale = 0.5,
+                },
+            }
+        }
+    })
 
     -- Reskin entities
     entity.graphics_set.drilling_vertical_movement_duration = 10 / speed
