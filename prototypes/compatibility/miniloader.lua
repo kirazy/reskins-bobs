@@ -21,9 +21,14 @@ local inputs = {
     group = "compatibility",
     subgroup = "miniloader",
     particles = {["medium"] = 1, ["big"] = 4},
-    make_masked_icon = true,
+    icon_layers = 2,
     make_remnants = false,
 }
+
+-- Handle belt tier labels
+if settings.startup["reskins-bobs-do-belt-entity-tier-labeling"].value == true then
+    inputs.tier_labels = true
+end
 
 local tier_map = {
     -- 1x1 Loader Entities
@@ -123,9 +128,8 @@ for name, tier in pairs(item_map) do
     -- Fetch item
     item = data.raw["item"][name]
 
-    if not item then
-        goto continue
-    end
+    -- Check if item exists, if not, skip this iteration
+    if not item then goto continue end
 
     -- Setup icon details
     if string.find(name, "filter") then
@@ -137,7 +141,7 @@ for name, tier in pairs(item_map) do
     -- Determine what tint we're using
     inputs.tint = reskins.bobs.belt_tint_handling(name, tier)
 
-    reskins.lib.setup_masked_icon(name, tier, inputs)
+    reskins.lib.construct_icon(name, tier, inputs)
 
     -- Handle grouping and ordering in the UI
     if name ~= "chute-miniloader" then

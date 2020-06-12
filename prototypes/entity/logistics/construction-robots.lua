@@ -16,7 +16,6 @@ local inputs = {
     mod = "bobs",
     group = "logistics",
     particles = {["medium"] = 2},
-    -- make_icons = false,
 }
 
 local tier_map = {

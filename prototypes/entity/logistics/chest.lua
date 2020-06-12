@@ -15,7 +15,7 @@ local inputs = {
     mod = "bobs",
     group = "logistics",
     particles = {["medium"] = 1},
-    make_masked_icon = true,
+    icon_layers = 2,
     untinted_icon_mask = true
 }
 

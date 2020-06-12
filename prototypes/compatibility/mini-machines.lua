@@ -15,8 +15,8 @@ local function switch_icon_to_mini(name, source, pattern, replacement, inputs)
     if not destination then return end
 
     -- Transcribe icons and pictures
-    inputs.icon = table.deepcopy(source.icons)
-    inputs.icon_picture = table.deepcopy(source.pictures)
+    inputs.icon = util.copy(source.icons)
+    inputs.icon_picture = util.copy(source.pictures)
 
     -- Switch to miniatures
     for n = 1, #inputs.icon do

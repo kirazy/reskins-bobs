@@ -16,7 +16,7 @@ local inputs =
     mod = "bobs",
     group = "logistics",
     particles = {["medium"] = 2},
-    make_icons = false,
+    icon_filename = inputs.directory.."/graphics/icons/logistics/zone-interface/zone-interface-icon-base.png",
     make_remnants = false,
 }
 
@@ -28,12 +28,7 @@ local entity = data.raw[inputs.type][name]
 -- Make sure the interface exists
 if not entity then return end
 
-inputs.internal_name = "logistic-zone-interface"
-
 reskins.lib.setup_standard_entity(name, tier, inputs)
-
--- Setup icon
-reskins.lib.setup_flat_icon(name, false, inputs.directory.."/graphics/icons/logistics/zone-interface/zone-interface-icon-base.png", inputs)
 
 -- Reskin entity
 entity.base =

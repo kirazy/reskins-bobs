@@ -22,9 +22,14 @@ local inputs = {
     group = "compatibility",
     subgroup = "vanilla-loaders-hd",
     particles = {["medium"] = 1, ["big"] = 4},
-    make_masked_icon = true,
+    icon_layers = 2,
     make_remnants = false,
 }
+
+-- Handle belt tier labels
+if settings.startup["reskins-bobs-do-belt-entity-tier-labeling"].value == true then
+    inputs.tier_labels = true
+end
 
 local tier_map = {
     ["basic-loader"] = {0, 1, true},

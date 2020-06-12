@@ -25,5 +25,5 @@ for name, inputs in pairs(tiered_item_list) do
     reskins.lib.parse_inputs(inputs)
 
     -- Reskin icons
-    reskins.lib.setup_standard_icon(name, inputs.tier, inputs)
+    reskins.lib.construct_icon(name, inputs.tier, inputs)
 end

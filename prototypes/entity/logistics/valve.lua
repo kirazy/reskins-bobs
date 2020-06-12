@@ -12,7 +12,7 @@ local inputs = {
     mod = "bobs",
     group = "logistics",
     particles = {["small"] = 2},
-    make_masked_icon = true,
+    icon_layers = 2,
     tier_labels = false,
     make_remnants = false,
 }

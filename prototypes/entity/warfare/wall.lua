@@ -18,6 +18,7 @@ local inputs = {
     directory = reskins.bobs.directory,
     mod = "bobs",
     particles = {["tiny-stone"] = 3, ["small-stone"] = 2, ["medium-stone"] = 1},
+    icon_filename = inputs.directory.."/graphics/icons/warfare/reinforced-wall/wall.png",
 }
 
 local reinforced_tint_index = {
@@ -40,7 +41,7 @@ end
 reskins.lib.create_remnant("reinforced-wall", inputs)
 
 -- Create icons
-reskins.lib.setup_flat_icon("reinforced-wall", false, inputs.directory.."/graphics/icons/warfare/reinforced-wall/wall.png", inputs)
+reskins.lib.construct_icon("reinforced-wall", 0, inputs)
 
 -- Reskin the gate
 remnant = data.raw["corpse"]["reinforced-wall-remnants"]

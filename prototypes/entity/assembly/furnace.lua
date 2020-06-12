@@ -121,9 +121,7 @@ for name, map in pairs(stone_furnace_map) do
     entity_source = data.raw["furnace"]["stone-furnace"]
 
     -- Check if entity exists, if not, skip this iteration
-    if not entity then
-        goto continue
-    end
+    if not entity then goto continue end
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
@@ -133,7 +131,8 @@ for name, map in pairs(stone_furnace_map) do
     -- Reskin remnants and entities
     if name == "stone-furnace" then
         entity.animation = stone_furnace_entities("stone-furnace", "stone-furnace")
-        reskins.lib.append_tier_labels_to_vanilla_icon(name, 1, inputs)
+        inputs.icon_filename = nil
+        reskins.lib.append_tier_labels_to_vanilla_icon(name, tier, inputs)
     end
 
     if string.find(name, "mixing") then
@@ -142,7 +141,8 @@ for name, map in pairs(stone_furnace_map) do
         entity.working_visualisations = entity_source.working_visualisations
         
         -- Setup icon
-        reskins.lib.setup_flat_icon(name, {1, 1}, inputs.directory.."/graphics/icons/assembly/stone-furnace/stone-metal-mixing-furnace.png", inputs)
+        inputs.icon_filename = inputs.directory.."/graphics/icons/assembly/stone-furnace/stone-metal-mixing-furnace.png"
+        reskins.lib.construct_icon(name, tier, inputs)
     end
 
     if string.find(name, "chemical") then
@@ -164,7 +164,8 @@ for name, map in pairs(stone_furnace_map) do
         }
 
         -- Setup icon
-        reskins.lib.setup_flat_icon(name, {1, 1}, inputs.directory.."/graphics/icons/assembly/stone-furnace/stone-chemical-furnace.png", inputs)
+        inputs.icon_filename = inputs.directory.."/graphics/icons/assembly/stone-furnace/stone-chemical-furnace.png"
+        reskins.lib.construct_icon(name, tier, inputs)
     end
 
     -- Label to skip to next iteration
@@ -340,9 +341,7 @@ for name, map in pairs(steel_furnace_map) do
     entity_source = data.raw["furnace"]["steel-furnace"]
 
     -- Check if entity exists, if not, skip this iteration
-    if not entity then
-        goto continue
-    end
+    if not entity then goto continue end
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
@@ -368,7 +367,8 @@ for name, map in pairs(steel_furnace_map) do
     end
 
     -- Setup icon
-    reskins.lib.setup_flat_icon(name, {2, 2}, inputs.directory.."/graphics/icons/assembly/steel-furnace/"..sprite_name..".png", inputs)
+    inputs.icon_filename = inputs.directory.."/graphics/icons/assembly/steel-furnace/"..sprite_name..".png"
+    reskins.lib.construct_icon(name, tier, inputs)
 
     -- Fetch remnant
     remnant = data.raw["corpse"][name.."-remnants"]

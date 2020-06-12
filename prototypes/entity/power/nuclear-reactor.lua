@@ -377,7 +377,7 @@ for name, map in pairs(tier_map) do
 
     -- Reskin icons
     inputs.icon_base = "nuclear-reactor-"..fuel_index[name].."-"..inputs.pipe_tier
-    reskins.lib.setup_standard_icon(name, tier, inputs)
+    reskins.lib.construct_icon(name, tier, inputs)
 
     -- Label to skip to next iteration
     ::continue::

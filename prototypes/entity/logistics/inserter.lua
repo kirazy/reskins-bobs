@@ -10,12 +10,10 @@
 -- Set input parameters
 local inputs = {
     type = "inserter",
-    icon_name = "inserter",
     directory = reskins.bobs.directory,
     mod = "bobs",
     group = "logistics",
     particles = {["medium"] = 1},
-    make_icons = false
 }
 
 local inserter_map
@@ -233,17 +231,14 @@ for name, map in pairs(inserter_map) do
         inputs.base_entity = "inserter"
     end
 
-    reskins.lib.setup_standard_entity(name, tier, inputs)
-
-    -- Handle icons
-    local icon_tier
-    if settings.startup["reskins-bobs-do-inserter-tier-labeling"].value == true then
-        inputs.tier_labels = true
-    else
+    -- Handle tier labels
+    if settings.startup["reskins-bobs-do-inserter-tier-labeling"].value == false then
         inputs.tier_labels = false
     end
 
-    reskins.lib.setup_flat_icon(name, {tier, tier}, inputs.directory.."/graphics/icons/logistics/inserter/standard/"..name.."-icon.png", inputs)
+    inputs.icon_filename = inputs.directory.."/graphics/icons/logistics/inserter/standard/"..name.."-icon.png"
+
+    reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Handle the type of inserter we're dealing with
     local inserter_type, hand_name

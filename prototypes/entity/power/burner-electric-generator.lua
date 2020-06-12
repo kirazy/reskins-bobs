@@ -15,8 +15,8 @@ local inputs = {
     group = "power",
     particles = {["medium"] = 2,["big"] = 1},
     tint = util.color("26262660"),
+    icon_filename = inputs.directory.."/graphics/icons/power/burner-electric-generator/burner-electric-generator.png",
     make_remnants = false,
-    make_icons = false,
 }
 
 local name = "bob-burner-generator"
@@ -28,8 +28,6 @@ entity = data.raw[inputs.type][name]
 if not entity then return end
 
 reskins.lib.setup_standard_entity(name, 0, inputs)
-
-reskins.lib.setup_flat_icon(name, false, inputs.directory.."/graphics/icons/power/burner-electric-generator/burner-electric-generator.png", inputs)
 
 -- Reskin entity
 entity.animation = {
