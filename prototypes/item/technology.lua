@@ -12,13 +12,11 @@ local science_packs = {
 }
 
 if settings.startup["bobmods-tech-colorupdate"] and settings.startup["bobmods-tech-colorupdate"].value == true and settings.startup["reskins-lib-customize-tier-colors"].value == true then
-    -- util.merge({science_packs, {
         science_packs["automation-science-pack"] = {tier = 1}
         science_packs["logistic-science-pack"] = {tier = 2}
         science_packs["chemical-science-pack"] = {tier = 3}
         science_packs["production-science-pack"] = {tier = 4}
         science_packs["utility-science-pack"] = {tier = 5}
-    -- }})
 end
 
 for name, parameters in pairs(science_packs) do
@@ -41,6 +39,7 @@ for name, parameters in pairs(science_packs) do
     reskins.lib.parse_inputs(inputs)
 
     reskins.lib.construct_icon(name, 0, inputs)
+    reskins.lib.construct_technology_icon(name, inputs)
 
     -- Label to skip to next iteration
     ::continue::

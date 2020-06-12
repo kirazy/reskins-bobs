@@ -6,9 +6,9 @@
 -- Core functions
 require("prototypes.functions")
 
--- Icons
-require("prototypes.icon.logistics")
-require("prototypes.icon.tech")
+-- Items
+require("prototypes.item.logistics")
+require("prototypes.item.technology")
 
 -- Compatiblity
 require("prototypes.compatibility.miniloader")
