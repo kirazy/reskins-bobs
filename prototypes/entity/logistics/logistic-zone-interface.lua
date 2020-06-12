@@ -16,9 +16,10 @@ local inputs =
     mod = "bobs",
     group = "logistics",
     particles = {["medium"] = 2},
-    icon_filename = inputs.directory.."/graphics/icons/logistics/zone-interface/zone-interface-icon-base.png",
     make_remnants = false,
 }
+
+inputs.icon_filename = inputs.directory.."/graphics/icons/logistics/zone-interface/zone-interface-icon-base.png"
 
 -- Fetch entity
 local name = "bob-logistic-zone-interface"

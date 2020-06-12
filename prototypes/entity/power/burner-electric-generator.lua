@@ -15,9 +15,10 @@ local inputs = {
     group = "power",
     particles = {["medium"] = 2,["big"] = 1},
     tint = util.color("26262660"),
-    icon_filename = inputs.directory.."/graphics/icons/power/burner-electric-generator/burner-electric-generator.png",
     make_remnants = false,
 }
+
+inputs.icon_filename = inputs.directory.."/graphics/icons/power/burner-electric-generator/burner-electric-generator.png"
 
 local name = "bob-burner-generator"
 

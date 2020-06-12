@@ -18,8 +18,9 @@ local inputs = {
     directory = reskins.bobs.directory,
     mod = "bobs",
     particles = {["tiny-stone"] = 3, ["small-stone"] = 2, ["medium-stone"] = 1},
-    icon_filename = inputs.directory.."/graphics/icons/warfare/reinforced-wall/wall.png",
 }
+
+inputs.icon_filename = inputs.directory.."/graphics/icons/warfare/reinforced-wall/wall.png"
 
 local reinforced_tint_index = {
     ["tiny-stone"] = util.color("a793bf"),

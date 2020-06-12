@@ -6,6 +6,20 @@
 -- Check to see if reskinning needs to be done.
 if not mods["bobtech"] then return end
 
+-- Steam science pack
+if settings.startup["bobmods-burnerphase"] and settings.startup["bobmods-burnerphase"].value == true then
+    local steam_science_inputs = {
+        directory = reskins.bobs.directory,
+        mod = "bobs",
+        group = "technology",
+        type = "tool",
+    }
+
+    steam_science_inputs.icon_filename = steam_science_inputs.directory.."/graphics/icons/technology/science-pack/steam-science-pack.png"
+
+    reskins.lib.construct_icon("steam-science-pack", 0, steam_science_inputs)
+end
+
 -- Science Packs
 local science_packs = {
     ["advanced-logistic-science-pack"] = {tint = util.color("de00a3")},

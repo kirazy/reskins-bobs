@@ -18,8 +18,9 @@ local inputs = {
     directory = reskins.bobs.directory,
     mod = "bobs",
     particles = {["big"] = 1, ["medium"] = 2},
-    icon_filename = inputs.directory.."/graphics/icons/warfare/reinforced-gate/gate.png",
 }
+
+inputs.icon_filename = inputs.directory.."/graphics/icons/warfare/reinforced-gate/gate.png"
 
 local reinforced_tint_index = {
     ["big"] = util.color("6f647d"),
