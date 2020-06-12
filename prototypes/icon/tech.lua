@@ -25,7 +25,7 @@ for name, parameters in pairs(science_packs) do
     inputs = {
         directory = reskins.bobs.directory,
         mod = "bobs",
-        group = "tech",
+        group = "technology",
         type = "tool",
         icon_name = "science-pack",
         tint = parameters.tint or reskins.lib.tint_index["tier-"..parameters.tier]
@@ -63,7 +63,7 @@ if settings.startup["bobmods-enemies-enablenewartifacts"] and settings.startup["
         local inputs = {
             directory = reskins.bobs.directory,
             mod = "bobs",
-            group = "tech",
+            group = "technology",
             type = "tool",
             icon_layers = 1,
             icon_name = "alien-science-pack",

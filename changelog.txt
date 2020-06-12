@@ -1,6 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.00.8
 Date: 2020.06.11
+  Features:
+    - Implemented science packs, alien science packs and associated technology
   Changes:
     - Set minimum version for Base to 0.18.31, Library to 0.00.4
 ---------------------------------------------------------------------------------------------------
