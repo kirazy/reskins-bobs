@@ -8,6 +8,7 @@ require("prototypes.functions")
 
 -- Icons
 require("prototypes.icon.logistics")
+require("prototypes.icon.tech")
 
 -- Compatiblity
 require("prototypes.compatibility.miniloader")
