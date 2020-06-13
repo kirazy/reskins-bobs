@@ -38,7 +38,7 @@ if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
 else
     tier_map["electronics-machine-1"] = {1, 1, false}
     tier_map["electronics-machine-2"] = {3, 3, false}
-    tier_map["electronics-machine-3"] = {5, 4, false}
+    tier_map["electronics-machine-3"] = {4, 4, false}
 end
 
 -- Reskin entities, create and assign extra details

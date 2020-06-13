@@ -24,10 +24,13 @@ require("assembly.oil-refinery")
 ----------------------------------------------------------------------------------------------------
 -- Bob's Logistics
 ----------------------------------------------------------------------------------------------------
+require("logistics.cargo-wagon")
 require("logistics.chest")
 require("logistics.construction-robots")
+require("logistics.fluid-wagon")
 require("logistics.inserter")
 require("logistics.inserter-overhaul")
+require("logistics.locomotive")
 require("logistics.logistic-robots")
 require("logistics.logistic-zone-expander")
 require("logistics.logistic-zone-interface")
@@ -88,12 +91,14 @@ require("power.substation")
 ----------------------------------------------------------------------------------------------------
 -- Bob's Warfare
 ----------------------------------------------------------------------------------------------------
--- require("warfare.artillery-turret")
+require("warfare.artillery-turret")
+require("warfare.artillery-wagon")
 require("warfare.beam")
 require("warfare.gun-turret")
 require("warfare.laser-turret")
 -- require("warfare.plasma-turret")
 require("warfare.radar")
 require("warfare.sniper-turret")
+require("warfare.tank")
 require("warfare.wall")
 require("warfare.gate")
