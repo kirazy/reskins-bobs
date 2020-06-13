@@ -4,4 +4,14 @@
 -- See LICENSE.md in the project directory for license information.
 
 -- Handles requires for standard equipment files
-require("equipment.personal-roboports")
+
+----------------------------------------------------------------------------------------------------
+-- Bob's Equipment
+----------------------------------------------------------------------------------------------------
+require("equipment.personal-roboport")
+require("equipment.fusion-reactor")
+
+----------------------------------------------------------------------------------------------------
+-- Bob's Vehicle Equipment
+----------------------------------------------------------------------------------------------------
+require("vehicle-equipment.fusion-reactor")
