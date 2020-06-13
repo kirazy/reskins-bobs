@@ -4,9 +4,14 @@ Date: 2020.06.XX
   Features:
     - Implemented science packs, alien science packs and associated technology
     - Implemented personal roboport equipment
+    - Implemented personal and vehicle fusion reactor equipment and associated technology
+    - Implemented artillery turrets
+    - Added icon support for locomotive, cargo wagon, fluid wagon, artillery wagon, and tanks
   Changes:
     - Set minimum version for Base to 0.18.31, Library to 0.00.4
     - Internal reorganization to handle requires by category
+    - Shifted ingredient-based tiers for logistics chests to tiers 3, 4, and 5 from 2, 3, and 4
+    - Shifted ingredient-based tier for electronics assembling machine 3 to tier 4 from 5
 ---------------------------------------------------------------------------------------------------
 Version: 0.00.7
 Date: 2020.06.11
