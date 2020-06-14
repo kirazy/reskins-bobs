@@ -169,7 +169,7 @@ for name, tier in pairs(item_map) do
     ::continue::
 end
 
--- Logistics (Belts)
+-- Technologies
 local technology_map = {
     ["basic-miniloader"] = 0,
     ["miniloader"] = 1,
