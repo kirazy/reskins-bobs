@@ -14,4 +14,5 @@ require("equipment.fusion-reactor")
 ----------------------------------------------------------------------------------------------------
 -- Bob's Vehicle Equipment
 ----------------------------------------------------------------------------------------------------
+require("vehicle-equipment.fusion-cell")
 require("vehicle-equipment.fusion-reactor")
