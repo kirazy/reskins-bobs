@@ -23,7 +23,6 @@ local inputs = {
     subgroup = "vanilla-loaders-hd",
     particles = {["medium"] = 1, ["big"] = 4},
     icon_layers = 2,
-    technology_icon_layers = 2,
     make_remnants = false,
 }
 
