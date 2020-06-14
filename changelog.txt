@@ -7,8 +7,10 @@ Date: 2020.06.XX
     - Implemented personal and vehicle fusion reactor equipment and associated technology
     - Implemented vehicle fusion cell equipment and associated technology
     - Implemented artillery turrets
+    - Implemented automation, logistics technologies
     - Added icon support for locomotives, cargo wagons, fluid wagons, artillery wagons, and tanks
     - Added support for Classic Mining Drill mod
+    - Added support for miniloader technologies
   Changes:
     - Set minimum version for Base to 0.18.31, Library to 0.00.4
     - Internal reorganization to handle requires by category

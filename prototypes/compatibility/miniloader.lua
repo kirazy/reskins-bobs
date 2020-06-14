@@ -22,6 +22,7 @@ local inputs = {
     subgroup = "miniloader",
     particles = {["medium"] = 1, ["big"] = 4},
     icon_layers = 2,
+    technology_icon_layers = 2,
     make_remnants = false,
 }
 
@@ -166,4 +167,34 @@ for name, tier in pairs(item_map) do
 
     -- Label to skip to next iteration
     ::continue::
+end
+
+-- Logistics (Belts)
+local technology_map = {
+    ["basic-miniloader"] = 0,
+    ["miniloader"] = 1,
+    ["fast-miniloader"] = 2,
+    ["express-miniloader"] = 3,
+    ["turbo-miniloader"] = 4,
+    ["ultimate-miniloader"] = 5,
+}
+
+-- Reskin technologies
+for name, tier in pairs(technology_map) do
+    -- Fetch technology
+    technology = data.raw["technology"][name]
+
+    -- Check if entity exists, if not, skip this iteration
+    if not technology then goto continue end
+
+    -- Fix inputs
+    inputs.icon_base = nil
+
+    -- Determine what tint we're using
+    inputs.tint = reskins.bobs.belt_tint_handling(name, tier)
+
+    reskins.lib.construct_technology_icon(name, inputs)
+
+    -- Label to skip to next iteration
+    ::continue::    
 end

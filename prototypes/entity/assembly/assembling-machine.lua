@@ -26,8 +26,8 @@ local tier_map = {
     ["assembling-machine-4"] = {3, 3, true},
     ["assembling-machine-5"] = {4, 4, true},
     ["assembling-machine-6"] = {5, 4, true},
-    ["burner-assembling-machine"] = {0, 0, false, "262626"},
-    ["steam-assembling-machine"] = {0, 0, true, "d9d9d9"},
+    ["burner-assembling-machine"] = {0, 0, false, util.color("262626")},
+    ["steam-assembling-machine"] = {0, 0, true, util.color("d9d9d9")},
 }
 
 -- Append electronics assembling machines
@@ -55,11 +55,7 @@ for name, map in pairs(tier_map) do
     has_fluids = map[3]  
        
     -- Determine what tint we're using
-    if map[4] then
-        inputs.tint = util.color(map[4])
-    else
-        inputs.tint = reskins.lib.tint_index["tier-"..tier]
-    end
+    inputs.tint = map[4] or reskins.lib.tint_index["tier-"..tier]
 
     -- Setup icon details
     if string.find(name, "electronics") then

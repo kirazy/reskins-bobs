@@ -8,6 +8,9 @@ for name, inputs in pairs(reskins.bobs.icons) do
     reskins.lib.assign_icons(name, inputs)
 end
 
+-- Technology
+require("prototypes.technology.technology-importer")
+
 -- Technology handling
 for name, inputs in pairs(reskins.bobs.technology) do
     reskins.lib.assign_technology_icons(name, inputs)

@@ -15,5 +15,8 @@ require("prototypes.entity.entity-importer")
 -- Equipment
 require("prototypes.equipment.equipment-importer")
 
+-- Technology
+require("prototypes.technology.technology-importer")
+
 -- Compatiblity
 require("prototypes.compatibility.compatibility-importer")
