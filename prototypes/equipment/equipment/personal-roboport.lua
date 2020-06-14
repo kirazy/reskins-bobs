@@ -50,7 +50,7 @@ for name, map in pairs(personal_roboports) do
 
     -- Construct icon
     reskins.lib.construct_icon(name, tier, inputs)
-    
+
     -- Reskin the equipment
     equipment.sprite = {
         layers = {
@@ -79,6 +79,19 @@ for name, map in pairs(personal_roboports) do
             }
         }
     }
+
+    -- Construct technology icon
+    inputs.icon_base = nil
+    inputs.icon_mask = nil
+    inputs.icon_highlights = nil
+
+    inputs.technology_icon_extras = {
+        {
+            icon = inputs.directory.."/graphics/technology/equipment/personal-equipment-symbol.png"
+        }
+    }
+
+    reskins.lib.construct_technology_icon(name, inputs)
 
     -- Label to skip to next iteration
     ::continue::
