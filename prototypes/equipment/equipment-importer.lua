@@ -16,3 +16,4 @@ require("equipment.fusion-reactor")
 ----------------------------------------------------------------------------------------------------
 require("vehicle-equipment.fusion-cell")
 require("vehicle-equipment.fusion-reactor")
+require("vehicle-equipment.vehicle-roboport")

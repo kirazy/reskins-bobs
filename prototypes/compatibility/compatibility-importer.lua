@@ -7,3 +7,4 @@
 require("loaderredux")
 require("miniloader")
 require("vanilla-loaders-hd")
+require("classic-mining-drill")

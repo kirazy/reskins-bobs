@@ -3,10 +3,12 @@ Version: 0.00.8
 Date: 2020.06.XX
   Features:
     - Implemented science packs, alien science packs and associated technology
-    - Implemented personal roboport equipment
+    - Implemented personal and vehicle roboport equipment and associated technology
     - Implemented personal and vehicle fusion reactor equipment and associated technology
+    - Implemented vehicle fusion cell equipment and associated technology
     - Implemented artillery turrets
-    - Added icon support for locomotive, cargo wagon, fluid wagon, artillery wagon, and tanks
+    - Added icon support for locomotives, cargo wagons, fluid wagons, artillery wagons, and tanks
+    - Added support for Classic Mining Drill mod
   Changes:
     - Set minimum version for Base to 0.18.31, Library to 0.00.4
     - Internal reorganization to handle requires by category
@@ -29,7 +31,7 @@ Date: 2020.06.10
   Features:
     - Added an option to display a filter symbol on filter-inserter and stack-filter-inserter icons when using Bob's Inserter Overhaul (default on)
     - Added an option to flip stack inserter icons when using Bob's Inserter Overhaul (default off)
-    - Added support for Loader Redux
+    - Added support for Loader Redux mod
     - Added a symbol to large area mining drill icons to better distinguish them from regular mining drill icons
     - Preliminary implementation of new mining drills
     - Implemented distilleries
@@ -78,4 +80,4 @@ Date: 2020.06.06
     - Option for the way tiers are determined, either through ingredients or order received (default)
     - Includes appropriate icons for differentiability, with configuration options
     - Adds remnants and explosive particle effects on structure death to all of Bob's structures
-    - Supports Mini-Machines, Miniloaders, and Vanilla Loaders HD
+    - Supports Mini-Machines, Miniloaders, and Vanilla Loaders HD mods
