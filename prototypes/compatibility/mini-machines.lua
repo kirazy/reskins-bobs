@@ -121,3 +121,12 @@ local storage_tanks = {
 }
 
 rescale_minimachine(storage_tanks, "storage-tank", "storage%-tank", "storage-tank")
+
+-- Beacons
+local beacons = {
+    ["mini-beacon-1"] = "beacon",
+    ["mini-beacon-2"] = "beacon-2",
+    ["mini-beacon-3"] = "beacon-3",
+}
+
+rescale_minimachine(beacons, "beacon", "beacon", "beacon")

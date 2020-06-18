@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.00.8
-Date: 2020.06.XX
+Date: 2020.06.18
   Features:
     - Implemented science packs, alien science packs and associated technology
     - Implemented personal and vehicle roboport equipment and associated technology
@@ -13,7 +13,7 @@ Date: 2020.06.XX
     - Added support for Classic Mining Drill mod
     - Added support for miniloader technologies
   Changes:
-    - Set minimum version for Base to 0.18.31, Library to 0.00.4
+    - Set minimum version for Base to 0.18.32, Library to 0.00.4
     - Internal reorganization to handle requires by category
     - Shifted ingredient-based tiers for logistics chests to tiers 3, 4, and 5 from 2, 3, and 4
     - Shifted ingredient-based tier for electronics assembling machine 3 to tier 4 from 5

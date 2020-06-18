@@ -112,8 +112,6 @@ local inputs = {
     mod = "bobs",
     group = "modules",
     particles = {["small"] = 3},
-    make_icons = false,
-    make_remnants = false,
 }
 
 local tier_map = {
@@ -129,6 +127,12 @@ for name, map in pairs(tier_map) do
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
+
+    -- Fix order shenanigans
+    if name == "beacon" then
+        data.raw["item"][name].order = "a[beacon]-1"
+        entity.order = "z-a[beacon]-1"
+    end
     
     -- Parse map
     if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
@@ -142,7 +146,90 @@ for name, map in pairs(tier_map) do
   
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
-    -- TODO: Remnants
+    -- Fetch remnant
+    remnant = data.raw["corpse"][name.."-remnants"]
+
+    -- Reskin remnants
+    remnant.animation = make_rotated_animation_variations_from_sheet (2, {
+        layers = {
+            -- Base
+            {
+                filename = "__base__/graphics/entity/beacon/remnants/beacon-remnants.png",
+                line_length = 1,
+                width = 106,
+                height = 104,
+                frame_count = 1,
+                variation_count = 1,
+                axially_symmetrical = false,
+                direction_count = 1,
+                shift = util.by_pixel(1, 5),
+                hr_version = {
+                    filename = "__base__/graphics/entity/beacon/remnants/hr-beacon-remnants.png",
+                    line_length = 1,
+                    width = 212,
+                    height = 206,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 1,
+                    shift = util.by_pixel(1, 5),
+                    scale = 0.5,
+                },
+            },
+            -- Mask
+            {
+                filename = inputs.directory.."/graphics/entity/modules/beacon/remnants/beacon-remnants-mask.png",
+                line_length = 1,
+                width = 106,
+                height = 104,
+                frame_count = 1,
+                variation_count = 1,
+                axially_symmetrical = false,
+                direction_count = 1,
+                shift = util.by_pixel(1, 5),
+                tint = inputs.tint,
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/modules/beacon/remnants/hr-beacon-remnants-mask.png",
+                    line_length = 1,
+                    width = 212,
+                    height = 206,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 1,
+                    shift = util.by_pixel(1, 5),
+                    tint = inputs.tint,
+                    scale = 0.5,
+                },
+            },
+            -- Highlights
+            {
+                filename = inputs.directory.."/graphics/entity/modules/beacon/remnants/beacon-remnants-highlights.png",
+                line_length = 1,
+                width = 106,
+                height = 104,
+                frame_count = 1,
+                variation_count = 1,
+                axially_symmetrical = false,
+                direction_count = 1,
+                shift = util.by_pixel(1, 5),
+                blend_mode = "additive",
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/modules/beacon/remnants/hr-beacon-remnants-highlights.png",
+                    line_length = 1,
+                    width = 212,
+                    height = 206,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 1,
+                    shift = util.by_pixel(1, 5),
+                    blend_mode = "additive",
+                    scale = 0.5,
+                },
+            },
+        }
+    })
 
     -- Reskin entities
     entity.graphics_set.animation_list =
