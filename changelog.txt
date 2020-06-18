@@ -8,6 +8,7 @@ Date: 2020.06.XX
     - Implemented vehicle fusion cell equipment and associated technology
     - Implemented artillery turrets
     - Implemented automation, logistics technologies
+    - Preliminary implementation of new beacons
     - Added icon support for locomotives, cargo wagons, fluid wagons, artillery wagons, and tanks
     - Added support for Classic Mining Drill mod
     - Added support for miniloader technologies
