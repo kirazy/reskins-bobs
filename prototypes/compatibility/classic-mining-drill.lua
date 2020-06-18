@@ -80,7 +80,7 @@ local function drill_animations(inputs)
                 -- Mask
                 {
                     priority = "high",
-                    filename = inputs.directory.."/graphics/entity/mining/classic-mining-drill//mining-drill-N-mask.png",
+                    filename = inputs.directory.."/graphics/entity/compatibility/classic-mining-drill/electric-mining-drill//mining-drill-N-mask.png",
                     line_length = 8,
                     width = 98,
                     height = 113,
@@ -92,7 +92,7 @@ local function drill_animations(inputs)
                     tint = inputs.tint,
                     hr_version = {
                         priority = "high",
-                        filename = inputs.directory.."/graphics/entity/mining/classic-mining-drill//hr-mining-drill-N-mask.png",
+                        filename = inputs.directory.."/graphics/entity/compatibility/classic-mining-drill/electric-mining-drill//hr-mining-drill-N-mask.png",
                         line_length = 8,
                         width = 196,
                         height = 226,
@@ -108,7 +108,7 @@ local function drill_animations(inputs)
                 -- Highlights
                 {
                     priority = "high",
-                    filename = inputs.directory.."/graphics/entity/mining/classic-mining-drill//mining-drill-N-highlights.png",
+                    filename = inputs.directory.."/graphics/entity/compatibility/classic-mining-drill/electric-mining-drill//mining-drill-N-highlights.png",
                     line_length = 8,
                     width = 98,
                     height = 113,
@@ -120,7 +120,7 @@ local function drill_animations(inputs)
                     blend_mode = "additive",
                     hr_version = {
                         priority = "high",
-                        filename = inputs.directory.."/graphics/entity/mining/classic-mining-drill//hr-mining-drill-N-highlights.png",
+                        filename = inputs.directory.."/graphics/entity/compatibility/classic-mining-drill/electric-mining-drill//hr-mining-drill-N-highlights.png",
                         line_length = 8,
                         width = 196,
                         height = 226,
@@ -196,7 +196,7 @@ local function drill_animations(inputs)
                 -- Mask
                 {
                     priority = "high",
-                    filename = inputs.directory.."/graphics/entity/mining/classic-mining-drill//mining-drill-E-mask.png",
+                    filename = inputs.directory.."/graphics/entity/compatibility/classic-mining-drill/electric-mining-drill//mining-drill-E-mask.png",
                     line_length = 8,
                     width = 105,
                     height = 98,
@@ -208,7 +208,7 @@ local function drill_animations(inputs)
                     run_mode = "forward-then-backward",
                     hr_version = {
                         priority = "high",
-                        filename = inputs.directory.."/graphics/entity/mining/classic-mining-drill//hr-mining-drill-E-mask.png",
+                        filename = inputs.directory.."/graphics/entity/compatibility/classic-mining-drill/electric-mining-drill//hr-mining-drill-E-mask.png",
                         line_length = 8,
                         width = 211,
                         height = 197,
@@ -224,7 +224,7 @@ local function drill_animations(inputs)
                 -- Highlights
                 {
                     priority = "high",
-                    filename = inputs.directory.."/graphics/entity/mining/classic-mining-drill//mining-drill-E-highlights.png",
+                    filename = inputs.directory.."/graphics/entity/compatibility/classic-mining-drill/electric-mining-drill//mining-drill-E-highlights.png",
                     line_length = 8,
                     width = 105,
                     height = 98,
@@ -236,7 +236,7 @@ local function drill_animations(inputs)
                     blend_mode = "additive",
                     hr_version = {
                         priority = "high",
-                        filename = inputs.directory.."/graphics/entity/mining/classic-mining-drill//hr-mining-drill-E-highlights.png",
+                        filename = inputs.directory.."/graphics/entity/compatibility/classic-mining-drill/electric-mining-drill//hr-mining-drill-E-highlights.png",
                         line_length = 8,
                         width = 211,
                         height = 197,
@@ -312,7 +312,7 @@ local function drill_animations(inputs)
                 -- Mask
                 {
                     priority = "high",
-                    filename = inputs.directory.."/graphics/entity/mining/classic-mining-drill//mining-drill-S-mask.png",
+                    filename = inputs.directory.."/graphics/entity/compatibility/classic-mining-drill/electric-mining-drill//mining-drill-S-mask.png",
                     line_length = 8,
                     width = 98,
                     height = 109,
@@ -324,7 +324,7 @@ local function drill_animations(inputs)
                     tint = inputs.tint,
                     hr_version = {
                         priority = "high",
-                        filename = inputs.directory.."/graphics/entity/mining/classic-mining-drill//hr-mining-drill-S-mask.png",
+                        filename = inputs.directory.."/graphics/entity/compatibility/classic-mining-drill/electric-mining-drill//hr-mining-drill-S-mask.png",
                         line_length = 8,
                         width = 196,
                         height = 219,
@@ -340,7 +340,7 @@ local function drill_animations(inputs)
                 -- Highlights
                 {
                     priority = "high",
-                    filename = inputs.directory.."/graphics/entity/mining/classic-mining-drill//mining-drill-S-highlights.png",
+                    filename = inputs.directory.."/graphics/entity/compatibility/classic-mining-drill/electric-mining-drill//mining-drill-S-highlights.png",
                     line_length = 8,
                     width = 98,
                     height = 109,
@@ -352,7 +352,7 @@ local function drill_animations(inputs)
                     blend_mode = "additive",
                     hr_version = {
                         priority = "high",
-                        filename = inputs.directory.."/graphics/entity/mining/classic-mining-drill//hr-mining-drill-S-highlights.png",
+                        filename = inputs.directory.."/graphics/entity/compatibility/classic-mining-drill/electric-mining-drill//hr-mining-drill-S-highlights.png",
                         line_length = 8,
                         width = 196,
                         height = 219,
@@ -428,7 +428,7 @@ local function drill_animations(inputs)
                 -- Mask
                 {
                     priority = "high",
-                    filename = inputs.directory.."/graphics/entity/mining/classic-mining-drill//mining-drill-W-mask.png",
+                    filename = inputs.directory.."/graphics/entity/compatibility/classic-mining-drill/electric-mining-drill//mining-drill-W-mask.png",
                     line_length = 8,
                     width = 105,
                     height = 98,
@@ -440,7 +440,7 @@ local function drill_animations(inputs)
                     tint = inputs.tint,
                     hr_version = {
                         priority = "high",
-                        filename = inputs.directory.."/graphics/entity/mining/classic-mining-drill//hr-mining-drill-W-mask.png",
+                        filename = inputs.directory.."/graphics/entity/compatibility/classic-mining-drill/electric-mining-drill//hr-mining-drill-W-mask.png",
                         line_length = 8,
                         width = 211,
                         height = 197,
@@ -456,7 +456,7 @@ local function drill_animations(inputs)
                 -- Highlights
                 {
                     priority = "high",
-                    filename = inputs.directory.."/graphics/entity/mining/classic-mining-drill//mining-drill-W-highlights.png",
+                    filename = inputs.directory.."/graphics/entity/compatibility/classic-mining-drill/electric-mining-drill//mining-drill-W-highlights.png",
                     line_length = 8,
                     width = 105,
                     height = 98,
@@ -468,7 +468,7 @@ local function drill_animations(inputs)
                     blend_mode = "additive",
                     hr_version = {
                         priority = "high",
-                        filename = inputs.directory.."/graphics/entity/mining/classic-mining-drill//hr-mining-drill-W-highlights.png",
+                        filename = inputs.directory.."/graphics/entity/compatibility/classic-mining-drill/electric-mining-drill//hr-mining-drill-W-highlights.png",
                         line_length = 8,
                         width = 211,
                         height = 197,
@@ -519,7 +519,7 @@ end
 local area_drill_animations = {
     north = {
         priority = "high",
-        filename = inputs.directory.."/graphics/entity/mining/classic-mining-drill/area-end/area-drill-N.png",
+        filename = inputs.directory.."/graphics/entity/compatibility/classic-mining-drill/electric-mining-drill/area-end/area-drill-N.png",
         line_length = 8,
         width = 98,
         height = 113,
@@ -530,7 +530,7 @@ local area_drill_animations = {
         run_mode = "forward-then-backward",
         hr_version = {
             priority = "high",
-            filename = inputs.directory.."/graphics/entity/mining/classic-mining-drill/area-end/hr-area-drill-N.png",
+            filename = inputs.directory.."/graphics/entity/compatibility/classic-mining-drill/electric-mining-drill/area-end/hr-area-drill-N.png",
             line_length = 8,
             width = 196,
             height = 226,
@@ -544,7 +544,7 @@ local area_drill_animations = {
     },
     east = {
         priority = "high",
-        filename = inputs.directory.."/graphics/entity/mining/classic-mining-drill/area-end/area-drill-E.png",
+        filename = inputs.directory.."/graphics/entity/compatibility/classic-mining-drill/electric-mining-drill/area-end/area-drill-E.png",
         line_length = 8,
         width = 105,
         height = 98,
@@ -555,7 +555,7 @@ local area_drill_animations = {
         run_mode = "forward-then-backward",
         hr_version = {
             priority = "high",
-            filename = inputs.directory.."/graphics/entity/mining/classic-mining-drill/area-end/hr-area-drill-E.png",
+            filename = inputs.directory.."/graphics/entity/compatibility/classic-mining-drill/electric-mining-drill/area-end/hr-area-drill-E.png",
             line_length = 8,
             width = 211,
             height = 197,
@@ -569,7 +569,7 @@ local area_drill_animations = {
     },
     south = {
         priority = "high",
-        filename = inputs.directory.."/graphics/entity/mining/classic-mining-drill/area-end/area-drill-S.png",
+        filename = inputs.directory.."/graphics/entity/compatibility/classic-mining-drill/electric-mining-drill/area-end/area-drill-S.png",
         line_length = 8,
         width = 98,
         height = 109,
@@ -580,7 +580,7 @@ local area_drill_animations = {
         run_mode = "forward-then-backward",
         hr_version = {
             priority = "high",
-            filename = inputs.directory.."/graphics/entity/mining/classic-mining-drill/area-end/hr-area-drill-S.png",
+            filename = inputs.directory.."/graphics/entity/compatibility/classic-mining-drill/electric-mining-drill/area-end/hr-area-drill-S.png",
             line_length = 8,
             width = 196,
             height = 219,
@@ -594,7 +594,7 @@ local area_drill_animations = {
     },
     west = {
         priority = "high",
-        filename = inputs.directory.."/graphics/entity/mining/classic-mining-drill/area-end/area-drill-W.png",
+        filename = inputs.directory.."/graphics/entity/compatibility/classic-mining-drill/electric-mining-drill/area-end/area-drill-W.png",
         line_length = 8,
         width = 105,
         height = 98,
@@ -605,7 +605,7 @@ local area_drill_animations = {
         run_mode = "forward-then-backward",
         hr_version = {
             priority = "high",
-            filename = inputs.directory.."/graphics/entity/mining/classic-mining-drill/area-end/hr-area-drill-W.png",
+            filename = inputs.directory.."/graphics/entity/compatibility/classic-mining-drill/electric-mining-drill/area-end/hr-area-drill-W.png",
             line_length = 8,
             width = 211,
             height = 197,

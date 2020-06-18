@@ -4,7 +4,7 @@
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not mods["LoaderRedux"] then return end
+if not mods["loaderredux/loader"] then return end
 if mods["vanilla-loaders-hd"] then return end
 
 -- Set input parameters
@@ -15,7 +15,7 @@ local inputs = {
     directory = reskins.bobs.directory,
     mod = "bobs",
     group = "compatibility",
-    subgroup = "loaderredux",
+    subgroup = "loaderredux/loader",
     particles = {["medium"] = 1, ["big"] = 4},
     icon_layers = 2,
     make_remnants = false,
@@ -57,12 +57,12 @@ for name, map in pairs(tier_map) do
     entity.structure.direction_in.sheets = {
         -- Base
         {
-            filename = inputs.directory.."/graphics/entity/compatibility/loaderredux/loader-base.png",
+            filename = inputs.directory.."/graphics/entity/compatibility/loaderredux/loader/loader-base.png",
             priority = "extra-high",
             width = 128,
             height = 128,
             hr_version = {
-                filename = inputs.directory.."/graphics/entity/compatibility/loaderredux/hr-loader-base.png",
+                filename = inputs.directory.."/graphics/entity/compatibility/loaderredux/loader/hr-loader-base.png",
                 priority = "extra-high",
                 width = 256,
                 height = 256,
@@ -71,13 +71,13 @@ for name, map in pairs(tier_map) do
         },
         -- Mask
         {
-            filename = inputs.directory.."/graphics/entity/compatibility/loaderredux/loader-mask.png",
+            filename = inputs.directory.."/graphics/entity/compatibility/loaderredux/loader/loader-mask.png",
             priority = "extra-high",
             width = 128,
             height = 128,
             tint = inputs.tint,
             hr_version = {
-                filename = inputs.directory.."/graphics/entity/compatibility/loaderredux/hr-loader-mask.png",
+                filename = inputs.directory.."/graphics/entity/compatibility/loaderredux/loader/hr-loader-mask.png",
                 priority = "extra-high",
                 width = 256,
                 height = 256,
@@ -89,13 +89,13 @@ for name, map in pairs(tier_map) do
     entity.structure.direction_out.sheets = {
         -- Base
         {
-            filename = inputs.directory.."/graphics/entity/compatibility/loaderredux/loader-base.png",
+            filename = inputs.directory.."/graphics/entity/compatibility/loaderredux/loader/loader-base.png",
             priority = "extra-high",
             width = 128,
             height = 128,
             y = 128,
             hr_version = {
-                filename = inputs.directory.."/graphics/entity/compatibility/loaderredux/hr-loader-base.png",
+                filename = inputs.directory.."/graphics/entity/compatibility/loaderredux/loader/hr-loader-base.png",
                 priority = "extra-high",
                 width = 256,
                 height = 256,
@@ -105,14 +105,14 @@ for name, map in pairs(tier_map) do
         },
         -- Mask
         {
-            filename = inputs.directory.."/graphics/entity/compatibility/loaderredux/loader-mask.png",
+            filename = inputs.directory.."/graphics/entity/compatibility/loaderredux/loader/loader-mask.png",
             priority = "extra-high",
             width = 128,
             height = 128,
             y = 128,
             tint = inputs.tint,
             hr_version = {
-                filename = inputs.directory.."/graphics/entity/compatibility/loaderredux/hr-loader-mask.png",
+                filename = inputs.directory.."/graphics/entity/compatibility/loaderredux/loader/hr-loader-mask.png",
                 priority = "extra-high",
                 width = 256,
                 height = 256,
