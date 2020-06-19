@@ -34,7 +34,7 @@ if settings.startup["bobmods-tech-colorupdate"] and settings.startup["bobmods-te
 end
 
 for name, parameters in pairs(science_packs) do
-    inputs = {
+    local inputs = {
         directory = reskins.bobs.directory,
         mod = "bobs",
         group = "technology",

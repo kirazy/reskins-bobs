@@ -14,18 +14,18 @@ local function setup_beacon_module_slot(parameters)
             has_empty_slot = true,
             render_layer = "lower-object",
             pictures = {
-                filename = "__base__/graphics/entity/beacon/beacon-module-slot-1.png",
-                line_length = 4,
+                filename = inputs.directory.."/graphics/entity/modules/beacon/slots/beacon-module-slot-1.png",
+                line_length = 9,
                 width = 26,
                 height = 34,
-                variation_count = 4,
+                variation_count = 9,
                 shift = util.by_pixel(-16, 15),
                 hr_version = {
-                    filename = "__base__/graphics/entity/beacon/hr-beacon-module-slot-1.png",
-                    line_length = 4,
+                    filename = inputs.directory.."/graphics/entity/modules/beacon/slots/hr-beacon-module-slot-1.png",
+                    line_length = 9,
                     width = 50,
                     height = 66,
-                    variation_count = 4,
+                    variation_count = 9,
                     scale = 0.5,
                     shift = util.by_pixel(-16, 14.5),
                 }
@@ -356,21 +356,19 @@ for name, map in pairs(tier_map) do
     }
 
     -- Handle module slots
-    -- entity.graphics_set.module_visualisations = {
-    --     {
-    --         art_style = "vanilla",
-    --         use_for_empty_slots = true,
-    --         tier_offset = 0,
-    --         slots = {
-    --             setup_beacon_module_slot(parameters),
-    --             setup_beacon_module_slot(parameters),
-    --             setup_beacon_module_slot(parameters),
-    --             setup_beacon_module_slot(parameters),
-    --             setup_beacon_module_slot(parameters),
-    --             setup_beacon_module_slot(parameters),
-    --         }
+    -- table.insert(entity.graphics_set.module_visualisations, {
+    --     art_style = "artisan-reskin",
+    --     use_for_empty_slots = true,
+    --     tier_offset = 0,
+    --     slots = {
+    --         setup_beacon_module_slot(),
+    --         -- setup_beacon_module_slot(parameters),
+    --         -- setup_beacon_module_slot(parameters),
+    --         -- setup_beacon_module_slot(parameters),
+    --         -- setup_beacon_module_slot(parameters),
+    --         -- setup_beacon_module_slot(parameters),
     --     }
-    -- }
+    -- })
 
     -- Label to skip to next iteration
     ::continue::
