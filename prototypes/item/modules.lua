@@ -9,24 +9,24 @@ if settings.startup["reskins-bobs-do-bobmodules"].value == false then return end
 
 -- Modules
 local color_map = {
-    ["blue"] = {"70b6ff", "63f8ff"},
-    ["brown"] = {"9c7c60", "e8edd3"},
-    ["cyan"] = {"70f1ff", "63ffde"},
-    ["green"] = {"95e26c", "5eff5e"},
-    ["pine"] = {"7a9e96", "a1dfb4"},
-    ["pink"] = {"ff93de", "ffdaf2"},
-    ["red"] = {"f27c52", "ffff85"},
-    ["yellow"] = {"ffdd45", "ffff85"},
+    ["blue"] = {"70b6ff", "30d2ff"},
+    ["brown"] = {"9c7c60", "fff0d9"},
+    ["cyan"] = {"70f1ff", "30ffd2"},
+    ["green"] = {"95e26c", "2bff2b"},
+    ["pine"] = {"7a9e96", "bfffd2"},
+    ["pink"] = {"f96bcd", "ffbfe9"},
+    ["red"] = {"f27c52", "ff9999"},
+    ["yellow"] = {"ffdd45", "ffff66"},
 }
 
 local modules_map = {
     ["speed"] = {"blue", true},
-    ["effectivity"] = {"green", true},
+    ["effectivity"] = {"yellow", true},
     ["productivity"] = {"red", true},
     ["pollution-create"] = {"brown"},
     ["pollution-clean"] = {"pine"},
     ["raw-speed"] = {"cyan"},
-    ["green"] = {"yellow"},
+    ["green"] = {"green"},
     ["raw-productivity"] = {"pink"},
 }
 
@@ -65,7 +65,7 @@ for class, map in pairs(modules_map) do
         reskins.lib.construct_icon(name, 0, inputs)
 
         -- Set beacon art style
-        -- entity.art_style = "artisan-reskin"
+        entity.art_style = "artisan-reskin"
 
         -- Overwrite beacon_tint property
         entity.beacon_tint = {
