@@ -5,6 +5,8 @@ Date: 2020.06.XX
     - Implemented modules
     - Partial implementation of new beacon slot graphics
     - Added support for Deadlock's Stacking Beltboxes & Compact Loaders, Deadlock's Crating Machine mods
+  Changes:
+    - Icons are now all assigned by data-updates, with ability to re-apply in data-final-fixes
   Bugfixes:
     - Revised how settings are fetched to protect against startup errors due to missing settings
 ---------------------------------------------------------------------------------------------------
