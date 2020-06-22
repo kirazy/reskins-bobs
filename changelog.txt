@@ -3,8 +3,10 @@ Version: 0.00.9
 Date: 2020.06.XX
   Features:
     - Implemented modules
-  Changes:
-    - ...!
+    - Partial implementation of new beacon slot graphics
+    - Added support for Deadlock's Stacking Beltboxes & Compact Loaders, Deadlock's Crating Machine mods
+  Bugfixes:
+    - Revised how settings are fetched to protect against startup errors due to missing settings
 ---------------------------------------------------------------------------------------------------
 Version: 0.00.8
 Date: 2020.06.18
