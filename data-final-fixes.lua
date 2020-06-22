@@ -3,15 +3,15 @@
 --     
 -- See LICENSE.md in the project directory for license information.
 
--- Icon handling
+-- Technology
+require("prototypes.technology.technology-importer")
+
+-- Icon reassignments
 for name, inputs in pairs(reskins.bobs.icons) do
     reskins.lib.assign_icons(name, inputs)
 end
 
--- Technology
-require("prototypes.technology.technology-importer")
-
--- Technology handling
+-- Technology reassignments
 for name, inputs in pairs(reskins.bobs.technology) do
     reskins.lib.assign_technology_icons(name, inputs)
 end

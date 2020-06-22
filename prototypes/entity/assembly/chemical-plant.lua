@@ -41,6 +41,13 @@ for name, map in pairs(tier_map) do
         tier = map[2]
     end
 
+    -- Chemical plant 1 needs the icon re-assigned in final fixes
+    if name == "chemical-plant" then
+        inputs.reassign_in_final_fixes = true
+    else
+        inputs.reassign_in_final_fixes = nil
+    end
+
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
   
