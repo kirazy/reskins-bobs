@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.00.9
-Date: 2020.06.XX
+Date: 2020.06.22
   Features:
     - Implemented modules
     - Partial implementation of new beacon slot graphics
