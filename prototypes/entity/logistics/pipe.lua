@@ -64,8 +64,8 @@ local function reskin_pipe_entity()
 end
 
 -- Check to see if reskinning needs to be done
-if not mods["boblogistics"] then reskin_pipe_icon() return else reskin_pipe_entity() end
-if settings.startup["reskins-bobs-do-boblogistics"].value == false then return end
+if not mods["boblogistics"] then return else reskin_pipe_entity() end
+if reskins.lib.setting("reskins-bobs-do-boblogistics") == false then return end
 
 -- Set input parameters
 local inputs = {
@@ -213,7 +213,7 @@ for material, map in pairs(material_map) do
     }
 
     -- Setup tier labels
-    if settings.startup["reskins-bobs-do-pipe-tier-labeling"].value == true then
+    if reskins.lib.setting("reskins-bobs-do-pipe-tier-labeling") == true then
         pipe_icon_inputs.icon = {{icon = pipe_icon_inputs.icon}}
         pipe_to_ground_icon_inputs.icon = {{icon = pipe_to_ground_icon_inputs.icon}}
         pipe_icon_inputs.tier_labels = true

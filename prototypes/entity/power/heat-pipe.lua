@@ -5,7 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobpower"] then return end
-if settings.startup["reskins-bobs-do-bobpower"].value == false then return end 
+if reskins.lib.setting("reskins-bobs-do-bobpower") == false then return end
 
 -- Set input parameters
 local inputs = {
@@ -30,7 +30,7 @@ for name, map in pairs(tier_map) do
     if not entity then goto continue end
 
     -- Parse map
-    if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
+    if reskins.lib.setting("reskins-lib-tier-mapping") == "name-map" then
         tier = map[1]
     else
         tier = map[2]
@@ -55,7 +55,7 @@ for name, map in pairs(tier_map) do
     }
 
     -- Setup tier labels
-    if settings.startup["reskins-bobs-do-pipe-tier-labeling"].value == true then
+    if reskins.lib.setting("reskins-bobs-do-pipe-tier-labeling") == true then
         heat_pipe_icon_inputs.icon = {{icon = heat_pipe_icon_inputs.icon}}
         heat_pipe_icon_inputs.tier_labels = true
         reskins.lib.append_tier_labels(tier, heat_pipe_icon_inputs)

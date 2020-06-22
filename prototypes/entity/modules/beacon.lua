@@ -5,7 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobmodules"] then return end
-if settings.startup["reskins-bobs-do-bobmodules"].value == false then return end
+if reskins.lib.setting("reskins-bobs-do-bobmodules") == false then return end
 
 local function setup_module_slot(shift, is_top)
     local shift_x, shift_y = 0, 0
@@ -242,7 +242,7 @@ for name, map in pairs(tier_map) do
     end
     
     -- Parse map
-    if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
+    if reskins.lib.setting("reskins-lib-tier-mapping") == "name-map" then
         tier = map[1]
     else
         tier = map[2]

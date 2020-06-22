@@ -7,7 +7,7 @@
 if not mods["bobtech"] then return end
 
 -- Steam science pack
-if settings.startup["bobmods-burnerphase"] and settings.startup["bobmods-burnerphase"].value == true then
+if reskins.lib.setting("bobmods-burnerphase") == true then
     local steam_science_inputs = {
         directory = reskins.bobs.directory,
         mod = "bobs",
@@ -25,7 +25,7 @@ local science_packs = {
     ["advanced-logistic-science-pack"] = {tint = util.color("de00a3")},
 }
 
-if settings.startup["bobmods-tech-colorupdate"] and settings.startup["bobmods-tech-colorupdate"].value == true and settings.startup["reskins-lib-customize-tier-colors"].value == true then
+if reskins.lib.setting("bobmods-tech-colorupdate") == true and reskins.lib.setting("reskins-lib-customize-tier-colors") == true then
         science_packs["automation-science-pack"] = {tier = 1}
         science_packs["logistic-science-pack"] = {tier = 2}
         science_packs["chemical-science-pack"] = {tier = 3}
@@ -60,7 +60,7 @@ for name, parameters in pairs(science_packs) do
 end
 
 -- Alien Science Packs
-if settings.startup["bobmods-enemies-enablenewartifacts"] and settings.startup["bobmods-enemies-enablenewartifacts"].value == true then
+if reskins.lib.setting("bobmods-enemies-enablenewartifacts") == true then
     local alien_science_packs = {
         "alien-science-pack",
         "alien-science-pack-blue",

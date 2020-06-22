@@ -5,7 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobassembly"] then return end
-if settings.startup["reskins-bobs-do-bobassembly"].value == false then return end
+if reskins.lib.setting("reskins-bobs-do-bobassembly") == false then return end
 
 -- Set input parameters
 local inputs = {
@@ -31,7 +31,7 @@ local tier_map = {
 }
 
 -- Append electronics assembling machines
-if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
+if reskins.lib.setting("reskins-lib-tier-mapping") == "name-map" then
     tier_map["electronics-machine-1"] = {1, 1, false}
     tier_map["electronics-machine-2"] = {2, 2, false}
     tier_map["electronics-machine-3"] = {3, 3, false}

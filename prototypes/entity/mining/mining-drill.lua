@@ -6,7 +6,7 @@
 -- Check to see if reskinning needs to be done.
 if not mods["bobmining"] then return end
 if mods["classic-mining-drill"] then return end
-if settings.startup["reskins-bobs-do-bobmining"].value == false then return end
+if reskins.lib.setting("reskins-bobs-do-bobmining") == false then return end
 
 -- Set input parameters
 local inputs = {
@@ -2086,7 +2086,7 @@ for name, map in pairs(tier_map) do
     if not entity then goto continue end
 
     -- Parse map
-    if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
+    if reskins.lib.setting("reskins-lib-tier-mapping") == "name-map" then
         tier = map[1]
     else
         tier = map[2]

@@ -8,7 +8,7 @@ if not mods["vanilla-loaders-hd"] then return end
 
 -- We reskin the base entities only if we're doing custom colors
 local custom_colors = true
-if settings.startup["reskins-lib-customize-tier-colors"].value == false then
+if reskins.lib.setting("reskins-lib-customize-tier-colors") == false then
     custom_colors = false
 end
 
@@ -27,7 +27,7 @@ local inputs = {
 }
 
 -- Handle belt tier labels
-if settings.startup["reskins-bobs-do-belt-entity-tier-labeling"].value == true then
+if reskins.lib.setting("reskins-bobs-do-belt-entity-tier-labeling") == true then
     inputs.tier_labels = true
 end
 
@@ -46,9 +46,7 @@ for name, map in pairs(tier_map) do
     entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
-    if not entity then
-        goto continue
-    end
+    if not entity then goto continue end
 
     -- Parse map
     tier = map[1]

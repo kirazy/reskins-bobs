@@ -18,3 +18,4 @@ end
 
 -- Compatibility
 require("prototypes.compatibility.mini-machines") -- This must be called after icons are handled
+require("prototypes.compatibility.deadlock-crating") -- DeadlockCrating sets up machines in data-final-fixes

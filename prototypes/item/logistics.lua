@@ -5,7 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["boblogistics"] then return end
-if settings.startup["reskins-bobs-do-boblogistics"].value == false then return end
+if reskins.lib.setting("reskins-bobs-do-boblogistics") == false then return end
 
 local tiered_item_list = {
     ["repair-pack"] = {tier = 1, icon_name = "repair-pack", type = "repair-tool", group = "logistics", make_entity_pictures = true},

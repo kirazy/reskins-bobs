@@ -12,7 +12,14 @@ if mods["bobassembly"] then
             name = "reskins-bobs-do-bobassembly",
             setting_type = "startup",
             default_value = true,
-        }
+        },
+        {
+            type = "bool-setting",
+            name = "reskins-bobs-do-furnace-tier-labeling",
+            setting_type = "startup",
+            order = "x",
+            default_value = true,
+        },
     })
 end
 
@@ -77,13 +84,6 @@ if mods["boblogistics"] then
             setting_type = "startup",
             order = "xx",
             default_value = false,
-        },
-        {
-            type = "bool-setting",
-            name = "reskins-bobs-do-furnace-tier-labeling",
-            setting_type = "startup",
-            order = "x",
-            default_value = true,
         },
         {
             type = "bool-setting",

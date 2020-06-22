@@ -5,7 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobwarfare"] then return end
-if settings.startup["reskins-bobs-do-bobwarfare"].value == false then return end 
+if reskins.lib.setting("reskins-bobs-do-bobwarfare") == false then return end 
 
 -- bob-plasma-turret-1
 -- bob-plasma-turret-2

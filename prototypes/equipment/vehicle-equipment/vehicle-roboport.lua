@@ -34,7 +34,7 @@ for name, map in pairs(vehicle_roboports) do
     if not equipment then goto continue end
 
     -- Parse map
-    if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
+    if reskins.lib.setting("reskins-lib-tier-mapping") == "name-map" then
         tier = map[1]
     else
         tier = map[2]

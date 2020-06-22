@@ -4,8 +4,8 @@
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
--- if not mods["boblogistics"] then return end
--- if settings.startup["reskins-bobs-do-boblogistics"].value == false then return end
+if not mods["boblogistics"] then return end
+if reskins.lib.setting("reskins-bobs-do-boblogistics") == false then return end
 
 -- Set input parameters
 local inputs = {
@@ -17,7 +17,7 @@ local inputs = {
 }
 
 local inserter_map
-if settings.startup["bobmods-logistics-inserteroverhaul"] and settings.startup["bobmods-logistics-inserteroverhaul"].value == false then
+if reskins.lib.setting("bobmods-logistics-inserteroverhaul") == false then
     inserter_map = {
         -- Standard inserters
         ["burner-inserter"] = {0, false},
@@ -232,7 +232,7 @@ for name, map in pairs(inserter_map) do
     end
 
     -- Handle tier labels
-    if settings.startup["reskins-bobs-do-inserter-tier-labeling"].value == false then
+    if reskins.lib.setting("reskins-bobs-do-inserter-tier-labeling") == false then
         inputs.tier_labels = false
     end
 

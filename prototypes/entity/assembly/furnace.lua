@@ -5,7 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobassembly"] and not mods["bobplates"] then return end
-if settings.startup["reskins-bobs-do-bobassembly"].value == false then return end
+if reskins.lib.setting("reskins-bobs-do-bobassembly") == false then return end
 
 local stone_furnace_tint = util.color("ffb700")
 local mixing_furnace_tint = util.color("00bfff")
@@ -108,7 +108,7 @@ for name, map in pairs(stone_furnace_map) do
         make_remnants = false,
     }
 
-    if settings.startup["reskins-bobs-do-furnace-tier-labeling"].value == true then
+    if reskins.lib.setting("reskins-bobs-do-furnace-tier-labeling") == true then
         inputs.tier_labels = true
     else
         inputs.tier_labels = false
@@ -327,7 +327,7 @@ for name, map in pairs(steel_furnace_map) do
         make_remnants = false,
     }
 
-    if settings.startup["reskins-bobs-do-furnace-tier-labeling"].value == true then
+    if reskins.lib.setting("reskins-bobs-do-furnace-tier-labeling") == true then
         inputs.tier_labels = true
     else
         inputs.tier_labels = false

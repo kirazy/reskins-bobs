@@ -5,8 +5,8 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobpower"] then return end
-if settings.startup["bobmods-power-heatsources"] and settings.startup["bobmods-power-heatsources"].value == false then return end
-if settings.startup["reskins-bobs-do-bobpower"].value == false then return end 
+if reskins.lib.setting("bobmods-power-heatsources") == false then return end
+if reskins.lib.setting("reskins-bobs-do-bobpower") == false then return end
 
 -- burner-reactor
 -- burner-reactor-2

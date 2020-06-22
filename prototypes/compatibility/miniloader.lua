@@ -8,7 +8,7 @@ if not mods["miniloader"] then return end
 
 -- We reskin the base entities only if we're doing custom colors
 local custom_colors = true
-if settings.startup["reskins-lib-customize-tier-colors"].value == false then
+if reskins.lib.setting("reskins-lib-customize-tier-colors") == false then
     custom_colors = false
 end
 
@@ -27,7 +27,7 @@ local inputs = {
 }
 
 -- Handle belt tier labels
-if settings.startup["reskins-bobs-do-belt-entity-tier-labeling"].value == true then
+if reskins.lib.setting("reskins-bobs-do-belt-entity-tier-labeling") == true then
     inputs.tier_labels = true
 end
 

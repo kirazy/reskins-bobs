@@ -4,7 +4,7 @@
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not mods["loaderredux/loader"] then return end
+if not mods["loaderredux"] then return end
 if mods["vanilla-loaders-hd"] then return end
 
 -- Set input parameters
@@ -22,7 +22,7 @@ local inputs = {
 }
 
 -- Handle belt tier labels
-if settings.startup["reskins-bobs-do-belt-entity-tier-labeling"].value == true then
+if reskins.lib.setting("reskins-bobs-do-belt-entity-tier-labeling") == true then
     inputs.tier_labels = true
 end
 

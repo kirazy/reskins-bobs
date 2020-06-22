@@ -5,8 +5,8 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobpower"] then return end
-if settings.startup["bobmods-power-steam"] and settings.startup["bobmods-power-steam"].value == false then return end
-if settings.startup["reskins-bobs-do-bobpower"].value == false then return end 
+if reskins.lib.setting("bobmods-power-steam") == false then return end
+if reskins.lib.setting("reskins-bobs-do-bobpower") == false then return end
 
 -- Set input parameters
 local inputs = {

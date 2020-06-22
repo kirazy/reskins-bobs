@@ -5,8 +5,8 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobpower"] then return end
-if settings.startup["bobmods-power-fluidgenerator"] and settings.startup["bobmods-power-fluidgenerator"].value == false then return end
-if settings.startup["reskins-bobs-do-bobpower"].value == false then return end 
+if reskins.lib.setting("bobmods-power-fluidgenerator") == false then return end
+if reskins.lib.setting("reskins-bobs-do-bobpower") == false then return end
 
 -- Set input parameters
 local inputs = {
@@ -22,7 +22,7 @@ local inputs = {
 
 -- Determine which tint we're using for the hydrazine-generator
 local hydrazine_tint
-if settings.startup["reskins-bobs-hydrazine-is-blue"].value == true then
+if reskins.lib.setting("reskins-bobs-hydrazine-is-blue") == true then
     hydrazine_tint = util.color("7ac1de")
 else
     hydrazine_tint = nil
@@ -126,7 +126,7 @@ for name, map in pairs(fluid_generators) do
     end
 
     -- Parse map
-    if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
+    if reskins.lib.setting("reskins-lib-tier-mapping") == "name-map" then
         tier = map[1]
     else
         tier = map[2]

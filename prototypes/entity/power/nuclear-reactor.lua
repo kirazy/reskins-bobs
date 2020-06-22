@@ -5,8 +5,8 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobpower"] then return end
-if settings.startup["bobmods-power-nuclear"] and settings.startup["bobmods-power-nuclear"].value == false then return end
-if settings.startup["reskins-bobs-do-bobpower"].value == false then return end 
+if reskins.lib.setting("bobmods-power-nuclear") == false then return end
+if reskins.lib.setting("reskins-bobs-do-bobpower") == false then return end
 
 -- Set input parameters
 local inputs = {
@@ -317,11 +317,11 @@ local fuel_index = {
 }
 
 -- Nucelar reactors have two modes, revamped or standard; determine which we are using
-if settings.startup["bobmods-revamp-nuclear"] and settings.startup["bobmods-revamp-nuclear"].value == true then
+if reskins.lib.setting("bobmods-revamp-nuclear") == true then
     -- Map fuel type to reactor entity name
     fuel_index["nuclear-reactor-2"] = "thorium"
 
-    if settings.startup["bobmods-plates-bluedeuterium"] and settings.startup["bobmods-plates-bluedeuterium"].value == true then 
+    if reskins.lib.setting("bobmods-plates-bluedeuterium") == true then 
         fuel_index["nuclear-reactor-3"] = "deuterium-blue"        
     else
         fuel_index["nuclear-reactor-3"] = "deuterium-pink"        
@@ -337,7 +337,7 @@ for name, map in pairs(tier_map) do
     if not entity then goto continue end
 
     -- Parse map
-    if settings.startup["reskins-lib-tier-mapping"].value == "name-map" then
+    if reskins.lib.setting("reskins-lib-tier-mapping") == "name-map" then
         tier = map[1]
     else
         tier = map[2]
@@ -350,7 +350,7 @@ for name, map in pairs(tier_map) do
     -- Create explosions
     reskins.lib.create_explosion(name, inputs)
 
-    if settings.startup["bobmods-revamp-nuclear"] and settings.startup["bobmods-revamp-nuclear"].value == true and settings.startup["reskins-bobs-do-bobrevamp"].value == true then
+    if reskins.lib.setting("bobmods-revamp-nuclear") == true and reskins.lib.setting("reskins-bobs-do-bobrevamp") == true then
         inputs.reactor = fuel_index[name]
         inputs.tint = nuclear_tint_index[inputs.fuel]
 

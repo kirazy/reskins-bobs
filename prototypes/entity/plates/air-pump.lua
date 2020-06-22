@@ -5,7 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobplates"] then return end
-if settings.startup["reskins-bobs-do-bobplates"].value == false then return end
+if reskins.lib.setting("reskins-bobs-do-bobplates") == false then return end
 
 -- Gas bottling machines...
 -- air-pump

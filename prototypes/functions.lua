@@ -10,8 +10,8 @@ reskins.bobs.icons = {}
 reskins.bobs.technology = {}
 
 -- CONSTANTS
-if settings.startup["reskins-bobs-do-basic-belts-separately"].value == true then
-    reskins.bobs.basic_belt_tint = util.color(settings.startup["reskins-bobs-basic-belts-color"].value)
+if reskins.lib.setting("reskins-bobs-do-basic-belts-separately") == true then
+    reskins.bobs.basic_belt_tint = util.color(reskins.lib.setting("reskins-bobs-basic-belts-color"))
 else
     reskins.bobs.basic_belt_tint = reskins.lib.tint_index["tier-0"]
 end
