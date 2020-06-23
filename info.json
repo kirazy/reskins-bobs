@@ -25,11 +25,7 @@
     "? bobrevamp",
     "? bobtech",
     "? bobwarfare",
-    "? vanilla-loaders-hd >= 0.18.7",
-    "? miniloader >= 1.11.0",
-    "? mini-machines",
-    "? DeadlockCrating",
-    "? deadlock-beltboxes-loaders",
+    "(?) vanilla-loaders-hd",
     "(?) ShinyBobGFX",
     "(?) ShinyAngelGFX"
   ]
