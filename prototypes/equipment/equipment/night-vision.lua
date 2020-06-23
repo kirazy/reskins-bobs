@@ -7,33 +7,36 @@
 if not mods["bobequipment"] then return end
 
 local inputs = {
-    type = "generator-equipment",
-    icon_name = "fusion-cell",
-    icon_background = "vehicle-equipment",
+    type = "night-vision-equipment",
+    icon_name = "night-vision",
     directory = reskins.bobs.directory,
     mod = "bobs",
-    group = "vehicle-equipment",
+    group = "equipment",
 }
 
 -- Setup defaults
 reskins.lib.parse_inputs(inputs)
 
-local fusion_cells = {
-    ["vehicle-fusion-cell-1"] = 0,
-    ["vehicle-fusion-cell-2"] = 1,
-    ["vehicle-fusion-cell-3"] = 2,
-    ["vehicle-fusion-cell-4"] = 3,
-    ["vehicle-fusion-cell-5"] = 4,
-    ["vehicle-fusion-cell-6"] = 5,
+local night_vision = {
+    ["night-vision-equipment"] = {1, 2},
+    ["night-vision-equipment-2"] = {2, 3},
+    ["night-vision-equipment-3"] = {3, 4},
 }
 
 -- Reskin equipment
-for name, tier in pairs(fusion_cells) do
+for name, map in pairs(night_vision) do
     -- Fetch equipment
     equipment = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not equipment then goto continue end
+
+    -- Parse map
+    if reskins.lib.setting("reskins-lib-tier-mapping") == "name-map" then
+        tier = map[1]
+    else
+        tier = map[2]
+    end
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
@@ -44,23 +47,23 @@ for name, tier in pairs(fusion_cells) do
     -- Construct technology icon
     inputs.technology_icon_extras = {
         {
-            icon = inputs.directory.."/graphics/technology/equipment/vehicle-equipment-symbol.png"
+            icon = inputs.directory.."/graphics/technology/equipment/personal-equipment-symbol.png"
         }
     }
 
-    reskins.lib.construct_technology_icon(string.gsub(name, "cell", "cell-equipment"), inputs)
+    reskins.lib.construct_technology_icon(name, inputs)
     
     -- Reskin the equipment
     equipment.sprite = {
         layers = {
             -- Base
             {
-                filename = inputs.directory.."/graphics/equipment/vehicle-equipment/fusion-cell/fusion-cell-equipment-base.png",
+                filename = inputs.directory.."/graphics/equipment/equipment/night-vision/night-vision-equipment-base.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
                 hr_version = {
-                    filename = inputs.directory.."/graphics/equipment/vehicle-equipment/fusion-cell/hr-fusion-cell-equipment-base.png",
+                    filename = inputs.directory.."/graphics/equipment/equipment/night-vision/hr-night-vision-equipment-base.png",
                     size = 128,
                     priority = "medium",
                     flags = { "no-crop" },
@@ -69,13 +72,13 @@ for name, tier in pairs(fusion_cells) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/equipment/vehicle-equipment/fusion-cell/fusion-cell-equipment-mask.png",
+                filename = inputs.directory.."/graphics/equipment/equipment/night-vision/night-vision-equipment-mask.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
                 tint = inputs.tint,
                 hr_version = {
-                    filename = inputs.directory.."/graphics/equipment/vehicle-equipment/fusion-cell/hr-fusion-cell-equipment-mask.png",
+                    filename = inputs.directory.."/graphics/equipment/equipment/night-vision/hr-night-vision-equipment-mask.png",
                     size = 128,
                     priority = "medium",
                     flags = { "no-crop" },
@@ -85,13 +88,13 @@ for name, tier in pairs(fusion_cells) do
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/equipment/vehicle-equipment/fusion-cell/fusion-cell-equipment-highlights.png",
+                filename = inputs.directory.."/graphics/equipment/equipment/night-vision/night-vision-equipment-highlights.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
                 blend_mode = "additive",
                 hr_version = {
-                    filename = inputs.directory.."/graphics/equipment/vehicle-equipment/fusion-cell/hr-fusion-cell-equipment-highlights.png",
+                    filename = inputs.directory.."/graphics/equipment/equipment/night-vision/hr-night-vision-equipment-highlights.png",
                     size = 128,
                     priority = "medium",
                     flags = { "no-crop" },

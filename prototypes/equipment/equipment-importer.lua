@@ -8,12 +8,15 @@
 ----------------------------------------------------------------------------------------------------
 -- Bob's Equipment
 ----------------------------------------------------------------------------------------------------
+require("equipment.battery")
+require("equipment.night-vision")
 require("equipment.personal-roboport")
 require("equipment.fusion-reactor")
 
 ----------------------------------------------------------------------------------------------------
 -- Bob's Vehicle Equipment
 ----------------------------------------------------------------------------------------------------
-require("vehicle-equipment.fusion-cell")
-require("vehicle-equipment.fusion-reactor")
+require("vehicle-equipment.vehicle-battery")
+require("vehicle-equipment.vehicle-fusion-cell")
+require("vehicle-equipment.vehicle-fusion-reactor")
 require("vehicle-equipment.vehicle-roboport")

@@ -4,7 +4,7 @@
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not mods["bobequipment"] then return end
+if not mods["bobvehicleequipment"] then return end
 
 local inputs = {
     type = "generator-equipment",
@@ -55,7 +55,7 @@ for name, tier in pairs(fusion_reactors) do
         layers = {
             -- Base
             {
-                filename = inputs.directory.."/graphics/equipment/vehicle-equipment/fusion-reactor/vehicle-fusion-reactor-equipment-base.png",
+                filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-fusion-reactor/vehicle-fusion-reactor-equipment-base.png",
                 width = 64,
                 height = 128,
                 priority = "medium",
@@ -63,7 +63,7 @@ for name, tier in pairs(fusion_reactors) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/equipment/vehicle-equipment/fusion-reactor/vehicle-fusion-reactor-equipment-mask.png",
+                filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-fusion-reactor/vehicle-fusion-reactor-equipment-mask.png",
                 width = 64,
                 height = 128,
                 priority = "medium",
@@ -72,7 +72,7 @@ for name, tier in pairs(fusion_reactors) do
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/equipment/vehicle-equipment/fusion-reactor/vehicle-fusion-reactor-equipment-highlights.png",
+                filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-fusion-reactor/vehicle-fusion-reactor-equipment-highlights.png",
                 width = 64,
                 height = 128,
                 priority = "medium",

@@ -6,4 +6,5 @@
 -- Handles requires for standard item files
 require("logistics")
 require("modules")
+require("plates")
 require("technology")

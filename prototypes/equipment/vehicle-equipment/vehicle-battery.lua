@@ -7,8 +7,8 @@
 if not mods["bobvehicleequipment"] then return end
 
 local inputs = {
-    type = "roboport-equipment",
-    icon_name = "vehicle-roboport",
+    type = "battery-equipment",
+    icon_name = "vehicle-battery",
     icon_background = "vehicle-equipment",
     directory = reskins.bobs.directory,
     mod = "bobs",
@@ -18,79 +18,66 @@ local inputs = {
 -- Setup defaults
 reskins.lib.parse_inputs(inputs)
 
-local vehicle_roboports = {
-    ["vehicle-roboport"] = {1, 2},
-    ["vehicle-roboport-2"] = {2, 3},
-    ["vehicle-roboport-3"] = {3, 4},
-    ["vehicle-roboport-4"] = {4, 5},
+local batteries = {
+    ["vehicle-battery-1"] = 0,
+    ["vehicle-battery-2"] = 1,
+    ["vehicle-battery-3"] = 2,
+    ["vehicle-battery-4"] = 3,
+    ["vehicle-battery-5"] = 4,
+    ["vehicle-battery-6"] = 5,
 }
 
 -- Reskin equipment
-for name, map in pairs(vehicle_roboports) do
+for name, tier in pairs(batteries) do
     -- Fetch equipment
     equipment = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not equipment then goto continue end
 
-    -- Parse map
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "name-map" then
-        tier = map[1]
-    else
-        tier = map[2]
-    end    
-    equipment_base = map[1]
-
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
 
-    -- Construct technology icon
-    inputs.icon_base = nil
+    -- Construct icon
+    reskins.lib.construct_icon(name, tier, inputs)
 
+    -- Construct technology icon
     inputs.technology_icon_extras = {
         {
             icon = inputs.directory.."/graphics/technology/equipment/vehicle-equipment-symbol.png"
         }
     }
 
-    reskins.lib.construct_technology_icon(string.gsub(name, "roboport", "roboport-equipment"), inputs)
-
-    -- Setup icon handling
-    inputs.icon_base = inputs.icon_name.."-"..equipment_base
-
-    -- Construct icon
-    reskins.lib.construct_icon(name, tier, inputs)
+    reskins.lib.construct_technology_icon(string.gsub(name, "battery", "battery-equipment"), inputs)
 
     -- Reskin the equipment
     equipment.sprite = {
         layers = {
             -- Base
             {
-                filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-roboport/"..inputs.icon_base.."-equipment-base.png",
-                size = 64,
+                filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-battery/vehicle-battery-equipment-base.png",
+                size = 32,
                 priority = "medium",
                 flags = { "no-crop" },
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-roboport/vehicle-roboport-equipment-mask.png",
-                size = 64,
+                filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-battery/vehicle-battery-equipment-mask.png",
+                size = 32,
                 priority = "medium",
                 flags = { "no-crop" },
                 tint = inputs.tint,
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-roboport/vehicle-roboport-equipment-highlights.png",
-                size = 64,
+                filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-battery/vehicle-battery-equipment-highlights.png",
+                size = 32,
                 priority = "medium",
                 flags = { "no-crop" },
                 blend_mode = "additive",
             }
         }
     }
-
-    
 
     -- Label to skip to next iteration
     ::continue::

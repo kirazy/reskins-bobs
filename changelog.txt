@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.00.10
+Date: 2020.06.XX
+  Features:
+    - Implemented item batteries, personal and vehicle batteries, and associated technologies
+    - Implemented night vision equipment and associated technologies
+  Changes:
+    - Adjusted internal naming for clarity
+---------------------------------------------------------------------------------------------------
 Version: 0.00.9
 Date: 2020.06.22
   Features:
@@ -7,6 +15,7 @@ Date: 2020.06.22
     - Added support for Deadlock's Stacking Beltboxes & Compact Loaders, Deadlock's Crating Machine mods
   Changes:
     - Icons are now all assigned by data-updates, with ability to re-apply in data-final-fixes
+    - Set minimum version for Library to 0.00.5
   Bugfixes:
     - Revised how settings are fetched to protect against startup errors due to missing settings
 ---------------------------------------------------------------------------------------------------
