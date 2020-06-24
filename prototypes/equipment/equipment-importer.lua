@@ -11,6 +11,7 @@
 require("equipment.battery")
 require("equipment.energy-shield")
 require("equipment.fusion-reactor")
+require("equipment.laser-defense")
 require("equipment.night-vision")
 require("equipment.personal-roboport")
 require("equipment.solar-panel")
