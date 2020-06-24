@@ -21,8 +21,9 @@ require("equipment.solar-panel")
 -- Bob's Vehicle Equipment
 ----------------------------------------------------------------------------------------------------
 require("vehicle-equipment.vehicle-battery")
--- require("vehicle-equipment.vehicle-energy-shield")
+require("vehicle-equipment.vehicle-energy-shield")
 require("vehicle-equipment.vehicle-fusion-cell")
 require("vehicle-equipment.vehicle-fusion-reactor")
+require("vehicle-equipment.vehicle-laser-defense")
 require("vehicle-equipment.vehicle-roboport")
 require("vehicle-equipment.vehicle-solar-panel")

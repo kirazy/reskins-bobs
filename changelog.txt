@@ -6,10 +6,12 @@ Date: 2020.06.XX
     - Implemented night vision equipment and associated technologies
     - Implemented solar energy technology
     - Implemented personal and vehicle solar panel equipment, and associated technologies
-    - Implemented personal energy shield equipment and associated technologies
+    - Implemented personal and vehicle energy shield equipment and associated personal equipment technologies
     - Implemented personal laser defense equipment and associated technologies
   Changes:
     - Adjusted internal naming for clarity
+  Bugfixes:
+    - Fix medium eletric poles having their tint fetched prior to determining tier, resulting in mismatched colors
 ---------------------------------------------------------------------------------------------------
 Version: 0.00.9
 Date: 2020.06.22
