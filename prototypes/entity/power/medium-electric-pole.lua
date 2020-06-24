@@ -31,9 +31,6 @@ for name, map in pairs(tier_map) do
     -- Fetch entity
     entity = data.raw[inputs.type][name]
 
-    -- Determine what tint we're using
-    inputs.tint = reskins.lib.tint_index["tier-"..tier]
-
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
@@ -43,6 +40,9 @@ for name, map in pairs(tier_map) do
     else
         tier = map[2]
     end
+
+    -- Determine what tint we're using
+    inputs.tint = reskins.lib.tint_index["tier-"..tier]
     
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
