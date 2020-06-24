@@ -4,6 +4,9 @@ Date: 2020.06.XX
   Features:
     - Implemented item batteries, personal and vehicle batteries, and associated technologies
     - Implemented night vision equipment and associated technologies
+    - Implemented solar energy technology
+    - Implemented personal and vehicle solar panels, and associated technologies
+    - Implemented personal energy shields and associated technology
   Changes:
     - Adjusted internal naming for clarity
 ---------------------------------------------------------------------------------------------------

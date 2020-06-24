@@ -5,3 +5,4 @@
 
 -- Handles requires for standard technology files
 require("logistics")
+require("power")
