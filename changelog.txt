@@ -12,6 +12,7 @@ Date: 2020.06.XX
     - Adjusted internal naming for clarity
   Bugfixes:
     - Fix medium eletric poles having their tint fetched prior to determining tier, resulting in mismatched colors
+    - Fix Mini-Machine compatibility causing problems when missing some of Bob's mods
 ---------------------------------------------------------------------------------------------------
 Version: 0.00.9
 Date: 2020.06.22
@@ -37,7 +38,7 @@ Date: 2020.06.18
     - Preliminary implementation of new beacons
     - Added icon support for locomotives, cargo wagons, fluid wagons, artillery wagons, and tanks
     - Added support for Classic Mining Drill mod
-    - Added support for miniloader technologies
+    - Added support for Miniloader technologies
   Changes:
     - Set minimum version for Base to 0.18.32, Library to 0.00.4
     - Internal reorganization to handle requires by category
@@ -94,7 +95,7 @@ Date: 2020.06.07
     - Adjusted starting_vertical_speed for smoke particles for burner electric generator and fluid generators
   Bugfixes:
     - Fix mini-machines dependency
-    - Fix sprite-out-of-bounds error with mini-machines when Angel's mods disable Bob's mods chemical plants
+    - Fix sprite-out-of-bounds error with Mini-Machines when Angel's mods disable Bob's mods chemical plants
 ---------------------------------------------------------------------------------------------------
 Version: 0.00.2
 Date: 2020.06.06

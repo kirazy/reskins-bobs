@@ -12,7 +12,10 @@ local function switch_icon_to_mini(name, source, pattern, replacement, inputs)
     local source = data.raw["item"][source]
 
     -- Check to make sure this entity is valid
-    if not destination then return end
+    if not destination then return end -- Minimachine isn't there
+    if not source.icons then return end -- No icons table, we didn't do work
+    if not source.icons[1].icon then return end -- Ill formed icons table
+    if not string.find(source.icons[1].icon, "reskin") then return end -- Icons table, but it's not ours
 
     -- Transcribe icons and pictures
     inputs.icon = util.copy(source.icons)
