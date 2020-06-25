@@ -8,17 +8,6 @@ if not mods["bobmodules"] then return end
 if reskins.lib.setting("reskins-bobs-do-bobmodules") == false then return end
 
 -- Modules
-local color_map = {
-    ["blue"] = {"70b6ff", "30d2ff"},
-    ["brown"] = {"9c7c60", "fff0d9"},
-    ["cyan"] = {"70f1ff", "30ffd2"},
-    ["green"] = {"95e26c", "2bff2b"},
-    ["pine"] = {"7a9e96", "bfffd2"},
-    ["pink"] = {"f96bcd", "ffbfe9"},
-    ["red"] = {"f27c52", "ff9999"},
-    ["yellow"] = {"ffdd45", "ffff66"},
-}
-
 local modules_map = {
     ["speed"] = {"blue", true},
     ["effectivity"] = {"yellow", true},
@@ -68,10 +57,7 @@ for class, map in pairs(modules_map) do
         entity.art_style = "artisan-reskin"
 
         -- Overwrite beacon_tint property
-        entity.beacon_tint = {
-            primary = util.color(color_map[color][1]),
-            secondary = util.color(color_map[color][2])
-        }
+        entity.beacon_tint = reskins.bobs.module_color_map[color]
 
         -- Label to skip to next iteration
         ::continue::

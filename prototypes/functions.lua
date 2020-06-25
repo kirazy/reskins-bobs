@@ -16,6 +16,22 @@ else
     reskins.bobs.basic_belt_tint = reskins.lib.tint_index["tier-0"]
 end
 
+reskins.bobs.module_color_map = {
+    ["blue"] = {primary = util.color("70b6ff"), secondary = util.color("30d2ff")},
+    ["brown"] = {primary = util.color("9c7c60"), secondary = util.color("fff0d9")},
+    ["cyan"] = {primary = util.color("70f1ff"), secondary = util.color("30ffd2")},
+    ["deep-red"] = {primary = util.color("cb302a"), secondary = util.color("ff7a66")},
+    ["gray"] = {primary = util.color("b7b7b7"), secondary = util.color("d5d5d5")},
+    ["green"] = {primary = util.color("95e26c"), secondary = util.color("2bff2b")},
+    ["orange"] = {primary = util.color("ffa345"), secondary = util.color("ffbf96")},
+    ["pine"] = {primary = util.color("7a9e96"), secondary = util.color("bfffd2")},
+    ["pink"] = {primary = util.color("f96bcd"), secondary = util.color("ffbfe9")},
+    ["purple"] = {primary = util.color("9c70ff"), secondary = util.color("ac6eff")},
+    ["red"] = {primary = util.color("f27c52"), secondary = util.color("ff9999")},
+    ["vanilla-red"] = {primary = util.color("f27c52"), secondary = util.color("ffe27c")},
+    ["yellow"] = {primary = util.color("ffdd45"), secondary = util.color("ffed66")},
+}
+
 -- ROBOT PARTICLE AND DEATH ANIMATIONS
 local function adjust_animation(animation, shift)
 
