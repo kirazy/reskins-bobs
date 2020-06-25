@@ -162,6 +162,7 @@ reskin_lab("lab-alien")
 -- lab
 -- lab-2
 -- lab-alien
+-- burner-lab
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobmodules"] then return end
