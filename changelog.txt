@@ -1,4 +1,7 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.00.13
+Date: 2020.06.XX
+---------------------------------------------------------------------------------------------------
 Version: 0.00.12
 Date: 2020.06.25
   Changes:
@@ -7,8 +10,8 @@ Date: 2020.06.25
 Version: 0.00.11
 Date: 2020.06.25
   Features:
-    - Added additional module icon colors, 'deep-red', 'gray', 'orange', 'purple', and 'vanilla-red' for optional use by other mods
-    - Exposed module colors, accessible from 'reskins.bobs.module_color_map[color]
+    - Added additional module icon colors, `deep-red`, `gray`, `orange`, `purple`, and `vanilla-red` for optional use by other mods
+    - Exposed module colors, accessible from `reskins.bobs.module_color_map[color]`
 ---------------------------------------------------------------------------------------------------
 Version: 0.00.10
 Date: 2020.06.24
