@@ -7,5 +7,6 @@
 require("loaderredux")
 require("miniloader")
 require("vanilla-loaders-hd")
+require("classic-beacon")
 require("classic-mining-drill")
 require("deadlock-stacking-beltboxes")

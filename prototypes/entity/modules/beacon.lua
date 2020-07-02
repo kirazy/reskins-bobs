@@ -4,6 +4,7 @@
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
+if mods["classic-beacon"] then return end
 if not mods["bobmodules"] then return end
 if reskins.lib.setting("reskins-bobs-do-bobmodules") == false then return end
 
