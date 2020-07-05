@@ -505,6 +505,196 @@ function reskins.bobs.assembly_pipe_pictures(tint)
     }
 end
 
+-- Prepare chemical-electric-furnace-style pipe pictures
+function reskins.bobs.furnace_pipe_pictures(tint)
+    return
+    {
+        north = {
+            filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-N-base.png",
+            priority = "extra-high",
+            width = 35,
+            height = 13,
+            shift = util.by_pixel(2.5, 10),
+            hr_version = {
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-N-base.png",
+                priority = "extra-high",
+                width = 70,
+                height = 26,
+                shift = util.by_pixel(2.5, 10),
+                scale = 0.5
+            }   
+        },
+        east = {
+            layers = {
+                -- Base
+                {
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-E-base.png",
+                    priority = "extra-high",
+                    width = 15,
+                    height = 35,
+                    shift = util.by_pixel(-20.5, 3),
+                    hr_version = {
+                        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-E-base.png",
+                        priority = "extra-high",
+                        width = 30,
+                        height = 70,
+                        shift = util.by_pixel(-20.5, 3),
+                        scale = 0.5
+                    }
+                },
+                -- Mask
+                {
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-E-mask.png",
+                    priority = "extra-high",
+                    width = 15,
+                    height = 35,
+                    shift = util.by_pixel(-20.5, 3),
+                    tint = tint,
+                    hr_version = {
+                        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-E-mask.png",
+                        priority = "extra-high",
+                        width = 30,
+                        height = 70,
+                        shift = util.by_pixel(-20.5, 3),
+                        tint = tint,
+                        scale = 0.5
+                    }
+                },
+                -- Highlights
+                {
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-E-highlights.png",
+                    priority = "extra-high",
+                    width = 15,
+                    height = 35,
+                    shift = util.by_pixel(-20.5, 3),
+                    blend_mode = "additive",
+                    hr_version = {
+                        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-E-highlights.png",
+                        priority = "extra-high",
+                        width = 30,
+                        height = 70,
+                        shift = util.by_pixel(-20.5, 3),
+                        blend_mode = "additive",
+                        scale = 0.5
+                    }
+                }
+            }
+        },
+        south = {
+            layers = {
+                -- Base
+                {
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-S-base.png",
+                    priority = "extra-high",
+                    width = 38,
+                    height = 29,
+                    shift = util.by_pixel(0.5, -30.5),
+                    hr_version = {
+                        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-S-base.png",
+                        priority = "extra-high",
+                        width = 76,
+                        height = 58,
+                        shift = util.by_pixel(0.5, -30.5),
+                        scale = 0.5
+                    }
+                },
+                -- Mask
+                {
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-S-mask.png",
+                    priority = "extra-high",
+                    width = 38,
+                    height = 29,
+                    shift = util.by_pixel(0.5, -30.5),
+                    tint = tint,
+                    hr_version = {
+                        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-S-mask.png",
+                        priority = "extra-high",
+                        width = 76,
+                        height = 58,
+                        shift = util.by_pixel(0.5, -30.5),
+                        tint = tint,
+                        scale = 0.5
+                    }
+                },
+                -- Highlights
+                {
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-S-highlights.png",
+                    priority = "extra-high",
+                    width = 38,
+                    height = 29,
+                    shift = util.by_pixel(0.5, -30.5),
+                    blend_mode = "additive",
+                    hr_version = {
+                        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-S-highlights.png",
+                        priority = "extra-high",
+                        width = 76,
+                        height = 58,
+                        shift = util.by_pixel(0.5, -30.5),
+                        blend_mode = "additive",
+                        scale = 0.5
+                    }
+                }
+            }
+        },
+        west = {
+            layers = {
+                -- Base
+                {
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-W-base.png",
+                    priority = "extra-high",
+                    width = 11,
+                    height = 34,
+                    shift = util.by_pixel(21.5, 2),
+                    hr_version = {
+                        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-W-base.png",
+                        priority = "extra-high",
+                        width = 22,
+                        height = 68,
+                        shift = util.by_pixel(21.5, 2),
+                        scale = 0.5
+                    }
+                },
+                -- Mask
+                {
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-W-mask.png",
+                    priority = "extra-high",
+                    width = 11,
+                    height = 34,
+                    shift = util.by_pixel(21.5, 2),
+                    tint = tint,
+                    hr_version = {
+                        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-W-mask.png",
+                        priority = "extra-high",
+                        width = 22,
+                        height = 68,
+                        shift = util.by_pixel(21.5, 2),
+                        tint = tint,
+                        scale = 0.5
+                    }
+                },
+                -- Highlights
+                {
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-W-highlights.png",
+                    priority = "extra-high",
+                    width = 11,
+                    height = 34,
+                    shift = util.by_pixel(21.5, 2),
+                    blend_mode = "additive",
+                    hr_version = {
+                        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-W-highlights.png",
+                        priority = "extra-high",
+                        width = 22,
+                        height = 68,
+                        shift = util.by_pixel(21.5, 2),
+                        blend_mode = "additive",
+                        scale = 0.5
+                    }
+                }
+            }
+        }
+    }
+end
+
 -- Prepare standard pipe sprites
 function reskins.bobs.pipe_pictures(inputs)
     return
