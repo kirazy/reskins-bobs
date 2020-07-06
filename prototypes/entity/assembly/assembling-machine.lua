@@ -391,6 +391,7 @@ for name, map in pairs(tier_map) do
     -- Rescale for electronics and burner assembling machines
     if string.find(name, "electronics") or name == "burner-assembling-machine" then
         reskins.lib.rescale_entity(entity.animation, 2/3)
+        reskins.lib.rescale_remnant(entity, 2/3)
     end
 
     -- Handle pipes
@@ -403,7 +404,7 @@ for name, map in pairs(tier_map) do
                 base_area = 10,
                 base_level = -1,
                 pipe_connections = {{ type="input", position = {0, -2} }},
-                secondary_draw_orders = { north = -1 }
+                secondary_draw_orders = { north = -1, east = 3, south = 3, west = 3 }
             },
             {
                 production_type = "output",
@@ -412,7 +413,7 @@ for name, map in pairs(tier_map) do
                 base_area = 10,
                 base_level = 1,
                 pipe_connections = {{ type="output", position = {0, 2} }},
-                secondary_draw_orders = { north = -1 }
+                secondary_draw_orders = { north = -1, east = 3, south = 3, west = 3 }
             },
             off_when_no_fluid_recipe = true
         }
