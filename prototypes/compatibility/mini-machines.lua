@@ -13,28 +13,46 @@ local function switch_icon_to_mini(name, source, pattern, replacement, inputs)
 
     -- Check to make sure this entity is valid
     if not destination then return end -- Minimachine isn't there
-    if not source.icons then return end -- No icons table, we didn't do work
-    if not source.icons[1].icon then return end -- Ill formed icons table
-    if not string.find(source.icons[1].icon, "reskin") then return end -- Icons table, but it's not ours
+    if not source then return end -- Source isn't there
+
+    -- Find and copy the active icon field, ensure it's ours
+    if source.icon then 
+        inputs.icon = util.copy(source.icon)
+        if not string.find(source.icon, "reskin") then return end -- Not our icon
+    elseif source.icons then
+        inputs.icon = util.copy(source.icons)
+        if not string.find(source.icons[1].icon, "reskin") then return end -- Not our icon
+    else
+        return
+    end    
 
     -- Transcribe icons and pictures
     inputs.icon = util.copy(source.icons)
     inputs.icon_picture = util.copy(source.pictures)
 
     -- Switch to miniatures
-    for n = 1, #inputs.icon do
-        inputs.icon[n].icon = string.gsub(inputs.icon[n].icon, "/"..pattern.."/", "/"..replacement.."/mini-")
+    if type(inputs.icon) == "table" then
+        for n = 1, #inputs.icon do
+            inputs.icon[n].icon = string.gsub(inputs.icon[n].icon, "/"..pattern.."/", "/"..replacement.."/mini-")
+        end
+    else
+        inputs.icon = string.gsub(inputs.icon, "/"..pattern.."/", "/"..replacement.."/mini-")
     end
 
-    for n = 1, #inputs.icon_picture.layers do
-        inputs.icon_picture.layers[n].filename = string.gsub(inputs.icon_picture.layers[n].filename, "/"..pattern.."/", "/"..replacement.."/mini-")
+
+    if inputs.icon_picture.layers then
+        for n = 1, #inputs.icon_picture.layers do
+            inputs.icon_picture.layers[n].filename = string.gsub(inputs.icon_picture.layers[n].filename, "/"..pattern.."/", "/"..replacement.."/mini-")
+        end
+    else
+        inputs.icon_picture[1].filename = string.gsub(inputs.icon_picture[1].filename, "/"..pattern.."/", "/"..replacement.."/mini-")
     end
 
     -- Assign icons
     reskins.lib.assign_icons(name, inputs)
 end
 
-local function rescale_minimachine(table, type, pattern, replacement)
+local function rescale_minimachine(table, type, pattern, replacement, scale)
     -- Prepare a basic inputs table
     local inputs = {
         icon_size = 64,
@@ -45,6 +63,7 @@ local function rescale_minimachine(table, type, pattern, replacement)
     -- Shrink the icon
     for name, source in pairs(table) do
         switch_icon_to_mini(name, source, pattern, replacement, inputs)
+        reskins.lib.rescale_remnant(data.raw[type][name], scale)
     end
 end
 
@@ -57,7 +76,7 @@ if reskins.lib.setting("angels-disable-bobs-chemical-plants") ~= true then
         ["mini-chemplant-4"] = "chemical-plant-4",
     }
 
-    rescale_minimachine(chemplants, "assembling-machine", "chemical%-plant", "chemical-plant")
+    rescale_minimachine(chemplants, "assembling-machine", "chemical%-plant", "chemical-plant", 2/3)
 end
 
 -- Electrolysers
@@ -69,7 +88,7 @@ local electrolysers = {
     ["mini-electro-5"] = "electrolyser-5",
 }
 
-rescale_minimachine(electrolysers, "assembling-machine", "electrolyser", "electrolyser")
+rescale_minimachine(electrolysers, "assembling-machine", "electrolyser", "electrolyser", 2/3)
 
 -- Assembling machines
 local assemblers = {
@@ -81,7 +100,7 @@ local assemblers = {
     ["mini-assembler-6"] = "assembling-machine-6",
 }
 
-rescale_minimachine(assemblers, "assembling-machine", "assembling%-machine", "assembling-machine")
+rescale_minimachine(assemblers, "assembling-machine", "assembling%-machine", "assembling-machine", 2/3)
 
 -- Mining drills
 local miners = {
@@ -92,7 +111,7 @@ local miners = {
     ["mini-miner-5"] = "bob-mining-drill-4",
 }
 
-rescale_minimachine(miners, "mining-drill", "electric%-mining%-drill", "electric-mining-drill")
+rescale_minimachine(miners, "mining-drill", "electric%-mining%-drill", "electric-mining-drill", 2/3)
 
 -- Radars
 local radars = {
@@ -103,7 +122,7 @@ local radars = {
     ["mini-radar-5"] = "radar-5",
 }
 
-rescale_minimachine(radars, "radar", "radar", "radar")
+rescale_minimachine(radars, "radar", "radar", "radar", 2/3)
 
 -- Oil refineries
 local refineries = {
@@ -113,7 +132,7 @@ local refineries = {
     ["mini-refinery-4"] = "oil-refinery-4",
 }
 
-rescale_minimachine(refineries, "assembling-machine", "oil%-refinery", "oil-refinery")
+rescale_minimachine(refineries, "assembling-machine", "oil%-refinery", "oil-refinery", 3/5)
 
 -- Storage tanks
 local storage_tanks = {
@@ -123,7 +142,7 @@ local storage_tanks = {
     ["mini-tank-4"] = "storage-tank-4",
 }
 
-rescale_minimachine(storage_tanks, "storage-tank", "storage%-tank", "storage-tank")
+rescale_minimachine(storage_tanks, "storage-tank", "storage%-tank", "storage-tank", 2/3)
 
 -- Beacons
 local beacons = {
@@ -132,4 +151,36 @@ local beacons = {
     ["mini-beacon-3"] = "beacon-3",
 }
 
-rescale_minimachine(beacons, "beacon", "beacon", "beacon")
+rescale_minimachine(beacons, "beacon", "beacon", "beacon", 2/3)
+
+-- Furnaces
+local furnaces = {
+    ["mini-furnace-1"] = "electric-furnace",
+    ["mini-furnace-2"] = "electric-furnace-2",
+    ["mini-furnace-3"] = "electric-furnace-3",
+}
+
+local assembly_furnaces = {
+    ["mini-bobchem-1"] = "chemical-furnace",
+    ["mini-bobchem-1"] = "electric-chemical-furnace",
+    ["mini-bobmetal-1"] = "electric-mixing-furnace",
+    ["mini-bobmulti-1"] = "electric-chemical-mixing-furnace",
+    ["mini-bobmulti-2"] = "electric-chemical-mixing-furnace-2",
+}
+
+rescale_minimachine(furnaces, "furnace", "electric%-furnace", "electric-furnace", 2/3)
+rescale_minimachine(assembly_furnaces, "assembling-machine", "electric%-furnace", "electric-furnace", 2/3)
+
+-- Handle fluid boxes for the assembly furnaces
+for name, _ in pairs(assembly_furnaces) do
+    entity = data.raw["assembling-machine"][name]
+    if not entity then return end
+
+    if entity.fluid_boxes then
+        -- Fetch tint
+        tint = entity.fluid_boxes[1].pipe_picture.east.layers[2].tint
+
+        -- Set to standard pipe pictures for now; TODO: Custom pipe pictures
+        entity.fluid_boxes[1].pipe_picture = reskins.bobs.assembly_pipe_pictures(tint)
+    end
+end

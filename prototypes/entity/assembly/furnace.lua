@@ -487,18 +487,18 @@ end
 
 -- ELECTRIC FURNACES
 local electric_furnace_map = {
-    ["electric-furnace"] = {tier = 3, type = "furnace", tint = standard_furnace_tint},
-    ["electric-furnace-2"] = {tier = 4, type = "furnace"},
-    ["electric-furnace-3"] = {tier = 5, type = "furnace"},
+    ["electric-furnace"] = {furnace = "standard", tier = 3, type = "furnace", tint = standard_furnace_tint},
+    ["electric-furnace-2"] = {furnace = "standard", tier = 4, type = "furnace"},
+    ["electric-furnace-3"] = {furnace = "standard", tier = 5, type = "furnace"},
 
     -- Names as of Bob's MCI 0.18.9
-    ["electric-mixing-furnace"] = {tier = 3, type = "assembling-machine", tint = mixing_furnace_tint},
-    ["electric-chemical-furnace"] = {tier = 3, type = "assembling-machine", tint = chemical_furnace_tint, has_fluids = true},
-    ["electric-chemical-mixing-furnace"] = {tier = 4, type = "assembling-machine", has_fluids = true},
-    ["electric-chemical-mixing-furnace-2"] = {tier = 5, type = "assembling-machine", has_fluids = true},
+    ["electric-mixing-furnace"] = {furnace = "mixing", tier = 3, type = "assembling-machine", tint = mixing_furnace_tint},
+    ["electric-chemical-furnace"] = {furnace = "chemical", tier = 3, type = "assembling-machine", tint = chemical_furnace_tint, has_fluids = true},
+    ["electric-chemical-mixing-furnace"] = {furnace = "multi", tier = 4, type = "assembling-machine", has_fluids = true},
+    ["electric-chemical-mixing-furnace-2"] = {furnace = "multi", tier = 5, type = "assembling-machine", has_fluids = true},
 
     -- Old names
-    ["chemical-furnace"] = {tier = 3, type = "assembling-machine", tint = chemical_furnace_tint, has_fluids = true},
+    ["chemical-furnace"] = {furnace = "chemical", tier = 3, type = "assembling-machine", tint = chemical_furnace_tint, has_fluids = true},
 }
 
 local function electric_furnace_shadow()
@@ -629,7 +629,7 @@ for name, map in pairs(electric_furnace_map) do
         group = "assembly",
         particles = {["medium"] = 2},
         tint = map.tint or reskins.lib.tint_index["tier-"..tier],
-        make_icons = false,
+        icon_name = "electric-furnace",
         make_remnants = false,
     }
 
@@ -645,12 +645,31 @@ for name, map in pairs(electric_furnace_map) do
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
+    -- Setup icons
+    if map.furnace == "chemical" then
+        inputs.icon_base = "electric-chemical-furnace"
+        inputs.icon_layers = 1
+    elseif map.furnace == "mixing" then
+        inputs.icon_base = "electric-metal-mixing-furnace"
+        inputs.icon_layers = 1
+    elseif map.furnace == "multi" then
+        inputs.icon_base = "electric-multi-purpose-furnace"
+        inputs.icon_mask = inputs.icon_base
+        inputs.icon_highlights = inputs.icon_base
+        inputs.icon_layers = nil
+    elseif map.furnace == "standard" then
+        inputs.icon_base = nil
+        inputs.icon_mask = nil
+        inputs.icon_highlights = nil
+        inputs.icon_layers = nil
+    end
+
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- TODO: Reskin remnants
 
     -- Reskin entities
-    if name == "electric-chemical-furnace" or name == "chemical-furnace" then
+    if map.furnace == "chemical" then
         entity.animation = {
             layers = {
                 -- Base
@@ -677,7 +696,7 @@ for name, map in pairs(electric_furnace_map) do
         entity.working_visualisations = {
             furnace_heater(true)
         }
-    elseif name == "electric-mixing-furnace" then
+    elseif map.furnace == "mixing" then
         entity.animation = {
             layers = {
                 -- Base
@@ -706,7 +725,7 @@ for name, map in pairs(electric_furnace_map) do
             furnace_large_propeller(),
             furnace_small_propeller(true),
         }
-    elseif string.find(name, "chemical%-mixing") then
+    elseif map.furnace == "multi" then
         entity.animation = {
             layers = {
                 -- Base
@@ -770,7 +789,7 @@ for name, map in pairs(electric_furnace_map) do
             furnace_heater(true),
             furnace_small_propeller(true),
         }
-    else
+    elseif map.furnace == "standard" then
         entity.animation = {
             layers = {
                 -- Base
