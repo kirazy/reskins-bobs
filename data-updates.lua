@@ -3,14 +3,22 @@
 --     
 -- See LICENSE.md in the project directory for license information.
 
--- Items
-require("prototypes.item.item-importer")
+-- Compatibility with ShinyBobGFX
+if mods["ShinyBobGFX"] then
+    require("shiny-bob-compatibility")
+end
 
--- Entities
-require("prototypes.entity.entity-importer")
+----------------------------------------------------------------------------------------------------
+-- ENTITIES
+----------------------------------------------------------------------------------------------------
+-- Bob's Assembly
+require("prototypes.entity.assembly.assembling-machine") -- Bob reskins in data-updates
+require("prototypes.entity.assembly.chemical-plant") -- Bob reskins in data-updates
 
--- Equipment
-require("prototypes.equipment.equipment-importer")
+-- Bob's Power
+require("prototypes.entity.power.nuclear-reactor") -- Bob reskins in data-updates
 
--- Compatiblity
-require("prototypes.compatibility.compatibility-importer")
+----------------------------------------------------------------------------------------------------
+-- COMPATIBILITY
+----------------------------------------------------------------------------------------------------
+require("prototypes.compatibility.deadlock-stacking-beltboxes")

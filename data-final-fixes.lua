@@ -4,7 +4,8 @@
 -- See LICENSE.md in the project directory for license information.
 
 -- Technology
-require("prototypes.technology.technology-importer")
+require("prototypes.technology.logistics")
+require("prototypes.technology.power")
 
 -- Icon reassignments
 for name, inputs in pairs(reskins.bobs.icons) do
