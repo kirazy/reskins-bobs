@@ -15,7 +15,7 @@ local inputs = {
     directory = reskins.bobs.directory,
     mod = "bobs",
     group = "compatibility",
-    subgroup = "loaderredux/loader",
+    subgroup = "loaderredux",
     particles = {["medium"] = 1, ["big"] = 4},
     icon_layers = 2,
     make_remnants = false,
