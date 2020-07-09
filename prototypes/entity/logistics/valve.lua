@@ -18,9 +18,9 @@ local inputs = {
 }
 
 local tint_map = {
-    ["bob-valve"] = {util.color("2ac0ff"), "basic"},
-    ["bob-overflow-valve"] = {util.color("ff3b29"), "overflow"},
-    ["bob-topup-valve"] = {util.color("4dff2a"), "top-up"},
+    ["bob-valve"] = util.color("2ac0ff"),
+    ["bob-overflow-valve"] = util.color("ff3b29"),
+    ["bob-topup-valve"] = util.color("4dff2a"),
 }
 
 local function cardinal_pictures(x, tint)
@@ -76,18 +76,15 @@ local function cardinal_pictures(x, tint)
 end
 
 -- Reskin entities, create and assign extra details
-for name, map in pairs(tint_map) do
+for name, tint in pairs(tint_map) do
     -- Fetch entity
-    entity = data.raw[inputs.type][name]
+    local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
-    if not entity then
-        goto continue
-    end
+    if not entity then goto continue end
 
     -- Parse map
-    inputs.tint = map[1]
-    variant = map[2]
+    inputs.tint = tint
 
     reskins.lib.setup_standard_entity(name, 3, inputs)
 
