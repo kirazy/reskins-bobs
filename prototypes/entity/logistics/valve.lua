@@ -83,7 +83,7 @@ for name, tint in pairs(tint_map) do
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
-    -- Parse map
+    -- Assign tint
     inputs.tint = tint
 
     reskins.lib.setup_standard_entity(name, 3, inputs)
