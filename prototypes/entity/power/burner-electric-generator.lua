@@ -23,7 +23,7 @@ inputs.icon_filename = inputs.directory.."/graphics/icons/power/burner-electric-
 local name = "bob-burner-generator"
 
 -- Fetch entity
-entity = data.raw[inputs.type][name]
+local entity = data.raw[inputs.type][name]
 
 -- Check if entity exists, if not, return
 if not entity then return end
@@ -186,3 +186,6 @@ entity.burner.smoke = {
         starting_frame_deviation = 60,
     }
 }
+
+-- Fix drawing box
+entity.drawing_box = {{-1.5, -2.25}, {1.5, 1.5}}

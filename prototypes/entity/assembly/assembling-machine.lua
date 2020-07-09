@@ -44,15 +44,15 @@ end
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
     -- Fetch entity
-    entity = data.raw[inputs.type][name]
+    local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
     -- Extract tier, shadow, has_fluids from map
-    tier = map[1]
-    shadow = map[2]  
-    has_fluids = map[3]  
+    local tier = map[1]
+    local shadow = map[2]  
+    local has_fluids = map[3]  
        
     -- Determine what tint we're using
     inputs.tint = map[4] or reskins.lib.tint_index["tier-"..tier]
@@ -387,6 +387,9 @@ for name, map in pairs(tier_map) do
             }
         })
     end
+
+    -- Fix drawing box
+    entity.drawing_box = nil
     
     -- Rescale for electronics and burner assembling machines
     if string.find(name, "electronics") or name == "burner-assembling-machine" then
