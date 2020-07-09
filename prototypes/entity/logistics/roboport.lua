@@ -28,18 +28,17 @@ local tier_map = {
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
     -- Fetch entity
-    entity = data.raw[inputs.type][name]
+    local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
     -- Parse map
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "name-map" then
-        tier = map[1]
-    else
+    local tier = map[1]
+    if reskins.lib.setting("reskins-lib-tier-mapping") == "ingredient-map" then
         tier = map[2]
     end
-    subtier = map[1]
+    local subtier = map[1]
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
@@ -50,7 +49,7 @@ for name, map in pairs(tier_map) do
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Fetch remnant
-    remnant = data.raw["corpse"][name.."-remnants"]    
+    local remnant = data.raw["corpse"][name.."-remnants"]    
 
     -- Reskin remnants
     remnant.animation = make_rotated_animation_variations_from_sheet (2, {

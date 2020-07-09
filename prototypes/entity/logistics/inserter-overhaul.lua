@@ -65,7 +65,7 @@ local function inserter_remnants(parameters)
         parameters.mask = "filter-"..parameters.mask
     end
 
-    remnant = make_rotated_animation_variations_from_sheet (4, {
+    local remnant = make_rotated_animation_variations_from_sheet (4, {
         layers = {
             -- Base
             {
@@ -153,7 +153,7 @@ end
 
 -- Inserter Arms
 local function inserter_arm_picture(parameters)
-    arm_picture = {
+    local arm_picture = {
         layers = {
             -- Base
             {
@@ -248,7 +248,7 @@ end
 
 -- Hand open, closed for stack, standard, and long-handed inserters
 local function inserter_hand_picture(parameters)
-    hand_picture = {
+    local hand_picture = {
         layers = {
             -- Base
             {
@@ -431,7 +431,7 @@ end
 -- Reskin entities, create and assign extra details
 for name, tier in pairs(inserter_map) do
     -- Fetch entity
-    entity = data.raw[inputs.type][name]
+    local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
@@ -494,7 +494,7 @@ for name, tier in pairs(inserter_map) do
     reskins.lib.setup_standard_entity(name, tier, inputs)    
 
     -- Fetch remnant
-    remnant = data.raw["corpse"][name.."-remnants"]
+    local remnant = data.raw["corpse"][name.."-remnants"]
 
     -- Reskin remnnant
     remnant.animation = inserter_remnants{type = inserter_type, tint = inputs.tint, filter = inserter_filter}

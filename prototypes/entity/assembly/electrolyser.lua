@@ -30,14 +30,14 @@ local tier_map = {
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
     -- Fetch entity
-    entity = data.raw[inputs.type][name]
+    local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
     
     -- Parse map
-    tier = map[1]
-    shadow = map[2]
+    local tier = map[1]
+    local shadow = map[2]
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]

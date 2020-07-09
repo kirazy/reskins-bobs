@@ -87,7 +87,7 @@ for name, map in pairs(tier_map) do
     end
 
     -- Fetch entity
-    entity = data.raw[inputs.type][name]
+    local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then
@@ -95,9 +95,9 @@ for name, map in pairs(tier_map) do
     end
 
     -- Parse map
-    tier = map[1]
-    variant = map[2] or nil
-    do_reskin = map[3] or nil
+    local tier = map[1]
+    local variant = map[2] or nil
+    local do_reskin = map[3] or nil
 
     -- Determine what tint we're using
     inputs.tint = reskins.bobs.belt_tint_handling(name, tier)
@@ -127,7 +127,7 @@ end
 -- Reskin icons
 for name, tier in pairs(item_map) do
     -- Fetch item
-    item = data.raw["item"][name]
+    local item = data.raw["item"][name]
 
     -- Check if item exists, if not, skip this iteration
     if not item then goto continue end
@@ -145,6 +145,7 @@ for name, tier in pairs(item_map) do
     reskins.lib.construct_icon(name, tier, inputs)
 
     -- Handle grouping and ordering in the UI
+    local base_item
     if name ~= "chute-miniloader" then
         base_item = data.raw["item"][string.gsub(string.gsub(name, "filter%-", ""), "miniloader", "transport-belt")]
     elseif data.raw["item"]["basic-transport-belt"] then
@@ -182,7 +183,7 @@ local technology_map = {
 -- Reskin technologies
 for name, tier in pairs(technology_map) do
     -- Fetch technology
-    technology = data.raw["technology"][name]
+    local technology = data.raw["technology"][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not technology then goto continue end

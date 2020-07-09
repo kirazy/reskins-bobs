@@ -172,12 +172,12 @@ rescale_minimachine(assembly_furnaces, "assembling-machine", "electric%-furnace"
 
 -- Handle fluid boxes for the assembly furnaces
 for name, _ in pairs(assembly_furnaces) do
-    entity = data.raw["assembling-machine"][name]
+    local entity = data.raw["assembling-machine"][name]
     if not entity then return end
 
     if entity.fluid_boxes then
         -- Fetch tint
-        tint = entity.fluid_boxes[1].pipe_picture.east.layers[2].tint
+        local tint = entity.fluid_boxes[1].pipe_picture.east.layers[2].tint
 
         -- Set to standard pipe pictures for now; TODO: Custom pipe pictures
         entity.fluid_boxes[1].pipe_picture = reskins.bobs.assembly_pipe_pictures(tint)

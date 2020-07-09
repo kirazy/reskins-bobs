@@ -49,7 +49,7 @@ end
 -- Reskin entities
 for name, map in pairs(tier_map) do
     -- Determine type
-    is_loader = string.find(name, "loader")
+    local is_loader = string.find(name, "loader")
 
     if is_loader then
         inputs.type = "loader-1x1"
@@ -58,15 +58,15 @@ for name, map in pairs(tier_map) do
     end
 
     -- Fetch entity, item
-    entity = data.raw[inputs.type][name]
+    local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
     -- Parse map
-    tier = map[1]
-    variant = map[2]
-    do_reskin = map[3]
+    local tier = map[1]
+    local variant = map[2]
+    local do_reskin = map[3]
 
     -- Determine what tint we're using
     inputs.tint = reskins.bobs.belt_tint_handling(name, tier)
@@ -173,7 +173,7 @@ local tech_map = {
 -- Reskin technologies
 for name, tier in pairs(tech_map) do
     -- Fetch technology
-    technology = data.raw.technology[name]
+    local technology = data.raw.technology[name]
 
     -- Check if technology exists, if not, skip this iteration
     if not technology then goto continue end

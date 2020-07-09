@@ -16,7 +16,7 @@ local inputs = {
     mod = "bobs",
     group = "mining",
     particles = {["small"] = 3},
-    make_remnants = false, -- TODO: Make pumpjack and water-pumpjack remnants
+    make_remnants = false, -- TODO: #4 Make pumpjack and water-pumpjack remnants
 }
 
 local tier_map = {

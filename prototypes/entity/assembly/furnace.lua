@@ -96,7 +96,7 @@ end
 -- Reskin entities, create and assign extra details
 for name, map in pairs(stone_furnace_map) do
     -- Setup inputs, parse map
-    inputs = {
+    local inputs = {
         type = map[2],
         base_entity = "stone-furnace",
         directory = reskins.bobs.directory,
@@ -114,11 +114,11 @@ for name, map in pairs(stone_furnace_map) do
         inputs.tier_labels = false
     end
 
-    tier = map[1]
+    local tier = map[1]
 
     -- Fetch entity
-    entity = data.raw[inputs.type][name]
-    entity_source = data.raw["furnace"]["stone-furnace"]
+    local entity = data.raw[inputs.type][name]
+    local entity_source = data.raw["furnace"]["stone-furnace"]
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
@@ -126,7 +126,7 @@ for name, map in pairs(stone_furnace_map) do
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Fetch remnant
-    remnant = data.raw["corpse"][name.."-remnants"]
+    local remnant = data.raw["corpse"][name.."-remnants"]
 
     -- Reskin remnants and entities
     if name == "stone-furnace" then
@@ -315,7 +315,7 @@ end
 -- Reskin entities, create and assign extra details
 for name, map in pairs(steel_furnace_map) do
     -- Setup inputs, parse map
-    inputs = {
+    local inputs = {
         type = map[2],
         base_entity = "steel-furnace",
         directory = reskins.bobs.directory,
@@ -333,12 +333,12 @@ for name, map in pairs(steel_furnace_map) do
         inputs.tier_labels = false
     end
 
-    tier = map[1]
-    has_4way = map[4] or false
+    local tier = map[1]
+    local has_4way = map[4] or false
 
     -- Fetch entity
-    entity = data.raw[inputs.type][name]
-    entity_source = data.raw["furnace"]["steel-furnace"]
+    local entity = data.raw[inputs.type][name]
+    local entity_source = data.raw["furnace"]["steel-furnace"]
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
@@ -371,7 +371,7 @@ for name, map in pairs(steel_furnace_map) do
     reskins.lib.construct_icon(name, tier, inputs)
 
     -- Fetch remnant
-    remnant = data.raw["corpse"][name.."-remnants"]
+    local remnant = data.raw["corpse"][name.."-remnants"]
 
     -- Reskin entities and remnants
     if has_4way == true then
@@ -619,9 +619,9 @@ end
 -- Reskin entities, create and assign extra details
 for name, map in pairs(electric_furnace_map) do
     -- Setup inputs, parse map
-    tier = map.tier
+    local tier = map.tier
 
-    inputs = {
+    local inputs = {
         type = map.type,
         base_entity = "electric-furnace",
         directory = reskins.bobs.directory,
@@ -640,7 +640,7 @@ for name, map in pairs(electric_furnace_map) do
     end
 
     -- Fetch entity
-    entity = data.raw[inputs.type][name]
+    local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end

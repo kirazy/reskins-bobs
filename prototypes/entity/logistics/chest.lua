@@ -45,20 +45,19 @@ local logistic_map = {
 -- Reskin entities, create and assign extra details
 for name, map in pairs(logistic_map) do
     -- Fetch entity
-    entity = data.raw[inputs.type][name]
+    local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
     -- Parse map
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "name-map" then
-        tier = map[1]
-    else
+    local tier = map[1]
+    if reskins.lib.setting("reskins-lib-tier-mapping") == "ingredient-map" then
         tier = map[2]
     end
 
-    material = map[3]
-    chest = map[4]
+    local material = map[3]
+    local chest = map[4]
 
     -- Stick tier labels on the vanilla logistic chests
     if not map[3] then
@@ -75,7 +74,7 @@ for name, map in pairs(logistic_map) do
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Fetch remnant
-    remnant = data.raw["corpse"][name.."-remnants"]
+    local remnant = data.raw["corpse"][name.."-remnants"]
 
     -- Reskin remnants
     remnant.animation = {

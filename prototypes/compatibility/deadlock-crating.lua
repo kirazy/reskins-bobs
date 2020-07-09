@@ -33,7 +33,7 @@ end
 for name, tier in pairs(tier_map) do
 
     -- Fetch entity, item
-    entity = data.raw[inputs.type][name]
+    local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
@@ -83,7 +83,7 @@ for name, tier in pairs(tier_map) do
     reskins.lib.assign_icons(name, inputs)
 
     -- Tech handling
-    technology = data.raw.technology[string.gsub(name, "machine%-", "")]
+    local technology = data.raw.technology[string.gsub(name, "machine%-", "")]
     if not technology then goto continue end
 
     technology.icons[2].tint = inputs.tint

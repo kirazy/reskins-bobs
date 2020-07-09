@@ -202,16 +202,14 @@ end
 -- Reskin entities, create and assign extra details
 for name, map in pairs(inserter_map) do
     -- Fetch entity
-    entity = data.raw[inputs.type][name]
+    local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
-    if not entity then
-        goto continue
-    end
+    if not entity then goto continue end
 
     -- Parse map
-    tier = map[1]
-    do_details = map[2]
+    local tier = map[1]
+    local do_details = map[2]
 
     -- Only do complete setup for non-vanilla inserters
     if do_details then
@@ -254,7 +252,7 @@ for name, map in pairs(inserter_map) do
     end
 
     -- Fetch remnant
-    remnant = data.raw["corpse"][name.."-remnants"]
+    local remnant = data.raw["corpse"][name.."-remnants"]
 
     -- Reskin remnnant
     remnant.animation = inserter_remnants{name = name}

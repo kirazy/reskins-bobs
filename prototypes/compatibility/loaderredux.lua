@@ -37,7 +37,7 @@ local tier_map = {
 -- Reskin entities
 for name, map in pairs(tier_map) do
     -- Fetch entity, item
-    entity = data.raw[inputs.type][name]
+    local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then
@@ -45,8 +45,8 @@ for name, map in pairs(tier_map) do
     end
 
     -- Parse map
-    tier = map[1]
-    variant = map[2]
+    local tier = map[1]
+    local variant = map[2]
 
     -- Determine what tint we're using
     inputs.tint = reskins.bobs.belt_tint_handling(name, tier)

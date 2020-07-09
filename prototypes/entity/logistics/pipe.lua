@@ -94,18 +94,18 @@ for material, map in pairs(material_map) do
     inputs.material = material
 
     -- Parse map
-    tier = map[1]
+    local tier = map[1]
 
     -- Check if we're trying to work with iron
     if material == "iron" then
         goto do_icons
     end
 
-    tint = util.color(map[2])  
+    local tint = util.color(map[2])  
 
     -- Fetch entities
-    pipe_entity = data.raw["pipe"][material.."-pipe"]
-    underground_pipe_entity =  data.raw["pipe-to-ground"][material.."-pipe-to-ground"]
+    local pipe_entity = data.raw["pipe"][material.."-pipe"]
+    local underground_pipe_entity =  data.raw["pipe-to-ground"][material.."-pipe-to-ground"]
 
     -- Check if entity exists, if not, skip this iteration; assume if we have one we have both
     if not pipe_entity then goto continue end  
@@ -125,8 +125,8 @@ for material, map in pairs(material_map) do
     reskins.lib.create_remnant(inputs.material.."-pipe-to-ground", {type = "pipe-to-ground", base_entity = "pipe-to-ground"})
 
     -- Fetch remnant
-    pipe_remnant = data.raw["corpse"][inputs.material.."-pipe-remnants"]
-    underground_pipe_remnant = data.raw["corpse"][inputs.material.."-pipe-to-ground-remnants"]
+    local pipe_remnant = data.raw["corpse"][inputs.material.."-pipe-remnants"]
+    local underground_pipe_remnant = data.raw["corpse"][inputs.material.."-pipe-to-ground-remnants"]
 
     -- Reskin remnants
     pipe_remnant.animation = make_rotated_animation_variations_from_sheet(2, {
