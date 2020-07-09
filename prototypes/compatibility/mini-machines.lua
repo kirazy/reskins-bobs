@@ -6,10 +6,10 @@
 -- Check for mini-machines
 if not mods["mini-machines"] then return end
 
-local function switch_icon_to_mini(name, source, pattern, replacement, inputs)
+local function switch_icon_to_mini(name, source_name, pattern, replacement, inputs)
     -- Initialize paths
     local destination = data.raw["item"][name]
-    local source = data.raw["item"][source]
+    local source = data.raw["item"][source_name]
 
     -- Check to make sure this entity is valid
     if not destination then return end -- Minimachine isn't there
@@ -27,7 +27,6 @@ local function switch_icon_to_mini(name, source, pattern, replacement, inputs)
     end    
 
     -- Transcribe icons and pictures
-    inputs.icon = util.copy(source.icons)
     inputs.icon_picture = util.copy(source.pictures)
 
     -- Switch to miniatures
