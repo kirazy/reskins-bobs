@@ -15,9 +15,8 @@ local inputs = {
     directory = reskins.bobs.directory,
     mod = "bobs",
     group = "mining",
-    -- TODO: particles = {["medium-long"] = 3}, -- particles: big 1, medium 2, small 3
-    make_explosions = false,
-    make_remnants = false,
+    particles = {["small"] = 3},
+    make_remnants = false, -- TODO: Make pumpjack and water-pumpjack remnants
 }
 
 local tier_map = {
@@ -135,12 +134,10 @@ local index = 1
 -- Loop through all the pumpjacks, figure out the mining speeds
 for name, tier in pairs(tier_map) do
     -- Fetch entity
-    entity = data.raw[inputs.type][name]
+    local entity = data.raw[inputs.type][name]
     
     -- Check if entity exists, if not, skip this iteration
-    if not entity then
-        goto continue
-    end
+    if not entity then goto continue end
 
     -- Fetch mining speed
     pumpjack_speeds[index] = data.raw[inputs.type][name].mining_speed
@@ -158,16 +155,14 @@ local min_speed = pumpjack_speeds[1]
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
     -- Fetch entity
-    entity = data.raw[inputs.type][name]
+    local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
-    if not entity then
-        goto continue
-    end
+    if not entity then goto continue end
 
     -- Parse map
-    tier = map[1]
-    variant = map[2] or false
+    local tier = map[1]
+    local variant = map[2] or false
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
@@ -182,6 +177,7 @@ for name, map in pairs(tier_map) do
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Calculate new animation playback speed
+    local playback_speed
     if max_speed - min_speed == 0 then 
         playback_speed = entity.mining_speed
     else
