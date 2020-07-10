@@ -44,7 +44,7 @@ for name, parameters in pairs(science_packs) do
     }
 
     -- Fetch entity
-    entity = data.raw[inputs.type][name]
+    local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
@@ -85,7 +85,7 @@ if reskins.lib.setting("bobmods-enemies-enablenewartifacts") == true then
         }
 
         -- Fetch entity
-        entity = data.raw[inputs.type][name]
+        local entity = data.raw[inputs.type][name]
 
         -- Check if entity exists, if not, skip this iteration
         if not entity then goto continue end

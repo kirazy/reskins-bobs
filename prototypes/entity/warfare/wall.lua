@@ -45,7 +45,7 @@ reskins.lib.create_remnant("reinforced-wall", inputs)
 reskins.lib.construct_icon("reinforced-wall", 0, inputs)
 
 -- Reskin the gate
-remnant = data.raw["corpse"]["reinforced-wall-remnants"]
+local remnant = data.raw["corpse"]["reinforced-wall-remnants"]
 
 -- Reskin remnants
 remnant.animation = make_rotated_animation_variations_from_sheet(4, {

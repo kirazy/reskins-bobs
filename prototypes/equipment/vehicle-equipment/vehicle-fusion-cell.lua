@@ -30,7 +30,7 @@ local fusion_cells = {
 -- Reskin equipment
 for name, tier in pairs(fusion_cells) do
     -- Fetch equipment
-    equipment = data.raw[inputs.type][name]
+    local equipment = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not equipment then goto continue end

@@ -20,7 +20,7 @@ local modules_map = {
 }
 
 for class, map in pairs(modules_map) do
-    inputs = {
+    local inputs = {
         directory = reskins.bobs.directory,
         mod = "bobs",
         type = "module",

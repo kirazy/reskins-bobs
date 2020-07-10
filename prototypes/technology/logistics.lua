@@ -27,18 +27,16 @@ local automation_map = {
 }
 
 -- Reskin technologies
+local automation_inputs = util.copy(inputs)
 for name, map in pairs(automation_map) do
     -- Fetch technology
-    technology = data.raw["technology"][name]
+    local technology = data.raw["technology"][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not technology then goto continue end
 
     -- Setup automation inputs
-    if not automation_inputs then automation_inputs = util.copy(inputs) end
     automation_inputs.icon_name = "automation"
-
-    -- Determine what tint we're using
     automation_inputs.tint = map[2] or reskins.lib.tint_index["tier-"..map[1]]
 
     reskins.lib.construct_technology_icon(name, automation_inputs)
@@ -58,23 +56,17 @@ local logistics_map = {
 }
 
 -- Reskin technologies
+local logistics_inputs = util.copy(inputs)
 for name, tier in pairs(logistics_map) do
     -- Fetch technology
-    technology = data.raw["technology"][name]
+    local technology = data.raw["technology"][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not technology then goto continue end
 
     -- Setup logistics inputs
-    if not logistics_inputs then logistics_inputs = util.copy(inputs) end
     logistics_inputs.icon_name = "logistics"
-
-    -- Determine what tint we're using
-    -- if name == "logisitcs-0" then
-        -- logistics_inputs.tint = reskins.lib.adjust_alpha(reskins.bobs.basic_belt_tint, 1)
-    -- else
-        logistics_inputs.tint = reskins.lib.tint_index["tier-"..tier]
-    -- end
+    logistics_inputs.tint = reskins.lib.tint_index["tier-"..tier]
 
     reskins.lib.construct_technology_icon(name, logistics_inputs)
 

@@ -29,14 +29,14 @@ local function stone_furnace_entities(name, shadow)
     {
         layers = {
             {
-                filename = inputs.directory.."/graphics/entity/assembly/stone-furnace/"..name..".png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/stone-furnace/"..name..".png",
                 priority = "extra-high",
                 width = 76,
                 height = 76,
                 frame_count = 1,
                 shift = util.by_pixel(0, 1),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/assembly/stone-furnace/hr-"..name..".png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/stone-furnace/hr-"..name..".png",
                     priority = "extra-high",
                     width = 152,
                     height = 152,
@@ -46,7 +46,7 @@ local function stone_furnace_entities(name, shadow)
                 }
             },
             {
-                filename = inputs.directory.."/graphics/entity/assembly/stone-furnace/shadows/"..shadow.."-shadow.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/stone-furnace/shadows/"..shadow.."-shadow.png",
                 priority = "extra-high",
                 width = 88,
                 height = 70,
@@ -54,7 +54,7 @@ local function stone_furnace_entities(name, shadow)
                 draw_as_shadow = true,
                 shift = util.by_pixel(12, 3),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/assembly/stone-furnace/shadows/hr-"..shadow.."-shadow.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/stone-furnace/shadows/hr-"..shadow.."-shadow.png",
                     priority = "extra-high",
                     width = 176,
                     height = 140,
@@ -71,7 +71,7 @@ end
 local function stone_furnace_remnants(name, rotations)
     local remnants = make_rotated_animation_variations_from_sheet(rotations,
     {
-        filename = inputs.directory.."/graphics/entity/assembly/stone-furnace/remnants/"..name.."-remnants.png",
+        filename = reskins.bobs.directory.."/graphics/entity/assembly/stone-furnace/remnants/"..name.."-remnants.png",
         line_length = 1,
         width = 76,
         height = 66,
@@ -79,7 +79,7 @@ local function stone_furnace_remnants(name, rotations)
         direction_count = 1,
         shift = util.by_pixel(0, 10),
         hr_version = {
-            filename = inputs.directory.."/graphics/entity/assembly/stone-furnace/remnants/hr-"..name.."-remnants.png",
+            filename = reskins.bobs.directory.."/graphics/entity/assembly/stone-furnace/remnants/hr-"..name.."-remnants.png",
             line_length = 1,
             width = 152,
             height = 130,
@@ -196,14 +196,14 @@ local function steel_furnace_entity_skin(name, shadow)
     {
         layers = {
             {
-                filename = inputs.directory.."/graphics/entity/assembly/steel-furnace/"..name..".png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/"..name..".png",
                 priority = "high",
                 width = 86,
                 height = 87,
                 frame_count = 1,
                 shift = util.by_pixel(-1, 2),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/assembly/steel-furnace/hr-"..name..".png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/hr-"..name..".png",
                     priority = "high",
                     width = 172,
                     height = 174,
@@ -213,7 +213,7 @@ local function steel_furnace_entity_skin(name, shadow)
                 }
             },
             {
-                filename = inputs.directory.."/graphics/entity/assembly/steel-furnace/shadows/"..shadow.."-shadow.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/shadows/"..shadow.."-shadow.png",
                 priority = "high",
                 width = 141,
                 height = 71,
@@ -221,7 +221,7 @@ local function steel_furnace_entity_skin(name, shadow)
                 draw_as_shadow = true,
                 shift = util.by_pixel(38.5, 3.5),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/assembly/steel-furnace/shadows/hr-"..shadow.."-shadow.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/shadows/hr-"..shadow.."-shadow.png",
                     priority = "high",
                     width = 282,
                     height = 142,
@@ -244,7 +244,7 @@ local function steel_furnace_working(type)
 
     return
     {
-        filename = inputs.directory.."/graphics/entity/assembly/steel-furnace/working/"..working_type..".png",
+        filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/working/"..working_type..".png",
         priority = "high",
         line_length = 8,
         width = 86,
@@ -254,7 +254,7 @@ local function steel_furnace_working(type)
         shift = util.by_pixel(-1, 2),
         blend_mode = "additive",
         hr_version = {
-            filename = inputs.directory.."/graphics/entity/assembly/steel-furnace/working/hr-"..working_type..".png",
+            filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/working/hr-"..working_type..".png",
             priority = "high",
             line_length = 8,
             width = 172,
@@ -290,7 +290,7 @@ local function steel_furnace_fire(type)
 
     return
     {
-        filename = inputs.directory.."/graphics/entity/assembly/steel-furnace/working/"..fire_type..".png",
+        filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/working/"..fire_type..".png",
         priority = "high",
         line_length = 8,
         width = 29,
@@ -299,7 +299,7 @@ local function steel_furnace_fire(type)
         direction_count = 1,
         shift = util.by_pixel(-0.5, 6),
         hr_version = {
-            filename = inputs.directory.."/graphics/entity/assembly/steel-furnace/working/hr-"..fire_type..".png",
+            filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/working/hr-"..fire_type..".png",
             priority = "high",
             line_length = 8,
             width = 57,
@@ -504,14 +504,14 @@ local electric_furnace_map = {
 local function electric_furnace_shadow()
     return 
     {
-        filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/electric-furnace-shadow.png",
+        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/electric-furnace-shadow.png",
         priority = "high",
         width = 114,
         height = 86,
         shift = util.by_pixel(10.75, 7.25),
         draw_as_shadow = true,
         hr_version = {
-            filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-furnace-shadow.png",
+            filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-furnace-shadow.png",
             priority = "high",
             width = 228,
             height = 172,
@@ -524,7 +524,7 @@ end
 
 local function furnace_heater(has_fluids)
     local furnace_heater = {
-        filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/electric-furnace-heater.png",
+        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/electric-furnace-heater.png",
         priority = "high",
         width = 30,
         height = 28,
@@ -532,7 +532,7 @@ local function furnace_heater(has_fluids)
         animation_speed = 0.5,
         shift = util.by_pixel(2, 33),
         hr_version = {
-            filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-furnace-heater.png",
+            filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-furnace-heater.png",
             priority = "high",
             width = 60,
             height = 56,
@@ -565,7 +565,7 @@ local function furnace_large_propeller()
     return
     {
         animation = {
-            filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/propeller-large.png",
+            filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/propeller-large.png",
             priority = "high",
             width = 19,
             height = 13,
@@ -573,7 +573,7 @@ local function furnace_large_propeller()
             animation_speed = 0.5,
             shift = util.by_pixel(-20, -18),
             hr_version = {
-                filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/hr-propeller-large.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/hr-propeller-large.png",
                 priority = "high",
                 width = 38,
                 height = 26,
@@ -595,7 +595,7 @@ local function furnace_small_propeller(is_shifted)
     return
     {
         animation = {
-            filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/propeller-small.png",
+            filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/propeller-small.png",
             priority = "high",
             width = 12,
             height = 8,
@@ -603,7 +603,7 @@ local function furnace_small_propeller(is_shifted)
             animation_speed = 0.5,
             shift = shift,
             hr_version = {
-                filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/hr-propeller-small.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/hr-propeller-small.png",
                 priority = "high",
                 width = 24,
                 height = 16,

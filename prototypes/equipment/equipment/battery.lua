@@ -29,14 +29,14 @@ local batteries = {
 -- Reskin equipment
 for name, map in pairs(batteries) do
     -- Fetch equipment
-    equipment = data.raw[inputs.type][name]
+    local equipment = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not equipment then goto continue end
 
     -- Parse map
-    tier = map[1]
-    technology = map[2]
+    local tier = map[1]
+    local technology = map[2]
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]

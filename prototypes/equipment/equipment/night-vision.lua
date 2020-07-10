@@ -26,15 +26,14 @@ local night_vision = {
 -- Reskin equipment
 for name, map in pairs(night_vision) do
     -- Fetch equipment
-    equipment = data.raw[inputs.type][name]
+    local equipment = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not equipment then goto continue end
 
     -- Parse map
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "name-map" then
-        tier = map[1]
-    else
+    local tier = map[1]
+    if reskins.lib.setting("reskins-lib-tier-mapping") == "ingredient-map" then
         tier = map[2]
     end
 

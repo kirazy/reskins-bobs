@@ -23,24 +23,22 @@ local solar_energy_map = {
 }
 
 -- Reskin technologies
+local solar_energy_inputs = util.copy(inputs)
 for name, map in pairs(solar_energy_map) do
     -- Fetch technology
-    technology = data.raw["technology"][name]
+    local technology = data.raw["technology"][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not technology then goto continue end
 
     -- Parse map
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "name-map" then
-        tier = map[1]
-    else
+    local tier = map[1]
+    if reskins.lib.setting("reskins-lib-tier-mapping") == "ingredient-map" then
         tier = map[2]
     end
 
     -- Setup logistics inputs
-    if not solar_energy_inputs then solar_energy_inputs = util.copy(inputs) end
     solar_energy_inputs.icon_name = "solar-energy"
-
     solar_energy_inputs.tint = reskins.lib.tint_index["tier-"..tier]
 
     reskins.lib.construct_technology_icon(name, solar_energy_inputs)

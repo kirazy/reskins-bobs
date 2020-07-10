@@ -43,12 +43,10 @@ local laser_beam_blend_mode = "additive"
 
 for name, lens in pairs(beam_map) do
     -- Fetch beam
-    beam = data.raw[inputs.type][name]
+    local beam = data.raw[inputs.type][name]
 
     -- Check if beam exists, if not, skip this iteration
-    if not beam then
-        goto continue
-    end
+    if not beam then goto continue end
 
     -- Reskin beams
     beam.head =

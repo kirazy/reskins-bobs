@@ -8,6 +8,23 @@ if mods["classic-beacon"] then return end
 if not mods["bobmodules"] then return end
 if reskins.lib.setting("reskins-bobs-do-bobmodules") == false then return end
 
+-- Set input parameters
+local inputs = {
+    type = "beacon",
+    icon_name = "beacon",
+    base_entity = "beacon",
+    directory = reskins.bobs.directory,
+    mod = "bobs",
+    group = "modules",
+    particles = {["small"] = 3},
+}
+
+local tier_map = {
+    ["beacon"] = {1, 3},
+    ["beacon-2"] = {2, 4},
+    ["beacon-3"] = {3, 5},
+}
+
 local function setup_module_slot(shift, is_top)
     local shift_x, shift_y = 0, 0
     if shift then
@@ -210,23 +227,6 @@ local function setup_module_slot(shift, is_top)
 
     return slot
 end
-
--- Set input parameters
-local inputs = {
-    type = "beacon",
-    icon_name = "beacon",
-    base_entity = "beacon",
-    directory = reskins.bobs.directory,
-    mod = "bobs",
-    group = "modules",
-    particles = {["small"] = 3},
-}
-
-local tier_map = {
-    ["beacon"] = {1, 3},
-    ["beacon-2"] = {2, 4},
-    ["beacon-3"] = {3, 5},
-}
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do

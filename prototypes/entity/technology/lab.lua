@@ -21,7 +21,7 @@ local inputs =
 
 local function reskin_lab(name)
     -- Fetch Entity
-    entity = data.raw["lab"][name]
+    local entity = data.raw["lab"][name]
 
     if not entity then return end
 

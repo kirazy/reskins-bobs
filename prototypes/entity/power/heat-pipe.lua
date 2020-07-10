@@ -24,15 +24,14 @@ local tier_map = {
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
     -- Fetch entity
-    entity = data.raw[inputs.type][name]
+    local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
     -- Parse map
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "name-map" then
-        tier = map[1]
-    else
+    local tier = map[1]
+    if reskins.lib.setting("reskins-lib-tier-mapping") == "ingredient-map" then
         tier = map[2]
     end
 
@@ -67,14 +66,14 @@ for name, map in pairs(tier_map) do
     if name == "heat-pipe" then goto continue end
 
     -- Create particles and explosions
-    particle_tints = {util.color(map[3][1]), util.color(map[3][2])}
+    local particle_tints = {util.color(map[3][1]), util.color(map[3][2])}
     reskins.lib.create_explosion(name, inputs)
     reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["small"], 1, particle_tints[1])
     reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["medium"], 2, particle_tints[2])
     
     -- Create and skin remnants
     reskins.lib.create_remnant(name, inputs)
-    remnant = data.raw["corpse"][name.."-remnants"]
+    local remnant = data.raw["corpse"][name.."-remnants"]
     remnant.animation = make_rotated_animation_variations_from_sheet (6, {
         filename = inputs.directory.."/graphics/entity/power/heat-pipe/"..name.."/remnants/"..name.."-remnants.png",
         line_length = 1,

@@ -28,18 +28,17 @@ local vehicle_roboports = {
 -- Reskin equipment
 for name, map in pairs(vehicle_roboports) do
     -- Fetch equipment
-    equipment = data.raw[inputs.type][name]
+    local equipment = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not equipment then goto continue end
 
     -- Parse map
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "name-map" then
-        tier = map[1]
-    else
+    local tier = map[1]
+    if reskins.lib.setting("reskins-lib-tier-mapping") == "ingredient-map" then
         tier = map[2]
-    end    
-    equipment_base = map[1]
+    end   
+    local equipment_base = map[1]
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]

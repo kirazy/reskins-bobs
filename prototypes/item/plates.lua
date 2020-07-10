@@ -26,18 +26,17 @@ local batteries = {
 
 for name, map in pairs(batteries) do
     -- Fetch item
-    item = data.raw.item[name]
+    local item = data.raw.item[name]
 
     -- Check if item exists, if not, skip this iteration
     if not item then goto continue end
 
     -- Parse map
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "name-map" then
-        tier = map[1]
-    else
+    local tier = map[1]
+    if reskins.lib.setting("reskins-lib-tier-mapping") == "ingredient-map" then
         tier = map[2]
     end
-    technology = map[3]
+    local technology = map[3]
 
     -- Determine what tint we're using
     battery_inputs.tint = reskins.lib.tint_index["tier-"..tier]

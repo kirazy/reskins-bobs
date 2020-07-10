@@ -8,7 +8,7 @@ if not mods["bobwarfare"] then return end
 if reskins.lib.setting("reskins-bobs-do-bobwarfare") == false then return end 
 
 -- Make sure the gate exists
-entity = data.raw["gate"]["reinforced-gate"]
+local entity = data.raw["gate"]["reinforced-gate"]
 if not entity then return end
 
 -- Set input parameters
@@ -44,7 +44,7 @@ reskins.lib.create_remnant("reinforced-gate", inputs)
 reskins.lib.construct_icon("reinforced-gate", 0,  inputs)
 
 -- Reskin the gate
-remnant = data.raw["corpse"]["reinforced-gate-remnants"]
+local remnant = data.raw["corpse"]["reinforced-gate-remnants"]
 
 -- Reskin remnants
 remnant.animation = {
