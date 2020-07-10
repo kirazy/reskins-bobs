@@ -96,7 +96,7 @@ for material, map in pairs(material_map) do
     -- Parse map
     local tier = map[1]
 
-    -- Check if we're trying to work with iron
+    -- Do work only if we're not the vanilla pipes
     if material ~= "iron" then
         local tint = util.color(map[2])  
 
