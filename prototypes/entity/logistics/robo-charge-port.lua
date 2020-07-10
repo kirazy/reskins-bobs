@@ -31,24 +31,26 @@ local tier_map = {
     ["bob-robo-charge-port-large-4"] = {4, 5, true},
 }
 
-local function charge_port_base(shift_x, shift_y, tint)
+local function charge_port_base(shift_x, shift_y, subtier, tint)
     local shift = {shift_x, shift_y}
     return
     {
         -- Base
         {
-            filename = inputs.directory.."/graphics/entity/logistics/robo-charge-port/robo-charge-port-base.png",
+            filename = inputs.directory.."/graphics/entity/logistics/robo-charge-port/robo-charge-port-"..subtier.."-base.png",
             priority = "medium",
+            animation_speed = 0.2,
             width = 30,
             height = 28,
-            repeat_count = 1,
+            repeat_count = 12,
             shift = shift,
             hr_version = {
-                filename = inputs.directory.."/graphics/entity/logistics/robo-charge-port/hr-robo-charge-port-base.png",
+                filename = inputs.directory.."/graphics/entity/logistics/robo-charge-port/hr-robo-charge-port-"..subtier.."-base.png",
                 priority = "medium",
+                animation_speed = 0.2,
                 width = 60,
                 height = 56,
-                repeat_count = 1,
+                repeat_count = 12,
                 shift = shift,
                 scale = 0.5,
             }
@@ -57,17 +59,19 @@ local function charge_port_base(shift_x, shift_y, tint)
         {
             filename = inputs.directory.."/graphics/entity/logistics/robo-charge-port/robo-charge-port-mask.png",
             priority = "medium",
+            animation_speed = 0.2,
             width = 30,
             height = 28,
-            repeat_count = 1,
+            repeat_count = 12,
             shift = shift,
             tint = tint,
             hr_version = {
                 filename = inputs.directory.."/graphics/entity/logistics/robo-charge-port/hr-robo-charge-port-mask.png",
                 priority = "medium",
+                animation_speed = 0.2,
                 width = 60,
                 height = 56,
-                repeat_count = 1,
+                repeat_count = 12,
                 shift = shift,
                 tint = tint,
                 scale = 0.5,
@@ -77,17 +81,19 @@ local function charge_port_base(shift_x, shift_y, tint)
         {
             filename = inputs.directory.."/graphics/entity/logistics/robo-charge-port/robo-charge-port-highlights.png",
             priority = "medium",
+            animation_speed = 0.2,
             width = 30,
             height = 28,
-            repeat_count = 1,
+            repeat_count = 12,
             shift = shift,
             blend_mode = "additive",
             hr_version = {
                 filename = inputs.directory.."/graphics/entity/logistics/robo-charge-port/hr-robo-charge-port-highlights.png",
                 priority = "medium",
+                animation_speed = 0.2,
                 width = 60,
                 height = 56,
-                repeat_count = 1,
+                repeat_count = 12,
                 shift = shift,
                 blend_mode = "additive",
                 scale = 0.5,
@@ -97,22 +103,68 @@ local function charge_port_base(shift_x, shift_y, tint)
         {
             filename = inputs.directory.."/graphics/entity/logistics/robo-charge-port/robo-charge-port-shadow.png",
             priority = "medium",
+            animation_speed = 0.2,
             width = 35,
             height = 29,
-            repeat_count = 1,
+            repeat_count = 12,
             shift = util.by_pixel(shift_x*32+2.5, shift_y*32+0.5),
             draw_as_shadow = true,
             hr_version = {
                 filename = inputs.directory.."/graphics/entity/logistics/robo-charge-port/hr-robo-charge-port-shadow.png",
                 priority = "medium",
+                animation_speed = 0.2,
                 width = 70,
                 height = 58,
-                repeat_count = 1,
+                repeat_count = 12,
                 shift = util.by_pixel(shift_x*32+2.5, shift_y*32+0.5),
                 draw_as_shadow = true,
                 scale = 0.5,
             }
-        }
+        },
+        -- Lights Mask
+        {
+            filename = inputs.directory.."/graphics/entity/logistics/robo-charge-port/robo-charge-port-lights-mask.png",
+            priority = "medium",
+            animation_speed = 0.2,
+            width = 16,
+            height = 16,
+            frame_count = 12,
+            shift = util.by_pixel(shift_x*32, shift_y*32+1),
+            tint = tint,
+            hr_version = {
+                filename = inputs.directory.."/graphics/entity/logistics/robo-charge-port/hr-robo-charge-port-lights-mask.png",
+                priority = "medium",
+                animation_speed = 0.2,
+                width = 32,
+                height = 32,
+                frame_count = 12,
+                shift = util.by_pixel(shift_x*32, shift_y*32+1),
+                tint = tint,
+                scale = 0.5,
+            }
+        },
+        -- Lights Highlights
+        {
+            filename = inputs.directory.."/graphics/entity/logistics/robo-charge-port/robo-charge-port-lights-highlights.png",
+            priority = "medium",
+            animation_speed = 0.2,
+            width = 16,
+            height = 16,
+            frame_count = 12,
+            shift = util.by_pixel(shift_x*32, shift_y*32+1),
+            blend_mode = "additive",
+            hr_version = {
+                filename = inputs.directory.."/graphics/entity/logistics/robo-charge-port/hr-robo-charge-port-lights-highlights.png",
+                priority = "medium",
+                animation_speed = 0.2,
+                width = 32,
+                height = 32,
+                frame_count = 12,
+                shift = util.by_pixel(shift_x*32, shift_y*32+1),
+                blend_mode = "additive",
+                scale = 0.5,
+            }
+        },
     }
 end
 
@@ -129,7 +181,7 @@ for name, map in pairs(tier_map) do
     if reskins.lib.setting("reskins-lib-tier-mapping") == "ingredients-map" then
         tier = map[2]
     end
-    -- local subtier = map[1] -- Used to specify material type
+    local subtier = map[1]
     local is_large = map[3]
 
     -- Determine what tint we're using
@@ -150,7 +202,7 @@ for name, map in pairs(tier_map) do
     -- Generate charge port array
     for i = array_start, array_end do
         for j = array_start, array_end do
-            local charge_port_array = charge_port_base(i, j, inputs.tint)
+            local charge_port_array = charge_port_base(i, j, subtier, inputs.tint)
             for k = 1, #charge_port_array do
                 table.insert(entity.base_animation.layers, charge_port_array[k])
             end
