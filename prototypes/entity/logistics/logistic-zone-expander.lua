@@ -54,58 +54,30 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = inputs.directory.."/graphics/entity/logistics/zone-expander/zone-expander-base.png",
+                filename = inputs.directory.."/graphics/entity/logistics/zone-expander/zone-expander-"..subtier.."-base.png",
                 width = 28,
-                height = 71,
-                shift = util.by_pixel(0, -25.5),
+                height = 78,
+                shift = util.by_pixel(0.5, -29.5),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/logistics/zone-expander/hr-zone-expander-base.png",
+                    filename = inputs.directory.."/graphics/entity/logistics/zone-expander/hr-zone-expander-"..subtier.."-base.png",
                     width = 56,
-                    height = 142,
-                    shift = util.by_pixel(0, -25.5),
-                    scale = 0.5
-                }
-            },
-            -- Grid
-            {
-                filename = inputs.directory.."/graphics/entity/logistics/zone-expander/grids/grid-"..subtier..".png",
-                width = 28,
-                height = 71,
-                shift = util.by_pixel(0, -25.5),
-                hr_version = {
-                    filename = inputs.directory.."/graphics/entity/logistics/zone-expander/grids/hr-grid-"..subtier..".png",
-                    width = 56,
-                    height = 142,
-                    shift = util.by_pixel(0, -25.5),
-                    scale = 0.5
-                }
-            },
-            -- Metal
-            {
-                filename = inputs.directory.."/graphics/entity/logistics/zone-expander/metal/metal-"..subtier..".png",
-                width = 28,
-                height = 71,
-                shift = util.by_pixel(0, -25.5),
-                hr_version = {
-                    filename = inputs.directory.."/graphics/entity/logistics/zone-expander/metal/hr-metal-"..subtier..".png",
-                    width = 56,
-                    height = 142,
-                    shift = util.by_pixel(0, -25.5),
+                    height = 156,
+                    shift = util.by_pixel(0.5, -29.5),
                     scale = 0.5
                 }
             },
             -- Mask
             {
                 filename = inputs.directory.."/graphics/entity/logistics/zone-expander/zone-expander-mask.png",
-                width = 28,
-                height = 71,
-                shift = util.by_pixel(0, -25.5),
+                width = 19,
+                height = 15,
+                shift = util.by_pixel(0.5, 0),
                 tint = inputs.tint,
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/zone-expander/hr-zone-expander-mask.png",
-                    width = 56,
-                    height = 142,
-                    shift = util.by_pixel(0, -25.5),
+                    width = 38,
+                    height = 30,
+                    shift = util.by_pixel(0.5, 0),
                     tint = inputs.tint,
                     scale = 0.5
                 }
@@ -113,37 +85,20 @@ for name, map in pairs(tier_map) do
             -- Highlights
             {
                 filename = inputs.directory.."/graphics/entity/logistics/zone-expander/zone-expander-highlights.png",
-                width = 28,
-                height = 71,
-                shift = util.by_pixel(0, -25.5),
+                width = 19,
+                height = 15,
+                shift = util.by_pixel(0.5, 0),
                 blend_mode = "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/zone-expander/hr-zone-expander-highlights.png",
-                    width = 56,
-                    height = 142,
-                    shift = util.by_pixel(0, -25.5),
+                    width = 38,
+                    height = 30,
+                    shift = util.by_pixel(0.5, 0),
                     blend_mode = "additive",
                     scale = 0.5
                 }
             },
-            -- Shadow Fix (we'll do a proper fix later...)
-            {
-                filename = inputs.directory.."/graphics/entity/logistics/zone-expander/zone-expander-shadow-fix.png",
-                width = 28,
-                height = 71,
-                shift = util.by_pixel(0, -25.5),
-                draw_as_shadow = true,
-                hr_version = {
-                    filename = inputs.directory.."/graphics/entity/logistics/zone-expander/hr-zone-expander-shadow-fix.png",
-                    width = 56,
-                    height = 142,
-                    shift = util.by_pixel(0, -25.5),
-                    draw_as_shadow = true,
-                    scale = 0.5
-                }
-            },
         }
-
     }
 
     entity.base_animation = {
@@ -156,7 +111,7 @@ for name, map in pairs(tier_map) do
                 height = 31,
                 frame_count = 8,
                 animation_speed = 0.5,
-                shift = util.by_pixel(0, -60),
+                shift = util.by_pixel(0.25, -66),
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/roboport/base/antennas/hr-roboport-"..subtier.."-base-animation.png",
                     priority = "medium",
@@ -164,27 +119,25 @@ for name, map in pairs(tier_map) do
                     height = 59,
                     frame_count = 8,
                     animation_speed = 0.5,
-                    shift = util.by_pixel(0, -60),
+                    shift = util.by_pixel(0.25, -66),
                     scale = 0.5
                 }
             },
             -- Shadow
             {
                 filename = inputs.directory.."/graphics/entity/logistics/zone-expander/zone-expander-shadow.png",
-                width = 95,
+                width = 114,
                 height = 30,
                 frame_count = 8,
-                shift = util.by_pixel(48, 0),
+                shift = util.by_pixel(44.5, -1.5),
                 draw_as_shadow = true,
-                run_mode = "backward", -- (Lawd, we'll fix this later...)
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/zone-expander/hr-zone-expander-shadow.png",
-                    width = 190,
+                    width = 228,
                     height = 60,
                     frame_count = 8,
-                    shift = util.by_pixel(48, 0),
+                    shift = util.by_pixel(44.5, -1.5),
                     draw_as_shadow = true,
-                    run_mode = "backward",
                     scale = 0.5
                 }
             }
