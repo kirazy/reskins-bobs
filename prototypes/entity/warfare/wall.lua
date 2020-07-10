@@ -8,7 +8,7 @@ if not mods["bobwarfare"] then return end
 if reskins.lib.setting("reskins-bobs-do-bobwarfare") == false then return end 
 
 -- Make sure the wall exists
-entity = data.raw["wall"]["reinforced-wall"]
+local entity = data.raw["wall"]["reinforced-wall"]
 if not entity then return end
 
 -- Set input parameters

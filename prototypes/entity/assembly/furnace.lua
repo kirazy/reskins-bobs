@@ -236,10 +236,9 @@ local function steel_furnace_entity_skin(name, shadow)
 end
 
 local function steel_furnace_working(type)
+    local working_type = "steel-furnace-working"
     if type then
         working_type = "steel-furnace-working-"..type
-    else
-        working_type = "steel-furnace-working"
     end
 
     return
@@ -282,10 +281,9 @@ local function steel_furnace_glow()
 end
 
 local function steel_furnace_fire(type)
+    local fire_type = "steel-furnace-fire"
     if type then
         fire_type = "steel-furnace-fire-"..type
-    else
-        fire_type = "steel-furnace-fire"
     end
 
     return
@@ -346,6 +344,7 @@ for name, map in pairs(steel_furnace_map) do
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Abstract from entity name to sprite sheet name
+    local sprite_name, shadow
     if string.find(name, "mixing") then
         sprite_name = "steel-metal-mixing-furnace"
         shadow = "steel-furnace"

@@ -36,10 +36,9 @@ for class, map in pairs(modules_map) do
     -- Do all tiers
     for tier = 1, 8 do
         -- Naming convention exception handling
+        local name = class.."-module-"..tier
         if tier == 1 and is_exception then
             name = class.."-module"
-        else
-            name = class.."-module-"..tier
         end
 
         -- Fetch entity
