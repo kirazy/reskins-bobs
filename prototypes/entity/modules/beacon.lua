@@ -244,7 +244,7 @@ for name, map in pairs(tier_map) do
     
     -- Parse map
     local tier = map[1]
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "ingredient-map" then
+    if reskins.lib.setting("reskins-lib-tier-mapping") == "ingredients-map" then
         tier = map[2]
     end
     local beacon_base = map[1]

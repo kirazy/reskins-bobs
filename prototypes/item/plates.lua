@@ -33,7 +33,7 @@ for name, map in pairs(batteries) do
 
     -- Parse map
     local tier = map[1]
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "ingredient-map" then
+    if reskins.lib.setting("reskins-lib-tier-mapping") == "ingredients-map" then
         tier = map[2]
     end
     local technology = map[3]
