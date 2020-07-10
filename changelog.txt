@@ -2,7 +2,7 @@
 Version: 0.0.14
 Date: 2020.07.XX
   Features:
-    - Implemented Robo Charging Ports
+    - Implemented Robot Charge Ports
   Changes:
     - Improved `drawing_box` fits for several entities
     - Code improvements; ensured variables are locally defined
