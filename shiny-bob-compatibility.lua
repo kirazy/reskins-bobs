@@ -12,6 +12,7 @@ require("prototypes.item.logistics")
 require("prototypes.item.modules")
 require("prototypes.item.plates")
 require("prototypes.item.technology")
+require("prototypes.item.warfare")
 
 ----------------------------------------------------------------------------------------------------
 -- ENTITIES
@@ -40,6 +41,7 @@ require("prototypes.entity.logistics.logistic-zone-interface")
 require("prototypes.entity.logistics.pipe")
 require("prototypes.entity.logistics.pump")
 require("prototypes.entity.logistics.robo-charge-port")
+require("prototypes.entity.logistics.robochest")
 require("prototypes.entity.logistics.roboport")
 require("prototypes.entity.logistics.splitter")
 require("prototypes.entity.logistics.storage-tank-all-corners")
