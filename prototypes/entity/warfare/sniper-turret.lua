@@ -313,6 +313,9 @@ for name, map in pairs(tier_map) do
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
+    -- Assign generic remnants
+    entity.corpse = "medium-remnants"
+
     -- Correct projectile details
     entity.attack_parameters.projectile_creation_distance = 2.3
     entity.attack_parameters.projectile_center = util.by_pixel(0, 0)

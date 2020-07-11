@@ -14,6 +14,7 @@ Date: 2020.07.XX
   Bugfixes:
     - Fixed that checking for presence of Loader Redux was not working properly
     - Fixed startup error with Mini Machines when tier labels were turned off
+    - Fixed that sniper turrets on death created gun turret remnants
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.13
 Date: 2020.07.06
