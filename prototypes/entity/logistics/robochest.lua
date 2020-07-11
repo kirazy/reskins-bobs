@@ -49,7 +49,6 @@ for name, map in pairs(tier_map) do
     
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
-    -- entity.stationing_offset = util.by_pixel(0, -6.5)
     entity.spawn_and_station_height = -0.25
 
     entity.base = {
