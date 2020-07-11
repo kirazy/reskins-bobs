@@ -16,7 +16,6 @@ local inputs = {
     mod = "bobs",
     group = "logistics",
     particles = {["medium"] = 2},
-    make_icons = false,
     make_remnants = false,
 }
 
@@ -186,6 +185,18 @@ for name, map in pairs(tier_map) do
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
+
+    -- Icon handling
+
+    if is_large then
+        inputs.icon_base = "large-"..inputs.icon_name.."-"..subtier
+        inputs.icon_mask = "large-"..inputs.icon_name
+        inputs.icon_highlights = "large-"..inputs.icon_name
+    else
+        inputs.icon_base = inputs.icon_name.."-"..subtier
+        inputs.icon_mask = nil
+        inputs.icon_highlights = nil
+    end
    
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
