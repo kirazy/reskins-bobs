@@ -2,11 +2,15 @@
 Version: 0.0.14
 Date: 2020.07.XX
   Features:
-    - Implemented Robot Charge Ports
+    - Implemented Robot Charging Points
+    - Implemented Robochests
+    - Implemented icons for flying robot frame, roboport door, roboport antenna and robot charging pad items
+    - Implemented icons for logistic, construction and combat robot tool items
   Changes:
     - Improved `drawing_box` fits for several entities
     - Code improvements; ensured variables are locally defined
     - Replaced normal resolution Roboport doors with revised material coloring, now consistent with high resolution
+    - Revised logistic chest shadow to more accurately reflect what should be cast by the chest, pending an actual fix from the devs
   Bugfixes:
     - Fixed that checking for presence of Loader Redux was not working properly
     - Fixed startup error with Mini Machines when tier labels were turned off
