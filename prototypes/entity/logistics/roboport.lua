@@ -350,25 +350,20 @@ for name, map in pairs(tier_map) do
     }
     
     entity.door_animation_up = {
-        layers =
-        {
-            {
-                filename = inputs.directory.."/graphics/entity/logistics/roboport/base/doors/roboport-"..subtier.."-door-up.png",
-                priority = "medium",
-                width = 52,
-                height = 20,
-                frame_count = 16,
-                shift = {0.015625, -0.890625},
-                hr_version = {
-                    filename = inputs.directory.."/graphics/entity/logistics/roboport/base/doors/hr-roboport-"..subtier.."-door-up.png",
-                    priority = "medium",
-                    width = 97,
-                    height = 38,
-                    frame_count = 16,
-                    shift = util.by_pixel(-0.25, -29.5),
-                    scale = 0.5
-                }
-            }
+        filename = inputs.directory.."/graphics/entity/logistics/roboport/base/doors/roboport-"..subtier.."-door-up.png",
+        priority = "medium",
+        width = 52,
+        height = 20,
+        frame_count = 16,
+        shift = util.by_pixel(0.5, -28.5),
+        hr_version = {
+            filename = inputs.directory.."/graphics/entity/logistics/roboport/base/doors/hr-roboport-"..subtier.."-door-up.png",
+            priority = "medium",
+            width = 97,
+            height = 38,
+            frame_count = 16,
+            shift = util.by_pixel(-0.25, -29.5),
+            scale = 0.5
         }
     }
     
@@ -378,7 +373,7 @@ for name, map in pairs(tier_map) do
         width = 52,
         height = 22,
         frame_count = 16,
-        shift = {0.015625, -0.234375},
+        shift = util.by_pixel(0.5, -7.5),
         hr_version = {
             filename = inputs.directory.."/graphics/entity/logistics/roboport/base/doors/hr-roboport-"..subtier.."-door-down.png",
             priority = "medium",
