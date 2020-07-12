@@ -522,7 +522,7 @@ for name, map in pairs(tier_map) do
         }
     }
 
-    entity.energy_source.pipe_covers = make_4way_animation_from_spritesheet({
+    entity.energy_source.pipe_covers = reskins.lib.make_4way_animation_from_spritesheet({
         filename = inputs.directory.."/graphics/entity/power/heat-exchanger/base/heatex-endings-"..pipe..".png",
         width = 32,
         height = 32,

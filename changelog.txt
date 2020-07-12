@@ -6,6 +6,7 @@ Date: 2020.07.XX
     - Implemented robochests
     - Implemented icons for flying robot frame, roboport door, roboport antenna and robot charging pad items
     - Implemented icons for logistic, construction and combat robot tool items
+    - Implemented barrelling pumps and compressors
   Changes:
     - Improved `drawing_box` fits for several entities
     - Code improvements; ensured variables are locally defined

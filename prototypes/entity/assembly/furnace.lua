@@ -146,7 +146,7 @@ for name, map in pairs(stone_furnace_map) do
     end
 
     if string.find(name, "chemical") then
-        entity.animation = make_4way_animation_from_spritesheet(stone_furnace_entities("stone-chemical-furnace", "stone-chemical-furnace", inputs))
+        entity.animation = reskins.lib.make_4way_animation_from_spritesheet(stone_furnace_entities("stone-chemical-furnace", "stone-chemical-furnace", inputs))
 
         -- Handle working_visualisations
         entity.working_visualisations = {
@@ -374,7 +374,7 @@ for name, map in pairs(steel_furnace_map) do
 
     -- Reskin entities and remnants
     if has_4way == true then
-        entity.animation = make_4way_animation_from_spritesheet(steel_furnace_entity_skin(sprite_name, shadow))
+        entity.animation = reskins.lib.make_4way_animation_from_spritesheet(steel_furnace_entity_skin(sprite_name, shadow))
     else
         entity.animation = steel_furnace_entity_skin(sprite_name, shadow)
     end

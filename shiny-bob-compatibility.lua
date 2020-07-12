@@ -59,10 +59,9 @@ require("prototypes.entity.mining.pumpjack")
 require("prototypes.entity.modules.beacon")
 
 -- Bob's Metals, Chemicals, and Intermediaries
--- require("prototypes.entity.plates.air-pump")
+require("prototypes.entity.plates.air-and-water-pump")
 -- require("prototypes.entity.plates.small-storage-tank")
 -- require("prototypes.entity.plates.void-pump")
--- require("prototypes.entity.plates.water-pump") -- Partially implemented
 
 -- Bob's Power
 require("prototypes.entity.power.accumulator")

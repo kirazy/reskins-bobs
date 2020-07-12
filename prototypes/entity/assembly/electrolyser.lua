@@ -50,7 +50,7 @@ for name, map in pairs(tier_map) do
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Reskin entities
-    entity.animation = make_4way_animation_from_spritesheet({
+    entity.animation = reskins.lib.make_4way_animation_from_spritesheet({
         layers = {
             -- Base
             {
