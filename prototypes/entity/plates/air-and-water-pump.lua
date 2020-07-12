@@ -51,6 +51,7 @@ for name, map in pairs(tier_map) do
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Reskin entities
+    entity.corpse = "medium-remnants"
     entity.match_animation_speed_to_activity = false
     entity.animation = reskins.lib.make_4way_animation_from_spritesheet({
         layers = {
