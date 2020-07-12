@@ -11,6 +11,7 @@ Date: 2020.07.XX
     - Improved `drawing_box` fits for several entities
     - Code improvements; ensured variables are locally defined
     - Replaced normal resolution Roboport doors with revised material coloring, now consistent with high resolution
+    - Revised logistic zone expanders, material colors now consistent with related entities
     - Revised logistic chest shadow to more accurately reflect what should be cast by the chest, pending an actual fix from the devs
     - Shifted icon symbols to account for adjusted tier labels
   Bugfixes:
