@@ -186,8 +186,6 @@ for name, map in pairs(tier_map) do
         }
     })
 
-    
-
     entity.working_visualisations = {
         -- Recipe Tint Mask
         {
