@@ -16,7 +16,6 @@ local inputs = {
     group = "plates",
     particles = {["big"] = 1, ["medium"] = 2},
     make_remnants = false,
-    make_icons = false,
 }
 
 local tier_map = {
@@ -79,6 +78,9 @@ for name, map in pairs(tier_map) do
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
+
+    -- Icon handling
+    inputs.icon_name = pump_type.."-pump"
   
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
@@ -90,22 +92,70 @@ for name, map in pairs(tier_map) do
             -- Base
             {
                 filename = inputs.directory.."/graphics/entity/plates/"..pump_type.."-pump/"..pump_type.."-pump-base.png",
-                width = 64,
-                height = 88,
+                width = 74,
+                height = 93,
                 frame_count = 4,
                 line_length = 4,
                 frame_sequence = {1, 2, 3, 4, 3, 2, 1},
                 animation_speed = 0.5,
-                shift = util.by_pixel(0, -12),
+                shift = util.by_pixel(0, -9.5),
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/plates/"..pump_type.."-pump/hr-"..pump_type.."-pump-base.png",
-                    width = 128,
-                    height = 176,
+                    width = 148,
+                    height = 186,
                     frame_count = 4,
                     line_length = 4,
                     frame_sequence = {1, 2, 3, 4, 3, 2, 1},
                     animation_speed = 0.5,
-                    shift = util.by_pixel(0, -12),
+                    shift = util.by_pixel(0, -9.5),
+                    scale = 0.5,
+                }
+            },
+            -- Mask
+            {
+                filename = inputs.directory.."/graphics/entity/plates/"..pump_type.."-pump/"..pump_type.."-pump-mask.png",
+                width = 74,
+                height = 93,
+                frame_count = 4,
+                line_length = 4,
+                frame_sequence = {1, 2, 3, 4, 3, 2, 1},
+                animation_speed = 0.5,
+                shift = util.by_pixel(0, -9.5),
+                tint = inputs.tint,
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/plates/"..pump_type.."-pump/hr-"..pump_type.."-pump-mask.png",
+                    width = 148,
+                    height = 186,
+                    frame_count = 4,
+                    line_length = 4,
+                    frame_sequence = {1, 2, 3, 4, 3, 2, 1},
+                    animation_speed = 0.5,
+                    shift = util.by_pixel(0, -9.5),
+                    tint = inputs.tint,
+                    scale = 0.5,
+                }
+            },
+            -- Highlights
+            {
+                filename = inputs.directory.."/graphics/entity/plates/"..pump_type.."-pump/"..pump_type.."-pump-highlights.png",
+                width = 74,
+                height = 93,
+                frame_count = 4,
+                line_length = 4,
+                frame_sequence = {1, 2, 3, 4, 3, 2, 1},
+                animation_speed = 0.5,
+                shift = util.by_pixel(0, -9.5),
+                blend_mode = "additive",
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/plates/"..pump_type.."-pump/hr-"..pump_type.."-pump-highlights.png",
+                    width = 148,
+                    height = 186,
+                    frame_count = 4,
+                    line_length = 4,
+                    frame_sequence = {1, 2, 3, 4, 3, 2, 1},
+                    animation_speed = 0.5,
+                    shift = util.by_pixel(0, -9.5),
+                    blend_mode = "additive",
                     scale = 0.5,
                 }
             },
