@@ -30,6 +30,38 @@ local tier_map = {
     ["air-pump-4"] = {4, 5, "air"},
 }
 
+local function generate_recipe_mask(pump_type, layer, blend_mode)
+    local recipe_mask = reskins.lib.make_4way_animation_from_spritesheet({
+        filename = inputs.directory.."/graphics/entity/plates/"..pump_type.."-pump/"..pump_type.."-pump-recipe-"..layer..".png",
+        width = 64,
+        height = 88,
+        shift = util.by_pixel(0, -12),
+        blend_mode = blend_mode,
+        hr_version = {
+            filename = inputs.directory.."/graphics/entity/plates/"..pump_type.."-pump/hr-"..pump_type.."-pump-recipe-"..layer..".png",
+            width = 128,
+            height = 176,
+            shift = util.by_pixel(0, -12),
+            blend_mode = blend_mode,
+            scale = 0.5,
+        }
+    })
+    return recipe_mask
+end
+
+-- Generate water and air pump working visualisation tables
+local recipe_tint_mask = {
+    ["water"] = generate_recipe_mask("water", "tint-mask"),
+    ["air"] = generate_recipe_mask("air", "tint-mask"),
+}
+
+local recipe_ligtening_mask = {
+    ["water"] = generate_recipe_mask("water", "lightening-mask"),
+    ["air"] = generate_recipe_mask("air", "lightening-mask"),
+}
+
+local recipe_tint_highlights = generate_recipe_mask("water", "tint-highlights", "additive")
+
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
     -- Fetch entity
@@ -104,30 +136,38 @@ for name, map in pairs(tier_map) do
         }
     })
 
-    local recipe_mask = reskins.lib.make_4way_animation_from_spritesheet({
-        filename = inputs.directory.."/graphics/entity/plates/"..pump_type.."-pump/"..pump_type.."-pump-recipe-mask.png",
-        width = 64,
-        height = 88,
-        shift = util.by_pixel(0, -12),
-        hr_version = {
-            filename = inputs.directory.."/graphics/entity/plates/"..pump_type.."-pump/hr-"..pump_type.."-pump-recipe-mask.png",
-            width = 128,
-            height = 176,
-            shift = util.by_pixel(0, -12),
-            scale = 0.5,
-        }
-    })
+    
 
     entity.working_visualisations = {
-        -- Recipe Mask
+        -- Recipe Tint Mask
         {
             apply_recipe_tint = "primary",
-            north_animation = recipe_mask.north,
-            east_animation = recipe_mask.east,
-            south_animation = recipe_mask.south,
-            west_animation = recipe_mask.west,
-        }
+            always_draw = true,
+            north_animation = recipe_tint_mask[pump_type].north,
+            east_animation = recipe_tint_mask[pump_type].east,
+            south_animation = recipe_tint_mask[pump_type].south,
+            west_animation = recipe_tint_mask[pump_type].west,
+        },
+        -- Recipe Lightening Mask
+        {
+            always_draw = true,
+            north_animation = recipe_ligtening_mask[pump_type].north,
+            east_animation = recipe_ligtening_mask[pump_type].east,
+            south_animation = recipe_ligtening_mask[pump_type].south,
+            west_animation = recipe_ligtening_mask[pump_type].west,
+        },
     }
+
+    if pump_type == "water" then
+        table.insert(entity.working_visualisations, {
+            apply_recipe_tint = "primary",
+            always_draw = true,
+            north_animation = recipe_tint_highlights.north,
+            east_animation = recipe_tint_highlights.east,
+            south_animation = recipe_tint_highlights.south,
+            west_animation = recipe_tint_highlights.west,
+        })
+    end
 
     -- Label to skip to next iteration
     ::continue::
