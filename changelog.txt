@@ -1,6 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.15
 Date: 2020.07.XX
+  Changes:
+    - For consistency, robot tools will match the tier of the corresponding robot rather than ingredients
+    - Improved highlights for robot tool icons
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.14
 Date: 2020.07.13
