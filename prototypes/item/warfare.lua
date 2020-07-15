@@ -33,3 +33,11 @@ for name, inputs in pairs(item_list) do
     -- Reskin icons
     reskins.lib.construct_icon(name, tier, inputs)
 end
+
+
+-- {
+--     icon = "__core__/graphics/icons/tooltips/tooltip-category-thrown.png",
+--     icon_size = 40,
+--     scale = 0.5,
+--     shift = {-8, 8}
+-- }

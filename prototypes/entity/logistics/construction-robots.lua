@@ -19,11 +19,11 @@ local inputs = {
 }
 
 local tier_map = {
-    ["construction-robot"] = 1,
-    ["bob-construction-robot-2"] = 2,
-    ["bob-construction-robot-3"] = 3,
-    ["bob-construction-robot-4"] = 4,
-    ["bob-construction-robot-5"] = 5,
+    ["construction-robot"] = {1, 2},
+    ["bob-construction-robot-2"] = {2, 3},
+    ["bob-construction-robot-3"] = {3, 4},
+    ["bob-construction-robot-4"] = {4, 5},
+    ["bob-construction-robot-5"] = {5, 6},
 }
 
 -- Animations
@@ -344,12 +344,18 @@ local function generate_robot_animations(tint)
 end
 
 -- Reskin entities, create and assign extra details
-for name, tier in pairs(tier_map) do
+for name, map in pairs(tier_map) do
     -- Fetch entity
     local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
+
+    -- Parse map
+    local tier = map[1]
+    if reskins.lib.setting("reskins-lib-tier-mapping") == "ingredients-map" then
+        tier = map[2]
+    end
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]

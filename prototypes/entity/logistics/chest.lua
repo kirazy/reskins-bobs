@@ -25,21 +25,21 @@ local material_tints = {
 }
 
 local logistic_map = {
-    ["logistic-chest-active-provider"] = {1, 3},
-    ["logistic-chest-passive-provider"] = {1, 3},
-    ["logistic-chest-storage"] = {1, 3},
-    ["logistic-chest-buffer"] = {1, 3},
-    ["logistic-chest-requester"] = {1, 3},
-    ["logistic-chest-active-provider-2"] = {2, 4, "brass", "active-provider"},
-    ["logistic-chest-passive-provider-2"] = {2, 4, "brass", "passive-provider"},
-    ["logistic-chest-storage-2"] = {2, 4, "brass", "storage"},
-    ["logistic-chest-buffer-2"] = {2, 4, "brass", "buffer"},
-    ["logistic-chest-requester-2"] = {2, 4, "brass", "requester"},
-    ["logistic-chest-active-provider-3"] = {3, 5, "titanium", "active-provider"},
-    ["logistic-chest-passive-provider-3"] = {3, 5, "titanium", "passive-provider"},
-    ["logistic-chest-storage-3"] = {3, 5, "titanium", "storage"},
-    ["logistic-chest-buffer-3"] = {3, 5, "titanium", "buffer"},
-    ["logistic-chest-requester-3"] = {3, 5, "titanium", "requester"},
+    ["logistic-chest-active-provider"] = {1, 2},
+    ["logistic-chest-passive-provider"] = {1, 2},
+    ["logistic-chest-storage"] = {1, 2},
+    ["logistic-chest-buffer"] = {1, 2},
+    ["logistic-chest-requester"] = {1, 2},
+    ["logistic-chest-active-provider-2"] = {2, 3, "brass", "active-provider"},
+    ["logistic-chest-passive-provider-2"] = {2, 3, "brass", "passive-provider"},
+    ["logistic-chest-storage-2"] = {2, 3, "brass", "storage"},
+    ["logistic-chest-buffer-2"] = {2, 3, "brass", "buffer"},
+    ["logistic-chest-requester-2"] = {2, 3, "brass", "requester"},
+    ["logistic-chest-active-provider-3"] = {3, 4, "titanium", "active-provider"},
+    ["logistic-chest-passive-provider-3"] = {3, 4, "titanium", "passive-provider"},
+    ["logistic-chest-storage-3"] = {3, 4, "titanium", "storage"},
+    ["logistic-chest-buffer-3"] = {3, 4, "titanium", "buffer"},
+    ["logistic-chest-requester-3"] = {3, 4, "titanium", "requester"},
 }
 
 local function logistic_chest_shadow(frames)

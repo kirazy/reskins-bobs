@@ -2,8 +2,9 @@
 Version: 0.0.15
 Date: 2020.07.XX
   Changes:
-    - For consistency, robot tools will match the tier of the corresponding robot rather than ingredients
+    - Added a 6th tier for use with ingredients-based tier labels
     - Improved highlights for robot tool icons
+    - Added additional background colors for vehicle equipment; red for weapons, blue for defenses, green for energy, and gray for logistics
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.14
 Date: 2020.07.13
