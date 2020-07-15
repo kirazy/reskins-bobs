@@ -16,29 +16,28 @@ local inputs = {
     mod = "bobs",
     particles = {["big"] = 1, ["medium"] = 2},
     group = "assembly",
-    make_remnants = false,
 }
 
 local tier_map = {
-    ["assembling-machine-1"] = {0, 0, false},
-    ["assembling-machine-2"] = {1, 1, true},
-    ["assembling-machine-3"] = {2, 2, true},
-    ["assembling-machine-4"] = {3, 3, true},
-    ["assembling-machine-5"] = {4, 4, true},
-    ["assembling-machine-6"] = {5, 4, true},
-    ["burner-assembling-machine"] = {0, 0, false, util.color("262626")},
-    ["steam-assembling-machine"] = {0, 0, true, util.color("d9d9d9")},
+    ["assembling-machine-1"] = {tier = 0, shadow = 0},
+    ["assembling-machine-2"] = {tier = 1, shadow = 1, has_fluids = true},
+    ["assembling-machine-3"] = {tier = 2, shadow = 2, has_fluids = true},
+    ["assembling-machine-4"] = {tier = 3, shadow = 3, has_fluids = true},
+    ["assembling-machine-5"] = {tier = 4, shadow = 4, has_fluids = true},
+    ["assembling-machine-6"] = {tier = 5, shadow = 4, has_fluids = true},
+    ["burner-assembling-machine"] = {tier = 0, shadow = 0, tint = util.color("262626")},
+    ["steam-assembling-machine"] = {tier = 0, shadow = 0, has_fluids = true, tint = util.color("d9d9d9")},
 }
 
 -- Append electronics assembling machines
 if reskins.lib.setting("reskins-lib-tier-mapping") == "name-map" then
-    tier_map["electronics-machine-1"] = {1, 1, false}
-    tier_map["electronics-machine-2"] = {2, 2, false}
-    tier_map["electronics-machine-3"] = {3, 3, false}
+    tier_map["electronics-machine-1"] = {tier = 1, shadow = 1}
+    tier_map["electronics-machine-2"] = {tier = 2, shadow = 2}
+    tier_map["electronics-machine-3"] = {tier = 3, shadow = 3}
 else
-    tier_map["electronics-machine-1"] = {1, 1, false}
-    tier_map["electronics-machine-2"] = {3, 3, false}
-    tier_map["electronics-machine-3"] = {4, 4, false}
+    tier_map["electronics-machine-1"] = {tier = 1, shadow = 1}
+    tier_map["electronics-machine-2"] = {tier = 3, shadow = 3}
+    tier_map["electronics-machine-3"] = {tier = 4, shadow = 4}
 end
 
 -- Reskin entities, create and assign extra details
@@ -48,14 +47,9 @@ for name, map in pairs(tier_map) do
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
-
-    -- Extract tier, shadow, has_fluids from map
-    local tier = map[1]
-    local shadow = map[2]  
-    local has_fluids = map[3]  
-       
+      
     -- Determine what tint we're using
-    inputs.tint = map[4] or reskins.lib.tint_index["tier-"..tier]
+    inputs.tint = map.tint or reskins.lib.tint_index["tier-"..map.tier]
 
     -- Setup icon details
     if string.find(name, "electronics") then
@@ -152,13 +146,13 @@ for name, map in pairs(tier_map) do
         -- Add gears
         inputs.icon_extras = {
             {
-                icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/gear-"..tier..".png"
+                icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/gear-"..map.tier..".png"
             }
         }
 
         inputs.icon_picture_extras = {
             {
-                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/gear-"..tier..".png",
+                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/gear-"..map.tier..".png",
                 size = 64,
                 mipmaps = 4,
                 scale = 0.25
@@ -166,7 +160,92 @@ for name, map in pairs(tier_map) do
         }
     end
 
-    reskins.lib.setup_standard_entity(name, tier, inputs)
+    reskins.lib.setup_standard_entity(name, map.tier, inputs)
+
+    -- Fetch remnant
+    local remnant = data.raw["corpse"][name.."-remnants"]
+
+    -- Reskin remnants
+    remnant.animation = make_rotated_animation_variations_from_sheet (3, {
+        layers = {
+            -- Base
+            {
+                filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/remnants/assembling-machine-remnants-base.png",
+                line_length = 1,
+                width = 164,
+                height = 142,
+                frame_count = 1,
+                variation_count = 1,
+                axially_symmetrical = false,
+                direction_count = 1,
+                shift = util.by_pixel(0, 10),
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/remnants/hr-assembling-machine-remnants-base.png",
+                    line_length = 1,
+                    width = 328,
+                    height = 282,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 1,
+                    shift = util.by_pixel(0, 9.5),
+                    scale = 0.5,
+                },
+            },
+            -- Mask
+            {
+                filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/remnants/assembling-machine-remnants-mask.png",
+                line_length = 1,
+                width = 164,
+                height = 142,
+                frame_count = 1,
+                variation_count = 1,
+                axially_symmetrical = false,
+                direction_count = 1,
+                shift = util.by_pixel(0, 10),
+                tint = inputs.tint,
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/remnants/hr-assembling-machine-remnants-mask.png",
+                    line_length = 1,
+                    width = 328,
+                    height = 282,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 1,
+                    shift = util.by_pixel(0, 9.5),
+                    tint = inputs.tint,
+                    scale = 0.5,
+                },
+            },
+            -- Highlights
+            {
+                filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/remnants/assembling-machine-remnants-highlights.png",
+                line_length = 1,
+                width = 164,
+                height = 142,
+                frame_count = 1,
+                variation_count = 1,
+                axially_symmetrical = false,
+                direction_count = 1,
+                shift = util.by_pixel(0, 10),
+                blend_mode = "additive",
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/remnants/hr-assembling-machine-remnants-highlights.png",
+                    line_length = 1,
+                    width = 328,
+                    height = 282,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 1,
+                    shift = util.by_pixel(0, 9.5),
+                    blend_mode = "additive",
+                    scale = 0.5,
+                },
+            }
+        }
+    })
 
     -- Reskin entities
     entity.animation = {
@@ -243,7 +322,7 @@ for name, map in pairs(tier_map) do
             },
             -- Animation
             {
-                filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/animations/assembling-machine-animation-"..tier..".png",
+                filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/animations/assembling-machine-animation-"..map.tier..".png",
                 priority="high",
                 width = 108,
                 height = 119,
@@ -251,7 +330,7 @@ for name, map in pairs(tier_map) do
                 line_length = 8,
                 shift = util.by_pixel(0, -0.5),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/animations/hr-assembling-machine-animation-"..tier..".png",
+                    filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/animations/hr-assembling-machine-animation-"..map.tier..".png",
                     priority="high",
                     width = 214,
                     height = 237,
@@ -263,7 +342,7 @@ for name, map in pairs(tier_map) do
             },
             -- Shadow
             {
-                filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/shadows/assembling-machine-"..shadow.."-shadow.png",
+                filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/shadows/assembling-machine-"..map.shadow.."-shadow.png",
                 priority="high",
                 width = 132,
                 height = 83,
@@ -272,7 +351,7 @@ for name, map in pairs(tier_map) do
                 draw_as_shadow = true,
                 shift = util.by_pixel(27, 5),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/shadows/hr-assembling-machine-"..shadow.."-shadow.png",
+                    filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/shadows/hr-assembling-machine-"..map.shadow.."-shadow.png",
                     priority="high",
                     width = 264,
                     height = 165,
@@ -398,7 +477,7 @@ for name, map in pairs(tier_map) do
     end
 
     -- Handle pipes
-    if has_fluids then
+    if map.has_fluids then
         entity.fluid_boxes = {
             {
                 production_type = "input",
@@ -435,6 +514,30 @@ for name, map in pairs(tier_map) do
             pipe_picture = reskins.bobs.assembly_pipe_pictures(inputs.tint),
             production_type = "input-output",
             filter = "steam"
+        }
+    end
+
+    -- Handle sounds
+    if map.tier > 3 then
+        entity.working_sound.sound = {
+            {
+                filename = "__base__/sound/assembling-machine-t3-1.ogg",
+                volume = 0.5 + map.tier * 0.2
+            }
+        }
+    elseif map.tier > 1 then
+        entity.working_sound.sound = {
+            {
+                filename = "__base__/sound/assembling-machine-t2-1.ogg",
+                volume = 0.5 + map.tier * 0.2
+            }
+        }
+    else
+        entity.working_sound.sound = {
+            {
+                filename = "__base__/sound/assembling-machine-t1-1.ogg",
+                volume = 0.5 + map.tier * 0.2
+            }
         }
     end
 

@@ -5,8 +5,7 @@
 
 -- Settings to disable select Reskins by mod
 if mods["bobassembly"] then
-    data:extend(
-    {
+    data:extend({
         {
             type = "bool-setting",
             name = "reskins-bobs-do-bobassembly",
@@ -24,8 +23,7 @@ if mods["bobassembly"] then
 end
 
 if mods["bobgreenhouse"] then
-    data:extend(
-    {
+    data:extend({
         {
             type = "bool-setting",
             name = "reskins-bobs-do-bobgreenhouse",
@@ -36,8 +34,7 @@ if mods["bobgreenhouse"] then
 end
 
 if mods["boblogistics"] or mods["bobpower"] then
-    data:extend(
-    {
+    data:extend({
         {
             type = "bool-setting",
             name = "reskins-bobs-do-pipe-tier-labeling",
@@ -49,8 +46,7 @@ if mods["boblogistics"] or mods["bobpower"] then
 end
 
 if mods["boblogistics"] then
-    data:extend(
-    {
+    data:extend({
         {
             type = "bool-setting",
             name = "reskins-bobs-do-boblogistics",
@@ -103,8 +99,7 @@ if mods["boblogistics"] then
 end
 
 if mods["bobmining"] then
-    data:extend(
-    {
+    data:extend({
         {
             type = "bool-setting",
             name = "reskins-bobs-do-bobmining",
@@ -115,8 +110,7 @@ if mods["bobmining"] then
 end
 
 if mods["bobmodules"] then
-    data:extend(
-    {
+    data:extend({
         {
             type = "bool-setting",
             name = "reskins-bobs-do-bobmodules",
@@ -127,8 +121,7 @@ if mods["bobmodules"] then
 end
 
 if mods["bobplates"] then
-    data:extend(
-    {
+    data:extend({
         {
             type = "bool-setting",
             name = "reskins-bobs-do-bobplates",
@@ -139,8 +132,7 @@ if mods["bobplates"] then
 end
 
 if mods["bobpower"] then
-    data:extend(
-    {
+    data:extend({
         {
             type = "bool-setting",
             name = "reskins-bobs-do-bobpower",
@@ -157,8 +149,7 @@ if mods["bobpower"] then
 end
 
 if mods["bobrevamp"] then
-    data:extend(
-    {
+    data:extend({
         {
             type = "bool-setting",
             name = "reskins-bobs-do-bobrevamp",
@@ -169,8 +160,7 @@ if mods["bobrevamp"] then
 end
 
 if mods["bobtech"] then
-    data:extend(
-    {
+    data:extend({
         {
             type = "bool-setting",
             name = "reskins-bobs-do-bobtech",
@@ -181,8 +171,7 @@ if mods["bobtech"] then
 end
 
 if mods["bobwarfare"] then
-    data:extend(
-    {
+    data:extend({
         {
             type = "bool-setting",
             name = "reskins-bobs-do-bobwarfare",
