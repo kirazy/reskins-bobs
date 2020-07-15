@@ -359,8 +359,8 @@ for name, map in pairs(tier_map) do
     entity.prepared_animation = {
         layers = {
             turret_shooting(),
-            turret_shooting_shadow(),
-            turret_shooting_mask()
+            turret_shooting_mask(),
+            turret_shooting_shadow()
         }
     }
 

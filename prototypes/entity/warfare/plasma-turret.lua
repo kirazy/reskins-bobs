@@ -27,10 +27,14 @@ local tier_map = {
     ["bob-plasma-turret-5"] = 5,
 }
 
+-- Temporary plasma turret visuals
+local laser_turret = data.raw[inputs.type]["laser-turret"]
+
 -- Reskin entities, create and assign extra details
 for name, tier in pairs(tier_map) do
     -- Fetch entity
     local entity = data.raw[inputs.type][name]
+    
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
@@ -61,6 +65,30 @@ for name, tier in pairs(tier_map) do
             }
         }
     }
+
+    entity.folded_animation = util.copy(laser_turret.folded_animation)
+    entity.preparing_animation = util.copy(laser_turret.preparing_animation)
+    entity.prepared_animation = util.copy(laser_turret.prepared_animation)
+    entity.folding_animation = util.copy(laser_turret.folding_animation)
+
+    -- Redo tints
+    local table_list = {
+        "folded_animation",
+        "preparing_animation",
+        "prepared_animation",
+        "folding_animation",
+    }
+
+    for _, v in pairs(table_list) do
+        -- Rescale
+        reskins.lib.rescale_entity(entity[v], 3/2)
+
+        -- Retint
+        entity[v].layers[2].apply_runtime_tint = nil
+        entity[v].layers[2].tint = reskins.lib.adjust_alpha(inputs.tint, 0.65)
+        entity[v].layers[2].hr_version.apply_runtime_tint = nil
+        entity[v].layers[2].hr_version.tint = reskins.lib.adjust_alpha(inputs.tint, 0.65)
+    end
 
     -- Label to skip to next iteration
     ::continue::

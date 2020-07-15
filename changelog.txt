@@ -5,6 +5,8 @@ Date: 2020.07.XX
     - Added a 6th tier for use with ingredients-based tier labels
     - Improved highlights for robot tool icons
     - Added additional background colors for vehicle equipment; red for weapons, blue for defenses, green for energy, and gray for logistics
+    - Reverted tier adjustments to logistic chests for ingredient-based tier labels, from version 0.0.8
+    - Shifted ingredients-based tiers for logistic and construction robots to tiers 2-6 from 1-5
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.14
 Date: 2020.07.13
