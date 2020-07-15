@@ -9,7 +9,7 @@ if not mods["bobvehicleequipment"] then return end
 local inputs = {
     type = "solar-panel-equipment",
     icon_name = "solar-panel",
-    icon_background = "vehicle-equipment",
+    equipment_category = "energy",
     directory = reskins.bobs.directory,
     mod = "bobs",
     group = "equipment",
