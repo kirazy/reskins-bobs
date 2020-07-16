@@ -4,6 +4,7 @@ Date: 2020.07.XX
   Features:
     - Added remnants for assembling machines
     - Added remnants for stone chemical furnaces and stone mixing furnaces
+    - Added remnants for electric-type furnaces
     - Added setting "Robots follow Progression", on by default, for robots to align with the tiers of robot parts when using "Progression" tier mapping
     - Added setting "Color: Fusion robots" to specify the color of the fusion robots, default white, for use with "Robots follow Progression"
   Changes:
@@ -14,6 +15,7 @@ Date: 2020.07.XX
     - Shifted progression-based tiers for logistic and construction robots to tiers 2-5 from 1-5, with Robot 4 and Fusion powered Robot 4 both tier 5; toggleable with startup setting "Robots follow Progression"
     - Assembling machine sound file and volume now accounts for tier
     - Enhanced mod setting names and descriptions with rich text
+    - Miniloaders now have small remnants on death
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.14
 Date: 2020.07.13

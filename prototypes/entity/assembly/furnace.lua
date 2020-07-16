@@ -694,7 +694,6 @@ for name, map in pairs(electric_furnace_map) do
         particles = {["medium"] = 2},
         tint = map.tint or reskins.lib.tint_index["tier-"..tier],
         icon_name = "electric-furnace",
-        make_remnants = false,
     }
 
     if reskins.lib.setting("reskins-bobs-do-furnace-tier-labeling") == true then
@@ -730,7 +729,78 @@ for name, map in pairs(electric_furnace_map) do
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
-    -- TODO: Reskin remnants
+    -- Fetch remnant
+    local remnant = data.raw["corpse"][name.."-remnants"]
+
+    -- Reskin remnants
+    remnant.animation = {
+        layers = {
+            -- Base
+            {
+                filename = "__base__/graphics/entity/electric-furnace/remnants/electric-furnace-remnants.png",
+                line_length = 1,
+                width = 228,
+                height = 224,
+                frame_count = 1,
+                direction_count = 1,
+                shift = util.by_pixel(-3, 7),
+                hr_version = {
+                    filename = "__base__/graphics/entity/electric-furnace/remnants/hr-electric-furnace-remnants.png",
+                    line_length = 1,
+                    width = 454,
+                    height = 448,
+                    frame_count = 1,
+                    direction_count = 1,
+                    shift = util.by_pixel(-3.25, 7.25),
+                    scale = 0.5,
+                }
+            },
+            -- Mask
+            {
+                filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/remnants/electric-furnace-remnants-mask.png",
+                line_length = 1,
+                width = 108,
+                height = 104,
+                frame_count = 1,
+                direction_count = 1,
+                shift = util.by_pixel(-3, 7),
+                tint = inputs.tint,
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/remnants/hr-electric-furnace-remnants-mask.png",
+                    line_length = 1,
+                    width = 214,
+                    height = 208,
+                    frame_count = 1,
+                    direction_count = 1,
+                    shift = util.by_pixel(-3.25, 7.25),
+                    tint = inputs.tint,
+                    scale = 0.5,
+                }
+            },
+            -- Highlights
+            {
+                filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/remnants/electric-furnace-remnants-highlights.png",
+                line_length = 1,
+                width = 108,
+                height = 104,
+                frame_count = 1,
+                direction_count = 1,
+                shift = util.by_pixel(-3, 7),
+                blend_mode = "additive",
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/remnants/hr-electric-furnace-remnants-highlights.png",
+                    line_length = 1,
+                    width = 214,
+                    height = 208,
+                    frame_count = 1,
+                    direction_count = 1,
+                    shift = util.by_pixel(-3.25, 7.25),
+                    blend_mode = "additive",
+                    scale = 0.5,
+                }
+            }
+        }
+    }
 
     -- Reskin entities
     if map.furnace == "chemical" then
@@ -760,6 +830,27 @@ for name, map in pairs(electric_furnace_map) do
         entity.working_visualisations = {
             furnace_heater(true)
         }
+
+        -- Add chemical furnace remnants details
+        table.insert(remnant.animation.layers, {
+            filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/remnants/chemical-furnace-remnants-overlay.png",
+            line_length = 1,
+            width = 108,
+            height = 104,
+            frame_count = 1,
+            direction_count = 1,
+            shift = util.by_pixel(-3, 7),
+            hr_version = {
+                filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/remnants/hr-chemical-furnace-remnants-overlay.png",
+                line_length = 1,
+                width = 214,
+                height = 208,
+                frame_count = 1,
+                direction_count = 1,
+                shift = util.by_pixel(-3.25, 7.25),
+                scale = 0.5,
+            }
+        })
     elseif map.furnace == "mixing" then
         entity.animation = {
             layers = {
@@ -853,6 +944,27 @@ for name, map in pairs(electric_furnace_map) do
             furnace_heater(true),
             furnace_small_propeller(true),
         }
+
+        -- Add multi-purpose furnace remnants details
+        table.insert(remnant.animation.layers, {
+            filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/remnants/multi-purpose-furnace-remnants-overlay.png",
+            line_length = 1,
+            width = 108,
+            height = 104,
+            frame_count = 1,
+            direction_count = 1,
+            shift = util.by_pixel(-3, 7),
+            hr_version = {
+                filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/remnants/hr-multi-purpose-furnace-remnants-overlay.png",
+                line_length = 1,
+                width = 214,
+                height = 208,
+                frame_count = 1,
+                direction_count = 1,
+                shift = util.by_pixel(-3.25, 7.25),
+                scale = 0.5,
+            }
+        })
     elseif map.furnace == "standard" then
         entity.animation = {
             layers = {

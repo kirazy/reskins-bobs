@@ -111,6 +111,7 @@ for name, map in pairs(tier_map) do
         entity.structure.direction_out.sheets[2].tint = inputs.tint
         entity.structure.direction_out.sheets[2].hr_version.tint = inputs.tint
     else
+        entity.corpse = "small-remnants"
         entity.platform_picture.sheets[2].tint = inputs.tint
         entity.platform_picture.sheets[2].hr_version.tint = inputs.tint
     end
