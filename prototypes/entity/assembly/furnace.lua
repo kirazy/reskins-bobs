@@ -68,31 +68,6 @@ local function stone_furnace_entities(name, shadow)
     }
 end
 
-local function stone_furnace_remnants(name, rotations)
-    local remnants = make_rotated_animation_variations_from_sheet(rotations,
-    {
-        filename = reskins.bobs.directory.."/graphics/entity/assembly/stone-furnace/remnants/"..name.."-remnants.png",
-        line_length = 1,
-        width = 76,
-        height = 66,
-        frame_count = 1,
-        direction_count = 1,
-        shift = util.by_pixel(0, 10),
-        hr_version = {
-            filename = reskins.bobs.directory.."/graphics/entity/assembly/stone-furnace/remnants/hr-"..name.."-remnants.png",
-            line_length = 1,
-            width = 152,
-            height = 130,
-            frame_count = 1,
-            direction_count = 1,
-            shift = util.by_pixel(0, 9.5),
-            scale = 0.5,
-        }
-    })
-
-    return remnants
-end
-
 -- Reskin entities, create and assign extra details
 for name, map in pairs(stone_furnace_map) do
     -- Setup inputs, parse map
@@ -239,21 +214,21 @@ end
 
 -- STEEL FURNACES
 local steel_furnace_map = {
-    ["steel-furnace"] = {2, "furnace", standard_furnace_tint, false},
+    ["steel-furnace"] = {tier = 2, type = "furnace", tint = standard_furnace_tint, furnace = "standard"},
 
     -- Names as of Bob's MCI 0.18.9
-    ["steel-mixing-furnace"] = {2, "assembling-machine", mixing_furnace_tint, false},
-    ["steel-chemical-furnace"] = {2, "assembling-machine", chemical_furnace_tint, true},
-    ["fluid-furnace"] = {2, "furnace", standard_furnace_tint, true},
-    ["fluid-mixing-furnace"] = {2, "assembling-machine", mixing_furnace_tint, true},
-    ["fluid-chemical-furnace"] = {2, "assembling-machine", chemical_furnace_tint, true},
+    ["steel-mixing-furnace"] = {tier = 2, type = "assembling-machine", tint = mixing_furnace_tint, furnace = "mixing"},
+    ["steel-chemical-furnace"] = {tier = 2, type = "assembling-machine", tint = chemical_furnace_tint, has_4way = true, furnace = "chemical"},
+    ["fluid-furnace"] = {tier = 2, type = "furnace", tint = standard_furnace_tint, has_4way = true, is_fluid = true, furnace = "standard"},
+    ["fluid-mixing-furnace"] = {tier = 2, type = "assembling-machine", tint = mixing_furnace_tint, has_4way = true, is_fluid = true, furnace = "mixing"},
+    ["fluid-chemical-furnace"] = {tier = 2, type = "assembling-machine", tint = chemical_furnace_tint, has_4way = true, is_fluid = true, furnace = "chemical"},
 
     -- Old names
-    ["mixing-steel-furnace"] = {2, "assembling-machine", mixing_furnace_tint, false},
-    ["chemical-steel-furnace"] = {2, "assembling-machine", chemical_furnace_tint, true},
-    ["oil-steel-furnace"] = {2, "furnace", standard_furnace_tint, true},
-    ["oil-mixing-steel-furnace"] = {2, "assembling-machine", mixing_furnace_tint, true},
-    ["oil-chemical-steel-furnace"] = {2, "assembling-machine", chemical_furnace_tint, true},
+    ["mixing-steel-furnace"] = {tier = 2, type = "assembling-machine", tint = mixing_furnace_tint, furnace = "mixing"},
+    ["chemical-steel-furnace"] = {tier = 2, type = "assembling-machine", tint = chemical_furnace_tint, has_4way = true, furnace = "chemical"},
+    ["oil-steel-furnace"] = {tier = 2, type = "furnace", tint = standard_furnace_tint, has_4way = true, is_fluid = true, furnace = "standard"},
+    ["oil-mixing-steel-furnace"] = {tier = 2, type = "assembling-machine", tint = mixing_furnace_tint, has_4way = true, is_fluid = true, furnace = "mixing"},
+    ["oil-chemical-steel-furnace"] = {tier = 2, type = "assembling-machine", tint = chemical_furnace_tint, has_4way = true, is_fluid = true, furnace = "chemical"},
 }
 
 local function steel_furnace_entity_skin(name, shadow)
@@ -379,15 +354,14 @@ end
 for name, map in pairs(steel_furnace_map) do
     -- Setup inputs, parse map
     local inputs = {
-        type = map[2],
+        type = map.type,
         base_entity = "steel-furnace",
         directory = reskins.bobs.directory,
         mod = "bobs",
         group = "assembly",
-        tint = map[3],
+        tint = map.tint,
         particles = {["medium"] = 2},
         make_icons = false,
-        make_remnants = false,
     }
 
     if reskins.lib.setting("reskins-bobs-do-furnace-tier-labeling") == true then
@@ -396,9 +370,6 @@ for name, map in pairs(steel_furnace_map) do
         inputs.tier_labels = false
     end
 
-    local tier = map[1]
-    local has_4way = map[4] or false
-
     -- Fetch entity
     local entity = data.raw[inputs.type][name]
     local entity_source = data.raw["furnace"]["steel-furnace"]
@@ -406,23 +377,23 @@ for name, map in pairs(steel_furnace_map) do
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
-    reskins.lib.setup_standard_entity(name, tier, inputs)
+    reskins.lib.setup_standard_entity(name, map.tier, inputs)
 
     -- Abstract from entity name to sprite sheet name
     local sprite_name, shadow
-    if string.find(name, "mixing") then
+    if map.furnace == "mixing" then
         sprite_name = "steel-metal-mixing-furnace"
         shadow = "steel-furnace"
-    elseif string.find(name, "chemical") then
+    elseif map.furnace == "chemical" then
         sprite_name = "steel-chemical-furnace"
         shadow = sprite_name
-    else
+    elseif map.furnace == "standard" then
         sprite_name = "steel-furnace"
         shadow = sprite_name
     end
 
     -- Prepend oil prefix when working with fluid-based furnaces
-    if string.find(name, "fluid") or string.find(name, "oil") then
+    if map.is_fluid == true then
         sprite_name = "oil-"..sprite_name
         shadow = "oil-"..shadow
 
@@ -432,24 +403,61 @@ for name, map in pairs(steel_furnace_map) do
 
     -- Setup icon
     inputs.icon_filename = inputs.directory.."/graphics/icons/assembly/steel-furnace/"..sprite_name..".png"
-    reskins.lib.construct_icon(name, tier, inputs)
+    reskins.lib.construct_icon(name, map.tier, inputs)
 
     -- Fetch remnant
     local remnant = data.raw["corpse"][name.."-remnants"]
 
     -- Reskin entities and remnants
-    if has_4way == true then
+    if map.has_4way == true then
+        remnant.animation = {
+          filename = inputs.directory.."/graphics/entity/assembly/steel-furnace/remnants/"..sprite_name.."-remnants.png",
+          line_length = 4,
+          width = 134,
+          height = 119,
+          frame_count = 1,
+          direction_count = 4,
+          shift = util.by_pixel(4, 0.5),
+          hr_version =
+          {
+            filename = inputs.directory.."/graphics/entity/assembly/steel-furnace/remnants/hr-"..sprite_name.."-remnants.png",
+            line_length = 4,
+            width = 268,
+            height = 238,
+            frame_count = 1,
+            direction_count = 4,
+            shift = util.by_pixel(4, 0.5),
+            scale = 0.5,
+          }
+        }
         entity.animation = reskins.lib.make_4way_animation_from_spritesheet(steel_furnace_entity_skin(sprite_name, shadow))
     else
+        remnant.animation = make_rotated_animation_variations_from_sheet(1, {
+            filename = inputs.directory.."/graphics/entity/assembly/steel-furnace/remnants/"..sprite_name.."-remnants.png",
+            line_length = 1,
+            width = 134,
+            height = 119,
+            frame_count = 1,
+            direction_count = 1,
+            shift = util.by_pixel(4, 0.5),
+            hr_version =
+            {
+                filename = inputs.directory.."/graphics/entity/assembly/steel-furnace/remnants/hr-"..sprite_name.."-remnants.png",
+                line_length = 1,
+                width = 268,
+                height = 238,
+                frame_count = 1,
+                direction_count = 1,
+                shift = util.by_pixel(4, 0.5),
+                scale = 0.5,
+            }
+        })
+
         entity.animation = steel_furnace_entity_skin(sprite_name, shadow)
     end
 
-    if has_4way ~= true then
-        entity.working_visualisations = data.raw["furnace"]["steel-furnace"].working_visualisations
-    end
-
-    if string.find(name, "chemical") then
-        if string.find(name, "fluid") or string.find(name, "oil") then
+    if map.furnace == "chemical" then
+        if map.is_fluid then
             -- Skin the fluid-based chemical furnace working visualization
             entity.working_visualisations = {
                 -- Fire effect
@@ -512,7 +520,7 @@ for name, map in pairs(steel_furnace_map) do
                 }
             }
         end
-    elseif string.find(name, "fluid") or string.find(name, "oil") then
+    elseif map.is_fluid then
         -- Skin the fluid-based non-chemical furncace working visualizations
         entity.working_visualisations = {
             -- Fire effect
@@ -543,6 +551,9 @@ for name, map in pairs(steel_furnace_map) do
                 west_animation = steel_furnace_working("left"),
             }
         }
+    else
+        -- Skin the standard-type furnace working visualizations
+        entity.working_visualisations = data.raw["furnace"]["steel-furnace"].working_visualisations
     end
 
     -- Label to skip to next iteration
