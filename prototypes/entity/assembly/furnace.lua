@@ -13,15 +13,15 @@ local chemical_furnace_tint = util.color("e50000")
 
 -- STONE FURNACES
 local stone_furnace_map = {
-    ["stone-furnace"] = {1, "furnace", standard_furnace_tint},
+    ["stone-furnace"] = {tier = 1, type = "furnace", tint = standard_furnace_tint, is_standard = true},
 
     -- Names as of Bob's MCI 0.18.9
-    ["stone-mixing-furnace"] = {1, "assembling-machine", mixing_furnace_tint},
-    ["stone-chemical-furnace"] = {1, "assembling-machine", chemical_furnace_tint},
+    ["stone-mixing-furnace"] = {tier = 1, type = "assembling-machine", tint = mixing_furnace_tint, is_mixing = true},
+    ["stone-chemical-furnace"] = {tier = 1, type = "assembling-machine", tint = chemical_furnace_tint, is_chemical = true},
 
     -- Old Names
-    ["mixing-furnace"] = {1, "assembling-machine", mixing_furnace_tint},
-    ["chemical-boiler"] = {1, "assembling-machine", chemical_furnace_tint},
+    ["mixing-furnace"] = {tier = 1, type = "assembling-machine", tint = mixing_furnace_tint, is_mixing = true},
+    ["chemical-boiler"] = {tier = 1, type = "assembling-machine", tint = chemical_furnace_tint, is_chemical = true},
 }
 
 local function stone_furnace_entities(name, shadow)
@@ -97,15 +97,14 @@ end
 for name, map in pairs(stone_furnace_map) do
     -- Setup inputs, parse map
     local inputs = {
-        type = map[2],
+        type = map.type,
         base_entity = "stone-furnace",
         directory = reskins.bobs.directory,
         mod = "bobs",
         group = "assembly",
-        tint = map[3],
+        tint = map.tint,
         particles = {["medium-stone"] = 2},
         make_icons = false,
-        make_remnants = false,
     }
 
     if reskins.lib.setting("reskins-bobs-do-furnace-tier-labeling") == true then
@@ -114,7 +113,7 @@ for name, map in pairs(stone_furnace_map) do
         inputs.tier_labels = false
     end
 
-    local tier = map[1]
+    local tier = map.tier
 
     -- Fetch entity
     local entity = data.raw[inputs.type][name]
@@ -129,13 +128,57 @@ for name, map in pairs(stone_furnace_map) do
     local remnant = data.raw["corpse"][name.."-remnants"]
 
     -- Reskin remnants and entities
-    if name == "stone-furnace" then
+    -- Standard Furnace
+    if map.is_standard then
+        remnant.animation = make_rotated_animation_variations_from_sheet(1, {
+            filename = inputs.directory.."/graphics/entity/assembly/stone-furnace/remnants/stone-furnace-remnants.png",
+            line_length = 1,
+            width = 76,
+            height = 66,
+            frame_count = 1,
+            direction_count = 1,
+            shift = util.by_pixel(0, 10),
+            hr_version =
+            {
+                filename = inputs.directory.."/graphics/entity/assembly/stone-furnace/remnants/hr-stone-furnace-remnants.png",
+                line_length = 1,
+                width = 152,
+                height = 130,
+                frame_count = 1,
+                direction_count = 1,
+                shift = util.by_pixel(0, 9.5),
+                scale = 0.5,
+            }
+        })
+
         entity.animation = stone_furnace_entities("stone-furnace", "stone-furnace")
         inputs.icon_filename = nil
         reskins.lib.append_tier_labels_to_vanilla_icon(name, tier, inputs)
     end
 
-    if string.find(name, "mixing") then
+    -- Metal Mixing Furnace
+    if map.is_mixing then
+        remnant.animation = make_rotated_animation_variations_from_sheet(1, {
+            filename = inputs.directory.."/graphics/entity/assembly/stone-furnace/remnants/stone-metal-mixing-furnace-remnants.png",
+            line_length = 1,
+            width = 76,
+            height = 66,
+            frame_count = 1,
+            direction_count = 1,
+            shift = util.by_pixel(0, 10),
+            hr_version =
+            {
+                filename = inputs.directory.."/graphics/entity/assembly/stone-furnace/remnants/hr-stone-metal-mixing-furnace-remnants.png",
+                line_length = 1,
+                width = 152,
+                height = 130,
+                frame_count = 1,
+                direction_count = 1,
+                shift = util.by_pixel(0, 9.5),
+                scale = 0.5,
+            }
+        })
+
         entity.animation = stone_furnace_entities("stone-metal-mixing-furnace", "stone-furnace")
         entity.energy_source.smoke = entity_source.energy_source.smoke
         entity.working_visualisations = entity_source.working_visualisations
@@ -145,7 +188,29 @@ for name, map in pairs(stone_furnace_map) do
         reskins.lib.construct_icon(name, tier, inputs)
     end
 
-    if string.find(name, "chemical") then
+    -- Chemical Furnace
+    if map.is_chemical then
+        remnant.animation = {
+            filename = inputs.directory.."/graphics/entity/assembly/stone-furnace/remnants/stone-chemical-furnace-remnants.png",
+            width = 101,
+            height = 90,
+            line_length = 4,
+            direction_count = 4,
+            frame_count = 1,
+            shift = util.by_pixel(2, 17),
+            hr_version =
+            {
+                filename = inputs.directory.."/graphics/entity/assembly/stone-furnace/remnants/hr-stone-chemical-furnace-remnants.png",
+                width = 202,
+                height = 180,
+                line_length = 4,
+                direction_count = 4,
+                frame_count = 1,
+                shift = util.by_pixel(2, 17),
+                scale = 0.5,
+            }
+        }
+
         entity.animation = reskins.lib.make_4way_animation_from_spritesheet(stone_furnace_entities("stone-chemical-furnace", "stone-chemical-furnace", inputs))
 
         -- Handle working_visualisations
