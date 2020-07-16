@@ -16,7 +16,6 @@ local inputs = {
     mod = "bobs",
     group = "mining",
     particles = {["small"] = 3},
-    make_remnants = false, -- TODO: #4 Make pumpjack and water-pumpjack remnants
 }
 
 local tier_map = {
@@ -185,9 +184,84 @@ for name, map in pairs(tier_map) do
                           + ((max_speed/(max_speed-min_speed)) - (entity.mining_speed/(max_speed-min_speed)))*min_playback
     end
 
-    -- TODO: Fetch remnants
+    -- Reskin base particles if we're a water pump
+    if variant then       
+       reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["big"], 1, util.color("3083bf"))
+       reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["medium"], 2, util.color("3083bf"))
+    end
 
-    -- TODO: Reskin remnants
+    -- Fetch remnants
+    local remnant = data.raw["corpse"][name.."-remnants"]
+
+    -- Reskin remnants
+    remnant.animation = make_rotated_animation_variations_from_sheet(2, {
+        layers = {
+            -- Base
+            {
+                filename = inputs.directory.."/graphics/entity/mining/pumpjack/remnants/"..inputs.icon_base.."-remnants-base.png",
+                line_length = 1,
+                width = 138,
+                height = 142,
+                frame_count = 1,
+                direction_count = 1,
+                shift = util.by_pixel(0, 3),
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/mining/pumpjack/remnants/hr-"..inputs.icon_base.."-remnants-base.png",
+                    line_length = 1,
+                    width = 274,
+                    height = 284,
+                    frame_count = 1,
+                    direction_count = 1,
+                    shift = util.by_pixel(0, 3.5),
+                    scale = 0.5,
+                }
+            },
+            -- Mask
+            {
+                filename = inputs.directory.."/graphics/entity/mining/pumpjack/remnants/pumpjack-remnants-mask.png",
+                line_length = 1,
+                width = 138,
+                height = 142,
+                frame_count = 1,
+                direction_count = 1,
+                shift = util.by_pixel(0, 3),
+                tint = inputs.tint,
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/mining/pumpjack/remnants/hr-pumpjack-remnants-mask.png",
+                    line_length = 1,
+                    width = 274,
+                    height = 284,
+                    frame_count = 1,
+                    direction_count = 1,
+                    shift = util.by_pixel(0, 3.5),
+                    tint = inputs.tint,
+                    scale = 0.5,
+                }
+            },
+            -- Highlights
+            {
+                filename = inputs.directory.."/graphics/entity/mining/pumpjack/remnants/pumpjack-remnants-highlights.png",
+                line_length = 1,
+                width = 138,
+                height = 142,
+                frame_count = 1,
+                direction_count = 1,
+                shift = util.by_pixel(0, 3),
+                blend_mode = "additive",
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/mining/pumpjack/remnants/hr-pumpjack-remnants-highlights.png",
+                    line_length = 1,
+                    width = 274,
+                    height = 284,
+                    frame_count = 1,
+                    direction_count = 1,
+                    shift = util.by_pixel(0, 3.5),
+                    blend_mode = "additive",
+                    scale = 0.5,
+                }
+            }
+        }
+    })
 
     -- Reskin entities
     entity.base_picture = {
