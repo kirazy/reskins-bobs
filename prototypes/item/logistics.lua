@@ -47,7 +47,7 @@ end
 for name, inputs in pairs(item_list) do
     -- Handle tier details
     local tier = inputs.name_tier or inputs.tier or 0
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "ingredients-map" then
+    if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
         tier = inputs.ingr_tier or inputs.tier or 0
     end
 

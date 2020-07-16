@@ -3,13 +3,15 @@ Version: 0.0.15
 Date: 2020.07.XX
   Features:
     - Added remnants for assembling machines
-    - Added a 6th tier for use with ingredients-based tier labels
+    - Added setting "Robots follow Progression", on by default, for robots to align with the tiers of robot parts when using "Progression" tier mapping
+    - Added setting "Color: Fusion robots" to specify the color of the fusion robots, default white, for use with "Robots follow Progression"
   Changes:
     - Improved highlights for robot tool icons
     - Added additional background colors for vehicle equipment; red for weapons, blue for defenses, green for energy, and gray for logistics
     - Reverted tier adjustments to logistic chests for ingredient-based tier labels, from version 0.0.8; tiers now 2-4 from 3-5
-    - Shifted ingredients-based tiers for logistic and construction robots to tiers 2-6 from 1-5
+    - Shifted progression-based tiers for logistic and construction robots to tiers 2-5 from 1-5, with Robot 4 and Fusion powered Robot 4 both tier 5; toggleable with startup setting "Robots follow Progression"
     - Assembling machine sound file and volume now accounts for tier
+    - Enhanced mod setting names and descriptions with rich text
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.14
 Date: 2020.07.13

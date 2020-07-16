@@ -35,8 +35,8 @@ if reskins.lib.setting("reskins-lib-tier-mapping") == "name-map" then
     tier_map["electronics-machine-2"] = {tier = 2, shadow = 2}
     tier_map["electronics-machine-3"] = {tier = 3, shadow = 3}
 else
-    tier_map["electronics-machine-1"] = {tier = 1, shadow = 1}
-    tier_map["electronics-machine-2"] = {tier = 3, shadow = 3}
+    tier_map["electronics-machine-1"] = {tier = 0, shadow = 1}
+    tier_map["electronics-machine-2"] = {tier = 2, shadow = 3}
     tier_map["electronics-machine-3"] = {tier = 4, shadow = 4}
 end
 

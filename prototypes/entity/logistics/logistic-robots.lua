@@ -23,7 +23,7 @@ local tier_map = {
     ["bob-logistic-robot-2"] = {2, 3},
     ["bob-logistic-robot-3"] = {3, 4},
     ["bob-logistic-robot-4"] = {4, 5},
-    ["bob-logistic-robot-5"] = {5, 6},
+    ["bob-logistic-robot-5"] = {5, 5, util.color(reskins.lib.setting("reskins-bobs-fusion-robot-color"))},
 }
 
 -- Animations
@@ -461,12 +461,14 @@ for name, map in pairs(tier_map) do
 
     -- Parse map
     local tier = map[1]
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "ingredients-map" then
+    local fusion_robot_color
+    if (reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" and reskins.lib.setting("reskins-bobs-do-progression-based-robots")) then
         tier = map[2]
+        fusion_robot_color = map[3]
     end
 
     -- Determine what tint we're using
-    inputs.tint = reskins.lib.tint_index["tier-"..tier]
+    inputs.tint = fusion_robot_color or reskins.lib.tint_index["tier-"..tier]
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 

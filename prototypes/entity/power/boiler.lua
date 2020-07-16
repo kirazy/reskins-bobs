@@ -40,7 +40,7 @@ for name, map in pairs(tier_map) do
 
     -- Parse map
     local tier = map[1]
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "ingredients-map" then
+    if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
         tier = map[2]
     end
     local has_fluids = map[3]
