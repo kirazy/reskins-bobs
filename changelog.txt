@@ -17,6 +17,7 @@ Date: 2020.07.XX
     - Assembling machine sound file and volume now accounts for tier
     - Enhanced mod setting names and descriptions with rich text
     - Miniloaders now have small remnants on death
+    - Revised roboport remnants to use new material colors for the doors
   Bugfixes:
     - Fixed that water pump explosion particles were green, and not blue
 ---------------------------------------------------------------------------------------------------
