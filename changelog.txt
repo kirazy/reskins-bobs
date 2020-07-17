@@ -5,14 +5,13 @@ Date: 2020.07.XX
     - Added remnants for assembling machines
     - Added remnants for stone, steel, and electric-type furnaces
     - Added remnants for pumpjacks and water pumps
+    - Added remnants for small and standard solar panels
     - Added setting "Robots follow Progression", on by default, for robots to align with the tiers of robot parts when using "Progression" tier mapping
     - Added setting "Color: Fusion robots" to specify the color of the fusion robots, default white, for use with "Robots follow Progression"
-    - TODO: Solar Panel Remnants
-    - TODO: Roboport remnant door colors
   Changes:
     - Improved highlights for robot tool icons
     - Added additional background colors for vehicle equipment; red for weapons, blue for defenses, green for energy, and gray for logistics
-    - Reverted tier adjustments to logistic chests for progression-based tier labels, from version 0.0.8; tiers now 2-4 from 3-5
+    - Reverted tier adjustments to logistic chests for progression-based tier labels from version 0.0.8; tiers now 2-4 from 3-5
     - Shifted progression-based tiers for electronics assembling machines from tiers 1, 3, and 4 to 0, 2, and 4
     - Shifted progression-based tiers for logistic and construction robots to tiers 2-5 from 1-5, with Robot 4 and Fusion powered Robot 4 both tier 5; toggleable with startup setting "Robots follow Progression"
     - Assembling machine sound file and volume now accounts for tier
