@@ -70,17 +70,87 @@ for name, map in pairs(tier_map) do
     
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
-    -- Initialize table addresses    
+    -- Fetch remnants
     local remnant = data.raw["corpse"][name.."-remnants"]
-
-    -- TODO: Reskin remnants
-    -- remnant.animation[1].filename = inputs.directory.."/graphics/entity/power/"..inputs.icon_name.."/"..inputs.internal_name.."/remnants/"..inputs.internal_name.."-remnants.png"
-    -- remnant.animation[1].hr_version.filename = inputs.directory.."/graphics/entity/power/"..inputs.icon_name.."/"..inputs.internal_name.."/remnants/hr-"..inputs.internal_name.."-remnants.png"
-    -- remnant.animation[2].filename = inputs.directory.."/graphics/entity/power/"..inputs.icon_name.."/"..inputs.internal_name.."/remnants/"..inputs.internal_name.."-remnants.png"
-    -- remnant.animation[2].hr_version.filename = inputs.directory.."/graphics/entity/power/"..inputs.icon_name.."/"..inputs.internal_name.."/remnants/hr-"..inputs.internal_name.."-remnants.png"
     
     -- Reskin entities
     if inputs.icon_name == "solar-panel-small" then
+        -- Reskin remnants
+        remnant.animation = make_rotated_animation_variations_from_sheet (2, {
+            layers = {
+                -- Base
+                {
+                    filename = inputs.directory.."/graphics/entity/power/solar-panel-small/remnants/small-solar-panel-remnants-base.png",
+                    line_length = 1,
+                    width = 123,
+                    height = 99,
+                    frame_count = 1,
+                    variation_count = 1,
+                    direction_count = 1,
+                    shift = util.by_pixel(-1, -0.5),
+                    hr_version = {
+                        filename = inputs.directory.."/graphics/entity/power/solar-panel-small/remnants/hr-small-solar-panel-remnants-base.png",
+                        line_length = 1,
+                        width = 246,
+                        height = 198,
+                        frame_count = 1,
+                        variation_count = 1,
+                        direction_count = 1,
+                        shift = util.by_pixel(-1, -0.5),
+                        scale = 0.5,
+                    },
+                },
+                -- Mask
+                {
+                    filename = inputs.directory.."/graphics/entity/power/solar-panel-small/remnants/small-solar-panel-remnants-mask.png",
+                    line_length = 1,
+                    width = 123,
+                    height = 99,
+                    frame_count = 1,
+                    variation_count = 1,
+                    direction_count = 1,
+                    shift = util.by_pixel(-1, -0.5),
+                    tint = inputs.tint,
+                    hr_version = {
+                        filename = inputs.directory.."/graphics/entity/power/solar-panel-small/remnants/hr-small-solar-panel-remnants-mask.png",
+                        line_length = 1,
+                        width = 246,
+                        height = 198,
+                        frame_count = 1,
+                        variation_count = 1,
+                        direction_count = 1,
+                        shift = util.by_pixel(-1, -0.5),
+                        tint = inputs.tint,
+                        scale = 0.5,
+                    },
+                },
+                -- Highlights
+                {
+                    filename = inputs.directory.."/graphics/entity/power/solar-panel-small/remnants/small-solar-panel-remnants-highlights.png",
+                    line_length = 1,
+                    width = 123,
+                    height = 99,
+                    frame_count = 1,
+                    variation_count = 1,
+                    direction_count = 1,
+                    shift = util.by_pixel(-1, -0.5),
+                    blend_mode = "additive",
+                    hr_version = {
+                        filename = inputs.directory.."/graphics/entity/power/solar-panel-small/remnants/hr-small-solar-panel-remnants-highlights.png",
+                        line_length = 1,
+                        width = 246,
+                        height = 198,
+                        frame_count = 1,
+                        variation_count = 1,
+                        direction_count = 1,
+                        shift = util.by_pixel(-1, -0.5),
+                        blend_mode = "additive",
+                        scale = 0.5,
+                    },
+                }
+            }
+        })
+
         -- Overwrite picture table in target entity
         entity.picture = {
             layers = {
@@ -178,6 +248,89 @@ for name, map in pairs(tier_map) do
             }
         }
     elseif inputs.icon_name == "solar-panel" then
+        -- Reskin remnants
+        remnant.animation = make_rotated_animation_variations_from_sheet (2, {
+            layers = {
+                -- Base
+                {
+                    filename = "__base__/graphics/entity/solar-panel/remnants/solar-panel-remnants.png",
+                    line_length = 1,
+                    width = 146,
+                    height = 142,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 1,
+                    shift = util.by_pixel(4, 0),
+                    hr_version = {
+                        filename = "__base__/graphics/entity/solar-panel/remnants/hr-solar-panel-remnants.png",
+                        line_length = 1,
+                        width = 290,
+                        height = 282,
+                        frame_count = 1,
+                        variation_count = 1,
+                        axially_symmetrical = false,
+                        direction_count = 1,
+                        shift = util.by_pixel(3.5, 0),
+                        scale = 0.5,
+                    },
+                },
+                -- Mask
+                {
+                    filename = inputs.directory.."/graphics/entity/power/solar-panel/remnants/solar-panel-remnants-mask.png",
+                    line_length = 1,
+                    width = 146,
+                    height = 142,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 1,
+                    shift = util.by_pixel(4, 0),
+                    tint = inputs.tint,
+                    hr_version = {
+                        filename = inputs.directory.."/graphics/entity/power/solar-panel/remnants/hr-solar-panel-remnants-mask.png",
+                        line_length = 1,
+                        width = 290,
+                        height = 282,
+                        frame_count = 1,
+                        variation_count = 1,
+                        axially_symmetrical = false,
+                        direction_count = 1,
+                        shift = util.by_pixel(3.5, 0),
+                        tint = inputs.tint,
+                        scale = 0.5,
+                    },
+                },
+                -- Highlights
+                {
+                    filename = inputs.directory.."/graphics/entity/power/solar-panel/remnants/solar-panel-remnants-highlights.png",
+                    line_length = 1,
+                    width = 146,
+                    height = 142,
+                    frame_count = 1,
+                    variation_count = 1,
+                    axially_symmetrical = false,
+                    direction_count = 1,
+                    shift = util.by_pixel(4, 0),
+                    blend_mode = "additive",
+                    hr_version = {
+                        filename = inputs.directory.."/graphics/entity/power/solar-panel/remnants/hr-solar-panel-remnants-highlights.png",
+                        line_length = 1,
+                        width = 290,
+                        height = 282,
+                        frame_count = 1,
+                        variation_count = 1,
+                        axially_symmetrical = false,
+                        direction_count = 1,
+                        shift = util.by_pixel(3.5, 0),
+                        blend_mode = "additive",
+                        scale = 0.5,
+                    },
+                }
+
+            }
+        })
+
         -- Overwrite picture table in target entity
         entity.picture = {
             layers = {
