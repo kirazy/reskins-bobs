@@ -181,6 +181,20 @@ for name, tier in pairs(tier_map) do
         }
     }
 
+    entity.water_reflection = {
+        pictures = {
+            filename = inputs.directory.."/graphics/entity/assembly/distillery/distillery-reflection.png",
+            priority = "extra-high",
+            width = 28,
+            height = 36,
+            shift = util.by_pixel(10/3, 35),
+            variation_count = 4,
+            scale = 10/3,
+        },
+        rotate = false,
+        orientation_to_variation = true
+    }
+
     -- Label to skip to next iteration
     ::continue::
 end

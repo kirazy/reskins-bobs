@@ -216,6 +216,20 @@ for name, map in pairs(tier_map) do
             west_animation = recipe_tint_highlights.west,
         })
     end
+    
+    entity.water_reflection = {
+        pictures = {
+            filename = inputs.directory.."/graphics/entity/plates/"..pump_type.."-pump/"..pump_type.."-pump-reflection.png",
+            priority = "extra-high",
+            width = 28,
+            height = 36,
+            shift = util.by_pixel(10/3, 40),
+            variation_count = 4,
+            scale = 10/3,
+        },
+        rotate = false,
+        orientation_to_variation = true
+    }
 
     -- Label to skip to next iteration
     ::continue::

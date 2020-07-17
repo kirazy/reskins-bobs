@@ -187,5 +187,19 @@ entity.burner.smoke = {
     }
 }
 
+entity.water_reflection = {
+    pictures = {
+        filename = inputs.directory.."/graphics/entity/power/burner-electric-generator/burner-electric-generator-reflection.png",
+        priority = "extra-high",
+        width = 28,
+        height = 36,
+        shift = util.by_pixel(5, 60),
+        variation_count = 1,
+        scale = 5,
+    },
+    rotate = false,
+    orientation_to_variation = false
+}
+
 -- Fix drawing box
 entity.drawing_box = {{-1.5, -2.25}, {1.5, 1.5}}

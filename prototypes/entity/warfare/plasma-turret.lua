@@ -90,6 +90,20 @@ for name, tier in pairs(tier_map) do
         entity[v].layers[2].hr_version.tint = reskins.lib.adjust_alpha(inputs.tint, 0.65)
     end
 
+    entity.water_reflection = {
+        pictures = {
+            filename = inputs.directory.."/graphics/entity/warfare/plasma-turret/plasma-turret-reflection.png",
+            priority = "extra-high",
+            width = 28,
+            height = 29,
+            shift = util.by_pixel(0, 65),
+            variation_count = 1,
+            scale = 5,
+        },
+        rotate = false,
+        orientation_to_variation = false
+    }
+
     -- Label to skip to next iteration
     ::continue::
 end

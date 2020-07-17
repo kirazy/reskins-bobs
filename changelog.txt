@@ -8,6 +8,7 @@ Date: 2020.07.XX
     - Added remnants for small and standard solar panels
     - Added setting "Robots follow Progression", on by default, for robots to align with the tiers of robot parts when using "Progression" tier mapping
     - Added setting "Color: Fusion robots" to specify the color of the fusion robots, default white, for use with "Robots follow Progression"
+    - Added water reflections for storage tanks, turrets, furnaces, generators, electrolysers, distilleries, barreling machines, and compressors
   Changes:
     - Improved highlights for robot tool icons
     - Added additional background colors for vehicle equipment; red for weapons, blue for defenses, green for energy, and gray for logistics

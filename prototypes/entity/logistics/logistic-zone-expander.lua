@@ -147,6 +147,20 @@ for name, map in pairs(tier_map) do
     -- Set drawing box so the entity appears properly within the GUI
     entity.drawing_box = {{-0.5, -2.5}, {0.5, 0.5}}
 
+    entity.water_reflection = {
+        pictures = {
+            filename = inputs.directory.."/graphics/entity/logistics/zone-expander/zone-expander-reflection.png",
+            priority = "extra-high",
+            width = 12,
+            height = 23,
+            shift = util.by_pixel(0, 45),
+            variation_count = 1,
+            scale = 5,
+        },
+        rotate = false,
+        orientation_to_variation = false
+    }
+
     -- Label to skip to next iteration
     ::continue::
 end

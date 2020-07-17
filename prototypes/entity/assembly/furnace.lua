@@ -208,6 +208,10 @@ for name, map in pairs(stone_furnace_map) do
         reskins.lib.construct_icon(name, tier, inputs)
     end
 
+    if name ~= "stone-furnace" then
+        entity.water_reflection = util.copy(data.raw["furnace"]["stone-furnace"].water_reflection)
+    end
+
     -- Label to skip to next iteration
     ::continue::
 end
@@ -554,6 +558,10 @@ for name, map in pairs(steel_furnace_map) do
     else
         -- Skin the standard-type furnace working visualizations
         entity.working_visualisations = data.raw["furnace"]["steel-furnace"].working_visualisations
+    end
+
+    if name ~= "steel-furnace" then
+        entity.water_reflection = util.copy(data.raw["furnace"]["steel-furnace"].water_reflection)
     end
 
     -- Label to skip to next iteration
@@ -1057,6 +1065,10 @@ for name, map in pairs(electric_furnace_map) do
             },
             off_when_no_fluid_recipe = true
         }       
+    end
+
+    if name ~= "electric-furnace" then
+        entity.water_reflection = util.copy(data.raw["furnace"]["electric-furnace"].water_reflection)
     end
 
     -- Label to skip to next iteration

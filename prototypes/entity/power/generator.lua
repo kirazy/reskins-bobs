@@ -170,6 +170,20 @@ for name, map in pairs(fluid_generators) do
         }
     end
 
+    entity.water_reflection = {
+        pictures = {
+            filename = inputs.directory.."/graphics/entity/power/fluid-generator/fluid-generator-reflection.png",
+            priority = "extra-high",
+            width = 28,
+            height = 36,
+            shift = util.by_pixel(5, 60),
+            variation_count = 1,
+            scale = 5,
+        },
+        rotate = false,
+        orientation_to_variation = false
+    }
+
     -- Label to skip to next iteration
     ::continue::
 end

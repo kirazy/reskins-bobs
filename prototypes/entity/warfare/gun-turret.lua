@@ -709,6 +709,10 @@ for name, tier in pairs(tier_map) do
         }
     }
 
+    if name ~= "gun-turret" then
+        entity.water_reflection = util.copy(data.raw[inputs.type]["gun-turret"].water_reflection)
+    end
+
     -- Label to skip to next iteration
     ::continue::
 end

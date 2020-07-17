@@ -441,6 +441,8 @@ for name, map in pairs(tier_map) do
         }
     }
 
+    entity.water_reflection = util.copy(data.raw[inputs.type]["gun-turret"].water_reflection)
+
     -- Label to skip to next iteration
     ::continue::
 end
