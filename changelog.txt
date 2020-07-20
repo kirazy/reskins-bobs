@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.15
-Date: 2020.07.XX
+Date: 2020.07.19
   Features:
     - Added remnants for assembling machines
     - Added remnants for stone, steel, and electric-type furnaces
