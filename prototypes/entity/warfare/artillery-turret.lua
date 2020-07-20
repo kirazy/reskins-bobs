@@ -165,14 +165,14 @@ for name, map in pairs(tier_map) do
                 priority = "high",
                 width = 138,
                 height = 75,
-                shift = util.by_pixel(18, 38),
+                shift = util.by_pixel(18+2, 38),
                 draw_as_shadow = true,
                 hr_version = {
                     filename = "__base__/graphics/entity/artillery-turret/hr-artillery-turret-base-shadow.png",
                     priority = "high",
                     width = 277,
                     height = 149,
-                    shift = util.by_pixel(18, 38),
+                    shift = util.by_pixel(18+2, 38),
                     draw_as_shadow = true,
                     scale = 0.5
                 }
