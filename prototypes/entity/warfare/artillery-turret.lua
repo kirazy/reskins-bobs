@@ -180,6 +180,9 @@ for name, map in pairs(tier_map) do
         }
     }
 
+    -- Adjust drawing box
+    entity.drawing_box = {{-1.5, -2.5}, {1.5, 1.5}}
+
     -- Label to skip to next iteration
     ::continue::
 end

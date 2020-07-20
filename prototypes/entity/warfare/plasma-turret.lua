@@ -27,8 +27,174 @@ local tier_map = {
     ["bob-plasma-turret-5"] = 5,
 }
 
--- Temporary plasma turret visuals
-local laser_turret = data.raw[inputs.type]["laser-turret"]
+local raising_frame_sequence = {1, 2, 3, 4, 1, 5, 1, 4, 1, 5, 6, 7, 1, 8, 9}
+
+local function plasma_turret_extension_base(parameters)
+    return
+    {
+        filename = inputs.directory.."/graphics/entity/warfare/plasma-turret/plasma-turret-cannon-raising-base.png",
+        priority = "medium",
+        width = 88,
+        height = 89,
+        frame_count = 1,
+        line_length = 1,
+        repeat_count = parameters.repeat_count or 15,
+        axially_symmetrical = false,
+        direction_count = 4,
+        shift = util.by_pixel(-0.5, -35),
+        hr_version = {
+            filename = inputs.directory.."/graphics/entity/warfare/plasma-turret/hr-plasma-turret-cannon-raising-base.png",
+            priority = "medium",
+            width = 176,
+            height = 178,
+            frame_count = 1,
+            line_length = 1,
+            repeat_count = parameters.repeat_count or 15,
+            axially_symmetrical = false,
+            direction_count = 4,
+            shift = util.by_pixel(-0.5, -35),
+            scale = 0.5
+        }
+    }
+end
+
+local function plasma_turret_extension_tint_mask(parameters)
+    return
+    {
+        filename = inputs.directory.."/graphics/entity/warfare/plasma-turret/plasma-turret-cannon-raising-mask.png",
+        priority = "medium",
+        width = 88,
+        height = 89,
+        frame_count = 1,
+        line_length = 1,
+        repeat_count = parameters.repeat_count or 15,
+        axially_symmetrical = false,
+        direction_count = 4,
+        shift = util.by_pixel(-0.5, -35),
+        tint = parameters.tint,
+        hr_version = {
+            filename = inputs.directory.."/graphics/entity/warfare/plasma-turret/hr-plasma-turret-cannon-raising-mask.png",
+            priority = "medium",
+            width = 176,
+            height = 178,
+            frame_count = 1,
+            line_length = 1,
+            repeat_count = parameters.repeat_count or 15,
+            axially_symmetrical = false,
+            direction_count = 4,
+            shift = util.by_pixel(-0.5, -35),
+            tint = parameters.tint,
+            scale = 0.5
+        }
+    }
+end
+
+local function plasma_turret_extension_highlights(parameters)
+    return
+    {
+        filename = inputs.directory.."/graphics/entity/warfare/plasma-turret/plasma-turret-cannon-raising-highlights.png",
+        priority = "medium",
+        width = 88,
+        height = 89,
+        frame_count = 1,
+        line_length = 1,
+        repeat_count = parameters.repeat_count or 15,
+        axially_symmetrical = false,
+        direction_count = 4,
+        shift = util.by_pixel(-0.5, -35),
+        blend_mode = "additive",
+        hr_version = {
+            filename = inputs.directory.."/graphics/entity/warfare/plasma-turret/hr-plasma-turret-cannon-raising-highlights.png",
+            priority = "medium",
+            width = 176,
+            height = 178,
+            frame_count = 1,
+            line_length = 1,
+            repeat_count = parameters.repeat_count or 15,
+            axially_symmetrical = false,
+            direction_count = 4,
+            shift = util.by_pixel(-0.5, -35),
+            blend_mode = "additive",
+            scale = 0.5
+        }
+    }
+end
+
+local function plasma_turret_extension_lights(parameters)
+    local shift = util.by_pixel(-17, -35)
+    if (parameters.side and parameters.side == "right") then
+        shift = util.by_pixel(17, -35)
+    end
+
+    return
+    {
+        filename = inputs.directory.."/graphics/entity/warfare/plasma-turret/plasma-turret-cannon-raising-lights-mask-"..parameters.side..".png",
+        priority = "medium",
+        width = 34,
+        height = 89,
+        frame_count = 9,
+        line_length = 9,
+        frame_sequence = raising_frame_sequence,
+        run_mode = parameters.run_mode or "forward",
+        tint = parameters.tint,
+        axially_symmetrical = false,
+        direction_count = 4,
+        shift = shift,
+        hr_version = {
+            filename = inputs.directory.."/graphics/entity/warfare/plasma-turret/hr-plasma-turret-cannon-raising-lights-mask-"..parameters.side..".png",
+            priority = "medium",
+            width = 68,
+            height = 178,
+            frame_count = 9,
+            line_length = 9,
+            frame_sequence = raising_frame_sequence,
+            run_mode = parameters.run_mode or "forward",
+            tint = parameters.tint,
+            axially_symmetrical = false,
+            direction_count = 4,
+            shift = shift,
+            scale = 0.5
+        }
+    }
+end
+
+local function plasma_turret_extension_lights_highlights(parameters)
+    local shift = util.by_pixel(-17, -35)
+    if (parameters.side and parameters.side == "right") then
+        shift = util.by_pixel(17, -35)
+    end
+
+    return
+    {
+        filename = inputs.directory.."/graphics/entity/warfare/plasma-turret/plasma-turret-cannon-raising-lights-highlights-"..parameters.side..".png",
+        priority = "medium",
+        width = 34,
+        height = 89,
+        frame_count = 9,
+        line_length = 9,
+        frame_sequence = raising_frame_sequence,
+        run_mode = parameters.run_mode or "forward",
+        blend_mode = "additive",
+        axially_symmetrical = false,
+        direction_count = 4,
+        shift = shift,
+        hr_version = {
+            filename = inputs.directory.."/graphics/entity/warfare/plasma-turret/hr-plasma-turret-cannon-raising-lights-highlights-"..parameters.side..".png",
+            priority = "medium",
+            width = 68,
+            height = 178,
+            frame_count = 9,
+            line_length = 9,
+            frame_sequence = raising_frame_sequence,
+            run_mode = parameters.run_mode or "forward",
+            blend_mode = "additive",
+            axially_symmetrical = false,
+            direction_count = 4,
+            shift = shift,
+            scale = 0.5
+        }
+    }
+end
 
 -- Reskin entities, create and assign extra details
 for name, tier in pairs(tier_map) do
@@ -66,29 +232,109 @@ for name, tier in pairs(tier_map) do
         }
     }
 
-    entity.folded_animation = util.copy(laser_turret.folded_animation)
-    entity.preparing_animation = util.copy(laser_turret.preparing_animation)
-    entity.prepared_animation = util.copy(laser_turret.prepared_animation)
-    entity.folding_animation = util.copy(laser_turret.folding_animation)
-
-    -- Redo tints
-    local table_list = {
-        "folded_animation",
-        "preparing_animation",
-        "prepared_animation",
-        "folding_animation",
+    entity.folded_animation = {
+        layers = {
+            plasma_turret_extension_base({tint = inputs.tint, repeat_count = 1}),
+            plasma_turret_extension_tint_mask({tint = inputs.tint, repeat_count = 1}),
+            plasma_turret_extension_highlights({tint = inputs.tint, repeat_count = 1}),
+        }
     }
 
-    for _, v in pairs(table_list) do
-        -- Rescale
-        reskins.lib.rescale_entity(entity[v], 3/2)
+    entity.preparing_animation = {
+        layers = {
+            plasma_turret_extension_base({tint = inputs.tint}),
+            plasma_turret_extension_tint_mask({tint = inputs.tint}),
+            plasma_turret_extension_highlights({tint = inputs.tint}),
+            plasma_turret_extension_lights({side = "left", tint = inputs.tint}),
+            plasma_turret_extension_lights_highlights({side = "left"}),
+            plasma_turret_extension_lights({side = "right", tint = inputs.tint}),
+            plasma_turret_extension_lights_highlights({side = "right"}),
+        }
+    }
 
-        -- Retint
-        entity[v].layers[2].apply_runtime_tint = nil
-        entity[v].layers[2].tint = reskins.lib.adjust_alpha(inputs.tint, 0.65)
-        entity[v].layers[2].hr_version.apply_runtime_tint = nil
-        entity[v].layers[2].hr_version.tint = reskins.lib.adjust_alpha(inputs.tint, 0.65)
-    end
+    entity.prepared_animation = {
+        layers = {
+            -- Base
+            {
+                filename = inputs.directory.."/graphics/entity/warfare/plasma-turret/plasma-turret-cannon-shooting-base.png",
+                line_length = 8,
+                width = 88,
+                height = 89,
+                frame_count = 1,
+                direction_count = 64,
+                shift = util.by_pixel(-0.5, -35),
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/warfare/plasma-turret/hr-plasma-turret-cannon-shooting-base.png",
+                    line_length = 8,
+                    width = 176,
+                    height = 178,
+                    frame_count = 1,
+                    direction_count = 64,
+                    shift = util.by_pixel(-0.5, -35),
+                    scale = 0.5
+                }
+            },
+            -- Mask
+            {
+                filename = inputs.directory.."/graphics/entity/warfare/plasma-turret/plasma-turret-cannon-shooting-mask.png",
+                line_length = 8,
+                width = 88,
+                height = 89,
+                frame_count = 1,
+                direction_count = 64,
+                shift = util.by_pixel(-0.5, -35),
+                tint = inputs.tint,
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/warfare/plasma-turret/hr-plasma-turret-cannon-shooting-mask.png",
+                    line_length = 8,
+                    width = 176,
+                    height = 178,
+                    frame_count = 1,
+                    direction_count = 64,
+                    shift = util.by_pixel(-0.5, -35),
+                    tint = inputs.tint,
+                    scale = 0.5
+                }
+            },
+            -- Highlights
+            {
+                filename = inputs.directory.."/graphics/entity/warfare/plasma-turret/plasma-turret-cannon-shooting-highlights.png",
+                line_length = 8,
+                width = 88,
+                height = 89,
+                frame_count = 1,
+                direction_count = 64,
+                shift = util.by_pixel(-0.5, -35),
+                blend_mode = "additive",
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/warfare/plasma-turret/hr-plasma-turret-cannon-shooting-highlights.png",
+                    line_length = 8,
+                    width = 176,
+                    height = 178,
+                    frame_count = 1,
+                    direction_count = 64,
+                    shift = util.by_pixel(-0.5, -35),
+                    blend_mode = "additive",
+                    scale = 0.5
+                }
+            },
+        }
+    }
+
+    entity.folding_animation = {
+        layers = {
+            plasma_turret_extension_base({tint = inputs.tint}),
+            plasma_turret_extension_tint_mask({tint = inputs.tint}),
+            plasma_turret_extension_highlights({tint = inputs.tint}),
+            plasma_turret_extension_lights({run_mode = "backward", side = "left", tint = inputs.tint}),
+            plasma_turret_extension_lights_highlights({run_mode = "backward", side = "left"}),
+            plasma_turret_extension_lights({run_mode = "backward", side = "right", tint = inputs.tint}),
+            plasma_turret_extension_lights_highlights({run_mode = "backward", side = "right"})
+        }
+    }
+
+    -- Adjust drawing box
+    entity.drawing_box = {{-1.5, -2.5}, {1.5, 1.5}}
 
     entity.water_reflection = {
         pictures = {
