@@ -51,7 +51,6 @@ require("prototypes.entity.logistics.underground-belt")
 require("prototypes.entity.logistics.valve")
 
 -- Bob's Mining
--- require("prototypes.entity.mining.classic-mining-drill")
 require("prototypes.entity.mining.mining-drill")
 require("prototypes.entity.mining.pumpjack")
 
@@ -87,7 +86,7 @@ require("prototypes.entity.warfare.artillery-wagon")
 require("prototypes.entity.warfare.beam")
 require("prototypes.entity.warfare.gun-turret")
 require("prototypes.entity.warfare.laser-turret")
--- require("prototypes.entity.warfare.plasma-turret")
+require("prototypes.entity.warfare.plasma-turret")
 require("prototypes.entity.warfare.radar")
 require("prototypes.entity.warfare.sniper-turret")
 require("prototypes.entity.warfare.tank")

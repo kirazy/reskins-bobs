@@ -1,6 +1,6 @@
 {
   "name": "reskins-bobs",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "factorio_version": "0.18",
   "title": "Artisanal Reskins: Bob's Mods",
   "author": "Kirazy",
@@ -9,7 +9,7 @@
   "homepage": "https://forums.factorio.com/viewtopic.php?f=51&t=85707",
   "dependencies": 
   [	
-    "base >= 0.18.32",
+    "base >= 0.18.36",
     "reskins-library >= 0.0.11",
     "? bobassembly",
     "? bobelectronics",
