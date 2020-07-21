@@ -58,6 +58,37 @@ local function plasma_turret_extension_base(parameters)
     }
 end
 
+local function plasma_turret_extension_runtime_mask(parameters)
+    return
+    {
+        filename = inputs.directory.."/graphics/entity/warfare/plasma-turret/plasma-turret-cannon-raising-runtime-mask.png",
+        priority = "medium",
+        width = 88,
+        height = 89,
+        frame_count = 1,
+        line_length = 1,
+        repeat_count = parameters.repeat_count or 15,
+        axially_symmetrical = false,
+        direction_count = 4,
+        shift = util.by_pixel(-0.5, -35),
+        apply_runtime_tint = true,
+        hr_version = {
+            filename = inputs.directory.."/graphics/entity/warfare/plasma-turret/hr-plasma-turret-cannon-raising-runtime-mask.png",
+            priority = "medium",
+            width = 176,
+            height = 178,
+            frame_count = 1,
+            line_length = 1,
+            repeat_count = parameters.repeat_count or 15,
+            axially_symmetrical = false,
+            direction_count = 4,
+            shift = util.by_pixel(-0.5, -35),
+            apply_runtime_tint = true,
+            scale = 0.5
+        }
+    }
+end
+
 local function plasma_turret_extension_tint_mask(parameters)
     return
     {
@@ -228,23 +259,43 @@ for name, tier in pairs(tier_map) do
                     shift = util.by_pixel(0, 0),
                     scale = 0.5
                 }
+            },
+            -- Runtime Mask
+            {
+                filename = inputs.directory.."/graphics/entity/warfare/plasma-turret/plasma-turret-runtime-mask.png",
+                priority = "high",
+                width = 104,
+                height = 89,
+                shift = util.by_pixel(0, 0),
+                apply_runtime_tint = true,
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/warfare/plasma-turret/hr-plasma-turret-runtime-mask.png",
+                    priority = "high",
+                    width = 208,
+                    height = 178,
+                    shift = util.by_pixel(0, 0),
+                    apply_runtime_tint = true,
+                    scale = 0.5
+                }
             }
         }
     }
 
     entity.folded_animation = {
         layers = {
-            plasma_turret_extension_base({tint = inputs.tint, repeat_count = 1}),
+            plasma_turret_extension_base({repeat_count = 1}),
+            plasma_turret_extension_runtime_mask({repeat_count = 1}),
             plasma_turret_extension_tint_mask({tint = inputs.tint, repeat_count = 1}),
-            plasma_turret_extension_highlights({tint = inputs.tint, repeat_count = 1}),
+            plasma_turret_extension_highlights({repeat_count = 1}),
         }
     }
 
     entity.preparing_animation = {
         layers = {
-            plasma_turret_extension_base({tint = inputs.tint}),
+            plasma_turret_extension_base({}),
+            plasma_turret_extension_runtime_mask({}),
             plasma_turret_extension_tint_mask({tint = inputs.tint}),
-            plasma_turret_extension_highlights({tint = inputs.tint}),
+            plasma_turret_extension_highlights({}),
             plasma_turret_extension_lights({side = "left", tint = inputs.tint}),
             plasma_turret_extension_lights_highlights({side = "left"}),
             plasma_turret_extension_lights({side = "right", tint = inputs.tint}),
@@ -323,9 +374,10 @@ for name, tier in pairs(tier_map) do
 
     entity.folding_animation = {
         layers = {
-            plasma_turret_extension_base({tint = inputs.tint}),
+            plasma_turret_extension_base({}),
+            plasma_turret_extension_runtime_mask({}),
             plasma_turret_extension_tint_mask({tint = inputs.tint}),
-            plasma_turret_extension_highlights({tint = inputs.tint}),
+            plasma_turret_extension_highlights({}),
             plasma_turret_extension_lights({run_mode = "backward", side = "left", tint = inputs.tint}),
             plasma_turret_extension_lights_highlights({run_mode = "backward", side = "left"}),
             plasma_turret_extension_lights({run_mode = "backward", side = "right", tint = inputs.tint}),
