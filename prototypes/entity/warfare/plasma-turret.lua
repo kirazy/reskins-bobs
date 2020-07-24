@@ -325,6 +325,28 @@ for name, tier in pairs(tier_map) do
                     scale = 0.5
                 }
             },
+            -- Runtime Mask
+            {
+                filename = inputs.directory.."/graphics/entity/warfare/plasma-turret/plasma-turret-cannon-shooting-runtime-mask.png",
+                line_length = 8,
+                width = 88,
+                height = 89,
+                frame_count = 1,
+                direction_count = 64,
+                shift = util.by_pixel(-0.5, -35),
+                apply_runtime_tint = true,
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/warfare/plasma-turret/hr-plasma-turret-cannon-shooting-runtime-mask.png",
+                    line_length = 8,
+                    width = 176,
+                    height = 178,
+                    frame_count = 1,
+                    direction_count = 64,
+                    shift = util.by_pixel(-0.5, -35),
+                    apply_runtime_tint = true,
+                    scale = 0.5
+                }
+            },
             -- Mask
             {
                 filename = inputs.directory.."/graphics/entity/warfare/plasma-turret/plasma-turret-cannon-shooting-mask.png",
