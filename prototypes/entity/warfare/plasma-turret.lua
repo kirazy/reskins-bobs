@@ -15,7 +15,6 @@ local inputs = {
     mod = "bobs",
     group = "warfare",
     particles = {["big"] = 4},
-    make_icons = false,
     make_remnants = false,
 }
 
@@ -242,6 +241,7 @@ for name, tier in pairs(tier_map) do
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Reskin entity
+    entity.base_picture_render_layer = "lower-object-above-shadow"
     entity.base_picture = {
         layers = {
             -- Base
@@ -277,7 +277,25 @@ for name, tier in pairs(tier_map) do
                     apply_runtime_tint = true,
                     scale = 0.5
                 }
-            }
+            },
+            -- Shadow
+            {
+                filename = inputs.directory.."/graphics/entity/warfare/plasma-turret/plasma-turret-base-shadow.png",
+                priority = "high",
+                width = 122,
+                height = 75,
+                shift = util.by_pixel(18.5, 11),
+                draw_as_shadow = true,
+                hr_version = {
+                    filename = inputs.directory.."/graphics/entity/warfare/plasma-turret/hr-plasma-turret-base-shadow.png",
+                    priority = "high",
+                    width = 244,
+                    height = 150,
+                    shift = util.by_pixel(18.5, 11),
+                    draw_as_shadow = true,
+                    scale = 0.5
+                }
+            },
         }
     }
 
