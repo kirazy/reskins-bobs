@@ -62,6 +62,9 @@ require("prototypes.entity.plates.air-and-water-pump")
 -- require("prototypes.entity.plates.small-storage-tank")
 -- require("prototypes.entity.plates.void-pump")
 
+-- Bob's Ores
+require("prototypes.entity.ores.ores")
+
 -- Bob's Power
 require("prototypes.entity.power.accumulator")
 require("prototypes.entity.power.big-electric-pole")

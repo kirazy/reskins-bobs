@@ -134,6 +134,17 @@ if mods["bobmodules"] then
     })
 end
 
+if mods["bobores"] then
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "reskins-bobs-do-bobores",
+            setting_type = "startup",
+            default_value = true,
+        }
+    })
+end
+
 if mods["bobplates"] then
     data:extend({
         {

@@ -1,8 +1,10 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.17
-Date: 2020.07.XX
+Date: 2020.07.27
   Features:
-    - Implemented plasma turrets
+    - Preliminary implementation of plasma turrets
+    - Implemented galena, gold, nickel, quartz, silver, and zinc ores
+    - Added setting to toggle Bob's Ores mod
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.16
 Date: 2020.07.20
