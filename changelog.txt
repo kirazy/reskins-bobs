@@ -1,6 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.18
 Date: 2020.08.XX
+  Features:
+    - Implemented cobaltite, sulfur, rutile, and thorium ores
+    - Implemented lithia and ground water
   Bugfixes:
     - Fixed that Bob's Ores mod was not a dependency
 ---------------------------------------------------------------------------------------------------
