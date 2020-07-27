@@ -241,6 +241,7 @@ for name, tier in pairs(tier_map) do
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Reskin entity
+    entity.corpse = "big-remnants"
     entity.base_picture_render_layer = "lower-object-above-shadow"
     entity.base_picture = {
         layers = {
