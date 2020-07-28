@@ -1,9 +1,9 @@
 # Artisanal Reskins: Bob's Mods
 
-#### A work-in-progress complete visual overhaul of Bobingabout's suite of mods
+**A work-in-progress complete visual overhaul of Bobingabout's suite of mods**  
 This mod reskins the items, structures, equipment, and technologies added to Factorio by Bob's Mods, adding tier coloring and labels. Care has been taken to emulate and align with Factorio's vanilla aesthetics. 
 
-**For an interactive sliding comparison of this reskin to standard Bob's mods, [click here](https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=ca4c1426-ce30-11ea-bf88-a15b6c7adf9a), showcasing version 0.0.17**.
+*For an interactive sliding comparison of this reskin to standard Bob's mods, [click here](https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=ca4c1426-ce30-11ea-bf88-a15b6c7adf9a), showcasing version 0.0.17*.
 
 As this is a work-in-progress effort, not all items, structures and all the rest have yet been touched, but the objective is to bring everything up to high-resolution standards. Weapons, ammo, circuits, plates, all of these will receive updated sprites to bring them up to Factorio's current standard.
 
