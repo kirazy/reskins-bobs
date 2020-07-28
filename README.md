@@ -22,7 +22,7 @@ Every structure has received attention, and hand-brushed artisanal color masks b
 
 ![Steam engines with color masks in the default yellow, red, blue, purple, green configuration](https://i.imgur.com/X9AT0Wi.png)
 
-Icons have been updated to the latest high-resolution icons found in vanilla Factorio, with coloring matching the structures themselves.
+Icons have been updated to the latest high-resolution icons found in vanilla Factorio, with coloring matching the structures themselves.  
 ![Steam engine icons showcasing tier labels and coloring](https://i.imgur.com/ihvdCRp.png)
 
 
