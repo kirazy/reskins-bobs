@@ -43,18 +43,18 @@ local function setup_module_slot(shift, is_top)
               pictures =
               {
                 filename = inputs.directory.."/graphics/entity/modules/beacon/slots/2/beacon-module-slot-2.png",
-                line_length = 4,
-                width = 24,
+                line_length = 9,
+                width = 23,
                 height = 22,
-                variation_count = 4,
+                variation_count = 9,
                 shift = util.by_pixel(19 + shift_x, -12 + shift_y),
                 hr_version =
                 {
                   filename = inputs.directory.."/graphics/entity/modules/beacon/slots/2/hr-beacon-module-slot-2.png",
-                  line_length = 4,
+                  line_length = 9,
                   width = 46,
                   height = 44,
-                  variation_count = 4,
+                  variation_count = 9,
                   scale = 0.5,
                   shift = util.by_pixel(19 + shift_x, -12 + shift_y),
                 }
@@ -66,18 +66,18 @@ local function setup_module_slot(shift, is_top)
               pictures =
               {
                 filename = inputs.directory.."/graphics/entity/modules/beacon/slots/2/beacon-module-mask-box-2.png",
-                line_length = 3,
+                line_length = 8,
                 width = 18,
                 height = 14,
-                variation_count = 3,
-                shift = util.by_pixel(20 + shift_x, -12 + shift_y),
+                variation_count = 8,
+                shift = util.by_pixel(20.5 + shift_x, -12 + shift_y),
                 hr_version =
                 {
                   filename = inputs.directory.."/graphics/entity/modules/beacon/slots/2/hr-beacon-module-mask-box-2.png",
-                  line_length = 3,
+                  line_length = 8,
                   width = 36,
-                  height = 26,
-                  variation_count = 3,
+                  height = 28,
+                  variation_count = 8,
                   scale = 0.5,
                   shift = util.by_pixel(20.5 + shift_x, -12 + shift_y),
                 }
@@ -89,20 +89,20 @@ local function setup_module_slot(shift, is_top)
               pictures =
               {
                 filename = inputs.directory.."/graphics/entity/modules/beacon/slots/2/beacon-module-mask-lights-2.png",
-                line_length = 3,
+                line_length = 8,
                 width = 12,
                 height = 8,
-                variation_count = 3,
-                shift = util.by_pixel(22 + shift_x, -15 + shift_y),
+                variation_count = 8,
+                shift = util.by_pixel(21.5 + shift_x, -15.5 + shift_y),
                 hr_version =
                 {
                   filename = inputs.directory.."/graphics/entity/modules/beacon/slots/2/hr-beacon-module-mask-lights-2.png",
-                  line_length = 3,
+                  line_length = 8,
                   width = 24,
-                  height = 14,
-                  variation_count = 3,
+                  height = 16,
+                  variation_count = 8,
                   scale = 0.5,
-                  shift = util.by_pixel(22 + shift_x, -15.5 + shift_y),
+                  shift = util.by_pixel(21.5 + shift_x, -15.5 + shift_y),
                 }
               }
             },
@@ -113,17 +113,17 @@ local function setup_module_slot(shift, is_top)
               pictures =
               {
                 filename = inputs.directory.."/graphics/entity/modules/beacon/slots/2/beacon-module-lights-2.png",
-                line_length = 3,
-                width = 34,
-                height = 24,
-                variation_count = 3,
+                line_length = 8,
+                width = 33,
+                height = 23,
+                variation_count = 8,
                 shift = util.by_pixel(22 + shift_x, -16 + shift_y),
                 hr_version = {
                   filename = inputs.directory.."/graphics/entity/modules/beacon/slots/2/hr-beacon-module-lights-2.png",
-                  line_length = 3,
+                  line_length = 8,
                   width = 66,
                   height = 46,
-                  variation_count = 3,
+                  variation_count = 8,
                   shift = util.by_pixel(22 + shift_x, -16 + shift_y),
                   scale = 0.5
                 }
