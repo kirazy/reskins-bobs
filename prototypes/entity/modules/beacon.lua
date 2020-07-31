@@ -434,14 +434,14 @@ for name, map in pairs(tier_map) do
             render_layer = "object",
             always_draw = true,
             animation = {
-                filename = "__base__/graphics/entity/beacon/beacon-top.png",
+                filename = inputs.directory.."/graphics/entity/modules/beacon/beacon-"..beacon_base.."-top.png",
                 width = 48,
                 height = 70,
                 repeat_count = 45,
                 animation_speed = 0.5,
                 shift = util.by_pixel(3, -19),
                 hr_version = {
-                    filename = "__base__/graphics/entity/beacon/hr-beacon-top.png",
+                    filename = inputs.directory.."/graphics/entity/modules/beacon/hr-beacon-"..beacon_base.."-top.png",
                     width = 96,
                     height = 140,
                     scale = 0.5,
