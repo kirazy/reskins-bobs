@@ -10,7 +10,7 @@ end
 ----------------------------------------------------------------------------------------------------
 -- ITEMS
 ----------------------------------------------------------------------------------------------------
--- require("prototypes.item.electronics")
+-- require("prototypes.item.electronics.circuits") -- Bob has circuit coloring in data-updates
 require("prototypes.item.plates.battery") -- Bob has some battery updates in data-updates
 
 ----------------------------------------------------------------------------------------------------

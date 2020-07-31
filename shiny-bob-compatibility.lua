@@ -8,6 +8,7 @@
 ----------------------------------------------------------------------------------------------------
 -- ITEMS
 ----------------------------------------------------------------------------------------------------
+require("prototypes.item.electronics")
 require("prototypes.item.logistics")
 require("prototypes.item.modules")
 require("prototypes.item.plates")
