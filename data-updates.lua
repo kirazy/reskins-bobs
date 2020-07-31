@@ -7,6 +7,11 @@
 if mods["ShinyBobGFX"] then
     require("shiny-bob-compatibility")
 end
+----------------------------------------------------------------------------------------------------
+-- ITEMS
+----------------------------------------------------------------------------------------------------
+-- require("prototypes.item.electronics")
+require("prototypes.item.plates.battery") -- Bob has some battery updates in data-updates
 
 ----------------------------------------------------------------------------------------------------
 -- ENTITIES

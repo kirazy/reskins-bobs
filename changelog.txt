@@ -6,6 +6,8 @@ Date: 2020.08.XX
     - Implemented lithia and ground water
     - Finished second module slot sprites for new beacon
     - Finished new beacons; modules now slot into each beacon base seamlessly
+  Changes:
+    - Batteries now respect Bob's Metals, Chemicals, and Intermediaries "Color updates" setting
   Bugfixes:
     - Fixed that Bob's Ores mod was not a dependency
 ---------------------------------------------------------------------------------------------------
