@@ -5,6 +5,7 @@ Date: 2020.08.XX
     - Implemented cobaltite, sulfur, rutile, and thorium ores
     - Implemented lithia and ground water
     - Finished second module slot sprites for new beacon
+    - Finished new beacons; modules now slot into each beacon base seamlessly
   Bugfixes:
     - Fixed that Bob's Ores mod was not a dependency
 ---------------------------------------------------------------------------------------------------
