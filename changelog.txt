@@ -6,7 +6,7 @@ Date: 2020.08.XX
     - Implemented lithia and ground water
     - Finished second module slot sprites for new beacon
     - Finished new beacons; modules now slot into each beacon base seamlessly
-    - Implemented plates, gears, bearings, and ball-bearings from Bob's Metals, Chemicals, and Intermediaries
+    - Implemented plates, gears, bearings, and ball-bearings
   Changes:
     - Batteries now respect Bob's Metals, Chemicals, and Intermediaries "Color updates" setting
   Bugfixes:
