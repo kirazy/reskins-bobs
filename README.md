@@ -15,7 +15,7 @@ You are welcome to help with localization, please use [this Crowdin project](htt
 
 
 
-# Structures and Items Showcase
+## Structures and Items Showcase
 
 **Updated and colored vanilla Factorio entities**  
 Every structure has received attention, and hand-brushed artisanal color masks bring rich color without washing out the details, rust, and vibrant sprites created by the Factorio artists.
@@ -60,7 +60,7 @@ Where remnants exist in vanilla Factorio, colored remnants have been added in th
 
 If no remnant sprite was available, structures use generic remnants, and every structure and vehicle has had particle and explosion effects added.
 
-# Customization Features
+## Customization Features
 
 **Progression vs Name Tier Mapping**  
 Choose between coloring items and structures based on the name, where the first entry is always tier one, or on progression, where a best-approximation has been used to align items and structures with the ingredients and technology level you can expect to use them. Progression is used by default.
@@ -82,7 +82,7 @@ The example below was customized using the [palette found at color-hex.com](http
 **Assorted customizations**  
 Beyond those three main features, you are able to toggle reskinning by individual Bob's mod, as well as turn tier labels on and off for furnaces, inserters, belts, and pipes. There are some additional customization options, and you are encouraged to explore the startup settings.
 
-# Mod Support
+## Mod Support
 
 **Belt and Loader Mods**  
 [Miniloader](https://mods.factorio.com/mod/miniloader)  
@@ -98,7 +98,7 @@ Beyond those three main features, you are able to toggle reskinning by individua
 ![Vanilla Loaders HD support](https://i.imgur.com/3Il4oJG.png)
 
 
-***Miscellaneous***
+***Miscellaneous***  
 [Mini Machines Mod](https://mods.factorio.com/mod/mini-machines)  
 ![Mini Machines mod support](https://i.imgur.com/Uz79AXO.png)
 
@@ -112,7 +112,8 @@ Currently, Mini Machines support entails classic-style shrunken icons. It is pla
 
 ---
 
-# Credits
+## Credits
+
 Thanks to [YuokiTani](https://forums.factorio.com/memberlist.php?mode=viewprofile&u=1680) for his donation of high-resolution electrolyser, logistics zone expander, robot charging pads, small/in-line storage tank, sniper turret, valve, air compressor, barreling machine, gas venting pump, and heat source sprites. Without him, this mod would not be as good as it is.
 
 Thank you to everyone on Discord, Reddit, and the Factorio forums for your feedback and comments. It has helped shape this mod and made it into what it is today.
