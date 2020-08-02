@@ -1,7 +1,7 @@
 # Artisanal Reskins: Bob's Mods
 
 **A work-in-progress complete visual overhaul of Bobingabout's suite of mods**  
-This mod reskins the items, structures, equipment, and technologies added to Factorio by Bob's Mods, adding tier coloring and labels. Care has been taken to emulate and align with Factorio's vanilla aesthetics. 
+This mod reskins the items, structures, equipment, and technologies added to Factorio by Bob's Mods, adding tier coloring and labels. Care has been taken to emulate and align with Factorio's vanilla aesthetics.
 
 *For an interactive sliding comparison of this reskin to standard Bob's mods, [click here](https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=ca4c1426-ce30-11ea-bf88-a15b6c7adf9a), showcasing version 0.0.17*.
 
@@ -13,8 +13,6 @@ This mod is constantly being worked on, and regular updates are released weekly 
 **Localization**  
 You are welcome to help with localization, please use [this Crowdin project](https://crowdin.com/project/factorio-mods-localization). You can find more details [here](https://github.com/dima74/factorio-mods-localization#how-to-translate-using-crowdin).
 
-
-
 ## Structures and Items Showcase
 
 **Updated and colored vanilla Factorio entities**  
@@ -24,8 +22,6 @@ Every structure has received attention, and hand-brushed artisanal color masks b
 
 Icons have been updated to the latest high-resolution icons found in vanilla Factorio, with coloring matching the structures themselves.  
 ![Steam engine icons showcasing tier labels and coloring](https://i.imgur.com/ihvdCRp.png)
-
-
 
 **Enhanced and original sprites for Bob's custom machines**  
 Where Bob has added new machines not seen in vanilla, care has been taken to enhance existing sprites or create new, original sprites to provide high-resolution visuals that align with vanilla Factorio.
@@ -96,7 +92,6 @@ Beyond those three main features, you are able to toggle reskinning by individua
 
 [Vanilla Loaders HD](https://mods.factorio.com/mod/vanilla-loaders-hd)  
 ![Vanilla Loaders HD support](https://i.imgur.com/3Il4oJG.png)
-
 
 ***Miscellaneous***  
 [Mini Machines Mod](https://mods.factorio.com/mod/mini-machines)  
