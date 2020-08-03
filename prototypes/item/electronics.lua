@@ -16,26 +16,26 @@ local inputs = {
 -- Setup input defaults
 reskins.lib.parse_inputs(inputs)
 
--- Wires
-local wires_inputs = util.copy(inputs)
-
-local wires = {
-    "gilded-copper-cable",
-    "tinned-copper-cable",
-    "insulated-cable",
+local intermediaries = {
+    -- Wires
+    ["gilded-copper-cable"] = {subfolder = "wires"},
+    ["tinned-copper-cable"] = {subfolder = "wires"},
+    ["insulated-cable"] = {subfolder = "wires"},
 }
 
-for _, name in pairs(wires) do
-    -- Fetch item
-    local item = data.raw.item[name]
+-- Items and recipes shared with other mods within Bob's suite
+if not mods["bobplates"] then
+    -- Intermediaries
+    intermediaries["solder-alloy"] = {folder = "plates", subfolder = "plates"}
+    intermediaries["rubber"] = {folder = "plates", subfolder = "items"}
+    intermediaries["resin"] = {folder = "plates", subfolder = "items"}
+    intermediaries["ferric-chloride-solution"] = {type = "fluid", folder = "plates", subfolder = "fluids"}
 
-    -- Check if item exists, if not, skip this iteration
-    if not item then goto continue end
-
-    wires_inputs.icon_filename = wires_inputs.directory.."/graphics/icons/electronics/wires/"..name..".png"
-
-    reskins.lib.construct_icon(name, 0, wires_inputs)
-
-    -- Label to skip to next iteration
-    ::continue::
+    -- Recipes
+    intermediaries["coal-cracking"] = {type = "recipe", folder = "plates", subfolder = "recipes"}
+    intermediaries["synthetic-wood"] = {type = "recipe", folder = "plates", subfolder = "recipes"}
+    intermediaries["bob-resin-wood"] = {type = "recipe", folder = "plates", subfolder = "recipes"}
+    intermediaries["bob-resin-oil"] = {type = "recipe", folder = "plates", subfolder = "recipes"}
 end
+
+reskins.lib.create_icons_from_list(intermediaries, inputs)

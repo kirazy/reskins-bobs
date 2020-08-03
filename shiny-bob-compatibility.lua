@@ -6,12 +6,20 @@
 -- When compatibility with ShinyBobGFX is finally dropped, the contents of this file will be moved to data.lua
 
 ----------------------------------------------------------------------------------------------------
+-- TECHNOLOGIES
+----------------------------------------------------------------------------------------------------
+require("prototypes.technology.greenhouse")
+
+----------------------------------------------------------------------------------------------------
 -- ITEMS
 ----------------------------------------------------------------------------------------------------
 require("prototypes.item.electronics")
+require("prototypes.item.greenhouse")
 require("prototypes.item.logistics")
 require("prototypes.item.modules")
+require("prototypes.item.ores")
 require("prototypes.item.plates")
+require("prototypes.item.revamp")
 require("prototypes.item.technology")
 require("prototypes.item.warfare")
 

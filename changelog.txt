@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.18
-Date: 2020.08.XX
+Date: 2020.08.03
   Features:
     - Implemented cobaltite, sulfur, rutile, and thorium ores
     - Implemented lithia and ground water
@@ -9,6 +9,7 @@ Date: 2020.08.XX
     - Implemented plates, gears, bearings, and ball-bearings
     - Implemented nuclear fuels and recipes, and solid fuels and recipes
     - Implemented bullets, projectiles, ammo magazines, warheads, and rockets
+    - Implemented fluids, seedlings, fertiliser, wood pellets and other recipe icons
   Changes:
     - Batteries now respect Bob's Metals, Chemicals, and Intermediaries "Color updates" setting
     - Revised handling for deferred icon assignments; pipes, heat pipes, and Deadlocks loaders and beltboxes no longer deferred

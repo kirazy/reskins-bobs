@@ -20,7 +20,6 @@ local intermediaries = {
     ----------------------------------------------------------------------------------------------------
     -- Intermediaries
     ----------------------------------------------------------------------------------------------------
-
     -- Plates
     ["aluminium-plate"] = {subfolder = "plates"},
     ["brass-alloy"] = {subfolder = "plates"},
@@ -37,7 +36,7 @@ local intermediaries = {
     ["nitinol-alloy"] = {subfolder = "plates"},
     -- ["silicon-plate"] = {subfolder = "plates"},
     ["silver-plate"] = {subfolder = "plates"},
-    ["solder-alloy"] = {subfolder = "plates"},
+    ["solder-alloy"] = {subfolder = "plates"}, -- Shared with Bob's Electronics
     ["tin-plate"] = {subfolder = "plates"},
     ["titanium-plate"] = {subfolder = "plates"},
     ["tungsten-carbide"] = {subfolder = "plates"},
@@ -78,36 +77,52 @@ local intermediaries = {
     ["plutonium-239"] = {subfolder = "nuclear"},
     ["thorium-232"] = {subfolder = "nuclear"},
 
-    -- Miscellaneous
-    ["glass"] = {subfolder = "intermediaries"},
-    ["carbon"] = {subfolder = "intermediaries"},
-    ["rubber"] = {subfolder = "intermediaries"},
-    ["resin"] = {subfolder = "intermediaries"},
-    ["enriched-fuel"] = {subfolder = "fuels"},
-    ["liquid-fuel"] = {subfolder = "fluids", type = "fluid"},
+    -- Fluids
+    ["liquid-fuel"] = {type = "fluid", subfolder = "fluids"},
+    ["ferric-chloride-solution"] = {type = "fluid", subfolder = "fluids"}, -- Shared with Bob's Electronics
+    ["lithia-water"] = {type = "fluid", subfolder = "fluids"}, -- Shared with Bob's Ores
+    ["alien-acid"] = {type = "fluid", subfolder = "fluids"},
+    ["alien-explosive"] = {type = "fluid", subfolder = "fluids"},
+    ["alien-fire"] = {type = "fluid", subfolder = "fluids"},
+    ["alien-poison"] = {type = "fluid", subfolder = "fluids"},
+
+    -- Miscellaneous Items
+    ["glass"] = {subfolder = "items"},
+    ["carbon"] = {subfolder = "items"},
+    ["rubber"] = {subfolder = "items"}, -- Shared with Bob's Electronics
+    ["resin"] = {subfolder = "items"}, -- Shared with Bob's Electronics
+    ["enriched-fuel"] = {subfolder = "items"},
 
     ----------------------------------------------------------------------------------------------------
     -- Recipes
     ----------------------------------------------------------------------------------------------------
     -- Plates
-    ["cobalt-oxide-from-copper"] = {type = "recipe", subfolder = "plates"},
-    ["silver-from-lead"] = {type = "recipe", subfolder = "plates"},
+    ["cobalt-oxide-from-copper"] = {type = "recipe", subfolder = "recipes"},
+    ["silver-from-lead"] = {type = "recipe", subfolder = "recipes"},
 
     -- Nuclear
-    ["thorium-processing"] = {type = "recipe", subfolder = "nuclear"},
-    ["thorium-fuel-reprocessing"] = {type = "recipe", subfolder = "nuclear", image = "thorium-nuclear-fuel-reprocessing"},
-    ["deuterium-fuel-reprocessing"] = {type = "recipe", subfolder = "nuclear", image = "deuterium-nuclear-fuel-reprocessing-pink"},
-    ["bobingabout-enrichment-process"] = {type = "recipe", subfolder = "nuclear"},
+    ["thorium-processing"] = {type = "recipe", subfolder = "recipes"},
+    ["thorium-fuel-reprocessing"] = {type = "recipe", subfolder = "recipes", image = "thorium-nuclear-fuel-reprocessing"},
+    ["deuterium-fuel-reprocessing"] = {type = "recipe", subfolder = "recipes", image = "deuterium-nuclear-fuel-reprocessing-pink"},
+    ["bobingabout-enrichment-process"] = {type = "recipe", subfolder = "recipes"},
 
     -- Solid Fuels
-    ["solid-fuel-from-hydrogen"] = {type = "recipe", subfolder = "fuels"},
-    ["solid-fuel-from-sour-gas"] = {type = "recipe", subfolder = "fuels"},
-    ["enriched-fuel-from-hydrazine"] = {type = "recipe", subfolder = "fuels"},
-    ["enriched-fuel-from-liquid-fuel"] = {type = "recipe", subfolder = "fuels"},
+    ["solid-fuel-from-hydrogen"] = {type = "recipe", subfolder = "recipes"},
+    ["solid-fuel-from-sour-gas"] = {type = "recipe", subfolder = "recipes"}, -- Shared with Bob's Revamp
+    ["enriched-fuel-from-hydrazine"] = {type = "recipe", subfolder = "recipes"},
+    ["enriched-fuel-from-liquid-fuel"] = {type = "recipe", subfolder = "recipes"},
 
-    -- Miscellaneous
-    ["bob-resin-wood"] = {type = "recipe", subfolder = "intermediaries"},
-    ["bob-resin-oil"] = {type = "recipe", subfolder = "intermediaries"},
+    -- Chemicals and Fluids
+    -- ["sulfuric-nitric-acid"] = {type = "recipe", subfolder = "recipes"},
+    -- ["pure-water"] = {type = "recipe", subfolder = "recipes"},
+    -- ["pure-water-from-lithia"] = {type = "recipe", subfolder = "recipes"},
+    ["coal-cracking"] = {type = "recipe", subfolder = "recipes"}, -- Shared with Bob's Electronics
+    ["petroleum-gas-cracking"] = {type = "recipe", subfolder = "recipes"},
+
+    -- Wood
+    ["bob-resin-wood"] = {type = "recipe", subfolder = "recipes"}, -- Shared with Bob's Electronics
+    ["bob-resin-oil"] = {type = "recipe", subfolder = "recipes"}, -- Shared with Bob's Electronics
+    ["synthetic-wood"] = {type = "recipe", subfolder = "recipes"}, -- Shared with Bob's Electronics
 }
 
 -- Handle deuterium color
@@ -118,7 +133,7 @@ end
 
 -- Handle nuclear update
 if reskins.lib.setting("bobmods-plates-nuclearupdate") == true then
-    intermediaries["nuclear-fuel-reprocessing"] = {type = "recipe", subfolder = "nuclear", defer_to_data_updates = true}
+    intermediaries["nuclear-fuel-reprocessing"] = {type = "recipe", subfolder = "recipes", defer_to_data_updates = true}
 
     -- Handle deuterium's default process color
     if reskins.lib.setting("bobmods-plates-bluedeuterium") == true then
@@ -136,31 +151,9 @@ else
     
 end
 
-for name, map in pairs(intermediaries) do
-    -- Fetch intermediary
-    local intermediary = data.raw.item[name]
-    if map.type then
-        intermediary = data.raw[map.type][name]
-    end
+reskins.lib.create_icons_from_list(intermediaries, inputs)
 
-    -- Check if intermediary exists, if not, skip this iteration
-    if not intermediary then goto continue end
-
-    -- Parse map
-    local image = map.image or name
-    inputs.type = map.type or nil
-    inputs.defer_to_data_updates = map.defer_to_data_updates or nil
-    inputs.defer_to_data_final_fixes = map.defer_to_data_final_fixes or nil
-
-    inputs.icon_filename = inputs.directory.."/graphics/icons/plates/"..map.subfolder.."/"..image..".png"
-
-    reskins.lib.construct_icon(name, 0, inputs)
-
-    -- One-off fixes
-    if name == "nickel-plate" then
-        reskins.lib.clear_icon_specification("bob-nickel-plate", "recipe")
-    end
-
-    -- Label to skip to next iteration
-    ::continue::
+-- One-off fixes
+if data.raw.item["nickel-plate"] then
+    reskins.lib.clear_icon_specification("bob-nickel-plate", "recipe")
 end
