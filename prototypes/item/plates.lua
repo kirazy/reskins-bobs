@@ -118,7 +118,7 @@ end
 
 -- Handle nuclear update
 if reskins.lib.setting("bobmods-plates-nuclearupdate") == true then
-    intermediaries["nuclear-fuel-reprocessing"] = {type = "recipe", subfolder = "nuclear"}
+    intermediaries["nuclear-fuel-reprocessing"] = {type = "recipe", subfolder = "nuclear", defer_to_data_updates = true}
 
     -- Handle deuterium's default process color
     if reskins.lib.setting("bobmods-plates-bluedeuterium") == true then
@@ -149,6 +149,8 @@ for name, map in pairs(intermediaries) do
     -- Parse map
     local image = map.image or name
     inputs.type = map.type or nil
+    inputs.defer_to_data_updates = map.defer_to_data_updates or nil
+    inputs.defer_to_data_final_fixes = map.defer_to_data_final_fixes or nil
 
     inputs.icon_filename = inputs.directory.."/graphics/icons/plates/"..map.subfolder.."/"..image..".png"
 
