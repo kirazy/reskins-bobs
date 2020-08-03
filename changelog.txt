@@ -11,6 +11,7 @@ Date: 2020.08.XX
     - Implemented bullets, projectiles, ammo magazines, warheads, and rockets
   Changes:
     - Batteries now respect Bob's Metals, Chemicals, and Intermediaries "Color updates" setting
+    - Revised handling for deferred icon assignments; pipes, heat pipes, and Deadlocks loaders and beltboxes no longer deferred
   Bugfixes:
     - Fixed that Bob's Ores mod was not a dependency
 ---------------------------------------------------------------------------------------------------
