@@ -24,6 +24,7 @@ for class, map in pairs(modules_map) do
         directory = reskins.bobs.directory,
         mod = "bobs",
         type = "module",
+        make_icon_pictures = false,
     }
 
     -- Setup input defaults

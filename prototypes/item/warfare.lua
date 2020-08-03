@@ -7,16 +7,6 @@
 if not mods["bobwarfare"] then return end
 if reskins.lib.setting("reskins-bobs-do-bobwarfare") == false then return end
 
--- Setup inputs
-local inputs = {
-    directory = reskins.bobs.directory,
-    mod = "bobs",
-    group = "warfare",
-}
-
--- Setup input defaults
-reskins.lib.parse_inputs(inputs)
-
 -- Items with custom color support
 local masked_items = {
     ["robot-tool-combat"] = {name_tier = 1, ingr_tier = 2, icon_name = "robot-tool-combat"},
@@ -45,13 +35,17 @@ for name, inputs in pairs(masked_items) do
     reskins.lib.construct_icon(name, tier, inputs)
 end
 
+-- Setup inputs
+local inputs = {
+    directory = reskins.bobs.directory,
+    mod = "bobs",
+    group = "warfare",
+    make_icon_pictures = false,
+}
 
--- {
---     icon = "__core__/graphics/icons/tooltips/tooltip-category-thrown.png",
---     icon_size = 40,
---     scale = 0.5,
---     shift = {-8, 8}
--- }
+-- Setup input defaults
+reskins.lib.parse_inputs(inputs)
+
 local items = {
     -- Bullets
     ["bullet"] = {subfolder = "bullets"},
@@ -126,24 +120,4 @@ local items = {
     -- ["shotgun-shell-casing"] = {subfolder = "components"},
 }
 
-for name, map in pairs(items) do
-    -- Fetch intermediary
-    local intermediary = data.raw.item[name]
-    if map.type then
-        intermediary = data.raw[map.type][name]
-    end
-
-    -- Check if intermediary exists, if not, skip this iteration
-    if not intermediary then goto continue end
-
-    -- Parse map
-    local image = map.image or name
-    inputs.type = map.type or nil
-
-    inputs.icon_filename = inputs.directory.."/graphics/icons/warfare/"..map.subfolder.."/"..image..".png"
-
-    reskins.lib.construct_icon(name, 0, inputs)
-
-    -- Label to skip to next iteration
-    ::continue::
-end
+reskins.lib.create_icons_from_list(items, inputs)

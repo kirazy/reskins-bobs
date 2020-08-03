@@ -11,6 +11,7 @@ local inputs = {
     directory = reskins.bobs.directory,
     mod = "bobs",
     group = "plates",
+    make_icon_pictures = false,
 }
 
 -- Setup input defaults

@@ -13,6 +13,7 @@ local inputs = {
     group = "plates",
     icon_name = "battery",
     tier_labels = false,
+    make_icon_pictures = false,
 }
 
 -- Setup input defaults

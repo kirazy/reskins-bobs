@@ -13,6 +13,7 @@ if reskins.lib.setting("bobmods-burnerphase") == true then
         mod = "bobs",
         group = "technology",
         type = "tool",
+        make_icon_pictures = false,
     }
 
     steam_science_inputs.icon_filename = steam_science_inputs.directory.."/graphics/icons/technology/science-pack/steam-science-pack.png"
@@ -81,7 +82,7 @@ if reskins.lib.setting("bobmods-enemies-enablenewartifacts") == true then
             icon_layers = 1,
             icon_name = "alien-science-pack",
             icon_base = name,
-            -- make_entity_pictures = true,
+            make_icon_pictures = false,
         }
 
         -- Fetch entity
