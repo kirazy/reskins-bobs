@@ -50,7 +50,8 @@ for name, map in pairs(tier_map) do
         },
         icon_size = 64,
         icon_mipmaps = 4,
-        type = "heat-pipe"
+        type = "heat-pipe",
+        make_icon_pictures = true,
     }
 
     -- Setup tier labels

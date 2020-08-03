@@ -57,6 +57,7 @@ local function rescale_minimachine(table, type, pattern, replacement, scale)
         icon_size = 64,
         icon_mipmaps = 4,
         type = type,
+        make_icon_pictures = true,
     }
 
     -- Shrink the icon

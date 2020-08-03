@@ -190,7 +190,8 @@ for material, map in pairs(material_map) do
         },
         icon_size = 64,
         icon_mipmaps = 4,
-        type = "pipe"
+        type = "pipe",
+        make_icon_pictures = true,
     }
 
     local pipe_to_ground_icon_inputs = {
@@ -204,7 +205,8 @@ for material, map in pairs(material_map) do
         },
         icon_size = 64,
         icon_mipmaps = 4,
-        type = "pipe-to-ground"
+        type = "pipe-to-ground",
+        make_icon_pictures = true,
     }
 
     -- Setup tier labels
