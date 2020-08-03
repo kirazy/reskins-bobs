@@ -42,9 +42,9 @@ for name, map in pairs(tier_map) do
 
     -- Chemical plant 1 needs the icon re-assigned in final fixes
     if name == "chemical-plant" then
-        inputs.reassign_in_final_fixes = true
+        inputs.defer_to_data_final_fixes = true
     else
-        inputs.reassign_in_final_fixes = nil
+        inputs.defer_to_data_final_fixes = nil
     end
 
     -- Determine what tint we're using

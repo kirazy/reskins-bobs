@@ -154,7 +154,7 @@ for name, map in pairs(tier_map) do
     end
 
     reskins.lib.append_tier_labels(tier, inputs)
-    reskins.lib.store_icons(name, inputs)
+    reskins.lib.assign_icons(name, inputs)
 
     -- Label to skip to next iteration
     ::continue::

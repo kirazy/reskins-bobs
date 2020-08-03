@@ -60,7 +60,7 @@ for name, map in pairs(tier_map) do
         reskins.lib.append_tier_labels(tier, heat_pipe_icon_inputs)
     end
 
-    reskins.lib.store_icons(name, heat_pipe_icon_inputs)
+    reskins.lib.assign_icons(name, heat_pipe_icon_inputs)
 
     --- Don't reskin the base pipes
     if name == "heat-pipe" then goto continue end

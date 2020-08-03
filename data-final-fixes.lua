@@ -13,13 +13,17 @@ require("prototypes.technology.power")
 -- DEFERRED ASSIGNMENTS
 ----------------------------------------------------------------------------------------------------
 -- Item Icons
-for name, inputs in pairs(reskins.bobs.icons) do
-    reskins.lib.assign_icons(name, inputs)
+if reskins.bobs.icons and reskins.bobs.icons["data-final-fixes"] then
+    for name, inputs in pairs(reskins.bobs.icons["data-final-fixes"]) do
+        reskins.lib.assign_icons(name, inputs)
+    end
 end
 
 -- Technology Icons
-for name, inputs in pairs(reskins.bobs.technology) do
-    reskins.lib.assign_technology_icons(name, inputs)
+if reskins.bobs.technology and reskins.bobs.technology["data-final-fixes"] then
+    for name, inputs in pairs(reskins.bobs.technology["data-final-fixes"]) do
+        reskins.lib.assign_technology_icons(name, inputs)
+    end
 end
 
 ----------------------------------------------------------------------------------------------------

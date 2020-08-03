@@ -225,8 +225,8 @@ for material, map in pairs(material_map) do
     if material ~= "iron" then
         pipe_icon_name = inputs.material.."-pipe"
         pipe_to_ground_icon_name = inputs.material.."-pipe-to-ground"
-        reskins.lib.store_icons(pipe_icon_name, pipe_icon_inputs)
-        reskins.lib.store_icons(pipe_to_ground_icon_name, pipe_to_ground_icon_inputs)
+        reskins.lib.assign_icons(pipe_icon_name, pipe_icon_inputs)
+        reskins.lib.assign_icons(pipe_to_ground_icon_name, pipe_to_ground_icon_inputs)
     else
         reskins.lib.append_tier_labels_to_vanilla_icon("pipe", tier, pipe_icon_inputs)
         reskins.lib.append_tier_labels_to_vanilla_icon("pipe-to-ground", tier, pipe_to_ground_icon_inputs)

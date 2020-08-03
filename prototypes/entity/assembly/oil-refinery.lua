@@ -40,7 +40,7 @@ for name, map in pairs(tier_map) do
     end
 
     -- COMPATIBILITY WITH SHINY RESKIN MODS
-    inputs.reassign_in_final_fixes = true
+    inputs.defer_to_data_final_fixes = true
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]

@@ -27,3 +27,20 @@ require("prototypes.entity.power.nuclear-reactor") -- Bob reskins in data-update
 -- COMPATIBILITY
 ----------------------------------------------------------------------------------------------------
 require("prototypes.compatibility.deadlock-stacking-beltboxes")
+
+----------------------------------------------------------------------------------------------------
+-- DEFERRED ASSIGNMENTS
+----------------------------------------------------------------------------------------------------
+-- Item Icons
+if reskins.bobs.icons and reskins.bobs.icons["data-updates"] then
+    for name, inputs in pairs(reskins.bobs.icons["data-updates"]) do
+        reskins.lib.assign_icons(name, inputs)
+    end
+end
+
+-- Technology Icons
+if reskins.bobs.technology and reskins.bobs.technology["data-updates"] then
+    for name, inputs in pairs(reskins.bobs.technology["data-updates"]) do
+        reskins.lib.assign_technology_icons(name, inputs)
+    end
+end
