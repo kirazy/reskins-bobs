@@ -10,7 +10,7 @@ require("prototypes.technology.logistics")
 require("prototypes.technology.power")
 
 ----------------------------------------------------------------------------------------------------
--- DEFERRED ASSIGNMENTS
+-- DEFERRED ICON ASSIGNMENTS
 ----------------------------------------------------------------------------------------------------
 -- Item Icons
 if reskins.bobs.icons and reskins.bobs.icons["data-final-fixes"] then

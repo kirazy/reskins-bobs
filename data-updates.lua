@@ -29,7 +29,7 @@ require("prototypes.entity.power.nuclear-reactor") -- Bob reskins in data-update
 require("prototypes.compatibility.deadlock-stacking-beltboxes")
 
 ----------------------------------------------------------------------------------------------------
--- DEFERRED ASSIGNMENTS
+-- DEFERRED ICON ASSIGNMENTS
 ----------------------------------------------------------------------------------------------------
 -- Item Icons
 if reskins.bobs.icons and reskins.bobs.icons["data-updates"] then
