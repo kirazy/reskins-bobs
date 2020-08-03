@@ -21,7 +21,7 @@ local intermediaries = {}
 -- Items and recipes shared with other mods within Bob's suite
 if not mods["bobplates"] then
     -- Intermediaries
-    intermediaries["lithia-water"] = {type = "fluid", folder = "plates", subfolder = "fluids"}
+    intermediaries["lithia-water"] = {type = "fluid", folder = "plates", subfolder = "fluids", defer_to_data_updates = true} -- Angels
 end
 
 reskins.lib.create_icons_from_list(intermediaries, inputs)

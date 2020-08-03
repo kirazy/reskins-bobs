@@ -80,7 +80,7 @@ local intermediaries = {
     -- Fluids
     ["liquid-fuel"] = {type = "fluid", subfolder = "fluids"},
     ["ferric-chloride-solution"] = {type = "fluid", subfolder = "fluids"}, -- Shared with Bob's Electronics
-    ["lithia-water"] = {type = "fluid", subfolder = "fluids"}, -- Shared with Bob's Ores
+    ["lithia-water"] = {type = "fluid", subfolder = "fluids", defer_to_data_updates = true}, -- Shared with Bob's Ores, Angels
     ["alien-acid"] = {type = "fluid", subfolder = "fluids"},
     ["alien-explosive"] = {type = "fluid", subfolder = "fluids"},
     ["alien-fire"] = {type = "fluid", subfolder = "fluids"},

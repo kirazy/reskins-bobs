@@ -18,15 +18,15 @@ reskins.lib.parse_inputs(inputs)
 
 local intermediaries = {
     -- Wires
-    ["gilded-copper-cable"] = {subfolder = "wires"},
-    ["tinned-copper-cable"] = {subfolder = "wires"},
+    ["gilded-copper-cable"] = {subfolder = "wires", defer_to_data_final_fixes = true}, -- Angels
+    ["tinned-copper-cable"] = {subfolder = "wires", defer_to_data_final_fixes = true}, -- Angels
     ["insulated-cable"] = {subfolder = "wires"},
 }
 
 -- Items and recipes shared with other mods within Bob's suite
 if not mods["bobplates"] then
     -- Intermediaries
-    intermediaries["solder-alloy"] = {folder = "plates", subfolder = "plates"}
+    intermediaries["solder-alloy"] = {folder = "plates", subfolder = "plates", defer_to_data_final_fixes = true} -- Angels
     intermediaries["rubber"] = {folder = "plates", subfolder = "items"}
     intermediaries["resin"] = {folder = "plates", subfolder = "items"}
     intermediaries["ferric-chloride-solution"] = {type = "fluid", folder = "plates", subfolder = "fluids"}

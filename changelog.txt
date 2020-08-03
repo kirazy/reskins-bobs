@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.19
+Date: 2020.08.03
+  Changes:
+    - Deferred icon assignments for lithia water, gilded and tinned copper cable, and solder alloy for compatibility with Angels, pending a fix in Angels Refining and Angels Smelting
+---------------------------------------------------------------------------------------------------
 Version: 0.0.18
 Date: 2020.08.03
   Features:
