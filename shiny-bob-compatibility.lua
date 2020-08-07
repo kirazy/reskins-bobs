@@ -12,6 +12,7 @@ require("prototypes.technology.assembly")
 -- require("prototypes.technology.electronics")
 require("prototypes.technology.greenhouse")
 require("prototypes.technology.logistics")
+require("prototypes.technology.plates")
 require("prototypes.technology.power")
 
 ----------------------------------------------------------------------------------------------------

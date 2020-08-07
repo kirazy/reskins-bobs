@@ -101,8 +101,8 @@ local intermediaries = {
 
     -- Nuclear
     ["thorium-processing"] = {type = "recipe", subgroup = "recipes"},
-    ["thorium-fuel-reprocessing"] = {type = "recipe", subgroup = "recipes", image = "thorium-nuclear-fuel-reprocessing"},
-    ["deuterium-fuel-reprocessing"] = {type = "recipe", subgroup = "recipes", image = "deuterium-nuclear-fuel-reprocessing-pink"},
+    ["thorium-fuel-reprocessing"] = {type = "recipe", subgroup = "recipes"},
+    ["deuterium-fuel-reprocessing"] = {type = "recipe", subgroup = "recipes", image = "deuterium-fuel-reprocessing-pink"},
     ["bobingabout-enrichment-process"] = {type = "recipe", subgroup = "recipes"},
 
     -- Solid Fuels
@@ -136,16 +136,16 @@ if reskins.lib.setting("bobmods-plates-nuclearupdate") == true then
 
     -- Handle deuterium's default process color
     if reskins.lib.setting("bobmods-plates-bluedeuterium") == true then
-        intermediaries["deuterium-fuel-reprocessing"].image = "deuterium-nuclear-fuel-reprocessing-blue"
+        intermediaries["deuterium-fuel-reprocessing"].image = "deuterium-fuel-reprocessing-blue"
     end
 else
-    intermediaries["thorium-fuel-reprocessing"].image = "thorium-nuclear-fuel-reprocessing-alternate"
+    intermediaries["thorium-fuel-reprocessing"].image = "thorium-fuel-reprocessing-alternate"
 
     -- Handle deuterium's alternate process color
     if reskins.lib.setting("bobmods-plates-bluedeuterium") == true then
-        intermediaries["deuterium-fuel-reprocessing"].image = "deuterium-nuclear-fuel-reprocessing-alternate-blue"
+        intermediaries["deuterium-fuel-reprocessing"].image = "deuterium-fuel-reprocessing-alternate-blue"
     else
-        intermediaries["deuterium-fuel-reprocessing"].image = "deuterium-nuclear-fuel-reprocessing-alternate-pink"
+        intermediaries["deuterium-fuel-reprocessing"].image = "deuterium-fuel-reprocessing-alternate-pink"
     end
     
 end

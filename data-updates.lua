@@ -11,9 +11,9 @@ end
 ----------------------------------------------------------------------------------------------------
 -- TECHNOLOGIES
 ----------------------------------------------------------------------------------------------------
-require("prototypes.technology.assembly")
 require("prototypes.technology.revamp") -- Bob does tech updates in data-updates
 require("prototypes.technology.technology") -- Bob does tech updates in data-updates
+require("prototypes.technology.warfare") -- Bob does tech updates in data-updates
 
 ----------------------------------------------------------------------------------------------------
 -- ITEMS
@@ -36,19 +36,5 @@ require("prototypes.entity.power.nuclear-reactor") -- Bob reskins in data-update
 ----------------------------------------------------------------------------------------------------
 require("prototypes.compatibility.deadlock-stacking-beltboxes")
 
-----------------------------------------------------------------------------------------------------
--- DEFERRED ICON ASSIGNMENTS
-----------------------------------------------------------------------------------------------------
--- Item Icons
-if reskins.bobs.icons and reskins.bobs.icons["data-updates"] then
-    for name, inputs in pairs(reskins.bobs.icons["data-updates"]) do
-        reskins.lib.assign_icons(name, inputs)
-    end
-end
-
--- Technology Icons
-if reskins.bobs.technology and reskins.bobs.technology["data-updates"] then
-    for name, inputs in pairs(reskins.bobs.technology["data-updates"]) do
-        reskins.lib.assign_technology_icons(name, inputs)
-    end
-end
+-- Assign deferred icons
+reskins.lib.assign_deferred_icons("bobs", "data-updates")

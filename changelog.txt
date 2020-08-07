@@ -1,9 +1,13 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.20
 Date: 2020.08.XX
+  Features:
+    - Added technology icons for nuclear-related research
   Changes:
     - Revised icon assignment to optionally define "pictures"
     - Updated technology icons to the new version from Factorio 0.18.43
+  Bugfixes:
+    - Added Angel's Smelting as a hidden dependency to resolve mod-load-order issues related to an unpatched bug in Angel's Smelting
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.19
 Date: 2020.08.03
