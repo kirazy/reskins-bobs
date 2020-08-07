@@ -42,29 +42,6 @@ local logistic_map = {
     ["logistic-chest-requester-3"] = {3, 4, "titanium", "requester"},
 }
 
-local function logistic_chest_shadow(frames)
-    return
-    {
-        filename = inputs.directory.."/graphics/entity/logistics/chest/logistic-chest-shadow.png",
-        priority = "extra-high",
-        width = 55,
-        height = 22,
-        repeat_count = frames,
-        shift = util.by_pixel(12, 5),
-        draw_as_shadow = true,
-        hr_version = {
-            filename = inputs.directory.."/graphics/entity/logistics/chest/hr-logistic-chest-shadow.png",
-            priority = "extra-high",
-            width = 110,
-            height = 44,
-            repeat_count = frames,
-            shift = util.by_pixel(12, 5),
-            draw_as_shadow = true,
-            scale = 0.5
-        }
-    }
-end
-
 -- Reskin entities, create and assign extra details
 for name, map in pairs(logistic_map) do
     -- Fetch entity
@@ -84,17 +61,7 @@ for name, map in pairs(logistic_map) do
 
     -- Stick tier labels on the vanilla logistic chests
     if not map[3] then
-        reskins.lib.append_tier_labels_to_vanilla_icon(name, tier, inputs)
-        
-        -- Replace shadow in a robust fashion
-        if entity.animation.layers then
-            if entity.animation.layers[1].frame_count then
-                if entity.animation.layers[2].draw_as_shadow then
-                    entity.animation.layers[2] = logistic_chest_shadow(entity.animation.layers[1].frame_count)
-                end
-            end
-        end
-        
+        reskins.lib.append_tier_labels_to_vanilla_icon(name, tier, inputs)      
         goto continue
     end
 
@@ -195,7 +162,25 @@ for name, map in pairs(logistic_map) do
                 }
             },
             -- Shadow
-            logistic_chest_shadow(7)
+            {
+                filename = "__base__/graphics/entity/logistic-chest/logistic-chest-shadow.png",
+                priority = "extra-high",
+                width = 56,
+                height = 24,
+                repeat_count = 7,
+                shift = util.by_pixel(12, 5),
+                draw_as_shadow = true,
+                hr_version = {
+                    filename = "__base__/graphics/entity/logistic-chest/hr-logistic-chest-shadow.png",
+                    priority = "extra-high",
+                    width = 112,
+                    height = 46,
+                    repeat_count = 7,
+                    shift = util.by_pixel(12, 4.5),
+                    draw_as_shadow = true,
+                    scale = 0.5
+                }
+            }
         }
     }
 
