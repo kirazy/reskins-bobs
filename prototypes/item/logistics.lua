@@ -56,7 +56,7 @@ local items = {
 
 -- Disable select items based on Bob's settings
 if (reskins.lib.setting("bobmods-logistics-flyingrobotframes") == false or reskins.lib.setting("bobmods-logistics-robotparts") == false) then
-    item_list["flying-robot-frame"] = nil
+    items["flying-robot-frame"] = nil
 end
 
 reskins.lib.create_icons_from_list(items, inputs)
