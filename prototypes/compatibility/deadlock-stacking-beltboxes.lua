@@ -5,6 +5,8 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["deadlock-beltboxes-loaders"] then return end
+if not mods["boblogistics"] then return end
+if reskins.lib.setting("reskins-bobs-do-boblogistics") == false then return end
 
 -- We reskin the base entities only if we're doing custom colors
 local custom_colors = true

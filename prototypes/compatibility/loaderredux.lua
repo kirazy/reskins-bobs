@@ -6,6 +6,8 @@
 -- Check to see if reskinning needs to be done.
 if not mods["LoaderRedux"] then return end
 if mods["vanilla-loaders-hd"] then return end
+if not mods["boblogistics"] then return end
+if reskins.lib.setting("reskins-bobs-do-boblogistics") == false then return end
 
 -- Set input parameters
 local inputs = {

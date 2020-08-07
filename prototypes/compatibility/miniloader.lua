@@ -5,6 +5,8 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["miniloader"] then return end
+if not mods["boblogistics"] then return end
+if reskins.lib.setting("reskins-bobs-do-boblogistics") == false then return end
 
 -- We reskin the base entities only if we're doing custom colors
 local custom_colors = true
@@ -106,10 +108,10 @@ for name, map in pairs(tier_map) do
 
     -- Retint the mask
     if not string.find(name, "inserter") then
-        entity.structure.direction_in.sheets[2].tint = inputs.tint
-        entity.structure.direction_in.sheets[2].hr_version.tint = inputs.tint
-        entity.structure.direction_out.sheets[2].tint = inputs.tint
-        entity.structure.direction_out.sheets[2].hr_version.tint = inputs.tint
+            entity.structure.direction_in.sheets[2].tint = inputs.tint
+            entity.structure.direction_in.sheets[2].hr_version.tint = inputs.tint
+            entity.structure.direction_out.sheets[2].tint = inputs.tint
+            entity.structure.direction_out.sheets[2].hr_version.tint = inputs.tint
     else
         entity.corpse = "small-remnants"
         entity.platform_picture.sheets[2].tint = inputs.tint
