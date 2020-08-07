@@ -1,14 +1,15 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.20
-Date: 2020.08.XX
+Date: 2020.08.07
   Features:
     - Added technology icons for nuclear-related research
   Changes:
-    - Revised icon assignment to optionally define "pictures"
-    - Updated technology icons to the new version from Factorio 0.18.43
+    - Revised icon assignment to optionally define `pictures`
+    - Updated some technology icons to the new version from Factorio 0.18.43
     - Moved reskin support of Miniloader, Loader Redux, Vanilla Loaders HD, Deadlock's Stacking Beltboxes & Compact Loaders and Deadlock's Crating Machine mods to respect "Reskin Bob's Logistics" setting
   Bugfixes:
-    - Added Angel's Smelting as a hidden dependency to resolve mod-load-order issues related to an unpatched bug in Angel's Smelting
+    - Added Angel's Smelting as a hidden dependency to resolve load-order issues related to an unpatched bug in Angel's Smelting
+    - Temporarily disabled mining drills pending rework to support the new graphics
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.19
 Date: 2020.08.03

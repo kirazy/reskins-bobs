@@ -64,7 +64,7 @@ require("prototypes.entity.logistics.underground-belt")
 require("prototypes.entity.logistics.valve")
 
 -- Bob's Mining
-require("prototypes.entity.mining.mining-drill")
+-- require("prototypes.entity.mining.mining-drill")
 require("prototypes.entity.mining.pumpjack")
 
 -- Bob's Modules

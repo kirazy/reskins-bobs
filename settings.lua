@@ -3,7 +3,7 @@
 --     
 -- See LICENSE.md in the project directory for license information.
 
--- Settings to disable select Reskins by mod
+-- Settings available based on mod loadout
 if mods["bobassembly"] then
     data:extend({
         {
