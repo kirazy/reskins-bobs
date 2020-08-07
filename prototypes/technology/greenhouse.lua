@@ -12,13 +12,13 @@ local inputs = {
     mod = "bobs",
     group = "greenhouse",
     type = "technology",
+    flat_icon = true,
 }
-
 -- Setup input defaults
 reskins.lib.parse_inputs(inputs)
 
 local technology = {
-    ["bob-fertiliser"] = {subfolder = "fertiliser", image = "fertiliser"}
+    ["bob-fertiliser"] = {subgroup = "fertiliser", image = "fertiliser"}
 }
 
-reskins.lib.create_icons_from_list(technology, inputs, true)
+reskins.lib.create_icons_from_list(technology, inputs)

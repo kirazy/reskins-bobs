@@ -7,117 +7,93 @@
 if not mods["bobwarfare"] then return end
 if reskins.lib.setting("reskins-bobs-do-bobwarfare") == false then return end
 
--- Items with custom color support
-local masked_items = {
-    ["robot-tool-combat"] = {name_tier = 1, ingr_tier = 2, icon_name = "robot-tool-combat"},
-    ["robot-tool-combat-2"] = {name_tier = 2, ingr_tier = 3, icon_name = "robot-tool-combat"},
-    ["robot-tool-combat-3"] = {name_tier = 3, ingr_tier = 4, icon_name = "robot-tool-combat"},
-    ["robot-tool-combat-4"] = {name_tier = 4, ingr_tier = 5, icon_name = "robot-tool-combat"},
-}
-
-for name, inputs in pairs(masked_items) do
-    -- Handle tier details
-    local tier = inputs.name_tier or inputs.tier or 0
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
-        tier = inputs.ingr_tier or inputs.tier or 0
-    end
-
-    -- Handle defaults, tints
-    inputs.tint = inputs.tint or reskins.lib.tint_index["tier-"..tier]
-    inputs.directory = reskins.bobs.directory
-    inputs.mod = "bobs"
-    inputs.group = "warfare"
-
-    -- Setup input defaults
-    reskins.lib.parse_inputs(inputs)
-
-    -- Reskin icons
-    reskins.lib.construct_icon(name, tier, inputs)
-end
-
 -- Setup inputs
 local inputs = {
     directory = reskins.bobs.directory,
     mod = "bobs",
     group = "warfare",
     make_icon_pictures = false,
+    flat_icon = true,
 }
 
--- Setup input defaults
-reskins.lib.parse_inputs(inputs)
-
 local items = {
+    -- Robot tools
+    ["robot-tool-combat"] = {tier = 1, prog_tier = 2, icon_name = "robot-tool-combat", flat_icon = false, make_icon_pictures = true},
+    ["robot-tool-combat-2"] = {tier = 2, prog_tier = 3, icon_name = "robot-tool-combat", flat_icon = false, make_icon_pictures = true},
+    ["robot-tool-combat-3"] = {tier = 3, prog_tier = 4, icon_name = "robot-tool-combat", flat_icon = false, make_icon_pictures = true},
+    ["robot-tool-combat-4"] = {tier = 4, prog_tier = 5, icon_name = "robot-tool-combat", flat_icon = false, make_icon_pictures = true},
+
     -- Bullets
-    ["bullet"] = {subfolder = "bullets"},
-    ["acid-bullet"] = {subfolder = "bullets"},
-    ["ap-bullet"] = {subfolder = "bullets"},
-    ["electric-bullet"] = {subfolder = "bullets"},
-    ["flame-bullet"] = {subfolder = "bullets"},
-    ["he-bullet"] = {subfolder = "bullets"},
-    ["plasma-bullet"] = {subfolder = "bullets"},
-    ["poison-bullet"] = {subfolder = "bullets"},
-    ["uranium-bullet"] = {subfolder = "bullets"},
+    ["bullet"] = {subgroup = "bullets"},
+    ["acid-bullet"] = {subgroup = "bullets"},
+    ["ap-bullet"] = {subgroup = "bullets"},
+    ["electric-bullet"] = {subgroup = "bullets"},
+    ["flame-bullet"] = {subgroup = "bullets"},
+    ["he-bullet"] = {subgroup = "bullets"},
+    ["plasma-bullet"] = {subgroup = "bullets"},
+    ["poison-bullet"] = {subgroup = "bullets"},
+    ["uranium-bullet"] = {subgroup = "bullets"},
 
     -- Projectiles
-    ["bullet-projectile"] = {subfolder = "projectiles"},
-    ["acid-bullet-projectile"] = {subfolder = "projectiles"},
-    ["ap-bullet-projectile"] = {subfolder = "projectiles"},
-    ["electric-bullet-projectile"] = {subfolder = "projectiles"},
-    ["flame-bullet-projectile"] = {subfolder = "projectiles"},
-    ["he-bullet-projectile"] = {subfolder = "projectiles"},
-    ["plasma-bullet-projectile"] = {subfolder = "projectiles"},
-    ["poison-bullet-projectile"] = {subfolder = "projectiles"},
-    ["uranium-bullet-projectile"] = {subfolder = "projectiles"},
+    ["bullet-projectile"] = {subgroup = "projectiles"},
+    ["acid-bullet-projectile"] = {subgroup = "projectiles"},
+    ["ap-bullet-projectile"] = {subgroup = "projectiles"},
+    ["electric-bullet-projectile"] = {subgroup = "projectiles"},
+    ["flame-bullet-projectile"] = {subgroup = "projectiles"},
+    ["he-bullet-projectile"] = {subgroup = "projectiles"},
+    ["plasma-bullet-projectile"] = {subgroup = "projectiles"},
+    ["poison-bullet-projectile"] = {subgroup = "projectiles"},
+    ["uranium-bullet-projectile"] = {subgroup = "projectiles"},
 
     -- Magazines
-    ["bullet-magazine"] = {type = "ammo", subfolder = "magazines"},
-    ["acid-bullet-magazine"] = {type = "ammo", subfolder = "magazines"},
-    ["ap-bullet-magazine"] = {type = "ammo", subfolder = "magazines"},
-    ["electric-bullet-magazine"] = {type = "ammo", subfolder = "magazines"},
-    ["flame-bullet-magazine"] = {type = "ammo", subfolder = "magazines"},
-    ["he-bullet-magazine"] = {type = "ammo", subfolder = "magazines"},
-    ["plasma-bullet-magazine"] = {type = "ammo", subfolder = "magazines"},
-    ["poison-bullet-magazine"] = {type = "ammo", subfolder = "magazines"},
-    ["uranium-rounds-magazine"] = {type = "ammo", subfolder = "magazines"},
+    ["bullet-magazine"] = {type = "ammo", subgroup = "magazines"},
+    ["acid-bullet-magazine"] = {type = "ammo", subgroup = "magazines"},
+    ["ap-bullet-magazine"] = {type = "ammo", subgroup = "magazines"},
+    ["electric-bullet-magazine"] = {type = "ammo", subgroup = "magazines"},
+    ["flame-bullet-magazine"] = {type = "ammo", subgroup = "magazines"},
+    ["he-bullet-magazine"] = {type = "ammo", subgroup = "magazines"},
+    ["plasma-bullet-magazine"] = {type = "ammo", subgroup = "magazines"},
+    ["poison-bullet-magazine"] = {type = "ammo", subgroup = "magazines"},
+    ["uranium-rounds-magazine"] = {type = "ammo", subgroup = "magazines"},
 
     -- Warheads
-    ["rocket-warhead"] = {subfolder = "warheads"},
-    ["acid-rocket-warhead"] = {subfolder = "warheads"},
-    ["piercing-rocket-warhead"] = {subfolder = "warheads"},
-    ["electric-rocket-warhead"] = {subfolder = "warheads"},
-    ["explosive-rocket-warhead"] = {subfolder = "warheads"},
-    ["flame-rocket-warhead"] = {subfolder = "warheads"},
-    ["plasma-rocket-warhead"] = {subfolder = "warheads"},
-    ["poison-rocket-warhead"] = {subfolder = "warheads"},
+    ["rocket-warhead"] = {subgroup = "warheads"},
+    ["acid-rocket-warhead"] = {subgroup = "warheads"},
+    ["piercing-rocket-warhead"] = {subgroup = "warheads"},
+    ["electric-rocket-warhead"] = {subgroup = "warheads"},
+    ["explosive-rocket-warhead"] = {subgroup = "warheads"},
+    ["flame-rocket-warhead"] = {subgroup = "warheads"},
+    ["plasma-rocket-warhead"] = {subgroup = "warheads"},
+    ["poison-rocket-warhead"] = {subgroup = "warheads"},
 
     -- Rockets
-    ["bob-rocket"] = {type = "ammo", subfolder = "rockets"},
-    ["bob-acid-rocket"] = {type = "ammo", subfolder = "rockets"},
-    ["bob-piercing-rocket"] = {type = "ammo", subfolder = "rockets"},
-    ["bob-electric-rocket"] = {type = "ammo", subfolder = "rockets"},
-    ["bob-flame-rocket"] = {type = "ammo", subfolder = "rockets"},
-    ["bob-explosive-rocket"] = {type = "ammo", subfolder = "rockets"},
-    ["bob-plasma-rocket"] = {type = "ammo", subfolder = "rockets"},
-    ["bob-poison-rocket"] = {type = "ammo", subfolder = "rockets"},
+    ["bob-rocket"] = {type = "ammo", subgroup = "rockets"},
+    ["bob-acid-rocket"] = {type = "ammo", subgroup = "rockets"},
+    ["bob-piercing-rocket"] = {type = "ammo", subgroup = "rockets"},
+    ["bob-electric-rocket"] = {type = "ammo", subgroup = "rockets"},
+    ["bob-flame-rocket"] = {type = "ammo", subgroup = "rockets"},
+    ["bob-explosive-rocket"] = {type = "ammo", subgroup = "rockets"},
+    ["bob-plasma-rocket"] = {type = "ammo", subgroup = "rockets"},
+    ["bob-poison-rocket"] = {type = "ammo", subgroup = "rockets"},
 
     -- Shotgun Shells
-    ["better-shotgun-shell"] = {type = "ammo", subfolder = "shells"},
-    ["shotgun-acid-shell"] = {type = "ammo", subfolder = "shells"},
-    ["shotgun-ap-shell"] = {type = "ammo", subfolder = "shells"},
-    ["shotgun-electric-shell"] = {type = "ammo", subfolder = "shells"},
-    ["shotgun-explosive-shell"] = {type = "ammo", subfolder = "shells"},
-    ["shotgun-flame-shell"] = {type = "ammo", subfolder = "shells"},
-    ["shotgun-plasma-shell"] = {type = "ammo", subfolder = "shells"},
-    ["shotgun-poison-shell"] = {type = "ammo", subfolder = "shells"},
-    ["shotgun-uranium-shell"] = {type = "ammo", subfolder = "shells"},
+    ["better-shotgun-shell"] = {type = "ammo", subgroup = "shells"},
+    ["shotgun-acid-shell"] = {type = "ammo", subgroup = "shells"},
+    ["shotgun-ap-shell"] = {type = "ammo", subgroup = "shells"},
+    ["shotgun-electric-shell"] = {type = "ammo", subgroup = "shells"},
+    ["shotgun-explosive-shell"] = {type = "ammo", subgroup = "shells"},
+    ["shotgun-flame-shell"] = {type = "ammo", subgroup = "shells"},
+    ["shotgun-plasma-shell"] = {type = "ammo", subgroup = "shells"},
+    ["shotgun-poison-shell"] = {type = "ammo", subgroup = "shells"},
+    ["shotgun-uranium-shell"] = {type = "ammo", subgroup = "shells"},
 
     -- Components
-    ["bullet-casing"] = {subfolder = "components"},
-    ["magazine"] = {subfolder = "components"},
-    ["cordite"] = {subfolder = "components"},
-    -- ["rocket-body"] = {subfolder = "components"},
-    -- ["shot"] = {subfolder = "components"},
-    -- ["shotgun-shell-casing"] = {subfolder = "components"},
+    ["bullet-casing"] = {subgroup = "components"},
+    ["magazine"] = {subgroup = "components"},
+    ["cordite"] = {subgroup = "components"},
+    -- ["rocket-body"] = {subgroup = "components"},
+    -- ["shot"] = {subgroup = "components"},
+    -- ["shotgun-shell-casing"] = {subgroup = "components"},
 }
 
 reskins.lib.create_icons_from_list(items, inputs)

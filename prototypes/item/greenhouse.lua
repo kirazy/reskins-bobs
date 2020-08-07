@@ -12,17 +12,15 @@ local inputs = {
     mod = "bobs",
     group = "greenhouse",
     make_icon_pictures = false,
+    flat_icon = true,
 }
 
--- Setup input defaults
-reskins.lib.parse_inputs(inputs)
-
 local intermediaries = {
-    ["seedling"] = {subfolder = "items"},
-    ["fertiliser"] = {subfolder = "items"},
-    ["wood-pellets"] = {subfolder = "items"},
-    ["bob-basic-greenhouse-cycle"] = {type = "recipe", subfolder = "recipes"},
-    ["bob-advanced-greenhouse-cycle"] = {type = "recipe", subfolder = "recipes"},
+    ["seedling"] = {subgroup = "items"},
+    ["fertiliser"] = {subgroup = "items"},
+    ["wood-pellets"] = {subgroup = "items"},
+    ["bob-basic-greenhouse-cycle"] = {type = "recipe", subgroup = "recipes"},
+    ["bob-advanced-greenhouse-cycle"] = {type = "recipe", subgroup = "recipes"},
 }
 
 reskins.lib.create_icons_from_list(intermediaries, inputs)

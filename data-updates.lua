@@ -9,6 +9,13 @@ if mods["ShinyBobGFX"] then
 end
 
 ----------------------------------------------------------------------------------------------------
+-- TECHNOLOGIES
+----------------------------------------------------------------------------------------------------
+require("prototypes.technology.assembly")
+require("prototypes.technology.revamp") -- Bob does tech updates in data-updates
+require("prototypes.technology.technology") -- Bob does tech updates in data-updates
+
+----------------------------------------------------------------------------------------------------
 -- ITEMS
 ----------------------------------------------------------------------------------------------------
 -- require("prototypes.item.electronics.circuits") -- Bob has circuit coloring in data-updates

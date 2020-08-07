@@ -5,44 +5,21 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobpower"] then return end
-if reskins.lib.setting("reskins-bobs-do-bobpower") == false then return end
 
 -- Setup standard inputs
 local inputs = {
     directory = reskins.bobs.directory,
     mod = "bobs",
     group = "power",
+    type = "technology",
 }
 
 -- Solar Energy
-local solar_energy_map = {
-    ["solar-energy"] = {1, 2},
-    ["bob-solar-energy-2"] = {1, 2},
-    ["bob-solar-energy-3"] = {2, 3},
-    ["bob-solar-energy-4"] = {3, 4},
+local technologies = {
+    ["solar-energy"] = {tier = 1, prog_tier = 2, icon_name = "solar-energy"},
+    ["bob-solar-energy-2"] = {tier = 1, prog_tier = 2, icon_name = "solar-energy"},
+    ["bob-solar-energy-3"] = {tier = 2, prog_tier = 3, icon_name = "solar-energy"},
+    ["bob-solar-energy-4"] = {tier = 3, prog_tier = 4, icon_name = "solar-energy"},
 }
 
--- Reskin technologies
-local solar_energy_inputs = util.copy(inputs)
-for name, map in pairs(solar_energy_map) do
-    -- Fetch technology
-    local technology = data.raw["technology"][name]
-
-    -- Check if entity exists, if not, skip this iteration
-    if not technology then goto continue end
-
-    -- Parse map
-    local tier = map[1]
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
-        tier = map[2]
-    end
-
-    -- Setup logistics inputs
-    solar_energy_inputs.icon_name = "solar-energy"
-    solar_energy_inputs.tint = reskins.lib.tint_index["tier-"..tier]
-
-    reskins.lib.construct_technology_icon(name, solar_energy_inputs)
-
-    -- Label to skip to next iteration
-    ::continue::    
-end
+reskins.lib.create_icons_from_list(technologies, inputs)

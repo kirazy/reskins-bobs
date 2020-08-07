@@ -3,6 +3,7 @@ Version: 0.0.20
 Date: 2020.08.XX
   Changes:
     - Revised icon assignment to optionally define "pictures"
+    - Updated technology icons to the new version from Factorio 0.18.43
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.19
 Date: 2020.08.03

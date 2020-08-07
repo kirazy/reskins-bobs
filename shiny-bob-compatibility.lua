@@ -8,7 +8,11 @@
 ----------------------------------------------------------------------------------------------------
 -- TECHNOLOGIES
 ----------------------------------------------------------------------------------------------------
+require("prototypes.technology.assembly")
+-- require("prototypes.technology.electronics")
 require("prototypes.technology.greenhouse")
+require("prototypes.technology.logistics")
+require("prototypes.technology.power")
 
 ----------------------------------------------------------------------------------------------------
 -- ITEMS
@@ -31,7 +35,6 @@ require("prototypes.entity.assembly.centrifuge")
 require("prototypes.entity.assembly.distillery")
 require("prototypes.entity.assembly.electrolyser")
 require("prototypes.entity.assembly.furnace")
-require("prototypes.entity.assembly.oil-refinery")
 
 -- Bob's Greenhouse
 -- require("prototypes.entity.greenhouse.greenhouse")
