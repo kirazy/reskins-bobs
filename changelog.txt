@@ -1,6 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.22
 Date: 2020.08.XX
+  Features:
+    - Implemented the new mining drills
+    - Added support for Semi-Classic Mining Drill mod
   Changes:
     - Removed volume scaling from assembling machines
 ---------------------------------------------------------------------------------------------------
