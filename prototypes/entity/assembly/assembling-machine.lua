@@ -522,21 +522,21 @@ for name, map in pairs(tier_map) do
         entity.working_sound.sound = {
             {
                 filename = "__base__/sound/assembling-machine-t3-1.ogg",
-                volume = 0.5 + map.tier * 0.2
+                volume = 0.45
             }
         }
     elseif map.tier > 1 then
         entity.working_sound.sound = {
             {
                 filename = "__base__/sound/assembling-machine-t2-1.ogg",
-                volume = 0.5 + map.tier * 0.2
+                volume = 0.45
             }
         }
     else
         entity.working_sound.sound = {
             {
                 filename = "__base__/sound/assembling-machine-t1-1.ogg",
-                volume = 0.5 + map.tier * 0.2
+                volume = 0.5
             }
         }
     end
