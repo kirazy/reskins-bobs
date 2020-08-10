@@ -61,6 +61,7 @@ local function reskin_pipe_entity()
             }
         }
     }
+    data.raw["pipe-to-ground"]["pipe-to-ground"]["fluid_box"].pipe_covers = pipecoverspictures()
 end
 
 -- Check to see if reskinning needs to be done

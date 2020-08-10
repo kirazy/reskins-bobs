@@ -1,11 +1,13 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.22
-Date: 2020.08.XX
+Date: 2020.08.09
   Features:
     - Implemented the new mining drills
     - Added support for Semi-Classic Mining Drill mod
   Changes:
     - Removed volume scaling from assembling machines
+  Bugfixes:
+    - Fixed that iron underground pipe covers were using Bob's pipe covers instead of vanilla pipe covers
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.21
 Date: 2020.08.07
