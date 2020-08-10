@@ -35,6 +35,7 @@ local empty_fill_layer = {
     }
 }
 
+-- Artisanal Reskins module slot
 local function setup_module_slot(parameters)
     local shift_x, shift_y = 0, 0
     if parameters.shift then
@@ -49,96 +50,89 @@ local function setup_module_slot(parameters)
         -- Slot 2 (Top Right)
         slot = {
             {
-              has_empty_slot = true,
-              render_layer = "lower-object",
-              pictures =
-              {
-                filename = inputs.directory.."/graphics/entity/modules/beacon/slots/"..num_lights.."-lights/2/beacon-module-slot-2.png",
-                line_length = num_lights + 1,
-                width = 23,
-                height = 22,
-                variation_count = num_lights + 1,
-                shift = util.by_pixel(19 + shift_x, -12 + shift_y),
-                hr_version =
-                {
-                  filename = inputs.directory.."/graphics/entity/modules/beacon/slots/"..num_lights.."-lights/2/hr-beacon-module-slot-2.png",
-                  line_length = num_lights + 1,
-                  width = 46,
-                  height = 44,
-                  variation_count = num_lights + 1,
-                  scale = 0.5,
-                  shift = util.by_pixel(19 + shift_x, -12 + shift_y),
+                has_empty_slot = true,
+                render_layer = "lower-object",
+                pictures = {
+                    filename = inputs.directory.."/graphics/entity/modules/beacon/slots/"..num_lights.."-lights/2/beacon-module-slot-2.png",
+                    line_length = num_lights + 1,
+                    width = 23,
+                    height = 22,
+                    variation_count = num_lights + 1,
+                    shift = util.by_pixel(19 + shift_x, -12 + shift_y),
+                    hr_version = {
+                        filename = inputs.directory.."/graphics/entity/modules/beacon/slots/"..num_lights.."-lights/2/hr-beacon-module-slot-2.png",
+                        line_length = num_lights + 1,
+                        width = 46,
+                        height = 44,
+                        variation_count = num_lights + 1,
+                        scale = 0.5,
+                        shift = util.by_pixel(19 + shift_x, -12 + shift_y),
+                    }
                 }
-              }
             },
             {
-              apply_module_tint = "primary",
-              render_layer = "lower-object",
-              pictures =
-              {
-                filename = inputs.directory.."/graphics/entity/modules/beacon/slots/"..num_lights.."-lights/2/beacon-module-mask-box-2.png",
-                line_length = num_lights,
-                width = 18,
-                height = 14,
-                variation_count = num_lights,
-                shift = util.by_pixel(20.5 + shift_x, -12 + shift_y),
-                hr_version =
-                {
-                  filename = inputs.directory.."/graphics/entity/modules/beacon/slots/"..num_lights.."-lights/2/hr-beacon-module-mask-box-2.png",
-                  line_length = num_lights,
-                  width = 36,
-                  height = 28,
-                  variation_count = num_lights,
-                  scale = 0.5,
-                  shift = util.by_pixel(20.5 + shift_x, -12 + shift_y),
+                apply_module_tint = "primary",
+                render_layer = "lower-object",
+                pictures = {
+                    filename = inputs.directory.."/graphics/entity/modules/beacon/slots/"..num_lights.."-lights/2/beacon-module-mask-box-2.png",
+                    line_length = num_lights,
+                    width = 18,
+                    height = 14,
+                    variation_count = num_lights,
+                    shift = util.by_pixel(20.5 + shift_x, -12 + shift_y),
+                    hr_version = {
+                        filename = inputs.directory.."/graphics/entity/modules/beacon/slots/"..num_lights.."-lights/2/hr-beacon-module-mask-box-2.png",
+                        line_length = num_lights,
+                        width = 36,
+                        height = 28,
+                        variation_count = num_lights,
+                        scale = 0.5,
+                        shift = util.by_pixel(20.5 + shift_x, -12 + shift_y),
+                    }
                 }
-              }
             },
             {
-              apply_module_tint = "secondary",
-              render_layer = "lower-object-above-shadow",
-              pictures =
-              {
-                filename = inputs.directory.."/graphics/entity/modules/beacon/slots/"..num_lights.."-lights/2/beacon-module-mask-lights-2.png",
-                line_length = num_lights,
-                width = 12,
-                height = 8,
-                variation_count = num_lights,
-                shift = util.by_pixel(21.5 + shift_x, -15.5 + shift_y),
-                hr_version =
-                {
-                  filename = inputs.directory.."/graphics/entity/modules/beacon/slots/"..num_lights.."-lights/2/hr-beacon-module-mask-lights-2.png",
-                  line_length = num_lights,
-                  width = 24,
-                  height = 16,
-                  variation_count = num_lights,
-                  scale = 0.5,
-                  shift = util.by_pixel(21.5 + shift_x, -15.5 + shift_y),
+                apply_module_tint = "secondary",
+                render_layer = "lower-object-above-shadow",
+                pictures = {
+                    filename = inputs.directory.."/graphics/entity/modules/beacon/slots/"..num_lights.."-lights/2/beacon-module-mask-lights-2.png",
+                    line_length = num_lights,
+                    width = 12,
+                    height = 8,
+                    variation_count = num_lights,
+                    shift = util.by_pixel(21.5 + shift_x, -15.5 + shift_y),
+                    hr_version = {
+                        filename = inputs.directory.."/graphics/entity/modules/beacon/slots/"..num_lights.."-lights/2/hr-beacon-module-mask-lights-2.png",
+                        line_length = num_lights,
+                        width = 24,
+                        height = 16,
+                        variation_count = num_lights,
+                        scale = 0.5,
+                        shift = util.by_pixel(21.5 + shift_x, -15.5 + shift_y),
+                    }
                 }
-              }
             },
             {
-              apply_module_tint = "secondary",
-              draw_as_light = true,
-              draw_as_sprite = false,
-              pictures =
-              {
-                filename = inputs.directory.."/graphics/entity/modules/beacon/slots/"..num_lights.."-lights/2/beacon-module-lights-2.png",
-                line_length = num_lights,
-                width = 33,
-                height = 23,
-                variation_count = num_lights,
-                shift = util.by_pixel(22 + shift_x, -16 + shift_y),
-                hr_version = {
-                  filename = inputs.directory.."/graphics/entity/modules/beacon/slots/"..num_lights.."-lights/2/hr-beacon-module-lights-2.png",
-                  line_length = num_lights,
-                  width = 66,
-                  height = 46,
-                  variation_count = num_lights,
-                  shift = util.by_pixel(22 + shift_x, -16 + shift_y),
-                  scale = 0.5
+                apply_module_tint = "secondary",
+                draw_as_light = true,
+                draw_as_sprite = false,
+                pictures = {
+                    filename = inputs.directory.."/graphics/entity/modules/beacon/slots/"..num_lights.."-lights/2/beacon-module-lights-2.png",
+                    line_length = num_lights,
+                    width = 33,
+                    height = 23,
+                    variation_count = num_lights,
+                    shift = util.by_pixel(22 + shift_x, -16 + shift_y),
+                    hr_version = {
+                        filename = inputs.directory.."/graphics/entity/modules/beacon/slots/"..num_lights.."-lights/2/hr-beacon-module-lights-2.png",
+                        line_length = num_lights,
+                        width = 66,
+                        height = 46,
+                        variation_count = num_lights,
+                        shift = util.by_pixel(22 + shift_x, -16 + shift_y),
+                        scale = 0.5
+                    }
                 }
-              }
             }
         }
     else
@@ -228,6 +222,211 @@ local function setup_module_slot(parameters)
                         width = 56,
                         height = 42,
                         variation_count = num_lights,
+                        shift = util.by_pixel(-18 + shift_x, 13 + shift_y),
+                        scale = 0.5
+                    }
+                }
+            }
+        }
+    end
+
+    -- Fix interleaved render orders
+    if parameters.needs_padding then
+        table.insert(slot, 1, empty_fill_layer)
+    end
+
+    return slot
+end
+
+-- Vanilla module slot
+local function setup_vanilla_module_slot(parameters)
+    local shift_x, shift_y = 0, 0
+    if parameters.shift then
+        shift_x = parameters.shift[1]
+        shift_y = parameters.shift[2]
+    end
+
+    -- Setup slots
+    if parameters.is_slot_2 then
+        -- Slot 2 (Top Right)
+        slot = {
+            {
+                has_empty_slot = true,
+                render_layer = "lower-object",
+                pictures =
+                {
+                    filename = "__base__/graphics/entity/beacon/beacon-module-slot-2.png",
+                    line_length = 4,
+                    width = 24,
+                    height = 22,
+                    variation_count = 4,
+                    shift = util.by_pixel(19 + shift_x, -12 + shift_y),
+                    hr_version =
+                    {
+                        filename = "__base__/graphics/entity/beacon/hr-beacon-module-slot-2.png",
+                        line_length = 4,
+                        width = 46,
+                        height = 44,
+                        variation_count = 4,
+                        scale = 0.5,
+                        shift = util.by_pixel(19 + shift_x, -12 + shift_y),
+                    }
+                }
+            },
+            {
+                apply_module_tint = "primary",
+                render_layer = "lower-object",
+                pictures =
+                {
+                    filename = "__base__/graphics/entity/beacon/beacon-module-mask-box-2.png",
+                    line_length = 3,
+                    width = 18,
+                    height = 14,
+                    variation_count = 3,
+                    shift = util.by_pixel(20 + shift_x, -12 + shift_y),
+                    hr_version =
+                    {
+                        filename = "__base__/graphics/entity/beacon/hr-beacon-module-mask-box-2.png",
+                        line_length = 3,
+                        width = 36,
+                        height = 26,
+                        variation_count = 3,
+                        scale = 0.5,
+                        shift = util.by_pixel(20.5 + shift_x, -12 + shift_y),
+                    }
+                }
+            },
+            {
+                apply_module_tint = "secondary",
+                render_layer = "lower-object-above-shadow",
+                pictures = {
+                    filename = "__base__/graphics/entity/beacon/beacon-module-mask-lights-2.png",
+                    line_length = 3,
+                    width = 12,
+                    height = 8,
+                    variation_count = 3,
+                    shift = util.by_pixel(22 + shift_x, -15 + shift_y),
+                    hr_version = {
+                        filename = "__base__/graphics/entity/beacon/hr-beacon-module-mask-lights-2.png",
+                        line_length = 3,
+                        width = 24,
+                        height = 14,
+                        variation_count = 3,
+                        scale = 0.5,
+                        shift = util.by_pixel(22 + shift_x, -15.5 + shift_y),
+                    }
+                }
+            },
+            {
+                apply_module_tint = "secondary",
+                draw_as_light = true,
+                draw_as_sprite = false,
+                pictures = {
+                    filename = "__base__/graphics/entity/beacon/beacon-module-lights-2.png",
+                    line_length = 3,
+                    width = 34,
+                    height = 24,
+                    variation_count = 3,
+                    shift = util.by_pixel(22 + shift_x, -16 + shift_y),
+                    hr_version = {
+                        filename = "__base__/graphics/entity/beacon/hr-beacon-module-lights-2.png",
+                        line_length = 3,
+                        width = 66,
+                        height = 46,
+                        variation_count = 3,
+                        shift = util.by_pixel(22 + shift_x, -16 + shift_y),
+                        scale = 0.5
+                    }
+                }
+            }
+        }
+    else
+        -- Slot 1 (Bottom Left)
+        slot = {
+            -- Slot Base
+            {
+                has_empty_slot = true,
+                render_layer = "lower-object",
+                pictures = {
+                    filename = "__base__/graphics/entity/beacon/beacon-module-slot-1.png",
+                    line_length = 4,
+                    width = 26,
+                    height = 34,
+                    variation_count = 4,
+                    shift = util.by_pixel(-16 + shift_x, 15 + shift_y),
+                    hr_version = {
+                        filename = "__base__/graphics/entity/beacon/hr-beacon-module-slot-1.png",
+                        line_length = 4,
+                        width = 50,
+                        height = 66,
+                        variation_count = 4,
+                        scale = 0.5,
+                        shift = util.by_pixel(-16 + shift_x, 14.5 + shift_y),
+                    }
+                }
+            },
+            -- Slot Mask
+            {
+                apply_module_tint = "primary",
+                render_layer = "lower-object",
+                pictures = {
+                    filename = "__base__/graphics/entity/beacon/beacon-module-mask-box-1.png",
+                    line_length = 3,
+                    width = 18,
+                    height = 16,
+                    variation_count = 3,
+                    shift = util.by_pixel(-17 + shift_x, 15 + shift_y),
+                    hr_version = {
+                        filename = "__base__/graphics/entity/beacon/hr-beacon-module-mask-box-1.png",
+                        line_length = 3,
+                        width = 36,
+                        height = 32,
+                        variation_count = 3,
+                        scale = 0.5,
+                        shift = util.by_pixel(-17 + shift_x, 15 + shift_y),
+                    }
+                }
+            },
+            -- Slot Lights Count
+            {
+                apply_module_tint = "secondary",
+                render_layer = "lower-object-above-shadow",
+                pictures = {
+                    filename = "__base__/graphics/entity/beacon/beacon-module-mask-lights-1.png",
+                    line_length = 3,
+                    width = 14,
+                    height = 6,
+                    variation_count = 3,
+                    shift = util.by_pixel(-18 + shift_x, 13 + shift_y),
+                    hr_version = {
+                        filename = "__base__/graphics/entity/beacon/hr-beacon-module-mask-lights-1.png",
+                        line_length = 3,
+                        width = 26,
+                        height = 12,
+                        variation_count = 3,
+                        scale = 0.5,
+                        shift = util.by_pixel(-18.5 + shift_x, 13 + shift_y),
+                    }
+                }
+            },
+            -- Slot Lights Radiance
+            {
+                apply_module_tint = "secondary",
+                draw_as_light = true,
+                draw_as_sprite = false,
+                pictures = {
+                    filename = "__base__/graphics/entity/beacon/beacon-module-lights-1.png",
+                    line_length = 3,
+                    width = 28,
+                    height = 22,
+                    variation_count = 3,
+                    shift = util.by_pixel(-18 + shift_x, 13 + shift_y),
+                    hr_version = {
+                        filename = "__base__/graphics/entity/beacon/hr-beacon-module-lights-1.png",
+                        line_length = 3,
+                        width = 56,
+                        height = 42,
+                        variation_count = 3,
                         shift = util.by_pixel(-18 + shift_x, 13 + shift_y),
                         scale = 0.5
                     }
@@ -484,6 +683,17 @@ for name, map in pairs(tier_map) do
 
     -- Handle module slots
     if beacon_base == 1 then
+        -- Setup vanilla slots
+        entity.graphics_set.module_visualisations[1] = {
+            art_style = "vanilla",
+            use_for_empty_slots = true,
+            tier_offset = 0,
+            slots = {
+                setup_vanilla_module_slot({}),
+                setup_vanilla_module_slot({is_slot_2 = true}),
+            }
+        }
+
         -- 8 light modules
         table.insert(entity.graphics_set.module_visualisations, {
             art_style = "artisan-reskin",
@@ -494,6 +704,7 @@ for name, map in pairs(tier_map) do
                 setup_module_slot({is_slot_2 = true}),
             }
         })
+        
         -- 5 light modules
         -- table.insert(entity.graphics_set.module_visualisations, {
         --     art_style = "artisan-reskin-5-lights",
@@ -505,6 +716,19 @@ for name, map in pairs(tier_map) do
         --     }
         -- })
     elseif beacon_base == 2 then
+        -- Setup vanilla slots
+        entity.graphics_set.module_visualisations[1] = {
+            art_style = "vanilla",
+            use_for_empty_slots = true,
+            tier_offset = 0,
+            slots = {
+                setup_vanilla_module_slot({shift = {-3, -2.5}}), -- Slot 1, shifted left and up, below other module slot
+                setup_vanilla_module_slot({shift = {-8.5, -5.5}, is_slot_2 = true}), -- Slot 2, shifted left and up, below other module slot
+                setup_vanilla_module_slot({shift = {12, 5}}), -- Slot 1, shifted right and down, above other module slot
+                setup_vanilla_module_slot({shift = {2, 5}, is_slot_2 = true}), -- Slot 2, shifted right and down, above other module slot
+            }
+        }
+
         -- 8 light modules
         table.insert(entity.graphics_set.module_visualisations, {
             art_style = "artisan-reskin",
@@ -517,6 +741,7 @@ for name, map in pairs(tier_map) do
                 setup_module_slot({shift = {2, 5}, is_slot_2 = true}), -- Slot 2, shifted right and down, above other module slot
             }
         })
+
         -- 5 light modules
         -- table.insert(entity.graphics_set.module_visualisations, {
         --     art_style = "artisan-reskin-5-lights",
@@ -554,6 +779,21 @@ for name, map in pairs(tier_map) do
             }
         })
     elseif beacon_base == 3 then
+        -- Setup vanilla slots
+        entity.graphics_set.module_visualisations[1] = {
+            art_style = "vanilla",
+            use_for_empty_slots = true,
+            tier_offset = 0,
+            slots = {
+                setup_vanilla_module_slot({shift = {-10.5, -11}}), -- Slot 1, shifted left and up, below all
+                setup_vanilla_module_slot({shift = {7.5, -2}, is_slot_2 = true}), -- Slot 2, shifted right and up, below all
+                setup_vanilla_module_slot({shift = {-1.5, 7}}), -- Slot 1, shifted left and down, middle
+                setup_vanilla_module_slot({shift = {-11, -6.5}, is_slot_2 = true}), -- Slot 2, shifted left and up, middle
+                setup_vanilla_module_slot({shift = {17, 3}}), -- Slot 1, shifted right and down, above all
+                setup_vanilla_module_slot({shift = {4.5, 8}, is_slot_2 = true, needs_padding = true}), -- Slot 2, shifted right and down, above all
+            }
+        }
+
         -- 8 light modules
         table.insert(entity.graphics_set.module_visualisations, {
             art_style = "artisan-reskin",
@@ -568,6 +808,7 @@ for name, map in pairs(tier_map) do
                 setup_module_slot({shift = {4.5, 8}, is_slot_2 = true, needs_padding = true}), -- Slot 2, shifted right and down, above all
             }
         })
+
         -- 5 light modules
         -- table.insert(entity.graphics_set.module_visualisations, {
         --     art_style = "artisan-reskin-5-lights",
@@ -642,4 +883,44 @@ for name, map in pairs(tier_map) do
 
     -- Label to skip to next iteration
     ::continue::
+end
+
+-- Circuit Processing Compatibility
+local function makebeacontable()
+    local ret = {}
+    for k,v in pairs({{'module-lights', 4}, {'module-mask-box', 4}, {'module-mask-lights', 4}, {'module-slot', 5}}) do
+        ret['__base__/graphics/entity/beacon/beacon-'..v[1]..'-1.png'] =
+            {file = '__CircuitProcessing__/graphics/beacon/beacon-'..v[1]..'-1.png', count = v[2]}
+        ret['__base__/graphics/entity/beacon/hr-beacon-'..v[1]..'-1.png'] =
+            {file = '__CircuitProcessing__/graphics/beacon/hr-beacon-'..v[1]..'-1.png', count = v[2]}
+        ret['__base__/graphics/entity/beacon/beacon-'..v[1]..'-2.png'] =
+            {file = '__CircuitProcessing__/graphics/beacon/beacon-'..v[1]..'-2.png', count = v[2]}
+        ret['__base__/graphics/entity/beacon/hr-beacon-'..v[1]..'-2.png'] =
+            {file = '__CircuitProcessing__/graphics/beacon/hr-beacon-'..v[1]..'-2.png', count = v[2]}
+    end
+    return ret
+end
+
+local beacontable = makebeacontable()
+  
+local function updatepictures(pictures)
+    local r = beacontable[pictures.filename]
+    if r then
+        pictures.filename = r.file
+        pictures.variation_count = r.count
+        pictures.line_length = r.count
+    end
+    if pictures.hr_version then
+        updatepictures(pictures.hr_version)
+    end
+end
+  
+for _,b in pairs(data.raw.beacon) do
+    if b.graphics_set and b.graphics_set.module_visualisations then
+        for ki,vi in pairs(b.graphics_set.module_visualisations[1].slots) do
+            for kj, vj in pairs(vi) do
+                updatepictures(vj.pictures)
+            end
+        end
+    end
 end

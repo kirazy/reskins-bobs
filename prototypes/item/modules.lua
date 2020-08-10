@@ -5,6 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobmodules"] then return end
+if mods["CircuitProcessing"] then return end
 if reskins.lib.setting("reskins-bobs-do-bobmodules") == false then return end
 
 -- Modules
