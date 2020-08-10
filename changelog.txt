@@ -5,6 +5,7 @@ Date: 2020.08.XX
     - Added support for Circuit Processing
   Changes:
     - Beacon module slot style "vanilla" now compatible with 4 and 6 module slot arrangements
+    - Adjusted mining drill to account for the changes in 0.18.46
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.22
 Date: 2020.08.09
