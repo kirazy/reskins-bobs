@@ -885,6 +885,7 @@ for name, map in pairs(tier_map) do
     ::continue::
 end
 
+if not mods["CircuitProcessing"] then return end
 -- Circuit Processing Compatibility
 local function makebeacontable()
     local ret = {}
