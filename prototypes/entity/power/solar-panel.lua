@@ -160,7 +160,7 @@ for name, map in pairs(tier_map) do
                     priority = "high",
                     width = 90,
                     height = 75,
-                    shift = util.by_pixel(2.5, 0.25),
+                    shift = util.by_pixel(5, 0.5),
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/solar-panel-small/base/hr-solar-panel-small.png",
                         priority = "high",
@@ -176,7 +176,7 @@ for name, map in pairs(tier_map) do
                     priority = "high",
                     width = 90,
                     height = 75,
-                    shift = util.by_pixel(2.5, 0.25),
+                    shift = util.by_pixel(5, 0.5),
                     tint = inputs.tint,
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/solar-panel-small/hr-solar-panel-small-mask.png",
@@ -194,7 +194,7 @@ for name, map in pairs(tier_map) do
                     priority = "high",
                     width = 90,
                     height = 75,
-                    shift = util.by_pixel(2.5, 0.25),
+                    shift = util.by_pixel(5, 0.5),
                     blend_mode = "additive",
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/solar-panel-small/hr-solar-panel-small-highlights.png",
@@ -212,7 +212,7 @@ for name, map in pairs(tier_map) do
                     priority = "high",
                     width = 90,
                     height = 75,
-                    shift = util.by_pixel(2.5, 0.25),
+                    shift = util.by_pixel(5, 0.5),
                     draw_as_shadow = true,
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/solar-panel-small/base/hr-solar-panel-small-shadow.png",
@@ -235,7 +235,7 @@ for name, map in pairs(tier_map) do
                     priority = "high",
                     width = 90,
                     height = 75,
-                    shift = util.by_pixel(2.5, 0.25),
+                    shift = util.by_pixel(5, 0.5),
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/solar-panel-small/base/hr-solar-panel-small-shadow-overlay.png",
                         priority = "high",
@@ -439,7 +439,7 @@ for name, map in pairs(tier_map) do
                     priority = "high",
                     width = 154,
                     height = 137,
-                    shift = util.by_pixel(2.5, 1.75),
+                    shift = util.by_pixel(5, 3.5),
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/solar-panel-large/base/hr-solar-panel-large.png",
                         priority = "high",
@@ -455,7 +455,7 @@ for name, map in pairs(tier_map) do
                     priority = "high",
                     width = 154,
                     height = 137,
-                    shift = util.by_pixel(2.5, 1.75),
+                    shift = util.by_pixel(5, 3.5),
                     tint = inputs.tint,
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/solar-panel-large/hr-solar-panel-large-mask.png",
@@ -473,7 +473,7 @@ for name, map in pairs(tier_map) do
                     priority = "high",
                     width = 154,
                     height = 137,
-                    shift = util.by_pixel(2.5, 1.75),
+                    shift = util.by_pixel(5, 3.5),
                     blend_mode = "additive",
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/solar-panel-large/hr-solar-panel-large-highlights.png",
@@ -491,7 +491,7 @@ for name, map in pairs(tier_map) do
                     priority = "high",
                     width = 154,
                     height = 137,
-                    shift = util.by_pixel(2.5, 1.75),
+                    shift = util.by_pixel(5, 3.5),
                     draw_as_shadow = true,
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/solar-panel-large/base/hr-solar-panel-large-shadow.png",
@@ -514,7 +514,7 @@ for name, map in pairs(tier_map) do
                     priority = "high",
                     width = 154,
                     height = 137,
-                    shift = util.by_pixel(2.5, 1.75),
+                    shift = util.by_pixel(5, 3.5),
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/solar-panel-large/base/hr-solar-panel-large-shadow-overlay.png",
                         priority = "high",

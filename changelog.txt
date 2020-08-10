@@ -6,6 +6,8 @@ Date: 2020.08.09
     - Added support for Semi-Classic Mining Drill mod
   Changes:
     - Removed volume scaling from assembling machines
+    - Improved positioning of small and large solar panels in normal resolution
+    - Updated thumbnail
   Bugfixes:
     - Fixed that iron underground pipe covers were using Bob's pipe covers instead of vanilla pipe covers
 ---------------------------------------------------------------------------------------------------
