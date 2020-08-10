@@ -1,10 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.23
 Date: 2020.08.XX
-  Features:
-    - Added support for Circuit Processing
   Changes:
     - Beacon module slot style "vanilla" now compatible with 4 and 6 module slot arrangements
+    - Beacon module slots are setup in data
     - Adjusted mining drill to account for the changes in 0.18.46
     - Removed `no-crop` flag from transport belt animations set, per bugfix in 0.18.41
 ---------------------------------------------------------------------------------------------------

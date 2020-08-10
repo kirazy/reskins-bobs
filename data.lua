@@ -6,6 +6,15 @@
 -- Core functions
 require("prototypes.functions")
 
+----------------------------------------------------------------------------------------------------
+-- ENTITIES
+----------------------------------------------------------------------------------------------------
+-- Bob's Modules
+require("prototypes.entity.modules.beacon-module-slots")
+
+----------------------------------------------------------------------------------------------------
+-- COMPATIBILITY
+----------------------------------------------------------------------------------------------------
 -- Compatibility with ShinyBobGFX (requires must be done in data-updates)
 if mods["ShinyBobGFX"] then return end
 
