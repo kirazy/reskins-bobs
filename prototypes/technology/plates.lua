@@ -21,6 +21,35 @@ local technology = {
     ["thorium-fuel-reprocessing"] = {subgroup = "nuclear"},
     ["deuterium-fuel-reprocessing"] = {subgroup = "nuclear", image = "deuterium-fuel-reprocessing-pink"},
     ["bobingabout-enrichment-process"] = {subgroup = "nuclear"},
+
+    -- Smelting
+    ["alloy-processing-1"] = {subgroup = "smelting"},
+    ["chemical-processing-1"] = {subgroup = "smelting"},
+    
+    ["advanced-material-processing"] = {subgroup = "smelting"}, -- yellow steel
+    ["fluid-furnace"] = {subgroup = "smelting"}, -- yellow fluid steel
+    ["steel-mixing-furnace"] = {subgroup = "smelting"}, -- blue steel
+    ["fluid-mixing-furnace"] = {subgroup = "smelting"}, -- blue fluid steel
+    ["steel-chemical-furnace"] = {subgroup = "smelting"}, -- red steel
+    ["fluid-chemical-furnace"] = {subgroup = "smelting"}, -- red fluid steel
+    
+    ["advanced-material-processing-2"] = {subgroup = "smelting"}, -- yellow electric
+    ["advanced-material-processing-3"] = {flat_icon = false, tier = 4, icon_name = "advanced-material-processing"}, -- yellow electric
+    ["advanced-material-processing-4"] = {flat_icon = false, tier = 5, icon_name = "advanced-material-processing"}, -- yellow electric
+    ["electric-chemical-furnace"] = {subgroup = "smelting"}, -- red electric
+    ["electric-mixing-furnace"] = {subgroup = "smelting"}, -- blue electric
+    ["multi-purpose-furnace-1"] = {flat_icon = false, tier = 4, icon_name = "multi-purpose-furnace"}, -- purple electric; needs color mask support
+    ["multi-purpose-furnace-2"] = {flat_icon = false, tier = 5, icon_name = "multi-purpose-furnace"}, -- green electric; needs color mask support
+
+    -- Structures
+    -- ["water-bore-1"] = {subgroup = "structures"}, -- Barrelling Pump
+
+
+    -- Plates
+    -- ["aluminium-processing"] = {subgroup = "plates"},
+    -- ["gold-processing"] = {subgroup = "plates"},
+    -- ["zinc-processing"] = {subgroup = "plates"},
+
 }
 
 -- Handle nuclear update

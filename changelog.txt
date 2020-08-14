@@ -1,6 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.23
 Date: 2020.08.XX
+  Features:
+    - Added technology icons for smelting-related research
   Changes:
     - Beacon module slot style "vanilla" now compatible with 4 and 6 module slot arrangements
     - Beacon module slots are setup in data
