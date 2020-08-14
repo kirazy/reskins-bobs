@@ -165,7 +165,7 @@ local linked_technologies = {
 
 -- Miniaturize the linked techs
 for name, source in pairs(linked_technologies) do
-        reskins.lib.rescale_minimachine_technology(name, source)
+    reskins.lib.rescale_minimachine_technology(name, source)
 end
 
 -- Generate tech icons from files
