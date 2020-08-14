@@ -2233,6 +2233,13 @@ for name, map in pairs(tier_map) do
         tier = map[2]
     end
 
+    -- AAI Industry Compatibility
+    if name == "electric-mining-drill" then
+        inputs.defer_to_data_updates = true
+    else
+        inputs.defer_to_data_updates = nil
+    end
+
     -- Handle icon base 
     if string.find(name, "area") then
         inputs.icon_base = "large-area-electric-mining-drill"
