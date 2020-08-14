@@ -6,6 +6,10 @@
 -- Check for mini-machines
 if not mods["mini-machines"] then return end
 
+----------------------------------------------------------------------------------------------------
+-- STRUCTURES
+----------------------------------------------------------------------------------------------------
+
 -- Chemical plants; only reskin when Mini-machines pulls from the vanilla chemical plantshn
 if reskins.lib.setting("angels-disable-bobs-chemical-plants") ~= true then
     local chemplants = {
@@ -122,4 +126,62 @@ for name, _ in pairs(assembly_furnaces) do
         -- Set to standard pipe pictures for now; TODO: Custom pipe pictures
         entity.fluid_boxes[1].pipe_picture = reskins.bobs.assembly_pipe_pictures(tint)
     end
+end
+
+----------------------------------------------------------------------------------------------------
+-- TECHNOLOGY
+----------------------------------------------------------------------------------------------------
+-- Generate tech icons from other technologies
+local linked_technologies = {
+    -- Assembling Machines
+    ["mini-assembler-1"] = "automation",
+    ["mini-assembler-2"] = "automation-2",
+    ["mini-assembler-3"] = "automation-3",
+    ["mini-assembler-4"] = "automation-4",
+    ["mini-assembler-5"] = "automation-5",
+    ["mini-assembler-6"] = "automation-6",
+
+    -- Electrolysers    
+    ["mini-electro-2"] = "electrolyser-2",
+    ["mini-electro-3"] = "electrolyser-3",
+    ["mini-electro-4"] = "electrolyser-4",
+    ["mini-electro-5"] = "electrolyser-5",
+
+    -- Radars
+    ["mini-radar-2"] = "radars",
+    ["mini-radar-3"] = "radars-2",
+    ["mini-radar-4"] = "radars-3",
+    ["mini-radar-5"] = "radars-4",
+
+    -- Furnaces
+    ["mini-furnace-1"] = "advanced-material-processing-2",
+    ["mini-furnace-2"] = "advanced-material-processing-3",
+    ["mini-furnace-3"] = "advanced-material-processing-4",
+    ["mini-bobmetal-1"] = "electric-mixing-furnace",
+    ["mini-bobchem-1"] = "electric-chemical-furnace",
+    ["mini-bobmulti-1"] = "multi-purpose-furnace-1",
+    ["mini-bobmulti-2"] = "multi-purpose-furnace-2",
+}
+
+-- Miniaturize the linked techs
+for name, source in pairs(linked_technologies) do
+        reskins.lib.rescale_minimachine_technology(name, source)
+end
+
+-- Generate tech icons from files
+local inputs = {
+    directory = reskins.bobs.directory,
+    mod = "bobs",
+    type = "technology"
+}
+
+local originated_technologies = {
+    ["mini-radar-1"] = {group = "warfare", tier = 1, icon_name = "radar"},
+    ["mini-electro-1"] = {group = "assembly", tier = 1, icon_name = "electrolyser", icon_base = "electrolyser-1", icon_mask = "electrolyser-1", icon_highlights = "electrolyser-1"},
+}
+
+-- Miniaturize the originated techs
+reskins.lib.create_icons_from_list(originated_technologies, inputs)
+for name, map in pairs(originated_technologies) do    
+    reskins.lib.rescale_minimachine_technology(name, name)
 end

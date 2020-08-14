@@ -15,6 +15,13 @@ local inputs = {
 }
 
 local technology = {
+    -- Radars
+    ["radars"] = {tier = 2, icon_name = "radar"},
+    ["radars-2"] = {tier = 3, icon_name = "radar"},
+    ["radars-3"] = {tier = 4, icon_name = "radar"},
+    ["radars-4"] = {tier = 5, icon_name = "radar"},
+
+    -- Miscellaneous
     ["reinforced-wall"] = {flat_icon = true}
 }
 
