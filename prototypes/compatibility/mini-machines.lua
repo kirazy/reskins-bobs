@@ -161,6 +161,22 @@ local linked_technologies = {
     ["mini-bobchem-1"] = "electric-chemical-furnace",
     ["mini-bobmulti-1"] = "multi-purpose-furnace-1",
     ["mini-bobmulti-2"] = "multi-purpose-furnace-2",
+
+    -- Chemical Plants
+    ["mini-chemplant-2"] = "chemical-plant-2",
+    ["mini-chemplant-3"] = "chemical-plant-3",
+    ["mini-chemplant-4"] = "chemical-plant-4",
+
+    -- Oil Refineries
+    ["mini-refinery-2"] = "oil-processing-2",
+    ["mini-refinery-3"] = "oil-processing-3",
+    ["mini-refinery-4"] = "oil-processing-4",
+
+    -- Miners
+    ["mini-miner-2"] = "bob-drills-1",
+    ["mini-miner-3"] = "bob-drills-2",
+    ["mini-miner-4"] = "bob-drills-3",
+    ["mini-miner-5"] = "bob-drills-4",
 }
 
 -- Miniaturize the linked techs
@@ -176,8 +192,26 @@ local inputs = {
 }
 
 local originated_technologies = {
+    -- Radars
     ["mini-radar-1"] = {group = "warfare", tier = 1, icon_name = "radar"},
+
+    -- Electrolysers
     ["mini-electro-1"] = {group = "assembly", tier = 1, icon_name = "electrolyser", icon_base = "electrolyser-1", icon_mask = "electrolyser-1", icon_highlights = "electrolyser-1"},
+
+    -- Storage Tanks
+    ["mini-tank-1"] = {group = "compatibility", subgroup = "mini-machine", tier = 1, prog_tier = 2, icon_name = "storage-tank"},
+    ["mini-tank-2"] = {group = "compatibility", subgroup = "mini-machine", tier = 2, prog_tier = 3, icon_name = "storage-tank"},
+    ["mini-tank-3"] = {group = "compatibility", subgroup = "mini-machine", tier = 3, prog_tier = 4, icon_name = "storage-tank"},
+    ["mini-tank-4"] = {group = "compatibility", subgroup = "mini-machine", tier = 4, prog_tier = 5, icon_name = "storage-tank"},
+
+    -- Chemical Plants
+    ["mini-chemplant-1"] = {group = "assembly", tier = 1, prog_tier = 2, icon_name = "chemical-plant"},
+
+    -- Oil Refinery
+    ["mini-refinery-1"] = {group = "assembly", tier = 1, prog_tier = 2, icon_name = "oil-refinery"},
+
+    -- Miners
+    ["mini-miner-1"] = {group = "mining", tier = 1, icon_name = "mining-drill"},
 }
 
 -- Miniaturize the originated techs

@@ -29,6 +29,16 @@ local technologies = {
     ["electrolyser-3"] = {tier = 3, icon_name = "electrolyser", icon_base = "electrolyser-3", icon_mask = "electrolyser-3", icon_highlights = "electrolyser-3"},
     ["electrolyser-4"] = {tier = 4, icon_name = "electrolyser", icon_base = "electrolyser-4", icon_mask = "electrolyser-4", icon_highlights = "electrolyser-4"},
     ["electrolyser-5"] = {tier = 5, icon_name = "electrolyser", icon_base = "electrolyser-5", icon_mask = "electrolyser-5", icon_highlights = "electrolyser-5"},
+
+    -- Chemical Plants
+    ["chemical-plant-2"] = {tier = 2, prog_tier = 3, icon_name = "chemical-plant"},
+    ["chemical-plant-3"] = {tier = 3, prog_tier = 4, icon_name = "chemical-plant"},
+    ["chemical-plant-4"] = {tier = 4, prog_tier = 5, icon_name = "chemical-plant"},
+
+    -- Oil Refinery
+    ["oil-processing-2"] = {tier = 2, prog_tier = 3, icon_name = "oil-refinery"},
+    ["oil-processing-3"] = {tier = 3, prog_tier = 4, icon_name = "oil-refinery"},
+    ["oil-processing-4"] = {tier = 4, prog_tier = 5, icon_name = "oil-refinery"},
 }
 
 reskins.lib.create_icons_from_list(technologies, inputs)

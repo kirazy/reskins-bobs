@@ -50,6 +50,12 @@ local technology = {
     -- ["gold-processing"] = {subgroup = "plates"},
     -- ["zinc-processing"] = {subgroup = "plates"},
 
+    -- Fluid Handling
+    ["fluid-handling"] = {flat_icon = false, tier = 1, prog_tier = 2, icon_name = "fluid-handling"},
+    ["bob-fluid-handling-2"] = {flat_icon = false, tier = 2, prog_tier = 3, icon_name = "fluid-handling"},
+    ["bob-fluid-handling-3"] = {flat_icon = false, tier = 3, prog_tier = 4, icon_name = "fluid-handling"},
+    ["bob-fluid-handling-4"] = {flat_icon = false, tier = 4, prog_tier = 5, icon_name = "fluid-handling"},
+
 }
 
 -- Handle nuclear update

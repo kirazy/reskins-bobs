@@ -15,6 +15,9 @@ local inputs = {
 }
 
 -- Automation (Assembling Machines)
-local technologies = {}
+local technologies = {
+    -- Chemical plant
+    ["chemical-plant"] = {group = "assembly", tier = 1, prog_tier = 2, icon_name = "chemical-plant"},
+}
 
--- reskins.lib.create_icons_from_list(technologies, inputs)
+reskins.lib.create_icons_from_list(technologies, inputs)
