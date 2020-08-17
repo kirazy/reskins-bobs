@@ -2,7 +2,7 @@
 Version: 0.0.23
 Date: 2020.08.XX
   Features:
-    - Added technology icons for radars, electrolysers, boilers, heat exchangers, storage tanks, oil refineries and furnace-related research
+    - Added technology icons for radars, electrolysers, boilers, heat exchangers, storage tanks, oil refineries, miners and furnace-related research
     - Added support for Mini Machines technology icons
   Changes:
     - Continued updating technology icons to the new Factorio icons
