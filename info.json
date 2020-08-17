@@ -9,7 +9,7 @@
   "dependencies": 
   [	
     "base >= 1.0.0",
-    "reskins-library >= 1.0.1",
+    "reskins-library >= 1.0.2",
     "? bobassembly",
     "? bobelectronics",
     "? bobgreenhouse",
