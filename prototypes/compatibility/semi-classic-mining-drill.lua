@@ -708,7 +708,7 @@ local function drill_dry_working_visualisation(speed, inputs)
                         width = 26,
                         height = 30,
                         frame_count = 10,
-                        animation_speed = electric_drill_animation_speed,
+                        animation_speed = speed,
                         direction_count = 1,
                         shift = util.by_pixel(0, -44),
                         hr_version = {
@@ -718,7 +718,7 @@ local function drill_dry_working_visualisation(speed, inputs)
                             width = 46,
                             height = 58,
                             frame_count = 10,
-                            animation_speed = electric_drill_animation_speed,
+                            animation_speed = speed,
                             direction_count = 1,
                             shift = util.by_pixel(1, -44),
                             scale = 0.5,
