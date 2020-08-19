@@ -104,7 +104,6 @@ local furnaces = {
 }
 
 local assembly_furnaces = {
-    ["mini-bobchem-1"] = "chemical-furnace",
     ["mini-bobchem-1"] = "electric-chemical-furnace",
     ["mini-bobmetal-1"] = "electric-mixing-furnace",
     ["mini-bobmulti-1"] = "electric-chemical-mixing-furnace",
