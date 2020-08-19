@@ -415,24 +415,23 @@ for name, map in pairs(steel_furnace_map) do
     -- Reskin entities and remnants
     if map.has_4way == true then
         remnant.animation = {
-          filename = inputs.directory.."/graphics/entity/assembly/steel-furnace/remnants/"..sprite_name.."-remnants.png",
-          line_length = 4,
-          width = 134,
-          height = 119,
-          frame_count = 1,
-          direction_count = 4,
-          shift = util.by_pixel(4, 0.5),
-          hr_version =
-          {
-            filename = inputs.directory.."/graphics/entity/assembly/steel-furnace/remnants/hr-"..sprite_name.."-remnants.png",
+            filename = inputs.directory.."/graphics/entity/assembly/steel-furnace/remnants/"..sprite_name.."-remnants.png",
             line_length = 4,
-            width = 268,
-            height = 238,
+            width = 134,
+            height = 119,
             frame_count = 1,
             direction_count = 4,
             shift = util.by_pixel(4, 0.5),
-            scale = 0.5,
-          }
+            hr_version = {
+                filename = inputs.directory.."/graphics/entity/assembly/steel-furnace/remnants/hr-"..sprite_name.."-remnants.png",
+                line_length = 4,
+                width = 268,
+                height = 238,
+                frame_count = 1,
+                direction_count = 4,
+                shift = util.by_pixel(4, 0.5),
+                scale = 0.5,
+            }
         }
         entity.animation = reskins.lib.make_4way_animation_from_spritesheet(steel_furnace_entity_skin(sprite_name, shadow))
     else
@@ -473,7 +472,7 @@ for name, map in pairs(steel_furnace_map) do
                     west_animation = steel_furnace_fire("left"),
                     light = {intensity = 1, size = 1, color = {r = 1.0, g = 1.0, b = 1.0}}
                 },
-                  -- Small glow around the furnace mouth
+                -- Small glow around the furnace mouth
                 {
                     position = {0, 0},
                     effect = "flicker",
@@ -504,7 +503,7 @@ for name, map in pairs(steel_furnace_map) do
                     west_animation = steel_furnace_fire(),
                     light = {intensity = 1, size = 1, color = {r = 1.0, g = 1.0, b = 1.0}}
                 },
-                  -- Small glow around the furnace mouth
+                -- Small glow around the furnace mouth
                 {
                     position = {0.0, 0.0},
                     effect = "flicker",
@@ -536,7 +535,7 @@ for name, map in pairs(steel_furnace_map) do
                 west_animation = steel_furnace_fire("left"),
                 light = {intensity = 1, size = 1, color = {r = 1.0, g = 1.0, b = 1.0}}
             },
-              -- Small glow around the furnace mouth
+            -- Small glow around the furnace mouth
             {
                 position = {0.0, 0.0},
                 effect = "flicker",
