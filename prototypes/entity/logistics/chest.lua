@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -61,7 +61,7 @@ for name, map in pairs(logistic_map) do
 
     -- Stick tier labels on the vanilla logistic chests
     if not map[3] then
-        reskins.lib.append_tier_labels_to_vanilla_icon(name, tier, inputs)      
+        reskins.lib.append_tier_labels_to_vanilla_icon(name, tier, inputs)
         goto continue
     end
 

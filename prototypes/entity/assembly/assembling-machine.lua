@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -47,7 +47,7 @@ for name, map in pairs(tier_map) do
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
-      
+
     -- Determine what tint we're using
     inputs.tint = map.tint or reskins.lib.tint_index["tier-"..map.tier]
 
@@ -361,13 +361,13 @@ for name, map in pairs(tier_map) do
                     shift = util.by_pixel(27, 5),
                     scale = 0.5
                 }
-            }                
+            }
         }
     }
 
     -- Insert the electronics assembling machine decoratives
     if string.find(name, "electronics") then
-        table.insert(entity.animation.layers, 
+        table.insert(entity.animation.layers,
         -- Base
         {
             filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/electronics/electronics-base.png",
@@ -390,7 +390,7 @@ for name, map in pairs(tier_map) do
                 scale = 0.5
             }
         })
-        table.insert(entity.animation.layers, 
+        table.insert(entity.animation.layers,
         -- Mask
         {
             filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/electronics/electronics-mask.png",
@@ -415,7 +415,7 @@ for name, map in pairs(tier_map) do
                 scale = 0.5
             }
         })
-        table.insert(entity.animation.layers, 
+        table.insert(entity.animation.layers,
         -- Highlights
         {
             filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/electronics/electronics-highlights.png",
@@ -440,7 +440,7 @@ for name, map in pairs(tier_map) do
                 scale = 0.5
             }
         })
-        table.insert(entity.animation.layers, 
+        table.insert(entity.animation.layers,
         -- Shadow
         {
             filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/electronics/electronics-shadow.png",
@@ -469,7 +469,7 @@ for name, map in pairs(tier_map) do
 
     -- Fix drawing box
     entity.drawing_box = nil
-    
+
     -- Rescale for electronics and burner assembling machines
     if string.find(name, "electronics") or name == "burner-assembling-machine" then
         reskins.lib.rescale_entity(entity.animation, 2/3)
@@ -542,5 +542,5 @@ for name, map in pairs(tier_map) do
     end
 
     -- Label to skip to next iteration
-    ::continue::    
+    ::continue::
 end

@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -34,7 +34,7 @@ for name, map in pairs(tier_map) do
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
-    
+
     -- Parse map
     local tier = map[1]
     local shadow = map[2]
@@ -46,7 +46,7 @@ for name, map in pairs(tier_map) do
     inputs.icon_base = "electrolyser-"..tier
     inputs.icon_mask = inputs.icon_base
     inputs.icon_highlights = inputs.icon_base
-  
+
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Reskin entities
