@@ -1,5 +1,5 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.0.23
+Version: 1.0.1
 Date: 2020.08.XX
   Features:
     - Added technology icons for radars, electrolysers, boilers, heat exchangers, storage tanks, oil refineries, miners and furnace-related research
@@ -10,6 +10,8 @@ Date: 2020.08.XX
     - Beacon module slots are setup in data
     - Adjusted mining drill to account for the changes in 0.18.46
     - Removed `no-crop` flag from transport belt animations set, per bugfix in 0.18.41
+  Bugfixes:
+    - Fixed Deadlock Beltboxes technologies missing icon_size property at root
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.22
 Date: 2020.08.09

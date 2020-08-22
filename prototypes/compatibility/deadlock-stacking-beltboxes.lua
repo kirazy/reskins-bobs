@@ -180,11 +180,16 @@ for name, tier in pairs(tech_map) do
     -- Check if technology exists, if not, skip this iteration
     if not technology then goto continue end
 
-    -- Determine what tint we're using
-    inputs.tint = reskins.bobs.belt_tint_handling(name, tier)
+    local inputs = {
+        technology_icon = {
+            { icon = "__deadlock-beltboxes-loaders__/graphics/icons/square/beltbox-icon-base-128.png" },
+            { icon = "__deadlock-beltboxes-loaders__/graphics/icons/square/beltbox-icon-mask-128.png", tint = reskins.bobs.belt_tint_handling(name, tier) },
+        },
+        technology_icon_size = 128,
+        technology_icon_mipmaps = 1,
+    }
 
-    -- Retint the mask
-    technology.icons[2].tint = inputs.tint
+    reskins.lib.assign_technology_icons(name, inputs)
     
     -- Label to skip to next iteration
     ::continue::
