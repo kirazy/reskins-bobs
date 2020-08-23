@@ -48,11 +48,11 @@ for name, map in pairs(vehicle_shield) do
     -- Construct technology icon
     inputs.technology_icon_extras = {
         {
-            icon = inputs.directory.."/graphics/technology/equipment/personal-equipment-symbol.png"
+            icon = inputs.directory.."/graphics/technology/equipment/vehicle-equipment-symbol.png"
         }
     }
 
-    -- reskins.lib.construct_technology_icon(technology, inputs)
+    reskins.lib.construct_technology_icon(technology, inputs)
 
     -- Reskin the equipment
     equipment.sprite = {
