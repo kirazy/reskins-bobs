@@ -2,8 +2,9 @@
 Version: 1.0.1
 Date: 2020.08.XX
   Features:
-    - Added technology icons for radars, electrolysers, boilers, heat exchangers, storage tanks, oil refineries, miners and furnace-related research
+    - Added a number of technology icons
     - Added support for Mini Machines technology icons
+    - Added localization support for German
   Changes:
     - Continued updating technology icons to the new Factorio icons
     - Beacon module slot style "vanilla" now compatible with 4 and 6 module slot arrangements
