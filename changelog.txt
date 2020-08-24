@@ -1,13 +1,15 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.1
-Date: 2020.08.XX
+Date: 2020.08.24
   Features:
-    - Added a number of technology icons
+    - Beacon module slot style "vanilla" now compatible with 4 and 6 module slot arrangements
+    - Added support for numerous machine technology icons
+    - Finished implementation of personal equipment with additions of exoskeletons, and personal roboport area expanders, charge pads, and robot control equipment
+    - Implemented support for vehicle roboport area expanders, charge pads, and robot control equipment 
     - Added support for Mini Machines technology icons
     - Added localization support for German
   Changes:
-    - Continued updating technology icons to the new Factorio icons
-    - Beacon module slot style "vanilla" now compatible with 4 and 6 module slot arrangements
+    - Existing supported technology icons updated to the new icons from 1.0.0
     - Beacon module slots are setup in data
     - Adjusted mining drill to account for the changes in 0.18.46
     - Removed `no-crop` flag from transport belt animations set, per bugfix in 0.18.41
