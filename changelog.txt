@@ -11,6 +11,7 @@ Date: 2020.08.XX
     - Beacon module slots are setup in data
     - Adjusted mining drill to account for the changes in 0.18.46
     - Removed `no-crop` flag from transport belt animations set, per bugfix in 0.18.41
+    - Tweaked mining drill handling to rely on local functions instead of vanilla global functions
   Bugfixes:
     - Fixed Deadlock Beltboxes technologies missing icon_size property at root
 ---------------------------------------------------------------------------------------------------

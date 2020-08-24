@@ -117,10 +117,12 @@ require("prototypes.entity.warfare.gate")
 -- Bob's Personal Equipment
 require("prototypes.equipment.equipment.battery")
 require("prototypes.equipment.equipment.energy-shield")
+require("prototypes.equipment.equipment.exoskeleton")
 require("prototypes.equipment.equipment.fusion-reactor")
 require("prototypes.equipment.equipment.laser-defense")
 require("prototypes.equipment.equipment.night-vision")
 require("prototypes.equipment.equipment.personal-roboport")
+require("prototypes.equipment.equipment.roboport-parts")
 require("prototypes.equipment.equipment.solar-panel")
 
 -- Bob's Vehicle Equipment
@@ -130,6 +132,7 @@ require("prototypes.equipment.vehicle-equipment.vehicle-fusion-cell")
 require("prototypes.equipment.vehicle-equipment.vehicle-fusion-reactor")
 require("prototypes.equipment.vehicle-equipment.vehicle-laser-defense")
 require("prototypes.equipment.vehicle-equipment.vehicle-roboport")
+require("prototypes.equipment.vehicle-equipment.vehicle-roboport-parts")
 require("prototypes.equipment.vehicle-equipment.vehicle-solar-panel")
 
 ----------------------------------------------------------------------------------------------------
