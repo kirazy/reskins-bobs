@@ -1196,3 +1196,117 @@ function reskins.bobs.pipe_covers(inputs)
         }
     }
 end
+
+-- MINING DRILL FUNCTIONS
+-- Apparently relying on vanilla globals can be dangerous when other mods break them
+function reskins.bobs.electric_mining_drill_smoke()
+    return
+    {
+        priority = "high",
+        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-smoke.png",
+        line_length = 6,
+        width = 24,
+        height = 38,
+        frame_count = 30,
+        animation_speed = 0.4,
+        direction_count = 1,
+        shift = util.by_pixel(0, 2),
+        hr_version = {
+            priority = "high",
+            filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-smoke.png",
+            line_length = 6,
+            width = 48,
+            height = 72,
+            frame_count = 30,
+            animation_speed = 0.4,
+            direction_count = 1,
+            shift = util.by_pixel(0, 3),
+            scale = 0.5,
+        }
+    }
+end
+
+function reskins.bobs.electric_mining_drill_smoke_front()
+    return
+    {
+        priority = "high",
+        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-smoke-front.png",
+        line_length = 6,
+        width = 76,
+        height = 68,
+        frame_count = 30,
+        animation_speed = 0.4,
+        direction_count = 1,
+        shift = util.by_pixel(-4, 8),
+        hr_version = {
+            priority = "high",
+            filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-smoke-front.png",
+            line_length = 6,
+            width = 148,
+            height = 132,
+            frame_count = 30,
+            animation_speed = 0.4,
+            direction_count = 1,
+            shift = util.by_pixel(-3, 9),
+            scale = 0.5,
+        }
+    }
+end
+
+reskins.bobs.electric_drill_animation_sequence = {
+    1, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+    21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+    21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+    21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+    21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+    21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+    21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+    21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+    21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+    21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+    21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+    21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+    21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+    21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+    21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+    21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+    21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 1
+}
+
+reskins.bobs.electric_drill_animation_shadow_sequence = {
+    1, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+    21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+    21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+    21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+    21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+    21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+    21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+    21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+    21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+    21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+    21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+    21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+    21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+    21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+    21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+    21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+    21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 1
+}
+
+local function electric_mining_drill_add_light_offsets(t)
+    t.north_position = { 0.8, -1.5}
+    t.east_position =  { 1.2, -1}
+    t.south_position = { 0.8,  0.8}
+    t.west_position =  {-1.2, -1}
+    return t
+end
+
+reskins.bobs.electric_mining_drill_primary_light = electric_mining_drill_add_light_offsets({
+    light = { intensity = 1, size = 3, color={r=1, g=1, b=1}, minimum_darkness = 0.1 }
+})
+
+reskins.bobs.electric_mining_drill_secondary_light = electric_mining_drill_add_light_offsets({
+    always_draw = true,
+    apply_tint = "status",
+    light = { intensity = 0.8, size = 1.5, color={r=1, g=1, b=1}, minimum_darkness = 0.1 }
+})
