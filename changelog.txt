@@ -2,7 +2,7 @@
 Version: 1.0.1
 Date: 2020.08.24
   Features:
-    - Forgot to mention that Circuit Processing modules are supported as of version 1.0.1
+    - Forgot to mention that Circuit Processing is supported as of version 1.0.1
   Changes:
     - Added support for the manual module override setting in Circuit Processing
 ---------------------------------------------------------------------------------------------------
