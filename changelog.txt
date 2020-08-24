@@ -2,6 +2,13 @@
 Version: 1.0.1
 Date: 2020.08.24
   Features:
+    - Forgot to mention that Circuit Processing modules are supported as of version 1.0.1
+  Changes:
+    - Added support for the manual module override setting in Circuit Processing
+---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+Date: 2020.08.24
+  Features:
     - Beacon module slot style "vanilla" now compatible with 4 and 6 module slot arrangements
     - Added support for numerous machine technology icons
     - Finished implementation of personal equipment with additions of exoskeletons, and personal roboport area expanders, charge pads, and robot control equipment

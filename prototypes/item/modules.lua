@@ -1,11 +1,12 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobmodules"] then return end
-if mods["CircuitProcessing"] then return end
+if reskins.lib.setting("cp-override-modules") == false then -- Do nothing
+elseif mods["CircuitProcessing"] then return end
 if reskins.lib.setting("reskins-bobs-do-bobmodules") == false then return end
 
 -- Modules
