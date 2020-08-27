@@ -1,10 +1,11 @@
 ---------------------------------------------------------------------------------------------------
-Version: 1.0.1
-Date: 2020.08.24
+Version: 1.0.2
+Date: 2020.08.XX
   Features:
-    - Forgot to mention that Circuit Processing is supported as of version 1.0.1
+    - Implemented support for Circuit Processing mod
   Changes:
     - Added support for the manual module override setting in Circuit Processing
+    - Revised accumulator color masks for improved rust exposure
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.1
 Date: 2020.08.24
