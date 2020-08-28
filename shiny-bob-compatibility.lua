@@ -1,33 +1,9 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- When compatibility with ShinyBobGFX is finally dropped, the contents of this file will be moved to data.lua
-
-----------------------------------------------------------------------------------------------------
--- TECHNOLOGIES
-----------------------------------------------------------------------------------------------------
-require("prototypes.technology.assembly")
--- require("prototypes.technology.electronics")
-require("prototypes.technology.greenhouse")
-require("prototypes.technology.logistics")
-require("prototypes.technology.mining")
-require("prototypes.technology.plates")
-require("prototypes.technology.power")
-
-----------------------------------------------------------------------------------------------------
--- ITEMS
-----------------------------------------------------------------------------------------------------
-require("prototypes.item.electronics")
-require("prototypes.item.greenhouse")
-require("prototypes.item.logistics")
-require("prototypes.item.modules")
-require("prototypes.item.ores")
-require("prototypes.item.plates")
-require("prototypes.item.revamp")
-require("prototypes.item.technology")
-require("prototypes.item.warfare")
 
 ----------------------------------------------------------------------------------------------------
 -- ENTITIES
@@ -134,6 +110,30 @@ require("prototypes.equipment.vehicle-equipment.vehicle-laser-defense")
 require("prototypes.equipment.vehicle-equipment.vehicle-roboport")
 require("prototypes.equipment.vehicle-equipment.vehicle-roboport-parts")
 require("prototypes.equipment.vehicle-equipment.vehicle-solar-panel")
+
+----------------------------------------------------------------------------------------------------
+-- ITEMS
+----------------------------------------------------------------------------------------------------
+require("prototypes.item.electronics")
+require("prototypes.item.greenhouse")
+require("prototypes.item.logistics")
+require("prototypes.item.modules")
+require("prototypes.item.ores")
+require("prototypes.item.plates")
+require("prototypes.item.revamp")
+require("prototypes.item.technology")
+require("prototypes.item.warfare")
+
+----------------------------------------------------------------------------------------------------
+-- TECHNOLOGIES
+----------------------------------------------------------------------------------------------------
+require("prototypes.technology.assembly")
+-- require("prototypes.technology.electronics")
+require("prototypes.technology.greenhouse")
+require("prototypes.technology.logistics")
+require("prototypes.technology.mining")
+require("prototypes.technology.plates")
+require("prototypes.technology.power")
 
 ----------------------------------------------------------------------------------------------------
 -- COMPATIBILITY
