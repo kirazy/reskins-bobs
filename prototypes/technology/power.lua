@@ -55,7 +55,6 @@ local technologies = {
     ["bob-heat-exchanger-3"] = {tier = 3, prog_tier = 5, icon_name = "heat-exchanger", icon_base = "heat-exchanger-3"},
 
     -- Steam Engines
-    ["bob-steam-engine-1"] = {tier = 1, icon_name = "steam-engine"},
     ["bob-steam-engine-2"] = {tier = 2, icon_name = "steam-engine"},
     ["bob-steam-engine-3"] = {tier = 3, icon_name = "steam-engine"},
     ["bob-steam-engine-4"] = {tier = 4, icon_name = "steam-engine"},
@@ -67,7 +66,7 @@ local technologies = {
     ["bob-steam-turbine-3"] = {tier = 3, prog_tier = 5, icon_name = "steam-turbine"},
 
     -- Accumulators
-    ["electric-energy-accumulators"] = {icon_name = "accumulator", flat_icon = true},
+    ["electric-energy-accumulators"] = {tier = 1, prog_tier = 2, icon_name = "accumulator", technology_icon_layers = 1},
     ["bob-electric-energy-accumulators-2"] = {tier = 1, prog_tier = 2, icon_name = "accumulator"},
     ["bob-electric-energy-accumulators-3"] = {tier = 2, prog_tier = 3, icon_name = "accumulator"},
     ["bob-electric-energy-accumulators-4"] = {tier = 3, prog_tier = 4, icon_name = "accumulator"},

@@ -20,6 +20,9 @@ local technologies = {
     ["basic-automation"] = {group = "assembly", icon_name = "automation", tint = util.color("262626")},
     ["steam-automation"] = {group = "assembly", icon_name = "automation", tint = util.color("d9d9d9")},
 
+    -- Steam Engine
+    ["bob-steam-engine-1"] = {group = "power", tier = 1, icon_name = "steam-engine"},
+
     -- Science Packs
     ["advanced-logistic-science-pack"] = {icon_name = "science-pack", tint = util.color("de00a3")}
 }
