@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -38,7 +38,7 @@ for name, map in pairs(tier_map) do
         data.raw["item"][name].order = "a[beacon]-1"
         entity.order = "z-a[beacon]-1"
     end
-    
+
     -- Parse map
     local tier = map[1]
     if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
@@ -48,7 +48,7 @@ for name, map in pairs(tier_map) do
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
-  
+
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Fetch remnant

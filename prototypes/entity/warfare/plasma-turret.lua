@@ -1,11 +1,11 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobwarfare"] then return end
-if reskins.lib.setting("reskins-bobs-do-bobwarfare") == false then return end 
+if reskins.lib.setting("reskins-bobs-do-bobwarfare") == false then return end
 
 local inputs = {
     type = "electric-turret",
@@ -230,7 +230,7 @@ end
 for name, tier in pairs(tier_map) do
     -- Fetch entity
     local entity = data.raw[inputs.type][name]
-    
+
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end

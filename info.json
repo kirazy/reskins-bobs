@@ -6,8 +6,8 @@
   "author": "Kirazy",
   "contact": "kirazy@live.com",
   "homepage": "https://forums.factorio.com/viewtopic.php?f=51&t=85707",
-  "dependencies": 
-  [	
+  "dependencies":
+  [
     "base >= 1.0.0",
     "reskins-library >= 1.0.4",
     "? bobassembly",

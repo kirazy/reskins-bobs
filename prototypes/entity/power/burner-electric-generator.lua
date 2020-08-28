@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -129,7 +129,7 @@ entity.animation = {
 entity.idle_animation = {
     layers = {
         -- Base
-        {        
+        {
             filename = inputs.directory.."/graphics/entity/power/burner-electric-generator/burner-electric-generator.png",
             width = 106,
             height = 136,

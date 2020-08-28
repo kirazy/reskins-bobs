@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -71,7 +71,7 @@ for name, map in pairs(tier_map) do
     reskins.lib.create_explosion(name, inputs)
     reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["small"], 1, particle_tints[1])
     reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["medium"], 2, particle_tints[2])
-    
+
     -- Create and skin remnants
     reskins.lib.create_remnant(name, inputs)
     local remnant = data.raw["corpse"][name.."-remnants"]

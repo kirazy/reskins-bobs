@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -57,7 +57,7 @@ local intermediaries = {
     ["nitinol-bearing-ball"] = {subgroup = "bearing-balls"},
     ["steel-bearing-ball"] = {subgroup = "bearing-balls"},
     ["titanium-bearing-ball"] = {subgroup = "bearing-balls"},
-    
+
     -- Gear Wheels
     ["brass-gear-wheel"] = {subgroup = "gears"},
     ["cobalt-steel-gear-wheel"] = {subgroup = "gears"},
@@ -125,7 +125,7 @@ local intermediaries = {
 }
 
 -- Handle deuterium color
-if reskins.lib.setting("bobmods-plates-bluedeuterium") == true then 
+if reskins.lib.setting("bobmods-plates-bluedeuterium") == true then
     intermediaries["deuterium-fuel-cell"].image = "deuterium-fuel-cell-blue"
     intermediaries["used-up-deuterium-fuel-cell"].image = "used-up-deuterium-fuel-cell-blue"
 end
@@ -147,7 +147,7 @@ else
     else
         intermediaries["deuterium-fuel-reprocessing"].image = "deuterium-fuel-reprocessing-alternate-pink"
     end
-    
+
 end
 
 reskins.lib.create_icons_from_list(intermediaries, inputs)

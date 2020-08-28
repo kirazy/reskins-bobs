@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -301,7 +301,7 @@ local function skin_reactor_remnants(name, inputs)
                     shift = util.by_pixel(7, 4),
                     scale = 0.5,
                 }
-            }          
+            }
         }
     }
 end
@@ -321,10 +321,10 @@ if reskins.lib.setting("bobmods-revamp-nuclear") == true then
     -- Map fuel type to reactor entity name
     fuel_index["nuclear-reactor-2"] = "thorium"
 
-    if reskins.lib.setting("bobmods-plates-bluedeuterium") == true then 
-        fuel_index["nuclear-reactor-3"] = "deuterium-blue"        
+    if reskins.lib.setting("bobmods-plates-bluedeuterium") == true then
+        fuel_index["nuclear-reactor-3"] = "deuterium-blue"
     else
-        fuel_index["nuclear-reactor-3"] = "deuterium-pink"        
+        fuel_index["nuclear-reactor-3"] = "deuterium-pink"
     end
 end
 

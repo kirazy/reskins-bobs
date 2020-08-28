@@ -4,6 +4,7 @@ Date: 2020.08.XX
   Features:
     - Implemented support for Circuit Processing mod
     - Added support for `Color intensity`, affecting how bright structures, vehicles and robots appear in-world
+    - Added support for additional machine technology icons
   Changes:
     - Added support for the manual module override setting in Circuit Processing
     - Revised accumulator color masks for improved rust exposure
@@ -14,7 +15,7 @@ Date: 2020.08.24
     - Beacon module slot style "vanilla" now compatible with 4 and 6 module slot arrangements
     - Added support for numerous machine technology icons
     - Finished implementation of personal equipment with additions of exoskeletons, and personal roboport area expanders, charge pads, and robot control equipment
-    - Implemented support for vehicle roboport area expanders, charge pads, and robot control equipment 
+    - Implemented support for vehicle roboport area expanders, charge pads, and robot control equipment
     - Added support for Mini Machines technology icons
     - Added localization support for German
   Changes:

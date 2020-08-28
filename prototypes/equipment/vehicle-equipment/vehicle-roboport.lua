@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -37,7 +37,7 @@ for name, map in pairs(vehicle_roboports) do
     local tier = map[1]
     if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
         tier = map[2]
-    end   
+    end
     local equipment_base = map[1]
 
     -- Determine what tint we're using
@@ -89,7 +89,7 @@ for name, map in pairs(vehicle_roboports) do
         }
     }
 
-    
+
 
     -- Label to skip to next iteration
     ::continue::

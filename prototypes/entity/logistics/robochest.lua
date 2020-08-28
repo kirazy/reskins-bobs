@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -46,7 +46,7 @@ for name, map in pairs(tier_map) do
 
     -- Setup icon details
     inputs.icon_base = "robochest-"..subtier
-    
+
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
     entity.spawn_and_station_height = -0.25
@@ -202,7 +202,7 @@ for name, map in pairs(tier_map) do
             scale = 0.5
         }
     }
-    
+
     entity.door_animation_down = {
         filename = inputs.directory.."/graphics/entity/logistics/roboport/base/doors/roboport-"..subtier.."-door-down.png",
         priority = "medium",

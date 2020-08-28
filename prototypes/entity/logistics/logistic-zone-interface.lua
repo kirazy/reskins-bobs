@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -50,9 +50,9 @@ entity.base =
 
 entity.base_animation =
 {
-    layers = 
+    layers =
     {
-        {            
+        {
             filename = inputs.directory.."/graphics/entity/logistics/roboport/base/antennas/roboport-1-base-animation.png",
             priority = "medium",
             width = 42,
@@ -72,7 +72,7 @@ entity.base_animation =
                 scale = 0.5
             }
         },
-        {            
+        {
             filename = inputs.directory.."/graphics/entity/logistics/zone-interface/logistic-zone-interface-shadow.png",
             priority = "medium",
             width = 53,

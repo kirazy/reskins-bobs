@@ -1,11 +1,11 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobwarfare"] then return end
-if reskins.lib.setting("reskins-bobs-do-bobwarfare") == false then return end 
+if reskins.lib.setting("reskins-bobs-do-bobwarfare") == false then return end
 
 -- Set input parameters
 local inputs = {
@@ -365,7 +365,7 @@ for name, map in pairs(tier_map) do
             sniper_turret_extension({run_mode = "backward"}),
             sniper_turret_extension_tint({run_mode = "backward"}),
             sniper_turret_extension_mask(inputs, {run_mode = "backward"}),
-            sniper_turret_extension_highlights({run_mode = "backward"}),           
+            sniper_turret_extension_highlights({run_mode = "backward"}),
             sniper_turret_extension_shadow({run_mode = "backward"})
         }
     }

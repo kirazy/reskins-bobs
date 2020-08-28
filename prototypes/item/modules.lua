@@ -63,5 +63,5 @@ for class, map in pairs(modules_map) do
 
         -- Label to skip to next iteration
         ::continue::
-    end    
+    end
 end

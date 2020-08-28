@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Add this mod to the reskins function host.
@@ -35,37 +35,37 @@ local function adjust_animation(animation, shift)
 
     local animation = util.copy(animation)
     local layers = animation.layers or {animation}
-  
+
     for k, layer in pairs (layers) do
-  
+
         layer.frame_count = layer.direction_count
         layer.direction_count = 0
         layer.animation_speed = 1
         layer.shift = util.add_shift(layer.shift, shift)
-  
+
         if layer.hr_version then
             layer.hr_version.frame_count = layer.hr_version.direction_count
             layer.hr_version.direction_count = 0
             layer.hr_version.animation_speed = 1
             layer.hr_version.shift = util.add_shift(layer.hr_version.shift, shift)
         end
-  
+
     end
-  
+
     return animation
 end
 
 local function reverse_animation(animation)
     local animation = util.copy(animation)
     local layers = animation.layers or {animation}
-  
+
     for k, layer in pairs (layers) do
         layer.run_mode = "backward"
         if layer.hr_version then
             layer.hr_version.run_mode = "backward"
         end
     end
-  
+
     return animation
 end
 
@@ -74,10 +74,10 @@ function reskins.bobs.make_robot_particle(prototype)
     local animation_shift = {0, 0}
 
     local particle_name = prototype.name.."-dying-particle"
-  
+
     local animation = adjust_animation(prototype.in_motion, animation_shift)
     local shadow_animation = adjust_animation(prototype.shadow_in_motion, shadow_shift)
-  
+
     local particle = {
         type = "optimized-particle",
         name = particle_name,
@@ -151,7 +151,7 @@ function reskins.bobs.make_robot_particle(prototype)
                 offsets = {{0, 0.5}}
             }
         }
-    }  
+    }
 end
 
 -- TRANSPORT BELT PICTURES
@@ -199,7 +199,7 @@ function reskins.bobs.transport_belt_animation_set(tint, variant)
                             direction_count = 20
                         }
                     },
-                }                
+                }
             }
         }
     else
@@ -322,7 +322,7 @@ function reskins.bobs.assembly_pipe_pictures(tint)
                         scale = 0.5
                     }
                 }
-            }        
+            }
         },
         east = {
             layers = {
@@ -512,7 +512,7 @@ function reskins.bobs.furnace_pipe_pictures(tint)
                 height = 26,
                 shift = util.by_pixel(2.5, 10),
                 scale = 0.5
-            }   
+            }
         },
         east = {
             layers = {

@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check for mini-machines
@@ -140,7 +140,7 @@ local linked_technologies = {
     ["mini-assembler-5"] = "automation-5",
     ["mini-assembler-6"] = "automation-6",
 
-    -- Electrolysers    
+    -- Electrolysers
     ["mini-electro-2"] = "electrolyser-2",
     ["mini-electro-3"] = "electrolyser-3",
     ["mini-electro-4"] = "electrolyser-4",
@@ -215,6 +215,6 @@ local originated_technologies = {
 
 -- Miniaturize the originated techs
 reskins.lib.create_icons_from_list(originated_technologies, inputs)
-for name, map in pairs(originated_technologies) do    
+for name, map in pairs(originated_technologies) do
     reskins.lib.rescale_minimachine_technology(name, name)
 end

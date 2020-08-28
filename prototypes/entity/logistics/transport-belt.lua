@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -58,12 +58,12 @@ for name, map in pairs(tier_map) do
     inputs.base_entity = map[4]
 
     -- Check if we're doing reskin operations on the vanilla belts
-    if do_reskin == false then 
+    if do_reskin == false then
         reskins.lib.append_tier_labels_to_vanilla_icon(name, tier, inputs)
         goto continue
     end
-    
-    reskins.lib.setup_standard_entity(name, tier, inputs)    
+
+    reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Fetch remnant
     local remnant = data.raw["corpse"][name.."-remnants"]
@@ -122,7 +122,7 @@ for name, map in pairs(tier_map) do
                 }
             }
         }
-    })    
+    })
 
     -- Reskin entities
     entity.belt_animation_set = reskins.bobs.transport_belt_animation_set(inputs.tint, variant)

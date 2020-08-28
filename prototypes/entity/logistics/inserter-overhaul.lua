@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -221,7 +221,7 @@ local function inserter_arm_picture(parameters)
         arm_picture.layers[3].hr_version.filename = inputs.directory.."/graphics/entity/logistics/inserter/arms/hr-filter-inserter-arm-highlights.png"
     end
 
-    return arm_picture       
+    return arm_picture
 end
 
 local function inserter_arm_shadow()
@@ -316,7 +316,7 @@ local function inserter_hand_picture(parameters)
         hand_picture.layers[3].hr_version.filename = inputs.directory.."/graphics/entity/logistics/inserter/hands/hr-filter-"..parameters.type.."-hand-highlights.png"
     end
 
-    return hand_picture    
+    return hand_picture
 end
 
 local function inserter_hand_shadow(parameters)
@@ -435,7 +435,7 @@ for name, tier in pairs(inserter_map) do
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
- 
+
     -- Handle base_entity
     if string.find(name, "stack%-inserter") then
         inputs.base_entity = "stack-inserter"
@@ -445,7 +445,7 @@ for name, tier in pairs(inserter_map) do
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
-    if string.find(name, "filter") then        
+    if string.find(name, "filter") then
         inputs.platform_tint = util.color("bfbfbf") -- Whiteish
     else
         inputs.platform_tint = inputs.tint
@@ -491,7 +491,7 @@ for name, tier in pairs(inserter_map) do
         inputs.tier_labels = false
     end
 
-    reskins.lib.setup_standard_entity(name, tier, inputs)    
+    reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Fetch remnant
     local remnant = data.raw["corpse"][name.."-remnants"]

@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -11,7 +11,7 @@ if reskins.lib.setting("reskins-bobs-do-boblogistics") == false then return end
 local inputs = {
     type = "logistic-robot",
     icon_name = "logistic-robot",
-    base_entity = "logistic-robot",    
+    base_entity = "logistic-robot",
     directory = reskins.bobs.directory,
     mod = "bobs",
     group = "logistics",
@@ -185,7 +185,7 @@ local function generate_robot_animations(tint)
                 }
             }
         },
-        
+
         in_motion = {
             layers = {
                 -- Base
@@ -266,7 +266,7 @@ local function generate_robot_animations(tint)
                 }
             }
         },
-        
+
         in_motion_with_cargo = {
             layers = {
                 -- Base
@@ -347,7 +347,7 @@ local function generate_robot_animations(tint)
                 }
             }
         },
-        
+
         shadow_idle = {
             filename = "__base__/graphics/entity/logistic-robot/logistic-robot-shadow.png",
             priority = "high",

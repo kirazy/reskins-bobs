@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -2061,7 +2061,7 @@ local index = 1
 for name, _ in pairs(tier_map) do
     -- Fetch entity
     local entity = data.raw[inputs.type][name]
-    
+
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
@@ -2092,7 +2092,7 @@ for name, map in pairs(tier_map) do
         tier = map[2]
     end
 
-    -- Handle icon base 
+    -- Handle icon base
     if string.find(name, "area") then
         inputs.icon_base = "large-area-electric-mining-drill"
         inputs.is_area_drill = true
@@ -2114,12 +2114,12 @@ for name, map in pairs(tier_map) do
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
-    
+
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Calculate new animation playback speed
     local speed
-    if max_speed - min_speed == 0 then 
+    if max_speed - min_speed == 0 then
         speed = entity.mining_speed
     else
         speed = ((entity.mining_speed/(max_speed-min_speed)) - (min_speed/(max_speed-min_speed)))*max_playback
@@ -2220,7 +2220,7 @@ for name, map in pairs(tier_map) do
     entity.wet_mining_graphics_set.shift_animation_waypoint_stop_duration = 195 / speed
     entity.wet_mining_graphics_set.shift_animation_transition_duration = 30 / speed
     entity.wet_mining_graphics_set.working_visualisations = drill_wet_working_visualisation(speed, inputs)
-    
+
     -- Label to skip to next iteration
     ::continue::
 end

@@ -1,11 +1,11 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobwarfare"] then return end
-if reskins.lib.setting("reskins-bobs-do-bobwarfare") == false then return end 
+if reskins.lib.setting("reskins-bobs-do-bobwarfare") == false then return end
 
 -- Set input parameters
 local inputs = {
@@ -244,7 +244,7 @@ local function turret_attack(inputs, parameters)
                     scale = 0.5
                 }
             },
-            -- Mask            
+            -- Mask
             {
                 width = 66,
                 height = 66,
@@ -643,7 +643,7 @@ for name, tier in pairs(tier_map) do
             turret_extension(inputs, {}),
             turret_extension_tint(inputs, {}),
             turret_extension_highlights(inputs, {}),
-            turret_extension_mask(inputs, {}),            
+            turret_extension_mask(inputs, {}),
             turret_extension_shadow(inputs, {})
         }
     }
@@ -654,7 +654,7 @@ for name, tier in pairs(tier_map) do
             turret_extension(inputs, {run_mode = "backward"}),
             turret_extension_tint(inputs, {run_mode = "backward"}),
             turret_extension_highlights(inputs, {run_mode = "backward"}),
-            turret_extension_mask(inputs, {run_mode = "backward"}),            
+            turret_extension_mask(inputs, {run_mode = "backward"}),
             turret_extension_shadow(inputs, {run_mode = "backward"})
         }
     }

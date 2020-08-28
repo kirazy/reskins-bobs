@@ -1,11 +1,11 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobwarfare"] then return end
-if reskins.lib.setting("reskins-bobs-do-bobwarfare") == false then return end 
+if reskins.lib.setting("reskins-bobs-do-bobwarfare") == false then return end
 
 -- Make sure the gate exists
 local entity = data.raw["gate"]["reinforced-gate"]
@@ -33,7 +33,7 @@ reskins.lib.parse_inputs(inputs)
 -- Create particles and explosions
 reskins.lib.create_explosion("reinforced-gate", inputs)
 
-for particle, key in pairs(inputs.particles) do 
+for particle, key in pairs(inputs.particles) do
     reskins.lib.create_particle("reinforced-gate", inputs.base_entity, reskins.lib.particle_index[particle], key, reinforced_tint_index[particle])
 end
 

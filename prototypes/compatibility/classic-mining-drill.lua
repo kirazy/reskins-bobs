@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -630,7 +630,7 @@ local index = 1
 for name, tier in pairs(tier_map) do
     -- Fetch entity
     local entity = data.raw[inputs.type][name]
-    
+
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
@@ -661,7 +661,7 @@ for name, map in pairs(tier_map) do
         tier = map[2]
     end
 
-    -- Handle icon base 
+    -- Handle icon base
     if string.find(name, "area") then
         inputs.icon_base = "large-area-electric-mining-drill"
          inputs.icon_extras = {
@@ -681,12 +681,12 @@ for name, map in pairs(tier_map) do
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
-    
+
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Calculate new animation playback speed
     local playback_speed
-    if max_speed - min_speed == 0 then 
+    if max_speed - min_speed == 0 then
         playback_speed = entity.mining_speed
     else
         playback_speed = ((entity.mining_speed/(max_speed-min_speed)) - (min_speed/(max_speed-min_speed)))*max_playback

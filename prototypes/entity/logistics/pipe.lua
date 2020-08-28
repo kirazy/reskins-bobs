@@ -1,11 +1,11 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Restore vanilla pipes to their proper glory, since Bob's sprites are pre-color-correction
 local function reskin_pipe_entity()
-    
+
     data.raw["pipe"]["pipe"].pictures = pipepictures()
     data.raw["pipe-to-ground"]["pipe-to-ground"].pictures = {
         up = {
@@ -99,14 +99,14 @@ for material, map in pairs(material_map) do
 
     -- Do work only if we're not the vanilla pipes
     if material ~= "iron" then
-        local tint = util.color(map[2])  
+        local tint = util.color(map[2])
 
         -- Fetch entities
         local pipe_entity = data.raw["pipe"][material.."-pipe"]
         local underground_pipe_entity =  data.raw["pipe-to-ground"][material.."-pipe-to-ground"]
 
         -- Check if entity exists, if not, skip this iteration; assume if we have one we have both
-        if not pipe_entity then goto continue end  
+        if not pipe_entity then goto continue end
 
         -- Create explosions
         reskins.lib.create_explosion(inputs.material.."-pipe", {type = "pipe", base_entity = "pipe"})
@@ -174,11 +174,11 @@ for material, map in pairs(material_map) do
         -- Fix fluid window
         pipe_entity.horizontal_window_bounding_box = {{-0.25, -0.28125}, {0.25, 0.15625}}
         pipe_entity.vertical_window_bounding_box = {{-0.28125, -0.5}, {0.03125, 0.125}}
-        
+
         -- Handle pipe covers for underground pipes
         underground_pipe_entity.fluid_box.pipe_covers = reskins.bobs.pipe_covers(inputs)
     end
-   
+
     -- Setup Icons
     local pipe_icon_inputs = {
         mod = "bobs",
@@ -221,10 +221,10 @@ for material, map in pairs(material_map) do
     else
         pipe_icon_inputs.tier_labels = false
         pipe_to_ground_icon_inputs.tier_labels = false
-    end    
+    end
 
     -- Handle naming
-    local pipe_icon_name, pipe_to_ground_icon_name    
+    local pipe_icon_name, pipe_to_ground_icon_name
     if material ~= "iron" then
         pipe_icon_name = inputs.material.."-pipe"
         pipe_to_ground_icon_name = inputs.material.."-pipe-to-ground"
@@ -233,8 +233,8 @@ for material, map in pairs(material_map) do
     else
         reskins.lib.append_tier_labels_to_vanilla_icon("pipe", tier, pipe_icon_inputs)
         reskins.lib.append_tier_labels_to_vanilla_icon("pipe-to-ground", tier, pipe_to_ground_icon_inputs)
-    end    
+    end
 
     -- Label to skip to next iteration
-    ::continue::    
+    ::continue::
 end

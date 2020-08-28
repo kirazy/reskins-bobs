@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -35,7 +35,7 @@ local fluid_generators = {
 }
 
 local function setup_fluid_generator(tint)
-    return 
+    return
     {
         layers = {
             -- Base
@@ -129,10 +129,10 @@ for name, map in pairs(fluid_generators) do
     end
 
     local frequency = map[3]
-    
+
     -- Determine what tint we're using
     inputs.tint = map[4] or reskins.lib.tint_index["tier-"..tier]
-    
+
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Reskin entities

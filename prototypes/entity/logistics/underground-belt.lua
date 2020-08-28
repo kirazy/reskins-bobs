@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -50,17 +50,17 @@ for name, map in pairs(tier_map) do
     -- Parse map
     local tier = map[1]
     local variant = map[2]
-    local do_reskin = map[3]    
+    local do_reskin = map[3]
 
     -- Determine what tint we're using
     inputs.tint = reskins.bobs.belt_tint_handling(name, tier)
 
     -- Check if we're doing reskin operations on the vanilla splitters
-    if do_reskin == false then 
+    if do_reskin == false then
         reskins.lib.append_tier_labels_to_vanilla_icon(name, tier, inputs)
         goto continue
     end
-    
+
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Fetch remnant

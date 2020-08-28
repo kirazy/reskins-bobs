@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -67,12 +67,12 @@ for name, map in pairs(tier_map) do
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
-    
+
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Fetch remnants
     local remnant = data.raw["corpse"][name.."-remnants"]
-    
+
     -- Reskin entities
     if inputs.icon_name == "solar-panel-small" then
         -- Reskin remnants
@@ -429,7 +429,7 @@ for name, map in pairs(tier_map) do
         }
     elseif inputs.icon_name == "solar-panel-large" then
         -- TODO: Large remnants
-        
+
         -- Overwrite picture table in target entity
         entity.picture = {
             layers = {

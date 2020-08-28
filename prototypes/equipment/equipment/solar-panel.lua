@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -52,7 +52,7 @@ for name, map in pairs(solar_panels) do
     }
 
     reskins.lib.construct_technology_icon(name, inputs)
-    
+
     -- Reskin the equipment
     equipment.sprite = {
         layers = {

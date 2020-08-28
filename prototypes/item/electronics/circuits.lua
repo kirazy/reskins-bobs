@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -29,7 +29,7 @@ reskins.lib.parse_inputs(inputs)
 --     data.raw.item["advanced-circuit"].icon = "__bobelectronics__/graphics/icons/colour-coded/electronic-circuit-board.png"
 --     data.raw.item["processing-unit"].icon = "__bobelectronics__/graphics/icons/colour-coded/electronic-logic-board.png"
 --     data.raw.item["advanced-processing-unit"].icon = "__bobelectronics__/graphics/icons/colour-coded/electronic-processing-board.png"
-  
+
 --     data.raw.item["basic-circuit-board"].icon_size = 128
 --     data.raw.item["circuit-board"].icon_size = 128
 --     data.raw.item["superior-circuit-board"].icon_size = 128

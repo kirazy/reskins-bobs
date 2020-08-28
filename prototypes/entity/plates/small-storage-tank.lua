@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- -- Check to see if reskinning needs to be done.
@@ -94,13 +94,13 @@
 -- --     if not entity then
 -- --         goto continue
 -- --     end
-    
+
 -- --     -- Map entity to name used internally
 -- --     inputs.internal_name = inputs.root_name.."-"..tier
 
 -- --     -- Determine what tint we're using
 -- --     inputs.tint = reskins.lib.tint_index["tier-"..tier]
-    
+
 -- --     reskins.lib.setup_standard_entity(name, tier, inputs)
 
 -- --     -- Reskin entities

@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -448,7 +448,7 @@ for _, name in pairs(beacons) do
                 setup_module_slot({is_slot_2 = true}),
             }
         })
-        
+
         -- 5 light modules
         -- table.insert(entity.graphics_set.module_visualisations, {
         --     art_style = "artisan-reskin-5-lights",

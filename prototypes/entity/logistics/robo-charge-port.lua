@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -197,7 +197,7 @@ for name, map in pairs(tier_map) do
         inputs.icon_mask = nil
         inputs.icon_highlights = nil
     end
-   
+
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Reskin entities
@@ -219,7 +219,7 @@ for name, map in pairs(tier_map) do
             end
         end
     end
-    
+
     -- Restore some defaults
     entity.recharging_animation = {
         filename = inputs.directory.."/graphics/entity/logistics/roboport/base/roboport-recharging.png",

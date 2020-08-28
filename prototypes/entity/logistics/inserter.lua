@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -221,7 +221,7 @@ for name, map in pairs(inserter_map) do
         inputs.make_explosions = false
         inputs.make_remnants = false
     end
- 
+
     -- Handle base_entity
     if string.find(name, "stack%-inserter") then
         inputs.base_entity = "stack-inserter"

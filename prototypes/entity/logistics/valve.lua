@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Set input parameters
@@ -39,7 +39,7 @@ local function cardinal_pictures(x, tint)
                 height = 64,
                 frame_count = 1,
                 -- shift = util.by_pixel(17, 0),
-                hr_version = 
+                hr_version =
                 {
                     filename = inputs.directory.."/graphics/entity/logistics/valve/hr-valve-base.png",
                     x = x_hr,
@@ -59,7 +59,7 @@ local function cardinal_pictures(x, tint)
                 frame_count = 1,
                 -- shift = util.by_pixel(17, 0),
                 tint = tint,
-                hr_version = 
+                hr_version =
                 {
                     filename = inputs.directory.."/graphics/entity/logistics/valve/hr-valve-mask.png",
                     x = x_hr,

@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -36,7 +36,7 @@ for name, map in pairs(personal_roboports) do
     local tier = map[1]
     if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
         tier = map[2]
-    end   
+    end
     local equipment_base = map[3]
 
     -- Setup icon handling

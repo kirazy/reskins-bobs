@@ -1,12 +1,12 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobpower"] then return end
 if reskins.lib.setting("bobmods-power-poles") == false then return end
-if reskins.lib.setting("reskins-bobs-do-bobpower") == false then return end 
+if reskins.lib.setting("reskins-bobs-do-bobpower") == false then return end
 
 -- Set input parameters
 local inputs = {
@@ -42,7 +42,7 @@ for name, map in pairs(tier_map) do
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
-    
+
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Fetch remnant
@@ -270,7 +270,7 @@ for name, map in pairs(tier_map) do
             }
         }
     }
-    
+
     -- Label to skip to next iteration
     ::continue::
 end

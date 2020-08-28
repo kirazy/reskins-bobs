@@ -1,12 +1,12 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobpower"] then return end
 if reskins.lib.setting("bobmods-power-steam") == false then return end
-if reskins.lib.setting("reskins-bobs-do-bobpower") == false then return end 
+if reskins.lib.setting("reskins-bobs-do-bobpower") == false then return end
 
 -- Set input parameters
 local inputs = {
@@ -111,7 +111,7 @@ for name, map in pairs(tier_map) do
                     shift = util.by_pixel(-0.5, -3),
                     tint = inputs.tint,
                     scale = 0.5,
-                }           
+                }
             },
             -- Highlights
             {
@@ -137,11 +137,11 @@ for name, map in pairs(tier_map) do
                     shift = util.by_pixel(-0.5, -3),
                     blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
-                }           
+                }
             }
         }
     }
-    
+
     -- Reskin entities
     entity.structure = {
         north = {

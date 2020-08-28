@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -38,13 +38,13 @@ for name, map in pairs(tier_map) do
     if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
         tier = map[2]
     end
-    
+
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index["tier-"..tier]
-    
+
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
-    -- Fetch remnant  
+    -- Fetch remnant
     local remnant = data.raw["corpse"][name.."-remnants"]
 
     -- Reskin remnants
@@ -126,7 +126,7 @@ for name, map in pairs(tier_map) do
                     scale = 0.5,
                 }
             }
-        }        
+        }
     })
 
     -- Reskin entities
@@ -218,7 +218,7 @@ for name, map in pairs(tier_map) do
             }
         }
     }
-    
+
     entity.vertical_animation = {
         layers = {
             -- Base

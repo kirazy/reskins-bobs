@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -28,7 +28,7 @@ local tier_map = {
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
-    -- Initialize table address 
+    -- Initialize table address
     local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
@@ -45,7 +45,7 @@ for name, map in pairs(tier_map) do
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
-    -- Initialize table addresses    
+    -- Initialize table addresses
     local remnant = data.raw["corpse"][name.."-remnants"]
 
     -- Reskin remnants
@@ -212,7 +212,7 @@ for name, map in pairs(tier_map) do
             }
         }
     }
-    
+
     -- Label to skip to next iteration
     ::continue::
 end

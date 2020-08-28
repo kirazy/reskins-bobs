@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -25,14 +25,14 @@ local technology = {
     -- Smelting
     ["alloy-processing-1"] = {subgroup = "smelting"},
     ["chemical-processing-1"] = {subgroup = "smelting"},
-    
+
     ["advanced-material-processing"] = {subgroup = "smelting"}, -- yellow steel
     ["fluid-furnace"] = {subgroup = "smelting"}, -- yellow fluid steel
     ["steel-mixing-furnace"] = {subgroup = "smelting"}, -- blue steel
     ["fluid-mixing-furnace"] = {subgroup = "smelting"}, -- blue fluid steel
     ["steel-chemical-furnace"] = {subgroup = "smelting"}, -- red steel
     ["fluid-chemical-furnace"] = {subgroup = "smelting"}, -- red fluid steel
-    
+
     ["advanced-material-processing-2"] = {subgroup = "smelting"}, -- yellow electric
     ["advanced-material-processing-3"] = {flat_icon = false, tier = 4, icon_name = "advanced-material-processing"}, -- yellow electric
     ["advanced-material-processing-4"] = {flat_icon = false, tier = 5, icon_name = "advanced-material-processing"}, -- yellow electric
@@ -75,7 +75,7 @@ else
     else
         technology["deuterium-fuel-reprocessing"].image = "deuterium-fuel-reprocessing-alternate-pink"
     end
-    
+
 end
 
 reskins.lib.create_icons_from_list(technology, inputs)

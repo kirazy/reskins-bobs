@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -43,7 +43,7 @@ for name, tier in pairs(tier_map) do
     -- Determine what tint we're using
     inputs.tint = reskins.bobs.belt_tint_handling(name, tier)
 
-    reskins.lib.setup_standard_entity(name, tier, inputs)   
+    reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Retint the mask
     entity.animation.layers[2].tint = inputs.tint

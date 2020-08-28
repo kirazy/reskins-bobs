@@ -1,12 +1,12 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobpower"] then return end
 if reskins.lib.setting("bobmods-power-accumulators") == false then return end
-if reskins.lib.setting("reskins-bobs-do-bobpower") == false then return end 
+if reskins.lib.setting("reskins-bobs-do-bobpower") == false then return end
 
 -- Set input parameters
 local inputs = {
@@ -222,11 +222,11 @@ for name, map in pairs(tier_map) do
             tint = reskins.lib.adjust_alpha(reskins.lib.tint_index["tier-"..tier], 0.75)
         }
     }
-    
-    reskins.lib.setup_standard_entity(name, tier, inputs)    
-        
+
+    reskins.lib.setup_standard_entity(name, tier, inputs)
+
     -- Fetch remnant
-    local remnant = data.raw["corpse"][name.."-remnants"]    
+    local remnant = data.raw["corpse"][name.."-remnants"]
 
     -- Reskin remnants
     remnant.animation = make_rotated_animation_variations_from_sheet(1, {

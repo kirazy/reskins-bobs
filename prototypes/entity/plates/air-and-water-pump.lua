@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -81,7 +81,7 @@ for name, map in pairs(tier_map) do
 
     -- Icon handling
     inputs.icon_name = pump_type.."-pump"
-  
+
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Reskin entities
@@ -216,7 +216,7 @@ for name, map in pairs(tier_map) do
             west_animation = recipe_tint_highlights.west,
         })
     end
-    
+
     entity.water_reflection = {
         pictures = {
             filename = inputs.directory.."/graphics/entity/plates/"..pump_type.."-pump/"..pump_type.."-pump-reflection.png",
