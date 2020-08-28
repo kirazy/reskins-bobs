@@ -109,7 +109,7 @@ for name, map in pairs(tier_map) do
                 frame_count = 1,
                 direction_count = 1,
                 shift = util.by_pixel(16, -5),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/assembly/chemical-plant/remnants/hr-chemical-plant-remnants-highlights.png",
                     line_length = 1,
@@ -118,7 +118,7 @@ for name, map in pairs(tier_map) do
                     frame_count = 1,
                     direction_count = 1,
                     shift = util.by_pixel(16, -5.5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             }
@@ -174,7 +174,7 @@ for name, map in pairs(tier_map) do
                 frame_count = 24,
                 line_length = 12,
                 shift = util.by_pixel(1, -9),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/assembly/chemical-plant/hr-chemical-plant-highlights.png",
                     width = 220,
@@ -182,7 +182,7 @@ for name, map in pairs(tier_map) do
                     frame_count = 24,
                     line_length = 12,
                     shift = util.by_pixel(0.5, -9),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5
                 }
             },

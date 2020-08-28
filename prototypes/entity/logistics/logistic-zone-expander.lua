@@ -88,13 +88,13 @@ for name, map in pairs(tier_map) do
                 width = 19,
                 height = 15,
                 shift = util.by_pixel(0.5, 0),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/zone-expander/hr-zone-expander-highlights.png",
                     width = 38,
                     height = 30,
                     shift = util.by_pixel(0.5, 0),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5
                 }
             },

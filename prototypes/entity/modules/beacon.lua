@@ -118,7 +118,7 @@ for name, map in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(1, 5),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/modules/beacon/remnants/hr-beacon-remnants-highlights.png",
                     line_length = 1,
@@ -129,7 +129,7 @@ for name, map in pairs(tier_map) do
                     axially_symmetrical = false,
                     direction_count = 1,
                     shift = util.by_pixel(1, 5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 },
             },
@@ -181,13 +181,13 @@ for name, map in pairs(tier_map) do
                         width = 106,
                         height = 96,
                         shift = util.by_pixel(0, 1),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         hr_version = {
                             filename = inputs.directory.."/graphics/entity/modules/beacon/hr-beacon-"..beacon_base.."-bottom-highlights.png",
                             width = 212,
                             height = 192,
                             shift = util.by_pixel(0.5, 1),
-                            blend_mode = "additive",
+                            blend_mode = reskins.lib.blend_mode, -- "additive",
                             scale = 0.5,
                         }
                     },
@@ -331,14 +331,14 @@ for name, map in pairs(tier_map) do
                         width = 106,
                         height = 96,
                         shift = util.by_pixel(0, 1),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         hr_version = {
                             filename = inputs.directory.."/graphics/entity/modules/beacon/hr-beacon-3-bottom-slot-overlay-highlights.png",
                             width = 212,
                             height = 192,
                             scale = 0.5,
                             shift = util.by_pixel(0.5, 1),
-                            blend_mode = "additive",
+                            blend_mode = reskins.lib.blend_mode, -- "additive",
                         }
                     }
                 }

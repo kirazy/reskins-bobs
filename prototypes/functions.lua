@@ -311,14 +311,14 @@ function reskins.bobs.assembly_pipe_pictures(tint)
                     width = 35,
                     height = 18,
                     shift = util.by_pixel(2.5, 14),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/pipes/hr-assembling-machine-pipe-N-highlights.png",
                         priority = "extra-high",
                         width = 71,
                         height = 38,
                         shift = util.by_pixel(2.25, 13.5),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 }
@@ -367,14 +367,14 @@ function reskins.bobs.assembly_pipe_pictures(tint)
                     width = 20,
                     height = 38,
                     shift = util.by_pixel(-25, 1),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/pipes/hr-assembling-machine-pipe-E-highlights.png",
                         priority = "extra-high",
                         width = 42,
                         height = 76,
                         shift = util.by_pixel(-24.5, 1),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 }
@@ -423,14 +423,14 @@ function reskins.bobs.assembly_pipe_pictures(tint)
                     width = 44,
                     height = 31,
                     shift = util.by_pixel(0, -31.5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/pipes/hr-assembling-machine-pipe-S-highlights.png",
                         priority = "extra-high",
                         width = 88,
                         height = 61,
                         shift = util.by_pixel(0, -31.25),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 }
@@ -479,14 +479,14 @@ function reskins.bobs.assembly_pipe_pictures(tint)
                     width = 19,
                     height = 37,
                     shift = util.by_pixel(25.5, 1.5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/pipes/hr-assembling-machine-pipe-W-highlights.png",
                         priority = "extra-high",
                         width = 39,
                         height = 73,
                         shift = util.by_pixel(25.75, 1.25),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 }
@@ -557,14 +557,14 @@ function reskins.bobs.furnace_pipe_pictures(tint)
                     width = 15,
                     height = 35,
                     shift = util.by_pixel(-20.5, 3),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-E-highlights.png",
                         priority = "extra-high",
                         width = 30,
                         height = 70,
                         shift = util.by_pixel(-20.5, 3),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 }
@@ -613,14 +613,14 @@ function reskins.bobs.furnace_pipe_pictures(tint)
                     width = 38,
                     height = 29,
                     shift = util.by_pixel(0.5, -30.5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-S-highlights.png",
                         priority = "extra-high",
                         width = 76,
                         height = 58,
                         shift = util.by_pixel(0.5, -30.5),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 }
@@ -669,14 +669,14 @@ function reskins.bobs.furnace_pipe_pictures(tint)
                     width = 11,
                     height = 34,
                     shift = util.by_pixel(21.5, 2),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-W-highlights.png",
                         priority = "extra-high",
                         width = 22,
                         height = 68,
                         shift = util.by_pixel(21.5, 2),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 }

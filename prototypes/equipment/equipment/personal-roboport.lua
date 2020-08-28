@@ -74,7 +74,7 @@ for name, map in pairs(personal_roboports) do
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
             }
         }
     }

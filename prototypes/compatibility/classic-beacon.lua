@@ -85,7 +85,7 @@ for name, map in pairs(tier_map) do
                             width = 116,
                             height = 93,
                             shift = util.by_pixel(11, 1.5),
-                            blend_mode = "additive",
+                            blend_mode = reskins.lib.blend_mode, -- "additive",
                         },
                         -- Shadow
                         {
@@ -155,7 +155,7 @@ for name, map in pairs(tier_map) do
             width = 232,
             height = 186,
             shift = util.by_pixel(11, 1.5),
-            blend_mode = "additive",
+            blend_mode = reskins.lib.blend_mode, -- "additive",
             scale = 0.5,
         }
         -- Beacon Base Shadow

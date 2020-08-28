@@ -229,7 +229,7 @@ for name, map in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(0, 10),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/remnants/hr-assembling-machine-remnants-highlights.png",
                     line_length = 1,
@@ -240,7 +240,7 @@ for name, map in pairs(tier_map) do
                     axially_symmetrical = false,
                     direction_count = 1,
                     shift = util.by_pixel(0, 9.5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 },
             }
@@ -306,7 +306,7 @@ for name, map in pairs(tier_map) do
                 line_length = 1,
                 repeat_count = 32,
                 shift = util.by_pixel(0, -0.5),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/base/hr-assembling-machine-base-highlights.png",
                     priority="high",
@@ -316,7 +316,7 @@ for name, map in pairs(tier_map) do
                     line_length = 1,
                     repeat_count = 32,
                     shift = util.by_pixel(0, -0.75),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5
                 }
             },
@@ -426,7 +426,7 @@ for name, map in pairs(tier_map) do
             line_length = 1,
             repeat_count = 32,
             shift = util.by_pixel(0, -0.5),
-            blend_mode = "additive",
+            blend_mode = reskins.lib.blend_mode, -- "additive",
             hr_version = {
                 filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/electronics/hr-electronics-highlights.png",
                 priority="high",
@@ -436,7 +436,7 @@ for name, map in pairs(tier_map) do
                 line_length = 1,
                 repeat_count = 32,
                 shift = util.by_pixel(0, -0.75),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 scale = 0.5
             }
         })

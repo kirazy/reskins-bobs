@@ -81,14 +81,14 @@ local function setup_fluid_generator(tint)
                 width = 101,
                 height = 130,
                 repeat_count = 8,
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 shift = util.by_pixel(2.5, -11),
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/fluid-generator/hr-fluid-generator-highlights.png",
                     width = 202,
                     height = 260,
                     repeat_count = 8,
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     shift = util.by_pixel(2.5, -11),
                     scale = 0.5
                 }

@@ -132,7 +132,7 @@ local function plasma_turret_extension_highlights(parameters)
         axially_symmetrical = false,
         direction_count = 4,
         shift = util.by_pixel(-0.5, -35),
-        blend_mode = "additive",
+        blend_mode = reskins.lib.blend_mode, -- "additive",
         hr_version = {
             filename = inputs.directory.."/graphics/entity/warfare/plasma-turret/hr-plasma-turret-cannon-raising-highlights.png",
             priority = "medium",
@@ -144,7 +144,7 @@ local function plasma_turret_extension_highlights(parameters)
             axially_symmetrical = false,
             direction_count = 4,
             shift = util.by_pixel(-0.5, -35),
-            blend_mode = "additive",
+            blend_mode = reskins.lib.blend_mode, -- "additive",
             scale = 0.5
         }
     }
@@ -397,7 +397,7 @@ for name, tier in pairs(tier_map) do
                 frame_count = 1,
                 direction_count = 64,
                 shift = util.by_pixel(-0.5, -35),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/plasma-turret/hr-plasma-turret-cannon-shooting-highlights.png",
                     line_length = 8,
@@ -406,7 +406,7 @@ for name, tier in pairs(tier_map) do
                     frame_count = 1,
                     direction_count = 64,
                     shift = util.by_pixel(-0.5, -35),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5
                 }
             },

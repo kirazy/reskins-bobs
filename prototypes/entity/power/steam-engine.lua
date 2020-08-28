@@ -107,7 +107,7 @@ for name, tier in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 4,
                 shift = util.by_pixel(17, 7),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/steam-engine/remnants/hr-steam-engine-remnants-highlights.png",
                     line_length = 1,
@@ -118,7 +118,7 @@ for name, tier in pairs(tier_map) do
                     axially_symmetrical = false,
                     direction_count = 4,
                     shift = util.by_pixel(17, 6.5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             }
@@ -174,7 +174,7 @@ for name, tier in pairs(tier_map) do
                 frame_count = 32,
                 line_length = 8,
                 shift = util.by_pixel(1, -5),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/steam-engine/hr-steam-engine-H-highlights.png",
                     width = 352,
@@ -182,7 +182,7 @@ for name, tier in pairs(tier_map) do
                     frame_count = 32,
                     line_length = 8,
                     shift = util.by_pixel(1, -4.75),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5
                 }
             },
@@ -257,7 +257,7 @@ for name, tier in pairs(tier_map) do
                 frame_count = 32,
                 line_length = 8,
                 shift = util.by_pixel(5, -6.5),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/steam-engine/hr-steam-engine-V-highlights.png",
                     width = 225,
@@ -265,7 +265,7 @@ for name, tier in pairs(tier_map) do
                     frame_count = 32,
                     line_length = 8,
                     shift = util.by_pixel(4.75, -6.25),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5
                 }
             },

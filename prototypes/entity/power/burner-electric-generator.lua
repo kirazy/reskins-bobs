@@ -63,7 +63,7 @@ entity.animation = {
             frame_count = 48,
             direction_count = 1,
             repeat_count = 2,
-            blend_mode = "additive",
+            blend_mode = reskins.lib.blend_mode, -- "additive",
             shift = util.by_pixel(-1, 9.5),
             hr_version = {
                 filename = inputs.directory.."/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator-fire.png",
@@ -74,7 +74,7 @@ entity.animation = {
                 frame_count = 48,
                 direction_count = 1,
                 repeat_count = 2,
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 shift = util.by_pixel(-1, 9.5),
                 scale = 0.5
             }

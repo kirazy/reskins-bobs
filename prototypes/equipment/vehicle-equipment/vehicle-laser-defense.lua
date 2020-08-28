@@ -89,13 +89,13 @@ for name, tier in pairs(laser_defense) do
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/equipment/equipment/laser-defense/hr-laser-defense-equipment-highlights.png",
                     size = 128,
                     priority = "medium",
                     flags = { "no-crop" },
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             }

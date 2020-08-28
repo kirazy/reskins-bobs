@@ -90,14 +90,14 @@ for name, map in pairs(tier_map) do
                 height = 146,
                 direction_count = 1,
                 shift = util.by_pixel(10, 2),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/artillery-turret/remnants/hr-artillery-turret-remnants-highlights.png",
                     width = 326,
                     height = 290,
                     direction_count = 1,
                     shift = util.by_pixel(9.5, 1.5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 },
             }
@@ -148,14 +148,14 @@ for name, map in pairs(tier_map) do
                 width = 104,
                 height = 100,
                 shift = util.by_pixel(-0, 22),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/artillery-turret/hr-artillery-turret-highlights.png",
                     priority = "high",
                     width = 207,
                     height = 199,
                     shift = util.by_pixel(-0, 22),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5
                 }
             },

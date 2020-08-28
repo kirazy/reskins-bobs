@@ -103,7 +103,7 @@ local function vertical_drill_animation(speed, inputs)
                 frame_sequence = reskins.bobs.electric_drill_animation_sequence,
                 direction_count = 1,
                 shift = util.by_pixel(0, -22),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     priority = "high",
                     filename = inputs.directory.."/graphics/entity/compatibility/semi-classic-mining-drill/electric-mining-drill/drill/hr-electric-mining-drill-highlights.png",
@@ -115,7 +115,7 @@ local function vertical_drill_animation(speed, inputs)
                     frame_sequence = reskins.bobs.electric_drill_animation_sequence,
                     direction_count = 1,
                     shift = util.by_pixel(0, -21),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             },
@@ -250,7 +250,7 @@ local function horizontal_drill_animation(speed, inputs, is_front)
                     frame_sequence = reskins.bobs.electric_drill_animation_sequence,
                     direction_count = 1,
                     shift = util.by_pixel(14, -22),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         priority = "high",
                         filename = inputs.directory.."/graphics/entity/compatibility/semi-classic-mining-drill/electric-mining-drill/drill/hr-electric-mining-drill-horizontal-front-highlights.png",
@@ -262,7 +262,7 @@ local function horizontal_drill_animation(speed, inputs, is_front)
                         frame_sequence = reskins.bobs.electric_drill_animation_sequence,
                         direction_count = 1,
                         shift = util.by_pixel(14, -23),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5,
                     }
                 },
@@ -340,7 +340,7 @@ local function horizontal_drill_animation(speed, inputs, is_front)
                     frame_sequence = reskins.bobs.electric_drill_animation_sequence,
                     direction_count = 1,
                     shift = util.by_pixel(-4, -28),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         priority = "high",
                         filename = inputs.directory.."/graphics/entity/compatibility/semi-classic-mining-drill/electric-mining-drill/drill/hr-electric-mining-drill-horizontal-highlights.png",
@@ -352,7 +352,7 @@ local function horizontal_drill_animation(speed, inputs, is_front)
                         frame_sequence = reskins.bobs.electric_drill_animation_sequence,
                         direction_count = 1,
                         shift = util.by_pixel(-3, -27),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5,
                     }
                 },
@@ -2190,7 +2190,7 @@ for name, map in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(7, 0),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/compatibility/semi-classic-mining-drill/electric-mining-drill/remnants/hr-electric-mining-drill-remnants-highlights.png",
                     line_length = 1,
@@ -2201,7 +2201,7 @@ for name, map in pairs(tier_map) do
                     axially_symmetrical = false,
                     direction_count = 1,
                     shift = util.by_pixel(7, -0.5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 },
             }

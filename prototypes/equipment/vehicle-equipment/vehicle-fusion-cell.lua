@@ -89,13 +89,13 @@ for name, tier in pairs(fusion_cells) do
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-fusion-cell/hr-vehicle-fusion-cell-equipment-highlights.png",
                     size = 128,
                     priority = "medium",
                     flags = { "no-crop" },
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             }

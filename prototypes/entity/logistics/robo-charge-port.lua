@@ -85,7 +85,7 @@ local function charge_port_base(shift_x, shift_y, subtier, tint)
             height = 28,
             repeat_count = 12,
             shift = shift,
-            blend_mode = "additive",
+            blend_mode = reskins.lib.blend_mode, -- "additive",
             hr_version = {
                 filename = inputs.directory.."/graphics/entity/logistics/robo-charge-port/hr-robo-charge-port-highlights.png",
                 priority = "medium",
@@ -94,7 +94,7 @@ local function charge_port_base(shift_x, shift_y, subtier, tint)
                 height = 56,
                 repeat_count = 12,
                 shift = shift,
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 scale = 0.5,
             }
         },

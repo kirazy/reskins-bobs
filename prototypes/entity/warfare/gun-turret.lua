@@ -99,7 +99,7 @@ local function turret_extension_highlights(inputs, parameters)
         line_length = parameters.line_length or 0,
         run_mode = parameters.run_mode or "forward",
         shift = util.by_pixel(0, -26),
-        blend_mode = "additive",
+        blend_mode = reskins.lib.blend_mode, -- "additive",
         axially_symmetrical = false,
         hr_version = {
             filename = inputs.directory.."/graphics/entity/warfare/gun-turret/hr-gun-turret-raising-highlights.png",
@@ -111,7 +111,7 @@ local function turret_extension_highlights(inputs, parameters)
             line_length = parameters.line_length or 0,
             run_mode = parameters.run_mode or "forward",
             shift = util.by_pixel(0, -26.5),
-            blend_mode = "additive",
+            blend_mode = reskins.lib.blend_mode, -- "additive",
             axially_symmetrical = false,
             scale = 0.5
         }
@@ -316,7 +316,7 @@ local function turret_attack(inputs, parameters)
                 axially_symmetrical = false,
                 direction_count = 64,
                 shift = util.by_pixel(0, -27),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 stripes = {
                     {
                         filename = inputs.directory.."/graphics/entity/warfare/gun-turret/gun-turret-shooting-1-highlights.png",
@@ -346,7 +346,7 @@ local function turret_attack(inputs, parameters)
                     axially_symmetrical = false,
                     direction_count = 64,
                     shift = util.by_pixel(0, -27.5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     stripes = {
                         {
                             filename = inputs.directory.."/graphics/entity/warfare/gun-turret/hr-gun-turret-shooting-1-highlights.png",
@@ -588,7 +588,7 @@ for name, tier in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(3, -1),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/gun-turret/remnants/hr-gun-turret-remnants-highlights.png",
                     line_length = 1,
@@ -599,7 +599,7 @@ for name, tier in pairs(tier_map) do
                     axially_symmetrical = false,
                     direction_count = 1,
                     shift = util.by_pixel(3, -1.5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             },

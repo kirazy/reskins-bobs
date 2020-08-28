@@ -91,7 +91,7 @@ local function generate_robot_animations(tint)
                     height = 42,
                     frame_count = 1,
                     shift = util.by_pixel(0, -3),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     direction_count = 16,
                     y = 42,
                     hr_version = {
@@ -102,7 +102,7 @@ local function generate_robot_animations(tint)
                         height = 84,
                         frame_count = 1,
                         shift = util.by_pixel(0, -3),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         direction_count = 16,
                         y = 84,
                         scale = 0.5
@@ -168,7 +168,7 @@ local function generate_robot_animations(tint)
                     height = 42,
                     frame_count = 1,
                     shift = util.by_pixel(0, -3),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     direction_count = 16,
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/logistics/logistic-robot/hr-logistic-robot-highlights.png",
@@ -178,7 +178,7 @@ local function generate_robot_animations(tint)
                         height = 84,
                         frame_count = 1,
                         shift = util.by_pixel(0, -3),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         direction_count = 16,
                         scale = 0.5
                     }
@@ -247,7 +247,7 @@ local function generate_robot_animations(tint)
                     height = 42,
                     frame_count = 1,
                     shift = util.by_pixel(0, -3),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     direction_count = 16,
                     y = 126,
                     hr_version = {
@@ -258,7 +258,7 @@ local function generate_robot_animations(tint)
                         height = 84,
                         frame_count = 1,
                         shift = util.by_pixel(0, -3),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         direction_count = 16,
                         y = 252,
                         scale = 0.5
@@ -328,7 +328,7 @@ local function generate_robot_animations(tint)
                     height = 42,
                     frame_count = 1,
                     shift = util.by_pixel(0, -3),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     direction_count = 16,
                     y = 84,
                     hr_version = {
@@ -339,7 +339,7 @@ local function generate_robot_animations(tint)
                         height = 84,
                         frame_count = 1,
                         shift = util.by_pixel(0, -3),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         direction_count = 16,
                         y = 168,
                         scale = 0.5
@@ -542,7 +542,7 @@ for name, map in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(1, 1),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/logistic-robot/remnants/hr-logistic-robot-remnants-highlights.png",
                     line_length = 1,
@@ -553,7 +553,7 @@ for name, map in pairs(tier_map) do
                     axially_symmetrical = false,
                     direction_count = 1,
                     shift = util.by_pixel(1, 1),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             }

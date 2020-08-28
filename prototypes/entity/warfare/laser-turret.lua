@@ -299,7 +299,7 @@ for name, map in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(3, -2),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/laser-turret/remnants/hr-laser-turret-remnants-highlights.png",
                     line_length = 1,
@@ -310,7 +310,7 @@ for name, map in pairs(tier_map) do
                     axially_symmetrical = false,
                     direction_count = 1,
                     shift = util.by_pixel(2.5, -2),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             },
@@ -435,7 +435,7 @@ for name, map in pairs(tier_map) do
                 direction_count = 1,
                 frame_count = 1,
                 shift = util.by_pixel(0, 2),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/laser-turret/hr-laser-turret-base-highlights.png",
                     priority = "high",
@@ -444,7 +444,7 @@ for name, map in pairs(tier_map) do
                     direction_count = 1,
                     frame_count = 1,
                     shift = util.by_pixel(-0.5, 2),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5
                 }
             },

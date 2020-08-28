@@ -125,7 +125,7 @@ local function inserter_remnants(parameters)
                 line_length = 1,
                 width = 67,
                 height = 47,
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
@@ -137,7 +137,7 @@ local function inserter_remnants(parameters)
                     line_length = 1,
                     width = 134,
                     height = 94,
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     frame_count = 1,
                     variation_count = 1,
                     axially_symmetrical = false,
@@ -198,7 +198,7 @@ local function inserter_arm_picture(parameters)
                 width = 16,
                 height = 68,
                 flags = {"no-crop"},
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 scale = 0.5,
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/inserter/arms/hr-inserter-arm-highlights.png",
@@ -206,7 +206,7 @@ local function inserter_arm_picture(parameters)
                     width = 32,
                     height = 136,
                     flags = {"no-crop"},
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.25
                 }
             }
@@ -294,14 +294,14 @@ local function inserter_hand_picture(parameters)
                 height = 82,
                 flags = {"no-crop"},
                 scale = 0.5,
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/inserter/hands/hr-"..parameters.type.."-hand-"..parameters.hand.."-highlights.png",
                     priority = "extra-high",
                     width = 130,
                     height = 164,
                     flags = {"no-crop"},
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.25
                 }
             }
@@ -394,14 +394,14 @@ local function inserter_platform_picture(parameters)
                 priority = "extra-high",
                 width = 53,
                 height = 40,
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 shift = util.by_pixel(1.75, 6.75),
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/inserter/platform/hr-inserter-platform-highlights.png",
                     priority = "extra-high",
                     width = 106,
                     height = 80,
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     shift = util.by_pixel(1.75, 6.75),
                     scale = 0.5
                 }

@@ -115,7 +115,7 @@ for name, map in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(2, 8),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/roboport/remnants/hr-roboport-remnants-highlights.png",
                     line_length = 1,
@@ -126,7 +126,7 @@ for name, map in pairs(tier_map) do
                     axially_symmetrical = false,
                     direction_count = 1,
                     shift = util.by_pixel(2, 8),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             },
@@ -221,13 +221,13 @@ for name, map in pairs(tier_map) do
                 width = 143,
                 height = 135,
                 shift = {0.5, 0.25},
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/roboport/hr-roboport-base-highlights.png",
                     width = 228,
                     height = 277,
                     shift = util.by_pixel(2, 7.75),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5
                 }
             },
@@ -314,7 +314,7 @@ for name, map in pairs(tier_map) do
                 height = 50,
                 frame_count = 1,
                 shift = {0.03125, 0.203125},
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/roboport/hr-roboport-base-patch-highlights.png",
                     priority = "medium",
@@ -322,7 +322,7 @@ for name, map in pairs(tier_map) do
                     height = 100,
                     frame_count = 1,
                     shift = util.by_pixel(1.5, 5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5
                 }
             }

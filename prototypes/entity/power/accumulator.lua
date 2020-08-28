@@ -86,7 +86,7 @@ local function accumulator_picture_tinted(inputs, repeat_count)
                 height = 94,
                 repeat_count = repeat_count,
                 shift = util.by_pixel(0, -10),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 animation_speed = 0.5,
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/accumulator/hr-accumulator-highlights.png",
@@ -95,7 +95,7 @@ local function accumulator_picture_tinted(inputs, repeat_count)
                     height = 189,
                     repeat_count = repeat_count,
                     shift = util.by_pixel(0, -11),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     animation_speed = 0.5,
                     scale = 0.5
                 }
@@ -292,7 +292,7 @@ for name, map in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(2, 4),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/accumulator/remnants/hr-accumulator-remnants-highlights.png",
                     line_length = 1,
@@ -303,7 +303,7 @@ for name, map in pairs(tier_map) do
                     axially_symmetrical = false,
                     direction_count = 1,
                     shift = util.by_pixel(2.5, 3.5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 },
             }

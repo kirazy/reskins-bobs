@@ -82,7 +82,7 @@ local function skin_reactor_entity(name, inputs)
                 width = 154,
                 height = 158,
                 shift = util.by_pixel(-6, -6),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version =
                 {
                     filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/hr-reactor-highlights.png",
@@ -90,7 +90,7 @@ local function skin_reactor_entity(name, inputs)
                     height = 318,
                     scale = 0.5,
                     shift = util.by_pixel(-5, -7),
-                    blend_mode = "additive"
+                    blend_mode = reskins.lib.blend_mode, -- "additive"
                 }
             },
             -- Pipes
@@ -261,7 +261,7 @@ local function skin_reactor_remnants(name, inputs)
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(7, 4),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version =
                 {
                     filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/remnants/hr-nuclear-reactor-remnants-highlights.png",
@@ -273,7 +273,7 @@ local function skin_reactor_remnants(name, inputs)
                     axially_symmetrical = false,
                     direction_count = 1,
                     shift = util.by_pixel(7, 4),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             },

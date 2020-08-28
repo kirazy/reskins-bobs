@@ -247,7 +247,7 @@ for name, map in pairs(tier_map) do
                 frame_count = 1,
                 direction_count = 1,
                 shift = util.by_pixel(0, 3),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/mining/pumpjack/remnants/hr-pumpjack-remnants-highlights.png",
                     line_length = 1,
@@ -256,7 +256,7 @@ for name, map in pairs(tier_map) do
                     frame_count = 1,
                     direction_count = 1,
                     shift = util.by_pixel(0, 3.5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             }
@@ -328,7 +328,7 @@ for name, map in pairs(tier_map) do
                     height = 102,
                     frame_count = 40,
                     shift = util.by_pixel(-4, -24),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     animation_speed = playback_speed,
                     repeat_count = 6,
                     hr_version = {
@@ -342,7 +342,7 @@ for name, map in pairs(tier_map) do
                         height = 202,
                         frame_count = 40,
                         shift = util.by_pixel(-4, -24),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                     }
                 },
                 -- Shadow

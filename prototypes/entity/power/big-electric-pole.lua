@@ -102,7 +102,7 @@ for name, map in pairs(tier_map) do
                 frame_count = 1,
                 direction_count = 1,
                 shift = util.by_pixel(44, 0),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/big-electric-pole/remnants/hr-big-electric-pole-base-remnants-highlights.png",
                     line_length = 1,
@@ -111,7 +111,7 @@ for name, map in pairs(tier_map) do
                     frame_count = 1,
                     direction_count = 1,
                     shift = util.by_pixel(43, 0.5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             },
@@ -171,7 +171,7 @@ for name, map in pairs(tier_map) do
                 frame_count = 1,
                 direction_count = 1,
                 shift = util.by_pixel(-1, -48),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/big-electric-pole/remnants/hr-big-electric-pole-top-remnants-highlights.png",
                     line_length = 1,
@@ -180,7 +180,7 @@ for name, map in pairs(tier_map) do
                     frame_count = 1,
                     direction_count = 1,
                     shift = util.by_pixel(-1.5, -48),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             },
@@ -236,7 +236,7 @@ for name, map in pairs(tier_map) do
                 height = 156,
                 direction_count = 4,
                 shift = util.by_pixel(1, -51),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/big-electric-pole/hr-big-electric-pole-highlights.png",
                     priority = "extra-high",
@@ -244,7 +244,7 @@ for name, map in pairs(tier_map) do
                     height = 312,
                     direction_count = 4,
                     shift = util.by_pixel(0, -51),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5
                 }
             },

@@ -88,13 +88,13 @@ for name, map in pairs(tier_map) do
                 width = 65,
                 height = 69,
                 shift = util.by_pixel(0, -2.75),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/robochest/hr-robochest-highlights.png",
                     width = 130,
                     height = 138,
                     shift = util.by_pixel(0, -2.75),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5
                 }
             },
@@ -170,13 +170,13 @@ for name, map in pairs(tier_map) do
                 width = 55,
                 height = 40,
                 shift = util.by_pixel(0, 5.5),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/robochest/hr-robochest-base-patch-highlights.png",
                     width = 110,
                     height = 80,
                     shift = util.by_pixel(0, 5.5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5
                 }
             },

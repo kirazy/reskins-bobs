@@ -111,7 +111,7 @@ for name, map in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(3, 1),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/substation/remnants/hr-substation-remnants-highlights.png",
                     line_length = 1,
@@ -122,7 +122,7 @@ for name, map in pairs(tier_map) do
                     axially_symmetrical = false,
                     direction_count = 1,
                     shift = util.by_pixel(2.5, 0.5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             }
@@ -178,7 +178,7 @@ for name, map in pairs(tier_map) do
                 height = 136,
                 direction_count = 4,
                 shift = util.by_pixel(0, 1-32),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/substation/hr-substation-highlights.png",
                     priority = "high",
@@ -186,7 +186,7 @@ for name, map in pairs(tier_map) do
                     height = 270,
                     direction_count = 4,
                     shift = util.by_pixel(0, 1-32),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5
                 }
             },

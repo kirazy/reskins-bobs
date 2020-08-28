@@ -106,7 +106,7 @@ for name, tier in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(12, 4),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/radar/remnants/hr-radar-remnants-highlights.png",
                     line_length = 1,
@@ -117,7 +117,7 @@ for name, tier in pairs(tier_map) do
                     axially_symmetrical = false,
                     direction_count = 1,
                     shift = util.by_pixel(12, 4.5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             }
@@ -201,7 +201,7 @@ for name, tier in pairs(tier_map) do
                 direction_count = 64,
                 line_length = 8,
                 shift = util.by_pixel(1, -16),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/warfare/radar/hr-radar-highlights.png",
                     priority = "low",
@@ -211,7 +211,7 @@ for name, tier in pairs(tier_map) do
                     direction_count = 64,
                     line_length = 8,
                     shift = util.by_pixel(1, -16),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5
                 }
             },

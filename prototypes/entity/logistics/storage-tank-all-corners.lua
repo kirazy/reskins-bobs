@@ -101,7 +101,7 @@ for name, map in pairs(tier_map) do
                 frame_count = 1,
                 direction_count = 1,
                 shift = util.by_pixel(27, 21),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/storage-tank/remnants/hr-storage-tank-remnants-highlights.png",
                     line_length = 1,
@@ -110,7 +110,7 @@ for name, map in pairs(tier_map) do
                     frame_count = 1,
                     direction_count = 1,
                     shift = util.by_pixel(27, 21),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             }
@@ -167,7 +167,7 @@ for name, map in pairs(tier_map) do
                     width = 110,
                     height = 108,
                     shift = util.by_pixel(0, 4),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/logistics/storage-tank-all-corners/hr-storage-tank-all-corners-highlights.png",
                         priority = "extra-high",
@@ -175,7 +175,7 @@ for name, map in pairs(tier_map) do
                         width = 219,
                         height = 215,
                         shift = util.by_pixel(-0.25, 3.75),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 },

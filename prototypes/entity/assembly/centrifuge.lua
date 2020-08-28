@@ -110,7 +110,7 @@ for name, map in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(7, 4),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/assembly/centrifuge/remnants/hr-centrifuge-remnants-highlights.png",
                     line_length = 1,
@@ -121,7 +121,7 @@ for name, map in pairs(tier_map) do
                     axially_symmetrical = false,
                     direction_count = 1,
                     shift = util.by_pixel(7, 4),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 },
             }
@@ -216,7 +216,7 @@ for name, map in pairs(tier_map) do
             {
                 filename = inputs.directory.."/graphics/entity/assembly/centrifuge/centrifuge-B-highlights.png",
                 priority = "high",
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 line_length = 8,
                 width = 78,
                 height = 117,
@@ -225,7 +225,7 @@ for name, map in pairs(tier_map) do
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/assembly/centrifuge/hr-centrifuge-B-highlights.png",
                     priority = "high",
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                     line_length = 8,
                     width = 156,
@@ -299,7 +299,7 @@ for name, map in pairs(tier_map) do
             {
                 filename = inputs.directory.."/graphics/entity/assembly/centrifuge/centrifuge-A-highlights.png",
                 priority = "high",
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 line_length = 8,
                 width = 70,
                 height = 123,
@@ -308,7 +308,7 @@ for name, map in pairs(tier_map) do
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/assembly/centrifuge/hr-centrifuge-A-highlights.png",
                     priority = "high",
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                     line_length = 8,
                     width = 139,

@@ -124,7 +124,7 @@ for name, map in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 4,
                 shift = util.by_pixel(0, -3),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/boiler/remnants/hr-boiler-remnants-highlights.png",
                     line_length = 1,
@@ -135,7 +135,7 @@ for name, map in pairs(tier_map) do
                     axially_symmetrical = false,
                     direction_count = 4,
                     shift = util.by_pixel(-0.5, -3),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 }           
             }
@@ -187,14 +187,14 @@ for name, map in pairs(tier_map) do
                     width = 131,
                     height = 108,
                     shift = util.by_pixel(-0.5, 4),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/boiler/hr-boiler-N-idle-highlights.png",
                         priority = "extra-high",
                         width = 269,
                         height = 221,
                         shift = util.by_pixel(-1.25, 5.25),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 },
@@ -261,14 +261,14 @@ for name, map in pairs(tier_map) do
                     width = 105,
                     height = 147,
                     shift = util.by_pixel(-3.5, -0.5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/boiler/hr-boiler-E-idle-highlights.png",
                         priority = "extra-high",
                         width = 216,
                         height = 301,
                         shift = util.by_pixel(-3, 1.25),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 },
@@ -335,14 +335,14 @@ for name, map in pairs(tier_map) do
                     width = 128,
                     height = 95,
                     shift = util.by_pixel(3, 12.5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/boiler/hr-boiler-S-idle-highlights.png",
                         priority = "extra-high",
                         width = 260,
                         height = 192,
                         shift = util.by_pixel(4, 13),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 },
@@ -409,14 +409,14 @@ for name, map in pairs(tier_map) do
                     width = 96,
                     height = 132,
                     shift = util.by_pixel(1, 5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/boiler/hr-boiler-W-idle-highlights.png",
                         priority = "extra-high",
                         width = 196,
                         height = 273,
                         shift = util.by_pixel(1.5, 7.75),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 },

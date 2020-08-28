@@ -125,7 +125,7 @@ local function sniper_turret_extension_highlights(parameters)
         line_length = parameters.line_length or 0,
         run_mode = parameters.run_mode or "forward",
         shift = util.by_pixel(0, -30.5),
-        blend_mode = "additive",
+        blend_mode = reskins.lib.blend_mode, -- "additive",
         hr_version = {
             filename = inputs.directory.."/graphics/entity/warfare/sniper-turret/hr-sniper-turret-raising-highlights.png",
             priority = "medium",
@@ -136,7 +136,7 @@ local function sniper_turret_extension_highlights(parameters)
             line_length = parameters.line_length or 0,
             run_mode = parameters.run_mode or "forward",
             shift = util.by_pixel(0, -30.5),
-            blend_mode = "additive",
+            blend_mode = reskins.lib.blend_mode, -- "additive",
             scale = 0.5
         }
     }
@@ -252,7 +252,7 @@ local function sniper_turret_shooting_highlights()
         width = 119,
         height = 89,
         frame_count = 1,
-        blend_mode = "additive",
+        blend_mode = reskins.lib.blend_mode, -- "additive",
         direction_count = 64,
         shift = util.by_pixel(0, -30.5),
         hr_version = {
@@ -261,7 +261,7 @@ local function sniper_turret_shooting_highlights()
             width = 238,
             height = 178,
             frame_count = 1,
-            blend_mode = "additive",
+            blend_mode = reskins.lib.blend_mode, -- "additive",
             direction_count = 64,
             shift = util.by_pixel(0, -30.5),
             scale = 0.5

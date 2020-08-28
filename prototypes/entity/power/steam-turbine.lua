@@ -111,7 +111,7 @@ for name, map in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 4,
                 shift = util.by_pixel(6, 0),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/steam-turbine/remnants/hr-steam-turbine-remnants-highlights.png",
                     line_length = 1,
@@ -122,7 +122,7 @@ for name, map in pairs(tier_map) do
                     axially_symmetrical = false,
                     direction_count = 4,
                     shift = util.by_pixel(6, 0),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             }
@@ -181,7 +181,7 @@ for name, map in pairs(tier_map) do
                 line_length = 1,
                 repeat_count = 8,
                 shift = util.by_pixel(0, -2.5),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/steam-turbine/hr-steam-turbine-H-highlights.png",
                     width = 320,
@@ -190,7 +190,7 @@ for name, map in pairs(tier_map) do
                     line_length = 1,
                     repeat_count = 8,
                     shift = util.by_pixel(0, -2.75),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5
                 }
             },
@@ -270,7 +270,7 @@ for name, map in pairs(tier_map) do
                 line_length = 1,
                 repeat_count = 8,
                 shift = util.by_pixel(5, 6.5),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/steam-turbine/hr-steam-turbine-V-highlights.png",
                     width = 217,
@@ -279,7 +279,7 @@ for name, map in pairs(tier_map) do
                     line_length = 1,
                     repeat_count = 8,
                     shift = util.by_pixel(4.75, 6.75),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5
                 }
             },

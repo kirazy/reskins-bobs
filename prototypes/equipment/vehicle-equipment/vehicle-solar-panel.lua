@@ -94,14 +94,14 @@ for name, tier in pairs(solar_panels) do
                 height = 32,
                 priority = "medium",
                 flags = { "no-crop" },
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-solar-panel/hr-vehicle-solar-panel-equipment-highlights.png",
                     width = 128,
                     height = 64,
                     priority = "medium",
                     flags = { "no-crop" },
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             }

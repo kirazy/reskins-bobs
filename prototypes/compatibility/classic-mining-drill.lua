@@ -117,7 +117,7 @@ local function drill_animations(inputs)
                     direction_count = 1,
                     shift = util.by_pixel(0, -8.5),
                     run_mode = "forward-then-backward",
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         priority = "high",
                         filename = inputs.directory.."/graphics/entity/compatibility/classic-mining-drill/electric-mining-drill//hr-mining-drill-N-highlights.png",
@@ -129,7 +129,7 @@ local function drill_animations(inputs)
                         direction_count = 1,
                         shift = util.by_pixel(0, -8),
                         run_mode = "forward-then-backward",
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 },
@@ -233,7 +233,7 @@ local function drill_animations(inputs)
                     direction_count = 1,
                     shift = util.by_pixel(3.5, -1),
                     run_mode = "forward-then-backward",
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         priority = "high",
                         filename = inputs.directory.."/graphics/entity/compatibility/classic-mining-drill/electric-mining-drill//hr-mining-drill-E-highlights.png",
@@ -245,7 +245,7 @@ local function drill_animations(inputs)
                         direction_count = 1,
                         shift = util.by_pixel(3.75, -1.25),
                         run_mode = "forward-then-backward",
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 },
@@ -349,7 +349,7 @@ local function drill_animations(inputs)
                     direction_count = 1,
                     shift = util.by_pixel(0, -1.5),
                     run_mode = "forward-then-backward",
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         priority = "high",
                         filename = inputs.directory.."/graphics/entity/compatibility/classic-mining-drill/electric-mining-drill//hr-mining-drill-S-highlights.png",
@@ -361,7 +361,7 @@ local function drill_animations(inputs)
                         direction_count = 1,
                         shift = util.by_pixel(0, -1.25),
                         run_mode = "forward-then-backward",
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 },
@@ -465,7 +465,7 @@ local function drill_animations(inputs)
                     direction_count = 1,
                     shift = util.by_pixel(-3.5, -1),
                     run_mode = "forward-then-backward",
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         priority = "high",
                         filename = inputs.directory.."/graphics/entity/compatibility/classic-mining-drill/electric-mining-drill//hr-mining-drill-W-highlights.png",
@@ -477,7 +477,7 @@ local function drill_animations(inputs)
                         direction_count = 1,
                         shift = util.by_pixel(-3.75, -0.75),
                         run_mode = "forward-then-backward",
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 },

@@ -3,6 +3,7 @@ Version: 1.0.2
 Date: 2020.08.XX
   Features:
     - Implemented support for Circuit Processing mod
+    - Added support for `Color intensity`, affecting how bright structures, vehicles and robots appear in-world
   Changes:
     - Added support for the manual module override setting in Circuit Processing
     - Revised accumulator color masks for improved rust exposure

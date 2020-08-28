@@ -93,14 +93,14 @@ for name, map in pairs(tier_map) do
                 height = 130,
                 frame_count = 1,
                 shift = util.by_pixel(17, 0),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/assembly/electrolyser/hr-electrolyser-"..tier.."-highlights.png",
                     width = 272,
                     height = 260,
                     frame_count = 1,
                     shift = util.by_pixel(17, 0),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5
                 }
             },

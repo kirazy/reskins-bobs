@@ -84,14 +84,14 @@ for name, tier in pairs(tier_map) do
                 height = 96,
                 frame_count = 1,
                 shift = util.by_pixel(0, 0),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/assembly/distillery/hr-distillery-highlights.png",
                     width = 128,
                     height = 192,
                     frame_count = 1,
                     shift = util.by_pixel(0, 0),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             },

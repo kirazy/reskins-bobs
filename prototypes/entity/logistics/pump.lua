@@ -111,7 +111,7 @@ for name, map in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 4,
                 shift = util.by_pixel(2, 2),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/logistics/pump/remnants/hr-pump-remnants-highlights.png",
                     line_length = 1,
@@ -122,7 +122,7 @@ for name, map in pairs(tier_map) do
                     axially_symmetrical = false,
                     direction_count = 4,
                     shift = util.by_pixel(2, 2),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             }
@@ -184,7 +184,7 @@ for name, map in pairs(tier_map) do
                     frame_count =32,
                     animation_speed = 0.5,
                     shift = util.by_pixel(8.000, 7.500),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/logistics/pump/hr-pump-north-highlights.png",
                         width = 103,
@@ -194,7 +194,7 @@ for name, map in pairs(tier_map) do
                         frame_count =32,
                         animation_speed = 0.5,
                         shift = util.by_pixel(8, 3.5),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                     }
                 }
             }
@@ -252,7 +252,7 @@ for name, map in pairs(tier_map) do
                     frame_count =32,
                     animation_speed = 0.5,
                     shift = util.by_pixel(0, 4),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/logistics/pump/hr-pump-east-highlights.png",
                         width = 130,
@@ -262,7 +262,7 @@ for name, map in pairs(tier_map) do
                         frame_count =32,
                         animation_speed = 0.5,
                         shift = util.by_pixel(-0.5, 1.75),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                     }
                 }
             }
@@ -320,7 +320,7 @@ for name, map in pairs(tier_map) do
                     frame_count =32,
                     animation_speed = 0.5,
                     shift = util.by_pixel(13.5, 0.5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/logistics/pump/hr-pump-south-highlights.png",
                         width = 114,
@@ -330,7 +330,7 @@ for name, map in pairs(tier_map) do
                         frame_count =32,
                         animation_speed = 0.5,
                         shift = util.by_pixel(12.5, -8),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                     }
                 }
             }
@@ -388,7 +388,7 @@ for name, map in pairs(tier_map) do
                     frame_count =32,
                     animation_speed = 0.5,
                     shift = util.by_pixel(0.5, -0.5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/logistics/pump/hr-pump-west-highlights.png",
                         width = 131,
@@ -398,7 +398,7 @@ for name, map in pairs(tier_map) do
                         frame_count =32,
                         animation_speed = 0.5,
                         shift = util.by_pixel(-0.25, 1.25),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                     }
                 }
             }

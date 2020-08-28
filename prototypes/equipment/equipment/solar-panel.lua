@@ -92,13 +92,13 @@ for name, map in pairs(solar_panels) do
                 size = 32,
                 priority = "medium",
                 flags = { "no-crop" },
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/equipment/equipment/solar-panel/hr-solar-panel-equipment-highlights.png",
                     size = 64,
                     priority = "medium",
                     flags = { "no-crop" },
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             }

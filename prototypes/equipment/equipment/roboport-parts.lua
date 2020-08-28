@@ -106,13 +106,13 @@ for _, category in pairs(categories) do
                     size = 32,
                     priority = "medium",
                     flags = { "no-crop" },
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-part-"..category.."/hr-vehicle-part-"..category.."-equipment-highlights.png",
                         size = 64,
                         priority = "medium",
                         flags = { "no-crop" },
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5,
                     }
                 }
@@ -157,13 +157,13 @@ for _, category in pairs(categories) do
         --             size = 32,
         --             priority = "medium",
         --             flags = { "no-crop" },
-        --             blend_mode = "additive",
+        --             blend_mode = reskins.lib.blend_mode, -- "additive",
         --             hr_version = {
         --                 filename = inputs.directory.."/graphics/equipment/equipment/part-"..category.."/hr-part-"..category.."-equipment-highlights.png",
         --                 size = 64,
         --                 priority = "medium",
         --                 flags = { "no-crop" },
-        --                 blend_mode = "additive",
+        --                 blend_mode = reskins.lib.blend_mode, -- "additive",
         --                 scale = 0.5,
         --             }
         --         }

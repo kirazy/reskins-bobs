@@ -134,7 +134,7 @@ for name, map in pairs(tier_map) do
                     variation_count = 1,
                     direction_count = 1,
                     shift = util.by_pixel(-1, -0.5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/solar-panel-small/remnants/hr-small-solar-panel-remnants-highlights.png",
                         line_length = 1,
@@ -144,7 +144,7 @@ for name, map in pairs(tier_map) do
                         variation_count = 1,
                         direction_count = 1,
                         shift = util.by_pixel(-1, -0.5),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5,
                     },
                 }
@@ -195,14 +195,14 @@ for name, map in pairs(tier_map) do
                     width = 90,
                     height = 75,
                     shift = util.by_pixel(5, 0.5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/solar-panel-small/hr-solar-panel-small-highlights.png",
                         priority = "high",
                         width = 180,
                         height = 150,
                         shift = util.by_pixel(5, 0.5),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 },
@@ -312,7 +312,7 @@ for name, map in pairs(tier_map) do
                     axially_symmetrical = false,
                     direction_count = 1,
                     shift = util.by_pixel(4, 0),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/solar-panel/remnants/hr-solar-panel-remnants-highlights.png",
                         line_length = 1,
@@ -323,7 +323,7 @@ for name, map in pairs(tier_map) do
                         axially_symmetrical = false,
                         direction_count = 1,
                         shift = util.by_pixel(3.5, 0),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5,
                     },
                 }
@@ -375,14 +375,14 @@ for name, map in pairs(tier_map) do
                     width = 116,
                     height = 112,
                     shift = util.by_pixel(-3, 3),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/solar-panel/hr-solar-panel-highlights.png",
                         priority = "high",
                         width = 230,
                         height = 224,
                         shift = util.by_pixel(-3, 3.5),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 },
@@ -474,14 +474,14 @@ for name, map in pairs(tier_map) do
                     width = 154,
                     height = 137,
                     shift = util.by_pixel(5, 3.5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/solar-panel-large/hr-solar-panel-large-highlights.png",
                         priority = "high",
                         width = 308,
                         height = 274,
                         shift = util.by_pixel(5, 3.5),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 },

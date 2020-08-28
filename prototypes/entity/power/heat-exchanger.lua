@@ -115,7 +115,7 @@ for name, map in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 4,
                 shift = util.by_pixel(0, 8),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/power/heat-exchanger/remnants/hr-heatex-remnants-highlights.png",
                     line_length = 1,
@@ -126,7 +126,7 @@ for name, map in pairs(tier_map) do
                     axially_symmetrical = false,
                     direction_count = 4,
                     shift = util.by_pixel(0.5, 8),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             },
@@ -203,14 +203,14 @@ for name, map in pairs(tier_map) do
                     width = 131,
                     height = 108,
                     shift = util.by_pixel(-0.5, 4),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/heat-exchanger/hr-heatex-N-idle-highlights.png",
                         priority = "extra-high",
                         width = 269,
                         height = 221,
                         shift = util.by_pixel(-1.25, 5.25),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 },
@@ -293,14 +293,14 @@ for name, map in pairs(tier_map) do
                     width = 102,
                     height = 147,
                     shift = util.by_pixel(-2, -0.5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/heat-exchanger/hr-heatex-E-idle-highlights.png",
                         priority = "extra-high",
                         width = 211,
                         height = 301,
                         shift = util.by_pixel(-1.75, 1.25),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 },
@@ -383,14 +383,14 @@ for name, map in pairs(tier_map) do
                     width = 128,
                     height = 100,
                     shift = util.by_pixel(3, 10),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/heat-exchanger/hr-heatex-S-idle-highlights.png",
                         priority = "extra-high",
                         width = 260,
                         height = 201,
                         shift = util.by_pixel(4, 10.75),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 },
@@ -473,14 +473,14 @@ for name, map in pairs(tier_map) do
                     width = 96,
                     height = 132,
                     shift = util.by_pixel(1, 5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/power/heat-exchanger/hr-heatex-W-idle-highlights.png",
                         priority = "extra-high",
                         width = 196,
                         height = 273,
                         shift = util.by_pixel(1.5, 7.75),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 },

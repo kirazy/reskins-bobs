@@ -145,7 +145,7 @@ for name, map in pairs(tier_map) do
                 frame_sequence = {1, 2, 3, 4, 3, 2, 1},
                 animation_speed = 0.5,
                 shift = util.by_pixel(0, -9.5),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/plates/"..pump_type.."-pump/hr-"..pump_type.."-pump-highlights.png",
                     width = 148,
@@ -155,7 +155,7 @@ for name, map in pairs(tier_map) do
                     frame_sequence = {1, 2, 3, 4, 3, 2, 1},
                     animation_speed = 0.5,
                     shift = util.by_pixel(0, -9.5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             },

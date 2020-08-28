@@ -79,7 +79,7 @@ for name, map in pairs(exoskeletons) do
                 height = 128,
                 priority = "medium",
                 flags = { "no-crop" },
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
             }
         }
     }

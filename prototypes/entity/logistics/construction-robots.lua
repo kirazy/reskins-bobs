@@ -87,7 +87,7 @@ local function generate_robot_animations(tint)
                     height = 36,
                     frame_count = 1,
                     shift = util.by_pixel(0,-4.5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     direction_count = 16,
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/logistics/construction-robot/hr-construction-robot-highlights.png",
@@ -97,7 +97,7 @@ local function generate_robot_animations(tint)
                         height = 76,
                         frame_count = 1,
                         shift = util.by_pixel(0,-4.5),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         direction_count = 16,
                         scale = 0.5
                     }
@@ -166,7 +166,7 @@ local function generate_robot_animations(tint)
                     height = 36,
                     frame_count = 1,
                     shift = util.by_pixel(0, -4.5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     direction_count = 16,
                     y = 36,
                     hr_version = {
@@ -177,7 +177,7 @@ local function generate_robot_animations(tint)
                         height = 76,
                         frame_count = 1,
                         shift = util.by_pixel(0, -4.5),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         direction_count = 16,
                         y = 76,
                         scale = 0.5
@@ -247,7 +247,7 @@ local function generate_robot_animations(tint)
                     height = 36,
                     frame_count = 2,
                     shift = util.by_pixel(-0.25, -5),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     direction_count = 16,
                     animation_speed = 0.3,
                     hr_version = {
@@ -258,7 +258,7 @@ local function generate_robot_animations(tint)
                         height = 74,
                         frame_count = 2,
                         shift = util.by_pixel(-0.25, -5),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         direction_count = 16,
                         animation_speed = 0.3,
                         scale = 0.5
@@ -434,7 +434,7 @@ for name, map in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(2, 1),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                   filename = inputs.directory.."/graphics/entity/logistics/construction-robot/remnants/hr-construction-robot-remnants-highlights.png",
                   line_length = 1,
@@ -445,7 +445,7 @@ for name, map in pairs(tier_map) do
                   axially_symmetrical = false,
                   direction_count = 1,
                   shift = util.by_pixel(2, 1),
-                  blend_mode = "additive",
+                  blend_mode = reskins.lib.blend_mode, -- "additive",
                   scale = 0.5,
                 }
             }

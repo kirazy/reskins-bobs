@@ -804,7 +804,7 @@ for name, map in pairs(electric_furnace_map) do
                 frame_count = 1,
                 direction_count = 1,
                 shift = util.by_pixel(-3, 7),
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/remnants/hr-electric-furnace-remnants-highlights.png",
                     line_length = 1,
@@ -813,7 +813,7 @@ for name, map in pairs(electric_furnace_map) do
                     frame_count = 1,
                     direction_count = 1,
                     shift = util.by_pixel(-3.25, 7.25),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             }
@@ -942,14 +942,14 @@ for name, map in pairs(electric_furnace_map) do
                     width = 119,
                     height = 106,
                     shift = util.by_pixel(1, 1),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-multi-purpose-furnace-highlights.png",
                         priority = "high",
                         width = 238,
                         height = 212,
                         shift = util.by_pixel(1, 1),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 },
@@ -1027,14 +1027,14 @@ for name, map in pairs(electric_furnace_map) do
                     width = 119,
                     height = 106,
                     shift = util.by_pixel(1, 1),
-                    blend_mode = "additive",
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
                         filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-furnace-highlights.png",
                         priority = "high",
                         width = 238,
                         height = 212,
                         shift = util.by_pixel(1, 1),
-                        blend_mode = "additive",
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 },

@@ -77,7 +77,7 @@ for name, tier in pairs(fusion_reactors) do
                 height = 128,
                 priority = "medium",
                 flags = { "no-crop" },
-                blend_mode = "additive",
+                blend_mode = reskins.lib.blend_mode, -- "additive",
             }
         }
     }
