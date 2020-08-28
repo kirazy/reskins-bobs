@@ -21,18 +21,17 @@ local inputs = {
 }
 
 -- Determine which tint we're using for the hydrazine-generator
-local hydrazine_tint
 if reskins.lib.setting("reskins-bobs-hydrazine-is-blue") == true then
-    hydrazine_tint = util.color("7ac1de")
+    reskins.bobs.hydrazine_tint = util.color("7ac1de")
 else
-    hydrazine_tint = nil
+    reskins.bobs.hydrazine_tint = nil
 end
 
 local fluid_generators = {
     ["fluid-generator"] = {1, 2, 2/16},
     ["fluid-generator-2"] = {2, 3, 3/16},
     ["fluid-generator-3"] = {3, 4, 4/16},
-    ["hydrazine-generator"] = {4, 5, 5/16, hydrazine_tint}
+    ["hydrazine-generator"] = {4, 5, 5/16, reskins.bobs.hydrazine_tint}
 }
 
 local function setup_fluid_generator(tint)
