@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -39,6 +39,12 @@ local technologies = {
     ["oil-processing-2"] = {tier = 2, prog_tier = 3, icon_name = "oil-refinery"},
     ["oil-processing-3"] = {tier = 3, prog_tier = 4, icon_name = "oil-refinery"},
     ["oil-processing-4"] = {tier = 4, prog_tier = 5, icon_name = "oil-refinery"},
+
+    -- Distilleries
+    ["bob-distillery-2"] = {tier = 2, icon_name = "distillery"},
+    ["bob-distillery-3"] = {tier = 3, icon_name = "distillery"},
+    ["bob-distillery-4"] = {tier = 4, icon_name = "distillery"},
+    ["bob-distillery-5"] = {tier = 5, icon_name = "distillery"},
 }
 
 reskins.lib.create_icons_from_list(technologies, inputs)
