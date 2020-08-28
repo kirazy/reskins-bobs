@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
---     
+--
 -- See LICENSE.md in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
@@ -53,6 +53,30 @@ local technologies = {
     ["bob-heat-exchanger-1"] = {tier = 1, prog_tier = 3, icon_name = "heat-exchanger", icon_base = "heat-exchanger-1"},
     ["bob-heat-exchanger-2"] = {tier = 2, prog_tier = 4, icon_name = "heat-exchanger", icon_base = "heat-exchanger-2"},
     ["bob-heat-exchanger-3"] = {tier = 3, prog_tier = 5, icon_name = "heat-exchanger", icon_base = "heat-exchanger-3"},
+
+    -- Steam Engines
+    ["bob-steam-engine-1"] = {tier = 1, icon_name = "steam-engine"},
+    ["bob-steam-engine-2"] = {tier = 2, icon_name = "steam-engine"},
+    ["bob-steam-engine-3"] = {tier = 3, icon_name = "steam-engine"},
+    ["bob-steam-engine-4"] = {tier = 4, icon_name = "steam-engine"},
+    ["bob-steam-engine-5"] = {tier = 5, icon_name = "steam-engine"},
+
+    -- Steam Turbines
+    ["bob-steam-turbine-1"] = {tier = 1, prog_tier = 3, icon_name = "steam-turbine"},
+    ["bob-steam-turbine-2"] = {tier = 2, prog_tier = 4, icon_name = "steam-turbine"},
+    ["bob-steam-turbine-3"] = {tier = 3, prog_tier = 5, icon_name = "steam-turbine"},
+
+    -- Accumulators
+    ["electric-energy-accumulators"] = {icon_name = "accumulator", flat_icon = true},
+    ["bob-electric-energy-accumulators-2"] = {tier = 1, prog_tier = 2, icon_name = "accumulator"},
+    ["bob-electric-energy-accumulators-3"] = {tier = 2, prog_tier = 3, icon_name = "accumulator"},
+    ["bob-electric-energy-accumulators-4"] = {tier = 3, prog_tier = 4, icon_name = "accumulator"},
+
+    -- Fluid generators
+    ["fluid-generator-1"] = {tier = 1, prog_tier = 2, icon_name = "fluid-generator"},
+    ["fluid-generator-2"] = {tier = 2, prog_tier = 3, icon_name = "fluid-generator"},
+    ["fluid-generator-3"] = {tier = 3, prog_tier = 4, icon_name = "fluid-generator"},
+    ["hydrazine-generator"] = {tier = 4, prog_tier = 5, icon_name = "fluid-generator", tint = reskins.bobs.hydrazine_tint},
 }
 
 reskins.lib.create_icons_from_list(technologies, inputs)
