@@ -17,7 +17,6 @@ Date: 2020.08.24
     - Finished implementation of personal equipment with additions of exoskeletons, and personal roboport area expanders, charge pads, and robot control equipment
     - Implemented support for vehicle roboport area expanders, charge pads, and robot control equipment
     - Added support for Mini Machines technology icons
-    - Added localization support for German
   Changes:
     - Existing supported technology icons updated to the new icons from 1.0.0
     - Beacon module slots are setup in data
@@ -26,6 +25,8 @@ Date: 2020.08.24
     - Tweaked mining drill handling to rely on local functions instead of vanilla global functions
   Bugfixes:
     - Fixed Deadlock Beltboxes technologies missing icon_size property at root
+  Locale:
+    - Added localization support for German
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.22
 Date: 2020.08.09
