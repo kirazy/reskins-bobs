@@ -5,37 +5,86 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobelectronics"] then return end
+if not reskins.lib.setting("reskins-bobs-do-boblogistics-circuits") then return end
 
 -- Setup inputs
 local inputs = {
     directory = reskins.bobs.directory,
     mod = "bobs",
     group = "electronics",
+    make_icon_pictures = false,
+    flat_icon = true,
+    tier_labels = false,
 }
 
--- Setup input defaults
-reskins.lib.parse_inputs(inputs)
+local circuits = {
+    -- Boards
+    ["wooden-board"] = {subgroup = "circuits"},
+    ["phenolic-board"] = {subgroup = "circuits"},
+    ["fibreglass-board"] = {subgroup = "circuits"},
 
--- Circuits
+    -- Circuits, standard coloring
+    ["basic-circuit-board"] = {subgroup = "circuits"},
+    ["circuit-board"] = {subgroup = "circuits"},
+    ["superior-circuit-board"] = {subgroup = "circuits"},
+    ["multi-layer-circuit-board"] = {subgroup = "circuits"},
+    ["electronic-circuit"] = {subgroup = "circuits"},
+    ["advanced-circuit"] = {subgroup = "circuits"},
+    ["processing-unit"] = {subgroup = "circuits"},
+    ["advanced-processing-unit"] = {subgroup = "circuits"},
+}
 
--- Bob's circuits respect "color updates", done in data updates
+-- Fetch relevant settings
+local bob_color_overhaul = reskins.lib.setting("bobmods-colorupdate")
+local tier_mapping = reskins.lib.setting("reskins-lib-tier-mapping")
+local custom_color = reskins.lib.setting("reskins-lib-customize-tier-colors")
 
--- if settings.startup["bobmods-colorupdate"].value == true then
---     data.raw.item["basic-circuit-board"].icon = "__bobelectronics__/graphics/icons/colour-coded/basic-circuit-board.png"
---     data.raw.item["circuit-board"].icon = "__bobelectronics__/graphics/icons/colour-coded/circuit-board.png"
---     data.raw.item["superior-circuit-board"].icon = "__bobelectronics__/graphics/icons/colour-coded/superior-circuit-board.png"
---     data.raw.item["multi-layer-circuit-board"].icon = "__bobelectronics__/graphics/icons/colour-coded/multi-layer-circuit-board.png"
---     data.raw.item["electronic-circuit"].icon = "__bobelectronics__/graphics/icons/colour-coded/basic-electronic-circuit-board.png"
---     data.raw.item["advanced-circuit"].icon = "__bobelectronics__/graphics/icons/colour-coded/electronic-circuit-board.png"
---     data.raw.item["processing-unit"].icon = "__bobelectronics__/graphics/icons/colour-coded/electronic-logic-board.png"
---     data.raw.item["advanced-processing-unit"].icon = "__bobelectronics__/graphics/icons/colour-coded/electronic-processing-board.png"
+local function circuit_picture_extras(name)
+    return
+    {
+        {
+            filename = inputs.directory.."/graphics/icons/electronics/circuits-custom/"..name.."/"..name.."-circuitry.png",
+            size = 64,
+            mipmaps = 4,
+            scale = 0.25,
+        }
+    }
+end
 
---     data.raw.item["basic-circuit-board"].icon_size = 128
---     data.raw.item["circuit-board"].icon_size = 128
---     data.raw.item["superior-circuit-board"].icon_size = 128
---     data.raw.item["multi-layer-circuit-board"].icon_size = 128
---     data.raw.item["electronic-circuit"].icon_size = 128
---     data.raw.item["advanced-circuit"].icon_size = 128
---     data.raw.item["processing-unit"].icon_size = 128
---     data.raw.item["advanced-processing-unit"].icon_size = 128
---   end
+if bob_color_overhaul then
+    if custom_color then
+        -- Intermediates
+        circuits["basic-circuit-board"] = {subgroup = "circuits-custom", tier = 1, prog_tier = 2, icon_name = "basic-circuit-board", icon_picture_extras = circuit_picture_extras("basic-circuit-board"), flat_icon = false, make_icon_pictures = true}
+        circuits["circuit-board"] = {subgroup = "circuits-custom", tier = 2, prog_tier = 3, icon_name = "circuit-board", icon_picture_extras = circuit_picture_extras("circuit-board"), flat_icon = false, make_icon_pictures = true}
+        circuits["superior-circuit-board"] = {subgroup = "circuits-custom", tier = 3, prog_tier = 4, icon_name = "superior-circuit-board", icon_picture_extras = circuit_picture_extras("superior-circuit-board"), flat_icon = false, make_icon_pictures = true}
+        circuits["multi-layer-circuit-board"] = {subgroup = "circuits-custom", tier = 4, prog_tier = 5, icon_name = "multi-layer-circuit-board", icon_picture_extras = circuit_picture_extras("multi-layer-circuit-board"), flat_icon = false, make_icon_pictures = true}
+
+        -- Completed
+        circuits["electronic-circuit"] = {subgroup = "circuits-custom", tier = 1, prog_tier = 2, icon_name = "electronic-circuit", icon_picture_extras = circuit_picture_extras("electronic-circuit"), flat_icon = false, make_icon_pictures = true}
+        circuits["advanced-circuit"] = {subgroup = "circuits-custom", tier = 2, prog_tier = 3, icon_name = "advanced-circuit", icon_picture_extras = circuit_picture_extras("advanced-circuit"), flat_icon = false, make_icon_pictures = true}
+        circuits["processing-unit"] = {subgroup = "circuits-custom", tier = 3, prog_tier = 4, icon_name = "processing-unit", icon_picture_extras = circuit_picture_extras("processing-unit"), flat_icon = false, make_icon_pictures = true}
+        circuits["advanced-processing-unit"] = {subgroup = "circuits-custom", tier = 4, prog_tier = 5, icon_name = "advanced-processing-unit", icon_picture_extras = circuit_picture_extras("advanced-processing-unit"), flat_icon = false, make_icon_pictures = true}
+    else
+        if tier_mapping == "name-map" then
+            circuits["basic-circuit-board"] = {subgroup = "circuits-name"}
+            circuits["circuit-board"] = {subgroup = "circuits-name"}
+            circuits["superior-circuit-board"] = {subgroup = "circuits-name"}
+            circuits["multi-layer-circuit-board"] = {subgroup = "circuits-name"}
+            circuits["electronic-circuit"] = {subgroup = "circuits-name"}
+            circuits["advanced-circuit"] = {subgroup = "circuits-name"}
+            circuits["processing-unit"] = {subgroup = "circuits-name"}
+            circuits["advanced-processing-unit"] = {subgroup = "circuits-name"}
+        elseif tier_mapping == "progression-map" then
+            circuits["basic-circuit-board"] = {subgroup = "circuits-progression"}
+            circuits["circuit-board"] = {subgroup = "circuits-progression"}
+            circuits["superior-circuit-board"] = {subgroup = "circuits-progression"}
+            circuits["multi-layer-circuit-board"] = {subgroup = "circuits-progression"}
+            circuits["electronic-circuit"] = {subgroup = "circuits-progression"}
+            circuits["advanced-circuit"] = {subgroup = "circuits-progression"}
+            circuits["processing-unit"] = {subgroup = "circuits-progression"}
+            circuits["advanced-processing-unit"] = {subgroup = "circuits-progression"}
+        end
+    end
+end
+
+reskins.lib.create_icons_from_list(circuits, inputs)

@@ -21,7 +21,7 @@ require("prototypes.entity.power.nuclear-reactor") -- Bob reskins in data-update
 ----------------------------------------------------------------------------------------------------
 -- ITEMS
 ----------------------------------------------------------------------------------------------------
--- require("prototypes.item.electronics.circuits") -- Bob has circuit coloring in data-updates
+require("prototypes.item.electronics.circuits") -- Bob has circuit coloring in data-updates
 require("prototypes.item.plates.battery") -- Bob has some battery updates in data-updates
 
 ----------------------------------------------------------------------------------------------------

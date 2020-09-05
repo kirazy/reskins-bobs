@@ -29,7 +29,7 @@ if mods["bobgreenhouse"] then
             name = "reskins-bobs-do-bobgreenhouse",
             setting_type = "startup",
             default_value = true,
-        }
+        },
     })
 end
 
@@ -41,7 +41,7 @@ if mods["boblogistics"] or mods["bobpower"] then
             setting_type = "startup",
             order = "x",
             default_value = true,
-        }
+        },
     })
 end
 
@@ -108,7 +108,13 @@ if mods["boblogistics"] then
             setting_type ="startup",
             order = "y2y",
             default_value = "e5e5e5",
-        }
+        },
+        {
+            type = "bool-setting",
+            name = "reskins-bobs-do-boblogistics-circuits",
+            setting_type = "startup",
+            default_value = true,
+        },
     })
 end
 
@@ -119,7 +125,7 @@ if mods["bobmining"] then
             name = "reskins-bobs-do-bobmining",
             setting_type = "startup",
             default_value = true,
-        }
+        },
     })
 end
 
@@ -130,7 +136,7 @@ if mods["bobmodules"] then
             name = "reskins-bobs-do-bobmodules",
             setting_type = "startup",
             default_value = true,
-        }
+        },
     })
 end
 
@@ -141,7 +147,7 @@ if mods["bobores"] then
             name = "reskins-bobs-do-bobores",
             setting_type = "startup",
             default_value = true,
-        }
+        },
     })
 end
 
@@ -152,7 +158,7 @@ if mods["bobplates"] then
             name = "reskins-bobs-do-bobplates",
             setting_type = "startup",
             default_value = true,
-        }
+        },
     })
 end
 
@@ -169,7 +175,7 @@ if mods["bobpower"] then
             name = "reskins-bobs-hydrazine-is-blue",
             setting_type = "startup",
             default_value = true,
-        }
+        },
     })
 end
 
@@ -180,7 +186,7 @@ if mods["bobrevamp"] then
             name = "reskins-bobs-do-bobrevamp",
             setting_type = "startup",
             default_value = true,
-        }
+        },
     })
 end
 
@@ -191,7 +197,7 @@ if mods["bobtech"] then
             name = "reskins-bobs-do-bobtech",
             setting_type = "startup",
             default_value = true,
-        }
+        },
     })
 end
 
@@ -202,6 +208,6 @@ if mods["bobwarfare"] then
             name = "reskins-bobs-do-bobwarfare",
             setting_type = "startup",
             default_value = true,
-        }
+        },
     })
 end
