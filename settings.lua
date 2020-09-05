@@ -22,6 +22,17 @@ if mods["bobassembly"] then
     })
 end
 
+if mods["bobelectronics"] then
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "reskins-bobs-do-bobelectronics-circuits",
+            setting_type = "startup",
+            default_value = true,
+        },
+    })
+end
+
 if mods["bobgreenhouse"] then
     data:extend({
         {
@@ -108,12 +119,6 @@ if mods["boblogistics"] then
             setting_type ="startup",
             order = "y2y",
             default_value = "e5e5e5",
-        },
-        {
-            type = "bool-setting",
-            name = "reskins-bobs-do-boblogistics-circuits",
-            setting_type = "startup",
-            default_value = true,
         },
     })
 end

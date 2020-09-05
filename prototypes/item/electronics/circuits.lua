@@ -5,7 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobelectronics"] then return end
-if not reskins.lib.setting("reskins-bobs-do-boblogistics-circuits") then return end
+if not reskins.lib.setting("reskins-bobs-do-bobelectronics-circuits") then return end
 
 -- Setup inputs
 local inputs = {
