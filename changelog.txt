@@ -1,10 +1,10 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.2
-Date: 2020.09.XX
+Date: 2020.09.06
   Features:
     - Implemented support for Circuit Processing mod
     - Added support for `Color intensity`, affecting how bright structures, vehicles and robots appear in-world
-    - Added support for additional machine technology icons
+    - Added support for additional technology icons
     - Implemented circuits, with support for Bob's color overhaul, and a setting to toggle whether circuits are reskinned
   Changes:
     - Added support for the manual module override setting in Circuit Processing

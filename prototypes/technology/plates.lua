@@ -41,8 +41,17 @@ local technology = {
     ["multi-purpose-furnace-1"] = {flat_icon = false, tier = 4, icon_name = "multi-purpose-furnace"}, -- purple electric; needs color mask support
     ["multi-purpose-furnace-2"] = {flat_icon = false, tier = 5, icon_name = "multi-purpose-furnace"}, -- green electric; needs color mask support
 
-    -- Structures
-    -- ["water-bore-1"] = {subgroup = "structures"}, -- Barrelling Pump
+    -- Barreling pumps
+    ["water-bore-1"] = {flat_icon = false, tier = 1, prog_tier = 2, icon_name = "water-bore"},
+    ["water-bore-2"] = {flat_icon = false, tier = 2, prog_tier = 3, icon_name = "water-bore"},
+    ["water-bore-3"] = {flat_icon = false, tier = 3, prog_tier = 4, icon_name = "water-bore"},
+    ["water-bore-4"] = {flat_icon = false, tier = 4, prog_tier = 5, icon_name = "water-bore"},
+
+    -- Air compressors
+    ["air-compressor-1"] = {flat_icon = false, tier = 1, prog_tier = 2, icon_name = "air-compressor"},
+    ["air-compressor-2"] = {flat_icon = false, tier = 2, prog_tier = 3, icon_name = "air-compressor"},
+    ["air-compressor-3"] = {flat_icon = false, tier = 3, prog_tier = 4, icon_name = "air-compressor"},
+    ["air-compressor-4"] = {flat_icon = false, tier = 4, prog_tier = 5, icon_name = "air-compressor"},
 
 
     -- Plates
