@@ -9,6 +9,9 @@ Date: 2020.09.06
   Changes:
     - Added support for the manual module override setting in Circuit Processing
     - Revised accumulator color masks for improved rust exposure
+  Locale:
+    - Added localization support for Czech
+    - Updated German localization
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.1
 Date: 2020.08.24
