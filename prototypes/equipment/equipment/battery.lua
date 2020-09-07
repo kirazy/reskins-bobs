@@ -9,7 +9,6 @@ if not mods["bobequipment"] then return end
 local inputs = {
     type = "battery-equipment",
     icon_name = "battery",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "equipment",
 }
@@ -47,7 +46,7 @@ for name, map in pairs(batteries) do
     -- Construct technology icon
     inputs.technology_icon_extras = {
         {
-            icon = inputs.directory.."/graphics/technology/equipment/personal-equipment-symbol.png"
+            icon = reskins.bobs.directory.."/graphics/technology/equipment/personal-equipment-symbol.png"
         }
     }
 
@@ -58,7 +57,7 @@ for name, map in pairs(batteries) do
         layers = {
             -- Base
             {
-                filename = inputs.directory.."/graphics/equipment/equipment/battery/battery-equipment-base.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/equipment/battery/battery-equipment-base.png",
                 width = 32,
                 height = 64,
                 priority = "medium",
@@ -66,7 +65,7 @@ for name, map in pairs(batteries) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/equipment/equipment/battery/battery-equipment-mask.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/equipment/battery/battery-equipment-mask.png",
                 width = 32,
                 height = 64,
                 priority = "medium",
@@ -75,7 +74,7 @@ for name, map in pairs(batteries) do
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/equipment/equipment/battery/battery-equipment-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/equipment/battery/battery-equipment-highlights.png",
                 width = 32,
                 height = 64,
                 priority = "medium",

@@ -9,7 +9,6 @@ if reskins.lib.setting("reskins-bobs-do-bobores") == false then return end
 
 local inputs = {
     type = "resource",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "ores",
 }
@@ -45,12 +44,12 @@ for _, name in pairs(ores) do
         inputs.icon = "__base__/graphics/icons/sulfur.png"
         inputs.icon_picture = nil
     else
-        inputs.icon = inputs.directory.."/graphics/icons/ores/"..name.."/"..name..".png"
+        inputs.icon = reskins.bobs.directory.."/graphics/icons/ores/"..name.."/"..name..".png"
         inputs.icon_picture = {
-            { size = 64, filename = inputs.directory.."/graphics/icons/ores/"..name.."/"..name..".png",   scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = inputs.directory.."/graphics/icons/ores/"..name.."/"..name.."-1.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = inputs.directory.."/graphics/icons/ores/"..name.."/"..name.."-2.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = inputs.directory.."/graphics/icons/ores/"..name.."/"..name.."-3.png", scale = 0.25, mipmap_count = 4 }
+            { size = 64, filename = reskins.bobs.directory.."/graphics/icons/ores/"..name.."/"..name..".png",   scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = reskins.bobs.directory.."/graphics/icons/ores/"..name.."/"..name.."-1.png", scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = reskins.bobs.directory.."/graphics/icons/ores/"..name.."/"..name.."-2.png", scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = reskins.bobs.directory.."/graphics/icons/ores/"..name.."/"..name.."-3.png", scale = 0.25, mipmap_count = 4 }
         }
     end
 
@@ -59,13 +58,13 @@ for _, name in pairs(ores) do
     -- Reskin entity
     entity.stages = {
         sheet = {
-            filename = inputs.directory.."/graphics/entity/ores/"..name.."/"..name..".png",
+            filename = reskins.bobs.directory.."/graphics/entity/ores/"..name.."/"..name..".png",
             priority = "extra-high",
             size = 64,
             frame_count = 8,
             variation_count = 8,
             hr_version = {
-                filename = inputs.directory.."/graphics/entity/ores/"..name.."/hr-"..name..".png",
+                filename = reskins.bobs.directory.."/graphics/entity/ores/"..name.."/hr-"..name..".png",
                 priority = "extra-high",
                 size = 128,
                 frame_count = 8,
@@ -79,7 +78,7 @@ for _, name in pairs(ores) do
     if name == "thorium" then
         entity.stages_effect = {
             sheet = {
-                filename = inputs.directory.."/graphics/entity/ores/"..name.."/"..name.."-glow.png",
+                filename = reskins.bobs.directory.."/graphics/entity/ores/"..name.."/"..name.."-glow.png",
                 priority = "extra-high",
                 width = 64,
                 height = 64,
@@ -88,7 +87,7 @@ for _, name in pairs(ores) do
                 blend_mode = "additive",
                 flags = {"light"},
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/ores/"..name.."/hr-"..name.."-glow.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/ores/"..name.."/hr-"..name.."-glow.png",
                     priority = "extra-high",
                     width = 128,
                     height = 128,

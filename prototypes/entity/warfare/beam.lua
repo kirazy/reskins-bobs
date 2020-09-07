@@ -10,7 +10,6 @@ if reskins.lib.setting("reskins-bobs-do-bobwarfare") == false then return end
 -- Set input parameters
 local inputs = {
     type = "beam",
-    directory = reskins.bobs.directory,
 }
 
 local beam_map = {
@@ -51,7 +50,7 @@ for name, lens in pairs(beam_map) do
     -- Reskin beams
     beam.head =
     {
-        filename = inputs.directory.."/graphics/entity/warfare/beam/"..lens.."/hr-"..lens.."-laser-body.png",
+        filename = reskins.bobs.directory.."/graphics/entity/warfare/beam/"..lens.."/hr-"..lens.."-laser-body.png",
         flags = beam_non_light_flags,
         line_length = 8,
         width = 64,
@@ -64,7 +63,7 @@ for name, lens in pairs(beam_map) do
 
     beam.tail =
     {
-        filename = inputs.directory.."/graphics/entity/warfare/beam/"..lens.."/hr-"..lens.."-laser-end.png",
+        filename = reskins.bobs.directory.."/graphics/entity/warfare/beam/"..lens.."/hr-"..lens.."-laser-end.png",
         flags = beam_non_light_flags,
         width = 110,
         height = 62,
@@ -78,7 +77,7 @@ for name, lens in pairs(beam_map) do
     beam.body =
     {
         {
-        filename = inputs.directory.."/graphics/entity/warfare/beam/"..lens.."/hr-"..lens.."-laser-body.png",
+        filename = reskins.bobs.directory.."/graphics/entity/warfare/beam/"..lens.."/hr-"..lens.."-laser-body.png",
         flags = beam_non_light_flags,
         line_length = 8,
         width = 64,
@@ -94,7 +93,7 @@ for name, lens in pairs(beam_map) do
     {
         head =
         {
-            filename = inputs.directory.."/graphics/entity/warfare/beam/base/hr-laser-body-light.png",
+            filename = reskins.bobs.directory.."/graphics/entity/warfare/beam/base/hr-laser-body-light.png",
             line_length = 8,
             width = 64,
             height = 12,
@@ -104,7 +103,7 @@ for name, lens in pairs(beam_map) do
         },
         tail =
         {
-            filename = inputs.directory.."/graphics/entity/warfare/beam/base/hr-laser-end-light.png",
+            filename = reskins.bobs.directory.."/graphics/entity/warfare/beam/base/hr-laser-end-light.png",
             width = 110,
             height = 62,
             frame_count = 8,
@@ -115,7 +114,7 @@ for name, lens in pairs(beam_map) do
         body =
         {
             {
-                filename = inputs.directory.."/graphics/entity/warfare/beam/base/hr-laser-body-light.png",
+                filename = reskins.bobs.directory.."/graphics/entity/warfare/beam/base/hr-laser-body-light.png",
                 line_length = 8,
                 width = 64,
                 height = 12,
@@ -130,7 +129,7 @@ for name, lens in pairs(beam_map) do
     {
         head =
         {
-            filename = inputs.directory.."/graphics/entity/warfare/beam/base/laser-ground-light-head.png",
+            filename = reskins.bobs.directory.."/graphics/entity/warfare/beam/base/laser-ground-light-head.png",
             line_length = 1,
             width = 256,
             height = 256,
@@ -142,7 +141,7 @@ for name, lens in pairs(beam_map) do
         },
         tail =
         {
-            filename = inputs.directory.."/graphics/entity/warfare/beam/base/laser-ground-light-tail.png",
+            filename = reskins.bobs.directory.."/graphics/entity/warfare/beam/base/laser-ground-light-tail.png",
             line_length = 1,
             width = 256,
             height = 256,
@@ -154,7 +153,7 @@ for name, lens in pairs(beam_map) do
         },
         body =
         {
-            filename = inputs.directory.."/graphics/entity/warfare/beam/base/laser-ground-light-body.png",
+            filename = reskins.bobs.directory.."/graphics/entity/warfare/beam/base/laser-ground-light-body.png",
             line_length = 1,
             width = 64,
             height = 256,

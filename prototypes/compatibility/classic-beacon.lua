@@ -13,8 +13,7 @@ local inputs = {
     type = "beacon",
     icon_name = "beacon",
     base_entity = "beacon",
-    directory = reskins.bobs.directory,
-    mod = "bobs",
+        mod = "bobs",
     group = "compatibility",
     subgroup = "classic-beacon",
     particles = {["small"] = 3},
@@ -73,7 +72,7 @@ for name, map in pairs(tier_map) do
                         },
                         -- Mask
                         {
-                            filename = inputs.directory.."/graphics/entity/compatibility/classic-beacon/beacon/beacon-mask.png",
+                            filename = reskins.bobs.directory.."/graphics/entity/compatibility/classic-beacon/beacon/beacon-mask.png",
                             width = 116,
                             height = 93,
                             shift = util.by_pixel(11, 1.5),
@@ -81,7 +80,7 @@ for name, map in pairs(tier_map) do
                         },
                         -- Highlights
                         {
-                            filename = inputs.directory.."/graphics/entity/compatibility/classic-beacon/beacon/beacon-highlights.png",
+                            filename = reskins.bobs.directory.."/graphics/entity/compatibility/classic-beacon/beacon/beacon-highlights.png",
                             width = 116,
                             height = 93,
                             shift = util.by_pixel(11, 1.5),
@@ -142,7 +141,7 @@ for name, map in pairs(tier_map) do
         }
         -- Beacon Mask
         entity.graphics_set.animation_list[1].animation.layers[2].hr_version = {
-            filename = inputs.directory.."/graphics/entity/compatibility/classic-beacon/beacon/hr-beacon-mask.png",
+            filename = reskins.bobs.directory.."/graphics/entity/compatibility/classic-beacon/beacon/hr-beacon-mask.png",
             width = 232,
             height = 186,
             shift = util.by_pixel(11, 1.5),
@@ -151,7 +150,7 @@ for name, map in pairs(tier_map) do
         }
         -- Beacon Highlights
         entity.graphics_set.animation_list[1].animation.layers[3].hr_version = {
-            filename = inputs.directory.."/graphics/entity/compatibility/classic-beacon/beacon/hr-beacon-highlights.png",
+            filename = reskins.bobs.directory.."/graphics/entity/compatibility/classic-beacon/beacon/hr-beacon-highlights.png",
             width = 232,
             height = 186,
             shift = util.by_pixel(11, 1.5),

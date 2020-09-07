@@ -12,7 +12,6 @@ local inputs = {
     type = "storage-tank",
     icon_name = "storage-tank-all-corners",
     base_entity = "storage-tank",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "logistics",
     particles = {["big"] = 1},
@@ -72,7 +71,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/logistics/storage-tank/remnants/storage-tank-remnants-mask.png",
+                filename = reskins.bobs.directory.."/graphics/entity/logistics/storage-tank/remnants/storage-tank-remnants-mask.png",
                 line_length = 1,
                 width = 214,
                 height = 142,
@@ -81,7 +80,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(27, 21),
                 tint = inputs.tint,
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/logistics/storage-tank/remnants/hr-storage-tank-remnants-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/storage-tank/remnants/hr-storage-tank-remnants-mask.png",
                     line_length = 1,
                     width = 426,
                     height = 282,
@@ -94,7 +93,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/entity/logistics/storage-tank/remnants/storage-tank-remnants-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/entity/logistics/storage-tank/remnants/storage-tank-remnants-highlights.png",
                 line_length = 1,
                 width = 214,
                 height = 142,
@@ -103,7 +102,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(27, 21),
                 blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/logistics/storage-tank/remnants/hr-storage-tank-remnants-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/storage-tank/remnants/hr-storage-tank-remnants-highlights.png",
                     line_length = 1,
                     width = 426,
                     height = 282,
@@ -123,14 +122,14 @@ for name, map in pairs(tier_map) do
             sheets = {
                 -- Base
                 {
-                    filename = inputs.directory.."/graphics/entity/logistics/storage-tank-all-corners/base/storage-tank-all-corners.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/storage-tank-all-corners/base/storage-tank-all-corners.png",
                     priority = "extra-high",
                     frames = 1,
                     width = 110,
                     height = 108,
                     shift = util.by_pixel(0, 4),
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/logistics/storage-tank-all-corners/base/hr-storage-tank-all-corners.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/logistics/storage-tank-all-corners/base/hr-storage-tank-all-corners.png",
                         priority = "extra-high",
                         frames = 1,
                         width = 219,
@@ -141,7 +140,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/logistics/storage-tank-all-corners/storage-tank-all-corners-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/storage-tank-all-corners/storage-tank-all-corners-mask.png",
                     priority = "extra-high",
                     frames = 1,
                     width = 110,
@@ -149,7 +148,7 @@ for name, map in pairs(tier_map) do
                     shift = util.by_pixel(0, 4),
                     tint = inputs.tint,
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/logistics/storage-tank-all-corners/hr-storage-tank-all-corners-mask.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/logistics/storage-tank-all-corners/hr-storage-tank-all-corners-mask.png",
                         priority = "extra-high",
                         frames = 1,
                         width = 219,
@@ -161,7 +160,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Highlights
                 {
-                    filename = inputs.directory.."/graphics/entity/logistics/storage-tank-all-corners/storage-tank-all-corners-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/storage-tank-all-corners/storage-tank-all-corners-highlights.png",
                     priority = "extra-high",
                     frames = 1,
                     width = 110,
@@ -169,7 +168,7 @@ for name, map in pairs(tier_map) do
                     shift = util.by_pixel(0, 4),
                     blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/logistics/storage-tank-all-corners/hr-storage-tank-all-corners-highlights.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/logistics/storage-tank-all-corners/hr-storage-tank-all-corners-highlights.png",
                         priority = "extra-high",
                         frames = 1,
                         width = 219,
@@ -181,7 +180,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Shadow
                 {
-                    filename = inputs.directory.."/graphics/entity/logistics/storage-tank-all-corners/base/storage-tank-all-corners-shadow.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/storage-tank-all-corners/base/storage-tank-all-corners-shadow.png",
                     priority = "extra-high",
                     frames = 1,
                     width = 146,
@@ -189,7 +188,7 @@ for name, map in pairs(tier_map) do
                     shift = util.by_pixel(30, 22.5),
                     draw_as_shadow = true,
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/logistics/storage-tank-all-corners/base/hr-storage-tank-all-corners-shadow.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/logistics/storage-tank-all-corners/base/hr-storage-tank-all-corners-shadow.png",
                         priority = "extra-high",
                         frames = 1,
                         width = 291,

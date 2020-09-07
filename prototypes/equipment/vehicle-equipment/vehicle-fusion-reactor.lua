@@ -10,7 +10,6 @@ local inputs = {
     type = "generator-equipment",
     icon_name = "fusion-reactor",
     equipment_category = "energy",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "equipment",
 }
@@ -44,7 +43,7 @@ for name, tier in pairs(fusion_reactors) do
     -- Construct technology icon
     inputs.technology_icon_extras = {
         {
-            icon = inputs.directory.."/graphics/technology/equipment/vehicle-equipment-symbol.png"
+            icon = reskins.bobs.directory.."/graphics/technology/equipment/vehicle-equipment-symbol.png"
         }
     }
 
@@ -55,7 +54,7 @@ for name, tier in pairs(fusion_reactors) do
         layers = {
             -- Base
             {
-                filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-fusion-reactor/vehicle-fusion-reactor-equipment-base.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-fusion-reactor/vehicle-fusion-reactor-equipment-base.png",
                 width = 64,
                 height = 128,
                 priority = "medium",
@@ -63,7 +62,7 @@ for name, tier in pairs(fusion_reactors) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-fusion-reactor/vehicle-fusion-reactor-equipment-mask.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-fusion-reactor/vehicle-fusion-reactor-equipment-mask.png",
                 width = 64,
                 height = 128,
                 priority = "medium",
@@ -72,7 +71,7 @@ for name, tier in pairs(fusion_reactors) do
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-fusion-reactor/vehicle-fusion-reactor-equipment-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-fusion-reactor/vehicle-fusion-reactor-equipment-highlights.png",
                 width = 64,
                 height = 128,
                 priority = "medium",

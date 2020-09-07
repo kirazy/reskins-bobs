@@ -8,7 +8,6 @@ if not mods["bobrevamp"] then return end
 
 -- Setup standard inputs
 local inputs = {
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "revamp",
     type = "technology",

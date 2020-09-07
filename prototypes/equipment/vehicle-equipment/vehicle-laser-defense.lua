@@ -10,7 +10,6 @@ local inputs = {
     type = "active-defense-equipment",
     icon_name = "laser-defense",
     equipment_category = "offense",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "equipment",
 }
@@ -44,7 +43,7 @@ for name, tier in pairs(laser_defense) do
     -- Construct technology icon
     inputs.technology_icon_extras = {
         {
-            icon = inputs.directory.."/graphics/technology/equipment/vehicle-equipment-symbol.png"
+            icon = reskins.bobs.directory.."/graphics/technology/equipment/vehicle-equipment-symbol.png"
         }
     }
 
@@ -55,12 +54,12 @@ for name, tier in pairs(laser_defense) do
         layers = {
             -- Base
             {
-                filename = inputs.directory.."/graphics/equipment/equipment/laser-defense/laser-defense-equipment-base.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/equipment/laser-defense/laser-defense-equipment-base.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
                 hr_version = {
-                    filename = inputs.directory.."/graphics/equipment/equipment/laser-defense/hr-laser-defense-equipment-base.png",
+                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/laser-defense/hr-laser-defense-equipment-base.png",
                     size = 128,
                     priority = "medium",
                     flags = { "no-crop" },
@@ -69,13 +68,13 @@ for name, tier in pairs(laser_defense) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/equipment/equipment/laser-defense/laser-defense-equipment-mask.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/equipment/laser-defense/laser-defense-equipment-mask.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
                 tint = inputs.tint,
                 hr_version = {
-                    filename = inputs.directory.."/graphics/equipment/equipment/laser-defense/hr-laser-defense-equipment-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/laser-defense/hr-laser-defense-equipment-mask.png",
                     size = 128,
                     priority = "medium",
                     flags = { "no-crop" },
@@ -85,13 +84,13 @@ for name, tier in pairs(laser_defense) do
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/equipment/equipment/laser-defense/laser-defense-equipment-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/equipment/laser-defense/laser-defense-equipment-highlights.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
                 blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
-                    filename = inputs.directory.."/graphics/equipment/equipment/laser-defense/hr-laser-defense-equipment-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/laser-defense/hr-laser-defense-equipment-highlights.png",
                     size = 128,
                     priority = "medium",
                     flags = { "no-crop" },

@@ -12,7 +12,6 @@ local inputs = {
     type = "roboport",
     icon_name = "robochest",
     base_entity = "roboport",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "logistics",
     particles = {["medium"] = 2},
@@ -54,12 +53,12 @@ for name, map in pairs(tier_map) do
     entity.base = {
         layers = {
             {
-                filename = inputs.directory.."/graphics/entity/logistics/robochest/robochest-base.png",
+                filename = reskins.bobs.directory.."/graphics/entity/logistics/robochest/robochest-base.png",
                 width = 65,
                 height = 69,
                 shift = util.by_pixel(0, -2.75),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/logistics/robochest/hr-robochest-base.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/robochest/hr-robochest-base.png",
                     width = 130,
                     height = 138,
                     shift = util.by_pixel(0, -2.75),
@@ -68,13 +67,13 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/logistics/robochest/robochest-mask.png",
+                filename = reskins.bobs.directory.."/graphics/entity/logistics/robochest/robochest-mask.png",
                 width = 65,
                 height = 69,
                 shift = util.by_pixel(0, -2.75),
                 tint = inputs.tint,
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/logistics/robochest/hr-robochest-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/robochest/hr-robochest-mask.png",
                     width = 130,
                     height = 138,
                     shift = util.by_pixel(0, -2.75),
@@ -84,13 +83,13 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/entity/logistics/robochest/robochest-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/entity/logistics/robochest/robochest-highlights.png",
                 width = 65,
                 height = 69,
                 shift = util.by_pixel(0, -2.75),
                 blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/logistics/robochest/hr-robochest-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/robochest/hr-robochest-highlights.png",
                     width = 130,
                     height = 138,
                     shift = util.by_pixel(0, -2.75),
@@ -100,13 +99,13 @@ for name, map in pairs(tier_map) do
             },
             -- Shadow
             {
-                filename = inputs.directory.."/graphics/entity/logistics/robochest/robochest-shadow.png",
+                filename = reskins.bobs.directory.."/graphics/entity/logistics/robochest/robochest-shadow.png",
                 width = 87,
                 height = 54,
                 shift = util.by_pixel(12, 5),
                 draw_as_shadow = true,
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/logistics/robochest/hr-robochest-shadow.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/robochest/hr-robochest-shadow.png",
                     width = 174,
                     height = 108,
                     shift = util.by_pixel(12, 5),
@@ -121,13 +120,13 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Padding
             {
-                filename = inputs.directory.."/graphics/empty.png",
+                filename = reskins.bobs.directory.."/graphics/empty.png",
                 priority = "medium",
                 width = 1,
                 height = 1,
                 frame_count = 1,
                 hr_version = {
-                    filename = inputs.directory.."/graphics/empty.png",
+                    filename = reskins.bobs.directory.."/graphics/empty.png",
                     priority = "medium",
                     width = 1,
                     height = 1,
@@ -136,12 +135,12 @@ for name, map in pairs(tier_map) do
             },
             -- Base
             {
-                filename = inputs.directory.."/graphics/entity/logistics/robochest/robochest-base-patch.png",
+                filename = reskins.bobs.directory.."/graphics/entity/logistics/robochest/robochest-base-patch.png",
                 width = 55,
                 height = 40,
                 shift = util.by_pixel(0, 5.5),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/logistics/robochest/hr-robochest-base-patch.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/robochest/hr-robochest-base-patch.png",
                     width = 110,
                     height = 80,
                     shift = util.by_pixel(0, 5.5),
@@ -150,13 +149,13 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/logistics/robochest/robochest-base-patch-mask.png",
+                filename = reskins.bobs.directory.."/graphics/entity/logistics/robochest/robochest-base-patch-mask.png",
                 width = 55,
                 height = 40,
                 shift = util.by_pixel(0, 5.5),
                 tint = inputs.tint,
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/logistics/robochest/hr-robochest-base-patch-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/robochest/hr-robochest-base-patch-mask.png",
                     width = 110,
                     height = 80,
                     shift = util.by_pixel(0, 5.5),
@@ -166,13 +165,13 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/entity/logistics/robochest/robochest-base-patch-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/entity/logistics/robochest/robochest-base-patch-highlights.png",
                 width = 55,
                 height = 40,
                 shift = util.by_pixel(0, 5.5),
                 blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/logistics/robochest/hr-robochest-base-patch-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/robochest/hr-robochest-base-patch-highlights.png",
                     width = 110,
                     height = 80,
                     shift = util.by_pixel(0, 5.5),
@@ -186,14 +185,14 @@ for name, map in pairs(tier_map) do
     entity.base_animation = util.empty_sprite()
 
     entity.door_animation_up = {
-        filename = inputs.directory.."/graphics/entity/logistics/roboport/base/doors/roboport-"..subtier.."-door-up.png",
+        filename = reskins.bobs.directory.."/graphics/entity/logistics/roboport/base/doors/roboport-"..subtier.."-door-up.png",
         priority = "medium",
         width = 52,
         height = 20,
         frame_count = 16,
         shift = util.by_pixel(0.5, -28.5+2.5),
         hr_version = {
-            filename = inputs.directory.."/graphics/entity/logistics/roboport/base/doors/hr-roboport-"..subtier.."-door-up.png",
+            filename = reskins.bobs.directory.."/graphics/entity/logistics/roboport/base/doors/hr-roboport-"..subtier.."-door-up.png",
             priority = "medium",
             width = 97,
             height = 38,
@@ -204,14 +203,14 @@ for name, map in pairs(tier_map) do
     }
 
     entity.door_animation_down = {
-        filename = inputs.directory.."/graphics/entity/logistics/roboport/base/doors/roboport-"..subtier.."-door-down.png",
+        filename = reskins.bobs.directory.."/graphics/entity/logistics/roboport/base/doors/roboport-"..subtier.."-door-down.png",
         priority = "medium",
         width = 52,
         height = 22,
         frame_count = 16,
         shift = util.by_pixel(0.5, -7.5+2.5),
         hr_version = {
-            filename = inputs.directory.."/graphics/entity/logistics/robochest/doors/hr-robochest-"..subtier.."-door-down.png",
+            filename = reskins.bobs.directory.."/graphics/entity/logistics/robochest/doors/hr-robochest-"..subtier.."-door-down.png",
             priority = "medium",
             width = 97,
             height = 45,

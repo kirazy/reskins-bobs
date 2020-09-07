@@ -7,7 +7,6 @@
 if not mods["bobtech"] then return end
 
 local inputs = {
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "technology",
     type = "tool",

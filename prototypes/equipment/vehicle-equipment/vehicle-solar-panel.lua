@@ -10,7 +10,6 @@ local inputs = {
     type = "solar-panel-equipment",
     icon_name = "solar-panel",
     equipment_category = "energy",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "equipment",
 }
@@ -44,7 +43,7 @@ for name, tier in pairs(solar_panels) do
     -- Construct technology icon
     inputs.technology_icon_extras = {
         {
-            icon = inputs.directory.."/graphics/technology/equipment/vehicle-equipment-symbol.png"
+            icon = reskins.bobs.directory.."/graphics/technology/equipment/vehicle-equipment-symbol.png"
         }
     }
 
@@ -55,13 +54,13 @@ for name, tier in pairs(solar_panels) do
         layers = {
             -- Base
             {
-                filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-solar-panel/vehicle-solar-panel-equipment-base.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-solar-panel/vehicle-solar-panel-equipment-base.png",
                 width = 64,
                 height = 32,
                 priority = "medium",
                 flags = { "no-crop" },
                 hr_version = {
-                    filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-solar-panel/hr-vehicle-solar-panel-equipment-base.png",
+                    filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-solar-panel/hr-vehicle-solar-panel-equipment-base.png",
                     width = 128,
                     height = 64,
                     priority = "medium",
@@ -71,14 +70,14 @@ for name, tier in pairs(solar_panels) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-solar-panel/vehicle-solar-panel-equipment-mask.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-solar-panel/vehicle-solar-panel-equipment-mask.png",
                 width = 64,
                 height = 32,
                 priority = "medium",
                 flags = { "no-crop" },
                 tint = inputs.tint,
                 hr_version = {
-                    filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-solar-panel/hr-vehicle-solar-panel-equipment-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-solar-panel/hr-vehicle-solar-panel-equipment-mask.png",
                     width = 128,
                     height = 64,
                     priority = "medium",
@@ -89,14 +88,14 @@ for name, tier in pairs(solar_panels) do
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-solar-panel/vehicle-solar-panel-equipment-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-solar-panel/vehicle-solar-panel-equipment-highlights.png",
                 width = 64,
                 height = 32,
                 priority = "medium",
                 flags = { "no-crop" },
                 blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
-                    filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-solar-panel/hr-vehicle-solar-panel-equipment-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-solar-panel/hr-vehicle-solar-panel-equipment-highlights.png",
                     width = 128,
                     height = 64,
                     priority = "medium",

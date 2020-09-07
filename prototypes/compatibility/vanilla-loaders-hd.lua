@@ -19,7 +19,6 @@ local inputs = {
     type = "loader",
     icon_name = "loader",
     base_entity = "splitter",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "compatibility",
     subgroup = "vanilla-loaders-hd",

@@ -10,7 +10,6 @@ local inputs = {
     type = "battery-equipment",
     icon_name = "vehicle-battery",
     equipment_category = "energy",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "vehicle-equipment",
 }
@@ -44,7 +43,7 @@ for name, tier in pairs(batteries) do
     -- Construct technology icon
     inputs.technology_icon_extras = {
         {
-            icon = inputs.directory.."/graphics/technology/equipment/vehicle-equipment-symbol.png"
+            icon = reskins.bobs.directory.."/graphics/technology/equipment/vehicle-equipment-symbol.png"
         }
     }
 
@@ -55,14 +54,14 @@ for name, tier in pairs(batteries) do
         layers = {
             -- Base
             {
-                filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-battery/vehicle-battery-equipment-base.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-battery/vehicle-battery-equipment-base.png",
                 size = 32,
                 priority = "medium",
                 flags = { "no-crop" },
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-battery/vehicle-battery-equipment-mask.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-battery/vehicle-battery-equipment-mask.png",
                 size = 32,
                 priority = "medium",
                 flags = { "no-crop" },
@@ -70,7 +69,7 @@ for name, tier in pairs(batteries) do
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-battery/vehicle-battery-equipment-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-battery/vehicle-battery-equipment-highlights.png",
                 size = 32,
                 priority = "medium",
                 flags = { "no-crop" },

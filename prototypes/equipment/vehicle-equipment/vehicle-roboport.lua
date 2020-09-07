@@ -10,7 +10,6 @@ local inputs = {
     type = "roboport-equipment",
     icon_name = "vehicle-roboport",
     equipment_category = "logistics",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "vehicle-equipment",
 }
@@ -48,7 +47,7 @@ for name, map in pairs(vehicle_roboports) do
 
     inputs.technology_icon_extras = {
         {
-            icon = inputs.directory.."/graphics/technology/equipment/vehicle-equipment-symbol.png"
+            icon = reskins.bobs.directory.."/graphics/technology/equipment/vehicle-equipment-symbol.png"
         }
     }
 
@@ -65,14 +64,14 @@ for name, map in pairs(vehicle_roboports) do
         layers = {
             -- Base
             {
-                filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-roboport/"..inputs.icon_base.."-equipment-base.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-roboport/"..inputs.icon_base.."-equipment-base.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-roboport/vehicle-roboport-equipment-mask.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-roboport/vehicle-roboport-equipment-mask.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
@@ -80,7 +79,7 @@ for name, map in pairs(vehicle_roboports) do
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-roboport/vehicle-roboport-equipment-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-roboport/vehicle-roboport-equipment-highlights.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },

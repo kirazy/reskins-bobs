@@ -8,7 +8,6 @@ if not mods["boblogistics"] then return end
 if reskins.lib.setting("reskins-bobs-do-boblogistics") == false then return end
 
 local inputs = {
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "logistics",
 }

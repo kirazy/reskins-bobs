@@ -8,7 +8,6 @@ if not mods["bobplates"] then return end
 
 -- Battery
 local inputs = {
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "plates",
     icon_name = "battery",

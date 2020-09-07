@@ -8,7 +8,6 @@ if not mods["bobpower"] then return end
 
 -- Setup standard inputs
 local inputs = {
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "power",
     type = "technology",
@@ -17,14 +16,14 @@ local inputs = {
 -- Setup boiler and oil-boiler icon_extras
 local boiler_icon_extra = {
     {
-        icon = inputs.directory.."/graphics/technology/power/boiler/boiler-technology-light.png",
+        icon = reskins.bobs.directory.."/graphics/technology/power/boiler/boiler-technology-light.png",
         tint = {1, 1, 1, 0}
     }
 }
 
 local oil_boiler_icon_extra = {
     {
-        icon = inputs.directory.."/graphics/technology/power/oil-boiler/oil-boiler-technology-light.png",
+        icon = reskins.bobs.directory.."/graphics/technology/power/oil-boiler/oil-boiler-technology-light.png",
         tint = {1, 1, 1, 0}
     }
 }

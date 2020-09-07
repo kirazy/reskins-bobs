@@ -12,7 +12,6 @@ local inputs = {
     type = "assembling-machine",
     icon_name = "assembling-machine",
     base_entity = "assembling-machine-1",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     particles = {["big"] = 1, ["medium"] = 2},
     group = "assembly",
@@ -61,13 +60,13 @@ for name, map in pairs(tier_map) do
         -- Add the indicator lights
         inputs.icon_extras = {
             {
-                icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/"..name..".png"
+                icon = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/"..name..".png"
             }
         }
 
         inputs.icon_picture_extras = {
             {
-                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/"..name..".png",
+                filename = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/"..name..".png",
                 size = 64,
                 mipmaps = 4,
                 scale = 0.25
@@ -82,13 +81,13 @@ for name, map in pairs(tier_map) do
         -- Smoke stack
         inputs.icon_extras = {
             {
-                icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/smoke-stack.png"
+                icon = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/smoke-stack.png"
             }
         }
 
         inputs.icon_picture_extras = {
             {
-                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/smoke-stack.png",
+                filename = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/smoke-stack.png",
                 size = 64,
                 mipmaps = 4,
                 scale = 0.25
@@ -103,34 +102,34 @@ for name, map in pairs(tier_map) do
         -- Add steam
         inputs.icon_extras = {
             {
-                icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/steam-smoke-stack-base.png"
+                icon = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/steam-smoke-stack-base.png"
             },
             {
-                icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/steam-smoke-stack-mask.png",
+                icon = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/steam-smoke-stack-mask.png",
                 tint = inputs.tint,
             },
             {
-                icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/steam-smoke-stack-highlights.png",
+                icon = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/steam-smoke-stack-highlights.png",
                 tint = {1,1,1,0}
             }
         }
 
         inputs.icon_picture_extras = {
             {
-                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/steam-smoke-stack-base.png",
+                filename = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/steam-smoke-stack-base.png",
                 size = 64,
                 mipmaps = 4,
                 scale = 0.25
             },
             {
-                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/steam-smoke-stack-mask.png",
+                filename = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/steam-smoke-stack-mask.png",
                 size = 64,
                 mipmaps = 4,
                 scale = 0.25,
                 tint = inputs.tint
             },
             {
-                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/steam-smoke-stack-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/steam-smoke-stack-highlights.png",
                 size = 64,
                 mipmaps = 4,
                 scale = 0.25,
@@ -146,13 +145,13 @@ for name, map in pairs(tier_map) do
         -- Add gears
         inputs.icon_extras = {
             {
-                icon = inputs.directory.."/graphics/icons/assembly/assembling-machine/gear-"..map.tier..".png"
+                icon = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/gear-"..map.tier..".png"
             }
         }
 
         inputs.icon_picture_extras = {
             {
-                filename = inputs.directory.."/graphics/icons/assembly/assembling-machine/gear-"..map.tier..".png",
+                filename = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/gear-"..map.tier..".png",
                 size = 64,
                 mipmaps = 4,
                 scale = 0.25
@@ -170,7 +169,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/remnants/assembling-machine-remnants-base.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/remnants/assembling-machine-remnants-base.png",
                 line_length = 1,
                 width = 164,
                 height = 142,
@@ -180,7 +179,7 @@ for name, map in pairs(tier_map) do
                 direction_count = 1,
                 shift = util.by_pixel(0, 10),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/remnants/hr-assembling-machine-remnants-base.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/remnants/hr-assembling-machine-remnants-base.png",
                     line_length = 1,
                     width = 328,
                     height = 282,
@@ -194,7 +193,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/remnants/assembling-machine-remnants-mask.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/remnants/assembling-machine-remnants-mask.png",
                 line_length = 1,
                 width = 164,
                 height = 142,
@@ -205,7 +204,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(0, 10),
                 tint = inputs.tint,
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/remnants/hr-assembling-machine-remnants-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/remnants/hr-assembling-machine-remnants-mask.png",
                     line_length = 1,
                     width = 328,
                     height = 282,
@@ -220,7 +219,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/remnants/assembling-machine-remnants-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/remnants/assembling-machine-remnants-highlights.png",
                 line_length = 1,
                 width = 164,
                 height = 142,
@@ -231,7 +230,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(0, 10),
                 blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/remnants/hr-assembling-machine-remnants-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/remnants/hr-assembling-machine-remnants-highlights.png",
                     line_length = 1,
                     width = 328,
                     height = 282,
@@ -252,7 +251,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/base/assembling-machine-base.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/base/assembling-machine-base.png",
                 priority="high",
                 width = 108,
                 height = 119,
@@ -261,7 +260,7 @@ for name, map in pairs(tier_map) do
                 repeat_count = 32,
                 shift = util.by_pixel(0, -0.5),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/base/hr-assembling-machine-base.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/base/hr-assembling-machine-base.png",
                     priority="high",
                     width = 214,
                     height = 237,
@@ -274,7 +273,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/base/assembling-machine-base-mask.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/base/assembling-machine-base-mask.png",
                 priority="high",
                 width = 108,
                 height = 119,
@@ -284,7 +283,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(0, -0.5),
                 tint = inputs.tint,
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/base/hr-assembling-machine-base-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/base/hr-assembling-machine-base-mask.png",
                     priority="high",
                     width = 214,
                     height = 237,
@@ -298,7 +297,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlight
             {
-                filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/base/assembling-machine-base-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/base/assembling-machine-base-highlights.png",
                 priority="high",
                 width = 108,
                 height = 119,
@@ -308,7 +307,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(0, -0.5),
                 blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/base/hr-assembling-machine-base-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/base/hr-assembling-machine-base-highlights.png",
                     priority="high",
                     width = 214,
                     height = 237,
@@ -322,7 +321,7 @@ for name, map in pairs(tier_map) do
             },
             -- Animation
             {
-                filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/animations/assembling-machine-animation-"..map.tier..".png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/animations/assembling-machine-animation-"..map.tier..".png",
                 priority="high",
                 width = 108,
                 height = 119,
@@ -330,7 +329,7 @@ for name, map in pairs(tier_map) do
                 line_length = 8,
                 shift = util.by_pixel(0, -0.5),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/animations/hr-assembling-machine-animation-"..map.tier..".png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/animations/hr-assembling-machine-animation-"..map.tier..".png",
                     priority="high",
                     width = 214,
                     height = 237,
@@ -342,7 +341,7 @@ for name, map in pairs(tier_map) do
             },
             -- Shadow
             {
-                filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/shadows/assembling-machine-"..map.shadow.."-shadow.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/shadows/assembling-machine-"..map.shadow.."-shadow.png",
                 priority="high",
                 width = 132,
                 height = 83,
@@ -351,7 +350,7 @@ for name, map in pairs(tier_map) do
                 draw_as_shadow = true,
                 shift = util.by_pixel(27, 5),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/shadows/hr-assembling-machine-"..map.shadow.."-shadow.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/shadows/hr-assembling-machine-"..map.shadow.."-shadow.png",
                     priority="high",
                     width = 264,
                     height = 165,
@@ -370,7 +369,7 @@ for name, map in pairs(tier_map) do
         table.insert(entity.animation.layers,
         -- Base
         {
-            filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/electronics/electronics-base.png",
+            filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/electronics/electronics-base.png",
             priority="high",
             width = 108,
             height = 119,
@@ -379,7 +378,7 @@ for name, map in pairs(tier_map) do
             repeat_count = 32,
             shift = util.by_pixel(0, -0.5),
             hr_version = {
-                filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/electronics/hr-electronics-base.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/electronics/hr-electronics-base.png",
                 priority="high",
                 width = 214,
                 height = 237,
@@ -393,7 +392,7 @@ for name, map in pairs(tier_map) do
         table.insert(entity.animation.layers,
         -- Mask
         {
-            filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/electronics/electronics-mask.png",
+            filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/electronics/electronics-mask.png",
             priority="high",
             width = 108,
             height = 119,
@@ -403,7 +402,7 @@ for name, map in pairs(tier_map) do
             shift = util.by_pixel(0, -0.5),
             tint = inputs.tint,
             hr_version = {
-                filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/electronics/hr-electronics-mask.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/electronics/hr-electronics-mask.png",
                 priority="high",
                 width = 214,
                 height = 237,
@@ -418,7 +417,7 @@ for name, map in pairs(tier_map) do
         table.insert(entity.animation.layers,
         -- Highlights
         {
-            filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/electronics/electronics-highlights.png",
+            filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/electronics/electronics-highlights.png",
             priority="high",
             width = 108,
             height = 119,
@@ -428,7 +427,7 @@ for name, map in pairs(tier_map) do
             shift = util.by_pixel(0, -0.5),
             blend_mode = reskins.lib.blend_mode, -- "additive",
             hr_version = {
-                filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/electronics/hr-electronics-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/electronics/hr-electronics-highlights.png",
                 priority="high",
                 width = 214,
                 height = 237,
@@ -443,7 +442,7 @@ for name, map in pairs(tier_map) do
         table.insert(entity.animation.layers,
         -- Shadow
         {
-            filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/electronics/electronics-shadow.png",
+            filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/electronics/electronics-shadow.png",
             priority="high",
             width = 132,
             height = 83,
@@ -453,7 +452,7 @@ for name, map in pairs(tier_map) do
             draw_as_shadow = true,
             shift = util.by_pixel(27, 5),
             hr_version = {
-                filename = inputs.directory.."/graphics/entity/assembly/assembling-machine/electronics/hr-electronics-shadow.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/electronics/hr-electronics-shadow.png",
                 priority="high",
                 width = 264,
                 height = 165,

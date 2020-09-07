@@ -17,7 +17,6 @@ end
 local inputs = {
     type = "transport-belt",
     icon_name = "transport-belt",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "logistics",
     particles = {["medium"] = 1, ["small"] = 2},
@@ -73,7 +72,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = inputs.directory.."/graphics/entity/logistics/transport-belt/remnants/transport-belt-remnants-base.png",
+                filename = reskins.bobs.directory.."/graphics/entity/logistics/transport-belt/remnants/transport-belt-remnants-base.png",
                 line_length = 1,
                 width = 54,
                 height = 52,
@@ -83,7 +82,7 @@ for name, map in pairs(tier_map) do
                 direction_count = 4,
                 shift = util.by_pixel(1, 0),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/logistics/transport-belt/remnants/hr-transport-belt-remnants-base.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/transport-belt/remnants/hr-transport-belt-remnants-base.png",
                     line_length = 1,
                     width = 106,
                     height = 102,
@@ -97,7 +96,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/logistics/transport-belt/remnants/transport-belt-remnants-mask.png",
+                filename = reskins.bobs.directory.."/graphics/entity/logistics/transport-belt/remnants/transport-belt-remnants-mask.png",
                 line_length = 1,
                 width = 54,
                 height = 52,
@@ -108,7 +107,7 @@ for name, map in pairs(tier_map) do
                 tint = inputs.tint,
                 shift = util.by_pixel(1, 0),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/logistics/transport-belt/remnants/hr-transport-belt-remnants-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/transport-belt/remnants/hr-transport-belt-remnants-mask.png",
                     line_length = 1,
                     width = 106,
                     height = 102,

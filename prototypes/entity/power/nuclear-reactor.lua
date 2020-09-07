@@ -13,7 +13,6 @@ local inputs = {
     type = "reactor",
     icon_name = "nuclear-reactor",
     base_entity = "nuclear-reactor",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "power"
 }
@@ -61,14 +60,14 @@ local function skin_reactor_entity(name, inputs)
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/reactor-mask.png",
+                filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/reactor-mask.png",
                 width = 154,
                 height = 158,
                 shift = util.by_pixel(-6, -6),
                 tint = inputs.tint,
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/hr-reactor-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/hr-reactor-mask.png",
                     width = 302,
                     height = 318,
                     scale = 0.5,
@@ -78,14 +77,14 @@ local function skin_reactor_entity(name, inputs)
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/reactor-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/reactor-highlights.png",
                 width = 154,
                 height = 158,
                 shift = util.by_pixel(-6, -6),
                 blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/hr-reactor-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/hr-reactor-highlights.png",
                     width = 302,
                     height = 318,
                     scale = 0.5,
@@ -95,13 +94,13 @@ local function skin_reactor_entity(name, inputs)
             },
             -- Pipes
             {
-                filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/pipes/reactor-piping-"..inputs.pipe_tier..".png",
+                filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/pipes/reactor-piping-"..inputs.pipe_tier..".png",
                 width = 154,
                 height = 158,
                 shift = util.by_pixel(-6, -6),
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/pipes/hr-reactor-piping-"..inputs.pipe_tier..".png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/pipes/hr-reactor-piping-"..inputs.pipe_tier..".png",
                     width = 302,
                     height = 318,
                     scale = 0.5,
@@ -131,13 +130,13 @@ local function skin_reactor_entity(name, inputs)
     -- Pipes
     entity.lower_layer_picture =
     {
-        filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/pipes/reactor-base-pipes-"..inputs.pipe_tier..".png",
+        filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/pipes/reactor-base-pipes-"..inputs.pipe_tier..".png",
         width = 156,
         height = 156,
         shift = util.by_pixel(-2, -4),
         hr_version =
         {
-            filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/pipes/hr-reactor-base-pipes-"..inputs.pipe_tier..".png",
+            filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/pipes/hr-reactor-base-pipes-"..inputs.pipe_tier..".png",
             width = 320,
             height = 316,
             scale = 0.5,
@@ -149,13 +148,13 @@ local function skin_reactor_entity(name, inputs)
     {
         sheet =
         {
-            filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/pipes/reactor-connect-patches-"..inputs.pipe_tier..".png",
+            filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/pipes/reactor-connect-patches-"..inputs.pipe_tier..".png",
             width = 32,
             height = 32,
             variation_count = 12,
             hr_version =
             {
-                filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/pipes/hr-reactor-connect-patches-"..inputs.pipe_tier..".png",
+                filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/pipes/hr-reactor-connect-patches-"..inputs.pipe_tier..".png",
                 width = 64,
                 height = 64,
                 variation_count = 12,
@@ -168,14 +167,14 @@ local function skin_reactor_entity(name, inputs)
     {
         sheet =
         {
-            filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/pipes/reactor-connect-patches-"..inputs.pipe_tier..".png",
+            filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/pipes/reactor-connect-patches-"..inputs.pipe_tier..".png",
             width = 32,
             height = 32,
             variation_count = 12,
             y = 32,
             hr_version =
             {
-                filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/pipes/hr-reactor-connect-patches-"..inputs.pipe_tier..".png",
+                filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/pipes/hr-reactor-connect-patches-"..inputs.pipe_tier..".png",
                 width = 64,
                 height = 64,
                 variation_count = 12,
@@ -225,7 +224,7 @@ local function skin_reactor_remnants(name, inputs)
             },
             -- Mask
             {
-                    filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/remnants/nuclear-reactor-remnants-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/remnants/nuclear-reactor-remnants-mask.png",
                     line_length = 1,
                     width = 206,
                     height = 198,
@@ -237,7 +236,7 @@ local function skin_reactor_remnants(name, inputs)
                     tint = inputs.tint,
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/remnants/hr-nuclear-reactor-remnants-mask.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/remnants/hr-nuclear-reactor-remnants-mask.png",
                         line_length = 1,
                         width = 410,
                         height = 396,
@@ -252,7 +251,7 @@ local function skin_reactor_remnants(name, inputs)
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/remnants/nuclear-reactor-remnants-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/remnants/nuclear-reactor-remnants-highlights.png",
                 line_length = 1,
                 width = 206,
                 height = 198,
@@ -264,7 +263,7 @@ local function skin_reactor_remnants(name, inputs)
                 blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/remnants/hr-nuclear-reactor-remnants-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/remnants/hr-nuclear-reactor-remnants-highlights.png",
                     line_length = 1,
                     width = 410,
                     height = 396,
@@ -279,7 +278,7 @@ local function skin_reactor_remnants(name, inputs)
             },
             -- Pipes
             {
-                filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/remnants/pipes/reactor-piping-"..inputs.pipe_tier.."-remnants.png",
+                filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/remnants/pipes/reactor-piping-"..inputs.pipe_tier.."-remnants.png",
                 line_length = 1,
                 width = 206,
                 height = 198,
@@ -290,7 +289,7 @@ local function skin_reactor_remnants(name, inputs)
                 shift = util.by_pixel(7, 4),
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/power/nuclear-reactor/remnants/pipes/hr-reactor-piping-"..inputs.pipe_tier.."-remnants.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/remnants/pipes/hr-reactor-piping-"..inputs.pipe_tier.."-remnants.png",
                     line_length = 1,
                     width = 410,
                     height = 396,

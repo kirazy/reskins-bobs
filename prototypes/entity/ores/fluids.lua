@@ -9,7 +9,6 @@ if reskins.lib.setting("reskins-bobs-do-bobores") == false then return end
 
 local inputs = {
     type = "resource",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "ores",
 }
@@ -29,14 +28,14 @@ for _, name in pairs(fluids) do
     if not entity then goto continue end
 
     -- Setup icons
-    inputs.icon = inputs.directory.."/graphics/icons/ores/"..name.."/"..name..".png"
+    inputs.icon = reskins.bobs.directory.."/graphics/icons/ores/"..name.."/"..name..".png"
 
     reskins.lib.assign_icons(name, inputs)
 
     -- Reskin entity
     entity.stages = {
         sheet = {
-            filename = inputs.directory.."/graphics/entity/ores/"..name.."/"..name..".png",
+            filename = reskins.bobs.directory.."/graphics/entity/ores/"..name.."/"..name..".png",
             priority = "extra-high",
             width = 74,
             height = 60,
@@ -44,7 +43,7 @@ for _, name in pairs(fluids) do
             variation_count = 1,
             shift = util.by_pixel(0, -2),
             hr_version = {
-                filename = inputs.directory.."/graphics/entity/ores/"..name.."/hr-"..name..".png",
+                filename = reskins.bobs.directory.."/graphics/entity/ores/"..name.."/hr-"..name..".png",
                 priority = "extra-high",
                 width = 148,
                 height = 120,

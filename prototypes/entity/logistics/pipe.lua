@@ -70,7 +70,6 @@ if reskins.lib.setting("reskins-bobs-do-boblogistics") == false then return end
 
 -- Set input parameters
 local inputs = {
-    directory = reskins.bobs.directory,
     mod = "bobs"
 }
 
@@ -128,7 +127,7 @@ for material, map in pairs(material_map) do
 
         -- Reskin remnants
         pipe_remnant.animation = make_rotated_animation_variations_from_sheet(2, {
-            filename = inputs.directory.."/graphics/entity/logistics/pipe/"..inputs.material.."/remnants/pipe-remnants.png",
+            filename = reskins.bobs.directory.."/graphics/entity/logistics/pipe/"..inputs.material.."/remnants/pipe-remnants.png",
             width = 61,
             height = 60,
             line_length = 1,
@@ -136,7 +135,7 @@ for material, map in pairs(material_map) do
             direction_count = 2,
             shift = util.by_pixel(1.5, 2.5),
             hr_version = {
-                filename = inputs.directory.."/graphics/entity/logistics/pipe/"..inputs.material.."/remnants/hr-pipe-remnants.png",
+                filename = reskins.bobs.directory.."/graphics/entity/logistics/pipe/"..inputs.material.."/remnants/hr-pipe-remnants.png",
                 width = 122,
                 height = 120,
                 line_length = 1,
@@ -148,7 +147,7 @@ for material, map in pairs(material_map) do
         })
 
         underground_pipe_remnant.animation = {
-            filename = inputs.directory.."/graphics/entity/logistics/pipe-to-ground/"..inputs.material.."/remnants/pipe-to-ground-remnants.png",
+            filename = reskins.bobs.directory.."/graphics/entity/logistics/pipe-to-ground/"..inputs.material.."/remnants/pipe-to-ground-remnants.png",
             width = 45,
             height = 40,
             line_length = 1,
@@ -156,7 +155,7 @@ for material, map in pairs(material_map) do
             direction_count = 1,
             shift = util.by_pixel(0.5, -3),
             hr_version = {
-                filename = inputs.directory.."/graphics/entity/logistics/pipe-to-ground/"..inputs.material.."/remnants/hr-pipe-to-ground-remnants.png",
+                filename = reskins.bobs.directory.."/graphics/entity/logistics/pipe-to-ground/"..inputs.material.."/remnants/hr-pipe-to-ground-remnants.png",
                 width = 90,
                 height = 80,
                 line_length = 1,
@@ -182,9 +181,9 @@ for material, map in pairs(material_map) do
     -- Setup Icons
     local pipe_icon_inputs = {
         mod = "bobs",
-        icon = inputs.directory.."/graphics/icons/logistics/pipe/"..inputs.material.."-pipe-icon.png",
+        icon = reskins.bobs.directory.."/graphics/icons/logistics/pipe/"..inputs.material.."-pipe-icon.png",
         icon_picture = {
-            filename = inputs.directory.."/graphics/icons/logistics/pipe/"..inputs.material.."-pipe-icon.png",
+            filename = reskins.bobs.directory.."/graphics/icons/logistics/pipe/"..inputs.material.."-pipe-icon.png",
             size = 64,
             mipmaps = 4,
             scale = 0.25
@@ -197,9 +196,9 @@ for material, map in pairs(material_map) do
 
     local pipe_to_ground_icon_inputs = {
         mod = "bobs",
-        icon = inputs.directory.."/graphics/icons/logistics/pipe-to-ground/"..inputs.material.."-pipe-to-ground-icon.png",
+        icon = reskins.bobs.directory.."/graphics/icons/logistics/pipe-to-ground/"..inputs.material.."-pipe-to-ground-icon.png",
         icon_picture = {
-            filename = inputs.directory.."/graphics/icons/logistics/pipe-to-ground/"..inputs.material.."-pipe-to-ground-icon.png",
+            filename = reskins.bobs.directory.."/graphics/icons/logistics/pipe-to-ground/"..inputs.material.."-pipe-to-ground-icon.png",
             size = 64,
             mipmaps = 4,
             scale = 0.25

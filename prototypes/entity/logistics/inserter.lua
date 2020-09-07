@@ -10,7 +10,6 @@ if reskins.lib.setting("reskins-bobs-do-boblogistics") == false then return end
 -- Set input parameters
 local inputs = {
     type = "inserter",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "logistics",
     particles = {["medium"] = 1},
@@ -47,7 +46,7 @@ end
 -- Inserter Remnants
 local function inserter_remnants(parameters)
     return make_rotated_animation_variations_from_sheet (4, {
-        filename = inputs.directory.."/graphics/entity/logistics/inserter/standard/"..parameters.name.."/remnants/"..parameters.name.."-remnants.png",
+        filename = reskins.bobs.directory.."/graphics/entity/logistics/inserter/standard/"..parameters.name.."/remnants/"..parameters.name.."-remnants.png",
         line_length = 1,
         width = 67,
         height = 47,
@@ -58,7 +57,7 @@ local function inserter_remnants(parameters)
         shift = util.by_pixel(3, -1.5),
         hr_version =
         {
-            filename = inputs.directory.."/graphics/entity/logistics/inserter/standard/"..parameters.name.."/remnants/hr-"..parameters.name.."-remnants.png",
+            filename = reskins.bobs.directory.."/graphics/entity/logistics/inserter/standard/"..parameters.name.."/remnants/hr-"..parameters.name.."-remnants.png",
             line_length = 1,
             width = 134,
             height = 94,
@@ -76,13 +75,13 @@ end
 local function inserter_arm_picture(parameters)
     return
     {
-        filename = inputs.directory.."/graphics/entity/logistics/inserter/standard/"..parameters.name.."/"..parameters.name.."-arm.png",
+        filename = reskins.bobs.directory.."/graphics/entity/logistics/inserter/standard/"..parameters.name.."/"..parameters.name.."-arm.png",
         priority = "extra-high",
         width = 16,
         height = 68,
         scale = 0.5,
         hr_version = {
-            filename = inputs.directory.."/graphics/entity/logistics/inserter/standard/"..parameters.name.."/hr-"..parameters.name.."-arm.png",
+            filename = reskins.bobs.directory.."/graphics/entity/logistics/inserter/standard/"..parameters.name.."/hr-"..parameters.name.."-arm.png",
             priority = "extra-high",
             width = 32,
             height = 136,
@@ -94,14 +93,14 @@ end
 local function inserter_arm_shadow()
     return
     {
-        filename = inputs.directory.."/graphics/entity/logistics/inserter/shadows/inserter-arm-shadow.png",
+        filename = reskins.bobs.directory.."/graphics/entity/logistics/inserter/shadows/inserter-arm-shadow.png",
         priority = "extra-high",
         width = 16,
         height = 68,
         draw_as_shadow = true,
         scale = 0.5,
         hr_version = {
-            filename = inputs.directory.."/graphics/entity/logistics/inserter/shadows/hr-inserter-arm-shadow.png",
+            filename = reskins.bobs.directory.."/graphics/entity/logistics/inserter/shadows/hr-inserter-arm-shadow.png",
             priority = "extra-high",
             width = 32,
             height = 136,
@@ -115,13 +114,13 @@ end
 local function inserter_hand_picture(parameters)
     return
     {
-        filename = inputs.directory.."/graphics/entity/logistics/inserter/standard/"..parameters.name.."/"..parameters.hand_name.."-hand-"..parameters.hand..".png",
+        filename = reskins.bobs.directory.."/graphics/entity/logistics/inserter/standard/"..parameters.name.."/"..parameters.hand_name.."-hand-"..parameters.hand..".png",
         priority = "extra-high",
         width = 65,
         height = 82,
         scale = 0.5,
         hr_version = {
-            filename = inputs.directory.."/graphics/entity/logistics/inserter/standard/"..parameters.name.."/hr-"..parameters.hand_name.."-hand-"..parameters.hand..".png",
+            filename = reskins.bobs.directory.."/graphics/entity/logistics/inserter/standard/"..parameters.name.."/hr-"..parameters.hand_name.."-hand-"..parameters.hand..".png",
             priority = "extra-high",
             width = 130,
             height = 164,
@@ -139,14 +138,14 @@ local function inserter_hand_shadow(parameters)
     end
     return
     {
-        filename = inputs.directory.."/graphics/entity/logistics/inserter/shadows/"..parameters.shadow.."-hand-"..parameters.hand.."-shadow.png",
+        filename = reskins.bobs.directory.."/graphics/entity/logistics/inserter/shadows/"..parameters.shadow.."-hand-"..parameters.hand.."-shadow.png",
         priority = "extra-high",
         width = 65,
         height = 82,
         scale = 0.5,
         draw_as_shadow = true,
         hr_version = {
-            filename = inputs.directory.."/graphics/entity/logistics/inserter/shadows/hr-"..parameters.shadow.."-hand-"..parameters.hand.."-shadow.png",
+            filename = reskins.bobs.directory.."/graphics/entity/logistics/inserter/shadows/hr-"..parameters.shadow.."-hand-"..parameters.hand.."-shadow.png",
             priority = "extra-high",
             width = 130,
             height = 164,
@@ -163,13 +162,13 @@ local function inserter_platform_picture(parameters)
         sheets = {
             -- Base
             {
-                filename = inputs.directory.."/graphics/entity/logistics/inserter/standard/"..parameters.name.."/"..parameters.name.."-platform.png",
+                filename = reskins.bobs.directory.."/graphics/entity/logistics/inserter/standard/"..parameters.name.."/"..parameters.name.."-platform.png",
                 priority = "extra-high",
                 width = 53,
                 height = 40,
                 shift = util.by_pixel(1.75, 6.75),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/logistics/inserter/standard/"..parameters.name.."/hr-"..parameters.name.."-platform.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/inserter/standard/"..parameters.name.."/hr-"..parameters.name.."-platform.png",
                     priority = "extra-high",
                     width = 106,
                     height = 80,
@@ -179,14 +178,14 @@ local function inserter_platform_picture(parameters)
             },
             -- Shadow
             {
-                filename = inputs.directory.."/graphics/entity/logistics/inserter/shadows/inserter-platform-shadow.png",
+                filename = reskins.bobs.directory.."/graphics/entity/logistics/inserter/shadows/inserter-platform-shadow.png",
                 priority = "extra-high",
                 width = 53,
                 height = 40,
                 draw_as_shadow = true,
                 shift = util.by_pixel(1.75, 6.75),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/logistics/inserter/shadows/hr-inserter-platform-shadow.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/inserter/shadows/hr-inserter-platform-shadow.png",
                     priority = "extra-high",
                     width = 106,
                     height = 80,
@@ -234,7 +233,7 @@ for name, map in pairs(inserter_map) do
         inputs.tier_labels = false
     end
 
-    inputs.icon_filename = inputs.directory.."/graphics/icons/logistics/inserter/standard/"..name.."-icon.png"
+    inputs.icon_filename = reskins.bobs.directory.."/graphics/icons/logistics/inserter/standard/"..name.."-icon.png"
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 

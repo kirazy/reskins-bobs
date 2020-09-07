@@ -8,7 +8,6 @@ if not mods["bobmining"] then return end
 
 -- Setup standard inputs
 local inputs = {
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "mining",
     type = "technology",

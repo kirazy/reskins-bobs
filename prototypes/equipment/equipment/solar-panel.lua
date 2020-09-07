@@ -9,7 +9,6 @@ if not mods["bobequipment"] then return end
 local inputs = {
     type = "solar-panel-equipment",
     icon_name = "solar-panel",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "equipment",
 }
@@ -47,7 +46,7 @@ for name, map in pairs(solar_panels) do
     -- Construct technology icon
     inputs.technology_icon_extras = {
         {
-            icon = inputs.directory.."/graphics/technology/equipment/personal-equipment-symbol.png"
+            icon = reskins.bobs.directory.."/graphics/technology/equipment/personal-equipment-symbol.png"
         }
     }
 
@@ -58,12 +57,12 @@ for name, map in pairs(solar_panels) do
         layers = {
             -- Base
             {
-                filename = inputs.directory.."/graphics/equipment/equipment/solar-panel/solar-panel-equipment-base.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/equipment/solar-panel/solar-panel-equipment-base.png",
                 size = 32,
                 priority = "medium",
                 flags = { "no-crop" },
                 hr_version = {
-                    filename = inputs.directory.."/graphics/equipment/equipment/solar-panel/hr-solar-panel-equipment-base.png",
+                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/solar-panel/hr-solar-panel-equipment-base.png",
                     size = 64,
                     priority = "medium",
                     flags = { "no-crop" },
@@ -72,13 +71,13 @@ for name, map in pairs(solar_panels) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/equipment/equipment/solar-panel/solar-panel-equipment-mask.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/equipment/solar-panel/solar-panel-equipment-mask.png",
                 size = 32,
                 priority = "medium",
                 flags = { "no-crop" },
                 tint = inputs.tint,
                 hr_version = {
-                    filename = inputs.directory.."/graphics/equipment/equipment/solar-panel/hr-solar-panel-equipment-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/solar-panel/hr-solar-panel-equipment-mask.png",
                     size = 64,
                     priority = "medium",
                     flags = { "no-crop" },
@@ -88,13 +87,13 @@ for name, map in pairs(solar_panels) do
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/equipment/equipment/solar-panel/solar-panel-equipment-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/equipment/solar-panel/solar-panel-equipment-highlights.png",
                 size = 32,
                 priority = "medium",
                 flags = { "no-crop" },
                 blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
-                    filename = inputs.directory.."/graphics/equipment/equipment/solar-panel/hr-solar-panel-equipment-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/solar-panel/hr-solar-panel-equipment-highlights.png",
                     size = 64,
                     priority = "medium",
                     flags = { "no-crop" },

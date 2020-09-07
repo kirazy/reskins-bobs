@@ -9,7 +9,6 @@ if not reskins.lib.setting("reskins-bobs-do-bobelectronics-circuits") then retur
 
 -- Setup inputs
 local inputs = {
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "electronics",
     make_icon_pictures = false,
@@ -43,7 +42,7 @@ local function circuit_picture_extras(name)
     return
     {
         {
-            filename = inputs.directory.."/graphics/icons/electronics/circuits-custom/"..name.."/"..name.."-circuitry.png",
+            filename = reskins.bobs.directory.."/graphics/icons/electronics/circuits-custom/"..name.."/"..name.."-circuitry.png",
             size = 64,
             mipmaps = 4,
             scale = 0.25,

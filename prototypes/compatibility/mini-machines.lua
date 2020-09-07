@@ -185,7 +185,6 @@ end
 
 -- Generate tech icons from files
 local inputs = {
-    directory = reskins.bobs.directory,
     mod = "bobs",
     type = "technology"
 }

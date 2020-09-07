@@ -9,7 +9,6 @@ if not mods["bobvehicleequipment"] then return end
 local inputs = {
     type = "roboport-equipment",
     equipment_category = "logistics",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "vehicle-equipment",
 }
@@ -73,12 +72,12 @@ for _, category in pairs(categories) do
             layers = {
                 -- Base
                 {
-                    filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-part-"..category.."/"..equipment_path.."-equipment-base.png",
+                    filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-part-"..category.."/"..equipment_path.."-equipment-base.png",
                     size = 32,
                     priority = "medium",
                     flags = { "no-crop" },
                     hr_version = {
-                        filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-part-"..category.."/hr-"..equipment_path.."-equipment-base.png",
+                        filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-part-"..category.."/hr-"..equipment_path.."-equipment-base.png",
                         size = 64,
                         priority = "medium",
                         flags = { "no-crop" },
@@ -87,13 +86,13 @@ for _, category in pairs(categories) do
                 },
                 -- Mask
                 {
-                    filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-part-"..category.."/vehicle-part-"..category.."-equipment-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-part-"..category.."/vehicle-part-"..category.."-equipment-mask.png",
                     size = 32,
                     priority = "medium",
                     flags = { "no-crop" },
                     tint = inputs.tint,
                     hr_version = {
-                        filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-part-"..category.."/hr-vehicle-part-"..category.."-equipment-mask.png",
+                        filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-part-"..category.."/hr-vehicle-part-"..category.."-equipment-mask.png",
                         size = 64,
                         priority = "medium",
                         flags = { "no-crop" },
@@ -103,13 +102,13 @@ for _, category in pairs(categories) do
                 },
                 -- Highlights
                 {
-                    filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-part-"..category.."/vehicle-part-"..category.."-equipment-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-part-"..category.."/vehicle-part-"..category.."-equipment-highlights.png",
                     size = 32,
                     priority = "medium",
                     flags = { "no-crop" },
                     blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
-                        filename = inputs.directory.."/graphics/equipment/vehicle-equipment/vehicle-part-"..category.."/hr-vehicle-part-"..category.."-equipment-highlights.png",
+                        filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-part-"..category.."/hr-vehicle-part-"..category.."-equipment-highlights.png",
                         size = 64,
                         priority = "medium",
                         flags = { "no-crop" },

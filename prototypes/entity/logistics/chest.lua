@@ -11,7 +11,6 @@ if reskins.lib.setting("reskins-bobs-do-boblogistics") == false then return end
 local inputs = {
     type = "logistic-container",
     icon_name = "logistic-chest",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "logistics",
     particles = {["medium"] = 1},
@@ -101,7 +100,7 @@ for name, map in pairs(logistic_map) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/logistics/chest/remnants/"..material.."-logistic-chest-remnants.png",
+                filename = reskins.bobs.directory.."/graphics/entity/logistics/chest/remnants/"..material.."-logistic-chest-remnants.png",
                 line_length = 1,
                 width = 60,
                 height = 42,
@@ -109,7 +108,7 @@ for name, map in pairs(logistic_map) do
                 direction_count = 1,
                 shift = util.by_pixel(10.5, -2.5),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/logistics/chest/remnants/hr-"..material.."-logistic-chest-remnants.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/chest/remnants/hr-"..material.."-logistic-chest-remnants.png",
                     line_length = 1,
                     width = 116,
                     height = 82,
@@ -145,14 +144,14 @@ for name, map in pairs(logistic_map) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/logistics/chest/"..material.."-logistic-chest.png",
+                filename = reskins.bobs.directory.."/graphics/entity/logistics/chest/"..material.."-logistic-chest.png",
                 priority = "extra-high",
                 width = 34,
                 height = 38,
                 frame_count = 7,
                 shift = util.by_pixel(0, -2),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/logistics/chest/hr-"..material.."-logistic-chest.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/chest/hr-"..material.."-logistic-chest.png",
                     priority = "extra-high",
                     width = 66,
                     height = 74,

@@ -12,7 +12,6 @@ local inputs = {
     type = "car",
     icon_name = "tank",
     base_entity = "tank",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "warfare",
     particles = {["medium"] = 2},

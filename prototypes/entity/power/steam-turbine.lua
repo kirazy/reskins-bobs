@@ -13,7 +13,6 @@ local inputs = {
     type = "generator",
     icon_name = "steam-turbine",
     base_entity = "steam-turbine",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "power",
     particles = {["medium"] = 2,["big"] = 1},
@@ -76,7 +75,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/power/steam-turbine/remnants/steam-turbine-remnants-mask.png",
+                filename = reskins.bobs.directory.."/graphics/entity/power/steam-turbine/remnants/steam-turbine-remnants-mask.png",
                 line_length = 1,
                 width = 230,
                 height = 204,
@@ -87,7 +86,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(6, 0),
                 tint = inputs.tint,
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/power/steam-turbine/remnants/hr-steam-turbine-remnants-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/steam-turbine/remnants/hr-steam-turbine-remnants-mask.png",
                     line_length = 1,
                     width = 460,
                     height = 408,
@@ -102,7 +101,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/entity/power/steam-turbine/remnants/steam-turbine-remnants-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/entity/power/steam-turbine/remnants/steam-turbine-remnants-highlights.png",
                 line_length = 1,
                 width = 230,
                 height = 204,
@@ -113,7 +112,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(6, 0),
                 blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/power/steam-turbine/remnants/hr-steam-turbine-remnants-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/steam-turbine/remnants/hr-steam-turbine-remnants-highlights.png",
                     line_length = 1,
                     width = 460,
                     height = 408,
@@ -152,7 +151,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/power/steam-turbine/steam-turbine-H-mask.png",
+                filename = reskins.bobs.directory.."/graphics/entity/power/steam-turbine/steam-turbine-H-mask.png",
                 width = 160,
                 height = 123,
                 frame_count = 1,
@@ -161,7 +160,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(0, -2.5),
                 tint = inputs.tint,
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/power/steam-turbine/hr-steam-turbine-H-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/steam-turbine/hr-steam-turbine-H-mask.png",
                     width = 320,
                     height = 245,
                     frame_count = 1,
@@ -174,7 +173,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/entity/power/steam-turbine/steam-turbine-H-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/entity/power/steam-turbine/steam-turbine-H-highlights.png",
                 width = 160,
                 height = 123,
                 frame_count = 1,
@@ -183,7 +182,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(0, -2.5),
                 blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/power/steam-turbine/hr-steam-turbine-H-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/steam-turbine/hr-steam-turbine-H-highlights.png",
                     width = 320,
                     height = 245,
                     frame_count = 1,
@@ -241,7 +240,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/power/steam-turbine/steam-turbine-V-mask.png",
+                filename = reskins.bobs.directory.."/graphics/entity/power/steam-turbine/steam-turbine-V-mask.png",
                 width = 108,
                 height = 173,
                 frame_count = 1,
@@ -250,7 +249,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(5, 6.5),
                 tint = inputs.tint,
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/power/steam-turbine/hr-steam-turbine-V-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/steam-turbine/hr-steam-turbine-V-mask.png",
                     width = 217,
                     height = 347,
                     frame_count = 1,
@@ -263,7 +262,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/entity/power/steam-turbine/steam-turbine-V-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/entity/power/steam-turbine/steam-turbine-V-highlights.png",
                 width = 108,
                 height = 173,
                 frame_count = 1,
@@ -272,7 +271,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(5, 6.5),
                 blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/power/steam-turbine/hr-steam-turbine-V-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/steam-turbine/hr-steam-turbine-V-highlights.png",
                     width = 217,
                     height = 347,
                     frame_count = 1,

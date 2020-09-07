@@ -51,7 +51,7 @@ for class, map in pairs(modules_map) do
         if not entity then goto continue end
 
         -- Setup icon path
-        inputs.icon_filename = inputs.directory.."/graphics/icons/modules/module/"..color.."/"..color.."_"..tier..".png"
+        inputs.icon_filename = reskins.bobs.directory.."/graphics/icons/modules/module/"..color.."/"..color.."_"..tier..".png"
 
         reskins.lib.construct_icon(name, 0, inputs)
 

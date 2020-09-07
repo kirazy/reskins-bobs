@@ -11,7 +11,6 @@ if reskins.lib.setting("reskins-bobs-do-bobpower") == false then return end
 local inputs = {
     type = "heat-pipe",
     base_entity = "heat-pipe",
-    directory = reskins.bobs.directory,
     mod = "bobs",
 }
 
@@ -41,9 +40,9 @@ for name, map in pairs(tier_map) do
     -- Setup icons
     local heat_pipe_icon_inputs = {
         mod = "bobs",
-        icon = inputs.directory.."/graphics/icons/power/heat-pipe/"..name.."-icon-base.png",
+        icon = reskins.bobs.directory.."/graphics/icons/power/heat-pipe/"..name.."-icon-base.png",
         icon_picture = {
-            filename = inputs.directory.."/graphics/icons/power/heat-pipe/"..name.."-icon-base.png",
+            filename = reskins.bobs.directory.."/graphics/icons/power/heat-pipe/"..name.."-icon-base.png",
             size = 64,
             mipmaps = 4,
             scale = 0.25
@@ -76,7 +75,7 @@ for name, map in pairs(tier_map) do
     reskins.lib.create_remnant(name, inputs)
     local remnant = data.raw["corpse"][name.."-remnants"]
     remnant.animation = make_rotated_animation_variations_from_sheet (6, {
-        filename = inputs.directory.."/graphics/entity/power/heat-pipe/"..name.."/remnants/"..name.."-remnants.png",
+        filename = reskins.bobs.directory.."/graphics/entity/power/heat-pipe/"..name.."/remnants/"..name.."-remnants.png",
         line_length = 1,
         width = 62,
         height = 52,
@@ -84,7 +83,7 @@ for name, map in pairs(tier_map) do
         direction_count = 2,
         shift = util.by_pixel(1, -1),
         hr_version = {
-            filename = inputs.directory.."/graphics/entity/power/heat-pipe/"..name.."/remnants/hr-"..name.."-remnants.png",
+            filename = reskins.bobs.directory.."/graphics/entity/power/heat-pipe/"..name.."/remnants/hr-"..name.."-remnants.png",
             line_length = 1,
             width = 122,
             height = 100,
@@ -96,7 +95,7 @@ for name, map in pairs(tier_map) do
     })
 
     -- Reskin entities
-    entity.connection_sprites = make_heat_pipe_pictures(inputs.directory.."/graphics/entity/power/heat-pipe/"..name.."/", name,
+    entity.connection_sprites = make_heat_pipe_pictures(reskins.bobs.directory.."/graphics/entity/power/heat-pipe/"..name.."/", name,
     {
         single = { name = "straight-vertical-single", ommit_number = true },
         straight_vertical = { variations = 6 },

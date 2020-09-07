@@ -9,7 +9,6 @@ if reskins.lib.setting("reskins-bobs-do-bobwarfare") == false then return end
 
 -- Setup inputs
 local inputs = {
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "warfare",
     make_icon_pictures = false,

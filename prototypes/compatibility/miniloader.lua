@@ -18,7 +18,6 @@ end
 local inputs = {
     icon_name = "miniloader",
     base_entity = "splitter",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "compatibility",
     subgroup = "miniloader",

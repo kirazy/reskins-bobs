@@ -13,7 +13,6 @@ local inputs = {
     type = "electric-pole",
     icon_name = "substation",
     base_entity = "substation",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "power",
     particles = {["big"] = 2},
@@ -53,7 +52,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = inputs.directory.."/graphics/entity/power/substation/base/remnants/substation-remnants.png",
+                filename = reskins.bobs.directory.."/graphics/entity/power/substation/base/remnants/substation-remnants.png",
                 line_length = 1,
                 width = 92,
                 height = 68,
@@ -63,7 +62,7 @@ for name, map in pairs(tier_map) do
                 direction_count = 1,
                 shift = util.by_pixel(3, 1),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/power/substation/base/remnants/hr-substation-remnants.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/substation/base/remnants/hr-substation-remnants.png",
                     line_length = 1,
                     width = 182,
                     height = 134,
@@ -77,7 +76,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/power/substation/remnants/substation-remnants-mask.png",
+                filename = reskins.bobs.directory.."/graphics/entity/power/substation/remnants/substation-remnants-mask.png",
                 line_length = 1,
                 width = 92,
                 height = 68,
@@ -88,7 +87,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(3, 1),
                 tint = inputs.tint,
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/power/substation/remnants/hr-substation-remnants-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/substation/remnants/hr-substation-remnants-mask.png",
                     line_length = 1,
                     width = 182,
                     height = 134,
@@ -102,7 +101,7 @@ for name, map in pairs(tier_map) do
                 }
             },
             {
-                filename = inputs.directory.."/graphics/entity/power/substation/remnants/substation-remnants-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/entity/power/substation/remnants/substation-remnants-highlights.png",
                 line_length = 1,
                 width = 92,
                 height = 68,
@@ -113,7 +112,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(3, 1),
                 blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/power/substation/remnants/hr-substation-remnants-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/substation/remnants/hr-substation-remnants-highlights.png",
                     line_length = 1,
                     width = 182,
                     height = 134,
@@ -134,14 +133,14 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = inputs.directory.."/graphics/entity/power/substation/base/substation.png",
+                filename = reskins.bobs.directory.."/graphics/entity/power/substation/base/substation.png",
                 priority = "high",
                 width = 70,
                 height = 136,
                 direction_count = 4,
                 shift = util.by_pixel(0, 1-32),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/power/substation/base/hr-substation.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/substation/base/hr-substation.png",
                     priority = "high",
                     width = 138,
                     height = 270,
@@ -152,7 +151,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/power/substation/substation-mask.png",
+                filename = reskins.bobs.directory.."/graphics/entity/power/substation/substation-mask.png",
                 priority = "high",
                 width = 70,
                 height = 136,
@@ -160,7 +159,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(0, 1-32),
                 tint = inputs.tint,
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/power/substation/hr-substation-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/substation/hr-substation-mask.png",
                     priority = "high",
                     width = 138,
                     height = 270,
@@ -172,7 +171,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/entity/power/substation/substation-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/entity/power/substation/substation-highlights.png",
                 priority = "high",
                 width = 70,
                 height = 136,
@@ -180,7 +179,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(0, 1-32),
                 blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/power/substation/hr-substation-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/substation/hr-substation-highlights.png",
                     priority = "high",
                     width = 138,
                     height = 270,
@@ -192,7 +191,7 @@ for name, map in pairs(tier_map) do
             },
             -- Shadow
             {
-                filename = inputs.directory.."/graphics/entity/power/substation/base/substation-shadow.png",
+                filename = reskins.bobs.directory.."/graphics/entity/power/substation/base/substation-shadow.png",
                 priority = "high",
                 width = 186,
                 height = 52,
@@ -200,7 +199,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(62, 42-32),
                 draw_as_shadow = true,
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/power/substation/base/hr-substation-shadow.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/substation/base/hr-substation-shadow.png",
                     priority = "high",
                     width = 370,
                     height = 104,

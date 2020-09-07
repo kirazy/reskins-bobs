@@ -9,7 +9,6 @@ if not mods["bobequipment"] then return end
 local inputs = {
     type = "energy-shield-equipment",
     icon_name = "energy-shield",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "equipment",
 }
@@ -47,7 +46,7 @@ for name, map in pairs(batteries) do
     -- Construct technology icon
     inputs.technology_icon_extras = {
         {
-            icon = inputs.directory.."/graphics/technology/equipment/personal-equipment-symbol.png"
+            icon = reskins.bobs.directory.."/graphics/technology/equipment/personal-equipment-symbol.png"
         }
     }
 
@@ -58,14 +57,14 @@ for name, map in pairs(batteries) do
         layers = {
             -- Base
             {
-                filename = inputs.directory.."/graphics/equipment/equipment/energy-shield/energy-shield-equipment-base.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/equipment/energy-shield/energy-shield-equipment-base.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/equipment/equipment/energy-shield/energy-shield-equipment-mask.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/equipment/energy-shield/energy-shield-equipment-mask.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
@@ -73,7 +72,7 @@ for name, map in pairs(batteries) do
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/equipment/equipment/energy-shield/energy-shield-equipment-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/equipment/energy-shield/energy-shield-equipment-highlights.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },

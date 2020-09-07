@@ -14,7 +14,6 @@ local inputs = {
     type = "loader",
     icon_name = "loader",
     base_entity = "splitter",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "compatibility",
     subgroup = "loaderredux",
@@ -59,12 +58,12 @@ for name, map in pairs(tier_map) do
     entity.structure.direction_in.sheets = {
         -- Base
         {
-            filename = inputs.directory.."/graphics/entity/compatibility/loaderredux/loader/loader-base.png",
+            filename = reskins.bobs.directory.."/graphics/entity/compatibility/loaderredux/loader/loader-base.png",
             priority = "extra-high",
             width = 128,
             height = 128,
             hr_version = {
-                filename = inputs.directory.."/graphics/entity/compatibility/loaderredux/loader/hr-loader-base.png",
+                filename = reskins.bobs.directory.."/graphics/entity/compatibility/loaderredux/loader/hr-loader-base.png",
                 priority = "extra-high",
                 width = 256,
                 height = 256,
@@ -73,13 +72,13 @@ for name, map in pairs(tier_map) do
         },
         -- Mask
         {
-            filename = inputs.directory.."/graphics/entity/compatibility/loaderredux/loader/loader-mask.png",
+            filename = reskins.bobs.directory.."/graphics/entity/compatibility/loaderredux/loader/loader-mask.png",
             priority = "extra-high",
             width = 128,
             height = 128,
             tint = inputs.tint,
             hr_version = {
-                filename = inputs.directory.."/graphics/entity/compatibility/loaderredux/loader/hr-loader-mask.png",
+                filename = reskins.bobs.directory.."/graphics/entity/compatibility/loaderredux/loader/hr-loader-mask.png",
                 priority = "extra-high",
                 width = 256,
                 height = 256,
@@ -91,13 +90,13 @@ for name, map in pairs(tier_map) do
     entity.structure.direction_out.sheets = {
         -- Base
         {
-            filename = inputs.directory.."/graphics/entity/compatibility/loaderredux/loader/loader-base.png",
+            filename = reskins.bobs.directory.."/graphics/entity/compatibility/loaderredux/loader/loader-base.png",
             priority = "extra-high",
             width = 128,
             height = 128,
             y = 128,
             hr_version = {
-                filename = inputs.directory.."/graphics/entity/compatibility/loaderredux/loader/hr-loader-base.png",
+                filename = reskins.bobs.directory.."/graphics/entity/compatibility/loaderredux/loader/hr-loader-base.png",
                 priority = "extra-high",
                 width = 256,
                 height = 256,
@@ -107,14 +106,14 @@ for name, map in pairs(tier_map) do
         },
         -- Mask
         {
-            filename = inputs.directory.."/graphics/entity/compatibility/loaderredux/loader/loader-mask.png",
+            filename = reskins.bobs.directory.."/graphics/entity/compatibility/loaderredux/loader/loader-mask.png",
             priority = "extra-high",
             width = 128,
             height = 128,
             y = 128,
             tint = inputs.tint,
             hr_version = {
-                filename = inputs.directory.."/graphics/entity/compatibility/loaderredux/loader/hr-loader-mask.png",
+                filename = reskins.bobs.directory.."/graphics/entity/compatibility/loaderredux/loader/hr-loader-mask.png",
                 priority = "extra-high",
                 width = 256,
                 height = 256,

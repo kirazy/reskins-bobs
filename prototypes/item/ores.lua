@@ -8,7 +8,6 @@ if not mods["bobores"] then return end
 
 -- Setup inputs
 local inputs = {
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "ores",
     make_icon_pictures = false,

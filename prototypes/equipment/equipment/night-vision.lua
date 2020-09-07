@@ -9,7 +9,6 @@ if not mods["bobequipment"] then return end
 local inputs = {
     type = "night-vision-equipment",
     icon_name = "night-vision",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "equipment",
 }
@@ -46,7 +45,7 @@ for name, map in pairs(night_vision) do
     -- Construct technology icon
     inputs.technology_icon_extras = {
         {
-            icon = inputs.directory.."/graphics/technology/equipment/personal-equipment-symbol.png"
+            icon = reskins.bobs.directory.."/graphics/technology/equipment/personal-equipment-symbol.png"
         }
     }
 
@@ -57,12 +56,12 @@ for name, map in pairs(night_vision) do
         layers = {
             -- Base
             {
-                filename = inputs.directory.."/graphics/equipment/equipment/night-vision/night-vision-equipment-base.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/equipment/night-vision/night-vision-equipment-base.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
                 hr_version = {
-                    filename = inputs.directory.."/graphics/equipment/equipment/night-vision/hr-night-vision-equipment-base.png",
+                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/night-vision/hr-night-vision-equipment-base.png",
                     size = 128,
                     priority = "medium",
                     flags = { "no-crop" },
@@ -71,13 +70,13 @@ for name, map in pairs(night_vision) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/equipment/equipment/night-vision/night-vision-equipment-mask.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/equipment/night-vision/night-vision-equipment-mask.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
                 tint = inputs.tint,
                 hr_version = {
-                    filename = inputs.directory.."/graphics/equipment/equipment/night-vision/hr-night-vision-equipment-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/night-vision/hr-night-vision-equipment-mask.png",
                     size = 128,
                     priority = "medium",
                     flags = { "no-crop" },
@@ -87,13 +86,13 @@ for name, map in pairs(night_vision) do
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/equipment/equipment/night-vision/night-vision-equipment-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/equipment/night-vision/night-vision-equipment-highlights.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
                 blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
-                    filename = inputs.directory.."/graphics/equipment/equipment/night-vision/hr-night-vision-equipment-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/night-vision/hr-night-vision-equipment-highlights.png",
                     size = 128,
                     priority = "medium",
                     flags = { "no-crop" },

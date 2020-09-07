@@ -13,7 +13,6 @@ local inputs =
     type = "lab",
     root_name = "lab",
     base_entity = "lab",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "technology",
     -- particles = {["big"] = 3}
@@ -30,7 +29,7 @@ local function reskin_lab(name)
         layers =
         {
             {
-                filename =  inputs.directory.."/graphics/entity/technology/lab/"..name..".png",
+                filename =  reskins.bobs.directory.."/graphics/entity/technology/lab/"..name..".png",
                 width = 98,
                 height = 87,
                 frame_count = 33,
@@ -39,7 +38,7 @@ local function reskin_lab(name)
                 shift = util.by_pixel(0, 1.5),
                 hr_version =
                 {
-                    filename =  inputs.directory.."/graphics/entity/technology/lab/hr-"..name..".png",
+                    filename =  reskins.bobs.directory.."/graphics/entity/technology/lab/hr-"..name..".png",
                     width = 194,
                     height = 174,
                     frame_count = 33,
@@ -103,14 +102,14 @@ local function reskin_lab(name)
         layers =
         {
             {
-                filename =  inputs.directory.."/graphics/entity/technology/lab/"..name..".png",
+                filename =  reskins.bobs.directory.."/graphics/entity/technology/lab/"..name..".png",
                 width = 98,
                 height = 87,
                 frame_count = 1,
                 shift = util.by_pixel(0, 1.5),
                 hr_version =
                 {
-                    filename =  inputs.directory.."/graphics/entity/technology/lab/hr-"..name..".png",
+                    filename =  reskins.bobs.directory.."/graphics/entity/technology/lab/hr-"..name..".png",
                     width = 194,
                     height = 174,
                     frame_count = 1,

@@ -9,7 +9,6 @@ if not mods["bobequipment"] then return end
 local inputs = {
     type = "movement-bonus-equipment",
     icon_name = "exoskeleton",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "equipment",
 }
@@ -46,7 +45,7 @@ for name, map in pairs(exoskeletons) do
     -- Construct technology icon
     inputs.technology_icon_extras = {
         {
-            icon = inputs.directory.."/graphics/technology/equipment/personal-equipment-symbol.png"
+            icon = reskins.bobs.directory.."/graphics/technology/equipment/personal-equipment-symbol.png"
         }
     }
 
@@ -57,7 +56,7 @@ for name, map in pairs(exoskeletons) do
         layers = {
             -- Base
             {
-                filename = inputs.directory.."/graphics/equipment/equipment/exoskeleton/exoskeleton-equipment-base.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/equipment/exoskeleton/exoskeleton-equipment-base.png",
                 width = 64,
                 height = 128,
                 priority = "medium",
@@ -65,7 +64,7 @@ for name, map in pairs(exoskeletons) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/equipment/equipment/exoskeleton/exoskeleton-equipment-mask.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/equipment/exoskeleton/exoskeleton-equipment-mask.png",
                 width = 64,
                 height = 128,
                 priority = "medium",
@@ -74,7 +73,7 @@ for name, map in pairs(exoskeletons) do
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/equipment/equipment/exoskeleton/exoskeleton-equipment-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/equipment/equipment/exoskeleton/exoskeleton-equipment-highlights.png",
                 width = 64,
                 height = 128,
                 priority = "medium",

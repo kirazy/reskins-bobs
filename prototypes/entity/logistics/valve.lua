@@ -8,7 +8,6 @@ local inputs = {
     type = "storage-tank",
     icon_name = "valve",
     base_entity = "pipe",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "logistics",
     particles = {["small"] = 2},
@@ -33,7 +32,7 @@ local function cardinal_pictures(x, tint)
         {
             -- Base
             {
-                filename = inputs.directory.."/graphics/entity/logistics/valve/valve-base.png",
+                filename = reskins.bobs.directory.."/graphics/entity/logistics/valve/valve-base.png",
                 x = x_lr,
                 width = 64,
                 height = 64,
@@ -41,7 +40,7 @@ local function cardinal_pictures(x, tint)
                 -- shift = util.by_pixel(17, 0),
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/logistics/valve/hr-valve-base.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/valve/hr-valve-base.png",
                     x = x_hr,
                     width = 128,
                     height = 128,
@@ -52,7 +51,7 @@ local function cardinal_pictures(x, tint)
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/logistics/valve/valve-mask.png",
+                filename = reskins.bobs.directory.."/graphics/entity/logistics/valve/valve-mask.png",
                 x = x_lr,
                 width = 64,
                 height = 64,
@@ -61,7 +60,7 @@ local function cardinal_pictures(x, tint)
                 tint = tint,
                 hr_version =
                 {
-                    filename = inputs.directory.."/graphics/entity/logistics/valve/hr-valve-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/valve/hr-valve-mask.png",
                     x = x_hr,
                     width = 128,
                     height = 128,

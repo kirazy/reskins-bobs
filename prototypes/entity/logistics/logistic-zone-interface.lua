@@ -12,14 +12,13 @@ local inputs =
 {
     type = "roboport",
     base_entity = "roboport",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "logistics",
     particles = {["medium"] = 2},
     make_remnants = false,
 }
 
-inputs.icon_filename = inputs.directory.."/graphics/icons/logistics/zone-interface/zone-interface-icon-base.png"
+inputs.icon_filename = reskins.bobs.directory.."/graphics/icons/logistics/zone-interface/zone-interface-icon-base.png"
 
 -- Fetch entity
 local name = "bob-logistic-zone-interface"
@@ -34,13 +33,13 @@ reskins.lib.setup_standard_entity(name, tier, inputs)
 -- Reskin entity
 entity.base =
 {
-    filename = inputs.directory.."/graphics/entity/logistics/zone-interface/logistic-zone-interface.png",
+    filename = reskins.bobs.directory.."/graphics/entity/logistics/zone-interface/logistic-zone-interface.png",
     width = 32,
     height = 35,
     shift = util.by_pixel(0, -4),
     hr_version =
     {
-        filename = inputs.directory.."/graphics/entity/logistics/zone-interface/hr-logistic-zone-interface.png",
+        filename = reskins.bobs.directory.."/graphics/entity/logistics/zone-interface/hr-logistic-zone-interface.png",
         width = 64,
         height = 70,
         shift = util.by_pixel(0, -4),
@@ -53,7 +52,7 @@ entity.base_animation =
     layers =
     {
         {
-            filename = inputs.directory.."/graphics/entity/logistics/roboport/base/antennas/roboport-1-base-animation.png",
+            filename = reskins.bobs.directory.."/graphics/entity/logistics/roboport/base/antennas/roboport-1-base-animation.png",
             priority = "medium",
             width = 42,
             height = 31,
@@ -62,7 +61,7 @@ entity.base_animation =
             shift = util.by_pixel(0.5, -21),
             hr_version =
             {
-                filename = inputs.directory.."/graphics/entity/logistics/roboport/base/antennas/hr-roboport-1-base-animation.png",
+                filename = reskins.bobs.directory.."/graphics/entity/logistics/roboport/base/antennas/hr-roboport-1-base-animation.png",
                 priority = "medium",
                 width = 83,
                 height = 59,
@@ -73,7 +72,7 @@ entity.base_animation =
             }
         },
         {
-            filename = inputs.directory.."/graphics/entity/logistics/zone-interface/logistic-zone-interface-shadow.png",
+            filename = reskins.bobs.directory.."/graphics/entity/logistics/zone-interface/logistic-zone-interface-shadow.png",
             priority = "medium",
             width = 53,
             height = 35,
@@ -83,7 +82,7 @@ entity.base_animation =
             draw_as_shadow = true,
             hr_version =
             {
-                filename = inputs.directory.."/graphics/entity/logistics/zone-interface/hr-logistic-zone-interface-shadow.png",
+                filename = reskins.bobs.directory.."/graphics/entity/logistics/zone-interface/hr-logistic-zone-interface-shadow.png",
                 priority = "medium",
                 width = 106,
                 height = 69,

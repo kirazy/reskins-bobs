@@ -18,7 +18,6 @@ local inputs = {
     type = "underground-belt",
     icon_name = "underground-belt",
     base_entity = "underground-belt",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "logistics",
     particles = {["medium"] = 3, ["small"] = 2},
@@ -71,7 +70,7 @@ for name, map in pairs(tier_map) do
         layers= {
             -- Base
             {
-                filename = inputs.directory.."/graphics/entity/logistics/underground-belt/remnants/underground-belt-remnants-base.png",
+                filename = reskins.bobs.directory.."/graphics/entity/logistics/underground-belt/remnants/underground-belt-remnants-base.png",
                 line_length = 1,
                 width = 78,
                 height = 72,
@@ -81,7 +80,7 @@ for name, map in pairs(tier_map) do
                 direction_count = 8,
                 shift = util.by_pixel(10, 3),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/logistics/underground-belt/remnants/hr-underground-belt-remnants-base.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/underground-belt/remnants/hr-underground-belt-remnants-base.png",
                     line_length = 1,
                     width = 156,
                     height = 144,
@@ -95,7 +94,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/logistics/underground-belt/remnants/underground-belt-remnants-mask.png",
+                filename = reskins.bobs.directory.."/graphics/entity/logistics/underground-belt/remnants/underground-belt-remnants-mask.png",
                 line_length = 1,
                 width = 78,
                 height = 72,
@@ -106,7 +105,7 @@ for name, map in pairs(tier_map) do
                 tint = inputs.tint,
                 shift = util.by_pixel(10, 3),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/logistics/underground-belt/remnants/hr-underground-belt-remnants-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/underground-belt/remnants/hr-underground-belt-remnants-mask.png",
                     line_length = 1,
                     width = 156,
                     height = 144,
@@ -128,13 +127,13 @@ for name, map in pairs(tier_map) do
             sheets = {
                 -- Base
                 {
-                    filename = inputs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure.png",
                     priority = "extra-high",
                     width = 96,
                     height = 96,
                     y = 96,
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure.png",
                         priority = "extra-high",
                         width = 192,
                         height = 192,
@@ -144,14 +143,14 @@ for name, map in pairs(tier_map) do
                 },
                 -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure-mask.png",
                     priority = "extra-high",
                     width = 96,
                     height = 96,
                     y = 96,
                     tint = inputs.tint,
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure-mask.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure-mask.png",
                         priority = "extra-high",
                         width = 192,
                         height = 192,
@@ -166,12 +165,12 @@ for name, map in pairs(tier_map) do
             sheets = {
                 -- Base
                 {
-                    filename = inputs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure.png",
                     priority = "extra-high",
                     width = 96,
                     height = 96,
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure.png",
                         priority = "extra-high",
                         width = 192,
                         height =192,
@@ -180,13 +179,13 @@ for name, map in pairs(tier_map) do
                 },
                 -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure-mask.png",
                     priority = "extra-high",
                     width = 96,
                     height = 96,
                     tint = inputs.tint,
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure-mask.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure-mask.png",
                         priority = "extra-high",
                         width = 192,
                         height =192,
@@ -200,14 +199,14 @@ for name, map in pairs(tier_map) do
             sheets = {
                 -- Base
                 {
-                    filename = inputs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure.png",
                     priority = "extra-high",
                     width = 96,
                     height = 96,
                     y = 96*3,
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure.png",
                         priority = "extra-high",
                         width = 192,
                         height = 192,
@@ -217,7 +216,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure-mask.png",
                     priority = "extra-high",
                     width = 96,
                     height = 96,
@@ -225,7 +224,7 @@ for name, map in pairs(tier_map) do
                     tint = inputs.tint,
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure-mask.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure-mask.png",
                         priority = "extra-high",
                         width = 192,
                         height = 192,
@@ -240,14 +239,14 @@ for name, map in pairs(tier_map) do
             sheets = {
                 -- Base
                 {
-                    filename = inputs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure.png",
                     priority = "extra-high",
                     width = 96,
                     height = 96,
                     y = 96*2,
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure.png",
                         priority = "extra-high",
                         width = 192,
                         height = 192,
@@ -257,7 +256,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/underground-belt/underground-belt-structure-mask.png",
                     priority = "extra-high",
                     width = 96,
                     height = 96,
@@ -265,7 +264,7 @@ for name, map in pairs(tier_map) do
                     tint = inputs.tint,
                     hr_version =
                     {
-                        filename = inputs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure-mask.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/logistics/underground-belt/hr-underground-belt-structure-mask.png",
                         priority = "extra-high",
                         width = 192,
                         height = 192,

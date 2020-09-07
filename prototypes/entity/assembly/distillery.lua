@@ -12,7 +12,6 @@ local inputs = {
     type = "furnace",
     icon_name = "distillery",
     base_entity = "steel-furnace",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "assembly",
     particles = {["medium"] = 2},
@@ -45,13 +44,13 @@ for name, tier in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = inputs.directory.."/graphics/entity/assembly/distillery/distillery-base.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/distillery/distillery-base.png",
                 width = 74,
                 height = 96,
                 frame_count = 1,
                 shift = util.by_pixel(0, 0),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/assembly/distillery/hr-distillery-base.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/distillery/hr-distillery-base.png",
                     width = 148,
                     height = 192,
                     frame_count = 1,
@@ -61,14 +60,14 @@ for name, tier in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/assembly/distillery/distillery-mask.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/distillery/distillery-mask.png",
                 width = 64,
                 height = 96,
                 frame_count = 1,
                 shift = util.by_pixel(0, 0),
                 tint = inputs.tint,
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/assembly/distillery/hr-distillery-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/distillery/hr-distillery-mask.png",
                     width = 128,
                     height = 192,
                     frame_count = 1,
@@ -79,14 +78,14 @@ for name, tier in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/entity/assembly/distillery/distillery-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/distillery/distillery-highlights.png",
                 width = 64,
                 height = 96,
                 frame_count = 1,
                 shift = util.by_pixel(0, 0),
                 blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/assembly/distillery/hr-distillery-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/distillery/hr-distillery-highlights.png",
                     width = 128,
                     height = 192,
                     frame_count = 1,
@@ -97,14 +96,14 @@ for name, tier in pairs(tier_map) do
             },
             -- Shadow
             {
-                filename = inputs.directory.."/graphics/entity/assembly/distillery/distillery-shadow.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/distillery/distillery-shadow.png",
                 width = 96,
                 height = 67,
                 frame_count = 1,
                 shift = util.by_pixel(16, 1.5),
                 draw_as_shadow = true,
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/assembly/distillery/hr-distillery-shadow.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/distillery/hr-distillery-shadow.png",
                     width = 192,
                     height = 134,
                     frame_count = 1,
@@ -127,12 +126,12 @@ for name, tier in pairs(tier_map) do
             south_position = util.by_pixel(8, 3.5),
             west_position = util.by_pixel(-10, 3),
             north_animation = {
-                filename = inputs.directory.."/graphics/entity/assembly/distillery/lights/distillery-light-north.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/distillery/lights/distillery-light-north.png",
                 width = 33,
                 height = 31,
                 shift = util.by_pixel(0, 0),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/assembly/distillery/lights/hr-distillery-light-north.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/distillery/lights/hr-distillery-light-north.png",
                     width = 66,
                     height = 62,
                     shift = util.by_pixel(0, 0),
@@ -140,12 +139,12 @@ for name, tier in pairs(tier_map) do
                 }
             },
             east_animation = {
-                filename = inputs.directory.."/graphics/entity/assembly/distillery/lights/distillery-light-east.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/distillery/lights/distillery-light-east.png",
                 width = 34,
                 height = 30,
                 shift = util.by_pixel(0, 0),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/assembly/distillery/lights/hr-distillery-light-east.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/distillery/lights/hr-distillery-light-east.png",
                     width = 68,
                     height = 60,
                     shift = util.by_pixel(0, 0),
@@ -153,12 +152,12 @@ for name, tier in pairs(tier_map) do
                 }
             },
             south_animation = {
-                filename = inputs.directory.."/graphics/entity/assembly/distillery/lights/distillery-light-south.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/distillery/lights/distillery-light-south.png",
                 width = 33,
                 height = 32,
                 shift = util.by_pixel(0, 0),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/assembly/distillery/lights/hr-distillery-light-south.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/distillery/lights/hr-distillery-light-south.png",
                     width = 66,
                     height = 64,
                     shift = util.by_pixel(0, 0),
@@ -166,12 +165,12 @@ for name, tier in pairs(tier_map) do
                 }
             },
             west_animation = {
-                filename = inputs.directory.."/graphics/entity/assembly/distillery/lights/distillery-light-west.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/distillery/lights/distillery-light-west.png",
                 width = 33,
                 height = 29,
                 shift = util.by_pixel(0, 0),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/assembly/distillery/lights/hr-distillery-light-west.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/distillery/lights/hr-distillery-light-west.png",
                     width = 66,
                     height = 58,
                     shift = util.by_pixel(0, 0),
@@ -183,7 +182,7 @@ for name, tier in pairs(tier_map) do
 
     entity.water_reflection = {
         pictures = {
-            filename = inputs.directory.."/graphics/entity/assembly/distillery/distillery-reflection.png",
+            filename = reskins.bobs.directory.."/graphics/entity/assembly/distillery/distillery-reflection.png",
             priority = "extra-high",
             width = 28,
             height = 36,

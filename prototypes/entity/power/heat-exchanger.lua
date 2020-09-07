@@ -13,7 +13,6 @@ local inputs = {
     type = "boiler",
     icon_name = "heat-exchanger",
     base_entity = "heat-exchanger",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "power",
     particles = {["big"] = 3},
@@ -80,7 +79,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/power/heat-exchanger/remnants/heatex-remnants-mask.png",
+                filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/remnants/heatex-remnants-mask.png",
                 line_length = 1,
                 width = 136,
                 height = 132,
@@ -91,7 +90,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(0, 8),
                 tint = inputs.tint,
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/remnants/hr-heatex-remnants-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/remnants/hr-heatex-remnants-mask.png",
                     line_length = 1,
                     width = 272,
                     height = 262,
@@ -106,7 +105,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/entity/power/heat-exchanger/remnants/heatex-remnants-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/remnants/heatex-remnants-highlights.png",
                 line_length = 1,
                 width = 136,
                 height = 132,
@@ -117,7 +116,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(0, 8),
                 blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/remnants/hr-heatex-remnants-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/remnants/hr-heatex-remnants-highlights.png",
                     line_length = 1,
                     width = 272,
                     height = 262,
@@ -132,7 +131,7 @@ for name, map in pairs(tier_map) do
             },
             -- Pipes
             {
-                filename = inputs.directory.."/graphics/entity/power/heat-exchanger/remnants/pipes/heatex-pipe-"..pipe.."-remnants.png",
+                filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/remnants/pipes/heatex-pipe-"..pipe.."-remnants.png",
                 line_length = 1,
                 width = 136,
                 height = 132,
@@ -142,7 +141,7 @@ for name, map in pairs(tier_map) do
                 direction_count = 4,
                 shift = util.by_pixel(0, 8),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/remnants/pipes/hr-heatex-pipe-"..pipe.."-remnants.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/remnants/pipes/hr-heatex-pipe-"..pipe.."-remnants.png",
                     line_length = 1,
                     width = 272,
                     height = 262,
@@ -180,14 +179,14 @@ for name, map in pairs(tier_map) do
                 },
                 -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/heatex-N-idle-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/heatex-N-idle-mask.png",
                     priority = "extra-high",
                     width = 131,
                     height = 108,
                     shift = util.by_pixel(-0.5, 4),
                     tint = inputs.tint,
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/power/heat-exchanger/hr-heatex-N-idle-mask.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/hr-heatex-N-idle-mask.png",
                         priority = "extra-high",
                         width = 269,
                         height = 221,
@@ -198,14 +197,14 @@ for name, map in pairs(tier_map) do
                 },
                 -- Highlights
                 {
-                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/heatex-N-idle-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/heatex-N-idle-highlights.png",
                     priority = "extra-high",
                     width = 131,
                     height = 108,
                     shift = util.by_pixel(-0.5, 4),
                     blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/power/heat-exchanger/hr-heatex-N-idle-highlights.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/hr-heatex-N-idle-highlights.png",
                         priority = "extra-high",
                         width = 269,
                         height = 221,
@@ -216,13 +215,13 @@ for name, map in pairs(tier_map) do
                 },
                 -- Pipes
                 {
-                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/pipes/heatex-N-pipe-"..pipe..".png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/pipes/heatex-N-pipe-"..pipe..".png",
                     priority = "extra-high",
                     width = 131,
                     height = 108,
                     shift = util.by_pixel(-0.5, 4),
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/power/heat-exchanger/pipes/hr-heatex-N-pipe-"..pipe..".png",
+                        filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/pipes/hr-heatex-N-pipe-"..pipe..".png",
                         priority = "extra-high",
                         width = 269,
                         height = 221,
@@ -270,14 +269,14 @@ for name, map in pairs(tier_map) do
                 },
                 -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/heatex-E-idle-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/heatex-E-idle-mask.png",
                     priority = "extra-high",
                     width = 102,
                     height = 147,
                     shift = util.by_pixel(-2, -0.5),
                     tint = inputs.tint,
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/power/heat-exchanger/hr-heatex-E-idle-mask.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/hr-heatex-E-idle-mask.png",
                         priority = "extra-high",
                         width = 211,
                         height = 301,
@@ -288,14 +287,14 @@ for name, map in pairs(tier_map) do
                 },
                 -- Highlights
                 {
-                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/heatex-E-idle-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/heatex-E-idle-highlights.png",
                     priority = "extra-high",
                     width = 102,
                     height = 147,
                     shift = util.by_pixel(-2, -0.5),
                     blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/power/heat-exchanger/hr-heatex-E-idle-highlights.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/hr-heatex-E-idle-highlights.png",
                         priority = "extra-high",
                         width = 211,
                         height = 301,
@@ -306,13 +305,13 @@ for name, map in pairs(tier_map) do
                 },
                 -- Pipes
                 {
-                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/pipes/heatex-E-pipe-"..pipe..".png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/pipes/heatex-E-pipe-"..pipe..".png",
                     priority = "extra-high",
                     width = 102,
                     height = 147,
                     shift = util.by_pixel(-2, -0.5),
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/power/heat-exchanger/pipes/hr-heatex-E-pipe-"..pipe..".png",
+                        filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/pipes/hr-heatex-E-pipe-"..pipe..".png",
                         priority = "extra-high",
                         width = 211,
                         height = 301,
@@ -360,14 +359,14 @@ for name, map in pairs(tier_map) do
                 },
                 -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/heatex-S-idle-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/heatex-S-idle-mask.png",
                     priority = "extra-high",
                     width = 128,
                     height = 100,
                     shift = util.by_pixel(3, 10),
                     tint = inputs.tint,
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/power/heat-exchanger/hr-heatex-S-idle-mask.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/hr-heatex-S-idle-mask.png",
                         priority = "extra-high",
                         width = 260,
                         height = 201,
@@ -378,14 +377,14 @@ for name, map in pairs(tier_map) do
                 },
                 -- Highlights
                 {
-                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/heatex-S-idle-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/heatex-S-idle-highlights.png",
                     priority = "extra-high",
                     width = 128,
                     height = 100,
                     shift = util.by_pixel(3, 10),
                     blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/power/heat-exchanger/hr-heatex-S-idle-highlights.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/hr-heatex-S-idle-highlights.png",
                         priority = "extra-high",
                         width = 260,
                         height = 201,
@@ -396,13 +395,13 @@ for name, map in pairs(tier_map) do
                 },
                 -- Pipes
                 {
-                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/pipes/heatex-S-pipe-"..pipe..".png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/pipes/heatex-S-pipe-"..pipe..".png",
                     priority = "extra-high",
                     width = 128,
                     height = 100,
                     shift = util.by_pixel(3, 10),
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/power/heat-exchanger/pipes/hr-heatex-S-pipe-"..pipe..".png",
+                        filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/pipes/hr-heatex-S-pipe-"..pipe..".png",
                         priority = "extra-high",
                         width = 260,
                         height = 201,
@@ -450,14 +449,14 @@ for name, map in pairs(tier_map) do
                 },
                 -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/heatex-W-idle-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/heatex-W-idle-mask.png",
                     priority = "extra-high",
                     width = 96,
                     height = 132,
                     shift = util.by_pixel(1, 5),
                     tint = inputs.tint,
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/power/heat-exchanger/hr-heatex-W-idle-mask.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/hr-heatex-W-idle-mask.png",
                         priority = "extra-high",
                         width = 196,
                         height = 273,
@@ -468,14 +467,14 @@ for name, map in pairs(tier_map) do
                 },
                 -- Highlights
                 {
-                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/heatex-W-idle-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/heatex-W-idle-highlights.png",
                     priority = "extra-high",
                     width = 96,
                     height = 132,
                     shift = util.by_pixel(1, 5),
                     blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/power/heat-exchanger/hr-heatex-W-idle-highlights.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/hr-heatex-W-idle-highlights.png",
                         priority = "extra-high",
                         width = 196,
                         height = 273,
@@ -486,13 +485,13 @@ for name, map in pairs(tier_map) do
                 },
                 -- Pipes
                 {
-                    filename = inputs.directory.."/graphics/entity/power/heat-exchanger/pipes/heatex-W-pipe-"..pipe..".png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/pipes/heatex-W-pipe-"..pipe..".png",
                     priority = "extra-high",
                     width = 96,
                     height = 132,
                     shift = util.by_pixel(1, 5),
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/power/heat-exchanger/pipes/hr-heatex-W-pipe-"..pipe..".png",
+                        filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/pipes/hr-heatex-W-pipe-"..pipe..".png",
                         priority = "extra-high",
                         width = 196,
                         height = 273,
@@ -523,12 +522,12 @@ for name, map in pairs(tier_map) do
     }
 
     entity.energy_source.pipe_covers = reskins.lib.make_4way_animation_from_spritesheet({
-        filename = inputs.directory.."/graphics/entity/power/heat-exchanger/base/heatex-endings-"..pipe..".png",
+        filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/base/heatex-endings-"..pipe..".png",
         width = 32,
         height = 32,
         direction_count = 4,
         hr_version = {
-            filename = inputs.directory.."/graphics/entity/power/heat-exchanger/base/hr-heatex-endings-"..pipe..".png",
+            filename = reskins.bobs.directory.."/graphics/entity/power/heat-exchanger/base/hr-heatex-endings-"..pipe..".png",
             width = 64,
             height = 64,
             direction_count = 4,

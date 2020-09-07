@@ -18,7 +18,6 @@ local inputs = {
     type = "splitter",
     icon_name = "splitter",
     base_entity = "splitter",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "logistics",
     particles = {["medium"] = 1, ["big"] = 4},
@@ -71,7 +70,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = inputs.directory.."/graphics/entity/logistics/splitter/remnants/splitter-remnants-base.png",
+                filename = reskins.bobs.directory.."/graphics/entity/logistics/splitter/remnants/splitter-remnants-base.png",
                 line_length = 1,
                 width = 96,
                 height = 96,
@@ -81,7 +80,7 @@ for name, map in pairs(tier_map) do
                 direction_count = 4,
                 shift = util.by_pixel(4, 1.5),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/logistics/splitter/remnants/hr-splitter-remnants-base.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/splitter/remnants/hr-splitter-remnants-base.png",
                     line_length = 1,
                     width = 190,
                     height = 190,
@@ -95,7 +94,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/logistics/splitter/remnants/splitter-remnants-mask.png",
+                filename = reskins.bobs.directory.."/graphics/entity/logistics/splitter/remnants/splitter-remnants-mask.png",
                 line_length = 1,
                 width = 96,
                 height = 96,
@@ -106,7 +105,7 @@ for name, map in pairs(tier_map) do
                 tint = inputs.tint,
                 shift = util.by_pixel(4, 1.5),
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/logistics/splitter/remnants/hr-splitter-remnants-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/splitter/remnants/hr-splitter-remnants-mask.png",
                     line_length = 1,
                     width = 190,
                     height = 190,
@@ -128,7 +127,7 @@ for name, map in pairs(tier_map) do
             layers = {
                 -- Base
                 {
-                    filename = inputs.directory.."/graphics/entity/logistics/splitter/north/splitter-north.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/splitter/north/splitter-north.png",
                     frame_count = 32,
                     line_length = 8,
                     priority = "extra-high",
@@ -136,7 +135,7 @@ for name, map in pairs(tier_map) do
                     height = 36,
                     shift = util.by_pixel(6, 0),
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/logistics/splitter/north/hr-splitter-north.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/logistics/splitter/north/hr-splitter-north.png",
                         frame_count = 32,
                         line_length = 8,
                         priority = "extra-high",
@@ -148,7 +147,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/logistics/splitter/north/splitter-north-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/splitter/north/splitter-north-mask.png",
                     frame_count = 32,
                     line_length = 8,
                     priority = "extra-high",
@@ -157,7 +156,7 @@ for name, map in pairs(tier_map) do
                     shift = util.by_pixel(6, 0),
                     tint = inputs.tint,
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/logistics/splitter/north/hr-splitter-north-mask.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/logistics/splitter/north/hr-splitter-north-mask.png",
                         frame_count = 32,
                         line_length = 8,
                         priority = "extra-high",
@@ -174,7 +173,7 @@ for name, map in pairs(tier_map) do
             layers = {
                 -- Base
                 {
-                    filename = inputs.directory.."/graphics/entity/logistics/splitter/east/splitter-east.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/splitter/east/splitter-east.png",
                     frame_count = 32,
                     line_length = 8,
                     priority = "extra-high",
@@ -182,7 +181,7 @@ for name, map in pairs(tier_map) do
                     height = 44,
                     shift = util.by_pixel(4, 12),
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/logistics/splitter/east/hr-splitter-east.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/logistics/splitter/east/hr-splitter-east.png",
                         frame_count = 32,
                         line_length = 8,
                         priority = "extra-high",
@@ -194,7 +193,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/logistics/splitter/east/splitter-east-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/splitter/east/splitter-east-mask.png",
                     frame_count = 32,
                     line_length = 8,
                     priority = "extra-high",
@@ -203,7 +202,7 @@ for name, map in pairs(tier_map) do
                     shift = util.by_pixel(4, 12),
                     tint = inputs.tint,
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/logistics/splitter/east/hr-splitter-east-mask.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/logistics/splitter/east/hr-splitter-east-mask.png",
                         frame_count = 32,
                         line_length = 8,
                         priority = "extra-high",
@@ -220,7 +219,7 @@ for name, map in pairs(tier_map) do
             layers = {
                 -- Base
                 {
-                    filename = inputs.directory.."/graphics/entity/logistics/splitter/south/splitter-south.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/splitter/south/splitter-south.png",
                     frame_count = 32,
                     line_length = 8,
                     priority = "extra-high",
@@ -228,7 +227,7 @@ for name, map in pairs(tier_map) do
                     height = 32,
                     shift = util.by_pixel(4, 0),
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/logistics/splitter/south/hr-splitter-south.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/logistics/splitter/south/hr-splitter-south.png",
                         frame_count = 32,
                         line_length = 8,
                         priority = "extra-high",
@@ -240,7 +239,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/logistics/splitter/south/splitter-south-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/splitter/south/splitter-south-mask.png",
                     frame_count = 32,
                     line_length = 8,
                     priority = "extra-high",
@@ -249,7 +248,7 @@ for name, map in pairs(tier_map) do
                     shift = util.by_pixel(4, 0),
                     tint = inputs.tint,
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/logistics/splitter/south/hr-splitter-south-mask.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/logistics/splitter/south/hr-splitter-south-mask.png",
                         frame_count = 32,
                         line_length = 8,
                         priority = "extra-high",
@@ -266,7 +265,7 @@ for name, map in pairs(tier_map) do
             layers = {
                 -- Base
                 {
-                    filename = inputs.directory.."/graphics/entity/logistics/splitter/west/splitter-west.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/splitter/west/splitter-west.png",
                     frame_count = 32,
                     line_length = 8,
                     priority = "extra-high",
@@ -274,7 +273,7 @@ for name, map in pairs(tier_map) do
                     height = 44,
                     shift = util.by_pixel(6, 12),
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/logistics/splitter/west/hr-splitter-west.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/logistics/splitter/west/hr-splitter-west.png",
                         frame_count = 32,
                         line_length = 8,
                         priority = "extra-high",
@@ -286,7 +285,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/logistics/splitter/west/splitter-west-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/splitter/west/splitter-west-mask.png",
                     frame_count = 32,
                     line_length = 8,
                     priority = "extra-high",
@@ -295,7 +294,7 @@ for name, map in pairs(tier_map) do
                     shift = util.by_pixel(6, 12),
                     tint = inputs.tint,
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/logistics/splitter/west/hr-splitter-west-mask.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/logistics/splitter/west/hr-splitter-west-mask.png",
                         frame_count = 32,
                         line_length = 8,
                         priority = "extra-high",
@@ -317,7 +316,7 @@ for name, map in pairs(tier_map) do
             layers = {
                 -- Base
                 {
-                    filename = inputs.directory.."/graphics/entity/logistics/splitter/east/splitter-east-top_patch.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/splitter/east/splitter-east-top_patch.png",
                     frame_count = 32,
                     line_length = 8,
                     priority = "extra-high",
@@ -325,7 +324,7 @@ for name, map in pairs(tier_map) do
                     height = 52,
                     shift = util.by_pixel(4, -20),
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/logistics/splitter/east/hr-splitter-east-top_patch.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/logistics/splitter/east/hr-splitter-east-top_patch.png",
                         frame_count = 32,
                         line_length = 8,
                         priority = "extra-high",
@@ -337,7 +336,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/logistics/splitter/east/splitter-east-top_patch-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/splitter/east/splitter-east-top_patch-mask.png",
                     frame_count = 32,
                     line_length = 8,
                     priority = "extra-high",
@@ -346,7 +345,7 @@ for name, map in pairs(tier_map) do
                     shift = util.by_pixel(4, -20),
                     tint = inputs.tint,
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/logistics/splitter/east/hr-splitter-east-top_patch-mask.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/logistics/splitter/east/hr-splitter-east-top_patch-mask.png",
                         frame_count = 32,
                         line_length = 8,
                         priority = "extra-high",
@@ -364,7 +363,7 @@ for name, map in pairs(tier_map) do
             layers = {
                 -- Base
                 {
-                    filename = inputs.directory.."/graphics/entity/logistics/splitter/west/splitter-west-top_patch.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/splitter/west/splitter-west-top_patch.png",
                     frame_count = 32,
                     line_length = 8,
                     priority = "extra-high",
@@ -372,7 +371,7 @@ for name, map in pairs(tier_map) do
                     height = 48,
                     shift = util.by_pixel(6, -18),
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/logistics/splitter/west/hr-splitter-west-top_patch.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/logistics/splitter/west/hr-splitter-west-top_patch.png",
                         frame_count = 32,
                         line_length = 8,
                         priority = "extra-high",
@@ -384,7 +383,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/logistics/splitter/west/splitter-west-top_patch-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/logistics/splitter/west/splitter-west-top_patch-mask.png",
                     frame_count = 32,
                     line_length = 8,
                     priority = "extra-high",
@@ -393,7 +392,7 @@ for name, map in pairs(tier_map) do
                     shift = util.by_pixel(6, -18),
                     tint = inputs.tint,
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/logistics/splitter/west/hr-splitter-west-top_patch-mask.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/logistics/splitter/west/hr-splitter-west-top_patch-mask.png",
                         frame_count = 32,
                         line_length = 8,
                         priority = "extra-high",

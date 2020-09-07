@@ -1,6 +1,11 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.2
 Date: 2020.09.06
+  Changes:
+    - Directories are now referenced in one place instead of duplicated locally
+---------------------------------------------------------------------------------------------------
+Version: 1.0.2
+Date: 2020.09.06
   Features:
     - Implemented support for Circuit Processing mod
     - Added support for `Color intensity`, affecting how bright structures, vehicles and robots appear in-world

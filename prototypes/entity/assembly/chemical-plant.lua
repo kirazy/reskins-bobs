@@ -13,7 +13,6 @@ local inputs = {
     type = "assembling-machine",
     icon_name = "chemical-plant",
     base_entity = "chemical-plant",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "assembly",
     particles = {["big"] = 1, ["medium"] = 2},
@@ -80,7 +79,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/assembly/chemical-plant/remnants/chemical-plant-remnants-mask.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/chemical-plant/remnants/chemical-plant-remnants-mask.png",
                 line_length = 1,
                 width = 224,
                 height = 172,
@@ -89,7 +88,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(16, -5),
                 tint = inputs.tint,
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/assembly/chemical-plant/remnants/hr-chemical-plant-remnants-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/chemical-plant/remnants/hr-chemical-plant-remnants-mask.png",
                     line_length = 1,
                     width = 446,
                     height = 342,
@@ -102,7 +101,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/entity/assembly/chemical-plant/remnants/chemical-plant-remnants-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/chemical-plant/remnants/chemical-plant-remnants-highlights.png",
                 line_length = 1,
                 width = 224,
                 height = 172,
@@ -111,7 +110,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(16, -5),
                 blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/assembly/chemical-plant/remnants/hr-chemical-plant-remnants-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/chemical-plant/remnants/hr-chemical-plant-remnants-highlights.png",
                     line_length = 1,
                     width = 446,
                     height = 342,
@@ -148,7 +147,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/assembly/chemical-plant/chemical-plant-mask.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/chemical-plant/chemical-plant-mask.png",
                 width = 108,
                 height = 148,
                 frame_count = 24,
@@ -156,7 +155,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(1, -9),
                 tint = inputs.tint,
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/assembly/chemical-plant/hr-chemical-plant-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/chemical-plant/hr-chemical-plant-mask.png",
                     width = 220,
                     height = 292,
                     frame_count = 24,
@@ -168,7 +167,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/entity/assembly/chemical-plant/chemical-plant-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/chemical-plant/chemical-plant-highlights.png",
                 width = 108,
                 height = 148,
                 frame_count = 24,
@@ -176,7 +175,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(1, -9),
                 blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/assembly/chemical-plant/hr-chemical-plant-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/chemical-plant/hr-chemical-plant-highlights.png",
                     width = 220,
                     height = 292,
                     frame_count = 24,

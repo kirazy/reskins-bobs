@@ -106,7 +106,7 @@ for name, map in pairs(stone_furnace_map) do
     -- Standard Furnace
     if map.is_standard then
         remnant.animation = make_rotated_animation_variations_from_sheet(1, {
-            filename = inputs.directory.."/graphics/entity/assembly/stone-furnace/remnants/stone-furnace-remnants.png",
+            filename = reskins.bobs.directory.."/graphics/entity/assembly/stone-furnace/remnants/stone-furnace-remnants.png",
             line_length = 1,
             width = 76,
             height = 66,
@@ -115,7 +115,7 @@ for name, map in pairs(stone_furnace_map) do
             shift = util.by_pixel(0, 10),
             hr_version =
             {
-                filename = inputs.directory.."/graphics/entity/assembly/stone-furnace/remnants/hr-stone-furnace-remnants.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/stone-furnace/remnants/hr-stone-furnace-remnants.png",
                 line_length = 1,
                 width = 152,
                 height = 130,
@@ -134,7 +134,7 @@ for name, map in pairs(stone_furnace_map) do
     -- Metal Mixing Furnace
     if map.is_mixing then
         remnant.animation = make_rotated_animation_variations_from_sheet(1, {
-            filename = inputs.directory.."/graphics/entity/assembly/stone-furnace/remnants/stone-metal-mixing-furnace-remnants.png",
+            filename = reskins.bobs.directory.."/graphics/entity/assembly/stone-furnace/remnants/stone-metal-mixing-furnace-remnants.png",
             line_length = 1,
             width = 76,
             height = 66,
@@ -143,7 +143,7 @@ for name, map in pairs(stone_furnace_map) do
             shift = util.by_pixel(0, 10),
             hr_version =
             {
-                filename = inputs.directory.."/graphics/entity/assembly/stone-furnace/remnants/hr-stone-metal-mixing-furnace-remnants.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/stone-furnace/remnants/hr-stone-metal-mixing-furnace-remnants.png",
                 line_length = 1,
                 width = 152,
                 height = 130,
@@ -159,14 +159,14 @@ for name, map in pairs(stone_furnace_map) do
         entity.working_visualisations = entity_source.working_visualisations
 
         -- Setup icon
-        inputs.icon_filename = inputs.directory.."/graphics/icons/assembly/stone-furnace/stone-metal-mixing-furnace.png"
+        inputs.icon_filename = reskins.bobs.directory.."/graphics/icons/assembly/stone-furnace/stone-metal-mixing-furnace.png"
         reskins.lib.construct_icon(name, tier, inputs)
     end
 
     -- Chemical Furnace
     if map.is_chemical then
         remnant.animation = {
-            filename = inputs.directory.."/graphics/entity/assembly/stone-furnace/remnants/stone-chemical-furnace-remnants.png",
+            filename = reskins.bobs.directory.."/graphics/entity/assembly/stone-furnace/remnants/stone-chemical-furnace-remnants.png",
             width = 101,
             height = 90,
             line_length = 4,
@@ -175,7 +175,7 @@ for name, map in pairs(stone_furnace_map) do
             shift = util.by_pixel(2, 17),
             hr_version =
             {
-                filename = inputs.directory.."/graphics/entity/assembly/stone-furnace/remnants/hr-stone-chemical-furnace-remnants.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/stone-furnace/remnants/hr-stone-chemical-furnace-remnants.png",
                 width = 202,
                 height = 180,
                 line_length = 4,
@@ -204,7 +204,7 @@ for name, map in pairs(stone_furnace_map) do
         }
 
         -- Setup icon
-        inputs.icon_filename = inputs.directory.."/graphics/icons/assembly/stone-furnace/stone-chemical-furnace.png"
+        inputs.icon_filename = reskins.bobs.directory.."/graphics/icons/assembly/stone-furnace/stone-chemical-furnace.png"
         reskins.lib.construct_icon(name, tier, inputs)
     end
 
@@ -406,7 +406,7 @@ for name, map in pairs(steel_furnace_map) do
     end
 
     -- Setup icon
-    inputs.icon_filename = inputs.directory.."/graphics/icons/assembly/steel-furnace/"..sprite_name..".png"
+    inputs.icon_filename = reskins.bobs.directory.."/graphics/icons/assembly/steel-furnace/"..sprite_name..".png"
     reskins.lib.construct_icon(name, map.tier, inputs)
 
     -- Fetch remnant
@@ -415,7 +415,7 @@ for name, map in pairs(steel_furnace_map) do
     -- Reskin entities and remnants
     if map.has_4way == true then
         remnant.animation = {
-            filename = inputs.directory.."/graphics/entity/assembly/steel-furnace/remnants/"..sprite_name.."-remnants.png",
+            filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/remnants/"..sprite_name.."-remnants.png",
             line_length = 4,
             width = 134,
             height = 119,
@@ -423,7 +423,7 @@ for name, map in pairs(steel_furnace_map) do
             direction_count = 4,
             shift = util.by_pixel(4, 0.5),
             hr_version = {
-                filename = inputs.directory.."/graphics/entity/assembly/steel-furnace/remnants/hr-"..sprite_name.."-remnants.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/remnants/hr-"..sprite_name.."-remnants.png",
                 line_length = 4,
                 width = 268,
                 height = 238,
@@ -436,7 +436,7 @@ for name, map in pairs(steel_furnace_map) do
         entity.animation = reskins.lib.make_4way_animation_from_spritesheet(steel_furnace_entity_skin(sprite_name, shadow))
     else
         remnant.animation = make_rotated_animation_variations_from_sheet(1, {
-            filename = inputs.directory.."/graphics/entity/assembly/steel-furnace/remnants/"..sprite_name.."-remnants.png",
+            filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/remnants/"..sprite_name.."-remnants.png",
             line_length = 1,
             width = 134,
             height = 119,
@@ -445,7 +445,7 @@ for name, map in pairs(steel_furnace_map) do
             shift = util.by_pixel(4, 0.5),
             hr_version =
             {
-                filename = inputs.directory.."/graphics/entity/assembly/steel-furnace/remnants/hr-"..sprite_name.."-remnants.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/remnants/hr-"..sprite_name.."-remnants.png",
                 line_length = 1,
                 width = 268,
                 height = 238,
@@ -775,7 +775,7 @@ for name, map in pairs(electric_furnace_map) do
             },
             -- Mask
             {
-                filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/remnants/electric-furnace-remnants-mask.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/remnants/electric-furnace-remnants-mask.png",
                 line_length = 1,
                 width = 108,
                 height = 104,
@@ -784,7 +784,7 @@ for name, map in pairs(electric_furnace_map) do
                 shift = util.by_pixel(-3, 7),
                 tint = inputs.tint,
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/remnants/hr-electric-furnace-remnants-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/remnants/hr-electric-furnace-remnants-mask.png",
                     line_length = 1,
                     width = 214,
                     height = 208,
@@ -797,7 +797,7 @@ for name, map in pairs(electric_furnace_map) do
             },
             -- Highlights
             {
-                filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/remnants/electric-furnace-remnants-highlights.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/remnants/electric-furnace-remnants-highlights.png",
                 line_length = 1,
                 width = 108,
                 height = 104,
@@ -806,7 +806,7 @@ for name, map in pairs(electric_furnace_map) do
                 shift = util.by_pixel(-3, 7),
                 blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
-                    filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/remnants/hr-electric-furnace-remnants-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/remnants/hr-electric-furnace-remnants-highlights.png",
                     line_length = 1,
                     width = 214,
                     height = 208,
@@ -826,13 +826,13 @@ for name, map in pairs(electric_furnace_map) do
             layers = {
                 -- Base
                 {
-                    filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/electric-chemical-furnace-base.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/electric-chemical-furnace-base.png",
                     priority = "high",
                     width = 119,
                     height = 106,
                     shift = util.by_pixel(1, 1),
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-chemical-furnace-base.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-chemical-furnace-base.png",
                         priority = "high",
                         width = 238,
                         height = 212,
@@ -851,7 +851,7 @@ for name, map in pairs(electric_furnace_map) do
 
         -- Add chemical furnace remnants details
         table.insert(remnant.animation.layers, {
-            filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/remnants/chemical-furnace-remnants-overlay.png",
+            filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/remnants/chemical-furnace-remnants-overlay.png",
             line_length = 1,
             width = 108,
             height = 104,
@@ -859,7 +859,7 @@ for name, map in pairs(electric_furnace_map) do
             direction_count = 1,
             shift = util.by_pixel(-3, 7),
             hr_version = {
-                filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/remnants/hr-chemical-furnace-remnants-overlay.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/remnants/hr-chemical-furnace-remnants-overlay.png",
                 line_length = 1,
                 width = 214,
                 height = 208,
@@ -874,13 +874,13 @@ for name, map in pairs(electric_furnace_map) do
             layers = {
                 -- Base
                 {
-                    filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/electric-metal-mixing-furnace-base.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/electric-metal-mixing-furnace-base.png",
                     priority = "high",
                     width = 119,
                     height = 106,
                     shift = util.by_pixel(1, 1),
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-metal-mixing-furnace-base.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-metal-mixing-furnace-base.png",
                         priority = "high",
                         width = 238,
                         height = 212,
@@ -903,13 +903,13 @@ for name, map in pairs(electric_furnace_map) do
             layers = {
                 -- Base
                 {
-                    filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/electric-multi-purpose-furnace-base.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/electric-multi-purpose-furnace-base.png",
                     priority = "high",
                     width = 119,
                     height = 106,
                     shift = util.by_pixel(1, 1),
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-multi-purpose-furnace-base.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-multi-purpose-furnace-base.png",
                         priority = "high",
                         width = 238,
                         height = 212,
@@ -919,14 +919,14 @@ for name, map in pairs(electric_furnace_map) do
                 },
                 -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/electric-multi-purpose-furnace-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/electric-multi-purpose-furnace-mask.png",
                     priority = "high",
                     width = 119,
                     height = 106,
                     shift = util.by_pixel(1, 1),
                     tint = inputs.tint,
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-multi-purpose-furnace-mask.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-multi-purpose-furnace-mask.png",
                         priority = "high",
                         width = 238,
                         height = 212,
@@ -937,14 +937,14 @@ for name, map in pairs(electric_furnace_map) do
                 },
                 -- Highlights
                 {
-                    filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/electric-multi-purpose-furnace-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/electric-multi-purpose-furnace-highlights.png",
                     priority = "high",
                     width = 119,
                     height = 106,
                     shift = util.by_pixel(1, 1),
                     blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-multi-purpose-furnace-highlights.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-multi-purpose-furnace-highlights.png",
                         priority = "high",
                         width = 238,
                         height = 212,
@@ -965,7 +965,7 @@ for name, map in pairs(electric_furnace_map) do
 
         -- Add multi-purpose furnace remnants details
         table.insert(remnant.animation.layers, {
-            filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/remnants/multi-purpose-furnace-remnants-overlay.png",
+            filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/remnants/multi-purpose-furnace-remnants-overlay.png",
             line_length = 1,
             width = 108,
             height = 104,
@@ -973,7 +973,7 @@ for name, map in pairs(electric_furnace_map) do
             direction_count = 1,
             shift = util.by_pixel(-3, 7),
             hr_version = {
-                filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/remnants/hr-multi-purpose-furnace-remnants-overlay.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/remnants/hr-multi-purpose-furnace-remnants-overlay.png",
                 line_length = 1,
                 width = 214,
                 height = 208,
@@ -988,13 +988,13 @@ for name, map in pairs(electric_furnace_map) do
             layers = {
                 -- Base
                 {
-                    filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/electric-furnace-base.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/electric-furnace-base.png",
                     priority = "high",
                     width = 119,
                     height = 106,
                     shift = util.by_pixel(1, 1),
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-furnace-base.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-furnace-base.png",
                         priority = "high",
                         width = 238,
                         height = 212,
@@ -1004,14 +1004,14 @@ for name, map in pairs(electric_furnace_map) do
                 },
                 -- Mask
                 {
-                    filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/electric-furnace-mask.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/electric-furnace-mask.png",
                     priority = "high",
                     width = 119,
                     height = 106,
                     shift = util.by_pixel(1, 1),
                     tint = inputs.tint,
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-furnace-mask.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-furnace-mask.png",
                         priority = "high",
                         width = 238,
                         height = 212,
@@ -1022,14 +1022,14 @@ for name, map in pairs(electric_furnace_map) do
                 },
                 -- Highlights
                 {
-                    filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/electric-furnace-highlights.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/electric-furnace-highlights.png",
                     priority = "high",
                     width = 119,
                     height = 106,
                     shift = util.by_pixel(1, 1),
                     blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
-                        filename = inputs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-furnace-highlights.png",
+                        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-furnace-highlights.png",
                         priority = "high",
                         width = 238,
                         height = 212,

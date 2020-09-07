@@ -12,7 +12,6 @@ local inputs = {
     type = "artillery-wagon",
     icon_name = "artillery-wagon",
     base_entity = "artillery-wagon",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "warfare",
     particles = {["big"] = 4},

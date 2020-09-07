@@ -13,7 +13,6 @@ local inputs = {
     type = "fluid-wagon",
     icon_name = "fluid-wagon",
     base_entity = "fluid-wagon",
-    directory = reskins.bobs.directory,
     mod = "bobs",
     group = "logistics",
     particles = {["small"] = 3},
@@ -48,10 +47,10 @@ for name, map in pairs(tier_map) do
     if string.find(name, "armoured") then
         inputs.icon_extras = {
             {
-                icon = inputs.directory.."/graphics/icons/logistics/locomotive/armored-train-symbol.png"
+                icon = reskins.bobs.directory.."/graphics/icons/logistics/locomotive/armored-train-symbol.png"
             },
             {
-                icon = inputs.directory.."/graphics/icons/logistics/locomotive/armored-train-symbol.png",
+                icon = reskins.bobs.directory.."/graphics/icons/logistics/locomotive/armored-train-symbol.png",
                 tint = reskins.lib.adjust_alpha(reskins.lib.tint_index["tier-"..tier], 0.75)
             }
         }
