@@ -3,6 +3,7 @@ Version: 1.0.2
 Date: 2020.09.06
   Changes:
     - Directories are now referenced in one place instead of duplicated locally
+    - Defined variable locally that was being defined globally
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.2
 Date: 2020.09.06

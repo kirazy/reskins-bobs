@@ -29,6 +29,7 @@ local function setup_module_slot(parameters)
     local num_lights = parameters.lights or 8
 
     -- Setup slots
+    local slot = {}
     if parameters.is_slot_2 then
         -- Slot 2 (Top Right)
         slot = {
