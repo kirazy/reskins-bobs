@@ -13,7 +13,7 @@ local inputs = {
     type = "beacon",
     icon_name = "beacon",
     base_entity = "beacon",
-        mod = "bobs",
+    mod = "bobs",
     group = "compatibility",
     subgroup = "classic-beacon",
     particles = {["small"] = 3},
