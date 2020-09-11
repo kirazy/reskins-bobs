@@ -1,9 +1,10 @@
 ---------------------------------------------------------------------------------------------------
-Version: 1.0.2
-Date: 2020.09.06
+Version: 1.0.3
+Date: 2020.09.XX
   Changes:
     - Directories are now referenced in one place instead of duplicated locally
     - Defined variable locally that was being defined globally
+    - Adjustments to handle internal rename of tier-mapping setting
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.2
 Date: 2020.09.06

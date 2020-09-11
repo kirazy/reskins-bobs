@@ -64,7 +64,7 @@ if bob_color_overhaul then
         circuits["processing-unit"] = {subgroup = "circuits-custom", tier = 3, prog_tier = 4, icon_name = "processing-unit", icon_picture_extras = circuit_picture_extras("processing-unit"), flat_icon = false, make_icon_pictures = true}
         circuits["advanced-processing-unit"] = {subgroup = "circuits-custom", tier = 4, prog_tier = 5, icon_name = "advanced-processing-unit", icon_picture_extras = circuit_picture_extras("advanced-processing-unit"), flat_icon = false, make_icon_pictures = true}
     else
-        if tier_mapping == "name-map" then
+        if tier_mapping == "traditional-map" then
             circuits["basic-circuit-board"] = {subgroup = "circuits-name"}
             circuits["circuit-board"] = {subgroup = "circuits-name"}
             circuits["superior-circuit-board"] = {subgroup = "circuits-name"}
