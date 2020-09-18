@@ -289,7 +289,6 @@ local function steel_furnace_working(type)
     {
         filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/working/"..working_type..".png",
         priority = "high",
-        line_length = 8,
         width = 86,
         height = 87,
         frame_count = 1,
@@ -299,7 +298,6 @@ local function steel_furnace_working(type)
         hr_version = {
             filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/working/hr-"..working_type..".png",
             priority = "high",
-            line_length = 8,
             width = 172,
             height = 174,
             frame_count = 1,
