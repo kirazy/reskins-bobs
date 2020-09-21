@@ -70,7 +70,8 @@ if reskins.lib.setting("reskins-bobs-do-boblogistics") == false then return end
 
 -- Set input parameters
 local inputs = {
-    mod = "bobs"
+    mod = "bobs",
+    group = "logistics",
 }
 
 local material_map = {
@@ -167,8 +168,8 @@ for material, map in pairs(material_map) do
         }
 
         -- Reskin entities
-        pipe_entity.pictures = reskins.bobs.pipe_pictures(inputs)
-        underground_pipe_entity.pictures = reskins.bobs.underground_pipe_pictures(inputs)
+        pipe_entity.pictures = reskins.lib.pipe_pictures(inputs)
+        underground_pipe_entity.pictures = reskins.lib.underground_pipe_pictures(inputs)
 
         -- Fix fluid window
         pipe_entity.horizontal_window_bounding_box = {{-0.25, -0.28125}, {0.25, 0.15625}}
