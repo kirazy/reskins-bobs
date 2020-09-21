@@ -58,10 +58,10 @@ If no remnant sprite was available, structures use generic remnants, and every s
 
 ## Customization Features
 
-**Progression vs Name Tier Mapping**  
+**Progression vs Traditional Tier Mapping**  
 Choose between coloring items and structures based on the name, where the first entry is always tier one, or on progression, where a best-approximation has been used to align items and structures with the ingredients and technology level you can expect to use them. Progression is used by default.
 
-![Name mapped Nuclear power structures](https://i.imgur.com/RP1kOfH.png) ![Progression mapped Nuclear power structures](https://i.imgur.com/H8oAdu1.png)
+![Traditional mapped Nuclear power structures](https://i.imgur.com/RP1kOfH.png) ![Progression mapped Nuclear power structures](https://i.imgur.com/H8oAdu1.png)
 
 **Tier Label Style**  
 Choose between 6 tier label styles, whatever suits your preference. Rounded Rectangles are used by default. Examples of each are shown below at 200% and 100% UI scale. Pixels have been hand-placed at 64px and 32px resolutions for improved clarity.
