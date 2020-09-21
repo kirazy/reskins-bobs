@@ -176,7 +176,7 @@ for material, map in pairs(material_map) do
         pipe_entity.vertical_window_bounding_box = {{-0.28125, -0.5}, {0.03125, 0.125}}
 
         -- Handle pipe covers for underground pipes
-        underground_pipe_entity.fluid_box.pipe_covers = reskins.bobs.pipe_covers(inputs)
+        underground_pipe_entity.fluid_box.pipe_covers = reskins.lib.pipe_covers(inputs)
     end
 
     -- Setup Icons

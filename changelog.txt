@@ -6,6 +6,8 @@ Date: 2020.09.21
     - Defined variable locally that was being defined globally
     - Adjustments to handle internal rename of tier-mapping setting
     - Moved some item icons and pipe picture handling functions into Artisanal Reskins: Library to support Artisanal Reskins: Angel's Mods
+  Bugfixes:
+    - Fixed that ore items were not being reskinned with Angels mods and ShinyBobGFX enabled
   Locale:
     - Updated Czech localization
 ---------------------------------------------------------------------------------------------------

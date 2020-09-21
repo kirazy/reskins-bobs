@@ -12,6 +12,9 @@ require("prototypes.functions")
 -- Bob's Modules
 require("prototypes.entity.modules.beacon-module-slots")
 
+-- Bob's Ores
+require("prototypes.entity.ores.ores")
+
 ----------------------------------------------------------------------------------------------------
 -- COMPATIBILITY
 ----------------------------------------------------------------------------------------------------

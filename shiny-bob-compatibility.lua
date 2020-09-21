@@ -53,7 +53,6 @@ require("prototypes.entity.plates.air-and-water-pump")
 -- require("prototypes.entity.plates.void-pump")
 
 -- Bob's Ores
-require("prototypes.entity.ores.ores")
 require("prototypes.entity.ores.fluids")
 
 -- Bob's Power
