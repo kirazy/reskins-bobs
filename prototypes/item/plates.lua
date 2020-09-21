@@ -25,7 +25,7 @@ local intermediaries = {
     ["cobalt-plate"] = {subgroup = "plates"},
     ["cobalt-steel-alloy"] = {subgroup = "plates"},
     ["copper-tungsten-alloy"] = {subgroup = "plates"},
-    ["gold-plate"] = {subgroup = "plates"},
+    ["gold-plate"] = {mod = "lib", group = "shared", subgroup = "items"}, -- Shared with Angels
     ["gunmetal-alloy"] = {subgroup = "plates"},
     ["invar-alloy"] = {subgroup = "plates"},
     ["lead-plate"] = {subgroup = "plates"},
@@ -85,9 +85,9 @@ local intermediaries = {
     ["alien-poison"] = {type = "fluid", subgroup = "fluids"},
 
     -- Miscellaneous Items
-    ["glass"] = {subgroup = "items"},
+    ["glass"] = {mod = "lib", group = "shared", subgroup = "items"},
     ["carbon"] = {subgroup = "items"},
-    ["rubber"] = {subgroup = "items"}, -- Shared with Bob's Electronics
+    ["rubber"] = {mod = "lib", group = "shared", subgroup = "items"}, -- Shared with Bob's Electronics, Angels
     ["resin"] = {subgroup = "items"}, -- Shared with Bob's Electronics
     ["enriched-fuel"] = {subgroup = "items"},
 

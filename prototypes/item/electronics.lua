@@ -16,15 +16,15 @@ local inputs = {
 
 local intermediaries = {
     -- Wires
-    ["gilded-copper-cable"] = {subgroup = "wires", defer_to_data_final_fixes = true}, -- Angels
-    ["tinned-copper-cable"] = {subgroup = "wires", defer_to_data_final_fixes = true}, -- Angels
+    ["gilded-copper-cable"] = {mod = "lib", group = "shared", subgroup = "items"},
+    ["tinned-copper-cable"] = {subgroup = "wires",},
     ["insulated-cable"] = {subgroup = "wires"},
 }
 
 -- Items and recipes shared with other mods within Bob's suite
 if not mods["bobplates"] then
     -- Intermediaries
-    intermediaries["solder-alloy"] = {group = "plates", subgroup = "plates", defer_to_data_final_fixes = true} -- Angels
+    intermediaries["solder-alloy"] = {mod = "lib", group = "shared", subgroup = "items"}
     intermediaries["rubber"] = {group = "plates", subgroup = "items"}
     intermediaries["resin"] = {group = "plates", subgroup = "items"}
     intermediaries["ferric-chloride-solution"] = {type = "fluid", group = "plates", subgroup = "fluids"}

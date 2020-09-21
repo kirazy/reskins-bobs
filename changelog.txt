@@ -1,10 +1,11 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.3
-Date: 2020.09.XX
+Date: 2020.09.20
   Changes:
     - Directories are now referenced in one place instead of duplicated locally
     - Defined variable locally that was being defined globally
     - Adjustments to handle internal rename of tier-mapping setting
+    - Moved some item icons into Artisanal Reskins: Library to support Artisanal Reskins: Angel's Mods
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.2
 Date: 2020.09.06
