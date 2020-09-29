@@ -5,10 +5,12 @@ This mod reskins the items, structures, equipment, and technologies added to Fac
 
 *For an interactive sliding comparison of this reskin to standard Bob's mods, [click here](https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=ca4c1426-ce30-11ea-bf88-a15b6c7adf9a), showcasing version 0.0.17*.
 
-As this is a work-in-progress effort, not all items, structures and all the rest have yet been touched, but the objective is to bring everything up to high-resolution standards. Weapons, ammo, circuits, plates, all of these will receive updated sprites to bring them up to Factorio's current standard.
+This is a work-in-progress, and though most items, structures, and equipment that I plan to touch have been touched, there are a few structures and items still to do.
 
 **Updates**  
-This mod is constantly being worked on, and regular updates are released weekly Sunday night and Monday morning, pacific time. Startup errors will be fixed as quickly as they are discovered, outside of the regular update cycle.
+This mod is constantly being worked on, but I am a graduate student and school has resumed. I will release bug fixes that correct startup errors as they occur, but content updates will occur on a monthly basis on the weekend, beginning October 3, 2020.
+
+Localization
 
 **Localization**  
 You are welcome to help with localization, please use [this Crowdin project](https://crowdin.com/project/factorio-mods-localization). You can find more details [here](https://github.com/dima74/factorio-mods-localization#how-to-translate-using-crowdin).
