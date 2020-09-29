@@ -10,8 +10,6 @@ This is a work-in-progress, and though most items, structures, and equipment tha
 **Updates**  
 This mod is constantly being worked on, but I am a graduate student and school has resumed. I will release bug fixes that correct startup errors as they occur, but content updates will occur on a monthly basis on the weekend, beginning October 3, 2020.
 
-Localization
-
 **Localization**  
 You are welcome to help with localization, please use [this Crowdin project](https://crowdin.com/project/factorio-mods-localization). You can find more details [here](https://github.com/dima74/factorio-mods-localization#how-to-translate-using-crowdin).
 
