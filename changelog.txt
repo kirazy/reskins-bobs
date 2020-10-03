@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.4
+Date: 2020.10.04
+  Changes:
+    - Moved ores common with Angels mods into Artisanal Reskins: Library to support Artisanal Reskins: Angel's mods
+---------------------------------------------------------------------------------------------------
 Version: 1.0.3
 Date: 2020.09.21
   Changes:

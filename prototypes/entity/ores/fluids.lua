@@ -28,13 +28,7 @@ for _, name in pairs(fluids) do
     if not entity then goto continue end
 
     -- Setup icons
-    inputs.icon = reskins.bobs.directory.."/graphics/icons/ores/"..name.."/"..name..".png"
-
-    if name == "lithia-water" then
-        inputs.defer_to_data_updates = true
-    else
-        inputs.defer_to_data_updates = nil
-    end
+    inputs.icon = reskins.bobs.directory.."/graphics/icons/ores/ores/"..name.."/"..name..".png"
 
     reskins.lib.assign_icons(name, inputs)
 
