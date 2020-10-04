@@ -1,6 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.4
 Date: 2020.10.04
+  Features:
+    - Implemented bauxite, tin, and tungsten ores
   Changes:
     - Moved ores common with Angels mods into Artisanal Reskins: Library to support Artisanal Reskins: Angel's mods
 ---------------------------------------------------------------------------------------------------

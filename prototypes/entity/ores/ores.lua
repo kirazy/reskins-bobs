@@ -22,18 +22,20 @@ local ores = {
     ["rutile-ore"] = {},
     ["sulfur"] = {},
     ["thorium-ore"] = {},
-    -- ["tin-ore"] = {},
+    ["tin-ore"] = {variations = 8},
 
     -- Shared with Angel's
-    -- ["bauxite-ore"] = {mod = "lib", group = "shared"},
+    ["bauxite-ore"] = {mod = "lib", group = "shared", variations = 8},
     ["cobalt-ore"] = {mod = "lib", group = "shared"},
     ["gold-ore"] = {mod = "lib", group = "shared"},
     ["nickel-ore"] = {mod = "lib", group = "shared"}, -- 408073
     ["quartz"] = {mod = "lib", group = "shared"}, -- 999999
     ["silver-ore"] = {mod = "lib", group = "shared"},
-    -- ["tungsten-ore"] = {mod = "lib", group = "shared"},
+    ["tungsten-ore"] = {mod = "lib", group = "shared", variations = 8},
     ["zinc-ore"] = {mod = "lib", group = "shared"},
 }
+
+
 
 for name, params in pairs(ores) do
     -- Fetch entity
@@ -52,12 +54,7 @@ for name, params in pairs(ores) do
         inputs.icon_picture = nil
     else
         inputs.icon = reskins[mod].directory.."/graphics/icons/"..group.."/ores/"..name.."/"..name..".png"
-        inputs.icon_picture = {
-            { size = 64, filename = reskins[mod].directory.."/graphics/icons/"..group.."/ores/"..name.."/"..name..".png",   scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = reskins[mod].directory.."/graphics/icons/"..group.."/ores/"..name.."/"..name.."-1.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = reskins[mod].directory.."/graphics/icons/"..group.."/ores/"..name.."/"..name.."-2.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = reskins[mod].directory.."/graphics/icons/"..group.."/ores/"..name.."/"..name.."-3.png", scale = 0.25, mipmap_count = 4 }
-        }
+        inputs.icon_picture = reskins.lib.ore_icon_pictures(mod, group, name, params.variations or 4)
     end
 
     reskins.lib.assign_icons(name, inputs)
