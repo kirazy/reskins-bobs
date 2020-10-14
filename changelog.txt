@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.5
+Date: 2020.10.13
+  Bugfixes:
+    - Fixed that when used with Bob's Electronics and not Bob's Metals, Chemicals and Intermediares that the icon for rubber was missing.
+---------------------------------------------------------------------------------------------------
 Version: 1.0.4
 Date: 2020.10.04
   Features:

@@ -25,7 +25,7 @@ local intermediaries = {
 if not mods["bobplates"] then
     -- Intermediaries
     intermediaries["solder-alloy"] = {mod = "lib", group = "shared", subgroup = "items"}
-    intermediaries["rubber"] = {group = "plates", subgroup = "items"}
+    intermediaries["rubber"] = {mod = "lib", group = "shared", subgroup = "items"}
     intermediaries["resin"] = {group = "plates", subgroup = "items"}
     intermediaries["ferric-chloride-solution"] = {type = "fluid", group = "plates", subgroup = "fluids"}
 
