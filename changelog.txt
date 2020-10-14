@@ -1,8 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.6
+Date: 2020.11.XX
+  Changes:
+    - Changed how default indicators for true/false setting descriptions are handled internally
+---------------------------------------------------------------------------------------------------
 Version: 1.0.5
 Date: 2020.10.13
   Bugfixes:
-    - Fixed that when used with Bob's Electronics and not Bob's Metals, Chemicals and Intermediares that the icon for rubber was missing.
+    - Fixed that when used with Bob's Electronics and not Bob's Metals, Chemicals and Intermediaries that the icon for rubber was missing.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.4
 Date: 2020.10.04
