@@ -205,7 +205,7 @@ Date: 2020.06.24
   Changes:
     - Adjusted internal naming for clarity
   Bugfixes:
-    - Fix medium eletric poles having their tint fetched prior to determining tier, resulting in mismatched colors
+    - Fix medium electric poles having their tint fetched prior to determining tier, resulting in mismatched colors
     - Fix Mini-Machine compatibility causing startup errors when select Bob's mods are not enabled
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.9
