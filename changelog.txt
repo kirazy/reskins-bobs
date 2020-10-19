@@ -5,6 +5,8 @@ Date: 2020.11.XX
     - Changed how default indicators for true/false setting descriptions are handled internally
   Bugfixes:
     - Fixed that the long-handed-type inserter color mask was misaligned while holding an item in normal resolution
+  Locale:
+    - Updated Czech and German localizations, added Brazilian Portuguese localization
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.5
 Date: 2020.10.13

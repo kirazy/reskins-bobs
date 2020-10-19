@@ -65,7 +65,7 @@ local function reskin_pipe_entity()
 end
 
 -- Check to see if reskinning needs to be done
-if not mods["boblogistics"] then return else reskin_pipe_entity() end
+if not mods["boblogistics"] then return elseif not mods["reskins-angels"] then reskin_pipe_entity() end
 if reskins.lib.setting("reskins-bobs-do-boblogistics") == false then return end
 
 -- Set input parameters
