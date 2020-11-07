@@ -18,11 +18,11 @@ reskins.lib.parse_inputs(inputs)
 local ores = {
     -- Pure Bob's
     -- ["gem-ore"] = {},
-    ["lead-ore"] = {}, -- 404040
+    ["lead-ore"] = {mod = "lib", group = "shared"}, -- 404040
     ["rutile-ore"] = {},
     ["sulfur"] = {},
     ["thorium-ore"] = {},
-    ["tin-ore"] = {variations = 8},
+    ["tin-ore"] = {mod = "lib", group = "shared", variations = 8},
 
     -- Shared with Angel's
     ["bauxite-ore"] = {mod = "lib", group = "shared", variations = 8},
