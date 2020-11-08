@@ -11,6 +11,7 @@ Date: 2020.11.XX
   Locale:
     - Modified setting names and descriptions for consistency
     - Updated Czech and German localizations, added Brazilian Portuguese localization
+    - Preliminary localization for Polish (5% complete)
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.5
 Date: 2020.10.13
