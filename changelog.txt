@@ -1,11 +1,10 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.6
-Date: 2020.11.XX
+Date: 2020.11.08
   Changes:
     - Changed how default indicators for true/false setting descriptions are handled internally
     - Moved item icons for lead ore and tin ore into Artisanal Reskins: Library to support Artisanal Reskins: Angel's Mods
     - Revised the color for steel and tungsten gears to better distinguish them from other gears
-    - Revised coloring for bearings and bearing balls to better match the lighting in Factorio
   Bugfixes:
     - Fixed that the long-handed-type inserter color mask was misaligned while holding an item in normal resolution
   Locale:
