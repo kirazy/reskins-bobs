@@ -23,12 +23,21 @@ if mods["bobassembly"] then
 end
 
 if mods["bobelectronics"] then
+    local circuit_style_locale = {"",
+        {"mod-setting-description.reskins-bobs-do-bobelectronics-circuit-style"},
+        {"reskins-bobs.reskins-bobs-circuit-style-material"},
+        {"reskins-bobs.reskins-bobs-circuit-style-vanilla"},
+        {"reskins-bobs.reskins-bobs-circuit-style-tier"},
+        {"reskins-bobs.reskins-bobs-circuit-style-default"},
+    }
     data:extend({
         {
-            type = "bool-setting",
-            name = "reskins-bobs-do-bobelectronics-circuits",
+            type = "string-setting",
+            name = "reskins-bobs-do-bobelectronics-circuit-style",
             setting_type = "startup",
-            default_value = true,
+            default_value = "colored-tier",
+            allowed_values = {"off","colored-material","colored-vanilla","colored-tier"},
+            localised_description = circuit_style_locale,
         },
     })
 end

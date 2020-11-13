@@ -5,7 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobelectronics"] then return end
-if not reskins.lib.setting("reskins-bobs-do-bobelectronics-circuits") then return end
+if reskins.lib.setting("reskins-bobs-do-bobelectronics-circuit-style") == "off" then return end
 
 -- Setup inputs
 local inputs = {
@@ -16,6 +16,7 @@ local inputs = {
     tier_labels = false,
 }
 
+-- Sets up circuits to use material colors
 local circuits = {
     -- Boards
     ["wooden-board"] = {subgroup = "circuits"},
@@ -27,6 +28,7 @@ local circuits = {
     ["circuit-board"] = {subgroup = "circuits"},
     ["superior-circuit-board"] = {subgroup = "circuits"},
     ["multi-layer-circuit-board"] = {subgroup = "circuits"},
+
     ["electronic-circuit"] = {subgroup = "circuits"},
     ["advanced-circuit"] = {subgroup = "circuits"},
     ["processing-unit"] = {subgroup = "circuits"},
@@ -34,7 +36,7 @@ local circuits = {
 }
 
 -- Fetch relevant settings
-local bob_color_overhaul = reskins.lib.setting("bobmods-colorupdate")
+local circuit_color_style = reskins.lib.setting("reskins-bobs-do-bobelectronics-circuit-style")
 local tier_mapping = reskins.lib.setting("reskins-lib-tier-mapping")
 local custom_color = reskins.lib.setting("reskins-lib-customize-tier-colors")
 
@@ -50,7 +52,8 @@ local function circuit_picture_extras(name)
     }
 end
 
-if bob_color_overhaul then
+-- Check if we're using tier or vanilla coloring
+if circuit_color_style == "colored-tier" then
     if custom_color then
         -- Intermediates
         circuits["basic-circuit-board"] = {subgroup = "circuits-custom", tier = 1, prog_tier = 2, icon_name = "basic-circuit-board", icon_picture_extras = circuit_picture_extras("basic-circuit-board"), flat_icon = false, make_icon_pictures = true}
@@ -69,6 +72,7 @@ if bob_color_overhaul then
             circuits["circuit-board"] = {subgroup = "circuits-name"}
             circuits["superior-circuit-board"] = {subgroup = "circuits-name"}
             circuits["multi-layer-circuit-board"] = {subgroup = "circuits-name"}
+
             circuits["electronic-circuit"] = {subgroup = "circuits-name"}
             circuits["advanced-circuit"] = {subgroup = "circuits-name"}
             circuits["processing-unit"] = {subgroup = "circuits-name"}
@@ -78,12 +82,44 @@ if bob_color_overhaul then
             circuits["circuit-board"] = {subgroup = "circuits-progression"}
             circuits["superior-circuit-board"] = {subgroup = "circuits-progression"}
             circuits["multi-layer-circuit-board"] = {subgroup = "circuits-progression"}
+
             circuits["electronic-circuit"] = {subgroup = "circuits-progression"}
             circuits["advanced-circuit"] = {subgroup = "circuits-progression"}
             circuits["processing-unit"] = {subgroup = "circuits-progression"}
             circuits["advanced-processing-unit"] = {subgroup = "circuits-progression"}
         end
     end
+elseif circuit_color_style == "colored-vanilla" then
+    circuits["basic-circuit-board"] = {subgroup = "circuits-vanilla"}
+    circuits["circuit-board"] = {subgroup = "circuits-vanilla"}
+    circuits["superior-circuit-board"] = {subgroup = "circuits-vanilla"}
+    circuits["multi-layer-circuit-board"] = {subgroup = "circuits-vanilla"}
+
+    circuits["electronic-circuit"] = {subgroup = "circuits-vanilla"}
+    circuits["advanced-circuit"] = {subgroup = "circuits-vanilla"}
+    circuits["processing-unit"] = {subgroup = "circuits-vanilla"}
+    circuits["advanced-processing-unit"] = {subgroup = "circuits-vanilla"}
+end
+
+-- Check for circuit processing, and remap the circuits if present
+if mods["CircuitProcessing"] then
+    -- Transcribe to the new names
+    circuits["cp-electronic-circuit-board"] = util.copy(circuits["electronic-circuit"])
+    circuits["cp-advanced-circuit-board"] = util.copy(circuits["advanced-circuit"])
+    circuits["cp-processing-board"] = util.copy(circuits["processing-unit"])
+    circuits["cp-advanced-processing-board"] = util.copy(circuits["advanced-processing-unit"])
+
+    -- Map to the image to use
+    circuits["cp-electronic-circuit-board"].image = "electronic-circuit"
+    circuits["cp-advanced-circuit-board"].image = "advanced-circuit"
+    circuits["cp-processing-board"].image = "processing-unit"
+    circuits["cp-advanced-processing-board"].image = "advanced-processing-unit"
+
+    -- Clear old mappings
+    circuits["electronic-circuit"] = nil
+    circuits["advanced-circuit"] = nil
+    circuits["processing-unit"] = nil
+    circuits["advanced-processing-unit"] = nil
 end
 
 reskins.lib.create_icons_from_list(circuits, inputs)
