@@ -1,12 +1,14 @@
 ---------------------------------------------------------------------------------------------------
-Version: 1.0.6
-Date: 2020.12.XX
+Version: 1.0.7
+Date: 2020.11.19
   Features:
     - Added Factorio-style circuit colors as an option (Use vanilla colors) under "Bob's Electronics: Circuit style" startup setting
   Changes:
     - Reworked how circuit coloring is handled, removing dependence on Bob's setting "Color update". See reworked setting "Bob's Electronics: Circuit style" under startup setting for details
     - Improved compatibility with Circuit Processing mod, no longer reskinning Circuit Processing's core circuits, further improvements to come
     - Added support for Loader Redux's new loader graphics
+  Locale:
+    - Updated German localizations
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.6
 Date: 2020.11.08
