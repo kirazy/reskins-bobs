@@ -6,6 +6,7 @@ Date: 2020.12.XX
   Changes:
     - Reworked how circuit coloring is handled, removing dependence on Bob's setting "Color update". See reworked setting "Bob's Electronics: Circuit style" under startup setting for details
     - Improved compatibility with Circuit Processing mod, no longer reskinning Circuit Processing's core circuits, further improvements to come
+    - Added support for Loader Redux's new loader graphics
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.6
 Date: 2020.11.08
