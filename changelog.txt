@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.8
+Date: 2020.12.XX
+  Bugfixes:
+    - Fixed that the highlights layer for the filter inserter icon was not properly mipmapped
+---------------------------------------------------------------------------------------------------
 Version: 1.0.7
 Date: 2020.11.19
   Features:
