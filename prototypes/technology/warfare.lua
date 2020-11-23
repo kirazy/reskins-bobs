@@ -1,7 +1,7 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
--- See LICENSE.md in the project directory for license information.
+-- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobwarfare"] then return end
@@ -23,5 +23,9 @@ local technology = {
     -- Miscellaneous
     ["reinforced-wall"] = {flat_icon = true}
 }
+
+if mods["aai-industry"] then
+    technology["radar"] = {tier = 1, icon_name = "radar"}
+end
 
 reskins.lib.create_icons_from_list(technology, inputs)

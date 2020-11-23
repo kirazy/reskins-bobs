@@ -1,7 +1,7 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
--- See LICENSE.md in the project directory for license information.
+-- See LICENSE in the project directory for license information.
 
 -- When compatibility with ShinyBobGFX is finally dropped, the contents of this file will be moved to data.lua
 

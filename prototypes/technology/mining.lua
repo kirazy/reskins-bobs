@@ -1,7 +1,7 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
--- See LICENSE.md in the project directory for license information.
+-- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobmining"] then return end
@@ -28,5 +28,9 @@ local technologies = {
     ["bob-area-drills-4"] = {tier = 4, prog_tier = 5, icon_name = "mining-drill", icon_base = "area-mining-drill"},
 
 }
+
+if mods["aai-industry"] then
+    technologies["electric-mining"] = {tier = 1, icon_name = "mining-drill"}
+end
 
 reskins.lib.create_icons_from_list(technologies, inputs)

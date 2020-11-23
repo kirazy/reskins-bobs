@@ -1,7 +1,7 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
--- See LICENSE.md in the project directory for license information.
+-- See LICENSE in the project directory for license information.
 
 -- Restore vanilla pipes to their proper glory, since Bob's sprites are pre-color-correction
 local function reskin_pipe_entity()

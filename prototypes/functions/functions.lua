@@ -1,10 +1,11 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
--- See LICENSE.md in the project directory for license information.
+-- See LICENSE in the project directory for license information.
 
 -- Add this mod to the reskins function host.
 if not reskins.bobs then reskins.bobs = {} end
+reskins.bobs.triggers = require("triggers")
 reskins.bobs.directory = "__reskins-bobs__"
 reskins.bobs.status = {}
 

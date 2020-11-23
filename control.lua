@@ -1,7 +1,7 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
--- See LICENSE.md in the project directory for license information.
+-- See LICENSE in the project directory for license information.
 
 local function on_configuration_changed(data)
     -- Notify of changes when updated in a save we were already present in

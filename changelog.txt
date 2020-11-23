@@ -1,8 +1,13 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.8
 Date: 2020.12.XX
+  Features:
+    - Added support for electric mining and radar technologies added by AAI Industry
   Bugfixes:
     - Fixed that the highlights layer for the filter inserter icon was not properly mipmapped
+    - Fixed that the burner assembling machine reskin with AAI Industry present was not properly scaled
+  Locale:
+    - Updated German localizations
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.7
 Date: 2020.11.19

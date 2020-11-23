@@ -1,7 +1,7 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
--- See LICENSE.md in the project directory for license information.
+-- See LICENSE in the project directory for license information.
 
 -- Check if the setting exists
 if not reskins.lib.setting("reskins-bobs-do-bobelectronics-circuit-style") then return end

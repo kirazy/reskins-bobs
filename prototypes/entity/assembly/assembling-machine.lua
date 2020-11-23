@@ -1,7 +1,7 @@
 -- Copyright (c) 2020 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
--- See LICENSE.md in the project directory for license information.
+-- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobassembly"] then return end
@@ -73,26 +73,49 @@ for name, map in pairs(tier_map) do
             }
         }
     elseif name == "burner-assembling-machine" then
-        -- Use the small assets
-        inputs.icon_base = "mini-assembling-machine"
-        inputs.icon_mask = inputs.icon_base
-        inputs.icon_highlights = inputs.icon_base
+        if reskins.bobs.triggers.burner_assembling_machine_is_small then
+            -- Use the normal assets
+            inputs.icon_base = nil
+            inputs.icon_mask = nil
+            inputs.icon_highlights = nil
 
-        -- Smoke stack
-        inputs.icon_extras = {
-            {
-                icon = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/smoke-stack.png"
+            -- Smoke stack
+            inputs.icon_extras = {
+                {
+                    icon = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/smoke-stack.png"
+                }
             }
-        }
 
-        inputs.icon_picture_extras = {
-            {
-                filename = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/smoke-stack.png",
-                size = 64,
-                mipmaps = 4,
-                scale = 0.25
+            inputs.icon_picture_extras = {
+                {
+                    filename = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/smoke-stack.png",
+                    size = 64,
+                    mipmaps = 4,
+                    scale = 0.25
+                }
             }
-        }
+        else
+            -- Use the small assets
+            inputs.icon_base = "mini-assembling-machine"
+            inputs.icon_mask = inputs.icon_base
+            inputs.icon_highlights = inputs.icon_base
+
+            -- Smoke stack
+            inputs.icon_extras = {
+                {
+                    icon = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/small-smoke-stack.png"
+                }
+            }
+
+            inputs.icon_picture_extras = {
+                {
+                    filename = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/smoke-stack.png",
+                    size = 64,
+                    mipmaps = 4,
+                    scale = 0.25
+                }
+            }
+        end
     elseif name == "steam-assembling-machine" then
         -- Use the standard assets
         inputs.icon_base = nil
@@ -470,7 +493,7 @@ for name, map in pairs(tier_map) do
     entity.drawing_box = nil
 
     -- Rescale for electronics and burner assembling machines
-    if string.find(name, "electronics") or name == "burner-assembling-machine" then
+    if string.find(name, "electronics") or (reskins.bobs.triggers.burner_assembling_machine_is_small and name == "burner-assembling-machine") then
         reskins.lib.rescale_entity(entity.animation, 2/3)
         reskins.lib.rescale_remnant(entity, 2/3)
     end
