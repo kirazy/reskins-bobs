@@ -180,13 +180,13 @@ for name, map in pairs(tier_map) do
         playback_speed = entity.mining_speed
     else
         playback_speed = ((entity.mining_speed/(max_speed-min_speed)) - (min_speed/(max_speed-min_speed)))*max_playback
-                          + ((max_speed/(max_speed-min_speed)) - (entity.mining_speed/(max_speed-min_speed)))*min_playback
+                        + ((max_speed/(max_speed-min_speed)) - (entity.mining_speed/(max_speed-min_speed)))*min_playback
     end
 
     -- Reskin base particles if we're a water pump
     if variant then
-       reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["big"], 1, util.color("3083bf"))
-       reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["medium"], 2, util.color("3083bf"))
+        reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["big"], 1, util.color("3083bf"))
+        reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["medium"], 2, util.color("3083bf"))
     end
 
     -- Fetch remnants

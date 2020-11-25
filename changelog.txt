@@ -1,7 +1,8 @@
 ---------------------------------------------------------------------------------------------------
-Version: 1.0.8
-Date: 2020.12.XX
+Version: 1.1.0
+Date: 2020.11.XX
   Features:
+    - Moved to Factorio 1.1
     - Added support for electric mining and radar technologies added by AAI Industry
   Bugfixes:
     - Fixed that the highlights layer for the filter inserter icon was not properly mipmapped

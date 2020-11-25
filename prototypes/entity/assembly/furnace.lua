@@ -11,17 +11,17 @@ local standard_furnace_tint = util.color("ffb700")
 local mixing_furnace_tint = util.color("00bfff")
 local chemical_furnace_tint = util.color("e50000")
 
+----------------------------------------------------------------------------------------------------
 -- STONE FURNACES
+----------------------------------------------------------------------------------------------------
 local stone_furnace_map = {
     ["stone-furnace"] = {tier = 1, type = "furnace", tint = standard_furnace_tint, is_standard = true},
-
-    -- Names as of Bob's MCI 0.18.9
     ["stone-mixing-furnace"] = {tier = 1, type = "assembling-machine", tint = mixing_furnace_tint, is_mixing = true},
     ["stone-chemical-furnace"] = {tier = 1, type = "assembling-machine", tint = chemical_furnace_tint, is_chemical = true},
 
     -- Old Names
-    ["mixing-furnace"] = {tier = 1, type = "assembling-machine", tint = mixing_furnace_tint, is_mixing = true},
-    ["chemical-boiler"] = {tier = 1, type = "assembling-machine", tint = chemical_furnace_tint, is_chemical = true},
+    -- ["mixing-furnace"] = {tier = 1, type = "assembling-machine", tint = mixing_furnace_tint, is_mixing = true},
+    -- ["chemical-boiler"] = {tier = 1, type = "assembling-machine", tint = chemical_furnace_tint, is_chemical = true},
 }
 
 local function stone_furnace_entities(name, shadow)
@@ -216,11 +216,11 @@ for name, map in pairs(stone_furnace_map) do
     ::continue::
 end
 
+----------------------------------------------------------------------------------------------------
 -- STEEL FURNACES
+----------------------------------------------------------------------------------------------------
 local steel_furnace_map = {
     ["steel-furnace"] = {tier = 2, type = "furnace", tint = standard_furnace_tint, furnace = "standard"},
-
-    -- Names as of Bob's MCI 0.18.9
     ["steel-mixing-furnace"] = {tier = 2, type = "assembling-machine", tint = mixing_furnace_tint, furnace = "mixing"},
     ["steel-chemical-furnace"] = {tier = 2, type = "assembling-machine", tint = chemical_furnace_tint, has_4way = true, furnace = "chemical"},
     ["fluid-furnace"] = {tier = 2, type = "furnace", tint = standard_furnace_tint, has_4way = true, is_fluid = true, furnace = "standard"},
@@ -228,11 +228,11 @@ local steel_furnace_map = {
     ["fluid-chemical-furnace"] = {tier = 2, type = "assembling-machine", tint = chemical_furnace_tint, has_4way = true, is_fluid = true, furnace = "chemical"},
 
     -- Old names
-    ["mixing-steel-furnace"] = {tier = 2, type = "assembling-machine", tint = mixing_furnace_tint, furnace = "mixing"},
-    ["chemical-steel-furnace"] = {tier = 2, type = "assembling-machine", tint = chemical_furnace_tint, has_4way = true, furnace = "chemical"},
-    ["oil-steel-furnace"] = {tier = 2, type = "furnace", tint = standard_furnace_tint, has_4way = true, is_fluid = true, furnace = "standard"},
-    ["oil-mixing-steel-furnace"] = {tier = 2, type = "assembling-machine", tint = mixing_furnace_tint, has_4way = true, is_fluid = true, furnace = "mixing"},
-    ["oil-chemical-steel-furnace"] = {tier = 2, type = "assembling-machine", tint = chemical_furnace_tint, has_4way = true, is_fluid = true, furnace = "chemical"},
+    -- ["mixing-steel-furnace"] = {tier = 2, type = "assembling-machine", tint = mixing_furnace_tint, furnace = "mixing"},
+    -- ["chemical-steel-furnace"] = {tier = 2, type = "assembling-machine", tint = chemical_furnace_tint, has_4way = true, furnace = "chemical"},
+    -- ["oil-steel-furnace"] = {tier = 2, type = "furnace", tint = standard_furnace_tint, has_4way = true, is_fluid = true, furnace = "standard"},
+    -- ["oil-mixing-steel-furnace"] = {tier = 2, type = "assembling-machine", tint = mixing_furnace_tint, has_4way = true, is_fluid = true, furnace = "mixing"},
+    -- ["oil-chemical-steel-furnace"] = {tier = 2, type = "assembling-machine", tint = chemical_furnace_tint, has_4way = true, is_fluid = true, furnace = "chemical"},
 }
 
 local function steel_furnace_entity_skin(name, shadow)
@@ -565,20 +565,20 @@ for name, map in pairs(steel_furnace_map) do
     ::continue::
 end
 
+----------------------------------------------------------------------------------------------------
 -- ELECTRIC FURNACES
+----------------------------------------------------------------------------------------------------
 local electric_furnace_map = {
     ["electric-furnace"] = {furnace = "standard", tier = 3, type = "furnace", tint = standard_furnace_tint},
     ["electric-furnace-2"] = {furnace = "standard", tier = 4, type = "furnace"},
     ["electric-furnace-3"] = {furnace = "standard", tier = 5, type = "furnace"},
-
-    -- Names as of Bob's MCI 0.18.9
     ["electric-mixing-furnace"] = {furnace = "mixing", tier = 3, type = "assembling-machine", tint = mixing_furnace_tint},
     ["electric-chemical-furnace"] = {furnace = "chemical", tier = 3, type = "assembling-machine", tint = chemical_furnace_tint, has_fluids = true},
     ["electric-chemical-mixing-furnace"] = {furnace = "multi", tier = 4, type = "assembling-machine", has_fluids = true},
     ["electric-chemical-mixing-furnace-2"] = {furnace = "multi", tier = 5, type = "assembling-machine", has_fluids = true},
 
     -- Old names
-    ["chemical-furnace"] = {furnace = "chemical", tier = 3, type = "assembling-machine", tint = chemical_furnace_tint, has_fluids = true},
+    -- ["chemical-furnace"] = {furnace = "chemical", tier = 3, type = "assembling-machine", tint = chemical_furnace_tint, has_fluids = true},
 }
 
 local function electric_furnace_shadow()
