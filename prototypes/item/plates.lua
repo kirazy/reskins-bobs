@@ -66,13 +66,22 @@ local intermediaries = {
     ["tungsten-gear-wheel"] = {subgroup = "gears"},
 
     -- Nuclear
-    ["plutonium-fuel-cell"] = {subgroup = "nuclear"},
-    ["thorium-fuel-cell"] = {subgroup = "nuclear"},
-    ["thorium-plutonium-fuel-cell"] = {subgroup = "nuclear"},
-    ["deuterium-fuel-cell"] = {subgroup = "nuclear", image = "deuterium-fuel-cell-pink"},
+    ["plutonium-fuel-cell"] = {subgroup = "nuclear", make_icon_pictures = true, icon_picture_extras = {reskins.lib.lit_icon_pictures_layer(inputs.mod, "fuel-cell")}},
+    ["thorium-fuel-cell"] = {subgroup = "nuclear", make_icon_pictures = true, icon_picture_extras = {reskins.lib.lit_icon_pictures_layer(inputs.mod, "fuel-cell")}},
+    ["thorium-plutonium-fuel-cell"] = {subgroup = "nuclear", make_icon_pictures = true, icon_picture_extras = {reskins.lib.lit_icon_pictures_layer(inputs.mod, "fuel-cell")}},
+    ["deuterium-fuel-cell"] = {subgroup = "nuclear", image = "deuterium-fuel-cell-pink", make_icon_pictures = true, icon_picture_extras = {reskins.lib.lit_icon_pictures_layer(inputs.mod, "fuel-cell")}},
+    ["deuterium-fuel-cell-2"] = {subgroup = "nuclear", image = "deuterium-fuel-cell-2-pink", make_icon_pictures = true, icon_picture_extras = {reskins.lib.lit_icon_pictures_layer(inputs.mod, "fuel-cell")}},
     ["used-up-thorium-fuel-cell"] = {subgroup = "nuclear"},
     ["used-up-deuterium-fuel-cell"] = {subgroup = "nuclear", image = "used-up-deuterium-fuel-cell-pink"},
-    ["plutonium-239"] = {subgroup = "nuclear"},
+    ["plutonium-239"] = {subgroup = "nuclear", make_icon_pictures = true, icon_picture_extras = {{
+        draw_as_light = true,
+        blend_mode = "additive",
+        size = 64,
+        filename = reskins.bobs.directory.."/graphics/icons/plates/nuclear/plutonium-239.png",
+        scale = 0.25,
+        tint = {r = 0.3, g = 0.3, b = 0.3, a = 0.3},
+        mipmap_count = 4
+    }}},
     ["thorium-232"] = {subgroup = "nuclear"},
 
     -- Fluids
@@ -126,6 +135,7 @@ local intermediaries = {
 -- Handle deuterium color
 if reskins.lib.setting("bobmods-plates-bluedeuterium") == true then
     intermediaries["deuterium-fuel-cell"].image = "deuterium-fuel-cell-blue"
+    intermediaries["deuterium-fuel-cell-2"].image = "deuterium-fuel-cell-2-blue"
     intermediaries["used-up-deuterium-fuel-cell"].image = "used-up-deuterium-fuel-cell-blue"
 end
 

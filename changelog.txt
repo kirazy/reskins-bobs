@@ -7,6 +7,7 @@ Date: 2020.11.XX
   Bugfixes:
     - Fixed that the highlights layer for the filter inserter icon was not properly mipmapped
     - Fixed that the burner assembling machine reskin with AAI Industry present was not properly scaled
+    - Restricted particle generation for walls when Nauvis Day is present, pending rework of particle generation
   Locale:
     - Updated German localizations
 ---------------------------------------------------------------------------------------------------

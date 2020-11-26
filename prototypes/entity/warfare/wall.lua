@@ -19,6 +19,10 @@ local inputs = {
     particles = {["tiny-stone"] = 3, ["small-stone"] = 2, ["medium-stone"] = 1},
 }
 
+if mods["NauvisDay"] then
+    inputs.make_explosions = false
+end
+
 inputs.icon_filename = reskins.bobs.directory.."/graphics/icons/warfare/reinforced-wall/wall.png"
 
 local reinforced_tint_index = {
