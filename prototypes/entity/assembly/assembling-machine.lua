@@ -492,8 +492,10 @@ for name, map in pairs(tier_map) do
     -- Fix drawing box
     entity.drawing_box = nil
 
+    local test = reskins.bobs.triggers.assembly.burner_assembling_machine_is_small
+
     -- Rescale for electronics and burner assembling machines
-    if string.find(name, "electronics") or (reskins.bobs.triggers.burner_assembling_machine_is_small and name == "burner-assembling-machine") then
+    if string.find(name, "electronics") or (reskins.bobs.triggers.assembly.burner_assembling_machine_is_small and name == "burner-assembling-machine") then
         reskins.lib.rescale_entity(entity.animation, 2/3)
         reskins.lib.rescale_remnant(entity, 2/3)
     end

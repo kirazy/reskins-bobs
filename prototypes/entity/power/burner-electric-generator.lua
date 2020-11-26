@@ -200,5 +200,12 @@ entity.water_reflection = {
     orientation_to_variation = false
 }
 
+-- Handle ambient-light
+entity.energy_source.light_flicker = {
+    color = {0, 0, 0},
+    minimum_light_size = 0,
+    light_intensity_to_size_coefficient = 0,
+}
+
 -- Fix drawing box
 entity.drawing_box = {{-1.5, -2.25}, {1.5, 1.5}}
