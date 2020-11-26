@@ -144,6 +144,32 @@ local function skin_reactor_entity(name, inputs)
         }
     }
 
+    -- Lights
+    -- entity.light = {
+    --     type = "basic",
+    --     intensity = 0,
+    --     size = 0,
+    -- }
+    -- entity.working_light_picture = {
+    --     filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/reactor-lights.png",
+    --     blend_mode = "additive",
+    --     draw_as_glow = true,
+    --     width = 160,
+    --     height = 160,
+    --     shift = { -0.03125, -0.1875 },
+    --     hr_version = {
+    --         filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/hr-reactor-lights.png",
+    --         blend_mode = "additive",
+    --         draw_as_glow = true,
+    --         width = 320,
+    --         height = 320,
+    --         scale = 0.5,
+    --         shift = { -0.03125, -0.1875 },
+    --     }
+    -- }
+    -- entity.use_fuel_glow_color = nil
+    -- entity.default_fuel_glow_color = nil
+
     entity.connection_patches_connected =
     {
         sheet =
