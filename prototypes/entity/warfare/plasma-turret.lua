@@ -169,6 +169,7 @@ local function plasma_turret_extension_lights(parameters)
         axially_symmetrical = false,
         direction_count = 4,
         shift = shift,
+        draw_as_glow = true,
         hr_version = {
             filename = reskins.bobs.directory.."/graphics/entity/warfare/plasma-turret/hr-plasma-turret-cannon-raising-lights-mask-"..parameters.side..".png",
             priority = "medium",
@@ -182,6 +183,7 @@ local function plasma_turret_extension_lights(parameters)
             axially_symmetrical = false,
             direction_count = 4,
             shift = shift,
+            draw_as_glow = true,
             scale = 0.5
         }
     }
@@ -207,6 +209,7 @@ local function plasma_turret_extension_lights_highlights(parameters)
         axially_symmetrical = false,
         direction_count = 4,
         shift = shift,
+        draw_as_glow = true,
         hr_version = {
             filename = reskins.bobs.directory.."/graphics/entity/warfare/plasma-turret/hr-plasma-turret-cannon-raising-lights-highlights-"..parameters.side..".png",
             priority = "medium",
@@ -220,6 +223,7 @@ local function plasma_turret_extension_lights_highlights(parameters)
             axially_symmetrical = false,
             direction_count = 4,
             shift = shift,
+            draw_as_glow = true,
             scale = 0.5
         }
     }
@@ -405,6 +409,54 @@ for name, tier in pairs(tier_map) do
                     frame_count = 1,
                     direction_count = 64,
                     shift = util.by_pixel(-0.5, -35),
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    scale = 0.5
+                }
+            },
+            -- Light Mask
+            {
+                filename = reskins.bobs.directory.."/graphics/entity/warfare/plasma-turret/plasma-turret-cannon-shooting-light-mask.png",
+                line_length = 8,
+                width = 88,
+                height = 89,
+                frame_count = 1,
+                direction_count = 64,
+                shift = util.by_pixel(-0.5, -35),
+                draw_as_glow = true,
+                tint = inputs.tint,
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/entity/warfare/plasma-turret/hr-plasma-turret-cannon-shooting-light-mask.png",
+                    line_length = 8,
+                    width = 176,
+                    height = 178,
+                    frame_count = 1,
+                    direction_count = 64,
+                    shift = util.by_pixel(-0.5, -35),
+                    draw_as_glow = true,
+                    tint = inputs.tint,
+                    scale = 0.5
+                }
+            },
+            -- Light Highlights
+            {
+                filename = reskins.bobs.directory.."/graphics/entity/warfare/plasma-turret/plasma-turret-cannon-shooting-light-highlights.png",
+                line_length = 8,
+                width = 88,
+                height = 89,
+                frame_count = 1,
+                direction_count = 64,
+                shift = util.by_pixel(-0.5, -35),
+                draw_as_glow = true,
+                blend_mode = reskins.lib.blend_mode, -- "additive",
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/entity/warfare/plasma-turret/hr-plasma-turret-cannon-shooting-light-highlights.png",
+                    line_length = 8,
+                    width = 176,
+                    height = 178,
+                    frame_count = 1,
+                    direction_count = 64,
+                    shift = util.by_pixel(-0.5, -35),
+                    draw_as_glow = true,
                     blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5
                 }

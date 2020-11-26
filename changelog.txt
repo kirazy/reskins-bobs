@@ -1,13 +1,13 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.0
-Date: 2020.11.XX
+Date: 2020.11.26
   Features:
     - Moved to Factorio 1.1
     - Added support for electric mining and radar technologies added by AAI Industry
     - Added lighting to several plasma, uranium, and electric-based items and intermediaries
   Changes:
     - Replaced the stack and filter stack inserter icons with icons derived from the new stack inserter technology icons, improving the ability to distinguish the icons from regular inserters
-    - Updated accumulators, distilleries to the new lighting system
+    - Updated accumulators, barreling and compressor machines, centrifuges, distilleries, furnaces, and the plasma turrets to the new lighting system
   Bugfixes:
     - Fixed that the highlights layer for the filter inserter icon was not properly mipmapped
     - Fixed that the burner assembling machine reskin with AAI Industry present was not properly scaled

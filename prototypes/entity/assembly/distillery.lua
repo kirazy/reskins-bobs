@@ -119,7 +119,6 @@ for name, tier in pairs(tier_map) do
     entity.working_visualisations = {
         {
             effect = "uranium-glow",
-            light = {intensity = 0.5, size = 2, color = {r = 1.0, g = 1.0, b = 1.0}},
             fadeout = true,
             north_position = util.by_pixel(-7.5, -9),
             east_position = util.by_pixel(10, -9),
@@ -130,11 +129,13 @@ for name, tier in pairs(tier_map) do
                 width = 33,
                 height = 31,
                 shift = util.by_pixel(0, 0),
+                draw_as_glow = true,
                 hr_version = {
                     filename = reskins.bobs.directory.."/graphics/entity/assembly/distillery/lights/hr-distillery-light-north.png",
                     width = 66,
                     height = 62,
                     shift = util.by_pixel(0, 0),
+                    draw_as_glow = true,
                     scale = 0.5,
                 }
             },
@@ -143,11 +144,13 @@ for name, tier in pairs(tier_map) do
                 width = 34,
                 height = 30,
                 shift = util.by_pixel(0, 0),
+                draw_as_glow = true,
                 hr_version = {
                     filename = reskins.bobs.directory.."/graphics/entity/assembly/distillery/lights/hr-distillery-light-east.png",
                     width = 68,
                     height = 60,
                     shift = util.by_pixel(0, 0),
+                    draw_as_glow = true,
                     scale = 0.5,
                 }
             },
@@ -156,11 +159,13 @@ for name, tier in pairs(tier_map) do
                 width = 33,
                 height = 32,
                 shift = util.by_pixel(0, 0),
+                draw_as_glow = true,
                 hr_version = {
                     filename = reskins.bobs.directory.."/graphics/entity/assembly/distillery/lights/hr-distillery-light-south.png",
                     width = 66,
                     height = 64,
                     shift = util.by_pixel(0, 0),
+                    draw_as_glow = true,
                     scale = 0.5,
                 }
             },
@@ -169,11 +174,13 @@ for name, tier in pairs(tier_map) do
                 width = 33,
                 height = 29,
                 shift = util.by_pixel(0, 0),
+                draw_as_glow = true,
                 hr_version = {
                     filename = reskins.bobs.directory.."/graphics/entity/assembly/distillery/lights/hr-distillery-light-west.png",
                     width = 66,
                     height = 58,
                     shift = util.by_pixel(0, 0),
+                    draw_as_glow = true,
                     scale = 0.5,
                 }
             },

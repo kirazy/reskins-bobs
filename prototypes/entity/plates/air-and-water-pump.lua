@@ -203,6 +203,25 @@ for name, map in pairs(tier_map) do
             south_animation = recipe_ligtening_mask[pump_type].south,
             west_animation = recipe_ligtening_mask[pump_type].west,
         },
+        -- Light
+        {
+            always_draw = true,
+            west_animation = {
+                filename = reskins.bobs.directory.."/graphics/entity/plates/air-pump/pump-light.png",
+                width = 74,
+                height = 93,
+                shift = util.by_pixel(0, -9.5),
+                draw_as_light = true,
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/entity/plates/air-pump/hr-pump-light.png",
+                    width = 148,
+                    height = 186,
+                    shift = util.by_pixel(0, -9.5),
+                    draw_as_light = true,
+                    scale = 0.5,
+                }
+            }
+        }
     }
 
     if pump_type == "water" then

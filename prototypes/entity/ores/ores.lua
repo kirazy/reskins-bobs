@@ -21,7 +21,7 @@ local ores = {
     ["lead-ore"] = {mod = "lib", group = "shared"}, -- 404040
     ["rutile-ore"] = {},
     ["sulfur"] = {},
-    ["thorium-ore"] = {},
+    ["thorium-ore"] = {make_glow = true},
     ["tin-ore"] = {mod = "lib", group = "shared", variations = 8},
 
     -- Shared with Angel's
@@ -54,7 +54,7 @@ for name, params in pairs(ores) do
         inputs.icon_picture = nil
     else
         inputs.icon = reskins[mod].directory.."/graphics/icons/"..group.."/ores/"..name.."/"..name..".png"
-        inputs.icon_picture = reskins.lib.ore_icon_pictures(mod, group, name, params.variations or 4)
+        inputs.icon_picture = reskins.lib.ore_icon_pictures(mod, group, name, params.variations or 4, params.make_glow)
     end
 
     reskins.lib.assign_icons(name, inputs)

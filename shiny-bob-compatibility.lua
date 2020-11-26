@@ -12,7 +12,9 @@
 require("prototypes.entity.assembly.centrifuge")
 require("prototypes.entity.assembly.distillery")
 require("prototypes.entity.assembly.electrolyser")
-require("prototypes.entity.assembly.furnace")
+require("prototypes.entity.assembly.electric-furnace")
+require("prototypes.entity.assembly.steel-furnace")
+require("prototypes.entity.assembly.stone-furnace")
 
 -- Bob's Greenhouse
 -- require("prototypes.entity.greenhouse.greenhouse")

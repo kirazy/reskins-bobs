@@ -127,15 +127,14 @@ local function accumulator_charge_tinted(inputs)
     return
     {
         layers = {
-            accumulator_picture_tinted(inputs, 24),
-            {
+            accumulator_picture_tinted(inputs, 24), {
                 filename = "__base__/graphics/entity/accumulator/accumulator-charge.png",
                 priority = "high",
                 width = 90,
                 height = 100,
                 line_length = 6,
                 frame_count = 24,
-                blend_mode = "additive",
+                draw_as_glow = true,
                 shift = util.by_pixel(0, -22),
                 hr_version = {
                     filename = "__base__/graphics/entity/accumulator/hr-accumulator-charge.png",
@@ -144,7 +143,7 @@ local function accumulator_charge_tinted(inputs)
                     height = 206,
                     line_length = 6,
                     frame_count = 24,
-                    blend_mode = "additive",
+                    draw_as_glow = true,
                     shift = util.by_pixel(0, -22),
                     scale = 0.5
                 }
@@ -157,15 +156,14 @@ local function accumulator_discharge_tinted(inputs)
     return
     {
         layers = {
-            accumulator_picture_tinted(inputs, 24),
-            {
+            accumulator_picture_tinted(inputs, 24), {
                 filename = "__base__/graphics/entity/accumulator/accumulator-discharge.png",
                 priority = "high",
                 width = 88,
                 height = 104,
                 line_length = 6,
                 frame_count = 24,
-                blend_mode = "additive",
+                draw_as_glow = true,
                 shift = util.by_pixel(-2, -22),
                 hr_version = {
                     filename = "__base__/graphics/entity/accumulator/hr-accumulator-discharge.png",
@@ -174,7 +172,7 @@ local function accumulator_discharge_tinted(inputs)
                     height = 210,
                     line_length = 6,
                     frame_count = 24,
-                    blend_mode = "additive",
+                    draw_as_glow = true,
                     shift = util.by_pixel(-1, -23),
                     scale = 0.5
                 }
@@ -313,6 +311,10 @@ for name, map in pairs(tier_map) do
     entity.picture = accumulator_picture_tinted(inputs)
     entity.charge_animation = accumulator_charge_tinted(inputs)
     entity.discharge_animation = accumulator_discharge_tinted(inputs)
+
+    -- Remove lights
+    entity.charge_light = nil
+    entity.discharge_light = nil
 
     -- Label to skip to next iteration
     ::continue::
