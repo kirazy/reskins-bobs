@@ -144,26 +144,6 @@ local function skin_reactor_entity(name, inputs)
         }
     }
 
-    -- Lights
-    entity.working_light_picture = {
-        filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/reactor-lights.png",
-        blend_mode = "additive",
-        draw_as_glow = true,
-        width = 160,
-        height = 160,
-        shift = { -0.03125, -0.1875 },
-        hr_version = {
-            filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/hr-reactor-lights.png",
-            blend_mode = "additive",
-            draw_as_glow = true,
-            width = 320,
-            height = 320,
-            scale = 0.5,
-            shift = { -0.03125, -0.1875 },
-        }
-    }
-    entity.use_fuel_glow_color = true
-
     entity.connection_patches_connected =
     {
         sheet =
@@ -393,11 +373,6 @@ for name, map in pairs(tier_map) do
     -- Reskin entities
     skin_reactor_entity(name, inputs)
 
-    -- Handle ambient-light
-    entity.energy_source.light_flicker = {
-        color = {0, 0, 0}
-    }
-
     -- Reskin icons
     inputs.icon_base = "nuclear-reactor-"..fuel_index[name].."-"..inputs.pipe_tier
     reskins.lib.construct_icon(name, tier, inputs)
@@ -405,5 +380,3 @@ for name, map in pairs(tier_map) do
     -- Label to skip to next iteration
     ::continue::
 end
-
-local finished = true
