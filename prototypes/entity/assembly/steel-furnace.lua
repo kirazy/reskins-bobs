@@ -393,8 +393,12 @@ for name, map in pairs(steel_furnace_map) do
         entity.working_visualisations = data.raw["furnace"]["steel-furnace"].working_visualisations
     end
 
-    -- Turn off the standard area light
-    entity.energy_source.light_flicker = { color = {0,0,0} }
+    -- Handle ambient-light
+    entity.energy_source.light_flicker = {
+        color = {0, 0, 0},
+        minimum_light_size = 0,
+        light_intensity_to_size_coefficient = 0,
+    }
 
     if name ~= "steel-furnace" then
         entity.water_reflection = util.copy(data.raw["furnace"]["steel-furnace"].water_reflection)

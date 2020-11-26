@@ -344,8 +344,12 @@ for name, map in pairs(stone_furnace_map) do
         reskins.lib.construct_icon(name, tier, inputs)
     end
 
-    -- Turn off the standard area light
-    entity.energy_source.light_flicker = { color = {0,0,0} }
+    -- Handle ambient-light
+    entity.energy_source.light_flicker = {
+        color = {0, 0, 0},
+        minimum_light_size = 0,
+        light_intensity_to_size_coefficient = 0,
+    }
 
     if name ~= "stone-furnace" then
         entity.water_reflection = util.copy(data.raw["furnace"]["stone-furnace"].water_reflection)
