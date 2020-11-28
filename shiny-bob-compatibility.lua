@@ -17,7 +17,7 @@ require("prototypes.entity.assembly.steel-furnace")
 require("prototypes.entity.assembly.stone-furnace")
 
 -- Bob's Greenhouse
--- require("prototypes.entity.greenhouse.greenhouse")
+require("prototypes.entity.greenhouse.greenhouse")
 
 -- Bob's Logistics
 require("prototypes.entity.logistics.cargo-wagon")
