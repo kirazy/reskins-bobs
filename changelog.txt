@@ -3,6 +3,10 @@ Version: 1.1.1
 Date: 2020.12.XX
   Features:
     - Implemented the greenhouse
+  Changes:
+    - Burner electric generator now lights up at night
+  Bugfixes:
+    - Fixed that the burner electric generator had fuel-colored ambient lighting
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.0
 Date: 2020.11.26

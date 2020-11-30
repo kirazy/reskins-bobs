@@ -62,8 +62,9 @@ entity.animation = {
             frame_count = 48,
             direction_count = 1,
             repeat_count = 2,
-            blend_mode = reskins.lib.blend_mode, -- "additive",
+            blend_mode = "additive",
             shift = util.by_pixel(-1, 9.5),
+            draw_as_glow = true,
             hr_version = {
                 filename = reskins.bobs.directory.."/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator-fire.png",
                 priority = "high",
@@ -73,8 +74,9 @@ entity.animation = {
                 frame_count = 48,
                 direction_count = 1,
                 repeat_count = 2,
-                blend_mode = reskins.lib.blend_mode, -- "additive",
+                blend_mode = "additive",
                 shift = util.by_pixel(-1, 9.5),
+                draw_as_glow = true,
                 scale = 0.5
             }
         },
@@ -88,6 +90,7 @@ entity.animation = {
             repeat_count = 3,
             blend_mode = "additive",
             shift = util.by_pixel(0, -12.5),
+            draw_as_glow = true,
             hr_version = {
                 filename = reskins.bobs.directory.."/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator-working-light-animated.png",
                 width = 212,
@@ -97,6 +100,7 @@ entity.animation = {
                 repeat_count = 3,
                 blend_mode = "additive",
                 shift = util.by_pixel(0, -12.5),
+                draw_as_glow = true,
                 scale = 0.5
             }
         },
@@ -201,7 +205,7 @@ entity.water_reflection = {
 }
 
 -- Handle ambient-light
-entity.energy_source.light_flicker = {
+entity.burner.light_flicker = {
     color = {0, 0, 0},
     minimum_light_size = 0,
     light_intensity_to_size_coefficient = 0,
