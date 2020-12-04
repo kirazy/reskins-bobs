@@ -128,6 +128,7 @@ local function charge_port_base(shift_x, shift_y, subtier, tint)
             height = 16,
             frame_count = 12,
             shift = util.by_pixel(shift_x*32, shift_y*32+1),
+            draw_as_glow = true,
             tint = tint,
             hr_version = {
                 filename = reskins.bobs.directory.."/graphics/entity/logistics/robo-charge-port/hr-robo-charge-port-lights-mask.png",
@@ -137,6 +138,7 @@ local function charge_port_base(shift_x, shift_y, subtier, tint)
                 height = 32,
                 frame_count = 12,
                 shift = util.by_pixel(shift_x*32, shift_y*32+1),
+                draw_as_glow = true,
                 tint = tint,
                 scale = 0.5,
             }
@@ -150,6 +152,7 @@ local function charge_port_base(shift_x, shift_y, subtier, tint)
             height = 16,
             frame_count = 12,
             shift = util.by_pixel(shift_x*32, shift_y*32+1),
+            draw_as_glow = true,
             blend_mode = "additive",
             hr_version = {
                 filename = reskins.bobs.directory.."/graphics/entity/logistics/robo-charge-port/hr-robo-charge-port-lights-highlights.png",
@@ -159,6 +162,7 @@ local function charge_port_base(shift_x, shift_y, subtier, tint)
                 height = 32,
                 frame_count = 12,
                 shift = util.by_pixel(shift_x*32, shift_y*32+1),
+                draw_as_glow = true,
                 blend_mode = "additive",
                 scale = 0.5,
             }

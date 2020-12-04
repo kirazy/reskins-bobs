@@ -12,6 +12,8 @@ local inputs = {
     equipment_category = "logistics",
     mod = "bobs",
     group = "vehicle-equipment",
+    technology_icon_size = 256,
+    technology_icon_mipmaps = 4,
 }
 
 -- Setup defaults
@@ -45,11 +47,7 @@ for name, map in pairs(vehicle_roboports) do
     -- Construct technology icon
     inputs.icon_base = nil
 
-    inputs.technology_icon_extras = {
-        {
-            icon = reskins.bobs.directory.."/graphics/technology/equipment/vehicle-equipment-symbol.png"
-        }
-    }
+    inputs.technology_icon_extras = { reskins.lib.technology_equipment_overlay{scale = 1, is_vehicle = true} }
 
     reskins.lib.construct_technology_icon(string.gsub(name, "roboport", "roboport-equipment"), inputs)
 
@@ -87,8 +85,6 @@ for name, map in pairs(vehicle_roboports) do
             }
         }
     }
-
-
 
     -- Label to skip to next iteration
     ::continue::

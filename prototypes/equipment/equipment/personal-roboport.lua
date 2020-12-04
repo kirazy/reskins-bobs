@@ -11,6 +11,8 @@ local inputs = {
     icon_name = "personal-roboport",
     mod = "bobs",
     group = "equipment",
+    technology_icon_size = 256,
+    technology_icon_mipmaps = 4,
 }
 
 -- Setup defaults
@@ -83,11 +85,7 @@ for name, map in pairs(personal_roboports) do
     inputs.icon_mask = nil
     inputs.icon_highlights = nil
 
-    inputs.technology_icon_extras = {
-        {
-            icon = reskins.bobs.directory.."/graphics/technology/equipment/personal-equipment-symbol.png"
-        }
-    }
+    inputs.technology_icon_extras = { reskins.lib.technology_equipment_overlay{scale = 1} }
 
     reskins.lib.construct_technology_icon(name, inputs)
 

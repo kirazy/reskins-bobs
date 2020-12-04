@@ -40,11 +40,7 @@ for name, tier in pairs(laser_defense) do
     reskins.lib.construct_icon(name, tier, inputs)
 
     -- Construct technology icon
-    inputs.technology_icon_extras = {
-        {
-            icon = reskins.bobs.directory.."/graphics/technology/equipment/personal-equipment-symbol.png"
-        }
-    }
+    inputs.technology_icon_extras = { reskins.lib.technology_equipment_overlay() }
 
     reskins.lib.construct_technology_icon(name, inputs)
 
