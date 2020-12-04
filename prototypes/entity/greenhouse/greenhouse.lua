@@ -11,11 +11,10 @@ if reskins.lib.setting("reskins-bobs-do-bobgreenhouse") == false then return end
 local inputs = {
     type = "assembling-machine",
     icon_name = "greenhouse",
-    base_entity = "assembling-machine-1",
+    base_entity = "lab",
     mod = "bobs",
-    particles = {["big"] = 1, ["medium"] = 2},
     group = "greenhouse",
-    make_icons = false,
+    icon_layers = 1,
 }
 
 -- Fetch entity
@@ -23,6 +22,8 @@ local entity = data.raw["assembling-machine"]["bob-greenhouse"]
 
 -- Check if entity exists, if not, return
 if not entity then return end
+
+reskins.lib.setup_standard_entity("bob-greenhouse", 0, inputs)
 
 local greenhouse_base = reskins.lib.make_4way_animation_from_spritesheet({
     -- Base

@@ -3,8 +3,11 @@ Version: 1.1.1
 Date: 2020.12.XX
   Features:
     - Implemented the greenhouse
+    - Added item icon for silicon plate, credit to Vigil for the sprite
   Changes:
     - Burner electric generator now lights up at night
+    - Renamed "Silicon plate" to "Silicon boule"
+    - Robot charging ports now light up at night
   Bugfixes:
     - Fixed that the burner electric generator had fuel-colored ambient lighting
 ---------------------------------------------------------------------------------------------------
