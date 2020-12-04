@@ -94,6 +94,8 @@ local intermediaries = {
     ["alien-poison"] = {type = "fluid", subgroup = "fluids"},
 
     -- Miscellaneous Items
+    ["silicon-wafer"] = {mod = "lib", group = "shared", subgroup = "items"},
+    ["silicon"] = {subgroup = "items"},
     ["glass"] = {mod = "lib", group = "shared", subgroup = "items"},
     ["carbon"] = {subgroup = "items"},
     ["rubber"] = {mod = "lib", group = "shared", subgroup = "items"}, -- Shared with Bob's Electronics, Angels

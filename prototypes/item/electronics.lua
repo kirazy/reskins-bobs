@@ -19,6 +19,9 @@ local intermediaries = {
     ["gilded-copper-cable"] = {mod = "lib", group = "shared", subgroup = "items"},
     ["tinned-copper-cable"] = {subgroup = "wires",},
     ["insulated-cable"] = {subgroup = "wires"},
+
+    -- Intermediaries
+    ["solder"] = {mod = "lib", group = "shared", subgroup = "items"},
 }
 
 -- Items and recipes shared with other mods within Bob's suite
@@ -28,6 +31,7 @@ if not mods["bobplates"] then
     intermediaries["rubber"] = {mod = "lib", group = "shared", subgroup = "items"}
     intermediaries["resin"] = {group = "plates", subgroup = "items"}
     intermediaries["ferric-chloride-solution"] = {type = "fluid", group = "plates", subgroup = "fluids"}
+    intermediaries["silicon-wafer"] = {mod = "lib", group = "shared", subgroup = "items"}
 
     -- Recipes
     intermediaries["coal-cracking"] = {type = "recipe", group = "plates", subgroup = "recipes"}
