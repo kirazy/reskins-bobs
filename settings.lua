@@ -212,6 +212,12 @@ if mods["bobtech"] then
             setting_type = "startup",
             default_value = true,
         },
+        {
+            type = "bool-setting",
+            name = "reskins-bobs-show-alien-decoratives-on-lab",
+            setting_type = "startup",
+            default_value = true,
+        },
     })
 end
 
