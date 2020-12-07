@@ -104,10 +104,12 @@ require("prototypes.equipment.equipment.solar-panel")
 
 -- Bob's Vehicle Equipment
 require("prototypes.equipment.vehicle-equipment.vehicle-battery")
+require("prototypes.equipment.vehicle-equipment.vehicle-belt-immunity")
 require("prototypes.equipment.vehicle-equipment.vehicle-energy-shield")
 require("prototypes.equipment.vehicle-equipment.vehicle-fusion-cell")
 require("prototypes.equipment.vehicle-equipment.vehicle-fusion-reactor")
 require("prototypes.equipment.vehicle-equipment.vehicle-laser-defense")
+require("prototypes.equipment.vehicle-equipment.vehicle-mobility")
 require("prototypes.equipment.vehicle-equipment.vehicle-roboport")
 require("prototypes.equipment.vehicle-equipment.vehicle-roboport-parts")
 require("prototypes.equipment.vehicle-equipment.vehicle-solar-panel")
@@ -129,7 +131,7 @@ require("prototypes.item.warfare")
 -- TECHNOLOGIES
 ----------------------------------------------------------------------------------------------------
 require("prototypes.technology.assembly")
--- require("prototypes.technology.electronics")
+require("prototypes.technology.equipment")
 require("prototypes.technology.greenhouse")
 require("prototypes.technology.logistics")
 require("prototypes.technology.mining")
