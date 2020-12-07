@@ -9,7 +9,7 @@ if not mods["bobvehicleequipment"] then return end
 local inputs = {
     type = "roboport-equipment",
     icon_name = "vehicle-roboport",
-    equipment_category = "logistics",
+    equipment_category = "utility",
     mod = "bobs",
     group = "vehicle-equipment",
     technology_icon_size = 256,

@@ -8,7 +8,7 @@ if not mods["bobvehicleequipment"] then return end
 
 local inputs = {
     type = "roboport-equipment",
-    equipment_category = "logistics",
+    equipment_category = "utility",
     mod = "bobs",
     group = "vehicle-equipment",
 }
