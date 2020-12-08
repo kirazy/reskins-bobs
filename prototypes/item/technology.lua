@@ -5,6 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobtech"] then return end
+if mods["ScienceCostTweakerM"] then return end
 
 local inputs = {
     mod = "bobs",

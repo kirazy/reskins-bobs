@@ -35,6 +35,7 @@ require("prototypes.technology.warfare") -- Bob does tech updates in data-update
 -- COMPATIBILITY
 ----------------------------------------------------------------------------------------------------
 require("prototypes.compatibility.deadlock-stacking-beltboxes")
+-- require("prototypes.compatibility.sciencecosttweaker")
 
 -- Assign deferred icons
 reskins.lib.assign_deferred_icons("bobs", "data-updates")
