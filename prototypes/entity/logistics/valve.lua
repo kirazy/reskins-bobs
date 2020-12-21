@@ -12,7 +12,6 @@ local inputs = {
     group = "logistics",
     particles = {["small"] = 2},
     icon_layers = 2,
-    tier_labels = false,
     make_remnants = false,
 }
 
@@ -28,44 +27,37 @@ local function cardinal_pictures(x, tint)
 
     return
     {
-        layers =
-        {
+        layers = {
             -- Base
             {
                 filename = reskins.bobs.directory.."/graphics/entity/logistics/valve/valve-base.png",
+                priority = "extra-high",
                 x = x_lr,
                 width = 64,
                 height = 64,
-                frame_count = 1,
-                -- shift = util.by_pixel(17, 0),
-                hr_version =
-                {
+                hr_version = {
                     filename = reskins.bobs.directory.."/graphics/entity/logistics/valve/hr-valve-base.png",
+                    priority = "extra-high",
                     x = x_hr,
                     width = 128,
                     height = 128,
-                    frame_count = 1,
-                    -- shift = util.by_pixel(17, 0),
                     scale = 0.5
                 }
             },
             -- Mask
             {
                 filename = reskins.bobs.directory.."/graphics/entity/logistics/valve/valve-mask.png",
+                priority = "extra-high",
                 x = x_lr,
                 width = 64,
                 height = 64,
-                frame_count = 1,
-                -- shift = util.by_pixel(17, 0),
                 tint = tint,
-                hr_version =
-                {
+                hr_version = {
                     filename = reskins.bobs.directory.."/graphics/entity/logistics/valve/hr-valve-mask.png",
+                    priority = "extra-high",
                     x = x_hr,
                     width = 128,
                     height = 128,
-                    frame_count = 1,
-                    -- shift = util.by_pixel(17, 0),
                     tint = tint,
                     scale = 0.5
                 }
@@ -85,7 +77,7 @@ for name, tint in pairs(tint_map) do
     -- Assign tint
     inputs.tint = tint
 
-    reskins.lib.setup_standard_entity(name, 3, inputs)
+    reskins.lib.setup_standard_entity(name, 0, inputs)
 
     -- Reskin entities
     entity.pictures.picture.north = cardinal_pictures(0, inputs.tint)

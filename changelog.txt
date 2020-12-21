@@ -11,6 +11,7 @@ Date: 2020.12.XX
     - Robot charging ports now light up at night
     - Updated personal and vehicle roboport technologies to the new technology icons
     - Reskinning of science packs and related technologies is inactivated when Science Cost Tweaker mod is present
+    - Made code adjustments to how valves are reskinned
   Bugfixes:
     - Fixed that the burner electric generator had fuel-colored ambient lighting
     - Fixed that tank icon at 32, 16 and 8 pixels had a border
