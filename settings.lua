@@ -217,6 +217,7 @@ if mods["bobtech"] then
             name = "reskins-bobs-show-alien-decoratives-on-lab",
             setting_type = "startup",
             default_value = true,
+            hidden = true,
         },
     })
 end

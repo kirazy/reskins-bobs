@@ -25,3 +25,11 @@ if not mods["bobplates"] then
 end
 
 reskins.lib.create_icons_from_list(intermediaries, inputs)
+
+local composite_recipes = {
+    ["ammonium-chloride-recycling"] = {["ammonium-chloride"] = {}, ["ammonia"] = {type = "fluid", scale = 0.375, shift = {-10, 11}}, ["calcium-chloride"] = {scale = 0.375, shift = {10, 11}}},
+}
+
+for name, sources in pairs(composite_recipes) do
+    reskins.lib.composite_existing_icons(name, "recipe", sources)
+end

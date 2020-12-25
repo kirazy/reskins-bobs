@@ -1,9 +1,10 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.1
-Date: 2020.12.XX
+Date: 2020.12.25
   Features:
     - Implemented the greenhouse
     - Added item icon for silicon plate, credit to Vigil for the sprite
+    - Added icons for calcium chloride, sodium hydroxide and alumina
     - Finished implementation of personal and vehicle equipment and related technologies, excluding those related to plasma cannons
   Changes:
     - Burner electric generator now lights up at night

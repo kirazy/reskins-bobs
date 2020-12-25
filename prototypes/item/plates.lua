@@ -101,6 +101,9 @@ local intermediaries = {
     ["rubber"] = {mod = "lib", group = "shared", subgroup = "items"}, -- Shared with Bob's Electronics, Angels
     ["resin"] = {subgroup = "items"}, -- Shared with Bob's Electronics
     ["enriched-fuel"] = {subgroup = "items"},
+    ["alumina"] = {subgroup = "items"},
+    ["calcium-chloride"] = {subgroup = "items"},
+    ["sodium-hydroxide"] = {subgroup = "items"},
 
     ----------------------------------------------------------------------------------------------------
     -- Recipes
