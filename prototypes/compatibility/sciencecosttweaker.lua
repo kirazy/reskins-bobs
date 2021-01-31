@@ -1,4 +1,4 @@
--- Copyright (c) 2020 Kirazy
+-- Copyright (c) 2021 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -11,8 +11,8 @@ if not mods["ScienceCostTweakerM"] then return end
 -- Items
 
 -- Technologies
-sct-lab-t1 -- sct-lab-t1-icon-128.png
+-- sct-lab-t1 -- sct-lab-t1-icon-128.png
 
 
 
-sct-automation-science-pack -- science-pack-1-128.png
+-- sct-automation-science-pack -- science-pack-1-128.png
