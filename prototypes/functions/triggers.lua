@@ -3,8 +3,6 @@
 --
 -- See LICENSE in the project directory for license information.
 
--- Check if reskinning needs to be done
-
 local triggers = {}
 
 -- Angel's Industries
