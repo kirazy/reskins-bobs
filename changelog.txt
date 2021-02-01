@@ -1,6 +1,11 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.2
-Date: 2021.01.XX
+Date: 2021.01.31
+  Features:
+    - Added compatibility for stacked science packs added by Deadlock Stacking for Vanilla
+    - Added compatibility for stacked science packs added by Deadlock Stacking for Bobs, non-functional until removal of `reskins-bobs` as a dependency
+  Changes:
+    - Adjusted advanced logistic science pack to use a single-layer icon instead of a dynamically generated icon
   Locale:
     - Added Russian localization
 ---------------------------------------------------------------------------------------------------

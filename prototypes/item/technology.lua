@@ -16,7 +16,7 @@ local inputs = {
 }
 
 local items = {
-    ["advanced-logistic-science-pack"] = {tint = util.color("de00a3")}
+    ["advanced-logistic-science-pack"] = {flat_icon = true, subgroup = "science-pack"}
 }
 
 -- Color overhaul for science packs
