@@ -41,7 +41,7 @@ for name, map in pairs(batteries) do
 
     -- Determine what tint we're using
     if reskins.lib.setting("bobmods-colorupdate") then
-        inputs.tint = reskins.lib.tint_index["tier-"..tier]
+        inputs.tint = reskins.lib.tint_index[tier]
     else
         inputs.tint = util.color(map[4])
     end

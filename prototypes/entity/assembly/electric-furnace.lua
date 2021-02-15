@@ -199,7 +199,7 @@ for name, map in pairs(electric_furnace_map) do
         mod = "bobs",
         group = "assembly",
         particles = {["medium"] = 2},
-        tint = map.tint or reskins.lib.tint_index["tier-"..tier],
+        tint = map.tint or reskins.lib.tint_index[tier],
         icon_name = "electric-furnace",
     }
 

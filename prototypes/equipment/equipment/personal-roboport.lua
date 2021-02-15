@@ -46,7 +46,7 @@ for name, map in pairs(personal_roboports) do
     inputs.icon_highlights = inputs.icon_base
 
     -- Determine what tint we're using
-    inputs.tint = reskins.lib.tint_index["tier-"..tier]
+    inputs.tint = reskins.lib.tint_index[tier]
 
     -- Construct icon
     reskins.lib.construct_icon(name, tier, inputs)

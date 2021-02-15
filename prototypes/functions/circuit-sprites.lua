@@ -45,7 +45,7 @@ for circuit, map in pairs(circuits) do
     end
 
     -- Fetch tint
-    local tint = reskins.lib.tint_index["tier-"..tier]
+    local tint = reskins.lib.tint_index[tier]
 
     -- Make tier colored sprites
     data:extend({

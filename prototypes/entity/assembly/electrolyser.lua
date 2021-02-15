@@ -39,7 +39,7 @@ for name, map in pairs(tier_map) do
     local shadow = map[2]
 
     -- Determine what tint we're using
-    inputs.tint = reskins.lib.tint_index["tier-"..tier]
+    inputs.tint = reskins.lib.tint_index[tier]
 
     -- Handle unique icons
     inputs.icon_base = "electrolyser-"..tier

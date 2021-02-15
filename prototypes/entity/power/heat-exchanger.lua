@@ -40,7 +40,7 @@ for name, map in pairs(tier_map) do
     if not entity then goto continue end
 
     -- Determine what tint we're using
-    inputs.tint = reskins.lib.tint_index["tier-"..tier]
+    inputs.tint = reskins.lib.tint_index[tier]
 
     -- Setup icon details
     inputs.icon_base = "heat-exchanger-"..pipe

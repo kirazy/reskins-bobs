@@ -42,7 +42,7 @@ for name, map in pairs(vehicle_roboports) do
     local equipment_base = map[1]
 
     -- Determine what tint we're using
-    inputs.tint = reskins.lib.tint_index["tier-"..tier]
+    inputs.tint = reskins.lib.tint_index[tier]
 
     -- Construct technology icon
     inputs.icon_base = nil

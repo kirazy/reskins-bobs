@@ -443,7 +443,7 @@ for name, tier in pairs(inserter_map) do
     end
 
     -- Determine what tint we're using
-    inputs.tint = reskins.lib.tint_index["tier-"..tier]
+    inputs.tint = reskins.lib.tint_index[tier]
     if string.find(name, "filter") then
         inputs.platform_tint = util.color("bfbfbf") -- Whiteish
     else
@@ -478,7 +478,7 @@ for name, tier in pairs(inserter_map) do
                 },
                 {
                     icon = reskins.bobs.directory.."/graphics/icons/logistics/inserter/filter.png",
-                    tint = reskins.lib.adjust_alpha(reskins.lib.tint_index["tier-"..tier], 0.75)
+                    tint = reskins.lib.adjust_alpha(reskins.lib.tint_index[tier], 0.75)
                 },
             }
         end

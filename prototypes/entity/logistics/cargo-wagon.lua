@@ -41,7 +41,7 @@ for name, map in pairs(tier_map) do
     end
 
     -- Determine what tint we're using
-    inputs.tint = reskins.lib.tint_index["tier-"..tier]
+    inputs.tint = reskins.lib.tint_index[tier]
 
     -- Setup icon details
     if string.find(name, "armoured") then
@@ -51,7 +51,7 @@ for name, map in pairs(tier_map) do
             },
             {
                 icon = reskins.bobs.directory.."/graphics/icons/logistics/locomotive/armored-train-symbol.png",
-                tint = reskins.lib.adjust_alpha(reskins.lib.tint_index["tier-"..tier], 0.75)
+                tint = reskins.lib.adjust_alpha(reskins.lib.tint_index[tier], 0.75)
             }
         }
     else

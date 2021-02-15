@@ -130,7 +130,7 @@ for name, map in pairs(fluid_generators) do
     local frequency = map[3]
 
     -- Determine what tint we're using
-    inputs.tint = map[4] or reskins.lib.tint_index["tier-"..tier]
+    inputs.tint = map[4] or reskins.lib.tint_index[tier]
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 

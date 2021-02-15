@@ -467,7 +467,7 @@ for name, map in pairs(tier_map) do
     end
 
     -- Determine what tint we're using
-    inputs.tint = fusion_robot_color or reskins.lib.tint_index["tier-"..tier]
+    inputs.tint = fusion_robot_color or reskins.lib.tint_index[tier]
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 

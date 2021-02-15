@@ -9,7 +9,7 @@
   "dependencies":
   [
     "base",
-    "reskins-library >= 1.1.1",
+    "reskins-library >= 1.1.3",
     "? bobassembly",
     "? bobelectronics",
     "? bobgreenhouse",
@@ -26,10 +26,7 @@
     "? bobwarfare",
     "(?) angelssmelting",
     "(?) CircuitProcessing",
-    "(?) semi-classic-mining-drill",
-    "(?) ScienceCostTweakerM",
     "(?) ShinyBobGFX",
-    "(?) ShinyAngelGFX",
-    "(?) vanilla-loaders-hd"
+    "(?) ShinyAngelGFX"
   ]
 }

@@ -99,7 +99,7 @@
 -- --     inputs.internal_name = inputs.root_name.."-"..tier
 
 -- --     -- Determine what tint we're using
--- --     inputs.tint = reskins.lib.tint_index["tier-"..tier]
+-- --     inputs.tint = reskins.lib.tint_index[tier]
 
 -- --     reskins.lib.setup_standard_entity(name, tier, inputs)
 

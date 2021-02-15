@@ -10,11 +10,7 @@ reskins.bobs.directory = "__reskins-bobs__"
 reskins.bobs.status = {}
 
 -- CONSTANTS
-if reskins.lib.setting("reskins-bobs-do-basic-belts-separately") == true then
-    reskins.bobs.basic_belt_tint = util.color(reskins.lib.setting("reskins-bobs-basic-belts-color"))
-else
-    reskins.bobs.basic_belt_tint = reskins.lib.tint_index["tier-0"]
-end
+
 
 reskins.bobs.module_color_map = {
     ["blue"] = {primary = util.color("70b6ff"), secondary = util.color("30d2ff")},
@@ -156,114 +152,18 @@ function reskins.bobs.make_robot_particle(prototype)
     }
 end
 
--- TRANSPORT BELT PICTURES
-function reskins.bobs.transport_belt_animation_set(tint, variant)
-    local transport_belt_animation_set
-    if variant == 1 then
-        transport_belt_animation_set = {
-            animation_set = {
-                layers = {
-                    -- Base
-                    {
-                        filename = reskins.bobs.directory.."/graphics/entity/logistics/transport-belt/transport-belt-1-base.png",
-                        priority = "extra-high",
-                        width = 64,
-                        height = 64,
-                        frame_count = 16,
-                        direction_count = 20,
-                        hr_version = {
-                            filename = reskins.bobs.directory.."/graphics/entity/logistics/transport-belt/hr-transport-belt-1-base.png",
-                            priority = "extra-high",
-                            width = 128,
-                            height = 128,
-                            scale = 0.5,
-                            frame_count = 16,
-                            direction_count = 20
-                        }
-                    },
-                    -- Mask
-                    {
-                        filename = reskins.bobs.directory.."/graphics/entity/logistics/transport-belt/transport-belt-1-mask.png",
-                        priority = "extra-high",
-                        width = 64,
-                        height = 64,
-                        frame_count = 16,
-                        tint = tint,
-                        direction_count = 20,
-                        hr_version = {
-                            filename = reskins.bobs.directory.."/graphics/entity/logistics/transport-belt/hr-transport-belt-1-mask.png",
-                            priority = "extra-high",
-                            width = 128,
-                            height = 128,
-                            scale = 0.5,
-                            frame_count = 16,
-                            tint = tint,
-                            direction_count = 20
-                        }
-                    },
-                }
-            }
-        }
-    else
-        transport_belt_animation_set = {
-            animation_set = {
-                layers = {
-                    -- Base
-                    {
-                        filename = reskins.bobs.directory.."/graphics/entity/logistics/transport-belt/transport-belt-2-base.png",
-                        priority = "extra-high",
-                        width = 64,
-                        height = 64,
-                        frame_count = 32,
-                        direction_count = 20,
-                        hr_version = {
-                            filename = reskins.bobs.directory.."/graphics/entity/logistics/transport-belt/hr-transport-belt-2-base.png",
-                            priority = "extra-high",
-                            width = 128,
-                            height = 128,
-                            scale = 0.5,
-                            frame_count = 32,
-                            direction_count = 20
-                        }
-                    },
-                    -- Mask
-                    {
-                        filename = reskins.bobs.directory.."/graphics/entity/logistics/transport-belt/transport-belt-2-mask.png",
-                        priority = "extra-high",
-                        width = 64,
-                        height = 64,
-                        frame_count = 32,
-                        tint = tint,
-                        direction_count = 20,
-                        hr_version = {
-                            filename = reskins.bobs.directory.."/graphics/entity/logistics/transport-belt/hr-transport-belt-2-mask.png",
-                            priority = "extra-high",
-                            width = 128,
-                            height = 128,
-                            scale = 0.5,
-                            frame_count = 32,
-                            tint = tint,
-                            direction_count = 20
-                        }
-                    },
-                }
-            }
-        }
-    end
-    return transport_belt_animation_set
-end
-
+-- DEPRECATED; belt tints have been broken out into a separate belt_tint_index
 -- Determine belt-related entity tints with special handling for basic belt entity types
-function reskins.bobs.belt_tint_handling(name, tier)
-    local tint
-    if string.find(name, "basic") then
-        tint = reskins.lib.belt_mask_tint(reskins.bobs.basic_belt_tint)
-    else
-        tint = reskins.lib.belt_mask_tint(reskins.lib.tint_index["tier-"..tier])
-    end
+-- function reskins.bobs.belt_tint_handling(name, tier)
+--     local tint
+--     if string.find(name, "basic") then
+--         tint = reskins.lib.belt_mask_tint(reskins.bobs.basic_belt_tint)
+--     else
+--         tint = reskins.lib.belt_mask_tint(reskins.lib.tint_index[tier])
+--     end
 
-    return tint
-end
+--     return tint
+-- end
 
 -- PIPE-RELATED PICTURE AND COVER GENERATION
 -- Prepare assembly-machine-style pipe pictures

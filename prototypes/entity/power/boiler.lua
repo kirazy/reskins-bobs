@@ -45,7 +45,7 @@ for name, map in pairs(tier_map) do
     local has_fluids = map[3]
 
     -- Determine what tint we're using
-    inputs.tint = reskins.lib.tint_index["tier-"..tier]
+    inputs.tint = reskins.lib.tint_index[tier]
 
     -- Setup icon details
     if has_fluids == true then

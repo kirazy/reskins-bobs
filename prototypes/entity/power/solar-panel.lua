@@ -60,12 +60,12 @@ for name, map in pairs(tier_map) do
         },
         {
             icon = reskins.bobs.directory.."/graphics/icons/power/"..inputs.icon_name.."/"..inputs.icon_name.."-icon-type.png",
-            tint = reskins.lib.adjust_alpha(reskins.lib.tint_index["tier-"..tier], 0.75)
+            tint = reskins.lib.adjust_alpha(reskins.lib.tint_index[tier], 0.75)
         }
     }
 
     -- Determine what tint we're using
-    inputs.tint = reskins.lib.tint_index["tier-"..tier]
+    inputs.tint = reskins.lib.tint_index[tier]
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 

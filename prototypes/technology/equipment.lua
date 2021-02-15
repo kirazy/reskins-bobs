@@ -34,7 +34,7 @@ for name, map in pairs(technology) do
     end
 
     -- Determine what tint we're using
-    inputs.tint = map.tint or reskins.lib.tint_index["tier-"..tier]
+    inputs.tint = map.tint or reskins.lib.tint_index[tier]
 
     inputs.icon_base = inputs.icon_name.."-"..map.tier
 

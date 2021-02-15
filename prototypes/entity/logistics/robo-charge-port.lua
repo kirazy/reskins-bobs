@@ -187,7 +187,7 @@ for name, map in pairs(tier_map) do
     local is_large = map[3]
 
     -- Determine what tint we're using
-    inputs.tint = reskins.lib.tint_index["tier-"..tier]
+    inputs.tint = reskins.lib.tint_index[tier]
 
     -- Icon handling
 

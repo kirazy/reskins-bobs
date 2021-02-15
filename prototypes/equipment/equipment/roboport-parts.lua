@@ -61,7 +61,7 @@ for _, category in pairs(categories) do
         end
 
         -- Determine what tint we're using
-        inputs.tint = reskins.lib.tint_index["tier-"..tier]
+        inputs.tint = reskins.lib.tint_index[tier]
 
         -- Construct icon
         reskins.lib.construct_icon(name, tier, inputs)

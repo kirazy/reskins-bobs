@@ -34,7 +34,7 @@ for name, tier in pairs(laser_defense) do
     if not equipment then goto continue end
 
     -- Determine what tint we're using
-    inputs.tint = reskins.lib.tint_index["tier-"..tier]
+    inputs.tint = reskins.lib.tint_index[tier]
 
     -- Construct icon
     reskins.lib.construct_icon(name, tier, inputs)

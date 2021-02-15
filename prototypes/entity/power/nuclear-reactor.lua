@@ -357,7 +357,7 @@ for name, map in pairs(tier_map) do
         reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["medium"], 2, inputs.tint)
     else
         inputs.reactor = "reactor-"..tier
-        inputs.tint = reskins.lib.tint_index["tier-"..tier]
+        inputs.tint = reskins.lib.tint_index[tier]
 
         -- Create particles
         reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["big"], 1, inputs.tint)

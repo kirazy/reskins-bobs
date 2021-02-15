@@ -35,11 +35,8 @@ require("prototypes.entity.logistics.pump")
 require("prototypes.entity.logistics.robo-charge-port")
 require("prototypes.entity.logistics.robochest")
 require("prototypes.entity.logistics.roboport")
-require("prototypes.entity.logistics.splitter")
 require("prototypes.entity.logistics.storage-tank-all-corners")
 require("prototypes.entity.logistics.storage-tank")
-require("prototypes.entity.logistics.transport-belt")
-require("prototypes.entity.logistics.underground-belt")
 require("prototypes.entity.logistics.valve")
 
 -- Bob's Mining
@@ -137,13 +134,3 @@ require("prototypes.technology.logistics")
 require("prototypes.technology.mining")
 require("prototypes.technology.plates")
 require("prototypes.technology.power")
-
-----------------------------------------------------------------------------------------------------
--- COMPATIBILITY
-----------------------------------------------------------------------------------------------------
-require("prototypes.compatibility.loaderredux")
-require("prototypes.compatibility.miniloader")
-require("prototypes.compatibility.vanilla-loaders-hd")
-require("prototypes.compatibility.classic-beacon")
-require("prototypes.compatibility.classic-mining-drill")
-require("prototypes.compatibility.semi-classic-mining-drill")

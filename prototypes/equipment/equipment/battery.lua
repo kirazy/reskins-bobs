@@ -38,7 +38,7 @@ for name, map in pairs(batteries) do
     local technology = map[2]
 
     -- Determine what tint we're using
-    inputs.tint = reskins.lib.tint_index["tier-"..tier]
+    inputs.tint = reskins.lib.tint_index[tier]
 
     -- Construct icon
     reskins.lib.construct_icon(name, tier, inputs)

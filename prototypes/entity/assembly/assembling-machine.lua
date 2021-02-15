@@ -48,7 +48,7 @@ for name, map in pairs(tier_map) do
     if not entity then goto continue end
 
     -- Determine what tint we're using
-    inputs.tint = map.tint or reskins.lib.tint_index["tier-"..map.tier]
+    inputs.tint = map.tint or reskins.lib.tint_index[map.tier]
 
     -- Setup icon details
     if string.find(name, "electronics") then

@@ -163,7 +163,7 @@ for name, map in pairs(tier_map) do
     local variant = map[2] or false
 
     -- Determine what tint we're using
-    inputs.tint = reskins.lib.tint_index["tier-"..tier]
+    inputs.tint = reskins.lib.tint_index[tier]
 
     -- Setup icon base details
     if variant then
