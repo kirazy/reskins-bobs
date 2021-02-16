@@ -231,6 +231,7 @@ local function setup_vanilla_module_slot(parameters)
     end
 
     -- Setup slots
+    local slot = {}
     if parameters.is_slot_2 then
         -- Slot 2 (Top Right)
         slot = {

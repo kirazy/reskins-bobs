@@ -1,6 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.3
 Date: 2021.02.XX
+  Features:
+    - Added rich text support to new game ore richness controls in line with changes in Factorio 1.1.24, pending native support in Bob's Ores mod
   Changes:
     - Revised brightness of the 1-light and 5-light module configurations
     - Code revisions to support changes in Artisanal Reskins: Library, now dependent on 1.1.3
@@ -9,6 +11,7 @@ Date: 2021.02.XX
     - Transport belt and related entity reskinning is no longer controlled by the setting "Bob's Logistics"
   Bugfixes:
     - Fixed that tier labels for transport belts and related entities did not respect the setting "Belt tier labels"
+    - Fixed that a variable in module setup was unintentionally globally accessible
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.2
 Date: 2021.01.31

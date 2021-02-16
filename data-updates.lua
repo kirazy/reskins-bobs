@@ -18,6 +18,9 @@ require("prototypes.entity.assembly.chemical-plant") -- Bob reskins in data-upda
 -- Bob's Power
 require("prototypes.entity.power.nuclear-reactor") -- Bob reskins in data-updates
 
+-- Bob's Ores
+require("prototypes.entity.ores.ores-updates")
+
 ----------------------------------------------------------------------------------------------------
 -- ITEMS
 ----------------------------------------------------------------------------------------------------
