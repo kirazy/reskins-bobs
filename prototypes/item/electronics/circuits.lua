@@ -101,25 +101,4 @@ elseif circuit_color_style == "colored-vanilla" then
     circuits["advanced-processing-unit"] = {subgroup = "circuits-vanilla"}
 end
 
--- Check for circuit processing, and remap the circuits if present
-if mods["CircuitProcessing"] then
-    -- Transcribe to the new names
-    circuits["cp-electronic-circuit-board"] = util.copy(circuits["electronic-circuit"])
-    circuits["cp-advanced-circuit-board"] = util.copy(circuits["advanced-circuit"])
-    circuits["cp-processing-board"] = util.copy(circuits["processing-unit"])
-    circuits["cp-advanced-processing-board"] = util.copy(circuits["advanced-processing-unit"])
-
-    -- Map to the image to use
-    circuits["cp-electronic-circuit-board"].image = "electronic-circuit"
-    circuits["cp-advanced-circuit-board"].image = "advanced-circuit"
-    circuits["cp-processing-board"].image = "processing-unit"
-    circuits["cp-advanced-processing-board"].image = "advanced-processing-unit"
-
-    -- Clear old mappings
-    circuits["electronic-circuit"] = nil
-    circuits["advanced-circuit"] = nil
-    circuits["processing-unit"] = nil
-    circuits["advanced-processing-unit"] = nil
-end
-
 reskins.lib.create_icons_from_list(circuits, inputs)
