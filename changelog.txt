@@ -318,6 +318,7 @@ Date: 2020.06.11
     - Fully implemented new mining drills
   Changes:
     - Icons are now assigned in data-final-fixes, ensuring more robust compatibility with other reskin mods
+    - Moved tintable circuit GUI sprites into Artisanal Reskins: Library
   Bugfixes:
     - Fix mining-drill animation skipping at various playback speeds
     - Remove dependency on angelspetrochem to reskin Mini-Chemplants icons, for the last time...

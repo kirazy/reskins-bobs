@@ -54,20 +54,20 @@ for circuit, map in pairs(circuits) do
             name = "reskins-bob-"..circuit.."-tier",
             layers = {
                 {
-                    filename = reskins.bobs.directory.."/graphics/icons/sprites/circuits/tier/"..circuit.."/"..circuit.."-base.png",
+                    filename = reskins.lib.directory.."/graphics/icons/sprites/circuits/"..circuit.."/"..circuit.."-base.png",
                     size = 40,
                     mipmap_count = 2,
                     flags = {"gui-icon"},
                 },
                 {
-                    filename = reskins.bobs.directory.."/graphics/icons/sprites/circuits/tier/"..circuit.."/"..circuit.."-mask.png",
+                    filename = reskins.lib.directory.."/graphics/icons/sprites/circuits/"..circuit.."/"..circuit.."-mask.png",
                     size = 40,
                     tint = tint,
                     mipmap_count = 2,
                     flags = {"gui-icon"},
                 },
                 {
-                    filename = reskins.bobs.directory.."/graphics/icons/sprites/circuits/tier/"..circuit.."/"..circuit.."-highlights.png",
+                    filename = reskins.lib.directory.."/graphics/icons/sprites/circuits/"..circuit.."/"..circuit.."-highlights.png",
                     size = 40,
                     blend_mode = "additive",
                     mipmap_count = 2,
