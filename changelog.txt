@@ -9,9 +9,12 @@ Date: 2021.02.XX
     - Moved handling for transport belts, splitters, and underground belts into Artisanal Reskins: Library
     - Moved mod compatibility for Circuit Processing, Classic Beacon, Classic Mining Drill, Deadlock Crating, Deadlock Stacking Beltboxes& Loaders, Loader Redux, Mini Machines, Miniloader, Semi-Classic Mining Drill, and Vanilla Loaders into a new mod, Artisanal Reskins: Compatibility
     - Transport belt and related entity reskinning is no longer controlled by the setting "Bob's Logistics"
+    - Moved tintable circuit GUI sprites into Artisanal Reskins: Library
   Bugfixes:
     - Fixed that tier labels for transport belts and related entities did not respect the setting "Belt tier labels"
     - Fixed that a variable in module setup was unintentionally globally accessible
+  Locale:
+    - Added partial localization for Polish
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.2
 Date: 2021.01.31
@@ -318,7 +321,6 @@ Date: 2020.06.11
     - Fully implemented new mining drills
   Changes:
     - Icons are now assigned in data-final-fixes, ensuring more robust compatibility with other reskin mods
-    - Moved tintable circuit GUI sprites into Artisanal Reskins: Library
   Bugfixes:
     - Fix mining-drill animation skipping at various playback speeds
     - Remove dependency on angelspetrochem to reskin Mini-Chemplants icons, for the last time...
