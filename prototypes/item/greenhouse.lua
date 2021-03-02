@@ -5,6 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobgreenhouse"] then return end
+if reskins.lib.setting("reskins-bobs-do-bobgreenhouse") == false then return end
 
 -- Setup inputs
 local inputs = {

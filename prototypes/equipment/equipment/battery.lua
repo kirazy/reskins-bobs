@@ -5,6 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobequipment"] then return end
+if reskins.lib.setting("reskins-bobs-do-bobequipment") == false then return end
 
 local inputs = {
     type = "battery-equipment",

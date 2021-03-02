@@ -5,6 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobmining"] then return end
+if reskins.lib.setting("reskins-bobs-do-bobmining") == false then return end
 
 -- Setup standard inputs
 local inputs = {

@@ -10,6 +10,7 @@ Date: 2021.02.XX
     - Moved mod compatibility for Circuit Processing, Classic Beacon, Classic Mining Drill, Deadlock Crating, Deadlock Stacking Beltboxes& Loaders, Loader Redux, Mini Machines, Miniloader, Semi-Classic Mining Drill, and Vanilla Loaders into a new mod, Artisanal Reskins: Compatibility
     - Transport belt and related entity reskinning is no longer controlled by the setting "Bob's Logistics"
     - Moved tintable circuit GUI sprites into Artisanal Reskins: Library
+    - Reskinning of items, recipes, and technologies that were not previously captured by the various mod-toggle settings are now captured
   Bugfixes:
     - Fixed that tier labels for transport belts and related entities did not respect the setting "Belt tier labels"
     - Fixed that a variable in module setup was unintentionally globally accessible

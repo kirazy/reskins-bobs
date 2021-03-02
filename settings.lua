@@ -39,7 +39,24 @@ if mods["bobelectronics"] then
             allowed_values = {"off","colored-material","colored-vanilla","colored-tier"},
             localised_description = circuit_style_locale,
         },
+        {
+            type = "bool-setting",
+            name = "reskins-bobs-do-bobelectronics",
+            setting_type = "startup",
+            default_value = true,
+        },
     })
+end
+
+if mods["bobequipment"] or mods["bobvehicleequipment"] then
+    data:extend{{
+        {
+            type = "bool-setting",
+            name = "reskins-bobs-do-bobequipment",
+            setting_type = "startup",
+            default_value = true,
+        }
+    }}
 end
 
 if mods["bobgreenhouse"] then
