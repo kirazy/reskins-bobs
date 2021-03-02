@@ -5,7 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobvehicleequipment"] then return end
-if reskins.lib.setting("reskins-bobs-do-bobequipment") == false then return end
+if reskins.lib.check_scope("equipment", "bobs", "bobequipment") == false then return end
 
 local inputs = {
     mod = "bobs",

@@ -7,7 +7,7 @@
 if mods["classic-mining-drill"] then return end
 if mods["semi-classic-mining-drill"] then return end
 if not mods["bobmining"] then return end
-if reskins.lib.setting("reskins-bobs-do-bobmining") == false then return end
+if reskins.lib.check_scope("entities", "bobs", "bobmining") == false then return end
 
 -- Set input parameters
 local inputs = {
@@ -1336,11 +1336,11 @@ local function drill_wet_working_visualisation(speed, inputs)
 
         -- Dust Animation 2
         {
-          constant_speed = true,
-          synced_fadeout = true,
-          align_to_waypoint = true,
-          apply_tint = "resource-color",
-          animation = reskins.bobs.electric_mining_drill_smoke_front(),
+            constant_speed = true,
+            synced_fadeout = true,
+            align_to_waypoint = true,
+            apply_tint = "resource-color",
+            animation = reskins.bobs.electric_mining_drill_smoke_front(),
         },
 
         -- Dust Animation Directional 2

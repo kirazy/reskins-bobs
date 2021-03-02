@@ -5,7 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["boblogistics"] then return end
-if reskins.lib.setting("reskins-bobs-do-boblogistics") == false then return end
+if reskins.lib.check_scope("technologies", "bobs", "boblogistics") == false then return end
 
 -- Setup standard inputs
 local inputs = {

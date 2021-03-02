@@ -5,9 +5,8 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobmodules"] then return end
-if reskins.lib.setting("cp-override-modules") == false then -- Do nothing
-elseif mods["CircuitProcessing"] then return end
-if reskins.lib.setting("reskins-bobs-do-bobmodules") == false then return end
+if reskins.lib.setting("cp-override-modules") == false then --[[ Do nothing ]] elseif mods["CircuitProcessing"] then return end
+if reskins.lib.check_scope("items-and-fluids", "bobs", "bobmodules") == false then return end
 
 -- Modules
 local modules_map = {

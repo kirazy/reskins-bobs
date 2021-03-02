@@ -5,7 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobwarfare"] then return end
-if reskins.lib.setting("reskins-bobs-do-bobwarfare") == false then return end
+if reskins.lib.check_scope("entities", "bobs", "bobwarfare") == false then return end
 
 local inputs = {
     type = "electric-turret",

@@ -3,6 +3,9 @@
 --
 -- See LICENSE in the project directory for license information.
 
+-- Check if reskinning needs to be done
+if reskins.lib.check_scope("entities", "bobs", "boblogistics") == false then return end
+
 -- Set input parameters
 local inputs = {
     type = "storage-tank",

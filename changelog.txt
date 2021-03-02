@@ -3,14 +3,14 @@ Version: 1.1.3
 Date: 2021.02.XX
   Features:
     - Added rich text support to new game ore richness controls in line with changes in Factorio 1.1.24, pending native support in Bob's Ores mod
+    - Reskinning of items, recipes, and technologies that were not previously captured by the various mod-toggle settings are now captured, and the scope of the reskinning is configurable under Artisanal Reskins: Librar startup settings
   Changes:
     - Revised brightness of the 1-light and 5-light module configurations
     - Code revisions to support changes in Artisanal Reskins: Library, now dependent on 1.1.3
     - Moved handling for transport belts, splitters, and underground belts into Artisanal Reskins: Library
     - Moved mod compatibility for Circuit Processing, Classic Beacon, Classic Mining Drill, Deadlock Crating, Deadlock Stacking Beltboxes& Loaders, Loader Redux, Mini Machines, Miniloader, Semi-Classic Mining Drill, and Vanilla Loaders into a new mod, Artisanal Reskins: Compatibility
-    - Transport belt and related entity reskinning is no longer controlled by the setting "Bob's Logistics"
     - Moved tintable circuit GUI sprites into Artisanal Reskins: Library
-    - Reskinning of items, recipes, and technologies that were not previously captured by the various mod-toggle settings are now captured
+    - Created new setting "Bob's Revamp: Reactor color" to control the color of nuclear reactors; the setting "Bob's Revamp" now controls whether intermediaries, recipes, and technologies are reskinned
   Bugfixes:
     - Fixed that tier labels for transport belts and related entities did not respect the setting "Belt tier labels"
     - Fixed that a variable in module setup was unintentionally globally accessible

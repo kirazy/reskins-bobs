@@ -5,7 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobrevamp"] then return end
-if reskins.lib.setting("reskins-bobs-do-bobrevamp") == false then return end
+if reskins.lib.check_scope("technologies", "bobs", "bobrevamp") == false then return end
 
 -- Setup standard inputs
 local inputs = {

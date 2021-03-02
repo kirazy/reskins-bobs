@@ -5,7 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobtech"] then return end
-if reskins.lib.setting("reskins-bobs-do-bobtech") == false then return end
+if reskins.lib.check_scope("entities", "bobs", "bobtech") == false then return end
 
 -- Set input parameters
 local inputs =

@@ -218,6 +218,12 @@ if mods["bobrevamp"] then
             setting_type = "startup",
             default_value = true,
         },
+        {
+            type = "bool-setting",
+            name = "reskins-bobs-do-bobrevamp-reactor-color",
+            setting_type = "startup",
+            default_value = true,
+        },
     })
 end
 

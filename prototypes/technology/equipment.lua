@@ -7,7 +7,7 @@
 local do_vehicle, do_personal = true, true
 if not mods["bobvehicleequipment"] then do_vehicle = false end
 if not mods["bobequipment"] then do_personal = false end
-if reskins.lib.setting("reskins-bobs-do-bobequipment") == false then return end
+if reskins.lib.check_scope("technologies", "bobs", "bobequipment") == false then return end
 
 if (not do_vehicle) and (not do_personal) then return end
 
