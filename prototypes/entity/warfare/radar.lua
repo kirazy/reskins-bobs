@@ -6,6 +6,9 @@
 -- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then return end
 
+-- Flag available for Mini-Machines compatibility pass
+if reskins.compatibility then reskins.compatibility.triggers.minimachines.radar = true end
+
 -- Set input parameters
 local inputs = {
     type = "radar",

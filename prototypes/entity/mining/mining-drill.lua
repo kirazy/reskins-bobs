@@ -4,9 +4,11 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if mods["classic-mining-drill"] then return end
-if mods["semi-classic-mining-drill"] then return end
+if mods["classic-mining-drill"] or mods["semi-classic-mining-drill"] then return end
 if not (reskins.bobs and reskins.bobs.triggers.mining.entities) then return end
+
+-- Flag available for Mini-Machines compatibility pass
+if reskins.compatibility then reskins.compatibility.triggers.minimachines.miners = true end
 
 -- Set input parameters
 local inputs = {

@@ -7,6 +7,9 @@
 if not mods["bobassembly"] and not mods["bobplates"] then return end
 if not (reskins.bobs and reskins.bobs.triggers.assembly.entities) then return end
 
+-- Flag available for Mini-Machines compatibility pass
+if reskins.compatibility then reskins.compatibility.triggers.minimachines.furnaces = true end
+
 local standard_furnace_tint = util.color("ffb700")
 local mixing_furnace_tint = util.color("00bfff")
 local chemical_furnace_tint = util.color("e50000")

@@ -7,6 +7,9 @@
 if mods["classic-beacon"] then return end
 if not (reskins.bobs and reskins.bobs.triggers.modules.entities) then return end
 
+-- Flag available for Mini-Machines compatibility pass
+if reskins.compatibility then reskins.compatibility.triggers.minimachines.beacons = true end
+
 -- Set input parameters
 local inputs = {
     type = "beacon",

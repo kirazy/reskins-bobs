@@ -4,14 +4,9 @@
 -- See LICENSE in the project directory for license information.
 
 -- Add this mod to the reskins function host.
-if not reskins.bobs then reskins.bobs = {} end
-reskins.bobs.triggers = require("triggers")
 reskins.bobs.directory = "__reskins-bobs__"
-reskins.bobs.status = {}
 
 -- CONSTANTS
-
-
 reskins.bobs.module_color_map = {
     ["blue"] = {primary = util.color("70b6ff"), secondary = util.color("30d2ff")},
     ["brown"] = {primary = util.color("9c7c60"), secondary = util.color("fff0d9")},
