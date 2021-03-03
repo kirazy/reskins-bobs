@@ -17,12 +17,12 @@ local inputs = {
 -- Setup input defaults
 reskins.lib.parse_inputs(inputs)
 
-local intermediaries = {}
+local intermediates = {}
 
 -- Items and recipes shared with other mods within Bob's suite
 if not mods["bobplates"] then
-    -- Intermediaries
-    intermediaries["lithia-water"] = {type = "fluid", group = "plates", subgroup = "fluids", defer_to_data_updates = true} -- Angels
+    -- Intermediates
+    intermediates["lithia-water"] = {type = "fluid", group = "plates", subgroup = "fluids", defer_to_data_updates = true} -- Angels
 end
 
-reskins.lib.create_icons_from_list(intermediaries, inputs)
+reskins.lib.create_icons_from_list(intermediates, inputs)

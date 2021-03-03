@@ -14,7 +14,7 @@ local inputs = {
     flat_icon = true,
 }
 
-local intermediaries = {
+local intermediates = {
     ["seedling"] = {subgroup = "items"},
     ["fertiliser"] = {subgroup = "items"},
     ["wood-pellets"] = {subgroup = "items"},
@@ -22,4 +22,4 @@ local intermediaries = {
     ["bob-advanced-greenhouse-cycle"] = {type = "recipe", subgroup = "recipes"},
 }
 
-reskins.lib.create_icons_from_list(intermediaries, inputs)
+reskins.lib.create_icons_from_list(intermediates, inputs)

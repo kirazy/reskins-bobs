@@ -62,7 +62,7 @@ triggers.modules = {
     technologies = reskins.lib.check_scope("technologies", "bobs", "bobmodules"),
 }
 
--- Bob's Metals, Chemicals, and Intermediaries
+-- Bob's Metals, Chemicals, and Intermediates
 triggers.plates = {
     entities = reskins.lib.check_scope("entities", "bobs", "bobplates"),
     equipment = reskins.lib.check_scope("equipment", "bobs", "bobplates"),

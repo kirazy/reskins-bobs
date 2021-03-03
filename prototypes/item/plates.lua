@@ -14,9 +14,9 @@ local inputs = {
     flat_icon = true,
 }
 
-local intermediaries = {
+local intermediates = {
     ----------------------------------------------------------------------------------------------------
-    -- Intermediaries
+    -- Intermediates
     ----------------------------------------------------------------------------------------------------
     -- Plates
     ["aluminium-plate"] = {subgroup = "plates"},
@@ -139,32 +139,32 @@ local intermediaries = {
 
 -- Handle deuterium color
 if reskins.lib.setting("bobmods-plates-bluedeuterium") == true then
-    intermediaries["deuterium-fuel-cell"].image = "deuterium-fuel-cell-blue"
-    intermediaries["deuterium-fuel-cell-2"].image = "deuterium-fuel-cell-2-blue"
-    intermediaries["used-up-deuterium-fuel-cell"].image = "used-up-deuterium-fuel-cell-blue"
+    intermediates["deuterium-fuel-cell"].image = "deuterium-fuel-cell-blue"
+    intermediates["deuterium-fuel-cell-2"].image = "deuterium-fuel-cell-2-blue"
+    intermediates["used-up-deuterium-fuel-cell"].image = "used-up-deuterium-fuel-cell-blue"
 end
 
 -- Handle nuclear update
 if reskins.lib.setting("bobmods-plates-nuclearupdate") == true then
-    intermediaries["nuclear-fuel-reprocessing"] = {type = "recipe", subgroup = "recipes", defer_to_data_updates = true}
+    intermediates["nuclear-fuel-reprocessing"] = {type = "recipe", subgroup = "recipes", defer_to_data_updates = true}
 
     -- Handle deuterium's default process color
     if reskins.lib.setting("bobmods-plates-bluedeuterium") == true then
-        intermediaries["deuterium-fuel-reprocessing"].image = "deuterium-fuel-reprocessing-blue"
+        intermediates["deuterium-fuel-reprocessing"].image = "deuterium-fuel-reprocessing-blue"
     end
 else
-    intermediaries["thorium-fuel-reprocessing"].image = "thorium-fuel-reprocessing-alternate"
+    intermediates["thorium-fuel-reprocessing"].image = "thorium-fuel-reprocessing-alternate"
 
     -- Handle deuterium's alternate process color
     if reskins.lib.setting("bobmods-plates-bluedeuterium") == true then
-        intermediaries["deuterium-fuel-reprocessing"].image = "deuterium-fuel-reprocessing-alternate-blue"
+        intermediates["deuterium-fuel-reprocessing"].image = "deuterium-fuel-reprocessing-alternate-blue"
     else
-        intermediaries["deuterium-fuel-reprocessing"].image = "deuterium-fuel-reprocessing-alternate-pink"
+        intermediates["deuterium-fuel-reprocessing"].image = "deuterium-fuel-reprocessing-alternate-pink"
     end
 
 end
 
-reskins.lib.create_icons_from_list(intermediaries, inputs)
+reskins.lib.create_icons_from_list(intermediates, inputs)
 
 -- One-off fixes
 if data.raw.item["nickel-plate"] then

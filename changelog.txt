@@ -10,7 +10,7 @@ Date: 2021.03.XX
     - Moved handling for transport belts, splitters, and underground belts into Artisanal Reskins: Library
     - Moved mod compatibility for Circuit Processing, Classic Beacon, Classic Mining Drill, Deadlock Crating, Deadlock Stacking Beltboxes& Loaders, Loader Redux, Mini Machines, Miniloader, Semi-Classic Mining Drill, and Vanilla Loaders into a new mod, Artisanal Reskins: Compatibility
     - Moved tintable circuit GUI sprites into Artisanal Reskins: Library
-    - Created new setting "Bob's Revamp: Reactor color" to control the color of nuclear reactors; the setting "Bob's Revamp" now controls whether intermediaries, recipes, and technologies are reskinned
+    - Created new setting "Bob's Revamp: Reactor color" to control the color of nuclear reactors; the setting "Bob's Revamp" now controls whether intermediates, recipes, and technologies are reskinned
   Bugfixes:
     - Fixed that tier labels for transport belts and related entities did not respect the setting "Belt tier labels"
     - Fixed that a variable in module setup was unintentionally globally accessible
@@ -50,7 +50,7 @@ Date: 2020.11.26
   Features:
     - Moved to Factorio 1.1
     - Added support for electric mining and radar technologies added by AAI Industry
-    - Added lighting to several plasma, uranium, and electric-based items and intermediaries
+    - Added lighting to several plasma, uranium, and electric-based items and intermediates
   Changes:
     - Replaced the stack and filter stack inserter icons with icons derived from the new stack inserter technology icons, improving the ability to distinguish the icons from regular inserters
     - Updated accumulators, barreling and compressor machines, centrifuges, distilleries, furnaces, and the plasma turrets to the new lighting system
@@ -88,7 +88,7 @@ Date: 2020.11.08
 Version: 1.0.5
 Date: 2020.10.13
   Bugfixes:
-    - Fixed that when used with Bob's Electronics and not Bob's Metals, Chemicals and Intermediaries that the icon for rubber was missing.
+    - Fixed that when used with Bob's Electronics and not Bob's Metals, Chemicals and Intermediates that the icon for rubber was missing.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.4
 Date: 2020.10.04
@@ -188,7 +188,7 @@ Date: 2020.08.03
     - Implemented bullets, projectiles, ammo magazines, warheads, and rockets
     - Implemented fluids, seedlings, fertiliser, wood pellets and other recipe icons
   Changes:
-    - Batteries now respect Bob's Metals, Chemicals, and Intermediaries "Color updates" setting
+    - Batteries now respect Bob's Metals, Chemicals, and Intermediates "Color updates" setting
     - Revised handling for deferred icon assignments; pipes, heat pipes, and Deadlocks loaders and beltboxes no longer deferred
   Bugfixes:
     - Fixed that Bob's Ores mod was not a dependency
