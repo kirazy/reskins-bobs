@@ -5,7 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if not mods["bobassembly"] and not mods["bobplates"] then return end
-if not reskins.bobs and reskins.bobs.triggers.assembly.entities then return end
+if not (reskins.bobs and reskins.bobs.triggers.assembly.entities) then return end
 
 local standard_furnace_tint = util.color("ffb700")
 local mixing_furnace_tint = util.color("00bfff")

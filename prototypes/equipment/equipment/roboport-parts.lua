@@ -4,7 +4,7 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not reskins.bobs and reskins.bobs.triggers.equipment.equipment then return end
+if not (reskins.bobs and reskins.bobs.triggers.equipment.equipment) then return end
 
 local inputs = {
     type = "roboport-equipment",
@@ -26,10 +26,6 @@ local properties = {
     {suffix = "-2", tier = 2, prog_tier = 3},
     {suffix = "-3", tier = 3, prog_tier = 4},
     {suffix = "-4", tier = 4, prog_tier = 5},
-}
-
-local technologies = {
-    -- "personal-roboport"
 }
 
 -- Reskin equipment

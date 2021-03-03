@@ -3,9 +3,6 @@
 --
 -- See LICENSE in the project directory for license information.
 
--- Check to see if reskinning needs to be done.
-if not reskins.bobs and reskins.bobs.triggers.equipment.equipment then return end
-
 local inputs = {
     type = "battery-equipment",
     icon_name = "battery",
@@ -40,45 +37,49 @@ for name, map in pairs(batteries) do
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index[tier]
 
-    -- Construct icon
-    reskins.lib.construct_icon(name, tier, inputs)
+    if reskins.bobs and reskins.bobs.triggers.equipment.technologies then
+        -- Construct technology icon
+        inputs.technology_icon_extras = { reskins.lib.technology_equipment_overlay() }
 
-    -- Construct technology icon
-    inputs.technology_icon_extras = { reskins.lib.technology_equipment_overlay() }
+        reskins.lib.construct_technology_icon(technology, inputs)
+    end
 
-    reskins.lib.construct_technology_icon(technology, inputs)
+    if reskins.bobs and reskins.bobs.triggers.equipment.equipment then
+        -- Construct icon
+        reskins.lib.construct_icon(name, tier, inputs)
 
-    -- Reskin the equipment
-    equipment.sprite = {
-        layers = {
-            -- Base
-            {
-                filename = reskins.bobs.directory.."/graphics/equipment/equipment/battery/battery-equipment-base.png",
-                width = 32,
-                height = 64,
-                priority = "medium",
-                flags = { "no-crop" },
-            },
-            -- Mask
-            {
-                filename = reskins.bobs.directory.."/graphics/equipment/equipment/battery/battery-equipment-mask.png",
-                width = 32,
-                height = 64,
-                priority = "medium",
-                flags = { "no-crop" },
-                tint = inputs.tint,
-            },
-            -- Highlights
-            {
-                filename = reskins.bobs.directory.."/graphics/equipment/equipment/battery/battery-equipment-highlights.png",
-                width = 32,
-                height = 64,
-                priority = "medium",
-                flags = { "no-crop" },
-                blend_mode = reskins.lib.blend_mode, -- "additive",
+        -- Reskin the equipment
+        equipment.sprite = {
+            layers = {
+                -- Base
+                {
+                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/battery/battery-equipment-base.png",
+                    width = 32,
+                    height = 64,
+                    priority = "medium",
+                    flags = { "no-crop" },
+                },
+                -- Mask
+                {
+                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/battery/battery-equipment-mask.png",
+                    width = 32,
+                    height = 64,
+                    priority = "medium",
+                    flags = { "no-crop" },
+                    tint = inputs.tint,
+                },
+                -- Highlights
+                {
+                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/battery/battery-equipment-highlights.png",
+                    width = 32,
+                    height = 64,
+                    priority = "medium",
+                    flags = { "no-crop" },
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                }
             }
         }
-    }
+    end
 
     -- Label to skip to next iteration
     ::continue::

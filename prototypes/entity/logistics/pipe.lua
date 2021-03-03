@@ -66,7 +66,7 @@ end
 
 -- Check to see if reskinning needs to be done
 if not mods["boblogistics"] then return elseif not mods["reskins-angels"] then reskin_pipe_entity() end
-if not reskins.bobs and reskins.bobs.triggers.logistics.entities then return end
+if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then return end
 
 -- Set input parameters
 local inputs = {

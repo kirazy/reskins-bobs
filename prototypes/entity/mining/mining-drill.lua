@@ -6,7 +6,7 @@
 -- Check to see if reskinning needs to be done.
 if mods["classic-mining-drill"] then return end
 if mods["semi-classic-mining-drill"] then return end
-if not reskins.bobs and reskins.bobs.triggers.mining.entities then return end
+if not (reskins.bobs and reskins.bobs.triggers.mining.entities) then return end
 
 -- Set input parameters
 local inputs = {

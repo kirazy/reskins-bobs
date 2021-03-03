@@ -5,7 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if reskins.lib.setting("cp-override-modules") == false then --[[ Do nothing ]] elseif mods["CircuitProcessing"] then return end
-if not reskins.bobs and reskins.bobs.triggers.modules.items then return end
+if not (reskins.bobs and reskins.bobs.triggers.modules.items) then return end
 
 -- Modules
 local modules_map = {

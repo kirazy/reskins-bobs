@@ -3,9 +3,6 @@
 --
 -- See LICENSE in the project directory for license information.
 
--- Check to see if reskinning needs to be done.
-if not reskins.bobs and reskins.bobs.triggers.equipment.equipment then return end
-
 local inputs = {
     type = "roboport-equipment",
     icon_name = "vehicle-roboport",
@@ -44,47 +41,51 @@ for name, map in pairs(vehicle_roboports) do
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index[tier]
 
-    -- Construct technology icon
-    inputs.icon_base = nil
+    if reskins.bobs and reskins.bobs.triggers.equipment.technologies then
+        -- Construct technology icon
+        inputs.icon_base = nil
 
-    inputs.technology_icon_extras = { reskins.lib.technology_equipment_overlay{scale = 1, is_vehicle = true} }
+        inputs.technology_icon_extras = { reskins.lib.technology_equipment_overlay{scale = 1, is_vehicle = true} }
 
-    reskins.lib.construct_technology_icon(string.gsub(name, "roboport", "roboport-equipment"), inputs)
+        reskins.lib.construct_technology_icon(string.gsub(name, "roboport", "roboport-equipment"), inputs)
+    end
 
-    -- Setup icon handling
-    inputs.icon_base = inputs.icon_name.."-"..equipment_base
+    if reskins.bobs and reskins.bobs.triggers.equipment.equipment then
+        -- Setup icon handling
+        inputs.icon_base = inputs.icon_name.."-"..equipment_base
 
-    -- Construct icon
-    reskins.lib.construct_icon(name, tier, inputs)
+        -- Construct icon
+        reskins.lib.construct_icon(name, tier, inputs)
 
-    -- Reskin the equipment
-    equipment.sprite = {
-        layers = {
-            -- Base
-            {
-                filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-roboport/"..inputs.icon_base.."-equipment-base.png",
-                size = 64,
-                priority = "medium",
-                flags = { "no-crop" },
-            },
-            -- Mask
-            {
-                filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-roboport/vehicle-roboport-equipment-mask.png",
-                size = 64,
-                priority = "medium",
-                flags = { "no-crop" },
-                tint = inputs.tint,
-            },
-            -- Highlights
-            {
-                filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-roboport/vehicle-roboport-equipment-highlights.png",
-                size = 64,
-                priority = "medium",
-                flags = { "no-crop" },
-                blend_mode = reskins.lib.blend_mode, -- "additive",
+        -- Reskin the equipment
+        equipment.sprite = {
+            layers = {
+                -- Base
+                {
+                    filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-roboport/"..inputs.icon_base.."-equipment-base.png",
+                    size = 64,
+                    priority = "medium",
+                    flags = { "no-crop" },
+                },
+                -- Mask
+                {
+                    filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-roboport/vehicle-roboport-equipment-mask.png",
+                    size = 64,
+                    priority = "medium",
+                    flags = { "no-crop" },
+                    tint = inputs.tint,
+                },
+                -- Highlights
+                {
+                    filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-roboport/vehicle-roboport-equipment-highlights.png",
+                    size = 64,
+                    priority = "medium",
+                    flags = { "no-crop" },
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                }
             }
         }
-    }
+    end
 
     -- Label to skip to next iteration
     ::continue::

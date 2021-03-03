@@ -7,7 +7,7 @@
 local do_vehicle, do_personal = true, true
 if not mods["bobvehicleequipment"] then do_vehicle = false end
 if not mods["bobequipment"] then do_personal = false end
-if not reskins.bobs and reskins.bobs.triggers.equipment.technologies then return end
+if not (reskins.bobs and reskins.bobs.triggers.equipment.technologies) then return end
 
 if (not do_vehicle) and (not do_personal) then return end
 

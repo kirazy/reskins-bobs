@@ -3,9 +3,6 @@
 --
 -- See LICENSE in the project directory for license information.
 
--- Check to see if reskinning needs to be done.
-if not reskins.bobs and reskins.bobs.triggers.equipment.equipment then return end
-
 local inputs = {
     type = "roboport-equipment",
     icon_name = "personal-roboport",
@@ -48,46 +45,50 @@ for name, map in pairs(personal_roboports) do
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index[tier]
 
-    -- Construct icon
-    reskins.lib.construct_icon(name, tier, inputs)
+    if reskins.bobs and reskins.bobs.triggers.equipment.equipment then
+        -- Construct icon
+        reskins.lib.construct_icon(name, tier, inputs)
 
-    -- Reskin the equipment
-    equipment.sprite = {
-        layers = {
-            -- Base
-            {
-                filename = reskins.bobs.directory.."/graphics/equipment/equipment/personal-roboport/"..inputs.icon_base.."-equipment-base.png",
-                size = 64,
-                priority = "medium",
-                flags = { "no-crop" },
-            },
-            -- Mask
-            {
-                filename = reskins.bobs.directory.."/graphics/equipment/equipment/personal-roboport/"..inputs.icon_base.."-equipment-mask.png",
-                size = 64,
-                priority = "medium",
-                flags = { "no-crop" },
-                tint = inputs.tint,
-            },
-            -- Highlights
-            {
-                filename = reskins.bobs.directory.."/graphics/equipment/equipment/personal-roboport/"..inputs.icon_base.."-equipment-highlights.png",
-                size = 64,
-                priority = "medium",
-                flags = { "no-crop" },
-                blend_mode = reskins.lib.blend_mode, -- "additive",
+        -- Reskin the equipment
+        equipment.sprite = {
+            layers = {
+                -- Base
+                {
+                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/personal-roboport/"..inputs.icon_base.."-equipment-base.png",
+                    size = 64,
+                    priority = "medium",
+                    flags = { "no-crop" },
+                },
+                -- Mask
+                {
+                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/personal-roboport/"..inputs.icon_base.."-equipment-mask.png",
+                    size = 64,
+                    priority = "medium",
+                    flags = { "no-crop" },
+                    tint = inputs.tint,
+                },
+                -- Highlights
+                {
+                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/personal-roboport/"..inputs.icon_base.."-equipment-highlights.png",
+                    size = 64,
+                    priority = "medium",
+                    flags = { "no-crop" },
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                }
             }
         }
-    }
+    end
 
-    -- Construct technology icon
-    inputs.icon_base = nil
-    inputs.icon_mask = nil
-    inputs.icon_highlights = nil
+    if reskins.bobs and reskins.bobs.triggers.equipment.technologies then
+        -- Construct technology icon
+        inputs.icon_base = nil
+        inputs.icon_mask = nil
+        inputs.icon_highlights = nil
 
-    inputs.technology_icon_extras = { reskins.lib.technology_equipment_overlay{scale = 1} }
+        inputs.technology_icon_extras = { reskins.lib.technology_equipment_overlay{scale = 1} }
 
-    reskins.lib.construct_technology_icon(name, inputs)
+        reskins.lib.construct_technology_icon(name, inputs)
+    end
 
     -- Label to skip to next iteration
     ::continue::

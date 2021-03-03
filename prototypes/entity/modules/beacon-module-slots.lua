@@ -5,7 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if mods["classic-beacon"] then return end
-if not reskins.bobs and reskins.bobs.triggers.modules.entities then return end
+if not (reskins.bobs and reskins.bobs.triggers.modules.entities) then return end
 
 local empty_fill_layer = {
     pictures = {

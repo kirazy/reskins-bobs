@@ -49,14 +49,14 @@ if mods["bobelectronics"] then
 end
 
 if mods["bobequipment"] or mods["bobvehicleequipment"] then
-    data:extend{{
+    data:extend({
         {
             type = "bool-setting",
             name = "reskins-bobs-do-bobequipment",
             setting_type = "startup",
             default_value = true,
-        }
-    }}
+        },
+    })
 end
 
 if mods["bobgreenhouse"] then

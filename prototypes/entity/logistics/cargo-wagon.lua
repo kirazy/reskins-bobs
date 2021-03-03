@@ -4,7 +4,7 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not reskins.bobs and reskins.bobs.triggers.logistics.entities then return end
+if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then return end
 if reskins.lib.setting("bobmods-logistics-trains") == false then return end
 
 -- Set input parameters

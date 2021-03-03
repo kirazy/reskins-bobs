@@ -3,9 +3,6 @@
 --
 -- See LICENSE in the project directory for license information.
 
--- Check to see if reskinning needs to be done.
-if not reskins.bobs and reskins.bobs.triggers.equipment.equipment then return end
-
 local inputs = {
     type = "solar-panel-equipment",
     icon_name = "solar-panel",
@@ -37,71 +34,75 @@ for name, tier in pairs(solar_panels) do
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index[tier]
 
-    -- Construct icon
-    reskins.lib.construct_icon(name, tier, inputs)
+    if reskins.bobs and reskins.bobs.triggers.equipment.technologies then
+        -- Construct technology icon
+        inputs.technology_icon_extras = { reskins.lib.technology_equipment_overlay{is_vehicle = true} }
 
-    -- Construct technology icon
-    inputs.technology_icon_extras = { reskins.lib.technology_equipment_overlay{is_vehicle = true} }
+        reskins.lib.construct_technology_icon(string.gsub(name, "panel", "panel-equipment"), inputs)
+    end
 
-    reskins.lib.construct_technology_icon(string.gsub(name, "panel", "panel-equipment"), inputs)
+    if reskins.bobs and reskins.bobs.triggers.equipment.equipment then
+        -- Construct icon
+        reskins.lib.construct_icon(name, tier, inputs)
 
-    -- Reskin the equipment
-    equipment.sprite = {
-        layers = {
-            -- Base
-            {
-                filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-solar-panel/vehicle-solar-panel-equipment-base.png",
-                width = 64,
-                height = 32,
-                priority = "medium",
-                flags = { "no-crop" },
-                hr_version = {
-                    filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-solar-panel/hr-vehicle-solar-panel-equipment-base.png",
-                    width = 128,
-                    height = 64,
+        -- Reskin the equipment
+        equipment.sprite = {
+            layers = {
+                -- Base
+                {
+                    filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-solar-panel/vehicle-solar-panel-equipment-base.png",
+                    width = 64,
+                    height = 32,
                     priority = "medium",
                     flags = { "no-crop" },
-                    scale = 0.5,
-                }
-            },
-            -- Mask
-            {
-                filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-solar-panel/vehicle-solar-panel-equipment-mask.png",
-                width = 64,
-                height = 32,
-                priority = "medium",
-                flags = { "no-crop" },
-                tint = inputs.tint,
-                hr_version = {
-                    filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-solar-panel/hr-vehicle-solar-panel-equipment-mask.png",
-                    width = 128,
-                    height = 64,
+                    hr_version = {
+                        filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-solar-panel/hr-vehicle-solar-panel-equipment-base.png",
+                        width = 128,
+                        height = 64,
+                        priority = "medium",
+                        flags = { "no-crop" },
+                        scale = 0.5,
+                    }
+                },
+                -- Mask
+                {
+                    filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-solar-panel/vehicle-solar-panel-equipment-mask.png",
+                    width = 64,
+                    height = 32,
                     priority = "medium",
                     flags = { "no-crop" },
                     tint = inputs.tint,
-                    scale = 0.5,
-                }
-            },
-            -- Highlights
-            {
-                filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-solar-panel/vehicle-solar-panel-equipment-highlights.png",
-                width = 64,
-                height = 32,
-                priority = "medium",
-                flags = { "no-crop" },
-                blend_mode = reskins.lib.blend_mode, -- "additive",
-                hr_version = {
-                    filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-solar-panel/hr-vehicle-solar-panel-equipment-highlights.png",
-                    width = 128,
-                    height = 64,
+                    hr_version = {
+                        filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-solar-panel/hr-vehicle-solar-panel-equipment-mask.png",
+                        width = 128,
+                        height = 64,
+                        priority = "medium",
+                        flags = { "no-crop" },
+                        tint = inputs.tint,
+                        scale = 0.5,
+                    }
+                },
+                -- Highlights
+                {
+                    filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-solar-panel/vehicle-solar-panel-equipment-highlights.png",
+                    width = 64,
+                    height = 32,
                     priority = "medium",
                     flags = { "no-crop" },
                     blend_mode = reskins.lib.blend_mode, -- "additive",
-                    scale = 0.5,
+                    hr_version = {
+                        filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-solar-panel/hr-vehicle-solar-panel-equipment-highlights.png",
+                        width = 128,
+                        height = 64,
+                        priority = "medium",
+                        flags = { "no-crop" },
+                        blend_mode = reskins.lib.blend_mode, -- "additive",
+                        scale = 0.5,
+                    }
                 }
             }
         }
-    }
+    end
 
     -- Label to skip to next iteration
     ::continue::

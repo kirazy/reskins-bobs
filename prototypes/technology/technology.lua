@@ -5,7 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if mods["ScienceCostTweakerM"] then return end
-if not reskins.bobs and reskins.bobs.triggers.technology.technologies then return end
+if not (reskins.bobs and reskins.bobs.triggers.technology.technologies) then return end
 
 -- Setup standard inputs
 local inputs = {
