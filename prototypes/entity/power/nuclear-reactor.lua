@@ -347,7 +347,7 @@ for name, map in pairs(tier_map) do
     -- Create explosions
     reskins.lib.create_explosion(name, inputs)
 
-    if reskins.lib.setting("bobmods-revamp-nuclear") == true and reskins.lib.setting("reskins-bobs-do-bobrevamp") == true then
+    if reskins.lib.setting("bobmods-revamp-nuclear") == true and reskins.lib.setting("reskins-bobs-do-bobrevamp-reactor-color") == true then
         inputs.reactor = fuel_index[name]
         inputs.tint = nuclear_tint_index[inputs.fuel]
 
