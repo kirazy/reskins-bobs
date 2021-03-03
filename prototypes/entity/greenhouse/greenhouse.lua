@@ -4,8 +4,7 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not mods["bobgreenhouse"] then return end
-if reskins.lib.check_scope("entities", "bobs", "bobgreenhouse") == false then return end
+if not reskins.bobs and reskins.bobs.triggers.greenhouse.entities then return end
 
 -- Set input parameters
 local inputs = {

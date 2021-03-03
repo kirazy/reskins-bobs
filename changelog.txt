@@ -1,9 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.3
-Date: 2021.02.XX
+Date: 2021.03.XX
   Features:
     - Added rich text support to new game ore richness controls in line with changes in Factorio 1.1.24, pending native support in Bob's Ores mod
-    - Reskinning of items, recipes, and technologies that were not previously captured by the various mod-toggle settings are now captured, and the scope of the reskinning is configurable under Artisanal Reskins: Librar startup settings
+    - Reskinning of items, recipes, and technologies that were not previously captured by the various mod-toggle settings are now captured, and the scope of the reskinning is configurable under Artisanal Reskins: Library startup settings
   Changes:
     - Revised brightness of the 1-light and 5-light module configurations
     - Code revisions to support changes in Artisanal Reskins: Library, now dependent on 1.1.3

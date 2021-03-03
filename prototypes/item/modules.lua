@@ -4,9 +4,8 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not mods["bobmodules"] then return end
 if reskins.lib.setting("cp-override-modules") == false then --[[ Do nothing ]] elseif mods["CircuitProcessing"] then return end
-if reskins.lib.check_scope("items-and-fluids", "bobs", "bobmodules") == false then return end
+if not reskins.bobs and reskins.bobs.triggers.modules.items then return end
 
 -- Modules
 local modules_map = {

@@ -4,9 +4,8 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not mods["bobpower"] then return end
+if not reskins.bobs and reskins.bobs.triggers.power.entities then return end
 if reskins.lib.setting("bobmods-power-steam") == false then return end
-if reskins.lib.check_scope("entities", "bobs", "bobpower") == false then return end
 
 -- Set input parameters
 local inputs = {

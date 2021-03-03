@@ -4,9 +4,8 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not mods["bobtech"] then return end
 if mods["ScienceCostTweakerM"] then return end
-if reskins.lib.check_scope("technologies", "bobs", "bobtech") == false then return end
+if not reskins.bobs and reskins.bobs.triggers.technology.technologies then return end
 
 -- Setup standard inputs
 local inputs = {

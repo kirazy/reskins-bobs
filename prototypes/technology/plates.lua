@@ -4,8 +4,7 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not mods["bobplates"] then return end
-if reskins.lib.check_scope("technologies", "bobs", "bobplates") == false then return end
+if not reskins.bobs and reskins.bobs.triggers.plates.technologies then return end
 
 -- Setup inputs
 local inputs = {
