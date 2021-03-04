@@ -46,7 +46,7 @@ local function electric_furnace_shadow()
 end
 
 local function furnace_heater(has_fluids)
-    local furnace_heater = {
+    local furnace_heater_animation = {
         filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/electric-furnace-heater.png",
         priority = "high",
         width = 30,
@@ -72,15 +72,15 @@ local function furnace_heater(has_fluids)
         return
         {
             fadeout = true,
-            north_animation = furnace_heater,
-            east_animation = furnace_heater,
-            west_animation = furnace_heater,
+            north_animation = util.copy(furnace_heater_animation),
+            east_animation = util.copy(furnace_heater_animation),
+            west_animation = util.copy(furnace_heater_animation),
         }
     else
         return
         {
             fadeout = true,
-            animation = furnace_heater,
+            animation = util.copy(furnace_heater_animation),
         }
     end
 end
@@ -352,9 +352,9 @@ for name, map in pairs(electric_furnace_map) do
             -- Furnace Ground Light
             {
                 fadeout = true,
-                north_animation = furnace_ground_light,
-                east_animation = furnace_ground_light,
-                west_animation = furnace_ground_light,
+                north_animation = util.copy(furnace_ground_light),
+                east_animation = util.copy(furnace_ground_light),
+                west_animation = util.copy(furnace_ground_light),
             },
         }
 
@@ -498,9 +498,9 @@ for name, map in pairs(electric_furnace_map) do
             -- Furnace Ground Light
             {
                 fadeout = true,
-                north_animation = furnace_ground_light,
-                east_animation = furnace_ground_light,
-                west_animation = furnace_ground_light,
+                north_animation = util.copy(furnace_ground_light),
+                east_animation = util.copy(furnace_ground_light),
+                west_animation = util.copy(furnace_ground_light),
             },
 
             -- Propeller
