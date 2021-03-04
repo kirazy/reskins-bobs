@@ -14,6 +14,7 @@ Date: 2021.03.04
     - Created new setting "Bob's Revamp: Reactor color" to control the color of nuclear reactors; the setting "Bob's Revamp" now controls whether intermediates, recipes, and technologies are reskinned
     - Internal code revisions such that reskinning is trigger-based
     - Changed animation assignment for fluid-type electric furnaces to ease compatibility with Mini Machines Mod
+    - Images are now losslessly compressed, instead of lossy; there is a modest increase in filesize
   Bugfixes:
     - Fixed that tier labels for transport belts and related entities did not respect the setting "Belt tier labels"
     - Fixed that a variable in module setup was unintentionally globally accessible
