@@ -1,5 +1,11 @@
 # Artisanal Reskins: Bob's Mods
 
+**Reskins Series mods**  
+[Artisanal Reskins: Angel's Mods](https://github.com/kirazy/reskins-angels)  
+[Artisanal Reskins: Bob's Mods](https://github.com/kirazy/reskins-bobs)  
+[Artisanal Reskins: Compatibility](https://github.com/kirazy/reskins-compatibility)  
+[Artisanal Reskins: Library](https://github.com/kirazy/reskins-library)  
+
 **A work-in-progress complete visual overhaul of Bobingabout's suite of mods**  
 This mod reskins the items, structures, equipment, and technologies added to Factorio by Bob's Mods, adding tier coloring and labels. Care has been taken to emulate and align with Factorio's vanilla aesthetics.
 
@@ -8,10 +14,16 @@ This mod reskins the items, structures, equipment, and technologies added to Fac
 This is a work-in-progress, and though most items, structures, and equipment that I plan to touch have been touched, there are a few structures and items still to do.
 
 **Updates**  
-This mod is constantly being worked on, but I am a graduate student and school has resumed. I will release bug fixes that correct startup errors as they occur, but content updates will occur on a monthly basis on the weekend, beginning October 3, 2020.
+This mod is constantly being worked on, but I am a graduate student and school has resumed.
+- Regular content updates will be released monthly.
+- Locale updates will be released on the weekend they are received from Crowdin.
+- Critical bugfixes will be released on an as-needed basis.
 
 **Localization**  
 You are welcome to help with localization, please use [this Crowdin project](https://crowdin.com/project/factorio-mods-localization). You can find more details [here](https://github.com/dima74/factorio-mods-localization#how-to-translate-using-crowdin).
+
+## Licensing
+All content is licensed under [MIT](https://opensource.org/licenses/MIT).
 
 ## Structures and Items Showcase
 
@@ -77,35 +89,6 @@ The example below was customized using the [palette found at color-hex.com](http
 
 **Assorted customizations**  
 Beyond those three main features, you are able to toggle reskinning by individual Bob's mod, as well as turn tier labels on and off for furnaces, inserters, belts, and pipes. There are some additional customization options, and you are encouraged to explore the startup settings.
-
-## Mod Support
-
-**Belt and Loader Mods**  
-[Miniloader](https://mods.factorio.com/mod/miniloader)  
-![Miniloaders support](https://i.imgur.com/2iThl8L.png)
-
-[Loader Redux](https://mods.factorio.com/mod/LoaderRedux)  
-![Loader Redux support](https://i.imgur.com/mgziNcc.png)
-
-[Deadlock's Crating Machine](https://mods.factorio.com/mod/DeadlockCrating) and [Deadlock's Stacking Beltboxes & Compact Loaders](https://mods.factorio.com/mod/deadlock-beltboxes-loaders)  
-![Deadlock's Crating Machine and Deadlock's Stacking Beltboxes & Compact Loaders support](https://i.imgur.com/AU6sZV0.png)
-
-[Vanilla Loaders HD](https://mods.factorio.com/mod/vanilla-loaders-hd)  
-![Vanilla Loaders HD support](https://i.imgur.com/3Il4oJG.png)
-
-***Miscellaneous***  
-[Mini Machines Mod](https://mods.factorio.com/mod/mini-machines)  
-![Mini Machines mod support](https://i.imgur.com/Uz79AXO.png)
-
-Currently, Mini Machines support entails classic-style shrunken icons. It is planned to include a small symbol to denote a miniaturized machine in the near future, in addition to the shrunken icon.
-
-[Classic Mining Drill](https://mods.factorio.com/mod/classic-mining-drill)  
-![Classic Mining Drill support](https://i.imgur.com/UAzFi8M.png)
-
-[Classic Beacon](https://mods.factorio.com/mod/classic-beacon)  
-![Classic Beacon support](https://i.imgur.com/c3vpgQO.png)
-
----
 
 ## Credits
 
