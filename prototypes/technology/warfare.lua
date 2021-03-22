@@ -62,7 +62,7 @@ local technology = {
 }
 
 if mods["aai-industry"] then
-    technology["radar"] = {tier = 1, icon_name = "radar"}
+    technology["radar"] = {tier = 1, icon_name = "radar", flat_icon = false, technology_icon_size = 128}
 end
 
 reskins.lib.create_icons_from_list(technology, inputs)
