@@ -8,7 +8,7 @@ if not (reskins.bobs and reskins.bobs.triggers.assembly.entities) then return en
 if reskins.lib.setting("bobmods-assembly-chemicalplants") == false then return end
 
 -- Flag available for Mini-Machines compatibility pass
-if reskins.compatibility then reskins.compatibility.triggers.minimachines.chemplants = true end
+if reskins.compatibility then reskins.compatibility.triggers.minimachines.chemplants.bobs = true end
 
 -- Set input parameters
 local inputs = {

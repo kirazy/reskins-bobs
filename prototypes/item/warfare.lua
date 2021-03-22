@@ -88,13 +88,41 @@ local items = {
     ["shotgun-poison-shell"] = {type = "ammo", subgroup = "shells"},
     ["shotgun-uranium-shell"] = {type = "ammo", subgroup = "shells", make_entity_pictures = true, icon_picture_extras = {reskins.lib.lit_icon_pictures_layer(inputs.mod, "aura-shotgun-shell", uranium_tint)}},
 
+    -- Laser rifle batteries
+    ["laser-rifle-battery"] = {type = "ammo", subgroup = "laser-rifle-batteries", make_entity_pictures = true, icon_picture_extras = {reskins.lib.lit_icon_pictures_layer(inputs.mod, "laser-rifle-battery", util.color("b3b3b3"))}},
+    ["laser-rifle-battery-ruby"] = {type = "ammo", subgroup = "laser-rifle-batteries", make_entity_pictures = true, icon_picture_extras = {reskins.lib.lit_icon_pictures_layer(inputs.mod, "laser-rifle-battery", util.color("fa1928"))}},
+    ["laser-rifle-battery-sapphire"] = {type = "ammo", subgroup = "laser-rifle-batteries", make_entity_pictures = true, icon_picture_extras = {reskins.lib.lit_icon_pictures_layer(inputs.mod, "laser-rifle-battery", util.color("0033ff"))}},
+    ["laser-rifle-battery-emerald"] = {type = "ammo", subgroup = "laser-rifle-batteries", make_entity_pictures = true, icon_picture_extras = {reskins.lib.lit_icon_pictures_layer(inputs.mod, "laser-rifle-battery", util.color("13e35c"))}},
+    ["laser-rifle-battery-amethyst"] = {type = "ammo", subgroup = "laser-rifle-batteries", make_entity_pictures = true, icon_picture_extras = {reskins.lib.lit_icon_pictures_layer(inputs.mod, "laser-rifle-battery", util.color("d414ff"))}},
+    ["laser-rifle-battery-topaz"] = {type = "ammo", subgroup = "laser-rifle-batteries", make_entity_pictures = true, icon_picture_extras = {reskins.lib.lit_icon_pictures_layer(inputs.mod, "laser-rifle-battery", util.color("f0b414"))}},
+    ["laser-rifle-battery-diamond"] = {type = "ammo", subgroup = "laser-rifle-batteries", make_entity_pictures = true, icon_picture_extras = {reskins.lib.lit_icon_pictures_layer(inputs.mod, "laser-rifle-battery", util.color("ffffff"))}},
+
+    -- Artillery shells
+    ["atomic-artillery-shell"] = {type = "ammo", subgroup = "artillery-shells", make_entity_pictures = true, icon_picture_extras = {reskins.lib.lit_icon_pictures_layer(inputs.mod, "atomic-artillery-shell", uranium_tint)}},
+    ["distractor-artillery-shell"] = {type = "ammo", subgroup = "artillery-shells"},
+    ["explosive-artillery-shell"] = {type = "ammo", subgroup = "artillery-shells"},
+    ["fire-artillery-shell"] = {type = "ammo", subgroup = "artillery-shells"},
+    ["poison-artillery-shell"] = {type = "ammo", subgroup = "artillery-shells"},
+
+    -- Cannon shells
+    ["scatter-cannon-shell"] = {type = "ammo", subgroup = "cannon-shells"},
+
+    -- Mines
+    ["distractor-mine"] = {subgroup = "mines"},
+    ["poison-mine"] = {subgroup = "mines"},
+    ["slowdown-mine"] = {subgroup = "mines"},
+
     -- Components
+    ["laser-rifle-battery-case"] = {subgroup = "components"},
     ["bullet-casing"] = {subgroup = "components"},
     ["magazine"] = {subgroup = "components"},
     ["cordite"] = {subgroup = "components"},
     -- ["rocket-body"] = {subgroup = "components"},
     -- ["shot"] = {subgroup = "components"},
     -- ["shotgun-shell-casing"] = {subgroup = "components"},
+
+    -- Weapons
+    ["laser-rifle"] = {type = "gun", subgroup = "weapons"},
 }
 
 reskins.lib.create_icons_from_list(items, inputs)
