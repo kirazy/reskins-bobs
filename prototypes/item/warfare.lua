@@ -120,7 +120,7 @@ local items = {
     ["rocket-engine"] = {subgroup = "components"},
     -- ["rocket-body"] = {subgroup = "components"},
     -- ["shot"] = {subgroup = "components"},
-    -- ["shotgun-shell-casing"] = {subgroup = "components"},
+    ["shotgun-shell-casing"] = {subgroup = "components"},
 
     -- Weapons
     ["laser-rifle"] = {type = "gun", subgroup = "weapons"},

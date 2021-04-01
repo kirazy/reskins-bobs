@@ -104,6 +104,8 @@ local intermediates = {
     ["alumina"] = {subgroup = "items"},
     ["calcium-chloride"] = {subgroup = "items"},
     ["sodium-hydroxide"] = {subgroup = "items"},
+    ["grinding-wheel"] = {subgroup = "items"},
+    ["polishing-wheel"] = {subgroup = "items"},
 
     ----------------------------------------------------------------------------------------------------
     -- Recipes
