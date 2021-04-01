@@ -1,7 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.8
 Date: ????
-  Changes:
+  Features:
+    - Implemented bullet and shotgun shell technologies, revised rocket technologies, credit to Snouz
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.7
 Date: 2021-03-22

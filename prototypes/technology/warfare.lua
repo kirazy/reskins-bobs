@@ -59,6 +59,28 @@ local technology = {
     ["poison-mine"] = {subgroup = "mines"},
     ["slowdown-mine"] = {subgroup = "mines"},
     ["distractor-mine"] = {subgroup = "mines"},
+
+    -- Shotgun shells
+    ["bob-shotgun-acid-shells"] = {subgroup = "shotgun-shells"},
+    ["bob-shotgun-ap-shells"] = {subgroup = "shotgun-shells"},
+    ["bob-shotgun-electric-shells"] = {subgroup = "shotgun-shells"},
+    ["bob-shotgun-flame-shells"] = {subgroup = "shotgun-shells"},
+    ["bob-shotgun-explosive-shells"] = {subgroup = "shotgun-shells"},
+    ["bob-shotgun-plasma-shells"] = {subgroup = "shotgun-shells"},
+    ["bob-shotgun-poison-shells"] = {subgroup = "shotgun-shells"},
+    ["bob-shotgun-shells"] = {subgroup = "shotgun-shells"},
+    ["bob-shotgun-uranium-shells"] = {subgroup = "shotgun-shells"},
+
+    -- Bullet magazines
+    ["bob-acid-bullets"] = {subgroup = "bullet-magazines"},
+    ["bob-ap-bullets"] = {subgroup = "bullet-magazines"},
+    ["bob-bullets"] = {subgroup = "bullet-magazines"},
+    ["bob-electric-bullets"] = {subgroup = "bullet-magazines"},
+    ["bob-flame-bullets"] = {subgroup = "bullet-magazines"},
+    ["bob-he-bullets"] = {subgroup = "bullet-magazines"},
+    ["bob-plasma-bullets"] = {subgroup = "bullet-magazines"},
+    ["bob-poison-bullets"] = {subgroup = "bullet-magazines"},
+    ["uranium-ammo"] = {subgroup = "bullet-magazines"},
 }
 
 if mods["aai-industry"] then

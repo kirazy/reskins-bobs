@@ -117,6 +117,7 @@ local items = {
     ["bullet-casing"] = {subgroup = "components"},
     ["magazine"] = {subgroup = "components"},
     ["cordite"] = {subgroup = "components"},
+    ["rocket-engine"] = {subgroup = "components"},
     -- ["rocket-body"] = {subgroup = "components"},
     -- ["shot"] = {subgroup = "components"},
     -- ["shotgun-shell-casing"] = {subgroup = "components"},
