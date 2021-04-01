@@ -2,8 +2,11 @@
 Version: 1.1.8
 Date: ????
   Features:
-    - Implemented bullet and shotgun shell technologies, revised rocket technologies, credit to Snouz
-    - Implemented grinding and polishing wheels, shotgun shell casins and the rocket engine items
+    - Implemented bullet and shotgun shell technologies, revised rocket technologies, in collaboration with Snouz
+    - Implemented alien fluid and plate technologies, in collaboration with Snouz
+    - Implemented grinding and polishing wheels, shotgun shell casings and the rocket engine items
+  Changes:
+    - Revised color of electric-type munitions from yellow to orange, aligning with Bob's coloring
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.7
 Date: 2021-03-22

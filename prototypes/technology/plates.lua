@@ -58,6 +58,14 @@ local technology = {
     -- ["gold-processing"] = {subgroup = "plates"},
     -- ["zinc-processing"] = {subgroup = "plates"},
 
+    -- Alien plates
+    ["alien-blue-research"] = {subgroup = "alien", technology_icon_size = 256, technology_icon_mipmaps = 4},
+    ["alien-orange-research"] = {subgroup = "alien", technology_icon_size = 256, technology_icon_mipmaps = 4},
+    ["alien-purple-research"] = {subgroup = "alien", technology_icon_size = 256, technology_icon_mipmaps = 4},
+    ["alien-yellow-research"] = {subgroup = "alien", technology_icon_size = 256, technology_icon_mipmaps = 4},
+    ["alien-green-research"] = {subgroup = "alien", technology_icon_size = 256, technology_icon_mipmaps = 4},
+    ["alien-red-research"] = {subgroup = "alien", technology_icon_size = 256, technology_icon_mipmaps = 4},
+
     -- Fluid Handling
     ["fluid-handling"] = {flat_icon = false, tier = 1, prog_tier = 2, icon_name = "fluid-handling"},
     ["bob-fluid-handling-2"] = {flat_icon = false, tier = 2, prog_tier = 3, icon_name = "fluid-handling"},
