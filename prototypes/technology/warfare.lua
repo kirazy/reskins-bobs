@@ -18,13 +18,13 @@ local inputs = {
 
 local technology = {
     -- Radars
-    ["radars"] = {tier = 2, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 1},
-    ["radars-2"] = {tier = 3, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 1},
-    ["radars-3"] = {tier = 4, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 1},
-    ["radars-4"] = {tier = 5, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 1},
+    ["radars"] = {tier = 2, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 0},
+    ["radars-2"] = {tier = 3, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 0},
+    ["radars-3"] = {tier = 4, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 0},
+    ["radars-4"] = {tier = 5, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 0},
 
     -- Miscellaneous
-    ["reinforced-wall"] = {technology_icon_size = 128, technology_icon_mipmaps = 1},
+    ["reinforced-wall"] = {technology_icon_size = 128, technology_icon_mipmaps = 0},
     ["bob-laser-rifle"] = {},
     ["bob-scatter-cannon-shells"] = {},
     ["cordite-processing"] = {},
@@ -84,7 +84,7 @@ local technology = {
 }
 
 if mods["aai-industry"] then
-    technology["radar"] = {tier = 1, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 1}
+    technology["radar"] = {tier = 1, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 0}
 end
 
 reskins.lib.create_icons_from_list(technology, inputs)
