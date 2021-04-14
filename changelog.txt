@@ -7,6 +7,8 @@ Date: ????
     - Implemented the inline and all-way small storage tank
   Changes:
     - Revised color of electric-type munitions from yellow to orange, aligning with Bob's coloring
+  Bugfixes:
+    - Fixed that radar technologies had incorrectly set mipmap levels
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.7
 Date: 2021-03-22
