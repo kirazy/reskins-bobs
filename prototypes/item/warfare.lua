@@ -119,7 +119,8 @@ local items = {
     ["cordite"] = {subgroup = "components"},
     ["rocket-engine"] = {subgroup = "components"},
     -- ["rocket-body"] = {subgroup = "components"},
-    -- ["shot"] = {subgroup = "components"},
+    ["petroleum-jelly"] = {subgroup = "components"},
+    ["shot"] = {subgroup = "components/shot"},
     ["shotgun-shell-casing"] = {subgroup = "components"},
 
     -- Weapons
@@ -127,3 +128,10 @@ local items = {
 }
 
 reskins.lib.create_icons_from_list(items, inputs)
+
+-- Handle shot variations
+local shot_item = data.raw.item["shot"]
+
+if shot_item then
+    shot_item.pictures = reskins.lib.create_icon_variations({mod = inputs.mod, group = inputs.group, subgroup = "components", icon = "shot", variations = 5})
+end

@@ -30,6 +30,14 @@ triggers.electronics = {
     technologies = reskins.lib.check_scope("technologies", "bobs", "bobelectronics"),
 }
 
+-- Bob's Enemies
+triggers.enemies = {
+    entities = reskins.lib.check_scope("entities", "bobs", "bobenemies"),
+    equipment = reskins.lib.check_scope("equipment", "bobs", "bobenemies"),
+    items = reskins.lib.check_scope("items-and-fluids", "bobs", "bobenemies"),
+    technologies = reskins.lib.check_scope("technologies", "bobs", "bobenemies"),
+}
+
 -- Bob's Equipment
 triggers.equipment = {
     entities = reskins.lib.check_scope("entities", "bobs", "bobequipment"),

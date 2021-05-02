@@ -116,6 +116,7 @@ require("prototypes.equipment.vehicle-equipment.vehicle-solar-panel")
 -- ITEMS
 ----------------------------------------------------------------------------------------------------
 require("prototypes.item.electronics")
+require("prototypes.item.enemies")
 require("prototypes.item.greenhouse")
 require("prototypes.item.logistics")
 require("prototypes.item.modules")

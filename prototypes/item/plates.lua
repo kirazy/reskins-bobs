@@ -106,6 +106,15 @@ local intermediates = {
     ["sodium-hydroxide"] = {subgroup = "items"},
     ["grinding-wheel"] = {subgroup = "items"},
     ["polishing-wheel"] = {subgroup = "items"},
+    ["polishing-compound"] = {subgroup = "items"},
+
+    -- Gemstones
+    ["ruby-5"] = {subgroup = "gems"},
+    ["sapphire-5"] = {subgroup = "gems"},
+    ["emerald-5"] = {subgroup = "gems"},
+    ["amethyst-5"] = {subgroup = "gems"},
+    ["topaz-5"] = {subgroup = "gems"},
+    ["diamond-5"] = {subgroup = "gems"},
 
     ----------------------------------------------------------------------------------------------------
     -- Recipes

@@ -48,6 +48,17 @@ if mods["bobelectronics"] then
     })
 end
 
+if mods["bobenemies"] then
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "reskins-bobs-do-bobenemies",
+            setting_type = "startup",
+            default_value = true,
+        }
+    })
+end
+
 if mods["bobequipment"] or mods["bobvehicleequipment"] then
     data:extend({
         {

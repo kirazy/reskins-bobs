@@ -8,7 +8,7 @@
     "homepage": "https://forums.factorio.com/viewtopic.php?f=51&t=85707",
     "dependencies": [
         "base",
-        "reskins-library >= 1.1.3",
+        "reskins-library >= 1.1.6",
         "? bobassembly",
         "? bobelectronics",
         "? bobgreenhouse",

@@ -2,11 +2,14 @@
 Version: 1.1.8
 Date: ????
   Features:
-    - Implemented bullet magazine and shotgun shell technologies, alien fluid and plate technologies, and revised rocket technologies in collaboration with Snouz
-    - Implemented grinding and polishing wheels, shotgun shell casings and the rocket engine items
+    - Implemented polished gem and petroleum jelly items, bullet magazine and shotgun shell technologies, alien fluid and plate technologies, and revised rocket technologies in collaboration with Snouz
+    - Implemented grinding and polishing wheels items and technologies, credit to Snouz
+    - Implemented polishing compound, shot, shotgun shell casings and rocket engine items
     - Implemented the inline and all-way small storage tank
+    - Added setting "Bob's Enemies" to toggle reskinning of items added by Bob's Enemies mod
   Changes:
     - Revised color of electric-type munitions from yellow to orange, aligning with Bob's coloring
+    - Revised alien fluids to align with new alien artifacts and technologies
   Bugfixes:
     - Fixed that radar technologies had incorrectly set mipmap levels
 ---------------------------------------------------------------------------------------------------
