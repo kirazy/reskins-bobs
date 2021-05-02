@@ -8,6 +8,7 @@ Date: ????
     - Implemented the inline and all-way small storage tank
     - Added setting "Bob's Enemies" to toggle reskinning of items added by Bob's Enemies mod
   Changes:
+    - Adjusted how ore icon variations are generated in line with changes in Artisanal Reskins: Library
     - Revised color of electric-type munitions from yellow to orange, aligning with Bob's coloring
     - Revised alien fluids to align with new alien artifacts and technologies
   Bugfixes:
