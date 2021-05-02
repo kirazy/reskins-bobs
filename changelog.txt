@@ -12,6 +12,7 @@ Date: ????
     - Revised alien fluids to align with new alien artifacts and technologies
   Bugfixes:
     - Fixed that radar technologies had incorrectly set mipmap levels
+    - Fixed that pipe to ground icons had black transparent pixels
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.7
 Date: 2021-03-22
