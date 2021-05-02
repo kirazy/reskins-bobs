@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.8
-Date: ????
+Date: 2021-05-02
   Features:
     - Implemented polished gem and petroleum jelly items, bullet magazine and shotgun shell technologies, alien fluid and plate technologies, and revised rocket technologies in collaboration with Snouz
     - Implemented grinding and polishing wheels items and technologies, credit to Snouz
