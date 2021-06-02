@@ -3,6 +3,7 @@ Version: 1.1.9
 Date: ????
   Features:
     - Added support for the advanced processing unit added by Bob's Metals, Chemicals, and Intermediates when Bob's Electronics is not present
+    - Added technology icons for Bob's modules
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.8
 Date: 2021-05-02

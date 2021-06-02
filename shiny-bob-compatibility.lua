@@ -129,6 +129,7 @@ require("prototypes.item.warfare")
 ----------------------------------------------------------------------------------------------------
 -- TECHNOLOGIES
 ----------------------------------------------------------------------------------------------------
+require("prototypes.technology.modules.module")
 require("prototypes.technology.assembly")
 require("prototypes.technology.equipment")
 require("prototypes.technology.greenhouse")
