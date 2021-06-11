@@ -11,13 +11,15 @@ local inputs = {
     mod = "bobs",
     group = "modules",
     type = "technology",
+    technology_icon_size = 256,
+    technology_icon_mipmaps = 4,
     flat_icon = true,
 }
 
 local technologies = {
     -- Module unlocks
-    -- ["modules"] = {}, -- Basics (Blue/Red/Yellow)
-    -- ["module-merging"] = {}, -- Pures/Raws (Cyan/Pink/Green)
+    ["modules"] = {}, -- Basics (Blue/Red/Yellow)
+    ["module-merging"] = {}, -- Pures/Raws (Cyan/Pink/Green)
 
     -- Beacons
     -- ["effect-transmission"] = {tier = 1, prog_tier = 3}, -- t3 beacon
