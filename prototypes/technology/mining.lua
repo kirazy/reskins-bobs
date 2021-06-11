@@ -40,7 +40,6 @@ local technologies = {
     -- ["water-miner-5"] =  {tier = 5},
 
     -- Oil pumpjacks
-    -- ["pumpjack"] = {tier = 1}, -- Revamp
     -- ["bob-pumpjacks-1"] = {tier = 2},
     -- ["bob-pumpjacks-2"] = {tier = 3},
     -- ["bob-pumpjacks-3"] = {tier = 4},

@@ -13,7 +13,6 @@ local inputs = {
     type = "technology",
 }
 
--- Automation (Assembling Machines)
 local technologies = {
     -- Chemical plant
     ["chemical-plant"] = {group = "assembly", tier = 1, prog_tier = 2, icon_name = "chemical-plant"},

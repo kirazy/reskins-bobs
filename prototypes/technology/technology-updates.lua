@@ -19,7 +19,7 @@ local inputs = {
 
 local technologies = {
     -- Science Packs
-    ["advanced-logistic-science-pack"] = {icon_name = "science-pack", tint = util.color("de00a3"), technology_icon_size = 128, technology_icon_mipmaps = 0, flat_icon = false}
+    ["advanced-logistic-science-pack"] = {icon_name = "science-pack", tint = util.color("de00a3"), technology_icon_size = 128, technology_icon_mipmaps = 0, flat_icon = false},
 }
 
 -- Color overhaul for science packs

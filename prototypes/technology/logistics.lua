@@ -131,5 +131,5 @@ end
 
 reskins.lib.create_icons_from_list(technologies, inputs)
 
--- Overwrite icons for inserter capacity bonus effects
+-- Overwrite icons for technology effects
 data.raw["utility-sprites"].default.stack_inserter_capacity_bonus_modifier_icon.filename = reskins.bobs.directory.."/graphics/icons/logistics/inserter/stack-inserter-technology-effect-icon.png"
