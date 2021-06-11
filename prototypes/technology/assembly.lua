@@ -16,12 +16,23 @@ local inputs = {
 -- Automation (Assembling Machines)
 local technologies = {
     -- Assemblers
+    ["basic-automation"] = {icon_name = "automation", tint = util.color("262626")},
+    ["steam-automation"] = {icon_name = "automation", tint = util.color("d9d9d9")},
     ["automation"] = {tier = 0, icon_name = "automation"},
     ["automation-2"] = {tier = 1, icon_name = "automation"},
     ["automation-3"] = {tier = 2, icon_name = "automation"},
     ["automation-4"] = {tier = 3, icon_name = "automation"},
     ["automation-5"] = {tier = 4, icon_name = "automation"},
     ["automation-6"] = {tier = 5, icon_name = "automation"},
+
+    -- Electronics Assemblers
+    -- ["electronics-machine-1"] = {},
+    -- ["electronics-machine-2"] = {},
+    -- ["electronics-machine-3"] = {},
+
+    -- Centrifuges
+    -- ["centrifuge-2"] = {},
+    -- ["centrifuge-3"] = {},
 
     -- Electrolysers
     ["electrolyser-2"] = {tier = 2, icon_name = "electrolyser", icon_base = "electrolyser-2", icon_mask = "electrolyser-2", icon_highlights = "electrolyser-2"},
