@@ -109,25 +109,25 @@ local technologies = {
 -- end
 
 -- Load which set of inserter technologies are to be reskinned
--- if reskins.lib.setting("bobmods-logistics-inserteroverhaul") == true then
---     -- Standard inserters
---     technologies["fast-inserter"] = {tier = 2}
---     technologies["express-inserters"] = {tier = 3}
---     technologies["turbo-inserter"] = {tier = 4}
---     technologies["ultimate-inserter"] = {tier = 5}
+if reskins.lib.setting("bobmods-logistics-inserteroverhaul") == true then
+    -- Standard inserters
+    -- technologies["fast-inserter"] = {tier = 2}
+    -- technologies["express-inserters"] = {tier = 3}
+    -- technologies["turbo-inserter"] = {tier = 4}
+    -- technologies["ultimate-inserter"] = {tier = 5}
 
---     -- Stack inserters
---     technologies["stack-inserter"] = {tier = 2}
---     technologies["stack-inserter-2"] = {tier = 3}
---     technologies["stack-inserter-3"] = {tier = 4}
---     technologies["stack-inserter-4"] = {tier = 5}
--- else
---     technologies["long-inserters-1"] = {} -- shared with bobinserters...?
---     technologies["fast-inserter"] = {} -- use vanilla tech icon blue/purple
---     technologies["express-inserters"] = {} -- green/pink
---     technologies["stack-inserter"] = {} -- green/white
---     technologies["stack-inserter-2"] = {} -- rich green/gray
--- end
+    -- Stack inserters
+    -- technologies["stack-inserter"] = {tier = 2}
+    -- technologies["stack-inserter-2"] = {tier = 3}
+    -- technologies["stack-inserter-3"] = {tier = 4}
+    -- technologies["stack-inserter-4"] = {tier = 5}
+else
+    technologies["long-inserters-1"] = {flat_icon = true}
+    -- technologies["fast-inserter"] = {} -- fine as-is
+    technologies["express-inserters"] = {flat_icon = true} -- green/pink
+    technologies["stack-inserter"] = {flat_icon = true} -- green/white
+    technologies["stack-inserter-2"] = {flat_icon = true} -- rich green/gray
+end
 
 reskins.lib.create_icons_from_list(technologies, inputs)
 
