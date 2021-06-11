@@ -4,6 +4,10 @@ Date: ????
   Features:
     - Added support for the advanced processing unit added by Bob's Metals, Chemicals, and Intermediates when Bob's Electronics is not present
     - Added technology icons for Bob's modules
+    - Overwrote technology icons for advanced electronics 2 and 3 with respective icons from base Factorio
+  Changes:
+    - Dropped support for ShinyBobGFX, ShinyAngelGFX
+    - Internal restructuring of technology data-stage requiring
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.8
 Date: 2021-05-02
