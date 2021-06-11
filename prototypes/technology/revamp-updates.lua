@@ -4,19 +4,19 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.greenhouse.technologies) then return end
+if not (reskins.bobs and reskins.bobs.triggers.revamp.technologies) then return end
 
--- Setup inputs
+-- Setup standard inputs
 local inputs = {
     mod = "bobs",
-    group = "greenhouse",
+    group = "revamp",
     type = "technology",
-    flat_icon = true,
 }
 
+-- Automation (Assembling Machines)
 local technologies = {
-    ["bob-fertiliser"] = {},
-    -- ["bob-greenhouse"] = {}, -- greenhouse, recipies
+    -- Chemical plant
+    ["chemical-plant"] = {group = "assembly", tier = 1, prog_tier = 2, icon_name = "chemical-plant"},
 }
 
 reskins.lib.create_icons_from_list(technologies, inputs)

@@ -16,8 +16,6 @@ local inputs = {
 -- Automation (Assembling Machines)
 local technologies = {
     -- Assemblers
-    ["basic-automation"] = {icon_name = "automation", tint = util.color("262626")},
-    ["steam-automation"] = {icon_name = "automation", tint = util.color("d9d9d9")},
     ["automation"] = {tier = 0, icon_name = "automation"},
     ["automation-2"] = {tier = 1, icon_name = "automation"},
     ["automation-3"] = {tier = 2, icon_name = "automation"},
@@ -46,6 +44,7 @@ local technologies = {
     ["chemical-plant-4"] = {tier = 4, prog_tier = 5, icon_name = "chemical-plant"},
 
     -- Oil Refinery
+    -- ["oil-processing"] = {tier = 1, prog_tier = 2} -- refinery 1
     ["oil-processing-2"] = {tier = 2, prog_tier = 3, icon_name = "oil-refinery"},
     ["oil-processing-3"] = {tier = 3, prog_tier = 4, icon_name = "oil-refinery"},
     ["oil-processing-4"] = {tier = 4, prog_tier = 5, icon_name = "oil-refinery"},

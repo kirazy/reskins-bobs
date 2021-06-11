@@ -17,6 +17,7 @@ local modules_map = {
     ["raw-speed"] = {color = "cyan"},
     ["green"] = {color = "green"},
     ["raw-productivity"] = {color = "pink"},
+    -- ["god"] = {color = "gray", is_god = true}
 }
 
 for class, map in pairs(modules_map) do

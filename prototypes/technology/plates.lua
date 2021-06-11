@@ -14,14 +14,18 @@ local inputs = {
     flat_icon = true,
 }
 
-local technology = {
+local technologies = {
     -- Nuclear
+    -- ["uranium-processing"] = {}, -- uraniuym proc, centri t3
     ["thorium-processing"] = {subgroup = "nuclear"},
     ["thorium-fuel-reprocessing"] = {subgroup = "nuclear"},
     ["deuterium-fuel-reprocessing"] = {subgroup = "nuclear", image = "deuterium-fuel-reprocessing-pink"},
     ["bobingabout-enrichment-process"] = {subgroup = "nuclear"},
+    -- ["plutonium-fuel-cell"] = {}, -- plut fuel cell icon, is broken/sized wrong
+    -- ["thorium-plutonium-fuel-cell"] = {}, -- ^^^
+    -- ["deuterium-fuel-cell-2"] = {}, -- check color from revamp settings?
 
-    -- Smelting
+    -- Furnaces
     ["alloy-processing-1"] = {subgroup = "smelting"},
     ["chemical-processing-1"] = {subgroup = "smelting"},
 
@@ -52,17 +56,46 @@ local technology = {
     ["air-compressor-3"] = {flat_icon = false, tier = 3, prog_tier = 4, icon_name = "air-compressor"},
     ["air-compressor-4"] = {flat_icon = false, tier = 4, prog_tier = 5, icon_name = "air-compressor"},
 
-    -- Processing steps
+    -- Assorted processes
+    -- ["plastics"] = {}, -- Plastic, plastic pipes
+    -- ["ceramics"] = {}, -- silicon nitride, ceramic bearing, ball bearing, pipes
+    -- ["advanced-oil-processing"] = {}, -- oil recipes
     ["grinding"] = {subgroup = "processing-steps", technology_icon_size = 256, technology_icon_mipmaps = 4},
     ["polishing"] = {subgroup = "processing-steps", technology_icon_size = 256, technology_icon_mipmaps = 4},
     ["electrolysis-1"] = {subgroup = "processing-steps", image = "electrolysis", technology_icon_size = 256, technology_icon_mipmaps = 4},
     ["electrolysis-2"] = {subgroup = "processing-steps", image = "electrolysis", technology_icon_size = 256, technology_icon_mipmaps = 4},
     ["void-fluid"] = {subgroup = "processing-steps", technology_icon_size = 256, technology_icon_mipmaps = 4},
 
-    -- Plates
+    -- Plate processing
     -- ["aluminium-processing"] = {subgroup = "plates"},
-    -- ["gold-processing"] = {subgroup = "plates"},
-    -- ["zinc-processing"] = {subgroup = "plates"},
+    -- ["gold-processing"] = {subgroup = "plates"}, -- gold plate
+    -- ["zinc-processing"] = {subgroup = "plates"}, -- zinc plate, brass, gunmetal, brass gear, brass pipes, brass chest
+    -- ["nickel-processing"] = {}, -- nickel plate
+    -- ["steel-processing"] = {}, -- vanilla fine as is
+    -- ["silicon-processing"] = {}, -- silicon boule, wager, powder
+    -- ["invar-processing"] = {}, -- invar plate
+    -- ["lead-processing"] = {}, -- lead plate, lead oxide
+    -- ["aluminium-processing"] = {}, -- alumina, aluminium plate
+    -- ["cobalt-processing"] = {}, -- cobalt oxide, cobalt plate, copper plate from cobalt, cobalt steel plate, gear, bearing, ball bearing
+    -- ["tungsten-alloy-processing"] = {}, -- copper-tungsten, tungsten carbide, c-tun-pipes
+    -- ["nitinol-processing"] = {}, -- nitinol plate, gear, bearing, ball,. pipes
+    -- ["titanium-processing"] = {}, -- titanium plate, gear, ball, bearing, pipes, chest
+    -- ["tungsten-processing"] = {}, -- tungsten plate, gear, pipe, acid, oxide, powdered
+
+    -- Gasses
+    -- ["nitrogen-processing"] = {}, -- fluids: nitrogen, nitrogen-dioxide, nitric acid, ammonia, nitric oxide, hydrogen peroxide
+    -- ["chemical-processing-2"] = {}, -- hydro chloride, calcium, ferric chloride, limestone, carbon dioxide,
+
+    -- Chemicals and fluids processing
+    -- ["lithium-processing"] = {}, -- lithium, lithium chloride, perchlorate, sodium chlorate, perchlorate, (Bob's revamp does something to this?)
+    -- ["nitroglycerin-processing"] = {}, -- glycerol, nitroglycerin, sulfuric and nitric acid
+    -- ["sulfur-processing"] = {}, -- sulfur, sulfuric acid, sulfur-dioxide, hydrogen-sulfide, hydrogen-peroxide, petroleum-gas
+    -- ["heavy-water-processing"] = {}, -- heavy water
+    -- ["deuterium-processing"] = {}, -- heavy water electrolysis
+
+    -- Gems
+    -- ["gem-processing-1"] = {}, -- cut gems
+    -- ["gem-processing-2"] = {}, -- polished gems
 
     -- Alien plates
     ["alien-blue-research"] = {subgroup = "alien", technology_icon_size = 256, technology_icon_mipmaps = 4},
@@ -77,26 +110,29 @@ local technology = {
     ["bob-fluid-handling-2"] = {flat_icon = false, tier = 2, prog_tier = 3, icon_name = "fluid-handling"},
     ["bob-fluid-handling-3"] = {flat_icon = false, tier = 3, prog_tier = 4, icon_name = "fluid-handling"},
     ["bob-fluid-handling-4"] = {flat_icon = false, tier = 4, prog_tier = 5, icon_name = "fluid-handling"},
+
+    -- Miscellaneous
+    -- ["gas-canisters"] = {}, -- gas cans
 }
 
 -- Handle nuclear update
 if reskins.lib.setting("bobmods-plates-nuclearupdate") == true then
-    technology["nuclear-fuel-reprocessing"] = {subgroup = "nuclear", defer_to_data_updates = true}
+    technologies["nuclear-fuel-reprocessing"] = {subgroup = "nuclear", defer_to_data_updates = true}
 
     -- Handle deuterium's default process color
     if reskins.lib.setting("bobmods-plates-bluedeuterium") == true then
-        technology["deuterium-fuel-reprocessing"].image = "deuterium-fuel-reprocessing-blue"
+        technologies["deuterium-fuel-reprocessing"].image = "deuterium-fuel-reprocessing-blue"
     end
 else
-    technology["thorium-fuel-reprocessing"].image = "thorium-fuel-reprocessing-alternate"
+    technologies["thorium-fuel-reprocessing"].image = "thorium-fuel-reprocessing-alternate"
 
     -- Handle deuterium's alternate process color
     if reskins.lib.setting("bobmods-plates-bluedeuterium") == true then
-        technology["deuterium-fuel-reprocessing"].image = "deuterium-fuel-reprocessing-alternate-blue"
+        technologies["deuterium-fuel-reprocessing"].image = "deuterium-fuel-reprocessing-alternate-blue"
     else
-        technology["deuterium-fuel-reprocessing"].image = "deuterium-fuel-reprocessing-alternate-pink"
+        technologies["deuterium-fuel-reprocessing"].image = "deuterium-fuel-reprocessing-alternate-pink"
     end
 
 end
 
-reskins.lib.create_icons_from_list(technology, inputs)
+reskins.lib.create_icons_from_list(technologies, inputs)

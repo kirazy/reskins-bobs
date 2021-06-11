@@ -16,75 +16,75 @@ local inputs = {
     flat_icon = true,
 }
 
-local technology = {
-    -- Radars
-    ["radars"] = {tier = 2, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 0},
-    ["radars-2"] = {tier = 3, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 0},
-    ["radars-3"] = {tier = 4, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 0},
-    ["radars-4"] = {tier = 5, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 0},
+local technologies = {
+    -- Gun turrets
+    -- ["gun-turret"] = {tier = 1}, -- t1 gun, technically part of revamp
+    -- ["bob-turrets-2"] = {tier = 2}, -- t2 turret
+    -- ["bob-turrets-3"] = {tier = 3}, -- t3 turret
+    -- ["bob-turrets-4"] = {tier = 4}, -- t4 turret
+    -- ["bob-turrets-5"] = {tier = 5}, -- t5 turret
 
-    -- Miscellaneous
-    ["reinforced-wall"] = {technology_icon_size = 128, technology_icon_mipmaps = 0},
-    ["bob-laser-rifle"] = {},
-    ["bob-scatter-cannon-shells"] = {},
-    ["cordite-processing"] = {},
+    -- Sniper turrets
+    -- ["bob-sniper-turrets-1"] = {tier = 1, prog_tier = 1}, -- t1 sniper
+    -- ["bob-sniper-turrets-2"] = {tier = 2, prog_tier = 3}, -- t3 sniper
+    -- ["bob-sniper-turrets-3"] = {tier = 3, prog_tier = 5}, -- t5 sniper
 
-    -- Laser rifle ammo
-    ["bob-laser-rifle-ammo-1"] = {subgroup = "laser-rifle-ammo"},
-    ["bob-laser-rifle-ammo-2"] = {subgroup = "laser-rifle-ammo"},
-    ["bob-laser-rifle-ammo-3"] = {subgroup = "laser-rifle-ammo"},
-    ["bob-laser-rifle-ammo-4"] = {subgroup = "laser-rifle-ammo"},
-    ["bob-laser-rifle-ammo-5"] = {subgroup = "laser-rifle-ammo"},
-    ["bob-laser-rifle-ammo-6"] = {subgroup = "laser-rifle-ammo"},
+    -- Laser turrets
+    -- ["laser-turret"] = {tier = 1}, -- t1 laser
+    -- ["bob-laser-turrets-2"] = {tier = 2}, -- t2 laser
+    -- ["bob-laser-turrets-3"] = {tier = 3}, -- t3 laser
+    -- ["bob-laser-turrets-4"] = {tier = 4}, -- t4 laser
+    -- ["bob-laser-turrets-5"] = {tier = 5}, -- t5 laser
 
-    -- Rocketry
-    ["rocketry"] = {subgroup = "rocketry"},
-    ["bob-rocket"] = {subgroup = "rocketry"},
-    ["bob-piercing-rocket"] = {subgroup = "rocketry"},
-    ["bob-electric-rocket"] = {subgroup = "rocketry"},
-    ["bob-acid-rocket"] = {subgroup = "rocketry"},
-    ["bob-explosive-rocket"] = {subgroup = "rocketry"},
-    ["bob-poison-rocket"] = {subgroup = "rocketry"},
-    ["bob-flame-rocket"] = {subgroup = "rocketry"},
-    ["bob-plasma-rocket"] = {subgroup = "rocketry"},
+    -- Plasma turrets
+    -- ["bob-plasma-turrets-1"] = {tier = 1}, -- t1 plasma
+    -- ["bob-plasma-turrets-2"] = {tier = 2},
+    -- ["bob-plasma-turrets-3"] = {tier = 3},
+    -- ["bob-plasma-turrets-4"] = {tier = 4},
+    -- ["bob-plasma-turrets-5"] = {tier = 5},
 
-    -- Artillery shells
-    ["bob-poison-artillery-shells"] = {subgroup = "artillery-shells"},
-    ["bob-fire-artillery-shells"] = {subgroup = "artillery-shells"},
-    ["bob-explosive-artillery-shells"] = {subgroup = "artillery-shells"},
-    ["bob-distractor-artillery-shells"] = {subgroup = "artillery-shells"},
-    ["bob-atomic-artillery-shell"] = {subgroup = "artillery-shells"},
+    -- Artillery and artillery wagons
+    -- ["artillery"] = {tier = 1, prog_tier = 3}, -- t3 arty/train arty
+    -- ["bob-artillery-turret-2"] = {tier = 2, prog_tier = 4}, -- t4 arty
+    -- ["bob-artillery-turret-3"] = {tier = 3, prog_tier = 5}, -- t5 arty
+    -- ["bob-artillery-wagon-2"] = {tier = 2, prog_tier = 4}, -- t4 train arty
+    -- ["bob-artillery-wagon-3"] = {tier = 3, prog_tier = 5}, -- t5 train arty
 
-    -- Mines
-    ["poison-mine"] = {subgroup = "mines"},
-    ["slowdown-mine"] = {subgroup = "mines"},
-    ["distractor-mine"] = {subgroup = "mines"},
+    -- Military progression
+    -- ["military"] = {},
+    -- ["military-3"] = {}, -- poison/slowdown capsules, auto shotty, napalm, sniper
+    -- ["military-4"] = {}, -- piercing shotgun shells, cluster grenade
 
-    -- Shotgun shells
-    ["bob-shotgun-acid-shells"] = {subgroup = "shotgun-shells"},
-    ["bob-shotgun-ap-shells"] = {subgroup = "shotgun-shells"},
-    ["bob-shotgun-electric-shells"] = {subgroup = "shotgun-shells"},
-    ["bob-shotgun-flame-shells"] = {subgroup = "shotgun-shells"},
-    ["bob-shotgun-explosive-shells"] = {subgroup = "shotgun-shells"},
-    ["bob-shotgun-plasma-shells"] = {subgroup = "shotgun-shells"},
-    ["bob-shotgun-poison-shells"] = {subgroup = "shotgun-shells"},
-    ["bob-shotgun-shells"] = {subgroup = "shotgun-shells"},
-    ["bob-shotgun-uranium-shells"] = {subgroup = "shotgun-shells"},
+    -- Armor
+    -- ["heavy-armor"] = {}, -- probably fine? Depends how armor is handled
+    -- ["bob-armor-making-3"] = {}, -- invar cobalt-steel armor (heavy-armor-2)
+    -- ["bob-armor-making-4"] = {}, -- titanium-ceramic armor
+    -- ["power-armor"] = {}, -- power armor first entry
+    -- ["power-armor-mk2"] = {}, -- 2nd power armor
+    -- ["bob-power-armor-3"] = {},
+    -- ["bob-power-armor-4"] = {},
+    -- ["bob-power-armor-5"] = {},
 
-    -- Bullet magazines
-    ["bob-acid-bullets"] = {subgroup = "bullet-magazines"},
-    ["bob-ap-bullets"] = {subgroup = "bullet-magazines"},
-    ["bob-bullets"] = {subgroup = "bullet-magazines"},
-    ["bob-electric-bullets"] = {subgroup = "bullet-magazines"},
-    ["bob-flame-bullets"] = {subgroup = "bullet-magazines"},
-    ["bob-he-bullets"] = {subgroup = "bullet-magazines"},
-    ["bob-plasma-bullets"] = {subgroup = "bullet-magazines"},
-    ["bob-poison-bullets"] = {subgroup = "bullet-magazines"},
-    ["uranium-ammo"] = {subgroup = "bullet-magazines"},
+    -- Tanks
+    -- ["tank"] = {}, -- t2 tank
+    -- ["bob-tanks-2"] = {}, -- t4 tank
+    -- ["bob-tanks-3"] = {},
+
+    -- Tank robots
+    -- ["bob-robot-gun-drones"] = {},
+    -- ["bob-robot-laser-drones"] = {},
+    -- ["bob-robot-flamethrower-drones"] = {},
+    -- ["bob-robot-plasma-drones"] = {},
+
+    -- Robots
+    -- ["bob-laser-robot"] = {}, -- it ghetto, but an Angel render
+
+    -- Spidertrons
+    -- ["walking-vehicle"] = {}, -- "Antron"
+    -- ["tankotron"] = {}, -- "tankotron"
+    -- ["logistic-spidertron"] = {}, -- "logitron"
+    -- ["spidertron"] = {}, -- "Spidertron"
+    -- ["heavy-spidertron"] = {}, -- "Heavy spidertron"
 }
 
-if mods["aai-industry"] then
-    technology["radar"] = {tier = 1, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 0}
-end
-
-reskins.lib.create_icons_from_list(technology, inputs)
+reskins.lib.create_icons_from_list(technologies, inputs)

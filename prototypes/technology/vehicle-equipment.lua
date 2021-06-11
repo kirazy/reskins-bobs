@@ -1,0 +1,6 @@
+-- ["vehicle-big-turret-equipment-1"] = {tier = 0},
+-- ["vehicle-big-turret-equipment-2"] = {tier = 1},
+-- ["vehicle-big-turret-equipment-3"] = {tier = 2},
+-- ["vehicle-big-turret-equipment-4"] = {tier = 3},
+-- ["vehicle-big-turret-equipment-5"] = {tier = 4},
+-- ["vehicle-big-turret-equipment-6"] = {tier = 5},

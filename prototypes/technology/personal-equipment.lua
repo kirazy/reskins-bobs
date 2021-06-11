@@ -20,14 +20,14 @@ local inputs = {
     technology_icon_mipmaps = 4,
 }
 
-local technology = {
+local technologies = {
     ["roboport-modular-equipment-1"] = {tier = 1, prog_tier = 2},
     ["roboport-modular-equipment-2"] = {tier = 2, prog_tier = 3},
     ["roboport-modular-equipment-3"] = {tier = 3, prog_tier = 4},
     ["roboport-modular-equipment-4"] = {tier = 4, prog_tier = 5},
 }
 
-for name, map in pairs(technology) do
+for name, map in pairs(technologies) do
     -- Handle tier
     local tier = map.tier
     if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then

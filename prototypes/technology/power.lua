@@ -75,6 +75,34 @@ local technologies = {
     ["fluid-generator-2"] = {tier = 2, prog_tier = 3, icon_name = "fluid-generator"},
     ["fluid-generator-3"] = {tier = 3, prog_tier = 4, icon_name = "fluid-generator"},
     ["hydrazine-generator"] = {tier = 4, prog_tier = 5, icon_name = "fluid-generator", tint = reskins.bobs.hydrazine_tint},
+
+    -- Heat pipes
+    -- ["bob-heat-pipe-1"] = {}, -- heat pipes
+    -- ["bob-heat-pipe-2"] = {}, -- silver pipes
+    -- ["bob-heat-pipe-3"] = {}, -- gold pipes
+
+    -- Electric poles
+    -- ["electric-energy-distribution-1"] = {}, -- t2 poles
+    -- ["electric-pole-2"] = {}, -- t3 poles
+    -- ["electric-pole-3"] = {}, -- t4 poles
+    -- ["electric-pole-4"] = {}, -- t5 poles
+    -- ["electric-energy-distribution-2"] = {}, -- t2 substation
+    -- ["electric-substation-2"] = {}, -- t3 substation
+    -- ["electric-substation-3"] = {}, -- t4 substation
+    -- ["electric-substation-4"] = {}, -- t5 substation
+
+    -- Heat sources
+    -- ["fluid-reactor-1"] = {}, -- t3 fluid burning heat sources
+    -- ["fluid-reactor-2"] = {}, -- t4 fluid heat source
+    -- ["fluid-reactor-3"] = {}, -- t5
+    -- ["burner-reactor-1"] = {}, -- t3 burner heat sources
+    -- ["burner-reactor-2"] = {}, -- t4 burner
+    -- ["burner-reactor-3"] = {}, -- t5
+
+    -- Nuclear reactors
+    -- ["nuclear-power"] = {}, -- t3 reactor
+    -- ["bob-nuclear-power-2"] = {}, -- t4 reactor
+    -- ["bob-nuclear-power-3"] = {}, -- t5 reactor
 }
 
 reskins.lib.create_icons_from_list(technologies, inputs)
