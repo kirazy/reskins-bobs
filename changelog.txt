@@ -9,7 +9,7 @@ Date: ????
     - Implemented inserter, alien science, logistic and construction robot technologies
   Changes:
     - Dropped support for ShinyBobGFX, ShinyAngelGFX
-    - Updated science pack, rocketry technologies
+    - Updated science pack, rocketry, bullet magazine, and alien artifact technologies
     - Internal restructuring of technology data-stage requiring
     - Now dependent on Artisanal Reskins: Library version 1.1.7
 ---------------------------------------------------------------------------------------------------
