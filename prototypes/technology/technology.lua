@@ -12,19 +12,21 @@ local inputs = {
     mod = "bobs",
     group = "technology",
     type = "technology",
+    technology_icon_size = 256,
+    technology_icon_mipmaps = 4,
 }
 
 local technologies = {
     -- Steam power-related unlocks
-    ["basic-automation"] = {group = "assembly", icon_name = "automation", tint = util.color("262626")},
-    ["steam-automation"] = {group = "assembly", icon_name = "automation", tint = util.color("d9d9d9")},
+    ["basic-automation"] = {group = "assembly", technology_icon_size = 128, technology_icon_mipmaps = 0, icon_name = "automation", tint = util.color("262626")},
+    ["steam-automation"] = {group = "assembly", technology_icon_size = 128, technology_icon_mipmaps = 0, icon_name = "automation", tint = util.color("d9d9d9")},
     -- ["steam-power"] = {}, -- unlocks boiler/steam drill/inserter/pump, conditional on steam setting, currently a steam cloud
     -- ["electricity"] = {}, -- inserter/miner/radar/pole/fluid burner gen
 
     -- Labs
     -- ["lab"] = {}, -- lab 1
     -- ["advanced-research"] = {}, -- lab 2
-    -- ["alien-research"] = {}, -- alien science packs, alien lab
+    ["alien-research"] = {flat_icon = true},
 
     -- TECHNOLOGY EFFECTS
     ["bob-infinite-worker-robots-storage-1"] = {technology_icon_filename = "__base__/graphics/technology/worker-robots-storage.png", technology_icon_extras = {reskins.lib.return_technology_effect_icon("capacity")}, technology_icon_size = 256, technology_icon_mipmaps = 4, flat_icon = true},

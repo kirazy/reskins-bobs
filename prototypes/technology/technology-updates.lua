@@ -19,17 +19,17 @@ local inputs = {
 
 local technologies = {
     -- Science Packs
-    ["advanced-logistic-science-pack"] = {icon_name = "science-pack", tint = util.color("de00a3"), technology_icon_size = 128, technology_icon_mipmaps = 0, flat_icon = false},
+    ["advanced-logistic-science-pack"] = {icon_name = "science-pack", tint = util.color("de00a3"), flat_icon = false},
 }
 
 -- Color overhaul for science packs
 if reskins.lib.setting("bobmods-tech-colorupdate") == true then
     if reskins.lib.setting("reskins-lib-customize-tier-colors") == true then
-        technologies["automation-science-pack"] = {tier = 1, icon_name = "science-pack", technology_icon_size = 128, technology_icon_mipmaps = 0, flat_icon = false}
-        technologies["logistic-science-pack"] = {tier = 2, icon_name = "science-pack", technology_icon_size = 128, technology_icon_mipmaps = 0, flat_icon = false}
-        technologies["chemical-science-pack"] = {tier = 3, icon_name = "science-pack", technology_icon_size = 128, technology_icon_mipmaps = 0, flat_icon = false}
-        technologies["production-science-pack"] = {tier = 4, icon_name = "science-pack", technology_icon_size = 128, technology_icon_mipmaps = 0, flat_icon = false}
-        technologies["utility-science-pack"] = {tier = 5, icon_name = "science-pack", technology_icon_size = 128, technology_icon_mipmaps = 0, flat_icon = false}
+        technologies["automation-science-pack"] = {tier = 1, icon_name = "science-pack", flat_icon = false}
+        technologies["logistic-science-pack"] = {tier = 2, icon_name = "science-pack", flat_icon = false}
+        technologies["chemical-science-pack"] = {tier = 3, icon_name = "science-pack", flat_icon = false}
+        technologies["production-science-pack"] = {tier = 4, icon_name = "science-pack", flat_icon = false}
+        technologies["utility-science-pack"] = {tier = 5, icon_name = "science-pack", flat_icon = false}
     else
         technologies["automation-science-pack"] = {technology_icon_filename = "__base__/graphics/technology/utility-science-pack.png"}
         technologies["logistic-science-pack"] = {technology_icon_filename = "__base__/graphics/technology/automation-science-pack.png"}
