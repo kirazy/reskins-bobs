@@ -111,16 +111,16 @@ local technologies = {
 -- Load which set of inserter technologies are to be reskinned
 if reskins.lib.setting("bobmods-logistics-inserteroverhaul") == true then
     -- Standard inserters
-    -- technologies["fast-inserter"] = {tier = 2}
-    -- technologies["express-inserters"] = {tier = 3}
-    -- technologies["turbo-inserter"] = {tier = 4}
-    -- technologies["ultimate-inserter"] = {tier = 5}
+    technologies["fast-inserter"] = {icon_name = "inserter", tier = 2}
+    technologies["express-inserters"] = {icon_name = "inserter", tier = 3}
+    technologies["turbo-inserter"] = {icon_name = "inserter", tier = 4}
+    technologies["ultimate-inserter"] = {icon_name = "inserter", tier = 5}
 
     -- Stack inserters
-    -- technologies["stack-inserter"] = {tier = 2}
-    -- technologies["stack-inserter-2"] = {tier = 3}
-    -- technologies["stack-inserter-3"] = {tier = 4}
-    -- technologies["stack-inserter-4"] = {tier = 5}
+    technologies["stack-inserter"] = {icon_name = "stack-inserter", tier = 2}
+    technologies["stack-inserter-2"] = {icon_name = "stack-inserter", tier = 3}
+    technologies["stack-inserter-3"] = {icon_name = "stack-inserter", tier = 4}
+    technologies["stack-inserter-4"] = {icon_name = "stack-inserter", tier = 5}
 else
     technologies["long-inserters-1"] = {flat_icon = true}
     -- technologies["fast-inserter"] = {} -- fine as-is
