@@ -6,7 +6,7 @@ Date: ????
     - Implemented technology icons for Bob's module unlocks
     - Overwrote technology icons for advanced electronics 2 and 3 with respective icons from base Factorio
     - Reskinned steel axe, inserter capacity, stack inserter capacity and toolbelt technologies
-    - Implemented inserter, alien science technologies
+    - Implemented inserter, alien science, logistic and construction robot technologies
   Changes:
     - Dropped support for ShinyBobGFX, ShinyAngelGFX
     - Updated science pack, rocketry technologies

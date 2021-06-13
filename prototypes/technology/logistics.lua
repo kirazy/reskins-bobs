@@ -61,12 +61,12 @@ local technologies = {
     -- ["bob-robotics-4"] = {tier = 4, prog_tier = 5},
 
     -- Construction/Logistic robots
-    -- ["construction-robots"] = {tier = 1, prog_tier = 2},
-    -- ["logistic-robots"] = {tier = 1, prog_tier = 2},
-    -- ["bob-robots-1"] = {tier = 2, prog_tier = 3},
-    -- ["bob-robots-2"] = {tier = 3, prog_tier = 4},
-    -- ["bob-robots-3"] = {tier = 4, prog_tier = 5},
-    -- ["bob-robots-4"] = {tier = 5, prog_tier = 5},
+    -- ["construction-robots"] = {tier = 1},
+    -- ["logistic-robots"] = {tier = 1},
+    ["bob-robots-1"] = {icon_name = "robots", tier = 2},
+    ["bob-robots-2"] = {icon_name = "robots", tier = 3},
+    ["bob-robots-3"] = {icon_name = "robots", tier = 4},
+    ["bob-robots-4"] = {icon_name = "robots", tier = 5},
 
     -- Logistic systems
     -- ["logistic-system"] = {tier = 1, prog_tier = 2},
@@ -104,9 +104,14 @@ local technologies = {
 -- end
 
 -- Set fusion robot color
--- if (reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" and reskins.lib.setting("reskins-bobs-do-progression-based-robots")) then
---     technologies["bob-robots-4"].tint = util.color(reskins.lib.setting("reskins-bobs-fusion-robot-color"))
--- end
+if (reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" and reskins.lib.setting("reskins-bobs-do-progression-based-robots")) then
+    -- technologies["construction-robots"].prog_tier = 2
+    -- technologies["logistic-robots"].prog_tier = 2
+    technologies["bob-robots-1"].prog_tier = 3
+    technologies["bob-robots-2"].prog_tier = 4
+    technologies["bob-robots-3"].prog_tier = 5
+    technologies["bob-robots-4"].tint = util.color(reskins.lib.setting("reskins-bobs-fusion-robot-color"))
+end
 
 -- Load which set of inserter technologies are to be reskinned
 if reskins.lib.setting("bobmods-logistics-inserteroverhaul") == true then
