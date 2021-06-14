@@ -59,7 +59,7 @@ if mods["bobenemies"] then
     })
 end
 
-if mods["bobequipment"] or mods["bobvehicleequipment"] then
+if mods["bobequipment"] then
     data:extend({
         {
             type = "bool-setting",
@@ -252,6 +252,17 @@ if mods["bobtech"] then
             setting_type = "startup",
             default_value = true,
             hidden = true,
+        },
+    })
+end
+
+if mods["bobvehicleequipment"] then
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "reskins-bobs-do-bobvehicleequipment",
+            setting_type = "startup",
+            default_value = true,
         },
     })
 end
