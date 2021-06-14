@@ -29,10 +29,6 @@ local properties = {
     {suffix = "-4", tier = 4, prog_tier = 5},
 }
 
-local technologies = {
-    -- "personal-roboport"
-}
-
 -- Reskin equipment
 for _, category in pairs(categories) do
     for index, map in pairs(properties) do

@@ -3,6 +3,9 @@
 --
 -- See LICENSE in the project directory for license information.
 
+-- Check to see if reskinning needs to be done.
+if not (reskins.bobs and reskins.bobs.triggers.equipment.technologies) then return end
+
 local inputs = {
     type = "generator-equipment",
     icon_name = "fusion-reactor",

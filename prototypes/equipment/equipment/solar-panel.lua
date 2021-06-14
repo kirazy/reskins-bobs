@@ -3,6 +3,9 @@
 --
 -- See LICENSE in the project directory for license information.
 
+-- Check to see if reskinning needs to be done.
+if not (reskins.bobs and reskins.bobs.triggers.equipment.technologies) then return end
+
 local inputs = {
     type = "solar-panel-equipment",
     icon_name = "solar-panel",
@@ -37,69 +40,60 @@ for name, map in pairs(solar_panels) do
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index[tier]
 
-    if reskins.bobs and reskins.bobs.triggers.equipment.technologies then
-        -- Construct technology icon
-        inputs.technology_icon_extras = { reskins.lib.technology_equipment_overlay() }
+    -- Construct icon
+    reskins.lib.construct_icon(name, tier, inputs)
 
-        reskins.lib.construct_technology_icon(name, inputs)
-    end
-
-    if reskins.bobs and reskins.bobs.triggers.equipment.equipment then
-        -- Construct icon
-        reskins.lib.construct_icon(name, tier, inputs)
-
-        -- Reskin the equipment
-        equipment.sprite = {
-            layers = {
-                -- Base
-                {
-                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/solar-panel/solar-panel-equipment-base.png",
-                    size = 32,
+    -- Reskin the equipment
+    equipment.sprite = {
+        layers = {
+            -- Base
+            {
+                filename = reskins.bobs.directory.."/graphics/equipment/equipment/solar-panel/solar-panel-equipment-base.png",
+                size = 32,
+                priority = "medium",
+                flags = { "no-crop" },
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/solar-panel/hr-solar-panel-equipment-base.png",
+                    size = 64,
                     priority = "medium",
                     flags = { "no-crop" },
-                    hr_version = {
-                        filename = reskins.bobs.directory.."/graphics/equipment/equipment/solar-panel/hr-solar-panel-equipment-base.png",
-                        size = 64,
-                        priority = "medium",
-                        flags = { "no-crop" },
-                        scale = 0.5,
-                    }
-                },
-                -- Mask
-                {
-                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/solar-panel/solar-panel-equipment-mask.png",
-                    size = 32,
+                    scale = 0.5,
+                }
+            },
+            -- Mask
+            {
+                filename = reskins.bobs.directory.."/graphics/equipment/equipment/solar-panel/solar-panel-equipment-mask.png",
+                size = 32,
+                priority = "medium",
+                flags = { "no-crop" },
+                tint = inputs.tint,
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/solar-panel/hr-solar-panel-equipment-mask.png",
+                    size = 64,
                     priority = "medium",
                     flags = { "no-crop" },
                     tint = inputs.tint,
-                    hr_version = {
-                        filename = reskins.bobs.directory.."/graphics/equipment/equipment/solar-panel/hr-solar-panel-equipment-mask.png",
-                        size = 64,
-                        priority = "medium",
-                        flags = { "no-crop" },
-                        tint = inputs.tint,
-                        scale = 0.5,
-                    }
-                },
-                -- Highlights
-                {
-                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/solar-panel/solar-panel-equipment-highlights.png",
-                    size = 32,
+                    scale = 0.5,
+                }
+            },
+            -- Highlights
+            {
+                filename = reskins.bobs.directory.."/graphics/equipment/equipment/solar-panel/solar-panel-equipment-highlights.png",
+                size = 32,
+                priority = "medium",
+                flags = { "no-crop" },
+                blend_mode = reskins.lib.blend_mode, -- "additive",
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/solar-panel/hr-solar-panel-equipment-highlights.png",
+                    size = 64,
                     priority = "medium",
                     flags = { "no-crop" },
                     blend_mode = reskins.lib.blend_mode, -- "additive",
-                    hr_version = {
-                        filename = reskins.bobs.directory.."/graphics/equipment/equipment/solar-panel/hr-solar-panel-equipment-highlights.png",
-                        size = 64,
-                        priority = "medium",
-                        flags = { "no-crop" },
-                        blend_mode = reskins.lib.blend_mode, -- "additive",
-                        scale = 0.5,
-                    }
+                    scale = 0.5,
                 }
             }
         }
-    end
+    }
 
     -- Label to skip to next iteration
     ::continue::

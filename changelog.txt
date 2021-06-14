@@ -5,11 +5,11 @@ Date: ????
     - Implemented advanced processing unit added by Bob's Metals, Chemicals, and Intermediates when Bob's Electronics is not present
     - Implemented technology icons for Bob's module unlocks
     - Overwrote technology icons for advanced electronics 2 and 3 with respective icons from base Factorio
-    - Reskinned steel axe, inserter capacity, stack inserter capacity and toolbelt technologies
+    - Added technology effect icons to several upgrade and infinite upgrade technology icons
     - Implemented inserter, alien science, logistic and construction robot technologies
   Changes:
     - Dropped support for ShinyBobGFX, ShinyAngelGFX
-    - Updated science pack, rocketry, bullet magazine, and alien artifact technologies
+    - Updated assorted technology icons
     - Internal restructuring of technology data-stage requiring
     - Now dependent on Artisanal Reskins: Library version 1.1.7
     - Added setting for Bob's Vehicle Equipment mod, separating reskinning controls from Bob's Personal Equipment mod

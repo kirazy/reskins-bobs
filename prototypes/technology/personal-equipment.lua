@@ -4,60 +4,53 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-local do_vehicle, do_personal = true, true
-if not mods["bobvehicleequipment"] then do_vehicle = false end
-if not mods["bobequipment"] then do_personal = false end
 if not (reskins.bobs and reskins.bobs.triggers.equipment.technologies) then return end
-
-if (not do_vehicle) and (not do_personal) then return end
 
 local inputs = {
     type = "technology",
     mod = "bobs",
     group = "equipment",
-    icon_name = "modular-equipment",
+    technology_icon_extras = {reskins.lib.technology_equipment_overlay{scale = 1}},
     technology_icon_size = 256,
     technology_icon_mipmaps = 4,
 }
 
 local technologies = {
-    ["roboport-modular-equipment-1"] = {tier = 1, prog_tier = 2},
-    ["roboport-modular-equipment-2"] = {tier = 2, prog_tier = 3},
-    ["roboport-modular-equipment-3"] = {tier = 3, prog_tier = 4},
-    ["roboport-modular-equipment-4"] = {tier = 4, prog_tier = 5},
+    -- Roboport modular equipment
+    ["personal-roboport-modular-equipment-1"] = {icon_name = "modular-equipment", icon_base = "modular-equipment-1", tier = 1, prog_tier = 2},
+    ["personal-roboport-modular-equipment-2"] = {icon_name = "modular-equipment", icon_base = "modular-equipment-2", tier = 2, prog_tier = 3},
+    ["personal-roboport-modular-equipment-3"] = {icon_name = "modular-equipment", icon_base = "modular-equipment-3", tier = 3, prog_tier = 4},
+    ["personal-roboport-modular-equipment-4"] = {icon_name = "modular-equipment", icon_base = "modular-equipment-4", tier = 4, prog_tier = 5},
+
+    -- Solar panels
+    ["solar-panel-equipment"] = {icon_name = "solar-panel", tier = 1, prog_tier = 2},
+    ["solar-panel-equipment-2"] = {icon_name = "solar-panel", tier = 2, prog_tier = 3},
+    ["solar-panel-equipment-3"] = {icon_name = "solar-panel", tier = 3, prog_tier = 4},
+    ["solar-panel-equipment-4"] = {icon_name = "solar-panel", tier = 4, prog_tier = 5},
+
+    -- Batteries
+    ["battery-equipment"] = {icon_name = "battery", tier = 0},
+    ["battery-mk2-equipment"] = {icon_name = "battery", tier = 1},
+    ["bob-battery-equipment-3"] = {icon_name = "battery", tier = 2},
+    ["bob-battery-equipment-4"] = {icon_name = "battery", tier = 3},
+    ["bob-battery-equipment-5"] = {icon_name = "battery", tier = 4},
+    ["bob-battery-equipment-6"] = {icon_name = "battery", tier = 5},
+
+    -- Shields
+    ["energy-shield-equipment"] = {icon_name = "energy-shield", tier = 0},
+    ["energy-shield-mk2-equipment"] = {icon_name = "energy-shield", tier = 1},
+    ["bob-energy-shield-equipment-3"] = {icon_name = "energy-shield", tier = 2},
+    ["bob-energy-shield-equipment-4"] = {icon_name = "energy-shield", tier = 3},
+    ["bob-energy-shield-equipment-5"] = {icon_name = "energy-shield", tier = 4},
+    ["bob-energy-shield-equipment-6"] = {icon_name = "energy-shield", tier = 5},
+
+    -- Laser defense
+    ["personal-laser-defense-equipment"] = {icon_name = "laser-defense", tier = 0},
+    ["personal-laser-defense-equipment-2"] = {icon_name = "laser-defense", tier = 1},
+    ["personal-laser-defense-equipment-3"] = {icon_name = "laser-defense", tier = 2},
+    ["personal-laser-defense-equipment-4"] = {icon_name = "laser-defense", tier = 3},
+    ["personal-laser-defense-equipment-5"] = {icon_name = "laser-defense", tier = 4},
+    ["personal-laser-defense-equipment-6"] = {icon_name = "laser-defense", tier = 5},
 }
 
-for name, map in pairs(technologies) do
-    -- Handle tier
-    local tier = map.tier
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
-        tier = map.prog_tier or map.tier
-    end
-
-    -- Determine what tint we're using
-    inputs.tint = map.tint or reskins.lib.tint_index[tier]
-
-    inputs.icon_base = inputs.icon_name.."-"..map.tier
-
-    -- Do personals
-    if do_personal then
-        if not data.raw[inputs.type]["personal-"..name] then goto vehicle end
-
-        inputs.technology_icon_extras = { reskins.lib.technology_equipment_overlay{scale = 1} }
-
-        reskins.lib.construct_technology_icon("personal-"..name, inputs)
-    end
-
-    -- Do vehicles
-    ::vehicle::
-    if do_vehicle then
-        if not data.raw[inputs.type]["vehicle-"..name] then goto continue end
-
-        inputs.technology_icon_extras = { reskins.lib.technology_equipment_overlay{scale = 1, is_vehicle = true} }
-
-        reskins.lib.construct_technology_icon("vehicle-"..name, inputs)
-    end
-
-    -- Label to skip to next iteration
-    ::continue::
-end
+reskins.lib.create_icons_from_list(technologies, inputs)
