@@ -27,4 +27,9 @@ local technologies = {
     -- ["effect-transmission-3"] = {tier = 3, prog_tier = 5}, -- t5 beacon
 }
 
+if mods["CircuitProcessing"] then
+    technologies["modules"] = nil
+    technologies["module-merging"] = nil
+end
+
 reskins.lib.create_icons_from_list(technologies, inputs)

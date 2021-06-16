@@ -7,12 +7,16 @@ Date: ????
     - Overwrote technology icons for advanced electronics 2 and 3 with respective icons from base Factorio
     - Added technology effect icons to several upgrade and infinite upgrade technology icons
     - Implemented inserter, alien science, logistic and construction robot technologies
+    - Implemented God modules
+    - Added beacon module slot art style `artisan-reskin-5-lights`
   Changes:
     - Dropped support for ShinyBobGFX, ShinyAngelGFX
     - Updated assorted technology icons
     - Internal restructuring of technology data-stage requiring
     - Now dependent on Artisanal Reskins: Library version 1.1.7
     - Added setting for Bob's Vehicle Equipment mod, separating reskinning controls from Bob's Personal Equipment mod
+    - Renamed beacon module slot art style `artisan-reskin` to `artisan-reskin-8-lights`
+    - Brightened secondary tint for `gray` module color contained in `module_color_map`
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.8
 Date: 2021-05-02

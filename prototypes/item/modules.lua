@@ -19,17 +19,17 @@ local modules_map = {
     ["raw-productivity"] = {"pink"},
 }
 
+local inputs = {
+    directory = reskins.bobs.directory,
+    mod = "bobs",
+    type = "module",
+    make_icon_pictures = false,
+}
+
+-- Setup input defaults
+reskins.lib.parse_inputs(inputs)
+
 for class, map in pairs(modules_map) do
-    local inputs = {
-        directory = reskins.bobs.directory,
-        mod = "bobs",
-        type = "module",
-        make_icon_pictures = false,
-    }
-
-    -- Setup input defaults
-    reskins.lib.parse_inputs(inputs)
-
     -- Parse map
     local color = map[1]
     local is_exception = map[2]
@@ -54,12 +54,41 @@ for class, map in pairs(modules_map) do
         reskins.lib.construct_icon(name, 0, inputs)
 
         -- Set beacon art style
-        entity.art_style = "artisan-reskin"
+        entity.art_style = "artisan-reskin-8-lights"
 
         -- Overwrite beacon_tint property
         entity.beacon_tint = reskins.bobs.module_color_map[color]
 
         -- Label to skip to next iteration
         ::continue::
+    end
+end
+
+-- Reskin God module entities
+if reskins.lib.setting("bobmods-modules-enablegodmodules") then
+    if not data.raw.module["god-module-6"] then
+        for i = 1, 5 do
+            -- Fetch entity
+            local name = "god-module-"..i
+            local entity = data.raw[inputs.type][name]
+
+            -- Check if entity exists, if not, skip this iteration
+            if not entity then goto continue end
+
+            -- Setup icon path
+            inputs.icon_filename = reskins.bobs.directory.."/graphics/icons/modules/god-module/"..name..".png"
+            inputs.icon_layers = 1
+
+            reskins.lib.construct_icon(name, 0, inputs)
+
+            -- Set beacon art style
+            entity.art_style = "artisan-reskin-5-lights"
+
+            -- Overwrite beacon_tint property
+            entity.beacon_tint = reskins.bobs.module_color_map["gray"]
+
+            -- Label to skip to next iteration
+            ::continue::
+        end
     end
 end
