@@ -14,6 +14,20 @@ local inputs = {
     flat_icon = true,
 }
 
+-- Setup light layer extras
+local function return_technology_light_layer(mod, name, directory)
+    local directory = directory and directory or name
+    return
+    {
+        {
+            icon = reskins.bobs.directory.."/graphics/technology/"..mod.."/"..directory.."/"..name.."-technology-lights.png",
+            icon_size = 256,
+            icon_mipmaps = 4,
+            tint = {1, 1, 1, 0}
+        }
+    }
+end
+
 local technologies = {
     -- Nuclear
     -- ["uranium-processing"] = {}, -- uraniuym proc, centri t3
@@ -36,13 +50,13 @@ local technologies = {
     ["steel-chemical-furnace"] = {subgroup = "smelting"}, -- red steel
     ["fluid-chemical-furnace"] = {subgroup = "smelting"}, -- red fluid steel
 
-    ["advanced-material-processing-2"] = {subgroup = "smelting"}, -- yellow electric
-    ["advanced-material-processing-3"] = {flat_icon = false, tier = 4, icon_name = "advanced-material-processing"}, -- yellow electric
-    ["advanced-material-processing-4"] = {flat_icon = false, tier = 5, icon_name = "advanced-material-processing"}, -- yellow electric
-    ["electric-chemical-furnace"] = {subgroup = "smelting"}, -- red electric
-    ["electric-mixing-furnace"] = {subgroup = "smelting"}, -- blue electric
-    ["multi-purpose-furnace-1"] = {flat_icon = false, tier = 4, icon_name = "multi-purpose-furnace"}, -- purple electric; needs color mask support
-    ["multi-purpose-furnace-2"] = {flat_icon = false, tier = 5, icon_name = "multi-purpose-furnace"}, -- green electric; needs color mask support
+    ["advanced-material-processing-2"] = {technology_icon_size = 256, technology_icon_mipmaps = 4, flat_icon = false, tint = util.color("ffb700"), icon_name = "advanced-material-processing", technology_icon_extras = return_technology_light_layer(inputs.group, "advanced-material-processing")}, -- yellow electric
+    ["advanced-material-processing-3"] = {technology_icon_size = 256, technology_icon_mipmaps = 4, flat_icon = false, tier = 4, icon_name = "advanced-material-processing", technology_icon_extras = return_technology_light_layer(inputs.group, "advanced-material-processing")}, -- yellow electric
+    ["advanced-material-processing-4"] = {technology_icon_size = 256, technology_icon_mipmaps = 4, flat_icon = false, tier = 5, icon_name = "advanced-material-processing", technology_icon_extras = return_technology_light_layer(inputs.group, "advanced-material-processing")}, -- yellow electric
+    ["electric-chemical-furnace"] = {technology_icon_size = 256, technology_icon_mipmaps = 4, flat_icon = false, tint = util.color("e50000"), icon_name = "electric-chemical-furnace", technology_icon_extras = return_technology_light_layer(inputs.group, "electric-chemical-furnace")}, -- red electric
+    ["electric-mixing-furnace"] = {technology_icon_size = 256, technology_icon_mipmaps = 4, flat_icon = false, tint = util.color("00bfff"), icon_name = "electric-mixing-furnace", technology_icon_extras = return_technology_light_layer(inputs.group, "electric-mixing-furnace")}, -- blue electric
+    ["multi-purpose-furnace-1"] = {technology_icon_size = 256, technology_icon_mipmaps = 4, flat_icon = false, tier = 4, icon_name = "multi-purpose-furnace", technology_icon_extras = return_technology_light_layer(inputs.group, "multi-purpose-furnace")}, -- purple electric; needs color mask support
+    ["multi-purpose-furnace-2"] = {technology_icon_size = 256, technology_icon_mipmaps = 4, flat_icon = false, tier = 5, icon_name = "multi-purpose-furnace", technology_icon_extras = return_technology_light_layer(inputs.group, "multi-purpose-furnace")}, -- green electric; needs color mask support
 
     -- Barreling pumps
     ["water-bore-1"] = {flat_icon = false, tier = 1, prog_tier = 2, icon_name = "water-bore"},
