@@ -18,21 +18,27 @@ local inputs = {
 reskins.lib.parse_inputs(inputs)
 
 local laser_defense = {
-    ["vehicle-laser-defense-1"] = 0,
-    ["vehicle-laser-defense-2"] = 1,
-    ["vehicle-laser-defense-3"] = 2,
-    ["vehicle-laser-defense-4"] = 3,
-    ["vehicle-laser-defense-5"] = 4,
-    ["vehicle-laser-defense-6"] = 5,
+    ["vehicle-laser-defense-1"] = {tier = 0},
+    ["vehicle-laser-defense-2"] = {tier = 1},
+    ["vehicle-laser-defense-3"] = {tier = 2},
+    ["vehicle-laser-defense-4"] = {tier = 3},
+    ["vehicle-laser-defense-5"] = {tier = 4},
+    ["vehicle-laser-defense-6"] = {tier = 5},
 }
 
 -- Reskin equipment
-for name, tier in pairs(laser_defense) do
+for name, map in pairs(laser_defense) do
     -- Fetch equipment
     local equipment = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not equipment then goto continue end
+
+    -- Handle tier
+    local tier = map.tier
+    if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
+        tier = map.prog_tier or map.tier
+    end
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index[tier]

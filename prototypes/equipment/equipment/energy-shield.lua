@@ -4,7 +4,7 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.equipment.technologies) then return end
+if not (reskins.bobs and reskins.bobs.triggers.equipment.equipment) then return end
 
 local inputs = {
     type = "energy-shield-equipment",
@@ -33,8 +33,14 @@ for name, map in pairs(batteries) do
     -- Check if entity exists, if not, skip this iteration
     if not equipment then goto continue end
 
+    -- Handle tier
+    local tier = map.tier
+    if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
+        tier = map.prog_tier or map.tier
+    end
+
     -- Determine what tint we're using
-    inputs.tint = reskins.lib.tint_index[map.tier]
+    inputs.tint = reskins.lib.tint_index[tier]
 
     -- Construct icon
     reskins.lib.construct_icon(name, map.tier, inputs)
@@ -48,6 +54,13 @@ for name, map in pairs(batteries) do
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/energy-shield/hr-energy-shield-equipment-base.png",
+                    size = 128,
+                    priority = "medium",
+                    flags = { "no-crop" },
+                    scale = 0.5,
+                }
             },
             -- Mask
             {
@@ -56,6 +69,14 @@ for name, map in pairs(batteries) do
                 priority = "medium",
                 flags = { "no-crop" },
                 tint = inputs.tint,
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/energy-shield/hr-energy-shield-equipment-mask.png",
+                    size = 128,
+                    priority = "medium",
+                    flags = { "no-crop" },
+                    tint = inputs.tint,
+                    scale = 0.5,
+                }
             },
             -- Highlights
             {
@@ -64,6 +85,14 @@ for name, map in pairs(batteries) do
                 priority = "medium",
                 flags = { "no-crop" },
                 blend_mode = reskins.lib.blend_mode, -- "additive",
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/energy-shield/hr-energy-shield-equipment-highlights.png",
+                    size = 128,
+                    priority = "medium",
+                    flags = { "no-crop" },
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    scale = 0.5,
+                }
             }
         }
     }

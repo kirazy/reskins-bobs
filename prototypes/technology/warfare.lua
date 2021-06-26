@@ -13,16 +13,15 @@ local inputs = {
     type = "technology",
     technology_icon_size = 256,
     technology_icon_mipmaps = 4,
-    flat_icon = true,
 }
 
 local technologies = {
     -- Gun turrets
-    -- ["gun-turret"] = {tier = 1}, -- t1 gun, technically part of revamp
-    -- ["bob-turrets-2"] = {tier = 2}, -- t2 turret
-    -- ["bob-turrets-3"] = {tier = 3}, -- t3 turret
-    -- ["bob-turrets-4"] = {tier = 4}, -- t4 turret
-    -- ["bob-turrets-5"] = {tier = 5}, -- t5 turret
+    ["gun-turret"] = {icon_name = "gun-turrets", tier = 1}, -- t1 gun, technically part of revamp
+    ["bob-turrets-2"] = {icon_name = "gun-turrets", tier = 2}, -- t2 turret
+    ["bob-turrets-3"] = {icon_name = "gun-turrets", tier = 3}, -- t3 turret
+    ["bob-turrets-4"] = {icon_name = "gun-turrets", tier = 4}, -- t4 turret
+    ["bob-turrets-5"] = {icon_name = "gun-turrets", tier = 5}, -- t5 turret
 
     -- Sniper turrets
     -- ["bob-sniper-turrets-1"] = {tier = 1, prog_tier = 1}, -- t1 sniper
@@ -30,18 +29,18 @@ local technologies = {
     -- ["bob-sniper-turrets-3"] = {tier = 3, prog_tier = 5}, -- t5 sniper
 
     -- Laser turrets
-    -- ["laser-turret"] = {tier = 1}, -- t1 laser
-    -- ["bob-laser-turrets-2"] = {tier = 2}, -- t2 laser
-    -- ["bob-laser-turrets-3"] = {tier = 3}, -- t3 laser
-    -- ["bob-laser-turrets-4"] = {tier = 4}, -- t4 laser
-    -- ["bob-laser-turrets-5"] = {tier = 5}, -- t5 laser
+    ["laser-turret"] = {icon_name = "laser-turrets", tier = 1}, -- t1 laser
+    ["bob-laser-turrets-2"] = {icon_name = "laser-turrets", tier = 2}, -- t2 laser
+    ["bob-laser-turrets-3"] = {icon_name = "laser-turrets", tier = 3}, -- t3 laser
+    ["bob-laser-turrets-4"] = {icon_name = "laser-turrets", tier = 4}, -- t4 laser
+    ["bob-laser-turrets-5"] = {icon_name = "laser-turrets", tier = 5}, -- t5 laser
 
     -- Plasma turrets
-    -- ["bob-plasma-turrets-1"] = {tier = 1}, -- t1 plasma
-    -- ["bob-plasma-turrets-2"] = {tier = 2},
-    -- ["bob-plasma-turrets-3"] = {tier = 3},
-    -- ["bob-plasma-turrets-4"] = {tier = 4},
-    -- ["bob-plasma-turrets-5"] = {tier = 5},
+    ["bob-plasma-turrets-1"] = {icon_name = "plasma-turrets", tier = 1}, -- t1 plasma
+    ["bob-plasma-turrets-2"] = {icon_name = "plasma-turrets", tier = 2},
+    ["bob-plasma-turrets-3"] = {icon_name = "plasma-turrets", tier = 3},
+    ["bob-plasma-turrets-4"] = {icon_name = "plasma-turrets", tier = 4},
+    ["bob-plasma-turrets-5"] = {icon_name = "plasma-turrets", tier = 5},
 
     -- Artillery and artillery wagons
     -- ["artillery"] = {tier = 1, prog_tier = 3}, -- t3 arty/train arty

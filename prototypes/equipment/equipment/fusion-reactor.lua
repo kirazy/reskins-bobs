@@ -4,7 +4,7 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.equipment.technologies) then return end
+if not (reskins.bobs and reskins.bobs.triggers.equipment.equipment) then return end
 
 local inputs = {
     type = "generator-equipment",
@@ -17,10 +17,10 @@ local inputs = {
 reskins.lib.parse_inputs(inputs)
 
 local fusion_reactors = {
-    ["fusion-reactor-equipment"] = {1, 2},
-    ["fusion-reactor-equipment-2"] = {2, 3},
-    ["fusion-reactor-equipment-3"] = {3, 4},
-    ["fusion-reactor-equipment-4"] = {4, 5},
+    ["fusion-reactor-equipment"] = {tier = 1, prog_tier = 2},
+    ["fusion-reactor-equipment-2"] = {tier = 2, prog_tier = 3},
+    ["fusion-reactor-equipment-3"] = {tier = 3, prog_tier = 4},
+    ["fusion-reactor-equipment-4"] = {tier = 4, prog_tier = 5},
 }
 
 -- Reskin equipment
@@ -31,55 +31,69 @@ for name, map in pairs(fusion_reactors) do
     -- Check if entity exists, if not, skip this iteration
     if not equipment then goto continue end
 
-    -- Parse map
-    local tier = map[1]
+    -- Handle tier
+    local tier = map.tier
     if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
-        tier = map[2]
+        tier = map.prog_tier or map.tier
     end
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index[tier]
 
-    if reskins.bobs and reskins.bobs.triggers.equipment.technologies then
-        -- Construct technology icon
-        inputs.technology_icon_extras = { reskins.lib.technology_equipment_overlay() }
+    -- Construct icon
+    reskins.lib.construct_icon(name, tier, inputs)
 
-        reskins.lib.construct_technology_icon(name, inputs)
-    end
-
-    if reskins.bobs and reskins.bobs.triggers.equipment.equipment then
-        -- Construct icon
-        reskins.lib.construct_icon(name, tier, inputs)
-
-        -- Reskin the equipment
-        equipment.sprite = {
-            layers = {
-                -- Base
-                {
-                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/fusion-reactor/fusion-reactor-equipment-base.png",
-                    size = 128,
+    -- Reskin the equipment
+    equipment.sprite = {
+        layers = {
+            -- Base
+            {
+                filename = reskins.bobs.directory.."/graphics/equipment/equipment/fusion-reactor/fusion-reactor-equipment-base.png",
+                size = 128,
+                priority = "medium",
+                flags = { "no-crop" },
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/fusion-reactor/hr-fusion-reactor-equipment-base.png",
+                    size = 256,
                     priority = "medium",
                     flags = { "no-crop" },
-                },
-                -- Mask
-                {
-                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/fusion-reactor/fusion-reactor-equipment-mask.png",
-                    size = 128,
+                    scale = 0.5,
+                }
+            },
+            -- Mask
+            {
+                filename = reskins.bobs.directory.."/graphics/equipment/equipment/fusion-reactor/fusion-reactor-equipment-mask.png",
+                size = 128,
+                priority = "medium",
+                flags = { "no-crop" },
+                tint = inputs.tint,
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/fusion-reactor/hr-fusion-reactor-equipment-mask.png",
+                    size = 256,
                     priority = "medium",
                     flags = { "no-crop" },
                     tint = inputs.tint,
-                },
-                -- Highlights
-                {
-                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/fusion-reactor/fusion-reactor-equipment-highlights.png",
-                    size = 128,
+                    scale = 0.5,
+                }
+            },
+            -- Highlights
+            {
+                filename = reskins.bobs.directory.."/graphics/equipment/equipment/fusion-reactor/fusion-reactor-equipment-highlights.png",
+                size = 128,
+                priority = "medium",
+                flags = { "no-crop" },
+                blend_mode = reskins.lib.blend_mode, -- "additive",
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/fusion-reactor/hr-fusion-reactor-equipment-highlights.png",
+                    size = 256,
                     priority = "medium",
                     flags = { "no-crop" },
                     blend_mode = reskins.lib.blend_mode, -- "additive",
+                    scale = 0.5,
                 }
             }
         }
-    end
+    }
 
     -- Label to skip to next iteration
     ::continue::

@@ -51,6 +51,28 @@ local technologies = {
     ["personal-laser-defense-equipment-4"] = {icon_name = "laser-defense", tier = 3},
     ["personal-laser-defense-equipment-5"] = {icon_name = "laser-defense", tier = 4},
     ["personal-laser-defense-equipment-6"] = {icon_name = "laser-defense", tier = 5},
+
+    -- Fusion Reactors
+    ["fusion-reactor-equipment"] = {icon_name = "fusion-reactor", tier = 1, prog_tier = 2},
+    ["fusion-reactor-equipment-2"] = {icon_name = "fusion-reactor", tier = 2, prog_tier = 3},
+    ["fusion-reactor-equipment-3"] = {icon_name = "fusion-reactor", tier = 3, prog_tier = 4},
+    ["fusion-reactor-equipment-4"] = {icon_name = "fusion-reactor", tier = 4, prog_tier = 5},
+
+    -- Night vision
+    ["night-vision-equipment"] = {icon_name = "night-vision", tier = 1, prog_tier = 2},
+    ["night-vision-equipment-2"] = {icon_name = "night-vision", tier = 2, prog_tier = 3},
+    ["night-vision-equipment-3"] = {icon_name = "night-vision", tier = 3, prog_tier = 4},
+
+    -- Exoskeleton
+    ["exoskeleton-equipment"] = {icon_name = "exoskeleton", tier = 1, prog_tier = 2},
+    ["exoskeleton-equipment-2"] = {icon_name = "exoskeleton", tier = 2, prog_tier = 3},
+    ["exoskeleton-equipment-3"] = {icon_name = "exoskeleton", tier = 3, prog_tier = 4},
+
+    -- Roboports
+    ["personal-roboport-equipment"] = {icon_name = "personal-roboport-1", tier = 1, prog_tier = 2},
+    ["personal-roboport-mk2-equipment"] = {icon_name = "personal-roboport-1", tier = 2, prog_tier = 3},
+    ["personal-roboport-mk3-equipment"] = {icon_name = "personal-roboport-2", tier = 3, prog_tier = 4},
+    ["personal-roboport-mk4-equipment"] = {icon_name = "personal-roboport-2", tier = 4, prog_tier = 5},
 }
 
 reskins.lib.create_icons_from_list(technologies, inputs)

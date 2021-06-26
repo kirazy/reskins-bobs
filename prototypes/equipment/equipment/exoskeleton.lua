@@ -4,7 +4,7 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.equipment.technologies) then return end
+if not (reskins.bobs and reskins.bobs.triggers.equipment.equipment) then return end
 
 local inputs = {
     type = "movement-bonus-equipment",
@@ -39,49 +39,66 @@ for name, map in pairs(exoskeletons) do
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index[tier]
 
-    if reskins.bobs and reskins.bobs.triggers.equipment.technologies then
-        -- Construct technology icon
-        inputs.technology_icon_extras = { reskins.lib.technology_equipment_overlay() }
+    -- Construct icon
+    reskins.lib.construct_icon(name, tier, inputs)
 
-        reskins.lib.construct_technology_icon(name, inputs)
-    end
-
-    if reskins.bobs and reskins.bobs.triggers.equipment.equipment then
-        -- Construct icon
-        reskins.lib.construct_icon(name, tier, inputs)
-
-        -- Reskin the equipment
-        equipment.sprite = {
-            layers = {
-                -- Base
-                {
-                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/exoskeleton/exoskeleton-equipment-base.png",
-                    width = 64,
-                    height = 128,
+    -- Reskin the equipment
+    equipment.sprite = {
+        layers = {
+            -- Base
+            {
+                filename = "__base__/graphics/equipment/exoskeleton-equipment.png",
+                width = 64,
+                height = 128,
+                priority = "medium",
+                flags = { "no-crop" },
+                hr_version = {
+                    filename = "__base__/graphics/equipment/hr-exoskeleton-equipment.png",
+                    width = 128,
+                    height = 256,
                     priority = "medium",
                     flags = { "no-crop" },
-                },
-                -- Mask
-                {
-                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/exoskeleton/exoskeleton-equipment-mask.png",
-                    width = 64,
-                    height = 128,
+                    scale = 0.5,
+                }
+            },
+            -- Mask
+            {
+                filename = reskins.bobs.directory.."/graphics/equipment/equipment/exoskeleton/exoskeleton-equipment-mask.png",
+                width = 64,
+                height = 128,
+                priority = "medium",
+                flags = { "no-crop" },
+                tint = inputs.tint,
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/exoskeleton/hr-exoskeleton-equipment-mask.png",
+                    width = 128,
+                    height = 256,
                     priority = "medium",
                     flags = { "no-crop" },
                     tint = inputs.tint,
-                },
-                -- Highlights
-                {
-                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/exoskeleton/exoskeleton-equipment-highlights.png",
-                    width = 64,
-                    height = 128,
+                    scale = 0.5,
+                }
+            },
+            -- Highlights
+            {
+                filename = reskins.bobs.directory.."/graphics/equipment/equipment/exoskeleton/exoskeleton-equipment-highlights.png",
+                width = 64,
+                height = 128,
+                priority = "medium",
+                flags = { "no-crop" },
+                blend_mode = reskins.lib.blend_mode, -- "additive",
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/exoskeleton/hr-exoskeleton-equipment-highlights.png",
+                    width = 128,
+                    height = 256,
                     priority = "medium",
                     flags = { "no-crop" },
                     blend_mode = reskins.lib.blend_mode, -- "additive",
+                    scale = 0.5,
                 }
             }
         }
-    end
+    }
 
     -- Label to skip to next iteration
     ::continue::

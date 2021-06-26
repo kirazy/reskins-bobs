@@ -11,9 +11,6 @@ local inputs = {
     equipment_category = "utility",
     mod = "bobs",
     group = "vehicle-equipment",
-    technology_icon_size = 256,
-    technology_icon_mipmaps = 4,
-    technology_icon_layers = 1,
     icon_layers = 1,
 }
 
@@ -35,32 +32,21 @@ for _, name in pairs(equipment_list) do
 
     inputs.icon_name = name
 
-    if reskins.bobs and reskins.bobs.triggers.equipment.equipment then
-        -- Construct icon
-        reskins.lib.construct_icon(name, 0, inputs)
+    -- Construct icon
+    reskins.lib.construct_icon(name, 0, inputs)
 
-        -- Reskin the equipment
-        equipment.sprite = {
-            filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/"..name.."/"..name.."-equipment.png",
-            size = 64,
+    -- Reskin the equipment
+    equipment.sprite = {
+        filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/"..name.."/"..name.."-equipment.png",
+        size = 64,
+        priority = "medium",
+        hr_version = {
+            filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/"..name.."/hr-"..name.."-equipment.png",
+            size = 128,
             priority = "medium",
-            flags = { "no-crop" },
-            hr_version = {
-                filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/"..name.."/hr-"..name.."-equipment.png",
-                size = 128,
-                priority = "medium",
-                flags = { "no-crop" },
-                scale = 0.5,
-            }
+            scale = 0.5,
         }
-    end
-
-    if reskins.bobs and reskins.bobs.triggers.equipment.technologies then
-        -- Construct technology icon
-        inputs.technology_icon_extras = { reskins.lib.technology_equipment_overlay{scale = 1, is_vehicle = true} }
-
-        reskins.lib.construct_technology_icon(name.."-equipment", inputs)
-    end
+    }
 
     -- Label to skip to next iteration
     ::continue::

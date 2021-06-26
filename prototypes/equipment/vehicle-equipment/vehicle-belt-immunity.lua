@@ -7,28 +7,36 @@
 if not (reskins.bobs and reskins.bobs.triggers.vehicle_equipment.equipment) then return end
 
 local inputs = {
+    type = "belt-immunity-equipment",
+    icon_name = "vehicle-belt-immunity",
     mod = "bobs",
     group = "vehicle-equipment",
     equipment_category = "utility",
-    technology_icon_size = 256,
-    technology_icon_mipmaps = 4,
-    technology_icon_layers = 1,
-    icon_name = "vehicle-belt-immunity",
     icon_filename = "__base__/graphics/icons/belt-immunity-equipment.png",
     icon_size = 64,
     icon_mipmaps = 4,
-    technology_icon_extras = { reskins.lib.technology_equipment_overlay{scale = 1, is_vehicle = true} },
 }
 
 local name = "vehicle-belt-immunity-equipment"
 
--- Check that the technology exists, and then reskin it if so
-if data.raw.technology[name] then
-    if reskins.bobs and reskins.bobs.triggers.equipment.technologies then
-        reskins.lib.construct_technology_icon(name, inputs)
-    end
+-- Reskin equipment; fetch the equipment
+local equipment = data.raw[inputs.type][name]
 
-    if reskins.bobs and reskins.bobs.triggers.equipment.equipment then
-        reskins.lib.construct_icon(name, 0, inputs)
-    end
-end
+-- Check if entity exists, if not, return
+if not equipment then return end
+
+-- Construct icon
+reskins.lib.construct_icon(name, 0, inputs)
+
+-- Reskin equipment
+equipment.sprite = {
+    filename = "__base__/graphics/equipment/belt-immunity-equipment.png",
+    size = 32,
+    priority = "medium",
+    hr_version = {
+        filename = "__base__/graphics/equipment/hr-belt-immunity-equipment.png",
+        size = 64,
+        priority = "medium",
+        scale = 0.5
+    }
+}

@@ -4,7 +4,7 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.equipment.technologies) then return end
+if not (reskins.bobs and reskins.bobs.triggers.equipment.equipment) then return end
 
 local inputs = {
     type = "solar-panel-equipment",
@@ -17,10 +17,10 @@ local inputs = {
 reskins.lib.parse_inputs(inputs)
 
 local solar_panels = {
-    ["solar-panel-equipment"] = {1, 2},
-    ["solar-panel-equipment-2"] = {2, 3},
-    ["solar-panel-equipment-3"] = {3, 4},
-    ["solar-panel-equipment-4"] = {4, 5},
+    ["solar-panel-equipment"] = {tier = 1, prog_tier = 2},
+    ["solar-panel-equipment-2"] = {tier = 2, prog_tier = 3},
+    ["solar-panel-equipment-3"] = {tier = 3, prog_tier = 4},
+    ["solar-panel-equipment-4"] = {tier = 4, prog_tier = 5},
 }
 
 -- Reskin equipment
@@ -31,10 +31,10 @@ for name, map in pairs(solar_panels) do
     -- Check if entity exists, if not, skip this iteration
     if not equipment then goto continue end
 
-    -- Parse map
-    local tier = map[1]
+    -- Handle tier
+    local tier = map.tier
     if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
-        tier = map[2]
+        tier = map.prog_tier or map.tier
     end
 
     -- Determine what tint we're using
