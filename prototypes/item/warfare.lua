@@ -125,6 +125,11 @@ local items = {
 
     -- Weapons
     ["laser-rifle"] = {type = "gun", subgroup = "weapons"},
+
+    -- Robots
+    ["defender-robot"] = {icon_filename = "__base__/graphics/icons/defender.png"},
+    ["distractor-robot"] = {icon_filename = "__base__/graphics/icons/distractor.png"},
+    ["destroyer-robot"] = {icon_filename = "__base__/graphics/icons/destroyer.png"},
 }
 
 reskins.lib.create_icons_from_list(items, inputs)

@@ -55,10 +55,10 @@ local technologies = {
     -- ["bob-fluid-handling-4"] = {flat_icon = false, tier = 4, prog_tier = 5, icon_name = "fluid-handling"}, -- handled by technology/plates.lua
 
     -- Robot frames
-    -- ["robotics"] = {tier = 1, prog_tier = 2},
-    -- ["bob-robotics-2"] = {tier = 2, prog_tier = 3},
-    -- ["bob-robotics-3"] = {tier = 3, prog_tier = 4},
-    -- ["bob-robotics-4"] = {tier = 4, prog_tier = 5},
+    ["robotics"] = {icon_name = "robotics", tier = 1, prog_tier = 2},
+    ["bob-robotics-2"] = {icon_name = "robotics", tier = 2, prog_tier = 3},
+    ["bob-robotics-3"] = {icon_name = "robotics", tier = 3, prog_tier = 4},
+    ["bob-robotics-4"] = {icon_name = "robotics", tier = 4, prog_tier = 5},
 
     -- Construction/Logistic robots
     -- ["construction-robots"] = {tier = 1},

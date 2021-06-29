@@ -11,6 +11,7 @@ Date: ????
     - Added beacon module slot art style `artisan-reskin-5-lights`
     - Finished implementation of high resolution versions of personal equipment and vehicle equipment
     - Implemented vehicle plasma turret equipment
+    - Defender, distractor and destroyer robot components now use high-resolution icons
   Changes:
     - Dropped support for ShinyBobGFX, ShinyAngelGFX
     - Updated assorted technology icons to higher resolution
