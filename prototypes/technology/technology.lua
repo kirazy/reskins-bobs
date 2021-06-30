@@ -50,10 +50,23 @@ data.raw["utility-sprites"].default.worker_robot_speed_modifier_icon = util.merg
 }}
 
 -- Set infer_icon properties for associated technologies
-data.raw.technology["worker-robots-storage-1"].effects[1].infer_icon = false
-data.raw.technology["worker-robots-storage-2"].effects[1].infer_icon = false
-data.raw.technology["worker-robots-storage-3"].effects[1].infer_icon = false
-data.raw.technology["bob-infinite-worker-robots-storage-1"].effects[1].infer_icon = false
+local technology_infer_icon_list = {
+    "worker-robots-storage-1",
+    "worker-robots-storage-2",
+    "worker-robots-storage-3",
+    "bob-infinite-worker-robots-storage-1",
+    "worker-robots-speed-1",
+    "worker-robots-speed-2",
+    "worker-robots-speed-3",
+    "worker-robots-speed-4",
+    "worker-robots-speed-5",
+    "worker-robots-speed-6",
+}
 
+for _, tech in pairs(technology_infer_icon_list) do
+    if data.raw.technology[tech] then
+        data.raw.technology[tech].effects[1].infer_icon = false
+    end
+end
 -- TODO: Redesign this to be a function that scans through technology table for a whitelist of effects and then sets infer_icon for those effects
 -- TODO: Move tech effect icon overwrites to its own function/file, along with the above

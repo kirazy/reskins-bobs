@@ -9,7 +9,7 @@ Date: ????
     - Implemented inserter, alien science, logistic and construction robot technologies
     - Implemented God modules
     - Added beacon module slot art style `artisan-reskin-5-lights`
-    - Finished implementation of high resolution versions of personal equipment and vehicle equipment
+    - Implemnented high resolution versions of most personal equipment and vehicle equipment
     - Implemented vehicle plasma turret equipment
     - Defender, distractor and destroyer robot components now use high-resolution icons
   Changes:

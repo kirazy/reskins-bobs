@@ -55,6 +55,13 @@ for name, map in pairs(batteries) do
                 size = 32,
                 priority = "medium",
                 flags = { "no-crop" },
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-battery/hr-vehicle-battery-equipment-base.png",
+                    size = 64,
+                    priority = "medium",
+                    flags = { "no-crop" },
+                    scale = 0.5,
+                }
             },
             -- Mask
             {
@@ -63,6 +70,14 @@ for name, map in pairs(batteries) do
                 priority = "medium",
                 flags = { "no-crop" },
                 tint = inputs.tint,
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-battery/hr-vehicle-battery-equipment-mask.png",
+                    size = 64,
+                    priority = "medium",
+                    flags = { "no-crop" },
+                    tint = inputs.tint,
+                    scale = 0.5,
+                }
             },
             -- Highlights
             {
@@ -71,6 +86,14 @@ for name, map in pairs(batteries) do
                 priority = "medium",
                 flags = { "no-crop" },
                 blend_mode = reskins.lib.blend_mode, -- "additive",
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-battery/hr-vehicle-battery-equipment-highlights.png",
+                    size = 64,
+                    priority = "medium",
+                    flags = { "no-crop" },
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    scale = 0.5,
+                }
             }
         }
     }
