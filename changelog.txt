@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.0
+Date: ????
+  Features:
+    - Major revisions to all color masks for all entities, items, and icons.
+    - Perceived brightness and contrast have been improved and oversaturation and color blowouts have been reduced
+---------------------------------------------------------------------------------------------------
 Version: 1.1.9
 Date: ????
   Features:
