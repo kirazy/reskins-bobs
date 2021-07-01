@@ -3,11 +3,6 @@
 --
 -- See LICENSE in the project directory for license information.
 
--- Compatibility with ShinyBobGFX
-if mods["ShinyBobGFX"] then
-    require("shiny-bob-compatibility")
-end
-
 ----------------------------------------------------------------------------------------------------
 -- ENTITIES
 ----------------------------------------------------------------------------------------------------
@@ -30,9 +25,11 @@ require("prototypes.item.plates.battery") -- Bob has some battery updates in dat
 ----------------------------------------------------------------------------------------------------
 -- TECHNOLOGIES
 ----------------------------------------------------------------------------------------------------
-require("prototypes.technology.revamp") -- Bob does tech updates in data-updates
-require("prototypes.technology.technology") -- Bob does tech updates in data-updates
-require("prototypes.technology.warfare") -- Bob does tech updates in data-updates
+require("prototypes.technology.electronics-updates")
+require("prototypes.technology.power-updates")
+require("prototypes.technology.revamp-updates") -- Bob does tech updates in data-updates
+require("prototypes.technology.technology-updates") -- Bob does tech updates in data-updates
+require("prototypes.technology.warfare-updates") -- Bob does tech updates in data-updates
 
 -- Assign deferred icons
 reskins.lib.assign_deferred_icons("bobs", "data-updates")

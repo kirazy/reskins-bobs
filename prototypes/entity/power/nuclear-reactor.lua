@@ -308,22 +308,32 @@ end
 reskins.lib.parse_inputs(inputs)
 
 -- Map fuel type to reactor entity name
-local fuel_index = {
-    ["nuclear-reactor"] = "uranium",
-    ["nuclear-reactor-2"] = "uranium",
-    ["nuclear-reactor-3"] = "uranium"
+reskins.bobs.nuclear_reactor_index = {
+    ["nuclear-reactor"] = {name = "uranium", tint = nuclear_tint_index["uranium"]},
+    ["nuclear-reactor-2"] = {name = "uranium", tint = nuclear_tint_index["uranium"]},
+    ["nuclear-reactor-3"] = {name = "uranium", tint = nuclear_tint_index["uranium"]},
 }
 
 -- Nucelar reactors have two modes, revamped or standard; determine which we are using
 if reskins.lib.setting("bobmods-revamp-nuclear") == true then
     -- Map fuel type to reactor entity name
-    fuel_index["nuclear-reactor-2"] = "thorium"
+    reskins.bobs.nuclear_reactor_index["nuclear-reactor-2"].name = "thorium"
+    reskins.bobs.nuclear_reactor_index["nuclear-reactor-2"].tint = nuclear_tint_index["thorium"]
 
     if reskins.lib.setting("bobmods-plates-bluedeuterium") == true then
-        fuel_index["nuclear-reactor-3"] = "deuterium-blue"
+        reskins.bobs.nuclear_reactor_index["nuclear-reactor-3"].name = "deuterium-blue"
+        reskins.bobs.nuclear_reactor_index["nuclear-reactor-3"].tint = nuclear_tint_index["deuterium-blue"]
     else
-        fuel_index["nuclear-reactor-3"] = "deuterium-pink"
+        reskins.bobs.nuclear_reactor_index["nuclear-reactor-3"].name = "deuterium-pink"
+        reskins.bobs.nuclear_reactor_index["nuclear-reactor-3"].tint = nuclear_tint_index["deuterium-pink"]
     end
+end
+
+-- Permit tier-based tint lookup
+if not (reskins.lib.setting("bobmods-revamp-nuclear") and reskins.lib.setting("reskins-bobs-do-bobrevamp-reactor-color")) then
+    reskins.bobs.nuclear_reactor_index["nuclear-reactor"].tint = nil
+    reskins.bobs.nuclear_reactor_index["nuclear-reactor-2"].tint = nil
+    reskins.bobs.nuclear_reactor_index["nuclear-reactor-3"].tint = nil
 end
 
 -- Reskin entities
@@ -342,14 +352,14 @@ for name, map in pairs(tier_map) do
 
     -- We need to assaign fuel, pipe-tier, and reactor inputs
     inputs.pipe_tier = map[1]
-    inputs.fuel = fuel_index[name]
+    inputs.fuel = reskins.bobs.nuclear_reactor_index[name]
 
     -- Create explosions
     reskins.lib.create_explosion(name, inputs)
 
     if reskins.lib.setting("bobmods-revamp-nuclear") == true and reskins.lib.setting("reskins-bobs-do-bobrevamp-reactor-color") == true then
-        inputs.reactor = fuel_index[name]
-        inputs.tint = nuclear_tint_index[inputs.fuel]
+        inputs.reactor = reskins.bobs.nuclear_reactor_index[name]
+        inputs.tint = reskins.bobs.nuclear_reactor_index[name].tint
 
         -- Create particles
         reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["big"], 1, inputs.tint)
@@ -373,7 +383,7 @@ for name, map in pairs(tier_map) do
     skin_reactor_entity(name, inputs)
 
     -- Reskin icons
-    inputs.icon_base = "nuclear-reactor-"..fuel_index[name].."-"..inputs.pipe_tier
+    inputs.icon_base = "nuclear-reactor-"..reskins.bobs.nuclear_reactor_index[name].name.."-"..inputs.pipe_tier
     reskins.lib.construct_icon(name, tier, inputs)
 
     -- Label to skip to next iteration

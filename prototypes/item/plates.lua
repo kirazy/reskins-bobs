@@ -175,6 +175,11 @@ else
 
 end
 
+-- Advanced processing unit absent Bob's Electronics
+if not mods["bobelectronics"] then
+    intermediates["advanced-processing-unit"] = {subgroup = "items"}
+end
+
 reskins.lib.create_icons_from_list(intermediates, inputs)
 
 -- One-off fixes

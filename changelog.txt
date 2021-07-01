@@ -1,7 +1,26 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.9
 Date: ????
+  Features:
+    - Implemented advanced processing unit added by Bob's Metals, Chemicals, and Intermediates when Bob's Electronics is not present
+    - Implemented technology icons for Bob's module unlocks
+    - Overwrote technology icons for advanced electronics 2 and 3 with respective icons from base Factorio
+    - Added technology effect icons to several upgrade and infinite upgrade technology icons
+    - Implemented inserter, alien science, logistic and construction robot technologies
+    - Implemented God modules
+    - Added beacon module slot art style `artisan-reskin-5-lights`
+    - Implemnented high resolution versions of most personal equipment and vehicle equipment
+    - Implemented vehicle plasma turret equipment
+    - Defender, distractor and destroyer robot components now use high-resolution icons
   Changes:
+    - Dropped support for ShinyBobGFX, ShinyAngelGFX
+    - Updated assorted technology icons to higher resolution
+    - Internal restructuring of technology data-stage requiring
+    - Now dependent on Artisanal Reskins: Library version 1.1.7
+    - Added setting for Bob's Vehicle Equipment mod, separating reskinning controls from Bob's Personal Equipment mod
+    - Renamed beacon module slot art style `artisan-reskin` to `artisan-reskin-8-lights`
+    - Brightened secondary tint for `gray` module color contained in `module_color_map`
+    - Revised vehicle motor and engine equipment to use updated Factorio sprites
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.8
 Date: 2021-05-02

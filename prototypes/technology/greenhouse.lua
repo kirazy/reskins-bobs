@@ -14,4 +14,9 @@ local inputs = {
     flat_icon = true,
 }
 
-reskins.lib.create_icons_from_list({["bob-fertiliser"] = {}}, inputs)
+local technologies = {
+    ["bob-fertiliser"] = {},
+    -- ["bob-greenhouse"] = {}, -- greenhouse, recipies
+}
+
+reskins.lib.create_icons_from_list(technologies, inputs)

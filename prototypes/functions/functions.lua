@@ -12,7 +12,7 @@ reskins.bobs.module_color_map = {
     ["brown"] = {primary = util.color("9c7c60"), secondary = util.color("fff0d9")},
     ["cyan"] = {primary = util.color("70f1ff"), secondary = util.color("30ffd2")},
     ["deep-red"] = {primary = util.color("cb302a"), secondary = util.color("ff7a66")},
-    ["gray"] = {primary = util.color("b7b7b7"), secondary = util.color("d5d5d5")},
+    ["gray"] = {primary = util.color("b7b7b7"), secondary = util.color("ffffff")}, -- d5d5d5
     ["green"] = {primary = util.color("95e26c"), secondary = util.color("2bff2b")},
     ["orange"] = {primary = util.color("ffa345"), secondary = util.color("ffbf96")},
     ["pine"] = {primary = util.color("7a9e96"), secondary = util.color("bfffd2")},
