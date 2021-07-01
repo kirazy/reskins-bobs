@@ -21,6 +21,7 @@ Date: ????
     - Renamed beacon module slot art style `artisan-reskin` to `artisan-reskin-8-lights`
     - Brightened secondary tint for `gray` module color contained in `module_color_map`
     - Revised vehicle motor and engine equipment to use updated Factorio sprites
+    - Revised tint handling for nuclear reactors to be globally accessible starting in data-updates via the table `reskins.bobs.nuclear_reactor_index`
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.8
 Date: 2021-05-02
