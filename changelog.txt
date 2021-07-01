@@ -5,6 +5,11 @@ Date: ????
       - Major revisions to all color masks for all entities, items, and icons
       - Perceived brightness and contrast have been improved and oversaturation and color blowouts have been reduced
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.10
+Date: 2021-07-01
+  Bugfixes:
+    - Fixed startup error related to incorrectly sized sprite when playing with AAI Industries
+---------------------------------------------------------------------------------------------------
 Version: 1.1.9
 Date: 2021-07-01
   Features:

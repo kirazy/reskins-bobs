@@ -55,7 +55,7 @@ local technologies = {
 }
 
 if mods["aai-industry"] then
-    technologies["electric-mining"] = {tier = 1, icon_name = "mining-drill"}
+    technologies["electric-mining"] = {tier = 1, icon_name = "mining-drill", technology_icon_size = 128, technology_icon_mipmaps = 0}
 end
 
 reskins.lib.create_icons_from_list(technologies, inputs)
