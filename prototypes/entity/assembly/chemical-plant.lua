@@ -61,7 +61,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/chemical-plant/remnants/chemical-plant-remnants.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/chemical-plant/remnants/chemical-plant-remnants-base.png",
                 line_length = 1,
                 width = 224,
                 height = 172,
@@ -69,7 +69,7 @@ for name, map in pairs(tier_map) do
                 direction_count = 1,
                 shift = util.by_pixel(16, -5),
                 hr_version = {
-                    filename = "__base__/graphics/entity/chemical-plant/remnants/hr-chemical-plant-remnants.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/chemical-plant/remnants/hr-chemical-plant-remnants-base.png",
                     line_length = 1,
                     width = 446,
                     height = 342,
@@ -131,14 +131,14 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/chemical-plant/chemical-plant.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/chemical-plant/chemical-plant-base.png",
                 width = 108,
                 height = 148,
                 frame_count = 24,
                 line_length = 12,
                 shift = util.by_pixel(1, -9),
                 hr_version = {
-                    filename = "__base__/graphics/entity/chemical-plant/hr-chemical-plant.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/chemical-plant/hr-chemical-plant-base.png",
                     width = 220,
                     height = 292,
                     frame_count = 24,
