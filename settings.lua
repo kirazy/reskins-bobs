@@ -23,13 +23,6 @@ if mods["bobassembly"] then
 end
 
 if mods["bobelectronics"] then
-    local circuit_style_locale = {"",
-        {"mod-setting-description.reskins-bobs-do-bobelectronics-circuit-style"},
-        {"reskins-bobs.reskins-bobs-circuit-style-material"},
-        {"reskins-bobs.reskins-bobs-circuit-style-vanilla"},
-        {"reskins-bobs.reskins-bobs-circuit-style-tier"},
-        {"reskins-bobs.reskins-bobs-circuit-style-default"},
-    }
     data:extend({
         {
             type = "string-setting",
@@ -37,7 +30,7 @@ if mods["bobelectronics"] then
             setting_type = "startup",
             default_value = "colored-tier",
             allowed_values = {"off","colored-material","colored-vanilla","colored-tier"},
-            localised_description = circuit_style_locale,
+            localised_description = {"", {"mod-setting-description.reskins-bobs-do-bobelectronics-circuit-style"}, {"reskins-bobs.reskins-bobs-circuit-style-material"}, {"reskins-bobs.reskins-bobs-circuit-style-vanilla"}, {"reskins-bobs.reskins-bobs-circuit-style-tier"}, {"reskins-defaults.default"}, " [color="..reskins.lib.default_tint.."]", {"string-mod-setting.reskins-bobs-do-bobelectronics-circuit-style-colored-tier"}, "[/color]"},
         },
         {
             type = "bool-setting",
@@ -142,6 +135,7 @@ if mods["boblogistics"] then
             setting_type ="startup",
             order = "y1y",
             default_value = "bfbfbf",
+            localised_description = {"", {"mod-setting-description.reskins-bobs-basic-belts-color"}, {"reskins-defaults.default"}, " ", {"reskins-defaults.basic-belts-color"}}
         },
         {
             type = "bool-setting",
@@ -156,6 +150,7 @@ if mods["boblogistics"] then
             setting_type ="startup",
             order = "y2y",
             default_value = "e5e5e5",
+            localised_description = {"", {"mod-setting-description.reskins-bobs-fusion-robot-color"}, {"reskins-defaults.default"}, " ", {"reskins-defaults.fusion-robot-color"}}
         },
     })
 end
