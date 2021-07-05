@@ -147,19 +147,6 @@ function reskins.bobs.make_robot_particle(prototype)
     }
 end
 
--- DEPRECATED; belt tints have been broken out into a separate belt_tint_index
--- Determine belt-related entity tints with special handling for basic belt entity types
--- function reskins.bobs.belt_tint_handling(name, tier)
---     local tint
---     if string.find(name, "basic") then
---         tint = reskins.lib.belt_mask_tint(reskins.bobs.basic_belt_tint)
---     else
---         tint = reskins.lib.belt_mask_tint(reskins.lib.tint_index[tier])
---     end
-
---     return tint
--- end
-
 -- PIPE-RELATED PICTURE AND COVER GENERATION
 -- Prepare assembly-machine-style pipe pictures
 function reskins.bobs.assembly_pipe_pictures(tint)
