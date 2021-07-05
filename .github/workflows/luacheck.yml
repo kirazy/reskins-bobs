@@ -14,4 +14,4 @@ jobs:
       - name: lint
         uses: Roang-zero1/factorio-mod-luacheck@master
         with:
-          luacheckrc_url: https://raw.githubusercontent.com/Nexela/Factorio-luacheckrc/master/.luacheckrc
+          luacheckrc_url: https://raw.githubusercontent.com/kirazy/Factorio-luacheckrc/master/.luacheckrc
