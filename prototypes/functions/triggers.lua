@@ -92,6 +92,15 @@ triggers.power = {
     equipment = reskins.lib.check_scope("equipment", "bobs", "bobpower"),
     items = reskins.lib.check_scope("items-and-fluids", "bobs", "bobpower"),
     technologies = reskins.lib.check_scope("technologies", "bobs", "bobpower"),
+
+    -- Fetch bobpower settings
+    accumulators = reskins.lib.setting("bobmods-power-accumulators"),
+    poles = reskins.lib.setting("bobmods-power-poles"),
+    steam = reskins.lib.setting("bobmods-power-steam"),
+    fluidgenerator = reskins.lib.setting("bobmods-power-fluidgenerator"),
+    heatsources = reskins.lib.setting("bobmods-power-heatsources"),
+    nuclear = reskins.lib.setting("bobmods-power-nuclear"),
+    solar = reskins.lib.setting("bobmods-power-solar"),
 }
 
 -- Bob's Revamp

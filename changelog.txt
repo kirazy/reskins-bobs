@@ -7,6 +7,14 @@ Date: ????
   Locale:
     - Removed default text from string mod setting descriptions for ease of translation and reduction of reduplication of translation effort; defaults are now appended automatically
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.11
+Date: 2021-07-09
+  Changes:
+    - Checks for settings in Bob's Power mod have been migrated to `reskins.bobs.triggers.power`, and reskinning adjusted to operate based on these triggers
+  Bugfixes:
+    - Fixed that if nuclear reactors were not enabled in Bob's Power mod, the table `reskins.bobs.nuclear_reactor_index` did not exist
+    - Fixed that the parameter tint in local function `setup_fluid_generator` was not properly implemented
+---------------------------------------------------------------------------------------------------
 Version: 1.1.10
 Date: 2021-07-01
   Bugfixes:
