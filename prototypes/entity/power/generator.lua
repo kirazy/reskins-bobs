@@ -5,7 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.power.entities) then return end
-if reskins.lib.setting("bobmods-power-fluidgenerator") == false then return end
+if not (reskins.bobs and reskins.bobs.triggers.power.fluidgenerator) then return end
 
 -- Set input parameters
 local inputs = {
@@ -60,14 +60,14 @@ local function setup_fluid_generator(tint)
                 width = 101,
                 height = 130,
                 repeat_count = 8,
-                tint = inputs.tint,
+                tint = tint,
                 shift = util.by_pixel(2.5, -11),
                 hr_version = {
                     filename = reskins.bobs.directory.."/graphics/entity/power/fluid-generator/hr-fluid-generator-mask.png",
                     width = 202,
                     height = 260,
                     repeat_count = 8,
-                    tint = inputs.tint,
+                    tint = tint,
                     shift = util.by_pixel(2.5, -11),
                     scale = 0.5
                 }
