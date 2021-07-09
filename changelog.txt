@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.11
-Date: ????
+Date: 2021-07-09
   Changes:
     - Checks for settings in Bob's Power mod have been migrated to `reskins.bobs.triggers.power`, and reskinning adjusted to operate based on these triggers
   Bugfixes:
