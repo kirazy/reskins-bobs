@@ -22,6 +22,42 @@ if mods["bobassembly"] then
     })
 end
 
+if mods["bobassembly"] or mods["bobplates"] then
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "reskins-bobs-do-custom-furnace-variants",
+            setting_type = "startup",
+            order = "y3",
+            default_value = false,
+        },
+        {
+            type = "string-setting",
+            name = "reskins-bobs-standard-furnace-color",
+            setting_type ="startup",
+            order = "y3x",
+            default_value = "ffb700",
+            localised_description = {"", {"mod-setting-description.reskins-bobs-standard-furnace-color"}, {"reskins-defaults.default"}, " ", {"reskins-defaults.standard-furnace-color"}}
+        },
+        {
+            type = "string-setting",
+            name = "reskins-bobs-mixing-furnace-color",
+            setting_type ="startup",
+            order = "y3y",
+            default_value = "00bfff",
+            localised_description = {"", {"mod-setting-description.reskins-bobs-mixing-furnace-color"}, {"reskins-defaults.default"}, " ", {"reskins-defaults.mixing-furnace-color"}}
+        },
+        {
+            type = "string-setting",
+            name = "reskins-bobs-chemical-furnace-color",
+            setting_type ="startup",
+            order = "y3z",
+            default_value = "f21f0c",
+            localised_description = {"", {"mod-setting-description.reskins-bobs-chemical-furnace-color"}, {"reskins-defaults.default"}, " ", {"reskins-defaults.chemical-furnace-color"}}
+        },
+    })
+end
+
 if mods["bobelectronics"] then
     local circuit_style_locale = {"",
         {"mod-setting-description.reskins-bobs-do-bobelectronics-circuit-style"},

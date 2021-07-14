@@ -4,17 +4,12 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not mods["bobassembly"] and not mods["bobplates"] then return end
-if not (reskins.bobs and reskins.bobs.triggers.assembly.entities) then return end
-
-local standard_furnace_tint = util.color("ffb700")
-local mixing_furnace_tint = util.color("00bfff")
-local chemical_furnace_tint = util.color("e50000")
+if not (reskins.bobs and (reskins.bobs.triggers.assembly.entities or reskins.bobs.triggers.plates.entities)) then return end
 
 local stone_furnace_map = {
-    ["stone-furnace"] = {tier = 1, type = "furnace", tint = standard_furnace_tint, is_standard = true},
-    ["stone-mixing-furnace"] = {tier = 1, type = "assembling-machine", tint = mixing_furnace_tint, is_mixing = true},
-    ["stone-chemical-furnace"] = {tier = 1, type = "assembling-machine", tint = chemical_furnace_tint, is_chemical = true},
+    ["stone-furnace"] = {type = "furnace", tint = reskins.bobs.furnace_tint_index.standard, is_standard = true},
+    ["stone-mixing-furnace"] = {type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.mixing, is_mixing = true},
+    ["stone-chemical-furnace"] = {type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.chemical, is_chemical = true},
 }
 
 local function stone_furnace_entities(name, shadow)
@@ -185,15 +180,13 @@ for name, map in pairs(stone_furnace_map) do
         inputs.tier_labels = false
     end
 
-    local tier = map.tier
-
     -- Fetch entity
     local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
-    reskins.lib.setup_standard_entity(name, tier, inputs)
+    reskins.lib.setup_standard_entity(name, 1, inputs)
 
     -- Fetch remnant
     local remnant = data.raw["corpse"][name.."-remnants"]
@@ -242,7 +235,7 @@ for name, map in pairs(stone_furnace_map) do
         }
 
         inputs.icon_filename = nil
-        reskins.lib.append_tier_labels_to_vanilla_icon(name, tier, inputs)
+        reskins.lib.append_tier_labels_to_vanilla_icon(name, 1, inputs)
     end
 
     -- Metal Mixing Furnace
@@ -289,7 +282,7 @@ for name, map in pairs(stone_furnace_map) do
 
         -- Setup icon
         inputs.icon_filename = reskins.bobs.directory.."/graphics/icons/assembly/stone-furnace/stone-metal-mixing-furnace.png"
-        reskins.lib.construct_icon(name, tier, inputs)
+        reskins.lib.construct_icon(name, 1, inputs)
     end
 
     -- Chemical Furnace
@@ -315,7 +308,7 @@ for name, map in pairs(stone_furnace_map) do
             }
         }
 
-        entity.animation = reskins.lib.make_4way_animation_from_spritesheet(stone_furnace_entities("stone-chemical-furnace", "stone-chemical-furnace", inputs))
+        entity.animation = reskins.lib.make_4way_animation_from_spritesheet(stone_furnace_entities("stone-chemical-furnace", "stone-chemical-furnace"))
 
         -- Handle working_visualisations
         entity.working_visualisations = {
@@ -341,7 +334,7 @@ for name, map in pairs(stone_furnace_map) do
 
         -- Setup icon
         inputs.icon_filename = reskins.bobs.directory.."/graphics/icons/assembly/stone-furnace/stone-chemical-furnace.png"
-        reskins.lib.construct_icon(name, tier, inputs)
+        reskins.lib.construct_icon(name, 1, inputs)
     end
 
     -- Handle ambient-light

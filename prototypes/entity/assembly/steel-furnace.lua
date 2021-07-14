@@ -4,20 +4,20 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not mods["bobassembly"] and not mods["bobplates"] then return end
-if not (reskins.bobs and reskins.bobs.triggers.assembly.entities) then return end
-
-local standard_furnace_tint = util.color("ffb700")
-local mixing_furnace_tint = util.color("00bfff")
-local chemical_furnace_tint = util.color("e50000")
+if not (reskins.bobs and (reskins.bobs.triggers.assembly.entities or reskins.bobs.triggers.plates.entities)) then return end
 
 local steel_furnace_map = {
-    ["steel-furnace"] = {tier = 2, type = "furnace", tint = standard_furnace_tint, furnace = "standard"},
-    ["steel-mixing-furnace"] = {tier = 2, type = "assembling-machine", tint = mixing_furnace_tint, furnace = "mixing"},
-    ["steel-chemical-furnace"] = {tier = 2, type = "assembling-machine", tint = chemical_furnace_tint, has_4way = true, furnace = "chemical"},
-    ["fluid-furnace"] = {tier = 2, type = "furnace", tint = standard_furnace_tint, has_4way = true, is_fluid = true, furnace = "standard"},
-    ["fluid-mixing-furnace"] = {tier = 2, type = "assembling-machine", tint = mixing_furnace_tint, has_4way = true, is_fluid = true, furnace = "mixing"},
-    ["fluid-chemical-furnace"] = {tier = 2, type = "assembling-machine", tint = chemical_furnace_tint, has_4way = true, is_fluid = true, furnace = "chemical"},
+    -- Standard furnaces
+    ["steel-furnace"] = {type = "furnace", tint = reskins.bobs.furnace_tint_index.standard, furnace = "standard"},
+    ["fluid-furnace"] = {type = "furnace", tint = reskins.bobs.furnace_tint_index.standard, has_fluids = true, is_fluid_burning = true, furnace = "standard"},
+
+    -- Mixing furnaces
+    ["steel-mixing-furnace"] = {type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.mixing, furnace = "mixing"},
+    ["fluid-mixing-furnace"] = {type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.mixing, has_fluids = true, is_fluid_burning = true, furnace = "mixing"},
+
+    -- Chemical furnaces
+    ["steel-chemical-furnace"] = {type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.chemical, has_fluids = true, furnace = "chemical"},
+    ["fluid-chemical-furnace"] = {type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.chemical, has_fluids = true, is_fluid_burning = true, furnace = "chemical"},
 }
 
 local function steel_furnace_entity_skin(name, shadow)
@@ -190,6 +190,7 @@ for name, map in pairs(steel_furnace_map) do
         tint = map.tint,
         particles = {["medium"] = 2},
         make_icons = false,
+        -- icon_name = name,
     }
 
     if reskins.lib.setting("reskins-bobs-do-furnace-tier-labeling") == true then
@@ -204,7 +205,7 @@ for name, map in pairs(steel_furnace_map) do
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
-    reskins.lib.setup_standard_entity(name, map.tier, inputs)
+    reskins.lib.setup_standard_entity(name, 2, inputs)
 
     -- Abstract from entity name to sprite sheet name
     local sprite_name, shadow
@@ -220,7 +221,7 @@ for name, map in pairs(steel_furnace_map) do
     end
 
     -- Prepend oil prefix when working with fluid-based furnaces
-    if map.is_fluid == true then
+    if map.is_fluid_burning == true then
         sprite_name = "oil-"..sprite_name
         shadow = "oil-"..shadow
 
@@ -230,13 +231,13 @@ for name, map in pairs(steel_furnace_map) do
 
     -- Setup icon
     inputs.icon_filename = reskins.bobs.directory.."/graphics/icons/assembly/steel-furnace/"..sprite_name..".png"
-    reskins.lib.construct_icon(name, map.tier, inputs)
+    reskins.lib.construct_icon(name, 2, inputs)
 
     -- Fetch remnant
     local remnant = data.raw["corpse"][name.."-remnants"]
 
     -- Reskin entities and remnants
-    if map.has_4way == true then
+    if map.has_fluids == true then
         remnant.animation = {
             filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/remnants/"..sprite_name.."-remnants.png",
             line_length = 4,
@@ -283,7 +284,7 @@ for name, map in pairs(steel_furnace_map) do
     end
 
     if map.furnace == "chemical" then
-        if map.is_fluid then
+        if map.is_fluid_burning then
             -- Skin the fluid-based chemical furnace working visualization
             entity.working_visualisations = {
                 -- Fire effect
@@ -352,7 +353,7 @@ for name, map in pairs(steel_furnace_map) do
                 }
             }
         end
-    elseif map.is_fluid then
+    elseif map.is_fluid_burning then
         -- Skin the fluid-based non-chemical furncace working visualizations
         entity.working_visualisations = {
             -- Fire effect

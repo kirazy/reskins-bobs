@@ -4,50 +4,32 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not mods["bobassembly"] and not mods["bobplates"] then return end
-if not (reskins.bobs and reskins.bobs.triggers.assembly.entities) then return end
+if not (reskins.bobs and (reskins.bobs.triggers.assembly.entities or reskins.bobs.triggers.plates.entities)) then return end
 
 -- Flag available for Mini-Machines compatibility pass
 if reskins.compatibility then reskins.compatibility.triggers.minimachines.furnaces = true end
 
-local standard_furnace_tint = util.color("ffb700")
-local mixing_furnace_tint = util.color("00bfff")
-local chemical_furnace_tint = util.color("e50000")
-
 local electric_furnace_map = {
-    ["electric-furnace"] = {furnace = "standard", tier = 3, type = "furnace", tint = standard_furnace_tint},
-    ["electric-furnace-2"] = {furnace = "standard", tier = 4, type = "furnace"},
-    ["electric-furnace-3"] = {furnace = "standard", tier = 5, type = "furnace"},
-    ["electric-mixing-furnace"] = {furnace = "mixing", tier = 3, type = "assembling-machine", tint = mixing_furnace_tint},
-    ["electric-chemical-furnace"] = {furnace = "chemical", tier = 3, type = "assembling-machine", tint = chemical_furnace_tint, has_fluids = true},
-    ["electric-chemical-mixing-furnace"] = {furnace = "multi", tier = 4, type = "assembling-machine", has_fluids = true},
-    ["electric-chemical-mixing-furnace-2"] = {furnace = "multi", tier = 5, type = "assembling-machine", has_fluids = true},
+    -- Standard furnaces
+    ["electric-furnace"] = {icon_name = "electric-furnace", furnace = "standard", tier = 3, type = "furnace", tint = reskins.bobs.furnace_tint_index.standard},
+    ["electric-furnace-2"] = {icon_name = "electric-furnace", furnace = "standard", tier = 4, type = "furnace"},
+    ["electric-furnace-3"] = {icon_name = "electric-furnace", furnace = "standard", tier = 5, type = "furnace"},
+
+    -- Mixing furnace
+    ["electric-mixing-furnace"] = {furnace = "mixing", tier = 3, type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.mixing},
+
+    -- Chemical furnace
+    ["electric-chemical-furnace"] = {furnace = "chemical", tier = 3, type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.chemical, has_fluids = true},
+
+    -- Chemical mixing furnaces
+    ["electric-chemical-mixing-furnace"] = {icon_name = "electric-chemical-mixing-furnace", furnace = "chemical-mixing", tier = 4, type = "assembling-machine", has_fluids = true},
+    ["electric-chemical-mixing-furnace-2"] = {icon_name = "electric-chemical-mixing-furnace", furnace = "chemical-mixing", tier = 5, type = "assembling-machine", has_fluids = true},
 }
 
-local function electric_furnace_shadow()
+local function furnace_heater_animation()
     return
-    {
-        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/electric-furnace-shadow.png",
-        priority = "high",
-        width = 114,
-        height = 86,
-        shift = util.by_pixel(10.75, 7.25),
-        draw_as_shadow = true,
-        hr_version = {
-            filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-furnace-shadow.png",
-            priority = "high",
-            width = 228,
-            height = 172,
-            shift = util.by_pixel(10.75, 7.25),
-            draw_as_shadow = true,
-            scale = 0.5
-        }
-    }
-end
-
-local function furnace_heater(has_fluids)
-    local furnace_heater_animation = {
-        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/electric-furnace-heater.png",
+        {
+        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/animations/electric-furnace-heater.png",
         priority = "high",
         width = 30,
         height = 28,
@@ -56,7 +38,7 @@ local function furnace_heater(has_fluids)
         shift = util.by_pixel(2, 33),
         draw_as_glow = true,
         hr_version = {
-            filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-furnace-heater.png",
+            filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/animations/hr-electric-furnace-heater.png",
             priority = "high",
             width = 60,
             height = 56,
@@ -67,20 +49,22 @@ local function furnace_heater(has_fluids)
             scale = 0.5
         }
     }
+end
 
+local function furnace_heater(has_fluids)
     if has_fluids then
         return
         {
             fadeout = true,
-            north_animation = util.copy(furnace_heater_animation),
-            east_animation = util.copy(furnace_heater_animation),
-            west_animation = util.copy(furnace_heater_animation),
+            north_animation = furnace_heater_animation(),
+            east_animation = furnace_heater_animation(),
+            west_animation = furnace_heater_animation(),
         }
     else
         return
         {
             fadeout = true,
-            animation = util.copy(furnace_heater_animation),
+            animation = furnace_heater_animation(),
         }
     end
 end
@@ -117,29 +101,32 @@ local function furnace_working_light(type, has_partial)
     }
 end
 
-local furnace_ground_light = {
-    filename = "__base__/graphics/entity/electric-furnace/electric-furnace-ground-light.png",
-    blend_mode = "additive",
-    width = 82,
-    height = 64,
-    shift = util.by_pixel(4, 68),
-    draw_as_light = true,
-    hr_version = {
-        filename = "__base__/graphics/entity/electric-furnace/hr-electric-furnace-ground-light.png",
+local function furnace_ground_light()
+    return
+    {
+        filename = "__base__/graphics/entity/electric-furnace/electric-furnace-ground-light.png",
         blend_mode = "additive",
-        width = 166,
-        height = 124,
-        shift = util.by_pixel(3, 69),
+        width = 82,
+        height = 64,
+        shift = util.by_pixel(4, 68),
         draw_as_light = true,
-        scale = 0.5,
+        hr_version = {
+            filename = "__base__/graphics/entity/electric-furnace/hr-electric-furnace-ground-light.png",
+            blend_mode = "additive",
+            width = 166,
+            height = 124,
+            shift = util.by_pixel(3, 69),
+            draw_as_light = true,
+            scale = 0.5,
+        }
     }
-}
+end
 
 local function furnace_large_propeller()
     return
     {
         animation = {
-            filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/propeller-large.png",
+            filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/animations/propeller-large.png",
             priority = "high",
             width = 19,
             height = 13,
@@ -147,7 +134,7 @@ local function furnace_large_propeller()
             animation_speed = 0.5,
             shift = util.by_pixel(-20, -18),
             hr_version = {
-                filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/hr-propeller-large.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/animations/hr-propeller-large.png",
                 priority = "high",
                 width = 38,
                 height = 26,
@@ -169,7 +156,7 @@ local function furnace_small_propeller(is_shifted)
     return
     {
         animation = {
-            filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/propeller-small.png",
+            filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/animations/propeller-small.png",
             priority = "high",
             width = 12,
             height = 8,
@@ -177,7 +164,7 @@ local function furnace_small_propeller(is_shifted)
             animation_speed = 0.5,
             shift = shift,
             hr_version = {
-                filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/hr-propeller-small.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/animations/hr-propeller-small.png",
                 priority = "high",
                 width = 24,
                 height = 16,
@@ -203,7 +190,7 @@ for name, map in pairs(electric_furnace_map) do
         group = "assembly",
         particles = {["medium"] = 2},
         tint = map.tint or reskins.lib.tint_index[tier],
-        icon_name = "electric-furnace",
+        icon_name = map.icon_name or name,
     }
 
     if reskins.lib.setting("reskins-bobs-do-furnace-tier-labeling") == true then
@@ -217,25 +204,6 @@ for name, map in pairs(electric_furnace_map) do
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
-
-    -- Setup icons
-    if map.furnace == "chemical" then
-        inputs.icon_base = "electric-chemical-furnace"
-        inputs.icon_layers = 1
-    elseif map.furnace == "mixing" then
-        inputs.icon_base = "electric-metal-mixing-furnace"
-        inputs.icon_layers = 1
-    elseif map.furnace == "multi" then
-        inputs.icon_base = "electric-multi-purpose-furnace"
-        inputs.icon_mask = inputs.icon_base
-        inputs.icon_highlights = inputs.icon_base
-        inputs.icon_layers = nil
-    elseif map.furnace == "standard" then
-        inputs.icon_base = nil
-        inputs.icon_mask = nil
-        inputs.icon_highlights = nil
-        inputs.icon_layers = nil
-    end
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
@@ -313,30 +281,82 @@ for name, map in pairs(electric_furnace_map) do
     }
 
     -- Reskin entities
-    if map.furnace == "chemical" then
-        entity.animation = {
-            layers = {
-                -- Base
-                {
-                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/electric-chemical-furnace-base.png",
+    entity.animation = {
+        layers = {
+            -- Base
+            {
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/"..inputs.icon_name.."-base.png",
+                priority = "high",
+                width = 119,
+                height = 106,
+                shift = util.by_pixel(1, 1),
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/hr-"..inputs.icon_name.."-base.png",
                     priority = "high",
-                    width = 119,
-                    height = 106,
+                    width = 238,
+                    height = 212,
                     shift = util.by_pixel(1, 1),
-                    hr_version = {
-                        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-chemical-furnace-base.png",
-                        priority = "high",
-                        width = 238,
-                        height = 212,
-                        shift = util.by_pixel(1, 1),
-                        scale = 0.5
-                    }
-                },
-                -- Shadow
-                electric_furnace_shadow()
+                    scale = 0.5
+                }
+            },
+            -- Mask
+            {
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/"..inputs.icon_name.."-mask.png",
+                priority = "high",
+                width = 119,
+                height = 106,
+                shift = util.by_pixel(1, 1),
+                tint = inputs.tint,
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/hr-"..inputs.icon_name.."-mask.png",
+                    priority = "high",
+                    width = 238,
+                    height = 212,
+                    shift = util.by_pixel(1, 1),
+                    tint = inputs.tint,
+                    scale = 0.5
+                }
+            },
+            -- Highlights
+            {
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/"..inputs.icon_name.."-highlights.png",
+                priority = "high",
+                width = 119,
+                height = 106,
+                shift = util.by_pixel(1, 1),
+                blend_mode = reskins.lib.blend_mode, -- "additive",
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/hr-"..inputs.icon_name.."-highlights.png",
+                    priority = "high",
+                    width = 238,
+                    height = 212,
+                    shift = util.by_pixel(1, 1),
+                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    scale = 0.5
+                }
+            },
+            -- Shadow
+            {
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/electric-furnace-shadow.png",
+                priority = "high",
+                width = 114,
+                height = 86,
+                shift = util.by_pixel(10.75, 7.25),
+                draw_as_shadow = true,
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-furnace-shadow.png",
+                    priority = "high",
+                    width = 228,
+                    height = 172,
+                    shift = util.by_pixel(10.75, 7.25),
+                    draw_as_shadow = true,
+                    scale = 0.5
+                }
             }
         }
+    }
 
+    if map.furnace == "chemical" then
         entity.working_visualisations = {
             -- Furnace Heater
             furnace_heater(true),
@@ -352,9 +372,9 @@ for name, map in pairs(electric_furnace_map) do
             -- Furnace Ground Light
             {
                 fadeout = true,
-                north_animation = util.copy(furnace_ground_light),
-                east_animation = util.copy(furnace_ground_light),
-                west_animation = util.copy(furnace_ground_light),
+                north_animation = furnace_ground_light(),
+                east_animation = furnace_ground_light(),
+                west_animation = furnace_ground_light(),
             },
         }
 
@@ -378,30 +398,8 @@ for name, map in pairs(electric_furnace_map) do
                 scale = 0.5,
             }
         })
-    elseif map.furnace == "mixing" then
-        entity.animation = {
-            layers = {
-                -- Base
-                {
-                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/electric-metal-mixing-furnace-base.png",
-                    priority = "high",
-                    width = 119,
-                    height = 106,
-                    shift = util.by_pixel(1, 1),
-                    hr_version = {
-                        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-metal-mixing-furnace-base.png",
-                        priority = "high",
-                        width = 238,
-                        height = 212,
-                        shift = util.by_pixel(1, 1),
-                        scale = 0.5
-                    }
-                },
-                -- Shadow
-                electric_furnace_shadow()
-            }
-        }
 
+    elseif map.furnace == "mixing" then
         entity.working_visualisations = {
             -- Furnace Heater
             furnace_heater(),
@@ -409,79 +407,20 @@ for name, map in pairs(electric_furnace_map) do
             -- Furnace Light
             {
                 fadeout = true,
-                animation = furnace_working_light("metal-mixing"),
+                animation = furnace_working_light("mixing"),
             },
 
             -- Furnace Ground Light
             {
                 fadeout = true,
-                animation = furnace_ground_light,
+                animation = furnace_ground_light(),
             },
 
             -- Propellers
             furnace_large_propeller(),
             furnace_small_propeller(true),
         }
-    elseif map.furnace == "multi" then
-        entity.animation = {
-            layers = {
-                -- Base
-                {
-                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/electric-multi-purpose-furnace-base.png",
-                    priority = "high",
-                    width = 119,
-                    height = 106,
-                    shift = util.by_pixel(1, 1),
-                    hr_version = {
-                        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-multi-purpose-furnace-base.png",
-                        priority = "high",
-                        width = 238,
-                        height = 212,
-                        shift = util.by_pixel(1, 1),
-                        scale = 0.5
-                    }
-                },
-                -- Mask
-                {
-                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/electric-multi-purpose-furnace-mask.png",
-                    priority = "high",
-                    width = 119,
-                    height = 106,
-                    shift = util.by_pixel(1, 1),
-                    tint = inputs.tint,
-                    hr_version = {
-                        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-multi-purpose-furnace-mask.png",
-                        priority = "high",
-                        width = 238,
-                        height = 212,
-                        shift = util.by_pixel(1, 1),
-                        tint = inputs.tint,
-                        scale = 0.5
-                    }
-                },
-                -- Highlights
-                {
-                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/electric-multi-purpose-furnace-highlights.png",
-                    priority = "high",
-                    width = 119,
-                    height = 106,
-                    shift = util.by_pixel(1, 1),
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
-                    hr_version = {
-                        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-multi-purpose-furnace-highlights.png",
-                        priority = "high",
-                        width = 238,
-                        height = 212,
-                        shift = util.by_pixel(1, 1),
-                        blend_mode = reskins.lib.blend_mode, -- "additive",
-                        scale = 0.5
-                    }
-                },
-                -- Shadow
-                electric_furnace_shadow()
-            }
-        }
-
+    elseif map.furnace == "chemical-mixing" then
         entity.working_visualisations = {
             -- Furnace Heater
             furnace_heater(true),
@@ -489,27 +428,27 @@ for name, map in pairs(electric_furnace_map) do
             -- Furnace Light
             {
                 fadeout = true,
-                north_animation = furnace_working_light("multi-purpose"),
-                east_animation = furnace_working_light("multi-purpose"),
-                south_animation = furnace_working_light("multi-purpose", true),
-                west_animation = furnace_working_light("multi-purpose"),
+                north_animation = furnace_working_light("chemical-mixing"),
+                east_animation = furnace_working_light("chemical-mixing"),
+                south_animation = furnace_working_light("chemical-mixing", true),
+                west_animation = furnace_working_light("chemical-mixing"),
             },
 
             -- Furnace Ground Light
             {
                 fadeout = true,
-                north_animation = util.copy(furnace_ground_light),
-                east_animation = util.copy(furnace_ground_light),
-                west_animation = util.copy(furnace_ground_light),
+                north_animation = furnace_ground_light(),
+                east_animation = furnace_ground_light(),
+                west_animation = furnace_ground_light(),
             },
 
             -- Propeller
             furnace_small_propeller(true),
         }
 
-        -- Add multi-purpose furnace remnants details
+        -- Add chemical-mixing furnace remnants details
         table.insert(remnant.animation.layers, {
-            filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/remnants/multi-purpose-furnace-remnants-overlay.png",
+            filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/remnants/chemical-mixing-furnace-remnants-overlay.png",
             line_length = 1,
             width = 108,
             height = 104,
@@ -517,7 +456,7 @@ for name, map in pairs(electric_furnace_map) do
             direction_count = 1,
             shift = util.by_pixel(-3, 7),
             hr_version = {
-                filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/remnants/hr-multi-purpose-furnace-remnants-overlay.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/remnants/hr-chemical-mixing-furnace-remnants-overlay.png",
                 line_length = 1,
                 width = 214,
                 height = 208,
@@ -528,65 +467,6 @@ for name, map in pairs(electric_furnace_map) do
             }
         })
     elseif map.furnace == "standard" then
-        entity.animation = {
-            layers = {
-                -- Base
-                {
-                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/electric-furnace-base.png",
-                    priority = "high",
-                    width = 119,
-                    height = 106,
-                    shift = util.by_pixel(1, 1),
-                    hr_version = {
-                        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-furnace-base.png",
-                        priority = "high",
-                        width = 238,
-                        height = 212,
-                        shift = util.by_pixel(1, 1),
-                        scale = 0.5
-                    }
-                },
-                -- Mask
-                {
-                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/electric-furnace-mask.png",
-                    priority = "high",
-                    width = 119,
-                    height = 106,
-                    shift = util.by_pixel(1, 1),
-                    tint = inputs.tint,
-                    hr_version = {
-                        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-furnace-mask.png",
-                        priority = "high",
-                        width = 238,
-                        height = 212,
-                        shift = util.by_pixel(1, 1),
-                        tint = inputs.tint,
-                        scale = 0.5
-                    }
-                },
-                -- Highlights
-                {
-                    filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/electric-furnace-highlights.png",
-                    priority = "high",
-                    width = 119,
-                    height = 106,
-                    shift = util.by_pixel(1, 1),
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
-                    hr_version = {
-                        filename = reskins.bobs.directory.."/graphics/entity/assembly/electric-furnace/hr-electric-furnace-highlights.png",
-                        priority = "high",
-                        width = 238,
-                        height = 212,
-                        shift = util.by_pixel(1, 1),
-                        blend_mode = reskins.lib.blend_mode, -- "additive",
-                        scale = 0.5
-                    }
-                },
-                -- Shadow
-                electric_furnace_shadow()
-            }
-        }
-
         entity.working_visualisations = {
             -- Furnace Heater
             furnace_heater(),
@@ -600,7 +480,7 @@ for name, map in pairs(electric_furnace_map) do
             -- Furnace Ground Light
             {
                 fadeout = true,
-                animation = furnace_ground_light,
+                animation = furnace_ground_light(),
             },
 
             -- Propellers
