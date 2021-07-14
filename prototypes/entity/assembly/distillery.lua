@@ -61,14 +61,14 @@ for name, tier in pairs(tier_map) do
             -- Mask
             {
                 filename = reskins.bobs.directory.."/graphics/entity/assembly/distillery/distillery-mask.png",
-                width = 64,
+                width = 74,
                 height = 96,
                 frame_count = 1,
                 shift = util.by_pixel(0, 0),
                 tint = inputs.tint,
                 hr_version = {
                     filename = reskins.bobs.directory.."/graphics/entity/assembly/distillery/hr-distillery-mask.png",
-                    width = 128,
+                    width = 148,
                     height = 192,
                     frame_count = 1,
                     shift = util.by_pixel(0, 0),
@@ -79,14 +79,14 @@ for name, tier in pairs(tier_map) do
             -- Highlights
             {
                 filename = reskins.bobs.directory.."/graphics/entity/assembly/distillery/distillery-highlights.png",
-                width = 64,
+                width = 74,
                 height = 96,
                 frame_count = 1,
                 shift = util.by_pixel(0, 0),
                 blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
                     filename = reskins.bobs.directory.."/graphics/entity/assembly/distillery/hr-distillery-highlights.png",
-                    width = 128,
+                    width = 148,
                     height = 192,
                     frame_count = 1,
                     shift = util.by_pixel(0, 0),

@@ -4,6 +4,11 @@ Date: ????
   Features:
     - Major revisions to all color masks for all entities, items, and icons
     - Perceived brightness and contrast have been improved and oversaturation and color blowouts have been reduced
+    - Added settings to enable and customize colors for the various furnace subtypes, default off
+  Changes:
+    - Revised the progression tier of the tank from 2 to 3 to better match the ingredients required
+  Bugfixes:
+    - Fixed that furnaces were not reskinned if Bob's Assembling machines mod was not present
   Locale:
     - Removed default text from string mod setting descriptions for ease of translation and reduction of reduplication of translation effort; defaults are now appended automatically
 ---------------------------------------------------------------------------------------------------

@@ -23,6 +23,15 @@ reskins.bobs.module_color_map = {
     ["yellow"] = {primary = util.color("ffdd45"), secondary = util.color("ffed66")},
 }
 
+
+reskins.bobs.furnace_tint_index = {
+    standard = reskins.lib.setting("reskins-bobs-do-custom-furnace-variants") and util.color(reskins.lib.setting("reskins-bobs-standard-furnace-color")) or util.color("ffb700"),
+    mixing = reskins.lib.setting("reskins-bobs-do-custom-furnace-variants") and util.color(reskins.lib.setting("reskins-bobs-mixing-furnace-color")) or util.color("00bfff"),
+    chemical = reskins.lib.setting("reskins-bobs-do-custom-furnace-variants") and util.color(reskins.lib.setting("reskins-bobs-chemical-furnace-color")) or util.color("f21f0c"),
+}
+
+local wait = true
+
 -- ROBOT PARTICLE AND DEATH ANIMATIONS
 local function adjust_animation(animation, shift)
 
