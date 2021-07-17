@@ -37,7 +37,7 @@ if mods["bobassembly"] or mods["bobplates"] then
             setting_type ="startup",
             order = "y3x",
             default_value = "ffb700",
-            localised_description = {"", {"mod-setting-description.reskins-bobs-standard-furnace-color"}, {"reskins-defaults.default"}, " ", {"reskins-defaults.standard-furnace-color"}}
+            localised_description = {"", {"mod-setting-description.reskins-bobs-standard-furnace-color"}, "\n\n", {"reskins-defaults.default"}, " ", {"reskins-defaults.standard-furnace-color"}}
         },
         {
             type = "string-setting",
@@ -45,7 +45,7 @@ if mods["bobassembly"] or mods["bobplates"] then
             setting_type ="startup",
             order = "y3y",
             default_value = "00bfff",
-            localised_description = {"", {"mod-setting-description.reskins-bobs-mixing-furnace-color"}, {"reskins-defaults.default"}, " ", {"reskins-defaults.mixing-furnace-color"}}
+            localised_description = {"", {"mod-setting-description.reskins-bobs-mixing-furnace-color"}, "\n\n", {"reskins-defaults.default"}, " ", {"reskins-defaults.mixing-furnace-color"}}
         },
         {
             type = "string-setting",
@@ -53,7 +53,7 @@ if mods["bobassembly"] or mods["bobplates"] then
             setting_type ="startup",
             order = "y3z",
             default_value = "f21f0c",
-            localised_description = {"", {"mod-setting-description.reskins-bobs-chemical-furnace-color"}, {"reskins-defaults.default"}, " ", {"reskins-defaults.chemical-furnace-color"}}
+            localised_description = {"", {"mod-setting-description.reskins-bobs-chemical-furnace-color"}, "\n\n", {"reskins-defaults.default"}, " ", {"reskins-defaults.chemical-furnace-color"}}
         },
     })
 end
@@ -64,7 +64,7 @@ if mods["bobelectronics"] then
         {"reskins-bobs.reskins-bobs-circuit-style-material"},
         {"reskins-bobs.reskins-bobs-circuit-style-vanilla"},
         {"reskins-bobs.reskins-bobs-circuit-style-tier"},
-        {"reskins-defaults.default"}, " [color="..reskins.lib.default_tint.."]", {"string-mod-setting.reskins-bobs-do-bobelectronics-circuit-style-colored-tier"}, "[/color]",
+        "\n\n", {"reskins-defaults.default"}, " [color="..reskins.lib.default_tint.."]", {"string-mod-setting.reskins-bobs-do-bobelectronics-circuit-style-colored-tier"}, "[/color]",
     }
     data:extend({
         {
@@ -178,7 +178,7 @@ if mods["boblogistics"] then
             setting_type ="startup",
             order = "y1y",
             default_value = "bfbfbf",
-            localised_description = {"", {"mod-setting-description.reskins-bobs-basic-belts-color"}, {"reskins-defaults.default"}, " ", {"reskins-defaults.basic-belts-color"}}
+            localised_description = {"", {"mod-setting-description.reskins-bobs-basic-belts-color"}, "\n\n", {"reskins-defaults.default"}, " ", {"reskins-defaults.basic-belts-color"}}
         },
         {
             type = "bool-setting",
@@ -193,7 +193,7 @@ if mods["boblogistics"] then
             setting_type ="startup",
             order = "y2y",
             default_value = "e5e5e5",
-            localised_description = {"", {"mod-setting-description.reskins-bobs-fusion-robot-color"}, {"reskins-defaults.default"}, " ", {"reskins-defaults.fusion-robot-color"}}
+            localised_description = {"", {"mod-setting-description.reskins-bobs-fusion-robot-color"}, "\n\n", {"reskins-defaults.default"}, " ", {"reskins-defaults.fusion-robot-color"}}
         },
     })
 end
