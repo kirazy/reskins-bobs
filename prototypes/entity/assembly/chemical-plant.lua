@@ -41,11 +41,9 @@ for name, map in pairs(tier_map) do
         tier = map[2]
     end
 
-    -- Chemical plant 1 needs the icon re-assigned in final fixes
-    if name == "chemical-plant" then
+    -- angelspetrochem at this version or earlier do icon work in data-final-fixes
+    if reskins.lib.migration.is_version_or_older(mods["angelspetrochem"], "0.9.19") and (name == "chemical-plant") then
         inputs.defer_to_data_final_fixes = true
-    else
-        inputs.defer_to_data_final_fixes = nil
     end
 
     -- Determine what tint we're using
