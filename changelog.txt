@@ -7,6 +7,7 @@ Date: ????
     - Added settings to enable and customize colors for the various furnace subtypes, default off
   Changes:
     - Revised the progression tier of the tank from 2 to 3 to better match the ingredients required
+    - Revised icons for bronze, brass, nitinol and aluminium plates, and revised bronze pipes to match
   Bugfixes:
     - Fixed that furnaces were not reskinned if Bob's Assembling machines mod was not present
   Locale:
