@@ -4,7 +4,7 @@
 -- See LICENSE in the project directory for license information.
 
 -- Requires
-local migration = require("__flib__.migration")
+local migration = require("__reskins-library__.prototypes.functions.migration")
 
 local function on_configuration_changed(data)
     for _, player in pairs(game.connected_players) do
