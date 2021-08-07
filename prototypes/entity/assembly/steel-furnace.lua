@@ -30,14 +30,12 @@ local function steel_furnace_entity_skin(furnace, tint)
                 priority = "high",
                 width = 86,
                 height = 87,
-                frame_count = 1,
                 shift = util.by_pixel(-1, 2),
                 hr_version = {
                     filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/hr-"..furnace.."-base.png",
                     priority = "high",
                     width = 172,
                     height = 174,
-                    frame_count = 1,
                     shift = util.by_pixel(-1, 2),
                     scale = 0.5
                 }
@@ -48,7 +46,6 @@ local function steel_furnace_entity_skin(furnace, tint)
                 priority = "high",
                 width = 86,
                 height = 87,
-                frame_count = 1,
                 shift = util.by_pixel(-1, 2),
                 tint = tint,
                 hr_version = {
@@ -56,7 +53,6 @@ local function steel_furnace_entity_skin(furnace, tint)
                     priority = "high",
                     width = 172,
                     height = 174,
-                    frame_count = 1,
                     shift = util.by_pixel(-1, 2),
                     tint = tint,
                     scale = 0.5
@@ -68,7 +64,6 @@ local function steel_furnace_entity_skin(furnace, tint)
                 priority = "high",
                 width = 86,
                 height = 87,
-                frame_count = 1,
                 shift = util.by_pixel(-1, 2),
                 blend_mode = reskins.lib.blend_mode,
                 hr_version = {
@@ -76,7 +71,6 @@ local function steel_furnace_entity_skin(furnace, tint)
                     priority = "high",
                     width = 172,
                     height = 174,
-                    frame_count = 1,
                     shift = util.by_pixel(-1, 2),
                     blend_mode = reskins.lib.blend_mode,
                     scale = 0.5
@@ -88,7 +82,6 @@ local function steel_furnace_entity_skin(furnace, tint)
                 priority = "high",
                 width = 141,
                 height = 71,
-                frame_count = 1,
                 draw_as_shadow = true,
                 shift = util.by_pixel(38.5, 3.5),
                 hr_version = {
@@ -96,7 +89,6 @@ local function steel_furnace_entity_skin(furnace, tint)
                     priority = "high",
                     width = 282,
                     height = 142,
-                    frame_count = 1,
                     draw_as_shadow = true,
                     shift = util.by_pixel(38.5, 3.5),
                     scale = 0.5

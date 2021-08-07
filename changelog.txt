@@ -8,6 +8,7 @@ Date: ????
   Changes:
     - Revised the progression tier of the tank from 2 to 3 to better match the ingredients required
     - Revised icons for bronze, brass, nitinol and aluminium plates, and revised bronze pipes to match
+    - Made visual improvements to the fluid burning furnaces and steel chemical furnace
   Bugfixes:
     - Fixed that furnaces were not reskinned if Bob's Assembling machines mod was not present
   Locale:
