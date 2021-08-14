@@ -23,6 +23,15 @@ reskins.bobs.module_color_map = {
     ["yellow"] = {primary = util.color("ffdd45"), secondary = util.color("ffed66")},
 }
 
+
+reskins.bobs.furnace_tint_index = {
+    standard = reskins.lib.setting("reskins-bobs-do-custom-furnace-variants") and util.color(reskins.lib.setting("reskins-bobs-standard-furnace-color")) or util.color("ffb700"),
+    mixing = reskins.lib.setting("reskins-bobs-do-custom-furnace-variants") and util.color(reskins.lib.setting("reskins-bobs-mixing-furnace-color")) or util.color("00bfff"),
+    chemical = reskins.lib.setting("reskins-bobs-do-custom-furnace-variants") and util.color(reskins.lib.setting("reskins-bobs-chemical-furnace-color")) or util.color("f21f0c"),
+}
+
+local wait = true
+
 -- ROBOT PARTICLE AND DEATH ANIMATIONS
 local function adjust_animation(animation, shift)
 
@@ -146,19 +155,6 @@ function reskins.bobs.make_robot_particle(prototype)
         }
     }
 end
-
--- DEPRECATED; belt tints have been broken out into a separate belt_tint_index
--- Determine belt-related entity tints with special handling for basic belt entity types
--- function reskins.bobs.belt_tint_handling(name, tier)
---     local tint
---     if string.find(name, "basic") then
---         tint = reskins.lib.belt_mask_tint(reskins.bobs.basic_belt_tint)
---     else
---         tint = reskins.lib.belt_mask_tint(reskins.lib.tint_index[tier])
---     end
-
---     return tint
--- end
 
 -- PIPE-RELATED PICTURE AND COVER GENERATION
 -- Prepare assembly-machine-style pipe pictures

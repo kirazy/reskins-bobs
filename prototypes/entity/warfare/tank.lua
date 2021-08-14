@@ -17,7 +17,7 @@ local inputs = {
 }
 
 local tier_map = {
-    ["tank"] = {1, 2},
+    ["tank"] = {1, 3},
     ["bob-tank-2"] = {2, 4},
     ["bob-tank-3"] = {3, 5},
 }

@@ -32,10 +32,10 @@ local technologies = {
     -- ["centrifuge-3"] = {},
 
     -- Electrolysers
-    ["electrolyser-2"] = {tier = 2, icon_name = "electrolyser", icon_base = "electrolyser-2", icon_mask = "electrolyser-2", icon_highlights = "electrolyser-2"},
-    ["electrolyser-3"] = {tier = 3, icon_name = "electrolyser", icon_base = "electrolyser-3", icon_mask = "electrolyser-3", icon_highlights = "electrolyser-3"},
-    ["electrolyser-4"] = {tier = 4, icon_name = "electrolyser", icon_base = "electrolyser-4", icon_mask = "electrolyser-4", icon_highlights = "electrolyser-4"},
-    ["electrolyser-5"] = {tier = 5, icon_name = "electrolyser", icon_base = "electrolyser-5", icon_mask = "electrolyser-5", icon_highlights = "electrolyser-5"},
+    ["electrolyser-2"] = {tier = 2, icon_name = "electrolyser", technology_icon_size = 256, technology_icon_mipmaps = 4, icon_base = "electrolyser-2", icon_mask = "electrolyser-2", icon_highlights = "electrolyser-2"},
+    ["electrolyser-3"] = {tier = 3, icon_name = "electrolyser", technology_icon_size = 256, technology_icon_mipmaps = 4, icon_base = "electrolyser-3", icon_mask = "electrolyser-3", icon_highlights = "electrolyser-3"},
+    ["electrolyser-4"] = {tier = 4, icon_name = "electrolyser", technology_icon_size = 256, technology_icon_mipmaps = 4, icon_base = "electrolyser-4", icon_mask = "electrolyser-4", icon_highlights = "electrolyser-4"},
+    ["electrolyser-5"] = {tier = 5, icon_name = "electrolyser", technology_icon_size = 256, technology_icon_mipmaps = 4, icon_base = "electrolyser-5", icon_mask = "electrolyser-5", icon_highlights = "electrolyser-5"},
 
     -- Chemical Plants
     ["chemical-plant-2"] = {tier = 2, prog_tier = 3, icon_name = "chemical-plant"},

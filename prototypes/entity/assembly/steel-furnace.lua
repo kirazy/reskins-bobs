@@ -4,62 +4,168 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not mods["bobassembly"] and not mods["bobplates"] then return end
-if not (reskins.bobs and reskins.bobs.triggers.assembly.entities) then return end
-
-local standard_furnace_tint = util.color("ffb700")
-local mixing_furnace_tint = util.color("00bfff")
-local chemical_furnace_tint = util.color("e50000")
+if not (reskins.bobs and (reskins.bobs.triggers.assembly.entities or reskins.bobs.triggers.plates.entities)) then return end
 
 local steel_furnace_map = {
-    ["steel-furnace"] = {tier = 2, type = "furnace", tint = standard_furnace_tint, furnace = "standard"},
-    ["steel-mixing-furnace"] = {tier = 2, type = "assembling-machine", tint = mixing_furnace_tint, furnace = "mixing"},
-    ["steel-chemical-furnace"] = {tier = 2, type = "assembling-machine", tint = chemical_furnace_tint, has_4way = true, furnace = "chemical"},
-    ["fluid-furnace"] = {tier = 2, type = "furnace", tint = standard_furnace_tint, has_4way = true, is_fluid = true, furnace = "standard"},
-    ["fluid-mixing-furnace"] = {tier = 2, type = "assembling-machine", tint = mixing_furnace_tint, has_4way = true, is_fluid = true, furnace = "mixing"},
-    ["fluid-chemical-furnace"] = {tier = 2, type = "assembling-machine", tint = chemical_furnace_tint, has_4way = true, is_fluid = true, furnace = "chemical"},
+    -- Standard furnaces
+    ["steel-furnace"] = {type = "furnace", tint = reskins.bobs.furnace_tint_index.standard},
+    ["fluid-furnace"] = {type = "furnace", tint = reskins.bobs.furnace_tint_index.standard, has_fluids = true, is_fluid_burning = true},
+
+    -- Mixing furnaces
+    ["steel-mixing-furnace"] = {type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.mixing},
+    ["fluid-mixing-furnace"] = {type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.mixing, has_fluids = true, is_fluid_burning = true},
+
+    -- Chemical furnaces
+    ["steel-chemical-furnace"] = {type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.chemical, has_fluids = true, is_chemical = true},
+    ["fluid-chemical-furnace"] = {type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.chemical, has_fluids = true, is_fluid_burning = true, is_chemical = true},
 }
 
-local function steel_furnace_entity_skin(name, shadow)
+local function steel_furnace_entity_skin(furnace, tint)
     return
     {
         layers = {
+            -- Base
             {
-                filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/"..name..".png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/"..furnace.."-base.png",
                 priority = "high",
                 width = 86,
                 height = 87,
-                frame_count = 1,
                 shift = util.by_pixel(-1, 2),
                 hr_version = {
-                    filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/hr-"..name..".png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/hr-"..furnace.."-base.png",
                     priority = "high",
                     width = 172,
                     height = 174,
-                    frame_count = 1,
                     shift = util.by_pixel(-1, 2),
                     scale = 0.5
                 }
             },
+            -- Mask
             {
-                filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/shadows/"..shadow.."-shadow.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/"..furnace.."-mask.png",
+                priority = "high",
+                width = 86,
+                height = 87,
+                shift = util.by_pixel(-1, 2),
+                tint = tint,
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/hr-"..furnace.."-mask.png",
+                    priority = "high",
+                    width = 172,
+                    height = 174,
+                    shift = util.by_pixel(-1, 2),
+                    tint = tint,
+                    scale = 0.5
+                }
+            },
+            -- Highlights
+            {
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/"..furnace.."-highlights.png",
+                priority = "high",
+                width = 86,
+                height = 87,
+                shift = util.by_pixel(-1, 2),
+                blend_mode = reskins.lib.blend_mode,
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/hr-"..furnace.."-highlights.png",
+                    priority = "high",
+                    width = 172,
+                    height = 174,
+                    shift = util.by_pixel(-1, 2),
+                    blend_mode = reskins.lib.blend_mode,
+                    scale = 0.5
+                }
+            },
+            -- Shadow
+            {
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/shadows/"..furnace.."-shadow.png",
                 priority = "high",
                 width = 141,
                 height = 71,
-                frame_count = 1,
                 draw_as_shadow = true,
                 shift = util.by_pixel(38.5, 3.5),
                 hr_version = {
-                    filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/shadows/hr-"..shadow.."-shadow.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/shadows/hr-"..furnace.."-shadow.png",
                     priority = "high",
                     width = 282,
                     height = 142,
-                    frame_count = 1,
                     draw_as_shadow = true,
                     shift = util.by_pixel(38.5, 3.5),
                     scale = 0.5
                 }
-            }
+            },
+        }
+    }
+end
+
+local function steel_furnace_remnant_skin(furnace, tint, count)
+    return
+    {
+        layers = {
+            -- Base
+            {
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/remnants/"..furnace.."-remnants-base.png",
+                line_length = count,
+                width = 134,
+                height = 119,
+                frame_count = 1,
+                direction_count = count,
+                shift = util.by_pixel(4, 0.5),
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/remnants/hr-"..furnace.."-remnants-base.png",
+                    line_length = count,
+                    width = 268,
+                    height = 238,
+                    frame_count = 1,
+                    direction_count = count,
+                    shift = util.by_pixel(4, 0.5),
+                    scale = 0.5,
+                }
+            },
+            -- Mask
+            {
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/remnants/"..furnace.."-remnants-mask.png",
+                line_length = count,
+                width = 134,
+                height = 119,
+                frame_count = 1,
+                direction_count = count,
+                shift = util.by_pixel(4, 0.5),
+                tint = tint,
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/remnants/hr-"..furnace.."-remnants-mask.png",
+                    line_length = count,
+                    width = 268,
+                    height = 238,
+                    frame_count = 1,
+                    direction_count = count,
+                    shift = util.by_pixel(4, 0.5),
+                    tint = tint,
+                    scale = 0.5,
+                }
+            },
+            -- Highlights
+            {
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/remnants/"..furnace.."-remnants-highlights.png",
+                line_length = count,
+                width = 134,
+                height = 119,
+                frame_count = 1,
+                direction_count = count,
+                shift = util.by_pixel(4, 0.5),
+                blend_mode = reskins.lib.blend_mode,
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/remnants/hr-"..furnace.."-remnants-highlights.png",
+                    line_length = count,
+                    width = 268,
+                    height = 238,
+                    frame_count = 1,
+                    direction_count = count,
+                    shift = util.by_pixel(4, 0.5),
+                    blend_mode = reskins.lib.blend_mode,
+                    scale = 0.5,
+                }
+            },
         }
     }
 end
@@ -189,7 +295,6 @@ for name, map in pairs(steel_furnace_map) do
         group = "assembly",
         tint = map.tint,
         particles = {["medium"] = 2},
-        make_icons = false,
     }
 
     if reskins.lib.setting("reskins-bobs-do-furnace-tier-labeling") == true then
@@ -204,156 +309,99 @@ for name, map in pairs(steel_furnace_map) do
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
-    reskins.lib.setup_standard_entity(name, map.tier, inputs)
-
     -- Abstract from entity name to sprite sheet name
-    local sprite_name, shadow
-    if map.furnace == "mixing" then
-        sprite_name = "steel-metal-mixing-furnace"
-        shadow = "steel-furnace"
-    elseif map.furnace == "chemical" then
-        sprite_name = "steel-chemical-furnace"
-        shadow = sprite_name
-    elseif map.furnace == "standard" then
-        sprite_name = "steel-furnace"
-        shadow = sprite_name
-    end
+    inputs.icon_name = map.is_chemical and "steel-chemical-furnace" or "steel-furnace"
+    inputs.icon_base = map.is_fluid_burning and "fluid-"..inputs.icon_name or inputs.icon_name
 
-    -- Prepend oil prefix when working with fluid-based furnaces
-    if map.is_fluid == true then
-        sprite_name = "oil-"..sprite_name
-        shadow = "oil-"..shadow
+    reskins.lib.setup_standard_entity(name, 2, inputs)
 
-        -- Clear out the pipe_picture field
+    -- Clear out pipe pictures
+    if map.is_fluid_burning == true then
         entity.energy_source.fluid_box.pipe_picture = nil
     end
-
-    -- Setup icon
-    inputs.icon_filename = reskins.bobs.directory.."/graphics/icons/assembly/steel-furnace/"..sprite_name..".png"
-    reskins.lib.construct_icon(name, map.tier, inputs)
 
     -- Fetch remnant
     local remnant = data.raw["corpse"][name.."-remnants"]
 
     -- Reskin entities and remnants
-    if map.has_4way == true then
-        remnant.animation = {
-            filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/remnants/"..sprite_name.."-remnants.png",
-            line_length = 4,
-            width = 134,
-            height = 119,
-            frame_count = 1,
-            direction_count = 4,
-            shift = util.by_pixel(4, 0.5),
-            hr_version = {
-                filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/remnants/hr-"..sprite_name.."-remnants.png",
-                line_length = 4,
-                width = 268,
-                height = 238,
-                frame_count = 1,
-                direction_count = 4,
-                shift = util.by_pixel(4, 0.5),
-                scale = 0.5,
-            }
-        }
-        entity.animation = reskins.lib.make_4way_animation_from_spritesheet(steel_furnace_entity_skin(sprite_name, shadow))
+    if map.has_fluids == true then
+        remnant.animation = steel_furnace_remnant_skin(inputs.icon_base, inputs.tint, 4)
+        entity.animation = reskins.lib.make_4way_animation_from_spritesheet(steel_furnace_entity_skin(inputs.icon_base, inputs.tint))
     else
-        remnant.animation = make_rotated_animation_variations_from_sheet(1, {
-            filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/remnants/"..sprite_name.."-remnants.png",
-            line_length = 1,
-            width = 134,
-            height = 119,
-            frame_count = 1,
-            direction_count = 1,
-            shift = util.by_pixel(4, 0.5),
-            hr_version =
-            {
-                filename = reskins.bobs.directory.."/graphics/entity/assembly/steel-furnace/remnants/hr-"..sprite_name.."-remnants.png",
-                line_length = 1,
-                width = 268,
-                height = 238,
-                frame_count = 1,
-                direction_count = 1,
-                shift = util.by_pixel(4, 0.5),
-                scale = 0.5,
-            }
-        })
-
-        entity.animation = steel_furnace_entity_skin(sprite_name, shadow)
+        remnant.animation = make_rotated_animation_variations_from_sheet(1, steel_furnace_remnant_skin(inputs.icon_base, inputs.tint, 1))
+        entity.animation = steel_furnace_entity_skin(inputs.icon_base, inputs.tint)
     end
 
-    if map.furnace == "chemical" then
-        if map.is_fluid then
-            -- Skin the fluid-based chemical furnace working visualization
-            entity.working_visualisations = {
-                -- Fire effect
-                {
-                    fadeout = true,
-                    effect = "flicker",
-                    south_animation = steel_furnace_fire("right"),
-                    west_animation = steel_furnace_fire("left"),
-                },
-                -- Small glow around the furnace mouth
-                {
-                    fadeout = true,
-                    effect = "flicker",
-                    south_animation = steel_furnace_glow(),
-                    west_animation = steel_furnace_glow(),
-                },
-                -- Furnace flicker
-                {
-                    fadeout = true,
-                    effect = "flicker",
-                    south_animation = steel_furnace_working("right"),
-                    west_animation = steel_furnace_working("left"),
-                },
-                -- Ground light
-                {
-                    fadeout = true,
-                    effect = "flicker",
-                    south_animation = steel_furnace_ground_light("right"),
-                    west_animation = steel_furnace_ground_light("left"),
-                }
+    if map.is_chemical and map.is_fluid_burning then
+        -- Skin the fluid-based steel chemical furnace working visualization
+        entity.working_visualisations = {
+            -- Fire effect
+            {
+                fadeout = true,
+                effect = "flicker",
+                south_animation = steel_furnace_fire("right"),
+                west_animation = steel_furnace_fire("left"),
+            },
+            -- Small glow around the furnace mouth
+            {
+                fadeout = true,
+                effect = "flicker",
+                south_animation = steel_furnace_glow(),
+                west_animation = steel_furnace_glow(),
+            },
+            -- Furnace flicker
+            {
+                fadeout = true,
+                effect = "flicker",
+                south_animation = steel_furnace_working("right"),
+                west_animation = steel_furnace_working("left"),
+            },
+            -- Ground light
+            {
+                fadeout = true,
+                effect = "flicker",
+                south_animation = steel_furnace_ground_light("right"),
+                west_animation = steel_furnace_ground_light("left"),
             }
-        else
-            -- Skin the basic chemical furnace working visualization
-            entity.working_visualisations = {
-                -- Fire effect
-                {
-                    fadeout = true,
-                    effect = "flicker",
-                    north_animation = steel_furnace_fire(),
-                    south_animation = steel_furnace_fire("right"),
-                    west_animation = steel_furnace_fire(),
-                },
-                -- Small glow around the furnace mouth
-                {
-                    fadeout = true,
-                    effect = "flicker",
-                    north_animation = steel_furnace_glow(),
-                    south_animation = steel_furnace_glow(),
-                    west_animation = steel_furnace_glow(),
-                },
-                -- Furnace flicker
-                {
-                    fadeout = true,
-                    effect = "flicker",
-                    north_animation = steel_furnace_working(),
-                    south_animation = steel_furnace_working("right"),
-                    west_animation = steel_furnace_working(),
-                },
-                -- Ground light
-                {
-                    fadeout = true,
-                    effect = "flicker",
-                    north_animation = steel_furnace_ground_light(),
-                    south_animation = steel_furnace_ground_light("right"),
-                    west_animation = steel_furnace_ground_light(),
-                }
+        }
+    elseif map.is_chemical then
+        -- Skin the steel chemical furnace working visualization
+        entity.working_visualisations = {
+            -- Fire effect
+            {
+                fadeout = true,
+                effect = "flicker",
+                north_animation = steel_furnace_fire(),
+                south_animation = steel_furnace_fire("right"),
+                west_animation = steel_furnace_fire(),
+            },
+            -- Small glow around the furnace mouth
+            {
+                fadeout = true,
+                effect = "flicker",
+                north_animation = steel_furnace_glow(),
+                south_animation = steel_furnace_glow(),
+                west_animation = steel_furnace_glow(),
+            },
+            -- Furnace flicker
+            {
+                fadeout = true,
+                effect = "flicker",
+                north_animation = steel_furnace_working(),
+                south_animation = steel_furnace_working("right"),
+                west_animation = steel_furnace_working(),
+            },
+            -- Ground light
+            {
+                fadeout = true,
+                effect = "flicker",
+                north_animation = steel_furnace_ground_light(),
+                south_animation = steel_furnace_ground_light("right"),
+                west_animation = steel_furnace_ground_light(),
             }
-        end
-    elseif map.is_fluid then
-        -- Skin the fluid-based non-chemical furncace working visualizations
+        }
+    elseif map.is_fluid_burning then
+        -- Skin the fluid-based steel furnace working visualizations
         entity.working_visualisations = {
             -- Fire effect
             {
@@ -389,7 +437,7 @@ for name, map in pairs(steel_furnace_map) do
             }
         }
     else
-        -- Skin the standard-type furnace working visualizations
+        -- Skin the steel furnace working visualizations
         entity.working_visualisations = data.raw["furnace"]["steel-furnace"].working_visualisations
     end
 

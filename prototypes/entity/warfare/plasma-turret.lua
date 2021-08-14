@@ -17,12 +17,18 @@ local inputs = {
 }
 
 local tier_map = {
-    ["bob-plasma-turret-1"] = 1,
-    ["bob-plasma-turret-2"] = 2,
-    ["bob-plasma-turret-3"] = 3,
-    ["bob-plasma-turret-4"] = 4,
-    ["bob-plasma-turret-5"] = 5,
+    ["bob-plasma-turret-1"] = {tier = 1},
+    ["bob-plasma-turret-2"] = {tier = 2},
+    ["bob-plasma-turret-3"] = {tier = 3},
+    ["bob-plasma-turret-4"] = {tier = 4},
+    ["bob-plasma-turret-5"] = {tier = 5},
 }
+
+-- Sea Block 0.5.5 recalibrates turret 1 and 2 to tiers 3 and 4, and hides the rest
+if reskins.lib.migration.is_version_or_newer(mods["SeaBlock"], "0.5.5") then
+    tier_map["bob-plasma-turret-1"].prog_tier = 3
+    tier_map["bob-plasma-turret-2"].prog_tier = 4
+end
 
 local raising_frame_sequence = {1, 2, 3, 4, 1, 5, 1, 4, 1, 5, 6, 7, 1, 8, 9}
 
@@ -229,13 +235,19 @@ local function plasma_turret_extension_lights_highlights(parameters)
 end
 
 -- Reskin entities, create and assign extra details
-for name, tier in pairs(tier_map) do
+for name, map in pairs(tier_map) do
     -- Fetch entity
     local entity = data.raw[inputs.type][name]
 
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
+
+    -- Handle tier
+    local tier = map.tier
+    if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
+        tier = map.prog_tier or map.tier
+    end
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index[tier]
