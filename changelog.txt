@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.0
-Date: ????
+Date: 2021-08-14
   Features:
     - Revisions to all color masks for all entities, items, and icons are ongoing
     - Perceived brightness and contrast have been improved and oversaturation and color blowouts have been reduced for revised entities
