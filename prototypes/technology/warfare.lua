@@ -86,4 +86,10 @@ local technologies = {
     -- ["heavy-spidertron"] = {}, -- "Heavy spidertron"
 }
 
+-- Sea Block 0.5.5 recalibrates turret 1 and 2 to tiers 3 and 4, and hides the rest
+if reskins.lib.migration.is_version_or_newer(mods["SeaBlock"], "0.5.5") then
+    technologies["bob-plasma-turrets-1"].prog_tier = 3
+    technologies["bob-plasma-turrets-2"].prog_tier = 4
+end
+
 reskins.lib.create_icons_from_list(technologies, inputs)
