@@ -2,14 +2,15 @@
 Version: 2.0.0
 Date: ????
   Features:
-    - Major revisions to all color masks for all entities, items, and icons
-    - Perceived brightness and contrast have been improved and oversaturation and color blowouts have been reduced
+    - Revisions to all color masks for all entities, items, and icons are ongoing
+    - Perceived brightness and contrast have been improved and oversaturation and color blowouts have been reduced for revised entities
     - Added settings to enable and customize colors for the various furnace subtypes, default off
     - Added compatibility support for Sea Block modifications to Plasma turrets
   Changes:
     - Revised the progression tier of the tank from 2 to 3 to better match the ingredients required
     - Revised icons for bronze, brass, nitinol and aluminium plates, and revised bronze pipes to match
     - Made visual improvements to the fluid burning furnaces and steel chemical furnace
+    - Corrected some visual discontinuities with the storage tank all corners
   Bugfixes:
     - Fixed that furnaces were not reskinned if Bob's Assembling machines mod was not present
   Locale:
