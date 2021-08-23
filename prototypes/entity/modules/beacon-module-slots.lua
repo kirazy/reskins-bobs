@@ -438,7 +438,10 @@ for _, name in pairs(beacons) do
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
-    if name == "beacon" then
+    -- Determine the number of slots to generate
+    local module_slots = mods["SeaBlock"] and 2 or entity.module_specification and entity.module_specification.module_slots
+
+    if module_slots == 2 then
         -- 8 light modules
         table.insert(entity.graphics_set.module_visualisations, {
             art_style = "artisan-reskin-8-lights",
@@ -460,7 +463,7 @@ for _, name in pairs(beacons) do
                 setup_module_slot({lights = 5, is_slot_2 = true}),
             }
         })
-    elseif name == "beacon-2" then
+    elseif module_slots == 4 then
         -- Setup vanilla slots
         entity.graphics_set.module_visualisations[1] = {
             art_style = "vanilla",
@@ -499,7 +502,7 @@ for _, name in pairs(beacons) do
                 setup_module_slot({lights = 5, shift = {2, 5}, is_slot_2 = true}), -- Slot 2, shifted right and down, above other module slot
             }
         })
-    else
+    elseif module_slots == 6 then
         -- Setup vanilla slots
         entity.graphics_set.module_visualisations[1] = {
             art_style = "vanilla",

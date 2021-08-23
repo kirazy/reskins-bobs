@@ -21,9 +21,9 @@ local inputs = {
 }
 
 local tier_map = {
-    ["beacon"] = {1, 3},
-    ["beacon-2"] = {2, 4},
-    ["beacon-3"] = {3, 5},
+    ["beacon"] = {tier = 1, prog_tier = 3},
+    ["beacon-2"] = {tier = 2, prog_tier = 4},
+    ["beacon-3"] = {tier = 3, prog_tier = 5},
 }
 
 -- Reskin entities, create and assign extra details
@@ -40,12 +40,11 @@ for name, map in pairs(tier_map) do
         entity.order = "z-a[beacon]-1"
     end
 
-    -- Parse map
-    local tier = map[1]
+    -- Handle tier
+    local tier = map.tier
     if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
-        tier = map[2]
+        tier = map.prog_tier or map.tier
     end
-    local beacon_base = map[1]
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tint_index[tier]
@@ -136,6 +135,10 @@ for name, map in pairs(tier_map) do
             },
         }
     })
+
+    -- Determine sprite set to use
+    local beacon_base = map.tier
+    local module_slots = mods["SeaBlock"] and 2 or entity.module_specification and entity.module_specification.module_slots
 
     -- Reskin entities
     entity.graphics_set.animation_list =
@@ -265,7 +268,7 @@ for name, map in pairs(tier_map) do
     }
 
     -- Handle module slot overlays
-    if beacon_base == 2 then
+    if module_slots == 4 then
         -- Module slot overlay
         table.insert(entity.graphics_set.animation_list, {
             render_layer = "transport-belt-circuit-connector", -- Above modules, below lights
@@ -289,7 +292,7 @@ for name, map in pairs(tier_map) do
                 }
             }
         })
-    elseif beacon_base == 3 then
+    elseif module_slots == 6 then
         -- Module slot overlay
         table.insert(entity.graphics_set.animation_list, {
             render_layer = "transport-belt-circuit-connector", -- Above modules, below lights
