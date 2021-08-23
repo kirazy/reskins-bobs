@@ -137,7 +137,7 @@ for name, map in pairs(tier_map) do
     })
 
     -- Determine sprite set to use
-    local beacon_base = map.tier
+    local beacon_base = mods["SeaBlock"] and 1 or map.tier
     local module_slots = mods["SeaBlock"] and 2 or entity.module_specification and entity.module_specification.module_slots
 
     -- Reskin entities
