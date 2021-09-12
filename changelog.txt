@@ -3,7 +3,6 @@ Version: 2.0.1
 Date: ????
   Features:
     - Added compatibility support for Sea Block changes to beacon module slot counts
-  Changes:
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.0
 Date: 2021-08-14
