@@ -33,11 +33,13 @@ local reinforced_tint_index = {
 -- Parse inputs
 reskins.lib.parse_inputs(inputs)
 
--- Create particles and explosions
-reskins.lib.create_explosion("reinforced-wall", inputs)
+if inputs.make_explosions then
+    -- Create particles and explosions
+    reskins.lib.create_explosion("reinforced-wall", inputs)
 
-for particle, key in pairs(inputs.particles) do
-    reskins.lib.create_particle("reinforced-wall", inputs.base_entity, reskins.lib.particle_index[particle], key, reinforced_tint_index[particle])
+    for particle, key in pairs(inputs.particles) do
+        reskins.lib.create_particle("reinforced-wall", inputs.base_entity, reskins.lib.particle_index[particle], key, reinforced_tint_index[particle])
+    end
 end
 
 -- Create remnants
