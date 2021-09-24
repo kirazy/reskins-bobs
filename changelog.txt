@@ -2,6 +2,8 @@
 Version: 2.0.3
 Date: ????
   Changes:
+  Bugfixes:
+    - Fixed that the setting Burner and steam assembling machines was not properly handled for the burner assembling machine with AAI Industry present
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.2
 Date: 2021-09-14

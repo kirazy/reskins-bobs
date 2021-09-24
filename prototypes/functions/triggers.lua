@@ -7,7 +7,7 @@ local triggers = {}
 
 -- Bob's Assembling Machines
 triggers.assembly = {
-    burner_assembling_machine_is_small = true, -- Angel's Industries
+    burner_assembling_machine_is_small = reskins.lib.setting("bobmods-assembly-burner"),
     entities = reskins.lib.check_scope("entities", "bobs", "bobassembly"),
     equipment = reskins.lib.check_scope("equipment", "bobs", "bobassembly"),
     items = reskins.lib.check_scope("items-and-fluids", "bobs", "bobassembly"),
@@ -135,7 +135,7 @@ triggers.warfare = {
     technologies = reskins.lib.check_scope("technologies", "bobs", "bobwarfare"),
 }
 
--- Override for AAI Industry and Angel's Refining interaction where the burner assembling machine is overwritten with a full-size entity
+-- aai-industry is optionally dependent on angelsrefining and will perform final edits to the burner assembling machine
 if mods["aai-industry"] and mods["angelsrefining"] then
     triggers.assembly.burner_assembling_machine_is_small = false
 end
