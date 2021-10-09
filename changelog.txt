@@ -2,6 +2,8 @@
 Version: 2.0.4
 Date: ????
   Changes:
+    - Removed deprecated support from boiler reskinning operations for ShinyBobGFX
+    - Removed fluid_box overwriting from fluid boilers, now merely sets the pipe covers and pipe pictures as intended
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.3
 Date: 2021-09-29
