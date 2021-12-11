@@ -26,6 +26,15 @@ local electric_furnace_map = {
     ["electric-chemical-mixing-furnace-2"] = {icon_name = "electric-chemical-mixing-furnace", furnace = "chemical-mixing", tier = 5, type = "assembling-machine", has_fluids = true},
 }
 
+-- Angel's Compatibility
+if mods["angelssmelting"] then
+    -- Use metal-mixing sprites to be consistent with new "Filtering Furnace" progression
+    electric_furnace_map["electric-chemical-mixing-furnace"].furnace = "mixing"
+    electric_furnace_map["electric-chemical-mixing-furnace"].icon_name = "electric-mixing-furnace"
+    electric_furnace_map["electric-chemical-mixing-furnace-2"].furnace = "mixing"
+    electric_furnace_map["electric-chemical-mixing-furnace-2"].icon_name = "electric-mixing-furnace"
+end
+
 local function furnace_heater_animation()
     return
         {

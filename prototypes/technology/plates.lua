@@ -55,8 +55,8 @@ local technologies = {
     ["advanced-material-processing-4"] = {technology_icon_size = 256, technology_icon_mipmaps = 4, flat_icon = false, tier = 5, icon_name = "advanced-material-processing", technology_icon_extras = return_technology_light_layer(inputs.group, "advanced-material-processing")}, -- yellow electric
     ["electric-chemical-furnace"] = {technology_icon_size = 256, technology_icon_mipmaps = 4, flat_icon = false, tint = util.color("e50000"), icon_name = "electric-chemical-furnace", technology_icon_extras = return_technology_light_layer(inputs.group, "electric-chemical-furnace")}, -- red electric
     ["electric-mixing-furnace"] = {technology_icon_size = 256, technology_icon_mipmaps = 4, flat_icon = false, tint = util.color("00bfff"), icon_name = "electric-mixing-furnace", technology_icon_extras = return_technology_light_layer(inputs.group, "electric-mixing-furnace")}, -- blue electric
-    ["multi-purpose-furnace-1"] = {technology_icon_size = 256, technology_icon_mipmaps = 4, flat_icon = false, tier = 4, icon_name = "multi-purpose-furnace", technology_icon_extras = return_technology_light_layer(inputs.group, "multi-purpose-furnace")}, -- purple electric; needs color mask support
-    ["multi-purpose-furnace-2"] = {technology_icon_size = 256, technology_icon_mipmaps = 4, flat_icon = false, tier = 5, icon_name = "multi-purpose-furnace", technology_icon_extras = return_technology_light_layer(inputs.group, "multi-purpose-furnace")}, -- green electric; needs color mask support
+    ["multi-purpose-furnace-1"] = {technology_icon_size = 256, technology_icon_mipmaps = 4, flat_icon = false, tier = 4, icon_name = "multi-purpose-furnace", technology_icon_extras = return_technology_light_layer(inputs.group, "multi-purpose-furnace")}, -- purple electric
+    ["multi-purpose-furnace-2"] = {technology_icon_size = 256, technology_icon_mipmaps = 4, flat_icon = false, tier = 5, icon_name = "multi-purpose-furnace", technology_icon_extras = return_technology_light_layer(inputs.group, "multi-purpose-furnace")}, -- green electric
 
     -- Barreling pumps
     ["water-bore-1"] = {flat_icon = false, tier = 1, prog_tier = 2, icon_name = "water-bore"},
@@ -146,7 +146,15 @@ else
     else
         technologies["deuterium-fuel-reprocessing"].image = "deuterium-fuel-reprocessing-alternate-pink"
     end
+end
 
+-- Angel's Compatibility
+if mods["angelssmelting"] then
+    -- Use metal-mixing sprites to be consistent with new "Filtering Furnace" progression
+    technologies["multi-purpose-furnace-1"].icon_name = "electric-mixing-furnace"
+    technologies["multi-purpose-furnace-1"].technology_icon_extras = return_technology_light_layer(inputs.group, "electric-mixing-furnace")
+    technologies["multi-purpose-furnace-2"].icon_name = "electric-mixing-furnace"
+    technologies["multi-purpose-furnace-2"].technology_icon_extras = return_technology_light_layer(inputs.group, "electric-mixing-furnace")
 end
 
 reskins.lib.create_icons_from_list(technologies, inputs)
