@@ -72,7 +72,6 @@ local technologies = {
 
     -- Assorted processes
     -- ["plastics"] = {}, -- Plastic, plastic pipes
-    -- ["ceramics"] = {}, -- silicon nitride, ceramic bearing, ball bearing, pipes
     -- ["advanced-oil-processing"] = {}, -- oil recipes
     ["grinding"] = {subgroup = "processing-steps", technology_icon_size = 256, technology_icon_mipmaps = 4},
     ["polishing"] = {subgroup = "processing-steps", technology_icon_size = 256, technology_icon_mipmaps = 4},
@@ -95,17 +94,16 @@ local technologies = {
     ["titanium-processing"] = {subgroup = "plates", technology_icon_size = 256}, -- titanium plate, gear, ball, bearing, pipes, chest
     ["tungsten-processing"] = {subgroup = "plates", technology_icon_size = 256}, -- tungsten plate, gear, pipe, acid, oxide, powdered
     ["alloy-processing"] = {subgroup = "plates", technology_icon_size = 256},
-
-    -- Gasses
-    -- ["nitrogen-processing"] = {}, -- fluids: nitrogen, nitrogen-dioxide, nitric acid, ammonia, nitric oxide, hydrogen peroxide
-    -- ["chemical-processing-2"] = {}, -- hydro chloride, calcium, ferric chloride, limestone, carbon dioxide,
+    ["ceramics"] = {subgroup = "plates", technology_icon_size = 256}, -- silicon nitride, ceramic bearing, ball bearing, pipes
 
     -- Chemicals and fluids processing
-    -- ["lithium-processing"] = {}, -- lithium, lithium chloride, perchlorate, sodium chlorate, perchlorate, (Bob's revamp does something to this?)
-    -- ["nitroglycerin-processing"] = {}, -- glycerol, nitroglycerin, sulfuric and nitric acid
-    -- ["sulfur-processing"] = {}, -- sulfur, sulfuric acid, sulfur-dioxide, hydrogen-sulfide, hydrogen-peroxide, petroleum-gas
-    -- ["heavy-water-processing"] = {}, -- heavy water
-    -- ["deuterium-processing"] = {}, -- heavy water electrolysis
+    ["chemical-processing-2"] = {subgroup = "chemical-processing", technology_icon_size = 256}, -- hydro chloride, calcium, ferric chloride, limestone, carbon dioxide,
+    ["lithium-processing"] = {subgroup = "chemical-processing", technology_icon_size = 256}, -- lithium, lithium chloride, perchlorate, sodium chlorate, perchlorate, (Bob's revamp does something to this?)
+    --["nitrogen-processing"] = {}, -- fluids: nitrogen, nitrogen-dioxide, nitric acid, ammonia, nitric oxide, hydrogen peroxide
+    --["heavy-water-processing"] = {}, -- heavy water
+    --["deuterium-processing"] = {}, -- heavy water electrolysis
+    -- // ok as it is //["sulfur-processing"] = {}, -- sulfur, sulfuric acid, sulfur-dioxide, hydrogen-sulfide, hydrogen-peroxide, petroleum-gas
+    -- // part of warfare // ["nitroglycerin-processing"] = {}, -- glycerol, nitroglycerin, sulfuric and nitric acid
 
     -- Gems
     -- ["gem-processing-1"] = {}, -- cut gems
@@ -120,10 +118,10 @@ local technologies = {
     ["alien-red-research"] = {subgroup = "alien", technology_icon_size = 256, technology_icon_mipmaps = 4},
 
     -- Fluid Handling
-    ["fluid-handling"] = {flat_icon = false, tier = 1, prog_tier = 2, icon_name = "fluid-handling"},
-    ["bob-fluid-handling-2"] = {flat_icon = false, tier = 2, prog_tier = 3, icon_name = "fluid-handling"},
-    ["bob-fluid-handling-3"] = {flat_icon = false, tier = 3, prog_tier = 4, icon_name = "fluid-handling"},
-    ["bob-fluid-handling-4"] = {flat_icon = false, tier = 4, prog_tier = 5, icon_name = "fluid-handling"},
+    ["fluid-handling"] = {flat_icon = false, tier = 1, prog_tier = 2, icon_name = "fluid-handling", technology_icon_size = 256},
+    ["bob-fluid-handling-2"] = {flat_icon = false, tier = 2, prog_tier = 3, icon_name = "fluid-handling", technology_icon_size = 256},
+    ["bob-fluid-handling-3"] = {flat_icon = false, tier = 3, prog_tier = 4, icon_name = "fluid-handling", technology_icon_size = 256},
+    ["bob-fluid-handling-4"] = {flat_icon = false, tier = 4, prog_tier = 5, icon_name = "fluid-handling", technology_icon_size = 256},
 
     -- Miscellaneous
     -- ["gas-canisters"] = {}, -- gas cans
