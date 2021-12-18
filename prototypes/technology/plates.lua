@@ -78,6 +78,8 @@ local technologies = {
     ["electrolysis-1"] = {subgroup = "processing-steps", image = "electrolysis", technology_icon_size = 256, technology_icon_mipmaps = 4},
     ["electrolysis-2"] = {subgroup = "processing-steps", image = "electrolysis", technology_icon_size = 256, technology_icon_mipmaps = 4},
     ["void-fluid"] = {subgroup = "processing-steps", technology_icon_size = 256, technology_icon_mipmaps = 4},
+    ["gem-processing-1"] = {subgroup = "processing-steps", technology_icon_size = 256}, -- cut gems
+    ["gem-processing-2"] = {subgroup = "processing-steps", technology_icon_size = 256}, -- polished gems
 
     -- Plate processing
     ["aluminium-processing"] = {subgroup = "plates", technology_icon_size = 256}, -- alumina, aluminium plate
@@ -104,10 +106,6 @@ local technologies = {
     --["deuterium-processing"] = {}, -- heavy water electrolysis
     -- // ok as it is //["sulfur-processing"] = {}, -- sulfur, sulfuric acid, sulfur-dioxide, hydrogen-sulfide, hydrogen-peroxide, petroleum-gas
     -- // part of warfare // ["nitroglycerin-processing"] = {}, -- glycerol, nitroglycerin, sulfuric and nitric acid
-
-    -- Gems
-    -- ["gem-processing-1"] = {}, -- cut gems
-    -- ["gem-processing-2"] = {}, -- polished gems
 
     -- Alien plates
     ["alien-blue-research"] = {subgroup = "alien", technology_icon_size = 256, technology_icon_mipmaps = 4},
