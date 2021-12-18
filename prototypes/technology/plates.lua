@@ -81,20 +81,19 @@ local technologies = {
     ["void-fluid"] = {subgroup = "processing-steps", technology_icon_size = 256, technology_icon_mipmaps = 4},
 
     -- Plate processing
-    -- ["aluminium-processing"] = {subgroup = "plates"},
-    -- ["gold-processing"] = {subgroup = "plates"}, -- gold plate
-    -- ["zinc-processing"] = {subgroup = "plates"}, -- zinc plate, brass, gunmetal, brass gear, brass pipes, brass chest
-    -- ["nickel-processing"] = {}, -- nickel plate
-    -- ["steel-processing"] = {}, -- vanilla fine as is
-    -- ["silicon-processing"] = {}, -- silicon boule, wager, powder
-    -- ["invar-processing"] = {}, -- invar plate
-    -- ["lead-processing"] = {}, -- lead plate, lead oxide
-    -- ["aluminium-processing"] = {}, -- alumina, aluminium plate
-    -- ["cobalt-processing"] = {}, -- cobalt oxide, cobalt plate, copper plate from cobalt, cobalt steel plate, gear, bearing, ball bearing
-    -- ["tungsten-alloy-processing"] = {}, -- copper-tungsten, tungsten carbide, c-tun-pipes
-    -- ["nitinol-processing"] = {}, -- nitinol plate, gear, bearing, ball,. pipes
-    -- ["titanium-processing"] = {}, -- titanium plate, gear, ball, bearing, pipes, chest
-    -- ["tungsten-processing"] = {}, -- tungsten plate, gear, pipe, acid, oxide, powdered
+    ["aluminium-processing"] = {subgroup = "plates", technology_icon_size = 256}, -- alumina, aluminium plate
+    ["gold-processing"] = {subgroup = "plates", technology_icon_size = 256}, -- gold plate
+    ["zinc-processing"] = {subgroup = "plates", technology_icon_size = 256}, -- zinc plate, brass, gunmetal, brass gear, brass pipes, brass chest
+    ["nickel-processing"] = {subgroup = "plates", technology_icon_size = 256}, -- nickel plate
+    ["steel-processing"] = {subgroup = "plates", technology_icon_size = 256}, -- vanilla fine as is
+    ["silicon-processing"] = {subgroup = "plates", technology_icon_size = 256}, -- silicon boule, wager, powder
+    ["invar-processing"] = {subgroup = "plates", technology_icon_size = 256}, -- invar plate
+    ["lead-processing"] = {subgroup = "plates", technology_icon_size = 256}, -- lead plate, lead oxide
+    ["cobalt-processing"] = {subgroup = "plates", technology_icon_size = 256}, -- cobalt oxide, cobalt plate, copper plate from cobalt, cobalt steel plate, gear, bearing, ball bearing
+    ["tungsten-alloy-processing"] = {subgroup = "plates", technology_icon_size = 256}, -- copper-tungsten, tungsten carbide, c-tun-pipes
+    ["nitinol-processing"] = {subgroup = "plates", technology_icon_size = 256}, -- nitinol plate, gear, bearing, ball,. pipes
+    ["titanium-processing"] = {subgroup = "plates", technology_icon_size = 256}, -- titanium plate, gear, ball, bearing, pipes, chest
+    ["tungsten-processing"] = {subgroup = "plates", technology_icon_size = 256}, -- tungsten plate, gear, pipe, acid, oxide, powdered
 
     -- Gasses
     -- ["nitrogen-processing"] = {}, -- fluids: nitrogen, nitrogen-dioxide, nitric acid, ammonia, nitric oxide, hydrogen peroxide
