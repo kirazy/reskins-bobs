@@ -35,9 +35,9 @@ local technologies = {
     ["thorium-fuel-reprocessing"] = {subgroup = "nuclear"},
     ["deuterium-fuel-reprocessing"] = {subgroup = "nuclear", image = "deuterium-fuel-reprocessing-pink"},
     ["bobingabout-enrichment-process"] = {subgroup = "nuclear", technology_icon_size = 256, technology_icon_mipmaps = 4},
-    -- ["plutonium-fuel-cell"] = {}, -- plut fuel cell icon, is broken/sized wrong
-    -- ["thorium-plutonium-fuel-cell"] = {}, -- ^^^
-    -- ["deuterium-fuel-cell-2"] = {}, -- check color from revamp settings?
+    ["plutonium-fuel-cell"] = {subgroup = "nuclear",}, -- plut fuel cell icon, is broken/sized wrong
+    ["thorium-plutonium-fuel-cell"] = {subgroup = "nuclear",}, -- ^^^
+    ["deuterium-fuel-cell-2"] = {subgroup = "nuclear",}, -- check color from revamp settings?
 
     -- Furnaces
     ["alloy-processing-1"] = {subgroup = "smelting"},

@@ -2,7 +2,7 @@
 Version: 2.0.5
 Date: ????
   Changes:
-    - Technology icons for plates processing, Oil pumpjacks, Water pumpjacks, updated fluid handling (snouz)
+    - Technology icons for plates processing, Oil pumpjacks, Water pumpjacks, updated fluid handling, Nuclear fuel cells (snouz)
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.4
 Date: 2021-12-12
