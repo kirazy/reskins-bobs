@@ -94,6 +94,7 @@ local technologies = {
     ["nitinol-processing"] = {subgroup = "plates", technology_icon_size = 256}, -- nitinol plate, gear, bearing, ball,. pipes
     ["titanium-processing"] = {subgroup = "plates", technology_icon_size = 256}, -- titanium plate, gear, ball, bearing, pipes, chest
     ["tungsten-processing"] = {subgroup = "plates", technology_icon_size = 256}, -- tungsten plate, gear, pipe, acid, oxide, powdered
+    ["alloy-processing"] = {subgroup = "plates", technology_icon_size = 256},
 
     -- Gasses
     -- ["nitrogen-processing"] = {}, -- fluids: nitrogen, nitrogen-dioxide, nitric acid, ammonia, nitric oxide, hydrogen peroxide
