@@ -33,17 +33,18 @@ local technologies = {
     ["bob-area-drills-4"] = {tier = 4, prog_tier = 5, icon_name = "mining-drill", icon_base = "area-mining-drill", technology_icon_size = 128, technology_icon_mipmaps = 0},
 
     -- Water pumpjacks
-    ["water-miner-1"] =  {tier = 1, icon_name = "pumpjack", technology_icon_size = 256, technology_icon_mipmaps = 0},
-    ["water-miner-2"] =  {tier = 2, icon_name = "pumpjack", technology_icon_size = 256, technology_icon_mipmaps = 0},
-    ["water-miner-3"] =  {tier = 3, icon_name = "pumpjack", technology_icon_size = 256, technology_icon_mipmaps = 0},
-    ["water-miner-4"] =  {tier = 4, icon_name = "pumpjack", technology_icon_size = 256, technology_icon_mipmaps = 0},
-    ["water-miner-5"] =  {tier = 5, icon_name = "pumpjack", technology_icon_size = 256, technology_icon_mipmaps = 0},
+    ["water-miner-1"] =  {tier = 1, icon_name = "water-pumpjack", technology_icon_size = 256, technology_icon_mipmaps = 0},
+    ["water-miner-2"] =  {tier = 2, icon_name = "water-pumpjack", technology_icon_size = 256, technology_icon_mipmaps = 0},
+    ["water-miner-3"] =  {tier = 3, icon_name = "water-pumpjack", technology_icon_size = 256, technology_icon_mipmaps = 0},
+    ["water-miner-4"] =  {tier = 4, icon_name = "water-pumpjack", technology_icon_size = 256, technology_icon_mipmaps = 0},
+    ["water-miner-5"] =  {tier = 5, icon_name = "water-pumpjack", technology_icon_size = 256, technology_icon_mipmaps = 0},
 
     -- Oil pumpjacks
-    -- ["bob-pumpjacks-1"] = {tier = 2},
-    -- ["bob-pumpjacks-2"] = {tier = 3},
-    -- ["bob-pumpjacks-3"] = {tier = 4},
-    -- ["bob-pumpjacks-4"] = {tier = 5},
+    ["pumpjack"] = {tier = 1, icon_name = "oil-pumpjack", technology_icon_size = 256, technology_icon_mipmaps = 0},
+    ["bob-pumpjacks-1"] = {tier = 2, icon_name = "oil-pumpjack", technology_icon_size = 256, technology_icon_mipmaps = 0},
+    ["bob-pumpjacks-2"] = {tier = 3, icon_name = "oil-pumpjack", technology_icon_size = 256, technology_icon_mipmaps = 0},
+    ["bob-pumpjacks-3"] = {tier = 4, icon_name = "oil-pumpjack", technology_icon_size = 256, technology_icon_mipmaps = 0},
+    ["bob-pumpjacks-4"] = {tier = 5, icon_name = "oil-pumpjack", technology_icon_size = 256, technology_icon_mipmaps = 0},
 
     -- TECHNOLOGY EFFECTS
     ["steel-axe"] = {technology_icon_filename = steel_axe_icon, technology_icon_extras = {constant_mining}, flat_icon = true},
