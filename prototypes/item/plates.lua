@@ -85,6 +85,7 @@ local intermediates = {
     ["thorium-232"] = {subgroup = "nuclear"},
 
     -- Fluids
+    ["liquid-air"] = {type = "fluid", subgroup = "fluids"},
     ["liquid-fuel"] = {type = "fluid", subgroup = "fluids"},
     ["ferric-chloride-solution"] = {type = "fluid", subgroup = "fluids"}, -- Shared with Bob's Electronics
     ["lithia-water"] = {type = "fluid", subgroup = "fluids", defer_to_data_updates = true}, -- Shared with Bob's Ores, Angels
@@ -185,4 +186,7 @@ reskins.lib.create_icons_from_list(intermediates, inputs)
 -- One-off fixes
 if data.raw.item["nickel-plate"] then
     reskins.lib.clear_icon_specification("bob-nickel-plate", "recipe")
+end
+if data.raw.fluid["liquid-air"] then
+    reskins.lib.clear_icon_specification("bob-liquid-air", "recipe")
 end

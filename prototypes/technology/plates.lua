@@ -102,9 +102,9 @@ local technologies = {
     ["chemical-processing-2"] = {subgroup = "chemical-processing", technology_icon_size = 256}, -- hydro chloride, calcium, ferric chloride, limestone, carbon dioxide,
     ["lithium-processing"] = {subgroup = "chemical-processing", technology_icon_size = 256}, -- lithium, lithium chloride, perchlorate, sodium chlorate, perchlorate, (Bob's revamp does something to this?)
     ["gas-canisters"] = {subgroup = "chemical-processing", technology_icon_size = 256}, -- gas cans
-    --["nitrogen-processing"] = {}, -- fluids: nitrogen, nitrogen-dioxide, nitric acid, ammonia, nitric oxide, hydrogen peroxide
-    --["heavy-water-processing"] = {}, -- heavy water
-    --["deuterium-processing"] = {}, -- heavy water electrolysis
+    -- // molecule // ["nitrogen-processing"] = {}, -- fluids: nitrogen, nitrogen-dioxide, nitric acid, ammonia, nitric oxide, hydrogen peroxide
+    -- // molecule // ["heavy-water-processing"] = {}, -- heavy water
+    -- // molecule // ["deuterium-processing"] = {}, -- heavy water electrolysis
     -- // ok as it is //["sulfur-processing"] = {}, -- sulfur, sulfuric acid, sulfur-dioxide, hydrogen-sulfide, hydrogen-peroxide, petroleum-gas
     -- // part of warfare // ["nitroglycerin-processing"] = {}, -- glycerol, nitroglycerin, sulfuric and nitric acid
 
