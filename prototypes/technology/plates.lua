@@ -101,6 +101,7 @@ local technologies = {
     -- Chemicals and fluids processing
     ["chemical-processing-2"] = {subgroup = "chemical-processing", technology_icon_size = 256}, -- hydro chloride, calcium, ferric chloride, limestone, carbon dioxide,
     ["lithium-processing"] = {subgroup = "chemical-processing", technology_icon_size = 256}, -- lithium, lithium chloride, perchlorate, sodium chlorate, perchlorate, (Bob's revamp does something to this?)
+    ["gas-canisters"] = {subgroup = "chemical-processing", technology_icon_size = 256}, -- gas cans
     --["nitrogen-processing"] = {}, -- fluids: nitrogen, nitrogen-dioxide, nitric acid, ammonia, nitric oxide, hydrogen peroxide
     --["heavy-water-processing"] = {}, -- heavy water
     --["deuterium-processing"] = {}, -- heavy water electrolysis
@@ -120,9 +121,6 @@ local technologies = {
     ["bob-fluid-handling-2"] = {flat_icon = false, tier = 2, prog_tier = 3, icon_name = "fluid-handling", technology_icon_size = 256},
     ["bob-fluid-handling-3"] = {flat_icon = false, tier = 3, prog_tier = 4, icon_name = "fluid-handling", technology_icon_size = 256},
     ["bob-fluid-handling-4"] = {flat_icon = false, tier = 4, prog_tier = 5, icon_name = "fluid-handling", technology_icon_size = 256},
-
-    -- Miscellaneous
-    -- ["gas-canisters"] = {}, -- gas cans
 }
 
 -- Handle nuclear update
