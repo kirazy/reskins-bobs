@@ -2,6 +2,7 @@
 Version: 2.0.5
 Date: ????
   Changes:
+    - Additional entities have received revised color masks
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.4
 Date: 2021-12-12
