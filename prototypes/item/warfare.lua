@@ -125,6 +125,8 @@ local items = {
 
     -- Weapons
     ["laser-rifle"] = {type = "gun", subgroup = "weapons"},
+    ["rifle"] = {type = "gun", subgroup = "weapons"},
+    ["sniper-rifle"] = {type = "gun", subgroup = "weapons"},
 
     -- Robots
     ["defender-robot"] = {icon_filename = "__base__/graphics/icons/defender.png"},
