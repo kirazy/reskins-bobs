@@ -128,6 +128,13 @@ local items = {
     ["rifle"] = {type = "gun", subgroup = "weapons"},
     ["sniper-rifle"] = {type = "gun", subgroup = "weapons"},
 
+    -- Armors
+    ["heavy-armor-2"] = {type = "armor", subgroup = "armors"},
+    ["heavy-armor-3"] = {type = "armor", subgroup = "armors"},
+    ["bob-power-armor-mk3"] = {type = "armor", subgroup = "armors"},
+    ["bob-power-armor-mk4"] = {type = "armor", subgroup = "armors"},
+    ["bob-power-armor-mk5"] = {type = "armor", subgroup = "armors"},
+
     -- Robots
     ["defender-robot"] = {icon_filename = "__base__/graphics/icons/defender.png"},
     ["distractor-robot"] = {icon_filename = "__base__/graphics/icons/distractor.png"},
