@@ -3,7 +3,8 @@ Version: 2.0.5
 Date: ????
   Changes:
     - Technology icons for plates processing, Oil pumpjacks, Water pumpjacks, updated fluid handling, Nuclear fuel cells, Gas canisters, gems processing 1 & 2
-    - Icons for Liquid air
+    - Icons for Liquid air, all powders,
+    - Recipe groups icons
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.4
 Date: 2021-12-12
