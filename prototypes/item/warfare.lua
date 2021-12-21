@@ -125,11 +125,24 @@ local items = {
 
     -- Weapons
     ["laser-rifle"] = {type = "gun", subgroup = "weapons"},
+    ["rifle"] = {type = "gun", subgroup = "weapons"},
+    ["sniper-rifle"] = {type = "gun", subgroup = "weapons"},
+
+    -- Armors
+    ["heavy-armor-2"] = {type = "armor", subgroup = "armors"},
+    ["heavy-armor-3"] = {type = "armor", subgroup = "armors"},
+    ["bob-power-armor-mk3"] = {type = "armor", subgroup = "armors"},
+    ["bob-power-armor-mk4"] = {type = "armor", subgroup = "armors"},
+    ["bob-power-armor-mk5"] = {type = "armor", subgroup = "armors"},
 
     -- Robots
     ["defender-robot"] = {icon_filename = "__base__/graphics/icons/defender.png"},
     ["distractor-robot"] = {icon_filename = "__base__/graphics/icons/distractor.png"},
     ["destroyer-robot"] = {icon_filename = "__base__/graphics/icons/destroyer.png"},
+    ["bob-laser-robot"] = {type = "item", subgroup = "robots"},
+
+    -- Parts
+    ["mech-armor-plate"] = {type = "item", subgroup = "parts"},
 }
 
 reskins.lib.create_icons_from_list(items, inputs)

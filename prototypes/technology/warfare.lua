@@ -56,13 +56,13 @@ local technologies = {
 
     -- Armor
     -- ["heavy-armor"] = {}, -- probably fine? Depends how armor is handled
-    -- ["bob-armor-making-3"] = {}, -- invar cobalt-steel armor (heavy-armor-2)
-    -- ["bob-armor-making-4"] = {}, -- titanium-ceramic armor
+    ["bob-armor-making-3"] = {subgroup = "armors", flat_icon = true}, -- invar cobalt-steel armor (heavy-armor-2)
+    ["bob-armor-making-4"] = {subgroup = "armors", flat_icon = true}, -- titanium-ceramic armor
     -- ["power-armor"] = {}, -- power armor first entry
     -- ["power-armor-mk2"] = {}, -- 2nd power armor
-    -- ["bob-power-armor-3"] = {},
-    -- ["bob-power-armor-4"] = {},
-    -- ["bob-power-armor-5"] = {},
+    ["bob-power-armor-3"] = {subgroup = "armors", flat_icon = true},
+    ["bob-power-armor-4"] = {subgroup = "armors", flat_icon = true},
+    ["bob-power-armor-5"] = {subgroup = "armors", flat_icon = true},
 
     -- Tanks
     -- ["tank"] = {}, -- t2 tank

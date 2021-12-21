@@ -4,6 +4,12 @@ Date: ????
   Changes:
     - Additional entities have received revised color masks
     - Revised normal resolution roboport to use updated Factorio sprites
+    - 7 item tab icons
+    - Plates tech icons: 15 plates, gas canisters, 2 gem processing, advanced electronics 3, fluid handling update
+    - Mining tech icons: oil pumpjacks, water pumpjacks
+    - Warfare tech icons: 5 armors
+    - Plates item icons: 14 powders, liquid air
+    - Warfare item icons: 5 armors, rifle, sniper rifle, mech armor plate
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.4
 Date: 2021-12-12
