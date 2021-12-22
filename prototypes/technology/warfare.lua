@@ -79,11 +79,11 @@ local technologies = {
     -- ["bob-laser-robot"] = {}, -- it ghetto, but an Angel render
 
     -- Spidertrons
-    -- ["walking-vehicle"] = {}, -- "Antron"
-    -- ["tankotron"] = {}, -- "tankotron"
-    -- ["logistic-spidertron"] = {}, -- "logitron"
+    ["walking-vehicle"] = {subgroup = "spidertron", flat_icon = true}, -- "Antron"
+    ["tankotron"] = {subgroup = "spidertron", flat_icon = true}, -- "tankotron"
+    ["logistic-spidertron"] = {subgroup = "spidertron", flat_icon = true}, -- "logitron"
     -- ["spidertron"] = {}, -- "Spidertron"
-    -- ["heavy-spidertron"] = {}, -- "Heavy spidertron"
+    ["heavy-spidertron"] = {subgroup = "spidertron", flat_icon = true}, -- "Heavy spidertron"
 }
 
 -- Sea Block 0.5.5 recalibrates turret 1 and 2 to tiers 3 and 4, and hides the rest

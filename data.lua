@@ -86,6 +86,7 @@ require("prototypes.entity.warfare.sniper-turret")
 require("prototypes.entity.warfare.tank")
 require("prototypes.entity.warfare.wall")
 require("prototypes.entity.warfare.gate")
+require("prototypes.entity.warfare.spidertron")
 
 ----------------------------------------------------------------------------------------------------
 -- EQUIPMENT
