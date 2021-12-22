@@ -6,9 +6,10 @@ Date: ????
     - 7 item tab icons
     - Plates tech icons: 15 plates, gas canisters, 2 gem processing, advanced electronics 3, fluid handling update
     - Mining tech icons: oil pumpjacks, water pumpjacks
-    - Warfare tech icons: 5 armors
+    - Warfare tech icons: 5 armors, 4 spidertrons
     - Plates item icons: 14 powders, liquid air
-    - Warfare item icons: 5 armors, rifle, sniper rifle, mech armor plate
+    - Warfare item icons: 5 armors, 4 spidertrons, 10 mech parts, rifle, sniper rifle
+    - Warfare entities: Added rotating Tankotron cannon, adjusted projectile position
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.4
 Date: 2021-12-12

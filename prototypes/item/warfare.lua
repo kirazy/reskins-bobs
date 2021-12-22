@@ -127,6 +127,10 @@ local items = {
     ["laser-rifle"] = {type = "gun", subgroup = "weapons"},
     ["rifle"] = {type = "gun", subgroup = "weapons"},
     ["sniper-rifle"] = {type = "gun", subgroup = "weapons"},
+    ["spidertron-gatling-gun"] = {type = "gun", subgroup = "weapons"},
+    ["spidertron-cannon"] = {type = "item", subgroup = "weapons"},
+    ["spidertron-cannon-1"] = {type = "gun", image = "spidertron-cannon", subgroup = "weapons"},
+    ["spidertron-cannon-2"] = {type = "gun", image = "spidertron-cannon", subgroup = "weapons"},
 
     -- Armors
     ["heavy-armor-2"] = {type = "armor", subgroup = "armors"},
@@ -141,8 +145,21 @@ local items = {
     ["destroyer-robot"] = {icon_filename = "__base__/graphics/icons/destroyer.png"},
     ["bob-laser-robot"] = {type = "item", subgroup = "robots"},
 
-    -- Parts
-    ["mech-armor-plate"] = {type = "item", subgroup = "parts"},
+    -- Mech parts
+    ["mech-armor-plate"] = {type = "item", subgroup = "mech-parts"},
+    ["mech-brain"] = {type = "item", subgroup = "mech-parts"},
+    ["mech-frame"] = {type = "item", subgroup = "mech-parts"},
+    ["mech-foot"] = {type = "item", subgroup = "mech-parts"},
+    ["mech-hip"] = {type = "item", subgroup = "mech-parts"},
+    ["mech-knee"] = {type = "item", subgroup = "mech-parts"},
+    ["mech-leg"] = {type = "item", subgroup = "mech-parts"},
+    ["mech-leg-segment"] = {type = "item", subgroup = "mech-parts"},
+
+    -- Spidertron
+    ["antron"] = {type = "item-with-entity-data", subgroup = "spidertron"},
+    ["tankotron"] = {type = "item-with-entity-data", subgroup = "spidertron"},
+    ["logistic-spidertron"] = {type = "item-with-entity-data", subgroup = "spidertron"},
+    ["heavy-spidertron"] = {type = "item-with-entity-data", subgroup = "spidertron"},
 }
 
 reskins.lib.create_icons_from_list(items, inputs)
