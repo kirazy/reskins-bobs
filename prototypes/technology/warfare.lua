@@ -70,10 +70,10 @@ local technologies = {
     -- ["bob-tanks-3"] = {},
 
     -- Tank robots
-    -- ["bob-robot-gun-drones"] = {},
-    -- ["bob-robot-laser-drones"] = {},
-    -- ["bob-robot-flamethrower-drones"] = {},
-    -- ["bob-robot-plasma-drones"] = {},
+    ["bob-robot-gun-drones"] = {subgroup = "drone-tank", flat_icon = true},
+    ["bob-robot-laser-drones"] = {subgroup = "drone-tank", flat_icon = true},
+    ["bob-robot-flamethrower-drones"] = {subgroup = "drone-tank", flat_icon = true},
+    ["bob-robot-plasma-drones"] = {subgroup = "drone-tank", flat_icon = true},
 
     -- Robots
     -- ["bob-laser-robot"] = {}, -- it ghetto, but an Angel render
