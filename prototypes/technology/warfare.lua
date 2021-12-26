@@ -76,7 +76,7 @@ local technologies = {
     ["bob-robot-plasma-drones"] = {subgroup = "drone-tank", flat_icon = true},
 
     -- Robots
-    -- ["bob-laser-robot"] = {}, -- it ghetto, but an Angel render
+    ["bob-laser-robot"] = {subgroup = "robots", flat_icon = true},
 
     -- Spidertrons
     ["walking-vehicle"] = {subgroup = "spidertron", flat_icon = true}, -- "Antron"

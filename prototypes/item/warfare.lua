@@ -145,6 +145,13 @@ local items = {
     ["destroyer-robot"] = {icon_filename = "__base__/graphics/icons/destroyer.png"},
     ["bob-laser-robot"] = {type = "item", subgroup = "robots"},
 
+    -- Capsules
+    ["fire-capsule"] = {type = "capsule", subgroup = "capsules"},
+    ["defender-capsule"] = {type = "capsule", subgroup = "capsules"},
+    ["distractor-capsule"] = {type = "capsule", subgroup = "capsules"},
+    ["destroyer-capsule"] = {type = "capsule", subgroup = "capsules"},
+    ["bob-laser-robot-capsule"] = {type = "capsule", subgroup = "capsules"},
+
     -- Drone tank
     ["bob-robot-gun-drone"] = {type = "item", subgroup = "drone-tank"},
     ["bob-robot-laser-drone"] = {type = "item", subgroup = "drone-tank"},
