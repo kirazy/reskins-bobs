@@ -46,8 +46,8 @@ local technologies = {
     -- ["artillery"] = {tier = 1, prog_tier = 3}, -- t3 arty/train arty
     -- ["bob-artillery-turret-2"] = {tier = 2, prog_tier = 4}, -- t4 arty
     -- ["bob-artillery-turret-3"] = {tier = 3, prog_tier = 5}, -- t5 arty
-    -- ["bob-artillery-wagon-2"] = {tier = 2, prog_tier = 4}, -- t4 train arty
-    -- ["bob-artillery-wagon-3"] = {tier = 3, prog_tier = 5}, -- t5 train arty
+    ["bob-artillery-wagon-2"] = {icon_name = "artillery-wagons", tier = 2, prog_tier = 4}, -- t4 train arty
+    ["bob-artillery-wagon-3"] = {icon_name = "artillery-wagons", tier = 3, prog_tier = 5}, -- t5 train arty
 
     -- Military progression
     -- ["military"] = {},
