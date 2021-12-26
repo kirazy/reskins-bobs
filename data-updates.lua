@@ -6,10 +6,6 @@
 ----------------------------------------------------------------------------------------------------
 -- ENTITIES
 ----------------------------------------------------------------------------------------------------
-
--- snouz added:
-require("prototypes.item-group")
-
 -- Bob's Assembly
 require("prototypes.entity.assembly.assembling-machine") -- Bob reskins in data-updates
 require("prototypes.entity.assembly.chemical-plant") -- Bob reskins in data-updates
@@ -37,6 +33,11 @@ require("prototypes.technology.power-updates")
 require("prototypes.technology.revamp-updates") -- Bob does tech updates in data-updates
 require("prototypes.technology.technology-updates") -- Bob does tech updates in data-updates
 require("prototypes.technology.warfare-updates") -- Bob does tech updates in data-updates
+
+----------------------------------------------------------------------------------------------------
+-- GUI Modifications
+----------------------------------------------------------------------------------------------------
+require("prototypes.item-group.item-group")
 
 -- Assign deferred icons
 reskins.lib.assign_deferred_icons("bobs", "data-updates")
