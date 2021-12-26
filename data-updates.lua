@@ -6,6 +6,10 @@
 ----------------------------------------------------------------------------------------------------
 -- ENTITIES
 ----------------------------------------------------------------------------------------------------
+
+-- snouz added:
+require("prototypes.item-group")
+
 -- Bob's Assembly
 require("prototypes.entity.assembly.assembling-machine") -- Bob reskins in data-updates
 require("prototypes.entity.assembly.chemical-plant") -- Bob reskins in data-updates
