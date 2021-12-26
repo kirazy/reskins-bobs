@@ -4,6 +4,7 @@ Date: ????
   Changes:
     - Additional entities have received revised color masks
     - Revised normal resolution roboport to use updated Factorio sprites
+    - Improved the color mask for the normal resolution electric mining drill
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.4
 Date: 2021-12-12
