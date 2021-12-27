@@ -24,9 +24,9 @@ local technologies = {
     ["bob-turrets-5"] = {icon_name = "gun-turrets", tier = 5}, -- t5 turret
 
     -- Sniper turrets
-    -- ["bob-sniper-turrets-1"] = {tier = 1, prog_tier = 1}, -- t1 sniper
-    -- ["bob-sniper-turrets-2"] = {tier = 2, prog_tier = 3}, -- t3 sniper
-    -- ["bob-sniper-turrets-3"] = {tier = 3, prog_tier = 5}, -- t5 sniper
+    ["bob-sniper-turrets-1"] = {icon_name = "sniper-turrets", tier = 1, prog_tier = 1}, -- t1 sniper
+    ["bob-sniper-turrets-2"] = {icon_name = "sniper-turrets", tier = 2, prog_tier = 3}, -- t3 sniper
+    ["bob-sniper-turrets-3"] = {icon_name = "sniper-turrets", tier = 3, prog_tier = 5}, -- t5 sniper
 
     -- Laser turrets
     ["laser-turret"] = {icon_name = "laser-turrets", tier = 1}, -- t1 laser
