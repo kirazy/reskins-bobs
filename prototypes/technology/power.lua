@@ -56,10 +56,10 @@ if reskins.bobs.triggers.power.poles then
     -- technologies["electric-pole-2"] = {} -- t3 poles
     -- technologies["electric-pole-3"] = {} -- t4 poles
     -- technologies["electric-pole-4"] = {} -- t5 poles
-    -- technologies["electric-energy-distribution-2"] = {} -- t2 substation
-    -- technologies["electric-substation-2"] = {} -- t3 substation
-    -- technologies["electric-substation-3"] = {} -- t4 substation
-    -- technologies["electric-substation-4"] = {} -- t5 substation
+    technologies["electric-energy-distribution-2"] = {icon_name = "substation", tier = 1, prog_tier = 2} -- t2 substation
+    technologies["electric-substation-2"] = {icon_name = "substation", tier = 2, prog_tier = 3} -- t3 substation
+    technologies["electric-substation-3"] = {icon_name = "substation", tier = 3, prog_tier = 4} -- t4 substation
+    technologies["electric-substation-4"] = {icon_name = "substation", tier = 4, prog_tier = 5} -- t5 substation
 end
 
 if reskins.bobs.triggers.power.steam then
