@@ -11,15 +11,18 @@ local inputs = {
     mod = "bobs",
     group = "revamp",
     type = "technology",
+    flat_icon = true,
+    technology_icon_size = 256,
+    technology_icon_mipmaps = 4,
 }
 
 local technologies = {
     -- ["pumpjack"] = {group = "mining", tier = 1}, -- pumpjack 1
 
-    -- ["solid-fuel"] = {}, -- Solid fuels! all of the, black/white
+    ["solid-fuel"] = {}, -- Solid fuels! all of the, black/white
     -- ["hydrazine"] = {}, -- Hydrazine, enriched fuel block from hydrazine
     -- ["rtg"] = {}, -- radio thermoelec gen, fluids, powders
-    -- ["heat-shield"] = {}, -- also need to do item, heat-shield-tile
+    ["heat-shield"] = {}, -- also need to do item, heat-shield-tile
 }
 
 reskins.lib.create_icons_from_list(technologies, inputs)

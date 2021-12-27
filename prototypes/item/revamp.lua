@@ -17,6 +17,7 @@ local inputs = {
 local intermediates = {
     ["brine"] = {type = "fluid", subgroup = "fluids"},
     ["ammoniated-brine"] = {type = "fluid", subgroup = "fluids"},
+    ["heat-shield-tile"] = {type = "item"},
 }
 
 -- Items and recipes shared with other mods within Bob's suite
