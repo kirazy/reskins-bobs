@@ -20,12 +20,12 @@ local technologies = {
     -- Steam power-related unlocks
     ["basic-automation"] = {group = "assembly", technology_icon_size = 128, technology_icon_mipmaps = 0, icon_name = "automation", tint = util.color("262626")},
     ["steam-automation"] = {group = "assembly", technology_icon_size = 128, technology_icon_mipmaps = 0, icon_name = "automation", tint = util.color("d9d9d9")},
-    -- ["steam-power"] = {}, -- unlocks boiler/steam drill/inserter/pump, conditional on steam setting, currently a steam cloud
+    ["steam-power"] = {flat_icon = true}, -- unlocks boiler/steam drill/inserter/pump, conditional on steam setting, currently a steam cloud
     -- ["electricity"] = {}, -- inserter/miner/radar/pole/fluid burner gen
 
     -- Labs
-    -- ["lab"] = {}, -- lab 1
-    -- ["advanced-research"] = {}, -- lab 2
+    ["lab"] = {flat_icon = true}, -- lab 1
+    ["advanced-research"] = {flat_icon = true}, -- lab 2
     ["alien-research"] = {flat_icon = true},
 
     -- TECHNOLOGY EFFECTS
