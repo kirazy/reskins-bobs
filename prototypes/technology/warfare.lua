@@ -65,9 +65,9 @@ local technologies = {
     ["bob-power-armor-5"] = {subgroup = "armors", flat_icon = true},
 
     -- Tanks
-    -- ["tank"] = {}, -- t2 tank
-    -- ["bob-tanks-2"] = {}, -- t4 tank
-    -- ["bob-tanks-3"] = {},
+    ["tank"] = {icon_name = "tank", tier = 1, prog_tier = 3}, -- t2 tank
+    ["bob-tanks-2"] = {icon_name = "tank", tier = 2, prog_tier = 4}, -- t4 tank
+    ["bob-tanks-3"] = {icon_name = "tank", tier = 3, prog_tier = 5},
 
     -- Tank robots
     ["bob-robot-gun-drones"] = {subgroup = "drone-tank", flat_icon = true},
