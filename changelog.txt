@@ -12,6 +12,7 @@ Date: ????
     - Technology tech icons: lab, advanced research, steam power
     - Greenhouse tech icons: greenhouse, fertiliser
     - Revamp tech icons: solid fuel, heat shielding
+    - Assembly tech icons: 2 centrifuge icons
     - Plates item icons: 14 powders, liquid air
     - Warfare item icons: 5 armors, 4 spidertrons, 4 drone tank units, 5 capsules, 10 mech parts, 2 drone parts, laser robot, rifle, sniper rifle, laser rifle
     - Revamp item icons: heat shield tile
