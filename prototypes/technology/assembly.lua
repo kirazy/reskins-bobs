@@ -28,8 +28,8 @@ local technologies = {
     -- ["electronics-machine-3"] = {},
 
     -- Centrifuges
-    -- ["centrifuge-2"] = {},
-    -- ["centrifuge-3"] = {},
+    ["centrifuge-2"] = {icon_name = "centrifuge", tier = 1, prog_tier = 4, technology_icon_size = 256, technology_icon_mipmaps = 4},
+    ["centrifuge-3"] = {icon_name = "centrifuge", tier = 2, prog_tier = 5, technology_icon_size = 256, technology_icon_mipmaps = 4},
 
     -- Electrolysers
     ["electrolyser-2"] = {tier = 2, icon_name = "electrolyser", technology_icon_size = 256, technology_icon_mipmaps = 4, icon_base = "electrolyser-2", icon_mask = "electrolyser-2", icon_highlights = "electrolyser-2"},
