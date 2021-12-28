@@ -25,9 +25,9 @@ local technologies = {
     ["automation-6"] = {tier = 5, icon_name = "automation"},
 
     -- Electronics Assemblers
-    -- ["electronics-machine-1"] = {},
-    -- ["electronics-machine-2"] = {},
-    -- ["electronics-machine-3"] = {},
+    ["electronics-machine-1"] = {tier = 1, prog_tier = 0, icon_name = "electronics-machines"},
+    ["electronics-machine-2"] = {tier = 2, prog_tier = 2, icon_name = "electronics-machines"},
+    ["electronics-machine-3"] = {tier = 3, prog_tier = 4, icon_name = "electronics-machines"},
 
     -- Centrifuges
     ["centrifuge-2"] = {icon_name = "centrifuge", tier = 1, prog_tier = 4},
