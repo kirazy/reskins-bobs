@@ -19,6 +19,7 @@ Date: ????
     - Tankotron entity: Added rotating cannon, adjusted projectile position
     - 4 Drone tank units entities: reworked appearance, adjusted projectile position, made turns slower
     - Laser robot entity: reworked appearance
+    - Improved the color mask for the normal resolution electric mining drill
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.4
 Date: 2021-12-12

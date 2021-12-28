@@ -94,10 +94,10 @@ end
 
 if reskins.bobs.triggers.power.fluidgenerator then
     -- Fluid generators
-    technologies["fluid-generator-1"] = {tier = 1, prog_tier = 2, icon_name = "fluid-generator", technology_icon_size = 128, technology_icon_mipmaps = 0}
-    technologies["fluid-generator-2"] = {tier = 2, prog_tier = 3, icon_name = "fluid-generator", technology_icon_size = 128, technology_icon_mipmaps = 0}
-    technologies["fluid-generator-3"] = {tier = 3, prog_tier = 4, icon_name = "fluid-generator", technology_icon_size = 128, technology_icon_mipmaps = 0}
-    technologies["hydrazine-generator"] = {tier = 4, prog_tier = 5, icon_name = "fluid-generator", technology_icon_size = 128, technology_icon_mipmaps = 0, tint = reskins.bobs.hydrazine_tint}
+    technologies["fluid-generator-1"] = {tier = 1, prog_tier = 2, icon_name = "fluid-generator"}
+    technologies["fluid-generator-2"] = {tier = 2, prog_tier = 3, icon_name = "fluid-generator"}
+    technologies["fluid-generator-3"] = {tier = 3, prog_tier = 4, icon_name = "fluid-generator"}
+    technologies["hydrazine-generator"] = {tier = 4, prog_tier = 5, icon_name = "fluid-generator", tint = reskins.bobs.hydrazine_tint}
 end
 
 if reskins.bobs.triggers.power.heatsources then
