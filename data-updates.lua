@@ -41,7 +41,7 @@ require("prototypes.technology.warfare-updates") -- Bob does tech updates in dat
 ----------------------------------------------------------------------------------------------------
 -- GUI Modifications
 ----------------------------------------------------------------------------------------------------
-require("prototypes.item-group.item-group")
+-- require("prototypes.item-group.item-group")
 
 -- Assign deferred icons
 reskins.lib.assign_deferred_icons("bobs", "data-updates")
