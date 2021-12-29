@@ -2,24 +2,25 @@
 Version: 2.0.5
 Date: ????
   Changes:
-    - Additional entities have received revised color masks
+    - Additional entities, items, and technologies have received revised color masks
     - Revised normal resolution roboport to use updated Factorio sprites
-    - 7 item tab icons
-    - Plates tech icons: 15 plates, gas canisters, 2 gem processing, advanced electronics 3, fluid handling update
-    - Mining tech icons: oil pumpjacks, water pumpjacks
-    - Warfare tech icons: 5 armors, 5 artillery shells, 4 spidertrons, 4 drone tank units, 3 tanks, 3 artillery, 3 sniper turrets, 2 artillery wagons, laser robot, laser rifle
-    - Power tech icons: 4 substations, 4 power poles
-    - Technology tech icons: lab, advanced research, steam power
-    - Greenhouse tech icons: greenhouse, fertiliser
-    - Revamp tech icons: solid fuel, heat shielding
-    - Assembly tech icons: 6 automation, 2 centrifuge
-    - Plates item icons: 14 powders, liquid air
-    - Warfare item icons: 5 armors, 4 spidertrons, 4 drone tank units, 5 capsules, 10 mech parts, 2 drone parts, laser robot, rifle, sniper rifle, laser rifle
-    - Revamp item icons: heat shield tile
-    - Tankotron entity: Added rotating cannon, adjusted projectile position
-    - 4 Drone tank units entities: reworked appearance, adjusted projectile position, made turns slower
-    - Laser robot entity: reworked appearance
     - Improved the color mask for the normal resolution electric mining drill
+    - Credit to Snouz for contributing sprites for numerous entities, items, and technologies:
+      - Seven crafting tab icons
+      - Plates tech icons: 15 plates, gas canisters, 2 gem processing, advanced electronics 3, fluid handling update
+      - Mining tech icons: oil pumpjacks, water pumpjacks
+      - Warfare tech icons: 5 armors, 5 artillery shells, 4 spidertrons, 4 drone tank units, 3 tanks, 3 artillery, 3 sniper turrets, 2 artillery wagons, laser robot, laser rifle
+      - Power tech icons: 4 substations, 4 power poles
+      - Technology tech icons: lab, advanced research, steam power
+      - Greenhouse tech icons: greenhouse, fertiliser
+      - Revamp tech icons: solid fuel, heat shielding
+      - Assembly tech icons: 6 automation, 2 centrifuge
+      - Plates item icons: 14 powders, liquid air
+      - Warfare item icons: 5 armors, 4 spidertrons, 4 drone tank units, 5 capsules, 10 mech parts, 2 drone parts, laser robot, rifle, sniper rifle, laser rifle
+      - Revamp item icons: heat shield tile
+      - Tankotron entity: Added rotating cannon, adjusted projectile position
+      - 4 Drone tank units entities: reworked appearance, adjusted projectile position, made turns slower
+      - Laser robot entity: reworked appearance
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.4
 Date: 2021-12-12
