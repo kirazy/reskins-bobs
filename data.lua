@@ -87,7 +87,7 @@ require("prototypes.entity.warfare.tank")
 require("prototypes.entity.warfare.wall")
 require("prototypes.entity.warfare.gate")
 require("prototypes.entity.warfare.spidertron")
-require("prototypes.entity.warfare.drone-tank")
+require("prototypes.entity.warfare.drone")
 require("prototypes.entity.warfare.laser-robot")
 
 ----------------------------------------------------------------------------------------------------

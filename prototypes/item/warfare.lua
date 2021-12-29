@@ -153,12 +153,8 @@ local items = {
     ["bob-laser-robot-capsule"] = {type = "capsule", subgroup = "capsules"},
 
     -- Drone tank
-    ["bob-robot-gun-drone"] = {type = "item", subgroup = "drone-tank"},
-    ["bob-robot-laser-drone"] = {type = "item", subgroup = "drone-tank"},
-    ["bob-robot-flamethrower-drone"] = {type = "item", subgroup = "drone-tank"},
-    ["bob-robot-plasma-drone"] = {type = "item", subgroup = "drone-tank"},
-    ["robot-drone-frame"] = {type = "item", subgroup = "drone-tank"},
-    ["robot-drone-frame-large"] = {type = "item", subgroup = "drone-tank"},
+    ["robot-drone-frame"] = {type = "item", subgroup = "drone"},
+    ["robot-drone-frame-large"] = {type = "item", subgroup = "drone"},
 
     -- Mech parts
     ["mech-armor-plate"] = {type = "item", subgroup = "mech-parts"},
