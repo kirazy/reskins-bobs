@@ -20,6 +20,7 @@ local inputs = {
 local technologies = {
     -- Science Packs
     ["advanced-logistic-science-pack"] = {icon_name = "science-pack", tint = util.color("de00a3"), flat_icon = false},
+    ["steam-automation"] = {group = "assembly", icon_name = "automation", tint = util.color("d9d9d9"), flat_icon = false},
 }
 
 -- Color overhaul for science packs

@@ -85,6 +85,7 @@ local intermediates = {
     ["thorium-232"] = {subgroup = "nuclear"},
 
     -- Fluids
+    ["liquid-air"] = {type = "fluid", subgroup = "fluids"},
     ["liquid-fuel"] = {type = "fluid", subgroup = "fluids"},
     ["ferric-chloride-solution"] = {type = "fluid", subgroup = "fluids"}, -- Shared with Bob's Electronics
     ["lithia-water"] = {type = "fluid", subgroup = "fluids", defer_to_data_updates = true}, -- Shared with Bob's Ores, Angels
@@ -101,12 +102,28 @@ local intermediates = {
     ["rubber"] = {mod = "lib", group = "shared", subgroup = "items"}, -- Shared with Bob's Electronics, Angels
     ["resin"] = {subgroup = "items"}, -- Shared with Bob's Electronics
     ["enriched-fuel"] = {subgroup = "items"},
-    ["alumina"] = {subgroup = "items"},
-    ["calcium-chloride"] = {subgroup = "items"},
-    ["sodium-hydroxide"] = {subgroup = "items"},
     ["grinding-wheel"] = {subgroup = "items"},
     ["polishing-wheel"] = {subgroup = "items"},
     ["polishing-compound"] = {subgroup = "items"},
+
+    -- Powders
+    ["alumina"] = {subgroup = "powders"},
+    ["calcium-chloride"] = {subgroup = "powders"},
+    ["sodium-hydroxide"] = {subgroup = "powders"},
+    ["cobalt-oxide"] = {subgroup = "powders"},
+    ["lead-oxide"] = {subgroup = "powders"},
+    ["lithium-chloride"] = {subgroup = "powders"},
+    ["lithium-cobalt-oxide"] = {subgroup = "powders"},
+    ["lithium-perchlorate"] = {subgroup = "powders"},
+    ["powdered-silicon"] = {subgroup = "powders"},
+    ["powdered-tungsten"] = {subgroup = "powders"},
+    ["salt"] = {subgroup = "powders"},
+    ["silicon-carbide"] = {subgroup = "powders"},
+    ["silicon-nitride"] = {subgroup = "powders"},
+    ["silicon-powder"] = {subgroup = "powders"},
+    ["silver-nitrate"] = {subgroup = "powders"},
+    ["silver-oxide"] = {subgroup = "powders"},
+    ["tungsten-oxide"] = {subgroup = "powders"},
 
     -- Gemstones
     ["ruby-5"] = {subgroup = "gems"},
@@ -185,4 +202,10 @@ reskins.lib.create_icons_from_list(intermediates, inputs)
 -- One-off fixes
 if data.raw.item["nickel-plate"] then
     reskins.lib.clear_icon_specification("bob-nickel-plate", "recipe")
+end
+if data.raw.fluid["liquid-air"] then
+    reskins.lib.clear_icon_specification("bob-liquid-air", "recipe")
+end
+if data.raw.item["lead-oxide"] then
+    reskins.lib.clear_icon_specification("lead-oxide-2", "recipe")
 end

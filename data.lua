@@ -86,6 +86,9 @@ require("prototypes.entity.warfare.sniper-turret")
 require("prototypes.entity.warfare.tank")
 require("prototypes.entity.warfare.wall")
 require("prototypes.entity.warfare.gate")
+require("prototypes.entity.warfare.spidertron")
+require("prototypes.entity.warfare.drone")
+require("prototypes.entity.warfare.laser-robot")
 
 ----------------------------------------------------------------------------------------------------
 -- EQUIPMENT
@@ -143,7 +146,7 @@ require("prototypes.technology.module")
 require("prototypes.technology.personal-equipment")
 require("prototypes.technology.plates")
 require("prototypes.technology.power")
--- require("prototypes.technology.revamp")
+require("prototypes.technology.revamp")
 require("prototypes.technology.technology")
 require("prototypes.technology.vehicle-equipment")
 require("prototypes.technology.warfare")

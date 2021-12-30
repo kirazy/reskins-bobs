@@ -24,9 +24,9 @@ local technologies = {
     ["bob-turrets-5"] = {icon_name = "gun-turrets", tier = 5}, -- t5 turret
 
     -- Sniper turrets
-    -- ["bob-sniper-turrets-1"] = {tier = 1, prog_tier = 1}, -- t1 sniper
-    -- ["bob-sniper-turrets-2"] = {tier = 2, prog_tier = 3}, -- t3 sniper
-    -- ["bob-sniper-turrets-3"] = {tier = 3, prog_tier = 5}, -- t5 sniper
+    ["bob-sniper-turrets-1"] = {icon_name = "sniper-turrets", tier = 1, prog_tier = 1}, -- t1 sniper
+    ["bob-sniper-turrets-2"] = {icon_name = "sniper-turrets", tier = 2, prog_tier = 3}, -- t3 sniper
+    ["bob-sniper-turrets-3"] = {icon_name = "sniper-turrets", tier = 3, prog_tier = 5}, -- t5 sniper
 
     -- Laser turrets
     ["laser-turret"] = {icon_name = "laser-turrets", tier = 1}, -- t1 laser
@@ -43,11 +43,11 @@ local technologies = {
     ["bob-plasma-turrets-5"] = {icon_name = "plasma-turrets", tier = 5},
 
     -- Artillery and artillery wagons
-    -- ["artillery"] = {tier = 1, prog_tier = 3}, -- t3 arty/train arty
-    -- ["bob-artillery-turret-2"] = {tier = 2, prog_tier = 4}, -- t4 arty
-    -- ["bob-artillery-turret-3"] = {tier = 3, prog_tier = 5}, -- t5 arty
-    -- ["bob-artillery-wagon-2"] = {tier = 2, prog_tier = 4}, -- t4 train arty
-    -- ["bob-artillery-wagon-3"] = {tier = 3, prog_tier = 5}, -- t5 train arty
+    ["artillery"] = {icon_name = "artillery", tier = 1, prog_tier = 3}, -- t3 arty/train arty
+    ["bob-artillery-turret-2"] = {icon_name = "artillery", tier = 2, prog_tier = 4}, -- t4 arty
+    ["bob-artillery-turret-3"] = {icon_name = "artillery", tier = 3, prog_tier = 5}, -- t5 arty
+    ["bob-artillery-wagon-2"] = {icon_name = "artillery-wagons", tier = 2, prog_tier = 4}, -- t4 train arty
+    ["bob-artillery-wagon-3"] = {icon_name = "artillery-wagons", tier = 3, prog_tier = 5}, -- t5 train arty
 
     -- Military progression
     -- ["military"] = {},
@@ -56,34 +56,34 @@ local technologies = {
 
     -- Armor
     -- ["heavy-armor"] = {}, -- probably fine? Depends how armor is handled
-    -- ["bob-armor-making-3"] = {}, -- invar cobalt-steel armor (heavy-armor-2)
-    -- ["bob-armor-making-4"] = {}, -- titanium-ceramic armor
+    ["bob-armor-making-3"] = {subgroup = "armors", flat_icon = true}, -- invar cobalt-steel armor (heavy-armor-2)
+    ["bob-armor-making-4"] = {subgroup = "armors", flat_icon = true}, -- titanium-ceramic armor
     -- ["power-armor"] = {}, -- power armor first entry
     -- ["power-armor-mk2"] = {}, -- 2nd power armor
-    -- ["bob-power-armor-3"] = {},
-    -- ["bob-power-armor-4"] = {},
-    -- ["bob-power-armor-5"] = {},
+    ["bob-power-armor-3"] = {subgroup = "armors", flat_icon = true},
+    ["bob-power-armor-4"] = {subgroup = "armors", flat_icon = true},
+    ["bob-power-armor-5"] = {subgroup = "armors", flat_icon = true},
 
     -- Tanks
-    -- ["tank"] = {}, -- t2 tank
-    -- ["bob-tanks-2"] = {}, -- t4 tank
-    -- ["bob-tanks-3"] = {},
+    ["tank"] = {icon_name = "tank", tier = 1, prog_tier = 3}, -- t2 tank
+    ["bob-tanks-2"] = {icon_name = "tank", tier = 2, prog_tier = 4}, -- t4 tank
+    ["bob-tanks-3"] = {icon_name = "tank", tier = 3, prog_tier = 5},
 
     -- Tank robots
-    -- ["bob-robot-gun-drones"] = {},
-    -- ["bob-robot-laser-drones"] = {},
-    -- ["bob-robot-flamethrower-drones"] = {},
-    -- ["bob-robot-plasma-drones"] = {},
+    ["bob-robot-gun-drones"] = {subgroup = "drone-tank", flat_icon = true},
+    ["bob-robot-laser-drones"] = {subgroup = "drone-tank", flat_icon = true},
+    ["bob-robot-flamethrower-drones"] = {subgroup = "drone-tank", flat_icon = true},
+    ["bob-robot-plasma-drones"] = {subgroup = "drone-tank", flat_icon = true},
 
     -- Robots
-    -- ["bob-laser-robot"] = {}, -- it ghetto, but an Angel render
+    ["bob-laser-robot"] = {subgroup = "robots", flat_icon = true},
 
     -- Spidertrons
-    -- ["walking-vehicle"] = {}, -- "Antron"
-    -- ["tankotron"] = {}, -- "tankotron"
-    -- ["logistic-spidertron"] = {}, -- "logitron"
+    ["walking-vehicle"] = {subgroup = "spidertron", flat_icon = true}, -- "Antron"
+    ["tankotron"] = {subgroup = "spidertron", flat_icon = true}, -- "tankotron"
+    ["logistic-spidertron"] = {subgroup = "spidertron", flat_icon = true}, -- "logitron"
     -- ["spidertron"] = {}, -- "Spidertron"
-    -- ["heavy-spidertron"] = {}, -- "Heavy spidertron"
+    ["heavy-spidertron"] = {subgroup = "spidertron", flat_icon = true}, -- "Heavy spidertron"
 }
 
 -- Sea Block 0.5.5 recalibrates turret 1 and 2 to tiers 3 and 4, and hides the rest

@@ -35,9 +35,9 @@ local technologies = {
     ["thorium-fuel-reprocessing"] = {subgroup = "nuclear"},
     ["deuterium-fuel-reprocessing"] = {subgroup = "nuclear", image = "deuterium-fuel-reprocessing-pink"},
     ["bobingabout-enrichment-process"] = {subgroup = "nuclear", technology_icon_size = 256, technology_icon_mipmaps = 4},
-    -- ["plutonium-fuel-cell"] = {}, -- plut fuel cell icon, is broken/sized wrong
-    -- ["thorium-plutonium-fuel-cell"] = {}, -- ^^^
-    -- ["deuterium-fuel-cell-2"] = {}, -- check color from revamp settings?
+    ["plutonium-fuel-cell"] = {subgroup = "nuclear",}, -- plut fuel cell icon, is broken/sized wrong
+    ["thorium-plutonium-fuel-cell"] = {subgroup = "nuclear",}, -- ^^^
+    ["deuterium-fuel-cell-2"] = {subgroup = "nuclear",}, -- check color from revamp settings?
 
     -- Furnaces
     ["alloy-processing-1"] = {subgroup = "smelting"},
@@ -72,44 +72,42 @@ local technologies = {
 
     -- Assorted processes
     -- ["plastics"] = {}, -- Plastic, plastic pipes
-    -- ["ceramics"] = {}, -- silicon nitride, ceramic bearing, ball bearing, pipes
     -- ["advanced-oil-processing"] = {}, -- oil recipes
     ["grinding"] = {subgroup = "processing-steps", technology_icon_size = 256, technology_icon_mipmaps = 4},
     ["polishing"] = {subgroup = "processing-steps", technology_icon_size = 256, technology_icon_mipmaps = 4},
     ["electrolysis-1"] = {subgroup = "processing-steps", image = "electrolysis", technology_icon_size = 256, technology_icon_mipmaps = 4},
     ["electrolysis-2"] = {subgroup = "processing-steps", image = "electrolysis", technology_icon_size = 256, technology_icon_mipmaps = 4},
     ["void-fluid"] = {subgroup = "processing-steps", technology_icon_size = 256, technology_icon_mipmaps = 4},
+    ["gem-processing-1"] = {subgroup = "processing-steps", technology_icon_size = 256, technology_icon_mipmaps = 4}, -- cut gems
+    ["gem-processing-2"] = {subgroup = "processing-steps", technology_icon_size = 256, technology_icon_mipmaps = 4}, -- polished gems
+    ["advanced-electronics-3"] = {subgroup = "processing-steps", technology_icon_size = 256, technology_icon_mipmaps = 4},
 
     -- Plate processing
-    -- ["aluminium-processing"] = {subgroup = "plates"},
-    -- ["gold-processing"] = {subgroup = "plates"}, -- gold plate
-    -- ["zinc-processing"] = {subgroup = "plates"}, -- zinc plate, brass, gunmetal, brass gear, brass pipes, brass chest
-    -- ["nickel-processing"] = {}, -- nickel plate
-    -- ["steel-processing"] = {}, -- vanilla fine as is
-    -- ["silicon-processing"] = {}, -- silicon boule, wager, powder
-    -- ["invar-processing"] = {}, -- invar plate
-    -- ["lead-processing"] = {}, -- lead plate, lead oxide
-    -- ["aluminium-processing"] = {}, -- alumina, aluminium plate
-    -- ["cobalt-processing"] = {}, -- cobalt oxide, cobalt plate, copper plate from cobalt, cobalt steel plate, gear, bearing, ball bearing
-    -- ["tungsten-alloy-processing"] = {}, -- copper-tungsten, tungsten carbide, c-tun-pipes
-    -- ["nitinol-processing"] = {}, -- nitinol plate, gear, bearing, ball,. pipes
-    -- ["titanium-processing"] = {}, -- titanium plate, gear, ball, bearing, pipes, chest
-    -- ["tungsten-processing"] = {}, -- tungsten plate, gear, pipe, acid, oxide, powdered
-
-    -- Gasses
-    -- ["nitrogen-processing"] = {}, -- fluids: nitrogen, nitrogen-dioxide, nitric acid, ammonia, nitric oxide, hydrogen peroxide
-    -- ["chemical-processing-2"] = {}, -- hydro chloride, calcium, ferric chloride, limestone, carbon dioxide,
+    ["aluminium-processing"] = {subgroup = "plates", technology_icon_size = 256, technology_icon_mipmaps = 4}, -- alumina, aluminium plate
+    ["gold-processing"] = {subgroup = "plates", technology_icon_size = 256, technology_icon_mipmaps = 4}, -- gold plate
+    ["zinc-processing"] = {subgroup = "plates", technology_icon_size = 256, technology_icon_mipmaps = 4}, -- zinc plate, brass, gunmetal, brass gear, brass pipes, brass chest
+    ["nickel-processing"] = {subgroup = "plates", technology_icon_size = 256, technology_icon_mipmaps = 4}, -- nickel plate
+    ["steel-processing"] = {subgroup = "plates", technology_icon_size = 256, technology_icon_mipmaps = 4}, -- vanilla fine as is
+    ["silicon-processing"] = {subgroup = "plates", technology_icon_size = 256, technology_icon_mipmaps = 4}, -- silicon boule, wager, powder
+    ["invar-processing"] = {subgroup = "plates", technology_icon_size = 256, technology_icon_mipmaps = 4}, -- invar plate
+    ["lead-processing"] = {subgroup = "plates", technology_icon_size = 256, technology_icon_mipmaps = 4}, -- lead plate, lead oxide
+    ["cobalt-processing"] = {subgroup = "plates", technology_icon_size = 256, technology_icon_mipmaps = 4}, -- cobalt oxide, cobalt plate, copper plate from cobalt, cobalt steel plate, gear, bearing, ball bearing
+    ["tungsten-alloy-processing"] = {subgroup = "plates", technology_icon_size = 256, technology_icon_mipmaps = 4}, -- copper-tungsten, tungsten carbide, c-tun-pipes
+    ["nitinol-processing"] = {subgroup = "plates", technology_icon_size = 256, technology_icon_mipmaps = 4}, -- nitinol plate, gear, bearing, ball,. pipes
+    ["titanium-processing"] = {subgroup = "plates", technology_icon_size = 256, technology_icon_mipmaps = 4}, -- titanium plate, gear, ball, bearing, pipes, chest
+    ["tungsten-processing"] = {subgroup = "plates", technology_icon_size = 256, technology_icon_mipmaps = 4}, -- tungsten plate, gear, pipe, acid, oxide, powdered
+    ["alloy-processing"] = {subgroup = "plates", technology_icon_size = 256, technology_icon_mipmaps = 4},
+    ["ceramics"] = {subgroup = "plates", technology_icon_size = 256, technology_icon_mipmaps = 4}, -- silicon nitride, ceramic bearing, ball bearing, pipes
 
     -- Chemicals and fluids processing
-    -- ["lithium-processing"] = {}, -- lithium, lithium chloride, perchlorate, sodium chlorate, perchlorate, (Bob's revamp does something to this?)
-    -- ["nitroglycerin-processing"] = {}, -- glycerol, nitroglycerin, sulfuric and nitric acid
-    -- ["sulfur-processing"] = {}, -- sulfur, sulfuric acid, sulfur-dioxide, hydrogen-sulfide, hydrogen-peroxide, petroleum-gas
-    -- ["heavy-water-processing"] = {}, -- heavy water
-    -- ["deuterium-processing"] = {}, -- heavy water electrolysis
-
-    -- Gems
-    -- ["gem-processing-1"] = {}, -- cut gems
-    -- ["gem-processing-2"] = {}, -- polished gems
+    ["chemical-processing-2"] = {subgroup = "chemical-processing", technology_icon_size = 256, technology_icon_mipmaps = 4}, -- hydro chloride, calcium, ferric chloride, limestone, carbon dioxide,
+    ["lithium-processing"] = {subgroup = "chemical-processing", technology_icon_size = 256, technology_icon_mipmaps = 4}, -- lithium, lithium chloride, perchlorate, sodium chlorate, perchlorate, (Bob's revamp does something to this?)
+    ["gas-canisters"] = {subgroup = "chemical-processing", technology_icon_size = 256, technology_icon_mipmaps = 4}, -- gas cans
+    -- // molecule // ["nitrogen-processing"] = {}, -- fluids: nitrogen, nitrogen-dioxide, nitric acid, ammonia, nitric oxide, hydrogen peroxide
+    -- // molecule // ["heavy-water-processing"] = {}, -- heavy water
+    -- // molecule // ["deuterium-processing"] = {}, -- heavy water electrolysis
+    -- // ok as it is //["sulfur-processing"] = {}, -- sulfur, sulfuric acid, sulfur-dioxide, hydrogen-sulfide, hydrogen-peroxide, petroleum-gas
+    -- // part of warfare // ["nitroglycerin-processing"] = {}, -- glycerol, nitroglycerin, sulfuric and nitric acid
 
     -- Alien plates
     ["alien-blue-research"] = {subgroup = "alien", technology_icon_size = 256, technology_icon_mipmaps = 4},
@@ -120,13 +118,10 @@ local technologies = {
     ["alien-red-research"] = {subgroup = "alien", technology_icon_size = 256, technology_icon_mipmaps = 4},
 
     -- Fluid Handling
-    ["fluid-handling"] = {flat_icon = false, tier = 1, prog_tier = 2, icon_name = "fluid-handling"},
-    ["bob-fluid-handling-2"] = {flat_icon = false, tier = 2, prog_tier = 3, icon_name = "fluid-handling"},
-    ["bob-fluid-handling-3"] = {flat_icon = false, tier = 3, prog_tier = 4, icon_name = "fluid-handling"},
-    ["bob-fluid-handling-4"] = {flat_icon = false, tier = 4, prog_tier = 5, icon_name = "fluid-handling"},
-
-    -- Miscellaneous
-    -- ["gas-canisters"] = {}, -- gas cans
+    ["fluid-handling"] = {flat_icon = false, tier = 1, prog_tier = 2, icon_name = "fluid-handling", technology_icon_size = 256, technology_icon_mipmaps = 4},
+    ["bob-fluid-handling-2"] = {flat_icon = false, tier = 2, prog_tier = 3, icon_name = "fluid-handling", technology_icon_size = 256, technology_icon_mipmaps = 4},
+    ["bob-fluid-handling-3"] = {flat_icon = false, tier = 3, prog_tier = 4, icon_name = "fluid-handling", technology_icon_size = 256, technology_icon_mipmaps = 4},
+    ["bob-fluid-handling-4"] = {flat_icon = false, tier = 4, prog_tier = 5, icon_name = "fluid-handling", technology_icon_size = 256, technology_icon_mipmaps = 4},
 }
 
 -- Handle nuclear update
