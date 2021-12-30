@@ -5,6 +5,7 @@ Date: ????
     - Additional entities, items, and technologies have received revised color masks
     - Revised normal resolution roboport to use updated Factorio sprites
     - Improved the color mask for the normal resolution electric mining drill
+    - Improved color masks for the pumpjack and water pumpjack, and adjusted the color of the water pumpjack
     - Credit to Snouz for contributing sprites for numerous entities, items, and technologies:
       - Seven crafting tab icons
       - Plates tech icons: 15 plates, gas canisters, 2 gem processing, advanced electronics 3, fluid handling update
