@@ -118,10 +118,10 @@ local technologies = {
     ["alien-red-research"] = {subgroup = "alien", technology_icon_size = 256, technology_icon_mipmaps = 4},
 
     -- Fluid Handling
-    ["fluid-handling"] = {flat_icon = false, tier = 1, prog_tier = 2, icon_name = "fluid-handling", technology_icon_size = 256},
-    ["bob-fluid-handling-2"] = {flat_icon = false, tier = 2, prog_tier = 3, icon_name = "fluid-handling", technology_icon_size = 256},
-    ["bob-fluid-handling-3"] = {flat_icon = false, tier = 3, prog_tier = 4, icon_name = "fluid-handling", technology_icon_size = 256},
-    ["bob-fluid-handling-4"] = {flat_icon = false, tier = 4, prog_tier = 5, icon_name = "fluid-handling", technology_icon_size = 256},
+    ["fluid-handling"] = {flat_icon = false, tier = 1, prog_tier = 2, icon_name = "fluid-handling", technology_icon_size = 256, technology_icon_mipmaps = 4},
+    ["bob-fluid-handling-2"] = {flat_icon = false, tier = 2, prog_tier = 3, icon_name = "fluid-handling", technology_icon_size = 256, technology_icon_mipmaps = 4},
+    ["bob-fluid-handling-3"] = {flat_icon = false, tier = 3, prog_tier = 4, icon_name = "fluid-handling", technology_icon_size = 256, technology_icon_mipmaps = 4},
+    ["bob-fluid-handling-4"] = {flat_icon = false, tier = 4, prog_tier = 5, icon_name = "fluid-handling", technology_icon_size = 256, technology_icon_mipmaps = 4},
 }
 
 -- Handle nuclear update
