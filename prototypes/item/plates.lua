@@ -106,15 +106,15 @@ local intermediates = {
     ["polishing-wheel"] = {subgroup = "items"},
     ["polishing-compound"] = {subgroup = "items"},
 
-    -- Powders
+    -- Powders -- TODO: https://github.com/kirazy/reskins-bobs/issues/31 Model and render out powder/particulate icons
     ["alumina"] = {subgroup = "powders"},
     ["calcium-chloride"] = {subgroup = "powders"},
     ["sodium-hydroxide"] = {subgroup = "powders"},
     ["cobalt-oxide"] = {subgroup = "powders"},
     ["lead-oxide"] = {subgroup = "powders"},
-    ["lithium-chloride"] = {subgroup = "powders"},
-    ["lithium-cobalt-oxide"] = {subgroup = "powders"},
-    ["lithium-perchlorate"] = {subgroup = "powders"},
+    -- ["lithium-chloride"] = {subgroup = "powders"}, -- Needs made-for-resolution icon
+    -- ["lithium-cobalt-oxide"] = {subgroup = "powders"}, -- Needs made-for-resolution icon
+    -- ["lithium-perchlorate"] = {subgroup = "powders"}, -- Needs made-for-resolution icon
     ["powdered-silicon"] = {subgroup = "powders"},
     ["powdered-tungsten"] = {subgroup = "powders"},
     ["salt"] = {subgroup = "powders"},
@@ -122,7 +122,7 @@ local intermediates = {
     ["silicon-nitride"] = {subgroup = "powders"},
     ["silicon-powder"] = {subgroup = "powders"},
     ["silver-nitrate"] = {subgroup = "powders"},
-    ["silver-oxide"] = {subgroup = "powders"},
+    -- ["silver-oxide"] = {subgroup = "powders"}, -- Needs made-for-resolution icon
     ["tungsten-oxide"] = {subgroup = "powders"},
 
     -- Gemstones

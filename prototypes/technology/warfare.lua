@@ -56,13 +56,13 @@ local technologies = {
 
     -- Armor
     -- ["heavy-armor"] = {}, -- probably fine? Depends how armor is handled
-    ["bob-armor-making-3"] = {subgroup = "armors", flat_icon = true}, -- invar cobalt-steel armor (heavy-armor-2)
-    ["bob-armor-making-4"] = {subgroup = "armors", flat_icon = true}, -- titanium-ceramic armor
+    ["bob-armor-making-3"] = {subgroup = "armor", flat_icon = true}, -- invar cobalt-steel armor (heavy-armor-2)
+    ["bob-armor-making-4"] = {subgroup = "armor", flat_icon = true}, -- titanium-ceramic armor
     -- ["power-armor"] = {}, -- power armor first entry
     -- ["power-armor-mk2"] = {}, -- 2nd power armor
-    ["bob-power-armor-3"] = {subgroup = "armors", flat_icon = true},
-    ["bob-power-armor-4"] = {subgroup = "armors", flat_icon = true},
-    ["bob-power-armor-5"] = {subgroup = "armors", flat_icon = true},
+    ["bob-power-armor-3"] = {subgroup = "armor", flat_icon = true},
+    ["bob-power-armor-4"] = {subgroup = "armor", flat_icon = true},
+    ["bob-power-armor-5"] = {subgroup = "armor", flat_icon = true},
 
     -- Tanks
     ["tank"] = {icon_name = "tank", tier = 1, prog_tier = 3}, -- t2 tank
@@ -70,10 +70,10 @@ local technologies = {
     ["bob-tanks-3"] = {icon_name = "tank", tier = 3, prog_tier = 5},
 
     -- Tank robots
-    ["bob-robot-gun-drones"] = {subgroup = "drone-tank", flat_icon = true},
-    ["bob-robot-laser-drones"] = {subgroup = "drone-tank", flat_icon = true},
-    ["bob-robot-flamethrower-drones"] = {subgroup = "drone-tank", flat_icon = true},
-    ["bob-robot-plasma-drones"] = {subgroup = "drone-tank", flat_icon = true},
+    ["bob-robot-gun-drones"] = {icon_name = "drone", tint = util.color("f2f230")},
+    ["bob-robot-laser-drones"] = {icon_name = "drone", tint = util.color("30f271")},
+    ["bob-robot-flamethrower-drones"] = {icon_name = "drone", tint = util.color("f25730")},
+    ["bob-robot-plasma-drones"] = {icon_name = "drone", tint = util.color("30a5f2")},
 
     -- Robots
     ["bob-laser-robot"] = {subgroup = "robots", flat_icon = true},

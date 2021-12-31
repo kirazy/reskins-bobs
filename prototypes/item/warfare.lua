@@ -132,12 +132,12 @@ local items = {
     ["spidertron-cannon-1"] = {type = "gun", image = "spidertron-cannon", subgroup = "weapons"},
     ["spidertron-cannon-2"] = {type = "gun", image = "spidertron-cannon", subgroup = "weapons"},
 
-    -- Armors
-    ["heavy-armor-2"] = {type = "armor", subgroup = "armors"},
-    ["heavy-armor-3"] = {type = "armor", subgroup = "armors"},
-    ["bob-power-armor-mk3"] = {type = "armor", subgroup = "armors"},
-    ["bob-power-armor-mk4"] = {type = "armor", subgroup = "armors"},
-    ["bob-power-armor-mk5"] = {type = "armor", subgroup = "armors"},
+    -- Armor
+    ["heavy-armor-2"] = {type = "armor", subgroup = "armor"},
+    ["heavy-armor-3"] = {type = "armor", subgroup = "armor"},
+    ["bob-power-armor-mk3"] = {type = "armor", subgroup = "armor"},
+    ["bob-power-armor-mk4"] = {type = "armor", subgroup = "armor"},
+    ["bob-power-armor-mk5"] = {type = "armor", subgroup = "armor"},
 
     -- Robots
     ["defender-robot"] = {icon_filename = "__base__/graphics/icons/defender.png"},
@@ -158,7 +158,7 @@ local items = {
 
     -- Mech parts
     ["mech-armor-plate"] = {type = "item", subgroup = "mech-parts"},
-    ["mech-brain"] = {type = "item", subgroup = "mech-parts"},
+    -- ["mech-brain"] = {type = "item", subgroup = "mech-parts"}, -- TODO: https://github.com/kirazy/reskins-bobs/issues/32 Model and render out robot/mech brains
     ["mech-frame"] = {type = "item", subgroup = "mech-parts"},
     ["mech-foot"] = {type = "item", subgroup = "mech-parts"},
     ["mech-hip"] = {type = "item", subgroup = "mech-parts"},

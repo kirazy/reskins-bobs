@@ -80,7 +80,7 @@ local technologies = {
     ["void-fluid"] = {subgroup = "processing-steps", technology_icon_size = 256, technology_icon_mipmaps = 4},
     ["gem-processing-1"] = {subgroup = "processing-steps", technology_icon_size = 256, technology_icon_mipmaps = 4}, -- cut gems
     ["gem-processing-2"] = {subgroup = "processing-steps", technology_icon_size = 256, technology_icon_mipmaps = 4}, -- polished gems
-    ["advanced-electronics-3"] = {subgroup = "processing-steps", technology_icon_size = 256, technology_icon_mipmaps = 4},
+    ["advanced-electronics-3"] = {subgroup = "processing-steps", technology_icon_size = 256, technology_icon_mipmaps = 4}, -- TODO: https://github.com/kirazy/reskins-bobs/issues/30 This is an angel circuit, when angel circuits are remodelled, produce something for this as well
 
     -- Plate processing
     ["aluminium-processing"] = {subgroup = "plates", technology_icon_size = 256, technology_icon_mipmaps = 4}, -- alumina, aluminium plate
