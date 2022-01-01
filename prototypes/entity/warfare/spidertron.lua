@@ -28,12 +28,8 @@ local function spidertron_icons(name)
     reskins.lib.assign_icons(name, inputs)
 
     -- Setup the tintable icons
-    item.icon = reskins.bobs.directory.."/graphics/icons/warfare/spidertron/"..name..".png"
     item.icon_tintable = reskins.bobs.directory.."/graphics/icons/warfare/spidertron/"..name.."-tintable.png"
     item.icon_tintable_mask = reskins.bobs.directory.."/graphics/icons/warfare/spidertron/"..name.."-tintable-mask.png"
-    item.icon_size = inputs.icon_size
-    item.icon_mipmaps = inputs.icon_mipmaps
-
 end
 
 for _,name in pairs(spidertrons) do
