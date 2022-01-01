@@ -1,59 +1,26 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
 
--- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.assembly.entities) then return end
+---Boolean toggles to customize the type of assembling machine sprites used.
+---Note that the `use_` flags are mutually exclusive, and if omitted the standard sprite set will be used.
+---@class flags.assembly_machine : table
+---@field is_small? boolean # 2x2 tile footprint, standard is 3x3
+---@field lights? '1-3' # Electronics machine light icon decoratives
+---@field use_electronics_set? boolean
+---@field use_burner_set? boolean
+---@field use_steam_set? boolean
 
--- Flag available for Mini-Machines compatibility pass
-if reskins.compatibility then reskins.compatibility.triggers.minimachines.assemblers = true end
+---Prepares icon properties for the `inputs` table
+---@param tier '0-5' # Tier gear icon decoratives
+---@param tint? table # [Types/Color](https://wiki.factorio.com/Types/Color)
+---@param flags flags.assembly_machine
+---@return table inputs
+local function icon_sets(tier, tint, flags)
+    local inputs = {}
 
--- Set input parameters
-local inputs = {
-    type = "assembling-machine",
-    icon_name = "assembling-machine",
-    base_entity = "assembling-machine-1",
-    mod = "bobs",
-    particles = {["big"] = 1, ["medium"] = 2},
-    group = "assembly",
-}
-
-local tier_map = {
-    ["assembling-machine-1"] = {tier = 0, shadow = 0},
-    ["assembling-machine-2"] = {tier = 1, shadow = 1, has_fluids = true},
-    ["assembling-machine-3"] = {tier = 2, shadow = 2, has_fluids = true},
-    ["assembling-machine-4"] = {tier = 3, shadow = 3, has_fluids = true},
-    ["assembling-machine-5"] = {tier = 4, shadow = 4, has_fluids = true},
-    ["assembling-machine-6"] = {tier = 5, shadow = 4, has_fluids = true},
-    ["burner-assembling-machine"] = {tier = 0, shadow = 0, tint = util.color("262626")},
-    ["steam-assembling-machine"] = {tier = 0, shadow = 0, has_fluids = true, tint = util.color("d9d9d9")},
-}
-
--- Append electronics assembling machines
-if reskins.lib.setting("reskins-lib-tier-mapping") == "traditional-map" then
-    tier_map["electronics-machine-1"] = {tier = 1, shadow = 1}
-    tier_map["electronics-machine-2"] = {tier = 2, shadow = 2}
-    tier_map["electronics-machine-3"] = {tier = 3, shadow = 3}
-else
-    tier_map["electronics-machine-1"] = {tier = 0, shadow = 1}
-    tier_map["electronics-machine-2"] = {tier = 2, shadow = 3}
-    tier_map["electronics-machine-3"] = {tier = 4, shadow = 4}
-end
-
--- Reskin entities, create and assign extra details
-for name, map in pairs(tier_map) do
-    -- Fetch entity
-    local entity = data.raw[inputs.type][name]
-
-    -- Check if entity exists, if not, skip this iteration
-    if not entity then goto continue end
-
-    -- Determine what tint we're using
-    inputs.tint = map.tint or reskins.lib.tint_index[map.tier]
-
-    -- Setup icon details
-    if string.find(name, "electronics") then
+    if flags.use_electronics_set then
         -- Use the small assets
         inputs.icon_base = "mini-assembling-machine"
         inputs.icon_mask = inputs.icon_base
@@ -62,41 +29,20 @@ for name, map in pairs(tier_map) do
         -- Add the indicator lights
         inputs.icon_extras = {
             {
-                icon = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/"..name..".png"
-            }
+                icon = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/electronics-machine-"..flags.lights..".png",
+            },
         }
 
         inputs.icon_picture_extras = {
             {
-                filename = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/"..name..".png",
+                filename = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/electronics-machine-"..flags.lights..".png",
                 size = 64,
                 mipmaps = 4,
-                scale = 0.25
-            }
+                scale = 0.25,
+            },
         }
-    elseif name == "burner-assembling-machine" then
-        if reskins.bobs.triggers.burner_assembling_machine_is_small then
-            -- Use the normal assets
-            inputs.icon_base = nil
-            inputs.icon_mask = nil
-            inputs.icon_highlights = nil
-
-            -- Smoke stack
-            inputs.icon_extras = {
-                {
-                    icon = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/smoke-stack.png"
-                }
-            }
-
-            inputs.icon_picture_extras = {
-                {
-                    filename = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/smoke-stack.png",
-                    size = 64,
-                    mipmaps = 4,
-                    scale = 0.25
-                }
-            }
-        else
+    elseif flags.use_burner_set then
+        if flags.is_small then
             -- Use the small assets
             inputs.icon_base = "mini-assembling-machine"
             inputs.icon_mask = inputs.icon_base
@@ -105,8 +51,8 @@ for name, map in pairs(tier_map) do
             -- Smoke stack
             inputs.icon_extras = {
                 {
-                    icon = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/small-smoke-stack.png"
-                }
+                    icon = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/small-smoke-stack.png",
+                },
             }
 
             inputs.icon_picture_extras = {
@@ -114,24 +60,35 @@ for name, map in pairs(tier_map) do
                     filename = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/smoke-stack.png",
                     size = 64,
                     mipmaps = 4,
-                    scale = 0.25
-                }
+                    scale = 0.25,
+                },
+            }
+        else
+            -- Smoke stack
+            inputs.icon_extras = {
+                {
+                    icon = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/smoke-stack.png",
+                },
+            }
+
+            inputs.icon_picture_extras = {
+                {
+                    filename = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/smoke-stack.png",
+                    size = 64,
+                    mipmaps = 4,
+                    scale = 0.25,
+                },
             }
         end
-    elseif name == "steam-assembling-machine" then
-        -- Use the standard assets
-        inputs.icon_base = nil
-        inputs.icon_mask = nil
-        inputs.icon_highlights = nil
-
-        -- Add steam
+    elseif flags.use_steam_set then
+        -- Smoke stack with pipe connection
         inputs.icon_extras = {
             {
                 icon = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/steam-smoke-stack-base.png"
             },
             {
                 icon = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/steam-smoke-stack-mask.png",
-                tint = inputs.tint,
+                tint = tint,
             },
             {
                 icon = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/steam-smoke-stack-highlights.png",
@@ -151,7 +108,7 @@ for name, map in pairs(tier_map) do
                 size = 64,
                 mipmaps = 4,
                 scale = 0.25,
-                tint = inputs.tint
+                tint = tint
             },
             {
                 filename = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/steam-smoke-stack-highlights.png",
@@ -162,35 +119,55 @@ for name, map in pairs(tier_map) do
             }
         }
     else
-        -- Use the standard assets
-        inputs.icon_base = nil
-        inputs.icon_mask = nil
-        inputs.icon_highlights = nil
+        if flags.is_small then
+            -- Use the small assets
+            inputs.icon_base = "mini-assembling-machine"
+            inputs.icon_mask = inputs.icon_base
+            inputs.icon_highlights = inputs.icon_base
 
-        -- Add gears
-        inputs.icon_extras = {
-            {
-                icon = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/gear-"..map.tier..".png"
+            -- Add gears
+            inputs.icon_extras = {
+                {
+                    icon = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/mini-gear-"..tier..".png"
+                }
             }
-        }
 
-        inputs.icon_picture_extras = {
-            {
-                filename = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/gear-"..map.tier..".png",
-                size = 64,
-                mipmaps = 4,
-                scale = 0.25
+            inputs.icon_picture_extras = {
+                {
+                    filename = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/mini-gear-"..tier..".png",
+                    size = 64,
+                    mipmaps = 4,
+                    scale = 0.25
+                }
             }
-        }
+        else
+            -- Add gears
+            inputs.icon_extras = {
+                {
+                    icon = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/gear-"..tier..".png"
+                }
+            }
+
+            inputs.icon_picture_extras = {
+                {
+                    filename = reskins.bobs.directory.."/graphics/icons/assembly/assembling-machine/gear-"..tier..".png",
+                    size = 64,
+                    mipmaps = 4,
+                    scale = 0.25
+                }
+            }
+        end
     end
 
-    reskins.lib.setup_standard_entity(name, map.tier, inputs)
+    return inputs
+end
 
-    -- Fetch remnant
-    local remnant = data.raw["corpse"][name.."-remnants"]
-
-    -- Reskin remnants
-    remnant.animation = make_rotated_animation_variations_from_sheet (3, {
+---Provides vanilla-style sprite definition for assembling machine corpse `animation` field. See [Prototype/Corpse](https://wiki.factorio.com/Prototype/Corpse).
+---@param tint table # [Types/Color](https://wiki.factorio.com/Types/Color)
+---@return table animation # [Types/RotatedAnimation](https://wiki.factorio.com/Types/RotatedAnimation)
+local function corpse_animation(tint)
+    return
+    make_rotated_animation_variations_from_sheet (3, {
         layers = {
             -- Base
             {
@@ -227,7 +204,7 @@ for name, map in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(0, 10),
-                tint = inputs.tint,
+                tint = tint,
                 hr_version = {
                     filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/remnants/hr-assembling-machine-remnants-mask.png",
                     line_length = 1,
@@ -238,7 +215,7 @@ for name, map in pairs(tier_map) do
                     axially_symmetrical = false,
                     direction_count = 1,
                     shift = util.by_pixel(0, 9.5),
-                    tint = inputs.tint,
+                    tint = tint,
                     scale = 0.5,
                 },
             },
@@ -270,9 +247,16 @@ for name, map in pairs(tier_map) do
             }
         }
     })
+end
 
-    -- Reskin entities
-    entity.animation = {
+---Provides vanilla-style sprite definition for assembling machine `animation` field. See [Prototype/AssemblingMachine](https://wiki.factorio.com/Prototype/AssemblingMachine).
+---@param tint table # [Types/Color](https://wiki.factorio.com/Types/Color)
+---@param flags flags.assembly_machine
+---@return table animation # [Types/Animation4Way](https://wiki.factorio.com/Types/Animation4Way)
+local function entity_animation(tier, tint, flags)
+    local shadow_tier = (tier >= 5) and 4 or tier
+
+    local animation = {
         layers = {
             -- Base
             {
@@ -306,7 +290,7 @@ for name, map in pairs(tier_map) do
                 line_length = 1,
                 repeat_count = 32,
                 shift = util.by_pixel(0, -0.5),
-                tint = inputs.tint,
+                tint = tint,
                 hr_version = {
                     filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/base/hr-assembling-machine-base-mask.png",
                     priority="high",
@@ -316,7 +300,7 @@ for name, map in pairs(tier_map) do
                     line_length = 1,
                     repeat_count = 32,
                     shift = util.by_pixel(0, -0.75),
-                    tint = inputs.tint,
+                    tint = tint,
                     scale = 0.5
                 }
             },
@@ -346,7 +330,7 @@ for name, map in pairs(tier_map) do
             },
             -- Animation
             {
-                filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/animations/assembling-machine-animation-"..map.tier..".png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/animations/assembling-machine-animation-"..tier..".png",
                 priority="high",
                 width = 108,
                 height = 119,
@@ -354,7 +338,7 @@ for name, map in pairs(tier_map) do
                 line_length = 8,
                 shift = util.by_pixel(0, -0.5),
                 hr_version = {
-                    filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/animations/hr-assembling-machine-animation-"..map.tier..".png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/animations/hr-assembling-machine-animation-"..tier..".png",
                     priority="high",
                     width = 214,
                     height = 237,
@@ -366,7 +350,7 @@ for name, map in pairs(tier_map) do
             },
             -- Shadow
             {
-                filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/shadows/assembling-machine-"..map.shadow.."-shadow.png",
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/shadows/assembling-machine-"..shadow_tier.."-shadow.png",
                 priority="high",
                 width = 132,
                 height = 83,
@@ -375,7 +359,7 @@ for name, map in pairs(tier_map) do
                 draw_as_shadow = true,
                 shift = util.by_pixel(27, 5),
                 hr_version = {
-                    filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/shadows/hr-assembling-machine-"..map.shadow.."-shadow.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/shadows/hr-assembling-machine-"..shadow_tier.."-shadow.png",
                     priority="high",
                     width = 264,
                     height = 165,
@@ -389,9 +373,8 @@ for name, map in pairs(tier_map) do
         }
     }
 
-    -- Insert the electronics assembling machine decoratives
-    if string.find(name, "electronics") then
-        table.insert(entity.animation.layers,
+    if flags.use_electronics_set then
+        table.insert(animation.layers,
         -- Base
         {
             filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/electronics/electronics-base.png",
@@ -414,7 +397,7 @@ for name, map in pairs(tier_map) do
                 scale = 0.5
             }
         })
-        table.insert(entity.animation.layers,
+        table.insert(animation.layers,
         -- Mask
         {
             filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/electronics/electronics-mask.png",
@@ -425,7 +408,7 @@ for name, map in pairs(tier_map) do
             line_length = 1,
             repeat_count = 32,
             shift = util.by_pixel(0, -0.5),
-            tint = inputs.tint,
+            tint = tint,
             hr_version = {
                 filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/electronics/hr-electronics-mask.png",
                 priority="high",
@@ -435,11 +418,11 @@ for name, map in pairs(tier_map) do
                 line_length = 1,
                 repeat_count = 32,
                 shift = util.by_pixel(0, -0.75),
-                tint = inputs.tint,
+                tint = tint,
                 scale = 0.5
             }
         })
-        table.insert(entity.animation.layers,
+        table.insert(animation.layers,
         -- Highlights
         {
             filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/electronics/electronics-highlights.png",
@@ -464,7 +447,7 @@ for name, map in pairs(tier_map) do
                 scale = 0.5
             }
         })
-        table.insert(entity.animation.layers,
+        table.insert(animation.layers,
         -- Shadow
         {
             filename = reskins.bobs.directory.."/graphics/entity/assembly/assembling-machine/electronics/electronics-shadow.png",
@@ -491,65 +474,72 @@ for name, map in pairs(tier_map) do
         })
     end
 
-    -- Fix drawing box
+    return animation
+end
+
+---Reskins the named splitter with vanilla-style splitter sprites and color masking, and sets up appropriate corpse, explosion, and particle prototypes
+---@param name string # [Prototype name](https://wiki.factorio.com/PrototypeBase#name)
+---@param tier integer # 1-6 are supported, 0 to disable
+---@param tint? table # [Types/Color](https://wiki.factorio.com/Types/Color)
+---@param flags? flags.assembly_machine
+function reskins.lib.apply_skin.assembling_machine(name, tier, tint, flags)
+    if not flags then flags = {} end
+
+    local inputs = util.merge({
+        {
+            type = "assembling-machine",
+            icon_name = "assembling-machine",
+            base_entity_name = "assembling-machine-1",
+            mod = "bobs",
+            group = "assembly",
+            particles = {["big"] = 1, ["medium"] = 2},
+            tint = tint and tint or reskins.lib.tint_index[tier]
+        },
+        icon_sets(tier, tint, flags)
+    })
+
+    local entity = data.raw[inputs.type][name]
+    if not entity then return end
+
+    reskins.lib.setup_standard_entity(name, tier, inputs)
+
+    -- Fetch corpse
+    local corpse = data.raw["corpse"][name.."-remnants"]
+
+    -- Reskin corpse
+    corpse.animation = corpse_animation(inputs.tint)
+
+    -- Reskin entity
+    entity.animation = entity_animation(tier, inputs.tint, flags)
     entity.drawing_box = nil
 
-    -- Rescale for electronics and burner assembling machines
-    if string.find(name, "electronics") or (reskins.bobs.triggers.assembly.burner_assembling_machine_is_small and name == "burner-assembling-machine") then
-        reskins.lib.rescale_entity(entity.animation, 2/3)
-        reskins.lib.rescale_remnant(entity, 2/3)
+    local draw_order_shift = (flags.use_electronics_set or flags.use_steam_set) and 6 or 3
+    if entity.fluid_boxes then
+        for _, fluid_box in pairs(entity.fluid_boxes) do
+            if type(fluid_box) == "table" then
+                fluid_box.pipe_picture = fluid_box.pipe_picture and reskins.bobs.assembly_pipe_pictures(inputs.tint)
+                fluid_box.pipe_covers = fluid_box.pipe_covers and pipecoverspictures()
+                fluid_box.secondary_draw_orders = { north = -1, east = draw_order_shift, south = draw_order_shift, west = draw_order_shift }
+            end
+        end
     end
 
-    -- Handle pipes
-    if map.has_fluids then
-        entity.fluid_boxes = {
-            {
-                production_type = "input",
-                pipe_picture = reskins.bobs.assembly_pipe_pictures(inputs.tint),
-                pipe_covers = pipecoverspictures(),
-                base_area = 10,
-                base_level = -1,
-                pipe_connections = {{ type="input", position = {0, -2} }},
-                secondary_draw_orders = { north = -1, east = 3, south = 3, west = 3 }
-            },
-            {
-                production_type = "output",
-                pipe_picture = reskins.bobs.assembly_pipe_pictures(inputs.tint),
-                pipe_covers = pipecoverspictures(),
-                base_area = 10,
-                base_level = 1,
-                pipe_connections = {{ type="output", position = {0, 2} }},
-                secondary_draw_orders = { north = -1, east = 3, south = 3, west = 3 }
-            },
-            off_when_no_fluid_recipe = true
-        }
-    end
-
-    if name == "steam-assembling-machine" then
-        entity.energy_source.fluid_box = {
-            base_area = 1,
-            height = 2,
-            base_level = -1,
-            pipe_connections = {
-                {type = "input-output", position = { 2, 0}},
-                {type = "input-output", position = {-2, 0}}
-            },
-            pipe_covers = pipecoverspictures(),
-            pipe_picture = reskins.bobs.assembly_pipe_pictures(inputs.tint),
-            production_type = "input-output",
-            filter = "steam"
-        }
+    local fluid_box = entity.energy_source.fluid_box
+    if fluid_box then
+        fluid_box.pipe_picture = fluid_box.pipe_picture and reskins.bobs.assembly_pipe_pictures(inputs.tint)
+        fluid_box.pipe_covers = fluid_box.pipe_covers and pipecoverspictures()
+        fluid_box.secondary_draw_orders = { north = -1, east = draw_order_shift, south = draw_order_shift, west = draw_order_shift }
     end
 
     -- Handle sounds
-    if map.tier > 3 then
+    if tier > 3 then
         entity.working_sound.sound = {
             {
                 filename = "__base__/sound/assembling-machine-t3-1.ogg",
                 volume = 0.45
             }
         }
-    elseif map.tier > 1 then
+    elseif tier > 1 then
         entity.working_sound.sound = {
             {
                 filename = "__base__/sound/assembling-machine-t2-1.ogg",
@@ -565,6 +555,9 @@ for name, map in pairs(tier_map) do
         }
     end
 
-    -- Label to skip to next iteration
-    ::continue::
+    -- Rescale entity
+    if flags.is_small then
+        reskins.lib.rescale_entity(entity.animation, 2/3)
+        reskins.lib.rescale_remnant(corpse, 2/3)
+    end
 end

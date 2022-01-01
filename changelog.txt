@@ -1,11 +1,8 @@
 ---------------------------------------------------------------------------------------------------
-Version: 2.0.5
+Version: 2.1.0
 Date: ????
-  Changes:
-    - Additional entities, items, and technologies have received revised color masks
-    - Revised normal resolution roboport to use updated Factorio sprites
-    - Improved the color mask for the normal resolution electric mining drill
-    - Improved color masks for the pumpjack and water pumpjack, and adjusted the color of the water pumpjack
+  Features:
+    - Additions of EmmyLua-style documentation is ongoing
     - Credit to Snouz for contributing sprites for numerous entities, items, and technologies:
       - Seven crafting tab icons
       - Bob's Metals, Chemicals, and Intermediates technology icons: 15 plates, gas canisters, 2 gem processing, advanced electronics 3, fluid handling update
@@ -22,8 +19,14 @@ Date: ????
       - Tankotron entity: Added rotating cannon, adjusted projectile position
       - 4 Drone tank units entities: reworked appearance, adjusted projectile position, made turns slower
       - Laser robot entity: reworked appearance
+  Changes:
+    - Additional entities, items, and technologies have received revised color masks
+    - Revised normal resolution roboport to use updated Factorio sprites
+    - Improved the color mask for the normal resolution electric mining drill
+    - Improved color masks for the pumpjack and water pumpjack, and adjusted the color of the water pumpjack
+    - Internal restructuring to make entity reskinning through functions globally available under `reskins.lib.apply_skin` is ongoing
   Bugfixes:
-    - Snouz fixed pixel artifacting along the bottom right edge of the nitinol plate icon
+    - Credit to Snouz for fixing pixel artifacting along the bottom right edge of the nitinol plate icon
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.4
 Date: 2021-12-12
