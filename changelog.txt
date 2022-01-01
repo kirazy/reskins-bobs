@@ -5,10 +5,10 @@ Date: ????
     - Additions of EmmyLua-style documentation is ongoing
     - Credit to Snouz for contributing sprites for numerous entities, items, and technologies:
       - Seven crafting tab icons
-      - Bob's Metals, Chemicals, and Intermediates technology icons: 15 plates, gas canisters, 2 gem processing, advanced electronics 3, fluid handling update
-      - Mining tech icons: oil pumpjacks, water pumpjacks
-      - Warfare tech icons: 5 armors, 5 artillery shells, 4 spidertrons, 4 drone tank units, 3 tanks, 3 artillery, 3 sniper turrets, 2 artillery wagons, laser robot, laser rifle
-      - Power tech icons: 4 substations, 4 power poles
+      - Bob's Metals, Chemicals, and Intermediates technology icons: metals processing, bottled gas processing, gem processing, advanced electronics 3, fluid handling update
+      - Bob's Mining technology icons: oil pumpjacks, water pumpjacks
+      - Bob's Warfare technology icons: 5 armors, 5 artillery shells, 4 spidertrons, 4 drone tank units, 3 tanks, 3 artillery, 3 sniper turrets, 2 artillery wagons, laser robot, laser rifle
+      - Bob's Power technology icons: electric energy distribution, substations, electric poles
       - Technology tech icons: lab, advanced research, steam power
       - Greenhouse tech icons: greenhouse, fertiliser
       - Revamp tech icons: solid fuel, heat shielding
