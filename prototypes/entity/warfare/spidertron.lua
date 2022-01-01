@@ -1,38 +1,49 @@
+-- Copyright (c) 2022 Kirazy
+-- Part of Artisanal Reskins: Bob's Mods
+--
+-- See LICENSE in the project directory for license information.
+
+-- Check to see if reskinning needs to be done.
+if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then return end
+
 local spidertrons = {
-  "antron",
-  "tankotron",
-  "logistic-spidertron",
-  "heavy-spidertron"
+    "antron",
+    "tankotron",
+    "logistic-spidertron",
+    "heavy-spidertron"
 }
 
-for _,name in pairs(spidertrons) do
-  if data.raw["spider-vehicle"][name] then
-    data.raw["spider-vehicle"][name].icon = "__reskins-bobs__/graphics/icons/warfare/spidertron/" .. name .. ".png"
-    data.raw["spider-vehicle"][name].icon_size = 64
-  end
+local function spidertron_icons(name)
+    local item = data.raw["item-with-entity-data"][name]
+    if not item then return end
+
+    ---@type inputs.assign_icons
+    local inputs = {
+        type = "spider-vehicle",
+        icon = reskins.bobs.directory.."/graphics/icons/warfare/spidertron/"..name..".png",
+        icon_size = 64,
+        icon_mipmaps = 4,
+    }
+
+    reskins.lib.assign_icons(name, inputs)
+
+    -- Setup the tintable icons
+    item.icon = reskins.bobs.directory.."/graphics/icons/warfare/spidertron/"..name..".png"
+    item.icon_tintable = reskins.bobs.directory.."/graphics/icons/warfare/spidertron/"..name.."-tintable.png"
+    item.icon_tintable_mask = reskins.bobs.directory.."/graphics/icons/warfare/spidertron/"..name.."-tintable-mask.png"
+    item.icon_size = inputs.icon_size
+    item.icon_mipmaps = inputs.icon_mipmaps
+
 end
 
-if data.raw["spider-vehicle"]["tankotron"] then
-  data.raw["spider-vehicle"]["tankotron"].graphics_set.animation = {
-    layers = {
-      {
-        filename = "__base__/graphics/entity/tank/tank-turret.png",
-        width = 90,
-        height = 67,
-        line_length = 8,
-        direction_count = 64,
-        shift = util.by_pixel(0, -9),
-        hr_version = {
-          filename = "__base__/graphics/entity/tank/hr-tank-turret.png",
-          width = 179,
-          height = 132,
-          line_length = 8,
-          direction_count = 64,
-          scale = 0.5,
-          shift = util.by_pixel(0, -9)
-        }
-      },
-      --[[{
+for _,name in pairs(spidertrons) do
+    spidertron_icons(name)
+end
+
+-- Add a tank cannon to the Tankotron
+local tankotron = data.raw["spider-vehicle"]["tankotron"]
+if tankotron then
+    table.insert(tankotron.graphics_set.animation.layers, 1, {
         filename = "__base__/graphics/entity/tank/tank-turret-mask.png",
         width = 36,
         height = 33,
@@ -41,101 +52,65 @@ if data.raw["spider-vehicle"]["tankotron"] then
         apply_runtime_tint = true,
         shift = util.by_pixel(0, -10),
         hr_version = {
-          filename = "__base__/graphics/entity/tank/hr-tank-turret-mask.png",
-          width = 72,
-          height = 66,
-          line_length = 8,
-          direction_count = 64,
-          scale = 0.5,
-          apply_runtime_tint = true,
-          shift = util.by_pixel(0, -10)
+            filename = "__base__/graphics/entity/tank/hr-tank-turret-mask.png",
+            width = 72,
+            height = 66,
+            line_length = 8,
+            direction_count = 64,
+            scale = 0.5,
+            apply_runtime_tint = true,
+            shift = util.by_pixel(0, -10)
         }
-      },]]
-      {
-        filename = "__base__/graphics/entity/spidertron/torso/spidertron-body.png",
-        width = 66,
-        height = 70,
+    })
+
+    table.insert(tankotron.graphics_set.animation.layers, 1, {
+        filename = "__base__/graphics/entity/tank/tank-turret.png",
+        width = 90,
+        height = 67,
         line_length = 8,
         direction_count = 64,
-        scale = 0.8,
-        shift = util.by_pixel(0 * 0.8, -25 * 0.8),
-        hr_version =
-        {
-          filename = "__base__/graphics/entity/spidertron/torso/hr-spidertron-body.png",
-          width = 132,
-          height = 138,
-          line_length = 8,
-          direction_count = 64,
-          scale = 0.5 * 0.8,
-          shift = util.by_pixel(0 * 0.8, -25 * 0.8)
+        shift = util.by_pixel(0, -9),
+        hr_version = {
+            filename = "__base__/graphics/entity/tank/hr-tank-turret.png",
+            width = 179,
+            height = 132,
+            line_length = 8,
+            direction_count = 64,
+            scale = 0.5,
+            shift = util.by_pixel(0, -9)
         }
-      },
-      {
-        filename = "__base__/graphics/entity/spidertron/torso/spidertron-body-mask.png",
-        width = 66,
-        height = 50,
-        line_length = 8,
-        direction_count = 64,
-        scale = 0.8,
-        apply_runtime_tint = true,
-        shift = util.by_pixel(0 * 0.8, -20 * 0.8),
-        hr_version =
-        {
-          filename = "__base__/graphics/entity/spidertron/torso/hr-spidertron-body-mask.png",
-          width = 130,
-          height = 100,
-          line_length = 8,
-          direction_count = 64,
-          scale = 0.5 * 0.8,
-          apply_runtime_tint = true,
-          shift = util.by_pixel(0 * 0.8, -20 * 0.8)
-        }
-      }
-    }
-  }
-  data.raw["spider-vehicle"]["tankotron"].torso_rotation_speed = 0.02
-  data.raw["spider-vehicle"]["tankotron"].drawing_box = {{-3 * 0.8, -4 * 0.8}, {3 * 0.8, 0 * 0.8}}
+    })
 
-end
-
-if data.raw.gun["spidertron-gatling-gun"] then
-  data.raw.gun["spidertron-gatling-gun"].attack_parameters.projectile_center = {0, 2.3}
-  data.raw.gun["spidertron-gatling-gun"].attack_parameters.projectile_creation_distance = 1.5
-  data.raw.gun["spidertron-gatling-gun"].attack_parameters.projectile_orientation_offset = 1
-end
-
-if data.raw.gun["spidertron-cannon-1"] then
-  data.raw.gun["spidertron-cannon-1"].attack_parameters.projectile_center = {0.3, 2}
-  data.raw.gun["spidertron-cannon-1"].attack_parameters.projectile_creation_distance = 1.65
-  data.raw.gun["spidertron-cannon-1"].attack_parameters.projectile_orientation_offset = 0 -- -1.65
-end
-
-if data.raw.gun["spidertron-cannon-2"] then
-  data.raw.gun["spidertron-cannon-2"].attack_parameters.projectile_center = {-0.3, 2}
-  data.raw.gun["spidertron-cannon-2"].attack_parameters.projectile_creation_distance = 1.65 -- 1.65
-  data.raw.gun["spidertron-cannon-2"].attack_parameters.projectile_orientation_offset = 0 -- -1.65
+    data.raw["spider-vehicle"]["tankotron"].drawing_box = {{-3, -3.5}, {3, 1.75}}
 end
 
 
---[[ turns out the game is bugged https://forums.factorio.com/viewtopic.php?f=28&t=100458&p=555629&hilit=source_offset#p555629
---if data.raw.gun["laser-rifle"] then
-  --data.raw.gun["laser-rifle"].attack_parameters.source_direction_count = 64
-  data.raw.gun["laser-rifle"].attack_parameters.source_offset = {60, 60}
-  data.raw.gun["laser-rifle"].attack_parameters.source_offset = {0, -1.31439 }
-  data.raw.gun["laser-rifle"].attack_parameters =
-    {
-      type = "beam",
-      ammo_category = "laser-rifle",
-      cooldown = 20,
-      movement_slow_down_factor = 0.5,
-      damage_modifier = 1.2,
-      source_offset = {0, -1.31439},
-      range = 20,
-    }
---end
 
-if data.raw.beam["bob-laser-beam-topaz-ammo"] then
-  --data.raw.beam["bob-laser-beam-topaz-ammo"].head.shift = {-1,0}
-  --data.raw.beam["bob-laser-beam-topaz-ammo"].body[1].shift = {-1,0}
+-- Revise projectile locations for the various spidertrons
+local guns = {
+    ["spidertron-gatling-gun"] = {
+            projectile_center = {0, 2.3},
+            projectile_creation_distance = 1.5,
+            projectile_orientation_offset = 1,
+        },
+    ["spidertron-cannon-1"] = {
+            projectile_center = {0.3, 2},
+            projectile_creation_distance = 1.65,
+            projectile_orientation_offset = 0, -- -1.65
+        },
+    ["spidertron-cannon-2"] = {
+            projectile_center = {-0.3, 2},
+            projectile_creation_distance = 1.65, -- 1.65
+            projectile_orientation_offset = 0, -- -1.65
+        },
+}
+
+for gun, attack_parameters in pairs(guns) do
+    local spidertron_gun = data.raw["gun"][gun]
+    if spidertron_gun then
+        spidertron_gun.attack_parameters = util.merge({spidertron_gun.attack_parameters, attack_parameters})
+    end
 end
-]]
+
+-- Beam weapon projectile centers cannot be adjusted on player/unit prototypes, unfortunately.
+-- See https://forums.factorio.com/viewtopic.php?f=28&t=100458&p=555629&hilit=source_offset#p555629

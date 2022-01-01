@@ -20,7 +20,7 @@ local assembling_machines = {
     ["assembling-machine-6"] = {tier = 5},
 
     -- Smoke stacks
-    ["burner-assembling-machine"] = {tier = 0, tint = util.color("262626"), flags = {use_burner_set = true, is_small = reskins.bobs.triggers.burner_assembling_machine_is_small}},
+    ["burner-assembling-machine"] = {tier = 0, tint = util.color("262626"), flags = {use_burner_set = true, is_small = reskins.bobs.triggers.assembly.burner_assembling_machine_is_small}},
     ["steam-assembling-machine"] = {tier = 0, tint = util.color("d9d9d9"), flags = {use_steam_set = true}},
 
     -- Electronics
@@ -30,7 +30,7 @@ local assembling_machines = {
 }
 
 for name, map in pairs(assembling_machines) do
-    reskins.lib.apply_skin.assembling_machine(name, map.tier, nil, map.flags)
+    reskins.lib.apply_skin.assembling_machine(name, map.tier, map.tint, map.flags)
 end
 
 -- CHEMICAL PLANTS (Note: Bob sets up in data-updates)

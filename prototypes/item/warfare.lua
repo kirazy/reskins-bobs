@@ -165,12 +165,6 @@ local items = {
     ["mech-knee"] = {type = "item", subgroup = "mech-parts"},
     ["mech-leg"] = {type = "item", subgroup = "mech-parts"},
     ["mech-leg-segment"] = {type = "item", subgroup = "mech-parts"},
-
-    -- Spidertron
-    ["antron"] = {type = "item-with-entity-data", subgroup = "spidertron"},
-    ["tankotron"] = {type = "item-with-entity-data", subgroup = "spidertron"},
-    ["logistic-spidertron"] = {type = "item-with-entity-data", subgroup = "spidertron"},
-    ["heavy-spidertron"] = {type = "item-with-entity-data", subgroup = "spidertron"},
 }
 
 reskins.lib.create_icons_from_list(items, inputs)
