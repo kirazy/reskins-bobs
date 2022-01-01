@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -11,7 +11,7 @@ if not (reskins.bobs and reskins.bobs.triggers.power.steam) then return end
 local inputs = {
     type = "boiler",
     icon_name = "heat-exchanger",
-    base_entity = "heat-exchanger",
+    base_entity_name = "heat-exchanger",
     mod = "bobs",
     group = "power",
     particles = {["big"] = 3},

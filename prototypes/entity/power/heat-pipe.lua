@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -9,7 +9,7 @@ if not (reskins.bobs and reskins.bobs.triggers.power.entities) then return end
 -- Set input parameters
 local inputs = {
     type = "heat-pipe",
-    base_entity = "heat-pipe",
+    base_entity_name = "heat-pipe",
     mod = "bobs",
 }
 
@@ -67,8 +67,8 @@ for name, map in pairs(tier_map) do
     -- Create particles and explosions
     local particle_tints = {util.color(map[3][1]), util.color(map[3][2])}
     reskins.lib.create_explosion(name, inputs)
-    reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["small"], 1, particle_tints[1])
-    reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["medium"], 2, particle_tints[2])
+    reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["small"], 1, particle_tints[1])
+    reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["medium"], 2, particle_tints[2])
 
     -- Create and skin remnants
     reskins.lib.create_remnant(name, inputs)

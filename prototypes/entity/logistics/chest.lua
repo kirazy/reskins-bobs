@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -64,7 +64,7 @@ for name, map in pairs(logistic_map) do
     end
 
     -- Construct inputs parameters
-    inputs.base_entity = chest.."-chest"
+    inputs.base_entity_name = chest.."-chest"
     inputs.icon_base = chest.."-chest"
     inputs.icon_mask = material.."-logistic-chest"
     inputs.tint = material_tints[material]

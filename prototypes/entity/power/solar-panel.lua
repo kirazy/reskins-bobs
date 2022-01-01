@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -10,7 +10,7 @@ if not (reskins.bobs and reskins.bobs.triggers.power.solar) then return end
 -- Set input parameters
 local inputs = {
     type = "solar-panel",
-    base_entity = "solar-panel",
+    base_entity_name = "solar-panel",
     mod = "bobs",
     group = "power",
     particles = {["small"] = 2},

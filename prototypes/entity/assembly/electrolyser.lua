@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -13,7 +13,7 @@ if reskins.compatibility then reskins.compatibility.triggers.minimachines.electr
 local inputs = {
     type = "assembling-machine",
     icon_name = "electrolyser",
-    base_entity = "chemical-plant",
+    base_entity_name = "chemical-plant",
     mod = "bobs",
     group = "assembly",
     particles = {["big"] = 1, ["medium"] = 2},

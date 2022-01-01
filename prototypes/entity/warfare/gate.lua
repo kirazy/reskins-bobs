@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -13,7 +13,7 @@ if not entity then return end
 -- Set input parameters
 local inputs = {
     type = "gate",
-    base_entity = "gate",
+    base_entity_name = "gate",
     mod = "bobs",
     particles = {["big"] = 1, ["medium"] = 2},
 }
@@ -32,7 +32,7 @@ reskins.lib.parse_inputs(inputs)
 reskins.lib.create_explosion("reinforced-gate", inputs)
 
 for particle, key in pairs(inputs.particles) do
-    reskins.lib.create_particle("reinforced-gate", inputs.base_entity, reskins.lib.particle_index[particle], key, reinforced_tint_index[particle])
+    reskins.lib.create_particle("reinforced-gate", inputs.base_entity_name, reskins.lib.particle_index[particle], key, reinforced_tint_index[particle])
 end
 
 -- Create remnants

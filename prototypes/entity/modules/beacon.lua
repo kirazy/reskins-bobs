@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -14,7 +14,7 @@ if reskins.compatibility then reskins.compatibility.triggers.minimachines.beacon
 local inputs = {
     type = "beacon",
     icon_name = "beacon",
-    base_entity = "beacon",
+    base_entity_name = "beacon",
     mod = "bobs",
     group = "modules",
     particles = {["small"] = 3},

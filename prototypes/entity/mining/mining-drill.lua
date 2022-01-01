@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -14,7 +14,7 @@ if reskins.compatibility then reskins.compatibility.triggers.minimachines.miners
 local inputs = {
     type = "mining-drill",
     icon_name = "electric-mining-drill",
-    base_entity = "electric-mining-drill",
+    base_entity_name = "electric-mining-drill",
     mod = "bobs",
     group = "mining",
     particles = {["medium-long"] = 3},

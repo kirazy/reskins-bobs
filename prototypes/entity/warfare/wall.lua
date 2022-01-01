@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -13,7 +13,7 @@ if not entity then return end
 -- Set input parameters
 local inputs = {
     type = "wall",
-    base_entity = "wall",
+    base_entity_name = "wall",
     mod = "bobs",
     particles = {["tiny-stone"] = 3, ["small-stone"] = 2, ["medium-stone"] = 1},
 }
@@ -38,7 +38,7 @@ if inputs.make_explosions then
     reskins.lib.create_explosion("reinforced-wall", inputs)
 
     for particle, key in pairs(inputs.particles) do
-        reskins.lib.create_particle("reinforced-wall", inputs.base_entity, reskins.lib.particle_index[particle], key, reinforced_tint_index[particle])
+        reskins.lib.create_particle("reinforced-wall", inputs.base_entity_name, reskins.lib.particle_index[particle], key, reinforced_tint_index[particle])
     end
 end
 

@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -10,7 +10,7 @@ if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then return e
 local inputs = {
     type = "pump",
     icon_name = "pump",
-    base_entity = "pump",
+    base_entity_name = "pump",
     mod = "bobs",
     group = "logistics",
     particles = {["medium"] = 3},

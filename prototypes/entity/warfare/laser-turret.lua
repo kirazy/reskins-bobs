@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -10,7 +10,7 @@ if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then return end
 local inputs = {
     type = "electric-turret",
     icon_name = "laser-turret",
-    base_entity = "laser-turret",
+    base_entity_name = "laser-turret",
     mod = "bobs",
     group = "warfare",
     particles = {["medium"] = 2},

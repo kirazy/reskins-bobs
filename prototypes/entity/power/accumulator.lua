@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -11,7 +11,7 @@ if not (reskins.bobs and reskins.bobs.triggers.power.accumulators) then return e
 local inputs = {
     type = "accumulator",
     icon_name = "accumulator",
-    base_entity = "accumulator",
+    base_entity_name = "accumulator",
     mod = "bobs",
     group = "power",
     particles = {["medium"] = 2, ["small"] = 3},

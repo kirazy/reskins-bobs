@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -463,7 +463,7 @@ for name, map in pairs(inserter_map) do
 
     -- Construct input properties from map properties
     inputs.platform_tint = map.is_filter and util.color("bfbfbf") or inputs.tint -- Whiteish for filter inserters
-    inputs.base_entity = map.is_stack_inserter and "stack-inserter" or "inserter"
+    inputs.base_entity_name = map.is_stack_inserter and "stack-inserter" or "inserter"
     inputs.icon_name = map.icon_name
     inputs.icon_extras = map.is_filter and filter_icon_symbol(inputs.tint)
 

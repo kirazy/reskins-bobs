@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -10,7 +10,7 @@ if not (reskins.bobs and reskins.bobs.triggers.mining.entities) then return end
 local inputs = {
     type = "mining-drill",
     icon_name = "pumpjack",
-    base_entity = "pumpjack",
+    base_entity_name = "pumpjack",
     mod = "bobs",
     group = "mining",
     particles = {["small"] = 3},
@@ -88,8 +88,8 @@ for name, map in pairs(tier_map) do
 
     -- Reskin base particles if we're a water pump
     if map.is_water_miner then
-        reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["big"], 1, util.color("3083bf"))
-        reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["medium"], 2, util.color("3083bf"))
+        reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["big"], 1, util.color("3083bf"))
+        reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["medium"], 2, util.color("3083bf"))
     end
 
     -- Fetch remnants

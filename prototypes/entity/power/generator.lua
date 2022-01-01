@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -11,7 +11,7 @@ if not (reskins.bobs and reskins.bobs.triggers.power.fluidgenerator) then return
 local inputs = {
     type = "generator",
     icon_name = "fluid-generator",
-    base_entity = "steam-turbine",
+    base_entity_name = "steam-turbine",
     mod = "bobs",
     group = "power",
     particles = {["medium"] = 2,["big"] = 1},

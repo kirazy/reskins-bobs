@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -11,7 +11,7 @@ if not (reskins.bobs and reskins.bobs.triggers.power.nuclear) then return end
 local inputs = {
     type = "reactor",
     icon_name = "nuclear-reactor",
-    base_entity = "nuclear-reactor",
+    base_entity_name = "nuclear-reactor",
     mod = "bobs",
     group = "power"
 }
@@ -362,15 +362,15 @@ for name, map in pairs(tier_map) do
         inputs.tint = reskins.bobs.nuclear_reactor_index[name].tint
 
         -- Create particles
-        reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["big"], 1, inputs.tint)
-        reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["medium"], 2, inputs.tint)
+        reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["big"], 1, inputs.tint)
+        reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["medium"], 2, inputs.tint)
     else
         inputs.reactor = "reactor-"..tier
         inputs.tint = reskins.lib.tint_index[tier]
 
         -- Create particles
-        reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["big"], 1, inputs.tint)
-        reskins.lib.create_particle(name, inputs.base_entity, reskins.lib.particle_index["medium"], 2, inputs.tint)
+        reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["big"], 1, inputs.tint)
+        reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["medium"], 2, inputs.tint)
     end
 
     -- Create remnants
