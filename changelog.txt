@@ -3,22 +3,19 @@ Version: 2.1.0
 Date: ????
   Features:
     - Additions of EmmyLua-style documentation is ongoing
-    - Credit to Snouz for contributing sprites for numerous entities, items, and technologies:
-      - Seven crafting tab icons
-      - Bob's Metals, Chemicals, and Intermediates technology icons: metals processing, bottled gas processing, gem processing, advanced electronics 3, fluid handling update
-      - Bob's Mining technology icons: oil pumpjacks, water pumpjacks
-      - Bob's Warfare technology icons: 5 armors, 5 artillery shells, 4 spidertrons, 4 drone tank units, 3 tanks, 3 artillery, 3 sniper turrets, 2 artillery wagons, laser robot, laser rifle
-      - Bob's Power technology icons: electric energy distribution, substations, electric poles
-      - Technology tech icons: lab, advanced research, steam power
-      - Greenhouse tech icons: greenhouse, fertiliser
-      - Revamp tech icons: solid fuel, heat shielding
-      - Assembly tech icons: 6 automation, 2 centrifuge
-      - Plates item icons: 14 powders, liquid air
-      - Warfare item icons: 5 armors, 4 spidertrons, 4 drone tank units, 5 capsules, 10 mech parts, 2 drone parts, laser robot, rifle, sniper rifle, laser rifle
-      - Revamp item icons: heat shield tile
-      - Tankotron entity: Added rotating cannon, adjusted projectile position
-      - 4 Drone tank units entities: reworked appearance, adjusted projectile position, made turns slower
-      - Laser robot entity: reworked appearance
+    - Credit to Snouz for contributing high-res sprites:
+      - Added new technology icons:
+        - metals processing, bottled gas processing, gem processing, and advanced electronics 3 (absent Bob's Electronics),
+        - oil and water pumpjacks, heavy and modular armor, artillery shells, spidertrons, robotic attack drones, tanks, artillery,
+        - sniper turrets, artillery wagons, laser robots, laser rifle, electric energy distribution, substations, electric poles,
+        - lab, advanced research, and steam power, greenhouse and updated fertiliser, solid fuel and heat shielding,
+        - updated automation and implemented centrifuges
+      - Added new item icons:
+        - heavy and modular armors, spidertrons, robot attack drones, robot capsules, mech parts, drone parts, laser robot,
+        - rifle, sniper rifle, laser rifle, powders, compressed air and heat shield tiles
+      - Added rotating cannon and adjusted projectile position for the Tankotron
+      - Added new entity and remnant sprites for the robotic attack drones, now with lighting!
+      - Improved the visuals of the laser robot sprites
   Changes:
     - Additional entities, items, and technologies have received revised color masks
     - Revised normal resolution roboport to use updated Factorio sprites

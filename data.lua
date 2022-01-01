@@ -91,6 +91,7 @@ require("prototypes.entity.warfare.gate")
 require("prototypes.entity.warfare.spidertron")
 require("prototypes.entity.warfare.drone")
 require("prototypes.entity.warfare.laser-robot")
+require("prototypes.entity.warfare.combat-robots")
 
 ----------------------------------------------------------------------------------------------------
 -- EQUIPMENT
