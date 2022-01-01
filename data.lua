@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -6,11 +6,13 @@
 -- Core functions
 require("prototypes.functions.functions")
 require("prototypes.functions.circuit-sprites")
+require("prototypes.functions.entity-functions")
 
 ----------------------------------------------------------------------------------------------------
 -- ENTITIES
 ----------------------------------------------------------------------------------------------------
 -- Bob's Assembly
+require("prototypes.entity.assembly")
 require("prototypes.entity.assembly.centrifuge")
 require("prototypes.entity.assembly.distillery")
 require("prototypes.entity.assembly.electrolyser")

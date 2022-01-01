@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -7,8 +7,7 @@
 -- ENTITIES
 ----------------------------------------------------------------------------------------------------
 -- Bob's Assembly
-require("prototypes.entity.assembly.assembling-machine") -- Bob reskins in data-updates
-require("prototypes.entity.assembly.chemical-plant") -- Bob reskins in data-updates
+require("prototypes.entity.assembly-updates")
 
 -- Bob's Greenhouse
 require("prototypes.entity.greenhouse.greenhouse") -- Nauvis Day tries to operate on Bob's Greenhouse in data-updates, need to execute after
