@@ -24,6 +24,8 @@ Date: ????
     - Internal restructuring to make entity reskinning through functions globally available under `reskins.lib.apply_skin` is ongoing
   Bugfixes:
     - Credit to Snouz for fixing pixel artifacting along the bottom right edge of the nitinol plate icon
+  Locale:
+    - Updated Russian localization
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.4
 Date: 2021-12-12
