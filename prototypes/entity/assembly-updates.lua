@@ -30,7 +30,7 @@ local assembling_machines = {
 }
 
 for name, map in pairs(assembling_machines) do
-    reskins.lib.apply_skin.assembling_machine(name, map.tier, map.tint, map.flags)
+    reskins.lib.apply_skin.assembling_machine(name, map.tier, map.tint, nil, map.flags)
 end
 
 -- CHEMICAL PLANTS (Note: Bob sets up in data-updates)

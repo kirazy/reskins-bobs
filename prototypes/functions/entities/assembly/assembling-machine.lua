@@ -481,8 +481,9 @@ end
 ---@param name string # [Prototype name](https://wiki.factorio.com/PrototypeBase#name)
 ---@param tier integer # 1-6 are supported, 0 to disable
 ---@param tint? table # [Types/Color](https://wiki.factorio.com/Types/Color)
+---@param make_tier_labels? boolean
 ---@param flags? flags.assembly_machine
-function reskins.lib.apply_skin.assembling_machine(name, tier, tint, flags)
+function reskins.lib.apply_skin.assembling_machine(name, tier, tint, make_tier_labels, flags)
     if not flags then flags = {} end
 
     local inputs = util.merge({
@@ -493,7 +494,8 @@ function reskins.lib.apply_skin.assembling_machine(name, tier, tint, flags)
             mod = "bobs",
             group = "assembly",
             particles = {["big"] = 1, ["medium"] = 2},
-            tint = tint and tint or reskins.lib.tint_index[tier]
+            tier_labels = make_tier_labels,
+            tint = tint and tint or reskins.lib.tint_index[tier],
         },
         icon_sets(tier, tint, flags)
     })
