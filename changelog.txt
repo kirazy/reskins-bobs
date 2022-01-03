@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.1
-Date: ????
+Date: 2022-01-03
   Changes:
     - Marked incompatible with Bob's Mods: Alternate Textures
     - Adjusted entity function `assembling_machine` to allow for custom tints and tier label settings
