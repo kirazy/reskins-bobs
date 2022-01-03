@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -222,9 +222,9 @@ for name, map in pairs(inserter_map) do
 
     -- Handle base_entity
     if string.find(name, "stack%-inserter") then
-        inputs.base_entity = "stack-inserter"
+        inputs.base_entity_name = "stack-inserter"
     else
-        inputs.base_entity = "inserter"
+        inputs.base_entity_name = "inserter"
     end
 
     -- Handle tier labels

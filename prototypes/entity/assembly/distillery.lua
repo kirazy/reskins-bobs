@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -11,7 +11,7 @@ if not (reskins.bobs and reskins.bobs.triggers.assembly.entities) then return en
 local inputs = {
     type = "furnace",
     icon_name = "distillery",
-    base_entity = "steel-furnace",
+    base_entity_name = "steel-furnace",
     mod = "bobs",
     group = "assembly",
     particles = {["medium"] = 2},

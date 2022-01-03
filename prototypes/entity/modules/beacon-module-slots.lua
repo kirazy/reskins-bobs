@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -17,8 +17,24 @@ local empty_fill_layer = {
     }
 }
 
--- Artisanal Reskins module slot
-local function setup_module_slot(parameters)
+---@class srms_parameters
+---@field shift? table [Types/vector](https://wiki.factorio.com/Types/vector)
+---@field lights? integer Default 8; Number of lights (variations) supported by the spritesheet; assumes an empty slot
+---@field is_slot_2? boolean When true, produces sprite definitions for the far-side module slot
+---@field needs_padding? boolean When true, inserts an empty sprite layer to push the render layer order up
+
+---Creates an Artisanal Reskins style module slot sprite definition with the appropriate flags and positions
+---```
+---parameters = {
+---    shift? = table,          -- Shift sprite centerpoint in {x, y} tile coordinates. See: https://wiki.factorio.com/Types/vector
+---    lights? = integer,       -- Default 8, number of lights (variations in the sprite sheet), assuming an empty slot
+---    is_slot_2? = boolean,    -- True: returns sprite definition for top-right beacon module slot
+---    needs_padding? = boolean -- True: Inserts an empty sprite layer at the bottom of the stack to fix rendering interleave issues
+---}
+---```
+---@param parameters srms_parameters
+---@return table slot #[Types/BeaconModuleVisualization](https://wiki.factorio.com/Types/BeaconModuleVisualization)
+local function setup_reskins_module_slot(parameters)
     local shift_x, shift_y = 0, 0
     if parameters.shift then
         shift_x = parameters.shift[1]
@@ -221,7 +237,21 @@ local function setup_module_slot(parameters)
     return slot
 end
 
--- Vanilla module slot
+---@class svms_parameters
+---@field shift? table [Types/vector](https://wiki.factorio.com/Types/vector)
+---@field is_slot_2? boolean When true, produces sprite definitions for the far-side module slot
+---@field needs_padding? boolean When true, inserts an empty sprite layer to push the render layer order up
+
+---Creates a vanilla Factorio style module slot sprite definition with the appropriate flags and positions
+---```
+---parameters = {
+---    shift? = table,          -- Shift sprite centerpoint in {x, y} tile coordinates. See: https://wiki.factorio.com/Types/vector
+---    is_slot_2? = boolean,    -- True: returns sprite definition for top-right beacon module slot
+---    needs_padding? = boolean -- True: Inserts an empty sprite layer at the bottom of the stack to fix rendering interleave issues
+---}
+---```
+---@param parameters svms_parameters
+---@return table slot #[Types/BeaconModuleVisualization](https://wiki.factorio.com/Types/BeaconModuleVisualization)
 local function setup_vanilla_module_slot(parameters)
     local shift_x, shift_y = 0, 0
     if parameters.shift then
@@ -448,8 +478,8 @@ for _, name in pairs(beacons) do
             use_for_empty_slots = false,
             tier_offset = 0,
             slots = {
-                setup_module_slot({}),
-                setup_module_slot({is_slot_2 = true}),
+                setup_reskins_module_slot({}),
+                setup_reskins_module_slot({is_slot_2 = true}),
             }
         })
 
@@ -459,8 +489,8 @@ for _, name in pairs(beacons) do
             use_for_empty_slots = false,
             tier_offset = 0,
             slots = {
-                setup_module_slot({lights = 5}),
-                setup_module_slot({lights = 5, is_slot_2 = true}),
+                setup_reskins_module_slot({lights = 5}),
+                setup_reskins_module_slot({lights = 5, is_slot_2 = true}),
             }
         })
     elseif module_slots == 4 then
@@ -483,10 +513,10 @@ for _, name in pairs(beacons) do
             use_for_empty_slots = false,
             tier_offset = 0,
             slots = {
-                setup_module_slot({shift = {-3, -2.5}}), -- Slot 1, shifted left and up, below other module slot
-                setup_module_slot({shift = {-8.5, -5.5}, is_slot_2 = true}), -- Slot 2, shifted left and up, below other module slot
-                setup_module_slot({shift = {12, 5}}), -- Slot 1, shifted right and down, above other module slot
-                setup_module_slot({shift = {2, 5}, is_slot_2 = true}), -- Slot 2, shifted right and down, above other module slot
+                setup_reskins_module_slot({shift = {-3, -2.5}}), -- Slot 1, shifted left and up, below other module slot
+                setup_reskins_module_slot({shift = {-8.5, -5.5}, is_slot_2 = true}), -- Slot 2, shifted left and up, below other module slot
+                setup_reskins_module_slot({shift = {12, 5}}), -- Slot 1, shifted right and down, above other module slot
+                setup_reskins_module_slot({shift = {2, 5}, is_slot_2 = true}), -- Slot 2, shifted right and down, above other module slot
             }
         })
 
@@ -496,10 +526,10 @@ for _, name in pairs(beacons) do
             use_for_empty_slots = false,
             tier_offset = 0,
             slots = {
-                setup_module_slot({lights = 5, shift = {-3, -2.5}}), -- Slot 1, shifted left and up, below other module slot
-                setup_module_slot({lights = 5, shift = {-8.5, -5.5}, is_slot_2 = true}), -- Slot 2, shifted left and up, below other module slot
-                setup_module_slot({lights = 5, shift = {12, 5}}), -- Slot 1, shifted right and down, above other module slot
-                setup_module_slot({lights = 5, shift = {2, 5}, is_slot_2 = true}), -- Slot 2, shifted right and down, above other module slot
+                setup_reskins_module_slot({lights = 5, shift = {-3, -2.5}}), -- Slot 1, shifted left and up, below other module slot
+                setup_reskins_module_slot({lights = 5, shift = {-8.5, -5.5}, is_slot_2 = true}), -- Slot 2, shifted left and up, below other module slot
+                setup_reskins_module_slot({lights = 5, shift = {12, 5}}), -- Slot 1, shifted right and down, above other module slot
+                setup_reskins_module_slot({lights = 5, shift = {2, 5}, is_slot_2 = true}), -- Slot 2, shifted right and down, above other module slot
             }
         })
     elseif module_slots == 6 then
@@ -524,12 +554,12 @@ for _, name in pairs(beacons) do
             use_for_empty_slots = false,
             tier_offset = 0,
             slots = {
-                setup_module_slot({shift = {-10.5, -11}}), -- Slot 1, shifted left and up, below all
-                setup_module_slot({shift = {7.5, -2}, is_slot_2 = true}), -- Slot 2, shifted right and up, below all
-                setup_module_slot({shift = {-1.5, 7}}), -- Slot 1, shifted left and down, middle
-                setup_module_slot({shift = {-11, -6.5}, is_slot_2 = true}), -- Slot 2, shifted left and up, middle
-                setup_module_slot({shift = {17, 3}}), -- Slot 1, shifted right and down, above all
-                setup_module_slot({shift = {4.5, 8}, is_slot_2 = true, needs_padding = true}), -- Slot 2, shifted right and down, above all
+                setup_reskins_module_slot({shift = {-10.5, -11}}), -- Slot 1, shifted left and up, below all
+                setup_reskins_module_slot({shift = {7.5, -2}, is_slot_2 = true}), -- Slot 2, shifted right and up, below all
+                setup_reskins_module_slot({shift = {-1.5, 7}}), -- Slot 1, shifted left and down, middle
+                setup_reskins_module_slot({shift = {-11, -6.5}, is_slot_2 = true}), -- Slot 2, shifted left and up, middle
+                setup_reskins_module_slot({shift = {17, 3}}), -- Slot 1, shifted right and down, above all
+                setup_reskins_module_slot({shift = {4.5, 8}, is_slot_2 = true, needs_padding = true}), -- Slot 2, shifted right and down, above all
             }
         })
 
@@ -539,12 +569,12 @@ for _, name in pairs(beacons) do
             use_for_empty_slots = false,
             tier_offset = 0,
             slots = {
-                setup_module_slot({lights = 5, shift = {-10.5, -11}}), -- Slot 1, shifted left and up, below all
-                setup_module_slot({lights = 5, shift = {7.5, -2}, is_slot_2 = true}), -- Slot 2, shifted right and up, below all
-                setup_module_slot({lights = 5, shift = {-1.5, 7}}), -- Slot 1, shifted left and down, middle
-                setup_module_slot({lights = 5, shift = {-11, -6.5}, is_slot_2 = true}), -- Slot 2, shifted left and up, middle
-                setup_module_slot({lights = 5, shift = {17, 3}}), -- Slot 1, shifted right and down, above all
-                setup_module_slot({lights = 5, shift = {4.5, 8}, is_slot_2 = true, needs_padding = true}), -- Slot 2, shifted right and down, above all
+                setup_reskins_module_slot({lights = 5, shift = {-10.5, -11}}), -- Slot 1, shifted left and up, below all
+                setup_reskins_module_slot({lights = 5, shift = {7.5, -2}, is_slot_2 = true}), -- Slot 2, shifted right and up, below all
+                setup_reskins_module_slot({lights = 5, shift = {-1.5, 7}}), -- Slot 1, shifted left and down, middle
+                setup_reskins_module_slot({lights = 5, shift = {-11, -6.5}, is_slot_2 = true}), -- Slot 2, shifted left and up, middle
+                setup_reskins_module_slot({lights = 5, shift = {17, 3}}), -- Slot 1, shifted right and down, above all
+                setup_reskins_module_slot({lights = 5, shift = {4.5, 8}, is_slot_2 = true, needs_padding = true}), -- Slot 2, shifted right and down, above all
             }
         })
     end

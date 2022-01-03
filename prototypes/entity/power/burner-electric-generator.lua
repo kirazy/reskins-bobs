@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -9,7 +9,7 @@ if not (reskins.bobs and reskins.bobs.triggers.power.entities) then return end
 local inputs = {
     type = "burner-generator",
     icon_name = "burner-electric-generator",
-    base_entity = "steam-engine",
+    base_entity_name = "steam-engine",
     mod = "bobs",
     group = "power",
     particles = {["medium"] = 2,["big"] = 1},

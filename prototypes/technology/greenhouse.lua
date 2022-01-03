@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -12,11 +12,13 @@ local inputs = {
     group = "greenhouse",
     type = "technology",
     flat_icon = true,
+    technology_icon_size = 256,
+    technology_icon_mipmaps = 4,
 }
 
 local technologies = {
     ["bob-fertiliser"] = {},
-    -- ["bob-greenhouse"] = {}, -- greenhouse, recipies
+    ["bob-greenhouse"] = {}, -- greenhouse, recipies
 }
 
 reskins.lib.create_icons_from_list(technologies, inputs)

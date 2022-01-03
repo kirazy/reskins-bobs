@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -13,7 +13,7 @@ if reskins.compatibility then reskins.compatibility.triggers.minimachines.radar 
 local inputs = {
     type = "radar",
     icon_name = "radar",
-    base_entity = "radar",
+    base_entity_name = "radar",
     mod = "bobs",
     group = "warfare",
     particles = {["medium"] = 2},

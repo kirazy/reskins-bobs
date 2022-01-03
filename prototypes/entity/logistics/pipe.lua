@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -109,8 +109,8 @@ for material, map in pairs(material_map) do
         if not pipe_entity then goto continue end
 
         -- Create explosions
-        reskins.lib.create_explosion(inputs.material.."-pipe", {type = "pipe", base_entity = "pipe"})
-        reskins.lib.create_explosion(inputs.material.."-pipe-to-ground", {type = "pipe-to-ground", base_entity = "pipe-to-ground"})
+        reskins.lib.create_explosion(inputs.material.."-pipe", {type = "pipe", base_entity_name = "pipe"})
+        reskins.lib.create_explosion(inputs.material.."-pipe-to-ground", {type = "pipe-to-ground", base_entity_name = "pipe-to-ground"})
 
         -- Create particles
         reskins.lib.create_particle(inputs.material.."-pipe", "pipe", reskins.lib.particle_index["medium"], 1, tint)
@@ -119,8 +119,8 @@ for material, map in pairs(material_map) do
         reskins.lib.create_particle(inputs.material.."-pipe-to-ground", "pipe-to-ground", reskins.lib.particle_index["small"], 2, tint)
 
         -- Create remnants
-        reskins.lib.create_remnant(inputs.material.."-pipe", {type = "pipe", base_entity = "pipe"})
-        reskins.lib.create_remnant(inputs.material.."-pipe-to-ground", {type = "pipe-to-ground", base_entity = "pipe-to-ground"})
+        reskins.lib.create_remnant(inputs.material.."-pipe", {type = "pipe", base_entity_name = "pipe"})
+        reskins.lib.create_remnant(inputs.material.."-pipe-to-ground", {type = "pipe-to-ground", base_entity_name = "pipe-to-ground"})
 
         -- Fetch remnant
         local pipe_remnant = data.raw["corpse"][inputs.material.."-pipe-remnants"]

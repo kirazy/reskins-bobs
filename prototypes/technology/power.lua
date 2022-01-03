@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -52,14 +52,14 @@ end
 
 if reskins.bobs.triggers.power.poles then
     -- Electric poles
-    -- technologies["electric-energy-distribution-1"] = {} -- t2 poles
-    -- technologies["electric-pole-2"] = {} -- t3 poles
-    -- technologies["electric-pole-3"] = {} -- t4 poles
-    -- technologies["electric-pole-4"] = {} -- t5 poles
-    -- technologies["electric-energy-distribution-2"] = {} -- t2 substation
-    -- technologies["electric-substation-2"] = {} -- t3 substation
-    -- technologies["electric-substation-3"] = {} -- t4 substation
-    -- technologies["electric-substation-4"] = {} -- t5 substation
+    technologies["electric-energy-distribution-1"] = {icon_name = "power-poles", tier = 1, prog_tier = 2} -- t2 poles
+    technologies["electric-pole-2"] = {icon_name = "power-poles", tier = 2, prog_tier = 3} -- t3 poles
+    technologies["electric-pole-3"] = {icon_name = "power-poles", tier = 3, prog_tier = 4} -- t4 poles
+    technologies["electric-pole-4"] = {icon_name = "power-poles", tier = 4, prog_tier = 5} -- t5 poles
+    technologies["electric-energy-distribution-2"] = {icon_name = "substation", tier = 1, prog_tier = 2} -- t2 substation
+    technologies["electric-substation-2"] = {icon_name = "substation", tier = 2, prog_tier = 3} -- t3 substation
+    technologies["electric-substation-3"] = {icon_name = "substation", tier = 3, prog_tier = 4} -- t4 substation
+    technologies["electric-substation-4"] = {icon_name = "substation", tier = 4, prog_tier = 5} -- t5 substation
 end
 
 if reskins.bobs.triggers.power.steam then
@@ -94,10 +94,10 @@ end
 
 if reskins.bobs.triggers.power.fluidgenerator then
     -- Fluid generators
-    technologies["fluid-generator-1"] = {tier = 1, prog_tier = 2, icon_name = "fluid-generator", technology_icon_size = 128, technology_icon_mipmaps = 0}
-    technologies["fluid-generator-2"] = {tier = 2, prog_tier = 3, icon_name = "fluid-generator", technology_icon_size = 128, technology_icon_mipmaps = 0}
-    technologies["fluid-generator-3"] = {tier = 3, prog_tier = 4, icon_name = "fluid-generator", technology_icon_size = 128, technology_icon_mipmaps = 0}
-    technologies["hydrazine-generator"] = {tier = 4, prog_tier = 5, icon_name = "fluid-generator", technology_icon_size = 128, technology_icon_mipmaps = 0, tint = reskins.bobs.hydrazine_tint}
+    technologies["fluid-generator-1"] = {tier = 1, prog_tier = 2, icon_name = "fluid-generator"}
+    technologies["fluid-generator-2"] = {tier = 2, prog_tier = 3, icon_name = "fluid-generator"}
+    technologies["fluid-generator-3"] = {tier = 3, prog_tier = 4, icon_name = "fluid-generator"}
+    technologies["hydrazine-generator"] = {tier = 4, prog_tier = 5, icon_name = "fluid-generator", tint = reskins.bobs.hydrazine_tint}
 end
 
 if reskins.bobs.triggers.power.heatsources then

@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -11,7 +11,7 @@ local inputs =
 {
     type = "lab",
     root_name = "lab",
-    base_entity = "lab",
+    base_entity_name = "lab",
     mod = "bobs",
     group = "technology",
     -- particles = {["big"] = 3}

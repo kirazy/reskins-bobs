@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -11,7 +11,7 @@ if reskins.lib.setting("bobmods-logistics-trains") == false then return end
 local inputs = {
     type = "fluid-wagon",
     icon_name = "fluid-wagon",
-    base_entity = "fluid-wagon",
+    base_entity_name = "fluid-wagon",
     mod = "bobs",
     group = "logistics",
     particles = {["small"] = 3},

@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -125,11 +125,46 @@ local items = {
 
     -- Weapons
     ["laser-rifle"] = {type = "gun", subgroup = "weapons"},
+    ["rifle"] = {type = "gun", subgroup = "weapons"},
+    ["sniper-rifle"] = {type = "gun", subgroup = "weapons"},
+    ["spidertron-gatling-gun"] = {type = "gun", subgroup = "weapons"},
+    ["spidertron-cannon"] = {type = "item", subgroup = "weapons"},
+    ["spidertron-cannon-1"] = {type = "gun", image = "spidertron-cannon", subgroup = "weapons"},
+    ["spidertron-cannon-2"] = {type = "gun", image = "spidertron-cannon", subgroup = "weapons"},
+
+    -- Armor
+    ["heavy-armor-2"] = {type = "armor", subgroup = "armor"},
+    ["heavy-armor-3"] = {type = "armor", subgroup = "armor"},
+    ["bob-power-armor-mk3"] = {type = "armor", subgroup = "armor"},
+    ["bob-power-armor-mk4"] = {type = "armor", subgroup = "armor"},
+    ["bob-power-armor-mk5"] = {type = "armor", subgroup = "armor"},
 
     -- Robots
     ["defender-robot"] = {icon_filename = "__base__/graphics/icons/defender.png"},
     ["distractor-robot"] = {icon_filename = "__base__/graphics/icons/distractor.png"},
     ["destroyer-robot"] = {icon_filename = "__base__/graphics/icons/destroyer.png"},
+    ["bob-laser-robot"] = {type = "item", subgroup = "robots"},
+
+    -- Capsules
+    ["fire-capsule"] = {type = "capsule", subgroup = "capsules"},
+    ["defender-capsule"] = {type = "capsule", subgroup = "capsules"},
+    ["distractor-capsule"] = {type = "capsule", subgroup = "capsules"},
+    ["destroyer-capsule"] = {type = "capsule", subgroup = "capsules"},
+    ["bob-laser-robot-capsule"] = {type = "capsule", subgroup = "capsules"},
+
+    -- Drone tank
+    ["robot-drone-frame"] = {type = "item", subgroup = "drone"},
+    ["robot-drone-frame-large"] = {type = "item", subgroup = "drone"},
+
+    -- Mech parts
+    ["mech-armor-plate"] = {type = "item", subgroup = "mech-parts"},
+    -- ["mech-brain"] = {type = "item", subgroup = "mech-parts"}, -- TODO: https://github.com/kirazy/reskins-bobs/issues/32 Model and render out robot/mech brains
+    ["mech-frame"] = {type = "item", subgroup = "mech-parts"},
+    ["mech-foot"] = {type = "item", subgroup = "mech-parts"},
+    ["mech-hip"] = {type = "item", subgroup = "mech-parts"},
+    ["mech-knee"] = {type = "item", subgroup = "mech-parts"},
+    ["mech-leg"] = {type = "item", subgroup = "mech-parts"},
+    ["mech-leg-segment"] = {type = "item", subgroup = "mech-parts"},
 }
 
 reskins.lib.create_icons_from_list(items, inputs)

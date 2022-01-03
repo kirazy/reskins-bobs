@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -13,7 +13,7 @@ if reskins.compatibility then reskins.compatibility.triggers.minimachines.storag
 local inputs = {
     type = "storage-tank",
     icon_name = "storage-tank",
-    base_entity = "storage-tank",
+    base_entity_name = "storage-tank",
     mod = "bobs",
     group = "logistics",
     particles = {["big"] = 1},

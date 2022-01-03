@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -289,7 +289,7 @@ for name, map in pairs(steel_furnace_map) do
     -- Setup inputs, parse map
     local inputs = {
         type = map.type,
-        base_entity = "steel-furnace",
+        base_entity_name = "steel-furnace",
         directory = reskins.bobs.directory,
         mod = "bobs",
         group = "assembly",

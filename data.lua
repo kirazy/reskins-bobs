@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -6,11 +6,13 @@
 -- Core functions
 require("prototypes.functions.functions")
 require("prototypes.functions.circuit-sprites")
+require("prototypes.functions.entity-functions")
 
 ----------------------------------------------------------------------------------------------------
 -- ENTITIES
 ----------------------------------------------------------------------------------------------------
 -- Bob's Assembly
+require("prototypes.entity.assembly")
 require("prototypes.entity.assembly.centrifuge")
 require("prototypes.entity.assembly.distillery")
 require("prototypes.entity.assembly.electrolyser")
@@ -86,6 +88,10 @@ require("prototypes.entity.warfare.sniper-turret")
 require("prototypes.entity.warfare.tank")
 require("prototypes.entity.warfare.wall")
 require("prototypes.entity.warfare.gate")
+require("prototypes.entity.warfare.spidertron")
+require("prototypes.entity.warfare.drone")
+require("prototypes.entity.warfare.laser-robot")
+require("prototypes.entity.warfare.combat-robots")
 
 ----------------------------------------------------------------------------------------------------
 -- EQUIPMENT
@@ -143,7 +149,7 @@ require("prototypes.technology.module")
 require("prototypes.technology.personal-equipment")
 require("prototypes.technology.plates")
 require("prototypes.technology.power")
--- require("prototypes.technology.revamp")
+require("prototypes.technology.revamp")
 require("prototypes.technology.technology")
 require("prototypes.technology.vehicle-equipment")
 require("prototypes.technology.warfare")

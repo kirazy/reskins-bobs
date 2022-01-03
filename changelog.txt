@@ -1,7 +1,29 @@
 ---------------------------------------------------------------------------------------------------
-Version: 2.0.5
+Version: 2.1.0
 Date: ????
+  Features:
+    - Additions of EmmyLua-style documentation is ongoing
+    - Credit to Snouz for contributing high-res sprites:
+      - Added new technology icons:
+        - metals processing, bottled gas processing, gem processing, and advanced electronics 3 (absent Bob's Electronics),
+        - oil and water pumpjacks, heavy and modular armor, artillery shells, spidertrons, robotic attack drones, tanks, artillery,
+        - sniper turrets, artillery wagons, laser robots, laser rifle, electric energy distribution, substations, electric poles,
+        - lab, advanced research, and steam power, greenhouse and updated fertiliser, solid fuel and heat shielding,
+        - updated automation and implemented centrifuges
+      - Added new item icons:
+        - heavy and modular armors, spidertrons, robot attack drones, robot capsules, mech parts, drone parts, laser robot,
+        - rifle, sniper rifle, laser rifle, powders, compressed air and heat shield tiles
+      - Added rotating cannon and adjusted projectile position for the Tankotron
+      - Added new entity and remnant sprites for the robotic attack drones, now with lighting!
+      - Improved the visuals of the laser robot sprites
   Changes:
+    - Additional entities, items, and technologies have received revised color masks
+    - Revised normal resolution roboport to use updated Factorio sprites
+    - Improved the color mask for the normal resolution electric mining drill
+    - Improved color masks for the pumpjack and water pumpjack, and adjusted the color of the water pumpjack
+    - Internal restructuring to make entity reskinning through functions globally available under `reskins.lib.apply_skin` is ongoing
+  Bugfixes:
+    - Credit to Snouz for fixing pixel artifacting along the bottom right edge of the nitinol plate icon
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.4
 Date: 2021-12-12

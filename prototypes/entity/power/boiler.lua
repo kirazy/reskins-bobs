@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -10,7 +10,7 @@ if not (reskins.bobs and reskins.bobs.triggers.power.steam) then return end
 -- Set input parameters
 local inputs = {
     type = "boiler",
-    base_entity = "boiler",
+    base_entity_name = "boiler",
     mod = "bobs",
     group = "power",
     particles = {["big"] = 3},

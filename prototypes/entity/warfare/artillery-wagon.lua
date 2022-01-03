@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -10,7 +10,7 @@ if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then return end
 local inputs = {
     type = "artillery-wagon",
     icon_name = "artillery-wagon",
-    base_entity = "artillery-wagon",
+    base_entity_name = "artillery-wagon",
     mod = "bobs",
     group = "warfare",
     particles = {["big"] = 4},

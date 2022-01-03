@@ -1,4 +1,4 @@
--- Copyright (c) 2021 Kirazy
+-- Copyright (c) 2022 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -24,7 +24,7 @@ local technologies = {
     ["radars-4"] = {tier = 5, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 0},
 
     -- Miscellaneous
-    ["reinforced-wall"] = {technology_icon_size = 128, technology_icon_mipmaps = 0},
+    ["reinforced-wall"] = {},
     ["bob-laser-rifle"] = {},
     ["bob-scatter-cannon-shells"] = {},
     ["cordite-processing"] = {},
