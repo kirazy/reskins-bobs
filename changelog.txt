@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.0
-Date: ????
+Date: 2022-01-03
   Features:
     - Additions of EmmyLua-style documentation is ongoing
     - Credit to Snouz for contributing high-res sprites:
