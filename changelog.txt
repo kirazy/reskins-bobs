@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.2
-Date: ????
+Date: 2022-03-19
   Changes:
     - Revised the progression tiers of heat pipes from 3/4/5 to 2/3/5 to better match the ingredients required
   Locale:
