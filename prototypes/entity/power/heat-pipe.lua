@@ -14,8 +14,8 @@ local inputs = {
 }
 
 local tier_map = {
-    ["heat-pipe"] = {1, 3},
-    ["heat-pipe-2"] = {2, 4, {"d4d4d4", "dff5ff"}},
+    ["heat-pipe"] = {1, 2},
+    ["heat-pipe-2"] = {2, 3, {"d4d4d4", "dff5ff"}},
     ["heat-pipe-3"] = {3, 5, {"d6b968", "ff7f3f"}},
 }
 

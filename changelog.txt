@@ -1,6 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.2
 Date: ????
+  Changes:
+    - Revised the progression tiers of heat pipes from 3/4/5 to 2/3/5 to better match the ingredients required
   Locale:
     - Added localization for Ukrainian
 ---------------------------------------------------------------------------------------------------
