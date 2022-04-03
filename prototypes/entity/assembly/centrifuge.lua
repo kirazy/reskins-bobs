@@ -340,96 +340,121 @@ for name, map in pairs(tier_map) do
     }
 
     entity.working_visualisations = {
-        -- Area Light
-        {
-            effect = "uranium-glow",
-            apply_recipe_tint = "primary",
-            fadeout = true,
-            light = {intensity = 0.1, size = 9.9, shift = {0.0, 0.0}, color = {r = 0.0, g = 1.0, b = 0.0}}
-        },
-
-        -- Working Light
+        -- WORKING LIGHTS
+        -- Centrifuge A (Front Left)
         {
             effect = "uranium-glow",
             fadeout = true,
             apply_recipe_tint = "primary",
             animation = {
-                layers = {
-                    -- Centrifuge C
-                    {
-                        filename = reskins.bobs.directory.."/graphics/entity/assembly/centrifuge/centrifuge-C-light.png",
-                        priority = "high",
-                        blend_mode = "additive",
-                        line_length = 8,
-                        width = 96,
-                        height = 104,
-                        frame_count = 64,
-                        shift = util.by_pixel(0, -27),
-                        draw_as_glow = true,
-                        hr_version = {
-                            filename = reskins.bobs.directory.."/graphics/entity/assembly/centrifuge/hr-centrifuge-C-light.png",
-                            priority = "high",
-                            scale = 0.5,
-                            blend_mode = "additive",
-                            line_length = 8,
-                            width = 190,
-                            height = 207,
-                            frame_count = 64,
-                            shift = util.by_pixel(0, -27.25),
-                            draw_as_glow = true,
-                        }
-                    },
-                    -- Centrifuge B
-                    {
-                        filename = reskins.bobs.directory.."/graphics/entity/assembly/centrifuge/centrifuge-B-light.png",
-                        priority = "high",
-                        blend_mode = "additive",
-                        line_length = 8,
-                        width = 65,
-                        height = 103,
-                        frame_count = 64,
-                        shift = util.by_pixel(16.5, 0.5),
-                        draw_as_glow = true,
-                        hr_version = {
-                            filename = reskins.bobs.directory.."/graphics/entity/assembly/centrifuge/hr-centrifuge-B-light.png",
-                            priority = "high",
-                            scale = 0.5,
-                            blend_mode = "additive",
-                            line_length = 8,
-                            width = 131,
-                            height = 206,
-                            frame_count = 64,
-                            shift = util.by_pixel(16.75, 0.5),
-                            draw_as_glow = true,
-                        }
-                    },
-                    -- Centrifuge A
-                    {
-                        filename = reskins.bobs.directory.."/graphics/entity/assembly/centrifuge/centrifuge-A-light.png",
-                        priority = "high",
-                        blend_mode = "additive",
-                        line_length = 8,
-                        width = 55,
-                        height = 98,
-                        frame_count = 64,
-                        shift = util.by_pixel(-23.5, -2),
-                        draw_as_glow = true,
-                        hr_version = {
-                            filename = reskins.bobs.directory.."/graphics/entity/assembly/centrifuge/hr-centrifuge-A-light.png",
-                            priority = "high",
-                            scale = 0.5,
-                            blend_mode = "additive",
-                            line_length = 8,
-                            width = 108,
-                            height = 197,
-                            frame_count = 64,
-                            shift = util.by_pixel(-23.5, -1.75),
-                            draw_as_glow = true,
-                        }
-                    }
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/centrifuge/centrifuge-A-light.png",
+                priority = "high",
+                blend_mode = "additive",
+                line_length = 8,
+                width = 55,
+                height = 98,
+                frame_count = 64,
+                shift = util.by_pixel(-23.5, -2),
+                draw_as_glow = true,
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/centrifuge/hr-centrifuge-A-light.png",
+                    priority = "high",
+                    scale = 0.5,
+                    blend_mode = "additive",
+                    line_length = 8,
+                    width = 108,
+                    height = 197,
+                    frame_count = 64,
+                    shift = util.by_pixel(-23.5, -1.75),
+                    draw_as_glow = true,
+                }
+            },
+        },
+
+        -- Centrifuge B (Front Right)
+        {
+            effect = "uranium-glow",
+            fadeout = true,
+            apply_recipe_tint = "secondary",
+            animation = {
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/centrifuge/centrifuge-B-light.png",
+                priority = "high",
+                blend_mode = "additive",
+                line_length = 8,
+                width = 65,
+                height = 103,
+                frame_count = 64,
+                shift = util.by_pixel(16.5, 0.5),
+                draw_as_glow = true,
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/centrifuge/hr-centrifuge-B-light.png",
+                    priority = "high",
+                    scale = 0.5,
+                    blend_mode = "additive",
+                    line_length = 8,
+                    width = 131,
+                    height = 206,
+                    frame_count = 64,
+                    shift = util.by_pixel(16.75, 0.5),
+                    draw_as_glow = true,
+                }
+            },
+        },
+
+        -- Centrifuge C (Rear)
+        {
+            effect = "uranium-glow",
+            fadeout = true,
+            apply_recipe_tint = "tertiary",
+            animation = {
+                filename = reskins.bobs.directory.."/graphics/entity/assembly/centrifuge/centrifuge-C-light.png",
+                priority = "high",
+                blend_mode = "additive",
+                line_length = 8,
+                width = 96,
+                height = 104,
+                frame_count = 64,
+                shift = util.by_pixel(0, -27),
+                draw_as_glow = true,
+                hr_version = {
+                    filename = reskins.bobs.directory.."/graphics/entity/assembly/centrifuge/hr-centrifuge-C-light.png",
+                    priority = "high",
+                    scale = 0.5,
+                    blend_mode = "additive",
+                    line_length = 8,
+                    width = 190,
+                    height = 207,
+                    frame_count = 64,
+                    shift = util.by_pixel(0, -27.25),
+                    draw_as_glow = true,
                 }
             }
-        }
+        },
+
+        -- AREA LIGHT
+        -- Centrifuge A (Front Left)
+        {
+            effect = "uranium-glow",
+            apply_recipe_tint = "primary",
+            fadeout = true,
+            light = {intensity = 0.066, size = 8.9, shift = {-1, 0.5}}
+        },
+
+        -- Centrifuge B (Front Right)
+        {
+            effect = "uranium-glow",
+            apply_recipe_tint = "secondary",
+            fadeout = true,
+            light = {intensity = 0.066, size = 8.9, shift = {1, 0.5}}
+        },
+
+        -- Centrifuge C (Rear)
+        {
+            effect = "uranium-glow",
+            apply_recipe_tint = "tertiary",
+            fadeout = true,
+            light = {intensity = 0.066, size = 8.9, shift = {0, -1.2}}
+        },
     }
 
     -- Label to skip to next iteration

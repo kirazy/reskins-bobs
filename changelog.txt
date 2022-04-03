@@ -2,6 +2,7 @@
 Version: 2.1.3
 Date: ????
   Changes:
+    - Revised lighting for centrifuges, now supports primary, secondary, and tertiary crafting tints
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.2
 Date: 2022-03-19
