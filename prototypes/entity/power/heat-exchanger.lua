@@ -18,9 +18,10 @@ local inputs = {
 }
 
 local tier_map = {
-    ["heat-exchanger"] = {1, 3},
-    ["heat-exchanger-2"] = {2, 4},
-    ["heat-exchanger-3"] = {3, 5},
+    ["heat-exchanger"] = {1, 2},
+    ["heat-exchanger-2"] = {2, 3},
+    ["heat-exchanger-3"] = {3, 4},
+    ["heat-exchanger-4"] = {4, 5},
 }
 
 -- Reskin entities, create and assign extra details

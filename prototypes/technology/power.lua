@@ -40,6 +40,7 @@ local technologies = {
     -- ["bob-heat-pipe-1"] = {}, -- heat pipes
     -- ["bob-heat-pipe-2"] = {}, -- silver pipes
     -- ["bob-heat-pipe-3"] = {}, -- gold pipes
+    -- ["bob-heat-pipe-4"] = {}, -- greenish pipes
 }
 
 if reskins.bobs.triggers.power.accumulators then
