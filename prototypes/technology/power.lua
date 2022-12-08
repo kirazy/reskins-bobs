@@ -76,6 +76,16 @@ if reskins.bobs.triggers.power.steam then
     technologies["bob-heat-exchanger-2"] = {tier = 2, prog_tier = 3, icon_name = "heat-exchanger", technology_icon_size = 128, technology_icon_mipmaps = 0, icon_base = "heat-exchanger-2"}
     technologies["bob-heat-exchanger-3"] = {tier = 3, prog_tier = 4, icon_name = "heat-exchanger", technology_icon_size = 128, technology_icon_mipmaps = 0, icon_base = "heat-exchanger-3"}
     technologies["bob-heat-exchanger-4"] = {tier = 4, prog_tier = 5, icon_name = "heat-exchanger", technology_icon_size = 128, technology_icon_mipmaps = 0, icon_base = "heat-exchanger-4"}
+    
+    -- Burner reactor
+    technologies["burner-reactor-1"] = {tier = 1, prog_tier = 1, icon_name = "heat-source-burner", technology_icon_size = 128, technology_icon_mipmaps = 0, icon_base = "heat-source-burner"}
+    technologies["burner-reactor-2"] = {tier = 2, prog_tier = 2, icon_name = "heat-source-burner", technology_icon_size = 128, technology_icon_mipmaps = 0, icon_base = "heat-source-burner"}
+    technologies["burner-reactor-3"] = {tier = 3, prog_tier = 3, icon_name = "heat-source-burner", technology_icon_size = 128, technology_icon_mipmaps = 0, icon_base = "heat-source-burner-3"}
+    
+    -- Burner fluid reactor
+    technologies["fluid-reactor-1"] = {tier = 1, prog_tier = 1, icon_name = "heat-source-fluid", technology_icon_size = 128, technology_icon_mipmaps = 0, icon_base = "heat-source-fluid"}
+    technologies["fluid-reactor-2"] = {tier = 2, prog_tier = 2, icon_name = "heat-source-fluid", technology_icon_size = 128, technology_icon_mipmaps = 0, icon_base = "heat-source-fluid"}
+    technologies["fluid-reactor-3"] = {tier = 3, prog_tier = 3, icon_name = "heat-source-fluid", technology_icon_size = 128, technology_icon_mipmaps = 0, icon_base = "heat-source-fluid-3"}
 
     -- Heat pipes
     technologies["bob-heat-pipe-1"] = {icon_name = "heat-pipe",technology_icon_size = 128, technology_icon_mipmaps = 0, icon_base = "heat-pipe-1"}

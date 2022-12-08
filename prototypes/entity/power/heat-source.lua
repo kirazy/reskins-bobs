@@ -18,12 +18,12 @@ local inputs = {
 }
 
 local tier_map = {
-    ["burner-reactor"] = {tier = 1, prog_tier = 3, icon_name = "heat-source-burner"},
-    ["burner-reactor-2"] = {tier = 2, prog_tier = 4, icon_name = "heat-source-burner"},
-    ["burner-reactor-3"] = {tier = 3, prog_tier = 5, icon_name = "heat-source-burner"},
-    ["fluid-reactor"] = {tier = 1, prog_tier = 3, icon_name = "heat-source-fluid"},
-    ["fluid-reactor-2"] = {tier = 2, prog_tier = 4, icon_name = "heat-source-fluid"},
-    ["fluid-reactor-3"] = {tier = 3, prog_tier = 5, icon_name = "heat-source-fluid"},
+    ["burner-reactor"] = {tier = 1, prog_tier = 1, icon_name = "heat-source-burner"},
+    ["burner-reactor-2"] = {tier = 2, prog_tier = 2, icon_name = "heat-source-burner"},
+    ["burner-reactor-3"] = {tier = 3, prog_tier = 3, icon_name = "heat-source-burner"},
+    ["fluid-reactor"] = {tier = 1, prog_tier = 1, icon_name = "heat-source-fluid"},
+    ["fluid-reactor-2"] = {tier = 2, prog_tier = 2, icon_name = "heat-source-fluid"},
+    ["fluid-reactor-3"] = {tier = 3, prog_tier = 3, icon_name = "heat-source-fluid"},
 }
 
 local function heat_source_base_pipes(tier)
