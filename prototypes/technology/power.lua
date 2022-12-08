@@ -36,11 +36,6 @@ local oil_boiler_icon_extra = {
 
 -- Solar Energy
 local technologies = {
-    -- Heat pipes
-    -- ["bob-heat-pipe-1"] = {}, -- heat pipes
-    -- ["bob-heat-pipe-2"] = {}, -- silver pipes
-    -- ["bob-heat-pipe-3"] = {}, -- gold pipes
-    -- ["bob-heat-pipe-4"] = {}, -- greenish pipes
 }
 
 if reskins.bobs.triggers.power.accumulators then
@@ -77,9 +72,16 @@ if reskins.bobs.triggers.power.steam then
     technologies["bob-oil-boiler-4"] = {tier = 4, prog_tier = 5, icon_name = "oil-boiler", technology_icon_size = 128, technology_icon_mipmaps = 0, technology_icon_extras = oil_boiler_icon_extra}
 
     -- Heat exchangers
-    technologies["bob-heat-exchanger-1"] = {tier = 1, prog_tier = 3, icon_name = "heat-exchanger", technology_icon_size = 128, technology_icon_mipmaps = 0, icon_base = "heat-exchanger-1"}
-    technologies["bob-heat-exchanger-2"] = {tier = 2, prog_tier = 4, icon_name = "heat-exchanger", technology_icon_size = 128, technology_icon_mipmaps = 0, icon_base = "heat-exchanger-2"}
-    technologies["bob-heat-exchanger-3"] = {tier = 3, prog_tier = 5, icon_name = "heat-exchanger", technology_icon_size = 128, technology_icon_mipmaps = 0, icon_base = "heat-exchanger-3"}
+    technologies["bob-heat-exchanger-1"] = {tier = 1, prog_tier = 2, icon_name = "heat-exchanger", technology_icon_size = 128, technology_icon_mipmaps = 0, icon_base = "heat-exchanger-1"}
+    technologies["bob-heat-exchanger-2"] = {tier = 2, prog_tier = 3, icon_name = "heat-exchanger", technology_icon_size = 128, technology_icon_mipmaps = 0, icon_base = "heat-exchanger-2"}
+    technologies["bob-heat-exchanger-3"] = {tier = 3, prog_tier = 4, icon_name = "heat-exchanger", technology_icon_size = 128, technology_icon_mipmaps = 0, icon_base = "heat-exchanger-3"}
+    technologies["bob-heat-exchanger-4"] = {tier = 4, prog_tier = 5, icon_name = "heat-exchanger", technology_icon_size = 128, technology_icon_mipmaps = 0, icon_base = "heat-exchanger-4"}
+
+    -- Heat pipes
+    technologies["bob-heat-pipe-1"] = {icon_name = "heat-pipe",technology_icon_size = 128, technology_icon_mipmaps = 0, icon_base = "heat-pipe-1"}
+    technologies["bob-heat-pipe-2"] = {icon_name = "heat-pipe",technology_icon_size = 128, technology_icon_mipmaps = 0, icon_base = "heat-pipe-2"}
+    technologies["bob-heat-pipe-3"] = {icon_name = "heat-pipe",technology_icon_size = 128, technology_icon_mipmaps = 0, icon_base = "heat-pipe-3"}
+    technologies["bob-heat-pipe-4"] = {icon_name = "heat-pipe",technology_icon_size = 128, technology_icon_mipmaps = 0, icon_base = "heat-pipe-4"}
 
     -- Steam engines
     technologies["bob-steam-engine-2"] = {tier = 2, icon_name = "steam-engine", technology_icon_size = 128, technology_icon_mipmaps = 0}
