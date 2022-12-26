@@ -17,9 +17,9 @@ local inputs = {
 }
 
 local tier_map = {
-    ["nuclear-reactor"] = {2, 3},
-    ["nuclear-reactor-2"] = {3, 4},
-    ["nuclear-reactor-3"] = {4, 5},
+    ["nuclear-reactor"] = {1, 3},
+    ["nuclear-reactor-2"] = {2, 4},
+    ["nuclear-reactor-3"] = {3, 5},
 }
 
 -- Nuclear fuel tints
