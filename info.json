@@ -19,7 +19,7 @@
         "? bobmodules",
         "? bobores",
         "? bobplates",
-        "? bobpower",
+        "? bobpower >= 1.1.6",
         "? bobrevamp",
         "? bobtech",
         "? bobwarfare",

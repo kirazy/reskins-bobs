@@ -2,8 +2,8 @@
 Version: 2.1.5
 Date: ????
   Changes:
-    - Added new Heat-Pipe and Heat-Exchanger 
-    - Adjusted Heat-Pipe and Heat-Exchanger tiers
+    - Added new Heat Pipe and Heat Exchanger 
+    - Adjusted Heat Pipe and Heat Exchanger tiers
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.4
 Date: 2022-08-15
