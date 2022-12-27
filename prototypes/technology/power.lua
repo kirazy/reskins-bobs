@@ -44,10 +44,17 @@ local technologies = {
 
 if reskins.bobs.triggers.power.accumulators then
     -- Accumulators
-    technologies["electric-energy-accumulators"] = {tier = 1, prog_tier = 2, icon_name = "accumulator", technology_icon_size = 128, technology_icon_mipmaps = 0, technology_icon_layers = 1}
-    technologies["bob-electric-energy-accumulators-2"] = {tier = 1, prog_tier = 2, icon_name = "accumulator", technology_icon_size = 128, technology_icon_mipmaps = 0}
-    technologies["bob-electric-energy-accumulators-3"] = {tier = 2, prog_tier = 3, icon_name = "accumulator", technology_icon_size = 128, technology_icon_mipmaps = 0}
-    technologies["bob-electric-energy-accumulators-4"] = {tier = 3, prog_tier = 4, icon_name = "accumulator", technology_icon_size = 128, technology_icon_mipmaps = 0}
+    technologies["electric-energy-accumulators"] = {tier = 1, prog_tier = 2, icon_name = "accumulator", technology_icon_size = 128, technology_icon_mipmaps = 0}
+
+    if reskins.lib.migration.is_version_or_newer(mods["bobpower"], "1.1.6") then
+        technologies["bob-electric-energy-accumulators-2"] = {tier = 2, prog_tier = 3, icon_name = "accumulator", technology_icon_size = 128, technology_icon_mipmaps = 0}
+        technologies["bob-electric-energy-accumulators-3"] = {tier = 3, prog_tier = 4, icon_name = "accumulator", technology_icon_size = 128, technology_icon_mipmaps = 0}
+    else
+        technologies["electric-energy-accumulators"].technology_icon_layers = 1
+        technologies["bob-electric-energy-accumulators-2"] = {tier = 1, prog_tier = 2, icon_name = "accumulator", technology_icon_size = 128, technology_icon_mipmaps = 0}
+        technologies["bob-electric-energy-accumulators-3"] = {tier = 2, prog_tier = 3, icon_name = "accumulator", technology_icon_size = 128, technology_icon_mipmaps = 0}
+        technologies["bob-electric-energy-accumulators-4"] = {tier = 3, prog_tier = 4, icon_name = "accumulator", technology_icon_size = 128, technology_icon_mipmaps = 0}
+    end
 end
 
 if reskins.bobs.triggers.power.poles then
@@ -116,6 +123,12 @@ if reskins.bobs.triggers.power.solar then
     technologies["bob-solar-energy-2"] = {tier = 1, prog_tier = 2, icon_name = "solar-energy"}
     technologies["bob-solar-energy-3"] = {tier = 2, prog_tier = 3, icon_name = "solar-energy"}
     technologies["bob-solar-energy-4"] = {tier = 3, prog_tier = 4, icon_name = "solar-energy"}
+
+    if reskins.lib.migration.is_version_or_newer(mods["bobpower"], "1.1.6") then
+        technologies["bob-solar-energy-2"] = {tier = 2, prog_tier = 3, icon_name = "solar-energy"}
+        technologies["bob-solar-energy-3"] = {tier = 3, prog_tier = 4, icon_name = "solar-energy"}
+        technologies["bob-solar-energy-4"] = nil
+    end
 end
 
 reskins.lib.create_icons_from_list(technologies, inputs)
