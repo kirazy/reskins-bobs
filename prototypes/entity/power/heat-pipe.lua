@@ -14,13 +14,29 @@ local inputs = {
 }
 
 local tier_map = {
-    ["heat-pipe"] = {1, 2},
-    ["heat-pipe-2"] = {2, 3, {"d4d4d4", "dff5ff"}},
-    ["heat-pipe-3"] = {3, 5, {"d6b968", "ff7f3f"}},
+    ["heat-pipe"] = {tier = 1, prog_tier = 2, material = "base"},
+    ["heat-pipe-2"] = {tier = 2, prog_tier = 3, material = "silver-aluminum", particle_colors = {"d4d4d4", "dff5ff"}},
+    ["heat-pipe-3"] = {tier = 3, prog_tier = 5, material = "gold-copper", particle_colors = {"d6b968", "ff7f3f"}},
 }
 
+if reskins.lib.migration.is_version_or_newer(mods["bobpower"], "1.1.6") then
+    tier_map["heat-pipe-2"].material = "aluminum-invar"
+    tier_map["heat-pipe-3"].particle_colors = {"dff5ff", "a99b84"}
+
+    tier_map["heat-pipe-3"].prog_tier = 4
+    tier_map["heat-pipe-3"].material = "silver-titanium"
+    tier_map["heat-pipe-3"].particle_colors = {"d4d4d4", "cfd2d4"}
+
+    tier_map["heat-pipe-4"] = {
+        tier = 4,
+        prog_tier = 5,
+        material = "gold-copper",
+        particle_colors = {"d6b968", "ff7f3f"}
+    }
+end
+
 -- Reskin entities, create and assign extra details
-for name, map in pairs(tier_map) do
+for name, mapping in pairs(tier_map) do
     -- Fetch entity
     local entity = data.raw[inputs.type][name]
 
@@ -28,9 +44,9 @@ for name, map in pairs(tier_map) do
     if not entity then goto continue end
 
     -- Parse map
-    local tier = map[1]
+    local tier = mapping.tier
     if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
-        tier = map[2]
+        tier = mapping.prog_tier or mapping.tier
     end
 
     -- Setup inputs defaults
@@ -39,9 +55,9 @@ for name, map in pairs(tier_map) do
     -- Setup icons
     local heat_pipe_icon_inputs = {
         mod = "bobs",
-        icon = reskins.bobs.directory.."/graphics/icons/power/heat-pipe/"..name.."-icon-base.png",
+        icon = reskins.bobs.directory.."/graphics/icons/power/heat-pipe/heat-pipe-"..mapping.material.."-icon-base.png",
         icon_picture = {
-            filename = reskins.bobs.directory.."/graphics/icons/power/heat-pipe/"..name.."-icon-base.png",
+            filename = reskins.bobs.directory.."/graphics/icons/power/heat-pipe/heat-pipe-"..mapping.material.."-icon-base.png",
             size = 64,
             mipmaps = 4,
             scale = 0.25
@@ -65,16 +81,15 @@ for name, map in pairs(tier_map) do
     if name == "heat-pipe" then goto continue end
 
     -- Create particles and explosions
-    local particle_tints = {util.color(map[3][1]), util.color(map[3][2])}
     reskins.lib.create_explosion(name, inputs)
-    reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["small"], 1, particle_tints[1])
-    reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["medium"], 2, particle_tints[2])
+    reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["small"], 1, util.color(mapping.particle_colors[1]))
+    reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["medium"], 2, util.color(mapping.particle_colors[2]))
 
     -- Create and skin remnants
     reskins.lib.create_remnant(name, inputs)
     local remnant = data.raw["corpse"][name.."-remnants"]
     remnant.animation = make_rotated_animation_variations_from_sheet (6, {
-        filename = reskins.bobs.directory.."/graphics/entity/power/heat-pipe/"..name.."/remnants/"..name.."-remnants.png",
+        filename = reskins.bobs.directory.."/graphics/entity/power/heat-pipe/"..mapping.material.."/remnants/heat-pipe-remnants.png",
         line_length = 1,
         width = 62,
         height = 52,
@@ -82,7 +97,7 @@ for name, map in pairs(tier_map) do
         direction_count = 2,
         shift = util.by_pixel(1, -1),
         hr_version = {
-            filename = reskins.bobs.directory.."/graphics/entity/power/heat-pipe/"..name.."/remnants/hr-"..name.."-remnants.png",
+            filename = reskins.bobs.directory.."/graphics/entity/power/heat-pipe/"..mapping.material.."/remnants/hr-heat-pipe-remnants.png",
             line_length = 1,
             width = 122,
             height = 100,
@@ -94,7 +109,7 @@ for name, map in pairs(tier_map) do
     })
 
     -- Reskin entities
-    entity.connection_sprites = make_heat_pipe_pictures(reskins.bobs.directory.."/graphics/entity/power/heat-pipe/"..name.."/", name,
+    entity.connection_sprites = make_heat_pipe_pictures(reskins.bobs.directory.."/graphics/entity/power/heat-pipe/"..mapping.material.."/", "heat-pipe",
     {
         single = { name = "straight-vertical-single", ommit_number = true },
         straight_vertical = { variations = 6 },

@@ -16,11 +16,16 @@ local inputs = {
     group = "power"
 }
 
-local tier_map = {
-    ["nuclear-reactor"] = {1, 3},
-    ["nuclear-reactor-2"] = {2, 4},
-    ["nuclear-reactor-3"] = {3, 5},
+local reactors = {
+    ["nuclear-reactor"] = {tier = 1, prog_tier = 3, material = "base"},
+    ["nuclear-reactor-2"] = {tier = 2, prog_tier = 4, material = "silver-aluminum"},
+    ["nuclear-reactor-3"] = {tier = 3, prog_tier = 5, material = "gold-copper"},
 }
+
+if reskins.lib.migration.is_version_or_newer(mods["bobpower"], "1.1.6") then
+    reactors["nuclear-reactor"].material = "aluminum-invar"
+    reactors["nuclear-reactor-2"].material = "silver-titanium"
+end
 
 -- Nuclear fuel tints
 local nuclear_tint_index = {
@@ -30,10 +35,9 @@ local nuclear_tint_index = {
     ["deuterium-pink"] = util.color("d00049"),
 }
 
-local function skin_reactor_entity(name, inputs)
-    -- Inputs required by this funciton:
+local function skin_reactor_entity(name, tint, material)
     -- tint        - rgb table to tint the reactor, e.g. {0.5, 0.5, 0.5}
-    -- pipe_tier   - Heatpipe to use, accepted values: 1 (base), 2 (silver), 3 (gold)
+    -- material    - Heatpipe to use, accepted values: "base", "aluminum-invar", "silver-aluminum", "silver-titanium", "gold-copper"
 
     -- Reskin reactor entities
     local entity = data.raw["reactor"][name]
@@ -63,7 +67,7 @@ local function skin_reactor_entity(name, inputs)
                 width = 154,
                 height = 158,
                 shift = util.by_pixel(-6, -6),
-                tint = inputs.tint,
+                tint = tint,
                 hr_version =
                 {
                     filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/hr-reactor-mask.png",
@@ -71,7 +75,7 @@ local function skin_reactor_entity(name, inputs)
                     height = 318,
                     scale = 0.5,
                     shift = util.by_pixel(-5, -7),
-                    tint = inputs.tint
+                    tint = tint
                 }
             },
             -- Highlights
@@ -93,13 +97,13 @@ local function skin_reactor_entity(name, inputs)
             },
             -- Pipes
             {
-                filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/pipes/reactor-piping-"..inputs.pipe_tier..".png",
+                filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/heat-pipes/"..material.."/reactor-piping.png",
                 width = 154,
                 height = 158,
                 shift = util.by_pixel(-6, -6),
                 hr_version =
                 {
-                    filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/pipes/hr-reactor-piping-"..inputs.pipe_tier..".png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/heat-pipes/"..material.."/hr-reactor-piping.png",
                     width = 302,
                     height = 318,
                     scale = 0.5,
@@ -129,13 +133,13 @@ local function skin_reactor_entity(name, inputs)
     -- Pipes
     entity.lower_layer_picture =
     {
-        filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/pipes/reactor-base-pipes-"..inputs.pipe_tier..".png",
+        filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/heat-pipes/"..material.."/reactor-base-pipes.png",
         width = 156,
         height = 156,
         shift = util.by_pixel(-2, -4),
         hr_version =
         {
-            filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/pipes/hr-reactor-base-pipes-"..inputs.pipe_tier..".png",
+            filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/heat-pipes/"..material.."/hr-reactor-base-pipes.png",
             width = 320,
             height = 316,
             scale = 0.5,
@@ -147,13 +151,13 @@ local function skin_reactor_entity(name, inputs)
     {
         sheet =
         {
-            filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/pipes/reactor-connect-patches-"..inputs.pipe_tier..".png",
+            filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/heat-pipes/"..material.."/reactor-connect-patches.png",
             width = 32,
             height = 32,
             variation_count = 12,
             hr_version =
             {
-                filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/pipes/hr-reactor-connect-patches-"..inputs.pipe_tier..".png",
+                filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/heat-pipes/"..material.."/hr-reactor-connect-patches.png",
                 width = 64,
                 height = 64,
                 variation_count = 12,
@@ -166,14 +170,14 @@ local function skin_reactor_entity(name, inputs)
     {
         sheet =
         {
-            filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/pipes/reactor-connect-patches-"..inputs.pipe_tier..".png",
+            filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/heat-pipes/"..material.."/reactor-connect-patches.png",
             width = 32,
             height = 32,
             variation_count = 12,
             y = 32,
             hr_version =
             {
-                filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/pipes/hr-reactor-connect-patches-"..inputs.pipe_tier..".png",
+                filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/heat-pipes/"..material.."/hr-reactor-connect-patches.png",
                 width = 64,
                 height = 64,
                 variation_count = 12,
@@ -184,10 +188,9 @@ local function skin_reactor_entity(name, inputs)
     }
 end
 
-local function skin_reactor_remnants(name, inputs)
-    -- Inputs required by this funciton:
+local function skin_reactor_remnants(name, tint, material)
     -- tint        - rgb table to tint the reactor, e.g. {0.5, 0.5, 0.5}
-    -- pipe_tier   - Heatpipe to use, accepted values: 1 (base), 2 (silver), 3 (gold)
+    -- material    - Heatpipe to use, accepted values: "base", "aluminum-invar", "silver-aluminum", "silver-titanium", "gold-copper"
 
     -- Reskin reactor remnants
     local remnant = data.raw["corpse"][name.."-remnants"]
@@ -232,7 +235,7 @@ local function skin_reactor_remnants(name, inputs)
                     axially_symmetrical = false,
                     direction_count = 1,
                     shift = util.by_pixel(7, 4),
-                    tint = inputs.tint,
+                    tint = tint,
                     hr_version =
                     {
                         filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/remnants/hr-nuclear-reactor-remnants-mask.png",
@@ -244,7 +247,7 @@ local function skin_reactor_remnants(name, inputs)
                         axially_symmetrical = false,
                         direction_count = 1,
                         shift = util.by_pixel(7, 4),
-                        tint = inputs.tint,
+                        tint = tint,
                         scale = 0.5,
                     }
             },
@@ -277,7 +280,7 @@ local function skin_reactor_remnants(name, inputs)
             },
             -- Pipes
             {
-                filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/remnants/pipes/reactor-piping-"..inputs.pipe_tier.."-remnants.png",
+                filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/heat-pipes/"..material.."/reactor-remnants.png",
                 line_length = 1,
                 width = 206,
                 height = 198,
@@ -288,7 +291,7 @@ local function skin_reactor_remnants(name, inputs)
                 shift = util.by_pixel(7, 4),
                 hr_version =
                 {
-                    filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/remnants/pipes/hr-reactor-piping-"..inputs.pipe_tier.."-remnants.png",
+                    filename = reskins.bobs.directory.."/graphics/entity/power/nuclear-reactor/heat-pipes/"..material.."/hr-reactor-remnants.png",
                     line_length = 1,
                     width = 410,
                     height = 396,
@@ -337,7 +340,7 @@ if not (reskins.lib.setting("bobmods-revamp-nuclear") and reskins.lib.setting("r
 end
 
 -- Reskin entities
-for name, map in pairs(tier_map) do
+for name, mapping in pairs(reactors) do
     -- Initialize table address
     local entity = data.raw[inputs.type][name]
 
@@ -345,13 +348,13 @@ for name, map in pairs(tier_map) do
     if not entity then goto continue end
 
     -- Parse map
-    local tier = map[1]
+    local tier = mapping.tier
     if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
-        tier = map[2]
+        tier = mapping.prog_tier or mapping.tier
     end
 
     -- We need to assaign fuel, pipe-tier, and reactor inputs
-    inputs.pipe_tier = map[1]
+    inputs.pipe_tier = mapping.tier
     inputs.fuel = reskins.bobs.nuclear_reactor_index[name]
 
     -- Create explosions
@@ -377,13 +380,13 @@ for name, map in pairs(tier_map) do
     reskins.lib.create_remnant(name, inputs)
 
     -- Reskin remnants
-    skin_reactor_remnants(name, inputs)
+    skin_reactor_remnants(name, inputs.tint, mapping.material)
 
     -- Reskin entities
-    skin_reactor_entity(name, inputs)
+    skin_reactor_entity(name, inputs.tint, mapping.material)
 
     -- Reskin icons
-    inputs.icon_base = "nuclear-reactor-"..reskins.bobs.nuclear_reactor_index[name].name.."-"..inputs.pipe_tier
+    inputs.icon_base = "nuclear-reactor-"..reskins.bobs.nuclear_reactor_index[name].name.."-"..mapping.material
     reskins.lib.construct_icon(name, tier, inputs)
 
     -- Label to skip to next iteration
