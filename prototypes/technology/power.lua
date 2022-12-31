@@ -83,9 +83,21 @@ if reskins.bobs.triggers.power.steam then
     technologies["bob-oil-boiler-4"] = {tier = 4, prog_tier = 5, icon_name = "oil-boiler", technology_icon_size = 128, technology_icon_mipmaps = 0, technology_icon_extras = oil_boiler_icon_extra}
 
     -- Heat exchangers
-    technologies["bob-heat-exchanger-1"] = {tier = 1, prog_tier = 3, icon_name = "heat-exchanger", technology_icon_size = 128, technology_icon_mipmaps = 0, icon_base = "heat-exchanger-1"}
-    technologies["bob-heat-exchanger-2"] = {tier = 2, prog_tier = 4, icon_name = "heat-exchanger", technology_icon_size = 128, technology_icon_mipmaps = 0, icon_base = "heat-exchanger-2"}
-    technologies["bob-heat-exchanger-3"] = {tier = 3, prog_tier = 5, icon_name = "heat-exchanger", technology_icon_size = 128, technology_icon_mipmaps = 0, icon_base = "heat-exchanger-3"}
+    technologies["bob-heat-exchanger-1"] = {tier = 1, prog_tier = 3, icon_name = "heat-exchanger", technology_icon_size = 128, technology_icon_mipmaps = 0, icon_base = "heat-exchanger-base"}
+    technologies["bob-heat-exchanger-2"] = {tier = 2, prog_tier = 4, icon_name = "heat-exchanger", technology_icon_size = 128, technology_icon_mipmaps = 0, icon_base = "heat-exchanger-silver-aluminum"}
+    technologies["bob-heat-exchanger-3"] = {tier = 3, prog_tier = 5, icon_name = "heat-exchanger", technology_icon_size = 128, technology_icon_mipmaps = 0, icon_base = "heat-exchanger-gold-copper"}
+
+    if reskins.lib.migration.is_version_or_newer(mods["bobpower"], "1.1.6") then
+        technologies["bob-heat-exchanger-1"].prog_tier = 2
+
+        technologies["bob-heat-exchanger-2"].prog_tier = 3
+        technologies["bob-heat-exchanger-2"].icon_base = "heat-exchanger-aluminum-invar"
+
+        technologies["bob-heat-exchanger-3"].prog_tier = 4
+        technologies["bob-heat-exchanger-3"].icon_base = "heat-exchanger-silver-titanium"
+
+        technologies["bob-heat-exchanger-4"] = {tier = 4, prog_tier = 5, icon_name = "heat-exchanger", technology_icon_size = 128, technology_icon_mipmaps = 0, icon_base = "heat-exchanger-gold-copper"}
+    end
 
     -- Steam engines
     technologies["bob-steam-engine-2"] = {tier = 2, icon_name = "steam-engine", technology_icon_size = 128, technology_icon_mipmaps = 0}
