@@ -5,6 +5,7 @@ Date: ????
     - Updated tier assignments for entities and technologies to reflect changes in Bob's Power version 1.1.6
       - Updated accumulators and solar energy
       - Revised heat pipes, heat exchangers, nuclear reactors, and heat sources to support Heat pipe 4
+    - Added support for revised radar technologies in Bob's Warfare version 1.1.6
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.4
 Date: 2022-08-15
