@@ -83,7 +83,7 @@ local technologies = {
     ["uranium-ammo"] = {subgroup = "bullet-magazines"},
 }
 
-if reskins.lib.migration.is_version_or_newer(mods["bobpower"], "1.1.6") then
+if reskins.lib.migration.is_version_or_newer(mods["bobwarfare"], "1.1.6") then
     technologies["radars"] = nil
     technologies["radars-1"] = {tier = 1, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 0}
     technologies["radars-2"] = {tier = 2, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 0}
