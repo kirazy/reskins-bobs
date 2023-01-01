@@ -30,7 +30,8 @@ if reskins.lib.migration.is_version_or_newer(mods["SeaBlock"], "0.5.5") then
     tier_map["bob-plasma-turret-2"].prog_tier = 4
 end
 
-local raising_frame_sequence = {1, 2, 3, 4, 1, 5, 1, 4, 1, 5, 6, 7, 1, 8, 9}
+
+local raising_frame_sequence = {1, 2, 2, 2, 3, 4, 4, 4, 1, 2, 2, 2, 3, 4, 4, 4}
 
 local function plasma_turret_extension_base(parameters)
     return
@@ -41,9 +42,9 @@ local function plasma_turret_extension_base(parameters)
         height = 89,
         frame_count = 1,
         line_length = 1,
-        repeat_count = parameters.repeat_count or 15,
+        repeat_count = parameters.repeat_count or 16,
         axially_symmetrical = false,
-        direction_count = 4,
+        direction_count = 8,
         shift = util.by_pixel(-0.5, -35),
         hr_version = {
             filename = reskins.bobs.directory.."/graphics/entity/warfare/plasma-turret/hr-plasma-turret-cannon-raising-base.png",
@@ -52,9 +53,9 @@ local function plasma_turret_extension_base(parameters)
             height = 178,
             frame_count = 1,
             line_length = 1,
-            repeat_count = parameters.repeat_count or 15,
+            repeat_count = parameters.repeat_count or 16,
             axially_symmetrical = false,
-            direction_count = 4,
+            direction_count = 8,
             shift = util.by_pixel(-0.5, -35),
             scale = 0.5
         }
@@ -70,9 +71,9 @@ local function plasma_turret_extension_runtime_mask(parameters)
         height = 89,
         frame_count = 1,
         line_length = 1,
-        repeat_count = parameters.repeat_count or 15,
+        repeat_count = parameters.repeat_count or 16,
         axially_symmetrical = false,
-        direction_count = 4,
+        direction_count = 8,
         shift = util.by_pixel(-0.5, -35),
         apply_runtime_tint = true,
         hr_version = {
@@ -82,9 +83,9 @@ local function plasma_turret_extension_runtime_mask(parameters)
             height = 178,
             frame_count = 1,
             line_length = 1,
-            repeat_count = parameters.repeat_count or 15,
+            repeat_count = parameters.repeat_count or 16,
             axially_symmetrical = false,
-            direction_count = 4,
+            direction_count = 8,
             shift = util.by_pixel(-0.5, -35),
             apply_runtime_tint = true,
             scale = 0.5
@@ -101,9 +102,9 @@ local function plasma_turret_extension_tint_mask(parameters)
         height = 89,
         frame_count = 1,
         line_length = 1,
-        repeat_count = parameters.repeat_count or 15,
+        repeat_count = parameters.repeat_count or 16,
         axially_symmetrical = false,
-        direction_count = 4,
+        direction_count = 8,
         shift = util.by_pixel(-0.5, -35),
         tint = parameters.tint,
         hr_version = {
@@ -113,9 +114,9 @@ local function plasma_turret_extension_tint_mask(parameters)
             height = 178,
             frame_count = 1,
             line_length = 1,
-            repeat_count = parameters.repeat_count or 15,
+            repeat_count = parameters.repeat_count or 16,
             axially_symmetrical = false,
-            direction_count = 4,
+            direction_count = 8,
             shift = util.by_pixel(-0.5, -35),
             tint = parameters.tint,
             scale = 0.5
@@ -132,9 +133,9 @@ local function plasma_turret_extension_highlights(parameters)
         height = 89,
         frame_count = 1,
         line_length = 1,
-        repeat_count = parameters.repeat_count or 15,
+        repeat_count = parameters.repeat_count or 16,
         axially_symmetrical = false,
-        direction_count = 4,
+        direction_count = 8,
         shift = util.by_pixel(-0.5, -35),
         blend_mode = reskins.lib.blend_mode, -- "additive",
         hr_version = {
@@ -144,9 +145,9 @@ local function plasma_turret_extension_highlights(parameters)
             height = 178,
             frame_count = 1,
             line_length = 1,
-            repeat_count = parameters.repeat_count or 15,
+            repeat_count = parameters.repeat_count or 16,
             axially_symmetrical = false,
-            direction_count = 4,
+            direction_count = 8,
             shift = util.by_pixel(-0.5, -35),
             blend_mode = reskins.lib.blend_mode, -- "additive",
             scale = 0.5
@@ -155,38 +156,35 @@ local function plasma_turret_extension_highlights(parameters)
 end
 
 local function plasma_turret_extension_lights(parameters)
-    local shift = util.by_pixel(-17, -35)
-    if (parameters.side and parameters.side == "right") then
-        shift = util.by_pixel(17, -35)
-    end
+    local shift = util.by_pixel(0, -35)
 
     return
     {
-        filename = reskins.bobs.directory.."/graphics/entity/warfare/plasma-turret/plasma-turret-cannon-raising-lights-mask-"..parameters.side..".png",
+        filename = reskins.bobs.directory.."/graphics/entity/warfare/plasma-turret/plasma-turret-cannon-raising-lights-mask.png",
         priority = "medium",
-        width = 34,
+        width = 67,
         height = 89,
-        frame_count = 9,
-        line_length = 9,
+        frame_count = 4,
+        line_length = 4,
         frame_sequence = raising_frame_sequence,
         run_mode = parameters.run_mode or "forward",
         tint = parameters.tint,
         axially_symmetrical = false,
-        direction_count = 4,
+        direction_count = 8,
         shift = shift,
         draw_as_glow = true,
         hr_version = {
-            filename = reskins.bobs.directory.."/graphics/entity/warfare/plasma-turret/hr-plasma-turret-cannon-raising-lights-mask-"..parameters.side..".png",
+            filename = reskins.bobs.directory.."/graphics/entity/warfare/plasma-turret/hr-plasma-turret-cannon-raising-lights-mask.png",
             priority = "medium",
-            width = 68,
+            width = 134,
             height = 178,
-            frame_count = 9,
-            line_length = 9,
+            frame_count = 4,
+            line_length = 4,
             frame_sequence = raising_frame_sequence,
             run_mode = parameters.run_mode or "forward",
             tint = parameters.tint,
             axially_symmetrical = false,
-            direction_count = 4,
+            direction_count = 8,
             shift = shift,
             draw_as_glow = true,
             scale = 0.5
@@ -195,38 +193,35 @@ local function plasma_turret_extension_lights(parameters)
 end
 
 local function plasma_turret_extension_lights_highlights(parameters)
-    local shift = util.by_pixel(-17, -35)
-    if (parameters.side and parameters.side == "right") then
-        shift = util.by_pixel(17, -35)
-    end
+    local shift = util.by_pixel(0, -35)
 
     return
     {
-        filename = reskins.bobs.directory.."/graphics/entity/warfare/plasma-turret/plasma-turret-cannon-raising-lights-highlights-"..parameters.side..".png",
+        filename = reskins.bobs.directory.."/graphics/entity/warfare/plasma-turret/plasma-turret-cannon-raising-lights-highlights.png",
         priority = "medium",
-        width = 34,
+        width = 67,
         height = 89,
-        frame_count = 9,
-        line_length = 9,
+        frame_count = 4,
+        line_length = 4,
         frame_sequence = raising_frame_sequence,
         run_mode = parameters.run_mode or "forward",
         blend_mode = "additive",
         axially_symmetrical = false,
-        direction_count = 4,
+        direction_count = 8,
         shift = shift,
         draw_as_glow = true,
         hr_version = {
-            filename = reskins.bobs.directory.."/graphics/entity/warfare/plasma-turret/hr-plasma-turret-cannon-raising-lights-highlights-"..parameters.side..".png",
+            filename = reskins.bobs.directory.."/graphics/entity/warfare/plasma-turret/hr-plasma-turret-cannon-raising-lights-highlights.png",
             priority = "medium",
-            width = 68,
+            width = 134,
             height = 178,
-            frame_count = 9,
-            line_length = 9,
+            frame_count = 4,
+            line_length = 4,
             frame_sequence = raising_frame_sequence,
             run_mode = parameters.run_mode or "forward",
             blend_mode = "additive",
             axially_symmetrical = false,
-            direction_count = 4,
+            direction_count = 8,
             shift = shift,
             draw_as_glow = true,
             scale = 0.5
@@ -329,10 +324,10 @@ for name, map in pairs(tier_map) do
             plasma_turret_extension_runtime_mask({}),
             plasma_turret_extension_tint_mask({tint = inputs.tint}),
             plasma_turret_extension_highlights({}),
-            plasma_turret_extension_lights({side = "left", tint = inputs.tint}),
-            plasma_turret_extension_lights_highlights({side = "left"}),
-            plasma_turret_extension_lights({side = "right", tint = inputs.tint}),
-            plasma_turret_extension_lights_highlights({side = "right"}),
+            plasma_turret_extension_lights({tint = inputs.tint}),
+            plasma_turret_extension_lights_highlights({}),
+            plasma_turret_extension_lights({tint = inputs.tint}),
+            plasma_turret_extension_lights_highlights({}),
         }
     }
 
@@ -481,10 +476,10 @@ for name, map in pairs(tier_map) do
             plasma_turret_extension_runtime_mask({}),
             plasma_turret_extension_tint_mask({tint = inputs.tint}),
             plasma_turret_extension_highlights({}),
-            plasma_turret_extension_lights({run_mode = "backward", side = "left", tint = inputs.tint}),
-            plasma_turret_extension_lights_highlights({run_mode = "backward", side = "left"}),
-            plasma_turret_extension_lights({run_mode = "backward", side = "right", tint = inputs.tint}),
-            plasma_turret_extension_lights_highlights({run_mode = "backward", side = "right"})
+            plasma_turret_extension_lights({run_mode = "backward", tint = inputs.tint}),
+            plasma_turret_extension_lights_highlights({run_mode = "backward"}),
+            plasma_turret_extension_lights({run_mode = "backward", tint = inputs.tint}),
+            plasma_turret_extension_lights_highlights({run_mode = "backward"})
         }
     }
 
