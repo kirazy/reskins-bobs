@@ -43,12 +43,12 @@ if reskins.bobs.triggers.power.nuclear then
     technologies["bob-nuclear-power-3"].icon_base = "nuclear-power-uranium-"..material_tiers[3]
 
     if reskins.lib.setting("bobmods-revamp-nuclear") == true then
-        technologies["bob-nuclear-power-2"].icon_base = "nuclear-power-thorium-2"
+        technologies["bob-nuclear-power-2"].icon_base = "nuclear-power-thorium-"..material_tiers[2]
 
         if reskins.lib.setting("bobmods-plates-bluedeuterium") == true then
-            technologies["bob-nuclear-power-3"].icon_base = "nuclear-power-deuterium-blue-3"
+            technologies["bob-nuclear-power-3"].icon_base = "nuclear-power-deuterium-blue-"..material_tiers[3]
         else
-            technologies["bob-nuclear-power-3"].icon_base = "nuclear-power-deuterium-pink-3"
+            technologies["bob-nuclear-power-3"].icon_base = "nuclear-power-deuterium-pink-"..material_tiers[3]
         end
     end
 end
