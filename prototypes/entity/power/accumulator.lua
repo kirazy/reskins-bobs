@@ -18,7 +18,7 @@ local inputs = {
 }
 
 local tier_map = {
-    ["accumulator"] = {1, 2},
+    ["accumulator"] = {1, 2, ""},
     ["large-accumulator"] = {1, 2, 1},
     ["large-accumulator-2"] = {2, 3, 1},
     ["large-accumulator-3"] = {3, 4, 1},
