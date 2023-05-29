@@ -1,4 +1,4 @@
--- Copyright (c) 2022 Kirazy
+-- Copyright (c) 2023 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -17,12 +17,12 @@ local inputs = {
 reskins.lib.parse_inputs(inputs)
 
 local batteries = {
-    ["battery-equipment"] = {tier = 0},
-    ["battery-mk2-equipment"] = {tier = 1},
-    ["battery-mk3-equipment"] = {tier = 2},
-    ["battery-mk4-equipment"] = {tier = 3},
-    ["battery-mk5-equipment"] = {tier = 4},
-    ["battery-mk6-equipment"] = {tier = 5},
+    ["battery-equipment"] = { tier = 0 },
+    ["battery-mk2-equipment"] = { tier = 1 },
+    ["battery-mk3-equipment"] = { tier = 2 },
+    ["battery-mk4-equipment"] = { tier = 3 },
+    ["battery-mk5-equipment"] = { tier = 4 },
+    ["battery-mk6-equipment"] = { tier = 5 },
 }
 
 -- Reskin equipment
@@ -50,13 +50,13 @@ for name, map in pairs(batteries) do
         layers = {
             -- Base
             {
-                filename = reskins.bobs.directory.."/graphics/equipment/equipment/battery/battery-equipment-base.png",
+                filename = reskins.bobs.directory .. "/graphics/equipment/equipment/battery/battery-equipment-base.png",
                 width = 32,
                 height = 64,
                 priority = "medium",
                 flags = { "no-crop" },
                 hr_version = {
-                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/battery/hr-battery-equipment-base.png",
+                    filename = reskins.bobs.directory .. "/graphics/equipment/equipment/battery/hr-battery-equipment-base.png",
                     width = 64,
                     height = 128,
                     priority = "medium",
@@ -66,14 +66,14 @@ for name, map in pairs(batteries) do
             },
             -- Mask
             {
-                filename = reskins.bobs.directory.."/graphics/equipment/equipment/battery/battery-equipment-mask.png",
+                filename = reskins.bobs.directory .. "/graphics/equipment/equipment/battery/battery-equipment-mask.png",
                 width = 32,
                 height = 64,
                 priority = "medium",
                 flags = { "no-crop" },
                 tint = inputs.tint,
                 hr_version = {
-                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/battery/hr-battery-equipment-mask.png",
+                    filename = reskins.bobs.directory .. "/graphics/equipment/equipment/battery/hr-battery-equipment-mask.png",
                     width = 64,
                     height = 128,
                     priority = "medium",
@@ -84,14 +84,14 @@ for name, map in pairs(batteries) do
             },
             -- Highlights
             {
-                filename = reskins.bobs.directory.."/graphics/equipment/equipment/battery/battery-equipment-highlights.png",
+                filename = reskins.bobs.directory .. "/graphics/equipment/equipment/battery/battery-equipment-highlights.png",
                 width = 32,
                 height = 64,
                 priority = "medium",
                 flags = { "no-crop" },
                 blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
-                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/battery/hr-battery-equipment-highlights.png",
+                    filename = reskins.bobs.directory .. "/graphics/equipment/equipment/battery/hr-battery-equipment-highlights.png",
                     width = 64,
                     height = 128,
                     priority = "medium",

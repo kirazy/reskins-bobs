@@ -1,4 +1,4 @@
--- Copyright (c) 2022 Kirazy
+-- Copyright (c) 2023 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -37,11 +37,11 @@ for _, name in pairs(equipment_list) do
 
     -- Reskin the equipment
     equipment.sprite = {
-        filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/"..name.."/"..name.."-equipment.png",
+        filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/" .. name .. "/" .. name .. "-equipment.png",
         size = 64,
         priority = "medium",
         hr_version = {
-            filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/"..name.."/hr-"..name.."-equipment.png",
+            filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/" .. name .. "/hr-" .. name .. "-equipment.png",
             size = 128,
             priority = "medium",
             scale = 0.5,

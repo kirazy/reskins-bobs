@@ -1,4 +1,4 @@
--- Copyright (c) 2022 Kirazy
+-- Copyright (c) 2023 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -17,12 +17,12 @@ local inputs = {
 reskins.lib.parse_inputs(inputs)
 
 local batteries = {
-    ["energy-shield-equipment"] = {tier = 0},
-    ["energy-shield-mk2-equipment"] = {tier = 1},
-    ["energy-shield-mk3-equipment"] = {tier = 2},
-    ["energy-shield-mk4-equipment"] = {tier = 3},
-    ["energy-shield-mk5-equipment"] = {tier = 4},
-    ["energy-shield-mk6-equipment"] = {tier = 5},
+    ["energy-shield-equipment"] = { tier = 0 },
+    ["energy-shield-mk2-equipment"] = { tier = 1 },
+    ["energy-shield-mk3-equipment"] = { tier = 2 },
+    ["energy-shield-mk4-equipment"] = { tier = 3 },
+    ["energy-shield-mk5-equipment"] = { tier = 4 },
+    ["energy-shield-mk6-equipment"] = { tier = 5 },
 }
 
 -- Reskin equipment
@@ -50,12 +50,12 @@ for name, map in pairs(batteries) do
         layers = {
             -- Base
             {
-                filename = reskins.bobs.directory.."/graphics/equipment/equipment/energy-shield/energy-shield-equipment-base.png",
+                filename = reskins.bobs.directory .. "/graphics/equipment/equipment/energy-shield/energy-shield-equipment-base.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
                 hr_version = {
-                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/energy-shield/hr-energy-shield-equipment-base.png",
+                    filename = reskins.bobs.directory .. "/graphics/equipment/equipment/energy-shield/hr-energy-shield-equipment-base.png",
                     size = 128,
                     priority = "medium",
                     flags = { "no-crop" },
@@ -64,13 +64,13 @@ for name, map in pairs(batteries) do
             },
             -- Mask
             {
-                filename = reskins.bobs.directory.."/graphics/equipment/equipment/energy-shield/energy-shield-equipment-mask.png",
+                filename = reskins.bobs.directory .. "/graphics/equipment/equipment/energy-shield/energy-shield-equipment-mask.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
                 tint = inputs.tint,
                 hr_version = {
-                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/energy-shield/hr-energy-shield-equipment-mask.png",
+                    filename = reskins.bobs.directory .. "/graphics/equipment/equipment/energy-shield/hr-energy-shield-equipment-mask.png",
                     size = 128,
                     priority = "medium",
                     flags = { "no-crop" },
@@ -80,13 +80,13 @@ for name, map in pairs(batteries) do
             },
             -- Highlights
             {
-                filename = reskins.bobs.directory.."/graphics/equipment/equipment/energy-shield/energy-shield-equipment-highlights.png",
+                filename = reskins.bobs.directory .. "/graphics/equipment/equipment/energy-shield/energy-shield-equipment-highlights.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
                 blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
-                    filename = reskins.bobs.directory.."/graphics/equipment/equipment/energy-shield/hr-energy-shield-equipment-highlights.png",
+                    filename = reskins.bobs.directory .. "/graphics/equipment/equipment/energy-shield/hr-energy-shield-equipment-highlights.png",
                     size = 128,
                     priority = "medium",
                     flags = { "no-crop" },

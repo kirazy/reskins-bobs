@@ -1,4 +1,4 @@
--- Copyright (c) 2022 Kirazy
+-- Copyright (c) 2023 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -22,17 +22,17 @@ local categories = {
 }
 
 local properties = {
-    {suffix = "", tier = 1, prog_tier = 2},
-    {suffix = "-2", tier = 2, prog_tier = 3},
-    {suffix = "-3", tier = 3, prog_tier = 4},
-    {suffix = "-4", tier = 4, prog_tier = 5},
+    { suffix = "",   tier = 1, prog_tier = 2 },
+    { suffix = "-2", tier = 2, prog_tier = 3 },
+    { suffix = "-3", tier = 3, prog_tier = 4 },
+    { suffix = "-4", tier = 4, prog_tier = 5 },
 }
 
 -- Reskin equipment
 for _, category in pairs(categories) do
     for index, map in pairs(properties) do
         -- Fetch equipment
-        local name = "personal-roboport-"..category.."-equipment"..map.suffix
+        local name = "personal-roboport-" .. category .. "-equipment" .. map.suffix
         local equipment = data.raw[inputs.type][name]
 
         -- Check if entity exists, if not, skip this iteration
@@ -45,14 +45,14 @@ for _, category in pairs(categories) do
         end
 
         -- Setup icon handling
-        inputs.icon_name = "vehicle-part-"..category
+        inputs.icon_name = "vehicle-part-" .. category
 
         local equipment_path
         if category ~= "robot" then
-            equipment_path = "vehicle-part-"..category.."-"..index
-            inputs.icon_base = "vehicle-part-"..category.."-"..index
+            equipment_path = "vehicle-part-" .. category .. "-" .. index
+            inputs.icon_base = "vehicle-part-" .. category .. "-" .. index
         else
-            equipment_path = "vehicle-part-"..category
+            equipment_path = "vehicle-part-" .. category
             inputs.icon_base = nil
         end
 
@@ -67,12 +67,12 @@ for _, category in pairs(categories) do
             layers = {
                 -- Base
                 {
-                    filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-part-"..category.."/"..equipment_path.."-equipment-base.png",
+                    filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-part-" .. category .. "/" .. equipment_path .. "-equipment-base.png",
                     size = 32,
                     priority = "medium",
                     flags = { "no-crop" },
                     hr_version = {
-                        filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-part-"..category.."/hr-"..equipment_path.."-equipment-base.png",
+                        filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-part-" .. category .. "/hr-" .. equipment_path .. "-equipment-base.png",
                         size = 64,
                         priority = "medium",
                         flags = { "no-crop" },
@@ -81,13 +81,13 @@ for _, category in pairs(categories) do
                 },
                 -- Mask
                 {
-                    filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-part-"..category.."/vehicle-part-"..category.."-equipment-mask.png",
+                    filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-part-" .. category .. "/vehicle-part-" .. category .. "-equipment-mask.png",
                     size = 32,
                     priority = "medium",
                     flags = { "no-crop" },
                     tint = inputs.tint,
                     hr_version = {
-                        filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-part-"..category.."/hr-vehicle-part-"..category.."-equipment-mask.png",
+                        filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-part-" .. category .. "/hr-vehicle-part-" .. category .. "-equipment-mask.png",
                         size = 64,
                         priority = "medium",
                         flags = { "no-crop" },
@@ -97,13 +97,13 @@ for _, category in pairs(categories) do
                 },
                 -- Highlights
                 {
-                    filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-part-"..category.."/vehicle-part-"..category.."-equipment-highlights.png",
+                    filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-part-" .. category .. "/vehicle-part-" .. category .. "-equipment-highlights.png",
                     size = 32,
                     priority = "medium",
                     flags = { "no-crop" },
                     blend_mode = reskins.lib.blend_mode, -- "additive",
                     hr_version = {
-                        filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-part-"..category.."/hr-vehicle-part-"..category.."-equipment-highlights.png",
+                        filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-part-" .. category .. "/hr-vehicle-part-" .. category .. "-equipment-highlights.png",
                         size = 64,
                         priority = "medium",
                         flags = { "no-crop" },

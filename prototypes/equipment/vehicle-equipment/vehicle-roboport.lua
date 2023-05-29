@@ -1,4 +1,4 @@
--- Copyright (c) 2022 Kirazy
+-- Copyright (c) 2023 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -20,10 +20,10 @@ local inputs = {
 reskins.lib.parse_inputs(inputs)
 
 local vehicle_roboports = {
-    ["vehicle-roboport"] = {tier = 1, prog_tier = 2, base = 1},
-    ["vehicle-roboport-2"] = {tier = 2, prog_tier = 3, base = 1},
-    ["vehicle-roboport-3"] = {tier = 3, prog_tier = 4, base = 2},
-    ["vehicle-roboport-4"] = {tier = 4, prog_tier = 5, base = 2},
+    ["vehicle-roboport"] = { tier = 1, prog_tier = 2, base = 1 },
+    ["vehicle-roboport-2"] = { tier = 2, prog_tier = 3, base = 1 },
+    ["vehicle-roboport-3"] = { tier = 3, prog_tier = 4, base = 2 },
+    ["vehicle-roboport-4"] = { tier = 4, prog_tier = 5, base = 2 },
 }
 
 -- Reskin equipment
@@ -44,7 +44,7 @@ for name, map in pairs(vehicle_roboports) do
     inputs.tint = reskins.lib.tint_index[tier]
 
     -- Setup icon handling
-    inputs.icon_base = inputs.icon_name.."-"..map.base
+    inputs.icon_base = inputs.icon_name .. "-" .. map.base
 
     -- Construct icon
     reskins.lib.construct_icon(name, tier, inputs)
@@ -54,12 +54,12 @@ for name, map in pairs(vehicle_roboports) do
         layers = {
             -- Base
             {
-                filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-roboport/"..inputs.icon_base.."-equipment-base.png",
+                filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-roboport/" .. inputs.icon_base .. "-equipment-base.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
                 hr_version = {
-                    filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-roboport/hr-"..inputs.icon_base.."-equipment-base.png",
+                    filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-roboport/hr-" .. inputs.icon_base .. "-equipment-base.png",
                     size = 128,
                     priority = "medium",
                     flags = { "no-crop" },
@@ -68,13 +68,13 @@ for name, map in pairs(vehicle_roboports) do
             },
             -- Mask
             {
-                filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-roboport/vehicle-roboport-equipment-mask.png",
+                filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-roboport/vehicle-roboport-equipment-mask.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
                 tint = inputs.tint,
                 hr_version = {
-                    filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-roboport/hr-vehicle-roboport-equipment-mask.png",
+                    filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-roboport/hr-vehicle-roboport-equipment-mask.png",
                     size = 128,
                     priority = "medium",
                     flags = { "no-crop" },
@@ -84,13 +84,13 @@ for name, map in pairs(vehicle_roboports) do
             },
             -- Highlights
             {
-                filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-roboport/vehicle-roboport-equipment-highlights.png",
+                filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-roboport/vehicle-roboport-equipment-highlights.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
                 blend_mode = reskins.lib.blend_mode, -- "additive",
                 hr_version = {
-                    filename = reskins.bobs.directory.."/graphics/equipment/vehicle-equipment/vehicle-roboport/hr-vehicle-roboport-equipment-highlights.png",
+                    filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-roboport/hr-vehicle-roboport-equipment-highlights.png",
                     size = 128,
                     priority = "medium",
                     flags = { "no-crop" },
