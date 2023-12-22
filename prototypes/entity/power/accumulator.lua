@@ -18,16 +18,16 @@ local inputs = {
 }
 
 local tier_map = {
-    ["accumulator"] = { 1, 2 },
-    ["large-accumulator"] = { 1, 2, 1 },
-    ["large-accumulator-2"] = { 2, 3, 1 },
-    ["large-accumulator-3"] = { 3, 4, 1 },
-    ["slow-accumulator"] = { 1, 2, 2 },
-    ["slow-accumulator-2"] = { 2, 3, 2 },
-    ["slow-accumulator-3"] = { 3, 4, 2 },
-    ["fast-accumulator"] = { 1, 2, 3 },
-    ["fast-accumulator-2"] = { 2, 3, 3 },
-    ["fast-accumulator-3"] = { 3, 4, 3 },
+    ["accumulator"] = {1, 2, ""},
+    ["large-accumulator"] = {1, 2, 1},
+    ["large-accumulator-2"] = {2, 3, 1},
+    ["large-accumulator-3"] = {3, 4, 1},
+    ["slow-accumulator"] = {1, 2, 2},
+    ["slow-accumulator-2"] = {2, 3, 2},
+    ["slow-accumulator-3"] = {3, 4, 2},
+    ["fast-accumulator"] = {1, 2, 3},
+    ["fast-accumulator-2"] = {2, 3, 3},
+    ["fast-accumulator-3"] = {3, 4, 3},
 }
 
 if reskins.lib.migration.is_version_or_newer(mods["bobpower"], "1.1.6") then
