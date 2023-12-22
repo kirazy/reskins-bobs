@@ -43,7 +43,7 @@ for name, map in pairs(batteries) do
     inputs.tint = reskins.lib.tint_index[tier]
 
     -- Construct icon
-    reskins.lib.construct_icon(name, map.tier, inputs)
+    reskins.lib.construct_icon(name, tier, inputs)
 
     -- Reskin the equipment
     equipment.sprite = {
