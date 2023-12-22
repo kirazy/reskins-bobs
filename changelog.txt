@@ -1,7 +1,11 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.6
 Date: ????
-  Changes:
+  Features:
+    - Added item icons for Bob's Modules intermediates, courtesy of Max (mxcop).
+  Bugfixes:
+    - Corrected an issue with how accumulator icons were composed, resulting in incompatibility with YAFC, courtesy of Dale McCoy.
+
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.5
 Date: 2023-01-01
