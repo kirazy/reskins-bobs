@@ -14,20 +14,20 @@ local inputs = {
     base_entity_name = "accumulator",
     mod = "bobs",
     group = "power",
-    particles = { ["medium"] = 2,["small"] = 3 },
+    particles = { ["medium"] = 2, ["small"] = 3 },
 }
 
 local tier_map = {
-    ["accumulator"] = {1, 2, ""},
-    ["large-accumulator"] = {1, 2, 1},
-    ["large-accumulator-2"] = {2, 3, 1},
-    ["large-accumulator-3"] = {3, 4, 1},
-    ["slow-accumulator"] = {1, 2, 2},
-    ["slow-accumulator-2"] = {2, 3, 2},
-    ["slow-accumulator-3"] = {3, 4, 2},
-    ["fast-accumulator"] = {1, 2, 3},
-    ["fast-accumulator-2"] = {2, 3, 3},
-    ["fast-accumulator-3"] = {3, 4, 3},
+    ["accumulator"] = { 1, 2, "" },
+    ["large-accumulator"] = { 1, 2, 1 },
+    ["large-accumulator-2"] = { 2, 3, 1 },
+    ["large-accumulator-3"] = { 3, 4, 1 },
+    ["slow-accumulator"] = { 1, 2, 2 },
+    ["slow-accumulator-2"] = { 2, 3, 2 },
+    ["slow-accumulator-3"] = { 3, 4, 2 },
+    ["fast-accumulator"] = { 1, 2, 3 },
+    ["fast-accumulator-2"] = { 2, 3, 3 },
+    ["fast-accumulator-3"] = { 3, 4, 3 },
 }
 
 if reskins.lib.migration.is_version_or_newer(mods["bobpower"], "1.1.6") then
@@ -56,8 +56,8 @@ local function accumulator_picture_tinted(inputs, repeat_count)
                     repeat_count = repeat_count,
                     shift = util.by_pixel(0, -11),
                     animation_speed = 0.5,
-                    scale = 0.5
-                }
+                    scale = 0.5,
+                },
             },
             -- Mask
             {
@@ -78,8 +78,8 @@ local function accumulator_picture_tinted(inputs, repeat_count)
                     shift = util.by_pixel(0, -11),
                     tint = inputs.tint,
                     animation_speed = 0.5,
-                    scale = 0.5
-                }
+                    scale = 0.5,
+                },
             },
             -- Highlights
             {
@@ -100,8 +100,8 @@ local function accumulator_picture_tinted(inputs, repeat_count)
                     shift = util.by_pixel(0, -11),
                     blend_mode = reskins.lib.blend_mode, -- "additive",
                     animation_speed = 0.5,
-                    scale = 0.5
-                }
+                    scale = 0.5,
+                },
             },
             -- Shadow
             {
@@ -120,10 +120,10 @@ local function accumulator_picture_tinted(inputs, repeat_count)
                     repeat_count = repeat_count,
                     shift = util.by_pixel(29, 6),
                     draw_as_shadow = true,
-                    scale = 0.5
-                }
-            }
-        }
+                    scale = 0.5,
+                },
+            },
+        },
     }
 end
 
@@ -149,10 +149,10 @@ local function accumulator_charge_tinted(inputs)
                 frame_count = 24,
                 draw_as_glow = true,
                 shift = util.by_pixel(0, -22),
-                scale = 0.5
-            }
-        }
-        }
+                scale = 0.5,
+            },
+        },
+        },
     }
 end
 
@@ -178,10 +178,10 @@ local function accumulator_discharge_tinted(inputs)
                 frame_count = 24,
                 draw_as_glow = true,
                 shift = util.by_pixel(-1, -23),
-                scale = 0.5
-            }
-        }
-        }
+                scale = 0.5,
+            },
+        },
+        },
     }
 end
 
@@ -216,12 +216,12 @@ for name, map in pairs(tier_map) do
     inputs.icon_extras = {
         -- Type indicator
         {
-            icon = reskins.bobs.directory .. "/graphics/icons/power/accumulator/accumulator-type-" .. inputs.wire .. "-icon.png"
+            icon = reskins.bobs.directory .. "/graphics/icons/power/accumulator/accumulator-type-" .. inputs.wire .. "-icon.png",
         },
         {
             icon = reskins.bobs.directory .. "/graphics/icons/power/accumulator/accumulator-type-" .. inputs.wire .. "-icon.png",
-            tint = reskins.lib.adjust_alpha(reskins.lib.tint_index[tier], 0.75)
-        }
+            tint = reskins.lib.adjust_alpha(reskins.lib.tint_index[tier], 0.75),
+        },
     }
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
@@ -307,8 +307,8 @@ for name, map in pairs(tier_map) do
                     blend_mode = reskins.lib.blend_mode, -- "additive",
                     scale = 0.5,
                 },
-            }
-        }
+            },
+        },
     })
 
     -- Reskin entities
