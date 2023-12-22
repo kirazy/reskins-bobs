@@ -6,8 +6,9 @@
 -- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.equipment.equipment) then return end
 
+-- Note that for equipment, the icons property is not used, so omit type information
+-- so that an icon is not set on the equipment prototype.
 local inputs = {
-    type = "night-vision-equipment",
     icon_name = "night-vision",
     mod = "bobs",
     group = "equipment",
@@ -25,7 +26,7 @@ local night_vision = {
 -- Reskin equipment
 for name, map in pairs(night_vision) do
     -- Fetch equipment
-    local equipment = data.raw[inputs.type][name]
+    local equipment = data.raw["night-vision-equipment"][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not equipment then goto continue end

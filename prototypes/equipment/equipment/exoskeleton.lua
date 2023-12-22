@@ -6,8 +6,9 @@
 -- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.equipment.equipment) then return end
 
+-- Note that for equipment, the icons property is not used, so omit type information
+-- so that an icon is not set on the equipment prototype.
 local inputs = {
-    type = "movement-bonus-equipment",
     icon_name = "exoskeleton",
     mod = "bobs",
     group = "equipment",
@@ -25,7 +26,7 @@ local exoskeletons = {
 -- Reskin equipment
 for name, map in pairs(exoskeletons) do
     -- Fetch equipment
-    local equipment = data.raw[inputs.type][name]
+    local equipment = data.raw["movement-bonus-equipment"][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not equipment then goto continue end
