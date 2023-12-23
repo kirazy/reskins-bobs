@@ -6,7 +6,7 @@
 ---Mod path for Artisanal Reskins: Bob's Mods.
 reskins.bobs.directory = "__reskins-bobs__"
 
----Table with fields `primary` and `secondary` ([Types/Color](https://wiki.factorio.com/Types/Color)) that define the colors for beacon module slot sprites.
+---@type data.BeaconVisualizationTints
 reskins.bobs.module_color_map = {
     ["blue"] = { primary = util.color("70b6ff"), secondary = util.color("30d2ff") },
     ["brown"] = { primary = util.color("9c7c60"), secondary = util.color("fff0d9") },
@@ -23,14 +23,12 @@ reskins.bobs.module_color_map = {
     ["yellow"] = { primary = util.color("ffdd45"), secondary = util.color("ffed66") },
 }
 
----Table of [Types/Color](https://wiki.factorio.com/Types/Color) that control the colors of the three types of furnaces added by bobplates.
+---Table of colors for the three types of furnaces added by bobplates.
 reskins.bobs.furnace_tint_index = {
     standard = reskins.lib.setting("reskins-bobs-do-custom-furnace-variants") and util.color(reskins.lib.setting("reskins-bobs-standard-furnace-color")) or util.color("ffb700"),
     mixing = reskins.lib.setting("reskins-bobs-do-custom-furnace-variants") and util.color(reskins.lib.setting("reskins-bobs-mixing-furnace-color")) or util.color("00bfff"),
     chemical = reskins.lib.setting("reskins-bobs-do-custom-furnace-variants") and util.color(reskins.lib.setting("reskins-bobs-chemical-furnace-color")) or util.color("f21f0c"),
 }
-
-local wait = true
 
 -- ROBOT PARTICLE AND DEATH ANIMATIONS
 
