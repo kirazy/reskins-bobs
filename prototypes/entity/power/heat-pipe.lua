@@ -31,7 +31,7 @@ if reskins.lib.migration.is_version_or_newer(mods["bobpower"], "1.1.6") then
         tier = 4,
         prog_tier = 5,
         material = "gold-copper",
-        particle_colors = { "d6b968", "ff7f3f" }
+        particle_colors = { "d6b968", "ff7f3f" },
     }
 end
 
@@ -53,27 +53,22 @@ for name, mapping in pairs(tier_map) do
     reskins.lib.parse_inputs(inputs)
 
     -- Setup icons
-    local heat_pipe_icon_inputs = {
-        mod = "bobs",
+    ---@type data.IconData[]
+    local icons = { {
         icon = reskins.bobs.directory .. "/graphics/icons/power/heat-pipe/heat-pipe-" .. mapping.material .. "-icon-base.png",
-        icon_picture = {
-            filename = reskins.bobs.directory .. "/graphics/icons/power/heat-pipe/heat-pipe-" .. mapping.material .. "-icon-base.png",
-            size = 64,
-            mipmaps = 4,
-            scale = 0.25
-        },
         icon_size = 64,
         icon_mipmaps = 4,
-        type = "heat-pipe",
-        make_icon_pictures = true,
-    }
+    } }
 
-    -- Setup tier labels
-    if reskins.lib.setting("reskins-bobs-do-pipe-tier-labeling") == true then
-        heat_pipe_icon_inputs.icon = { { icon = heat_pipe_icon_inputs.icon } }
-        heat_pipe_icon_inputs.tier_labels = true
-        reskins.lib.append_tier_labels(tier, heat_pipe_icon_inputs)
-    end
+    ---@type boolean
+    local do_labels = reskins.lib.setting("reskins-bobs-do-pipe-tier-labeling") or false
+
+    local heat_pipe_icon_inputs = {
+        mod = "bobs",
+        icon = do_labels and reskins.lib.add_tier_labels_to_icons(icons, tier) or icons,
+        icon_picture = do_labels and reskins.lib.convert_icons_to_sprite(icons, 0.25) or nil,
+        type = "heat-pipe",
+    }
 
     reskins.lib.assign_icons(name, heat_pipe_icon_inputs)
 
@@ -126,7 +121,7 @@ for name, mapping in pairs(tier_map) do
             ending_up = {},
             ending_down = {},
             ending_right = {},
-            ending_left = {}
+            ending_left = {},
         })
 
     -- Label to skip to next iteration

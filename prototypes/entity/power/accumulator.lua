@@ -202,7 +202,7 @@ for name, map in pairs(tier_map) do
 
     -- Stick tier labels on the vanilla accumulator
     if name == "accumulator" and reskins.lib.migration.is_older_version(mods["bobpower"], "1.1.6") then
-        reskins.lib.append_tier_labels_to_vanilla_icon(name, tier, inputs)
+        reskins.lib.add_tier_labels_to_entity(name, inputs.type, tier)
         goto continue
     end
 

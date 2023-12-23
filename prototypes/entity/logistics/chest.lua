@@ -59,7 +59,7 @@ for name, map in pairs(logistic_map) do
 
     -- Stick tier labels on the vanilla logistic chests
     if not map[3] then
-        reskins.lib.append_tier_labels_to_vanilla_icon(name, tier, inputs)
+        reskins.lib.add_tier_labels_to_entity(name, inputs.type, tier)
         goto continue
     end
 

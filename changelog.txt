@@ -3,6 +3,8 @@ Version: 2.1.6
 Date: ????
   Features:
     - Added item icons for Bob's Modules intermediates, courtesy of Max (mxcop) #44
+  Changes:
+    - Internal updates to reflect changes to Artisanal Reskins: Library, now depends on version 2.1.6
   Bugfixes:
     - Corrected an issue with how accumulator icons were composed, resulting in incompatibility with YAFC, courtesy of Dale McCoy #43
     - Fixed that icons were set on equipment prototypes resulting in warnings in the log, as this field is not used #38
