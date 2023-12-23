@@ -30,6 +30,45 @@ reskins.bobs.furnace_tint_index = {
     chemical = reskins.lib.setting("reskins-bobs-do-custom-furnace-variants") and util.color(reskins.lib.setting("reskins-bobs-chemical-furnace-color")) or util.color("f21f0c"),
 }
 
+-- NUCLEAR REACTOR COLORS AND ICON COMPOSITIONS
+
+-- Nuclear fuel tints
+local nuclear_tint_index = {
+    ["uranium"] = util.color("3acc0b"),
+    ["thorium"] = util.color("cca500"),
+    ["deuterium-blue"] = util.color("008ed0"),
+    ["deuterium-pink"] = util.color("d00049"),
+}
+
+-- Map fuel type to reactor entity name
+reskins.bobs.nuclear_reactor_index = {
+    ["nuclear-reactor"] = { name = "uranium", tint = nuclear_tint_index["uranium"] },
+    ["nuclear-reactor-2"] = { name = "uranium", tint = nuclear_tint_index["uranium"] },
+    ["nuclear-reactor-3"] = { name = "uranium", tint = nuclear_tint_index["uranium"] },
+}
+
+-- Nucelar reactors have two modes, revamped or standard; determine which we are using
+if reskins.lib.setting("bobmods-revamp-nuclear") == true then
+    -- Map fuel type to reactor entity name
+    reskins.bobs.nuclear_reactor_index["nuclear-reactor-2"].name = "thorium"
+    reskins.bobs.nuclear_reactor_index["nuclear-reactor-2"].tint = nuclear_tint_index["thorium"]
+
+    if reskins.lib.setting("bobmods-plates-bluedeuterium") == true then
+        reskins.bobs.nuclear_reactor_index["nuclear-reactor-3"].name = "deuterium-blue"
+        reskins.bobs.nuclear_reactor_index["nuclear-reactor-3"].tint = nuclear_tint_index["deuterium-blue"]
+    else
+        reskins.bobs.nuclear_reactor_index["nuclear-reactor-3"].name = "deuterium-pink"
+        reskins.bobs.nuclear_reactor_index["nuclear-reactor-3"].tint = nuclear_tint_index["deuterium-pink"]
+    end
+end
+
+-- Permit tier-based tint lookup
+if not (reskins.lib.setting("bobmods-revamp-nuclear") and reskins.lib.setting("reskins-bobs-do-bobrevamp-reactor-color")) then
+    reskins.bobs.nuclear_reactor_index["nuclear-reactor"].tint = nil
+    reskins.bobs.nuclear_reactor_index["nuclear-reactor-2"].tint = nil
+    reskins.bobs.nuclear_reactor_index["nuclear-reactor-3"].tint = nil
+end
+
 -- ROBOT PARTICLE AND DEATH ANIMATIONS
 
 ---Converts the directional spritesheet to a non-directional, animated spritesheet, for use with robot death animations.

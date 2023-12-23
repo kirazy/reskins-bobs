@@ -6,6 +6,7 @@ Date: ????
   Bugfixes:
     - Corrected an issue with how accumulator icons were composed, resulting in incompatibility with YAFC, courtesy of Dale McCoy #43
     - Fixed that icons were set on equipment prototypes resulting in warnings in the log, as this field is not used #38
+    - Fixed startup error when reskinning of entities was disabled #46
 
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.5

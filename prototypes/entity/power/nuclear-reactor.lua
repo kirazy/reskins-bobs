@@ -27,14 +27,6 @@ if reskins.lib.migration.is_version_or_newer(mods["bobpower"], "1.1.6") then
     reactors["nuclear-reactor-2"].material = "silver-titanium"
 end
 
--- Nuclear fuel tints
-local nuclear_tint_index = {
-    ["uranium"] = util.color("3acc0b"),
-    ["thorium"] = util.color("cca500"),
-    ["deuterium-blue"] = util.color("008ed0"),
-    ["deuterium-pink"] = util.color("d00049"),
-}
-
 local function skin_reactor_entity(name, tint, material)
     -- tint        - rgb table to tint the reactor, e.g. {0.5, 0.5, 0.5}
     -- material    - Heatpipe to use, accepted values: "base", "aluminum-invar", "silver-aluminum", "silver-titanium", "gold-copper"
@@ -309,35 +301,6 @@ end
 
 -- Construct default inputs
 reskins.lib.parse_inputs(inputs)
-
--- Map fuel type to reactor entity name
-reskins.bobs.nuclear_reactor_index = {
-    ["nuclear-reactor"] = { name = "uranium", tint = nuclear_tint_index["uranium"] },
-    ["nuclear-reactor-2"] = { name = "uranium", tint = nuclear_tint_index["uranium"] },
-    ["nuclear-reactor-3"] = { name = "uranium", tint = nuclear_tint_index["uranium"] },
-}
-
--- Nucelar reactors have two modes, revamped or standard; determine which we are using
-if reskins.lib.setting("bobmods-revamp-nuclear") == true then
-    -- Map fuel type to reactor entity name
-    reskins.bobs.nuclear_reactor_index["nuclear-reactor-2"].name = "thorium"
-    reskins.bobs.nuclear_reactor_index["nuclear-reactor-2"].tint = nuclear_tint_index["thorium"]
-
-    if reskins.lib.setting("bobmods-plates-bluedeuterium") == true then
-        reskins.bobs.nuclear_reactor_index["nuclear-reactor-3"].name = "deuterium-blue"
-        reskins.bobs.nuclear_reactor_index["nuclear-reactor-3"].tint = nuclear_tint_index["deuterium-blue"]
-    else
-        reskins.bobs.nuclear_reactor_index["nuclear-reactor-3"].name = "deuterium-pink"
-        reskins.bobs.nuclear_reactor_index["nuclear-reactor-3"].tint = nuclear_tint_index["deuterium-pink"]
-    end
-end
-
--- Permit tier-based tint lookup
-if not (reskins.lib.setting("bobmods-revamp-nuclear") and reskins.lib.setting("reskins-bobs-do-bobrevamp-reactor-color")) then
-    reskins.bobs.nuclear_reactor_index["nuclear-reactor"].tint = nil
-    reskins.bobs.nuclear_reactor_index["nuclear-reactor-2"].tint = nil
-    reskins.bobs.nuclear_reactor_index["nuclear-reactor-3"].tint = nil
-end
 
 -- Reskin entities
 for name, mapping in pairs(reactors) do
