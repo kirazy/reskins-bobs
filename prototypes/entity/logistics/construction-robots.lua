@@ -21,7 +21,7 @@ local tier_map = {
     ["bob-construction-robot-2"] = { 2, 3 },
     ["bob-construction-robot-3"] = { 3, 4 },
     ["bob-construction-robot-4"] = { 4, 5 },
-    ["bob-construction-robot-5"] = { 5, 5, util.color(reskins.lib.setting("reskins-bobs-fusion-robot-color")) },
+    ["bob-construction-robot-5"] = { 5, 5, reskins.lib.setting("reskins-bobs-fusion-robot-color") },
 }
 
 -- Animations

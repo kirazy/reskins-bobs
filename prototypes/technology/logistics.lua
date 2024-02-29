@@ -110,7 +110,7 @@ if (reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" and res
     technologies["bob-robots-1"].prog_tier = 3
     technologies["bob-robots-2"].prog_tier = 4
     technologies["bob-robots-3"].prog_tier = 5
-    technologies["bob-robots-4"].tint = util.color(reskins.lib.setting("reskins-bobs-fusion-robot-color"))
+    technologies["bob-robots-4"].tint = reskins.lib.setting("reskins-bobs-fusion-robot-color")
 end
 
 -- Load which set of inserter technologies are to be reskinned

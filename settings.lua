@@ -3,6 +3,8 @@
 --
 -- See LICENSE in the project directory for license information.
 
+local util = require("util")
+
 -- Settings available based on mod loadout
 if mods["bobassembly"] then
     data:extend({
@@ -32,27 +34,27 @@ if mods["bobassembly"] or mods["bobplates"] then
             default_value = false,
         },
         {
-            type = "string-setting",
+            type = "color-setting",
             name = "reskins-bobs-standard-furnace-color",
             setting_type ="startup",
             order = "y3x",
-            default_value = "ffb700",
+            default_value = util.color("#ffb700"),
             localised_description = {"", {"mod-setting-description.reskins-bobs-standard-furnace-color"}, "\n\n", {"reskins-defaults.default"}, " ", {"reskins-defaults.standard-furnace-color"}}
         },
         {
-            type = "string-setting",
+            type = "color-setting",
             name = "reskins-bobs-mixing-furnace-color",
             setting_type ="startup",
             order = "y3y",
-            default_value = "00bfff",
+            default_value = util.color("#00bfff"),
             localised_description = {"", {"mod-setting-description.reskins-bobs-mixing-furnace-color"}, "\n\n", {"reskins-defaults.default"}, " ", {"reskins-defaults.mixing-furnace-color"}}
         },
         {
-            type = "string-setting",
+            type = "color-setting",
             name = "reskins-bobs-chemical-furnace-color",
             setting_type ="startup",
             order = "y3z",
-            default_value = "f21f0c",
+            default_value = util.color("#f21f0c"),
             localised_description = {"", {"mod-setting-description.reskins-bobs-chemical-furnace-color"}, "\n\n", {"reskins-defaults.default"}, " ", {"reskins-defaults.chemical-furnace-color"}}
         },
     })
@@ -173,11 +175,11 @@ if mods["boblogistics"] then
             default_value = true,
         },
         {
-            type = "string-setting",
+            type = "color-setting",
             name = "reskins-bobs-basic-belts-color",
             setting_type ="startup",
             order = "y1y",
-            default_value = "bfbfbf",
+            default_value = util.color("#bfbfbf"),
             localised_description = {"", {"mod-setting-description.reskins-bobs-basic-belts-color"}, "\n\n", {"reskins-defaults.default"}, " ", {"reskins-defaults.basic-belts-color"}}
         },
         {
@@ -188,11 +190,11 @@ if mods["boblogistics"] then
             default_value = true,
         },
         {
-            type = "string-setting",
+            type = "color-setting",
             name = "reskins-bobs-fusion-robot-color",
             setting_type ="startup",
             order = "y2y",
-            default_value = "e5e5e5",
+            default_value = util.color("#e5e5e5"),
             localised_description = {"", {"mod-setting-description.reskins-bobs-fusion-robot-color"}, "\n\n", {"reskins-defaults.default"}, " ", {"reskins-defaults.fusion-robot-color"}}
         },
     })

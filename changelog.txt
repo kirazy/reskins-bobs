@@ -2,6 +2,7 @@
 Version: 2.1.7
 Date: ????
   Changes:
+    - Migrated custom color settings to `color-setting`, allowing for the use of a color picker in-game.
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.6
 Date: 2023-12-23

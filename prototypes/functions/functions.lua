@@ -25,9 +25,9 @@ reskins.bobs.module_color_map = {
 
 ---Table of colors for the three types of furnaces added by bobplates.
 reskins.bobs.furnace_tint_index = {
-    standard = reskins.lib.setting("reskins-bobs-do-custom-furnace-variants") and util.color(reskins.lib.setting("reskins-bobs-standard-furnace-color")) or util.color("ffb700"),
-    mixing = reskins.lib.setting("reskins-bobs-do-custom-furnace-variants") and util.color(reskins.lib.setting("reskins-bobs-mixing-furnace-color")) or util.color("00bfff"),
-    chemical = reskins.lib.setting("reskins-bobs-do-custom-furnace-variants") and util.color(reskins.lib.setting("reskins-bobs-chemical-furnace-color")) or util.color("f21f0c"),
+    standard = reskins.lib.setting("reskins-bobs-do-custom-furnace-variants") and reskins.lib.setting("reskins-bobs-standard-furnace-color") or util.color("ffb700"),
+    mixing = reskins.lib.setting("reskins-bobs-do-custom-furnace-variants") and reskins.lib.setting("reskins-bobs-mixing-furnace-color") or util.color("00bfff"),
+    chemical = reskins.lib.setting("reskins-bobs-do-custom-furnace-variants") and reskins.lib.setting("reskins-bobs-chemical-furnace-color") or util.color("f21f0c"),
 }
 
 -- NUCLEAR REACTOR COLORS AND ICON COMPOSITIONS
