@@ -17,20 +17,20 @@ reskins.lib.parse_inputs(inputs)
 local ores = {
     -- Pure Bob's
     -- ["gem-ore"] = {},
-    ["lead-ore"] = { mod = "lib", group = "shared" }, -- 404040
-    ["rutile-ore"] = {},
-    ["sulfur"] = {},
-    ["thorium-ore"] = { make_glow = true },
-    ["tin-ore"] = { mod = "lib", group = "shared", variations = 8 },
+    ["lead-ore"]     = { mod = "lib", group = "shared" }, -- 404040
+    ["rutile-ore"]   = {},
+    ["sulfur"]       = {},
+    ["thorium-ore"]  = { make_glow = true },
+    ["tin-ore"]      = { mod = "lib", group = "shared", variations = 8 },
     -- Shared with Angel's
-    ["bauxite-ore"] = { mod = "lib", group = "shared", variations = 8 },
-    ["cobalt-ore"] = { mod = "lib", group = "shared" },
-    ["gold-ore"] = { mod = "lib", group = "shared" },
-    ["nickel-ore"] = { mod = "lib", group = "shared" }, -- 408073
-    ["quartz"] = { mod = "lib", group = "shared" },   -- 999999
-    ["silver-ore"] = { mod = "lib", group = "shared" },
+    ["bauxite-ore"]  = { mod = "lib", group = "shared", variations = 8 },
+    ["cobalt-ore"]   = { mod = "lib", group = "shared" },
+    ["gold-ore"]     = { mod = "lib", group = "shared" },
+    ["nickel-ore"]   = { mod = "lib", group = "shared" }, -- 408073
+    ["quartz"]       = { mod = "lib", group = "shared" }, -- 999999
+    ["silver-ore"]   = { mod = "lib", group = "shared" },
     ["tungsten-ore"] = { mod = "lib", group = "shared", variations = 8 },
-    ["zinc-ore"] = { mod = "lib", group = "shared" },
+    ["zinc-ore"]     = { mod = "lib", group = "shared" },
 }
 
 
@@ -71,9 +71,9 @@ for name, params in pairs(ores) do
                 size = 128,
                 frame_count = 8,
                 variation_count = 8,
-                scale = 0.5
-            }
-        }
+                scale = 0.5,
+            },
+        },
     }
 
     -- Radioactive glow
@@ -97,9 +97,9 @@ for name, params in pairs(ores) do
                     variation_count = 8,
                     scale = 0.5,
                     blend_mode = "additive",
-                    flags = { "light" }
-                }
-            }
+                    flags = { "light" },
+                },
+            },
         }
     end
 
