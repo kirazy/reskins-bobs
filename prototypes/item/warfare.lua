@@ -1,4 +1,4 @@
--- Copyright (c) 2023 Kirazy
+-- Copyright (c) 2024 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -173,5 +173,5 @@ reskins.lib.create_icons_from_list(items, inputs)
 local shot_item = data.raw.item["shot"]
 
 if shot_item then
-    shot_item.pictures = reskins.lib.create_icon_variations({mod = inputs.mod, group = inputs.group, subgroup = "components", icon = "shot", variations = 5})
+    shot_item.pictures = reskins.lib.create_sprite_variations_for_icon("shot", 5, inputs.mod, inputs.group, "components")
 end

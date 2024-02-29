@@ -1,4 +1,4 @@
--- Copyright (c) 2023 Kirazy
+-- Copyright (c) 2024 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
@@ -2251,7 +2251,7 @@ for name, map in pairs(tier_map) do
             },
             {
                 icon = reskins.bobs.directory .. "/graphics/icons/mining/electric-mining-drill/area-drill-symbol.png",
-                tint = reskins.lib.adjust_alpha(reskins.lib.tint_index[tier], 0.75)
+                tint = util.get_color_with_alpha(reskins.lib.tint_index[tier], 0.75)
             }
         }
     else
