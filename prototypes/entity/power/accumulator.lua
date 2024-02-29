@@ -220,7 +220,7 @@ for name, map in pairs(tier_map) do
         },
         {
             icon = reskins.bobs.directory .. "/graphics/icons/power/accumulator/accumulator-type-" .. inputs.wire .. "-icon.png",
-            tint = reskins.lib.adjust_alpha(reskins.lib.tint_index[tier], 0.75),
+            tint = util.get_color_with_alpha(reskins.lib.tint_index[tier], 0.75),
         },
     }
 

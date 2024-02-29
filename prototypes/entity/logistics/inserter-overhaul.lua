@@ -58,7 +58,7 @@ local function filter_icon_symbol(tint)
         },
         {
             icon = reskins.bobs.directory .. "/graphics/icons/logistics/inserter/filter.png",
-            tint = reskins.lib.adjust_alpha(tint, 0.75)
+            tint = util.get_color_with_alpha(tint, 0.75)
         },
     }
 
