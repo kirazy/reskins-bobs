@@ -36,13 +36,13 @@ for name, map in pairs(batteries) do
 
     -- Handle tier
     local tier = map.tier
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
+    if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
         tier = map.prog_tier or map.tier
     end
 
     -- Determine what tint we're using
-    if reskins.lib.setting("bobmods-colorupdate") then
-        inputs.tint = reskins.lib.tint_index[tier]
+    if reskins.lib.settings.get_value("bobmods-colorupdate") then
+        inputs.tint = reskins.lib.tiers.get_tint(tier)
     else
         inputs.tint = util.color(map.tint)
     end

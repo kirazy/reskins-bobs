@@ -43,7 +43,7 @@ end
 ---@return table #[Types/RotatedAnimation](https://wiki.factorio.com/Types/RotatedAnimation)
 local function build_drone_animation(scale, tint)
     local make_hr_version = true
-    if scale <= 0.5 then make_hr_version = nil end -- At 0.5 and below, the normal resolution sprites are equivalent to hr sprites
+    if scale <= 0.5 then make_hr_version = false end -- At 0.5 and below, the normal resolution sprites are equivalent to hr sprites
 
     local animation_speed = 8
 
@@ -79,7 +79,7 @@ local function build_drone_animation(scale, tint)
                         { filename = "__base__/graphics/entity/tank/hr-tank-base-4.png", width_in_frames = 2, height_in_frames = 16 },
                     },
                     scale = 0.5,
-                }
+                } or nil,
             },
 
             -- Mask
@@ -93,10 +93,10 @@ local function build_drone_animation(scale, tint)
                 -- line_length = 2,
                 tint = tint,
                 stripes = util.multiplystripes(2, {
-                    { filename = reskins.bobs.directory .. "/graphics/entity/warfare/drone/drone-mask_01.png", width_in_frames = 1, height_in_frames = 16 },
-                    { filename = reskins.bobs.directory .. "/graphics/entity/warfare/drone/drone-mask_02.png", width_in_frames = 1, height_in_frames = 16 },
-                    { filename = reskins.bobs.directory .. "/graphics/entity/warfare/drone/drone-mask_03.png", width_in_frames = 1, height_in_frames = 16 },
-                    { filename = reskins.bobs.directory .. "/graphics/entity/warfare/drone/drone-mask_04.png", width_in_frames = 1, height_in_frames = 16 },
+                    { filename = "__reskins-bobs__/graphics/entity/warfare/drone/drone-mask_01.png", width_in_frames = 1, height_in_frames = 16 },
+                    { filename = "__reskins-bobs__/graphics/entity/warfare/drone/drone-mask_02.png", width_in_frames = 1, height_in_frames = 16 },
+                    { filename = "__reskins-bobs__/graphics/entity/warfare/drone/drone-mask_03.png", width_in_frames = 1, height_in_frames = 16 },
+                    { filename = "__reskins-bobs__/graphics/entity/warfare/drone/drone-mask_04.png", width_in_frames = 1, height_in_frames = 16 },
                 }),
                 hr_version = make_hr_version and {
                     width = 270,
@@ -108,13 +108,13 @@ local function build_drone_animation(scale, tint)
                     -- line_length = 2,
                     tint = tint,
                     stripes = util.multiplystripes(2, {
-                        { filename = reskins.bobs.directory .. "/graphics/entity/warfare/drone/hr-drone-mask_01.png", width_in_frames = 1, height_in_frames = 16 },
-                        { filename = reskins.bobs.directory .. "/graphics/entity/warfare/drone/hr-drone-mask_02.png", width_in_frames = 1, height_in_frames = 16 },
-                        { filename = reskins.bobs.directory .. "/graphics/entity/warfare/drone/hr-drone-mask_03.png", width_in_frames = 1, height_in_frames = 16 },
-                        { filename = reskins.bobs.directory .. "/graphics/entity/warfare/drone/hr-drone-mask_04.png", width_in_frames = 1, height_in_frames = 16 },
+                        { filename = "__reskins-bobs__/graphics/entity/warfare/drone/hr-drone-mask_01.png", width_in_frames = 1, height_in_frames = 16 },
+                        { filename = "__reskins-bobs__/graphics/entity/warfare/drone/hr-drone-mask_02.png", width_in_frames = 1, height_in_frames = 16 },
+                        { filename = "__reskins-bobs__/graphics/entity/warfare/drone/hr-drone-mask_03.png", width_in_frames = 1, height_in_frames = 16 },
+                        { filename = "__reskins-bobs__/graphics/entity/warfare/drone/hr-drone-mask_04.png", width_in_frames = 1, height_in_frames = 16 },
                     }),
                     scale = 0.5,
-                }
+                } or nil,
             },
 
             -- Highlights
@@ -126,12 +126,12 @@ local function build_drone_animation(scale, tint)
                 shift = util.by_pixel(0, -10),
                 max_advance = 1,
                 -- line_length = 2,
-                blend_mode = reskins.lib.blend_mode,
+                blend_mode = reskins.lib.settings.blend_mode,
                 stripes = util.multiplystripes(2, {
-                    { filename = reskins.bobs.directory .. "/graphics/entity/warfare/drone/drone-highlights_01.png", width_in_frames = 1, height_in_frames = 16 },
-                    { filename = reskins.bobs.directory .. "/graphics/entity/warfare/drone/drone-highlights_02.png", width_in_frames = 1, height_in_frames = 16 },
-                    { filename = reskins.bobs.directory .. "/graphics/entity/warfare/drone/drone-highlights_03.png", width_in_frames = 1, height_in_frames = 16 },
-                    { filename = reskins.bobs.directory .. "/graphics/entity/warfare/drone/drone-highlights_04.png", width_in_frames = 1, height_in_frames = 16 }
+                    { filename = "__reskins-bobs__/graphics/entity/warfare/drone/drone-highlights_01.png", width_in_frames = 1, height_in_frames = 16 },
+                    { filename = "__reskins-bobs__/graphics/entity/warfare/drone/drone-highlights_02.png", width_in_frames = 1, height_in_frames = 16 },
+                    { filename = "__reskins-bobs__/graphics/entity/warfare/drone/drone-highlights_03.png", width_in_frames = 1, height_in_frames = 16 },
+                    { filename = "__reskins-bobs__/graphics/entity/warfare/drone/drone-highlights_04.png", width_in_frames = 1, height_in_frames = 16 }
                 }),
                 hr_version = make_hr_version and {
                     width = 270,
@@ -141,20 +141,20 @@ local function build_drone_animation(scale, tint)
                     shift = util.by_pixel(0, -10),
                     max_advance = 1,
                     -- line_length = 2,
-                    blend_mode = reskins.lib.blend_mode,
+                    blend_mode = reskins.lib.settings.blend_mode,
                     stripes = util.multiplystripes(2, {
-                        { filename = reskins.bobs.directory .. "/graphics/entity/warfare/drone/hr-drone-highlights_01.png", width_in_frames = 1, height_in_frames = 16 },
-                        { filename = reskins.bobs.directory .. "/graphics/entity/warfare/drone/hr-drone-highlights_02.png", width_in_frames = 1, height_in_frames = 16 },
-                        { filename = reskins.bobs.directory .. "/graphics/entity/warfare/drone/hr-drone-highlights_03.png", width_in_frames = 1, height_in_frames = 16 },
-                        { filename = reskins.bobs.directory .. "/graphics/entity/warfare/drone/hr-drone-highlights_04.png", width_in_frames = 1, height_in_frames = 16 },
+                        { filename = "__reskins-bobs__/graphics/entity/warfare/drone/hr-drone-highlights_01.png", width_in_frames = 1, height_in_frames = 16 },
+                        { filename = "__reskins-bobs__/graphics/entity/warfare/drone/hr-drone-highlights_02.png", width_in_frames = 1, height_in_frames = 16 },
+                        { filename = "__reskins-bobs__/graphics/entity/warfare/drone/hr-drone-highlights_03.png", width_in_frames = 1, height_in_frames = 16 },
+                        { filename = "__reskins-bobs__/graphics/entity/warfare/drone/hr-drone-highlights_04.png", width_in_frames = 1, height_in_frames = 16 },
                     }),
                     scale = 0.5,
-                }
+                } or nil,
             },
 
             -- Drone Top
             {
-                stripes = expand_to_stripes(reskins.bobs.directory .. "/graphics/entity/warfare/drone/drone-top.png", 64, 2),
+                stripes = expand_to_stripes("__reskins-bobs__/graphics/entity/warfare/drone/drone-top.png", 64, 2),
                 width = 49,
                 height = 83,
                 frame_count = 2,
@@ -163,7 +163,7 @@ local function build_drone_animation(scale, tint)
                 max_advance = 1,
                 -- line_length = 2,
                 hr_version = make_hr_version and {
-                    stripes = expand_to_stripes(reskins.bobs.directory .. "/graphics/entity/warfare/drone/hr-drone-top.png", 64, 2),
+                    stripes = expand_to_stripes("__reskins-bobs__/graphics/entity/warfare/drone/hr-drone-top.png", 64, 2),
                     width = 98,
                     height = 166,
                     frame_count = 2,
@@ -172,12 +172,12 @@ local function build_drone_animation(scale, tint)
                     max_advance = 1,
                     -- line_length = 2,
                     scale = 0.5,
-                }
+                } or nil,
             },
 
             -- Drone Light
             {
-                stripes = expand_to_stripes(reskins.bobs.directory .. "/graphics/entity/warfare/drone/drone-top-light.png", 64, 2),
+                stripes = expand_to_stripes("__reskins-bobs__/graphics/entity/warfare/drone/drone-top-light.png", 64, 2),
                 width = 49,
                 height = 83,
                 frame_count = 2,
@@ -188,7 +188,7 @@ local function build_drone_animation(scale, tint)
                 max_advance = 1,
                 -- line_length = 2,
                 hr_version = make_hr_version and {
-                    stripes = expand_to_stripes(reskins.bobs.directory .. "/graphics/entity/warfare/drone/hr-drone-top-light.png", 64, 2),
+                    stripes = expand_to_stripes("__reskins-bobs__/graphics/entity/warfare/drone/hr-drone-top-light.png", 64, 2),
                     width = 98,
                     height = 166,
                     frame_count = 2,
@@ -199,12 +199,12 @@ local function build_drone_animation(scale, tint)
                     max_advance = 1,
                     -- line_length = 2,
                     scale = 0.5,
-                }
+                } or nil,
             },
 
             -- Drone Light Core
             {
-                stripes = expand_to_stripes(reskins.bobs.directory .. "/graphics/entity/warfare/drone/drone-top-light-core.png", 64, 2),
+                stripes = expand_to_stripes("__reskins-bobs__/graphics/entity/warfare/drone/drone-top-light-core.png", 64, 2),
                 width = 49,
                 height = 83,
                 frame_count = 2,
@@ -215,7 +215,7 @@ local function build_drone_animation(scale, tint)
                 max_advance = 1,
                 -- line_length = 2,
                 hr_version = make_hr_version and {
-                    stripes = expand_to_stripes(reskins.bobs.directory .. "/graphics/entity/warfare/drone/hr-drone-top-light-core.png", 64, 2),
+                    stripes = expand_to_stripes("__reskins-bobs__/graphics/entity/warfare/drone/hr-drone-top-light-core.png", 64, 2),
                     width = 98,
                     height = 166,
                     frame_count = 2,
@@ -226,7 +226,7 @@ local function build_drone_animation(scale, tint)
                     max_advance = 1,
                     -- line_length = 2,
                     scale = 0.5,
-                }
+                } or nil,
             },
 
             -- Shadow
@@ -259,12 +259,12 @@ local function build_drone_animation(scale, tint)
                         { filename = "__base__/graphics/entity/tank/hr-tank-base-shadow-4.png", width_in_frames = 1, height_in_frames = 16 },
                     }),
                     scale = 0.5,
-                }
+                } or nil,
             }
         }
     }
 
-    reskins.lib.rescale_entity(animation, scale)
+    reskins.lib.prototypes.rescale_prototype(animation, scale)
 
     return animation
 end
@@ -275,12 +275,12 @@ end
 ---@return table #[Types/RotatedAnimation](https://wiki.factorio.com/Types/RotatedAnimation)
 local function build_drone_remnants(scale, tint)
     local make_hr_version = true
-    if scale <= 0.5 then make_hr_version = nil end -- At 0.5 and below, the normal resolution sprites are equivalent to hr sprites
+    if scale <= 0.5 then make_hr_version = false end -- At 0.5 and below, the normal resolution sprites are equivalent to hr sprites
 
     local animation = {
         layers = {
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/warfare/drone/remnants/drone-remnants.png",
+                filename = "__reskins-bobs__/graphics/entity/warfare/drone/remnants/drone-remnants.png",
                 line_length = 1,
                 width = 207,
                 height = 190,
@@ -288,7 +288,7 @@ local function build_drone_remnants(scale, tint)
                 direction_count = 4,
                 shift = util.by_pixel(4, 0.5),
                 hr_version = make_hr_version and {
-                    filename = reskins.bobs.directory .. "/graphics/entity/warfare/drone/remnants/hr-drone-remnants.png",
+                    filename = "__reskins-bobs__/graphics/entity/warfare/drone/remnants/hr-drone-remnants.png",
                     line_length = 1,
                     width = 414,
                     height = 380,
@@ -296,12 +296,12 @@ local function build_drone_remnants(scale, tint)
                     direction_count = 4,
                     shift = util.by_pixel(4, 0.5),
                     scale = 0.5
-                }
+                } or nil,
             },
 
             -- Mask
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/warfare/drone/remnants/drone-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/warfare/drone/remnants/drone-remnants-mask.png",
                 line_length = 1,
                 width = 207,
                 height = 190,
@@ -310,7 +310,7 @@ local function build_drone_remnants(scale, tint)
                 shift = util.by_pixel(4, 0.5),
                 tint = tint,
                 hr_version = make_hr_version and {
-                    filename = reskins.bobs.directory .. "/graphics/entity/warfare/drone/remnants/hr-drone-remnants-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/warfare/drone/remnants/hr-drone-remnants-mask.png",
                     line_length = 1,
                     width = 414,
                     height = 380,
@@ -319,35 +319,35 @@ local function build_drone_remnants(scale, tint)
                     shift = util.by_pixel(4, 0.5),
                     tint = tint,
                     scale = 0.5
-                }
+                } or nil,
             },
 
             -- Highlights
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/warfare/drone/remnants/drone-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/warfare/drone/remnants/drone-remnants-highlights.png",
                 line_length = 1,
                 width = 207,
                 height = 190,
                 frame_count = 1,
                 direction_count = 4,
                 shift = util.by_pixel(4, 0.5),
-                blend_mode = reskins.lib.blend_mode,
+                blend_mode = reskins.lib.settings.blend_mode,
                 hr_version = make_hr_version and {
-                    filename = reskins.bobs.directory .. "/graphics/entity/warfare/drone/remnants/hr-drone-remnants-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/warfare/drone/remnants/hr-drone-remnants-highlights.png",
                     line_length = 1,
                     width = 414,
                     height = 380,
                     frame_count = 1,
                     direction_count = 4,
                     shift = util.by_pixel(4, 0.5),
-                    blend_mode = reskins.lib.blend_mode,
+                    blend_mode = reskins.lib.settings.blend_mode,
                     scale = 0.5
-                }
+                } or nil,
             },
         }
     }
 
-    reskins.lib.rescale_entity(animation, scale)
+    reskins.lib.prototypes.rescale_prototype(animation, scale)
 
     return animation
 end

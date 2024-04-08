@@ -6,7 +6,7 @@
 -- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.vehicle_equipment.technologies) then return end
 
--- Setup inputs
+---@type CreateIconsFromListInputs
 local inputs = {
     mod = "bobs",
     group = "vehicle-equipment",
@@ -16,6 +16,7 @@ local inputs = {
     technology_icon_mipmaps = 4,
 }
 
+---@type CreateIconsFromListTable
 local technologies = {
     -- Plasma cannons
     ["vehicle-big-turret-equipment-1"] = {icon_name = "vehicle-plasma-turret", tier = 0},
@@ -91,4 +92,4 @@ local technologies = {
     ["vehicle-roboport-equipment-4"] = {group = "equipment", icon_name = "personal-roboport-2", tier = 4, prog_tier = 5},
 }
 
-reskins.lib.create_icons_from_list(technologies, inputs)
+reskins.internal.create_icons_from_list(technologies, inputs)

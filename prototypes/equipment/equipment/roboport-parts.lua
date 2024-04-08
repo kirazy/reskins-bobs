@@ -41,7 +41,7 @@ for _, category in pairs(categories) do
 
         -- Handle tier
         local tier = map.tier
-        if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
+        if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
             tier = map.prog_tier or map.tier
         end
 
@@ -58,7 +58,7 @@ for _, category in pairs(categories) do
         end
 
         -- Determine what tint we're using
-        inputs.tint = reskins.lib.tint_index[tier]
+        inputs.tint = reskins.lib.tiers.get_tint(tier)
 
         -- Construct icon
         reskins.lib.construct_icon(name, tier, inputs)
@@ -68,12 +68,12 @@ for _, category in pairs(categories) do
             layers = {
                 -- Base
                 {
-                    filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-part-" .. category .. "/" .. equipment_path .. "-equipment-base.png",
+                    filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-part-" .. category .. "/" .. equipment_path .. "-equipment-base.png",
                     size = 32,
                     priority = "medium",
                     flags = { "no-crop" },
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-part-" .. category .. "/hr-" .. equipment_path .. "-equipment-base.png",
+                        filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-part-" .. category .. "/hr-" .. equipment_path .. "-equipment-base.png",
                         size = 64,
                         priority = "medium",
                         flags = { "no-crop" },
@@ -82,13 +82,13 @@ for _, category in pairs(categories) do
                 },
                 -- Mask
                 {
-                    filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-part-" .. category .. "/vehicle-part-" .. category .. "-equipment-mask.png",
+                    filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-part-" .. category .. "/vehicle-part-" .. category .. "-equipment-mask.png",
                     size = 32,
                     priority = "medium",
                     flags = { "no-crop" },
                     tint = inputs.tint,
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-part-" .. category .. "/hr-vehicle-part-" .. category .. "-equipment-mask.png",
+                        filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-part-" .. category .. "/hr-vehicle-part-" .. category .. "-equipment-mask.png",
                         size = 64,
                         priority = "medium",
                         flags = { "no-crop" },
@@ -98,17 +98,17 @@ for _, category in pairs(categories) do
                 },
                 -- Highlights
                 {
-                    filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-part-" .. category .. "/vehicle-part-" .. category .. "-equipment-highlights.png",
+                    filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-part-" .. category .. "/vehicle-part-" .. category .. "-equipment-highlights.png",
                     size = 32,
                     priority = "medium",
                     flags = { "no-crop" },
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-part-" .. category .. "/hr-vehicle-part-" .. category .. "-equipment-highlights.png",
+                        filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-part-" .. category .. "/hr-vehicle-part-" .. category .. "-equipment-highlights.png",
                         size = 64,
                         priority = "medium",
                         flags = { "no-crop" },
-                        blend_mode = reskins.lib.blend_mode, -- "additive",
+                        blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                         scale = 0.5,
                     }
                 }

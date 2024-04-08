@@ -37,12 +37,12 @@ for name, map in pairs(solar_panels) do
 
     -- Handle tier
     local tier = map.tier
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
+    if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
         tier = map.prog_tier or map.tier
     end
 
     -- Determine what tint we're using
-    inputs.tint = reskins.lib.tint_index[tier]
+    inputs.tint = reskins.lib.tiers.get_tint(tier)
 
     -- Construct icon
     reskins.lib.construct_icon(name, tier, inputs)
@@ -52,13 +52,13 @@ for name, map in pairs(solar_panels) do
         layers = {
             -- Base
             {
-                filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-solar-panel/vehicle-solar-panel-equipment-base.png",
+                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-solar-panel/vehicle-solar-panel-equipment-base.png",
                 width = 64,
                 height = 32,
                 priority = "medium",
                 flags = { "no-crop" },
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-solar-panel/hr-vehicle-solar-panel-equipment-base.png",
+                    filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-solar-panel/hr-vehicle-solar-panel-equipment-base.png",
                     width = 128,
                     height = 64,
                     priority = "medium",
@@ -68,14 +68,14 @@ for name, map in pairs(solar_panels) do
             },
             -- Mask
             {
-                filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-solar-panel/vehicle-solar-panel-equipment-mask.png",
+                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-solar-panel/vehicle-solar-panel-equipment-mask.png",
                 width = 64,
                 height = 32,
                 priority = "medium",
                 flags = { "no-crop" },
                 tint = inputs.tint,
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-solar-panel/hr-vehicle-solar-panel-equipment-mask.png",
+                    filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-solar-panel/hr-vehicle-solar-panel-equipment-mask.png",
                     width = 128,
                     height = 64,
                     priority = "medium",
@@ -86,19 +86,19 @@ for name, map in pairs(solar_panels) do
             },
             -- Highlights
             {
-                filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-solar-panel/vehicle-solar-panel-equipment-highlights.png",
+                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-solar-panel/vehicle-solar-panel-equipment-highlights.png",
                 width = 64,
                 height = 32,
                 priority = "medium",
                 flags = { "no-crop" },
-                blend_mode = reskins.lib.blend_mode, -- "additive",
+                blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-solar-panel/hr-vehicle-solar-panel-equipment-highlights.png",
+                    filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-solar-panel/hr-vehicle-solar-panel-equipment-highlights.png",
                     width = 128,
                     height = 64,
                     priority = "medium",
                     flags = { "no-crop" },
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             }

@@ -22,7 +22,7 @@ local reactors = {
     ["nuclear-reactor-3"] = { tier = 3, prog_tier = 5, material = "gold-copper" },
 }
 
-if reskins.lib.migration.is_version_or_newer(mods["bobpower"], "1.1.6") then
+if reskins.lib.version.is_same_or_newer(mods["bobpower"], "1.1.6") then
     reactors["nuclear-reactor"].material = "aluminum-invar"
     reactors["nuclear-reactor-2"].material = "silver-titanium"
 end
@@ -55,14 +55,14 @@ local function skin_reactor_entity(name, tint, material)
             },
             -- Mask
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/nuclear-reactor/reactor-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/reactor-mask.png",
                 width = 154,
                 height = 158,
                 shift = util.by_pixel(-6, -6),
                 tint = tint,
                 hr_version =
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/power/nuclear-reactor/hr-reactor-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/hr-reactor-mask.png",
                     width = 302,
                     height = 318,
                     scale = 0.5,
@@ -72,30 +72,30 @@ local function skin_reactor_entity(name, tint, material)
             },
             -- Highlights
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/nuclear-reactor/reactor-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/reactor-highlights.png",
                 width = 154,
                 height = 158,
                 shift = util.by_pixel(-6, -6),
-                blend_mode = reskins.lib.blend_mode, -- "additive",
+                blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 hr_version =
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/power/nuclear-reactor/hr-reactor-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/hr-reactor-highlights.png",
                     width = 302,
                     height = 318,
                     scale = 0.5,
                     shift = util.by_pixel(-5, -7),
-                    blend_mode = reskins.lib.blend_mode, -- "additive"
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive"
                 }
             },
             -- Pipes
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-piping.png",
+                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-piping.png",
                 width = 154,
                 height = 158,
                 shift = util.by_pixel(-6, -6),
                 hr_version =
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/hr-reactor-piping.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/hr-reactor-piping.png",
                     width = 302,
                     height = 318,
                     scale = 0.5,
@@ -125,13 +125,13 @@ local function skin_reactor_entity(name, tint, material)
     -- Pipes
     entity.lower_layer_picture =
     {
-        filename = reskins.bobs.directory .. "/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-base-pipes.png",
+        filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-base-pipes.png",
         width = 156,
         height = 156,
         shift = util.by_pixel(-2, -4),
         hr_version =
         {
-            filename = reskins.bobs.directory .. "/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/hr-reactor-base-pipes.png",
+            filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/hr-reactor-base-pipes.png",
             width = 320,
             height = 316,
             scale = 0.5,
@@ -143,13 +143,13 @@ local function skin_reactor_entity(name, tint, material)
     {
         sheet =
         {
-            filename = reskins.bobs.directory .. "/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-connect-patches.png",
+            filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-connect-patches.png",
             width = 32,
             height = 32,
             variation_count = 12,
             hr_version =
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/hr-reactor-connect-patches.png",
+                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/hr-reactor-connect-patches.png",
                 width = 64,
                 height = 64,
                 variation_count = 12,
@@ -162,14 +162,14 @@ local function skin_reactor_entity(name, tint, material)
     {
         sheet =
         {
-            filename = reskins.bobs.directory .. "/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-connect-patches.png",
+            filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-connect-patches.png",
             width = 32,
             height = 32,
             variation_count = 12,
             y = 32,
             hr_version =
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/hr-reactor-connect-patches.png",
+                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/hr-reactor-connect-patches.png",
                 width = 64,
                 height = 64,
                 variation_count = 12,
@@ -218,7 +218,7 @@ local function skin_reactor_remnants(name, tint, material)
             },
             -- Mask
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/nuclear-reactor/remnants/nuclear-reactor-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/remnants/nuclear-reactor-remnants-mask.png",
                 line_length = 1,
                 width = 206,
                 height = 198,
@@ -230,7 +230,7 @@ local function skin_reactor_remnants(name, tint, material)
                 tint = tint,
                 hr_version =
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/power/nuclear-reactor/remnants/hr-nuclear-reactor-remnants-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/remnants/hr-nuclear-reactor-remnants-mask.png",
                     line_length = 1,
                     width = 410,
                     height = 396,
@@ -245,7 +245,7 @@ local function skin_reactor_remnants(name, tint, material)
             },
             -- Highlights
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/nuclear-reactor/remnants/nuclear-reactor-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/remnants/nuclear-reactor-remnants-highlights.png",
                 line_length = 1,
                 width = 206,
                 height = 198,
@@ -254,10 +254,10 @@ local function skin_reactor_remnants(name, tint, material)
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(7, 4),
-                blend_mode = reskins.lib.blend_mode, -- "additive",
+                blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 hr_version =
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/power/nuclear-reactor/remnants/hr-nuclear-reactor-remnants-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/remnants/hr-nuclear-reactor-remnants-highlights.png",
                     line_length = 1,
                     width = 410,
                     height = 396,
@@ -266,13 +266,13 @@ local function skin_reactor_remnants(name, tint, material)
                     axially_symmetrical = false,
                     direction_count = 1,
                     shift = util.by_pixel(7, 4),
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             },
             -- Pipes
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-remnants.png",
+                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-remnants.png",
                 line_length = 1,
                 width = 206,
                 height = 198,
@@ -283,7 +283,7 @@ local function skin_reactor_remnants(name, tint, material)
                 shift = util.by_pixel(7, 4),
                 hr_version =
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/hr-reactor-remnants.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/hr-reactor-remnants.png",
                     line_length = 1,
                     width = 410,
                     height = 396,
@@ -312,7 +312,7 @@ for name, mapping in pairs(reactors) do
 
     -- Parse map
     local tier = mapping.tier
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
+    if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
         tier = mapping.prog_tier or mapping.tier
     end
 
@@ -323,7 +323,7 @@ for name, mapping in pairs(reactors) do
     -- Create explosions
     reskins.lib.create_explosion(name, inputs)
 
-    if reskins.lib.setting("bobmods-revamp-nuclear") == true and reskins.lib.setting("reskins-bobs-do-bobrevamp-reactor-color") == true then
+    if reskins.lib.settings.get_value("bobmods-revamp-nuclear") == true and reskins.lib.settings.get_value("reskins-bobs-do-bobrevamp-reactor-color") == true then
         inputs.reactor = reskins.bobs.nuclear_reactor_index[name]
         inputs.tint = reskins.bobs.nuclear_reactor_index[name].tint
 
@@ -332,7 +332,7 @@ for name, mapping in pairs(reactors) do
         reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["medium"], 2, inputs.tint)
     else
         inputs.reactor = "reactor-" .. tier
-        inputs.tint = reskins.lib.tint_index[tier]
+        inputs.tint = reskins.lib.tiers.get_tint(tier)
 
         -- Create particles
         reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["big"], 1, inputs.tint)

@@ -9,7 +9,7 @@ if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then return end
 -- Set input parameters
 local inputs = {
     type = "combat-robot",
-    icon_filename = reskins.bobs.directory .. "/graphics/icons/warfare/robots/bob-laser-robot.png",
+    icon_filename = "__reskins-bobs__/graphics/icons/warfare/robots/bob-laser-robot.png",
     base_entity_name = "defender-robot",
     mod = "bobs",
     group = "warfare",
@@ -72,7 +72,7 @@ local remnant = data.raw["corpse"][name .. "-remnants"]
 
 -- Reskin remants
 remnant.animation = {
-    filename = reskins.bobs.directory .. "/graphics/entity/warfare/laser-robot/remnants/laser-robot-remnants.png",
+    filename = "__reskins-bobs__/graphics/entity/warfare/laser-robot/remnants/laser-robot-remnants.png",
     line_length = 1,
     width = 49,
     height = 47,
@@ -81,7 +81,7 @@ remnant.animation = {
     axially_symmetrical = false,
     direction_count = 1,
     hr_version = {
-        filename = reskins.bobs.directory .. "/graphics/entity/warfare/laser-robot/remnants/hr-laser-robot-remnants.png",
+        filename = "__reskins-bobs__/graphics/entity/warfare/laser-robot/remnants/hr-laser-robot-remnants.png",
         line_length = 1,
         width = 98,
         height = 94,

@@ -21,7 +21,7 @@ local tier_map = {
     ["bob-logistic-robot-2"] = { 2, 3 },
     ["bob-logistic-robot-3"] = { 3, 4 },
     ["bob-logistic-robot-4"] = { 4, 5 },
-    ["bob-logistic-robot-5"] = { 5, 5, reskins.lib.setting("reskins-bobs-fusion-robot-color") },
+    ["bob-logistic-robot-5"] = { 5, 5, reskins.lib.settings.get_value("reskins-bobs-fusion-robot-color") },
 }
 
 -- Animations
@@ -56,7 +56,7 @@ local function generate_robot_animations(tint)
                 },
                 -- Mask
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/logistics/logistic-robot/logistic-robot-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/logistic-robot-mask.png",
                     priority = "high",
                     line_length = 16,
                     width = 41,
@@ -67,7 +67,7 @@ local function generate_robot_animations(tint)
                     direction_count = 16,
                     y = 42,
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/logistics/logistic-robot/hr-logistic-robot-mask.png",
+                        filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/hr-logistic-robot-mask.png",
                         priority = "high",
                         line_length = 16,
                         width = 80,
@@ -82,25 +82,25 @@ local function generate_robot_animations(tint)
                 },
                 -- Highlights
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/logistics/logistic-robot/logistic-robot-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/logistic-robot-highlights.png",
                     priority = "high",
                     line_length = 16,
                     width = 41,
                     height = 42,
                     frame_count = 1,
                     shift = util.by_pixel(0, -3),
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     direction_count = 16,
                     y = 42,
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/logistics/logistic-robot/hr-logistic-robot-highlights.png",
+                        filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/hr-logistic-robot-highlights.png",
                         priority = "high",
                         line_length = 16,
                         width = 80,
                         height = 84,
                         frame_count = 1,
                         shift = util.by_pixel(0, -3),
-                        blend_mode = reskins.lib.blend_mode, -- "additive",
+                        blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                         direction_count = 16,
                         y = 84,
                         scale = 0.5
@@ -134,7 +134,7 @@ local function generate_robot_animations(tint)
                 },
                 -- Mask
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/logistics/logistic-robot/logistic-robot-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/logistic-robot-mask.png",
                     priority = "high",
                     line_length = 16,
                     width = 41,
@@ -144,7 +144,7 @@ local function generate_robot_animations(tint)
                     tint = tint,
                     direction_count = 16,
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/logistics/logistic-robot/hr-logistic-robot-mask.png",
+                        filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/hr-logistic-robot-mask.png",
                         priority = "high",
                         line_length = 16,
                         width = 80,
@@ -158,24 +158,24 @@ local function generate_robot_animations(tint)
                 },
                 -- Highlights
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/logistics/logistic-robot/logistic-robot-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/logistic-robot-highlights.png",
                     priority = "high",
                     line_length = 16,
                     width = 41,
                     height = 42,
                     frame_count = 1,
                     shift = util.by_pixel(0, -3),
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     direction_count = 16,
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/logistics/logistic-robot/hr-logistic-robot-highlights.png",
+                        filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/hr-logistic-robot-highlights.png",
                         priority = "high",
                         line_length = 16,
                         width = 80,
                         height = 84,
                         frame_count = 1,
                         shift = util.by_pixel(0, -3),
-                        blend_mode = reskins.lib.blend_mode, -- "additive",
+                        blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                         direction_count = 16,
                         scale = 0.5
                     }
@@ -210,7 +210,7 @@ local function generate_robot_animations(tint)
                 },
                 -- Mask
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/logistics/logistic-robot/logistic-robot-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/logistic-robot-mask.png",
                     priority = "high",
                     line_length = 16,
                     width = 41,
@@ -221,7 +221,7 @@ local function generate_robot_animations(tint)
                     direction_count = 16,
                     y = 126,
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/logistics/logistic-robot/hr-logistic-robot-mask.png",
+                        filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/hr-logistic-robot-mask.png",
                         priority = "high",
                         line_length = 16,
                         width = 80,
@@ -236,25 +236,25 @@ local function generate_robot_animations(tint)
                 },
                 -- Highlights
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/logistics/logistic-robot/logistic-robot-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/logistic-robot-highlights.png",
                     priority = "high",
                     line_length = 16,
                     width = 41,
                     height = 42,
                     frame_count = 1,
                     shift = util.by_pixel(0, -3),
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     direction_count = 16,
                     y = 126,
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/logistics/logistic-robot/hr-logistic-robot-highlights.png",
+                        filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/hr-logistic-robot-highlights.png",
                         priority = "high",
                         line_length = 16,
                         width = 80,
                         height = 84,
                         frame_count = 1,
                         shift = util.by_pixel(0, -3),
-                        blend_mode = reskins.lib.blend_mode, -- "additive",
+                        blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                         direction_count = 16,
                         y = 252,
                         scale = 0.5
@@ -290,7 +290,7 @@ local function generate_robot_animations(tint)
                 },
                 -- Mask
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/logistics/logistic-robot/logistic-robot-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/logistic-robot-mask.png",
                     priority = "high",
                     line_length = 16,
                     width = 41,
@@ -301,7 +301,7 @@ local function generate_robot_animations(tint)
                     direction_count = 16,
                     y = 84,
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/logistics/logistic-robot/hr-logistic-robot-mask.png",
+                        filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/hr-logistic-robot-mask.png",
                         priority = "high",
                         line_length = 16,
                         width = 80,
@@ -316,25 +316,25 @@ local function generate_robot_animations(tint)
                 },
                 -- Highlights
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/logistics/logistic-robot/logistic-robot-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/logistic-robot-highlights.png",
                     priority = "high",
                     line_length = 16,
                     width = 41,
                     height = 42,
                     frame_count = 1,
                     shift = util.by_pixel(0, -3),
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     direction_count = 16,
                     y = 84,
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/logistics/logistic-robot/hr-logistic-robot-highlights.png",
+                        filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/hr-logistic-robot-highlights.png",
                         priority = "high",
                         line_length = 16,
                         width = 80,
                         height = 84,
                         frame_count = 1,
                         shift = util.by_pixel(0, -3),
-                        blend_mode = reskins.lib.blend_mode, -- "additive",
+                        blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                         direction_count = 16,
                         y = 168,
                         scale = 0.5
@@ -453,13 +453,13 @@ for name, map in pairs(tier_map) do
     -- Parse map
     local tier = map[1]
     local fusion_robot_color
-    if (reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" and reskins.lib.setting("reskins-bobs-do-progression-based-robots")) then
+    if (reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" and reskins.lib.settings.get_value("reskins-bobs-do-progression-based-robots")) then
         tier = map[2]
         fusion_robot_color = map[3]
     end
 
     -- Determine what tint we're using
-    inputs.tint = fusion_robot_color or reskins.lib.tint_index[tier]
+    inputs.tint = fusion_robot_color or reskins.lib.tiers.get_tint(tier)
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
@@ -498,7 +498,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/logistics/logistic-robot/remnants/logistic-robot-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/remnants/logistic-robot-remnants-mask.png",
                 line_length = 1,
                 width = 58,
                 height = 58,
@@ -509,7 +509,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(1, 1),
                 tint = inputs.tint,
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/logistics/logistic-robot/remnants/hr-logistic-robot-remnants-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/remnants/hr-logistic-robot-remnants-mask.png",
                     line_length = 1,
                     width = 116,
                     height = 114,
@@ -524,7 +524,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/logistics/logistic-robot/remnants/logistic-robot-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/remnants/logistic-robot-remnants-highlights.png",
                 line_length = 1,
                 width = 58,
                 height = 58,
@@ -533,9 +533,9 @@ for name, map in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(1, 1),
-                blend_mode = reskins.lib.blend_mode, -- "additive",
+                blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/logistics/logistic-robot/remnants/hr-logistic-robot-remnants-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/remnants/hr-logistic-robot-remnants-highlights.png",
                     line_length = 1,
                     width = 116,
                     height = 114,
@@ -544,7 +544,7 @@ for name, map in pairs(tier_map) do
                     axially_symmetrical = false,
                     direction_count = 1,
                     shift = util.by_pixel(1, 1),
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             }

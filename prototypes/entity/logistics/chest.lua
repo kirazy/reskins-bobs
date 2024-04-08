@@ -50,7 +50,7 @@ for name, map in pairs(logistic_map) do
 
     -- Parse map
     local tier = map[1]
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
+    if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
         tier = map[2]
     end
 
@@ -59,7 +59,7 @@ for name, map in pairs(logistic_map) do
 
     -- Stick tier labels on the vanilla logistic chests
     if not map[3] then
-        reskins.lib.add_tier_labels_to_entity(name, inputs.type, tier)
+        reskins.lib.tiers.add_tier_labels_to_prototype_by_reference(tier, entity)
         goto continue
     end
 
@@ -99,7 +99,7 @@ for name, map in pairs(logistic_map) do
             },
             -- Mask
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/logistics/chest/remnants/" .. material .. "-logistic-chest-remnants.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/chest/remnants/" .. material .. "-logistic-chest-remnants.png",
                 line_length = 1,
                 width = 60,
                 height = 42,
@@ -107,7 +107,7 @@ for name, map in pairs(logistic_map) do
                 direction_count = 1,
                 shift = util.by_pixel(10.5, -2.5),
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/logistics/chest/remnants/hr-" .. material .. "-logistic-chest-remnants.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/chest/remnants/hr-" .. material .. "-logistic-chest-remnants.png",
                     line_length = 1,
                     width = 116,
                     height = 82,
@@ -143,14 +143,14 @@ for name, map in pairs(logistic_map) do
             },
             -- Mask
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/logistics/chest/" .. material .. "-logistic-chest.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/chest/" .. material .. "-logistic-chest.png",
                 priority = "extra-high",
                 width = 34,
                 height = 38,
                 frame_count = 7,
                 shift = util.by_pixel(0, -2),
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/logistics/chest/hr-" .. material .. "-logistic-chest.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/chest/hr-" .. material .. "-logistic-chest.png",
                     priority = "extra-high",
                     width = 66,
                     height = 74,

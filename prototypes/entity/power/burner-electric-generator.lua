@@ -17,7 +17,7 @@ local inputs = {
     make_remnants = false,
 }
 
-inputs.icon_filename = reskins.bobs.directory .. "/graphics/icons/power/burner-electric-generator/burner-electric-generator.png"
+inputs.icon_filename = "__reskins-bobs__/graphics/icons/power/burner-electric-generator/burner-electric-generator.png"
 
 local name = "bob-burner-generator"
 
@@ -34,7 +34,7 @@ entity.animation = {
     layers = {
         -- Base
         {
-            filename = reskins.bobs.directory .. "/graphics/entity/power/burner-electric-generator/burner-electric-generator.png",
+            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/burner-electric-generator.png",
             width = 106,
             height = 136,
             frame_count = 32,
@@ -42,7 +42,7 @@ entity.animation = {
             repeat_count = 3,
             shift = util.by_pixel(0, -12.5),
             hr_version = {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator.png",
+                filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator.png",
                 width = 212,
                 height = 272,
                 frame_count = 32,
@@ -54,7 +54,7 @@ entity.animation = {
         },
         -- Fire
         {
-            filename = reskins.bobs.directory .. "/graphics/entity/power/burner-electric-generator/burner-electric-generator-fire.png",
+            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/burner-electric-generator-fire.png",
             priority = "high",
             line_length = 8,
             width = 29,
@@ -66,7 +66,7 @@ entity.animation = {
             shift = util.by_pixel(-1, 9.5),
             draw_as_glow = true,
             hr_version = {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator-fire.png",
+                filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator-fire.png",
                 priority = "high",
                 line_length = 8,
                 width = 58,
@@ -82,7 +82,7 @@ entity.animation = {
         },
         -- Radiant Light
         {
-            filename = reskins.bobs.directory .. "/graphics/entity/power/burner-electric-generator/burner-electric-generator-working-light-animated.png",
+            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/burner-electric-generator-working-light-animated.png",
             width = 106,
             height = 136,
             frame_count = 32,
@@ -92,7 +92,7 @@ entity.animation = {
             shift = util.by_pixel(0, -12.5),
             draw_as_glow = true,
             hr_version = {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator-working-light-animated.png",
+                filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator-working-light-animated.png",
                 width = 212,
                 height = 272,
                 frame_count = 32,
@@ -106,7 +106,7 @@ entity.animation = {
         },
         -- Shadow
         {
-            filename = reskins.bobs.directory .. "/graphics/entity/power/burner-electric-generator/burner-electric-generator-shadow.png",
+            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/burner-electric-generator-shadow.png",
             width = 144,
             height = 85,
             frame_count = 32,
@@ -115,7 +115,7 @@ entity.animation = {
             draw_as_shadow = true,
             shift = util.by_pixel(30, 12),
             hr_version = {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator-shadow.png",
+                filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator-shadow.png",
                 width = 288,
                 height = 170,
                 frame_count = 32,
@@ -133,7 +133,7 @@ entity.idle_animation = {
     layers = {
         -- Base
         {
-            filename = reskins.bobs.directory .. "/graphics/entity/power/burner-electric-generator/burner-electric-generator.png",
+            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/burner-electric-generator.png",
             width = 106,
             height = 136,
             frame_count = 32,
@@ -141,7 +141,7 @@ entity.idle_animation = {
             repeat_count = 3,
             shift = util.by_pixel(0, -12.5),
             hr_version = {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator.png",
+                filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator.png",
                 width = 212,
                 height = 272,
                 frame_count = 32,
@@ -153,7 +153,7 @@ entity.idle_animation = {
         },
         -- Shadow
         {
-            filename = reskins.bobs.directory .. "/graphics/entity/power/burner-electric-generator/burner-electric-generator-shadow.png",
+            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/burner-electric-generator-shadow.png",
             width = 144,
             height = 85,
             frame_count = 32,
@@ -162,7 +162,7 @@ entity.idle_animation = {
             draw_as_shadow = true,
             shift = util.by_pixel(30, 12),
             hr_version = {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator-shadow.png",
+                filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator-shadow.png",
                 width = 288,
                 height = 170,
                 frame_count = 32,
@@ -192,7 +192,7 @@ entity.burner.smoke = {
 
 entity.water_reflection = {
     pictures = {
-        filename = reskins.bobs.directory .. "/graphics/entity/power/burner-electric-generator/burner-electric-generator-reflection.png",
+        filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/burner-electric-generator-reflection.png",
         priority = "extra-high",
         width = 28,
         height = 36,

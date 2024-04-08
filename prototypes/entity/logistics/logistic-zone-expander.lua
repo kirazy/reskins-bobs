@@ -34,7 +34,7 @@ for name, map in pairs(tier_map) do
 
     -- Parse map
     local tier = map[1]
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
+    if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
         tier = map[2]
     end
     local subtier = map[1]
@@ -43,7 +43,7 @@ for name, map in pairs(tier_map) do
     inputs.icon_base = "zone-expander-" .. subtier
 
     -- Determine what tint we're using
-    inputs.tint = reskins.lib.tint_index[tier]
+    inputs.tint = reskins.lib.tiers.get_tint(tier)
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
@@ -52,12 +52,12 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/logistics/zone-expander/zone-expander-" .. subtier .. "-base.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/zone-expander/zone-expander-" .. subtier .. "-base.png",
                 width = 28,
                 height = 78,
                 shift = util.by_pixel(0.5, -29.5),
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/logistics/zone-expander/hr-zone-expander-" .. subtier .. "-base.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/zone-expander/hr-zone-expander-" .. subtier .. "-base.png",
                     width = 56,
                     height = 156,
                     shift = util.by_pixel(0.5, -29.5),
@@ -66,13 +66,13 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/logistics/zone-expander/zone-expander-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/zone-expander/zone-expander-mask.png",
                 width = 19,
                 height = 15,
                 shift = util.by_pixel(0.5, 0),
                 tint = inputs.tint,
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/logistics/zone-expander/hr-zone-expander-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/zone-expander/hr-zone-expander-mask.png",
                     width = 38,
                     height = 30,
                     shift = util.by_pixel(0.5, 0),
@@ -82,17 +82,17 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/logistics/zone-expander/zone-expander-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/zone-expander/zone-expander-highlights.png",
                 width = 19,
                 height = 15,
                 shift = util.by_pixel(0.5, 0),
-                blend_mode = reskins.lib.blend_mode, -- "additive",
+                blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/logistics/zone-expander/hr-zone-expander-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/zone-expander/hr-zone-expander-highlights.png",
                     width = 38,
                     height = 30,
                     shift = util.by_pixel(0.5, 0),
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     scale = 0.5
                 }
             },
@@ -103,7 +103,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Antenna
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/logistics/roboport/base/antennas/roboport-" .. subtier .. "-base-animation.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/antennas/roboport-" .. subtier .. "-base-animation.png",
                 priority = "medium",
                 width = 42,
                 height = 31,
@@ -111,7 +111,7 @@ for name, map in pairs(tier_map) do
                 animation_speed = 0.5,
                 shift = util.by_pixel(0.25, -66),
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/logistics/roboport/base/antennas/hr-roboport-" .. subtier .. "-base-animation.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/antennas/hr-roboport-" .. subtier .. "-base-animation.png",
                     priority = "medium",
                     width = 83,
                     height = 59,
@@ -123,14 +123,14 @@ for name, map in pairs(tier_map) do
             },
             -- Shadow
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/logistics/zone-expander/zone-expander-shadow.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/zone-expander/zone-expander-shadow.png",
                 width = 114,
                 height = 30,
                 frame_count = 8,
                 shift = util.by_pixel(44.5, -1.5),
                 draw_as_shadow = true,
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/logistics/zone-expander/hr-zone-expander-shadow.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/zone-expander/hr-zone-expander-shadow.png",
                     width = 228,
                     height = 60,
                     frame_count = 8,
@@ -147,7 +147,7 @@ for name, map in pairs(tier_map) do
 
     entity.water_reflection = {
         pictures = {
-            filename = reskins.bobs.directory .. "/graphics/entity/logistics/zone-expander/zone-expander-reflection.png",
+            filename = "__reskins-bobs__/graphics/entity/logistics/zone-expander/zone-expander-reflection.png",
             priority = "extra-high",
             width = 12,
             height = 23,

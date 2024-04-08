@@ -26,7 +26,7 @@ local tier_map = {
     ["fluid-reactor-3"] = { tier = 3, prog_tier = 5, icon_name = "heat-source-fluid", material = "gold-copper" },
 }
 
-if reskins.lib.migration.is_version_or_newer(mods["bobpower"], "1.1.6") then
+if reskins.lib.version.is_same_or_newer(mods["bobpower"], "1.1.6") then
     tier_map["burner-reactor"].prog_tier = 2
     tier_map["fluid-reactor"].prog_tier = 2
 
@@ -42,12 +42,12 @@ end
 local function heat_source_base_pipes(material)
     return
     {
-        filename = reskins.bobs.directory .. "/graphics/entity/power/heat-source/heat-source-base-pipes-" .. material .. ".png",
+        filename = "__reskins-bobs__/graphics/entity/power/heat-source/heat-source-base-pipes-" .. material .. ".png",
         width = 96,
         height = 96,
         shift = { -0.03125, -0.1875 },
         hr_version = {
-            filename = reskins.bobs.directory .. "/graphics/entity/power/heat-source/hr-heat-source-base-pipes-" .. material .. ".png",
+            filename = "__reskins-bobs__/graphics/entity/power/heat-source/hr-heat-source-base-pipes-" .. material .. ".png",
             width = 192,
             height = 192,
             scale = 0.5,
@@ -60,12 +60,12 @@ local function connect_patches_connected(material)
     return
     {
         sheet = {
-            filename = reskins.bobs.directory .. "/graphics/entity/power/heat-source/reactor-connect-patches-" .. material .. ".png",
+            filename = "__reskins-bobs__/graphics/entity/power/heat-source/reactor-connect-patches-" .. material .. ".png",
             width = 32,
             height = 32,
             variation_count = 12,
             hr_version = {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/heat-source/hr-reactor-connect-patches-" .. material .. ".png",
+                filename = "__reskins-bobs__/graphics/entity/power/heat-source/hr-reactor-connect-patches-" .. material .. ".png",
                 width = 64,
                 height = 64,
                 variation_count = 12,
@@ -79,13 +79,13 @@ local function connect_patches_disconnected(material)
     return
     {
         sheet = {
-            filename = reskins.bobs.directory .. "/graphics/entity/power/heat-source/reactor-connect-patches-" .. material .. ".png",
+            filename = "__reskins-bobs__/graphics/entity/power/heat-source/reactor-connect-patches-" .. material .. ".png",
             width = 32,
             height = 32,
             y = 32,
             variation_count = 12,
             hr_version = {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/heat-source/hr-reactor-connect-patches-" .. material .. ".png",
+                filename = "__reskins-bobs__/graphics/entity/power/heat-source/hr-reactor-connect-patches-" .. material .. ".png",
                 width = 64,
                 height = 64,
                 y = 64,
@@ -106,7 +106,7 @@ for name, mapping in pairs(tier_map) do
 
     -- Handle tier
     local tier = mapping.tier
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
+    if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
         tier = mapping.prog_tier or mapping.tier
     end
 
@@ -114,7 +114,7 @@ for name, mapping in pairs(tier_map) do
     inputs.icon_name = mapping.icon_name
 
     -- Determine what tint we're using
-    inputs.tint = mapping.tint or reskins.lib.tint_index[tier]
+    inputs.tint = mapping.tint or reskins.lib.tiers.get_tint(tier)
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
@@ -122,7 +122,7 @@ for name, mapping in pairs(tier_map) do
     entity.picture = {
         layers = {
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/heat-source/heat-source-base.png",
+                filename = "__reskins-bobs__/graphics/entity/power/heat-source/heat-source-base.png",
                 priority = "high",
                 width = 84,
                 height = 66,
@@ -130,7 +130,7 @@ for name, mapping in pairs(tier_map) do
                 shift = { 0.4375 * 1.5, 0.03125 * 1.5 }
             },
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/heat-source/heat-source-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/power/heat-source/heat-source-mask.png",
                 priority = "high",
                 width = 84,
                 height = 66,
@@ -139,16 +139,16 @@ for name, mapping in pairs(tier_map) do
                 shift = { 0.4375 * 1.5, 0.03125 * 1.5 }
             },
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/heat-source/heat-source-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/power/heat-source/heat-source-highlights.png",
                 priority = "high",
                 width = 84,
                 height = 66,
                 scale = 1.5,
-                blend_mode = reskins.lib.blend_mode,
+                blend_mode = reskins.lib.settings.blend_mode,
                 shift = { 0.4375 * 1.5, 0.03125 * 1.5 }
             },
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/heat-source/heat-source-shadow.png",
+                filename = "__reskins-bobs__/graphics/entity/power/heat-source/heat-source-shadow.png",
                 priority = "high",
                 width = 84,
                 height = 66,

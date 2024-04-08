@@ -6,7 +6,7 @@
 -- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.electronics.items) then return end
 
--- Setup inputs
+---@type CreateIconsFromListInputs
 local inputs = {
     mod = "bobs",
     group = "electronics",
@@ -14,11 +14,13 @@ local inputs = {
     flat_icon = true,
 }
 
+---@type CreateIconsFromListTable
 local intermediates = {
     -- Wires
     ["gilded-copper-cable"] = { mod = "lib", group = "shared", subgroup = "items" },
-    ["tinned-copper-cable"] = { subgroup = "wires", },
+    ["tinned-copper-cable"] = { subgroup = "wires" },
     ["insulated-cable"] = { subgroup = "wires" },
+
     -- Intermediates
     ["solder"] = { mod = "lib", group = "shared", subgroup = "items" },
 }
@@ -39,4 +41,4 @@ if not mods["bobplates"] then
     intermediates["bob-resin-oil"] = { type = "recipe", group = "plates", subgroup = "recipes" }
 end
 
-reskins.lib.create_icons_from_list(intermediates, inputs)
+reskins.internal.create_icons_from_list(intermediates, inputs)

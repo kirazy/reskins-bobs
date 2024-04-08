@@ -8,6 +8,7 @@ if not (reskins.bobs and reskins.bobs.triggers.modules.items) then return end
 -- Intermediates, courtesy of Maxi (mxcop).
 -- https://github.com/mxcop/maxi-reskins/tree/main
 
+---@type CreateIconsFromListInputs
 local intermediate_inputs = {
     directory = reskins.bobs.directory,
     mod = "bobs",
@@ -16,10 +17,7 @@ local intermediate_inputs = {
     flat_icon = true,
 }
 
--- Setup input defaults
-reskins.lib.parse_inputs(intermediate_inputs)
-
--- Host for item icon instructions.
+---@type CreateIconsFromListTable
 local items = {
     ["module-contact"] = { subgroup = "intermediates" },
     ["module-processor-board"] = { subgroup = "intermediates" },
@@ -27,6 +25,7 @@ local items = {
     ["module-processor-board-3"] = { subgroup = "intermediates" },
 }
 
+---@type CreateIconsFromListTable
 local tools = {
     ["module-case"] = { subgroup = "intermediates" },
     ["module-circuit-board"] = { subgroup = "intermediates" },
@@ -46,10 +45,10 @@ for name, map in pairs(intermediates_map) do
     items[name .. "-processor-3"] = { subgroup = "intermediates/" .. map.color, image = map.color .. "-processor-3" }
 end
 
-reskins.lib.create_icons_from_list(items, intermediate_inputs)
-reskins.lib.create_icons_from_list(tools, intermediate_inputs)
+reskins.internal.create_icons_from_list(items, intermediate_inputs)
+reskins.internal.create_icons_from_list(tools, intermediate_inputs)
 
 -- When Bob's module research is a thing, the type changes.
 local tool_inputs = util.copy(intermediate_inputs)
 tool_inputs.type = "tool"
-reskins.lib.create_icons_from_list(tools, tool_inputs)
+reskins.internal.create_icons_from_list(tools, tool_inputs)

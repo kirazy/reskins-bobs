@@ -38,11 +38,11 @@ for _, name in pairs(equipment_list) do
 
     -- Reskin the equipment
     equipment.sprite = {
-        filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/" .. name .. "/" .. name .. "-equipment.png",
+        filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/" .. name .. "/" .. name .. "-equipment.png",
         size = 64,
         priority = "medium",
         hr_version = {
-            filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/" .. name .. "/hr-" .. name .. "-equipment.png",
+            filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/" .. name .. "/hr-" .. name .. "-equipment.png",
             size = 128,
             priority = "medium",
             scale = 0.5,

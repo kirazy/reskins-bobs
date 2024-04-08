@@ -6,7 +6,7 @@
 -- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.plates.items) then return end
 
--- Setup inputs
+---@type CreateIconsFromListInputs
 local inputs = {
     mod = "bobs",
     group = "plates",
@@ -14,6 +14,7 @@ local inputs = {
     flat_icon = true,
 }
 
+---@type CreateIconsFromListTable
 local intermediates = {
     ----------------------------------------------------------------------------------------------------
     -- Intermediates
@@ -66,22 +67,22 @@ local intermediates = {
     ["tungsten-gear-wheel"] = { subgroup = "gears" },
 
     -- Nuclear
-    ["plutonium-fuel-cell"] = { subgroup = "nuclear", make_icon_pictures = true, icon_picture_extras = { reskins.lib.get_lit_sprite_layer("fuel-cell") } },
-    ["thorium-fuel-cell"] = { subgroup = "nuclear", make_icon_pictures = true, icon_picture_extras = { reskins.lib.get_lit_sprite_layer("fuel-cell") } },
-    ["thorium-plutonium-fuel-cell"] = { subgroup = "nuclear", make_icon_pictures = true, icon_picture_extras = { reskins.lib.get_lit_sprite_layer("fuel-cell") } },
-    ["deuterium-fuel-cell"] = { subgroup = "nuclear", image = "deuterium-fuel-cell-pink", make_icon_pictures = true, icon_picture_extras = { reskins.lib.get_lit_sprite_layer("fuel-cell") } },
-    ["deuterium-fuel-cell-2"] = { subgroup = "nuclear", image = "deuterium-fuel-cell-2-pink", make_icon_pictures = true, icon_picture_extras = { reskins.lib.get_lit_sprite_layer("fuel-cell") } },
+    ["plutonium-fuel-cell"] = { subgroup = "nuclear", make_icon_pictures = true, icon_picture_extras = { reskins.lib.sprites.get_sprite_light_layer("fuel-cell") } },
+    ["thorium-fuel-cell"] = { subgroup = "nuclear", make_icon_pictures = true, icon_picture_extras = { reskins.lib.sprites.get_sprite_light_layer("fuel-cell") } },
+    ["thorium-plutonium-fuel-cell"] = { subgroup = "nuclear", make_icon_pictures = true, icon_picture_extras = { reskins.lib.sprites.get_sprite_light_layer("fuel-cell") } },
+    ["deuterium-fuel-cell"] = { subgroup = "nuclear", image = "deuterium-fuel-cell-pink", make_icon_pictures = true, icon_picture_extras = { reskins.lib.sprites.get_sprite_light_layer("fuel-cell") } },
+    ["deuterium-fuel-cell-2"] = { subgroup = "nuclear", image = "deuterium-fuel-cell-2-pink", make_icon_pictures = true, icon_picture_extras = { reskins.lib.sprites.get_sprite_light_layer("fuel-cell") } },
     ["used-up-thorium-fuel-cell"] = { subgroup = "nuclear" },
     ["used-up-deuterium-fuel-cell"] = { subgroup = "nuclear", image = "used-up-deuterium-fuel-cell-pink" },
     ["plutonium-239"] = {
         subgroup = "nuclear",
         make_icon_pictures = true,
         icon_picture_extras = { {
-        draw_as_light = true,
-        blend_mode = "additive",
-        size = 64,
-            filename = reskins.bobs.directory .. "/graphics/icons/plates/nuclear/plutonium-239.png",
-        scale = 0.25,
+            draw_as_light = true,
+            blend_mode = "additive",
+            size = 64,
+            filename = "__reskins-bobs__/graphics/icons/plates/nuclear/plutonium-239.png",
+            scale = 0.25,
             tint = { r = 0.3, g = 0.3, b = 0.3, a = 0.3 },
             mipmap_count = 4,
         } },
@@ -166,25 +167,25 @@ local intermediates = {
 }
 
 -- Handle deuterium color
-if reskins.lib.setting("bobmods-plates-bluedeuterium") == true then
+if reskins.lib.settings.get_value("bobmods-plates-bluedeuterium") == true then
     intermediates["deuterium-fuel-cell"].image = "deuterium-fuel-cell-blue"
     intermediates["deuterium-fuel-cell-2"].image = "deuterium-fuel-cell-2-blue"
     intermediates["used-up-deuterium-fuel-cell"].image = "used-up-deuterium-fuel-cell-blue"
 end
 
 -- Handle nuclear update
-if reskins.lib.setting("bobmods-plates-nuclearupdate") == true then
+if reskins.lib.settings.get_value("bobmods-plates-nuclearupdate") == true then
     intermediates["nuclear-fuel-reprocessing"] = { type = "recipe", subgroup = "recipes", defer_to_data_updates = true }
 
     -- Handle deuterium's default process color
-    if reskins.lib.setting("bobmods-plates-bluedeuterium") == true then
+    if reskins.lib.settings.get_value("bobmods-plates-bluedeuterium") == true then
         intermediates["deuterium-fuel-reprocessing"].image = "deuterium-fuel-reprocessing-blue"
     end
 else
     intermediates["thorium-fuel-reprocessing"].image = "thorium-fuel-reprocessing-alternate"
 
     -- Handle deuterium's alternate process color
-    if reskins.lib.setting("bobmods-plates-bluedeuterium") == true then
+    if reskins.lib.settings.get_value("bobmods-plates-bluedeuterium") == true then
         intermediates["deuterium-fuel-reprocessing"].image = "deuterium-fuel-reprocessing-alternate-blue"
     else
         intermediates["deuterium-fuel-reprocessing"].image = "deuterium-fuel-reprocessing-alternate-pink"
@@ -196,15 +197,15 @@ if not mods["bobelectronics"] then
     intermediates["advanced-processing-unit"] = { subgroup = "items" }
 end
 
-reskins.lib.create_icons_from_list(intermediates, inputs)
+reskins.internal.create_icons_from_list(intermediates, inputs)
 
 -- One-off fixes
 if data.raw.item["nickel-plate"] then
-    reskins.lib.clear_icon_specification("bob-nickel-plate", "recipe")
+    reskins.lib.icons.clear_icon_from_prototype_by_name("bob-nickel-plate", "recipe")
 end
 if data.raw.fluid["liquid-air"] then
-    reskins.lib.clear_icon_specification("bob-liquid-air", "recipe")
+    reskins.lib.icons.clear_icon_from_prototype_by_name("bob-liquid-air", "recipe")
 end
 if data.raw.item["lead-oxide"] then
-    reskins.lib.clear_icon_specification("lead-oxide-2", "recipe")
+    reskins.lib.icons.clear_icon_from_prototype_by_name("lead-oxide-2", "recipe")
 end

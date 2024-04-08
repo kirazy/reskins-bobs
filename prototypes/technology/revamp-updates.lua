@@ -6,16 +6,17 @@
 -- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.revamp.technologies) then return end
 
--- Setup standard inputs
+---@type CreateIconsFromListInputs
 local inputs = {
     mod = "bobs",
     group = "revamp",
     type = "technology",
 }
 
+---@type CreateIconsFromListTable
 local technologies = {
     -- Chemical plant
     ["chemical-plant"] = {group = "assembly", tier = 1, prog_tier = 2, icon_name = "chemical-plant"},
 }
 
-reskins.lib.create_icons_from_list(technologies, inputs)
+reskins.internal.create_icons_from_list(technologies, inputs)

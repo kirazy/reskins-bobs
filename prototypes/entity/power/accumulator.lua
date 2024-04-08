@@ -18,20 +18,20 @@ local inputs = {
 }
 
 local tier_map = {
-    ["accumulator"] = { 1, 2, "" },
-    ["large-accumulator"] = { 1, 2, 1 },
-    ["large-accumulator-2"] = { 2, 3, 1 },
-    ["large-accumulator-3"] = { 3, 4, 1 },
-    ["slow-accumulator"] = { 1, 2, 2 },
-    ["slow-accumulator-2"] = { 2, 3, 2 },
-    ["slow-accumulator-3"] = { 3, 4, 2 },
-    ["fast-accumulator"] = { 1, 2, 3 },
-    ["fast-accumulator-2"] = { 2, 3, 3 },
-    ["fast-accumulator-3"] = { 3, 4, 3 },
+    ["accumulator"] = { tier = 1, prog_tier = 2},
+    ["large-accumulator"] = { tier = 1, prog_tier = 2, wire = 1, letter = "H" },
+    ["large-accumulator-2"] = { tier = 2, prog_tier = 3, wire = 1, letter = "H" },
+    ["large-accumulator-3"] = { tier = 3, prog_tier = 4, wire = 1, letter = "H" },
+    ["slow-accumulator"] = { tier = 1, prog_tier = 2, wire = 2, letter = "S" },
+    ["slow-accumulator-2"] = { tier = 2, prog_tier = 3, wire = 2, letter = "S" },
+    ["slow-accumulator-3"] = { tier = 3, prog_tier = 4, wire = 2, letter = "S" },
+    ["fast-accumulator"] = { tier = 1, prog_tier = 2, wire = 3, letter = "F" },
+    ["fast-accumulator-2"] = { tier = 2, prog_tier = 3, wire = 3, letter = "F" },
+    ["fast-accumulator-3"] = { tier = 3, prog_tier = 4, wire = 3, letter = "F" },
 }
 
-if reskins.lib.migration.is_version_or_newer(mods["bobpower"], "1.1.6") then
-    tier_map["accumulator"] = { 1, 2, 1 }
+if reskins.lib.version.is_same_or_newer(mods["bobpower"], "1.1.6") then
+    tier_map["accumulator"] = { tier = 1, prog_tier = 2, wire = 1, letter = "H" }
     tier_map["large-accumulator"] = nil
 end
 
@@ -41,7 +41,7 @@ local function accumulator_picture_tinted(inputs, repeat_count)
         layers = {
             -- Base
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/accumulator/wires/accumulator-" .. inputs.wire .. ".png",
+                filename = "__reskins-bobs__/graphics/entity/power/accumulator/wires/accumulator-" .. inputs.wire .. ".png",
                 priority = "high",
                 width = 66,
                 height = 94,
@@ -49,7 +49,7 @@ local function accumulator_picture_tinted(inputs, repeat_count)
                 shift = util.by_pixel(0, -10),
                 animation_speed = 0.5,
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/power/accumulator/wires/hr-accumulator-" .. inputs.wire .. ".png",
+                    filename = "__reskins-bobs__/graphics/entity/power/accumulator/wires/hr-accumulator-" .. inputs.wire .. ".png",
                     priority = "high",
                     width = 130,
                     height = 189,
@@ -61,7 +61,7 @@ local function accumulator_picture_tinted(inputs, repeat_count)
             },
             -- Mask
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/accumulator/accumulator-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/power/accumulator/accumulator-mask.png",
                 priority = "high",
                 width = 66,
                 height = 94,
@@ -70,7 +70,7 @@ local function accumulator_picture_tinted(inputs, repeat_count)
                 tint = inputs.tint,
                 animation_speed = 0.5,
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/power/accumulator/hr-accumulator-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/accumulator/hr-accumulator-mask.png",
                     priority = "high",
                     width = 130,
                     height = 189,
@@ -83,22 +83,22 @@ local function accumulator_picture_tinted(inputs, repeat_count)
             },
             -- Highlights
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/accumulator/accumulator-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/power/accumulator/accumulator-highlights.png",
                 priority = "high",
                 width = 66,
                 height = 94,
                 repeat_count = repeat_count,
                 shift = util.by_pixel(0, -10),
-                blend_mode = reskins.lib.blend_mode, -- "additive",
+                blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 animation_speed = 0.5,
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/power/accumulator/hr-accumulator-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/accumulator/hr-accumulator-highlights.png",
                     priority = "high",
                     width = 130,
                     height = 189,
                     repeat_count = repeat_count,
                     shift = util.by_pixel(0, -11),
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     animation_speed = 0.5,
                     scale = 0.5,
                 },
@@ -194,35 +194,26 @@ for name, map in pairs(tier_map) do
     if not entity then goto continue end
 
     -- Parse map
-    local tier = map[1]
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
-        tier = map[2]
+    local tier = map.tier
+    if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
+        tier = map.prog_tier or map.tier
     end
-    inputs.wire = map[3]
+    inputs.wire = map.wire
 
     -- Stick tier labels on the vanilla accumulator
-    if name == "accumulator" and reskins.lib.migration.is_older_version(mods["bobpower"], "1.1.6") then
-        reskins.lib.add_tier_labels_to_entity(name, inputs.type, tier)
+    if name == "accumulator" and reskins.lib.version.is_older(mods["bobpower"], "1.1.6") then
+        reskins.lib.tiers.add_tier_labels_to_prototype_by_reference(tier, entity)
         goto continue
     end
 
     -- Determine what tint we're using
-    inputs.tint = reskins.lib.tint_index[tier]
+    inputs.tint = reskins.lib.tiers.get_tint(tier)
 
     -- Setup icon base details
-    inputs.icon_base = "accumulator-" .. inputs.wire
+    inputs.icon_base = "accumulator-" .. map.wire
 
     -- Setup additional icon details
-    inputs.icon_extras = {
-        -- Type indicator
-        {
-            icon = reskins.bobs.directory .. "/graphics/icons/power/accumulator/accumulator-type-" .. inputs.wire .. "-icon.png",
-        },
-        {
-            icon = reskins.bobs.directory .. "/graphics/icons/power/accumulator/accumulator-type-" .. inputs.wire .. "-icon.png",
-            tint = util.get_color_with_alpha(reskins.lib.tint_index[tier], 0.75),
-        },
-    }
+    inputs.icon_extras = reskins.lib.icons.get_letter(map.letter, reskins.lib.tiers.get_tint(tier))
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
@@ -234,7 +225,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/accumulator/remnants/wires/accumulator-" .. inputs.wire .. "-remnants.png",
+                filename = "__reskins-bobs__/graphics/entity/power/accumulator/remnants/wires/accumulator-" .. inputs.wire .. "-remnants.png",
                 line_length = 1,
                 width = 86,
                 height = 74,
@@ -244,7 +235,7 @@ for name, map in pairs(tier_map) do
                 direction_count = 1,
                 shift = util.by_pixel(2, 4),
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/power/accumulator/remnants/wires/hr-accumulator-" .. inputs.wire .. "-remnants.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/accumulator/remnants/wires/hr-accumulator-" .. inputs.wire .. "-remnants.png",
                     line_length = 1,
                     width = 172,
                     height = 146,
@@ -258,7 +249,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/accumulator/remnants/accumulator-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/power/accumulator/remnants/accumulator-remnants-mask.png",
                 line_length = 1,
                 width = 86,
                 height = 74,
@@ -269,7 +260,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(2, 4),
                 tint = inputs.tint,
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/power/accumulator/remnants/hr-accumulator-remnants-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/accumulator/remnants/hr-accumulator-remnants-mask.png",
                     line_length = 1,
                     width = 172,
                     height = 146,
@@ -284,7 +275,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/accumulator/remnants/accumulator-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/power/accumulator/remnants/accumulator-remnants-highlights.png",
                 line_length = 1,
                 width = 86,
                 height = 74,
@@ -293,9 +284,9 @@ for name, map in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(2, 4),
-                blend_mode = reskins.lib.blend_mode, -- "additive",
+                blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/power/accumulator/remnants/hr-accumulator-remnants-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/accumulator/remnants/hr-accumulator-remnants-highlights.png",
                     line_length = 1,
                     width = 172,
                     height = 146,
@@ -304,7 +295,7 @@ for name, map in pairs(tier_map) do
                     axially_symmetrical = false,
                     direction_count = 1,
                     shift = util.by_pixel(2.5, 3.5),
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     scale = 0.5,
                 },
             },

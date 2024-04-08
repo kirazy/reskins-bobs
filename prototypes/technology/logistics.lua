@@ -19,7 +19,19 @@ local inputs = {
 local stack_inserter_icon = "__base__/graphics/technology/stack-inserter.png"
 local inserter_icon = "__base__/graphics/technology/inserter-capacity.png"
 local toolbelt_icon = "__base__/graphics/technology/toolbelt.png"
-local constant_capacity = reskins.lib.return_technology_effect_icon("capacity")
+
+---@param filename string # The filename of the icon to use.
+---@return CreateIconsFromListOverrides
+local function get_capacity_override(filename)
+    ---@type CreateIconsFromListOverrides
+    local override = {
+        technology_icon_filename = filename,
+        technology_icon_extras = { reskins.lib.return_technology_effect_icon("capacity") },
+        flat_icon = true,
+    }
+
+    return override
+end
 
 local technologies = {
     -- Fluid wagons
@@ -43,10 +55,10 @@ local technologies = {
     -- ["bob-robo-modular-4"] = {tier = 4, prog_tier = 5},
 
     -- Repair packs
-    ["bob-repair-pack-2"] = {tier = 2, icon_name = "repair-pack", technology_icon_size = 128, technology_icon_mipmaps = 0},
-    ["bob-repair-pack-3"] = {tier = 3, icon_name = "repair-pack", technology_icon_size = 128, technology_icon_mipmaps = 0},
-    ["bob-repair-pack-4"] = {tier = 4, icon_name = "repair-pack", technology_icon_size = 128, technology_icon_mipmaps = 0},
-    ["bob-repair-pack-5"] = {tier = 5, icon_name = "repair-pack", technology_icon_size = 128, technology_icon_mipmaps = 0},
+    ["bob-repair-pack-2"] = { tier = 2, icon_name = "repair-pack", technology_icon_size = 128, technology_icon_mipmaps = 0 },
+    ["bob-repair-pack-3"] = { tier = 3, icon_name = "repair-pack", technology_icon_size = 128, technology_icon_mipmaps = 0 },
+    ["bob-repair-pack-4"] = { tier = 4, icon_name = "repair-pack", technology_icon_size = 128, technology_icon_mipmaps = 0 },
+    ["bob-repair-pack-5"] = { tier = 5, icon_name = "repair-pack", technology_icon_size = 128, technology_icon_mipmaps = 0 },
 
     -- Fluid Handling
     -- ["fluid-handling"] = {flat_icon = false, tier = 1, prog_tier = 2, icon_name = "fluid-handling"}, -- handled by technology/plates.lua
@@ -55,18 +67,18 @@ local technologies = {
     -- ["bob-fluid-handling-4"] = {flat_icon = false, tier = 4, prog_tier = 5, icon_name = "fluid-handling"}, -- handled by technology/plates.lua
 
     -- Robot frames
-    ["robotics"] = {icon_name = "robotics", tier = 1, prog_tier = 2},
-    ["bob-robotics-2"] = {icon_name = "robotics", tier = 2, prog_tier = 3},
-    ["bob-robotics-3"] = {icon_name = "robotics", tier = 3, prog_tier = 4},
-    ["bob-robotics-4"] = {icon_name = "robotics", tier = 4, prog_tier = 5},
+    ["robotics"] = { icon_name = "robotics", tier = 1, prog_tier = 2 },
+    ["bob-robotics-2"] = { icon_name = "robotics", tier = 2, prog_tier = 3 },
+    ["bob-robotics-3"] = { icon_name = "robotics", tier = 3, prog_tier = 4 },
+    ["bob-robotics-4"] = { icon_name = "robotics", tier = 4, prog_tier = 5 },
 
     -- Construction/Logistic robots
     -- ["construction-robots"] = {tier = 1},
     -- ["logistic-robots"] = {tier = 1},
-    ["bob-robots-1"] = {icon_name = "robots", tier = 2},
-    ["bob-robots-2"] = {icon_name = "robots", tier = 3},
-    ["bob-robots-3"] = {icon_name = "robots", tier = 4},
-    ["bob-robots-4"] = {icon_name = "robots", tier = 5},
+    ["bob-robots-1"] = { icon_name = "robots", tier = 2 },
+    ["bob-robots-2"] = { icon_name = "robots", tier = 3 },
+    ["bob-robots-3"] = { icon_name = "robots", tier = 4 },
+    ["bob-robots-4"] = { icon_name = "robots", tier = 5 },
 
     -- Logistic systems
     -- ["logistic-system"] = {tier = 1, prog_tier = 2},
@@ -75,66 +87,70 @@ local technologies = {
 
     -- TECHNOLOGY EFFECTS
     -- Stack inserter capacities
-    ["inserter-capacity-bonus-1"] = {technology_icon_filename = stack_inserter_icon, technology_icon_extras = {constant_capacity}, flat_icon = true},
-    ["inserter-capacity-bonus-2"] = {technology_icon_filename = stack_inserter_icon, technology_icon_extras = {constant_capacity}, flat_icon = true},
-    ["inserter-capacity-bonus-3"] = {technology_icon_filename = stack_inserter_icon, technology_icon_extras = {constant_capacity}, flat_icon = true},
-    ["inserter-capacity-bonus-4"] = {technology_icon_filename = stack_inserter_icon, technology_icon_extras = {constant_capacity}, flat_icon = true},
-    ["inserter-capacity-bonus-5"] = {technology_icon_filename = stack_inserter_icon, technology_icon_extras = {constant_capacity}, flat_icon = true},
-    ["inserter-capacity-bonus-6"] = {technology_icon_filename = stack_inserter_icon, technology_icon_extras = {constant_capacity}, flat_icon = true},
-    ["inserter-capacity-bonus-7"] = {technology_icon_filename = stack_inserter_icon, technology_icon_extras = {constant_capacity}, flat_icon = true},
-    ["inserter-capacity-bonus-8"] = {technology_icon_filename = stack_inserter_icon, technology_icon_extras = {constant_capacity}, flat_icon = true},
+    ["inserter-capacity-bonus-1"] = get_capacity_override(stack_inserter_icon),
+    ["inserter-capacity-bonus-2"] = get_capacity_override(stack_inserter_icon),
+    ["inserter-capacity-bonus-3"] = get_capacity_override(stack_inserter_icon),
+    ["inserter-capacity-bonus-4"] = get_capacity_override(stack_inserter_icon),
+    ["inserter-capacity-bonus-5"] = get_capacity_override(stack_inserter_icon),
+    ["inserter-capacity-bonus-6"] = get_capacity_override(stack_inserter_icon),
+    ["inserter-capacity-bonus-7"] = get_capacity_override(stack_inserter_icon),
+    ["inserter-capacity-bonus-8"] = get_capacity_override(stack_inserter_icon),
 
     -- Inserter capacities
-    ["inserter-stack-size-bonus-1"] = {technology_icon_filename = inserter_icon, technology_icon_extras = {constant_capacity}, flat_icon = true},
-    ["inserter-stack-size-bonus-2"] = {technology_icon_filename = inserter_icon, technology_icon_extras = {constant_capacity}, flat_icon = true},
-    ["inserter-stack-size-bonus-3"] = {technology_icon_filename = inserter_icon, technology_icon_extras = {constant_capacity}, flat_icon = true},
-    ["inserter-stack-size-bonus-4"] = {technology_icon_filename = inserter_icon, technology_icon_extras = {constant_capacity}, flat_icon = true},
+    ["inserter-stack-size-bonus-1"] = get_capacity_override(inserter_icon),
+    ["inserter-stack-size-bonus-2"] = get_capacity_override(inserter_icon),
+    ["inserter-stack-size-bonus-3"] = get_capacity_override(inserter_icon),
+    ["inserter-stack-size-bonus-4"] = get_capacity_override(inserter_icon),
 
     -- Toolbelt capacity
-    ["toolbelt"] = {technology_icon_filename = toolbelt_icon, technology_icon_extras = {constant_capacity}, flat_icon = true},
-    ["toolbelt-2"] = {technology_icon_filename = toolbelt_icon, technology_icon_extras = {constant_capacity}, flat_icon = true},
-    ["toolbelt-3"] = {technology_icon_filename = toolbelt_icon, technology_icon_extras = {constant_capacity}, flat_icon = true},
-    ["toolbelt-4"] = {technology_icon_filename = toolbelt_icon, technology_icon_extras = {constant_capacity}, flat_icon = true},
-    ["toolbelt-5"] = {technology_icon_filename = toolbelt_icon, technology_icon_extras = {constant_capacity}, flat_icon = true},
+    ["toolbelt"] = get_capacity_override(toolbelt_icon),
+    ["toolbelt-2"] = get_capacity_override(toolbelt_icon),
+    ["toolbelt-3"] = get_capacity_override(toolbelt_icon),
+    ["toolbelt-4"] = get_capacity_override(toolbelt_icon),
+    ["toolbelt-5"] = get_capacity_override(toolbelt_icon),
 }
 
 -- Disable select items based on Bob's settings
--- if (reskins.lib.setting("bobmods-logistics-flyingrobotframes") == false or reskins.lib.setting("bobmods-logistics-robotparts") == false) then
+-- if (reskins.lib.setting.get_value("bobmods-logistics-flyingrobotframes") == false 
+--     or reskins.lib.setting.get_value("bobmods-logistics-robotparts") == false) then
 --     technologies["robotics"] = nil
 -- end
 
 -- Set fusion robot color
-if (reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" and reskins.lib.setting("reskins-bobs-do-progression-based-robots")) then
+if (reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map"
+    and reskins.lib.settings.get_value("reskins-bobs-do-progression-based-robots")) then
+
     -- technologies["construction-robots"].prog_tier = 2
     -- technologies["logistic-robots"].prog_tier = 2
     technologies["bob-robots-1"].prog_tier = 3
     technologies["bob-robots-2"].prog_tier = 4
     technologies["bob-robots-3"].prog_tier = 5
-    technologies["bob-robots-4"].tint = reskins.lib.setting("reskins-bobs-fusion-robot-color")
+    technologies["bob-robots-4"].tint = reskins.lib.settings.get_value("reskins-bobs-fusion-robot-color")
 end
 
 -- Load which set of inserter technologies are to be reskinned
-if reskins.lib.setting("bobmods-logistics-inserteroverhaul") == true then
+if reskins.lib.settings.get_value("bobmods-logistics-inserteroverhaul") == true then
     -- Standard inserters
-    technologies["fast-inserter"] = {icon_name = "inserter", tier = 2}
-    technologies["express-inserters"] = {icon_name = "inserter", tier = 3}
-    technologies["turbo-inserter"] = {icon_name = "inserter", tier = 4}
-    technologies["ultimate-inserter"] = {icon_name = "inserter", tier = 5}
+    technologies["fast-inserter"] = { icon_name = "inserter", tier = 2 }
+    technologies["express-inserters"] = { icon_name = "inserter", tier = 3 }
+    technologies["turbo-inserter"] = { icon_name = "inserter", tier = 4 }
+    technologies["ultimate-inserter"] = { icon_name = "inserter", tier = 5 }
 
     -- Stack inserters
-    technologies["stack-inserter"] = {icon_name = "stack-inserter", tier = 2}
-    technologies["stack-inserter-2"] = {icon_name = "stack-inserter", tier = 3}
-    technologies["stack-inserter-3"] = {icon_name = "stack-inserter", tier = 4}
-    technologies["stack-inserter-4"] = {icon_name = "stack-inserter", tier = 5}
+    technologies["stack-inserter"] = { icon_name = "stack-inserter", tier = 2 }
+    technologies["stack-inserter-2"] = { icon_name = "stack-inserter", tier = 3 }
+    technologies["stack-inserter-3"] = { icon_name = "stack-inserter", tier = 4 }
+    technologies["stack-inserter-4"] = { icon_name = "stack-inserter", tier = 5 }
 else
-    technologies["long-inserters-1"] = {flat_icon = true}
+    technologies["long-inserters-1"] = { flat_icon = true }
     -- technologies["fast-inserter"] = {} -- fine as-is
-    technologies["express-inserters"] = {flat_icon = true} -- green/pink
-    technologies["stack-inserter"] = {flat_icon = true} -- green/white
-    technologies["stack-inserter-2"] = {flat_icon = true} -- rich green/gray
+    technologies["express-inserters"] = { flat_icon = true } -- green/pink
+    technologies["stack-inserter"] = { flat_icon = true }    -- green/white
+    technologies["stack-inserter-2"] = { flat_icon = true }  -- rich green/gray
 end
 
-reskins.lib.create_icons_from_list(technologies, inputs)
+reskins.internal.create_icons_from_list(technologies, inputs)
 
 -- Overwrite icons for technology effects
-data.raw["utility-sprites"].default.stack_inserter_capacity_bonus_modifier_icon.filename = reskins.bobs.directory.."/graphics/icons/logistics/inserter/stack-inserter-technology-effect-icon.png"
+data.raw["utility-sprites"].default.stack_inserter_capacity_bonus_modifier_icon.filename =
+    "__reskins-bobs__/graphics/icons/logistics/inserter/stack-inserter-technology-effect-icon.png"

@@ -6,7 +6,7 @@
 -- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.assembly.technologies) then return end
 
--- Setup standard inputs
+---@type CreateIconsFromListInputs
 local inputs = {
     mod = "bobs",
     group = "assembly",
@@ -15,6 +15,7 @@ local inputs = {
     technology_icon_mipmaps = 4,
 }
 
+---@type CreateIconsFromListTable
 local technologies = {
     -- Assemblers
     ["automation"] = {tier = 0, icon_name = "automation"},
@@ -57,4 +58,4 @@ local technologies = {
     ["bob-distillery-5"] = {tier = 5, icon_name = "distillery", technology_icon_size = 128, technology_icon_mipmaps = 0},
 }
 
-reskins.lib.create_icons_from_list(technologies, inputs)
+reskins.internal.create_icons_from_list(technologies, inputs)

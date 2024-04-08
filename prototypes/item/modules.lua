@@ -4,7 +4,7 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if reskins.lib.setting("cp-override-modules") == false then --[[ Do nothing ]]
+if reskins.lib.settings.get_value("cp-override-modules") == false then --[[ Do nothing ]]
 elseif mods["CircuitProcessing"] then
     return
 end
@@ -52,7 +52,7 @@ for class, map in pairs(modules_map) do
         if not entity then goto continue end
 
         -- Setup icon path
-        inputs.icon_filename = reskins.bobs.directory .. "/graphics/icons/modules/module/" .. color .. "/" .. color .. "_" .. tier .. ".png"
+        inputs.icon_filename = "__reskins-bobs__/graphics/icons/modules/module/" .. color .. "/" .. color .. "_" .. tier .. ".png"
 
         reskins.lib.construct_icon(name, 0, inputs)
 
@@ -68,7 +68,7 @@ for class, map in pairs(modules_map) do
 end
 
 -- Reskin God module entities
-if reskins.lib.setting("bobmods-modules-enablegodmodules") then
+if reskins.lib.settings.get_value("bobmods-modules-enablegodmodules") then
     if not data.raw.module["god-module-6"] then
         for i = 1, 5 do
             -- Fetch entity
@@ -79,7 +79,7 @@ if reskins.lib.setting("bobmods-modules-enablegodmodules") then
             if not entity then goto continue end
 
             -- Setup icon path
-            inputs.icon_filename = reskins.bobs.directory .. "/graphics/icons/modules/god-module/" .. name .. ".png"
+            inputs.icon_filename = "__reskins-bobs__/graphics/icons/modules/god-module/" .. name .. ".png"
             inputs.icon_layers = 1
 
             reskins.lib.construct_icon(name, 0, inputs)

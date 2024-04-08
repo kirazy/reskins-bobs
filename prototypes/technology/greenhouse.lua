@@ -6,7 +6,7 @@
 -- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.greenhouse.technologies) then return end
 
--- Setup inputs
+---@type CreateIconsFromListInputs
 local inputs = {
     mod = "bobs",
     group = "greenhouse",
@@ -16,9 +16,10 @@ local inputs = {
     technology_icon_mipmaps = 4,
 }
 
+---@type CreateIconsFromListTable
 local technologies = {
     ["bob-fertiliser"] = {},
     ["bob-greenhouse"] = {}, -- greenhouse, recipies
 }
 
-reskins.lib.create_icons_from_list(technologies, inputs)
+reskins.internal.create_icons_from_list(technologies, inputs)

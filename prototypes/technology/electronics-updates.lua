@@ -6,7 +6,7 @@
 -- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.electronics.technologies) then return end
 
--- Setup standard inputs
+---@type CreateIconsFromListInputs
 local inputs = {
     mod = "bobs",
     group = "electronics",
@@ -16,8 +16,9 @@ local inputs = {
     flat_icon = true,
 }
 
+---@type CreateIconsFromListTable
 local technologies = {
-    ["advanced-electronics-2"] = {technology_icon_filename = "__base__/graphics/technology/electronics.png"}, -- Use "electronics.png" from base
+    ["advanced-electronics-2"] = {technology_icon_filename = "__base__/graphics/technology/electronics.png"},
 }
 
-reskins.lib.create_icons_from_list(technologies, inputs)
+reskins.internal.create_icons_from_list(technologies, inputs)

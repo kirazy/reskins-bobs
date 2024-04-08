@@ -6,7 +6,7 @@
 -- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.greenhouse.items) then return end
 
--- Setup inputs
+---@type CreateIconsFromListInputs
 local inputs = {
     mod = "bobs",
     group = "greenhouse",
@@ -14,6 +14,7 @@ local inputs = {
     flat_icon = true,
 }
 
+---@type CreateIconsFromListTable
 local intermediates = {
     ["seedling"] = { subgroup = "items" },
     ["fertiliser"] = { subgroup = "items" },
@@ -22,4 +23,4 @@ local intermediates = {
     ["bob-advanced-greenhouse-cycle"] = { type = "recipe", subgroup = "recipes" },
 }
 
-reskins.lib.create_icons_from_list(intermediates, inputs)
+reskins.internal.create_icons_from_list(intermediates, inputs)

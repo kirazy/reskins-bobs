@@ -19,7 +19,7 @@ local inputs = {
 }
 
 -- Determine which tint we're using for the hydrazine-generator
-if reskins.lib.setting("reskins-bobs-hydrazine-is-blue") == true then
+if reskins.lib.settings.get_value("reskins-bobs-hydrazine-is-blue") == true then
     reskins.bobs.hydrazine_tint = util.color("7ac1de")
 else
     reskins.bobs.hydrazine_tint = nil
@@ -38,14 +38,14 @@ local function setup_fluid_generator(tint)
         layers = {
             -- Base
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/fluid-generator/fluid-generator-base.png",
+                filename = "__reskins-bobs__/graphics/entity/power/fluid-generator/fluid-generator-base.png",
                 width = 101,
                 height = 130,
                 frame_count = 8,
                 line_length = 4,
                 shift = util.by_pixel(2.5, -11),
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/power/fluid-generator/hr-fluid-generator-base.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/fluid-generator/hr-fluid-generator-base.png",
                     width = 202,
                     height = 260,
                     frame_count = 8,
@@ -56,14 +56,14 @@ local function setup_fluid_generator(tint)
             },
             -- Mask
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/fluid-generator/fluid-generator-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/power/fluid-generator/fluid-generator-mask.png",
                 width = 101,
                 height = 130,
                 repeat_count = 8,
                 tint = tint,
                 shift = util.by_pixel(2.5, -11),
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/power/fluid-generator/hr-fluid-generator-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/fluid-generator/hr-fluid-generator-mask.png",
                     width = 202,
                     height = 260,
                     repeat_count = 8,
@@ -74,32 +74,32 @@ local function setup_fluid_generator(tint)
             },
             -- Highlights
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/fluid-generator/fluid-generator-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/power/fluid-generator/fluid-generator-highlights.png",
                 width = 101,
                 height = 130,
                 repeat_count = 8,
-                blend_mode = reskins.lib.blend_mode, -- "additive",
+                blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 shift = util.by_pixel(2.5, -11),
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/power/fluid-generator/hr-fluid-generator-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/fluid-generator/hr-fluid-generator-highlights.png",
                     width = 202,
                     height = 260,
                     repeat_count = 8,
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     shift = util.by_pixel(2.5, -11),
                     scale = 0.5
                 }
             },
             -- Shadow
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/fluid-generator/fluid-generator-shadow.png",
+                filename = "__reskins-bobs__/graphics/entity/power/fluid-generator/fluid-generator-shadow.png",
                 width = 162,
                 height = 130,
                 repeat_count = 8,
                 draw_as_shadow = true,
                 shift = util.by_pixel(33, -11),
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/power/fluid-generator/hr-fluid-generator-shadow.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/fluid-generator/hr-fluid-generator-shadow.png",
                     width = 324,
                     height = 260,
                     repeat_count = 8,
@@ -122,14 +122,14 @@ for name, map in pairs(fluid_generators) do
 
     -- Parse map
     local tier = map[1]
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
+    if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
         tier = map[2]
     end
 
     local frequency = map[3]
 
     -- Determine what tint we're using
-    inputs.tint = map[4] or reskins.lib.tint_index[tier]
+    inputs.tint = map[4] or reskins.lib.tiers.get_tint(tier)
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
@@ -169,7 +169,7 @@ for name, map in pairs(fluid_generators) do
 
     entity.water_reflection = {
         pictures = {
-            filename = reskins.bobs.directory .. "/graphics/entity/power/fluid-generator/fluid-generator-reflection.png",
+            filename = "__reskins-bobs__/graphics/entity/power/fluid-generator/fluid-generator-reflection.png",
             priority = "extra-high",
             width = 28,
             height = 36,

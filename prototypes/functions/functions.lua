@@ -25,9 +25,9 @@ reskins.bobs.module_color_map = {
 
 ---Table of colors for the three types of furnaces added by bobplates.
 reskins.bobs.furnace_tint_index = {
-    standard = reskins.lib.setting("reskins-bobs-do-custom-furnace-variants") and reskins.lib.setting("reskins-bobs-standard-furnace-color") or util.color("ffb700"),
-    mixing = reskins.lib.setting("reskins-bobs-do-custom-furnace-variants") and reskins.lib.setting("reskins-bobs-mixing-furnace-color") or util.color("00bfff"),
-    chemical = reskins.lib.setting("reskins-bobs-do-custom-furnace-variants") and reskins.lib.setting("reskins-bobs-chemical-furnace-color") or util.color("f21f0c"),
+    standard = reskins.lib.settings.get_value("reskins-bobs-do-custom-furnace-variants") and reskins.lib.settings.get_value("reskins-bobs-standard-furnace-color") or util.color("ffb700"),
+    mixing = reskins.lib.settings.get_value("reskins-bobs-do-custom-furnace-variants") and reskins.lib.settings.get_value("reskins-bobs-mixing-furnace-color") or util.color("00bfff"),
+    chemical = reskins.lib.settings.get_value("reskins-bobs-do-custom-furnace-variants") and reskins.lib.settings.get_value("reskins-bobs-chemical-furnace-color") or util.color("f21f0c"),
 }
 
 -- NUCLEAR REACTOR COLORS AND ICON COMPOSITIONS
@@ -48,12 +48,12 @@ reskins.bobs.nuclear_reactor_index = {
 }
 
 -- Nucelar reactors have two modes, revamped or standard; determine which we are using
-if reskins.lib.setting("bobmods-revamp-nuclear") == true then
+if reskins.lib.settings.get_value("bobmods-revamp-nuclear") == true then
     -- Map fuel type to reactor entity name
     reskins.bobs.nuclear_reactor_index["nuclear-reactor-2"].name = "thorium"
     reskins.bobs.nuclear_reactor_index["nuclear-reactor-2"].tint = nuclear_tint_index["thorium"]
 
-    if reskins.lib.setting("bobmods-plates-bluedeuterium") == true then
+    if reskins.lib.settings.get_value("bobmods-plates-bluedeuterium") == true then
         reskins.bobs.nuclear_reactor_index["nuclear-reactor-3"].name = "deuterium-blue"
         reskins.bobs.nuclear_reactor_index["nuclear-reactor-3"].tint = nuclear_tint_index["deuterium-blue"]
     else
@@ -63,7 +63,7 @@ if reskins.lib.setting("bobmods-revamp-nuclear") == true then
 end
 
 -- Permit tier-based tint lookup
-if not (reskins.lib.setting("bobmods-revamp-nuclear") and reskins.lib.setting("reskins-bobs-do-bobrevamp-reactor-color")) then
+if not (reskins.lib.settings.get_value("bobmods-revamp-nuclear") and reskins.lib.settings.get_value("reskins-bobs-do-bobrevamp-reactor-color")) then
     reskins.bobs.nuclear_reactor_index["nuclear-reactor"].tint = nil
     reskins.bobs.nuclear_reactor_index["nuclear-reactor-2"].tint = nil
     reskins.bobs.nuclear_reactor_index["nuclear-reactor-3"].tint = nil
@@ -212,13 +212,13 @@ function reskins.bobs.assembly_pipe_pictures(tint)
             layers = {
                 -- Base
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/assembly/assembling-machine/pipes/assembling-machine-pipe-N-base.png",
+                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/pipes/assembling-machine-pipe-N-base.png",
                     priority = "extra-high",
                     width = 35,
                     height = 18,
                     shift = util.by_pixel(2.5, 14),
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/assembly/assembling-machine/pipes/hr-assembling-machine-pipe-N-base.png",
+                        filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/pipes/hr-assembling-machine-pipe-N-base.png",
                         priority = "extra-high",
                         width = 71,
                         height = 38,
@@ -228,14 +228,14 @@ function reskins.bobs.assembly_pipe_pictures(tint)
                 },
                 -- Mask
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/assembly/assembling-machine/pipes/assembling-machine-pipe-N-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/pipes/assembling-machine-pipe-N-mask.png",
                     priority = "extra-high",
                     width = 35,
                     height = 18,
                     shift = util.by_pixel(2.5, 14),
                     tint = tint,
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/assembly/assembling-machine/pipes/hr-assembling-machine-pipe-N-mask.png",
+                        filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/pipes/hr-assembling-machine-pipe-N-mask.png",
                         priority = "extra-high",
                         width = 71,
                         height = 38,
@@ -246,19 +246,19 @@ function reskins.bobs.assembly_pipe_pictures(tint)
                 },
                 -- Highlights
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/assembly/assembling-machine/pipes/assembling-machine-pipe-N-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/pipes/assembling-machine-pipe-N-highlights.png",
                     priority = "extra-high",
                     width = 35,
                     height = 18,
                     shift = util.by_pixel(2.5, 14),
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/assembly/assembling-machine/pipes/hr-assembling-machine-pipe-N-highlights.png",
+                        filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/pipes/hr-assembling-machine-pipe-N-highlights.png",
                         priority = "extra-high",
                         width = 71,
                         height = 38,
                         shift = util.by_pixel(2.25, 13.5),
-                        blend_mode = reskins.lib.blend_mode, -- "additive",
+                        blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 }
@@ -268,13 +268,13 @@ function reskins.bobs.assembly_pipe_pictures(tint)
             layers = {
                 -- Base
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/assembly/assembling-machine/pipes/assembling-machine-pipe-E-base.png",
+                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/pipes/assembling-machine-pipe-E-base.png",
                     priority = "extra-high",
                     width = 20,
                     height = 38,
                     shift = util.by_pixel(-25, 1),
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/assembly/assembling-machine/pipes/hr-assembling-machine-pipe-E-base.png",
+                        filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/pipes/hr-assembling-machine-pipe-E-base.png",
                         priority = "extra-high",
                         width = 42,
                         height = 76,
@@ -284,14 +284,14 @@ function reskins.bobs.assembly_pipe_pictures(tint)
                 },
                 -- Mask
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/assembly/assembling-machine/pipes/assembling-machine-pipe-E-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/pipes/assembling-machine-pipe-E-mask.png",
                     priority = "extra-high",
                     width = 20,
                     height = 38,
                     shift = util.by_pixel(-25, 1),
                     tint = tint,
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/assembly/assembling-machine/pipes/hr-assembling-machine-pipe-E-mask.png",
+                        filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/pipes/hr-assembling-machine-pipe-E-mask.png",
                         priority = "extra-high",
                         width = 42,
                         height = 76,
@@ -302,19 +302,19 @@ function reskins.bobs.assembly_pipe_pictures(tint)
                 },
                 -- Highlights
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/assembly/assembling-machine/pipes/assembling-machine-pipe-E-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/pipes/assembling-machine-pipe-E-highlights.png",
                     priority = "extra-high",
                     width = 20,
                     height = 38,
                     shift = util.by_pixel(-25, 1),
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/assembly/assembling-machine/pipes/hr-assembling-machine-pipe-E-highlights.png",
+                        filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/pipes/hr-assembling-machine-pipe-E-highlights.png",
                         priority = "extra-high",
                         width = 42,
                         height = 76,
                         shift = util.by_pixel(-24.5, 1),
-                        blend_mode = reskins.lib.blend_mode, -- "additive",
+                        blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 }
@@ -324,13 +324,13 @@ function reskins.bobs.assembly_pipe_pictures(tint)
             layers = {
                 -- Base
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/assembly/assembling-machine/pipes/assembling-machine-pipe-S-base.png",
+                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/pipes/assembling-machine-pipe-S-base.png",
                     priority = "extra-high",
                     width = 44,
                     height = 31,
                     shift = util.by_pixel(0, -31.5),
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/assembly/assembling-machine/pipes/hr-assembling-machine-pipe-S-base.png",
+                        filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/pipes/hr-assembling-machine-pipe-S-base.png",
                         priority = "extra-high",
                         width = 88,
                         height = 61,
@@ -340,14 +340,14 @@ function reskins.bobs.assembly_pipe_pictures(tint)
                 },
                 -- Mask
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/assembly/assembling-machine/pipes/assembling-machine-pipe-S-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/pipes/assembling-machine-pipe-S-mask.png",
                     priority = "extra-high",
                     width = 44,
                     height = 31,
                     shift = util.by_pixel(0, -31.5),
                     tint = tint,
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/assembly/assembling-machine/pipes/hr-assembling-machine-pipe-S-mask.png",
+                        filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/pipes/hr-assembling-machine-pipe-S-mask.png",
                         priority = "extra-high",
                         width = 88,
                         height = 61,
@@ -358,19 +358,19 @@ function reskins.bobs.assembly_pipe_pictures(tint)
                 },
                 -- Highlights
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/assembly/assembling-machine/pipes/assembling-machine-pipe-S-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/pipes/assembling-machine-pipe-S-highlights.png",
                     priority = "extra-high",
                     width = 44,
                     height = 31,
                     shift = util.by_pixel(0, -31.5),
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/assembly/assembling-machine/pipes/hr-assembling-machine-pipe-S-highlights.png",
+                        filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/pipes/hr-assembling-machine-pipe-S-highlights.png",
                         priority = "extra-high",
                         width = 88,
                         height = 61,
                         shift = util.by_pixel(0, -31.25),
-                        blend_mode = reskins.lib.blend_mode, -- "additive",
+                        blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 }
@@ -380,13 +380,13 @@ function reskins.bobs.assembly_pipe_pictures(tint)
             layers = {
                 -- Base
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/assembly/assembling-machine/pipes/assembling-machine-pipe-W-base.png",
+                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/pipes/assembling-machine-pipe-W-base.png",
                     priority = "extra-high",
                     width = 19,
                     height = 37,
                     shift = util.by_pixel(25.5, 1.5),
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/assembly/assembling-machine/pipes/hr-assembling-machine-pipe-W-base.png",
+                        filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/pipes/hr-assembling-machine-pipe-W-base.png",
                         priority = "extra-high",
                         width = 39,
                         height = 73,
@@ -396,14 +396,14 @@ function reskins.bobs.assembly_pipe_pictures(tint)
                 },
                 -- Mask
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/assembly/assembling-machine/pipes/assembling-machine-pipe-W-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/pipes/assembling-machine-pipe-W-mask.png",
                     priority = "extra-high",
                     width = 19,
                     height = 37,
                     shift = util.by_pixel(25.5, 1.5),
                     tint = tint,
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/assembly/assembling-machine/pipes/hr-assembling-machine-pipe-W-mask.png",
+                        filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/pipes/hr-assembling-machine-pipe-W-mask.png",
                         priority = "extra-high",
                         width = 39,
                         height = 73,
@@ -414,19 +414,19 @@ function reskins.bobs.assembly_pipe_pictures(tint)
                 },
                 -- Highlights
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/assembly/assembling-machine/pipes/assembling-machine-pipe-W-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/pipes/assembling-machine-pipe-W-highlights.png",
                     priority = "extra-high",
                     width = 19,
                     height = 37,
                     shift = util.by_pixel(25.5, 1.5),
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/assembly/assembling-machine/pipes/hr-assembling-machine-pipe-W-highlights.png",
+                        filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/pipes/hr-assembling-machine-pipe-W-highlights.png",
                         priority = "extra-high",
                         width = 39,
                         height = 73,
                         shift = util.by_pixel(25.75, 1.25),
-                        blend_mode = reskins.lib.blend_mode, -- "additive",
+                        blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 }
@@ -442,13 +442,13 @@ function reskins.bobs.furnace_pipe_pictures(tint)
     return
     {
         north = {
-            filename = reskins.bobs.directory .. "/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-N-base.png",
+            filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-N-base.png",
             priority = "extra-high",
             width = 35,
             height = 13,
             shift = util.by_pixel(2.5, 10),
             hr_version = {
-                filename = reskins.bobs.directory .. "/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-N-base.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-N-base.png",
                 priority = "extra-high",
                 width = 70,
                 height = 26,
@@ -460,13 +460,13 @@ function reskins.bobs.furnace_pipe_pictures(tint)
             layers = {
                 -- Base
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-E-base.png",
+                    filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-E-base.png",
                     priority = "extra-high",
                     width = 15,
                     height = 35,
                     shift = util.by_pixel(-20.5, 3),
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-E-base.png",
+                        filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-E-base.png",
                         priority = "extra-high",
                         width = 30,
                         height = 70,
@@ -476,14 +476,14 @@ function reskins.bobs.furnace_pipe_pictures(tint)
                 },
                 -- Mask
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-E-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-E-mask.png",
                     priority = "extra-high",
                     width = 15,
                     height = 35,
                     shift = util.by_pixel(-20.5, 3),
                     tint = tint,
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-E-mask.png",
+                        filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-E-mask.png",
                         priority = "extra-high",
                         width = 30,
                         height = 70,
@@ -494,19 +494,19 @@ function reskins.bobs.furnace_pipe_pictures(tint)
                 },
                 -- Highlights
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-E-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-E-highlights.png",
                     priority = "extra-high",
                     width = 15,
                     height = 35,
                     shift = util.by_pixel(-20.5, 3),
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-E-highlights.png",
+                        filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-E-highlights.png",
                         priority = "extra-high",
                         width = 30,
                         height = 70,
                         shift = util.by_pixel(-20.5, 3),
-                        blend_mode = reskins.lib.blend_mode, -- "additive",
+                        blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 }
@@ -516,13 +516,13 @@ function reskins.bobs.furnace_pipe_pictures(tint)
             layers = {
                 -- Base
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-S-base.png",
+                    filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-S-base.png",
                     priority = "extra-high",
                     width = 38,
                     height = 29,
                     shift = util.by_pixel(0.5, -30.5),
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-S-base.png",
+                        filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-S-base.png",
                         priority = "extra-high",
                         width = 76,
                         height = 58,
@@ -532,14 +532,14 @@ function reskins.bobs.furnace_pipe_pictures(tint)
                 },
                 -- Mask
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-S-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-S-mask.png",
                     priority = "extra-high",
                     width = 38,
                     height = 29,
                     shift = util.by_pixel(0.5, -30.5),
                     tint = tint,
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-S-mask.png",
+                        filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-S-mask.png",
                         priority = "extra-high",
                         width = 76,
                         height = 58,
@@ -550,19 +550,19 @@ function reskins.bobs.furnace_pipe_pictures(tint)
                 },
                 -- Highlights
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-S-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-S-highlights.png",
                     priority = "extra-high",
                     width = 38,
                     height = 29,
                     shift = util.by_pixel(0.5, -30.5),
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-S-highlights.png",
+                        filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-S-highlights.png",
                         priority = "extra-high",
                         width = 76,
                         height = 58,
                         shift = util.by_pixel(0.5, -30.5),
-                        blend_mode = reskins.lib.blend_mode, -- "additive",
+                        blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 }
@@ -572,13 +572,13 @@ function reskins.bobs.furnace_pipe_pictures(tint)
             layers = {
                 -- Base
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-W-base.png",
+                    filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-W-base.png",
                     priority = "extra-high",
                     width = 11,
                     height = 34,
                     shift = util.by_pixel(21.5, 2),
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-W-base.png",
+                        filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-W-base.png",
                         priority = "extra-high",
                         width = 22,
                         height = 68,
@@ -588,14 +588,14 @@ function reskins.bobs.furnace_pipe_pictures(tint)
                 },
                 -- Mask
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-W-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-W-mask.png",
                     priority = "extra-high",
                     width = 11,
                     height = 34,
                     shift = util.by_pixel(21.5, 2),
                     tint = tint,
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-W-mask.png",
+                        filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-W-mask.png",
                         priority = "extra-high",
                         width = 22,
                         height = 68,
@@ -606,19 +606,19 @@ function reskins.bobs.furnace_pipe_pictures(tint)
                 },
                 -- Highlights
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-W-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/pipes/electric-furnace-pipe-W-highlights.png",
                     priority = "extra-high",
                     width = 11,
                     height = 34,
                     shift = util.by_pixel(21.5, 2),
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-W-highlights.png",
+                        filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/pipes/hr-electric-furnace-pipe-W-highlights.png",
                         priority = "extra-high",
                         width = 22,
                         height = 68,
                         shift = util.by_pixel(21.5, 2),
-                        blend_mode = reskins.lib.blend_mode, -- "additive",
+                        blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 }

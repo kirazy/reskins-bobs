@@ -36,12 +36,12 @@ for name, map in pairs(tier_map) do
 
     -- Parse map
     local tier = map[1]
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
+    if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
         tier = map[2]
     end
 
     -- Determine what tint we're using
-    inputs.tint = reskins.lib.tint_index[tier]
+    inputs.tint = reskins.lib.tiers.get_tint(tier)
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
@@ -73,7 +73,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/logistics/storage-tank/remnants/storage-tank-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank/remnants/storage-tank-remnants-mask.png",
                 line_length = 1,
                 width = 214,
                 height = 142,
@@ -82,7 +82,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(27, 21),
                 tint = inputs.tint,
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/logistics/storage-tank/remnants/hr-storage-tank-remnants-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank/remnants/hr-storage-tank-remnants-mask.png",
                     line_length = 1,
                     width = 426,
                     height = 282,
@@ -95,23 +95,23 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/logistics/storage-tank/remnants/storage-tank-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank/remnants/storage-tank-remnants-highlights.png",
                 line_length = 1,
                 width = 214,
                 height = 142,
                 frame_count = 1,
                 direction_count = 1,
                 shift = util.by_pixel(27, 21),
-                blend_mode = reskins.lib.blend_mode, -- "additive",
+                blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/logistics/storage-tank/remnants/hr-storage-tank-remnants-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank/remnants/hr-storage-tank-remnants-highlights.png",
                     line_length = 1,
                     width = 426,
                     height = 282,
                     frame_count = 1,
                     direction_count = 1,
                     shift = util.by_pixel(27, 21),
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             }
@@ -142,7 +142,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Mask
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/logistics/storage-tank/storage-tank-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank/storage-tank-mask.png",
                     priority = "extra-high",
                     frames = 2,
                     width = 110,
@@ -150,7 +150,7 @@ for name, map in pairs(tier_map) do
                     shift = util.by_pixel(0, 4),
                     tint = inputs.tint,
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/logistics/storage-tank/hr-storage-tank-mask.png",
+                        filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank/hr-storage-tank-mask.png",
                         priority = "extra-high",
                         frames = 2,
                         width = 219,
@@ -162,21 +162,21 @@ for name, map in pairs(tier_map) do
                 },
                 -- Highlights
                 {
-                    filename = reskins.bobs.directory .. "/graphics/entity/logistics/storage-tank/storage-tank-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank/storage-tank-highlights.png",
                     priority = "extra-high",
                     frames = 2,
                     width = 110,
                     height = 108,
                     shift = util.by_pixel(0, 4),
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     hr_version = {
-                        filename = reskins.bobs.directory .. "/graphics/entity/logistics/storage-tank/hr-storage-tank-highlights.png",
+                        filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank/hr-storage-tank-highlights.png",
                         priority = "extra-high",
                         frames = 2,
                         width = 219,
                         height = 215,
                         shift = util.by_pixel(-0.25, 3.75),
-                        blend_mode = reskins.lib.blend_mode, -- "additive",
+                        blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                         scale = 0.5
                     }
                 },

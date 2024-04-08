@@ -6,7 +6,7 @@
 -- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.modules.technologies) then return end
 
--- Setup inputs
+---@type CreateIconsFromListInputs
 local inputs = {
     mod = "bobs",
     group = "modules",
@@ -16,13 +16,14 @@ local inputs = {
     flat_icon = true,
 }
 
+---@type CreateIconsFromListTable
 local technologies = {
     -- Module unlocks
-    ["modules"] = {}, -- Basics (Blue/Red/Yellow)
+    ["modules"] = {},        -- Basics (Blue/Red/Yellow)
     ["module-merging"] = {}, -- Pures/Raws (Cyan/Pink/Green)
 
     -- Beacons
-    -- ["effect-transmission"] = {tier = 1, prog_tier = 3}, -- t3 beacon
+    -- ["effect-transmission"] = {tier = 1, prog_tier = 3},   -- t3 beacon
     -- ["effect-transmission-2"] = {tier = 2, prog_tier = 4}, -- t4 beacon
     -- ["effect-transmission-3"] = {tier = 3, prog_tier = 5}, -- t5 beacon
 }
@@ -32,4 +33,4 @@ if mods["CircuitProcessing"] then
     technologies["module-merging"] = nil
 end
 
-reskins.lib.create_icons_from_list(technologies, inputs)
+reskins.internal.create_icons_from_list(technologies, inputs)

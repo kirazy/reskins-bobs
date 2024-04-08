@@ -36,28 +36,29 @@ for name, map in pairs(batteries) do
 
     -- Handle tier
     local tier = map.tier
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
+    if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
         tier = map.prog_tier or map.tier
     end
 
     -- Determine what tint we're using
-    inputs.tint = reskins.lib.tint_index[tier]
+    inputs.tint = reskins.lib.tiers.get_tint(tier)
 
     -- Construct icon
     reskins.lib.construct_icon(name, tier, inputs)
 
     -- Reskin the equipment
+    ---@type data.Sprite
     equipment.sprite = {
         layers = {
             -- Base
             {
-                filename = reskins.bobs.directory .. "/graphics/equipment/equipment/battery/battery-equipment-base.png",
+                filename = "__reskins-bobs__/graphics/equipment/equipment/battery/battery-equipment-base.png",
                 width = 32,
                 height = 64,
                 priority = "medium",
                 flags = { "no-crop" },
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/equipment/equipment/battery/hr-battery-equipment-base.png",
+                    filename = "__reskins-bobs__/graphics/equipment/equipment/battery/hr-battery-equipment-base.png",
                     width = 64,
                     height = 128,
                     priority = "medium",
@@ -67,14 +68,14 @@ for name, map in pairs(batteries) do
             },
             -- Mask
             {
-                filename = reskins.bobs.directory .. "/graphics/equipment/equipment/battery/battery-equipment-mask.png",
+                filename = "__reskins-bobs__/graphics/equipment/equipment/battery/battery-equipment-mask.png",
                 width = 32,
                 height = 64,
                 priority = "medium",
                 flags = { "no-crop" },
                 tint = inputs.tint,
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/equipment/equipment/battery/hr-battery-equipment-mask.png",
+                    filename = "__reskins-bobs__/graphics/equipment/equipment/battery/hr-battery-equipment-mask.png",
                     width = 64,
                     height = 128,
                     priority = "medium",
@@ -85,19 +86,19 @@ for name, map in pairs(batteries) do
             },
             -- Highlights
             {
-                filename = reskins.bobs.directory .. "/graphics/equipment/equipment/battery/battery-equipment-highlights.png",
+                filename = "__reskins-bobs__/graphics/equipment/equipment/battery/battery-equipment-highlights.png",
                 width = 32,
                 height = 64,
                 priority = "medium",
                 flags = { "no-crop" },
-                blend_mode = reskins.lib.blend_mode, -- "additive",
+                blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/equipment/equipment/battery/hr-battery-equipment-highlights.png",
+                    filename = "__reskins-bobs__/graphics/equipment/equipment/battery/hr-battery-equipment-highlights.png",
                     width = 64,
                     height = 128,
                     priority = "medium",
                     flags = { "no-crop" },
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             }

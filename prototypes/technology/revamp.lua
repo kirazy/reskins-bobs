@@ -6,7 +6,7 @@
 -- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.revamp.technologies) then return end
 
--- Setup standard inputs
+---@type CreateIconsFromListInputs
 local inputs = {
     mod = "bobs",
     group = "revamp",
@@ -16,6 +16,7 @@ local inputs = {
     technology_icon_mipmaps = 4,
 }
 
+---@type CreateIconsFromListTable
 local technologies = {
     -- ["pumpjack"] = {group = "mining", tier = 1}, -- pumpjack 1
 
@@ -25,4 +26,4 @@ local technologies = {
     ["heat-shield"] = {}, -- also need to do item, heat-shield-tile
 }
 
-reskins.lib.create_icons_from_list(technologies, inputs)
+reskins.internal.create_icons_from_list(technologies, inputs)

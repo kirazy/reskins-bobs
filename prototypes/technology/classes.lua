@@ -26,4 +26,4 @@ local technologies = {
     -- ["prospector-body"] = {},
 }
 
-reskins.lib.create_icons_from_list(technologies, inputs)
+reskins.internal.create_icons_from_list(technologies, inputs)

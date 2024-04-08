@@ -7,7 +7,7 @@
 if mods["ScienceCostTweakerM"] then return end -- May not be needed, but labs?...
 if not (reskins.bobs and reskins.bobs.triggers.technology.technologies) then return end
 
--- Setup standard inputs
+---@type CreateIconsFromListInputs
 local inputs = {
     mod = "bobs",
     group = "technology",
@@ -16,6 +16,7 @@ local inputs = {
     technology_icon_mipmaps = 4,
 }
 
+---@type CreateIconsFromListTable
 local technologies = {
     -- Steam power-related unlocks
     ["basic-automation"] = {group = "assembly", icon_name = "automation", tint = util.color("262626")},
@@ -31,7 +32,7 @@ local technologies = {
     ["bob-infinite-worker-robots-storage-1"] = {technology_icon_filename = "__base__/graphics/technology/worker-robots-storage.png", technology_icon_extras = {reskins.lib.return_technology_effect_icon("capacity")}, technology_icon_size = 256, technology_icon_mipmaps = 4, flat_icon = true},
 }
 
-reskins.lib.create_icons_from_list(technologies, inputs)
+reskins.internal.create_icons_from_list(technologies, inputs)
 
 -- Overwrite icons for technology effects
 data.raw["utility-sprites"].default.worker_robot_storage_modifier_icon = util.merge{data.raw["utility-sprites"].default.worker_robot_storage_modifier_icon, {

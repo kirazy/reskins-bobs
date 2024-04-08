@@ -28,14 +28,14 @@ local tier_map = {
 }
 
 local function generate_recipe_mask(pump_type, layer, blend_mode)
-    local recipe_mask = reskins.lib.make_4way_animation_from_spritesheet({
-        filename = reskins.bobs.directory .. "/graphics/entity/plates/" .. pump_type .. "-pump/" .. pump_type .. "-pump-recipe-" .. layer .. ".png",
+    local recipe_mask = reskins.lib.sprites.make_4way_animation_from_spritesheet({
+        filename = "__reskins-bobs__/graphics/entity/plates/" .. pump_type .. "-pump/" .. pump_type .. "-pump-recipe-" .. layer .. ".png",
         width = 64,
         height = 88,
         shift = util.by_pixel(0, -12),
         blend_mode = blend_mode,
         hr_version = {
-            filename = reskins.bobs.directory .. "/graphics/entity/plates/" .. pump_type .. "-pump/hr-" .. pump_type .. "-pump-recipe-" .. layer .. ".png",
+            filename = "__reskins-bobs__/graphics/entity/plates/" .. pump_type .. "-pump/hr-" .. pump_type .. "-pump-recipe-" .. layer .. ".png",
             width = 128,
             height = 176,
             shift = util.by_pixel(0, -12),
@@ -69,13 +69,13 @@ for name, map in pairs(tier_map) do
 
     -- Parse map
     local tier = map[1]
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
+    if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
         tier = map[2]
     end
     local pump_type = map[3]
 
     -- Determine what tint we're using
-    inputs.tint = reskins.lib.tint_index[tier]
+    inputs.tint = reskins.lib.tiers.get_tint(tier)
 
     -- Icon handling
     inputs.icon_name = pump_type .. "-pump"
@@ -85,11 +85,11 @@ for name, map in pairs(tier_map) do
     -- Reskin entities
     entity.corpse = "medium-remnants"
     entity.match_animation_speed_to_activity = false
-    entity.animation = reskins.lib.make_4way_animation_from_spritesheet({
+    entity.animation = reskins.lib.sprites.make_4way_animation_from_spritesheet({
         layers = {
             -- Base
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/plates/" .. pump_type .. "-pump/" .. pump_type .. "-pump-base.png",
+                filename = "__reskins-bobs__/graphics/entity/plates/" .. pump_type .. "-pump/" .. pump_type .. "-pump-base.png",
                 width = 74,
                 height = 93,
                 frame_count = 4,
@@ -98,7 +98,7 @@ for name, map in pairs(tier_map) do
                 animation_speed = 0.5,
                 shift = util.by_pixel(0, -9.5),
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/plates/" .. pump_type .. "-pump/hr-" .. pump_type .. "-pump-base.png",
+                    filename = "__reskins-bobs__/graphics/entity/plates/" .. pump_type .. "-pump/hr-" .. pump_type .. "-pump-base.png",
                     width = 148,
                     height = 186,
                     frame_count = 4,
@@ -111,7 +111,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/plates/" .. pump_type .. "-pump/" .. pump_type .. "-pump-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/plates/" .. pump_type .. "-pump/" .. pump_type .. "-pump-mask.png",
                 width = 74,
                 height = 93,
                 frame_count = 4,
@@ -121,7 +121,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(0, -9.5),
                 tint = inputs.tint,
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/plates/" .. pump_type .. "-pump/hr-" .. pump_type .. "-pump-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/plates/" .. pump_type .. "-pump/hr-" .. pump_type .. "-pump-mask.png",
                     width = 148,
                     height = 186,
                     frame_count = 4,
@@ -135,7 +135,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/plates/" .. pump_type .. "-pump/" .. pump_type .. "-pump-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/plates/" .. pump_type .. "-pump/" .. pump_type .. "-pump-highlights.png",
                 width = 74,
                 height = 93,
                 frame_count = 4,
@@ -143,9 +143,9 @@ for name, map in pairs(tier_map) do
                 frame_sequence = { 1, 2, 3, 4, 3, 2, 1 },
                 animation_speed = 0.5,
                 shift = util.by_pixel(0, -9.5),
-                blend_mode = reskins.lib.blend_mode, -- "additive",
+                blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/plates/" .. pump_type .. "-pump/hr-" .. pump_type .. "-pump-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/plates/" .. pump_type .. "-pump/hr-" .. pump_type .. "-pump-highlights.png",
                     width = 148,
                     height = 186,
                     frame_count = 4,
@@ -153,13 +153,13 @@ for name, map in pairs(tier_map) do
                     frame_sequence = { 1, 2, 3, 4, 3, 2, 1 },
                     animation_speed = 0.5,
                     shift = util.by_pixel(0, -9.5),
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             },
             -- Shadow
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/plates/" .. pump_type .. "-pump/" .. pump_type .. "-pump-shadow.png",
+                filename = "__reskins-bobs__/graphics/entity/plates/" .. pump_type .. "-pump/" .. pump_type .. "-pump-shadow.png",
                 width = 86,
                 height = 67,
                 frame_count = 4,
@@ -169,7 +169,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(11, 1.5),
                 draw_as_shadow = true,
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/plates/" .. pump_type .. "-pump/hr-" .. pump_type .. "-pump-shadow.png",
+                    filename = "__reskins-bobs__/graphics/entity/plates/" .. pump_type .. "-pump/hr-" .. pump_type .. "-pump-shadow.png",
                     width = 172,
                     height = 134,
                     frame_count = 4,
@@ -206,13 +206,13 @@ for name, map in pairs(tier_map) do
         {
             always_draw = true,
             west_animation = {
-                filename = reskins.bobs.directory .. "/graphics/entity/plates/air-pump/pump-light.png",
+                filename = "__reskins-bobs__/graphics/entity/plates/air-pump/pump-light.png",
                 width = 74,
                 height = 93,
                 shift = util.by_pixel(0, -9.5),
                 draw_as_light = true,
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/plates/air-pump/hr-pump-light.png",
+                    filename = "__reskins-bobs__/graphics/entity/plates/air-pump/hr-pump-light.png",
                     width = 148,
                     height = 186,
                     shift = util.by_pixel(0, -9.5),
@@ -236,7 +236,7 @@ for name, map in pairs(tier_map) do
 
     entity.water_reflection = {
         pictures = {
-            filename = reskins.bobs.directory .. "/graphics/entity/plates/" .. pump_type .. "-pump/" .. pump_type .. "-pump-reflection.png",
+            filename = "__reskins-bobs__/graphics/entity/plates/" .. pump_type .. "-pump/" .. pump_type .. "-pump-reflection.png",
             priority = "extra-high",
             width = 28,
             height = 36,

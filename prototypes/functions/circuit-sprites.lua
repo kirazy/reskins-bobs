@@ -4,7 +4,7 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check if the setting exists
-if not reskins.lib.setting("reskins-bobs-do-bobelectronics-circuit-style") then return end
+if not reskins.lib.settings.get_value("reskins-bobs-do-bobelectronics-circuit-style") then return end
 
 local circuits = {
     ["electronic-circuit"] = { tier = 1, prog_tier = 2 },
@@ -19,7 +19,7 @@ for circuit, map in pairs(circuits) do
         {
             type = "sprite",
             name = "reskins-bob-" .. circuit .. "-vanilla",
-            filename = reskins.bobs.directory .. "/graphics/icons/sprites/circuits/vanilla/" .. circuit .. ".png",
+            filename = "__reskins-bobs__/graphics/icons/sprites/circuits/vanilla/" .. circuit .. ".png",
             size = 40,
             mipmap_count = 2,
             flags = { "gui-icon" },
@@ -31,7 +31,7 @@ for circuit, map in pairs(circuits) do
         {
             type = "sprite",
             name = "reskins-bob-" .. circuit .. "-material",
-            filename = reskins.bobs.directory .. "/graphics/icons/sprites/circuits/material/" .. circuit .. ".png",
+            filename = "__reskins-bobs__/graphics/icons/sprites/circuits/material/" .. circuit .. ".png",
             size = 40,
             mipmap_count = 2,
             flags = { "gui-icon" },
@@ -40,12 +40,12 @@ for circuit, map in pairs(circuits) do
 
     -- Parse map
     local tier = map.tier
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
+    if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
         tier = map.prog_tier
     end
 
     -- Fetch tint
-    local tint = reskins.lib.tint_index[tier]
+    local tint = reskins.lib.tiers.get_tint(tier)
 
     -- Make tier colored sprites
     data:extend({
@@ -54,20 +54,20 @@ for circuit, map in pairs(circuits) do
             name = "reskins-bob-" .. circuit .. "-tier",
             layers = {
                 {
-                    filename = reskins.lib.directory .. "/graphics/icons/sprites/circuits/" .. circuit .. "/" .. circuit .. "-base.png",
+                    filename = "__reskins-library__/graphics/icons/sprites/circuits/" .. circuit .. "/" .. circuit .. "-base.png",
                     size = 40,
                     mipmap_count = 2,
                     flags = { "gui-icon" },
                 },
                 {
-                    filename = reskins.lib.directory .. "/graphics/icons/sprites/circuits/" .. circuit .. "/" .. circuit .. "-mask.png",
+                    filename = "__reskins-library__/graphics/icons/sprites/circuits/" .. circuit .. "/" .. circuit .. "-mask.png",
                     size = 40,
                     tint = tint,
                     mipmap_count = 2,
                     flags = { "gui-icon" },
                 },
                 {
-                    filename = reskins.lib.directory .. "/graphics/icons/sprites/circuits/" .. circuit .. "/" .. circuit .. "-highlights.png",
+                    filename = "__reskins-library__/graphics/icons/sprites/circuits/" .. circuit .. "/" .. circuit .. "-highlights.png",
                     size = 40,
                     blend_mode = "additive",
                     mipmap_count = 2,

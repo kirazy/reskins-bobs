@@ -7,7 +7,7 @@
 if mods["ScienceCostTweakerM"] then return end
 if not (reskins.bobs and reskins.bobs.triggers.technology.technologies) then return end
 
--- Setup standard inputs
+---@type CreateIconsFromListInputs
 local inputs = {
     mod = "bobs",
     group = "technology",
@@ -17,6 +17,7 @@ local inputs = {
     flat_icon = true,
 }
 
+---@type CreateIconsFromListTable
 local technologies = {
     -- Science Packs
     ["advanced-logistic-science-pack"] = {icon_name = "science-pack", tint = util.color("de00a3"), flat_icon = false},
@@ -24,8 +25,8 @@ local technologies = {
 }
 
 -- Color overhaul for science packs
-if reskins.lib.setting("bobmods-tech-colorupdate") == true then
-    if reskins.lib.setting("reskins-lib-customize-tier-colors") == true then
+if reskins.lib.settings.get_value("bobmods-tech-colorupdate") == true then
+    if reskins.lib.settings.get_value("reskins-lib-customize-tier-colors") == true then
         technologies["automation-science-pack"] = {tier = 1, icon_name = "science-pack", flat_icon = false}
         technologies["logistic-science-pack"] = {tier = 2, icon_name = "science-pack", flat_icon = false}
         technologies["chemical-science-pack"] = {tier = 3, icon_name = "science-pack", flat_icon = false}
@@ -46,4 +47,4 @@ else
     technologies["utility-science-pack"] = {technology_icon_filename = "__base__/graphics/technology/utility-science-pack.png"}
 end
 
-reskins.lib.create_icons_from_list(technologies, inputs)
+reskins.internal.create_icons_from_list(technologies, inputs)

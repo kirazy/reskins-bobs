@@ -6,7 +6,7 @@
 -- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.enemies.items) then return end
 
--- Setup inputs
+---@type CreateIconsFromListInputs
 local inputs = {
     mod = "bobs",
     group = "enemies",
@@ -14,6 +14,7 @@ local inputs = {
     flat_icon = true,
 }
 
+---@type CreateIconsFromListTable
 local items = {
     ["alien-artifact"] = { subgroup = "artifacts" },
     ["alien-artifact-blue"] = { subgroup = "artifacts" },
@@ -22,6 +23,7 @@ local items = {
     ["alien-artifact-purple"] = { subgroup = "artifacts" },
     ["alien-artifact-red"] = { subgroup = "artifacts" },
     ["alien-artifact-yellow"] = { subgroup = "artifacts" },
+
     ["small-alien-artifact"] = { subgroup = "artifacts" },
     ["small-alien-artifact-blue"] = { subgroup = "artifacts" },
     ["small-alien-artifact-green"] = { subgroup = "artifacts" },
@@ -31,4 +33,4 @@ local items = {
     ["small-alien-artifact-yellow"] = { subgroup = "artifacts" },
 }
 
-reskins.lib.create_icons_from_list(items, inputs)
+reskins.internal.create_icons_from_list(items, inputs)

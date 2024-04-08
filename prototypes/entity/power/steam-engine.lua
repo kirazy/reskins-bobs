@@ -34,7 +34,7 @@ for name, tier in pairs(tier_map) do
     if not entity then goto continue end
 
     -- Determine what tint we're using
-    inputs.tint = reskins.lib.tint_index[tier]
+    inputs.tint = reskins.lib.tiers.get_tint(tier)
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
@@ -70,7 +70,7 @@ for name, tier in pairs(tier_map) do
             },
             -- Color Mask
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/steam-engine/remnants/steam-engine-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/power/steam-engine/remnants/steam-engine-remnants-mask.png",
                 line_length = 1,
                 width = 232,
                 height = 194,
@@ -81,7 +81,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(17, 7),
                 tint = inputs.tint,
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/power/steam-engine/remnants/hr-steam-engine-remnants-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/steam-engine/remnants/hr-steam-engine-remnants-mask.png",
                     line_length = 1,
                     width = 462,
                     height = 386,
@@ -96,7 +96,7 @@ for name, tier in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/steam-engine/remnants/steam-engine-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/power/steam-engine/remnants/steam-engine-remnants-highlights.png",
                 line_length = 1,
                 width = 232,
                 height = 194,
@@ -105,9 +105,9 @@ for name, tier in pairs(tier_map) do
                 axially_symmetrical = false,
                 direction_count = 4,
                 shift = util.by_pixel(17, 7),
-                blend_mode = reskins.lib.blend_mode, -- "additive",
+                blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/power/steam-engine/remnants/hr-steam-engine-remnants-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/steam-engine/remnants/hr-steam-engine-remnants-highlights.png",
                     line_length = 1,
                     width = 462,
                     height = 386,
@@ -116,7 +116,7 @@ for name, tier in pairs(tier_map) do
                     axially_symmetrical = false,
                     direction_count = 4,
                     shift = util.by_pixel(17, 6.5),
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             }
@@ -146,7 +146,7 @@ for name, tier in pairs(tier_map) do
             },
             -- Color Mask
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/steam-engine/steam-engine-H-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/power/steam-engine/steam-engine-H-mask.png",
                 width = 176,
                 height = 128,
                 frame_count = 32,
@@ -154,7 +154,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(1, -5),
                 tint = inputs.tint,
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/power/steam-engine/hr-steam-engine-H-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/steam-engine/hr-steam-engine-H-mask.png",
                     width = 352,
                     height = 257,
                     frame_count = 32,
@@ -166,21 +166,21 @@ for name, tier in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/steam-engine/steam-engine-H-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/power/steam-engine/steam-engine-H-highlights.png",
                 width = 176,
                 height = 128,
                 frame_count = 32,
                 line_length = 8,
                 shift = util.by_pixel(1, -5),
-                blend_mode = reskins.lib.blend_mode, -- "additive",
+                blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/power/steam-engine/hr-steam-engine-H-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/steam-engine/hr-steam-engine-H-highlights.png",
                     width = 352,
                     height = 257,
                     frame_count = 32,
                     line_length = 8,
                     shift = util.by_pixel(1, -4.75),
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     scale = 0.5
                 }
             },
@@ -229,7 +229,7 @@ for name, tier in pairs(tier_map) do
             },
             -- Color mask
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/steam-engine/steam-engine-V-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/power/steam-engine/steam-engine-V-mask.png",
                 width = 112,
                 height = 195,
                 frame_count = 32,
@@ -237,7 +237,7 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(5, -6.5),
                 tint = inputs.tint,
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/power/steam-engine/hr-steam-engine-V-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/steam-engine/hr-steam-engine-V-mask.png",
                     width = 225,
                     height = 391,
                     frame_count = 32,
@@ -249,21 +249,21 @@ for name, tier in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = reskins.bobs.directory .. "/graphics/entity/power/steam-engine/steam-engine-V-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/power/steam-engine/steam-engine-V-highlights.png",
                 width = 112,
                 height = 195,
                 frame_count = 32,
                 line_length = 8,
                 shift = util.by_pixel(5, -6.5),
-                blend_mode = reskins.lib.blend_mode, -- "additive",
+                blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/entity/power/steam-engine/hr-steam-engine-V-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/steam-engine/hr-steam-engine-V-highlights.png",
                     width = 225,
                     height = 391,
                     frame_count = 32,
                     line_length = 8,
                     shift = util.by_pixel(4.75, -6.25),
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     scale = 0.5
                 }
             },

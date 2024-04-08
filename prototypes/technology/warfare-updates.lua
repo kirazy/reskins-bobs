@@ -6,7 +6,7 @@
 -- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.warfare.technologies) then return end
 
--- Setup inputs
+---@type CreateIconsFromListInputs
 local inputs = {
     mod = "bobs",
     group = "warfare",
@@ -16,6 +16,7 @@ local inputs = {
     flat_icon = true,
 }
 
+---@type CreateIconsFromListTable
 local technologies = {
     -- Radars
     ["radars"] = {tier = 2, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 0},
@@ -83,7 +84,7 @@ local technologies = {
     ["uranium-ammo"] = {subgroup = "bullet-magazines"},
 }
 
-if reskins.lib.migration.is_version_or_newer(mods["bobwarfare"], "1.1.6") then
+if reskins.lib.version.is_same_or_newer(mods["bobwarfare"], "1.1.6") then
     technologies["radars"] = nil
     technologies["radars-1"] = {tier = 1, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 0}
     technologies["radars-2"] = {tier = 2, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 0}
@@ -96,4 +97,4 @@ if mods["aai-industry"] then
     technologies["radar"] = {tier = 1, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 0}
 end
 
-reskins.lib.create_icons_from_list(technologies, inputs)
+reskins.internal.create_icons_from_list(technologies, inputs)

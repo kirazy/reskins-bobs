@@ -4,7 +4,7 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if reskins.lib.setting("cp-override-modules") == false then --[[ Do nothing ]] elseif mods["CircuitProcessing"] then return end
+if reskins.lib.settings.get_value("cp-override-modules") == false then --[[ Do nothing ]] elseif mods["CircuitProcessing"] then return end
 if not (reskins.bobs and reskins.bobs.triggers.modules.technologies) then return end
 
 -- Modules
@@ -48,7 +48,7 @@ for class, map in pairs(modules_map) do
         if not technology then goto continue end
 
         -- Setup icon path
-        inputs.technology_icon_filename = reskins.bobs.directory.."/graphics/technology/modules/module/"..map.color.."/"..map.color.."_"..tier..".png"
+        inputs.technology_icon_filename = "__reskins-bobs__/graphics/technology/modules/module/"..map.color.."/"..map.color.."_"..tier..".png"
 
         reskins.lib.construct_technology_icon(name, inputs)
 
@@ -58,7 +58,7 @@ for class, map in pairs(modules_map) do
 end
 
 -- Reskin God module technologies
-if reskins.lib.setting("bobmods-modules-enablegodmodules") then
+if reskins.lib.settings.get_value("bobmods-modules-enablegodmodules") then
     if not data.raw.technology["god-module-6"] then
         for i = 1, 5 do
             -- Fetch technology
@@ -69,7 +69,7 @@ if reskins.lib.setting("bobmods-modules-enablegodmodules") then
             if not technology then goto continue end
 
             -- Setup icon path
-            inputs.technology_icon_filename = reskins.bobs.directory.."/graphics/technology/modules/god-module/"..name..".png"
+            inputs.technology_icon_filename = "__reskins-bobs__/graphics/technology/modules/god-module/"..name..".png"
             inputs.technology_icon_layers = 1
 
             reskins.lib.construct_technology_icon(name, inputs)

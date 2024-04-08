@@ -10,30 +10,48 @@ local spidertrons = {
     "antron",
     "tankotron",
     "logistic-spidertron",
-    "heavy-spidertron"
+    "heavy-spidertron",
 }
 
-local function spidertron_icons(name)
-    local item = data.raw["item-with-entity-data"][name]
-    if not item then return end
+local function do_spidertron_icons(name)
+    local item_with_entity_data = data.raw["item-with-entity-data"][name]
+    if not item_with_entity_data then return end
 
-    ---@type inputs.assign_icons
-    local inputs = {
-        type = "spider-vehicle",
-        icon = reskins.bobs.directory .. "/graphics/icons/warfare/spidertron/" .. name .. ".png",
-        icon_size = 64,
-        icon_mipmaps = 4,
+    ---@type DeferrableIconData
+    local deferrable_icon = {
+        name = name,
+        type_name = "spider-vehicle",
+        icon_data = { {
+            icon = "__reskins-bobs__/graphics/icons/warfare/spidertron/" .. name .. ".png",
+            icon_size = 64,
+            icon_mipmaps = 4,
+            scale = 0.5,
+        } },
     }
 
-    reskins.lib.assign_icons(name, inputs)
+    reskins.lib.icons.assign_deferrable_icon(deferrable_icon)
 
-    -- Setup the tintable icons
-    item.icon_tintable = reskins.bobs.directory .. "/graphics/icons/warfare/spidertron/" .. name .. "-tintable.png"
-    item.icon_tintable_mask = reskins.bobs.directory .. "/graphics/icons/warfare/spidertron/" .. name .. "-tintable-mask.png"
+    ---icon_tintables uses icon_tintable instead of icon.
+    ---@diagnostic disable-next-line: missing-fields
+    item_with_entity_data.icon_tintables = { {
+        icon_tintable = "__reskins-bobs__/graphics/icons/warfare/spidertron/" .. name .. "-tintable.png",
+        icon_size = 64,
+        icon_mipmaps = 4,
+        scale = 0.5,
+    } }
+
+    ---icon_tintable_masks uses icon_tintable_mask instead of icon.
+    ---@diagnostic disable-next-line: missing-fields
+    item_with_entity_data.icon_tintable_masks = { {
+        icon_tintable_mask = "__reskins-bobs__/graphics/icons/warfare/spidertron/" .. name .. "-tintable-mask.png",
+        icon_size = 64,
+        icon_mipmaps = 4,
+        scale = 0.5,
+    } }
 end
 
 for _, name in pairs(spidertrons) do
-    spidertron_icons(name)
+    do_spidertron_icons(name)
 end
 
 -- Add a tank cannon to the Tankotron
@@ -55,8 +73,8 @@ if tankotron then
             direction_count = 64,
             scale = 0.5,
             apply_runtime_tint = true,
-            shift = util.by_pixel(0, -10)
-        }
+            shift = util.by_pixel(0, -10),
+        },
     })
 
     table.insert(tankotron.graphics_set.animation.layers, 1, {
@@ -73,8 +91,8 @@ if tankotron then
             line_length = 8,
             direction_count = 64,
             scale = 0.5,
-            shift = util.by_pixel(0, -9)
-        }
+            shift = util.by_pixel(0, -9),
+        },
     })
 
     data.raw["spider-vehicle"]["tankotron"].drawing_box = { { -3, -3.5 }, { 3, 1.75 } }
@@ -92,12 +110,12 @@ local guns = {
     ["spidertron-cannon-1"] = {
         projectile_center = { 0.3, 2 },
         projectile_creation_distance = 1.65,
-        projectile_orientation_offset = 0,     -- -1.65
+        projectile_orientation_offset = 0, -- -1.65
     },
     ["spidertron-cannon-2"] = {
         projectile_center = { -0.3, 2 },
-        projectile_creation_distance = 1.65,     -- 1.65
-        projectile_orientation_offset = 0,       -- -1.65
+        projectile_creation_distance = 1.65, -- 1.65
+        projectile_orientation_offset = 0,   -- -1.65
     },
 }
 

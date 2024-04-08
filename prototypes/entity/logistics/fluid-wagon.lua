@@ -5,7 +5,7 @@
 
 -- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then return end
-if reskins.lib.setting("bobmods-logistics-trains") == false then return end
+if reskins.lib.settings.get_value("bobmods-logistics-trains") == false then return end
 
 -- Set input parameters
 local inputs = {
@@ -18,11 +18,11 @@ local inputs = {
 }
 
 local tier_map = {
-    ["fluid-wagon"] = { 1, 2 },
-    ["bob-fluid-wagon-2"] = { 2, 3 },
-    ["bob-fluid-wagon-3"] = { 3, 4 },
-    ["bob-armoured-fluid-wagon"] = { 1, 4 },
-    ["bob-armoured-fluid-wagon-2"] = { 2, 5 },
+    ["fluid-wagon"] = { tier = 1, prog_tier = 2 },
+    ["bob-fluid-wagon-2"] = { tier = 2, prog_tier = 3 },
+    ["bob-fluid-wagon-3"] = { tier = 3, prog_tier = 4 },
+    ["bob-armoured-fluid-wagon"] = { tier = 1, prog_tier = 4 },
+    ["bob-armoured-fluid-wagon-2"] = { tier = 2, prog_tier = 5 },
 }
 
 -- Reskin entities, create and assign extra details
@@ -34,25 +34,17 @@ for name, map in pairs(tier_map) do
     if not entity then goto continue end
 
     -- Parse map
-    local tier = map[1]
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
-        tier = map[2]
+    local tier = map.tier
+    if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
+        tier = map.prog_tier or map.tier
     end
 
     -- Determine what tint we're using
-    inputs.tint = reskins.lib.tint_index[tier]
+    inputs.tint = reskins.lib.tiers.get_tint(tier)
 
     -- Setup icon details
     if string.find(name, "armoured") then
-        inputs.icon_extras = {
-            {
-                icon = reskins.bobs.directory .. "/graphics/icons/logistics/locomotive/armored-train-symbol.png"
-            },
-            {
-                icon = reskins.bobs.directory .. "/graphics/icons/logistics/locomotive/armored-train-symbol.png",
-                tint = util.get_color_with_alpha(reskins.lib.tint_index[tier], 0.75)
-            }
-        }
+        inputs.icon_extras = reskins.lib.icons.get_symbol("shield", inputs.tint)
     else
         inputs.icon_extras = nil
     end

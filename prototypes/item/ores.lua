@@ -6,7 +6,7 @@
 -- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.ores.items) then return end
 
--- Setup inputs
+---@type CreateIconsFromListInputs
 local inputs = {
     mod = "bobs",
     group = "ores",
@@ -14,9 +14,7 @@ local inputs = {
     flat_icon = true,
 }
 
--- Setup input defaults
-reskins.lib.parse_inputs(inputs)
-
+---@type CreateIconsFromListTable
 local intermediates = {}
 
 -- Items and recipes shared with other mods within Bob's suite
@@ -25,4 +23,4 @@ if not mods["bobplates"] then
     intermediates["lithia-water"] = {type = "fluid", group = "plates", subgroup = "fluids", defer_to_data_updates = true} -- Angels
 end
 
-reskins.lib.create_icons_from_list(intermediates, inputs)
+reskins.internal.create_icons_from_list(intermediates, inputs)

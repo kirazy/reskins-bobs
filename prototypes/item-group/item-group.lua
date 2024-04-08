@@ -18,7 +18,7 @@ local function assign_item_group_icon(name)
     if item_group then else return end
 
     -- Assign the revised UI icons
-    item_group.icon = reskins.bobs.directory.."/graphics/item-group/"..name..".png"
+    item_group.icon = "__reskins-bobs__/graphics/item-group/"..name..".png"
     item_group.icon_size = 128
     item_group.icon_mipmaps = 0
 end

@@ -19,7 +19,7 @@ local tier_map = {
     ["heat-pipe-3"] = { tier = 3, prog_tier = 5, material = "gold-copper", particle_colors = { "d6b968", "ff7f3f" } },
 }
 
-if reskins.lib.migration.is_version_or_newer(mods["bobpower"], "1.1.6") then
+if reskins.lib.version.is_same_or_newer(mods["bobpower"], "1.1.6") then
     tier_map["heat-pipe-2"].material = "aluminum-invar"
     tier_map["heat-pipe-3"].particle_colors = { "dff5ff", "a99b84" }
 
@@ -45,7 +45,7 @@ for name, mapping in pairs(tier_map) do
 
     -- Parse map
     local tier = mapping.tier
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
+    if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
         tier = mapping.prog_tier or mapping.tier
     end
 
@@ -54,23 +54,24 @@ for name, mapping in pairs(tier_map) do
 
     -- Setup icons
     ---@type data.IconData[]
-    local icons = { {
-        icon = reskins.bobs.directory .. "/graphics/icons/power/heat-pipe/heat-pipe-" .. mapping.material .. "-icon-base.png",
+    local icon_data = { {
+        icon = "__reskins-bobs__/graphics/icons/power/heat-pipe/heat-pipe-" .. mapping.material .. "-icon-base.png",
         icon_size = 64,
         icon_mipmaps = 4,
+        scale = 0.5,
     } }
 
-    ---@type boolean
-    local do_labels = reskins.lib.setting("reskins-bobs-do-pipe-tier-labeling") or false
+    local do_labels = reskins.lib.settings.get_value("reskins-bobs-do-pipe-tier-labeling") == true
 
-    local heat_pipe_icon_inputs = {
-        mod = "bobs",
-        icon = do_labels and reskins.lib.add_tier_labels_to_icons(icons, tier) or icons,
-        icon_picture = do_labels and reskins.lib.convert_icons_to_sprite(icons, 0.25) or nil,
-        type = "heat-pipe",
+    ---@type DeferrableIconData
+    local deferrable_icon = {
+        name = name,
+        type_name = "heat-pipe",
+        icon_data = do_labels and reskins.lib.tiers.add_tier_labels_to_icons(tier, icon_data) or icon_data,
+        pictures = do_labels and reskins.lib.sprites.create_sprite_from_icons(icon_data, 0.5) or nil,
     }
 
-    reskins.lib.assign_icons(name, heat_pipe_icon_inputs)
+    reskins.lib.icons.assign_deferrable_icon(deferrable_icon)
 
     --- Don't reskin the base pipes
     if name == "heat-pipe" then goto continue end
@@ -84,7 +85,7 @@ for name, mapping in pairs(tier_map) do
     reskins.lib.create_remnant(name, inputs)
     local remnant = data.raw["corpse"][name .. "-remnants"]
     remnant.animation = make_rotated_animation_variations_from_sheet(6, {
-        filename = reskins.bobs.directory .. "/graphics/entity/power/heat-pipe/" .. mapping.material .. "/remnants/heat-pipe-remnants.png",
+        filename = "__reskins-bobs__/graphics/entity/power/heat-pipe/" .. mapping.material .. "/remnants/heat-pipe-remnants.png",
         line_length = 1,
         width = 62,
         height = 52,
@@ -92,7 +93,7 @@ for name, mapping in pairs(tier_map) do
         direction_count = 2,
         shift = util.by_pixel(1, -1),
         hr_version = {
-            filename = reskins.bobs.directory .. "/graphics/entity/power/heat-pipe/" .. mapping.material .. "/remnants/hr-heat-pipe-remnants.png",
+            filename = "__reskins-bobs__/graphics/entity/power/heat-pipe/" .. mapping.material .. "/remnants/hr-heat-pipe-remnants.png",
             line_length = 1,
             width = 122,
             height = 100,
@@ -104,7 +105,7 @@ for name, mapping in pairs(tier_map) do
     })
 
     -- Reskin entities
-    entity.connection_sprites = make_heat_pipe_pictures(reskins.bobs.directory .. "/graphics/entity/power/heat-pipe/" .. mapping.material .. "/", "heat-pipe",
+    entity.connection_sprites = make_heat_pipe_pictures("__reskins-bobs__/graphics/entity/power/heat-pipe/" .. mapping.material .. "/", "heat-pipe",
         {
             single = { name = "straight-vertical-single", ommit_number = true },
             straight_vertical = { variations = 6 },

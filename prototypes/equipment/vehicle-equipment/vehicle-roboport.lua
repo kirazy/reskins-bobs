@@ -37,12 +37,12 @@ for name, map in pairs(vehicle_roboports) do
 
     -- Handle tier
     local tier = map.tier
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
+    if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
         tier = map.prog_tier or map.tier
     end
 
     -- Determine what tint we're using
-    inputs.tint = reskins.lib.tint_index[tier]
+    inputs.tint = reskins.lib.tiers.get_tint(tier)
 
     -- Setup icon handling
     inputs.icon_base = inputs.icon_name .. "-" .. map.base
@@ -55,12 +55,12 @@ for name, map in pairs(vehicle_roboports) do
         layers = {
             -- Base
             {
-                filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-roboport/" .. inputs.icon_base .. "-equipment-base.png",
+                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-roboport/" .. inputs.icon_base .. "-equipment-base.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-roboport/hr-" .. inputs.icon_base .. "-equipment-base.png",
+                    filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-roboport/hr-" .. inputs.icon_base .. "-equipment-base.png",
                     size = 128,
                     priority = "medium",
                     flags = { "no-crop" },
@@ -69,13 +69,13 @@ for name, map in pairs(vehicle_roboports) do
             },
             -- Mask
             {
-                filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-roboport/vehicle-roboport-equipment-mask.png",
+                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-roboport/vehicle-roboport-equipment-mask.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
                 tint = inputs.tint,
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-roboport/hr-vehicle-roboport-equipment-mask.png",
+                    filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-roboport/hr-vehicle-roboport-equipment-mask.png",
                     size = 128,
                     priority = "medium",
                     flags = { "no-crop" },
@@ -85,17 +85,17 @@ for name, map in pairs(vehicle_roboports) do
             },
             -- Highlights
             {
-                filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-roboport/vehicle-roboport-equipment-highlights.png",
+                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-roboport/vehicle-roboport-equipment-highlights.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
-                blend_mode = reskins.lib.blend_mode, -- "additive",
+                blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/equipment/vehicle-equipment/vehicle-roboport/hr-vehicle-roboport-equipment-highlights.png",
+                    filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-roboport/hr-vehicle-roboport-equipment-highlights.png",
                     size = 128,
                     priority = "medium",
                     flags = { "no-crop" },
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             }

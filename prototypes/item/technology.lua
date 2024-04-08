@@ -7,6 +7,7 @@
 if mods["ScienceCostTweakerM"] then return end
 if not (reskins.bobs and reskins.bobs.triggers.technology.items) then return end
 
+---@type CreateIconsFromListInputs
 local inputs = {
     mod = "bobs",
     group = "technology",
@@ -15,12 +16,15 @@ local inputs = {
     tier_labels = false,
 }
 
+---@type CreateIconsFromListTable
 local items = {
     ["advanced-logistic-science-pack"] = {flat_icon = true, subgroup = "science-pack"}
 }
 
 -- Color overhaul for science packs
-if reskins.lib.setting("bobmods-tech-colorupdate") == true and reskins.lib.setting("reskins-lib-customize-tier-colors") == true then
+if reskins.lib.settings.get_value("bobmods-tech-colorupdate") == true 
+    and reskins.lib.settings.get_value("reskins-lib-customize-tier-colors") == true then
+
     items["automation-science-pack"] = {tier = 1}
     items["logistic-science-pack"] = {tier = 2}
     items["chemical-science-pack"] = {tier = 3}
@@ -29,12 +33,12 @@ if reskins.lib.setting("bobmods-tech-colorupdate") == true and reskins.lib.setti
 end
 
 -- Burner phase is enabled
-if reskins.lib.setting("bobmods-burnerphase") == true then
+if reskins.lib.settings.get_value("bobmods-burnerphase") == true then
     items["steam-science-pack"] = {subgroup = "science-pack", flat_icon = true}
 end
 
 -- Alien science packs
-if reskins.lib.setting("bobmods-enemies-enablenewartifacts") == true then
+if reskins.lib.settings.get_value("bobmods-enemies-enablenewartifacts") == true then
     items["alien-science-pack"] = {subgroup = "alien-science-pack", flat_icon = true}
     items["alien-science-pack-blue"] = {subgroup = "alien-science-pack", flat_icon = true}
     items["alien-science-pack-orange"] = {subgroup = "alien-science-pack", flat_icon = true}
@@ -45,4 +49,4 @@ if reskins.lib.setting("bobmods-enemies-enablenewartifacts") == true then
     items["science-pack-gold"] = {subgroup = "alien-science-pack", flat_icon = true}
 end
 
-reskins.lib.create_icons_from_list(items, inputs)
+reskins.internal.create_icons_from_list(items, inputs)

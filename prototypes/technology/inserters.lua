@@ -6,7 +6,7 @@
 -- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.mining.technologies) then return end
 
--- Setup standard inputs
+---@type CreateIconsFromListInputs
 local inputs = {
     mod = "bobs",
     group = "inserters",
@@ -16,6 +16,7 @@ local inputs = {
     flat_icon = true,
 }
 
+---@type CreateIconsFromListTable
 local technologies = {
     -- ["long-inserters-1"] = {},
     -- ["long-inserters-2"] = {},
@@ -25,8 +26,8 @@ local technologies = {
 }
 
 -- For non-overhaul condition, long-handed inserters are unlocked by this technology
-if reskins.lib.setting("bobmods-logistics-inserteroverhaul") ~= true then
+if reskins.lib.settings.get_value("bobmods-logistics-inserteroverhaul") ~= true then
     -- technologies["long-inserters-1"] = nil
 end
 
-reskins.lib.create_icons_from_list(technologies, inputs)
+reskins.internal.create_icons_from_list(technologies, inputs)

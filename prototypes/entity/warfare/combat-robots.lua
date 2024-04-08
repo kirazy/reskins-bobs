@@ -21,7 +21,7 @@ local function capsule_projectile(name)
     if not projectile then return end
 
     projectile.animation = {
-        filename = reskins.bobs.directory .. "/graphics/entity/warfare/capsules/" .. name .. ".png",
+        filename = "__reskins-bobs__/graphics/entity/warfare/capsules/" .. name .. ".png",
         priority = "high",
         flags = { "no-crop" },
         frame_count = 1,
@@ -30,7 +30,7 @@ local function capsule_projectile(name)
     }
 
     projectile.shadow = {
-        filename = reskins.bobs.directory .. "/graphics/entity/warfare/capsules/combat-robot-capsule-shadow.png",
+        filename = "__reskins-bobs__/graphics/entity/warfare/capsules/combat-robot-capsule-shadow.png",
         priority = "high",
         flags = { "no-crop" },
         frame_count = 1,

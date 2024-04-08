@@ -33,12 +33,12 @@ for name, map in pairs(exoskeletons) do
 
     -- Handle tier
     local tier = map.tier
-    if reskins.lib.setting("reskins-lib-tier-mapping") == "progression-map" then
+    if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
         tier = map.prog_tier or map.tier
     end
 
     -- Determine what tint we're using
-    inputs.tint = reskins.lib.tint_index[tier]
+    inputs.tint = reskins.lib.tiers.get_tint(tier)
 
     -- Construct icon
     reskins.lib.construct_icon(name, tier, inputs)
@@ -64,14 +64,14 @@ for name, map in pairs(exoskeletons) do
             },
             -- Mask
             {
-                filename = reskins.bobs.directory .. "/graphics/equipment/equipment/exoskeleton/exoskeleton-equipment-mask.png",
+                filename = "__reskins-bobs__/graphics/equipment/equipment/exoskeleton/exoskeleton-equipment-mask.png",
                 width = 64,
                 height = 128,
                 priority = "medium",
                 flags = { "no-crop" },
                 tint = inputs.tint,
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/equipment/equipment/exoskeleton/hr-exoskeleton-equipment-mask.png",
+                    filename = "__reskins-bobs__/graphics/equipment/equipment/exoskeleton/hr-exoskeleton-equipment-mask.png",
                     width = 128,
                     height = 256,
                     priority = "medium",
@@ -82,19 +82,19 @@ for name, map in pairs(exoskeletons) do
             },
             -- Highlights
             {
-                filename = reskins.bobs.directory .. "/graphics/equipment/equipment/exoskeleton/exoskeleton-equipment-highlights.png",
+                filename = "__reskins-bobs__/graphics/equipment/equipment/exoskeleton/exoskeleton-equipment-highlights.png",
                 width = 64,
                 height = 128,
                 priority = "medium",
                 flags = { "no-crop" },
-                blend_mode = reskins.lib.blend_mode, -- "additive",
+                blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 hr_version = {
-                    filename = reskins.bobs.directory .. "/graphics/equipment/equipment/exoskeleton/hr-exoskeleton-equipment-highlights.png",
+                    filename = "__reskins-bobs__/graphics/equipment/equipment/exoskeleton/hr-exoskeleton-equipment-highlights.png",
                     width = 128,
                     height = 256,
                     priority = "medium",
                     flags = { "no-crop" },
-                    blend_mode = reskins.lib.blend_mode, -- "additive",
+                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     scale = 0.5,
                 }
             }

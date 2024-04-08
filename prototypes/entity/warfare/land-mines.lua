@@ -34,7 +34,7 @@ for _, name in pairs(tier_map) do
 
     -- Reskin entities
     entity.picture_safe = {
-        filename = reskins.bobs.directory .. "/graphics/entity/warfare/" .. name .. "/hr-" .. name .. ".png",
+        filename = "__reskins-bobs__/graphics/entity/warfare/" .. name .. "/hr-" .. name .. ".png",
         priority = "medium",
         width = 64,
         height = 64,
@@ -42,7 +42,7 @@ for _, name in pairs(tier_map) do
     }
 
     entity.picture_set = {
-        filename = reskins.bobs.directory .. "/graphics/entity/warfare/" .. name .. "/hr-" .. name .. "-set.png",
+        filename = "__reskins-bobs__/graphics/entity/warfare/" .. name .. "/hr-" .. name .. "-set.png",
         priority = "medium",
         width = 64,
         height = 64,
