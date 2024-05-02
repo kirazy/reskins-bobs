@@ -114,7 +114,6 @@ local intermediates = {
     -- Powders -- TODO: https://github.com/kirazy/reskins-bobs/issues/31 Model and render out powder/particulate icons
     ["calcium-chloride"] = { subgroup = "powders" },
     ["sodium-hydroxide"] = { subgroup = "powders" },
-    ["lead-oxide"] = { subgroup = "powders" },
     -- ["lithium-chloride"] = {subgroup = "powders"}, -- Needs made-for-resolution icon
     -- ["lithium-cobalt-oxide"] = {subgroup = "powders"}, -- Needs made-for-resolution icon
     -- ["lithium-perchlorate"] = {subgroup = "powders"}, -- Needs made-for-resolution icon
@@ -123,7 +122,6 @@ local intermediates = {
     ["silicon-carbide"] = { subgroup = "powders" },
     ["silicon-nitride"] = { subgroup = "powders" },
     ["silicon-powder"] = { subgroup = "powders" },
-    ["silver-nitrate"] = { subgroup = "powders" },
     -- ["silver-oxide"] = {subgroup = "powders"}, -- Needs made-for-resolution icon
 
     -- Gemstones
