@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.2.0
-Date: ????
+Date: 2024-05-04
   Changes:
     - Internal updates to reflect changes to Artisanal Reskins: Library, now depends on version 2.2.0
     - Migrated custom color settings to `color-setting`, allowing for the use of a color picker in-game.
