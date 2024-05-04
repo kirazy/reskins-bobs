@@ -216,15 +216,22 @@ local technologies = {
         technology_icon_mipmaps = 4,
     },
 
+    -- raw gems
+    -- ["gem-processing-1"] = {
+    --     subgroup = "processing-steps",
+    --     technology_icon_size = 256,
+    --     technology_icon_mipmaps = 4,
+    -- },
+
     -- cut gems
-    ["gem-processing-1"] = {
+    ["gem-processing-2"] = {
         subgroup = "processing-steps",
         technology_icon_size = 256,
         technology_icon_mipmaps = 4,
     },
 
     -- polished gems
-    ["gem-processing-2"] = {
+    ["gem-processing-3"] = {
         subgroup = "processing-steps",
         technology_icon_size = 256,
         technology_icon_mipmaps = 4,
