@@ -58,4 +58,13 @@ local technologies = {
     ["bob-distillery-5"] = {tier = 5, icon_name = "distillery", technology_icon_size = 128, technology_icon_mipmaps = 0},
 }
 
+if reskins.lib.version.is_same_or_newer(mods["bobassembly"], "1.3.0") then
+    technologies["automation"].tier = 1
+    technologies["automation-2"].tier = 2
+    technologies["automation-3"].tier = 3
+    technologies["automation-4"].tier = 4
+    technologies["automation-5"].tier = 5
+    technologies["automation-6"].tier = 6
+end
+
 reskins.internal.create_icons_from_list(technologies, inputs)

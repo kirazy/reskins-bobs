@@ -32,6 +32,11 @@ local technologies = {
     ["bob-infinite-worker-robots-storage-1"] = {technology_icon_filename = "__base__/graphics/technology/worker-robots-storage.png", technology_icon_extras = {reskins.lib.return_technology_effect_icon("capacity")}, technology_icon_size = 256, technology_icon_mipmaps = 4, flat_icon = true},
 }
 
+if reskins.lib.version.is_same_or_newer(mods["bobassembly"], "1.3.0") then
+    technologies["basic-automation"].tint = nil
+    technologies["basic-automation"].tier = 0
+end
+
 reskins.internal.create_icons_from_list(technologies, inputs)
 
 -- Overwrite icons for technology effects
