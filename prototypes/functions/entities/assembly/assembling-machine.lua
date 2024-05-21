@@ -8,16 +8,17 @@
 ---@class AssemblyMachineFlags
 ---@field is_small boolean? # When true, uses the sprites for a 2x2 tile footprint; otherwise, for a 3x3 tile footprint.
 ---@field lights integer? # An integer between 1 and 3, corresponding to the number of lights on the electronics assembling machine icon.
+---@field sprite_set integer? # An integer between 0 and 5, corresponding to the tier of sprite set to use. If omitted, defaults to the tier.
 ---@field use_electronics_set boolean? # When true, uses the sprites for an electronics assembling machine.
 ---@field use_burner_set boolean? # When true, uses the sprites for a burner assembling machine.
 ---@field use_steam_set boolean? # When true, uses the sprites for a steam assembling machine.
 
 ---Prepares icon properties for the `inputs` table
----@param tier integer # An integer between 0 and 5. Tier gear icon decoratives
+---@param sprite_set integer # An integer between 0 and 5. Tier gear icon decoratives
 ---@param tint? data.Color
 ---@param flags AssemblyMachineFlags
 ---@return table inputs
-local function icon_sets(tier, tint, flags)
+local function icon_sets(sprite_set, tint, flags)
     local inputs = {}
 
     if flags.use_electronics_set then
@@ -146,7 +147,7 @@ local function icon_sets(tier, tint, flags)
             -- Add gears
             inputs.icon_extras = {
                 {
-                    icon = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/mini-gear-" .. tier .. ".png",
+                    icon = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/mini-gear-" .. sprite_set .. ".png",
                     icon_size = 64,
                     icon_mipmaps = 4,
                     scale = 0.5,
@@ -155,7 +156,7 @@ local function icon_sets(tier, tint, flags)
 
             inputs.icon_picture_extras = {
                 {
-                    filename = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/mini-gear-" .. tier .. ".png",
+                    filename = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/mini-gear-" .. sprite_set .. ".png",
                     size = 64,
                     mipmaps = 4,
                     scale = 0.25
@@ -165,7 +166,7 @@ local function icon_sets(tier, tint, flags)
             -- Add gears
             inputs.icon_extras = {
                 {
-                    icon = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/gear-" .. tier .. ".png",
+                    icon = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/gear-" .. sprite_set .. ".png",
                     icon_size = 64,
                     icon_mipmaps = 4,
                     scale = 0.5,
@@ -174,7 +175,7 @@ local function icon_sets(tier, tint, flags)
 
             inputs.icon_picture_extras = {
                 {
-                    filename = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/gear-" .. tier .. ".png",
+                    filename = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/gear-" .. sprite_set .. ".png",
                     size = 64,
                     mipmaps = 4,
                     scale = 0.25
@@ -274,12 +275,15 @@ local function corpse_animation(tint)
 end
 
 ---Provides vanilla-style sprite definition for assembling machine `animation` field. See [Prototype/AssemblingMachine](https://wiki.factorio.com/Prototype/AssemblingMachine).
----@param tint table # [Types/Color](https://wiki.factorio.com/Types/Color)
----@param flags AssemblyMachineFlags
----@return table animation # [Types/Animation4Way](https://wiki.factorio.com/Types/Animation4Way)
-local function entity_animation(tier, tint, flags)
-    local shadow_tier = (tier >= 5) and 4 or tier
+---@param sprite_set integer # An integer between 0 and 5.
+---@param tint data.Color
+---@param flags any
+---@return data.Animation
+local function entity_animation(sprite_set, tint, flags)
+    local shadow_sprite_set = (sprite_set >= 5) and 4 or sprite_set
+    sprite_set = (sprite_set >= 5) and 5 or sprite_set
 
+    ---@type data.Animation
     local animation = {
         layers = {
             -- Base
@@ -354,7 +358,7 @@ local function entity_animation(tier, tint, flags)
             },
             -- Animation
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/animations/assembling-machine-animation-" .. tier .. ".png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/animations/assembling-machine-animation-" .. sprite_set .. ".png",
                 priority = "high",
                 width = 108,
                 height = 119,
@@ -362,7 +366,7 @@ local function entity_animation(tier, tint, flags)
                 line_length = 8,
                 shift = util.by_pixel(0, -0.5),
                 hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/animations/hr-assembling-machine-animation-" .. tier .. ".png",
+                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/animations/hr-assembling-machine-animation-" .. sprite_set .. ".png",
                     priority = "high",
                     width = 214,
                     height = 237,
@@ -374,7 +378,7 @@ local function entity_animation(tier, tint, flags)
             },
             -- Shadow
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/shadows/assembling-machine-" .. shadow_tier .. "-shadow.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/shadows/assembling-machine-" .. shadow_sprite_set .. "-shadow.png",
                 priority = "high",
                 width = 132,
                 height = 83,
@@ -383,7 +387,7 @@ local function entity_animation(tier, tint, flags)
                 draw_as_shadow = true,
                 shift = util.by_pixel(27, 5),
                 hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/shadows/hr-assembling-machine-" .. shadow_tier .. "-shadow.png",
+                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/shadows/hr-assembling-machine-" .. shadow_sprite_set .. "-shadow.png",
                     priority = "high",
                     width = 264,
                     height = 165,
@@ -521,7 +525,7 @@ function reskins.lib.apply_skin.assembling_machine(name, tier, tint, make_tier_l
             tier_labels = make_tier_labels,
             tint = tint and tint or reskins.lib.tiers.get_tint(tier),
         },
-        icon_sets(tier, tint, flags)
+        icon_sets(flags.sprite_set or tier, tint, flags)
     })
 
     ---@type data.AssemblingMachinePrototype
@@ -537,7 +541,7 @@ function reskins.lib.apply_skin.assembling_machine(name, tier, tint, make_tier_l
     corpse.animation = corpse_animation(inputs.tint)
 
     -- Reskin entity
-    entity.animation = entity_animation(tier, inputs.tint, flags)
+    entity.animation = entity_animation(flags.sprite_set or tier, inputs.tint, flags)
     entity.drawing_box = nil
 
     local draw_order_shift = (flags.use_electronics_set or flags.use_steam_set) and 6 or 3

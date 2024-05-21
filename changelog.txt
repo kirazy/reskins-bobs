@@ -2,14 +2,17 @@
 Version: 2.2.1
 Date: ????
   Changes:
+    - Added support for the revised assembly machine tiers in Bob's Assembling machines, version 1.3.0
+    - Added `sprite_set` flag to the AssemblingMachineFlags type on the reskins.lib.apply_skin.assembling_machine method.
+      - Indicates which sprite set to use. If omitted, defaults to the tier. Supports integers between 0 and 5.
 ---------------------------------------------------------------------------------------------------
 Version: 2.2.0
 Date: 2024-05-04
   Changes:
     - Internal updates to reflect changes to Artisanal Reskins: Library, now depends on version 2.2.0
-    - Migrated custom color settings to `color-setting`, allowing for the use of a color picker in-game.
+    - Migrated custom color settings to `color-setting`, allowing for the use of a color picker in-game
   Bugfixes:
-    - Fixed that technology icons for the Gem Processing techs were assigned to the wrong tier.
+    - Fixed that technology icons for the Gem Processing techs were assigned to the wrong tier
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.6
 Date: 2023-12-23

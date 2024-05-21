@@ -10,25 +10,48 @@ if not (reskins.bobs and reskins.bobs.triggers.assembly.entities) then return en
 -- Flag available for Mini-Machines compatibility pass
 if reskins.compatibility then reskins.compatibility.triggers.minimachines.assemblers = true end
 
+local is_progression = reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map"
+
 local assembling_machines = {
     -- Standard assembly machines
-    ["assembling-machine-1"] = { tier = 0 },
-    ["assembling-machine-2"] = { tier = 1 },
-    ["assembling-machine-3"] = { tier = 2 },
-    ["assembling-machine-4"] = { tier = 3 },
-    ["assembling-machine-5"] = { tier = 4 },
-    ["assembling-machine-6"] = { tier = 5 },
+    ["assembling-machine-1"] = { tier = 0, flags = { sprite_set = 0 } },
+    ["assembling-machine-2"] = { tier = 1, flags = { sprite_set = 1 } },
+    ["assembling-machine-3"] = { tier = 2, flags = { sprite_set = 2 } },
+    ["assembling-machine-4"] = { tier = 3, flags = { sprite_set = 3 } },
+    ["assembling-machine-5"] = { tier = 4, flags = { sprite_set = 4 } },
+    ["assembling-machine-6"] = { tier = 5, flags = { sprite_set = 5 } },
     -- Smoke stacks
     ["burner-assembling-machine"] = { tier = 0, tint = util.color("262626"), flags = { use_burner_set = true, is_small = reskins.bobs.triggers.assembly.burner_assembling_machine_is_small } },
     ["steam-assembling-machine"] = { tier = 0, tint = util.color("d9d9d9"), flags = { use_steam_set = true } },
     -- Electronics
-    ["electronics-machine-1"] = { tier = (reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "traditional-map") and 1 or 0, flags = { use_electronics_set = true, lights = 1, is_small = true } },
-    ["electronics-machine-2"] = { tier = (reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "traditional-map") and 2 or 2, flags = { use_electronics_set = true, lights = 2, is_small = true } },
-    ["electronics-machine-3"] = { tier = (reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "traditional-map") and 3 or 4, flags = { use_electronics_set = true, lights = 3, is_small = true } },
+    ["electronics-machine-1"] = { tier = 1, prog_tier = 0, flags = { use_electronics_set = true, lights = 1, is_small = true } },
+    ["electronics-machine-2"] = { tier = 2, prog_tier = 2, flags = { use_electronics_set = true, lights = 2, is_small = true } },
+    ["electronics-machine-3"] = { tier = 3, prog_tier = 4, flags = { use_electronics_set = true, lights = 3, is_small = true } },
 }
 
+if reskins.lib.version.is_same_or_newer(mods["bobassembly"], "1.3.0") then
+    -- Remove the custom tint, use tier 0 directly.
+    assembling_machines["burner-assembling-machine"].tint = nil
+
+    assembling_machines["assembling-machine-1"].tier = 1
+    assembling_machines["assembling-machine-2"].tier = 2
+    assembling_machines["assembling-machine-3"].tier = 3
+    assembling_machines["assembling-machine-4"].tier = 4
+    assembling_machines["assembling-machine-5"].tier = 5
+    assembling_machines["assembling-machine-6"].tier = 6
+
+    assembling_machines["electronics-machine-1"].tier = 1
+    assembling_machines["electronics-machine-1"].prog_tier = 1
+
+    assembling_machines["electronics-machine-2"].tier = 2
+    assembling_machines["electronics-machine-2"].prog_tier = 3
+
+    assembling_machines["electronics-machine-3"].tier = 3
+    assembling_machines["electronics-machine-3"].prog_tier = 5
+end
+
 for name, map in pairs(assembling_machines) do
-    reskins.lib.apply_skin.assembling_machine(name, map.tier, map.tint, nil, map.flags)
+    reskins.lib.apply_skin.assembling_machine(name, is_progression and map.prog_tier or map.tier, map.tint, nil, map.flags)
 end
 
 -- CHEMICAL PLANTS (Note: Bob sets up in data-updates)
@@ -44,6 +67,6 @@ if reskins.lib.settings.get_value("bobmods-assembly-chemicalplants") then
     }
 
     for name, map in pairs(tier_map) do
-        reskins.lib.apply_skin.chemical_plant(name, (reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map") and map.prog_tier or map.tier)
+        reskins.lib.apply_skin.chemical_plant(name, is_progression and map.prog_tier or map.tier)
     end
 end
