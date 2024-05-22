@@ -65,6 +65,9 @@ if reskins.lib.version.is_same_or_newer(mods["bobassembly"], "1.3.0") then
     technologies["automation-4"].tier = 4
     technologies["automation-5"].tier = 5
     technologies["automation-6"].tier = 6
+    technologies["electronics-machine-1"].prog_tier = 1
+    technologies["electronics-machine-2"].prog_tier = 3
+    technologies["electronics-machine-3"].prog_tier = 5
 end
 
 reskins.internal.create_icons_from_list(technologies, inputs)
