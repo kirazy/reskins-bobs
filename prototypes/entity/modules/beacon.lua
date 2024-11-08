@@ -28,7 +28,7 @@ local tier_map = {
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
-    -- Fetch entity
+    ---@type data.BeaconPrototype
     local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
@@ -103,7 +103,7 @@ for name, map in pairs(tier_map) do
 
     -- Determine sprite set to use
     local beacon_base = mods["SeaBlock"] and 1 or map.tier
-    local module_slots = mods["SeaBlock"] and 2 or entity.module_specification and entity.module_specification.module_slots
+    local module_slots = mods["SeaBlock"] and 2 or entity.module_slots
 
     -- Reskin entities
     entity.graphics_set.animation_list =

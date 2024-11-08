@@ -332,14 +332,14 @@ local beacons = { "beacon", "beacon-2", "beacon-3" }
 
 -- Setup module slots
 for _, name in pairs(beacons) do
-    -- Fetch entity
+    ---@type data.BeaconPrototype
     local entity = data.raw["beacon"][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
     -- Determine the number of slots to generate
-    local module_slots = mods["SeaBlock"] and 2 or entity.module_specification and entity.module_specification.module_slots
+    local module_slots = mods["SeaBlock"] and 2 or entity.module_slots
 
     if module_slots == 2 then
         -- 8 light modules
