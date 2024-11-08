@@ -7,8 +7,7 @@
 if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then return end
 
 -- Set input parameters
-local inputs =
-{
+local inputs = {
     type = "roboport",
     base_entity_name = "roboport",
     mod = "bobs",
@@ -19,19 +18,16 @@ local inputs =
 
 inputs.icon_filename = "__reskins-bobs__/graphics/icons/logistics/zone-interface/zone-interface-icon-base.png"
 
--- Fetch entity
 local name = "bob-logistic-zone-interface"
 local tier = 0
-local entity = data.raw[inputs.type][name]
 
--- Make sure the interface exists
+---@type data.RoboportPrototype
+local entity = data.raw[inputs.type][name]
 if not entity then return end
 
 reskins.lib.setup_standard_entity(name, tier, inputs)
 
--- Reskin entity
-entity.base =
-{
+entity.base = {
     filename = "__reskins-bobs__/graphics/entity/logistics/zone-interface/hr-logistic-zone-interface.png",
     width = 64,
     height = 70,
@@ -39,10 +35,8 @@ entity.base =
     scale = 0.5,
 }
 
-entity.base_animation =
-{
-    layers =
-    {
+entity.base_animation = {
+    layers = {
         {
             filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/antennas/hr-roboport-1-base-animation.png",
             priority = "medium",
@@ -66,9 +60,6 @@ entity.base_animation =
         },
     },
 }
-
--- Set drawing box so the entity appears properly within the GUI
-entity.drawing_box = { { -0.5, -1.5 }, { 0.5, 0.5 } }
 
 -- Fix corpse
 entity.corpse = "small-remnants"

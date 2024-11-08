@@ -18,26 +18,24 @@ local inputs = {
 }
 
 local tier_map = {
-    ["bob-logistic-zone-expander"] = { 1, 2 },
-    ["bob-logistic-zone-expander-2"] = { 2, 3 },
-    ["bob-logistic-zone-expander-3"] = { 3, 4 },
-    ["bob-logistic-zone-expander-4"] = { 4, 5 },
+    ["bob-logistic-zone-expander"] = { tier = 1, prog_tier = 2 },
+    ["bob-logistic-zone-expander-2"] = { tier = 2, prog_tier = 3 },
+    ["bob-logistic-zone-expander-3"] = { tier = 3, prog_tier = 4 },
+    ["bob-logistic-zone-expander-4"] = { tier = 4, prog_tier = 5 },
 }
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
-    -- Fetch entity
+    ---@type data.RoboportPrototype
     local entity = data.raw[inputs.type][name]
-
-    -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
     -- Parse map
-    local tier = map[1]
+    local tier = map.tier
     if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
-        tier = map[2]
+        tier = map.prog_tier
     end
-    local subtier = map[1]
+    local subtier = map.tier
 
     -- Setup icon details
     inputs.icon_base = "zone-expander-" .. subtier
@@ -104,9 +102,6 @@ for name, map in pairs(tier_map) do
             },
         },
     }
-
-    -- Set drawing box so the entity appears properly within the GUI
-    entity.drawing_box = { { -0.5, -2.5 }, { 0.5, 0.5 } }
 
     entity.water_reflection = {
         pictures = {

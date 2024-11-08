@@ -150,11 +150,8 @@ end
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
-    -- Fetch entity
+    ---@type data.ElectricTurretPrototype
     local entity = data.raw[inputs.type][name]
-
-
-    -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
     -- Handle tier
@@ -317,9 +314,6 @@ for name, map in pairs(tier_map) do
             plasma_turret_extension_lights_highlights({ run_mode = "backward" }),
         },
     }
-
-    -- Adjust drawing box
-    entity.drawing_box = { { -1.5, -2.5 }, { 1.5, 1.5 } }
 
     entity.water_reflection = {
         pictures = {

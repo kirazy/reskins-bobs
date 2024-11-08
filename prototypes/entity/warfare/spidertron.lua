@@ -74,8 +74,6 @@ if tankotron then
         scale = 0.5,
         shift = util.by_pixel(0, -9),
     })
-
-    data.raw["spider-vehicle"]["tankotron"].drawing_box = { { -3, -3.5 }, { 3, 1.75 } }
 end
 
 
