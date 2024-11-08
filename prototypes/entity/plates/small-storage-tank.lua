@@ -98,7 +98,7 @@ for name, map in pairs(tier_map) do
             priority = "extra-high",
             width = 10,
             height = 36,
-            scale = 0.5
+            scale = 0.5,
         },
         flow_sprite = {
             filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/fluid-flow.png",
@@ -116,7 +116,7 @@ for name, map in pairs(tier_map) do
             axially_symmetrical = false,
             animation_speed = 0.25,
             direction_count = 1,
-            scale = 0.5
+            scale = 0.5,
         },
     }
 

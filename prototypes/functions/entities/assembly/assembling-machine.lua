@@ -105,8 +105,8 @@ local function icon_sets(sprite_set, tint, flags)
                 icon = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/steam-smoke-stack-highlights.png",
                 icon_size = 64,
                 scale = 0.5,
-                tint = { 1, 1, 1, 0 }
-            }
+                tint = { 1, 1, 1, 0 },
+            },
         }
 
         inputs.icon_picture_extras = {
@@ -114,22 +114,22 @@ local function icon_sets(sprite_set, tint, flags)
                 filename = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/steam-smoke-stack-base.png",
                 size = 64,
                 mipmaps = 4,
-                scale = 0.25
+                scale = 0.25,
             },
             {
                 filename = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/steam-smoke-stack-mask.png",
                 size = 64,
                 mipmaps = 4,
                 scale = 0.25,
-                tint = tint
+                tint = tint,
             },
             {
                 filename = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/steam-smoke-stack-highlights.png",
                 size = 64,
                 mipmaps = 4,
                 scale = 0.25,
-                blend_mode = "additive"
-            }
+                blend_mode = "additive",
+            },
         }
     else
         if flags.is_small then
@@ -144,7 +144,7 @@ local function icon_sets(sprite_set, tint, flags)
                     icon = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/mini-gear-" .. sprite_set .. ".png",
                     icon_size = 64,
                     scale = 0.5,
-                }
+                },
             }
 
             inputs.icon_picture_extras = {
@@ -152,8 +152,8 @@ local function icon_sets(sprite_set, tint, flags)
                     filename = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/mini-gear-" .. sprite_set .. ".png",
                     size = 64,
                     mipmaps = 4,
-                    scale = 0.25
-                }
+                    scale = 0.25,
+                },
             }
         else
             -- Add gears
@@ -162,7 +162,7 @@ local function icon_sets(sprite_set, tint, flags)
                     icon = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/gear-" .. sprite_set .. ".png",
                     icon_size = 64,
                     scale = 0.5,
-                }
+                },
             }
 
             inputs.icon_picture_extras = {
@@ -170,8 +170,8 @@ local function icon_sets(sprite_set, tint, flags)
                     filename = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/gear-" .. sprite_set .. ".png",
                     size = 64,
                     mipmaps = 4,
-                    scale = 0.25
-                }
+                    scale = 0.25,
+                },
             }
         end
     end
@@ -226,8 +226,8 @@ local function corpse_animation(tint)
                     shift = util.by_pixel(0, 9.5),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     scale = 0.5,
-                }
-            }
+                },
+            },
         })
 end
 
@@ -253,7 +253,7 @@ local function entity_animation(sprite_set, tint, flags)
                 line_length = 1,
                 repeat_count = 32,
                 shift = util.by_pixel(0, -0.75),
-                scale = 0.5
+                scale = 0.5,
             },
             -- Mask
             {
@@ -266,7 +266,7 @@ local function entity_animation(sprite_set, tint, flags)
                 repeat_count = 32,
                 shift = util.by_pixel(0, -0.75),
                 tint = tint,
-                scale = 0.5
+                scale = 0.5,
             },
             -- Highlight
             {
@@ -279,7 +279,7 @@ local function entity_animation(sprite_set, tint, flags)
                 repeat_count = 32,
                 shift = util.by_pixel(0, -0.75),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                scale = 0.5
+                scale = 0.5,
             },
             -- Animation
             {
@@ -290,7 +290,7 @@ local function entity_animation(sprite_set, tint, flags)
                 frame_count = 32,
                 line_length = 8,
                 shift = util.by_pixel(0, -0.75),
-                scale = 0.5
+                scale = 0.5,
             },
             -- Shadow
             {
@@ -302,9 +302,9 @@ local function entity_animation(sprite_set, tint, flags)
                 line_length = 8,
                 draw_as_shadow = true,
                 shift = util.by_pixel(27, 5),
-                scale = 0.5
-            }
-        }
+                scale = 0.5,
+            },
+        },
     }
 
     if flags.use_electronics_set then
@@ -319,7 +319,7 @@ local function entity_animation(sprite_set, tint, flags)
                 line_length = 1,
                 repeat_count = 32,
                 shift = util.by_pixel(0, -0.75),
-                scale = 0.5
+                scale = 0.5,
             })
         table.insert(animation.layers,
             -- Mask
@@ -333,7 +333,7 @@ local function entity_animation(sprite_set, tint, flags)
                 repeat_count = 32,
                 shift = util.by_pixel(0, -0.75),
                 tint = tint,
-                scale = 0.5
+                scale = 0.5,
             })
         table.insert(animation.layers,
             -- Highlights
@@ -347,7 +347,7 @@ local function entity_animation(sprite_set, tint, flags)
                 repeat_count = 32,
                 shift = util.by_pixel(0, -0.75),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                scale = 0.5
+                scale = 0.5,
             })
         table.insert(animation.layers,
             -- Shadow
@@ -361,7 +361,7 @@ local function entity_animation(sprite_set, tint, flags)
                 repeat_count = 32,
                 draw_as_shadow = true,
                 shift = util.by_pixel(27, 5),
-                scale = 0.5
+                scale = 0.5,
             })
     end
 
@@ -384,11 +384,11 @@ function reskins.lib.apply_skin.assembling_machine(name, tier, tint, make_tier_l
             base_entity_name = "assembling-machine-1",
             mod = "bobs",
             group = "assembly",
-            particles = { ["big"] = 1,["medium"] = 2 },
+            particles = { ["big"] = 1, ["medium"] = 2 },
             tier_labels = make_tier_labels,
             tint = tint and tint or reskins.lib.tiers.get_tint(tier),
         },
-        icon_sets(flags.sprite_set or tier, tint, flags)
+        icon_sets(flags.sprite_set or tier, tint, flags),
     })
 
     ---@type data.AssemblingMachinePrototype
@@ -430,22 +430,22 @@ function reskins.lib.apply_skin.assembling_machine(name, tier, tint, make_tier_l
         entity.working_sound.sound = {
             {
                 filename = "__base__/sound/assembling-machine-t3-1.ogg",
-                volume = 0.45
-            }
+                volume = 0.45,
+            },
         }
     elseif tier > 1 then
         entity.working_sound.sound = {
             {
                 filename = "__base__/sound/assembling-machine-t2-1.ogg",
-                volume = 0.45
-            }
+                volume = 0.45,
+            },
         }
     else
         entity.working_sound.sound = {
             {
                 filename = "__base__/sound/assembling-machine-t1-1.ogg",
-                volume = 0.5
-            }
+                volume = 0.5,
+            },
         }
     end
 

@@ -63,7 +63,7 @@ local function inserter_arm_picture(parameters)
         priority = "extra-high",
         width = 32,
         height = 136,
-        scale = 0.25
+        scale = 0.25,
     }
 end
 
@@ -75,7 +75,7 @@ local function inserter_arm_shadow()
         width = 32,
         height = 136,
         draw_as_shadow = true,
-        scale = 0.25
+        scale = 0.25,
     }
 end
 
@@ -87,7 +87,7 @@ local function inserter_hand_picture(parameters)
         priority = "extra-high",
         width = 130,
         height = 164,
-        scale = 0.25
+        scale = 0.25,
     }
 end
 
@@ -105,7 +105,7 @@ local function inserter_hand_shadow(parameters)
         width = 130,
         height = 164,
         draw_as_shadow = true,
-        scale = 0.25
+        scale = 0.25,
     }
 end
 
@@ -121,7 +121,7 @@ local function inserter_platform_picture(parameters)
                 width = 106,
                 height = 80,
                 shift = util.by_pixel(1.75, 6.75),
-                scale = 0.5
+                scale = 0.5,
             },
             -- Shadow
             {
@@ -131,9 +131,9 @@ local function inserter_platform_picture(parameters)
                 height = 80,
                 draw_as_shadow = true,
                 shift = util.by_pixel(1.75, 6.75),
-                scale = 0.5
-            }
-        }
+                scale = 0.5,
+            },
+        },
     }
 end
 

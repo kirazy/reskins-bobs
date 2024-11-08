@@ -43,7 +43,7 @@ local function furnace_heater_animation()
         animation_speed = 0.5,
         shift = util.by_pixel(2, 33),
         draw_as_glow = true,
-        scale = 0.5
+        scale = 0.5,
     }
 end
 
@@ -84,7 +84,7 @@ local function furnace_working_light(type, has_partial)
         shift = util.by_pixel(1, 1),
         blend_mode = "additive",
         draw_as_glow = true,
-        scale = 0.5
+        scale = 0.5,
     }
 end
 
@@ -112,8 +112,8 @@ local function furnace_large_propeller()
             frame_count = 4,
             animation_speed = 0.5,
             shift = util.by_pixel(-20, -18),
-            scale = 0.5
-        }
+            scale = 0.5,
+        },
     }
 end
 
@@ -133,8 +133,8 @@ local function furnace_small_propeller(is_shifted)
             frame_count = 4,
             animation_speed = 0.5,
             shift = shift,
-            scale = 0.5
-        }
+            scale = 0.5,
+        },
     }
 end
 
@@ -208,8 +208,8 @@ for name, map in pairs(electric_furnace_map) do
                 shift = util.by_pixel(-3.25, 7.25),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 scale = 0.5,
-            }
-        }
+            },
+        },
     }
 
     -- Reskin entities
@@ -222,7 +222,7 @@ for name, map in pairs(electric_furnace_map) do
                 width = 238,
                 height = 212,
                 shift = util.by_pixel(1, 1),
-                scale = 0.5
+                scale = 0.5,
             },
             -- Mask
             {
@@ -232,7 +232,7 @@ for name, map in pairs(electric_furnace_map) do
                 height = 212,
                 shift = util.by_pixel(1, 1),
                 tint = inputs.tint,
-                scale = 0.5
+                scale = 0.5,
             },
             -- Highlights
             {
@@ -242,7 +242,7 @@ for name, map in pairs(electric_furnace_map) do
                 height = 212,
                 shift = util.by_pixel(1, 1),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                scale = 0.5
+                scale = 0.5,
             },
             -- Shadow
             {
@@ -252,9 +252,9 @@ for name, map in pairs(electric_furnace_map) do
                 height = 172,
                 shift = util.by_pixel(10.75, 7.25),
                 draw_as_shadow = true,
-                scale = 0.5
-            }
-        }
+                scale = 0.5,
+            },
+        },
     }
 
     if map.furnace == "chemical" then
@@ -381,9 +381,9 @@ for name, map in pairs(electric_furnace_map) do
                 base_area = 10,
                 base_level = -1,
                 pipe_connections = { { type = "input", position = { 0, -2 } } },
-                secondary_draw_orders = { north = -1 }
+                secondary_draw_orders = { north = -1 },
             },
-            off_when_no_fluid_recipe = true
+            off_when_no_fluid_recipe = true,
         }
     end
 

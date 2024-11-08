@@ -87,8 +87,8 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(2.5, 0.5),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 scale = 0.5,
-            }
-        }
+            },
+        },
     })
 
     -- Reskin entities
@@ -102,7 +102,7 @@ for name, map in pairs(tier_map) do
                 height = 270,
                 direction_count = 4,
                 shift = util.by_pixel(0, 1 - 32),
-                scale = 0.5
+                scale = 0.5,
             },
             -- Mask
             {
@@ -113,7 +113,7 @@ for name, map in pairs(tier_map) do
                 direction_count = 4,
                 shift = util.by_pixel(0, 1 - 32),
                 tint = inputs.tint,
-                scale = 0.5
+                scale = 0.5,
             },
             -- Highlights
             {
@@ -124,7 +124,7 @@ for name, map in pairs(tier_map) do
                 direction_count = 4,
                 shift = util.by_pixel(0, 1 - 32),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                scale = 0.5
+                scale = 0.5,
             },
             -- Shadow
             {
@@ -135,9 +135,9 @@ for name, map in pairs(tier_map) do
                 direction_count = 4,
                 shift = util.by_pixel(62, 42 - 32),
                 draw_as_shadow = true,
-                scale = 0.5
-            }
-        }
+                scale = 0.5,
+            },
+        },
     }
 
     -- Label to skip to next iteration

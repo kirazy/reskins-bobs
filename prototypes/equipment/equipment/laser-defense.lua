@@ -74,8 +74,8 @@ for name, map in pairs(laser_defense) do
                 flags = { "no-crop" },
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 scale = 0.5,
-            }
-        }
+            },
+        },
     }
 
     -- Label to skip to next iteration

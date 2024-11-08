@@ -14,7 +14,7 @@ local inputs = {
     group = "logistics",
     particles = { ["medium"] = 1 },
     icon_layers = 2,
-    untinted_icon_mask = true
+    untinted_icon_mask = true,
 }
 
 local material_tints = {
@@ -98,8 +98,8 @@ for name, map in pairs(logistic_map) do
                 direction_count = 1,
                 shift = util.by_pixel(10, -3),
                 scale = 0.5,
-            }
-        }
+            },
+        },
     }
 
     -- Reskin entities
@@ -113,7 +113,7 @@ for name, map in pairs(logistic_map) do
                 height = 74,
                 frame_count = 7,
                 shift = util.by_pixel(0, -2),
-                scale = 0.5
+                scale = 0.5,
             },
             -- Mask
             {
@@ -123,7 +123,7 @@ for name, map in pairs(logistic_map) do
                 height = 74,
                 frame_count = 7,
                 shift = util.by_pixel(0, -2),
-                scale = 0.5
+                scale = 0.5,
             },
             -- Shadow
             {
@@ -134,9 +134,9 @@ for name, map in pairs(logistic_map) do
                 repeat_count = 7,
                 shift = util.by_pixel(12, 4.5),
                 draw_as_shadow = true,
-                scale = 0.5
-            }
-        }
+                scale = 0.5,
+            },
+        },
     }
 
     -- Label to skip to next iteration

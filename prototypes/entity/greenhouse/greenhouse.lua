@@ -29,7 +29,7 @@ local greenhouse_base = reskins.lib.sprites.make_4way_animation_from_spritesheet
     width = 194,
     height = 192,
     shift = util.by_pixel(0, 0),
-    scale = 0.5
+    scale = 0.5,
 })
 
 local greenhouse_integration_patch = {
@@ -37,7 +37,7 @@ local greenhouse_integration_patch = {
     width = 242,
     height = 162,
     shift = util.by_pixel(0, 15.5),
-    scale = 0.5
+    scale = 0.5,
 }
 
 local greenhouse_shadow = {
@@ -46,7 +46,7 @@ local greenhouse_shadow = {
     height = 136,
     shift = util.by_pixel(13, 11),
     scale = 0.5,
-    draw_as_shadow = true
+    draw_as_shadow = true,
 }
 
 -- Reskin the entity
@@ -55,29 +55,29 @@ entity.animation = {
         layers = {
             greenhouse_base.north,
             greenhouse_integration_patch,
-            greenhouse_shadow
-        }
+            greenhouse_shadow,
+        },
     },
     east = {
         layers = {
             greenhouse_base.east,
             greenhouse_integration_patch,
-            greenhouse_shadow
-        }
+            greenhouse_shadow,
+        },
     },
     south = {
         layers = {
             greenhouse_base.south,
             greenhouse_integration_patch,
-            greenhouse_shadow
-        }
+            greenhouse_shadow,
+        },
     },
     west = {
         layers = {
             greenhouse_base.west,
             greenhouse_integration_patch,
-            greenhouse_shadow
-        }
+            greenhouse_shadow,
+        },
     },
 }
 
@@ -91,7 +91,7 @@ local greenhouse_working = reskins.lib.sprites.make_4way_animation_from_spritesh
             width = 194,
             height = 192,
             shift = util.by_pixel(0, 0),
-            scale = 0.5
+            scale = 0.5,
         },
         -- Light
         {
@@ -100,9 +100,9 @@ local greenhouse_working = reskins.lib.sprites.make_4way_animation_from_spritesh
             height = 192,
             shift = util.by_pixel(0, 0),
             draw_as_light = true,
-            scale = 0.5
+            scale = 0.5,
         },
-    }
+    },
 })
 
 entity.working_visualisations = {
@@ -119,7 +119,7 @@ entity.working_visualisations = {
         always_draw = true,
         north_animation = reskins.lib.sprites.pipes.get_vertical_pipe_shadow({ 0, -1 }),
         south_animation = reskins.lib.sprites.pipes.get_vertical_pipe_shadow({ 0, 1 }),
-    }
+    },
 }
 
 entity.fluid_boxes[1].pipe_picture = nil

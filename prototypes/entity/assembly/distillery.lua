@@ -80,8 +80,8 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(16, 1.5),
                 draw_as_shadow = true,
                 scale = 0.5,
-            }
-        }
+            },
+        },
     })
 
     -- Handle Working Visualization
@@ -125,7 +125,7 @@ for name, tier in pairs(tier_map) do
                 draw_as_glow = true,
                 scale = 0.5,
             },
-        }
+        },
     }
 
     entity.water_reflection = {
@@ -139,7 +139,7 @@ for name, tier in pairs(tier_map) do
             scale = 10 / 3,
         },
         rotate = false,
-        orientation_to_variation = true
+        orientation_to_variation = true,
     }
 
     -- Label to skip to next iteration

@@ -16,7 +16,7 @@ local inputs = {
     base_entity_name = "chemical-plant",
     mod = "bobs",
     group = "assembly",
-    particles = { ["big"] = 1,["medium"] = 2 },
+    particles = { ["big"] = 1, ["medium"] = 2 },
     make_remnants = false,
 }
 
@@ -25,7 +25,7 @@ local tier_map = {
     ["electrolyser-2"] = { 2, 2 },
     ["electrolyser-3"] = { 3, 3 },
     ["electrolyser-4"] = { 4, 3 },
-    ["electrolyser-5"] = { 5, 5 }
+    ["electrolyser-5"] = { 5, 5 },
 }
 
 -- Reskin entities, create and assign extra details
@@ -60,7 +60,7 @@ for name, map in pairs(tier_map) do
                 height = 260,
                 frame_count = 1,
                 shift = util.by_pixel(17, 0),
-                scale = 0.5
+                scale = 0.5,
             },
             -- Mask
             {
@@ -70,7 +70,7 @@ for name, map in pairs(tier_map) do
                 frame_count = 1,
                 shift = util.by_pixel(17, 0),
                 tint = inputs.tint,
-                scale = 0.5
+                scale = 0.5,
             },
             -- Highlights
             {
@@ -80,7 +80,7 @@ for name, map in pairs(tier_map) do
                 frame_count = 1,
                 shift = util.by_pixel(17, 0),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                scale = 0.5
+                scale = 0.5,
             },
             -- Shadow
             {
@@ -90,9 +90,9 @@ for name, map in pairs(tier_map) do
                 frame_count = 1,
                 shift = util.by_pixel(17, 0),
                 draw_as_shadow = true,
-                scale = 0.5
-            }
-        }
+                scale = 0.5,
+            },
+        },
     })
 
     entity.water_reflection = util.copy(data.raw["storage-tank"]["storage-tank"].water_reflection)

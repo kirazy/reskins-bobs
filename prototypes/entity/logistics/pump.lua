@@ -88,8 +88,8 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(2, 2),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 scale = 0.5,
-            }
-        }
+            },
+        },
     })
 
     -- Reskin entities
@@ -105,7 +105,7 @@ for name, map in pairs(tier_map) do
                     line_length = 8,
                     frame_count = 32,
                     animation_speed = 0.5,
-                    shift = util.by_pixel(8, 3.5)
+                    shift = util.by_pixel(8, 3.5),
                 },
                 -- Mask
                 {
@@ -130,8 +130,8 @@ for name, map in pairs(tier_map) do
                     animation_speed = 0.5,
                     shift = util.by_pixel(8, 3.5),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                }
-            }
+                },
+            },
         },
         east = {
             layers = {
@@ -144,7 +144,7 @@ for name, map in pairs(tier_map) do
                     line_length = 8,
                     frame_count = 32,
                     animation_speed = 0.5,
-                    shift = util.by_pixel(-0.5, 1.75)
+                    shift = util.by_pixel(-0.5, 1.75),
                 },
                 -- Mask
                 {
@@ -169,8 +169,8 @@ for name, map in pairs(tier_map) do
                     animation_speed = 0.5,
                     shift = util.by_pixel(-0.5, 1.75),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                }
-            }
+                },
+            },
         },
         south = {
             layers = {
@@ -183,7 +183,7 @@ for name, map in pairs(tier_map) do
                     line_length = 8,
                     frame_count = 32,
                     animation_speed = 0.5,
-                    shift = util.by_pixel(12.5, -8)
+                    shift = util.by_pixel(12.5, -8),
                 },
                 -- Mask
                 {
@@ -208,8 +208,8 @@ for name, map in pairs(tier_map) do
                     animation_speed = 0.5,
                     shift = util.by_pixel(12.5, -8),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                }
-            }
+                },
+            },
         },
         west = {
             layers = {
@@ -222,7 +222,7 @@ for name, map in pairs(tier_map) do
                     line_length = 8,
                     frame_count = 32,
                     animation_speed = 0.5,
-                    shift = util.by_pixel(-0.25, 1.25)
+                    shift = util.by_pixel(-0.25, 1.25),
                 },
                 -- Mask
                 {
@@ -247,9 +247,9 @@ for name, map in pairs(tier_map) do
                     animation_speed = 0.5,
                     shift = util.by_pixel(-0.25, 1.25),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                }
-            }
-        }
+                },
+            },
+        },
     }
 
     -- Label to skip to next iteration

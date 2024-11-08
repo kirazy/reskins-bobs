@@ -107,8 +107,8 @@ for name, map in pairs(tier_map) do
                     shift = util.by_pixel(-1, -0.5),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     scale = 0.5,
-                }
-            }
+                },
+            },
         })
 
         -- Overwrite picture table in target entity
@@ -121,7 +121,7 @@ for name, map in pairs(tier_map) do
                     width = 180,
                     height = 150,
                     shift = util.by_pixel(5, 0.5),
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Mask
                 {
@@ -131,7 +131,7 @@ for name, map in pairs(tier_map) do
                     height = 150,
                     shift = util.by_pixel(5, 0.5),
                     tint = inputs.tint,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Highlights
                 {
@@ -141,7 +141,7 @@ for name, map in pairs(tier_map) do
                     height = 150,
                     shift = util.by_pixel(5, 0.5),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Shadow
                 {
@@ -151,9 +151,9 @@ for name, map in pairs(tier_map) do
                     height = 150,
                     shift = util.by_pixel(5, 0.5),
                     draw_as_shadow = true,
-                    scale = 0.5
-                }
-            }
+                    scale = 0.5,
+                },
+            },
         }
 
         -- Overwrite or create overlay table in target entity
@@ -165,9 +165,9 @@ for name, map in pairs(tier_map) do
                     width = 180,
                     height = 150,
                     shift = util.by_pixel(5, 0.5),
-                    scale = 0.5
-                }
-            }
+                    scale = 0.5,
+                },
+            },
         }
     elseif inputs.icon_name == "solar-panel" then
         -- Reskin remnants
@@ -213,9 +213,9 @@ for name, map in pairs(tier_map) do
                     shift = util.by_pixel(3.5, 0),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     scale = 0.5,
-                }
+                },
 
-            }
+            },
         })
 
         -- Overwrite picture table in target entity
@@ -228,7 +228,7 @@ for name, map in pairs(tier_map) do
                     width = 230,
                     height = 224,
                     shift = util.by_pixel(-3, 3.5),
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Mask
                 {
@@ -238,7 +238,7 @@ for name, map in pairs(tier_map) do
                     height = 224,
                     shift = util.by_pixel(-3, 3.5),
                     tint = inputs.tint,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Highlights
                 {
@@ -248,7 +248,7 @@ for name, map in pairs(tier_map) do
                     height = 224,
                     shift = util.by_pixel(-3, 3.5),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Shadow
                 {
@@ -258,9 +258,9 @@ for name, map in pairs(tier_map) do
                     height = 180,
                     shift = util.by_pixel(9.5, 6),
                     draw_as_shadow = true,
-                    scale = 0.5
-                }
-            }
+                    scale = 0.5,
+                },
+            },
         }
 
         -- Overwrite or create overlay table in target entity
@@ -272,9 +272,9 @@ for name, map in pairs(tier_map) do
                     width = 214,
                     height = 180,
                     shift = util.by_pixel(10.5, 6),
-                    scale = 0.5
-                }
-            }
+                    scale = 0.5,
+                },
+            },
         }
     elseif inputs.icon_name == "solar-panel-large" then
         -- TODO: Large remnants
@@ -289,7 +289,7 @@ for name, map in pairs(tier_map) do
                     width = 308,
                     height = 274,
                     shift = util.by_pixel(5, 3.5),
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Mask
                 {
@@ -299,7 +299,7 @@ for name, map in pairs(tier_map) do
                     height = 274,
                     shift = util.by_pixel(5, 3.5),
                     tint = inputs.tint,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Highlights
                 {
@@ -309,7 +309,7 @@ for name, map in pairs(tier_map) do
                     height = 274,
                     shift = util.by_pixel(5, 3.5),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Shadow
                 {
@@ -319,9 +319,9 @@ for name, map in pairs(tier_map) do
                     height = 274,
                     shift = util.by_pixel(5, 3.5),
                     draw_as_shadow = true,
-                    scale = 0.5
-                }
-            }
+                    scale = 0.5,
+                },
+            },
         }
 
         -- Overwrite or create overlay table in target entity
@@ -333,9 +333,9 @@ for name, map in pairs(tier_map) do
                     width = 308,
                     height = 274,
                     shift = util.by_pixel(5, 3.5),
-                    scale = 0.5
-                }
-            }
+                    scale = 0.5,
+                },
+            },
         }
     end
 

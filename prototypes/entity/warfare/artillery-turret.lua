@@ -75,8 +75,8 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(9.5, 1.5),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 scale = 0.5,
-            }
-        }
+            },
+        },
     })
 
     -- Reskin entity
@@ -89,7 +89,7 @@ for name, map in pairs(tier_map) do
                 width = 207,
                 height = 199,
                 shift = util.by_pixel(-0, 22),
-                scale = 0.5
+                scale = 0.5,
             },
             -- Mask
             {
@@ -99,7 +99,7 @@ for name, map in pairs(tier_map) do
                 height = 199,
                 shift = util.by_pixel(-0, 22),
                 tint = inputs.tint,
-                scale = 0.5
+                scale = 0.5,
             },
             -- Highlights
             {
@@ -109,7 +109,7 @@ for name, map in pairs(tier_map) do
                 height = 199,
                 shift = util.by_pixel(-0, 22),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                scale = 0.5
+                scale = 0.5,
             },
             -- Shadow
             {
@@ -119,9 +119,9 @@ for name, map in pairs(tier_map) do
                 height = 149,
                 shift = util.by_pixel(18 + 2, 38),
                 draw_as_shadow = true,
-                scale = 0.5
-            }
-        }
+                scale = 0.5,
+            },
+        },
     }
 
     -- Adjust drawing box

@@ -15,7 +15,7 @@ local inputs = {
     type = "wall",
     base_entity_name = "wall",
     mod = "bobs",
-    particles = { ["tiny-stone"] = 3,["small-stone"] = 2,["medium-stone"] = 1 },
+    particles = { ["tiny-stone"] = 3, ["small-stone"] = 2, ["medium-stone"] = 1 },
 }
 
 if mods["NauvisDay"] then
@@ -27,7 +27,7 @@ inputs.icon_filename = "__reskins-bobs__/graphics/icons/warfare/reinforced-wall/
 local reinforced_tint_index = {
     ["tiny-stone"] = util.color("a793bf"),
     ["small-stone"] = util.color("a793bf"),
-    ["medium-stone"] = util.color("9584ab")
+    ["medium-stone"] = util.color("9584ab"),
 }
 
 -- Parse inputs
@@ -75,7 +75,7 @@ entity.pictures = {
                 variation_count = 2,
                 line_length = 2,
                 shift = util.by_pixel(0, -5),
-                scale = 0.5
+                scale = 0.5,
             },
             {
                 filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-wall/shadows/hr-reinforced-wall-single-shadow.png",
@@ -85,9 +85,9 @@ entity.pictures = {
                 repeat_count = 2,
                 shift = util.by_pixel(10, 17),
                 draw_as_shadow = true,
-                scale = 0.5
-            }
-        }
+                scale = 0.5,
+            },
+        },
     },
     straight_vertical = {
         layers = {
@@ -99,7 +99,7 @@ entity.pictures = {
                 variation_count = 5,
                 line_length = 5,
                 shift = util.by_pixel(0, 8),
-                scale = 0.5
+                scale = 0.5,
             },
             {
                 filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-wall/shadows/hr-reinforced-wall-vertical-shadow.png",
@@ -109,9 +109,9 @@ entity.pictures = {
                 repeat_count = 5,
                 shift = util.by_pixel(10, 29),
                 draw_as_shadow = true,
-                scale = 0.5
-            }
-        }
+                scale = 0.5,
+            },
+        },
     },
     straight_horizontal = {
         layers = {
@@ -123,7 +123,7 @@ entity.pictures = {
                 variation_count = 6,
                 line_length = 6,
                 shift = util.by_pixel(0, -2),
-                scale = 0.5
+                scale = 0.5,
             },
             {
                 filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-wall/shadows/hr-reinforced-wall-horizontal-shadow.png",
@@ -133,9 +133,9 @@ entity.pictures = {
                 repeat_count = 6,
                 shift = util.by_pixel(14, 15),
                 draw_as_shadow = true,
-                scale = 0.5
-            }
-        }
+                scale = 0.5,
+            },
+        },
     },
     corner_right_down = {
         layers = {
@@ -147,7 +147,7 @@ entity.pictures = {
                 variation_count = 2,
                 line_length = 2,
                 shift = util.by_pixel(0, 7),
-                scale = 0.5
+                scale = 0.5,
             },
             {
                 filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-wall/shadows/hr-reinforced-wall-corner-right-shadow.png",
@@ -157,9 +157,9 @@ entity.pictures = {
                 repeat_count = 2,
                 shift = util.by_pixel(17, 28),
                 draw_as_shadow = true,
-                scale = 0.5
-            }
-        }
+                scale = 0.5,
+            },
+        },
     },
     corner_left_down = {
         layers = {
@@ -171,7 +171,7 @@ entity.pictures = {
                 variation_count = 2,
                 line_length = 2,
                 shift = util.by_pixel(0, 7),
-                scale = 0.5
+                scale = 0.5,
             },
             {
                 filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-wall/shadows/hr-reinforced-wall-corner-left-shadow.png",
@@ -181,9 +181,9 @@ entity.pictures = {
                 repeat_count = 2,
                 shift = util.by_pixel(9, 28),
                 draw_as_shadow = true,
-                scale = 0.5
-            }
-        }
+                scale = 0.5,
+            },
+        },
     },
     t_up = {
         layers = {
@@ -195,7 +195,7 @@ entity.pictures = {
                 variation_count = 4,
                 line_length = 4,
                 shift = util.by_pixel(0, 7),
-                scale = 0.5
+                scale = 0.5,
             },
             {
                 filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-wall/shadows/hr-reinforced-wall-t-shadow.png",
@@ -205,9 +205,9 @@ entity.pictures = {
                 repeat_count = 4,
                 shift = util.by_pixel(14, 28),
                 draw_as_shadow = true,
-                scale = 0.5
-            }
-        }
+                scale = 0.5,
+            },
+        },
     },
     ending_right = {
         layers = {
@@ -219,7 +219,7 @@ entity.pictures = {
                 variation_count = 2,
                 line_length = 2,
                 shift = util.by_pixel(0, -3),
-                scale = 0.5
+                scale = 0.5,
             },
             {
                 filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-wall/shadows/hr-reinforced-wall-ending-right-shadow.png",
@@ -229,9 +229,9 @@ entity.pictures = {
                 repeat_count = 2,
                 shift = util.by_pixel(17, 15),
                 draw_as_shadow = true,
-                scale = 0.5
-            }
-        }
+                scale = 0.5,
+            },
+        },
     },
     ending_left = {
         layers = {
@@ -243,7 +243,7 @@ entity.pictures = {
                 variation_count = 2,
                 line_length = 2,
                 shift = util.by_pixel(0, -3),
-                scale = 0.5
+                scale = 0.5,
             },
             {
                 filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-wall/shadows/hr-reinforced-wall-ending-left-shadow.png",
@@ -253,9 +253,9 @@ entity.pictures = {
                 repeat_count = 2,
                 shift = util.by_pixel(9, 15),
                 draw_as_shadow = true,
-                scale = 0.5
-            }
-        }
+                scale = 0.5,
+            },
+        },
     },
     filling = {
         filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-wall/hr-reinforced-wall-filling.png",
@@ -265,7 +265,7 @@ entity.pictures = {
         variation_count = 8,
         line_length = 8,
         shift = util.by_pixel(0, -1),
-        scale = 0.5
+        scale = 0.5,
     },
     water_connection_patch = {
         sheets = {
@@ -275,7 +275,7 @@ entity.pictures = {
                 width = 116,
                 height = 128,
                 shift = util.by_pixel(0, -2),
-                scale = 0.5
+                scale = 0.5,
             },
             {
                 filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-wall/shadows/hr-reinforced-wall-patch-shadow.png",
@@ -284,9 +284,9 @@ entity.pictures = {
                 height = 100,
                 shift = util.by_pixel(9, 15),
                 draw_as_shadow = true,
-                scale = 0.5
-            }
-        }
+                scale = 0.5,
+            },
+        },
     },
     gate_connection_patch = {
         sheets = {
@@ -296,7 +296,7 @@ entity.pictures = {
                 width = 82,
                 height = 108,
                 shift = util.by_pixel(0, -7),
-                scale = 0.5
+                scale = 0.5,
             },
             {
                 filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-wall/shadows/hr-reinforced-wall-gate-shadow.png",
@@ -305,8 +305,8 @@ entity.pictures = {
                 height = 78,
                 shift = util.by_pixel(14, 18),
                 draw_as_shadow = true,
-                scale = 0.5
-            }
-        }
-    }
+                scale = 0.5,
+            },
+        },
+    },
 }

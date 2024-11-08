@@ -222,10 +222,40 @@ local function build_drone_remnants(scale, tint)
 end
 
 local drones = {
-    ["gun-drone"] = { tint = util.color("f2f230"), scale = 0.5, rotation_speed = 0.015, attack_parameters = { projectile_center = { 0, 5 }, projectile_creation_distance = 0.2 } }, -- Yellow tint, sat 80%
-    ["laser-drone"] = { tint = util.color("30f271"), scale = 0.5, rotation_speed = 0.015, attack_parameters = { source_offset = { 0, -0.5 } } },                              -- Green/teal
-    ["flamethrower-drone"] = { tint = util.color("f25730"), scale = 0.5, rotation_speed = 0.015, attack_parameters = { gun_center_shift = { 0, -0.5 } } },                    -- Orange
-    ["plasma-drone"] = { tint = util.color("30a5f2"), scale = 0.75, rotation_speed = 0.007, attack_parameters = { projectile_center = { 0, -0.5 }, projectile_creation_distance = 0 } },
+    ["gun-drone"] = {
+        tint = util.color("f2f230"), -- Yellow tint, sat 80%
+        scale = 0.5,
+        rotation_speed = 0.015,
+        attack_parameters = {
+            projectile_center = { 0, 5 },
+            projectile_creation_distance = 0.2,
+        },
+    },
+    ["laser-drone"] = {
+        tint = util.color("30f271"), -- Green/teal
+        scale = 0.5,
+        rotation_speed = 0.015,
+        attack_parameters = {
+            source_offset = { 0, -0.5 },
+        },
+    },
+    ["flamethrower-drone"] = {
+        tint = util.color("f25730"), -- Orange
+        scale = 0.5,
+        rotation_speed = 0.015,
+        attack_parameters = {
+            gun_center_shift = { 0, -0.5 },
+        },
+    },
+    ["plasma-drone"] = {
+        tint = util.color("30a5f2"),
+        scale = 0.75,
+        rotation_speed = 0.007,
+        attack_parameters = {
+            projectile_center = { 0, -0.5 },
+            projectile_creation_distance = 0,
+        },
+    },
 }
 
 -- Reskin entities, create and assign extra details

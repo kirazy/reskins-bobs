@@ -12,7 +12,7 @@ local inputs = {
     base_entity_name = "chemical-plant",
     mod = "bobs",
     group = "plates",
-    particles = { ["big"] = 1,["medium"] = 2 },
+    particles = { ["big"] = 1, ["medium"] = 2 },
     make_remnants = false,
 }
 
@@ -130,8 +130,8 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(11, 1.5),
                 draw_as_shadow = true,
                 scale = 0.5,
-            }
-        }
+            },
+        },
     })
 
     entity.working_visualisations = {
@@ -162,8 +162,8 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(0, -9.5),
                 draw_as_light = true,
                 scale = 0.5,
-            }
-        }
+            },
+        },
     }
 
     if pump_type == "water" then
@@ -188,7 +188,7 @@ for name, map in pairs(tier_map) do
             scale = 10 / 3,
         },
         rotate = false,
-        orientation_to_variation = true
+        orientation_to_variation = true,
     }
 
     -- Label to skip to next iteration

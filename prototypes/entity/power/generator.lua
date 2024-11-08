@@ -14,7 +14,7 @@ local inputs = {
     base_entity_name = "steam-turbine",
     mod = "bobs",
     group = "power",
-    particles = { ["medium"] = 2,["big"] = 1 },
+    particles = { ["medium"] = 2, ["big"] = 1 },
     make_remnants = false,
 }
 
@@ -29,7 +29,7 @@ local fluid_generators = {
     ["fluid-generator"] = { 1, 2, 2 / 16 },
     ["fluid-generator-2"] = { 2, 3, 3 / 16 },
     ["fluid-generator-3"] = { 3, 4, 4 / 16 },
-    ["hydrazine-generator"] = { 4, 5, 5 / 16, reskins.bobs.hydrazine_tint }
+    ["hydrazine-generator"] = { 4, 5, 5 / 16, reskins.bobs.hydrazine_tint },
 }
 
 local function setup_fluid_generator(tint)
@@ -44,7 +44,7 @@ local function setup_fluid_generator(tint)
                 frame_count = 8,
                 line_length = 4,
                 shift = util.by_pixel(2.5, -11),
-                scale = 0.5
+                scale = 0.5,
             },
             -- Mask
             {
@@ -54,7 +54,7 @@ local function setup_fluid_generator(tint)
                 repeat_count = 8,
                 tint = tint,
                 shift = util.by_pixel(2.5, -11),
-                scale = 0.5
+                scale = 0.5,
             },
             -- Highlights
             {
@@ -64,7 +64,7 @@ local function setup_fluid_generator(tint)
                 repeat_count = 8,
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 shift = util.by_pixel(2.5, -11),
-                scale = 0.5
+                scale = 0.5,
             },
             -- Shadow
             {
@@ -74,9 +74,9 @@ local function setup_fluid_generator(tint)
                 repeat_count = 8,
                 draw_as_shadow = true,
                 shift = util.by_pixel(33, -11),
-                scale = 0.5
+                scale = 0.5,
             },
-        }
+        },
     }
 end
 
@@ -118,8 +118,8 @@ for name, map in pairs(fluid_generators) do
                 frequency = frequency,
                 starting_vertical_speed = 0.08,
                 slow_down_factor = 1,
-                starting_frame_deviation = 60
-            }
+                starting_frame_deviation = 60,
+            },
         }
     else
         entity.smoke = {
@@ -130,8 +130,8 @@ for name, map in pairs(fluid_generators) do
                 frequency = frequency,
                 starting_vertical_speed = 0.08,
                 slow_down_factor = 1,
-                starting_frame_deviation = 60
-            }
+                starting_frame_deviation = 60,
+            },
         }
     end
 
@@ -146,7 +146,7 @@ for name, map in pairs(fluid_generators) do
             scale = 5,
         },
         rotate = false,
-        orientation_to_variation = false
+        orientation_to_variation = false,
     }
 
     -- Label to skip to next iteration

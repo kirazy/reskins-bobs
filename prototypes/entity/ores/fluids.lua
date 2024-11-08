@@ -26,7 +26,7 @@ for _, name in pairs(fluids) do
             icon = "__reskins-bobs__/graphics/icons/ores/ores/" .. name .. "/" .. name .. ".png",
             icon_size = 64,
             scale = 0.5,
-        }
+        },
     }
 
     reskins.lib.icons.assign_deferrable_icon(deferrable_icon)
@@ -42,7 +42,7 @@ for _, name in pairs(fluids) do
             variation_count = 1,
             shift = util.by_pixel(0, -2),
             scale = 0.5,
-        }
+        },
     }
 
     -- Label to skip to next iteration

@@ -20,7 +20,7 @@ local intermediates = {}
 -- Items and recipes shared with other mods within Bob's suite
 if not mods["bobplates"] then
     -- Intermediates
-    intermediates["lithia-water"] = {type = "fluid", group = "plates", subgroup = "fluids", defer_to_data_updates = true} -- Angels
+    intermediates["lithia-water"] = { type = "fluid", group = "plates", subgroup = "fluids", defer_to_data_updates = true } -- Angels
 end
 
 reskins.internal.create_icons_from_list(intermediates, inputs)

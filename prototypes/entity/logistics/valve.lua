@@ -38,7 +38,7 @@ local function cardinal_pictures(x, tint)
                 x = x_hr,
                 width = 128,
                 height = 128,
-                scale = 0.5
+                scale = 0.5,
             },
             -- Mask
             {
@@ -48,9 +48,9 @@ local function cardinal_pictures(x, tint)
                 width = 128,
                 height = 128,
                 tint = tint,
-                scale = 0.5
-            }
-        }
+                scale = 0.5,
+            },
+        },
     }
 end
 

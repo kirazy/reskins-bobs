@@ -24,7 +24,7 @@ local categories = {
 }
 
 local properties = {
-    { suffix = "",   tier = 1, prog_tier = 2 },
+    { suffix = "", tier = 1, prog_tier = 2 },
     { suffix = "-2", tier = 2, prog_tier = 3 },
     { suffix = "-3", tier = 3, prog_tier = 4 },
     { suffix = "-4", tier = 4, prog_tier = 5 },
@@ -92,8 +92,8 @@ for _, category in pairs(categories) do
                     flags = { "no-crop" },
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     scale = 0.5,
-                }
-            }
+                },
+            },
         }
 
         -- Label to skip to next iteration

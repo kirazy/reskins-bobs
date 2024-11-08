@@ -18,7 +18,7 @@ local inputs = {
 }
 
 local tier_map = {
-    ["accumulator"] = { tier = 1, prog_tier = 2},
+    ["accumulator"] = { tier = 1, prog_tier = 2 },
     ["large-accumulator"] = { tier = 1, prog_tier = 2, wire = 1, letter = "H" },
     ["large-accumulator-2"] = { tier = 2, prog_tier = 3, wire = 1, letter = "H" },
     ["large-accumulator-3"] = { tier = 3, prog_tier = 4, wire = 1, letter = "H" },
@@ -93,7 +93,7 @@ local function accumulator_charge_tinted(inputs)
     return
     {
         layers = {
-            accumulator_picture_tinted(inputs, 24), 
+            accumulator_picture_tinted(inputs, 24),
             {
                 filename = "__base__/graphics/entity/accumulator/hr-accumulator-charge.png",
                 priority = "high",

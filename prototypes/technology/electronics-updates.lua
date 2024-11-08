@@ -17,7 +17,7 @@ local inputs = {
 
 ---@type CreateIconsFromListTable
 local technologies = {
-    ["advanced-electronics-2"] = {technology_icon_filename = "__base__/graphics/technology/electronics.png"},
+    ["advanced-electronics-2"] = { technology_icon_filename = "__base__/graphics/technology/electronics.png" },
 }
 
 reskins.internal.create_icons_from_list(technologies, inputs)

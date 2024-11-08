@@ -14,7 +14,7 @@ local empty_fill_layer = {
         size = 1,
         line_length = 1,
         variation_count = 1,
-    }
+    },
 }
 
 ---@class srms_parameters
@@ -59,7 +59,7 @@ local function setup_reskins_module_slot(parameters)
                     variation_count = num_lights + 1,
                     scale = 0.5,
                     shift = util.by_pixel(19 + shift_x, -12 + shift_y),
-                }
+                },
             },
             {
                 apply_module_tint = "primary",
@@ -72,7 +72,7 @@ local function setup_reskins_module_slot(parameters)
                     variation_count = num_lights,
                     scale = 0.5,
                     shift = util.by_pixel(20.5 + shift_x, -12 + shift_y),
-                }
+                },
             },
             {
                 apply_module_tint = "secondary",
@@ -85,7 +85,7 @@ local function setup_reskins_module_slot(parameters)
                     variation_count = num_lights,
                     scale = 0.5,
                     shift = util.by_pixel(21.5 + shift_x, -15.5 + shift_y),
-                }
+                },
             },
             {
                 apply_module_tint = "secondary",
@@ -98,9 +98,9 @@ local function setup_reskins_module_slot(parameters)
                     height = 46,
                     variation_count = num_lights,
                     shift = util.by_pixel(22 + shift_x, -16 + shift_y),
-                    scale = 0.5
-                }
-            }
+                    scale = 0.5,
+                },
+            },
         }
     else
         -- Slot 1 (Bottom Left)
@@ -117,7 +117,7 @@ local function setup_reskins_module_slot(parameters)
                     variation_count = num_lights + 1,
                     scale = 0.5,
                     shift = util.by_pixel(-16 + shift_x, 14.5 + shift_y),
-                }
+                },
             },
             -- Slot Mask
             {
@@ -131,7 +131,7 @@ local function setup_reskins_module_slot(parameters)
                     variation_count = num_lights,
                     scale = 0.5,
                     shift = util.by_pixel(-17 + shift_x, 15 + shift_y),
-                }
+                },
             },
             -- Slot Lights Count
             {
@@ -145,7 +145,7 @@ local function setup_reskins_module_slot(parameters)
                     variation_count = num_lights,
                     scale = 0.5,
                     shift = util.by_pixel(-18.5 + shift_x, 13 + shift_y),
-                }
+                },
             },
             -- Slot Lights Radiance
             {
@@ -159,9 +159,9 @@ local function setup_reskins_module_slot(parameters)
                     height = 42,
                     variation_count = num_lights,
                     shift = util.by_pixel(-18 + shift_x, 13 + shift_y),
-                    scale = 0.5
-                }
-            }
+                    scale = 0.5,
+                },
+            },
         }
     end
 
@@ -212,7 +212,7 @@ local function setup_vanilla_module_slot(parameters)
                     variation_count = 4,
                     scale = 0.5,
                     shift = util.by_pixel(19 + shift_x, -12 + shift_y),
-                }
+                },
             },
             {
                 apply_module_tint = "primary",
@@ -226,7 +226,7 @@ local function setup_vanilla_module_slot(parameters)
                     variation_count = 3,
                     scale = 0.5,
                     shift = util.by_pixel(20.5 + shift_x, -12 + shift_y),
-                }
+                },
             },
             {
                 apply_module_tint = "secondary",
@@ -239,7 +239,7 @@ local function setup_vanilla_module_slot(parameters)
                     variation_count = 3,
                     scale = 0.5,
                     shift = util.by_pixel(22 + shift_x, -15.5 + shift_y),
-                }
+                },
             },
             {
                 apply_module_tint = "secondary",
@@ -252,9 +252,9 @@ local function setup_vanilla_module_slot(parameters)
                     height = 46,
                     variation_count = 3,
                     shift = util.by_pixel(22 + shift_x, -16 + shift_y),
-                    scale = 0.5
-                }
-            }
+                    scale = 0.5,
+                },
+            },
         }
     else
         -- Slot 1 (Bottom Left)
@@ -271,7 +271,7 @@ local function setup_vanilla_module_slot(parameters)
                     variation_count = 4,
                     scale = 0.5,
                     shift = util.by_pixel(-16 + shift_x, 14.5 + shift_y),
-                }
+                },
             },
             -- Slot Mask
             {
@@ -285,7 +285,7 @@ local function setup_vanilla_module_slot(parameters)
                     variation_count = 3,
                     scale = 0.5,
                     shift = util.by_pixel(-17 + shift_x, 15 + shift_y),
-                }
+                },
             },
             -- Slot Lights Count
             {
@@ -299,7 +299,7 @@ local function setup_vanilla_module_slot(parameters)
                     variation_count = 3,
                     scale = 0.5,
                     shift = util.by_pixel(-18.5 + shift_x, 13 + shift_y),
-                }
+                },
             },
             -- Slot Lights Radiance
             {
@@ -313,9 +313,9 @@ local function setup_vanilla_module_slot(parameters)
                     height = 42,
                     variation_count = 3,
                     shift = util.by_pixel(-18 + shift_x, 13 + shift_y),
-                    scale = 0.5
-                }
-            }
+                    scale = 0.5,
+                },
+            },
         }
     end
 
@@ -350,7 +350,7 @@ for _, name in pairs(beacons) do
             slots = {
                 setup_reskins_module_slot({}),
                 setup_reskins_module_slot({ is_slot_2 = true }),
-            }
+            },
         })
 
         -- 5 light modules
@@ -361,7 +361,7 @@ for _, name in pairs(beacons) do
             slots = {
                 setup_reskins_module_slot({ lights = 5 }),
                 setup_reskins_module_slot({ lights = 5, is_slot_2 = true }),
-            }
+            },
         })
     elseif module_slots == 4 then
         -- Setup vanilla slots
@@ -370,11 +370,11 @@ for _, name in pairs(beacons) do
             use_for_empty_slots = true,
             tier_offset = 0,
             slots = {
-                setup_vanilla_module_slot({ shift = { -3, -2.5 } }),                 -- Slot 1, shifted left and up, below other module slot
+                setup_vanilla_module_slot({ shift = { -3, -2.5 } }),                     -- Slot 1, shifted left and up, below other module slot
                 setup_vanilla_module_slot({ shift = { -8.5, -5.5 }, is_slot_2 = true }), -- Slot 2, shifted left and up, below other module slot
-                setup_vanilla_module_slot({ shift = { 12, 5 } }),                    -- Slot 1, shifted right and down, above other module slot
-                setup_vanilla_module_slot({ shift = { 2, 5 }, is_slot_2 = true }),   -- Slot 2, shifted right and down, above other module slot
-            }
+                setup_vanilla_module_slot({ shift = { 12, 5 } }),                        -- Slot 1, shifted right and down, above other module slot
+                setup_vanilla_module_slot({ shift = { 2, 5 }, is_slot_2 = true }),       -- Slot 2, shifted right and down, above other module slot
+            },
         }
 
         -- 8 light modules
@@ -383,11 +383,11 @@ for _, name in pairs(beacons) do
             use_for_empty_slots = false,
             tier_offset = 0,
             slots = {
-                setup_reskins_module_slot({ shift = { -3, -2.5 } }),                 -- Slot 1, shifted left and up, below other module slot
+                setup_reskins_module_slot({ shift = { -3, -2.5 } }),                     -- Slot 1, shifted left and up, below other module slot
                 setup_reskins_module_slot({ shift = { -8.5, -5.5 }, is_slot_2 = true }), -- Slot 2, shifted left and up, below other module slot
-                setup_reskins_module_slot({ shift = { 12, 5 } }),                    -- Slot 1, shifted right and down, above other module slot
-                setup_reskins_module_slot({ shift = { 2, 5 }, is_slot_2 = true }),   -- Slot 2, shifted right and down, above other module slot
-            }
+                setup_reskins_module_slot({ shift = { 12, 5 } }),                        -- Slot 1, shifted right and down, above other module slot
+                setup_reskins_module_slot({ shift = { 2, 5 }, is_slot_2 = true }),       -- Slot 2, shifted right and down, above other module slot
+            },
         })
 
         -- 5 light modules
@@ -396,11 +396,11 @@ for _, name in pairs(beacons) do
             use_for_empty_slots = false,
             tier_offset = 0,
             slots = {
-                setup_reskins_module_slot({ lights = 5, shift = { -3, -2.5 } }),                 -- Slot 1, shifted left and up, below other module slot
+                setup_reskins_module_slot({ lights = 5, shift = { -3, -2.5 } }),                     -- Slot 1, shifted left and up, below other module slot
                 setup_reskins_module_slot({ lights = 5, shift = { -8.5, -5.5 }, is_slot_2 = true }), -- Slot 2, shifted left and up, below other module slot
-                setup_reskins_module_slot({ lights = 5, shift = { 12, 5 } }),                    -- Slot 1, shifted right and down, above other module slot
-                setup_reskins_module_slot({ lights = 5, shift = { 2, 5 }, is_slot_2 = true }),   -- Slot 2, shifted right and down, above other module slot
-            }
+                setup_reskins_module_slot({ lights = 5, shift = { 12, 5 } }),                        -- Slot 1, shifted right and down, above other module slot
+                setup_reskins_module_slot({ lights = 5, shift = { 2, 5 }, is_slot_2 = true }),       -- Slot 2, shifted right and down, above other module slot
+            },
         })
     elseif module_slots == 6 then
         -- Setup vanilla slots
@@ -409,13 +409,13 @@ for _, name in pairs(beacons) do
             use_for_empty_slots = true,
             tier_offset = 0,
             slots = {
-                setup_vanilla_module_slot({ shift = { -10.5, -11 } }),                                 -- Slot 1, shifted left and up, below all
-                setup_vanilla_module_slot({ shift = { 7.5, -2 }, is_slot_2 = true }),                  -- Slot 2, shifted right and up, below all
-                setup_vanilla_module_slot({ shift = { -1.5, 7 } }),                                    -- Slot 1, shifted left and down, middle
-                setup_vanilla_module_slot({ shift = { -11, -6.5 }, is_slot_2 = true }),                -- Slot 2, shifted left and up, middle
-                setup_vanilla_module_slot({ shift = { 17, 3 } }),                                      -- Slot 1, shifted right and down, above all
+                setup_vanilla_module_slot({ shift = { -10.5, -11 } }),                                     -- Slot 1, shifted left and up, below all
+                setup_vanilla_module_slot({ shift = { 7.5, -2 }, is_slot_2 = true }),                      -- Slot 2, shifted right and up, below all
+                setup_vanilla_module_slot({ shift = { -1.5, 7 } }),                                        -- Slot 1, shifted left and down, middle
+                setup_vanilla_module_slot({ shift = { -11, -6.5 }, is_slot_2 = true }),                    -- Slot 2, shifted left and up, middle
+                setup_vanilla_module_slot({ shift = { 17, 3 } }),                                          -- Slot 1, shifted right and down, above all
                 setup_vanilla_module_slot({ shift = { 4.5, 8 }, is_slot_2 = true, needs_padding = true }), -- Slot 2, shifted right and down, above all
-            }
+            },
         }
 
         -- 8 light modules
@@ -424,13 +424,13 @@ for _, name in pairs(beacons) do
             use_for_empty_slots = false,
             tier_offset = 0,
             slots = {
-                setup_reskins_module_slot({ shift = { -10.5, -11 } }),                                 -- Slot 1, shifted left and up, below all
-                setup_reskins_module_slot({ shift = { 7.5, -2 }, is_slot_2 = true }),                  -- Slot 2, shifted right and up, below all
-                setup_reskins_module_slot({ shift = { -1.5, 7 } }),                                    -- Slot 1, shifted left and down, middle
-                setup_reskins_module_slot({ shift = { -11, -6.5 }, is_slot_2 = true }),                -- Slot 2, shifted left and up, middle
-                setup_reskins_module_slot({ shift = { 17, 3 } }),                                      -- Slot 1, shifted right and down, above all
+                setup_reskins_module_slot({ shift = { -10.5, -11 } }),                                     -- Slot 1, shifted left and up, below all
+                setup_reskins_module_slot({ shift = { 7.5, -2 }, is_slot_2 = true }),                      -- Slot 2, shifted right and up, below all
+                setup_reskins_module_slot({ shift = { -1.5, 7 } }),                                        -- Slot 1, shifted left and down, middle
+                setup_reskins_module_slot({ shift = { -11, -6.5 }, is_slot_2 = true }),                    -- Slot 2, shifted left and up, middle
+                setup_reskins_module_slot({ shift = { 17, 3 } }),                                          -- Slot 1, shifted right and down, above all
                 setup_reskins_module_slot({ shift = { 4.5, 8 }, is_slot_2 = true, needs_padding = true }), -- Slot 2, shifted right and down, above all
-            }
+            },
         })
 
         -- 5 light modules
@@ -439,13 +439,13 @@ for _, name in pairs(beacons) do
             use_for_empty_slots = false,
             tier_offset = 0,
             slots = {
-                setup_reskins_module_slot({ lights = 5, shift = { -10.5, -11 } }),                                 -- Slot 1, shifted left and up, below all
-                setup_reskins_module_slot({ lights = 5, shift = { 7.5, -2 }, is_slot_2 = true }),                  -- Slot 2, shifted right and up, below all
-                setup_reskins_module_slot({ lights = 5, shift = { -1.5, 7 } }),                                    -- Slot 1, shifted left and down, middle
-                setup_reskins_module_slot({ lights = 5, shift = { -11, -6.5 }, is_slot_2 = true }),                -- Slot 2, shifted left and up, middle
-                setup_reskins_module_slot({ lights = 5, shift = { 17, 3 } }),                                      -- Slot 1, shifted right and down, above all
+                setup_reskins_module_slot({ lights = 5, shift = { -10.5, -11 } }),                                     -- Slot 1, shifted left and up, below all
+                setup_reskins_module_slot({ lights = 5, shift = { 7.5, -2 }, is_slot_2 = true }),                      -- Slot 2, shifted right and up, below all
+                setup_reskins_module_slot({ lights = 5, shift = { -1.5, 7 } }),                                        -- Slot 1, shifted left and down, middle
+                setup_reskins_module_slot({ lights = 5, shift = { -11, -6.5 }, is_slot_2 = true }),                    -- Slot 2, shifted left and up, middle
+                setup_reskins_module_slot({ lights = 5, shift = { 17, 3 } }),                                          -- Slot 1, shifted right and down, above all
                 setup_reskins_module_slot({ lights = 5, shift = { 4.5, 8 }, is_slot_2 = true, needs_padding = true }), -- Slot 2, shifted right and down, above all
-            }
+            },
         })
     end
 

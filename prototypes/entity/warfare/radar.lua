@@ -24,7 +24,7 @@ local tier_map = {
     ["radar-2"] = 2,
     ["radar-3"] = 3,
     ["radar-4"] = 4,
-    ["radar-5"] = 5
+    ["radar-5"] = 5,
 }
 
 -- Reskin entities, create and assign extra details
@@ -86,8 +86,8 @@ for name, tier in pairs(tier_map) do
                 shift = util.by_pixel(12, 4.5),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 scale = 0.5,
-            }
-        }
+            },
+        },
     })
 
     -- Reskin entity
@@ -98,7 +98,7 @@ for name, tier in pairs(tier_map) do
         height = 216,
         direction_count = 1,
         shift = util.by_pixel(1.5, 4),
-        scale = 0.5
+        scale = 0.5,
     }
 
     entity.pictures = {
@@ -113,7 +113,7 @@ for name, tier in pairs(tier_map) do
                 direction_count = 64,
                 line_length = 8,
                 shift = util.by_pixel(1, -16),
-                scale = 0.5
+                scale = 0.5,
             },
             -- Mask
             {
@@ -126,7 +126,7 @@ for name, tier in pairs(tier_map) do
                 line_length = 8,
                 shift = util.by_pixel(1, -16),
                 tint = inputs.tint,
-                scale = 0.5
+                scale = 0.5,
             },
             -- Highlights
             {
@@ -139,7 +139,7 @@ for name, tier in pairs(tier_map) do
                 line_length = 8,
                 shift = util.by_pixel(1, -16),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                scale = 0.5
+                scale = 0.5,
             },
             -- Shadow
             {
@@ -152,9 +152,9 @@ for name, tier in pairs(tier_map) do
                 line_length = 8,
                 shift = util.by_pixel(39.25, 3),
                 draw_as_shadow = true,
-                scale = 0.5
-            }
-        }
+                scale = 0.5,
+            },
+        },
     }
 
     if name ~= "radar" then

@@ -4,10 +4,10 @@
 -- See LICENSE in the project directory for license information.
 
 local item_groups = {
-    ["bob-logistics"] = {related_item_group = "logistics"},
+    ["bob-logistics"] = { related_item_group = "logistics" },
     ["bob-fluid-products"] = {},
     ["bob-resource-products"] = {},
-    ["bob-intermediate-products"] = {related_item_group = "intermediate-products"},
+    ["bob-intermediate-products"] = { related_item_group = "intermediate-products" },
     ["bob-gems"] = {},
 }
 
@@ -18,7 +18,7 @@ local function assign_item_group_icon(name)
     if item_group then else return end
 
     -- Assign the revised UI icons
-    item_group.icon = "__reskins-bobs__/graphics/item-group/"..name..".png"
+    item_group.icon = "__reskins-bobs__/graphics/item-group/" .. name .. ".png"
     item_group.icon_size = 128
 end
 

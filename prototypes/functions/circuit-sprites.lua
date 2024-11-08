@@ -23,7 +23,7 @@ for circuit, map in pairs(circuits) do
             size = 40,
             mipmap_count = 2,
             flags = { "gui-icon" },
-        }
+        },
     })
 
     -- Make material-colored sprites
@@ -35,7 +35,7 @@ for circuit, map in pairs(circuits) do
             size = 40,
             mipmap_count = 2,
             flags = { "gui-icon" },
-        }
+        },
     })
 
     -- Parse map
@@ -72,9 +72,9 @@ for circuit, map in pairs(circuits) do
                     blend_mode = "additive",
                     mipmap_count = 2,
                     flags = { "gui-icon" },
-                }
+                },
             },
-            flags = { "gui-icon" }
-        }
+            flags = { "gui-icon" },
+        },
     })
 end

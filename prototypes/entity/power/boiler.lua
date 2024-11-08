@@ -101,8 +101,8 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(-0.5, -3),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 scale = 0.5,
-            }
-        }
+            },
+        },
     }
 
     -- Reskin entities
@@ -116,7 +116,7 @@ for name, map in pairs(tier_map) do
                     width = 269,
                     height = 221,
                     shift = util.by_pixel(-1.25, 5.25),
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Mask
                 {
@@ -126,7 +126,7 @@ for name, map in pairs(tier_map) do
                     height = 221,
                     shift = util.by_pixel(-1.25, 5.25),
                     tint = inputs.tint,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Highlights
                 {
@@ -136,7 +136,7 @@ for name, map in pairs(tier_map) do
                     height = 221,
                     shift = util.by_pixel(-1.25, 5.25),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Shadow
                 {
@@ -146,9 +146,9 @@ for name, map in pairs(tier_map) do
                     height = 164,
                     scale = 0.5,
                     shift = util.by_pixel(20.5, 9),
-                    draw_as_shadow = true
-                }
-            }
+                    draw_as_shadow = true,
+                },
+            },
         },
         east = {
             layers = {
@@ -159,7 +159,7 @@ for name, map in pairs(tier_map) do
                     width = 216,
                     height = 301,
                     shift = util.by_pixel(-3, 1.25),
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Color mask
                 {
@@ -169,7 +169,7 @@ for name, map in pairs(tier_map) do
                     height = 301,
                     shift = util.by_pixel(-3, 1.25),
                     tint = inputs.tint,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Highlights
                 {
@@ -179,7 +179,7 @@ for name, map in pairs(tier_map) do
                     height = 301,
                     shift = util.by_pixel(-3, 1.25),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Shadow
                 {
@@ -189,9 +189,9 @@ for name, map in pairs(tier_map) do
                     height = 194,
                     scale = 0.5,
                     shift = util.by_pixel(30, 9.5),
-                    draw_as_shadow = true
-                }
-            }
+                    draw_as_shadow = true,
+                },
+            },
         },
         south = {
             layers = {
@@ -202,7 +202,7 @@ for name, map in pairs(tier_map) do
                     width = 260,
                     height = 192,
                     shift = util.by_pixel(4, 13),
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Mask
                 {
@@ -212,7 +212,7 @@ for name, map in pairs(tier_map) do
                     height = 192,
                     shift = util.by_pixel(4, 13),
                     tint = inputs.tint,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Highlights
                 {
@@ -222,7 +222,7 @@ for name, map in pairs(tier_map) do
                     height = 192,
                     shift = util.by_pixel(4, 13),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Shadow
                 {
@@ -232,9 +232,9 @@ for name, map in pairs(tier_map) do
                     height = 131,
                     scale = 0.5,
                     shift = util.by_pixel(29.75, 15.75),
-                    draw_as_shadow = true
-                }
-            }
+                    draw_as_shadow = true,
+                },
+            },
         },
         west = {
             layers = {
@@ -245,7 +245,7 @@ for name, map in pairs(tier_map) do
                     width = 196,
                     height = 273,
                     shift = util.by_pixel(1.5, 7.75),
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Mask
                 {
@@ -255,7 +255,7 @@ for name, map in pairs(tier_map) do
                     height = 273,
                     shift = util.by_pixel(1.5, 7.75),
                     tint = inputs.tint,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Highlights
                 {
@@ -265,7 +265,7 @@ for name, map in pairs(tier_map) do
                     height = 273,
                     shift = util.by_pixel(1.5, 7.75),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Shadow
                 {
@@ -275,10 +275,10 @@ for name, map in pairs(tier_map) do
                     height = 218,
                     scale = 0.5,
                     shift = util.by_pixel(19.5, 6.5),
-                    draw_as_shadow = true
-                }
-            }
-        }
+                    draw_as_shadow = true,
+                },
+            },
+        },
     }
 
     -- Handle ambient-light

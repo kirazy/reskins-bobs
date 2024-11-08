@@ -38,7 +38,7 @@ for _, name in pairs(tier_map) do
         priority = "medium",
         width = 64,
         height = 64,
-        scale = 0.5
+        scale = 0.5,
     }
 
     entity.picture_set = {
@@ -46,7 +46,7 @@ for _, name in pairs(tier_map) do
         priority = "medium",
         width = 64,
         height = 64,
-        scale = 0.5
+        scale = 0.5,
     }
 
     -- Label to skip to next iteration

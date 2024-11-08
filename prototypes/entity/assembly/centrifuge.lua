@@ -13,7 +13,7 @@ local inputs = {
     base_entity_name = "centrifuge",
     mod = "bobs",
     group = "assembly",
-    particles = { ["big"] = 1,["medium"] = 2 },
+    particles = { ["big"] = 1, ["medium"] = 2 },
 }
 
 local tier_map = {
@@ -87,8 +87,8 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(7, 4),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 scale = 0.5,
-            }
-        }
+            },
+        },
     })
 
     -- Reskin entities
@@ -103,7 +103,7 @@ for name, map in pairs(tier_map) do
                 width = 237,
                 height = 214,
                 frame_count = 64,
-                shift = util.by_pixel(-0.25, -26.5)
+                shift = util.by_pixel(-0.25, -26.5),
             },
             {
                 filename = "__base__/graphics/entity/centrifuge/hr-centrifuge-C-shadow.png",
@@ -114,7 +114,7 @@ for name, map in pairs(tier_map) do
                 width = 279,
                 height = 152,
                 frame_count = 64,
-                shift = util.by_pixel(16.75, -10)
+                shift = util.by_pixel(16.75, -10),
             },
             -- Centrifuge B
             {
@@ -125,7 +125,7 @@ for name, map in pairs(tier_map) do
                 width = 156,
                 height = 234,
                 frame_count = 64,
-                shift = util.by_pixel(23, 6.5)
+                shift = util.by_pixel(23, 6.5),
             },
             {
                 filename = "__reskins-bobs__/graphics/entity/assembly/centrifuge/hr-centrifuge-B-mask.png",
@@ -136,7 +136,7 @@ for name, map in pairs(tier_map) do
                 width = 156,
                 height = 234,
                 frame_count = 64,
-                shift = util.by_pixel(23, 6.5)
+                shift = util.by_pixel(23, 6.5),
             },
             {
                 filename = "__reskins-bobs__/graphics/entity/assembly/centrifuge/hr-centrifuge-B-highlights.png",
@@ -147,7 +147,7 @@ for name, map in pairs(tier_map) do
                 width = 156,
                 height = 234,
                 frame_count = 64,
-                shift = util.by_pixel(23, 6.5)
+                shift = util.by_pixel(23, 6.5),
             },
             {
                 filename = "__base__/graphics/entity/centrifuge/hr-centrifuge-B-shadow.png",
@@ -158,7 +158,7 @@ for name, map in pairs(tier_map) do
                 width = 251,
                 height = 149,
                 frame_count = 64,
-                shift = util.by_pixel(63.25, 15.25)
+                shift = util.by_pixel(63.25, 15.25),
             },
             -- Centrifuge A
             {
@@ -169,7 +169,7 @@ for name, map in pairs(tier_map) do
                 width = 139,
                 height = 246,
                 frame_count = 64,
-                shift = util.by_pixel(-26.25, 3.5)
+                shift = util.by_pixel(-26.25, 3.5),
             },
             {
                 filename = "__reskins-bobs__/graphics/entity/assembly/centrifuge/hr-centrifuge-A-mask.png",
@@ -180,7 +180,7 @@ for name, map in pairs(tier_map) do
                 width = 139,
                 height = 246,
                 frame_count = 64,
-                shift = util.by_pixel(-26.25, 3.5)
+                shift = util.by_pixel(-26.25, 3.5),
             },
             {
                 filename = "__reskins-bobs__/graphics/entity/assembly/centrifuge/hr-centrifuge-A-highlights.png",
@@ -191,7 +191,7 @@ for name, map in pairs(tier_map) do
                 width = 139,
                 height = 246,
                 frame_count = 64,
-                shift = util.by_pixel(-26.25, 3.5)
+                shift = util.by_pixel(-26.25, 3.5),
             },
             {
                 filename = "__base__/graphics/entity/centrifuge/hr-centrifuge-A-shadow.png",
@@ -202,9 +202,9 @@ for name, map in pairs(tier_map) do
                 width = 230,
                 height = 124,
                 frame_count = 64,
-                shift = util.by_pixel(8.5, 23.5)
-            }
-        }
+                shift = util.by_pixel(8.5, 23.5),
+            },
+        },
     }
 
     entity.working_visualisations = {
@@ -213,7 +213,7 @@ for name, map in pairs(tier_map) do
             effect = "uranium-glow",
             apply_recipe_tint = "primary",
             fadeout = true,
-            light = { intensity = 0.1, size = 9.9, shift = { 0.0, 0.0 }, color = { r = 0.0, g = 1.0, b = 0.0 } }
+            light = { intensity = 0.1, size = 9.9, shift = { 0.0, 0.0 }, color = { r = 0.0, g = 1.0, b = 0.0 } },
         },
 
         -- Working Light
@@ -261,10 +261,10 @@ for name, map in pairs(tier_map) do
                         frame_count = 64,
                         shift = util.by_pixel(-23.5, -1.75),
                         draw_as_glow = true,
-                    }
-                }
-            }
-        }
+                    },
+                },
+            },
+        },
     }
 
     -- Label to skip to next iteration

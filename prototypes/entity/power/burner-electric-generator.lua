@@ -12,7 +12,7 @@ local inputs = {
     base_entity_name = "steam-engine",
     mod = "bobs",
     group = "power",
-    particles = { ["medium"] = 2,["big"] = 1 },
+    particles = { ["medium"] = 2, ["big"] = 1 },
     tint = util.color("26262660"),
     make_remnants = false,
 }
@@ -41,7 +41,7 @@ entity.animation = {
             line_length = 8,
             repeat_count = 3,
             shift = util.by_pixel(0, -12.5),
-            scale = 0.5
+            scale = 0.5,
         },
         -- Fire
         {
@@ -56,7 +56,7 @@ entity.animation = {
             blend_mode = "additive",
             shift = util.by_pixel(-1, 9.5),
             draw_as_glow = true,
-            scale = 0.5
+            scale = 0.5,
         },
         -- Radiant Light
         {
@@ -69,7 +69,7 @@ entity.animation = {
             blend_mode = "additive",
             shift = util.by_pixel(0, -12.5),
             draw_as_glow = true,
-            scale = 0.5
+            scale = 0.5,
         },
         -- Shadow
         {
@@ -81,9 +81,9 @@ entity.animation = {
             repeat_count = 3,
             draw_as_shadow = true,
             shift = util.by_pixel(30, 12),
-            scale = 0.5
-        }
-    }
+            scale = 0.5,
+        },
+    },
 }
 
 entity.idle_animation = {
@@ -97,7 +97,7 @@ entity.idle_animation = {
             line_length = 8,
             repeat_count = 3,
             shift = util.by_pixel(0, -12.5),
-            scale = 0.5
+            scale = 0.5,
         },
         -- Shadow
         {
@@ -109,9 +109,9 @@ entity.idle_animation = {
             repeat_count = 3,
             draw_as_shadow = true,
             shift = util.by_pixel(30, 12),
-            scale = 0.5
-        }
-    }
+            scale = 0.5,
+        },
+    },
 }
 
 -- Handle smoke
@@ -125,7 +125,7 @@ entity.burner.smoke = {
         frequency = 15,
         starting_vertical_speed = 0.08,
         starting_frame_deviation = 60,
-    }
+    },
 }
 
 entity.water_reflection = {
@@ -139,7 +139,7 @@ entity.water_reflection = {
         scale = 5,
     },
     rotate = false,
-    orientation_to_variation = false
+    orientation_to_variation = false,
 }
 
 -- Handle ambient-light

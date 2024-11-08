@@ -20,7 +20,7 @@ local tier_map = {
     ["roboport"] = { 1, 2 },
     ["bob-roboport-2"] = { 2, 3 },
     ["bob-roboport-3"] = { 3, 4 },
-    ["bob-roboport-4"] = { 4, 5 }
+    ["bob-roboport-4"] = { 4, 5 },
 }
 
 -- Reskin entities, create and assign extra details
@@ -118,8 +118,8 @@ for name, map in pairs(tier_map) do
                 direction_count = 1,
                 shift = util.by_pixel(2, 8),
                 scale = 0.5,
-            }
-        }
+            },
+        },
     })
 
     -- Reskin entities
@@ -132,7 +132,7 @@ for name, map in pairs(tier_map) do
                 width = 228,
                 height = 277,
                 shift = util.by_pixel(2, 7.75),
-                scale = 0.5
+                scale = 0.5,
             },
             -- Mask
             {
@@ -141,7 +141,7 @@ for name, map in pairs(tier_map) do
                 height = 277,
                 shift = util.by_pixel(2, 7.75),
                 tint = inputs.tint,
-                scale = 0.5
+                scale = 0.5,
             },
             -- Highlights
             {
@@ -150,7 +150,7 @@ for name, map in pairs(tier_map) do
                 height = 277,
                 shift = util.by_pixel(2, 7.75),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                scale = 0.5
+                scale = 0.5,
             },
             -- Shadow
             {
@@ -160,9 +160,9 @@ for name, map in pairs(tier_map) do
                 draw_as_shadow = true,
                 force_hr_shadow = true,
                 shift = util.by_pixel(28.5, 19.25),
-                scale = 0.5
-            }
-        }
+                scale = 0.5,
+            },
+        },
     }
 
     entity.base_patch = {
@@ -183,7 +183,7 @@ for name, map in pairs(tier_map) do
                 height = 100,
                 frame_count = 1,
                 shift = util.by_pixel(1.5, 5),
-                scale = 0.5
+                scale = 0.5,
             },
             -- Mask
             {
@@ -194,7 +194,7 @@ for name, map in pairs(tier_map) do
                 frame_count = 1,
                 shift = util.by_pixel(1.5, 5),
                 tint = inputs.tint,
-                scale = 0.5
+                scale = 0.5,
             },
             -- Highlights
             {
@@ -205,9 +205,9 @@ for name, map in pairs(tier_map) do
                 frame_count = 1,
                 shift = util.by_pixel(1.5, 5),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                scale = 0.5
-            }
-        }
+                scale = 0.5,
+            },
+        },
     }
 
     entity.base_animation = {
@@ -218,7 +218,7 @@ for name, map in pairs(tier_map) do
         frame_count = 8,
         animation_speed = 0.5,
         shift = util.by_pixel(-17.75, -61.25),
-        scale = 0.5
+        scale = 0.5,
     }
 
     entity.door_animation_up = {
@@ -228,7 +228,7 @@ for name, map in pairs(tier_map) do
         height = 38,
         frame_count = 16,
         shift = util.by_pixel(-0.25, -29.5),
-        scale = 0.5
+        scale = 0.5,
     }
 
     entity.door_animation_down = {
@@ -238,7 +238,7 @@ for name, map in pairs(tier_map) do
         height = 41,
         frame_count = 16,
         shift = util.by_pixel(-0.25, -9.75),
-        scale = 0.5
+        scale = 0.5,
     }
 
     entity.recharging_animation = {
@@ -248,7 +248,7 @@ for name, map in pairs(tier_map) do
         height = 35,
         frame_count = 16,
         scale = 1.5,
-        animation_speed = 0.5
+        animation_speed = 0.5,
     }
 
     if name ~= "roboport" then

@@ -25,7 +25,7 @@ local function robot_animation()
         height = 64,
         frame_count = 1,
         direction_count = 1,
-        scale = 0.5
+        scale = 0.5,
     }
 end
 
@@ -38,7 +38,7 @@ local function robot_shadow()
         frame_count = 1,
         direction_count = 1,
         draw_as_shadow = true,
-        scale = 0.5
+        scale = 0.5,
     }
 end
 

@@ -14,7 +14,7 @@ local inputs = {
     base_entity_name = "steam-turbine",
     mod = "bobs",
     group = "power",
-    particles = { ["medium"] = 2,["big"] = 1 },
+    particles = { ["medium"] = 2, ["big"] = 1 },
 }
 
 local tier_map = {
@@ -88,8 +88,8 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(6, 0),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 scale = 0.5,
-            }
-        }
+            },
+        },
     })
 
     -- Reskin entities
@@ -103,7 +103,7 @@ for name, map in pairs(tier_map) do
                 frame_count = 8,
                 line_length = 4,
                 shift = util.by_pixel(0, -2.75),
-                scale = 0.5
+                scale = 0.5,
             },
             -- Mask
             {
@@ -115,7 +115,7 @@ for name, map in pairs(tier_map) do
                 repeat_count = 8,
                 shift = util.by_pixel(0, -2.75),
                 tint = inputs.tint,
-                scale = 0.5
+                scale = 0.5,
             },
             -- Highlights
             {
@@ -127,7 +127,7 @@ for name, map in pairs(tier_map) do
                 repeat_count = 8,
                 shift = util.by_pixel(0, -2.75),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                scale = 0.5
+                scale = 0.5,
             },
             -- Shadow
             {
@@ -139,9 +139,9 @@ for name, map in pairs(tier_map) do
                 line_length = 1,
                 draw_as_shadow = true,
                 shift = util.by_pixel(28.5, 18),
-                scale = 0.5
-            }
-        }
+                scale = 0.5,
+            },
+        },
     }
 
     entity.vertical_animation = {
@@ -154,7 +154,7 @@ for name, map in pairs(tier_map) do
                 frame_count = 8,
                 line_length = 4,
                 shift = util.by_pixel(4.75, 6.75),
-                scale = 0.5
+                scale = 0.5,
             },
             -- Mask
             {
@@ -166,7 +166,7 @@ for name, map in pairs(tier_map) do
                 repeat_count = 8,
                 shift = util.by_pixel(4.75, 6.75),
                 tint = inputs.tint,
-                scale = 0.5
+                scale = 0.5,
             },
             -- Highlights
             {
@@ -178,7 +178,7 @@ for name, map in pairs(tier_map) do
                 repeat_count = 8,
                 shift = util.by_pixel(4.75, 6.75),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                scale = 0.5
+                scale = 0.5,
             },
             -- Shadow
             {
@@ -190,9 +190,9 @@ for name, map in pairs(tier_map) do
                 line_length = 1,
                 draw_as_shadow = true,
                 shift = util.by_pixel(39.5, 24.5),
-                scale = 0.5
-            }
-        }
+                scale = 0.5,
+            },
+        },
     }
 
     -- Label to skip to next iteration

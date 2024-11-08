@@ -56,7 +56,7 @@ for name, map in pairs(tier_map) do
                 width = 130,
                 height = 138,
                 shift = util.by_pixel(0, -2.75),
-                scale = 0.5
+                scale = 0.5,
             },
             -- Mask
             {
@@ -65,7 +65,7 @@ for name, map in pairs(tier_map) do
                 height = 138,
                 shift = util.by_pixel(0, -2.75),
                 tint = inputs.tint,
-                scale = 0.5
+                scale = 0.5,
             },
             -- Highlights
             {
@@ -74,7 +74,7 @@ for name, map in pairs(tier_map) do
                 height = 138,
                 shift = util.by_pixel(0, -2.75),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                scale = 0.5
+                scale = 0.5,
             },
             -- Shadow
             {
@@ -83,9 +83,9 @@ for name, map in pairs(tier_map) do
                 height = 108,
                 shift = util.by_pixel(12, 5),
                 draw_as_shadow = true,
-                scale = 0.5
-            }
-        }
+                scale = 0.5,
+            },
+        },
     }
 
     entity.base_patch = {
@@ -104,7 +104,7 @@ for name, map in pairs(tier_map) do
                 width = 110,
                 height = 80,
                 shift = util.by_pixel(0, 5.5),
-                scale = 0.5
+                scale = 0.5,
             },
             -- Mask
             {
@@ -113,7 +113,7 @@ for name, map in pairs(tier_map) do
                 height = 80,
                 shift = util.by_pixel(0, 5.5),
                 tint = inputs.tint,
-                scale = 0.5
+                scale = 0.5,
             },
             -- Highlights
             {
@@ -122,9 +122,9 @@ for name, map in pairs(tier_map) do
                 height = 80,
                 shift = util.by_pixel(0, 5.5),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                scale = 0.5
+                scale = 0.5,
             },
-        }
+        },
     }
 
     entity.base_animation = util.empty_sprite()
@@ -136,7 +136,7 @@ for name, map in pairs(tier_map) do
         height = 38,
         frame_count = 16,
         shift = util.by_pixel(-0.25, -29.5 + 4.5),
-        scale = 0.5
+        scale = 0.5,
     }
 
     entity.door_animation_down = {
@@ -146,7 +146,7 @@ for name, map in pairs(tier_map) do
         height = 45,
         frame_count = 16,
         shift = util.by_pixel(-0.25, -9.75 + 3.5),
-        scale = 0.5
+        scale = 0.5,
     }
 
 

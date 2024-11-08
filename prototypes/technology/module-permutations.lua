@@ -9,14 +9,14 @@ if not (reskins.bobs and reskins.bobs.triggers.modules.technologies) then return
 
 -- Modules
 local modules_map = {
-    ["speed"] = {color = "blue", is_exception = true},
-    ["effectivity"] = {color = "yellow", is_exception = true},
-    ["productivity"] = {color = "red", is_exception = true},
-    ["pollution-create"] = {color = "brown"},
-    ["pollution-clean"] = {color = "pine"},
-    ["raw-speed"] = {color = "cyan"},
-    ["green"] = {color = "green"},
-    ["raw-productivity"] = {color = "pink"},
+    ["speed"] = { color = "blue", is_exception = true },
+    ["effectivity"] = { color = "yellow", is_exception = true },
+    ["productivity"] = { color = "red", is_exception = true },
+    ["pollution-create"] = { color = "brown" },
+    ["pollution-clean"] = { color = "pine" },
+    ["raw-speed"] = { color = "cyan" },
+    ["green"] = { color = "green" },
+    ["raw-productivity"] = { color = "pink" },
 }
 
 -- Setup inputs
@@ -35,9 +35,9 @@ for class, map in pairs(modules_map) do
     -- Do all tiers
     for tier = 1, 8 do
         -- Naming convention exception handling
-        local name = class.."-module-"..tier
+        local name = class .. "-module-" .. tier
         if tier == 1 and map.is_exception then
-            name = class.."-module"
+            name = class .. "-module"
         end
 
         -- Fetch technology
@@ -47,7 +47,7 @@ for class, map in pairs(modules_map) do
         if not technology then goto continue end
 
         -- Setup icon path
-        inputs.technology_icon_filename = "__reskins-bobs__/graphics/technology/modules/module/"..map.color.."/"..map.color.."_"..tier..".png"
+        inputs.technology_icon_filename = "__reskins-bobs__/graphics/technology/modules/module/" .. map.color .. "/" .. map.color .. "_" .. tier .. ".png"
 
         reskins.lib.construct_technology_icon(name, inputs)
 
@@ -61,21 +61,20 @@ if reskins.lib.settings.get_value("bobmods-modules-enablegodmodules") then
     if not data.raw.technology["god-module-6"] then
         for i = 1, 5 do
             -- Fetch technology
-            local name = "god-module-"..i
+            local name = "god-module-" .. i
             local technology = data.raw[inputs.type][name]
 
             -- Check if technology exists, if not, skip this iteration
             if not technology then goto continue end
 
             -- Setup icon path
-            inputs.technology_icon_filename = "__reskins-bobs__/graphics/technology/modules/god-module/"..name..".png"
+            inputs.technology_icon_filename = "__reskins-bobs__/graphics/technology/modules/god-module/" .. name .. ".png"
             inputs.technology_icon_layers = 1
 
             reskins.lib.construct_technology_icon(name, inputs)
 
             -- Label to skip to next iteration
             ::continue::
-
         end
     end
 end

@@ -24,7 +24,7 @@ local beam_map = {
     ["bob-laser-beam-emerald-ammo"] = "emerald",
     ["bob-laser-beam-amethyst-ammo"] = "amethyst",
     ["bob-laser-beam-topaz-ammo"] = "topaz",
-    ["bob-laser-beam-diamond-ammo"] = "diamond"
+    ["bob-laser-beam-diamond-ammo"] = "diamond",
 }
 
 local light_tint_map = {
@@ -34,7 +34,7 @@ local light_tint_map = {
     ["sapphire"] = util.color("023B80"),
     ["topaz"] = util.color("80590D"),
     ["amethyst"] = util.color("1E0D80"),
-    ["diamond"] = util.color("F9F9F9")
+    ["diamond"] = util.color("F9F9F9"),
 }
 
 local laser_beam_blend_mode = "additive"
@@ -57,7 +57,7 @@ for name, lens in pairs(beam_map) do
         frame_count = 8,
         scale = 0.5,
         animation_speed = 0.5,
-        blend_mode = laser_beam_blend_mode
+        blend_mode = laser_beam_blend_mode,
     }
 
     beam.tail =
@@ -70,7 +70,7 @@ for name, lens in pairs(beam_map) do
         shift = util.by_pixel(11.5, 1),
         scale = 0.5,
         animation_speed = 0.5,
-        blend_mode = laser_beam_blend_mode
+        blend_mode = laser_beam_blend_mode,
     }
 
     beam.body =
@@ -84,8 +84,8 @@ for name, lens in pairs(beam_map) do
             frame_count = 8,
             scale = 0.5,
             animation_speed = 0.5,
-            blend_mode = laser_beam_blend_mode
-        }
+            blend_mode = laser_beam_blend_mode,
+        },
     }
 
     beam.light_animations =
@@ -120,8 +120,8 @@ for name, lens in pairs(beam_map) do
                 frame_count = 8,
                 scale = 0.5,
                 animation_speed = 0.5,
-            }
-        }
+            },
+        },
     }
 
     beam.ground_light_animations =
@@ -136,7 +136,7 @@ for name, lens in pairs(beam_map) do
             scale = 0.5,
             shift = util.by_pixel(-32, 0),
             animation_speed = 0.5,
-            tint = light_tint_map[lens]
+            tint = light_tint_map[lens],
         },
         tail =
         {
@@ -148,7 +148,7 @@ for name, lens in pairs(beam_map) do
             scale = 0.5,
             shift = util.by_pixel(32, 0),
             animation_speed = 0.5,
-            tint = light_tint_map[lens]
+            tint = light_tint_map[lens],
         },
         body =
         {
@@ -159,8 +159,8 @@ for name, lens in pairs(beam_map) do
             repeat_count = 8,
             scale = 0.5,
             animation_speed = 0.5,
-            tint = light_tint_map[lens]
-        }
+            tint = light_tint_map[lens],
+        },
     }
 
     -- Label to skip to next iteration

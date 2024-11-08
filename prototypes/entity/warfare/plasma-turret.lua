@@ -46,7 +46,7 @@ local function plasma_turret_extension_base(parameters)
         axially_symmetrical = false,
         direction_count = 8,
         shift = util.by_pixel(-0.5, -35),
-        scale = 0.5
+        scale = 0.5,
     }
 end
 
@@ -64,7 +64,7 @@ local function plasma_turret_extension_runtime_mask(parameters)
         direction_count = 8,
         shift = util.by_pixel(-0.5, -35),
         apply_runtime_tint = true,
-        scale = 0.5
+        scale = 0.5,
     }
 end
 
@@ -82,7 +82,7 @@ local function plasma_turret_extension_tint_mask(parameters)
         direction_count = 8,
         shift = util.by_pixel(-0.5, -35),
         tint = parameters.tint,
-        scale = 0.5
+        scale = 0.5,
     }
 end
 
@@ -100,7 +100,7 @@ local function plasma_turret_extension_highlights(parameters)
         direction_count = 8,
         shift = util.by_pixel(-0.5, -35),
         blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-        scale = 0.5
+        scale = 0.5,
     }
 end
 
@@ -122,7 +122,7 @@ local function plasma_turret_extension_lights(parameters)
         direction_count = 8,
         shift = shift,
         draw_as_glow = true,
-        scale = 0.5
+        scale = 0.5,
     }
 end
 
@@ -144,7 +144,7 @@ local function plasma_turret_extension_lights_highlights(parameters)
         direction_count = 8,
         shift = shift,
         draw_as_glow = true,
-        scale = 0.5
+        scale = 0.5,
     }
 end
 
@@ -180,7 +180,7 @@ for name, map in pairs(tier_map) do
                 width = 208,
                 height = 178,
                 shift = util.by_pixel(0, 0),
-                scale = 0.5
+                scale = 0.5,
             },
             -- Runtime Mask
             {
@@ -190,7 +190,7 @@ for name, map in pairs(tier_map) do
                 height = 178,
                 shift = util.by_pixel(0, 0),
                 apply_runtime_tint = true,
-                scale = 0.5
+                scale = 0.5,
             },
             -- Shadow
             {
@@ -200,9 +200,9 @@ for name, map in pairs(tier_map) do
                 height = 150,
                 shift = util.by_pixel(18.5, 11),
                 draw_as_shadow = true,
-                scale = 0.5
+                scale = 0.5,
             },
-        }
+        },
     }
 
     entity.folded_animation = {
@@ -211,7 +211,7 @@ for name, map in pairs(tier_map) do
             plasma_turret_extension_runtime_mask({ repeat_count = 1 }),
             plasma_turret_extension_tint_mask({ tint = inputs.tint, repeat_count = 1 }),
             plasma_turret_extension_highlights({ repeat_count = 1 }),
-        }
+        },
     }
 
     entity.preparing_animation = {
@@ -224,7 +224,7 @@ for name, map in pairs(tier_map) do
             plasma_turret_extension_lights_highlights({}),
             plasma_turret_extension_lights({ tint = inputs.tint }),
             plasma_turret_extension_lights_highlights({}),
-        }
+        },
     }
 
     entity.prepared_animation = {
@@ -238,7 +238,7 @@ for name, map in pairs(tier_map) do
                 frame_count = 1,
                 direction_count = 64,
                 shift = util.by_pixel(-0.5, -35),
-                scale = 0.5
+                scale = 0.5,
             },
             -- Runtime Mask
             {
@@ -250,7 +250,7 @@ for name, map in pairs(tier_map) do
                 direction_count = 64,
                 shift = util.by_pixel(-0.5, -35),
                 apply_runtime_tint = true,
-                scale = 0.5
+                scale = 0.5,
             },
             -- Mask
             {
@@ -262,7 +262,7 @@ for name, map in pairs(tier_map) do
                 direction_count = 64,
                 shift = util.by_pixel(-0.5, -35),
                 tint = inputs.tint,
-                scale = 0.5
+                scale = 0.5,
             },
             -- Highlights
             {
@@ -274,7 +274,7 @@ for name, map in pairs(tier_map) do
                 direction_count = 64,
                 shift = util.by_pixel(-0.5, -35),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                scale = 0.5
+                scale = 0.5,
             },
             -- Light Mask
             {
@@ -287,7 +287,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(-0.5, -35),
                 draw_as_glow = true,
                 tint = inputs.tint,
-                scale = 0.5
+                scale = 0.5,
             },
             -- Light Highlights
             {
@@ -300,9 +300,9 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(-0.5, -35),
                 draw_as_glow = true,
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                scale = 0.5
+                scale = 0.5,
             },
-        }
+        },
     }
 
     entity.folding_animation = {
@@ -314,8 +314,8 @@ for name, map in pairs(tier_map) do
             plasma_turret_extension_lights({ run_mode = "backward", tint = inputs.tint }),
             plasma_turret_extension_lights_highlights({ run_mode = "backward" }),
             plasma_turret_extension_lights({ run_mode = "backward", tint = inputs.tint }),
-            plasma_turret_extension_lights_highlights({ run_mode = "backward" })
-        }
+            plasma_turret_extension_lights_highlights({ run_mode = "backward" }),
+        },
     }
 
     -- Adjust drawing box
@@ -332,7 +332,7 @@ for name, map in pairs(tier_map) do
             scale = 5,
         },
         rotate = false,
-        orientation_to_variation = false
+        orientation_to_variation = false,
     }
 
     -- Label to skip to next iteration

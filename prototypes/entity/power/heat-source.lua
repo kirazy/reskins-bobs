@@ -13,7 +13,7 @@ local inputs = {
     base_entity_name = "nuclear-reactor",
     mod = "bobs",
     group = "power",
-    particles = { ["big"] = 1,["medium"] = 2 },
+    particles = { ["big"] = 1, ["medium"] = 2 },
     make_remnants = false,
 }
 
@@ -46,7 +46,7 @@ local function heat_source_base_pipes(material)
         width = 192,
         height = 192,
         scale = 0.5,
-        shift = { -0.03125, -0.1875 }
+        shift = { -0.03125, -0.1875 },
     }
 end
 
@@ -58,8 +58,8 @@ local function connect_patches_connected(material)
             width = 64,
             height = 64,
             variation_count = 12,
-            scale = 0.5
-        }
+            scale = 0.5,
+        },
     }
 end
 
@@ -72,8 +72,8 @@ local function connect_patches_disconnected(material)
             height = 64,
             y = 64,
             variation_count = 12,
-            scale = 0.5
-        }
+            scale = 0.5,
+        },
     }
 end
 
@@ -108,7 +108,7 @@ for name, mapping in pairs(tier_map) do
                 width = 84,
                 height = 66,
                 scale = 1.5,
-                shift = { 0.4375 * 1.5, 0.03125 * 1.5 }
+                shift = { 0.4375 * 1.5, 0.03125 * 1.5 },
             },
             {
                 filename = "__reskins-bobs__/graphics/entity/power/heat-source/heat-source-mask.png",
@@ -117,7 +117,7 @@ for name, mapping in pairs(tier_map) do
                 height = 66,
                 scale = 1.5,
                 tint = inputs.tint,
-                shift = { 0.4375 * 1.5, 0.03125 * 1.5 }
+                shift = { 0.4375 * 1.5, 0.03125 * 1.5 },
             },
             {
                 filename = "__reskins-bobs__/graphics/entity/power/heat-source/heat-source-highlights.png",
@@ -126,7 +126,7 @@ for name, mapping in pairs(tier_map) do
                 height = 66,
                 scale = 1.5,
                 blend_mode = reskins.lib.settings.blend_mode,
-                shift = { 0.4375 * 1.5, 0.03125 * 1.5 }
+                shift = { 0.4375 * 1.5, 0.03125 * 1.5 },
             },
             {
                 filename = "__reskins-bobs__/graphics/entity/power/heat-source/heat-source-shadow.png",
@@ -135,9 +135,9 @@ for name, mapping in pairs(tier_map) do
                 height = 66,
                 scale = 1.5,
                 draw_as_shadow = true,
-                shift = { 0.4375 * 1.5, 0.03125 * 1.5 }
-            }
-        }
+                shift = { 0.4375 * 1.5, 0.03125 * 1.5 },
+            },
+        },
     }
 
     entity.working_light_picture = {
@@ -168,7 +168,7 @@ for name, mapping in pairs(tier_map) do
     -- Overlay tinted pipe pictures
     if entity.energy_source.fluid_box then
         entity.energy_source = util.merge { entity.energy_source, {
-            fluid_box = { pipe_picture = reskins.bobs.assembly_pipe_pictures(inputs.tint) }
+            fluid_box = { pipe_picture = reskins.bobs.assembly_pipe_pictures(inputs.tint) },
         } }
     end
 

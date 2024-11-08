@@ -41,7 +41,7 @@ local function generate_robot_animations(tint)
                     shift = util.by_pixel(0, -3),
                     direction_count = 16,
                     y = 84,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Mask
                 {
@@ -55,7 +55,7 @@ local function generate_robot_animations(tint)
                     tint = tint,
                     direction_count = 16,
                     y = 84,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Highlights
                 {
@@ -69,9 +69,9 @@ local function generate_robot_animations(tint)
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     direction_count = 16,
                     y = 84,
-                    scale = 0.5
-                }
-            }
+                    scale = 0.5,
+                },
+            },
         },
         idle_with_cargo = {
             layers = {
@@ -85,7 +85,7 @@ local function generate_robot_animations(tint)
                     frame_count = 1,
                     shift = util.by_pixel(0, -3),
                     direction_count = 16,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Mask
                 {
@@ -98,7 +98,7 @@ local function generate_robot_animations(tint)
                     shift = util.by_pixel(0, -3),
                     tint = tint,
                     direction_count = 16,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Highlights
                 {
@@ -111,9 +111,9 @@ local function generate_robot_animations(tint)
                     shift = util.by_pixel(0, -3),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     direction_count = 16,
-                    scale = 0.5
-                }
-            }
+                    scale = 0.5,
+                },
+            },
         },
         in_motion = {
             layers = {
@@ -128,7 +128,7 @@ local function generate_robot_animations(tint)
                     shift = util.by_pixel(0, -3),
                     direction_count = 16,
                     y = 252,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Mask
                 {
@@ -142,7 +142,7 @@ local function generate_robot_animations(tint)
                     tint = tint,
                     direction_count = 16,
                     y = 252,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Highlights
                 {
@@ -156,9 +156,9 @@ local function generate_robot_animations(tint)
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     direction_count = 16,
                     y = 252,
-                    scale = 0.5
-                }
-            }
+                    scale = 0.5,
+                },
+            },
         },
         in_motion_with_cargo = {
             layers = {
@@ -173,7 +173,7 @@ local function generate_robot_animations(tint)
                     shift = util.by_pixel(0, -3),
                     direction_count = 16,
                     y = 168,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Mask
                 {
@@ -187,7 +187,7 @@ local function generate_robot_animations(tint)
                     tint = tint,
                     direction_count = 16,
                     y = 168,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Highlights
                 {
@@ -201,9 +201,9 @@ local function generate_robot_animations(tint)
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     direction_count = 16,
                     y = 168,
-                    scale = 0.5
-                }
-            }
+                    scale = 0.5,
+                },
+            },
         },
         shadow_idle = {
             filename = "__base__/graphics/entity/logistic-robot/hr-logistic-robot-shadow.png",
@@ -216,7 +216,7 @@ local function generate_robot_animations(tint)
             direction_count = 16,
             y = 57,
             scale = 0.5,
-            draw_as_shadow = true
+            draw_as_shadow = true,
         },
         shadow_idle_with_cargo = {
             filename = "__base__/graphics/entity/logistic-robot/hr-logistic-robot-shadow.png",
@@ -228,7 +228,7 @@ local function generate_robot_animations(tint)
             shift = util.by_pixel(31.75, 19.75),
             direction_count = 16,
             scale = 0.5,
-            draw_as_shadow = true
+            draw_as_shadow = true,
         },
         shadow_in_motion = {
             filename = "__base__/graphics/entity/logistic-robot/hr-logistic-robot-shadow.png",
@@ -241,7 +241,7 @@ local function generate_robot_animations(tint)
             direction_count = 16,
             y = 57 * 3,
             scale = 0.5,
-            draw_as_shadow = true
+            draw_as_shadow = true,
         },
         shadow_in_motion_with_cargo = {
             filename = "__base__/graphics/entity/logistic-robot/hr-logistic-robot-shadow.png",
@@ -254,8 +254,8 @@ local function generate_robot_animations(tint)
             direction_count = 16,
             y = 114,
             scale = 0.5,
-            draw_as_shadow = true
-        }
+            draw_as_shadow = true,
+        },
     }
 end
 
@@ -329,8 +329,8 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(1, 1),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 scale = 0.5,
-            }
-        }
+            },
+        },
     })
 
     -- Clear this, logistic robots do not generate the corpse directly

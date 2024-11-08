@@ -84,7 +84,7 @@ for name, map in pairs(tier_map) do
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 scale = 0.5,
             },
-        }
+        },
     })
 
     remnant.animation_overlay = make_rotated_animation_variations_from_sheet(3, {
@@ -123,8 +123,8 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(0, -38.5),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 scale = 0.5,
-            }
-        }
+            },
+        },
     })
 
     -- Reskin entities
@@ -138,7 +138,7 @@ for name, map in pairs(tier_map) do
                 height = 252,
                 direction_count = 4,
                 shift = util.by_pixel(3.5, -44),
-                scale = 0.5
+                scale = 0.5,
             },
             -- Mask
             {
@@ -149,7 +149,7 @@ for name, map in pairs(tier_map) do
                 direction_count = 4,
                 shift = util.by_pixel(3.5, -44),
                 tint = inputs.tint,
-                scale = 0.5
+                scale = 0.5,
             },
             -- Highlights
             {
@@ -160,7 +160,7 @@ for name, map in pairs(tier_map) do
                 direction_count = 4,
                 shift = util.by_pixel(3.5, -44),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                scale = 0.5
+                scale = 0.5,
             },
             -- Shadow
             {
@@ -171,9 +171,9 @@ for name, map in pairs(tier_map) do
                 direction_count = 4,
                 shift = util.by_pixel(56.5, -1),
                 draw_as_shadow = true,
-                scale = 0.5
-            }
-        }
+                scale = 0.5,
+            },
+        },
     }
 
     -- Label to skip to next iteration

@@ -127,7 +127,7 @@ function reskins.bobs.make_robot_particle(prototype)
                 type = "create-trivial-smoke",
                 smoke_name = "smoke-fast",
                 starting_frame_deviation = 5,
-                probability = 0.5
+                probability = 0.5,
             },
             {
                 type = "create-particle",
@@ -141,14 +141,14 @@ function reskins.bobs.make_robot_particle(prototype)
                 initial_vertical_speed_deviation = 0.05,
                 speed_from_center = 0.1,
                 speed_from_center_deviation = 0.05,
-                offset_deviation = { { -0.25, -0.25 }, { 0.25, 0.25 } }
-            }
+                offset_deviation = { { -0.25, -0.25 }, { 0.25, 0.25 } },
+            },
         },
         ended_on_ground_trigger_effect = {
             type = "create-entity",
             entity_name = prototype.name .. "-remnants",
-            offsets = { { 0, 0 } }
-        }
+            offsets = { { 0, 0 } },
+        },
     }
 
     data:extend { particle }
@@ -164,8 +164,8 @@ function reskins.bobs.make_robot_particle(prototype)
             speed_from_center = 0,
             speed_from_center_deviation = 0.2,
             offset_deviation = { { -0.01, -0.01 }, { 0.01, 0.01 } },
-            offsets = { { 0, 0.5 } }
-        }
+            offsets = { { 0, 0.5 } },
+        },
     }
 
     if prototype.type == "construction-robot" or prototype.type == "logistic-robot" then return end
@@ -184,9 +184,9 @@ function reskins.bobs.make_robot_particle(prototype)
                 speed_from_center = 0,
                 speed_from_center_deviation = 0.1,
                 offset_deviation = { { -0.01, -0.01 }, { 0.01, 0.01 } },
-                offsets = { { 0, 0.5 } }
-            }
-        }
+                offsets = { { 0, 0.5 } },
+            },
+        },
     }
 end
 
@@ -207,7 +207,7 @@ function reskins.bobs.assembly_pipe_pictures(tint)
                     width = 71,
                     height = 38,
                     shift = util.by_pixel(2.25, 13.5),
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Mask
                 {
@@ -217,7 +217,7 @@ function reskins.bobs.assembly_pipe_pictures(tint)
                     height = 38,
                     shift = util.by_pixel(2.25, 13.5),
                     tint = tint,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Highlights
                 {
@@ -227,9 +227,9 @@ function reskins.bobs.assembly_pipe_pictures(tint)
                     height = 38,
                     shift = util.by_pixel(2.25, 13.5),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5
-                }
-            }
+                    scale = 0.5,
+                },
+            },
         },
         east = {
             layers = {
@@ -240,7 +240,7 @@ function reskins.bobs.assembly_pipe_pictures(tint)
                     width = 42,
                     height = 76,
                     shift = util.by_pixel(-24.5, 1),
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Mask
                 {
@@ -250,7 +250,7 @@ function reskins.bobs.assembly_pipe_pictures(tint)
                     height = 76,
                     shift = util.by_pixel(-24.5, 1),
                     tint = tint,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Highlights
                 {
@@ -260,9 +260,9 @@ function reskins.bobs.assembly_pipe_pictures(tint)
                     height = 76,
                     shift = util.by_pixel(-24.5, 1),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5
-                }
-            }
+                    scale = 0.5,
+                },
+            },
         },
         south = {
             layers = {
@@ -273,7 +273,7 @@ function reskins.bobs.assembly_pipe_pictures(tint)
                     width = 88,
                     height = 61,
                     shift = util.by_pixel(0, -31.25),
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Mask
                 {
@@ -283,7 +283,7 @@ function reskins.bobs.assembly_pipe_pictures(tint)
                     height = 61,
                     shift = util.by_pixel(0, -31.25),
                     tint = tint,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Highlights
                 {
@@ -293,9 +293,9 @@ function reskins.bobs.assembly_pipe_pictures(tint)
                     height = 61,
                     shift = util.by_pixel(0, -31.25),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5
-                }
-            }
+                    scale = 0.5,
+                },
+            },
         },
         west = {
             layers = {
@@ -306,7 +306,7 @@ function reskins.bobs.assembly_pipe_pictures(tint)
                     width = 39,
                     height = 73,
                     shift = util.by_pixel(25.75, 1.25),
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Mask
                 {
@@ -316,7 +316,7 @@ function reskins.bobs.assembly_pipe_pictures(tint)
                     height = 73,
                     shift = util.by_pixel(25.75, 1.25),
                     tint = tint,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Highlights
                 {
@@ -326,10 +326,10 @@ function reskins.bobs.assembly_pipe_pictures(tint)
                     height = 73,
                     shift = util.by_pixel(25.75, 1.25),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5
-                }
-            }
-        }
+                    scale = 0.5,
+                },
+            },
+        },
     }
 end
 
@@ -345,7 +345,7 @@ function reskins.bobs.furnace_pipe_pictures(tint)
             width = 70,
             height = 26,
             shift = util.by_pixel(2.5, 10),
-            scale = 0.5
+            scale = 0.5,
         },
         east = {
             layers = {
@@ -356,7 +356,7 @@ function reskins.bobs.furnace_pipe_pictures(tint)
                     width = 30,
                     height = 70,
                     shift = util.by_pixel(-20.5, 3),
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Mask
                 {
@@ -366,7 +366,7 @@ function reskins.bobs.furnace_pipe_pictures(tint)
                     height = 70,
                     shift = util.by_pixel(-20.5, 3),
                     tint = tint,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Highlights
                 {
@@ -376,9 +376,9 @@ function reskins.bobs.furnace_pipe_pictures(tint)
                     height = 70,
                     shift = util.by_pixel(-20.5, 3),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5
-                }
-            }
+                    scale = 0.5,
+                },
+            },
         },
         south = {
             layers = {
@@ -389,7 +389,7 @@ function reskins.bobs.furnace_pipe_pictures(tint)
                     width = 76,
                     height = 58,
                     shift = util.by_pixel(0.5, -30.5),
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Mask
                 {
@@ -399,7 +399,7 @@ function reskins.bobs.furnace_pipe_pictures(tint)
                     height = 58,
                     shift = util.by_pixel(0.5, -30.5),
                     tint = tint,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Highlights
                 {
@@ -409,9 +409,9 @@ function reskins.bobs.furnace_pipe_pictures(tint)
                     height = 58,
                     shift = util.by_pixel(0.5, -30.5),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5
-                }
-            }
+                    scale = 0.5,
+                },
+            },
         },
         west = {
             layers = {
@@ -422,7 +422,7 @@ function reskins.bobs.furnace_pipe_pictures(tint)
                     width = 22,
                     height = 68,
                     shift = util.by_pixel(21.5, 2),
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Mask
                 {
@@ -432,7 +432,7 @@ function reskins.bobs.furnace_pipe_pictures(tint)
                     height = 68,
                     shift = util.by_pixel(21.5, 2),
                     tint = tint,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Highlights
                 {
@@ -442,10 +442,10 @@ function reskins.bobs.furnace_pipe_pictures(tint)
                     height = 68,
                     shift = util.by_pixel(21.5, 2),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5
-                }
-            }
-        }
+                    scale = 0.5,
+                },
+            },
+        },
     }
 end
 
@@ -506,7 +506,7 @@ reskins.bobs.electric_drill_animation_sequence = {
     21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
     21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
     21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
-    21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 1
+    21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 1,
 }
 
 ---Duplicate of vanilla Factorio `electric_drill_animation_shadow_sequence` for compatibility purposes.
@@ -527,7 +527,7 @@ reskins.bobs.electric_drill_animation_shadow_sequence = {
     21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
     21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
     21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
-    21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 1
+    21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 1,
 }
 
 ---Duplicate of vanilla Factorio `electric_mining_drill_add_light_offsets()` for compatibility purposes.\
@@ -544,12 +544,12 @@ end
 
 ---Duplicate of vanilla Factorio `electric_mining_drill_primary_light` for compatibility purposes.
 reskins.bobs.electric_mining_drill_primary_light = electric_mining_drill_add_light_offsets({
-    light = { intensity = 1, size = 3, color = { r = 1, g = 1, b = 1 }, minimum_darkness = 0.1 }
+    light = { intensity = 1, size = 3, color = { r = 1, g = 1, b = 1 }, minimum_darkness = 0.1 },
 })
 
 ---Duplicate of vanilla Factorio `electric_mining_drill_secondary_light` for compatibility purposes.
 reskins.bobs.electric_mining_drill_secondary_light = electric_mining_drill_add_light_offsets({
     always_draw = true,
     apply_tint = "status",
-    light = { intensity = 0.8, size = 1.5, color = { r = 1, g = 1, b = 1 }, minimum_darkness = 0.1 }
+    light = { intensity = 0.8, size = 1.5, color = { r = 1, g = 1, b = 1 }, minimum_darkness = 0.1 },
 })

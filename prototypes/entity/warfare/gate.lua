@@ -15,7 +15,7 @@ local inputs = {
     type = "gate",
     base_entity_name = "gate",
     mod = "bobs",
-    particles = { ["big"] = 1,["medium"] = 2 },
+    particles = { ["big"] = 1, ["medium"] = 2 },
 }
 
 inputs.icon_filename = "__reskins-bobs__/graphics/icons/warfare/reinforced-gate/gate.png"
@@ -56,7 +56,7 @@ remnant.animation = {
         axially_symmetrical = false,
         direction_count = 4,
         shift = util.by_pixel(0, 1),
-        scale = 0.5
+        scale = 0.5,
     },
     {
         filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/remnants/hr-reinforced-gate-remnants-var-2.png",
@@ -68,7 +68,7 @@ remnant.animation = {
         axially_symmetrical = false,
         direction_count = 4,
         shift = util.by_pixel(-0.5, 0),
-        scale = 0.5
+        scale = 0.5,
     },
     {
         filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/remnants/hr-reinforced-gate-remnants-var-3.png",
@@ -80,8 +80,8 @@ remnant.animation = {
         axially_symmetrical = false,
         direction_count = 4,
         shift = util.by_pixel(0, 0.5),
-        scale = 0.5
-    }
+        scale = 0.5,
+    },
 }
 
 -- Reskin entity
@@ -94,7 +94,7 @@ entity.vertical_animation = {
             height = 120,
             frame_count = 16,
             shift = util.by_pixel(-1, -13),
-            scale = 0.5
+            scale = 0.5,
         },
         {
             filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/shadows/hr-reinforced-gate-vertical-shadow.png",
@@ -104,9 +104,9 @@ entity.vertical_animation = {
             frame_count = 16,
             shift = util.by_pixel(9, 9),
             draw_as_shadow = true,
-            scale = 0.5
-        }
-    }
+            scale = 0.5,
+        },
+    },
 }
 
 entity.horizontal_animation = {
@@ -118,7 +118,7 @@ entity.horizontal_animation = {
             height = 90,
             frame_count = 16,
             shift = util.by_pixel(0, -3),
-            scale = 0.5
+            scale = 0.5,
         },
         {
             filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/shadows/hr-reinforced-gate-horizontal-shadow.png",
@@ -128,9 +128,9 @@ entity.horizontal_animation = {
             frame_count = 16,
             shift = util.by_pixel(12, 10),
             draw_as_shadow = true,
-            scale = 0.5
-        }
-    }
+            scale = 0.5,
+        },
+    },
 }
 
 entity.horizontal_rail_animation_left = {
@@ -142,7 +142,7 @@ entity.horizontal_rail_animation_left = {
             height = 74,
             frame_count = 16,
             shift = util.by_pixel(0, -7),
-            scale = 0.5
+            scale = 0.5,
         },
         {
             filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/shadows/hr-reinforced-gate-rail-horizontal-shadow-left.png",
@@ -152,9 +152,9 @@ entity.horizontal_rail_animation_left = {
             frame_count = 16,
             shift = util.by_pixel(12, 10),
             draw_as_shadow = true,
-            scale = 0.5
-        }
-    }
+            scale = 0.5,
+        },
+    },
 }
 
 entity.horizontal_rail_animation_right = {
@@ -166,7 +166,7 @@ entity.horizontal_rail_animation_right = {
             height = 74,
             frame_count = 16,
             shift = util.by_pixel(0, -7),
-            scale = 0.5
+            scale = 0.5,
         },
         {
             filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/shadows/hr-reinforced-gate-rail-horizontal-shadow-right.png",
@@ -176,9 +176,9 @@ entity.horizontal_rail_animation_right = {
             frame_count = 16,
             shift = util.by_pixel(12, 11),
             draw_as_shadow = true,
-            scale = 0.5
-        }
-    }
+            scale = 0.5,
+        },
+    },
 }
 
 entity.vertical_rail_animation_left = {
@@ -190,7 +190,7 @@ entity.vertical_rail_animation_left = {
             height = 118,
             frame_count = 16,
             shift = util.by_pixel(0, -13),
-            scale = 0.5
+            scale = 0.5,
         },
         {
             filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/shadows/hr-reinforced-gate-rail-vertical-shadow-left.png",
@@ -200,9 +200,9 @@ entity.vertical_rail_animation_left = {
             frame_count = 16,
             shift = util.by_pixel(9, 9),
             draw_as_shadow = true,
-            scale = 0.5
-        }
-    }
+            scale = 0.5,
+        },
+    },
 }
 
 entity.vertical_rail_animation_right = {
@@ -214,7 +214,7 @@ entity.vertical_rail_animation_right = {
             height = 118,
             frame_count = 16,
             shift = util.by_pixel(0, -13),
-            scale = 0.5
+            scale = 0.5,
         },
         {
             filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/shadows/hr-reinforced-gate-rail-vertical-shadow-right.png",
@@ -224,9 +224,9 @@ entity.vertical_rail_animation_right = {
             frame_count = 16,
             shift = util.by_pixel(9, 9),
             draw_as_shadow = true,
-            scale = 0.5
-        }
-    }
+            scale = 0.5,
+        },
+    },
 }
 
 entity.vertical_rail_base = {
@@ -236,7 +236,7 @@ entity.vertical_rail_base = {
     height = 130,
     frame_count = 16,
     shift = util.by_pixel(-1, 0),
-    scale = 0.5
+    scale = 0.5,
 }
 
 entity.horizontal_rail_base = {
@@ -246,7 +246,7 @@ entity.horizontal_rail_base = {
     height = 104,
     frame_count = 16,
     shift = util.by_pixel(0, 3),
-    scale = 0.5
+    scale = 0.5,
 }
 
 entity.wall_patch = {
@@ -258,7 +258,7 @@ entity.wall_patch = {
             height = 94,
             frame_count = 16,
             shift = util.by_pixel(-1, 13),
-            scale = 0.5
+            scale = 0.5,
         },
         {
             filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/shadows/hr-reinforced-gate-wall-patch-shadow.png",
@@ -268,7 +268,7 @@ entity.wall_patch = {
             frame_count = 16,
             shift = util.by_pixel(9, 33),
             draw_as_shadow = true,
-            scale = 0.5
-        }
-    }
+            scale = 0.5,
+        },
+    },
 }

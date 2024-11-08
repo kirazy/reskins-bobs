@@ -36,7 +36,7 @@ local function sniper_turret_extension(parameters)
         line_length = parameters.line_length or 0,
         run_mode = parameters.run_mode or "forward",
         shift = util.by_pixel(0, -30.5),
-        scale = 0.5
+        scale = 0.5,
     }
 end
 
@@ -54,7 +54,7 @@ local function sniper_turret_extension_tint(parameters)
         shift = util.by_pixel(0, -30.5),
         flags = { "mask" },
         apply_runtime_tint = true,
-        scale = 0.5
+        scale = 0.5,
     }
 end
 
@@ -71,7 +71,7 @@ local function sniper_turret_extension_mask(inputs, parameters)
         run_mode = parameters.run_mode or "forward",
         shift = util.by_pixel(0, -30.5),
         tint = inputs.tint,
-        scale = 0.5
+        scale = 0.5,
     }
 end
 
@@ -88,7 +88,7 @@ local function sniper_turret_extension_highlights(parameters)
         run_mode = parameters.run_mode or "forward",
         shift = util.by_pixel(0, -30.5),
         blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-        scale = 0.5
+        scale = 0.5,
     }
 end
 
@@ -104,7 +104,7 @@ local function sniper_turret_extension_shadow(parameters)
         run_mode = parameters.run_mode or "forward",
         shift = util.by_pixel(21.5, 2),
         draw_as_shadow = true,
-        scale = 0.5
+        scale = 0.5,
     }
 end
 
@@ -118,7 +118,7 @@ local function sniper_turret_shooting()
         frame_count = 1,
         direction_count = 64,
         shift = util.by_pixel(0, -30.5),
-        scale = 0.5
+        scale = 0.5,
     }
 end
 
@@ -134,7 +134,7 @@ local function sniper_turret_shooting_tint()
         apply_runtime_tint = true,
         direction_count = 64,
         shift = util.by_pixel(0, -30.5),
-        scale = 0.5
+        scale = 0.5,
     }
 end
 
@@ -149,7 +149,7 @@ local function sniper_turret_shooting_mask(inputs)
         tint = inputs.tint,
         direction_count = 64,
         shift = util.by_pixel(0, -30.5),
-        scale = 0.5
+        scale = 0.5,
     }
 end
 
@@ -164,7 +164,7 @@ local function sniper_turret_shooting_highlights()
         blend_mode = reskins.lib.settings.blend_mode, -- "additive",
         direction_count = 64,
         shift = util.by_pixel(0, -30.5),
-        scale = 0.5
+        scale = 0.5,
     }
 end
 
@@ -179,7 +179,7 @@ local function sniper_turret_shooting_shadow()
         direction_count = 64,
         draw_as_shadow = true,
         shift = util.by_pixel(21.5, 2),
-        scale = 0.5
+        scale = 0.5,
     }
 end
 
@@ -219,8 +219,8 @@ for name, map in pairs(tier_map) do
             sniper_turret_extension_tint({ frame_count = 1, line_length = 1 }),
             sniper_turret_extension_mask(inputs, { frame_count = 1, line_length = 1 }),
             sniper_turret_extension_highlights({ frame_count = 1, line_length = 1 }),
-            sniper_turret_extension_shadow({ frame_count = 1, line_length = 1 })
-        }
+            sniper_turret_extension_shadow({ frame_count = 1, line_length = 1 }),
+        },
     }
     entity.preparing_animation = {
         layers = {
@@ -228,8 +228,8 @@ for name, map in pairs(tier_map) do
             sniper_turret_extension_tint({}),
             sniper_turret_extension_mask(inputs, {}),
             sniper_turret_extension_highlights({}),
-            sniper_turret_extension_shadow({})
-        }
+            sniper_turret_extension_shadow({}),
+        },
     }
     entity.prepared_animation = {
         layers = {
@@ -238,7 +238,7 @@ for name, map in pairs(tier_map) do
             sniper_turret_shooting_mask(inputs),
             sniper_turret_shooting_highlights(),
             sniper_turret_shooting_shadow(),
-        }
+        },
     }
     entity.attacking_animation = {
         layers = {
@@ -247,7 +247,7 @@ for name, map in pairs(tier_map) do
             sniper_turret_shooting_mask(inputs),
             sniper_turret_shooting_highlights(),
             sniper_turret_shooting_shadow(),
-        }
+        },
     }
     entity.folding_animation = {
         layers = {
@@ -255,8 +255,8 @@ for name, map in pairs(tier_map) do
             sniper_turret_extension_tint({ run_mode = "backward" }),
             sniper_turret_extension_mask(inputs, { run_mode = "backward" }),
             sniper_turret_extension_highlights({ run_mode = "backward" }),
-            sniper_turret_extension_shadow({ run_mode = "backward" })
-        }
+            sniper_turret_extension_shadow({ run_mode = "backward" }),
+        },
     }
     entity.base_picture = {
         layers = {
@@ -269,7 +269,7 @@ for name, map in pairs(tier_map) do
                 direction_count = 1,
                 frame_count = 1,
                 shift = util.by_pixel(2, 0),
-                scale = 0.5
+                scale = 0.5,
             },
             -- Runtime Mask
             {
@@ -281,7 +281,7 @@ for name, map in pairs(tier_map) do
                 frame_count = 1,
                 shift = util.by_pixel(2, 0),
                 apply_runtime_tint = true,
-                scale = 0.5
+                scale = 0.5,
             },
             -- Shadow
             {
@@ -293,9 +293,9 @@ for name, map in pairs(tier_map) do
                 direction_count = 1,
                 frame_count = 1,
                 shift = util.by_pixel(2, 0),
-                scale = 0.5
+                scale = 0.5,
             },
-        }
+        },
     }
 
     entity.water_reflection = util.copy(data.raw[inputs.type]["gun-turret"].water_reflection)

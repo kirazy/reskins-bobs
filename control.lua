@@ -14,7 +14,7 @@ local function on_configuration_changed(data)
                 if data.mod_changes and data.mod_changes["reskins-bobs"] and data.mod_changes["reskins-bobs"].old_version then
                     -- 1.0.7 update
                     if _version.is_same_or_older(data.mod_changes["reskins-bobs"].old_version, "1.0.7") then
-                        player.print({"", "[", {"reskins-library.reskins-suite-name"}, "] ", {"reskins-updates.reskins-bobs-1-0-7-update", {"mod-setting-name.reskins-bobs-do-bobelectronics-circuit-style"}}})
+                        player.print({ "", "[", { "reskins-library.reskins-suite-name" }, "] ", { "reskins-updates.reskins-bobs-1-0-7-update", { "mod-setting-name.reskins-bobs-do-bobelectronics-circuit-style" } } })
                     end
                 end
             end

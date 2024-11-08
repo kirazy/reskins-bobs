@@ -51,7 +51,7 @@ entity.base_animation =
             frame_count = 8,
             animation_speed = 0.5,
             shift = util.by_pixel(1, -21),
-            scale = 0.5
+            scale = 0.5,
         },
         {
             filename = "__reskins-bobs__/graphics/entity/logistics/zone-interface/hr-logistic-zone-interface-shadow.png",
@@ -62,9 +62,9 @@ entity.base_animation =
             animation_speed = 0.5,
             shift = util.by_pixel(11.5, 1.5),
             draw_as_shadow = true,
-            scale = 0.5
+            scale = 0.5,
         },
-    }
+    },
 }
 
 -- Set drawing box so the entity appears properly within the GUI

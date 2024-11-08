@@ -21,7 +21,7 @@ local tier_map = {
     ["bob-laser-turret-2"] = { 2, "sapphire" },
     ["bob-laser-turret-3"] = { 3, "emerald" },
     ["bob-laser-turret-4"] = { 4, "topaz" },
-    ["bob-laser-turret-5"] = { 5, "diamond" }
+    ["bob-laser-turret-5"] = { 5, "diamond" },
 }
 
 local function turret_extension(parameters)
@@ -37,7 +37,7 @@ local function turret_extension(parameters)
         axially_symmetrical = false,
         direction_count = 4,
         shift = util.by_pixel(0, -32.5),
-        scale = 0.5
+        scale = 0.5,
     }
 end
 
@@ -55,7 +55,7 @@ local function turret_extension_mask(parameters)
         apply_runtime_tint = true,
         direction_count = 4,
         shift = util.by_pixel(0, -43),
-        scale = 0.5
+        scale = 0.5,
     }
 end
 
@@ -72,7 +72,7 @@ local function turret_extension_shadow(parameters)
         direction_count = 4,
         draw_as_shadow = true,
         shift = util.by_pixel(47, 2.5),
-        scale = 0.5
+        scale = 0.5,
     }
 end
 
@@ -86,7 +86,7 @@ local function turret_shooting()
         frame_count = 1,
         direction_count = 64,
         shift = util.by_pixel(0, -35),
-        scale = 0.5
+        scale = 0.5,
     }
 end
 
@@ -102,7 +102,7 @@ local function turret_shooting_mask()
         apply_runtime_tint = true,
         direction_count = 64,
         shift = util.by_pixel(0, -43.5),
-        scale = 0.5
+        scale = 0.5,
     }
 end
 
@@ -117,7 +117,7 @@ local function turret_shooting_shadow()
         direction_count = 64,
         draw_as_shadow = true,
         shift = util.by_pixel(50.5, 2.5),
-        scale = 0.5
+        scale = 0.5,
     }
 end
 
@@ -132,7 +132,7 @@ local function turret_shooting_glow(lens)
         direction_count = 64,
         shift = util.by_pixel(-0.5, -35),
         blend_mode = "additive",
-        scale = 0.5
+        scale = 0.5,
     }
 end
 
@@ -211,8 +211,8 @@ for name, map in pairs(tier_map) do
                 direction_count = 1,
                 shift = util.by_pixel(4, -2.5),
                 scale = 0.5,
-            }
-        }
+            },
+        },
     })
 
     -- Reskin entities
@@ -220,24 +220,24 @@ for name, map in pairs(tier_map) do
         layers = {
             turret_extension({ frame_count = 1, line_length = 1 }),
             turret_extension_mask({ frame_count = 1, line_length = 1 }),
-            turret_extension_shadow({ frame_count = 1, line_length = 1 })
-        }
+            turret_extension_shadow({ frame_count = 1, line_length = 1 }),
+        },
     }
 
     entity.preparing_animation = {
         layers = {
             turret_extension({}),
             turret_extension_mask({}),
-            turret_extension_shadow({})
-        }
+            turret_extension_shadow({}),
+        },
     }
 
     entity.prepared_animation = {
         layers = {
             turret_shooting(),
             turret_shooting_mask(),
-            turret_shooting_shadow()
-        }
+            turret_shooting_shadow(),
+        },
     }
 
     if lens then
@@ -255,7 +255,7 @@ for name, map in pairs(tier_map) do
             turret_extension({ run_mode = "backward" }),
             turret_extension_mask({ run_mode = "backward" }),
             turret_extension_shadow({ run_mode = "backward" }),
-        }
+        },
     }
 
     entity.base_picture = {
@@ -269,7 +269,7 @@ for name, map in pairs(tier_map) do
                 direction_count = 1,
                 frame_count = 1,
                 shift = util.by_pixel(-0.5, 2),
-                scale = 0.5
+                scale = 0.5,
             },
             -- Mask
             {
@@ -281,7 +281,7 @@ for name, map in pairs(tier_map) do
                 frame_count = 1,
                 shift = util.by_pixel(-0.5, 2),
                 tint = inputs.tint,
-                scale = 0.5
+                scale = 0.5,
             },
             -- Highlights
             {
@@ -293,7 +293,7 @@ for name, map in pairs(tier_map) do
                 frame_count = 1,
                 shift = util.by_pixel(-0.5, 2),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                scale = 0.5
+                scale = 0.5,
             },
             -- Shadow
             {
@@ -305,9 +305,9 @@ for name, map in pairs(tier_map) do
                 direction_count = 1,
                 frame_count = 1,
                 shift = util.by_pixel(6, 3),
-                scale = 0.5
-            }
-        }
+                scale = 0.5,
+            },
+        },
     }
 
     if name ~= "laser-turret" then

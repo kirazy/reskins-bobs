@@ -35,7 +35,7 @@ local function reskin_lab(name)
                 line_length = 11,
                 animation_speed = 1 / 3,
                 shift = util.by_pixel(0, 1.5),
-                scale = 0.5
+                scale = 0.5,
             },
             {
                 filename = "__base__/graphics/entity/lab/hr-lab-integration.png",
@@ -46,7 +46,7 @@ local function reskin_lab(name)
                 repeat_count = 33,
                 animation_speed = 1 / 3,
                 shift = util.by_pixel(0, 15.5),
-                scale = 0.5
+                scale = 0.5,
             },
             {
                 filename = "__base__/graphics/entity/lab/hr-lab-shadow.png",
@@ -58,9 +58,9 @@ local function reskin_lab(name)
                 animation_speed = 1 / 3,
                 shift = util.by_pixel(13, 11),
                 scale = 0.5,
-                draw_as_shadow = true
-            }
-        }
+                draw_as_shadow = true,
+            },
+        },
     }
 
     entity.off_animation =
@@ -73,7 +73,7 @@ local function reskin_lab(name)
                 height = 174,
                 frame_count = 1,
                 shift = util.by_pixel(0, 1.5),
-                scale = 0.5
+                scale = 0.5,
             },
             {
                 filename = "__base__/graphics/entity/lab/hr-lab-integration.png",
@@ -81,7 +81,7 @@ local function reskin_lab(name)
                 height = 162,
                 frame_count = 1,
                 shift = util.by_pixel(0, 15.5),
-                scale = 0.5
+                scale = 0.5,
             },
             {
                 filename = "__base__/graphics/entity/lab/hr-lab-shadow.png",
@@ -90,9 +90,9 @@ local function reskin_lab(name)
                 frame_count = 1,
                 shift = util.by_pixel(13, 11),
                 draw_as_shadow = true,
-                scale = 0.5
-            }
-        }
+                scale = 0.5,
+            },
+        },
     }
 end
 

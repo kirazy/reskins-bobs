@@ -82,8 +82,8 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(27, 21),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 scale = 0.5,
-            }
-        }
+            },
+        },
     }
 
     -- Reskin entities
@@ -98,7 +98,7 @@ for name, map in pairs(tier_map) do
                     width = 219,
                     height = 215,
                     shift = util.by_pixel(-0.25, 3.75),
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Mask
                 {
@@ -109,7 +109,7 @@ for name, map in pairs(tier_map) do
                     height = 215,
                     shift = util.by_pixel(-0.25, 3.75),
                     tint = inputs.tint,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Highlights
                 {
@@ -120,7 +120,7 @@ for name, map in pairs(tier_map) do
                     height = 215,
                     shift = util.by_pixel(-0.25, 3.75),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Shadow
                 {
@@ -131,28 +131,28 @@ for name, map in pairs(tier_map) do
                     height = 153,
                     shift = util.by_pixel(29.75, 22.25),
                     scale = 0.5,
-                    draw_as_shadow = true
-                }
-            }
+                    draw_as_shadow = true,
+                },
+            },
         },
         fluid_background = {
             filename = "__base__/graphics/entity/storage-tank/fluid-background.png",
             priority = "extra-high",
             width = 32,
-            height = 15
+            height = 15,
         },
         window_background = {
             filename = "__base__/graphics/entity/storage-tank/hr-window-background.png",
             priority = "extra-high",
             width = 34,
             height = 48,
-            scale = 0.5
+            scale = 0.5,
         },
         flow_sprite = {
             filename = "__base__/graphics/entity/pipe/fluid-flow-low-temperature.png",
             priority = "extra-high",
             width = 160,
-            height = 20
+            height = 20,
         },
         gas_flow = {
             filename = "__base__/graphics/entity/pipe/hr-steam.png",
@@ -164,8 +164,8 @@ for name, map in pairs(tier_map) do
             axially_symmetrical = false,
             animation_speed = 0.25,
             direction_count = 1,
-            scale = 0.5
-        }
+            scale = 0.5,
+        },
     }
 
     entity.water_reflection = util.copy(data.raw[inputs.type]["storage-tank"].water_reflection)

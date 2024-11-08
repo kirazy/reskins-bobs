@@ -18,17 +18,17 @@ local inputs = {
 ---@type CreateIconsFromListTable
 local technologies = {
     -- Steam power-related unlocks
-    ["basic-automation"] = {group = "assembly", icon_name = "automation", tint = util.color("262626")},
-    ["steam-power"] = {flat_icon = true}, -- unlocks boiler/steam drill/inserter/pump, conditional on steam setting, currently a steam cloud
+    ["basic-automation"] = { group = "assembly", icon_name = "automation", tint = util.color("262626") },
+    ["steam-power"] = { flat_icon = true }, -- unlocks boiler/steam drill/inserter/pump, conditional on steam setting, currently a steam cloud
     -- ["electricity"] = {}, -- inserter/miner/radar/pole/fluid burner gen
 
     -- Labs
-    ["lab"] = {flat_icon = true}, -- lab 1
-    ["advanced-research"] = {flat_icon = true}, -- lab 2
-    ["alien-research"] = {flat_icon = true},
+    ["lab"] = { flat_icon = true },             -- lab 1
+    ["advanced-research"] = { flat_icon = true }, -- lab 2
+    ["alien-research"] = { flat_icon = true },
 
     -- TECHNOLOGY EFFECTS
-    ["bob-infinite-worker-robots-storage-1"] = {technology_icon_filename = "__base__/graphics/technology/worker-robots-storage.png", technology_icon_extras = {reskins.lib.return_technology_effect_icon("capacity")}, technology_icon_size = 256, flat_icon = true},
+    ["bob-infinite-worker-robots-storage-1"] = { technology_icon_filename = "__base__/graphics/technology/worker-robots-storage.png", technology_icon_extras = { reskins.lib.return_technology_effect_icon("capacity") }, technology_icon_size = 256, flat_icon = true },
 }
 
 if reskins.lib.version.is_same_or_newer(mods["bobassembly"], "1.3.0") then
@@ -39,19 +39,19 @@ end
 reskins.internal.create_icons_from_list(technologies, inputs)
 
 -- Overwrite icons for technology effects
-data.raw["utility-sprites"].default.worker_robot_storage_modifier_icon = util.merge{data.raw["utility-sprites"].default.worker_robot_storage_modifier_icon, {
+data.raw["utility-sprites"].default.worker_robot_storage_modifier_icon = util.merge { data.raw["utility-sprites"].default.worker_robot_storage_modifier_icon, {
     filename = "__base__/graphics/icons/logistic-robot.png",
     width = 64,
     height = 64,
     mipmap_count = 4,
-}}
+} }
 
-data.raw["utility-sprites"].default.worker_robot_speed_modifier_icon = util.merge{data.raw["utility-sprites"].default.worker_robot_speed_modifier_icon, {
+data.raw["utility-sprites"].default.worker_robot_speed_modifier_icon = util.merge { data.raw["utility-sprites"].default.worker_robot_speed_modifier_icon, {
     filename = "__base__/graphics/icons/logistic-robot.png",
     width = 64,
     height = 64,
     mipmap_count = 4,
-}}
+} }
 
 -- Set infer_icon properties for associated technologies
 local technology_infer_icon_list = {

@@ -40,7 +40,7 @@ local function generate_robot_animations(tint)
                     frame_count = 1,
                     shift = util.by_pixel(0, -4.5),
                     direction_count = 16,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Mask
                 {
@@ -53,7 +53,7 @@ local function generate_robot_animations(tint)
                     shift = util.by_pixel(0, -4.5),
                     tint = tint,
                     direction_count = 16,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Highlights
                 {
@@ -66,9 +66,9 @@ local function generate_robot_animations(tint)
                     shift = util.by_pixel(0, -4.5),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     direction_count = 16,
-                    scale = 0.5
-                }
-            }
+                    scale = 0.5,
+                },
+            },
         },
         in_motion = {
             layers = {
@@ -83,7 +83,7 @@ local function generate_robot_animations(tint)
                     shift = util.by_pixel(0, -4.5),
                     direction_count = 16,
                     y = 76,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Mask
                 {
@@ -97,7 +97,7 @@ local function generate_robot_animations(tint)
                     tint = tint,
                     direction_count = 16,
                     y = 76,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Highlights
                 {
@@ -111,9 +111,9 @@ local function generate_robot_animations(tint)
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     direction_count = 16,
                     y = 76,
-                    scale = 0.5
-                }
-            }
+                    scale = 0.5,
+                },
+            },
         },
         working = {
             layers = {
@@ -128,7 +128,7 @@ local function generate_robot_animations(tint)
                     shift = util.by_pixel(-0.25, -5),
                     direction_count = 16,
                     animation_speed = 0.3,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Mask
                 {
@@ -142,7 +142,7 @@ local function generate_robot_animations(tint)
                     tint = tint,
                     direction_count = 16,
                     animation_speed = 0.3,
-                    scale = 0.5
+                    scale = 0.5,
                 },
                 -- Highlights
                 {
@@ -156,9 +156,9 @@ local function generate_robot_animations(tint)
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                     direction_count = 16,
                     animation_speed = 0.3,
-                    scale = 0.5
-                }
-            }
+                    scale = 0.5,
+                },
+            },
         },
         shadow_idle = {
             filename = "__base__/graphics/entity/construction-robot/hr-construction-robot-shadow.png",
@@ -170,7 +170,7 @@ local function generate_robot_animations(tint)
             shift = util.by_pixel(33.5, 18.75),
             direction_count = 16,
             scale = 0.5,
-            draw_as_shadow = true
+            draw_as_shadow = true,
         },
         shadow_in_motion = {
             filename = "__base__/graphics/entity/construction-robot/hr-construction-robot-shadow.png",
@@ -182,7 +182,7 @@ local function generate_robot_animations(tint)
             shift = util.by_pixel(33.5, 18.75),
             direction_count = 16,
             scale = 0.5,
-            draw_as_shadow = true
+            draw_as_shadow = true,
         },
         shadow_working = {
             filename = "__base__/graphics/entity/construction-robot/hr-construction-robot-shadow.png",
@@ -195,8 +195,8 @@ local function generate_robot_animations(tint)
             shift = util.by_pixel(33.5, 18.75),
             direction_count = 16,
             scale = 0.5,
-            draw_as_shadow = true
-        }
+            draw_as_shadow = true,
+        },
     }
 end
 
@@ -270,8 +270,8 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(2, 1),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 scale = 0.5,
-            }
-        }
+            },
+        },
     })
 
     -- Clear this, construction robots do not generate the corpse directly

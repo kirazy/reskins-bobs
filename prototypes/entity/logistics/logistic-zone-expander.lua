@@ -56,7 +56,7 @@ for name, map in pairs(tier_map) do
                 width = 56,
                 height = 156,
                 shift = util.by_pixel(0.5, -29.5),
-                scale = 0.5
+                scale = 0.5,
             },
             -- Mask
             {
@@ -65,7 +65,7 @@ for name, map in pairs(tier_map) do
                 height = 30,
                 shift = util.by_pixel(0.5, 0),
                 tint = inputs.tint,
-                scale = 0.5
+                scale = 0.5,
             },
             -- Highlights
             {
@@ -74,9 +74,9 @@ for name, map in pairs(tier_map) do
                 height = 30,
                 shift = util.by_pixel(0.5, 0),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                scale = 0.5
+                scale = 0.5,
             },
-        }
+        },
     }
 
     entity.base_animation = {
@@ -90,7 +90,7 @@ for name, map in pairs(tier_map) do
                 frame_count = 8,
                 animation_speed = 0.5,
                 shift = util.by_pixel(0.25, -66),
-                scale = 0.5
+                scale = 0.5,
             },
             -- Shadow
             {
@@ -100,9 +100,9 @@ for name, map in pairs(tier_map) do
                 frame_count = 8,
                 shift = util.by_pixel(44.5, -1.5),
                 draw_as_shadow = true,
-                scale = 0.5
-            }
-        }
+                scale = 0.5,
+            },
+        },
     }
 
     -- Set drawing box so the entity appears properly within the GUI
@@ -119,7 +119,7 @@ for name, map in pairs(tier_map) do
             scale = 5,
         },
         rotate = false,
-        orientation_to_variation = false
+        orientation_to_variation = false,
     }
 
     -- Label to skip to next iteration

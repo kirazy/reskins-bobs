@@ -13,7 +13,7 @@ local inputs = {
     icon_name = "nuclear-reactor",
     base_entity_name = "nuclear-reactor",
     mod = "bobs",
-    group = "power"
+    group = "power",
 }
 
 local reactors = {
@@ -53,7 +53,7 @@ local function skin_reactor_entity(name, tint, material)
                 height = 318,
                 scale = 0.5,
                 shift = util.by_pixel(-5, -7),
-                tint = tint
+                tint = tint,
             },
             -- Highlights
             {
@@ -79,9 +79,9 @@ local function skin_reactor_entity(name, tint, material)
                 height = 323,
                 scale = 0.5,
                 shift = { 1.625, 0 },
-                draw_as_shadow = true
-            }
-        }
+                draw_as_shadow = true,
+            },
+        },
     }
 
     -- Pipes
@@ -102,8 +102,8 @@ local function skin_reactor_entity(name, tint, material)
             width = 64,
             height = 64,
             variation_count = 12,
-            scale = 0.5
-        }
+            scale = 0.5,
+        },
     }
 
     entity.connection_patches_disconnected =
@@ -115,8 +115,8 @@ local function skin_reactor_entity(name, tint, material)
             height = 64,
             variation_count = 12,
             y = 64,
-            scale = 0.5
-        }
+            scale = 0.5,
+        },
     }
 end
 
@@ -184,8 +184,8 @@ local function skin_reactor_remnants(name, tint, material)
                 direction_count = 1,
                 shift = util.by_pixel(7, 4),
                 scale = 0.5,
-            }
-        }
+            },
+        },
     }
 end
 

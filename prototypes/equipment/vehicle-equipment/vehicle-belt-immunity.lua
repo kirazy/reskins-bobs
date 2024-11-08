@@ -33,5 +33,5 @@ equipment.sprite = {
     filename = "__base__/graphics/equipment/hr-belt-immunity-equipment.png",
     size = 64,
     priority = "medium",
-    scale = 0.5
+    scale = 0.5,
 }

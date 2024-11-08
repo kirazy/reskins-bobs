@@ -98,7 +98,7 @@ for name, map in pairs(tier_map) do
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 scale = 0.5,
             },
-        }
+        },
     })
 
     -- Determine sprite set to use
@@ -148,9 +148,9 @@ for name, map in pairs(tier_map) do
                         scale = 0.5,
                         draw_as_shadow = true,
                         shift = util.by_pixel(12.5, 0.5),
-                    }
-                }
-            }
+                    },
+                },
+            },
         },
         -- Beacon Antenna
         {
@@ -164,7 +164,7 @@ for name, map in pairs(tier_map) do
                 repeat_count = 45,
                 animation_speed = 0.5,
                 shift = util.by_pixel(3, -19),
-            }
+            },
         },
         -- Beacon Light Animation
         {
@@ -183,7 +183,7 @@ for name, map in pairs(tier_map) do
                 scale = 0.5,
                 shift = util.by_pixel(0.5, -18),
                 blend_mode = "additive",
-            }
+            },
         },
     }
 
@@ -202,9 +202,9 @@ for name, map in pairs(tier_map) do
                         height = 192,
                         scale = 0.5,
                         shift = util.by_pixel(0.5, 1),
-                    }
-                }
-            }
+                    },
+                },
+            },
         })
     elseif module_slots == 6 then
         -- Module slot overlay
@@ -238,9 +238,9 @@ for name, map in pairs(tier_map) do
                         scale = 0.5,
                         shift = util.by_pixel(0.5, 1),
                         blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    }
-                }
-            }
+                    },
+                },
+            },
         })
     end
 
