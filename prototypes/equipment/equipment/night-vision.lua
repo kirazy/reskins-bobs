@@ -48,7 +48,7 @@ for name, map in pairs(night_vision) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/equipment/hr-night-vision-equipment.png",
+                filename = "__base__/graphics/equipment/night-vision-equipment.png",
                 size = 128,
                 priority = "medium",
                 flags = { "no-crop" },

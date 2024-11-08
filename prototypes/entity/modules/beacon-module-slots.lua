@@ -205,7 +205,7 @@ local function setup_vanilla_module_slot(parameters)
                 render_layer = "lower-object",
                 pictures =
                 {
-                    filename = "__base__/graphics/entity/beacon/hr-beacon-module-slot-2.png",
+                    filename = "__base__/graphics/entity/beacon/beacon-module-slot-2.png",
                     line_length = 4,
                     width = 46,
                     height = 44,
@@ -219,7 +219,7 @@ local function setup_vanilla_module_slot(parameters)
                 render_layer = "lower-object",
                 pictures =
                 {
-                    filename = "__base__/graphics/entity/beacon/hr-beacon-module-mask-box-2.png",
+                    filename = "__base__/graphics/entity/beacon/beacon-module-mask-box-2.png",
                     line_length = 3,
                     width = 36,
                     height = 26,
@@ -232,7 +232,7 @@ local function setup_vanilla_module_slot(parameters)
                 apply_module_tint = "secondary",
                 render_layer = "lower-object-above-shadow",
                 pictures = {
-                    filename = "__base__/graphics/entity/beacon/hr-beacon-module-mask-lights-2.png",
+                    filename = "__base__/graphics/entity/beacon/beacon-module-mask-lights-2.png",
                     line_length = 3,
                     width = 24,
                     height = 14,
@@ -246,7 +246,7 @@ local function setup_vanilla_module_slot(parameters)
                 draw_as_light = true,
                 draw_as_sprite = false,
                 pictures = {
-                    filename = "__base__/graphics/entity/beacon/hr-beacon-module-lights-2.png",
+                    filename = "__base__/graphics/entity/beacon/beacon-module-lights-2.png",
                     line_length = 3,
                     width = 66,
                     height = 46,
@@ -264,7 +264,7 @@ local function setup_vanilla_module_slot(parameters)
                 has_empty_slot = true,
                 render_layer = "lower-object",
                 pictures = {
-                    filename = "__base__/graphics/entity/beacon/hr-beacon-module-slot-1.png",
+                    filename = "__base__/graphics/entity/beacon/beacon-module-slot-1.png",
                     line_length = 4,
                     width = 50,
                     height = 66,
@@ -278,7 +278,7 @@ local function setup_vanilla_module_slot(parameters)
                 apply_module_tint = "primary",
                 render_layer = "lower-object",
                 pictures = {
-                    filename = "__base__/graphics/entity/beacon/hr-beacon-module-mask-box-1.png",
+                    filename = "__base__/graphics/entity/beacon/beacon-module-mask-box-1.png",
                     line_length = 3,
                     width = 36,
                     height = 32,
@@ -292,7 +292,7 @@ local function setup_vanilla_module_slot(parameters)
                 apply_module_tint = "secondary",
                 render_layer = "lower-object-above-shadow",
                 pictures = {
-                    filename = "__base__/graphics/entity/beacon/hr-beacon-module-mask-lights-1.png",
+                    filename = "__base__/graphics/entity/beacon/beacon-module-mask-lights-1.png",
                     line_length = 3,
                     width = 26,
                     height = 12,
@@ -307,7 +307,7 @@ local function setup_vanilla_module_slot(parameters)
                 draw_as_light = true,
                 draw_as_sprite = false,
                 pictures = {
-                    filename = "__base__/graphics/entity/beacon/hr-beacon-module-lights-1.png",
+                    filename = "__base__/graphics/entity/beacon/beacon-module-lights-1.png",
                     line_length = 3,
                     width = 56,
                     height = 42,

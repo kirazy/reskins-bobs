@@ -48,7 +48,7 @@ for name, tier in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/radar/remnants/hr-radar-remnants.png",
+                filename = "__base__/graphics/entity/radar/remnants/radar-remnants.png",
                 line_length = 1,
                 width = 282,
                 height = 212,
@@ -92,7 +92,7 @@ for name, tier in pairs(tier_map) do
 
     -- Reskin entity
     entity.integration_patch = {
-        filename = "__base__/graphics/entity/radar/hr-radar-integration.png",
+        filename = "__base__/graphics/entity/radar/radar-integration.png",
         priority = "low",
         width = 238,
         height = 216,
@@ -105,7 +105,7 @@ for name, tier in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/radar/hr-radar.png",
+                filename = "__base__/graphics/entity/radar/radar.png",
                 priority = "low",
                 width = 196,
                 height = 254,
@@ -143,7 +143,7 @@ for name, tier in pairs(tier_map) do
             },
             -- Shadow
             {
-                filename = "__base__/graphics/entity/radar/hr-radar-shadow.png",
+                filename = "__base__/graphics/entity/radar/radar-shadow.png",
                 priority = "low",
                 width = 343,
                 height = 186,

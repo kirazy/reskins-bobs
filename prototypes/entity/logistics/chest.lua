@@ -79,7 +79,7 @@ for name, map in pairs(logistic_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/logistic-chest/remnants/hr-" .. chest .. "-chest-remnants.png",
+                filename = "__base__/graphics/entity/logistic-chest/remnants/" .. chest .. "-chest-remnants.png",
                 line_length = 1,
                 width = 116,
                 height = 82,
@@ -107,7 +107,7 @@ for name, map in pairs(logistic_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/logistic-chest/hr-logistic-chest-" .. chest .. ".png",
+                filename = "__base__/graphics/entity/logistic-chest/logistic-chest-" .. chest .. ".png",
                 priority = "extra-high",
                 width = 66,
                 height = 74,
@@ -127,7 +127,7 @@ for name, map in pairs(logistic_map) do
             },
             -- Shadow
             {
-                filename = "__base__/graphics/entity/logistic-chest/hr-logistic-chest-shadow.png",
+                filename = "__base__/graphics/entity/logistic-chest/logistic-chest-shadow.png",
                 priority = "extra-high",
                 width = 112,
                 height = 46,

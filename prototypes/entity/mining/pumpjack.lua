@@ -100,7 +100,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/remnants/hr-water-pumpjack-remnants-base.png" or "__base__/graphics/entity/pumpjack/remnants/hr-pumpjack-remnants.png",
+                filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/remnants/hr-water-pumpjack-remnants-base.png" or "__base__/graphics/entity/pumpjack/remnants/pumpjack-remnants.png",
                 line_length = 1,
                 width = 274,
                 height = 284,
@@ -141,7 +141,7 @@ for name, map in pairs(tier_map) do
         sheets = {
             -- Base
             {
-                filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/hr-water-pumpjack-base.png" or "__base__/graphics/entity/pumpjack/hr-pumpjack-base.png",
+                filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/hr-water-pumpjack-base.png" or "__base__/graphics/entity/pumpjack/pumpjack-base.png",
                 priority = "extra-high",
                 width = 261,
                 height = 273,
@@ -150,7 +150,7 @@ for name, map in pairs(tier_map) do
             },
             -- Shadow
             {
-                filename = "__base__/graphics/entity/pumpjack/hr-pumpjack-base-shadow.png",
+                filename = "__base__/graphics/entity/pumpjack/pumpjack-base-shadow.png",
                 width = 220,
                 height = 220,
                 scale = 0.5,
@@ -167,7 +167,7 @@ for name, map in pairs(tier_map) do
                 -- Base
                 {
                     priority = "high",
-                    filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/hr-water-pumpjack-horsehead.png" or "__base__/graphics/entity/pumpjack/hr-pumpjack-horsehead.png",
+                    filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/hr-water-pumpjack-horsehead.png" or "__base__/graphics/entity/pumpjack/pumpjack-horsehead.png",
                     animation_speed = animation_speed,
                     repeat_count = 6,
                     scale = 0.5,
@@ -208,7 +208,7 @@ for name, map in pairs(tier_map) do
                 -- Shadow
                 {
                     priority = "high",
-                    filename = "__base__/graphics/entity/pumpjack/hr-pumpjack-horsehead-shadow.png",
+                    filename = "__base__/graphics/entity/pumpjack/pumpjack-horsehead-shadow.png",
                     animation_speed = animation_speed,
                     repeat_count = 6,
                     draw_as_shadow = true,

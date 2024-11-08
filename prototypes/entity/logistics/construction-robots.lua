@@ -32,7 +32,7 @@ local function generate_robot_animations(tint)
             layers = {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/construction-robot/hr-construction-robot.png",
+                    filename = "__base__/graphics/entity/construction-robot/construction-robot.png",
                     priority = "high",
                     line_length = 16,
                     width = 66,
@@ -74,7 +74,7 @@ local function generate_robot_animations(tint)
             layers = {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/construction-robot/hr-construction-robot.png",
+                    filename = "__base__/graphics/entity/construction-robot/construction-robot.png",
                     priority = "high",
                     line_length = 16,
                     width = 66,
@@ -119,7 +119,7 @@ local function generate_robot_animations(tint)
             layers = {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/construction-robot/hr-construction-robot-working.png",
+                    filename = "__base__/graphics/entity/construction-robot/construction-robot-working.png",
                     priority = "high",
                     line_length = 2,
                     width = 57,
@@ -161,7 +161,7 @@ local function generate_robot_animations(tint)
             },
         },
         shadow_idle = {
-            filename = "__base__/graphics/entity/construction-robot/hr-construction-robot-shadow.png",
+            filename = "__base__/graphics/entity/construction-robot/construction-robot-shadow.png",
             priority = "high",
             line_length = 16,
             width = 104,
@@ -173,7 +173,7 @@ local function generate_robot_animations(tint)
             draw_as_shadow = true,
         },
         shadow_in_motion = {
-            filename = "__base__/graphics/entity/construction-robot/hr-construction-robot-shadow.png",
+            filename = "__base__/graphics/entity/construction-robot/construction-robot-shadow.png",
             priority = "high",
             line_length = 16,
             width = 104,
@@ -185,7 +185,7 @@ local function generate_robot_animations(tint)
             draw_as_shadow = true,
         },
         shadow_working = {
-            filename = "__base__/graphics/entity/construction-robot/hr-construction-robot-shadow.png",
+            filename = "__base__/graphics/entity/construction-robot/construction-robot-shadow.png",
             priority = "high",
             line_length = 16,
             width = 104,
@@ -232,7 +232,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/construction-robot/remnants/hr-construction-robot-remnants.png",
+                filename = "__base__/graphics/entity/construction-robot/remnants/construction-robot-remnants.png",
                 line_length = 1,
                 width = 120,
                 height = 114,

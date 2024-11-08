@@ -48,7 +48,7 @@ for name, map in pairs(exoskeletons) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/equipment/hr-exoskeleton-equipment.png",
+                filename = "__base__/graphics/equipment/exoskeleton-equipment.png",
                 width = 128,
                 height = 256,
                 priority = "medium",

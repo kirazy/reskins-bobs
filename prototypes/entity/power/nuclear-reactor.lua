@@ -40,7 +40,7 @@ local function skin_reactor_entity(name, tint, material)
         {
             -- Base
             {
-                filename = "__base__/graphics/entity/nuclear-reactor/hr-reactor.png",
+                filename = "__base__/graphics/entity/nuclear-reactor/reactor.png",
                 width = 302,
                 height = 318,
                 scale = 0.5,
@@ -74,7 +74,7 @@ local function skin_reactor_entity(name, tint, material)
             },
             -- Shadow
             {
-                filename = "__base__/graphics/entity/nuclear-reactor/hr-reactor-shadow.png",
+                filename = "__base__/graphics/entity/nuclear-reactor/reactor-shadow.png",
                 width = 525,
                 height = 323,
                 scale = 0.5,
@@ -133,7 +133,7 @@ local function skin_reactor_remnants(name, tint, material)
         {
             -- Base
             {
-                filename = "__base__/graphics/entity/nuclear-reactor/remnants/hr-nuclear-reactor-remnants.png",
+                filename = "__base__/graphics/entity/nuclear-reactor/remnants/nuclear-reactor-remnants.png",
                 line_length = 1,
                 width = 410,
                 height = 396,

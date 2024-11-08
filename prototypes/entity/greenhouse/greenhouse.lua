@@ -33,7 +33,7 @@ local greenhouse_base = reskins.lib.sprites.make_4way_animation_from_spritesheet
 })
 
 local greenhouse_integration_patch = {
-    filename = "__base__/graphics/entity/lab/hr-lab-integration.png",
+    filename = "__base__/graphics/entity/lab/lab-integration.png",
     width = 242,
     height = 162,
     shift = util.by_pixel(0, 15.5),
@@ -41,7 +41,7 @@ local greenhouse_integration_patch = {
 }
 
 local greenhouse_shadow = {
-    filename = "__base__/graphics/entity/lab/hr-lab-shadow.png",
+    filename = "__base__/graphics/entity/lab/lab-shadow.png",
     width = 242,
     height = 136,
     shift = util.by_pixel(13, 11),

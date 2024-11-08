@@ -175,7 +175,7 @@ for name, map in pairs(tier_map) do
             layers = {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/solar-panel/remnants/hr-solar-panel-remnants.png",
+                    filename = "__base__/graphics/entity/solar-panel/remnants/solar-panel-remnants.png",
                     line_length = 1,
                     width = 290,
                     height = 282,
@@ -223,7 +223,7 @@ for name, map in pairs(tier_map) do
             layers = {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/solar-panel/hr-solar-panel.png",
+                    filename = "__base__/graphics/entity/solar-panel/solar-panel.png",
                     priority = "high",
                     width = 230,
                     height = 224,
@@ -252,7 +252,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Shadow
                 {
-                    filename = "__base__/graphics/entity/solar-panel/hr-solar-panel-shadow.png",
+                    filename = "__base__/graphics/entity/solar-panel/solar-panel-shadow.png",
                     priority = "high",
                     width = 220,
                     height = 180,
@@ -267,7 +267,7 @@ for name, map in pairs(tier_map) do
         entity.overlay = {
             layers = {
                 {
-                    filename = "__base__/graphics/entity/solar-panel/hr-solar-panel-shadow-overlay.png",
+                    filename = "__base__/graphics/entity/solar-panel/solar-panel-shadow-overlay.png",
                     priority = "high",
                     width = 214,
                     height = 180,

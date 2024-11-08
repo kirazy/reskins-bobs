@@ -51,7 +51,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/medium-electric-pole/remnants/hr-medium-electric-pole-base-remnants.png",
+                filename = "__base__/graphics/entity/medium-electric-pole/remnants/medium-electric-pole-base-remnants.png",
                 line_length = 1,
                 width = 284,
                 height = 140,
@@ -91,7 +91,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/medium-electric-pole/remnants/hr-medium-electric-pole-top-remnants.png",
+                filename = "__base__/graphics/entity/medium-electric-pole/remnants/medium-electric-pole-top-remnants.png",
                 line_length = 1,
                 width = 100,
                 height = 184,
@@ -132,7 +132,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/medium-electric-pole/hr-medium-electric-pole.png",
+                filename = "__base__/graphics/entity/medium-electric-pole/medium-electric-pole.png",
                 priority = "extra-high",
                 width = 84,
                 height = 252,
@@ -164,7 +164,7 @@ for name, map in pairs(tier_map) do
             },
             -- Shadow
             {
-                filename = "__base__/graphics/entity/medium-electric-pole/hr-medium-electric-pole-shadow.png",
+                filename = "__base__/graphics/entity/medium-electric-pole/medium-electric-pole-shadow.png",
                 priority = "extra-high",
                 width = 280,
                 height = 64,

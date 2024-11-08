@@ -53,7 +53,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/storage-tank/remnants/hr-storage-tank-remnants.png",
+                filename = "__base__/graphics/entity/storage-tank/remnants/storage-tank-remnants.png",
                 line_length = 1,
                 width = 426,
                 height = 282,
@@ -95,7 +95,7 @@ for name, map in pairs(tier_map) do
             sheets = {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/storage-tank/hr-storage-tank.png",
+                    filename = "__base__/graphics/entity/storage-tank/storage-tank.png",
                     priority = "extra-high",
                     frames = 2,
                     width = 219,
@@ -127,7 +127,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Shadow
                 {
-                    filename = "__base__/graphics/entity/storage-tank/hr-storage-tank-shadow.png",
+                    filename = "__base__/graphics/entity/storage-tank/storage-tank-shadow.png",
                     priority = "extra-high",
                     frames = 2,
                     width = 291,
@@ -145,7 +145,7 @@ for name, map in pairs(tier_map) do
             height = 15,
         },
         window_background = {
-            filename = "__base__/graphics/entity/storage-tank/hr-window-background.png",
+            filename = "__base__/graphics/entity/storage-tank/window-background.png",
             priority = "extra-high",
             width = 34,
             height = 48,
@@ -158,7 +158,7 @@ for name, map in pairs(tier_map) do
             height = 20,
         },
         gas_flow = {
-            filename = "__base__/graphics/entity/pipe/hr-steam.png",
+            filename = "__base__/graphics/entity/pipe/steam.png",
             priority = "extra-high",
             line_length = 10,
             width = 48,

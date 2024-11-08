@@ -59,7 +59,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/beacon/remnants/hr-beacon-remnants.png",
+                filename = "__base__/graphics/entity/beacon/remnants/beacon-remnants.png",
                 line_length = 1,
                 width = 212,
                 height = 206,
@@ -142,7 +142,7 @@ for name, map in pairs(tier_map) do
                     },
                     -- Shadow
                     {
-                        filename = "__base__/graphics/entity/beacon/hr-beacon-shadow.png",
+                        filename = "__base__/graphics/entity/beacon/beacon-shadow.png",
                         width = 244,
                         height = 176,
                         scale = 0.5,
@@ -174,7 +174,7 @@ for name, map in pairs(tier_map) do
             draw_as_light = true,
             always_draw = false,
             animation = {
-                filename = "__base__/graphics/entity/beacon/hr-beacon-light.png",
+                filename = "__base__/graphics/entity/beacon/beacon-light.png",
                 line_length = 9,
                 width = 110,
                 height = 186,

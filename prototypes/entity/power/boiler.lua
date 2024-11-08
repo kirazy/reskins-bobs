@@ -63,7 +63,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/boiler/remnants/hr-boiler-remnants.png",
+                filename = "__base__/graphics/entity/boiler/remnants/boiler-remnants.png",
                 line_length = 1,
                 width = 274,
                 height = 220,
@@ -111,7 +111,7 @@ for name, map in pairs(tier_map) do
             layers = {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/boiler/hr-boiler-N-idle.png",
+                    filename = "__base__/graphics/entity/boiler/boiler-N-idle.png",
                     priority = "extra-high",
                     width = 269,
                     height = 221,
@@ -140,7 +140,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Shadow
                 {
-                    filename = "__base__/graphics/entity/boiler/hr-boiler-N-shadow.png",
+                    filename = "__base__/graphics/entity/boiler/boiler-N-shadow.png",
                     priority = "extra-high",
                     width = 274,
                     height = 164,
@@ -154,7 +154,7 @@ for name, map in pairs(tier_map) do
             layers = {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/boiler/hr-boiler-E-idle.png",
+                    filename = "__base__/graphics/entity/boiler/boiler-E-idle.png",
                     priority = "extra-high",
                     width = 216,
                     height = 301,
@@ -183,7 +183,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Shadow
                 {
-                    filename = "__base__/graphics/entity/boiler/hr-boiler-E-shadow.png",
+                    filename = "__base__/graphics/entity/boiler/boiler-E-shadow.png",
                     priority = "extra-high",
                     width = 184,
                     height = 194,
@@ -197,7 +197,7 @@ for name, map in pairs(tier_map) do
             layers = {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/boiler/hr-boiler-S-idle.png",
+                    filename = "__base__/graphics/entity/boiler/boiler-S-idle.png",
                     priority = "extra-high",
                     width = 260,
                     height = 192,
@@ -226,7 +226,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Shadow
                 {
-                    filename = "__base__/graphics/entity/boiler/hr-boiler-S-shadow.png",
+                    filename = "__base__/graphics/entity/boiler/boiler-S-shadow.png",
                     priority = "extra-high",
                     width = 311,
                     height = 131,
@@ -240,7 +240,7 @@ for name, map in pairs(tier_map) do
             layers = {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/boiler/hr-boiler-W-idle.png",
+                    filename = "__base__/graphics/entity/boiler/boiler-W-idle.png",
                     priority = "extra-high",
                     width = 196,
                     height = 273,
@@ -269,7 +269,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Shadow
                 {
-                    filename = "__base__/graphics/entity/boiler/hr-boiler-W-shadow.png",
+                    filename = "__base__/graphics/entity/boiler/boiler-W-shadow.png",
                     priority = "extra-high",
                     width = 206,
                     height = 218,

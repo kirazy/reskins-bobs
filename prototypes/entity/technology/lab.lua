@@ -38,7 +38,7 @@ local function reskin_lab(name)
                 scale = 0.5,
             },
             {
-                filename = "__base__/graphics/entity/lab/hr-lab-integration.png",
+                filename = "__base__/graphics/entity/lab/lab-integration.png",
                 width = 242,
                 height = 162,
                 frame_count = 1,
@@ -49,7 +49,7 @@ local function reskin_lab(name)
                 scale = 0.5,
             },
             {
-                filename = "__base__/graphics/entity/lab/hr-lab-shadow.png",
+                filename = "__base__/graphics/entity/lab/lab-shadow.png",
                 width = 242,
                 height = 136,
                 frame_count = 1,
@@ -76,7 +76,7 @@ local function reskin_lab(name)
                 scale = 0.5,
             },
             {
-                filename = "__base__/graphics/entity/lab/hr-lab-integration.png",
+                filename = "__base__/graphics/entity/lab/lab-integration.png",
                 width = 242,
                 height = 162,
                 frame_count = 1,
@@ -84,7 +84,7 @@ local function reskin_lab(name)
                 scale = 0.5,
             },
             {
-                filename = "__base__/graphics/entity/lab/hr-lab-shadow.png",
+                filename = "__base__/graphics/entity/lab/lab-shadow.png",
                 width = 242,
                 height = 136,
                 frame_count = 1,

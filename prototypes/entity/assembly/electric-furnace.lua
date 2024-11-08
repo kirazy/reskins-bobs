@@ -91,7 +91,7 @@ end
 local function furnace_ground_light()
     return
     {
-        filename = "__base__/graphics/entity/electric-furnace/hr-electric-furnace-ground-light.png",
+        filename = "__base__/graphics/entity/electric-furnace/electric-furnace-ground-light.png",
         blend_mode = "additive",
         width = 166,
         height = 124,
@@ -176,7 +176,7 @@ for name, map in pairs(electric_furnace_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/electric-furnace/remnants/hr-electric-furnace-remnants.png",
+                filename = "__base__/graphics/entity/electric-furnace/remnants/electric-furnace-remnants.png",
                 line_length = 1,
                 width = 454,
                 height = 448,

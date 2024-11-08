@@ -50,7 +50,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/pump/remnants/hr-pump-remnants.png",
+                filename = "__base__/graphics/entity/pump/remnants/pump-remnants.png",
                 line_length = 1,
                 width = 188,
                 height = 186,
@@ -98,7 +98,7 @@ for name, map in pairs(tier_map) do
             layers = {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/pump/hr-pump-north.png",
+                    filename = "__base__/graphics/entity/pump/pump-north.png",
                     width = 103,
                     height = 164,
                     scale = 0.5,
@@ -137,7 +137,7 @@ for name, map in pairs(tier_map) do
             layers = {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/pump/hr-pump-east.png",
+                    filename = "__base__/graphics/entity/pump/pump-east.png",
                     width = 130,
                     height = 109,
                     scale = 0.5,
@@ -176,7 +176,7 @@ for name, map in pairs(tier_map) do
             layers = {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/pump/hr-pump-south.png",
+                    filename = "__base__/graphics/entity/pump/pump-south.png",
                     width = 114,
                     height = 160,
                     scale = 0.5,
@@ -215,7 +215,7 @@ for name, map in pairs(tier_map) do
             layers = {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/pump/hr-pump-west.png",
+                    filename = "__base__/graphics/entity/pump/pump-west.png",
                     width = 131,
                     height = 111,
                     scale = 0.5,

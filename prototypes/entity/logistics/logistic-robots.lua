@@ -32,7 +32,7 @@ local function generate_robot_animations(tint)
             layers = {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/logistic-robot/hr-logistic-robot.png",
+                    filename = "__base__/graphics/entity/logistic-robot/logistic-robot.png",
                     priority = "high",
                     line_length = 16,
                     width = 80,
@@ -77,7 +77,7 @@ local function generate_robot_animations(tint)
             layers = {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/logistic-robot/hr-logistic-robot.png",
+                    filename = "__base__/graphics/entity/logistic-robot/logistic-robot.png",
                     priority = "high",
                     line_length = 16,
                     width = 80,
@@ -119,7 +119,7 @@ local function generate_robot_animations(tint)
             layers = {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/logistic-robot/hr-logistic-robot.png",
+                    filename = "__base__/graphics/entity/logistic-robot/logistic-robot.png",
                     priority = "high",
                     line_length = 16,
                     width = 80,
@@ -164,7 +164,7 @@ local function generate_robot_animations(tint)
             layers = {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/logistic-robot/hr-logistic-robot.png",
+                    filename = "__base__/graphics/entity/logistic-robot/logistic-robot.png",
                     priority = "high",
                     line_length = 16,
                     width = 80,
@@ -206,7 +206,7 @@ local function generate_robot_animations(tint)
             },
         },
         shadow_idle = {
-            filename = "__base__/graphics/entity/logistic-robot/hr-logistic-robot-shadow.png",
+            filename = "__base__/graphics/entity/logistic-robot/logistic-robot-shadow.png",
             priority = "high",
             line_length = 16,
             width = 115,
@@ -219,7 +219,7 @@ local function generate_robot_animations(tint)
             draw_as_shadow = true,
         },
         shadow_idle_with_cargo = {
-            filename = "__base__/graphics/entity/logistic-robot/hr-logistic-robot-shadow.png",
+            filename = "__base__/graphics/entity/logistic-robot/logistic-robot-shadow.png",
             priority = "high",
             line_length = 16,
             width = 115,
@@ -231,7 +231,7 @@ local function generate_robot_animations(tint)
             draw_as_shadow = true,
         },
         shadow_in_motion = {
-            filename = "__base__/graphics/entity/logistic-robot/hr-logistic-robot-shadow.png",
+            filename = "__base__/graphics/entity/logistic-robot/logistic-robot-shadow.png",
             priority = "high",
             line_length = 16,
             width = 115,
@@ -244,7 +244,7 @@ local function generate_robot_animations(tint)
             draw_as_shadow = true,
         },
         shadow_in_motion_with_cargo = {
-            filename = "__base__/graphics/entity/logistic-robot/hr-logistic-robot-shadow.png",
+            filename = "__base__/graphics/entity/logistic-robot/logistic-robot-shadow.png",
             priority = "high",
             line_length = 16,
             width = 115,
@@ -291,7 +291,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/logistic-robot/remnants/hr-logistic-robot-remnants.png",
+                filename = "__base__/graphics/entity/logistic-robot/remnants/logistic-robot-remnants.png",
                 line_length = 1,
                 width = 116,
                 height = 114,

@@ -28,7 +28,7 @@ local tier_map = {
 local function turret_extension(inputs, parameters)
     return
     {
-        filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-raising.png",
+        filename = "__base__/graphics/entity/gun-turret/gun-turret-raising.png",
         priority = "medium",
         width = 130,
         height = 126,
@@ -81,7 +81,7 @@ end
 local function turret_extension_mask(inputs, parameters)
     return
     {
-        filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-raising-mask.png",
+        filename = "__base__/graphics/entity/gun-turret/gun-turret-raising-mask.png",
         inputs = { "mask" },
         width = 48,
         height = 62,
@@ -99,7 +99,7 @@ end
 local function turret_extension_shadow(inputs, parameters)
     return
     {
-        filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-raising-shadow.png",
+        filename = "__base__/graphics/entity/gun-turret/gun-turret-raising-shadow.png",
         width = 250,
         height = 124,
         direction_count = 4,
@@ -127,22 +127,22 @@ local function turret_attack(inputs, parameters)
                 shift = util.by_pixel(0, -27.5),
                 stripes = {
                     {
-                        filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-shooting-1.png",
+                        filename = "__base__/graphics/entity/gun-turret/gun-turret-shooting-1.png",
                         width_in_frames = parameters.frame_count or 2,
                         height_in_frames = 16,
                     },
                     {
-                        filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-shooting-2.png",
+                        filename = "__base__/graphics/entity/gun-turret/gun-turret-shooting-2.png",
                         width_in_frames = parameters.frame_count or 2,
                         height_in_frames = 16,
                     },
                     {
-                        filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-shooting-3.png",
+                        filename = "__base__/graphics/entity/gun-turret/gun-turret-shooting-3.png",
                         width_in_frames = parameters.frame_count or 2,
                         height_in_frames = 16,
                     },
                     {
-                        filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-shooting-4.png",
+                        filename = "__base__/graphics/entity/gun-turret/gun-turret-shooting-4.png",
                         width_in_frames = parameters.frame_count or 2,
                         height_in_frames = 16,
                     },
@@ -228,22 +228,22 @@ local function turret_attack(inputs, parameters)
                 apply_runtime_tint = true,
                 stripes = {
                     {
-                        filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-shooting-mask-1.png",
+                        filename = "__base__/graphics/entity/gun-turret/gun-turret-shooting-mask-1.png",
                         width_in_frames = parameters.frame_count and parameters.frame_count or 2,
                         height_in_frames = 16,
                     },
                     {
-                        filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-shooting-mask-2.png",
+                        filename = "__base__/graphics/entity/gun-turret/gun-turret-shooting-mask-2.png",
                         width_in_frames = parameters.frame_count and parameters.frame_count or 2,
                         height_in_frames = 16,
                     },
                     {
-                        filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-shooting-mask-3.png",
+                        filename = "__base__/graphics/entity/gun-turret/gun-turret-shooting-mask-3.png",
                         width_in_frames = parameters.frame_count and parameters.frame_count or 2,
                         height_in_frames = 16,
                     },
                     {
-                        filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-shooting-mask-4.png",
+                        filename = "__base__/graphics/entity/gun-turret/gun-turret-shooting-mask-4.png",
                         width_in_frames = parameters.frame_count and parameters.frame_count or 2,
                         height_in_frames = 16,
                     },
@@ -261,22 +261,22 @@ local function turret_attack(inputs, parameters)
                 draw_as_shadow = true,
                 stripes = {
                     {
-                        filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-shooting-shadow-1.png",
+                        filename = "__base__/graphics/entity/gun-turret/gun-turret-shooting-shadow-1.png",
                         width_in_frames = parameters.frame_count and parameters.frame_count or 2,
                         height_in_frames = 16,
                     },
                     {
-                        filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-shooting-shadow-2.png",
+                        filename = "__base__/graphics/entity/gun-turret/gun-turret-shooting-shadow-2.png",
                         width_in_frames = parameters.frame_count and parameters.frame_count or 2,
                         height_in_frames = 16,
                     },
                     {
-                        filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-shooting-shadow-3.png",
+                        filename = "__base__/graphics/entity/gun-turret/gun-turret-shooting-shadow-3.png",
                         width_in_frames = parameters.frame_count and parameters.frame_count or 2,
                         height_in_frames = 16,
                     },
                     {
-                        filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-shooting-shadow-4.png",
+                        filename = "__base__/graphics/entity/gun-turret/gun-turret-shooting-shadow-4.png",
                         width_in_frames = parameters.frame_count and parameters.frame_count or 2,
                         height_in_frames = 16,
                     },
@@ -308,7 +308,7 @@ for name, tier in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/gun-turret/remnants/hr-gun-turret-remnants.png",
+                filename = "__base__/graphics/entity/gun-turret/remnants/gun-turret-remnants.png",
                 line_length = 1,
                 width = 252,
                 height = 242,
@@ -350,7 +350,7 @@ for name, tier in pairs(tier_map) do
             -- Runtime Mask
             {
                 priority = "low",
-                filename = "__base__/graphics/entity/gun-turret/remnants/mask/hr-gun-turret-remnants-mask.png",
+                filename = "__base__/graphics/entity/gun-turret/remnants/mask/gun-turret-remnants-mask.png",
                 width = 68,
                 height = 64,
                 frame_count = 1,
@@ -395,7 +395,7 @@ for name, tier in pairs(tier_map) do
     entity.base_picture = {
         layers = {
             {
-                filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-base.png",
+                filename = "__base__/graphics/entity/gun-turret/gun-turret-base.png",
                 priority = "high",
                 width = 150,
                 height = 118,
@@ -406,7 +406,7 @@ for name, tier in pairs(tier_map) do
                 scale = 0.5,
             },
             {
-                filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-base-mask.png",
+                filename = "__base__/graphics/entity/gun-turret/gun-turret-base-mask.png",
                 inputs = { "mask", "low-object" },
                 line_length = 1,
                 width = 122,

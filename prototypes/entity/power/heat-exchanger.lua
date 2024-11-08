@@ -69,7 +69,7 @@ for name, mapping in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/heat-exchanger/remnants/hr-heat-exchanger-remnants.png",
+                filename = "__base__/graphics/entity/heat-exchanger/remnants/heat-exchanger-remnants.png",
                 line_length = 1,
                 width = 272,
                 height = 262,
@@ -131,7 +131,7 @@ for name, mapping in pairs(tier_map) do
             layers = {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/heat-exchanger/hr-heatex-N-idle.png",
+                    filename = "__base__/graphics/entity/heat-exchanger/heatex-N-idle.png",
                     priority = "extra-high",
                     width = 269,
                     height = 221,
@@ -169,7 +169,7 @@ for name, mapping in pairs(tier_map) do
                 },
                 -- Shadow
                 {
-                    filename = "__base__/graphics/entity/boiler/hr-boiler-N-shadow.png",
+                    filename = "__base__/graphics/entity/boiler/boiler-N-shadow.png",
                     priority = "extra-high",
                     width = 274,
                     height = 164,
@@ -183,7 +183,7 @@ for name, mapping in pairs(tier_map) do
             layers = {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/heat-exchanger/hr-heatex-E-idle.png",
+                    filename = "__base__/graphics/entity/heat-exchanger/heatex-E-idle.png",
                     priority = "extra-high",
                     width = 211,
                     height = 301,
@@ -221,7 +221,7 @@ for name, mapping in pairs(tier_map) do
                 },
                 -- Shadow
                 {
-                    filename = "__base__/graphics/entity/boiler/hr-boiler-E-shadow.png",
+                    filename = "__base__/graphics/entity/boiler/boiler-E-shadow.png",
                     priority = "extra-high",
                     width = 184,
                     height = 194,
@@ -235,7 +235,7 @@ for name, mapping in pairs(tier_map) do
             layers = {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/heat-exchanger/hr-heatex-S-idle.png",
+                    filename = "__base__/graphics/entity/heat-exchanger/heatex-S-idle.png",
                     priority = "extra-high",
                     width = 260,
                     height = 201,
@@ -273,7 +273,7 @@ for name, mapping in pairs(tier_map) do
                 },
                 -- Shadow
                 {
-                    filename = "__base__/graphics/entity/boiler/hr-boiler-S-shadow.png",
+                    filename = "__base__/graphics/entity/boiler/boiler-S-shadow.png",
                     priority = "extra-high",
                     width = 311,
                     height = 131,
@@ -287,7 +287,7 @@ for name, mapping in pairs(tier_map) do
             layers = {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/heat-exchanger/hr-heatex-W-idle.png",
+                    filename = "__base__/graphics/entity/heat-exchanger/heatex-W-idle.png",
                     priority = "extra-high",
                     width = 196,
                     height = 273,
@@ -325,7 +325,7 @@ for name, mapping in pairs(tier_map) do
                 },
                 -- Shadow
                 {
-                    filename = "__base__/graphics/entity/boiler/hr-boiler-W-shadow.png",
+                    filename = "__base__/graphics/entity/boiler/boiler-W-shadow.png",
                     priority = "extra-high",
                     width = 206,
                     height = 218,

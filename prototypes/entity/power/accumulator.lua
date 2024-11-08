@@ -76,7 +76,7 @@ local function accumulator_picture_tinted(inputs, repeat_count)
             },
             -- Shadow
             {
-                filename = "__base__/graphics/entity/accumulator/hr-accumulator-shadow.png",
+                filename = "__base__/graphics/entity/accumulator/accumulator-shadow.png",
                 priority = "high",
                 width = 234,
                 height = 106,
@@ -95,7 +95,7 @@ local function accumulator_charge_tinted(inputs)
         layers = {
             accumulator_picture_tinted(inputs, 24),
             {
-                filename = "__base__/graphics/entity/accumulator/hr-accumulator-charge.png",
+                filename = "__base__/graphics/entity/accumulator/accumulator-charge.png",
                 priority = "high",
                 width = 178,
                 height = 206,
@@ -115,7 +115,7 @@ local function accumulator_discharge_tinted(inputs)
         layers = {
             accumulator_picture_tinted(inputs, 24),
             {
-                filename = "__base__/graphics/entity/accumulator/hr-accumulator-discharge.png",
+                filename = "__base__/graphics/entity/accumulator/accumulator-discharge.png",
                 priority = "high",
                 width = 170,
                 height = 210,

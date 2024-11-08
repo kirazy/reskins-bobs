@@ -458,7 +458,7 @@ function reskins.bobs.electric_mining_drill_smoke()
     return
     {
         priority = "high",
-        filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-smoke.png",
+        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-smoke.png",
         line_length = 6,
         width = 48,
         height = 72,
@@ -476,7 +476,7 @@ function reskins.bobs.electric_mining_drill_smoke_front()
     return
     {
         priority = "high",
-        filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-smoke-front.png",
+        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-smoke-front.png",
         line_length = 6,
         width = 148,
         height = 132,

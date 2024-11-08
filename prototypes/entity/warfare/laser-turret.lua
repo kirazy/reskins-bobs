@@ -27,7 +27,7 @@ local tier_map = {
 local function turret_extension(parameters)
     return
     {
-        filename = "__base__/graphics/entity/laser-turret/hr-laser-turret-raising.png",
+        filename = "__base__/graphics/entity/laser-turret/laser-turret-raising.png",
         priority = "medium",
         width = 130,
         height = 126,
@@ -44,7 +44,7 @@ end
 local function turret_extension_mask(parameters)
     return
     {
-        filename = "__base__/graphics/entity/laser-turret/hr-laser-turret-raising-mask.png",
+        filename = "__base__/graphics/entity/laser-turret/laser-turret-raising-mask.png",
         flags = { "mask" },
         width = 86,
         height = 80,
@@ -62,7 +62,7 @@ end
 local function turret_extension_shadow(parameters)
     return
     {
-        filename = "__base__/graphics/entity/laser-turret/hr-laser-turret-raising-shadow.png",
+        filename = "__base__/graphics/entity/laser-turret/laser-turret-raising-shadow.png",
         width = 182,
         height = 96,
         frame_count = parameters.frame_count and parameters.frame_count or 15,
@@ -79,7 +79,7 @@ end
 local function turret_shooting()
     return
     {
-        filename = "__base__/graphics/entity/laser-turret/hr-laser-turret-shooting.png",
+        filename = "__base__/graphics/entity/laser-turret/laser-turret-shooting.png",
         line_length = 8,
         width = 126,
         height = 120,
@@ -93,7 +93,7 @@ end
 local function turret_shooting_mask()
     return
     {
-        filename = "__base__/graphics/entity/laser-turret/hr-laser-turret-shooting-mask.png",
+        filename = "__base__/graphics/entity/laser-turret/laser-turret-shooting-mask.png",
         flags = { "mask" },
         line_length = 8,
         width = 92,
@@ -109,7 +109,7 @@ end
 local function turret_shooting_shadow()
     return
     {
-        filename = "__base__/graphics/entity/laser-turret/hr-laser-turret-shooting-shadow.png",
+        filename = "__base__/graphics/entity/laser-turret/laser-turret-shooting-shadow.png",
         line_length = 8,
         width = 170,
         height = 92,
@@ -161,7 +161,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/laser-turret/remnants/hr-laser-turret-remnants.png",
+                filename = "__base__/graphics/entity/laser-turret/remnants/laser-turret-remnants.png",
                 line_length = 1,
                 width = 198,
                 height = 194,
@@ -203,7 +203,7 @@ for name, map in pairs(tier_map) do
             -- Runtime Mask
             {
                 priority = "low",
-                filename = "__base__/graphics/entity/laser-turret/remnants/mask/hr-laser-turret-remnants-mask.png",
+                filename = "__base__/graphics/entity/laser-turret/remnants/mask/laser-turret-remnants-mask.png",
                 width = 114,
                 height = 94,
                 frame_count = 1,
@@ -262,7 +262,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/laser-turret/hr-laser-turret-base.png",
+                filename = "__base__/graphics/entity/laser-turret/laser-turret-base.png",
                 priority = "high",
                 width = 138,
                 height = 104,
@@ -297,7 +297,7 @@ for name, map in pairs(tier_map) do
             },
             -- Shadow
             {
-                filename = "__base__/graphics/entity/laser-turret/hr-laser-turret-base-shadow.png",
+                filename = "__base__/graphics/entity/laser-turret/laser-turret-base-shadow.png",
                 line_length = 1,
                 width = 132,
                 height = 82,

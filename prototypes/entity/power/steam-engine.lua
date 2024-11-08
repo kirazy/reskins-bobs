@@ -46,7 +46,7 @@ for name, tier in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/steam-engine/remnants/hr-steam-engine-remnants.png",
+                filename = "__base__/graphics/entity/steam-engine/remnants/steam-engine-remnants.png",
                 line_length = 1,
                 width = 462,
                 height = 386,
@@ -93,7 +93,7 @@ for name, tier in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-H.png",
+                filename = "__base__/graphics/entity/steam-engine/steam-engine-H.png",
                 width = 352,
                 height = 257,
                 frame_count = 32,
@@ -125,7 +125,7 @@ for name, tier in pairs(tier_map) do
             },
             -- Shadow
             {
-                filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-H-shadow.png",
+                filename = "__base__/graphics/entity/steam-engine/steam-engine-H-shadow.png",
                 width = 508,
                 height = 160,
                 frame_count = 32,
@@ -141,7 +141,7 @@ for name, tier in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-V.png",
+                filename = "__base__/graphics/entity/steam-engine/steam-engine-V.png",
                 width = 225,
                 height = 391,
                 frame_count = 32,
@@ -173,7 +173,7 @@ for name, tier in pairs(tier_map) do
             },
             -- Shadow
             {
-                filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-V-shadow.png",
+                filename = "__base__/graphics/entity/steam-engine/steam-engine-V-shadow.png",
                 width = 330,
                 height = 307,
                 frame_count = 32,

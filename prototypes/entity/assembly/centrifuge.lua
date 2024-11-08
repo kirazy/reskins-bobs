@@ -49,7 +49,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/centrifuge/remnants/hr-centrifuge-remnants.png",
+                filename = "__base__/graphics/entity/centrifuge/remnants/centrifuge-remnants.png",
                 line_length = 1,
                 width = 286,
                 height = 284,
@@ -96,7 +96,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Centrifuge C
             {
-                filename = "__base__/graphics/entity/centrifuge/hr-centrifuge-C.png",
+                filename = "__base__/graphics/entity/centrifuge/centrifuge-C.png",
                 priority = "high",
                 scale = 0.5,
                 line_length = 8,
@@ -106,7 +106,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(-0.25, -26.5),
             },
             {
-                filename = "__base__/graphics/entity/centrifuge/hr-centrifuge-C-shadow.png",
+                filename = "__base__/graphics/entity/centrifuge/centrifuge-C-shadow.png",
                 draw_as_shadow = true,
                 priority = "high",
                 scale = 0.5,
@@ -118,7 +118,7 @@ for name, map in pairs(tier_map) do
             },
             -- Centrifuge B
             {
-                filename = "__base__/graphics/entity/centrifuge/hr-centrifuge-B.png",
+                filename = "__base__/graphics/entity/centrifuge/centrifuge-B.png",
                 priority = "high",
                 scale = 0.5,
                 line_length = 8,
@@ -150,7 +150,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(23, 6.5),
             },
             {
-                filename = "__base__/graphics/entity/centrifuge/hr-centrifuge-B-shadow.png",
+                filename = "__base__/graphics/entity/centrifuge/centrifuge-B-shadow.png",
                 draw_as_shadow = true,
                 priority = "high",
                 scale = 0.5,
@@ -162,7 +162,7 @@ for name, map in pairs(tier_map) do
             },
             -- Centrifuge A
             {
-                filename = "__base__/graphics/entity/centrifuge/hr-centrifuge-A.png",
+                filename = "__base__/graphics/entity/centrifuge/centrifuge-A.png",
                 priority = "high",
                 scale = 0.5,
                 line_length = 8,
@@ -194,7 +194,7 @@ for name, map in pairs(tier_map) do
                 shift = util.by_pixel(-26.25, 3.5),
             },
             {
-                filename = "__base__/graphics/entity/centrifuge/hr-centrifuge-A-shadow.png",
+                filename = "__base__/graphics/entity/centrifuge/centrifuge-A-shadow.png",
                 priority = "high",
                 draw_as_shadow = true,
                 scale = 0.5,

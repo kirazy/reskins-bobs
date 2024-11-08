@@ -113,7 +113,7 @@ for name, map in pairs(tier_map) do
             },
             -- Shadow
             {
-                filename = "__base__/graphics/entity/artillery-turret/hr-artillery-turret-base-shadow.png",
+                filename = "__base__/graphics/entity/artillery-turret/artillery-turret-base-shadow.png",
                 priority = "high",
                 width = 277,
                 height = 149,

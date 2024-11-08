@@ -102,7 +102,7 @@ end
 local function base_fire_animation()
     return
     {
-        filename = "__base__/graphics/entity/stone-furnace/hr-stone-furnace-fire.png",
+        filename = "__base__/graphics/entity/stone-furnace/stone-furnace-fire.png",
         priority = "extra-high",
         line_length = 8,
         width = 41,
@@ -135,7 +135,7 @@ end
 local function furnace_ground_light()
     return
     {
-        filename = "__base__/graphics/entity/stone-furnace/hr-stone-furnace-ground-light.png",
+        filename = "__base__/graphics/entity/stone-furnace/stone-furnace-ground-light.png",
         blend_mode = "additive",
         draw_as_light = true,
         width = 116,
