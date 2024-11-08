@@ -33,37 +33,22 @@ local function cardinal_pictures(x, tint)
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/valve/valve-base.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/valve/hr-valve-base.png",
                 priority = "extra-high",
-                x = x_lr,
-                width = 64,
-                height = 64,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/valve/hr-valve-base.png",
-                    priority = "extra-high",
-                    x = x_hr,
-                    width = 128,
-                    height = 128,
-                    scale = 0.5
-                }
+                x = x_hr,
+                width = 128,
+                height = 128,
+                scale = 0.5
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/valve/valve-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/valve/hr-valve-mask.png",
                 priority = "extra-high",
-                x = x_lr,
-                width = 64,
-                height = 64,
+                x = x_hr,
+                width = 128,
+                height = 128,
                 tint = tint,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/valve/hr-valve-mask.png",
-                    priority = "extra-high",
-                    x = x_hr,
-                    width = 128,
-                    height = 128,
-                    tint = tint,
-                    scale = 0.5
-                }
+                scale = 0.5
             }
         }
     }

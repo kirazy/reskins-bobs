@@ -85,23 +85,14 @@ for name, mapping in pairs(tier_map) do
     reskins.lib.create_remnant(name, inputs)
     local remnant = data.raw["corpse"][name .. "-remnants"]
     remnant.animation = make_rotated_animation_variations_from_sheet(6, {
-        filename = "__reskins-bobs__/graphics/entity/power/heat-pipe/" .. mapping.material .. "/remnants/heat-pipe-remnants.png",
+        filename = "__reskins-bobs__/graphics/entity/power/heat-pipe/" .. mapping.material .. "/remnants/hr-heat-pipe-remnants.png",
         line_length = 1,
-        width = 62,
-        height = 52,
+        width = 122,
+        height = 100,
         frame_count = 1,
         direction_count = 2,
-        shift = util.by_pixel(1, -1),
-        hr_version = {
-            filename = "__reskins-bobs__/graphics/entity/power/heat-pipe/" .. mapping.material .. "/remnants/hr-heat-pipe-remnants.png",
-            line_length = 1,
-            width = 122,
-            height = 100,
-            frame_count = 1,
-            direction_count = 2,
-            shift = util.by_pixel(0.5, -1.5),
-            scale = 0.5,
-        },
+        shift = util.by_pixel(0.5, -1.5),
+        scale = 0.5,
     })
 
     -- Reskin entities

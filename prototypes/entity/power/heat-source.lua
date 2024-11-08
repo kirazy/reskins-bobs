@@ -42,17 +42,11 @@ end
 local function heat_source_base_pipes(material)
     return
     {
-        filename = "__reskins-bobs__/graphics/entity/power/heat-source/heat-source-base-pipes-" .. material .. ".png",
-        width = 96,
-        height = 96,
-        shift = { -0.03125, -0.1875 },
-        hr_version = {
-            filename = "__reskins-bobs__/graphics/entity/power/heat-source/hr-heat-source-base-pipes-" .. material .. ".png",
-            width = 192,
-            height = 192,
-            scale = 0.5,
-            shift = { -0.03125, -0.1875 }
-        }
+        filename = "__reskins-bobs__/graphics/entity/power/heat-source/hr-heat-source-base-pipes-" .. material .. ".png",
+        width = 192,
+        height = 192,
+        scale = 0.5,
+        shift = { -0.03125, -0.1875 }
     }
 end
 
@@ -60,17 +54,11 @@ local function connect_patches_connected(material)
     return
     {
         sheet = {
-            filename = "__reskins-bobs__/graphics/entity/power/heat-source/reactor-connect-patches-" .. material .. ".png",
-            width = 32,
-            height = 32,
+            filename = "__reskins-bobs__/graphics/entity/power/heat-source/hr-reactor-connect-patches-" .. material .. ".png",
+            width = 64,
+            height = 64,
             variation_count = 12,
-            hr_version = {
-                filename = "__reskins-bobs__/graphics/entity/power/heat-source/hr-reactor-connect-patches-" .. material .. ".png",
-                width = 64,
-                height = 64,
-                variation_count = 12,
-                scale = 0.5
-            }
+            scale = 0.5
         }
     }
 end
@@ -79,19 +67,12 @@ local function connect_patches_disconnected(material)
     return
     {
         sheet = {
-            filename = "__reskins-bobs__/graphics/entity/power/heat-source/reactor-connect-patches-" .. material .. ".png",
-            width = 32,
-            height = 32,
-            y = 32,
+            filename = "__reskins-bobs__/graphics/entity/power/heat-source/hr-reactor-connect-patches-" .. material .. ".png",
+            width = 64,
+            height = 64,
+            y = 64,
             variation_count = 12,
-            hr_version = {
-                filename = "__reskins-bobs__/graphics/entity/power/heat-source/hr-reactor-connect-patches-" .. material .. ".png",
-                width = 64,
-                height = 64,
-                y = 64,
-                variation_count = 12,
-                scale = 0.5
-            }
+            scale = 0.5
         }
     }
 end

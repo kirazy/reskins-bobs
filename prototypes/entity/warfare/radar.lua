@@ -48,197 +48,111 @@ for name, tier in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/radar/remnants/radar-remnants.png",
+                filename = "__base__/graphics/entity/radar/remnants/hr-radar-remnants.png",
                 line_length = 1,
-                width = 142,
-                height = 106,
+                width = 282,
+                height = 212,
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
                 direction_count = 1,
-                shift = util.by_pixel(12, 4),
-                hr_version = {
-                    filename = "__base__/graphics/entity/radar/remnants/hr-radar-remnants.png",
-                    line_length = 1,
-                    width = 282,
-                    height = 212,
-                    frame_count = 1,
-                    variation_count = 1,
-                    axially_symmetrical = false,
-                    direction_count = 1,
-                    shift = util.by_pixel(12, 4.5),
-                    scale = 0.5,
-                }
+                shift = util.by_pixel(12, 4.5),
+                scale = 0.5,
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/warfare/radar/remnants/radar-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/warfare/radar/remnants/hr-radar-remnants-mask.png",
                 line_length = 1,
-                width = 142,
-                height = 106,
+                width = 282,
+                height = 212,
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
                 direction_count = 1,
-                shift = util.by_pixel(12, 4),
+                shift = util.by_pixel(12, 4.5),
                 tint = inputs.tint,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/warfare/radar/remnants/hr-radar-remnants-mask.png",
-                    line_length = 1,
-                    width = 282,
-                    height = 212,
-                    frame_count = 1,
-                    variation_count = 1,
-                    axially_symmetrical = false,
-                    direction_count = 1,
-                    shift = util.by_pixel(12, 4.5),
-                    tint = inputs.tint,
-                    scale = 0.5,
-                }
+                scale = 0.5,
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/warfare/radar/remnants/radar-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/warfare/radar/remnants/hr-radar-remnants-highlights.png",
                 line_length = 1,
-                width = 142,
-                height = 106,
+                width = 282,
+                height = 212,
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
                 direction_count = 1,
-                shift = util.by_pixel(12, 4),
+                shift = util.by_pixel(12, 4.5),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/warfare/radar/remnants/hr-radar-remnants-highlights.png",
-                    line_length = 1,
-                    width = 282,
-                    height = 212,
-                    frame_count = 1,
-                    variation_count = 1,
-                    axially_symmetrical = false,
-                    direction_count = 1,
-                    shift = util.by_pixel(12, 4.5),
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5,
-                }
+                scale = 0.5,
             }
         }
     })
 
     -- Reskin entity
     entity.integration_patch = {
-        filename = "__base__/graphics/entity/radar/radar-integration.png",
+        filename = "__base__/graphics/entity/radar/hr-radar-integration.png",
         priority = "low",
-        width = 119,
-        height = 108,
+        width = 238,
+        height = 216,
         direction_count = 1,
         shift = util.by_pixel(1.5, 4),
-        hr_version = {
-            filename = "__base__/graphics/entity/radar/hr-radar-integration.png",
-            priority = "low",
-            width = 238,
-            height = 216,
-            direction_count = 1,
-            shift = util.by_pixel(1.5, 4),
-            scale = 0.5
-        }
+        scale = 0.5
     }
 
     entity.pictures = {
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/radar/radar.png",
+                filename = "__base__/graphics/entity/radar/hr-radar.png",
                 priority = "low",
-                width = 98,
-                height = 128,
+                width = 196,
+                height = 254,
                 apply_projection = false,
                 direction_count = 64,
                 line_length = 8,
                 shift = util.by_pixel(1, -16),
-                hr_version = {
-                    filename = "__base__/graphics/entity/radar/hr-radar.png",
-                    priority = "low",
-                    width = 196,
-                    height = 254,
-                    apply_projection = false,
-                    direction_count = 64,
-                    line_length = 8,
-                    shift = util.by_pixel(1, -16),
-                    scale = 0.5
-                }
+                scale = 0.5
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/warfare/radar/radar-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/warfare/radar/hr-radar-mask.png",
                 priority = "low",
-                width = 98,
-                height = 128,
+                width = 196,
+                height = 254,
                 apply_projection = false,
                 direction_count = 64,
                 line_length = 8,
                 shift = util.by_pixel(1, -16),
                 tint = inputs.tint,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/warfare/radar/hr-radar-mask.png",
-                    priority = "low",
-                    width = 196,
-                    height = 254,
-                    apply_projection = false,
-                    direction_count = 64,
-                    line_length = 8,
-                    shift = util.by_pixel(1, -16),
-                    tint = inputs.tint,
-                    scale = 0.5
-                }
+                scale = 0.5
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/warfare/radar/radar-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/warfare/radar/hr-radar-highlights.png",
                 priority = "low",
-                width = 98,
-                height = 128,
+                width = 196,
+                height = 254,
                 apply_projection = false,
                 direction_count = 64,
                 line_length = 8,
                 shift = util.by_pixel(1, -16),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/warfare/radar/hr-radar-highlights.png",
-                    priority = "low",
-                    width = 196,
-                    height = 254,
-                    apply_projection = false,
-                    direction_count = 64,
-                    line_length = 8,
-                    shift = util.by_pixel(1, -16),
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5
-                }
+                scale = 0.5
             },
             -- Shadow
             {
-                filename = "__base__/graphics/entity/radar/radar-shadow.png",
+                filename = "__base__/graphics/entity/radar/hr-radar-shadow.png",
                 priority = "low",
-                width = 172,
-                height = 94,
+                width = 343,
+                height = 186,
                 apply_projection = false,
                 direction_count = 64,
                 line_length = 8,
-                shift = util.by_pixel(39, 3),
+                shift = util.by_pixel(39.25, 3),
                 draw_as_shadow = true,
-                hr_version = {
-                    filename = "__base__/graphics/entity/radar/hr-radar-shadow.png",
-                    priority = "low",
-                    width = 343,
-                    height = 186,
-                    apply_projection = false,
-                    direction_count = 64,
-                    line_length = 8,
-                    shift = util.by_pixel(39.25, 3),
-                    draw_as_shadow = true,
-                    scale = 0.5
-                }
+                scale = 0.5
             }
         }
     }

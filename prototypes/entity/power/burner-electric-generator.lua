@@ -34,97 +34,54 @@ entity.animation = {
     layers = {
         -- Base
         {
-            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/burner-electric-generator.png",
-            width = 106,
-            height = 136,
+            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator.png",
+            width = 212,
+            height = 272,
             frame_count = 32,
             line_length = 8,
             repeat_count = 3,
             shift = util.by_pixel(0, -12.5),
-            hr_version = {
-                filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator.png",
-                width = 212,
-                height = 272,
-                frame_count = 32,
-                line_length = 8,
-                repeat_count = 3,
-                shift = util.by_pixel(0, -12.5),
-                scale = 0.5
-            }
+            scale = 0.5
         },
         -- Fire
         {
-            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/burner-electric-generator-fire.png",
+            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator-fire.png",
             priority = "high",
             line_length = 8,
-            width = 29,
-            height = 41,
+            width = 58,
+            height = 82,
             frame_count = 48,
             direction_count = 1,
             repeat_count = 2,
             blend_mode = "additive",
             shift = util.by_pixel(-1, 9.5),
             draw_as_glow = true,
-            hr_version = {
-                filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator-fire.png",
-                priority = "high",
-                line_length = 8,
-                width = 58,
-                height = 82,
-                frame_count = 48,
-                direction_count = 1,
-                repeat_count = 2,
-                blend_mode = "additive",
-                shift = util.by_pixel(-1, 9.5),
-                draw_as_glow = true,
-                scale = 0.5
-            }
+            scale = 0.5
         },
         -- Radiant Light
         {
-            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/burner-electric-generator-working-light-animated.png",
-            width = 106,
-            height = 136,
+            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator-working-light-animated.png",
+            width = 212,
+            height = 272,
             frame_count = 32,
             line_length = 8,
             repeat_count = 3,
             blend_mode = "additive",
             shift = util.by_pixel(0, -12.5),
             draw_as_glow = true,
-            hr_version = {
-                filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator-working-light-animated.png",
-                width = 212,
-                height = 272,
-                frame_count = 32,
-                line_length = 8,
-                repeat_count = 3,
-                blend_mode = "additive",
-                shift = util.by_pixel(0, -12.5),
-                draw_as_glow = true,
-                scale = 0.5
-            }
+            scale = 0.5
         },
         -- Shadow
         {
-            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/burner-electric-generator-shadow.png",
-            width = 144,
-            height = 85,
+            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator-shadow.png",
+            width = 288,
+            height = 170,
             frame_count = 32,
             line_length = 8,
             repeat_count = 3,
             draw_as_shadow = true,
             shift = util.by_pixel(30, 12),
-            hr_version = {
-                filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator-shadow.png",
-                width = 288,
-                height = 170,
-                frame_count = 32,
-                line_length = 8,
-                repeat_count = 3,
-                draw_as_shadow = true,
-                shift = util.by_pixel(30, 12),
-                scale = 0.5
-            }
+            scale = 0.5
         }
     }
 }
@@ -133,45 +90,26 @@ entity.idle_animation = {
     layers = {
         -- Base
         {
-            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/burner-electric-generator.png",
-            width = 106,
-            height = 136,
+            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator.png",
+            width = 212,
+            height = 272,
             frame_count = 32,
             line_length = 8,
             repeat_count = 3,
             shift = util.by_pixel(0, -12.5),
-            hr_version = {
-                filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator.png",
-                width = 212,
-                height = 272,
-                frame_count = 32,
-                line_length = 8,
-                repeat_count = 3,
-                shift = util.by_pixel(0, -12.5),
-                scale = 0.5
-            }
+            scale = 0.5
         },
         -- Shadow
         {
-            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/burner-electric-generator-shadow.png",
-            width = 144,
-            height = 85,
+            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator-shadow.png",
+            width = 288,
+            height = 170,
             frame_count = 32,
             line_length = 8,
             repeat_count = 3,
             draw_as_shadow = true,
             shift = util.by_pixel(30, 12),
-            hr_version = {
-                filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator-shadow.png",
-                width = 288,
-                height = 170,
-                frame_count = 32,
-                line_length = 8,
-                repeat_count = 3,
-                draw_as_shadow = true,
-                shift = util.by_pixel(30, 12),
-                scale = 0.5
-            }
+            scale = 0.5
         }
     }
 }

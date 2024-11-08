@@ -100,67 +100,38 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/remnants/water-pumpjack-remnants-base.png" or "__base__/graphics/entity/pumpjack/remnants/pumpjack-remnants.png",
+                filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/remnants/hr-water-pumpjack-remnants-base.png" or "__base__/graphics/entity/pumpjack/remnants/hr-pumpjack-remnants.png",
                 line_length = 1,
-                width = 138,
-                height = 142,
+                width = 274,
+                height = 284,
                 frame_count = 1,
                 direction_count = 1,
-                shift = util.by_pixel(0, 3),
-                hr_version = {
-                    filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/remnants/hr-water-pumpjack-remnants-base.png" or "__base__/graphics/entity/pumpjack/remnants/hr-pumpjack-remnants.png",
-                    line_length = 1,
-                    width = 274,
-                    height = 284,
-                    frame_count = 1,
-                    direction_count = 1,
-                    shift = util.by_pixel(0, 3.5),
-                    scale = 0.5,
-                }
+                shift = util.by_pixel(0, 3.5),
+                scale = 0.5,
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/mining/pumpjack/remnants/pumpjack-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/mining/pumpjack/remnants/hr-pumpjack-remnants-mask.png",
                 line_length = 1,
-                width = 138,
-                height = 142,
+                width = 274,
+                height = 284,
                 frame_count = 1,
                 direction_count = 1,
-                shift = util.by_pixel(0, 3),
+                shift = util.by_pixel(0, 3.5),
                 tint = inputs.tint,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/mining/pumpjack/remnants/hr-pumpjack-remnants-mask.png",
-                    line_length = 1,
-                    width = 274,
-                    height = 284,
-                    frame_count = 1,
-                    direction_count = 1,
-                    shift = util.by_pixel(0, 3.5),
-                    tint = inputs.tint,
-                    scale = 0.5,
-                }
+                scale = 0.5,
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/mining/pumpjack/remnants/pumpjack-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/mining/pumpjack/remnants/hr-pumpjack-remnants-highlights.png",
                 line_length = 1,
-                width = 138,
-                height = 142,
+                width = 274,
+                height = 284,
                 frame_count = 1,
                 direction_count = 1,
-                shift = util.by_pixel(0, 3),
+                shift = util.by_pixel(0, 3.5),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/mining/pumpjack/remnants/hr-pumpjack-remnants-highlights.png",
-                    line_length = 1,
-                    width = 274,
-                    height = 284,
-                    frame_count = 1,
-                    direction_count = 1,
-                    shift = util.by_pixel(0, 3.5),
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5,
-                }
+                scale = 0.5,
             }
         }
     })
@@ -170,36 +141,21 @@ for name, map in pairs(tier_map) do
         sheets = {
             -- Base
             {
-                filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/water-pumpjack-base.png" or "__base__/graphics/entity/pumpjack/pumpjack-base.png",
+                filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/hr-water-pumpjack-base.png" or "__base__/graphics/entity/pumpjack/hr-pumpjack-base.png",
                 priority = "extra-high",
-                width = 131,
-                height = 137,
-                shift = util.by_pixel(-2.5, -4.5),
-                hr_version = {
-                    filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/hr-water-pumpjack-base.png" or "__base__/graphics/entity/pumpjack/hr-pumpjack-base.png",
-                    priority = "extra-high",
-                    width = 261,
-                    height = 273,
-                    shift = util.by_pixel(-2.25, -4.75),
-                    scale = 0.5
-                }
+                width = 261,
+                height = 273,
+                shift = util.by_pixel(-2.25, -4.75),
+                scale = 0.5
             },
             -- Shadow
             {
-                filename = "__base__/graphics/entity/pumpjack/pumpjack-base-shadow.png",
-                priority = "extra-high",
-                width = 110,
-                height = 111,
+                filename = "__base__/graphics/entity/pumpjack/hr-pumpjack-base-shadow.png",
+                width = 220,
+                height = 220,
+                scale = 0.5,
                 draw_as_shadow = true,
-                shift = util.by_pixel(6, 0.5),
-                hr_version = {
-                    filename = "__base__/graphics/entity/pumpjack/hr-pumpjack-base-shadow.png",
-                    width = 220,
-                    height = 220,
-                    scale = 0.5,
-                    draw_as_shadow = true,
-                    shift = util.by_pixel(6, 0.5)
-                }
+                shift = util.by_pixel(6, 0.5)
             }
 
         }
@@ -211,104 +167,57 @@ for name, map in pairs(tier_map) do
                 -- Base
                 {
                     priority = "high",
-                    filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/water-pumpjack-horsehead.png" or "__base__/graphics/entity/pumpjack/pumpjack-horsehead.png",
-                    line_length = 8,
-                    width = 104,
-                    height = 102,
-                    frame_count = 40,
-                    shift = util.by_pixel(-4, -24),
+                    filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/hr-water-pumpjack-horsehead.png" or "__base__/graphics/entity/pumpjack/hr-pumpjack-horsehead.png",
                     animation_speed = animation_speed,
                     repeat_count = 6,
-                    hr_version = {
-                        priority = "high",
-                        filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/hr-water-pumpjack-horsehead.png" or "__base__/graphics/entity/pumpjack/hr-pumpjack-horsehead.png",
-                        animation_speed = animation_speed,
-                        repeat_count = 6,
-                        scale = 0.5,
-                        line_length = 8,
-                        width = 206,
-                        height = 202,
-                        frame_count = 40,
-                        shift = util.by_pixel(-4, -24)
-                    }
+                    scale = 0.5,
+                    line_length = 8,
+                    width = 206,
+                    height = 202,
+                    frame_count = 40,
+                    shift = util.by_pixel(-4, -24)
                 },
                 -- Mask
                 {
                     priority = "high",
-                    filename = "__reskins-bobs__/graphics/entity/mining/pumpjack/pumpjack-horsehead-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/mining/pumpjack/hr-pumpjack-horsehead-mask.png",
+                    animation_speed = animation_speed,
+                    repeat_count = 6,
+                    scale = 0.5,
                     line_length = 8,
-                    width = 104,
-                    height = 102,
+                    width = 206,
+                    height = 202,
                     frame_count = 40,
                     shift = util.by_pixel(-4, -24),
                     tint = inputs.tint,
-                    animation_speed = animation_speed,
-                    repeat_count = 6,
-                    hr_version = {
-                        priority = "high",
-                        filename = "__reskins-bobs__/graphics/entity/mining/pumpjack/hr-pumpjack-horsehead-mask.png",
-                        animation_speed = animation_speed,
-                        repeat_count = 6,
-                        scale = 0.5,
-                        line_length = 8,
-                        width = 206,
-                        height = 202,
-                        frame_count = 40,
-                        shift = util.by_pixel(-4, -24),
-                        tint = inputs.tint,
-                    }
                 },
                 -- Highlights
                 {
                     priority = "high",
-                    filename = "__reskins-bobs__/graphics/entity/mining/pumpjack/pumpjack-horsehead-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/mining/pumpjack/hr-pumpjack-horsehead-highlights.png",
+                    animation_speed = animation_speed,
+                    repeat_count = 6,
+                    scale = 0.5,
                     line_length = 8,
-                    width = 104,
-                    height = 102,
+                    width = 206,
+                    height = 202,
                     frame_count = 40,
                     shift = util.by_pixel(-4, -24),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    animation_speed = animation_speed,
-                    repeat_count = 6,
-                    hr_version = {
-                        priority = "high",
-                        filename = "__reskins-bobs__/graphics/entity/mining/pumpjack/hr-pumpjack-horsehead-highlights.png",
-                        animation_speed = animation_speed,
-                        repeat_count = 6,
-                        scale = 0.5,
-                        line_length = 8,
-                        width = 206,
-                        height = 202,
-                        frame_count = 40,
-                        shift = util.by_pixel(-4, -24),
-                        blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    }
                 },
                 -- Shadow
                 {
                     priority = "high",
-                    filename = "__base__/graphics/entity/pumpjack/pumpjack-horsehead-shadow.png",
+                    filename = "__base__/graphics/entity/pumpjack/hr-pumpjack-horsehead-shadow.png",
                     animation_speed = animation_speed,
                     repeat_count = 6,
                     draw_as_shadow = true,
                     line_length = 8,
-                    width = 155,
-                    height = 41,
+                    width = 309,
+                    height = 82,
                     frame_count = 40,
-                    shift = util.by_pixel(17.5, 14.5),
-                    hr_version = {
-                        priority = "high",
-                        filename = "__base__/graphics/entity/pumpjack/hr-pumpjack-horsehead-shadow.png",
-                        animation_speed = animation_speed,
-                        repeat_count = 6,
-                        draw_as_shadow = true,
-                        line_length = 8,
-                        width = 309,
-                        height = 82,
-                        frame_count = 40,
-                        scale = 0.5,
-                        shift = util.by_pixel(17.75, 14.5)
-                    }
+                    scale = 0.5,
+                    shift = util.by_pixel(17.75, 14.5)
                 }
             }
         }

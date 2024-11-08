@@ -26,73 +26,42 @@ local function steel_furnace_entity_skin(furnace, tint)
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/"..furnace.."-base.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/hr-"..furnace.."-base.png",
                 priority = "high",
-                width = 86,
-                height = 87,
+                width = 172,
+                height = 174,
                 shift = util.by_pixel(-1, 2),
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/hr-"..furnace.."-base.png",
-                    priority = "high",
-                    width = 172,
-                    height = 174,
-                    shift = util.by_pixel(-1, 2),
-                    scale = 0.5
-                }
+                scale = 0.5
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/"..furnace.."-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/hr-"..furnace.."-mask.png",
                 priority = "high",
-                width = 86,
-                height = 87,
+                width = 172,
+                height = 174,
                 shift = util.by_pixel(-1, 2),
                 tint = tint,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/hr-"..furnace.."-mask.png",
-                    priority = "high",
-                    width = 172,
-                    height = 174,
-                    shift = util.by_pixel(-1, 2),
-                    tint = tint,
-                    scale = 0.5
-                }
+                scale = 0.5
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/"..furnace.."-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/hr-"..furnace.."-highlights.png",
                 priority = "high",
-                width = 86,
-                height = 87,
+                width = 172,
+                height = 174,
                 shift = util.by_pixel(-1, 2),
                 blend_mode = reskins.lib.settings.blend_mode,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/hr-"..furnace.."-highlights.png",
-                    priority = "high",
-                    width = 172,
-                    height = 174,
-                    shift = util.by_pixel(-1, 2),
-                    blend_mode = reskins.lib.settings.blend_mode,
-                    scale = 0.5
-                }
+                scale = 0.5
             },
             -- Shadow
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/shadows/"..furnace.."-shadow.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/shadows/hr-"..furnace.."-shadow.png",
                 priority = "high",
-                width = 141,
-                height = 71,
+                width = 282,
+                height = 142,
                 draw_as_shadow = true,
                 shift = util.by_pixel(38.5, 3.5),
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/shadows/hr-"..furnace.."-shadow.png",
-                    priority = "high",
-                    width = 282,
-                    height = 142,
-                    draw_as_shadow = true,
-                    shift = util.by_pixel(38.5, 3.5),
-                    scale = 0.5
-                }
+                scale = 0.5
             },
         }
     }
@@ -104,67 +73,38 @@ local function steel_furnace_remnant_skin(furnace, tint, count)
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/remnants/"..furnace.."-remnants-base.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/remnants/hr-"..furnace.."-remnants-base.png",
                 line_length = count,
-                width = 134,
-                height = 119,
+                width = 268,
+                height = 238,
                 frame_count = 1,
                 direction_count = count,
                 shift = util.by_pixel(4, 0.5),
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/remnants/hr-"..furnace.."-remnants-base.png",
-                    line_length = count,
-                    width = 268,
-                    height = 238,
-                    frame_count = 1,
-                    direction_count = count,
-                    shift = util.by_pixel(4, 0.5),
-                    scale = 0.5,
-                }
+                scale = 0.5,
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/remnants/"..furnace.."-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/remnants/hr-"..furnace.."-remnants-mask.png",
                 line_length = count,
-                width = 134,
-                height = 119,
+                width = 268,
+                height = 238,
                 frame_count = 1,
                 direction_count = count,
                 shift = util.by_pixel(4, 0.5),
                 tint = tint,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/remnants/hr-"..furnace.."-remnants-mask.png",
-                    line_length = count,
-                    width = 268,
-                    height = 238,
-                    frame_count = 1,
-                    direction_count = count,
-                    shift = util.by_pixel(4, 0.5),
-                    tint = tint,
-                    scale = 0.5,
-                }
+                scale = 0.5,
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/remnants/"..furnace.."-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/remnants/hr-"..furnace.."-remnants-highlights.png",
                 line_length = count,
-                width = 134,
-                height = 119,
+                width = 268,
+                height = 238,
                 frame_count = 1,
                 direction_count = count,
                 shift = util.by_pixel(4, 0.5),
                 blend_mode = reskins.lib.settings.blend_mode,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/remnants/hr-"..furnace.."-remnants-highlights.png",
-                    line_length = count,
-                    width = 268,
-                    height = 238,
-                    frame_count = 1,
-                    direction_count = count,
-                    shift = util.by_pixel(4, 0.5),
-                    blend_mode = reskins.lib.settings.blend_mode,
-                    scale = 0.5,
-                }
+                scale = 0.5,
             },
         }
     }
@@ -179,27 +119,16 @@ local function steel_furnace_working(type)
 
     return
     {
-        filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/working/"..working_type..".png",
+        filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/working/hr-"..working_type..".png",
         priority = "high",
-        width = 86,
-        height = 87,
+        width = 172,
+        height = 174,
         frame_count = 1,
         direction_count = 1,
         shift = util.by_pixel(-1, 2),
         blend_mode = "additive",
         draw_as_glow = true,
-        hr_version = {
-            filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/working/hr-"..working_type..".png",
-            priority = "high",
-            width = 172,
-            height = 174,
-            frame_count = 1,
-            direction_count = 1,
-            shift = util.by_pixel(-1, 2),
-            blend_mode = "additive",
-            draw_as_glow = true,
-            scale = 0.5
-        }
+        scale = 0.5
     }
 end
 
@@ -227,27 +156,16 @@ local function steel_furnace_fire(type)
 
     return
     {
-        filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/working/"..fire_type..".png",
+        filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/working/hr-"..fire_type..".png",
         priority = "high",
         line_length = 8,
-        width = 29,
-        height = 40,
+        width = 57,
+        height = 81,
         frame_count = 48,
         direction_count = 1,
-        shift = util.by_pixel(-0.5, 6),
+        shift = util.by_pixel(-0.75, 5.75),
         draw_as_glow = true,
-        hr_version = {
-            filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/working/hr-"..fire_type..".png",
-            priority = "high",
-            line_length = 8,
-            width = 57,
-            height = 81,
-            frame_count = 48,
-            direction_count = 1,
-            shift = util.by_pixel(-0.75, 5.75),
-            draw_as_glow = true,
-            scale = 0.5
-        }
+        scale = 0.5
     }
 end
 
@@ -258,29 +176,17 @@ local function steel_furnace_ground_light(type)
     end
     return
     {
-        filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/lights/"..ground_type..".png",
+        filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/lights/hr-"..ground_type..".png",
         priority = "high",
         line_length = 1,
         draw_as_light = true,
-        width = 78,
-        height = 64,
+        width = 152,
+        height = 126,
         frame_count = 1,
         direction_count = 1,
-        shift = util.by_pixel(0, 48),
+        shift = util.by_pixel(1, 48),
         blend_mode = "additive",
-        hr_version = {
-            filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/lights/hr-"..ground_type..".png",
-            priority = "high",
-            line_length = 1,
-            draw_as_light = true,
-            width = 152,
-            height = 126,
-            frame_count = 1,
-            direction_count = 1,
-            shift = util.by_pixel(1, 48),
-            blend_mode = "additive",
-            scale = 0.5,
-        }
+        scale = 0.5,
     }
 end
 

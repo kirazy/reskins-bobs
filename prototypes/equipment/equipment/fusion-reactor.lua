@@ -49,49 +49,29 @@ for name, map in pairs(fusion_reactors) do
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/equipment/equipment/fusion-reactor/fusion-reactor-equipment-base.png",
-                size = 128,
+                filename = "__reskins-bobs__/graphics/equipment/equipment/fusion-reactor/hr-fusion-reactor-equipment-base.png",
+                size = 256,
                 priority = "medium",
                 flags = { "no-crop" },
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/equipment/equipment/fusion-reactor/hr-fusion-reactor-equipment-base.png",
-                    size = 256,
-                    priority = "medium",
-                    flags = { "no-crop" },
-                    scale = 0.5,
-                }
+                scale = 0.5,
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/equipment/equipment/fusion-reactor/fusion-reactor-equipment-mask.png",
-                size = 128,
+                filename = "__reskins-bobs__/graphics/equipment/equipment/fusion-reactor/hr-fusion-reactor-equipment-mask.png",
+                size = 256,
                 priority = "medium",
                 flags = { "no-crop" },
                 tint = inputs.tint,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/equipment/equipment/fusion-reactor/hr-fusion-reactor-equipment-mask.png",
-                    size = 256,
-                    priority = "medium",
-                    flags = { "no-crop" },
-                    tint = inputs.tint,
-                    scale = 0.5,
-                }
+                scale = 0.5,
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/equipment/equipment/fusion-reactor/fusion-reactor-equipment-highlights.png",
-                size = 128,
+                filename = "__reskins-bobs__/graphics/equipment/equipment/fusion-reactor/hr-fusion-reactor-equipment-highlights.png",
+                size = 256,
                 priority = "medium",
                 flags = { "no-crop" },
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/equipment/equipment/fusion-reactor/hr-fusion-reactor-equipment-highlights.png",
-                    size = 256,
-                    priority = "medium",
-                    flags = { "no-crop" },
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5,
-                }
+                scale = 0.5,
             }
         }
     }

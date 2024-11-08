@@ -52,63 +52,39 @@ local function setup_reskins_module_slot(parameters)
                 has_empty_slot = true,
                 render_layer = "lower-object",
                 pictures = {
-                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/2/beacon-module-slot-2.png",
+                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/2/hr-beacon-module-slot-2.png",
                     line_length = num_lights + 1,
-                    width = 23,
-                    height = 22,
+                    width = 46,
+                    height = 44,
                     variation_count = num_lights + 1,
+                    scale = 0.5,
                     shift = util.by_pixel(19 + shift_x, -12 + shift_y),
-                    hr_version = {
-                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/2/hr-beacon-module-slot-2.png",
-                        line_length = num_lights + 1,
-                        width = 46,
-                        height = 44,
-                        variation_count = num_lights + 1,
-                        scale = 0.5,
-                        shift = util.by_pixel(19 + shift_x, -12 + shift_y),
-                    }
                 }
             },
             {
                 apply_module_tint = "primary",
                 render_layer = "lower-object",
                 pictures = {
-                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/2/beacon-module-mask-box-2.png",
+                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/2/hr-beacon-module-mask-box-2.png",
                     line_length = num_lights,
-                    width = 18,
-                    height = 14,
+                    width = 36,
+                    height = 28,
                     variation_count = num_lights,
+                    scale = 0.5,
                     shift = util.by_pixel(20.5 + shift_x, -12 + shift_y),
-                    hr_version = {
-                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/2/hr-beacon-module-mask-box-2.png",
-                        line_length = num_lights,
-                        width = 36,
-                        height = 28,
-                        variation_count = num_lights,
-                        scale = 0.5,
-                        shift = util.by_pixel(20.5 + shift_x, -12 + shift_y),
-                    }
                 }
             },
             {
                 apply_module_tint = "secondary",
                 render_layer = "lower-object-above-shadow",
                 pictures = {
-                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/2/beacon-module-mask-lights-2.png",
+                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/2/hr-beacon-module-mask-lights-2.png",
                     line_length = num_lights,
-                    width = 12,
-                    height = 8,
+                    width = 24,
+                    height = 16,
                     variation_count = num_lights,
+                    scale = 0.5,
                     shift = util.by_pixel(21.5 + shift_x, -15.5 + shift_y),
-                    hr_version = {
-                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/2/hr-beacon-module-mask-lights-2.png",
-                        line_length = num_lights,
-                        width = 24,
-                        height = 16,
-                        variation_count = num_lights,
-                        scale = 0.5,
-                        shift = util.by_pixel(21.5 + shift_x, -15.5 + shift_y),
-                    }
                 }
             },
             {
@@ -116,21 +92,13 @@ local function setup_reskins_module_slot(parameters)
                 draw_as_light = true,
                 draw_as_sprite = false,
                 pictures = {
-                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/2/beacon-module-lights-2.png",
+                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/2/hr-beacon-module-lights-2.png",
                     line_length = num_lights,
-                    width = 33,
-                    height = 23,
+                    width = 66,
+                    height = 46,
                     variation_count = num_lights,
                     shift = util.by_pixel(22 + shift_x, -16 + shift_y),
-                    hr_version = {
-                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/2/hr-beacon-module-lights-2.png",
-                        line_length = num_lights,
-                        width = 66,
-                        height = 46,
-                        variation_count = num_lights,
-                        shift = util.by_pixel(22 + shift_x, -16 + shift_y),
-                        scale = 0.5
-                    }
+                    scale = 0.5
                 }
             }
         }
@@ -142,21 +110,13 @@ local function setup_reskins_module_slot(parameters)
                 has_empty_slot = true,
                 render_layer = "lower-object",
                 pictures = {
-                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/1/beacon-module-slot-1.png",
+                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/1/hr-beacon-module-slot-1.png",
                     line_length = num_lights + 1,
-                    width = 25,
-                    height = 33,
+                    width = 50,
+                    height = 66,
                     variation_count = num_lights + 1,
+                    scale = 0.5,
                     shift = util.by_pixel(-16 + shift_x, 14.5 + shift_y),
-                    hr_version = {
-                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/1/hr-beacon-module-slot-1.png",
-                        line_length = num_lights + 1,
-                        width = 50,
-                        height = 66,
-                        variation_count = num_lights + 1,
-                        scale = 0.5,
-                        shift = util.by_pixel(-16 + shift_x, 14.5 + shift_y),
-                    }
                 }
             },
             -- Slot Mask
@@ -164,21 +124,13 @@ local function setup_reskins_module_slot(parameters)
                 apply_module_tint = "primary",
                 render_layer = "lower-object",
                 pictures = {
-                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/1/beacon-module-mask-box-1.png",
+                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/1/hr-beacon-module-mask-box-1.png",
                     line_length = num_lights,
-                    width = 18,
-                    height = 16,
+                    width = 36,
+                    height = 32,
                     variation_count = num_lights,
+                    scale = 0.5,
                     shift = util.by_pixel(-17 + shift_x, 15 + shift_y),
-                    hr_version = {
-                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/1/hr-beacon-module-mask-box-1.png",
-                        line_length = num_lights,
-                        width = 36,
-                        height = 32,
-                        variation_count = num_lights,
-                        scale = 0.5,
-                        shift = util.by_pixel(-17 + shift_x, 15 + shift_y),
-                    }
                 }
             },
             -- Slot Lights Count
@@ -186,21 +138,13 @@ local function setup_reskins_module_slot(parameters)
                 apply_module_tint = "secondary",
                 render_layer = "lower-object-above-shadow",
                 pictures = {
-                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/1/beacon-module-mask-lights-1.png",
+                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/1/hr-beacon-module-mask-lights-1.png",
                     line_length = num_lights,
-                    width = 13,
-                    height = 11,
+                    width = 26,
+                    height = 22,
                     variation_count = num_lights,
-                    shift = util.by_pixel(-18 + shift_x, 13 + shift_y),
-                    hr_version = {
-                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/1/hr-beacon-module-mask-lights-1.png",
-                        line_length = num_lights,
-                        width = 26,
-                        height = 22,
-                        variation_count = num_lights,
-                        scale = 0.5,
-                        shift = util.by_pixel(-18.5 + shift_x, 13 + shift_y),
-                    }
+                    scale = 0.5,
+                    shift = util.by_pixel(-18.5 + shift_x, 13 + shift_y),
                 }
             },
             -- Slot Lights Radiance
@@ -209,21 +153,13 @@ local function setup_reskins_module_slot(parameters)
                 draw_as_light = true,
                 draw_as_sprite = false,
                 pictures = {
-                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/1/beacon-module-lights-1.png",
+                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/1/hr-beacon-module-lights-1.png",
                     line_length = num_lights,
-                    width = 28,
-                    height = 21,
+                    width = 56,
+                    height = 42,
                     variation_count = num_lights,
                     shift = util.by_pixel(-18 + shift_x, 13 + shift_y),
-                    hr_version = {
-                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/1/hr-beacon-module-lights-1.png",
-                        line_length = num_lights,
-                        width = 56,
-                        height = 42,
-                        variation_count = num_lights,
-                        shift = util.by_pixel(-18 + shift_x, 13 + shift_y),
-                        scale = 0.5
-                    }
+                    scale = 0.5
                 }
             }
         }
@@ -269,22 +205,13 @@ local function setup_vanilla_module_slot(parameters)
                 render_layer = "lower-object",
                 pictures =
                 {
-                    filename = "__base__/graphics/entity/beacon/beacon-module-slot-2.png",
+                    filename = "__base__/graphics/entity/beacon/hr-beacon-module-slot-2.png",
                     line_length = 4,
-                    width = 24,
-                    height = 22,
+                    width = 46,
+                    height = 44,
                     variation_count = 4,
+                    scale = 0.5,
                     shift = util.by_pixel(19 + shift_x, -12 + shift_y),
-                    hr_version =
-                    {
-                        filename = "__base__/graphics/entity/beacon/hr-beacon-module-slot-2.png",
-                        line_length = 4,
-                        width = 46,
-                        height = 44,
-                        variation_count = 4,
-                        scale = 0.5,
-                        shift = util.by_pixel(19 + shift_x, -12 + shift_y),
-                    }
                 }
             },
             {
@@ -292,43 +219,26 @@ local function setup_vanilla_module_slot(parameters)
                 render_layer = "lower-object",
                 pictures =
                 {
-                    filename = "__base__/graphics/entity/beacon/beacon-module-mask-box-2.png",
+                    filename = "__base__/graphics/entity/beacon/hr-beacon-module-mask-box-2.png",
                     line_length = 3,
-                    width = 18,
-                    height = 14,
+                    width = 36,
+                    height = 26,
                     variation_count = 3,
-                    shift = util.by_pixel(20 + shift_x, -12 + shift_y),
-                    hr_version =
-                    {
-                        filename = "__base__/graphics/entity/beacon/hr-beacon-module-mask-box-2.png",
-                        line_length = 3,
-                        width = 36,
-                        height = 26,
-                        variation_count = 3,
-                        scale = 0.5,
-                        shift = util.by_pixel(20.5 + shift_x, -12 + shift_y),
-                    }
+                    scale = 0.5,
+                    shift = util.by_pixel(20.5 + shift_x, -12 + shift_y),
                 }
             },
             {
                 apply_module_tint = "secondary",
                 render_layer = "lower-object-above-shadow",
                 pictures = {
-                    filename = "__base__/graphics/entity/beacon/beacon-module-mask-lights-2.png",
+                    filename = "__base__/graphics/entity/beacon/hr-beacon-module-mask-lights-2.png",
                     line_length = 3,
-                    width = 12,
-                    height = 8,
+                    width = 24,
+                    height = 14,
                     variation_count = 3,
-                    shift = util.by_pixel(22 + shift_x, -15 + shift_y),
-                    hr_version = {
-                        filename = "__base__/graphics/entity/beacon/hr-beacon-module-mask-lights-2.png",
-                        line_length = 3,
-                        width = 24,
-                        height = 14,
-                        variation_count = 3,
-                        scale = 0.5,
-                        shift = util.by_pixel(22 + shift_x, -15.5 + shift_y),
-                    }
+                    scale = 0.5,
+                    shift = util.by_pixel(22 + shift_x, -15.5 + shift_y),
                 }
             },
             {
@@ -336,21 +246,13 @@ local function setup_vanilla_module_slot(parameters)
                 draw_as_light = true,
                 draw_as_sprite = false,
                 pictures = {
-                    filename = "__base__/graphics/entity/beacon/beacon-module-lights-2.png",
+                    filename = "__base__/graphics/entity/beacon/hr-beacon-module-lights-2.png",
                     line_length = 3,
-                    width = 34,
-                    height = 24,
+                    width = 66,
+                    height = 46,
                     variation_count = 3,
                     shift = util.by_pixel(22 + shift_x, -16 + shift_y),
-                    hr_version = {
-                        filename = "__base__/graphics/entity/beacon/hr-beacon-module-lights-2.png",
-                        line_length = 3,
-                        width = 66,
-                        height = 46,
-                        variation_count = 3,
-                        shift = util.by_pixel(22 + shift_x, -16 + shift_y),
-                        scale = 0.5
-                    }
+                    scale = 0.5
                 }
             }
         }
@@ -362,21 +264,13 @@ local function setup_vanilla_module_slot(parameters)
                 has_empty_slot = true,
                 render_layer = "lower-object",
                 pictures = {
-                    filename = "__base__/graphics/entity/beacon/beacon-module-slot-1.png",
+                    filename = "__base__/graphics/entity/beacon/hr-beacon-module-slot-1.png",
                     line_length = 4,
-                    width = 26,
-                    height = 34,
+                    width = 50,
+                    height = 66,
                     variation_count = 4,
-                    shift = util.by_pixel(-16 + shift_x, 15 + shift_y),
-                    hr_version = {
-                        filename = "__base__/graphics/entity/beacon/hr-beacon-module-slot-1.png",
-                        line_length = 4,
-                        width = 50,
-                        height = 66,
-                        variation_count = 4,
-                        scale = 0.5,
-                        shift = util.by_pixel(-16 + shift_x, 14.5 + shift_y),
-                    }
+                    scale = 0.5,
+                    shift = util.by_pixel(-16 + shift_x, 14.5 + shift_y),
                 }
             },
             -- Slot Mask
@@ -384,21 +278,13 @@ local function setup_vanilla_module_slot(parameters)
                 apply_module_tint = "primary",
                 render_layer = "lower-object",
                 pictures = {
-                    filename = "__base__/graphics/entity/beacon/beacon-module-mask-box-1.png",
+                    filename = "__base__/graphics/entity/beacon/hr-beacon-module-mask-box-1.png",
                     line_length = 3,
-                    width = 18,
-                    height = 16,
+                    width = 36,
+                    height = 32,
                     variation_count = 3,
+                    scale = 0.5,
                     shift = util.by_pixel(-17 + shift_x, 15 + shift_y),
-                    hr_version = {
-                        filename = "__base__/graphics/entity/beacon/hr-beacon-module-mask-box-1.png",
-                        line_length = 3,
-                        width = 36,
-                        height = 32,
-                        variation_count = 3,
-                        scale = 0.5,
-                        shift = util.by_pixel(-17 + shift_x, 15 + shift_y),
-                    }
                 }
             },
             -- Slot Lights Count
@@ -406,21 +292,13 @@ local function setup_vanilla_module_slot(parameters)
                 apply_module_tint = "secondary",
                 render_layer = "lower-object-above-shadow",
                 pictures = {
-                    filename = "__base__/graphics/entity/beacon/beacon-module-mask-lights-1.png",
+                    filename = "__base__/graphics/entity/beacon/hr-beacon-module-mask-lights-1.png",
                     line_length = 3,
-                    width = 14,
-                    height = 6,
+                    width = 26,
+                    height = 12,
                     variation_count = 3,
-                    shift = util.by_pixel(-18 + shift_x, 13 + shift_y),
-                    hr_version = {
-                        filename = "__base__/graphics/entity/beacon/hr-beacon-module-mask-lights-1.png",
-                        line_length = 3,
-                        width = 26,
-                        height = 12,
-                        variation_count = 3,
-                        scale = 0.5,
-                        shift = util.by_pixel(-18.5 + shift_x, 13 + shift_y),
-                    }
+                    scale = 0.5,
+                    shift = util.by_pixel(-18.5 + shift_x, 13 + shift_y),
                 }
             },
             -- Slot Lights Radiance
@@ -429,21 +307,13 @@ local function setup_vanilla_module_slot(parameters)
                 draw_as_light = true,
                 draw_as_sprite = false,
                 pictures = {
-                    filename = "__base__/graphics/entity/beacon/beacon-module-lights-1.png",
+                    filename = "__base__/graphics/entity/beacon/hr-beacon-module-lights-1.png",
                     line_length = 3,
-                    width = 28,
-                    height = 22,
+                    width = 56,
+                    height = 42,
                     variation_count = 3,
                     shift = util.by_pixel(-18 + shift_x, 13 + shift_y),
-                    hr_version = {
-                        filename = "__base__/graphics/entity/beacon/hr-beacon-module-lights-1.png",
-                        line_length = 3,
-                        width = 56,
-                        height = 42,
-                        variation_count = 3,
-                        shift = util.by_pixel(-18 + shift_x, 13 + shift_y),
-                        scale = 0.5
-                    }
+                    scale = 0.5
                 }
             }
         }

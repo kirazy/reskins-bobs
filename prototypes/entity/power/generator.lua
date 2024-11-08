@@ -38,75 +38,43 @@ local function setup_fluid_generator(tint)
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/power/fluid-generator/fluid-generator-base.png",
-                width = 101,
-                height = 130,
+                filename = "__reskins-bobs__/graphics/entity/power/fluid-generator/hr-fluid-generator-base.png",
+                width = 202,
+                height = 260,
                 frame_count = 8,
                 line_length = 4,
                 shift = util.by_pixel(2.5, -11),
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/fluid-generator/hr-fluid-generator-base.png",
-                    width = 202,
-                    height = 260,
-                    frame_count = 8,
-                    line_length = 4,
-                    shift = util.by_pixel(2.5, -11),
-                    scale = 0.5
-                }
+                scale = 0.5
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/power/fluid-generator/fluid-generator-mask.png",
-                width = 101,
-                height = 130,
+                filename = "__reskins-bobs__/graphics/entity/power/fluid-generator/hr-fluid-generator-mask.png",
+                width = 202,
+                height = 260,
                 repeat_count = 8,
                 tint = tint,
                 shift = util.by_pixel(2.5, -11),
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/fluid-generator/hr-fluid-generator-mask.png",
-                    width = 202,
-                    height = 260,
-                    repeat_count = 8,
-                    tint = tint,
-                    shift = util.by_pixel(2.5, -11),
-                    scale = 0.5
-                }
+                scale = 0.5
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/power/fluid-generator/fluid-generator-highlights.png",
-                width = 101,
-                height = 130,
+                filename = "__reskins-bobs__/graphics/entity/power/fluid-generator/hr-fluid-generator-highlights.png",
+                width = 202,
+                height = 260,
                 repeat_count = 8,
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 shift = util.by_pixel(2.5, -11),
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/fluid-generator/hr-fluid-generator-highlights.png",
-                    width = 202,
-                    height = 260,
-                    repeat_count = 8,
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    shift = util.by_pixel(2.5, -11),
-                    scale = 0.5
-                }
+                scale = 0.5
             },
             -- Shadow
             {
-                filename = "__reskins-bobs__/graphics/entity/power/fluid-generator/fluid-generator-shadow.png",
-                width = 162,
-                height = 130,
+                filename = "__reskins-bobs__/graphics/entity/power/fluid-generator/hr-fluid-generator-shadow.png",
+                width = 324,
+                height = 260,
                 repeat_count = 8,
                 draw_as_shadow = true,
                 shift = util.by_pixel(33, -11),
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/fluid-generator/hr-fluid-generator-shadow.png",
-                    width = 324,
-                    height = 260,
-                    repeat_count = 8,
-                    draw_as_shadow = true,
-                    shift = util.by_pixel(33, -11),
-                    scale = 0.5
-                }
+                scale = 0.5
             },
         }
     }

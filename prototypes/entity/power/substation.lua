@@ -50,78 +50,43 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/power/substation/base/remnants/substation-remnants.png",
+                filename = "__reskins-bobs__/graphics/entity/power/substation/base/remnants/hr-substation-remnants.png",
                 line_length = 1,
-                width = 92,
-                height = 68,
+                width = 182,
+                height = 134,
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
                 direction_count = 1,
-                shift = util.by_pixel(3, 1),
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/substation/base/remnants/hr-substation-remnants.png",
-                    line_length = 1,
-                    width = 182,
-                    height = 134,
-                    frame_count = 1,
-                    variation_count = 1,
-                    axially_symmetrical = false,
-                    direction_count = 1,
-                    shift = util.by_pixel(2.5, 0.5),
-                    scale = 0.5,
-                }
+                shift = util.by_pixel(2.5, 0.5),
+                scale = 0.5,
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/power/substation/remnants/substation-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/power/substation/remnants/hr-substation-remnants-mask.png",
                 line_length = 1,
-                width = 92,
-                height = 68,
+                width = 182,
+                height = 134,
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
                 direction_count = 1,
-                shift = util.by_pixel(3, 1),
+                shift = util.by_pixel(2.5, 0.5),
                 tint = inputs.tint,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/substation/remnants/hr-substation-remnants-mask.png",
-                    line_length = 1,
-                    width = 182,
-                    height = 134,
-                    frame_count = 1,
-                    variation_count = 1,
-                    axially_symmetrical = false,
-                    direction_count = 1,
-                    shift = util.by_pixel(2.5, 0.5),
-                    tint = inputs.tint,
-                    scale = 0.5,
-                }
+                scale = 0.5,
             },
             {
-                filename = "__reskins-bobs__/graphics/entity/power/substation/remnants/substation-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/power/substation/remnants/hr-substation-remnants-highlights.png",
                 line_length = 1,
-                width = 92,
-                height = 68,
+                width = 182,
+                height = 134,
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
                 direction_count = 1,
-                shift = util.by_pixel(3, 1),
+                shift = util.by_pixel(2.5, 0.5),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/substation/remnants/hr-substation-remnants-highlights.png",
-                    line_length = 1,
-                    width = 182,
-                    height = 134,
-                    frame_count = 1,
-                    variation_count = 1,
-                    axially_symmetrical = false,
-                    direction_count = 1,
-                    shift = util.by_pixel(2.5, 0.5),
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5,
-                }
+                scale = 0.5,
             }
         }
     })
@@ -131,81 +96,46 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/power/substation/base/substation.png",
+                filename = "__reskins-bobs__/graphics/entity/power/substation/base/hr-substation.png",
                 priority = "high",
-                width = 70,
-                height = 136,
+                width = 138,
+                height = 270,
                 direction_count = 4,
                 shift = util.by_pixel(0, 1 - 32),
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/substation/base/hr-substation.png",
-                    priority = "high",
-                    width = 138,
-                    height = 270,
-                    direction_count = 4,
-                    shift = util.by_pixel(0, 1 - 32),
-                    scale = 0.5
-                }
+                scale = 0.5
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/power/substation/substation-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/power/substation/hr-substation-mask.png",
                 priority = "high",
-                width = 70,
-                height = 136,
+                width = 138,
+                height = 270,
                 direction_count = 4,
                 shift = util.by_pixel(0, 1 - 32),
                 tint = inputs.tint,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/substation/hr-substation-mask.png",
-                    priority = "high",
-                    width = 138,
-                    height = 270,
-                    direction_count = 4,
-                    shift = util.by_pixel(0, 1 - 32),
-                    tint = inputs.tint,
-                    scale = 0.5
-                }
+                scale = 0.5
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/power/substation/substation-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/power/substation/hr-substation-highlights.png",
                 priority = "high",
-                width = 70,
-                height = 136,
+                width = 138,
+                height = 270,
                 direction_count = 4,
                 shift = util.by_pixel(0, 1 - 32),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/substation/hr-substation-highlights.png",
-                    priority = "high",
-                    width = 138,
-                    height = 270,
-                    direction_count = 4,
-                    shift = util.by_pixel(0, 1 - 32),
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5
-                }
+                scale = 0.5
             },
             -- Shadow
             {
-                filename = "__reskins-bobs__/graphics/entity/power/substation/base/substation-shadow.png",
+                filename = "__reskins-bobs__/graphics/entity/power/substation/base/hr-substation-shadow.png",
                 priority = "high",
-                width = 186,
-                height = 52,
+                width = 370,
+                height = 104,
                 direction_count = 4,
                 shift = util.by_pixel(62, 42 - 32),
                 draw_as_shadow = true,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/substation/base/hr-substation-shadow.png",
-                    priority = "high",
-                    width = 370,
-                    height = 104,
-                    direction_count = 4,
-                    shift = util.by_pixel(62, 42 - 32),
-                    draw_as_shadow = true,
-                    scale = 0.5
-                }
+                scale = 0.5
             }
         }
     }

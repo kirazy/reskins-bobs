@@ -79,43 +79,25 @@ for name, map in pairs(logistic_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/logistic-chest/remnants/" .. chest .. "-chest-remnants.png",
+                filename = "__base__/graphics/entity/logistic-chest/remnants/hr-" .. chest .. "-chest-remnants.png",
                 line_length = 1,
-                width = 60,
-                height = 42,
+                width = 116,
+                height = 82,
                 frame_count = 1,
                 direction_count = 1,
-                shift = util.by_pixel(10.5, -2.5),
-                hr_version = {
-                    filename = "__base__/graphics/entity/logistic-chest/remnants/hr-" .. chest .. "-chest-remnants.png",
-                    line_length = 1,
-                    width = 116,
-                    height = 82,
-                    frame_count = 1,
-                    direction_count = 1,
-                    shift = util.by_pixel(10, -3),
-                    scale = 0.5,
-                }
+                shift = util.by_pixel(10, -3),
+                scale = 0.5,
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/chest/remnants/" .. material .. "-logistic-chest-remnants.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/chest/remnants/hr-" .. material .. "-logistic-chest-remnants.png",
                 line_length = 1,
-                width = 60,
-                height = 42,
+                width = 116,
+                height = 82,
                 frame_count = 1,
                 direction_count = 1,
-                shift = util.by_pixel(10.5, -2.5),
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/chest/remnants/hr-" .. material .. "-logistic-chest-remnants.png",
-                    line_length = 1,
-                    width = 116,
-                    height = 82,
-                    frame_count = 1,
-                    direction_count = 1,
-                    shift = util.by_pixel(10, -3),
-                    scale = 0.5,
-                }
+                shift = util.by_pixel(10, -3),
+                scale = 0.5,
             }
         }
     }
@@ -125,59 +107,34 @@ for name, map in pairs(logistic_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/logistic-chest/logistic-chest-" .. chest .. ".png",
+                filename = "__base__/graphics/entity/logistic-chest/hr-logistic-chest-" .. chest .. ".png",
                 priority = "extra-high",
-                width = 34,
-                height = 38,
+                width = 66,
+                height = 74,
                 frame_count = 7,
                 shift = util.by_pixel(0, -2),
-                hr_version = {
-                    filename = "__base__/graphics/entity/logistic-chest/hr-logistic-chest-" .. chest .. ".png",
-                    priority = "extra-high",
-                    width = 66,
-                    height = 74,
-                    frame_count = 7,
-                    shift = util.by_pixel(0, -2),
-                    scale = 0.5
-                }
+                scale = 0.5
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/chest/" .. material .. "-logistic-chest.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/chest/hr-" .. material .. "-logistic-chest.png",
                 priority = "extra-high",
-                width = 34,
-                height = 38,
+                width = 66,
+                height = 74,
                 frame_count = 7,
                 shift = util.by_pixel(0, -2),
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/chest/hr-" .. material .. "-logistic-chest.png",
-                    priority = "extra-high",
-                    width = 66,
-                    height = 74,
-                    frame_count = 7,
-                    shift = util.by_pixel(0, -2),
-                    scale = 0.5
-                }
+                scale = 0.5
             },
             -- Shadow
             {
-                filename = "__base__/graphics/entity/logistic-chest/logistic-chest-shadow.png",
+                filename = "__base__/graphics/entity/logistic-chest/hr-logistic-chest-shadow.png",
                 priority = "extra-high",
-                width = 56,
-                height = 24,
+                width = 112,
+                height = 46,
                 repeat_count = 7,
-                shift = util.by_pixel(12, 5),
+                shift = util.by_pixel(12, 4.5),
                 draw_as_shadow = true,
-                hr_version = {
-                    filename = "__base__/graphics/entity/logistic-chest/hr-logistic-chest-shadow.png",
-                    priority = "extra-high",
-                    width = 112,
-                    height = 46,
-                    repeat_count = 7,
-                    shift = util.by_pixel(12, 4.5),
-                    draw_as_shadow = true,
-                    scale = 0.5
-                }
+                scale = 0.5
             }
         }
     }

@@ -50,79 +50,44 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/steam-turbine/remnants/steam-turbine-remnants.png",
+                filename = "__base__/graphics/entity/steam-turbine/remnants/hr-steam-turbine-remnants.png",
                 line_length = 1,
-                width = 230,
-                height = 204,
+                width = 460,
+                height = 408,
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
                 direction_count = 4,
                 shift = util.by_pixel(6, 0),
-                hr_version = {
-                    filename = "__base__/graphics/entity/steam-turbine/remnants/hr-steam-turbine-remnants.png",
-                    line_length = 1,
-                    width = 460,
-                    height = 408,
-                    frame_count = 1,
-                    variation_count = 1,
-                    axially_symmetrical = false,
-                    direction_count = 4,
-                    shift = util.by_pixel(6, 0),
-                    scale = 0.5,
-                }
+                scale = 0.5,
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/remnants/steam-turbine-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/remnants/hr-steam-turbine-remnants-mask.png",
                 line_length = 1,
-                width = 230,
-                height = 204,
+                width = 460,
+                height = 408,
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
                 direction_count = 4,
                 shift = util.by_pixel(6, 0),
                 tint = inputs.tint,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/remnants/hr-steam-turbine-remnants-mask.png",
-                    line_length = 1,
-                    width = 460,
-                    height = 408,
-                    frame_count = 1,
-                    variation_count = 1,
-                    axially_symmetrical = false,
-                    direction_count = 4,
-                    shift = util.by_pixel(6, 0),
-                    tint = inputs.tint,
-                    scale = 0.5,
-                }
+                scale = 0.5,
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/remnants/steam-turbine-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/remnants/hr-steam-turbine-remnants-highlights.png",
                 line_length = 1,
-                width = 230,
-                height = 204,
+                width = 460,
+                height = 408,
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
                 direction_count = 4,
                 shift = util.by_pixel(6, 0),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/remnants/hr-steam-turbine-remnants-highlights.png",
-                    line_length = 1,
-                    width = 460,
-                    height = 408,
-                    frame_count = 1,
-                    variation_count = 1,
-                    axially_symmetrical = false,
-                    direction_count = 4,
-                    shift = util.by_pixel(6, 0),
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5,
-                }
+                scale = 0.5,
             }
         }
     })
@@ -132,87 +97,49 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/steam-turbine/steam-turbine-H.png",
-                width = 160,
-                height = 123,
+                filename = "__base__/graphics/entity/steam-turbine/hr-steam-turbine-H.png",
+                width = 320,
+                height = 245,
                 frame_count = 8,
                 line_length = 4,
-                shift = util.by_pixel(0, -2.5),
-                hr_version = {
-                    filename = "__base__/graphics/entity/steam-turbine/hr-steam-turbine-H.png",
-                    width = 320,
-                    height = 245,
-                    frame_count = 8,
-                    line_length = 4,
-                    shift = util.by_pixel(0, -2.75),
-                    scale = 0.5
-                }
+                shift = util.by_pixel(0, -2.75),
+                scale = 0.5
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/steam-turbine-H-mask.png",
-                width = 160,
-                height = 123,
+                filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/hr-steam-turbine-H-mask.png",
+                width = 320,
+                height = 245,
                 frame_count = 1,
                 line_length = 1,
                 repeat_count = 8,
-                shift = util.by_pixel(0, -2.5),
+                shift = util.by_pixel(0, -2.75),
                 tint = inputs.tint,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/hr-steam-turbine-H-mask.png",
-                    width = 320,
-                    height = 245,
-                    frame_count = 1,
-                    line_length = 1,
-                    repeat_count = 8,
-                    shift = util.by_pixel(0, -2.75),
-                    tint = inputs.tint,
-                    scale = 0.5
-                }
+                scale = 0.5
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/steam-turbine-H-highlights.png",
-                width = 160,
-                height = 123,
+                filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/hr-steam-turbine-H-highlights.png",
+                width = 320,
+                height = 245,
                 frame_count = 1,
                 line_length = 1,
                 repeat_count = 8,
-                shift = util.by_pixel(0, -2.5),
+                shift = util.by_pixel(0, -2.75),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/hr-steam-turbine-H-highlights.png",
-                    width = 320,
-                    height = 245,
-                    frame_count = 1,
-                    line_length = 1,
-                    repeat_count = 8,
-                    shift = util.by_pixel(0, -2.75),
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5
-                }
+                scale = 0.5
             },
             -- Shadow
             {
-                filename = "__base__/graphics/entity/steam-turbine/steam-turbine-H-shadow.png",
-                width = 217,
-                height = 74,
+                filename = "__base__/graphics/entity/steam-turbine/hr-steam-turbine-H-shadow.png",
+                width = 435,
+                height = 150,
                 repeat_count = 8,
                 frame_count = 1,
                 line_length = 1,
                 draw_as_shadow = true,
-                shift = util.by_pixel(28.75, 18),
-                hr_version = {
-                    filename = "__base__/graphics/entity/steam-turbine/hr-steam-turbine-H-shadow.png",
-                    width = 435,
-                    height = 150,
-                    repeat_count = 8,
-                    frame_count = 1,
-                    line_length = 1,
-                    draw_as_shadow = true,
-                    shift = util.by_pixel(28.5, 18),
-                    scale = 0.5
-                }
+                shift = util.by_pixel(28.5, 18),
+                scale = 0.5
             }
         }
     }
@@ -221,87 +148,49 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/steam-turbine/steam-turbine-V.png",
-                width = 108,
-                height = 173,
+                filename = "__base__/graphics/entity/steam-turbine/hr-steam-turbine-V.png",
+                width = 217,
+                height = 347,
                 frame_count = 8,
                 line_length = 4,
-                shift = util.by_pixel(5, 6.5),
-                hr_version = {
-                    filename = "__base__/graphics/entity/steam-turbine/hr-steam-turbine-V.png",
-                    width = 217,
-                    height = 347,
-                    frame_count = 8,
-                    line_length = 4,
-                    shift = util.by_pixel(4.75, 6.75),
-                    scale = 0.5
-                }
+                shift = util.by_pixel(4.75, 6.75),
+                scale = 0.5
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/steam-turbine-V-mask.png",
-                width = 108,
-                height = 173,
+                filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/hr-steam-turbine-V-mask.png",
+                width = 217,
+                height = 347,
                 frame_count = 1,
                 line_length = 1,
                 repeat_count = 8,
-                shift = util.by_pixel(5, 6.5),
+                shift = util.by_pixel(4.75, 6.75),
                 tint = inputs.tint,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/hr-steam-turbine-V-mask.png",
-                    width = 217,
-                    height = 347,
-                    frame_count = 1,
-                    line_length = 1,
-                    repeat_count = 8,
-                    shift = util.by_pixel(4.75, 6.75),
-                    tint = inputs.tint,
-                    scale = 0.5
-                }
+                scale = 0.5
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/steam-turbine-V-highlights.png",
-                width = 108,
-                height = 173,
+                filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/hr-steam-turbine-V-highlights.png",
+                width = 217,
+                height = 347,
                 frame_count = 1,
                 line_length = 1,
                 repeat_count = 8,
-                shift = util.by_pixel(5, 6.5),
+                shift = util.by_pixel(4.75, 6.75),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/hr-steam-turbine-V-highlights.png",
-                    width = 217,
-                    height = 347,
-                    frame_count = 1,
-                    line_length = 1,
-                    repeat_count = 8,
-                    shift = util.by_pixel(4.75, 6.75),
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5
-                }
+                scale = 0.5
             },
             -- Shadow
             {
-                filename = "__base__/graphics/entity/steam-turbine/steam-turbine-V-shadow.png",
-                width = 151,
-                height = 131,
+                filename = "__base__/graphics/entity/steam-turbine/hr-steam-turbine-V-shadow.png",
+                width = 302,
+                height = 260,
                 repeat_count = 8,
                 frame_count = 1,
                 line_length = 1,
                 draw_as_shadow = true,
                 shift = util.by_pixel(39.5, 24.5),
-                hr_version = {
-                    filename = "__base__/graphics/entity/steam-turbine/hr-steam-turbine-V-shadow.png",
-                    width = 302,
-                    height = 260,
-                    repeat_count = 8,
-                    frame_count = 1,
-                    line_length = 1,
-                    draw_as_shadow = true,
-                    shift = util.by_pixel(39.5, 24.5),
-                    scale = 0.5
-                }
+                scale = 0.5
             }
         }
     }

@@ -59,79 +59,44 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/beacon/remnants/beacon-remnants.png",
+                filename = "__base__/graphics/entity/beacon/remnants/hr-beacon-remnants.png",
                 line_length = 1,
-                width = 106,
-                height = 104,
+                width = 212,
+                height = 206,
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(1, 5),
-                hr_version = {
-                    filename = "__base__/graphics/entity/beacon/remnants/hr-beacon-remnants.png",
-                    line_length = 1,
-                    width = 212,
-                    height = 206,
-                    frame_count = 1,
-                    variation_count = 1,
-                    axially_symmetrical = false,
-                    direction_count = 1,
-                    shift = util.by_pixel(1, 5),
-                    scale = 0.5,
-                },
+                scale = 0.5,
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/modules/beacon/remnants/beacon-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/modules/beacon/remnants/hr-beacon-remnants-mask.png",
                 line_length = 1,
-                width = 106,
-                height = 104,
+                width = 212,
+                height = 206,
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(1, 5),
                 tint = inputs.tint,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/remnants/hr-beacon-remnants-mask.png",
-                    line_length = 1,
-                    width = 212,
-                    height = 206,
-                    frame_count = 1,
-                    variation_count = 1,
-                    axially_symmetrical = false,
-                    direction_count = 1,
-                    shift = util.by_pixel(1, 5),
-                    tint = inputs.tint,
-                    scale = 0.5,
-                },
+                scale = 0.5,
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/modules/beacon/remnants/beacon-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/modules/beacon/remnants/hr-beacon-remnants-highlights.png",
                 line_length = 1,
-                width = 106,
-                height = 104,
+                width = 212,
+                height = 206,
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(1, 5),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/remnants/hr-beacon-remnants-highlights.png",
-                    line_length = 1,
-                    width = 212,
-                    height = 206,
-                    frame_count = 1,
-                    variation_count = 1,
-                    axially_symmetrical = false,
-                    direction_count = 1,
-                    shift = util.by_pixel(1, 5),
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5,
-                },
+                scale = 0.5,
             },
         }
     })
@@ -151,65 +116,38 @@ for name, map in pairs(tier_map) do
                 layers = {
                     -- Base
                     {
-                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/beacon-" .. beacon_base .. "-bottom.png",
-                        width = 106,
-                        height = 96,
-                        shift = util.by_pixel(0, 1),
-                        hr_version = {
-                            filename = "__reskins-bobs__/graphics/entity/modules/beacon/hr-beacon-" .. beacon_base .. "-bottom.png",
-                            width = 212,
-                            height = 192,
-                            scale = 0.5,
-                            shift = util.by_pixel(0.5, 1),
-                        }
+                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/hr-beacon-" .. beacon_base .. "-bottom.png",
+                        width = 212,
+                        height = 192,
+                        scale = 0.5,
+                        shift = util.by_pixel(0.5, 1),
                     },
                     -- Mask
                     {
-                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/beacon-" .. beacon_base .. "-bottom-mask.png",
-                        width = 106,
-                        height = 96,
-                        shift = util.by_pixel(0, 1),
+                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/hr-beacon-" .. beacon_base .. "-bottom-mask.png",
+                        width = 212,
+                        height = 192,
+                        shift = util.by_pixel(0.5, 1),
                         tint = inputs.tint,
-                        hr_version = {
-                            filename = "__reskins-bobs__/graphics/entity/modules/beacon/hr-beacon-" .. beacon_base .. "-bottom-mask.png",
-                            width = 212,
-                            height = 192,
-                            shift = util.by_pixel(0.5, 1),
-                            tint = inputs.tint,
-                            scale = 0.5,
-                        }
+                        scale = 0.5,
                     },
                     -- Highlights
                     {
-                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/beacon-" .. beacon_base .. "-bottom-highlights.png",
-                        width = 106,
-                        height = 96,
-                        shift = util.by_pixel(0, 1),
+                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/hr-beacon-" .. beacon_base .. "-bottom-highlights.png",
+                        width = 212,
+                        height = 192,
+                        shift = util.by_pixel(0.5, 1),
                         blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                        hr_version = {
-                            filename = "__reskins-bobs__/graphics/entity/modules/beacon/hr-beacon-" .. beacon_base .. "-bottom-highlights.png",
-                            width = 212,
-                            height = 192,
-                            shift = util.by_pixel(0.5, 1),
-                            blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                            scale = 0.5,
-                        }
+                        scale = 0.5,
                     },
                     -- Shadow
                     {
-                        filename = "__base__/graphics/entity/beacon/beacon-shadow.png",
-                        width = 122,
-                        height = 90,
+                        filename = "__base__/graphics/entity/beacon/hr-beacon-shadow.png",
+                        width = 244,
+                        height = 176,
+                        scale = 0.5,
                         draw_as_shadow = true,
-                        shift = util.by_pixel(12, 1),
-                        hr_version = {
-                            filename = "__base__/graphics/entity/beacon/hr-beacon-shadow.png",
-                            width = 244,
-                            height = 176,
-                            scale = 0.5,
-                            draw_as_shadow = true,
-                            shift = util.by_pixel(12.5, 0.5),
-                        }
+                        shift = util.by_pixel(12.5, 0.5),
                     }
                 }
             }
@@ -219,21 +157,13 @@ for name, map in pairs(tier_map) do
             render_layer = "object",
             always_draw = true,
             animation = {
-                filename = "__reskins-bobs__/graphics/entity/modules/beacon/beacon-" .. beacon_base .. "-top.png",
-                width = 48,
-                height = 70,
+                filename = "__reskins-bobs__/graphics/entity/modules/beacon/hr-beacon-" .. beacon_base .. "-top.png",
+                width = 96,
+                height = 140,
+                scale = 0.5,
                 repeat_count = 45,
                 animation_speed = 0.5,
                 shift = util.by_pixel(3, -19),
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/hr-beacon-" .. beacon_base .. "-top.png",
-                    width = 96,
-                    height = 140,
-                    scale = 0.5,
-                    repeat_count = 45,
-                    animation_speed = 0.5,
-                    shift = util.by_pixel(3, -19),
-                }
             }
         },
         -- Beacon Light Animation
@@ -244,25 +174,15 @@ for name, map in pairs(tier_map) do
             draw_as_light = true,
             always_draw = false,
             animation = {
-                filename = "__base__/graphics/entity/beacon/beacon-light.png",
+                filename = "__base__/graphics/entity/beacon/hr-beacon-light.png",
                 line_length = 9,
-                width = 56,
-                height = 94,
+                width = 110,
+                height = 186,
                 frame_count = 45,
                 animation_speed = 0.5,
-                shift = util.by_pixel(1, -18),
+                scale = 0.5,
+                shift = util.by_pixel(0.5, -18),
                 blend_mode = "additive",
-                hr_version = {
-                    filename = "__base__/graphics/entity/beacon/hr-beacon-light.png",
-                    line_length = 9,
-                    width = 110,
-                    height = 186,
-                    frame_count = 45,
-                    animation_speed = 0.5,
-                    scale = 0.5,
-                    shift = util.by_pixel(0.5, -18),
-                    blend_mode = "additive",
-                }
             }
         },
     }
@@ -277,17 +197,11 @@ for name, map in pairs(tier_map) do
                 layers = {
                     -- Base
                     {
-                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/beacon-2-bottom-slot-overlay.png",
-                        width = 106,
-                        height = 96,
-                        shift = util.by_pixel(0, 1),
-                        hr_version = {
-                            filename = "__reskins-bobs__/graphics/entity/modules/beacon/hr-beacon-2-bottom-slot-overlay.png",
-                            width = 212,
-                            height = 192,
-                            scale = 0.5,
-                            shift = util.by_pixel(0.5, 1),
-                        }
+                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/hr-beacon-2-bottom-slot-overlay.png",
+                        width = 212,
+                        height = 192,
+                        scale = 0.5,
+                        shift = util.by_pixel(0.5, 1),
                     }
                 }
             }
@@ -301,49 +215,29 @@ for name, map in pairs(tier_map) do
                 layers = {
                     -- Base
                     {
-                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/beacon-3-bottom-slot-overlay.png",
-                        width = 106,
-                        height = 96,
-                        shift = util.by_pixel(0, 1),
-                        hr_version = {
-                            filename = "__reskins-bobs__/graphics/entity/modules/beacon/hr-beacon-3-bottom-slot-overlay.png",
-                            width = 212,
-                            height = 192,
-                            scale = 0.5,
-                            shift = util.by_pixel(0.5, 1),
-                        }
+                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/hr-beacon-3-bottom-slot-overlay.png",
+                        width = 212,
+                        height = 192,
+                        scale = 0.5,
+                        shift = util.by_pixel(0.5, 1),
                     },
                     -- Mask
                     {
-                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/beacon-3-bottom-slot-overlay-mask.png",
-                        width = 106,
-                        height = 96,
-                        shift = util.by_pixel(0, 1),
+                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/hr-beacon-3-bottom-slot-overlay-mask.png",
+                        width = 212,
+                        height = 192,
+                        scale = 0.5,
+                        shift = util.by_pixel(0.5, 1),
                         tint = inputs.tint,
-                        hr_version = {
-                            filename = "__reskins-bobs__/graphics/entity/modules/beacon/hr-beacon-3-bottom-slot-overlay-mask.png",
-                            width = 212,
-                            height = 192,
-                            scale = 0.5,
-                            shift = util.by_pixel(0.5, 1),
-                            tint = inputs.tint,
-                        }
                     },
                     -- Highlights
                     {
-                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/beacon-3-bottom-slot-overlay-highlights.png",
-                        width = 106,
-                        height = 96,
-                        shift = util.by_pixel(0, 1),
+                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/hr-beacon-3-bottom-slot-overlay-highlights.png",
+                        width = 212,
+                        height = 192,
+                        scale = 0.5,
+                        shift = util.by_pixel(0.5, 1),
                         blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                        hr_version = {
-                            filename = "__reskins-bobs__/graphics/entity/modules/beacon/hr-beacon-3-bottom-slot-overlay-highlights.png",
-                            width = 212,
-                            height = 192,
-                            scale = 0.5,
-                            shift = util.by_pixel(0.5, 1),
-                            blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                        }
                     }
                 }
             }

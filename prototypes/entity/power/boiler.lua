@@ -63,79 +63,44 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/boiler/remnants/boiler-remnants.png",
+                filename = "__base__/graphics/entity/boiler/remnants/hr-boiler-remnants.png",
                 line_length = 1,
-                width = 138,
-                height = 110,
+                width = 274,
+                height = 220,
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
                 direction_count = 4,
-                shift = util.by_pixel(0, -3),
-                hr_version = {
-                    filename = "__base__/graphics/entity/boiler/remnants/hr-boiler-remnants.png",
-                    line_length = 1,
-                    width = 274,
-                    height = 220,
-                    frame_count = 1,
-                    variation_count = 1,
-                    axially_symmetrical = false,
-                    direction_count = 4,
-                    shift = util.by_pixel(-0.5, -3),
-                    scale = 0.5,
-                }
+                shift = util.by_pixel(-0.5, -3),
+                scale = 0.5,
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/power/boiler/remnants/boiler-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/power/boiler/remnants/hr-boiler-remnants-mask.png",
                 line_length = 1,
-                width = 138,
-                height = 110,
+                width = 274,
+                height = 220,
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
                 direction_count = 4,
-                shift = util.by_pixel(0, -3),
+                shift = util.by_pixel(-0.5, -3),
                 tint = inputs.tint,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/boiler/remnants/hr-boiler-remnants-mask.png",
-                    line_length = 1,
-                    width = 274,
-                    height = 220,
-                    frame_count = 1,
-                    variation_count = 1,
-                    axially_symmetrical = false,
-                    direction_count = 4,
-                    shift = util.by_pixel(-0.5, -3),
-                    tint = inputs.tint,
-                    scale = 0.5,
-                }
+                scale = 0.5,
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/power/boiler/remnants/boiler-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/power/boiler/remnants/hr-boiler-remnants-highlights.png",
                 line_length = 1,
-                width = 138,
-                height = 110,
+                width = 274,
+                height = 220,
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
                 direction_count = 4,
-                shift = util.by_pixel(0, -3),
+                shift = util.by_pixel(-0.5, -3),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/boiler/remnants/hr-boiler-remnants-highlights.png",
-                    line_length = 1,
-                    width = 274,
-                    height = 220,
-                    frame_count = 1,
-                    variation_count = 1,
-                    axially_symmetrical = false,
-                    direction_count = 4,
-                    shift = util.by_pixel(-0.5, -3),
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5,
-                }
+                scale = 0.5,
             }
         }
     }
@@ -146,73 +111,42 @@ for name, map in pairs(tier_map) do
             layers = {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/boiler/boiler-N-idle.png",
+                    filename = "__base__/graphics/entity/boiler/hr-boiler-N-idle.png",
                     priority = "extra-high",
-                    width = 131,
-                    height = 108,
-                    shift = util.by_pixel(-0.5, 4),
-                    hr_version = {
-                        filename = "__base__/graphics/entity/boiler/hr-boiler-N-idle.png",
-                        priority = "extra-high",
-                        width = 269,
-                        height = 221,
-                        shift = util.by_pixel(-1.25, 5.25),
-                        scale = 0.5
-                    }
+                    width = 269,
+                    height = 221,
+                    shift = util.by_pixel(-1.25, 5.25),
+                    scale = 0.5
                 },
                 -- Mask
                 {
-                    filename = "__reskins-bobs__/graphics/entity/power/boiler/boiler-N-idle-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/boiler/hr-boiler-N-idle-mask.png",
                     priority = "extra-high",
-                    width = 131,
-                    height = 108,
-                    shift = util.by_pixel(-0.5, 4),
+                    width = 269,
+                    height = 221,
+                    shift = util.by_pixel(-1.25, 5.25),
                     tint = inputs.tint,
-                    hr_version = {
-                        filename = "__reskins-bobs__/graphics/entity/power/boiler/hr-boiler-N-idle-mask.png",
-                        priority = "extra-high",
-                        width = 269,
-                        height = 221,
-                        shift = util.by_pixel(-1.25, 5.25),
-                        tint = inputs.tint,
-                        scale = 0.5
-                    }
+                    scale = 0.5
                 },
                 -- Highlights
                 {
-                    filename = "__reskins-bobs__/graphics/entity/power/boiler/boiler-N-idle-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/boiler/hr-boiler-N-idle-highlights.png",
                     priority = "extra-high",
-                    width = 131,
-                    height = 108,
-                    shift = util.by_pixel(-0.5, 4),
+                    width = 269,
+                    height = 221,
+                    shift = util.by_pixel(-1.25, 5.25),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    hr_version = {
-                        filename = "__reskins-bobs__/graphics/entity/power/boiler/hr-boiler-N-idle-highlights.png",
-                        priority = "extra-high",
-                        width = 269,
-                        height = 221,
-                        shift = util.by_pixel(-1.25, 5.25),
-                        blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                        scale = 0.5
-                    }
+                    scale = 0.5
                 },
                 -- Shadow
                 {
-                    filename = "__base__/graphics/entity/boiler/boiler-N-shadow.png",
+                    filename = "__base__/graphics/entity/boiler/hr-boiler-N-shadow.png",
                     priority = "extra-high",
-                    width = 137,
-                    height = 82,
+                    width = 274,
+                    height = 164,
+                    scale = 0.5,
                     shift = util.by_pixel(20.5, 9),
-                    draw_as_shadow = true,
-                    hr_version = {
-                        filename = "__base__/graphics/entity/boiler/hr-boiler-N-shadow.png",
-                        priority = "extra-high",
-                        width = 274,
-                        height = 164,
-                        scale = 0.5,
-                        shift = util.by_pixel(20.5, 9),
-                        draw_as_shadow = true
-                    }
+                    draw_as_shadow = true
                 }
             }
         },
@@ -220,73 +154,42 @@ for name, map in pairs(tier_map) do
             layers = {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/boiler/boiler-E-idle.png",
+                    filename = "__base__/graphics/entity/boiler/hr-boiler-E-idle.png",
                     priority = "extra-high",
-                    width = 105,
-                    height = 147,
-                    shift = util.by_pixel(-3.5, -0.5),
-                    hr_version = {
-                        filename = "__base__/graphics/entity/boiler/hr-boiler-E-idle.png",
-                        priority = "extra-high",
-                        width = 216,
-                        height = 301,
-                        shift = util.by_pixel(-3, 1.25),
-                        scale = 0.5
-                    }
+                    width = 216,
+                    height = 301,
+                    shift = util.by_pixel(-3, 1.25),
+                    scale = 0.5
                 },
                 -- Color mask
                 {
-                    filename = "__reskins-bobs__/graphics/entity/power/boiler/boiler-E-idle-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/boiler/hr-boiler-E-idle-mask.png",
                     priority = "extra-high",
-                    width = 105,
-                    height = 147,
-                    shift = util.by_pixel(-3.5, -0.5),
+                    width = 216,
+                    height = 301,
+                    shift = util.by_pixel(-3, 1.25),
                     tint = inputs.tint,
-                    hr_version = {
-                        filename = "__reskins-bobs__/graphics/entity/power/boiler/hr-boiler-E-idle-mask.png",
-                        priority = "extra-high",
-                        width = 216,
-                        height = 301,
-                        shift = util.by_pixel(-3, 1.25),
-                        tint = inputs.tint,
-                        scale = 0.5
-                    }
+                    scale = 0.5
                 },
                 -- Highlights
                 {
-                    filename = "__reskins-bobs__/graphics/entity/power/boiler/boiler-E-idle-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/boiler/hr-boiler-E-idle-highlights.png",
                     priority = "extra-high",
-                    width = 105,
-                    height = 147,
-                    shift = util.by_pixel(-3.5, -0.5),
+                    width = 216,
+                    height = 301,
+                    shift = util.by_pixel(-3, 1.25),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    hr_version = {
-                        filename = "__reskins-bobs__/graphics/entity/power/boiler/hr-boiler-E-idle-highlights.png",
-                        priority = "extra-high",
-                        width = 216,
-                        height = 301,
-                        shift = util.by_pixel(-3, 1.25),
-                        blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                        scale = 0.5
-                    }
+                    scale = 0.5
                 },
                 -- Shadow
                 {
-                    filename = "__base__/graphics/entity/boiler/boiler-E-shadow.png",
+                    filename = "__base__/graphics/entity/boiler/hr-boiler-E-shadow.png",
                     priority = "extra-high",
-                    width = 92,
-                    height = 97,
+                    width = 184,
+                    height = 194,
+                    scale = 0.5,
                     shift = util.by_pixel(30, 9.5),
-                    draw_as_shadow = true,
-                    hr_version = {
-                        filename = "__base__/graphics/entity/boiler/hr-boiler-E-shadow.png",
-                        priority = "extra-high",
-                        width = 184,
-                        height = 194,
-                        scale = 0.5,
-                        shift = util.by_pixel(30, 9.5),
-                        draw_as_shadow = true
-                    }
+                    draw_as_shadow = true
                 }
             }
         },
@@ -294,73 +197,42 @@ for name, map in pairs(tier_map) do
             layers = {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/boiler/boiler-S-idle.png",
+                    filename = "__base__/graphics/entity/boiler/hr-boiler-S-idle.png",
                     priority = "extra-high",
-                    width = 128,
-                    height = 95,
-                    shift = util.by_pixel(3, 12.5),
-                    hr_version = {
-                        filename = "__base__/graphics/entity/boiler/hr-boiler-S-idle.png",
-                        priority = "extra-high",
-                        width = 260,
-                        height = 192,
-                        shift = util.by_pixel(4, 13),
-                        scale = 0.5
-                    }
+                    width = 260,
+                    height = 192,
+                    shift = util.by_pixel(4, 13),
+                    scale = 0.5
                 },
                 -- Mask
                 {
-                    filename = "__reskins-bobs__/graphics/entity/power/boiler/boiler-S-idle-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/boiler/hr-boiler-S-idle-mask.png",
                     priority = "extra-high",
-                    width = 128,
-                    height = 95,
-                    shift = util.by_pixel(3, 12.5),
+                    width = 260,
+                    height = 192,
+                    shift = util.by_pixel(4, 13),
                     tint = inputs.tint,
-                    hr_version = {
-                        filename = "__reskins-bobs__/graphics/entity/power/boiler/hr-boiler-S-idle-mask.png",
-                        priority = "extra-high",
-                        width = 260,
-                        height = 192,
-                        shift = util.by_pixel(4, 13),
-                        tint = inputs.tint,
-                        scale = 0.5
-                    }
+                    scale = 0.5
                 },
                 -- Highlights
                 {
-                    filename = "__reskins-bobs__/graphics/entity/power/boiler/boiler-S-idle-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/boiler/hr-boiler-S-idle-highlights.png",
                     priority = "extra-high",
-                    width = 128,
-                    height = 95,
-                    shift = util.by_pixel(3, 12.5),
+                    width = 260,
+                    height = 192,
+                    shift = util.by_pixel(4, 13),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    hr_version = {
-                        filename = "__reskins-bobs__/graphics/entity/power/boiler/hr-boiler-S-idle-highlights.png",
-                        priority = "extra-high",
-                        width = 260,
-                        height = 192,
-                        shift = util.by_pixel(4, 13),
-                        blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                        scale = 0.5
-                    }
+                    scale = 0.5
                 },
                 -- Shadow
                 {
-                    filename = "__base__/graphics/entity/boiler/boiler-S-shadow.png",
+                    filename = "__base__/graphics/entity/boiler/hr-boiler-S-shadow.png",
                     priority = "extra-high",
-                    width = 156,
-                    height = 66,
-                    shift = util.by_pixel(30, 16),
-                    draw_as_shadow = true,
-                    hr_version = {
-                        filename = "__base__/graphics/entity/boiler/hr-boiler-S-shadow.png",
-                        priority = "extra-high",
-                        width = 311,
-                        height = 131,
-                        scale = 0.5,
-                        shift = util.by_pixel(29.75, 15.75),
-                        draw_as_shadow = true
-                    }
+                    width = 311,
+                    height = 131,
+                    scale = 0.5,
+                    shift = util.by_pixel(29.75, 15.75),
+                    draw_as_shadow = true
                 }
             }
         },
@@ -368,73 +240,42 @@ for name, map in pairs(tier_map) do
             layers = {
                 -- Base
                 {
-                    filename = "__base__/graphics/entity/boiler/boiler-W-idle.png",
+                    filename = "__base__/graphics/entity/boiler/hr-boiler-W-idle.png",
                     priority = "extra-high",
-                    width = 96,
-                    height = 132,
-                    shift = util.by_pixel(1, 5),
-                    hr_version = {
-                        filename = "__base__/graphics/entity/boiler/hr-boiler-W-idle.png",
-                        priority = "extra-high",
-                        width = 196,
-                        height = 273,
-                        shift = util.by_pixel(1.5, 7.75),
-                        scale = 0.5
-                    }
+                    width = 196,
+                    height = 273,
+                    shift = util.by_pixel(1.5, 7.75),
+                    scale = 0.5
                 },
                 -- Mask
                 {
-                    filename = "__reskins-bobs__/graphics/entity/power/boiler/boiler-W-idle-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/boiler/hr-boiler-W-idle-mask.png",
                     priority = "extra-high",
-                    width = 96,
-                    height = 132,
-                    shift = util.by_pixel(1, 5),
+                    width = 196,
+                    height = 273,
+                    shift = util.by_pixel(1.5, 7.75),
                     tint = inputs.tint,
-                    hr_version = {
-                        filename = "__reskins-bobs__/graphics/entity/power/boiler/hr-boiler-W-idle-mask.png",
-                        priority = "extra-high",
-                        width = 196,
-                        height = 273,
-                        shift = util.by_pixel(1.5, 7.75),
-                        tint = inputs.tint,
-                        scale = 0.5
-                    }
+                    scale = 0.5
                 },
                 -- Highlights
                 {
-                    filename = "__reskins-bobs__/graphics/entity/power/boiler/boiler-W-idle-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/boiler/hr-boiler-W-idle-highlights.png",
                     priority = "extra-high",
-                    width = 96,
-                    height = 132,
-                    shift = util.by_pixel(1, 5),
+                    width = 196,
+                    height = 273,
+                    shift = util.by_pixel(1.5, 7.75),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    hr_version = {
-                        filename = "__reskins-bobs__/graphics/entity/power/boiler/hr-boiler-W-idle-highlights.png",
-                        priority = "extra-high",
-                        width = 196,
-                        height = 273,
-                        shift = util.by_pixel(1.5, 7.75),
-                        blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                        scale = 0.5
-                    }
+                    scale = 0.5
                 },
                 -- Shadow
                 {
-                    filename = "__base__/graphics/entity/boiler/boiler-W-shadow.png",
+                    filename = "__base__/graphics/entity/boiler/hr-boiler-W-shadow.png",
                     priority = "extra-high",
-                    width = 103,
-                    height = 109,
+                    width = 206,
+                    height = 218,
+                    scale = 0.5,
                     shift = util.by_pixel(19.5, 6.5),
-                    draw_as_shadow = true,
-                    hr_version = {
-                        filename = "__base__/graphics/entity/boiler/hr-boiler-W-shadow.png",
-                        priority = "extra-high",
-                        width = 206,
-                        height = 218,
-                        scale = 0.5,
-                        shift = util.by_pixel(19.5, 6.5),
-                        draw_as_shadow = true
-                    }
+                    draw_as_shadow = true
                 }
             }
         }

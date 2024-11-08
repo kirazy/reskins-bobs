@@ -49,55 +49,32 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/warfare/artillery-turret/remnants/artillery-turret-remnants-base.png",
-                width = 164,
-                height = 146,
+                filename = "__reskins-bobs__/graphics/entity/warfare/artillery-turret/remnants/hr-artillery-turret-remnants-base.png",
+                width = 326,
+                height = 290,
                 direction_count = 1,
-                shift = util.by_pixel(10, 2),
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/warfare/artillery-turret/remnants/hr-artillery-turret-remnants-base.png",
-                    width = 326,
-                    height = 290,
-                    direction_count = 1,
-                    shift = util.by_pixel(9.5, 1.5),
-                    scale = 0.5,
-                },
+                shift = util.by_pixel(9.5, 1.5),
+                scale = 0.5,
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/warfare/artillery-turret/remnants/artillery-turret-remnants-mask.png",
-                width = 164,
-                height = 146,
+                filename = "__reskins-bobs__/graphics/entity/warfare/artillery-turret/remnants/hr-artillery-turret-remnants-mask.png",
+                width = 326,
+                height = 290,
                 direction_count = 1,
-                shift = util.by_pixel(10, 2),
+                shift = util.by_pixel(9.5, 1.5),
                 tint = inputs.tint,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/warfare/artillery-turret/remnants/hr-artillery-turret-remnants-mask.png",
-                    width = 326,
-                    height = 290,
-                    direction_count = 1,
-                    shift = util.by_pixel(9.5, 1.5),
-                    tint = inputs.tint,
-                    scale = 0.5,
-                },
+                scale = 0.5,
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/warfare/artillery-turret/remnants/artillery-turret-remnants-highlights.png",
-                width = 164,
-                height = 146,
+                filename = "__reskins-bobs__/graphics/entity/warfare/artillery-turret/remnants/hr-artillery-turret-remnants-highlights.png",
+                width = 326,
+                height = 290,
                 direction_count = 1,
-                shift = util.by_pixel(10, 2),
+                shift = util.by_pixel(9.5, 1.5),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/warfare/artillery-turret/remnants/hr-artillery-turret-remnants-highlights.png",
-                    width = 326,
-                    height = 290,
-                    direction_count = 1,
-                    shift = util.by_pixel(9.5, 1.5),
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5,
-                },
+                scale = 0.5,
             }
         }
     })
@@ -107,73 +84,42 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/warfare/artillery-turret/artillery-turret-base.png",
+                filename = "__reskins-bobs__/graphics/entity/warfare/artillery-turret/hr-artillery-turret-base.png",
                 priority = "high",
-                width = 104,
-                height = 100,
+                width = 207,
+                height = 199,
                 shift = util.by_pixel(-0, 22),
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/warfare/artillery-turret/hr-artillery-turret-base.png",
-                    priority = "high",
-                    width = 207,
-                    height = 199,
-                    shift = util.by_pixel(-0, 22),
-                    scale = 0.5
-                }
+                scale = 0.5
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/warfare/artillery-turret/artillery-turret-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/warfare/artillery-turret/hr-artillery-turret-mask.png",
                 priority = "high",
-                width = 104,
-                height = 100,
+                width = 207,
+                height = 199,
                 shift = util.by_pixel(-0, 22),
                 tint = inputs.tint,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/warfare/artillery-turret/hr-artillery-turret-mask.png",
-                    priority = "high",
-                    width = 207,
-                    height = 199,
-                    shift = util.by_pixel(-0, 22),
-                    tint = inputs.tint,
-                    scale = 0.5
-                }
+                scale = 0.5
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/warfare/artillery-turret/artillery-turret-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/warfare/artillery-turret/hr-artillery-turret-highlights.png",
                 priority = "high",
-                width = 104,
-                height = 100,
+                width = 207,
+                height = 199,
                 shift = util.by_pixel(-0, 22),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/warfare/artillery-turret/hr-artillery-turret-highlights.png",
-                    priority = "high",
-                    width = 207,
-                    height = 199,
-                    shift = util.by_pixel(-0, 22),
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5
-                }
+                scale = 0.5
             },
             -- Shadow
             {
-                filename = "__base__/graphics/entity/artillery-turret/artillery-turret-base-shadow.png",
+                filename = "__base__/graphics/entity/artillery-turret/hr-artillery-turret-base-shadow.png",
                 priority = "high",
-                width = 138,
-                height = 75,
+                width = 277,
+                height = 149,
                 shift = util.by_pixel(18 + 2, 38),
                 draw_as_shadow = true,
-                hr_version = {
-                    filename = "__base__/graphics/entity/artillery-turret/hr-artillery-turret-base-shadow.png",
-                    priority = "high",
-                    width = 277,
-                    height = 149,
-                    shift = util.by_pixel(18 + 2, 38),
-                    draw_as_shadow = true,
-                    scale = 0.5
-                }
+                scale = 0.5
             }
         }
     }

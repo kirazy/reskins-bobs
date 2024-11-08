@@ -28,79 +28,45 @@ local tier_map = {
 -- All-way small storage tank
 local all_way_sheets = {
     {
-        filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/small-storage-tank.png",
-        priority = "extra-high",
-        frames = 1,
-        width = 32,
-        height = 64,
-        shift = util.by_pixel(0, -16),
-        hr_version = {
-            filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/hr-small-storage-tank.png",
-            priority = "extra-high",
-            frames = 1,
-            width = 64,
-            height = 128,
-            shift = util.by_pixel(0, -16),
-            scale = 0.5,
-        }
-    },
-    {
-        filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/small-storage-tank-shadow.png",
+        filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/hr-small-storage-tank.png",
         priority = "extra-high",
         frames = 1,
         width = 64,
-        height = 32,
+        height = 128,
+        shift = util.by_pixel(0, -16),
+        scale = 0.5,
+    },
+    {
+        filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/hr-small-storage-tank-shadow.png",
+        priority = "extra-high",
+        frames = 1,
+        width = 128,
+        height = 64,
         shift = util.by_pixel(16, 0),
         draw_as_shadow = true,
-        hr_version = {
-            filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/hr-small-storage-tank-shadow.png",
-            priority = "extra-high",
-            frames = 1,
-            width = 128,
-            height = 64,
-            shift = util.by_pixel(16, 0),
-            draw_as_shadow = true,
-            scale = 0.5,
-        }
+        scale = 0.5,
     },
 }
 
 local inline_sheets = {
     {
-        filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/inline-storage-tank.png",
-        priority = "extra-high",
-        frames = 2,
-        width = 32,
-        height = 64,
-        shift = util.by_pixel(0, -16),
-        hr_version = {
-            filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/hr-inline-storage-tank.png",
-            priority = "extra-high",
-            frames = 2,
-            width = 64,
-            height = 128,
-            shift = util.by_pixel(0, -16),
-            scale = 0.5,
-        }
-    },
-    {
-        filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/inline-storage-tank-shadow.png",
+        filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/hr-inline-storage-tank.png",
         priority = "extra-high",
         frames = 2,
         width = 64,
-        height = 32,
+        height = 128,
+        shift = util.by_pixel(0, -16),
+        scale = 0.5,
+    },
+    {
+        filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/hr-inline-storage-tank-shadow.png",
+        priority = "extra-high",
+        frames = 2,
+        width = 128,
+        height = 64,
         shift = util.by_pixel(16, 0),
         draw_as_shadow = true,
-        hr_version = {
-            filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/hr-inline-storage-tank-shadow.png",
-            priority = "extra-high",
-            frames = 2,
-            width = 128,
-            height = 64,
-            shift = util.by_pixel(16, 0),
-            draw_as_shadow = true,
-            scale = 0.5,
-        }
+        scale = 0.5,
     },
 }
 
@@ -128,17 +94,11 @@ for name, map in pairs(tier_map) do
             height = 18,
         },
         window_background = {
-            filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/window-background.png",
+            filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/hr-window-background.png",
             priority = "extra-high",
-            width = 5,
-            height = 18,
-            hr_version = {
-                filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/hr-window-background.png",
-                priority = "extra-high",
-                width = 10,
-                height = 36,
-                scale = 0.5
-            }
+            width = 10,
+            height = 36,
+            scale = 0.5
         },
         flow_sprite = {
             filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/fluid-flow.png",
@@ -147,27 +107,16 @@ for name, map in pairs(tier_map) do
             height = 10,
         },
         gas_flow = {
-            filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/steam.png",
+            filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/hr-steam.png",
             priority = "extra-high",
             line_length = 10,
-            width = 7,
-            height = 15,
+            width = 14,
+            height = 30,
             frame_count = 60,
             axially_symmetrical = false,
-            direction_count = 1,
             animation_speed = 0.25,
-            hr_version = {
-                filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/hr-steam.png",
-                priority = "extra-high",
-                line_length = 10,
-                width = 14,
-                height = 30,
-                frame_count = 60,
-                axially_symmetrical = false,
-                animation_speed = 0.25,
-                direction_count = 1,
-                scale = 0.5
-            }
+            direction_count = 1,
+            scale = 0.5
         },
     }
 

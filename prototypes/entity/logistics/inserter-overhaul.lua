@@ -71,82 +71,44 @@ local function inserter_remnants(parameters)
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/remnants/" .. prefix .. "-remnants-base.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/remnants/hr-" .. prefix .. "-remnants-base.png",
                 line_length = 1,
-                width = 67,
-                height = 47,
+                width = 134,
+                height = 94,
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(3, -1.5),
-                hr_version =
-                {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/inserter/remnants/hr-" .. prefix .. "-remnants-base.png",
-                    line_length = 1,
-                    width = 134,
-                    height = 94,
-                    frame_count = 1,
-                    variation_count = 1,
-                    axially_symmetrical = false,
-                    direction_count = 1,
-                    shift = util.by_pixel(3, -1.5),
-                    scale = 0.5,
-                },
+                scale = 0.5,
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/remnants/" .. prefix .. "-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/remnants/hr-" .. prefix .. "-remnants-mask.png",
                 line_length = 1,
-                width = 67,
-                height = 47,
+                width = 134,
+                height = 94,
                 tint = parameters.tint,
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(3, -1.5),
-                hr_version =
-                {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/inserter/remnants/hr-" .. prefix .. "-remnants-mask.png",
-                    line_length = 1,
-                    width = 134,
-                    height = 94,
-                    tint = parameters.tint,
-                    frame_count = 1,
-                    variation_count = 1,
-                    axially_symmetrical = false,
-                    direction_count = 1,
-                    shift = util.by_pixel(3, -1.5),
-                    scale = 0.5,
-                },
+                scale = 0.5,
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/remnants/" .. prefix .. "-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/remnants/hr-" .. prefix .. "-remnants-highlights.png",
                 line_length = 1,
-                width = 67,
-                height = 47,
+                width = 134,
+                height = 94,
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(3, -1.5),
-                hr_version =
-                {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/inserter/remnants/hr-" .. prefix .. "-remnants-highlights.png",
-                    line_length = 1,
-                    width = 134,
-                    height = 94,
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    frame_count = 1,
-                    variation_count = 1,
-                    axially_symmetrical = false,
-                    direction_count = 1,
-                    shift = util.by_pixel(3, -1.5),
-                    scale = 0.5,
-                },
+                scale = 0.5,
             },
         },
     })
@@ -159,68 +121,40 @@ local function inserter_arm_picture(parameters)
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/arms/inserter-arm-base.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/arms/hr-inserter-arm-base.png",
                 priority = "extra-high",
-                width = 16,
-                height = 68,
+                width = 32,
+                height = 136,
                 flags = { "no-crop" },
-                scale = 0.5,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/inserter/arms/hr-inserter-arm-base.png",
-                    priority = "extra-high",
-                    width = 32,
-                    height = 136,
-                    flags = { "no-crop" },
-                    scale = 0.25,
-                },
+                scale = 0.25,
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/arms/inserter-arm-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/arms/hr-inserter-arm-mask.png",
                 priority = "extra-high",
-                width = 16,
-                height = 68,
+                width = 32,
+                height = 136,
                 flags = { "no-crop" },
                 tint = parameters.tint,
-                scale = 0.5,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/inserter/arms/hr-inserter-arm-mask.png",
-                    priority = "extra-high",
-                    width = 32,
-                    height = 136,
-                    flags = { "no-crop" },
-                    tint = parameters.tint,
-                    scale = 0.25,
-                },
+                scale = 0.25,
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/arms/inserter-arm-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/arms/hr-inserter-arm-highlights.png",
                 priority = "extra-high",
-                width = 16,
-                height = 68,
+                width = 32,
+                height = 136,
                 flags = { "no-crop" },
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                scale = 0.5,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/inserter/arms/hr-inserter-arm-highlights.png",
-                    priority = "extra-high",
-                    width = 32,
-                    height = 136,
-                    flags = { "no-crop" },
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.25,
-                },
+                scale = 0.25,
             },
         },
     }
 
     -- Check to see if we're a filter inserter, and if so, replace the mask/highlights
     if parameters.is_filter then
-        arm_picture.layers[2].filename = "__reskins-bobs__/graphics/entity/logistics/inserter/arms/filter-inserter-arm-mask.png"
-        arm_picture.layers[2].hr_version.filename = "__reskins-bobs__/graphics/entity/logistics/inserter/arms/hr-filter-inserter-arm-mask.png"
-        arm_picture.layers[3].filename = "__reskins-bobs__/graphics/entity/logistics/inserter/arms/filter-inserter-arm-highlights.png"
-        arm_picture.layers[3].hr_version.filename = "__reskins-bobs__/graphics/entity/logistics/inserter/arms/hr-filter-inserter-arm-highlights.png"
+        arm_picture.layers[2].filename = "__reskins-bobs__/graphics/entity/logistics/inserter/arms/hr-filter-inserter-arm-mask.png"
+        arm_picture.layers[3].filename = "__reskins-bobs__/graphics/entity/logistics/inserter/arms/hr-filter-inserter-arm-highlights.png"
     end
 
     return arm_picture
@@ -229,22 +163,13 @@ end
 local function inserter_arm_shadow()
     return
     {
-        filename = "__reskins-bobs__/graphics/entity/logistics/inserter/shadows/inserter-arm-shadow.png",
+        filename = "__reskins-bobs__/graphics/entity/logistics/inserter/shadows/hr-inserter-arm-shadow.png",
         priority = "extra-high",
-        width = 16,
-        height = 68,
+        width = 32,
+        height = 136,
         flags = { "no-crop" },
         draw_as_shadow = true,
-        scale = 0.5,
-        hr_version = {
-            filename = "__reskins-bobs__/graphics/entity/logistics/inserter/shadows/hr-inserter-arm-shadow.png",
-            priority = "extra-high",
-            width = 32,
-            height = 136,
-            flags = { "no-crop" },
-            draw_as_shadow = true,
-            scale = 0.25,
-        },
+        scale = 0.25,
     }
 end
 
@@ -254,68 +179,40 @@ local function inserter_hand_picture(parameters)
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/" .. parameters.type .. "-hand-" .. parameters.hand .. "-base.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/hr-" .. parameters.type .. "-hand-" .. parameters.hand .. "-base.png",
                 priority = "extra-high",
-                width = 65,
-                height = 82,
+                width = 130,
+                height = 164,
                 flags = { "no-crop" },
-                scale = 0.5,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/hr-" .. parameters.type .. "-hand-" .. parameters.hand .. "-base.png",
-                    priority = "extra-high",
-                    width = 130,
-                    height = 164,
-                    flags = { "no-crop" },
-                    scale = 0.25,
-                },
+                scale = 0.25,
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/" .. parameters.type .. "-hand-" .. parameters.hand .. "-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/hr-" .. parameters.type .. "-hand-" .. parameters.hand .. "-mask.png",
                 priority = "extra-high",
-                width = 65,
-                height = 82,
+                width = 130,
+                height = 164,
                 flags = { "no-crop" },
-                scale = 0.5,
                 tint = parameters.tint,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/hr-" .. parameters.type .. "-hand-" .. parameters.hand .. "-mask.png",
-                    priority = "extra-high",
-                    width = 130,
-                    height = 164,
-                    flags = { "no-crop" },
-                    tint = parameters.tint,
-                    scale = 0.25,
-                },
+                scale = 0.25,
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/" .. parameters.type .. "-hand-" .. parameters.hand .. "-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/hr-" .. parameters.type .. "-hand-" .. parameters.hand .. "-highlights.png",
                 priority = "extra-high",
-                width = 65,
-                height = 82,
+                width = 130,
+                height = 164,
                 flags = { "no-crop" },
-                scale = 0.5,
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/hr-" .. parameters.type .. "-hand-" .. parameters.hand .. "-highlights.png",
-                    priority = "extra-high",
-                    width = 130,
-                    height = 164,
-                    flags = { "no-crop" },
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.25,
-                },
+                scale = 0.25,
             },
         },
     }
 
     -- Check to see if we're a filter inserter, and if so, replace the mask/highlights
     if parameters.is_filter then
-        hand_picture.layers[2].filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/filter-" .. parameters.type .. "-hand-mask.png"
-        hand_picture.layers[2].hr_version.filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/hr-filter-" .. parameters.type .. "-hand-mask.png"
-        hand_picture.layers[3].filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/filter-" .. parameters.type .. "-hand-highlights.png"
-        hand_picture.layers[3].hr_version.filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/hr-filter-" .. parameters.type .. "-hand-highlights.png"
+        hand_picture.layers[2].filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/hr-filter-" .. parameters.type .. "-hand-mask.png"
+        hand_picture.layers[3].filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/hr-filter-" .. parameters.type .. "-hand-highlights.png"
     end
 
     return hand_picture
@@ -332,22 +229,13 @@ local function inserter_hand_shadow(parameters)
 
     -- Shadow
     {
-        filename = "__reskins-bobs__/graphics/entity/logistics/inserter/shadows/" .. parameters.shadow .. "-hand-" .. parameters.hand .. "-shadow.png",
+        filename = "__reskins-bobs__/graphics/entity/logistics/inserter/shadows/hr-" .. parameters.shadow .. "-hand-" .. parameters.hand .. "-shadow.png",
         priority = "extra-high",
-        width = 65,
-        height = 82,
+        width = 130,
+        height = 164,
         flags = { "no-crop" },
-        scale = 0.5,
         draw_as_shadow = true,
-        hr_version = {
-            filename = "__reskins-bobs__/graphics/entity/logistics/inserter/shadows/hr-" .. parameters.shadow .. "-hand-" .. parameters.hand .. "-shadow.png",
-            priority = "extra-high",
-            width = 130,
-            height = 164,
-            flags = { "no-crop" },
-            draw_as_shadow = true,
-            scale = 0.25,
-        },
+        scale = 0.25,
     }
 end
 
@@ -358,73 +246,42 @@ local function inserter_platform_picture(parameters)
         sheets = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/platform/inserter-platform-base.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/platform/hr-inserter-platform-base.png",
                 priority = "extra-high",
-                width = 53,
-                height = 40,
+                width = 106,
+                height = 80,
                 shift = util.by_pixel(1.75, 6.75),
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/inserter/platform/hr-inserter-platform-base.png",
-                    priority = "extra-high",
-                    width = 106,
-                    height = 80,
-                    shift = util.by_pixel(1.75, 6.75),
-                    scale = 0.5,
-                },
+                scale = 0.5,
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/platform/inserter-platform-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/platform/hr-inserter-platform-mask.png",
                 priority = "extra-high",
-                width = 53,
-                height = 40,
+                width = 106,
+                height = 80,
                 tint = parameters.tint,
                 shift = util.by_pixel(1.75, 6.75),
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/inserter/platform/hr-inserter-platform-mask.png",
-                    priority = "extra-high",
-                    width = 106,
-                    height = 80,
-                    tint = parameters.tint,
-                    shift = util.by_pixel(1.75, 6.75),
-                    scale = 0.5,
-                },
+                scale = 0.5,
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/platform/inserter-platform-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/platform/hr-inserter-platform-highlights.png",
                 priority = "extra-high",
-                width = 53,
-                height = 40,
+                width = 106,
+                height = 80,
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
                 shift = util.by_pixel(1.75, 6.75),
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/inserter/platform/hr-inserter-platform-highlights.png",
-                    priority = "extra-high",
-                    width = 106,
-                    height = 80,
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    shift = util.by_pixel(1.75, 6.75),
-                    scale = 0.5,
-                },
+                scale = 0.5,
             },
             -- Shadow
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/shadows/inserter-platform-shadow.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/shadows/hr-inserter-platform-shadow.png",
                 priority = "extra-high",
-                width = 53,
-                height = 40,
+                width = 106,
+                height = 80,
                 draw_as_shadow = true,
                 shift = util.by_pixel(1.75, 6.75),
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/inserter/shadows/hr-inserter-platform-shadow.png",
-                    priority = "extra-high",
-                    width = 106,
-                    height = 80,
-                    draw_as_shadow = true,
-                    shift = util.by_pixel(1.75, 6.75),
-                    scale = 0.5,
-                },
+                scale = 0.5,
             },
         },
     }

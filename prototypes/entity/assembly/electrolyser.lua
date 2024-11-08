@@ -55,73 +55,42 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/electrolyser/electrolyser-" .. tier .. "-base.png",
-                width = 136,
-                height = 130,
+                filename = "__reskins-bobs__/graphics/entity/assembly/electrolyser/hr-electrolyser-" .. tier .. "-base.png",
+                width = 272,
+                height = 260,
                 frame_count = 1,
                 shift = util.by_pixel(17, 0),
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/assembly/electrolyser/hr-electrolyser-" .. tier .. "-base.png",
-                    width = 272,
-                    height = 260,
-                    frame_count = 1,
-                    shift = util.by_pixel(17, 0),
-                    scale = 0.5
-                }
+                scale = 0.5
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/electrolyser/electrolyser-" .. tier .. "-mask.png",
-                width = 136,
-                height = 130,
+                filename = "__reskins-bobs__/graphics/entity/assembly/electrolyser/hr-electrolyser-" .. tier .. "-mask.png",
+                width = 272,
+                height = 260,
                 frame_count = 1,
                 shift = util.by_pixel(17, 0),
                 tint = inputs.tint,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/assembly/electrolyser/hr-electrolyser-" .. tier .. "-mask.png",
-                    width = 272,
-                    height = 260,
-                    frame_count = 1,
-                    shift = util.by_pixel(17, 0),
-                    tint = inputs.tint,
-                    scale = 0.5
-                }
+                scale = 0.5
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/electrolyser/electrolyser-" .. tier .. "-highlights.png",
-                width = 136,
-                height = 130,
+                filename = "__reskins-bobs__/graphics/entity/assembly/electrolyser/hr-electrolyser-" .. tier .. "-highlights.png",
+                width = 272,
+                height = 260,
                 frame_count = 1,
                 shift = util.by_pixel(17, 0),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/assembly/electrolyser/hr-electrolyser-" .. tier .. "-highlights.png",
-                    width = 272,
-                    height = 260,
-                    frame_count = 1,
-                    shift = util.by_pixel(17, 0),
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5
-                }
+                scale = 0.5
             },
             -- Shadow
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/electrolyser/electrolyser-" .. shadow .. "-shadow.png",
-                width = 136,
-                height = 130,
+                filename = "__reskins-bobs__/graphics/entity/assembly/electrolyser/hr-electrolyser-" .. shadow .. "-shadow.png",
+                width = 272,
+                height = 260,
                 frame_count = 1,
                 shift = util.by_pixel(17, 0),
                 draw_as_shadow = true,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/assembly/electrolyser/hr-electrolyser-" .. shadow .. "-shadow.png",
-                    width = 272,
-                    height = 260,
-                    frame_count = 1,
-                    shift = util.by_pixel(17, 0),
-                    draw_as_shadow = true,
-                    scale = 0.5
-                }
+                scale = 0.5
             }
         }
     })

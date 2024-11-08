@@ -196,79 +196,44 @@ local function corpse_animation(tint)
             layers = {
                 -- Base
                 {
-                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/remnants/assembling-machine-remnants-base.png",
+                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/remnants/hr-assembling-machine-remnants-base.png",
                     line_length = 1,
-                    width = 164,
-                    height = 142,
+                    width = 328,
+                    height = 282,
                     frame_count = 1,
                     variation_count = 1,
                     axially_symmetrical = false,
                     direction_count = 1,
-                    shift = util.by_pixel(0, 10),
-                    hr_version = {
-                        filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/remnants/hr-assembling-machine-remnants-base.png",
-                        line_length = 1,
-                        width = 328,
-                        height = 282,
-                        frame_count = 1,
-                        variation_count = 1,
-                        axially_symmetrical = false,
-                        direction_count = 1,
-                        shift = util.by_pixel(0, 9.5),
-                        scale = 0.5,
-                    },
+                    shift = util.by_pixel(0, 9.5),
+                    scale = 0.5,
                 },
                 -- Mask
                 {
-                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/remnants/assembling-machine-remnants-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/remnants/hr-assembling-machine-remnants-mask.png",
                     line_length = 1,
-                    width = 164,
-                    height = 142,
+                    width = 328,
+                    height = 282,
                     frame_count = 1,
                     variation_count = 1,
                     axially_symmetrical = false,
                     direction_count = 1,
-                    shift = util.by_pixel(0, 10),
+                    shift = util.by_pixel(0, 9.5),
                     tint = tint,
-                    hr_version = {
-                        filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/remnants/hr-assembling-machine-remnants-mask.png",
-                        line_length = 1,
-                        width = 328,
-                        height = 282,
-                        frame_count = 1,
-                        variation_count = 1,
-                        axially_symmetrical = false,
-                        direction_count = 1,
-                        shift = util.by_pixel(0, 9.5),
-                        tint = tint,
-                        scale = 0.5,
-                    },
+                    scale = 0.5,
                 },
                 -- Highlights
                 {
-                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/remnants/assembling-machine-remnants-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/remnants/hr-assembling-machine-remnants-highlights.png",
                     line_length = 1,
-                    width = 164,
-                    height = 142,
+                    width = 328,
+                    height = 282,
                     frame_count = 1,
                     variation_count = 1,
                     axially_symmetrical = false,
                     direction_count = 1,
-                    shift = util.by_pixel(0, 10),
+                    shift = util.by_pixel(0, 9.5),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    hr_version = {
-                        filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/remnants/hr-assembling-machine-remnants-highlights.png",
-                        line_length = 1,
-                        width = 328,
-                        height = 282,
-                        frame_count = 1,
-                        variation_count = 1,
-                        axially_symmetrical = false,
-                        direction_count = 1,
-                        shift = util.by_pixel(0, 9.5),
-                        blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                        scale = 0.5,
-                    },
+                    scale = 0.5,
                 }
             }
         })
@@ -288,115 +253,64 @@ local function entity_animation(sprite_set, tint, flags)
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/base/assembling-machine-base.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/base/hr-assembling-machine-base.png",
                 priority = "high",
-                width = 108,
-                height = 119,
+                width = 214,
+                height = 237,
                 frame_count = 1,
                 line_length = 1,
                 repeat_count = 32,
-                shift = util.by_pixel(0, -0.5),
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/base/hr-assembling-machine-base.png",
-                    priority = "high",
-                    width = 214,
-                    height = 237,
-                    frame_count = 1,
-                    line_length = 1,
-                    repeat_count = 32,
-                    shift = util.by_pixel(0, -0.75),
-                    scale = 0.5
-                }
+                shift = util.by_pixel(0, -0.75),
+                scale = 0.5
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/base/assembling-machine-base-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/base/hr-assembling-machine-base-mask.png",
                 priority = "high",
-                width = 108,
-                height = 119,
+                width = 214,
+                height = 237,
                 frame_count = 1,
                 line_length = 1,
                 repeat_count = 32,
-                shift = util.by_pixel(0, -0.5),
+                shift = util.by_pixel(0, -0.75),
                 tint = tint,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/base/hr-assembling-machine-base-mask.png",
-                    priority = "high",
-                    width = 214,
-                    height = 237,
-                    frame_count = 1,
-                    line_length = 1,
-                    repeat_count = 32,
-                    shift = util.by_pixel(0, -0.75),
-                    tint = tint,
-                    scale = 0.5
-                }
+                scale = 0.5
             },
             -- Highlight
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/base/assembling-machine-base-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/base/hr-assembling-machine-base-highlights.png",
                 priority = "high",
-                width = 108,
-                height = 119,
+                width = 214,
+                height = 237,
                 frame_count = 1,
                 line_length = 1,
                 repeat_count = 32,
-                shift = util.by_pixel(0, -0.5),
+                shift = util.by_pixel(0, -0.75),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/base/hr-assembling-machine-base-highlights.png",
-                    priority = "high",
-                    width = 214,
-                    height = 237,
-                    frame_count = 1,
-                    line_length = 1,
-                    repeat_count = 32,
-                    shift = util.by_pixel(0, -0.75),
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5
-                }
+                scale = 0.5
             },
             -- Animation
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/animations/assembling-machine-animation-" .. sprite_set .. ".png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/animations/hr-assembling-machine-animation-" .. sprite_set .. ".png",
                 priority = "high",
-                width = 108,
-                height = 119,
+                width = 214,
+                height = 237,
                 frame_count = 32,
                 line_length = 8,
-                shift = util.by_pixel(0, -0.5),
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/animations/hr-assembling-machine-animation-" .. sprite_set .. ".png",
-                    priority = "high",
-                    width = 214,
-                    height = 237,
-                    frame_count = 32,
-                    line_length = 8,
-                    shift = util.by_pixel(0, -0.75),
-                    scale = 0.5
-                }
+                shift = util.by_pixel(0, -0.75),
+                scale = 0.5
             },
             -- Shadow
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/shadows/assembling-machine-" .. shadow_sprite_set .. "-shadow.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/shadows/hr-assembling-machine-" .. shadow_sprite_set .. "-shadow.png",
                 priority = "high",
-                width = 132,
-                height = 83,
+                width = 264,
+                height = 165,
                 frame_count = 32,
                 line_length = 8,
                 draw_as_shadow = true,
                 shift = util.by_pixel(27, 5),
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/shadows/hr-assembling-machine-" .. shadow_sprite_set .. "-shadow.png",
-                    priority = "high",
-                    width = 264,
-                    height = 165,
-                    frame_count = 32,
-                    line_length = 8,
-                    draw_as_shadow = true,
-                    shift = util.by_pixel(27, 5),
-                    scale = 0.5
-                }
+                scale = 0.5
             }
         }
     }
@@ -405,100 +319,57 @@ local function entity_animation(sprite_set, tint, flags)
         table.insert(animation.layers,
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/electronics/electronics-base.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/electronics/hr-electronics-base.png",
                 priority = "high",
-                width = 108,
-                height = 119,
+                width = 214,
+                height = 237,
                 frame_count = 1,
                 line_length = 1,
                 repeat_count = 32,
-                shift = util.by_pixel(0, -0.5),
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/electronics/hr-electronics-base.png",
-                    priority = "high",
-                    width = 214,
-                    height = 237,
-                    frame_count = 1,
-                    line_length = 1,
-                    repeat_count = 32,
-                    shift = util.by_pixel(0, -0.75),
-                    scale = 0.5
-                }
+                shift = util.by_pixel(0, -0.75),
+                scale = 0.5
             })
         table.insert(animation.layers,
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/electronics/electronics-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/electronics/hr-electronics-mask.png",
                 priority = "high",
-                width = 108,
-                height = 119,
+                width = 214,
+                height = 237,
                 frame_count = 1,
                 line_length = 1,
                 repeat_count = 32,
-                shift = util.by_pixel(0, -0.5),
+                shift = util.by_pixel(0, -0.75),
                 tint = tint,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/electronics/hr-electronics-mask.png",
-                    priority = "high",
-                    width = 214,
-                    height = 237,
-                    frame_count = 1,
-                    line_length = 1,
-                    repeat_count = 32,
-                    shift = util.by_pixel(0, -0.75),
-                    tint = tint,
-                    scale = 0.5
-                }
+                scale = 0.5
             })
         table.insert(animation.layers,
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/electronics/electronics-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/electronics/hr-electronics-highlights.png",
                 priority = "high",
-                width = 108,
-                height = 119,
+                width = 214,
+                height = 237,
                 frame_count = 1,
                 line_length = 1,
                 repeat_count = 32,
-                shift = util.by_pixel(0, -0.5),
+                shift = util.by_pixel(0, -0.75),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/electronics/hr-electronics-highlights.png",
-                    priority = "high",
-                    width = 214,
-                    height = 237,
-                    frame_count = 1,
-                    line_length = 1,
-                    repeat_count = 32,
-                    shift = util.by_pixel(0, -0.75),
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5
-                }
+                scale = 0.5
             })
         table.insert(animation.layers,
             -- Shadow
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/electronics/electronics-shadow.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/electronics/hr-electronics-shadow.png",
                 priority = "high",
-                width = 132,
-                height = 83,
+                width = 264,
+                height = 165,
                 frame_count = 1,
                 line_length = 1,
                 repeat_count = 32,
                 draw_as_shadow = true,
                 shift = util.by_pixel(27, 5),
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/electronics/hr-electronics-shadow.png",
-                    priority = "high",
-                    width = 264,
-                    height = 165,
-                    frame_count = 1,
-                    line_length = 1,
-                    repeat_count = 32,
-                    draw_as_shadow = true,
-                    shift = util.by_pixel(27, 5),
-                    scale = 0.5
-                }
+                scale = 0.5
             })
     end
 

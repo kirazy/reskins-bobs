@@ -35,23 +35,14 @@ for _, name in pairs(fluids) do
     -- Reskin entity
     entity.stages = {
         sheet = {
-            filename = "__reskins-bobs__/graphics/entity/ores/" .. name .. "/" .. name .. ".png",
+            filename = "__reskins-bobs__/graphics/entity/ores/" .. name .. "/hr-" .. name .. ".png",
             priority = "extra-high",
-            width = 74,
-            height = 60,
+            width = 148,
+            height = 120,
             frame_count = 4,
             variation_count = 1,
             shift = util.by_pixel(0, -2),
-            hr_version = {
-                filename = "__reskins-bobs__/graphics/entity/ores/" .. name .. "/hr-" .. name .. ".png",
-                priority = "extra-high",
-                width = 148,
-                height = 120,
-                frame_count = 4,
-                variation_count = 1,
-                shift = util.by_pixel(0, -2),
-                scale = 0.5,
-            }
+            scale = 0.5,
         }
     }
 

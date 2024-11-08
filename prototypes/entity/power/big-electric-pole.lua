@@ -51,67 +51,38 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/base/remnants/big-electric-pole-base-remnants.png",
+                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/base/remnants/hr-big-electric-pole-base-remnants.png",
                 line_length = 1,
-                width = 184,
-                height = 94,
+                width = 366,
+                height = 188,
                 frame_count = 1,
                 direction_count = 1,
-                shift = util.by_pixel(44, 0),
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/base/remnants/hr-big-electric-pole-base-remnants.png",
-                    line_length = 1,
-                    width = 366,
-                    height = 188,
-                    frame_count = 1,
-                    direction_count = 1,
-                    shift = util.by_pixel(43, 0.5),
-                    scale = 0.5,
-                }
+                shift = util.by_pixel(43, 0.5),
+                scale = 0.5,
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/remnants/big-electric-pole-base-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/remnants/hr-big-electric-pole-base-remnants-mask.png",
                 line_length = 1,
-                width = 184,
-                height = 94,
+                width = 366,
+                height = 188,
                 frame_count = 1,
                 direction_count = 1,
-                shift = util.by_pixel(44, 0),
+                shift = util.by_pixel(43, 0.5),
                 tint = inputs.tint,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/remnants/hr-big-electric-pole-base-remnants-mask.png",
-                    line_length = 1,
-                    width = 366,
-                    height = 188,
-                    frame_count = 1,
-                    direction_count = 1,
-                    shift = util.by_pixel(43, 0.5),
-                    tint = inputs.tint,
-                    scale = 0.5,
-                }
+                scale = 0.5,
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/remnants/big-electric-pole-base-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/remnants/hr-big-electric-pole-base-remnants-highlights.png",
                 line_length = 1,
-                width = 184,
-                height = 94,
+                width = 366,
+                height = 188,
                 frame_count = 1,
                 direction_count = 1,
-                shift = util.by_pixel(44, 0),
+                shift = util.by_pixel(43, 0.5),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/remnants/hr-big-electric-pole-base-remnants-highlights.png",
-                    line_length = 1,
-                    width = 366,
-                    height = 188,
-                    frame_count = 1,
-                    direction_count = 1,
-                    shift = util.by_pixel(43, 0.5),
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5,
-                }
+                scale = 0.5,
             },
         },
     })
@@ -120,67 +91,38 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/base/remnants/big-electric-pole-top-remnants.png",
+                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/base/remnants/hr-big-electric-pole-top-remnants.png",
                 line_length = 1,
-                width = 76,
-                height = 126,
+                width = 148,
+                height = 252,
                 frame_count = 1,
                 direction_count = 1,
-                shift = util.by_pixel(-1, -48),
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/base/remnants/hr-big-electric-pole-top-remnants.png",
-                    line_length = 1,
-                    width = 148,
-                    height = 252,
-                    frame_count = 1,
-                    direction_count = 1,
-                    shift = util.by_pixel(-1.5, -48),
-                    scale = 0.5,
-                }
+                shift = util.by_pixel(-1.5, -48),
+                scale = 0.5,
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/remnants/big-electric-pole-top-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/remnants/hr-big-electric-pole-top-remnants-mask.png",
                 line_length = 1,
-                width = 76,
-                height = 126,
+                width = 148,
+                height = 252,
                 frame_count = 1,
                 direction_count = 1,
-                shift = util.by_pixel(-1, -48),
+                shift = util.by_pixel(-1.5, -48),
                 tint = inputs.tint,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/remnants/hr-big-electric-pole-top-remnants-mask.png",
-                    line_length = 1,
-                    width = 148,
-                    height = 252,
-                    frame_count = 1,
-                    direction_count = 1,
-                    shift = util.by_pixel(-1.5, -48),
-                    tint = inputs.tint,
-                    scale = 0.5,
-                }
+                scale = 0.5,
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/remnants/big-electric-pole-top-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/remnants/hr-big-electric-pole-top-remnants-highlights.png",
                 line_length = 1,
-                width = 76,
-                height = 126,
+                width = 148,
+                height = 252,
                 frame_count = 1,
                 direction_count = 1,
-                shift = util.by_pixel(-1, -48),
+                shift = util.by_pixel(-1.5, -48),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/remnants/hr-big-electric-pole-top-remnants-highlights.png",
-                    line_length = 1,
-                    width = 148,
-                    height = 252,
-                    frame_count = 1,
-                    direction_count = 1,
-                    shift = util.by_pixel(-1.5, -48),
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5,
-                }
+                scale = 0.5,
             },
         }
     })
@@ -190,81 +132,46 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/base/big-electric-pole.png",
+                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/base/hr-big-electric-pole.png",
                 priority = "extra-high",
-                width = 76,
-                height = 156,
+                width = 148,
+                height = 312,
                 direction_count = 4,
-                shift = util.by_pixel(1, -51),
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/base/hr-big-electric-pole.png",
-                    priority = "extra-high",
-                    width = 148,
-                    height = 312,
-                    direction_count = 4,
-                    shift = util.by_pixel(0, -51),
-                    scale = 0.5
-                }
+                shift = util.by_pixel(0, -51),
+                scale = 0.5
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/big-electric-pole-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/hr-big-electric-pole-mask.png",
                 priority = "extra-high",
-                width = 76,
-                height = 156,
+                width = 148,
+                height = 312,
                 direction_count = 4,
-                shift = util.by_pixel(1, -51),
+                shift = util.by_pixel(0, -51),
                 tint = inputs.tint,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/hr-big-electric-pole-mask.png",
-                    priority = "extra-high",
-                    width = 148,
-                    height = 312,
-                    direction_count = 4,
-                    shift = util.by_pixel(0, -51),
-                    tint = inputs.tint,
-                    scale = 0.5
-                }
+                scale = 0.5
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/big-electric-pole-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/hr-big-electric-pole-highlights.png",
                 priority = "extra-high",
-                width = 76,
-                height = 156,
+                width = 148,
+                height = 312,
                 direction_count = 4,
-                shift = util.by_pixel(1, -51),
+                shift = util.by_pixel(0, -51),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/hr-big-electric-pole-highlights.png",
-                    priority = "extra-high",
-                    width = 148,
-                    height = 312,
-                    direction_count = 4,
-                    shift = util.by_pixel(0, -51),
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5
-                }
+                scale = 0.5
             },
             -- Shadow
             {
-                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/base/big-electric-pole-shadow.png",
+                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/base/hr-big-electric-pole-shadow.png",
                 priority = "extra-high",
-                width = 188,
-                height = 48,
+                width = 374,
+                height = 94,
                 direction_count = 4,
                 shift = util.by_pixel(60, 0),
                 draw_as_shadow = true,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/base/hr-big-electric-pole-shadow.png",
-                    priority = "extra-high",
-                    width = 374,
-                    height = 94,
-                    direction_count = 4,
-                    shift = util.by_pixel(60, 0),
-                    draw_as_shadow = true,
-                    scale = 0.5
-                }
+                scale = 0.5
             }
         }
     }

@@ -58,41 +58,24 @@ end
 local tankotron = data.raw["spider-vehicle"]["tankotron"]
 if tankotron then
     table.insert(tankotron.graphics_set.animation.layers, 1, {
-        filename = "__base__/graphics/entity/tank/tank-turret-mask.png",
-        width = 36,
-        height = 33,
+        filename = "__base__/graphics/entity/tank/hr-tank-turret-mask.png",
+        width = 72,
+        height = 66,
         line_length = 8,
         direction_count = 64,
+        scale = 0.5,
         apply_runtime_tint = true,
         shift = util.by_pixel(0, -10),
-        hr_version = {
-            filename = "__base__/graphics/entity/tank/hr-tank-turret-mask.png",
-            width = 72,
-            height = 66,
-            line_length = 8,
-            direction_count = 64,
-            scale = 0.5,
-            apply_runtime_tint = true,
-            shift = util.by_pixel(0, -10),
-        },
     })
 
     table.insert(tankotron.graphics_set.animation.layers, 1, {
-        filename = "__base__/graphics/entity/tank/tank-turret.png",
-        width = 90,
-        height = 67,
+        filename = "__base__/graphics/entity/tank/hr-tank-turret.png",
+        width = 179,
+        height = 132,
         line_length = 8,
         direction_count = 64,
+        scale = 0.5,
         shift = util.by_pixel(0, -9),
-        hr_version = {
-            filename = "__base__/graphics/entity/tank/hr-tank-turret.png",
-            width = 179,
-            height = 132,
-            line_length = 8,
-            direction_count = 64,
-            scale = 0.5,
-            shift = util.by_pixel(0, -9),
-        },
     })
 
     data.raw["spider-vehicle"]["tankotron"].drawing_box = { { -3, -3.5 }, { 3, 1.75 } }

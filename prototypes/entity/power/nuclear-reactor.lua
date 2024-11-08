@@ -40,84 +40,46 @@ local function skin_reactor_entity(name, tint, material)
         {
             -- Base
             {
-                filename = "__base__/graphics/entity/nuclear-reactor/reactor.png",
-                width = 154,
-                height = 158,
-                shift = util.by_pixel(-6, -6),
-                hr_version =
-                {
-                    filename = "__base__/graphics/entity/nuclear-reactor/hr-reactor.png",
-                    width = 302,
-                    height = 318,
-                    scale = 0.5,
-                    shift = util.by_pixel(-5, -7),
-                }
+                filename = "__base__/graphics/entity/nuclear-reactor/hr-reactor.png",
+                width = 302,
+                height = 318,
+                scale = 0.5,
+                shift = util.by_pixel(-5, -7),
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/reactor-mask.png",
-                width = 154,
-                height = 158,
-                shift = util.by_pixel(-6, -6),
-                tint = tint,
-                hr_version =
-                {
-                    filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/hr-reactor-mask.png",
-                    width = 302,
-                    height = 318,
-                    scale = 0.5,
-                    shift = util.by_pixel(-5, -7),
-                    tint = tint
-                }
+                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/hr-reactor-mask.png",
+                width = 302,
+                height = 318,
+                scale = 0.5,
+                shift = util.by_pixel(-5, -7),
+                tint = tint
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/reactor-highlights.png",
-                width = 154,
-                height = 158,
-                shift = util.by_pixel(-6, -6),
-                blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                hr_version =
-                {
-                    filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/hr-reactor-highlights.png",
-                    width = 302,
-                    height = 318,
-                    scale = 0.5,
-                    shift = util.by_pixel(-5, -7),
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive"
-                }
+                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/hr-reactor-highlights.png",
+                width = 302,
+                height = 318,
+                scale = 0.5,
+                shift = util.by_pixel(-5, -7),
+                blend_mode = reskins.lib.settings.blend_mode, -- "additive"
             },
             -- Pipes
             {
-                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-piping.png",
-                width = 154,
-                height = 158,
-                shift = util.by_pixel(-6, -6),
-                hr_version =
-                {
-                    filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/hr-reactor-piping.png",
-                    width = 302,
-                    height = 318,
-                    scale = 0.5,
-                    shift = util.by_pixel(-5, -7),
-                }
+                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/hr-reactor-piping.png",
+                width = 302,
+                height = 318,
+                scale = 0.5,
+                shift = util.by_pixel(-5, -7),
             },
             -- Shadow
             {
-                filename = "__base__/graphics/entity/nuclear-reactor/reactor-shadow.png",
-                width = 263,
-                height = 162,
+                filename = "__base__/graphics/entity/nuclear-reactor/hr-reactor-shadow.png",
+                width = 525,
+                height = 323,
+                scale = 0.5,
                 shift = { 1.625, 0 },
-                draw_as_shadow = true,
-                hr_version =
-                {
-                    filename = "__base__/graphics/entity/nuclear-reactor/hr-reactor-shadow.png",
-                    width = 525,
-                    height = 323,
-                    scale = 0.5,
-                    shift = { 1.625, 0 },
-                    draw_as_shadow = true
-                }
+                draw_as_shadow = true
             }
         }
     }
@@ -125,36 +87,22 @@ local function skin_reactor_entity(name, tint, material)
     -- Pipes
     entity.lower_layer_picture =
     {
-        filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-base-pipes.png",
-        width = 156,
-        height = 156,
-        shift = util.by_pixel(-2, -4),
-        hr_version =
-        {
-            filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/hr-reactor-base-pipes.png",
-            width = 320,
-            height = 316,
-            scale = 0.5,
-            shift = util.by_pixel(-1, -5),
-        }
+        filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/hr-reactor-base-pipes.png",
+        width = 320,
+        height = 316,
+        scale = 0.5,
+        shift = util.by_pixel(-1, -5),
     }
 
     entity.connection_patches_connected =
     {
         sheet =
         {
-            filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-connect-patches.png",
-            width = 32,
-            height = 32,
+            filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/hr-reactor-connect-patches.png",
+            width = 64,
+            height = 64,
             variation_count = 12,
-            hr_version =
-            {
-                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/hr-reactor-connect-patches.png",
-                width = 64,
-                height = 64,
-                variation_count = 12,
-                scale = 0.5
-            }
+            scale = 0.5
         }
     }
 
@@ -162,20 +110,12 @@ local function skin_reactor_entity(name, tint, material)
     {
         sheet =
         {
-            filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-connect-patches.png",
-            width = 32,
-            height = 32,
+            filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/hr-reactor-connect-patches.png",
+            width = 64,
+            height = 64,
             variation_count = 12,
-            y = 32,
-            hr_version =
-            {
-                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/hr-reactor-connect-patches.png",
-                width = 64,
-                height = 64,
-                variation_count = 12,
-                y = 64,
-                scale = 0.5
-            }
+            y = 64,
+            scale = 0.5
         }
     }
 end
@@ -193,107 +133,57 @@ local function skin_reactor_remnants(name, tint, material)
         {
             -- Base
             {
-                filename = "__base__/graphics/entity/nuclear-reactor/remnants/nuclear-reactor-remnants.png",
+                filename = "__base__/graphics/entity/nuclear-reactor/remnants/hr-nuclear-reactor-remnants.png",
                 line_length = 1,
-                width = 206,
-                height = 198,
+                width = 410,
+                height = 396,
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(7, 4),
-                hr_version =
-                {
-                    filename = "__base__/graphics/entity/nuclear-reactor/remnants/hr-nuclear-reactor-remnants.png",
-                    line_length = 1,
-                    width = 410,
-                    height = 396,
-                    frame_count = 1,
-                    variation_count = 1,
-                    axially_symmetrical = false,
-                    direction_count = 1,
-                    shift = util.by_pixel(7, 4),
-                    scale = 0.5,
-                }
+                scale = 0.5,
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/remnants/nuclear-reactor-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/remnants/hr-nuclear-reactor-remnants-mask.png",
                 line_length = 1,
-                width = 206,
-                height = 198,
+                width = 410,
+                height = 396,
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(7, 4),
                 tint = tint,
-                hr_version =
-                {
-                    filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/remnants/hr-nuclear-reactor-remnants-mask.png",
-                    line_length = 1,
-                    width = 410,
-                    height = 396,
-                    frame_count = 1,
-                    variation_count = 1,
-                    axially_symmetrical = false,
-                    direction_count = 1,
-                    shift = util.by_pixel(7, 4),
-                    tint = tint,
-                    scale = 0.5,
-                }
+                scale = 0.5,
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/remnants/nuclear-reactor-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/remnants/hr-nuclear-reactor-remnants-highlights.png",
                 line_length = 1,
-                width = 206,
-                height = 198,
+                width = 410,
+                height = 396,
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(7, 4),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                hr_version =
-                {
-                    filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/remnants/hr-nuclear-reactor-remnants-highlights.png",
-                    line_length = 1,
-                    width = 410,
-                    height = 396,
-                    frame_count = 1,
-                    variation_count = 1,
-                    axially_symmetrical = false,
-                    direction_count = 1,
-                    shift = util.by_pixel(7, 4),
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5,
-                }
+                scale = 0.5,
             },
             -- Pipes
             {
-                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-remnants.png",
+                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/hr-reactor-remnants.png",
                 line_length = 1,
-                width = 206,
-                height = 198,
+                width = 410,
+                height = 396,
                 frame_count = 1,
                 variation_count = 1,
                 axially_symmetrical = false,
                 direction_count = 1,
                 shift = util.by_pixel(7, 4),
-                hr_version =
-                {
-                    filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/hr-reactor-remnants.png",
-                    line_length = 1,
-                    width = 410,
-                    height = 396,
-                    frame_count = 1,
-                    variation_count = 1,
-                    axially_symmetrical = false,
-                    direction_count = 1,
-                    shift = util.by_pixel(7, 4),
-                    scale = 0.5,
-                }
+                scale = 0.5,
             }
         }
     }

@@ -52,55 +52,32 @@ for name, map in pairs(batteries) do
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/equipment/equipment/battery/battery-equipment-base.png",
-                width = 32,
-                height = 64,
+                filename = "__reskins-bobs__/graphics/equipment/equipment/battery/hr-battery-equipment-base.png",
+                width = 64,
+                height = 128,
                 priority = "medium",
                 flags = { "no-crop" },
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/equipment/equipment/battery/hr-battery-equipment-base.png",
-                    width = 64,
-                    height = 128,
-                    priority = "medium",
-                    flags = { "no-crop" },
-                    scale = 0.5,
-                }
+                scale = 0.5,
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/equipment/equipment/battery/battery-equipment-mask.png",
-                width = 32,
-                height = 64,
+                filename = "__reskins-bobs__/graphics/equipment/equipment/battery/hr-battery-equipment-mask.png",
+                width = 64,
+                height = 128,
                 priority = "medium",
                 flags = { "no-crop" },
                 tint = inputs.tint,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/equipment/equipment/battery/hr-battery-equipment-mask.png",
-                    width = 64,
-                    height = 128,
-                    priority = "medium",
-                    flags = { "no-crop" },
-                    tint = inputs.tint,
-                    scale = 0.5,
-                }
+                scale = 0.5,
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/equipment/equipment/battery/battery-equipment-highlights.png",
-                width = 32,
-                height = 64,
+                filename = "__reskins-bobs__/graphics/equipment/equipment/battery/hr-battery-equipment-highlights.png",
+                width = 64,
+                height = 128,
                 priority = "medium",
                 flags = { "no-crop" },
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/equipment/equipment/battery/hr-battery-equipment-highlights.png",
-                    width = 64,
-                    height = 128,
-                    priority = "medium",
-                    flags = { "no-crop" },
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5,
-                }
+                scale = 0.5,
             }
         }
     }

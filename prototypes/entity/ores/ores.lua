@@ -61,19 +61,12 @@ for name, params in pairs(ores) do
     -- Reskin entity
     entity.stages = {
         sheet = {
-            filename = "__reskins-bobs__/graphics/entity/ores/" .. name .. "/" .. name .. ".png",
+            filename = "__reskins-bobs__/graphics/entity/ores/" .. name .. "/hr-" .. name .. ".png",
             priority = "extra-high",
-            size = 64,
+            size = 128,
             frame_count = 8,
             variation_count = 8,
-            hr_version = {
-                filename = "__reskins-bobs__/graphics/entity/ores/" .. name .. "/hr-" .. name .. ".png",
-                priority = "extra-high",
-                size = 128,
-                frame_count = 8,
-                variation_count = 8,
-                scale = 0.5,
-            },
+            scale = 0.5,
         },
     }
 
@@ -81,25 +74,15 @@ for name, params in pairs(ores) do
     if name == "thorium" then
         entity.stages_effect = {
             sheet = {
-                filename = "__reskins-bobs__/graphics/entity/ores/" .. name .. "/" .. name .. "-glow.png",
+                filename = "__reskins-bobs__/graphics/entity/ores/" .. name .. "/hr-" .. name .. "-glow.png",
                 priority = "extra-high",
-                width = 64,
-                height = 64,
+                width = 128,
+                height = 128,
                 frame_count = 8,
                 variation_count = 8,
+                scale = 0.5,
                 blend_mode = "additive",
                 flags = { "light" },
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/ores/" .. name .. "/hr-" .. name .. "-glow.png",
-                    priority = "extra-high",
-                    width = 128,
-                    height = 128,
-                    frame_count = 8,
-                    variation_count = 8,
-                    scale = 0.5,
-                    blend_mode = "additive",
-                    flags = { "light" },
-                },
             },
         }
     end

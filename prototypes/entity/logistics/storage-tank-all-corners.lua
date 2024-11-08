@@ -50,67 +50,38 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/storage-tank/remnants/storage-tank-remnants.png",
+                filename = "__base__/graphics/entity/storage-tank/remnants/hr-storage-tank-remnants.png",
                 line_length = 1,
-                width = 214,
-                height = 142,
+                width = 426,
+                height = 282,
                 frame_count = 1,
                 direction_count = 1,
                 shift = util.by_pixel(27, 21),
-                hr_version = {
-                    filename = "__base__/graphics/entity/storage-tank/remnants/hr-storage-tank-remnants.png",
-                    line_length = 1,
-                    width = 426,
-                    height = 282,
-                    frame_count = 1,
-                    direction_count = 1,
-                    shift = util.by_pixel(27, 21),
-                    scale = 0.5,
-                }
+                scale = 0.5,
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank/remnants/storage-tank-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank/remnants/hr-storage-tank-remnants-mask.png",
                 line_length = 1,
-                width = 214,
-                height = 142,
+                width = 426,
+                height = 282,
                 frame_count = 1,
                 direction_count = 1,
                 shift = util.by_pixel(27, 21),
                 tint = inputs.tint,
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank/remnants/hr-storage-tank-remnants-mask.png",
-                    line_length = 1,
-                    width = 426,
-                    height = 282,
-                    frame_count = 1,
-                    direction_count = 1,
-                    shift = util.by_pixel(27, 21),
-                    tint = inputs.tint,
-                    scale = 0.5,
-                }
+                scale = 0.5,
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank/remnants/storage-tank-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank/remnants/hr-storage-tank-remnants-highlights.png",
                 line_length = 1,
-                width = 214,
-                height = 142,
+                width = 426,
+                height = 282,
                 frame_count = 1,
                 direction_count = 1,
                 shift = util.by_pixel(27, 21),
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                hr_version = {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank/remnants/hr-storage-tank-remnants-highlights.png",
-                    line_length = 1,
-                    width = 426,
-                    height = 282,
-                    frame_count = 1,
-                    direction_count = 1,
-                    shift = util.by_pixel(27, 21),
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5,
-                }
+                scale = 0.5,
             }
         }
     }
@@ -121,81 +92,46 @@ for name, map in pairs(tier_map) do
             sheets = {
                 -- Base
                 {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank-all-corners/base/storage-tank-all-corners.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank-all-corners/base/hr-storage-tank-all-corners.png",
                     priority = "extra-high",
                     frames = 1,
-                    width = 110,
-                    height = 108,
-                    shift = util.by_pixel(0, 4),
-                    hr_version = {
-                        filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank-all-corners/base/hr-storage-tank-all-corners.png",
-                        priority = "extra-high",
-                        frames = 1,
-                        width = 219,
-                        height = 215,
-                        shift = util.by_pixel(-0.25, 3.75),
-                        scale = 0.5
-                    }
+                    width = 219,
+                    height = 215,
+                    shift = util.by_pixel(-0.25, 3.75),
+                    scale = 0.5
                 },
                 -- Mask
                 {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank-all-corners/storage-tank-all-corners-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank-all-corners/hr-storage-tank-all-corners-mask.png",
                     priority = "extra-high",
                     frames = 1,
-                    width = 110,
-                    height = 108,
-                    shift = util.by_pixel(0, 4),
+                    width = 219,
+                    height = 215,
+                    shift = util.by_pixel(-0.25, 3.75),
                     tint = inputs.tint,
-                    hr_version = {
-                        filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank-all-corners/hr-storage-tank-all-corners-mask.png",
-                        priority = "extra-high",
-                        frames = 1,
-                        width = 219,
-                        height = 215,
-                        shift = util.by_pixel(-0.25, 3.75),
-                        tint = inputs.tint,
-                        scale = 0.5
-                    }
+                    scale = 0.5
                 },
                 -- Highlights
                 {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank-all-corners/storage-tank-all-corners-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank-all-corners/hr-storage-tank-all-corners-highlights.png",
                     priority = "extra-high",
                     frames = 1,
-                    width = 110,
-                    height = 108,
-                    shift = util.by_pixel(0, 4),
+                    width = 219,
+                    height = 215,
+                    shift = util.by_pixel(-0.25, 3.75),
                     blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    hr_version = {
-                        filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank-all-corners/hr-storage-tank-all-corners-highlights.png",
-                        priority = "extra-high",
-                        frames = 1,
-                        width = 219,
-                        height = 215,
-                        shift = util.by_pixel(-0.25, 3.75),
-                        blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                        scale = 0.5
-                    }
+                    scale = 0.5
                 },
                 -- Shadow
                 {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank-all-corners/base/storage-tank-all-corners-shadow.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank-all-corners/base/hr-storage-tank-all-corners-shadow.png",
                     priority = "extra-high",
                     frames = 1,
-                    width = 146,
-                    height = 77,
-                    shift = util.by_pixel(30, 22.5),
-                    draw_as_shadow = true,
-                    hr_version = {
-                        filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank-all-corners/base/hr-storage-tank-all-corners-shadow.png",
-                        priority = "extra-high",
-                        frames = 1,
-                        width = 291,
-                        height = 153,
-                        shift = util.by_pixel(29.75, 22.25),
-                        scale = 0.5,
-                        draw_as_shadow = true
-                    }
+                    width = 291,
+                    height = 153,
+                    shift = util.by_pixel(29.75, 22.25),
+                    scale = 0.5,
+                    draw_as_shadow = true
                 }
             }
         },
@@ -206,17 +142,11 @@ for name, map in pairs(tier_map) do
             height = 15
         },
         window_background = {
-            filename = "__base__/graphics/entity/storage-tank/window-background.png",
+            filename = "__base__/graphics/entity/storage-tank/hr-window-background.png",
             priority = "extra-high",
-            width = 17,
-            height = 24,
-            hr_version = {
-                filename = "__base__/graphics/entity/storage-tank/hr-window-background.png",
-                priority = "extra-high",
-                width = 34,
-                height = 48,
-                scale = 0.5
-            }
+            width = 34,
+            height = 48,
+            scale = 0.5
         },
         flow_sprite = {
             filename = "__base__/graphics/entity/pipe/fluid-flow-low-temperature.png",
@@ -225,27 +155,16 @@ for name, map in pairs(tier_map) do
             height = 20
         },
         gas_flow = {
-            filename = "__base__/graphics/entity/pipe/steam.png",
+            filename = "__base__/graphics/entity/pipe/hr-steam.png",
             priority = "extra-high",
             line_length = 10,
-            width = 24,
-            height = 15,
+            width = 48,
+            height = 30,
             frame_count = 60,
             axially_symmetrical = false,
-            direction_count = 1,
             animation_speed = 0.25,
-            hr_version = {
-                filename = "__base__/graphics/entity/pipe/hr-steam.png",
-                priority = "extra-high",
-                line_length = 10,
-                width = 48,
-                height = 30,
-                frame_count = 60,
-                axially_symmetrical = false,
-                animation_speed = 0.25,
-                direction_count = 1,
-                scale = 0.5
-            }
+            direction_count = 1,
+            scale = 0.5
         }
     }
 

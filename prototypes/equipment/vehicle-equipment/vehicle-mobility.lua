@@ -38,15 +38,10 @@ for _, name in pairs(equipment_list) do
 
     -- Reskin the equipment
     equipment.sprite = {
-        filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/" .. name .. "/" .. name .. "-equipment.png",
-        size = 64,
+        filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/" .. name .. "/hr-" .. name .. "-equipment.png",
+        size = 128,
         priority = "medium",
-        hr_version = {
-            filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/" .. name .. "/hr-" .. name .. "-equipment.png",
-            size = 128,
-            priority = "medium",
-            scale = 0.5,
-        }
+        scale = 0.5,
     }
 
     -- Label to skip to next iteration

@@ -31,13 +31,8 @@ reskins.lib.construct_icon(name, 0, inputs)
 
 -- Reskin equipment
 equipment.sprite = {
-    filename = "__base__/graphics/equipment/belt-immunity-equipment.png",
-    size = 32,
+    filename = "__base__/graphics/equipment/hr-belt-immunity-equipment.png",
+    size = 64,
     priority = "medium",
-    hr_version = {
-        filename = "__base__/graphics/equipment/hr-belt-immunity-equipment.png",
-        size = 64,
-        priority = "medium",
-        scale = 0.5
-    }
+    scale = 0.5
 }
