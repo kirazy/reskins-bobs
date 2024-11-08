@@ -57,7 +57,6 @@ for name, mapping in pairs(tier_map) do
     local icon_data = { {
         icon = "__reskins-bobs__/graphics/icons/power/heat-pipe/heat-pipe-" .. mapping.material .. "-icon-base.png",
         icon_size = 64,
-        icon_mipmaps = 4,
         scale = 0.5,
     } }
 

@@ -32,7 +32,6 @@ local function icon_sets(sprite_set, tint, flags)
             {
                 icon = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/electronics-machine-" .. flags.lights .. ".png",
                 icon_size = 64,
-                icon_mipmaps = 4,
                 scale = 0.5,
             },
         }
@@ -57,7 +56,6 @@ local function icon_sets(sprite_set, tint, flags)
                 {
                     icon = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/small-smoke-stack.png",
                     icon_size = 64,
-                    icon_mipmaps = 4,
                     scale = 0.5,
                 },
             }
@@ -76,7 +74,6 @@ local function icon_sets(sprite_set, tint, flags)
                 {
                     icon = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/smoke-stack.png",
                     icon_size = 64,
-                    icon_mipmaps = 4,
                     scale = 0.5,
                 },
             }
@@ -96,20 +93,17 @@ local function icon_sets(sprite_set, tint, flags)
             {
                 icon = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/steam-smoke-stack-base.png",
                 icon_size = 64,
-                icon_mipmaps = 4,
                 scale = 0.5,
             },
             {
                 icon = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/steam-smoke-stack-mask.png",
                 icon_size = 64,
-                icon_mipmaps = 4,
                 scale = 0.5,
                 tint = tint,
             },
             {
                 icon = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/steam-smoke-stack-highlights.png",
                 icon_size = 64,
-                icon_mipmaps = 4,
                 scale = 0.5,
                 tint = { 1, 1, 1, 0 }
             }
@@ -149,7 +143,6 @@ local function icon_sets(sprite_set, tint, flags)
                 {
                     icon = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/mini-gear-" .. sprite_set .. ".png",
                     icon_size = 64,
-                    icon_mipmaps = 4,
                     scale = 0.5,
                 }
             }
@@ -168,7 +161,6 @@ local function icon_sets(sprite_set, tint, flags)
                 {
                     icon = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/gear-" .. sprite_set .. ".png",
                     icon_size = 64,
-                    icon_mipmaps = 4,
                     scale = 0.5,
                 }
             }

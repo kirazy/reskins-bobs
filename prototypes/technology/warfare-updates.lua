@@ -12,17 +12,16 @@ local inputs = {
     group = "warfare",
     type = "technology",
     technology_icon_size = 256,
-    technology_icon_mipmaps = 4,
     flat_icon = true,
 }
 
 ---@type CreateIconsFromListTable
 local technologies = {
     -- Radars
-    ["radars"] = {tier = 2, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 0},
-    ["radars-2"] = {tier = 3, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 0},
-    ["radars-3"] = {tier = 4, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 0},
-    ["radars-4"] = {tier = 5, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 0},
+    ["radars"] = {tier = 2, icon_name = "radar", flat_icon = false, technology_icon_size = 128 },
+    ["radars-2"] = {tier = 3, icon_name = "radar", flat_icon = false, technology_icon_size = 128 },
+    ["radars-3"] = {tier = 4, icon_name = "radar", flat_icon = false, technology_icon_size = 128 },
+    ["radars-4"] = {tier = 5, icon_name = "radar", flat_icon = false, technology_icon_size = 128 },
 
     -- Miscellaneous
     ["reinforced-wall"] = {},
@@ -86,15 +85,15 @@ local technologies = {
 
 if reskins.lib.version.is_same_or_newer(mods["bobwarfare"], "1.1.6") then
     technologies["radars"] = nil
-    technologies["radars-1"] = {tier = 1, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 0}
-    technologies["radars-2"] = {tier = 2, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 0}
-    technologies["radars-3"] = {tier = 3, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 0}
-    technologies["radars-4"] = {tier = 4, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 0}
-    technologies["radars-5"] = {tier = 5, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 0}
+    technologies["radars-1"] = {tier = 1, icon_name = "radar", flat_icon = false, technology_icon_size = 128 }
+    technologies["radars-2"] = {tier = 2, icon_name = "radar", flat_icon = false, technology_icon_size = 128 }
+    technologies["radars-3"] = {tier = 3, icon_name = "radar", flat_icon = false, technology_icon_size = 128 }
+    technologies["radars-4"] = {tier = 4, icon_name = "radar", flat_icon = false, technology_icon_size = 128 }
+    technologies["radars-5"] = {tier = 5, icon_name = "radar", flat_icon = false, technology_icon_size = 128 }
 end
 
 if mods["aai-industry"] then
-    technologies["radar"] = {tier = 1, icon_name = "radar", flat_icon = false, technology_icon_size = 128, technology_icon_mipmaps = 0}
+    technologies["radar"] = {tier = 1, icon_name = "radar", flat_icon = false, technology_icon_size = 128 }
 end
 
 reskins.internal.create_icons_from_list(technologies, inputs)

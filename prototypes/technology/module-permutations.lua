@@ -26,7 +26,6 @@ local inputs = {
     group = "modules",
     type = "technology",
     technology_icon_size = 256,
-    technology_icon_mipmaps = 4,
 }
 
 -- Setup input defaults

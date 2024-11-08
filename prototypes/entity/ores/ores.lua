@@ -40,7 +40,6 @@ for name, params in pairs(ores) do
             icon_datum = {
                 icon = "__base__/graphics/icons/sulfur.png",
                 icon_size = 64,
-                icon_mipmaps = 4,
                 scale = 0.5,
             },
         })
@@ -51,7 +50,6 @@ for name, params in pairs(ores) do
             icon_data = { {
                 icon = reskins[params.key].directory .. "/graphics/icons/" .. params.subfolder .. "/ores/" .. name .. "/" .. name .. ".png",
                 icon_size = 64,
-                icon_mipmaps = 4,
                 scale = 0.5,
             } },
             pictures = reskins.internal.create_sprite_variations(params.key, params.subfolder .. "/ores", name, params.num_variations or 4, params.is_light),

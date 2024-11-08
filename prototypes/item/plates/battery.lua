@@ -12,7 +12,6 @@ local inputs = {
     group = "plates",
     icon_name = "battery",
     technology_icon_size = 256,
-    technology_icon_mipmaps = 4,
     tier_labels = false,
     make_icon_pictures = false,
 }

@@ -13,7 +13,6 @@ local inputs = {
     group = "equipment",
     technology_icon_extras = { reskins.lib.technology_equipment_overlay { scale = 1 } },
     technology_icon_size = 256,
-    technology_icon_mipmaps = 4,
 }
 
 ---@type CreateIconsFromListTable

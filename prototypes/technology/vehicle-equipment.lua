@@ -13,7 +13,6 @@ local inputs = {
     type = "technology",
     technology_icon_extras = {reskins.lib.technology_equipment_overlay{is_vehicle = true, scale = 1}},
     technology_icon_size = 256,
-    technology_icon_mipmaps = 4,
 }
 
 ---@type CreateIconsFromListTable

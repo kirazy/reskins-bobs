@@ -25,7 +25,6 @@ for _, name in pairs(fluids) do
         icon_datum = {
             icon = "__reskins-bobs__/graphics/icons/ores/ores/" .. name .. "/" .. name .. ".png",
             icon_size = 64,
-            icon_mipmaps = 4,
             scale = 0.5,
         }
     }

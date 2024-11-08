@@ -20,7 +20,6 @@ local function assign_item_group_icon(name)
     -- Assign the revised UI icons
     item_group.icon = "__reskins-bobs__/graphics/item-group/"..name..".png"
     item_group.icon_size = 128
-    item_group.icon_mipmaps = 0
 end
 
 for name, params in pairs(item_groups) do

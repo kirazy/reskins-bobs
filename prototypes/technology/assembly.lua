@@ -12,7 +12,6 @@ local inputs = {
     group = "assembly",
     type = "technology",
     technology_icon_size = 256,
-    technology_icon_mipmaps = 4,
 }
 
 ---@type CreateIconsFromListTable
@@ -41,21 +40,21 @@ local technologies = {
     ["electrolyser-5"] = {tier = 5, icon_name = "electrolyser", icon_base = "electrolyser-5", icon_mask = "electrolyser-5", icon_highlights = "electrolyser-5"},
 
     -- Chemical Plants
-    ["chemical-plant-2"] = {tier = 2, prog_tier = 3, icon_name = "chemical-plant", technology_icon_size = 128, technology_icon_mipmaps = 0},
-    ["chemical-plant-3"] = {tier = 3, prog_tier = 4, icon_name = "chemical-plant", technology_icon_size = 128, technology_icon_mipmaps = 0},
-    ["chemical-plant-4"] = {tier = 4, prog_tier = 5, icon_name = "chemical-plant", technology_icon_size = 128, technology_icon_mipmaps = 0},
+    ["chemical-plant-2"] = {tier = 2, prog_tier = 3, icon_name = "chemical-plant", technology_icon_size = 128 },
+    ["chemical-plant-3"] = {tier = 3, prog_tier = 4, icon_name = "chemical-plant", technology_icon_size = 128 },
+    ["chemical-plant-4"] = {tier = 4, prog_tier = 5, icon_name = "chemical-plant", technology_icon_size = 128 },
 
     -- Oil Refinery
     -- ["oil-processing"] = {tier = 1, prog_tier = 2} -- refinery 1
-    ["oil-processing-2"] = {tier = 2, prog_tier = 3, icon_name = "oil-refinery", technology_icon_size = 128, technology_icon_mipmaps = 0},
-    ["oil-processing-3"] = {tier = 3, prog_tier = 4, icon_name = "oil-refinery", technology_icon_size = 128, technology_icon_mipmaps = 0},
-    ["oil-processing-4"] = {tier = 4, prog_tier = 5, icon_name = "oil-refinery", technology_icon_size = 128, technology_icon_mipmaps = 0},
+    ["oil-processing-2"] = {tier = 2, prog_tier = 3, icon_name = "oil-refinery", technology_icon_size = 128 },
+    ["oil-processing-3"] = {tier = 3, prog_tier = 4, icon_name = "oil-refinery", technology_icon_size = 128 },
+    ["oil-processing-4"] = {tier = 4, prog_tier = 5, icon_name = "oil-refinery", technology_icon_size = 128 },
 
     -- Distilleries
-    ["bob-distillery-2"] = {tier = 2, icon_name = "distillery", technology_icon_size = 128, technology_icon_mipmaps = 0},
-    ["bob-distillery-3"] = {tier = 3, icon_name = "distillery", technology_icon_size = 128, technology_icon_mipmaps = 0},
-    ["bob-distillery-4"] = {tier = 4, icon_name = "distillery", technology_icon_size = 128, technology_icon_mipmaps = 0},
-    ["bob-distillery-5"] = {tier = 5, icon_name = "distillery", technology_icon_size = 128, technology_icon_mipmaps = 0},
+    ["bob-distillery-2"] = {tier = 2, icon_name = "distillery", technology_icon_size = 128 },
+    ["bob-distillery-3"] = {tier = 3, icon_name = "distillery", technology_icon_size = 128 },
+    ["bob-distillery-4"] = {tier = 4, icon_name = "distillery", technology_icon_size = 128 },
+    ["bob-distillery-5"] = {tier = 5, icon_name = "distillery", technology_icon_size = 128 },
 }
 
 if reskins.lib.version.is_same_or_newer(mods["bobassembly"], "1.3.0") then

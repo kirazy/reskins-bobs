@@ -15,7 +15,6 @@ local inputs = {
     equipment_category = "utility",
     icon_filename = "__base__/graphics/icons/belt-immunity-equipment.png",
     icon_size = 64,
-    icon_mipmaps = 4,
 }
 
 local name = "vehicle-belt-immunity-equipment"

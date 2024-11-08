@@ -12,7 +12,6 @@ local inputs = {
     group = "logistics",
     type = "technology",
     technology_icon_size = 256,
-    technology_icon_mipmaps = 4,
 }
 
 -- Filenames and effect overlays
@@ -55,10 +54,10 @@ local technologies = {
     -- ["bob-robo-modular-4"] = {tier = 4, prog_tier = 5},
 
     -- Repair packs
-    ["bob-repair-pack-2"] = { tier = 2, icon_name = "repair-pack", technology_icon_size = 128, technology_icon_mipmaps = 0 },
-    ["bob-repair-pack-3"] = { tier = 3, icon_name = "repair-pack", technology_icon_size = 128, technology_icon_mipmaps = 0 },
-    ["bob-repair-pack-4"] = { tier = 4, icon_name = "repair-pack", technology_icon_size = 128, technology_icon_mipmaps = 0 },
-    ["bob-repair-pack-5"] = { tier = 5, icon_name = "repair-pack", technology_icon_size = 128, technology_icon_mipmaps = 0 },
+    ["bob-repair-pack-2"] = { tier = 2, icon_name = "repair-pack", technology_icon_size = 128 },
+    ["bob-repair-pack-3"] = { tier = 3, icon_name = "repair-pack", technology_icon_size = 128 },
+    ["bob-repair-pack-4"] = { tier = 4, icon_name = "repair-pack", technology_icon_size = 128 },
+    ["bob-repair-pack-5"] = { tier = 5, icon_name = "repair-pack", technology_icon_size = 128 },
 
     -- Fluid Handling
     -- ["fluid-handling"] = {flat_icon = false, tier = 1, prog_tier = 2, icon_name = "fluid-handling"}, -- handled by technology/plates.lua

@@ -12,12 +12,11 @@ local inputs = {
     group = "power",
     type = "technology",
     technology_icon_size = 256,
-    technology_icon_mipmaps = 4,
 }
 
 ---@type CreateIconsFromListTable
 local technologies = {
-    ["bob-steam-engine-1"] = {tier = 1, icon_name = "steam-engine", technology_icon_size = 128, technology_icon_mipmaps = 0}, -- Bob technology burner phase
+    ["bob-steam-engine-1"] = {tier = 1, icon_name = "steam-engine", technology_icon_size = 128 }, -- Bob technology burner phase
 }
 
 local material_tiers = {

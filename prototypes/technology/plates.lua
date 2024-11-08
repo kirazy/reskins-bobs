@@ -31,7 +31,6 @@ local function get_technology_light_layer(name, folder)
         {
             icon = "__reskins-bobs__/graphics/technology/plates/" .. folder .. "/" .. name .. "-technology-lights.png",
             icon_size = 256,
-            icon_mipmaps = 4,
             tint = { 1, 1, 1, 0 },
         },
     }
@@ -48,12 +47,10 @@ local technologies = {
     ["thorium-processing"] = {
         subgroup = "nuclear",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
     ["bobingabout-enrichment-process"] = {
         subgroup = "nuclear",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
 
     ["plutonium-fuel-cell"] = { subgroup = "nuclear" },
@@ -72,7 +69,6 @@ local technologies = {
 
     ["advanced-material-processing-2"] = {
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
         flat_icon = false,
         tint = util.color("ffb700"),
         icon_name = "advanced-material-processing",
@@ -80,7 +76,6 @@ local technologies = {
     },
     ["advanced-material-processing-3"] = {
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
         flat_icon = false,
         tier = 4,
         icon_name = "advanced-material-processing",
@@ -88,7 +83,6 @@ local technologies = {
     },
     ["advanced-material-processing-4"] = {
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
         flat_icon = false,
         tier = 5,
         icon_name = "advanced-material-processing",
@@ -97,7 +91,6 @@ local technologies = {
 
     ["electric-chemical-furnace"] = {
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
         flat_icon = false,
         tint = util.color("e50000"),
         icon_name = "electric-chemical-furnace",
@@ -106,7 +99,6 @@ local technologies = {
 
     ["electric-mixing-furnace"] = {
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
         flat_icon = false,
         tint = util.color("00bfff"),
         icon_name = "electric-mixing-furnace",
@@ -115,7 +107,6 @@ local technologies = {
 
     ["multi-purpose-furnace-1"] = {
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
         flat_icon = false,
         tier = 4,
         icon_name = "multi-purpose-furnace",
@@ -123,7 +114,6 @@ local technologies = {
     },
     ["multi-purpose-furnace-2"] = {
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
         flat_icon = false,
         tier = 5,
         icon_name = "multi-purpose-furnace",
@@ -188,53 +178,45 @@ local technologies = {
     ["grinding"] = {
         subgroup = "processing-steps",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
 
     ["polishing"] = {
         subgroup = "processing-steps",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
 
     ["electrolysis-1"] = {
         subgroup = "processing-steps",
         image = "electrolysis",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
     ["electrolysis-2"] = {
         subgroup = "processing-steps",
         image = "electrolysis",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
 
     ["void-fluid"] = {
         subgroup = "processing-steps",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
 
     -- raw gems
     -- ["gem-processing-1"] = {
     --     subgroup = "processing-steps",
     --     technology_icon_size = 256,
-    --     technology_icon_mipmaps = 4,
     -- },
 
     -- cut gems
     ["gem-processing-2"] = {
         subgroup = "processing-steps",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
 
     -- polished gems
     ["gem-processing-3"] = {
         subgroup = "processing-steps",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
 
     -- Plate processing
@@ -242,104 +224,89 @@ local technologies = {
     ["aluminium-processing"] = {
         subgroup = "plates",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
 
     -- gold plate
     ["gold-processing"] = {
         subgroup = "plates",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
 
     -- zinc plate, brass, gunmetal, brass gear, brass pipes, brass chest
     ["zinc-processing"] = {
         subgroup = "plates",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
 
     -- nickel plate
     ["nickel-processing"] = {
         subgroup = "plates",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
 
     -- vanilla fine as is
     ["steel-processing"] = {
         subgroup = "plates",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
 
     -- silicon boule, wager, powder
     ["silicon-processing"] = {
         subgroup = "plates",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
 
     -- invar plate
     ["invar-processing"] = {
         subgroup = "plates",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
 
     -- lead plate, lead oxide
     ["lead-processing"] = {
         subgroup = "plates",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
 
     -- cobalt oxide, cobalt plate, copper plate from cobalt, cobalt steel plate, gear, bearing, ball bearing
     ["cobalt-processing"] = {
         subgroup = "plates",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
 
     -- copper-tungsten, tungsten carbide, c-tun-pipes
     ["tungsten-alloy-processing"] = {
         subgroup = "plates",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
 
     -- nitinol plate, gear, bearing, ball,. pipes
     ["nitinol-processing"] = {
         subgroup = "plates",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
 
     -- titanium plate, gear, ball, bearing, pipes, chest
     ["titanium-processing"] = {
         subgroup = "plates",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
 
     -- tungsten plate, gear, pipe, acid, oxide, powdered
     ["tungsten-processing"] = {
         subgroup = "plates",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
 
     ["alloy-processing"] = {
         subgroup = "plates",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
 
     -- silicon nitride, ceramic bearing, ball bearing, pipes
     ["ceramics"] = {
         subgroup = "plates",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
 
     -- Chemicals and fluids processing
@@ -348,21 +315,18 @@ local technologies = {
     ["chemical-processing-2"] = {
         subgroup = "chemical-processing",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
 
     -- lithium, lithium chloride, perchlorate, sodium chlorate, perchlorate, (Bob's revamp does something to this?)
     ["lithium-processing"] = {
         subgroup = "chemical-processing",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
 
     -- gas cans
     ["gas-canisters"] = {
         subgroup = "chemical-processing",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
 
     -- fluids: nitrogen, nitrogen-dioxide, nitric acid, ammonia, nitric oxide, hydrogen peroxide
@@ -384,32 +348,26 @@ local technologies = {
     ["alien-blue-research"] = {
         subgroup = "alien",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
     ["alien-orange-research"] = {
         subgroup = "alien",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
     ["alien-purple-research"] = {
         subgroup = "alien",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
     ["alien-yellow-research"] = {
         subgroup = "alien",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
     ["alien-green-research"] = {
         subgroup = "alien",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
     ["alien-red-research"] = {
         subgroup = "alien",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
 
     -- Fluid Handling
@@ -419,7 +377,6 @@ local technologies = {
         prog_tier = 2,
         icon_name = "fluid-handling",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
     ["bob-fluid-handling-2"] = {
         flat_icon = false,
@@ -427,7 +384,6 @@ local technologies = {
         prog_tier = 3,
         icon_name = "fluid-handling",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
     ["bob-fluid-handling-3"] = {
         flat_icon = false,
@@ -435,7 +391,6 @@ local technologies = {
         prog_tier = 4,
         icon_name = "fluid-handling",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
     ["bob-fluid-handling-4"] = {
         flat_icon = false,
@@ -443,7 +398,6 @@ local technologies = {
         prog_tier = 5,
         icon_name = "fluid-handling",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     },
 }
 
@@ -454,7 +408,6 @@ if not mods["bobelectronics"] then
     technologies["advanced-electronics-3"] = {
         subgroup = "processing-steps",
         technology_icon_size = 256,
-        technology_icon_mipmaps = 4,
     }
 end
 

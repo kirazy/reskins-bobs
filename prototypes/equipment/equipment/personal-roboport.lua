@@ -13,7 +13,6 @@ local inputs = {
     mod = "bobs",
     group = "equipment",
     technology_icon_size = 256,
-    technology_icon_mipmaps = 4,
 }
 
 -- Setup defaults

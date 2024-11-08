@@ -13,7 +13,6 @@ local inputs = {
     type = "technology",
     flat_icon = true,
     technology_icon_size = 256,
-    technology_icon_mipmaps = 4,
 }
 
 ---@type CreateIconsFromListTable

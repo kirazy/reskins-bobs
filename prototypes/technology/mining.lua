@@ -12,7 +12,6 @@ local inputs = {
     group = "mining",
     type = "technology",
     technology_icon_size = 256,
-    technology_icon_mipmaps = 4,
 }
 
 ---@return CreateIconsFromListOverrides
@@ -37,7 +36,6 @@ local function get_mining_drill_overrides(tier, prog_tier)
         prog_tier = prog_tier,
         icon_name = "mining-drill",
         technology_icon_size = 128,
-        technology_icon_mipmaps = 0,
     }
 
     return override
@@ -54,7 +52,6 @@ local function get_area_mining_drill_overrides(tier, prog_tier)
         icon_name = "mining-drill",
         icon_base = "area-mining-drill",
         technology_icon_size = 128,
-        technology_icon_mipmaps = 0,
     }
 
     return override
@@ -126,7 +123,7 @@ local technologies = {
 }
 
 if mods["aai-industry"] then
-    technologies["electric-mining"] = { tier = 1, icon_name = "mining-drill", technology_icon_size = 128, technology_icon_mipmaps = 0 }
+    technologies["electric-mining"] = { tier = 1, icon_name = "mining-drill", technology_icon_size = 128 }
 end
 
 reskins.internal.create_icons_from_list(technologies, inputs)
