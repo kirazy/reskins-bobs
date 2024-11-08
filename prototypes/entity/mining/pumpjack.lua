@@ -59,7 +59,7 @@ local min_speed = pumpjack_speeds[1]
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
-    -- Fetch entity
+    ---@type data.MiningDrillPrototype
     local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
@@ -161,7 +161,7 @@ for name, map in pairs(tier_map) do
         },
     }
 
-    entity.animations = {
+    entity.graphics_set.animation = {
         north = {
             layers = {
                 -- Base

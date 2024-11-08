@@ -26,10 +26,10 @@ else
 end
 
 local fluid_generators = {
-    ["fluid-generator"] = { 1, 2, 2 / 16 },
-    ["fluid-generator-2"] = { 2, 3, 3 / 16 },
-    ["fluid-generator-3"] = { 3, 4, 4 / 16 },
-    ["hydrazine-generator"] = { 4, 5, 5 / 16, reskins.bobs.hydrazine_tint },
+    ["fluid-generator"] = { tier = 1, prog_tier = 2, frequency = 2 / 16 },
+    ["fluid-generator-2"] = { tier = 2, prog_tier = 3, frequency = 3 / 16 },
+    ["fluid-generator-3"] = { tier = 3, prog_tier = 4, frequency = 4 / 16 },
+    ["hydrazine-generator"] = { tier = 4, prog_tier = 5, frequency = 5 / 16, tint = reskins.bobs.hydrazine_tint },
 }
 
 local function setup_fluid_generator(tint)
@@ -82,31 +82,26 @@ end
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(fluid_generators) do
-    -- Fetch entity
+    ---@type data.GeneratorPrototype
     local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
     -- Parse map
-    local tier = map[1]
+    local tier = map.tier
     if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
-        tier = map[2]
+        tier = map.prog_tier
     end
 
-    local frequency = map[3]
-
     -- Determine what tint we're using
-    inputs.tint = map[4] or reskins.lib.tiers.get_tint(tier)
+    inputs.tint = map.tint or reskins.lib.tiers.get_tint(tier)
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Reskin entities
     entity.horizontal_animation = setup_fluid_generator(inputs.tint)
     entity.vertical_animation = setup_fluid_generator(inputs.tint)
-
-    -- Clear out working_visualisations
-    entity.working_visualisations = nil
 
     -- Handle smoke
     if name == "hydrazine-generator" then
@@ -115,7 +110,7 @@ for name, map in pairs(fluid_generators) do
                 name = "light-smoke",
                 north_position = util.by_pixel(-30, -44),
                 east_position = util.by_pixel(-30, -44),
-                frequency = frequency,
+                frequency = map.frequency,
                 starting_vertical_speed = 0.08,
                 slow_down_factor = 1,
                 starting_frame_deviation = 60,
@@ -127,7 +122,7 @@ for name, map in pairs(fluid_generators) do
                 name = "smoke",
                 north_position = util.by_pixel(-30, -44),
                 east_position = util.by_pixel(-30, -44),
-                frequency = frequency,
+                frequency = map.frequency,
                 starting_vertical_speed = 0.08,
                 slow_down_factor = 1,
                 starting_frame_deviation = 60,

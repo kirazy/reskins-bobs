@@ -23,51 +23,48 @@ local material_tints = {
 }
 
 local logistic_map = {
-    ["logistic-chest-active-provider"] = { 1, 2 },
-    ["logistic-chest-passive-provider"] = { 1, 2 },
-    ["logistic-chest-storage"] = { 1, 2 },
-    ["logistic-chest-buffer"] = { 1, 2 },
-    ["logistic-chest-requester"] = { 1, 2 },
-    ["logistic-chest-active-provider-2"] = { 2, 3, "brass", "active-provider" },
-    ["logistic-chest-passive-provider-2"] = { 2, 3, "brass", "passive-provider" },
-    ["logistic-chest-storage-2"] = { 2, 3, "brass", "storage" },
-    ["logistic-chest-buffer-2"] = { 2, 3, "brass", "buffer" },
-    ["logistic-chest-requester-2"] = { 2, 3, "brass", "requester" },
-    ["logistic-chest-active-provider-3"] = { 3, 4, "titanium", "active-provider" },
-    ["logistic-chest-passive-provider-3"] = { 3, 4, "titanium", "passive-provider" },
-    ["logistic-chest-storage-3"] = { 3, 4, "titanium", "storage" },
-    ["logistic-chest-buffer-3"] = { 3, 4, "titanium", "buffer" },
-    ["logistic-chest-requester-3"] = { 3, 4, "titanium", "requester" },
+    ["logistic-chest-active-provider"] = { tier = 1, prog_tier = 2 },
+    ["logistic-chest-passive-provider"] = { tier = 1, prog_tier = 2 },
+    ["logistic-chest-storage"] = { tier = 1, prog_tier = 2 },
+    ["logistic-chest-buffer"] = { tier = 1, prog_tier = 2 },
+    ["logistic-chest-requester"] = { tier = 1, prog_tier = 2 },
+    ["logistic-chest-active-provider-2"] = { tier = 2, prog_tier = 3, material = "brass", chest_type = "active-provider" },
+    ["logistic-chest-passive-provider-2"] = { tier = 2, prog_tier = 3, material = "brass", chest_type = "passive-provider" },
+    ["logistic-chest-storage-2"] = { tier = 2, prog_tier = 3, material = "brass", chest_type = "storage" },
+    ["logistic-chest-buffer-2"] = { tier = 2, prog_tier = 3, material = "brass", chest_type = "buffer" },
+    ["logistic-chest-requester-2"] = { tier = 2, prog_tier = 3, material = "brass", chest_type = "requester" },
+    ["logistic-chest-active-provider-3"] = { tier = 3, prog_tier = 4, material = "titanium", chest_type = "active-provider" },
+    ["logistic-chest-passive-provider-3"] = { tier = 3, prog_tier = 4, material = "titanium", chest_type = "passive-provider" },
+    ["logistic-chest-storage-3"] = { tier = 3, prog_tier = 4, material = "titanium", chest_type = "storage" },
+    ["logistic-chest-buffer-3"] = { tier = 3, prog_tier = 4, material = "titanium", chest_type = "buffer" },
+    ["logistic-chest-requester-3"] = { tier = 3, prog_tier = 4, material = "titanium", chest_type = "requester" },
 }
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(logistic_map) do
-    -- Fetch entity
+    ---@type data.LogisticContainerPrototype
     local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
     -- Parse map
-    local tier = map[1]
+    local tier = map.tier
     if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
-        tier = map[2]
+        tier = map.prog_tier
     end
 
-    local material = map[3]
-    local chest = map[4]
-
     -- Stick tier labels on the vanilla logistic chests
-    if not map[3] then
+    if not map.material then
         reskins.lib.tiers.add_tier_labels_to_prototype_by_reference(tier, entity)
         goto continue
     end
 
     -- Construct inputs parameters
-    inputs.base_entity_name = chest .. "-chest"
-    inputs.icon_base = chest .. "-chest"
-    inputs.icon_mask = material .. "-logistic-chest"
-    inputs.tint = material_tints[material]
+    inputs.base_entity_name = map.chest_type .. "-chest"
+    inputs.icon_base = map.chest_type .. "-chest"
+    inputs.icon_mask = map.material .. "-logistic-chest"
+    inputs.tint = material_tints[map.material]
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
@@ -79,7 +76,7 @@ for name, map in pairs(logistic_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/logistic-chest/remnants/" .. chest .. "-chest-remnants.png",
+                filename = "__base__/graphics/entity/logistic-chest/remnants/" .. map.chest_type .. "-chest-remnants.png",
                 line_length = 1,
                 width = 116,
                 height = 82,
@@ -90,7 +87,7 @@ for name, map in pairs(logistic_map) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/chest/remnants/hr-" .. material .. "-logistic-chest-remnants.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/chest/remnants/hr-" .. map.material .. "-logistic-chest-remnants.png",
                 line_length = 1,
                 width = 116,
                 height = 82,
@@ -107,7 +104,7 @@ for name, map in pairs(logistic_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/logistic-chest/logistic-chest-" .. chest .. ".png",
+                filename = "__base__/graphics/entity/logistic-chest/logistic-chest-" .. map.chest_type .. ".png",
                 priority = "extra-high",
                 width = 66,
                 height = 74,
@@ -117,7 +114,7 @@ for name, map in pairs(logistic_map) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/chest/hr-" .. material .. "-logistic-chest.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/chest/hr-" .. map.material .. "-logistic-chest.png",
                 priority = "extra-high",
                 width = 66,
                 height = 74,

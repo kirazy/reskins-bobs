@@ -39,20 +39,28 @@ if reskins.lib.version.is_same_or_newer(mods["bobpower"], "1.1.6") then
     tier_map["fluid-reactor-3"] = nil
 end
 
+---comment
+---@param material any
+---@return data.Sprite
 local function heat_source_base_pipes(material)
-    return
-    {
+    ---@type data.Sprite
+    local sprite = {
         filename = "__reskins-bobs__/graphics/entity/power/heat-source/hr-heat-source-base-pipes-" .. material .. ".png",
         width = 192,
         height = 192,
         scale = 0.5,
         shift = { -0.03125, -0.1875 },
     }
+
+    return sprite
 end
 
+---comment
+---@param material any
+---@return data.SpriteVariations
 local function connect_patches_connected(material)
-    return
-    {
+    ---@type data.SpriteVariations
+    local sprite = {
         sheet = {
             filename = "__reskins-bobs__/graphics/entity/power/heat-source/hr-reactor-connect-patches-" .. material .. ".png",
             width = 64,
@@ -61,11 +69,16 @@ local function connect_patches_connected(material)
             scale = 0.5,
         },
     }
+
+    return sprite
 end
 
+---comment
+---@param material any
+---@return data.SpriteVariations
 local function connect_patches_disconnected(material)
-    return
-    {
+    ---@type data.SpriteVariations
+    local sprite = {
         sheet = {
             filename = "__reskins-bobs__/graphics/entity/power/heat-source/hr-reactor-connect-patches-" .. material .. ".png",
             width = 64,
@@ -75,31 +88,25 @@ local function connect_patches_disconnected(material)
             scale = 0.5,
         },
     }
+
+    return sprite
 end
 
--- Reskin entities, create and assign extra details
 for name, mapping in pairs(tier_map) do
-    -- Fetch entity
+    ---@type data.ReactorPrototype
     local entity = data.raw[inputs.type][name]
-
-    -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
-    -- Handle tier
     local tier = mapping.tier
     if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
         tier = mapping.prog_tier or mapping.tier
     end
 
-    -- Setup icon details
     inputs.icon_name = mapping.icon_name
-
-    -- Determine what tint we're using
     inputs.tint = mapping.tint or reskins.lib.tiers.get_tint(tier)
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
-    -- Reskin entities
     entity.picture = {
         layers = {
             {

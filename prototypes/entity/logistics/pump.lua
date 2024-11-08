@@ -17,24 +17,24 @@ local inputs = {
 }
 
 local tier_map = {
-    ["pump"] = { 1, 2 },
-    ["bob-pump-2"] = { 2, 3 },
-    ["bob-pump-3"] = { 3, 4 },
-    ["bob-pump-4"] = { 4, 5 },
+    ["pump"] = { tier = 1, prog_tier = 2 },
+    ["bob-pump-2"] = { tier = 2, prog_tier = 3 },
+    ["bob-pump-3"] = { tier = 3, prog_tier = 4 },
+    ["bob-pump-4"] = { tier = 4, prog_tier = 5 },
 }
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
-    -- Fetch entity
+    ---@type data.PumpPrototype
     local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
     -- Parse map
-    local tier = map[1]
+    local tier = map.tier
     if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
-        tier = map[2]
+        tier = map.prog_tier
     end
 
     -- Determine what tint we're using

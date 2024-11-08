@@ -209,7 +209,7 @@ for name, map in pairs(steel_furnace_map) do
         inputs.tier_labels = false
     end
 
-    -- Fetch entity
+    ---@type data.FurnacePrototype|data.AssemblingMachinePrototype
     local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
@@ -232,15 +232,15 @@ for name, map in pairs(steel_furnace_map) do
     -- Reskin entities and remnants
     if map.has_fluids == true then
         remnant.animation = steel_furnace_remnant_skin(inputs.icon_base, inputs.tint, 4)
-        entity.animation = reskins.lib.sprites.make_4way_animation_from_spritesheet(steel_furnace_entity_skin(inputs.icon_base, inputs.tint))
+        entity.graphics_set.animation = reskins.lib.sprites.make_4way_animation_from_spritesheet(steel_furnace_entity_skin(inputs.icon_base, inputs.tint))
     else
         remnant.animation = make_rotated_animation_variations_from_sheet(1, steel_furnace_remnant_skin(inputs.icon_base, inputs.tint, 1))
-        entity.animation = steel_furnace_entity_skin(inputs.icon_base, inputs.tint)
+        entity.graphics_set.animation = steel_furnace_entity_skin(inputs.icon_base, inputs.tint)
     end
 
     if map.is_chemical and map.is_fluid_burning then
         -- Skin the fluid-based steel chemical furnace working visualization
-        entity.working_visualisations = {
+        entity.graphics_set.working_visualisations = {
             -- Fire effect
             {
                 fadeout = true,
@@ -272,7 +272,7 @@ for name, map in pairs(steel_furnace_map) do
         }
     elseif map.is_chemical then
         -- Skin the steel chemical furnace working visualization
-        entity.working_visualisations = {
+        entity.graphics_set.working_visualisations = {
             -- Fire effect
             {
                 fadeout = true,
@@ -308,7 +308,7 @@ for name, map in pairs(steel_furnace_map) do
         }
     elseif map.is_fluid_burning then
         -- Skin the fluid-based steel furnace working visualizations
-        entity.working_visualisations = {
+        entity.graphics_set.working_visualisations = {
             -- Fire effect
             {
                 fadeout = true,
@@ -344,7 +344,7 @@ for name, map in pairs(steel_furnace_map) do
         }
     else
         -- Skin the steel furnace working visualizations
-        entity.working_visualisations = data.raw["furnace"]["steel-furnace"].working_visualisations
+        entity.graphics_set.working_visualisations = data.raw["furnace"]["steel-furnace"].working_visualisations
     end
 
     -- Handle ambient-light

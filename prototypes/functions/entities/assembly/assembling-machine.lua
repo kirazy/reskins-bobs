@@ -404,8 +404,7 @@ function reskins.lib.apply_skin.assembling_machine(name, tier, tint, make_tier_l
     corpse.animation = corpse_animation(inputs.tint)
 
     -- Reskin entity
-    entity.animation = entity_animation(flags.sprite_set or tier, inputs.tint, flags)
-    entity.drawing_box = nil
+    entity.graphics_set.animation = entity_animation(flags.sprite_set or tier, inputs.tint, flags)
 
     local draw_order_shift = (flags.use_electronics_set or flags.use_steam_set) and 6 or 3
     if entity.fluid_boxes then
@@ -451,7 +450,7 @@ function reskins.lib.apply_skin.assembling_machine(name, tier, tint, make_tier_l
 
     -- Rescale entity
     if flags.is_small then
-        reskins.lib.prototypes.rescale_prototype(entity.animation, 2 / 3)
+        reskins.lib.prototypes.rescale_prototype(entity.graphics_set.animation, 2 / 3)
         reskins.lib.prototypes.rescale_remnants_of_prototype(entity, 2 / 3)
     end
 end

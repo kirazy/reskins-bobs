@@ -194,7 +194,7 @@ for name, map in pairs(stone_furnace_map) do
         inputs.tier_labels = false
     end
 
-    -- Fetch entity
+    ---@type data.FurnacePrototype|data.AssemblingMachinePrototype
     local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
@@ -212,10 +212,10 @@ for name, map in pairs(stone_furnace_map) do
     -- Standard Furnace
     if map.is_chemical then
         remnant.animation = stone_furnace_remnants(inputs.icon_name, inputs.tint, 4)
-        entity.animation = reskins.lib.sprites.make_4way_animation_from_spritesheet(stone_furnace_entities(inputs.icon_name, inputs.tint))
+        entity.graphics_set.animation = reskins.lib.sprites.make_4way_animation_from_spritesheet(stone_furnace_entities(inputs.icon_name, inputs.tint))
 
         -- Handle working_visualisations
-        entity.working_visualisations = {
+        entity.graphics_set.working_visualisations = {
             -- Furnace and stack lights
             {
                 fadeout = true,
@@ -237,10 +237,10 @@ for name, map in pairs(stone_furnace_map) do
         }
     else
         remnant.animation = make_rotated_animation_variations_from_sheet(1, stone_furnace_remnants(inputs.icon_name, inputs.tint, 1))
-        entity.animation = stone_furnace_entities(inputs.icon_name, inputs.tint)
+        entity.graphics_set.animation = stone_furnace_entities(inputs.icon_name, inputs.tint)
 
         -- Handle working_visualisations
-        entity.working_visualisations = {
+        entity.graphics_set.working_visualisations = {
             -- Furnace and stack lights
             {
                 fadeout = true,

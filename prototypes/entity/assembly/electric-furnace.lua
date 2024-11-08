@@ -161,6 +161,7 @@ for name, map in pairs(electric_furnace_map) do
     end
 
     -- Fetch entity
+    ---@type data.FurnacePrototype|data.AssemblingMachinePrototype
     local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
@@ -213,7 +214,7 @@ for name, map in pairs(electric_furnace_map) do
     }
 
     -- Reskin entities
-    entity.animation = {
+    entity.graphics_set.animation = {
         layers = {
             -- Base
             {
@@ -258,7 +259,7 @@ for name, map in pairs(electric_furnace_map) do
     }
 
     if map.furnace == "chemical" then
-        entity.working_visualisations = {
+        entity.graphics_set.working_visualisations = {
             -- Furnace Heater
             furnace_heater(true),
 
@@ -291,7 +292,7 @@ for name, map in pairs(electric_furnace_map) do
             scale = 0.5,
         })
     elseif map.furnace == "mixing" then
-        entity.working_visualisations = {
+        entity.graphics_set.working_visualisations = {
             -- Furnace Heater
             furnace_heater(),
 
@@ -312,7 +313,7 @@ for name, map in pairs(electric_furnace_map) do
             furnace_small_propeller(true),
         }
     elseif map.furnace == "chemical-mixing" then
-        entity.working_visualisations = {
+        entity.graphics_set.working_visualisations = {
             -- Furnace Heater
             furnace_heater(true),
 
@@ -349,7 +350,7 @@ for name, map in pairs(electric_furnace_map) do
             scale = 0.5,
         })
     elseif map.furnace == "standard" then
-        entity.working_visualisations = {
+        entity.graphics_set.working_visualisations = {
             -- Furnace Heater
             furnace_heater(),
 

@@ -16,8 +16,8 @@ local inputs = {
     icon_layers = 1,
 }
 
--- Fetch entity
-local entity = data.raw["assembling-machine"]["bob-greenhouse"]
+---@type data.AssemblingMachinePrototype
+local entity = data.raw[inputs.type]["bob-greenhouse"]
 
 -- Check if entity exists, if not, return
 if not entity then return end
@@ -50,7 +50,7 @@ local greenhouse_shadow = {
 }
 
 -- Reskin the entity
-entity.animation = {
+entity.graphics_set.animation = {
     north = {
         layers = {
             greenhouse_base.north,
@@ -81,7 +81,7 @@ entity.animation = {
     },
 }
 
-entity.idle_animation = nil
+entity.graphics_set.idle_animation = nil
 
 local greenhouse_working = reskins.lib.sprites.make_4way_animation_from_spritesheet({
     layers = {
@@ -105,7 +105,7 @@ local greenhouse_working = reskins.lib.sprites.make_4way_animation_from_spritesh
     },
 })
 
-entity.working_visualisations = {
+entity.graphics_set.working_visualisations = {
     {
         fadeout = true,
         north_animation = greenhouse_working.north,

@@ -17,34 +17,26 @@ local inputs = {
 }
 
 local tier_map = {
-    ["centrifuge"] = { 1, 3 },
-    ["centrifuge-2"] = { 2, 4 },
-    ["centrifuge-3"] = { 3, 5 },
+    ["centrifuge"] = { tier = 1, prog_tier = 3 },
+    ["centrifuge-2"] = { tier = 2, prog_tier = 4 },
+    ["centrifuge-3"] = { tier = 3, prog_tier = 5 },
 }
 
--- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
-    -- Fetch entity
+    ---@type data.AssemblingMachinePrototype
     local entity = data.raw[inputs.type][name]
-
-    -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
-    -- Parse map
-    local tier = map[1]
+    local tier = map.tier
     if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
-        tier = map[2]
+        tier = map.prog_tier or map.tier
     end
 
-    -- Determine what tint we're using
     inputs.tint = reskins.lib.tiers.get_tint(tier)
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
-    -- Fetch remnant
     local remnant = data.raw["corpse"][name .. "-remnants"]
-
-    -- Reskin remnants
     remnant.animation = make_rotated_animation_variations_from_sheet(1, {
         layers = {
             -- Base
@@ -92,7 +84,7 @@ for name, map in pairs(tier_map) do
     })
 
     -- Reskin entities
-    entity.idle_animation = {
+    entity.graphics_set.idle_animation = {
         layers = {
             -- Centrifuge C
             {
@@ -207,7 +199,7 @@ for name, map in pairs(tier_map) do
         },
     }
 
-    entity.working_visualisations = {
+    entity.graphics_set.working_visualisations = {
         -- Area Light
         {
             effect = "uranium-glow",
@@ -271,7 +263,7 @@ for name, map in pairs(tier_map) do
     ::continue::
 end
 
--- entity.working_visualisations = {
+-- entity.graphics_set.working_visualisations = {
 --     -- WORKING LIGHTS
 --     -- Centrifuge A (Front Left)
 --     {

@@ -21,15 +21,12 @@ inputs.icon_filename = "__reskins-bobs__/graphics/icons/power/burner-electric-ge
 
 local name = "bob-burner-generator"
 
--- Fetch entity
+---@type data.BurnerGeneratorPrototype
 local entity = data.raw[inputs.type][name]
-
--- Check if entity exists, if not, return
 if not entity then return end
 
 reskins.lib.setup_standard_entity(name, 0, inputs)
 
--- Reskin entity
 entity.animation = {
     layers = {
         -- Base
@@ -148,6 +145,3 @@ entity.burner.light_flicker = {
     minimum_light_size = 0,
     light_intensity_to_size_coefficient = 0,
 }
-
--- Fix drawing box
-entity.drawing_box = { { -1.5, -2.25 }, { 1.5, 1.5 } }

@@ -17,14 +17,14 @@ local inputs = {
 }
 
 local tier_map = {
-    ["water-pump"] = { 1, 2, "water" },
-    ["water-pump-2"] = { 2, 3, "water" },
-    ["water-pump-3"] = { 3, 4, "water" },
-    ["water-pump-4"] = { 4, 5, "water" },
-    ["air-pump"] = { 1, 2, "air" },
-    ["air-pump-2"] = { 2, 3, "air" },
-    ["air-pump-3"] = { 3, 4, "air" },
-    ["air-pump-4"] = { 4, 5, "air" },
+    ["water-pump"] = { tier = 1, prog_tier = 2, pump_type = "water" },
+    ["water-pump-2"] = { tier = 2, prog_tier = 3, pump_type = "water" },
+    ["water-pump-3"] = { tier = 3, prog_tier = 4, pump_type = "water" },
+    ["water-pump-4"] = { tier = 4, prog_tier = 5, pump_type = "water" },
+    ["air-pump"] = { tier = 1, prog_tier = 2, pump_type = "air" },
+    ["air-pump-2"] = { tier = 2, prog_tier = 3, pump_type = "air" },
+    ["air-pump-3"] = { tier = 3, prog_tier = 4, pump_type = "air" },
+    ["air-pump-4"] = { tier = 4, prog_tier = 5, pump_type = "air" },
 }
 
 local function generate_recipe_mask(pump_type, layer, blend_mode)
@@ -54,35 +54,34 @@ local recipe_tint_highlights = generate_recipe_mask("water", "tint-highlights", 
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
-    -- Fetch entity
+    ---@type data.AssemblingMachinePrototype
     local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
     -- Parse map
-    local tier = map[1]
+    local tier = map.tier
     if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
-        tier = map[2]
+        tier = map.prog_tier
     end
-    local pump_type = map[3]
 
     -- Determine what tint we're using
     inputs.tint = reskins.lib.tiers.get_tint(tier)
 
     -- Icon handling
-    inputs.icon_name = pump_type .. "-pump"
+    inputs.icon_name = map.pump_type .. "-pump"
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
     -- Reskin entities
     entity.corpse = "medium-remnants"
     entity.match_animation_speed_to_activity = false
-    entity.animation = reskins.lib.sprites.make_4way_animation_from_spritesheet({
+    entity.graphics_set.animation = reskins.lib.sprites.make_4way_animation_from_spritesheet({
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/plates/" .. pump_type .. "-pump/hr-" .. pump_type .. "-pump-base.png",
+                filename = "__reskins-bobs__/graphics/entity/plates/" .. map.pump_type .. "-pump/hr-" .. map.pump_type .. "-pump-base.png",
                 width = 148,
                 height = 186,
                 frame_count = 4,
@@ -94,7 +93,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/plates/" .. pump_type .. "-pump/hr-" .. pump_type .. "-pump-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/plates/" .. map.pump_type .. "-pump/hr-" .. map.pump_type .. "-pump-mask.png",
                 width = 148,
                 height = 186,
                 frame_count = 4,
@@ -107,7 +106,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/plates/" .. pump_type .. "-pump/hr-" .. pump_type .. "-pump-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/plates/" .. map.pump_type .. "-pump/hr-" .. map.pump_type .. "-pump-highlights.png",
                 width = 148,
                 height = 186,
                 frame_count = 4,
@@ -120,7 +119,7 @@ for name, map in pairs(tier_map) do
             },
             -- Shadow
             {
-                filename = "__reskins-bobs__/graphics/entity/plates/" .. pump_type .. "-pump/hr-" .. pump_type .. "-pump-shadow.png",
+                filename = "__reskins-bobs__/graphics/entity/plates/" .. map.pump_type .. "-pump/hr-" .. map.pump_type .. "-pump-shadow.png",
                 width = 172,
                 height = 134,
                 frame_count = 4,
@@ -134,23 +133,23 @@ for name, map in pairs(tier_map) do
         },
     })
 
-    entity.working_visualisations = {
+    entity.graphics_set.working_visualisations = {
         -- Recipe Tint Mask
         {
             apply_recipe_tint = "primary",
             always_draw = true,
-            north_animation = recipe_tint_mask[pump_type].north,
-            east_animation = recipe_tint_mask[pump_type].east,
-            south_animation = recipe_tint_mask[pump_type].south,
-            west_animation = recipe_tint_mask[pump_type].west,
+            north_animation = recipe_tint_mask[map.pump_type].north,
+            east_animation = recipe_tint_mask[map.pump_type].east,
+            south_animation = recipe_tint_mask[map.pump_type].south,
+            west_animation = recipe_tint_mask[map.pump_type].west,
         },
         -- Recipe Lightening Mask
         {
             always_draw = true,
-            north_animation = recipe_ligtening_mask[pump_type].north,
-            east_animation = recipe_ligtening_mask[pump_type].east,
-            south_animation = recipe_ligtening_mask[pump_type].south,
-            west_animation = recipe_ligtening_mask[pump_type].west,
+            north_animation = recipe_ligtening_mask[map.pump_type].north,
+            east_animation = recipe_ligtening_mask[map.pump_type].east,
+            south_animation = recipe_ligtening_mask[map.pump_type].south,
+            west_animation = recipe_ligtening_mask[map.pump_type].west,
         },
         -- Light
         {
@@ -166,8 +165,8 @@ for name, map in pairs(tier_map) do
         },
     }
 
-    if pump_type == "water" then
-        table.insert(entity.working_visualisations, {
+    if map.pump_type == "water" then
+        table.insert(entity.graphics_set.working_visualisations, {
             apply_recipe_tint = "primary",
             always_draw = true,
             north_animation = recipe_tint_highlights.north,
@@ -179,7 +178,7 @@ for name, map in pairs(tier_map) do
 
     entity.water_reflection = {
         pictures = {
-            filename = "__reskins-bobs__/graphics/entity/plates/" .. pump_type .. "-pump/" .. pump_type .. "-pump-reflection.png",
+            filename = "__reskins-bobs__/graphics/entity/plates/" .. map.pump_type .. "-pump/" .. map.pump_type .. "-pump-reflection.png",
             priority = "extra-high",
             width = 28,
             height = 36,
