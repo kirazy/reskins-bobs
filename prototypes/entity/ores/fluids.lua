@@ -3,7 +3,6 @@
 --
 -- See LICENSE in the project directory for license information.
 
--- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.ores.entities) then return end
 
 local fluids = {
@@ -12,10 +11,7 @@ local fluids = {
 }
 
 for _, name in pairs(fluids) do
-    -- Fetch entity
     local entity = data.raw["resource"][name]
-
-    -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
     ---@type DeferrableIconDatum
@@ -31,7 +27,6 @@ for _, name in pairs(fluids) do
 
     reskins.lib.icons.assign_deferrable_icon(deferrable_icon)
 
-    -- Reskin entity
     entity.stages = {
         sheet = {
             filename = "__reskins-bobs__/graphics/entity/ores/" .. name .. "/hr-" .. name .. ".png",
@@ -45,6 +40,5 @@ for _, name in pairs(fluids) do
         },
     }
 
-    -- Label to skip to next iteration
     ::continue::
 end

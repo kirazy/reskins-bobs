@@ -15,7 +15,7 @@ local inputs = {
 }
 
 -- Setup defaults
-reskins.lib.parse_inputs(inputs)
+reskins.lib.set_inputs_defaults(inputs)
 
 local laser_defense = {
     ["personal-laser-defense-equipment"] = { tier = 0 },

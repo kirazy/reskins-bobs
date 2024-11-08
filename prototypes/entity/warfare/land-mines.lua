@@ -24,7 +24,7 @@ local tier_map = {
 
 -- Reskin entities, create and assign extra details
 for _, name in pairs(tier_map) do
-    -- Fetch entity
+    ---@type data.LandMinePrototype
     local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration

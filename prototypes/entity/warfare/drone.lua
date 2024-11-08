@@ -260,8 +260,9 @@ local drones = {
 
 -- Reskin entities, create and assign extra details
 for drone, map in pairs(drones) do
-    -- Fetch entity
     local name = "bob-robot-" .. drone
+
+    ---@type data.UnitPrototype
     local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration

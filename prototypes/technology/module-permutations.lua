@@ -29,7 +29,7 @@ local inputs = {
 }
 
 -- Setup input defaults
-reskins.lib.parse_inputs(inputs)
+reskins.lib.set_inputs_defaults(inputs)
 
 for class, map in pairs(modules_map) do
     -- Do all tiers

@@ -160,7 +160,6 @@ for name, map in pairs(electric_furnace_map) do
         inputs.tier_labels = false
     end
 
-    -- Fetch entity
     ---@type data.FurnacePrototype|data.AssemblingMachinePrototype
     local entity = data.raw[inputs.type][name]
 

@@ -17,7 +17,7 @@ local inputs = {
 }
 
 -- Setup defaults
-reskins.lib.parse_inputs(inputs)
+reskins.lib.set_inputs_defaults(inputs)
 
 local vehicle_roboports = {
     ["vehicle-roboport"] = { tier = 1, prog_tier = 2, base = 1 },

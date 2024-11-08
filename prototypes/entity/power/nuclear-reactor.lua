@@ -190,7 +190,7 @@ local function skin_reactor_remnants(name, tint, material)
 end
 
 -- Construct default inputs
-reskins.lib.parse_inputs(inputs)
+reskins.lib.set_inputs_defaults(inputs)
 
 -- Reskin entities
 for name, mapping in pairs(reactors) do

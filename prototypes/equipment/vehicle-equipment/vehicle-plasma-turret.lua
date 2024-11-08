@@ -16,7 +16,7 @@ local inputs = {
 }
 
 -- Setup defaults
-reskins.lib.parse_inputs(inputs)
+reskins.lib.set_inputs_defaults(inputs)
 
 local plasma_turret = {
     ["vehicle-big-turret-1"] = { tier = 0 },

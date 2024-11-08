@@ -3,34 +3,30 @@
 --
 -- See LICENSE in the project directory for license information.
 
--- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.ores.entities) then return end
 
 local ores = {
     -- Pure Bob's
     -- ["gem-ore"] = { key = "bobs", subfolder = "ores" },
-    ["lead-ore"]     = { key = "lib", subfolder = "shared" }, -- 404040
-    ["rutile-ore"]   = { key = "bobs", subfolder = "ores" },
-    ["sulfur"]       = { key = "bobs", subfolder = "ores" },
-    ["thorium-ore"]  = { key = "bobs", subfolder = "ores", is_light = true },
-    ["tin-ore"]      = { key = "lib", subfolder = "shared", num_variations = 8 },
+    ["lead-ore"] = { key = "lib", subfolder = "shared" }, -- 404040
+    ["rutile-ore"] = { key = "bobs", subfolder = "ores" },
+    ["sulfur"] = { key = "bobs", subfolder = "ores" },
+    ["thorium-ore"] = { key = "bobs", subfolder = "ores", is_light = true },
+    ["tin-ore"] = { key = "lib", subfolder = "shared", num_variations = 8 },
 
     -- Shared with Angel's
-    ["bauxite-ore"]  = { key = "lib", subfolder = "shared", num_variations = 8 },
-    ["cobalt-ore"]   = { key = "lib", subfolder = "shared" },
-    ["gold-ore"]     = { key = "lib", subfolder = "shared" },
-    ["nickel-ore"]   = { key = "lib", subfolder = "shared" }, -- 408073
-    ["quartz"]       = { key = "lib", subfolder = "shared" }, -- 999999
-    ["silver-ore"]   = { key = "lib", subfolder = "shared" },
+    ["bauxite-ore"] = { key = "lib", subfolder = "shared", num_variations = 8 },
+    ["cobalt-ore"] = { key = "lib", subfolder = "shared" },
+    ["gold-ore"] = { key = "lib", subfolder = "shared" },
+    ["nickel-ore"] = { key = "lib", subfolder = "shared" }, -- 408073
+    ["quartz"] = { key = "lib", subfolder = "shared" },     -- 999999
+    ["silver-ore"] = { key = "lib", subfolder = "shared" },
     ["tungsten-ore"] = { key = "lib", subfolder = "shared", num_variations = 8 },
-    ["zinc-ore"]     = { key = "lib", subfolder = "shared" },
+    ["zinc-ore"] = { key = "lib", subfolder = "shared" },
 }
 
 for name, params in pairs(ores) do
-    -- Fetch entity
     local entity = data.raw["resource"][name]
-
-    -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
     if name == "sulfur" then
@@ -56,7 +52,6 @@ for name, params in pairs(ores) do
         })
     end
 
-    -- Reskin entity
     entity.stages = {
         sheet = {
             filename = "__reskins-bobs__/graphics/entity/ores/" .. name .. "/hr-" .. name .. ".png",
@@ -85,6 +80,5 @@ for name, params in pairs(ores) do
         }
     end
 
-    -- Label to skip to next iteration
     ::continue::
 end

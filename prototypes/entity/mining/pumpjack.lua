@@ -38,10 +38,8 @@ local index = 1
 
 -- Loop through all the pumpjacks, figure out the mining speeds
 for name, _ in pairs(tier_map) do
-    -- Fetch entity
+    ---@type data.MiningDrillPrototype
     local entity = data.raw[inputs.type][name]
-
-    -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
     -- Fetch mining speed
@@ -61,8 +59,6 @@ local min_speed = pumpjack_speeds[1]
 for name, map in pairs(tier_map) do
     ---@type data.MiningDrillPrototype
     local entity = data.raw[inputs.type][name]
-
-    -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
     -- Determine what tint we're using

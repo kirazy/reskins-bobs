@@ -31,7 +31,7 @@ local reinforced_tint_index = {
 }
 
 -- Parse inputs
-reskins.lib.parse_inputs(inputs)
+reskins.lib.set_inputs_defaults(inputs)
 
 if inputs.make_explosions then
     -- Create particles and explosions

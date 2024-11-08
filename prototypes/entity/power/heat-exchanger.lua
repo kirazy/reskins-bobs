@@ -41,7 +41,7 @@ end
 
 -- Reskin entities, create and assign extra details
 for name, mapping in pairs(tier_map) do
-    -- Fetch entity
+    ---@type data.BoilerPrototype
     local entity = data.raw[inputs.type][name]
 
     -- Parse map

@@ -3,25 +3,25 @@
 --
 -- See LICENSE in the project directory for license information.
 
--- Check to see if reskinning needs to be done.
-if reskins.lib.settings.get_value("cp-override-modules") == false then --[[ Do nothing ]]
+if reskins.lib.settings.get_value("cp-override-modules") == false then
+    -- Do nothing.
 elseif mods["CircuitProcessing"] then
     return
 end
 if not (reskins.bobs and reskins.bobs.triggers.modules.items) then return end
 
--- Modules
 local modules_map = {
-    ["speed"] = { "blue", true },
-    ["effectivity"] = { "yellow", true },
-    ["productivity"] = { "red", true },
-    ["pollution-create"] = { "brown" },
-    ["pollution-clean"] = { "pine" },
-    ["raw-speed"] = { "cyan" },
-    ["green"] = { "green" },
-    ["raw-productivity"] = { "pink" },
+    ["speed"] = { color = "blue", has_no_number_at_tier_one = true },
+    ["effectivity"] = { color = "yellow", has_no_number_at_tier_one = true },
+    ["productivity"] = { color = "red", has_no_number_at_tier_one = true },
+    ["pollution-create"] = { color = "brown" },
+    ["pollution-clean"] = { color = "pine" },
+    ["raw-speed"] = { color = "cyan" },
+    ["green"] = { color = "green" },
+    ["raw-productivity"] = { color = "pink" },
 }
 
+---@type SetupStandardEntityInputs
 local inputs = {
     directory = reskins.bobs.directory,
     mod = "bobs",
@@ -29,40 +29,26 @@ local inputs = {
     make_icon_pictures = false,
 }
 
--- Setup input defaults
-reskins.lib.parse_inputs(inputs)
+reskins.lib.set_inputs_defaults(inputs)
 
 for class, map in pairs(modules_map) do
-    -- Parse map
-    local color = map[1]
-    local is_exception = map[2]
-
-    -- Do all tiers
     for tier = 1, 8 do
-        -- Naming convention exception handling
         local name = class .. "-module-" .. tier
-        if tier == 1 and is_exception then
+        if tier == 1 and map.has_no_number_at_tier_one then
             name = class .. "-module"
         end
 
-        -- Fetch entity
+        ---@type data.ModulePrototype
         local entity = data.raw[inputs.type][name]
-
-        -- Check if entity exists, if not, skip this iteration
         if not entity then goto continue end
 
-        -- Setup icon path
-        inputs.icon_filename = "__reskins-bobs__/graphics/icons/modules/module/" .. color .. "/" .. color .. "_" .. tier .. ".png"
+        inputs.icon_filename = "__reskins-bobs__/graphics/icons/modules/module/" .. map.color .. "/" .. map.color .. "_" .. tier .. ".png"
 
         reskins.lib.construct_icon(name, 0, inputs)
 
-        -- Set beacon art style
         entity.art_style = "artisan-reskin-8-lights"
+        entity.beacon_tint = reskins.bobs.module_color_map[map.color]
 
-        -- Overwrite beacon_tint property
-        entity.beacon_tint = reskins.bobs.module_color_map[color]
-
-        -- Label to skip to next iteration
         ::continue::
     end
 end
@@ -71,26 +57,20 @@ end
 if reskins.lib.settings.get_value("bobmods-modules-enablegodmodules") then
     if not data.raw.module["god-module-6"] then
         for i = 1, 5 do
-            -- Fetch entity
             local name = "god-module-" .. i
-            local entity = data.raw[inputs.type][name]
 
-            -- Check if entity exists, if not, skip this iteration
+            ---@type data.ModulePrototype
+            local entity = data.raw[inputs.type][name]
             if not entity then goto continue end
 
-            -- Setup icon path
             inputs.icon_filename = "__reskins-bobs__/graphics/icons/modules/god-module/" .. name .. ".png"
             inputs.icon_layers = 1
 
             reskins.lib.construct_icon(name, 0, inputs)
 
-            -- Set beacon art style
             entity.art_style = "artisan-reskin-5-lights"
-
-            -- Overwrite beacon_tint property
             entity.beacon_tint = reskins.bobs.module_color_map["gray"]
 
-            -- Label to skip to next iteration
             ::continue::
         end
     end

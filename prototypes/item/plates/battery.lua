@@ -17,7 +17,7 @@ local inputs = {
 }
 
 -- Setup input defaults
-reskins.lib.parse_inputs(inputs)
+reskins.lib.set_inputs_defaults(inputs)
 
 -- Batteries
 local batteries = {

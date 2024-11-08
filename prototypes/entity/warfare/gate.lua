@@ -26,7 +26,7 @@ local reinforced_tint_index = {
 }
 
 -- Parse inputs
-reskins.lib.parse_inputs(inputs)
+reskins.lib.set_inputs_defaults(inputs)
 
 -- Create particles and explosions
 reskins.lib.create_explosion("reinforced-gate", inputs)

@@ -37,7 +37,7 @@ end
 
 -- Reskin entities, create and assign extra details
 for name, mapping in pairs(tier_map) do
-    -- Fetch entity
+    ---@type data.HeatPipePrototype
     local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
@@ -50,7 +50,7 @@ for name, mapping in pairs(tier_map) do
     end
 
     -- Setup inputs defaults
-    reskins.lib.parse_inputs(inputs)
+    reskins.lib.set_inputs_defaults(inputs)
 
     -- Setup icons
     ---@type data.IconData[]

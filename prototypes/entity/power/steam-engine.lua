@@ -18,25 +18,25 @@ local inputs = {
 }
 
 local tier_map = {
-    ["steam-engine"] = 1,
-    ["steam-engine-2"] = 2,
-    ["steam-engine-3"] = 3,
-    ["steam-engine-4"] = 4,
-    ["steam-engine-5"] = 5,
+    ["steam-engine"] = { tier = 1 },
+    ["steam-engine-2"] = { tier = 2 },
+    ["steam-engine-3"] = { tier = 3 },
+    ["steam-engine-4"] = { tier = 4 },
+    ["steam-engine-5"] = { tier = 5 },
 }
 
 -- Reskin entities, create and assign extra details
-for name, tier in pairs(tier_map) do
-    -- Fetch entity
+for name, map in pairs(tier_map) do
+    ---@type data.GeneratorPrototype
     local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not entity then goto continue end
 
     -- Determine what tint we're using
-    inputs.tint = reskins.lib.tiers.get_tint(tier)
+    inputs.tint = reskins.lib.tiers.get_tint(map.tier)
 
-    reskins.lib.setup_standard_entity(name, tier, inputs)
+    reskins.lib.setup_standard_entity(name, map.tier, inputs)
 
     -- Fetch remnant
     local remnant = data.raw["corpse"][name .. "-remnants"]

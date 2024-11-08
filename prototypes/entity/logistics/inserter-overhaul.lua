@@ -289,10 +289,10 @@ end
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(inserter_map) do
-    -- Create a working copy of the inputs table
+    ---@type SetupStandardEntityInputs
     local inputs = util.copy(inputs)
 
-    -- Fetch entity
+    ---@type data.InserterPrototype
     local entity = data.raw[inputs.type][name]
 
     -- Check if entity exists, if not, skip this iteration

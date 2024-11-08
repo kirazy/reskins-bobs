@@ -42,12 +42,12 @@ local function robot_shadow()
     }
 end
 
--- Fetch entity
 local name = "bob-laser-robot"
+
 local robot = data.raw["combat-robot"][name]
 if not robot then return end
 
-reskins.lib.parse_inputs(inputs)
+reskins.lib.set_inputs_defaults(inputs)
 reskins.lib.create_explosions_and_particles(name, inputs)
 reskins.lib.create_remnant(name, { type = inputs.type, base_entity_name = "defender" })
 reskins.lib.construct_icon(name, 0, inputs)
