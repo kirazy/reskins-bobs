@@ -37,4 +37,4 @@ require("prototypes.technology.warfare-updates")    -- Bob does tech updates in 
 ----------------------------------------------------------------------------------------------------
 -- GUI Modifications
 ----------------------------------------------------------------------------------------------------
--- require("prototypes.item-group.item-group")
+require("prototypes.item-group.item-group")
