@@ -30,18 +30,14 @@ local function do_spidertron_icons(name)
 
     reskins.lib.icons.assign_deferrable_icon(deferrable_icon)
 
-    ---icon_tintables uses icon_tintable instead of icon.
-    ---@diagnostic disable-next-line: missing-fields
     item_with_entity_data.icon_tintables = { {
-        icon_tintable = "__reskins-bobs__/graphics/icons/warfare/spidertron/" .. name .. "-tintable.png",
+        icon = "__reskins-bobs__/graphics/icons/warfare/spidertron/" .. name .. "-tintable.png",
         icon_size = 64,
         scale = 0.5,
     } }
 
-    ---icon_tintable_masks uses icon_tintable_mask instead of icon.
-    ---@diagnostic disable-next-line: missing-fields
     item_with_entity_data.icon_tintable_masks = { {
-        icon_tintable_mask = "__reskins-bobs__/graphics/icons/warfare/spidertron/" .. name .. "-tintable-mask.png",
+        icon = "__reskins-bobs__/graphics/icons/warfare/spidertron/" .. name .. "-tintable-mask.png",
         icon_size = 64,
         scale = 0.5,
     } }

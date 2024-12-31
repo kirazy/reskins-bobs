@@ -372,20 +372,22 @@ for name, map in pairs(electric_furnace_map) do
     end
 
     -- Handle pipe pictures
-    if map.has_fluids then
-        entity.fluid_boxes = {
-            {
-                production_type = "input",
-                pipe_picture = reskins.bobs.furnace_pipe_pictures(inputs.tint),
-                pipe_covers = pipecoverspictures(),
-                base_area = 10,
-                base_level = -1,
-                pipe_connections = { { type = "input", position = { 0, -2 } } },
-                secondary_draw_orders = { north = -1 },
-            },
-            off_when_no_fluid_recipe = true,
-        }
-    end
+    -- TODO Rework this for the revised fluid box manager prototype.
+    -- Should not need to re-define the fluid box to reskin the pictures...
+    -- if map.has_fluids then
+    --     entity.fluid_boxes = {
+    --         {
+    --             production_type = "input",
+    --             pipe_picture = reskins.bobs.furnace_pipe_pictures(inputs.tint),
+    --             pipe_covers = pipecoverspictures(),
+    --             base_area = 10,
+    --             base_level = -1,
+    --             pipe_connections = { { type = "input", position = { 0, -2 } } },
+    --             secondary_draw_orders = { north = -1 },
+    --         },
+    --         off_when_no_fluid_recipe = true,
+    --     }
+    -- end
 
     if name ~= "electric-furnace" then
         entity.water_reflection = util.copy(data.raw["furnace"]["electric-furnace"].water_reflection)

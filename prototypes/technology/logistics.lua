@@ -15,7 +15,7 @@ local inputs = {
 }
 
 -- Filenames and effect overlays
-local stack_inserter_icon = "__base__/graphics/technology/stack-inserter.png"
+local stack_inserter_icon = "__base__/graphics/technology/bulk-inserter.png"
 local inserter_icon = "__base__/graphics/technology/inserter-capacity.png"
 local toolbelt_icon = "__base__/graphics/technology/toolbelt.png"
 
@@ -150,5 +150,5 @@ end
 reskins.internal.create_icons_from_list(technologies, inputs)
 
 -- Overwrite icons for technology effects
-data.raw["utility-sprites"].default.stack_inserter_capacity_bonus_modifier_icon.filename =
+data.raw["utility-sprites"].default.bulk_inserter_capacity_bonus_modifier_icon.filename =
 "__reskins-bobs__/graphics/icons/logistics/inserter/stack-inserter-technology-effect-icon.png"
