@@ -41,7 +41,7 @@ local function icon_sets(sprite_set, tint, flags)
                 filename = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/electronics-machine-" .. flags.lights .. ".png",
                 size = 64,
                 mipmaps = 4,
-                scale = 0.25,
+                scale = 0.5,
             },
         }
     elseif flags.use_burner_set then
@@ -83,7 +83,7 @@ local function icon_sets(sprite_set, tint, flags)
                     filename = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/smoke-stack.png",
                     size = 64,
                     mipmaps = 4,
-                    scale = 0.25,
+                    scale = 0.5,
                 },
             }
         end
@@ -114,21 +114,21 @@ local function icon_sets(sprite_set, tint, flags)
                 filename = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/steam-smoke-stack-base.png",
                 size = 64,
                 mipmaps = 4,
-                scale = 0.25,
+                scale = 0.5,
             },
             {
                 filename = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/steam-smoke-stack-mask.png",
                 size = 64,
                 mipmaps = 4,
-                scale = 0.25,
+                scale = 0.5,
                 tint = tint,
             },
             {
                 filename = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/steam-smoke-stack-highlights.png",
                 size = 64,
                 mipmaps = 4,
-                scale = 0.25,
-                blend_mode = "additive",
+                scale = 0.5,
+                blend_mode = reskins.lib.settings.blend_mode,
             },
         }
     else
@@ -152,7 +152,7 @@ local function icon_sets(sprite_set, tint, flags)
                     filename = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/mini-gear-" .. sprite_set .. ".png",
                     size = 64,
                     mipmaps = 4,
-                    scale = 0.25,
+                    scale = 0.5,
                 },
             }
         else
@@ -170,7 +170,7 @@ local function icon_sets(sprite_set, tint, flags)
                     filename = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/gear-" .. sprite_set .. ".png",
                     size = 64,
                     mipmaps = 4,
-                    scale = 0.25,
+                    scale = 0.5,
                 },
             }
         end
