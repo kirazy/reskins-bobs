@@ -20,27 +20,26 @@ local intermediates = {
     -- Intermediates
     ----------------------------------------------------------------------------------------------------
     -- Plates
-    ["aluminium-plate"] = { subgroup = "plates" },
+    ["bob-aluminium-plate"] = { subgroup = "plates", image = "aluminium-plate" },
     ["brass-alloy"] = { subgroup = "plates" },
     ["bronze-alloy"] = { subgroup = "plates" },
     ["cobalt-plate"] = { subgroup = "plates" },
     ["cobalt-steel-alloy"] = { subgroup = "plates" },
     ["copper-tungsten-alloy"] = { subgroup = "plates" },
-    ["gold-plate"] = { mod = "lib", group = "shared", subgroup = "items" }, -- Shared with Angels
+    ["bob-gold-plate"] = { mod = "lib", group = "shared", subgroup = "items", image = "gold-plate" }, -- Shared with Angels
     ["gunmetal-alloy"] = { subgroup = "plates" },
     ["invar-alloy"] = { subgroup = "plates" },
-    ["lead-plate"] = { subgroup = "plates" },
+    ["bob-lead-plate"] = { subgroup = "plates", image = "lead-plate" },
     ["lithium"] = { subgroup = "plates" },
-    ["nickel-plate"] = { subgroup = "plates" },
+    ["bob-nickel-plate"] = { subgroup = "plates", image = "nickel-plate" },
     ["nitinol-alloy"] = { subgroup = "plates" },
-    -- ["silicon-plate"] = {subgroup = "plates"},
     ["silver-plate"] = { subgroup = "plates" },
     ["solder-alloy"] = { subgroup = "plates" }, -- Shared with Bob's Electronics
     ["tin-plate"] = { subgroup = "plates" },
-    ["titanium-plate"] = { subgroup = "plates" },
+    ["bob-titanium-plate"] = { subgroup = "plates", image = "titanium-plate" },
     ["tungsten-carbide"] = { subgroup = "plates" },
-    ["tungsten-plate"] = { subgroup = "plates" },
-    ["zinc-plate"] = { subgroup = "plates" },
+    ["bob-tungsten-plate"] = { subgroup = "plates", image = "tungsten-plate" },
+    ["bob-zinc-plate"] = { subgroup = "plates", image = "zinc-plate" },
     ["alien-orange-alloy"] = { subgroup = "plates" },
     ["alien-blue-alloy"] = { subgroup = "plates" },
 
@@ -101,15 +100,15 @@ local intermediates = {
 
     -- Miscellaneous Items
     ["silicon-wafer"] = { mod = "lib", group = "shared", subgroup = "items" },
-    ["silicon"] = { subgroup = "items" },
-    ["glass"] = { mod = "lib", group = "shared", subgroup = "items" },
+    ["bob-silicon-plate"] = { subgroup = "items", image = "silicon" },
+    ["bob-glass"] = { mod = "lib", group = "shared", subgroup = "items", image = "glass" },
     ["carbon"] = { subgroup = "items" },
     ["rubber"] = { mod = "lib", group = "shared", subgroup = "items" }, -- Shared with Bob's Electronics, Angels
     ["resin"] = { subgroup = "items" },                                 -- Shared with Bob's Electronics
     ["enriched-fuel"] = { subgroup = "items" },
-    ["grinding-wheel"] = { subgroup = "items" },
-    ["polishing-wheel"] = { subgroup = "items" },
-    ["polishing-compound"] = { subgroup = "items" },
+    ["bob-grinding-wheel"] = { subgroup = "items", image = "grinding-wheel" },
+    ["bob-polishing-wheel"] = { subgroup = "items", image = "polishing-wheel" },
+    ["bob-polishing-compound"] = { subgroup = "items", image = "polishing-compound" },
 
     -- Powders -- TODO: https://github.com/kirazy/reskins-bobs/issues/31 Model and render out powder/particulate icons
     ["calcium-chloride"] = { subgroup = "powders" },
@@ -198,8 +197,8 @@ end
 reskins.internal.create_icons_from_list(intermediates, inputs)
 
 -- One-off fixes
-if data.raw.item["nickel-plate"] then
-    reskins.lib.icons.clear_icon_from_prototype_by_name("bob-nickel-plate", "recipe")
+if data.raw.item["bob-nickel-plate"] then
+    reskins.lib.icons.clear_icon_from_prototype_by_name("bob-bob-nickel-plate", "recipe")
 end
 if data.raw.fluid["liquid-air"] then
     reskins.lib.icons.clear_icon_from_prototype_by_name("bob-liquid-air", "recipe")
