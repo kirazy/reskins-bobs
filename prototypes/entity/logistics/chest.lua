@@ -23,21 +23,21 @@ local material_tints = {
 }
 
 local logistic_map = {
-    ["logistic-chest-active-provider"] = { tier = 1, prog_tier = 2 },
-    ["logistic-chest-passive-provider"] = { tier = 1, prog_tier = 2 },
-    ["logistic-chest-storage"] = { tier = 1, prog_tier = 2 },
-    ["logistic-chest-buffer"] = { tier = 1, prog_tier = 2 },
-    ["logistic-chest-requester"] = { tier = 1, prog_tier = 2 },
-    ["logistic-chest-active-provider-2"] = { tier = 2, prog_tier = 3, material = "brass", chest_type = "active-provider" },
-    ["logistic-chest-passive-provider-2"] = { tier = 2, prog_tier = 3, material = "brass", chest_type = "passive-provider" },
-    ["logistic-chest-storage-2"] = { tier = 2, prog_tier = 3, material = "brass", chest_type = "storage" },
-    ["logistic-chest-buffer-2"] = { tier = 2, prog_tier = 3, material = "brass", chest_type = "buffer" },
-    ["logistic-chest-requester-2"] = { tier = 2, prog_tier = 3, material = "brass", chest_type = "requester" },
-    ["logistic-chest-active-provider-3"] = { tier = 3, prog_tier = 4, material = "titanium", chest_type = "active-provider" },
-    ["logistic-chest-passive-provider-3"] = { tier = 3, prog_tier = 4, material = "titanium", chest_type = "passive-provider" },
-    ["logistic-chest-storage-3"] = { tier = 3, prog_tier = 4, material = "titanium", chest_type = "storage" },
-    ["logistic-chest-buffer-3"] = { tier = 3, prog_tier = 4, material = "titanium", chest_type = "buffer" },
-    ["logistic-chest-requester-3"] = { tier = 3, prog_tier = 4, material = "titanium", chest_type = "requester" },
+    ["active-provider-chest"] = { tier = 1, prog_tier = 2 },
+    ["passive-provider-chest"] = { tier = 1, prog_tier = 2 },
+    ["storage-chest"] = { tier = 1, prog_tier = 2 },
+    ["buffer-chest"] = { tier = 1, prog_tier = 2 },
+    ["requester-chest"] = { tier = 1, prog_tier = 2 },
+    ["active-provider-chest-2"] = { tier = 2, prog_tier = 3, material = "brass", chest_type = "active-provider" },
+    ["passive-provider-chest-2"] = { tier = 2, prog_tier = 3, material = "brass", chest_type = "passive-provider" },
+    ["storage-chest-2"] = { tier = 2, prog_tier = 3, material = "brass", chest_type = "storage" },
+    ["buffer-chest-2"] = { tier = 2, prog_tier = 3, material = "brass", chest_type = "buffer" },
+    ["requester-chest-2"] = { tier = 2, prog_tier = 3, material = "brass", chest_type = "requester" },
+    ["active-provider-chest-3"] = { tier = 3, prog_tier = 4, material = "titanium", chest_type = "active-provider" },
+    ["passive-provider-chest-3"] = { tier = 3, prog_tier = 4, material = "titanium", chest_type = "passive-provider" },
+    ["storage-chest-3"] = { tier = 3, prog_tier = 4, material = "titanium", chest_type = "storage" },
+    ["buffer-chest-3"] = { tier = 3, prog_tier = 4, material = "titanium", chest_type = "buffer" },
+    ["requester-chest-3"] = { tier = 3, prog_tier = 4, material = "titanium", chest_type = "requester" },
 }
 
 -- Reskin entities, create and assign extra details
@@ -104,7 +104,7 @@ for name, map in pairs(logistic_map) do
         layers = {
             -- Base
             {
-                filename = "__base__/graphics/entity/logistic-chest/logistic-chest-" .. map.chest_type .. ".png",
+                filename = "__base__/graphics/entity/logistic-chest/" .. map.chest_type .. "-chest.png",
                 priority = "extra-high",
                 width = 66,
                 height = 74,
