@@ -43,15 +43,10 @@ local items = {
     ["flying-robot-frame-3"] = { tier = 3, prog_tier = 4, icon_name = "flying-robot-frame" },
     ["flying-robot-frame-4"] = { tier = 4, prog_tier = 5, icon_name = "flying-robot-frame" },
 
-    ["robot-tool-construction"] = { tier = 1, prog_tier = 2, icon_name = "robot-tool-construction" },
-    ["robot-tool-construction-2"] = { tier = 2, prog_tier = 3, icon_name = "robot-tool-construction" },
-    ["robot-tool-construction-3"] = { tier = 3, prog_tier = 4, icon_name = "robot-tool-construction" },
-    ["robot-tool-construction-4"] = { tier = 4, prog_tier = 5, icon_name = "robot-tool-construction" },
-
-    ["robot-tool-logistic"] = { tier = 1, prog_tier = 2, icon_name = "robot-tool-logistic" },
-    ["robot-tool-logistic-2"] = { tier = 2, prog_tier = 3, icon_name = "robot-tool-logistic" },
-    ["robot-tool-logistic-3"] = { tier = 3, prog_tier = 4, icon_name = "robot-tool-logistic" },
-    ["robot-tool-logistic-4"] = { tier = 4, prog_tier = 5, icon_name = "robot-tool-logistic" },
+    ["bob-robot-tool"] = { tier = 1, prog_tier = 2, icon_name = "robot-tool" },
+    ["bob-robot-tool-2"] = { tier = 2, prog_tier = 3, icon_name = "robot-tool" },
+    ["bob-robot-tool-3"] = { tier = 3, prog_tier = 4, icon_name = "robot-tool" },
+    ["bob-robot-tool-4"] = { tier = 4, prog_tier = 5, icon_name = "robot-tool" },
 }
 
 -- Disable select items based on Bob's settings
