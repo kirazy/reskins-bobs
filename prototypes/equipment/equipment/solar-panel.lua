@@ -49,7 +49,7 @@ for name, map in pairs(solar_panels) do
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/equipment/equipment/solar-panel/hr-solar-panel-equipment-base.png",
+                filename = "__reskins-bobs__/graphics/equipment/equipment/solar-panel/solar-panel-equipment-base.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
@@ -57,7 +57,7 @@ for name, map in pairs(solar_panels) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/equipment/equipment/solar-panel/hr-solar-panel-equipment-mask.png",
+                filename = "__reskins-bobs__/graphics/equipment/equipment/solar-panel/solar-panel-equipment-mask.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
@@ -66,7 +66,7 @@ for name, map in pairs(solar_panels) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/equipment/equipment/solar-panel/hr-solar-panel-equipment-highlights.png",
+                filename = "__reskins-bobs__/graphics/equipment/equipment/solar-panel/solar-panel-equipment-highlights.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },

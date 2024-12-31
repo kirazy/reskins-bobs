@@ -52,7 +52,7 @@ local function setup_reskins_module_slot(parameters)
                 has_empty_slot = true,
                 render_layer = "lower-object",
                 pictures = {
-                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/2/hr-beacon-module-slot-2.png",
+                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/2/beacon-module-slot-2.png",
                     line_length = num_lights + 1,
                     width = 46,
                     height = 44,
@@ -65,7 +65,7 @@ local function setup_reskins_module_slot(parameters)
                 apply_module_tint = "primary",
                 render_layer = "lower-object",
                 pictures = {
-                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/2/hr-beacon-module-mask-box-2.png",
+                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/2/beacon-module-mask-box-2.png",
                     line_length = num_lights,
                     width = 36,
                     height = 28,
@@ -78,7 +78,7 @@ local function setup_reskins_module_slot(parameters)
                 apply_module_tint = "secondary",
                 render_layer = "lower-object-above-shadow",
                 pictures = {
-                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/2/hr-beacon-module-mask-lights-2.png",
+                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/2/beacon-module-mask-lights-2.png",
                     line_length = num_lights,
                     width = 24,
                     height = 16,
@@ -92,7 +92,7 @@ local function setup_reskins_module_slot(parameters)
                 draw_as_light = true,
                 draw_as_sprite = false,
                 pictures = {
-                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/2/hr-beacon-module-lights-2.png",
+                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/2/beacon-module-lights-2.png",
                     line_length = num_lights,
                     width = 66,
                     height = 46,
@@ -110,7 +110,7 @@ local function setup_reskins_module_slot(parameters)
                 has_empty_slot = true,
                 render_layer = "lower-object",
                 pictures = {
-                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/1/hr-beacon-module-slot-1.png",
+                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/1/beacon-module-slot-1.png",
                     line_length = num_lights + 1,
                     width = 50,
                     height = 66,
@@ -124,7 +124,7 @@ local function setup_reskins_module_slot(parameters)
                 apply_module_tint = "primary",
                 render_layer = "lower-object",
                 pictures = {
-                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/1/hr-beacon-module-mask-box-1.png",
+                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/1/beacon-module-mask-box-1.png",
                     line_length = num_lights,
                     width = 36,
                     height = 32,
@@ -138,7 +138,7 @@ local function setup_reskins_module_slot(parameters)
                 apply_module_tint = "secondary",
                 render_layer = "lower-object-above-shadow",
                 pictures = {
-                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/1/hr-beacon-module-mask-lights-1.png",
+                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/1/beacon-module-mask-lights-1.png",
                     line_length = num_lights,
                     width = 26,
                     height = 22,
@@ -153,7 +153,7 @@ local function setup_reskins_module_slot(parameters)
                 draw_as_light = true,
                 draw_as_sprite = false,
                 pictures = {
-                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/1/hr-beacon-module-lights-1.png",
+                    filename = "__reskins-bobs__/graphics/entity/modules/beacon/slots/" .. num_lights .. "-lights/1/beacon-module-lights-1.png",
                     line_length = num_lights,
                     width = 56,
                     height = 42,

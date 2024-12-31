@@ -44,7 +44,7 @@ local function generate_robot_animations(tint)
                 },
                 -- Mask
                 {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/construction-robot/hr-construction-robot-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/construction-robot/construction-robot-mask.png",
                     priority = "high",
                     line_length = 16,
                     width = 66,
@@ -57,7 +57,7 @@ local function generate_robot_animations(tint)
                 },
                 -- Highlights
                 {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/construction-robot/hr-construction-robot-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/construction-robot/construction-robot-highlights.png",
                     priority = "high",
                     line_length = 16,
                     width = 66,
@@ -87,7 +87,7 @@ local function generate_robot_animations(tint)
                 },
                 -- Mask
                 {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/construction-robot/hr-construction-robot-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/construction-robot/construction-robot-mask.png",
                     priority = "high",
                     line_length = 16,
                     width = 66,
@@ -101,7 +101,7 @@ local function generate_robot_animations(tint)
                 },
                 -- Highlights
                 {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/construction-robot/hr-construction-robot-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/construction-robot/construction-robot-highlights.png",
                     priority = "high",
                     line_length = 16,
                     width = 66,
@@ -132,7 +132,7 @@ local function generate_robot_animations(tint)
                 },
                 -- Mask
                 {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/construction-robot/hr-construction-robot-working-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/construction-robot/construction-robot-working-mask.png",
                     priority = "high",
                     line_length = 2,
                     width = 57,
@@ -146,7 +146,7 @@ local function generate_robot_animations(tint)
                 },
                 -- Highlights
                 {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/construction-robot/hr-construction-robot-working-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/construction-robot/construction-robot-working-highlights.png",
                     priority = "high",
                     line_length = 2,
                     width = 57,
@@ -245,7 +245,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/construction-robot/remnants/hr-construction-robot-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/construction-robot/remnants/construction-robot-remnants-mask.png",
                 line_length = 1,
                 width = 120,
                 height = 114,
@@ -259,7 +259,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/construction-robot/remnants/hr-construction-robot-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/construction-robot/remnants/construction-robot-remnants-highlights.png",
                 line_length = 1,
                 width = 120,
                 height = 114,

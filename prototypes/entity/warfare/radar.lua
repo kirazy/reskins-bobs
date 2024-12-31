@@ -61,7 +61,7 @@ for name, tier in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/warfare/radar/remnants/hr-radar-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/warfare/radar/remnants/radar-remnants-mask.png",
                 line_length = 1,
                 width = 282,
                 height = 212,
@@ -75,7 +75,7 @@ for name, tier in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/warfare/radar/remnants/hr-radar-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/warfare/radar/remnants/radar-remnants-highlights.png",
                 line_length = 1,
                 width = 282,
                 height = 212,
@@ -117,7 +117,7 @@ for name, tier in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/warfare/radar/hr-radar-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/warfare/radar/radar-mask.png",
                 priority = "low",
                 width = 196,
                 height = 254,
@@ -130,7 +130,7 @@ for name, tier in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/warfare/radar/hr-radar-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/warfare/radar/radar-highlights.png",
                 priority = "low",
                 width = 196,
                 height = 254,

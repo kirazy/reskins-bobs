@@ -27,7 +27,7 @@ local tier_map = {
 local function sniper_turret_extension(parameters)
     return
     {
-        filename = "__reskins-bobs__/graphics/entity/warfare/sniper-turret/hr-sniper-turret-raising.png",
+        filename = "__reskins-bobs__/graphics/entity/warfare/sniper-turret/sniper-turret-raising.png",
         priority = "medium",
         width = 238,
         height = 178,
@@ -43,7 +43,7 @@ end
 local function sniper_turret_extension_tint(parameters)
     return
     {
-        filename = "__reskins-bobs__/graphics/entity/warfare/sniper-turret/hr-sniper-turret-raising-tint.png",
+        filename = "__reskins-bobs__/graphics/entity/warfare/sniper-turret/sniper-turret-raising-tint.png",
         priority = "medium",
         width = 238,
         height = 178,
@@ -61,7 +61,7 @@ end
 local function sniper_turret_extension_mask(inputs, parameters)
     return
     {
-        filename = "__reskins-bobs__/graphics/entity/warfare/sniper-turret/hr-sniper-turret-raising-mask.png",
+        filename = "__reskins-bobs__/graphics/entity/warfare/sniper-turret/sniper-turret-raising-mask.png",
         priority = "medium",
         width = 238,
         height = 178,
@@ -78,7 +78,7 @@ end
 local function sniper_turret_extension_highlights(parameters)
     return
     {
-        filename = "__reskins-bobs__/graphics/entity/warfare/sniper-turret/hr-sniper-turret-raising-highlights.png",
+        filename = "__reskins-bobs__/graphics/entity/warfare/sniper-turret/sniper-turret-raising-highlights.png",
         priority = "medium",
         width = 238,
         height = 178,
@@ -95,7 +95,7 @@ end
 local function sniper_turret_extension_shadow(parameters)
     return
     {
-        filename = "__reskins-bobs__/graphics/entity/warfare/sniper-turret/hr-sniper-turret-raising-shadow.png",
+        filename = "__reskins-bobs__/graphics/entity/warfare/sniper-turret/sniper-turret-raising-shadow.png",
         width = 246,
         height = 178,
         direction_count = 4,
@@ -111,7 +111,7 @@ end
 local function sniper_turret_shooting()
     return
     {
-        filename = "__reskins-bobs__/graphics/entity/warfare/sniper-turret/hr-sniper-turret-shooting.png",
+        filename = "__reskins-bobs__/graphics/entity/warfare/sniper-turret/sniper-turret-shooting.png",
         line_length = 8,
         width = 238,
         height = 178,
@@ -125,7 +125,7 @@ end
 local function sniper_turret_shooting_tint()
     return
     {
-        filename = "__reskins-bobs__/graphics/entity/warfare/sniper-turret/hr-sniper-turret-shooting-tint.png",
+        filename = "__reskins-bobs__/graphics/entity/warfare/sniper-turret/sniper-turret-shooting-tint.png",
         flags = { "mask" },
         line_length = 8,
         width = 238,
@@ -141,7 +141,7 @@ end
 local function sniper_turret_shooting_mask(inputs)
     return
     {
-        filename = "__reskins-bobs__/graphics/entity/warfare/sniper-turret/hr-sniper-turret-shooting-mask.png",
+        filename = "__reskins-bobs__/graphics/entity/warfare/sniper-turret/sniper-turret-shooting-mask.png",
         line_length = 8,
         width = 238,
         height = 178,
@@ -156,7 +156,7 @@ end
 local function sniper_turret_shooting_highlights()
     return
     {
-        filename = "__reskins-bobs__/graphics/entity/warfare/sniper-turret/hr-sniper-turret-shooting-highlights.png",
+        filename = "__reskins-bobs__/graphics/entity/warfare/sniper-turret/sniper-turret-shooting-highlights.png",
         line_length = 8,
         width = 238,
         height = 178,
@@ -171,7 +171,7 @@ end
 local function sniper_turret_shooting_shadow()
     return
     {
-        filename = "__reskins-bobs__/graphics/entity/warfare/sniper-turret/hr-sniper-turret-shooting-shadow.png",
+        filename = "__reskins-bobs__/graphics/entity/warfare/sniper-turret/sniper-turret-shooting-shadow.png",
         line_length = 8,
         width = 246,
         height = 178,
@@ -262,7 +262,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/warfare/sniper-turret/hr-sniper-turret-base.png",
+                filename = "__reskins-bobs__/graphics/entity/warfare/sniper-turret/sniper-turret-base.png",
                 priority = "high",
                 width = 150,
                 height = 118,
@@ -273,7 +273,7 @@ for name, map in pairs(tier_map) do
             },
             -- Runtime Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/warfare/sniper-turret/hr-sniper-turret-base-runtime-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/warfare/sniper-turret/sniper-turret-base-runtime-mask.png",
                 priority = "high",
                 width = 150,
                 height = 118,
@@ -285,7 +285,7 @@ for name, map in pairs(tier_map) do
             },
             -- Shadow
             {
-                filename = "__reskins-bobs__/graphics/entity/warfare/sniper-turret/hr-sniper-turret-base-shadow.png",
+                filename = "__reskins-bobs__/graphics/entity/warfare/sniper-turret/sniper-turret-base-shadow.png",
                 priority = "high",
                 width = 150,
                 height = 118,

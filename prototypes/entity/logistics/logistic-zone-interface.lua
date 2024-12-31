@@ -28,7 +28,7 @@ if not entity then return end
 reskins.lib.setup_standard_entity(name, tier, inputs)
 
 entity.base = {
-    filename = "__reskins-bobs__/graphics/entity/logistics/zone-interface/hr-logistic-zone-interface.png",
+    filename = "__reskins-bobs__/graphics/entity/logistics/zone-interface/logistic-zone-interface.png",
     width = 64,
     height = 70,
     shift = util.by_pixel(0, -4),
@@ -38,7 +38,7 @@ entity.base = {
 entity.base_animation = {
     layers = {
         {
-            filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/antennas/hr-roboport-1-base-animation.png",
+            filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/antennas/roboport-1-base-animation.png",
             priority = "medium",
             width = 83,
             height = 59,
@@ -48,7 +48,7 @@ entity.base_animation = {
             scale = 0.5,
         },
         {
-            filename = "__reskins-bobs__/graphics/entity/logistics/zone-interface/hr-logistic-zone-interface-shadow.png",
+            filename = "__reskins-bobs__/graphics/entity/logistics/zone-interface/logistic-zone-interface-shadow.png",
             priority = "medium",
             width = 106,
             height = 69,

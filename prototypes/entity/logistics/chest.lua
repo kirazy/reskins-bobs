@@ -87,7 +87,7 @@ for name, map in pairs(logistic_map) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/chest/remnants/hr-" .. map.material .. "-logistic-chest-remnants.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/chest/remnants/" .. map.material .. "-logistic-chest-remnants.png",
                 line_length = 1,
                 width = 116,
                 height = 82,
@@ -114,7 +114,7 @@ for name, map in pairs(logistic_map) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/chest/hr-" .. map.material .. "-logistic-chest.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/chest/" .. map.material .. "-logistic-chest.png",
                 priority = "extra-high",
                 width = 66,
                 height = 74,

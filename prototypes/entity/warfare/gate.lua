@@ -47,7 +47,7 @@ local remnant = data.raw["corpse"]["reinforced-gate-remnants"]
 -- Reskin remnants
 remnant.animation = {
     {
-        filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/remnants/hr-reinforced-gate-remnants-var-1.png",
+        filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/remnants/reinforced-gate-remnants-var-1.png",
         line_length = 1,
         width = 86,
         height = 82,
@@ -59,7 +59,7 @@ remnant.animation = {
         scale = 0.5,
     },
     {
-        filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/remnants/hr-reinforced-gate-remnants-var-2.png",
+        filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/remnants/reinforced-gate-remnants-var-2.png",
         line_length = 1,
         width = 84,
         height = 82,
@@ -71,7 +71,7 @@ remnant.animation = {
         scale = 0.5,
     },
     {
-        filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/remnants/hr-reinforced-gate-remnants-var-3.png",
+        filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/remnants/reinforced-gate-remnants-var-3.png",
         line_length = 1,
         width = 82,
         height = 84,
@@ -88,7 +88,7 @@ remnant.animation = {
 entity.vertical_animation = {
     layers = {
         {
-            filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/hr-reinforced-gate-vertical.png",
+            filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/reinforced-gate-vertical.png",
             line_length = 8,
             width = 78,
             height = 120,
@@ -97,7 +97,7 @@ entity.vertical_animation = {
             scale = 0.5,
         },
         {
-            filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/shadows/hr-reinforced-gate-vertical-shadow.png",
+            filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/shadows/reinforced-gate-vertical-shadow.png",
             line_length = 8,
             width = 82,
             height = 104,
@@ -112,7 +112,7 @@ entity.vertical_animation = {
 entity.horizontal_animation = {
     layers = {
         {
-            filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/hr-reinforced-gate-horizontal.png",
+            filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/reinforced-gate-horizontal.png",
             line_length = 8,
             width = 66,
             height = 90,
@@ -121,7 +121,7 @@ entity.horizontal_animation = {
             scale = 0.5,
         },
         {
-            filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/shadows/hr-reinforced-gate-horizontal-shadow.png",
+            filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/shadows/reinforced-gate-horizontal-shadow.png",
             line_length = 8,
             width = 122,
             height = 60,
@@ -136,7 +136,7 @@ entity.horizontal_animation = {
 entity.horizontal_rail_animation_left = {
     layers = {
         {
-            filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/hr-reinforced-gate-rail-horizontal-left.png",
+            filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/reinforced-gate-rail-horizontal-left.png",
             line_length = 8,
             width = 66,
             height = 74,
@@ -145,7 +145,7 @@ entity.horizontal_rail_animation_left = {
             scale = 0.5,
         },
         {
-            filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/shadows/hr-reinforced-gate-rail-horizontal-shadow-left.png",
+            filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/shadows/reinforced-gate-rail-horizontal-shadow-left.png",
             line_length = 8,
             width = 122,
             height = 60,
@@ -160,7 +160,7 @@ entity.horizontal_rail_animation_left = {
 entity.horizontal_rail_animation_right = {
     layers = {
         {
-            filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/hr-reinforced-gate-rail-horizontal-right.png",
+            filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/reinforced-gate-rail-horizontal-right.png",
             line_length = 8,
             width = 66,
             height = 74,
@@ -169,7 +169,7 @@ entity.horizontal_rail_animation_right = {
             scale = 0.5,
         },
         {
-            filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/shadows/hr-reinforced-gate-rail-horizontal-shadow-right.png",
+            filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/shadows/reinforced-gate-rail-horizontal-shadow-right.png",
             line_length = 8,
             width = 122,
             height = 58,
@@ -184,7 +184,7 @@ entity.horizontal_rail_animation_right = {
 entity.vertical_rail_animation_left = {
     layers = {
         {
-            filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/hr-reinforced-gate-rail-vertical-left.png",
+            filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/reinforced-gate-rail-vertical-left.png",
             line_length = 8,
             width = 42,
             height = 118,
@@ -193,7 +193,7 @@ entity.vertical_rail_animation_left = {
             scale = 0.5,
         },
         {
-            filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/shadows/hr-reinforced-gate-rail-vertical-shadow-left.png",
+            filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/shadows/reinforced-gate-rail-vertical-shadow-left.png",
             line_length = 8,
             width = 82,
             height = 104,
@@ -208,7 +208,7 @@ entity.vertical_rail_animation_left = {
 entity.vertical_rail_animation_right = {
     layers = {
         {
-            filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/hr-reinforced-gate-rail-vertical-right.png",
+            filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/reinforced-gate-rail-vertical-right.png",
             line_length = 8,
             width = 42,
             height = 118,
@@ -217,7 +217,7 @@ entity.vertical_rail_animation_right = {
             scale = 0.5,
         },
         {
-            filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/shadows/hr-reinforced-gate-rail-vertical-shadow-right.png",
+            filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/shadows/reinforced-gate-rail-vertical-shadow-right.png",
             line_length = 8,
             width = 82,
             height = 104,
@@ -230,7 +230,7 @@ entity.vertical_rail_animation_right = {
 }
 
 entity.vertical_rail_base = {
-    filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/hr-reinforced-gate-rail-base-vertical.png",
+    filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/reinforced-gate-rail-base-vertical.png",
     line_length = 8,
     width = 138,
     height = 130,
@@ -240,7 +240,7 @@ entity.vertical_rail_base = {
 }
 
 entity.horizontal_rail_base = {
-    filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/hr-reinforced-gate-rail-base-horizontal.png",
+    filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/reinforced-gate-rail-base-horizontal.png",
     line_length = 8,
     width = 130,
     height = 104,
@@ -252,7 +252,7 @@ entity.horizontal_rail_base = {
 entity.wall_patch = {
     layers = {
         {
-            filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/hr-reinforced-gate-wall-patch.png",
+            filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/reinforced-gate-wall-patch.png",
             line_length = 8,
             width = 70,
             height = 94,
@@ -261,7 +261,7 @@ entity.wall_patch = {
             scale = 0.5,
         },
         {
-            filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/shadows/hr-reinforced-gate-wall-patch-shadow.png",
+            filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/shadows/reinforced-gate-wall-patch-shadow.png",
             line_length = 8,
             width = 82,
             height = 72,

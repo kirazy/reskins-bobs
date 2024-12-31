@@ -52,7 +52,7 @@ for name, map in pairs(vehicle_shield) do
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-energy-shield/hr-vehicle-energy-shield-equipment-base.png",
+                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-energy-shield/vehicle-energy-shield-equipment-base.png",
                 size = 128,
                 priority = "medium",
                 flags = { "no-crop" },
@@ -60,7 +60,7 @@ for name, map in pairs(vehicle_shield) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-energy-shield/hr-vehicle-energy-shield-equipment-mask.png",
+                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-energy-shield/vehicle-energy-shield-equipment-mask.png",
                 size = 128,
                 priority = "medium",
                 flags = { "no-crop" },
@@ -69,7 +69,7 @@ for name, map in pairs(vehicle_shield) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-energy-shield/hr-vehicle-energy-shield-equipment-highlights.png",
+                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-energy-shield/vehicle-energy-shield-equipment-highlights.png",
                 size = 128,
                 priority = "medium",
                 flags = { "no-crop" },

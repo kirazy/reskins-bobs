@@ -29,7 +29,7 @@ for _, name in pairs(fluids) do
 
     entity.stages = {
         sheet = {
-            filename = "__reskins-bobs__/graphics/entity/ores/" .. name .. "/hr-" .. name .. ".png",
+            filename = "__reskins-bobs__/graphics/entity/ores/" .. name .. "/" .. name .. ".png",
             priority = "extra-high",
             width = 148,
             height = 120,

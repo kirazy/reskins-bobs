@@ -31,7 +31,7 @@ entity.animation = {
     layers = {
         -- Base
         {
-            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator.png",
+            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/burner-electric-generator.png",
             width = 212,
             height = 272,
             frame_count = 32,
@@ -42,7 +42,7 @@ entity.animation = {
         },
         -- Fire
         {
-            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator-fire.png",
+            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/burner-electric-generator-fire.png",
             priority = "high",
             line_length = 8,
             width = 58,
@@ -57,7 +57,7 @@ entity.animation = {
         },
         -- Radiant Light
         {
-            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator-working-light-animated.png",
+            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/burner-electric-generator-working-light-animated.png",
             width = 212,
             height = 272,
             frame_count = 32,
@@ -70,7 +70,7 @@ entity.animation = {
         },
         -- Shadow
         {
-            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator-shadow.png",
+            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/burner-electric-generator-shadow.png",
             width = 288,
             height = 170,
             frame_count = 32,
@@ -87,7 +87,7 @@ entity.idle_animation = {
     layers = {
         -- Base
         {
-            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator.png",
+            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/burner-electric-generator.png",
             width = 212,
             height = 272,
             frame_count = 32,
@@ -98,7 +98,7 @@ entity.idle_animation = {
         },
         -- Shadow
         {
-            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/hr-burner-electric-generator-shadow.png",
+            filename = "__reskins-bobs__/graphics/entity/power/burner-electric-generator/burner-electric-generator-shadow.png",
             width = 288,
             height = 170,
             frame_count = 32,

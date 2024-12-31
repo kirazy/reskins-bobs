@@ -56,7 +56,7 @@ for name, map in pairs(night_vision) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/equipment/equipment/night-vision/hr-night-vision-equipment-mask.png",
+                filename = "__reskins-bobs__/graphics/equipment/equipment/night-vision/night-vision-equipment-mask.png",
                 size = 128,
                 priority = "medium",
                 flags = { "no-crop" },
@@ -65,7 +65,7 @@ for name, map in pairs(night_vision) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/equipment/equipment/night-vision/hr-night-vision-equipment-highlights.png",
+                filename = "__reskins-bobs__/graphics/equipment/equipment/night-vision/night-vision-equipment-highlights.png",
                 size = 128,
                 priority = "medium",
                 flags = { "no-crop" },

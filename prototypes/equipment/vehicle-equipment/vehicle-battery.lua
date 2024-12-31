@@ -52,7 +52,7 @@ for name, map in pairs(batteries) do
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-battery/hr-vehicle-battery-equipment-base.png",
+                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-battery/vehicle-battery-equipment-base.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
@@ -60,7 +60,7 @@ for name, map in pairs(batteries) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-battery/hr-vehicle-battery-equipment-mask.png",
+                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-battery/vehicle-battery-equipment-mask.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },
@@ -69,7 +69,7 @@ for name, map in pairs(batteries) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-battery/hr-vehicle-battery-equipment-highlights.png",
+                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-battery/vehicle-battery-equipment-highlights.png",
                 size = 64,
                 priority = "medium",
                 flags = { "no-crop" },

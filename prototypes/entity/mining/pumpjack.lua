@@ -96,7 +96,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/remnants/hr-water-pumpjack-remnants-base.png" or "__base__/graphics/entity/pumpjack/remnants/pumpjack-remnants.png",
+                filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/remnants/water-pumpjack-remnants-base.png" or "__base__/graphics/entity/pumpjack/remnants/pumpjack-remnants.png",
                 line_length = 1,
                 width = 274,
                 height = 284,
@@ -107,7 +107,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/mining/pumpjack/remnants/hr-pumpjack-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/mining/pumpjack/remnants/pumpjack-remnants-mask.png",
                 line_length = 1,
                 width = 274,
                 height = 284,
@@ -119,7 +119,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/mining/pumpjack/remnants/hr-pumpjack-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/mining/pumpjack/remnants/pumpjack-remnants-highlights.png",
                 line_length = 1,
                 width = 274,
                 height = 284,
@@ -137,7 +137,7 @@ for name, map in pairs(tier_map) do
         sheets = {
             -- Base
             {
-                filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/hr-water-pumpjack-base.png" or "__base__/graphics/entity/pumpjack/pumpjack-base.png",
+                filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/water-pumpjack-base.png" or "__base__/graphics/entity/pumpjack/pumpjack-base.png",
                 priority = "extra-high",
                 width = 261,
                 height = 273,
@@ -163,7 +163,7 @@ for name, map in pairs(tier_map) do
                 -- Base
                 {
                     priority = "high",
-                    filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/hr-water-pumpjack-horsehead.png" or "__base__/graphics/entity/pumpjack/pumpjack-horsehead.png",
+                    filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/water-pumpjack-horsehead.png" or "__base__/graphics/entity/pumpjack/pumpjack-horsehead.png",
                     animation_speed = animation_speed,
                     repeat_count = 6,
                     scale = 0.5,
@@ -176,7 +176,7 @@ for name, map in pairs(tier_map) do
                 -- Mask
                 {
                     priority = "high",
-                    filename = "__reskins-bobs__/graphics/entity/mining/pumpjack/hr-pumpjack-horsehead-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/mining/pumpjack/pumpjack-horsehead-mask.png",
                     animation_speed = animation_speed,
                     repeat_count = 6,
                     scale = 0.5,
@@ -190,7 +190,7 @@ for name, map in pairs(tier_map) do
                 -- Highlights
                 {
                     priority = "high",
-                    filename = "__reskins-bobs__/graphics/entity/mining/pumpjack/hr-pumpjack-horsehead-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/mining/pumpjack/pumpjack-horsehead-highlights.png",
                     animation_speed = animation_speed,
                     repeat_count = 6,
                     scale = 0.5,

@@ -50,7 +50,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/power/substation/base/remnants/hr-substation-remnants.png",
+                filename = "__reskins-bobs__/graphics/entity/power/substation/base/remnants/substation-remnants.png",
                 line_length = 1,
                 width = 182,
                 height = 134,
@@ -63,7 +63,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/power/substation/remnants/hr-substation-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/power/substation/remnants/substation-remnants-mask.png",
                 line_length = 1,
                 width = 182,
                 height = 134,
@@ -76,7 +76,7 @@ for name, map in pairs(tier_map) do
                 scale = 0.5,
             },
             {
-                filename = "__reskins-bobs__/graphics/entity/power/substation/remnants/hr-substation-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/power/substation/remnants/substation-remnants-highlights.png",
                 line_length = 1,
                 width = 182,
                 height = 134,
@@ -96,7 +96,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/power/substation/base/hr-substation.png",
+                filename = "__reskins-bobs__/graphics/entity/power/substation/base/substation.png",
                 priority = "high",
                 width = 138,
                 height = 270,
@@ -106,7 +106,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/power/substation/hr-substation-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/power/substation/substation-mask.png",
                 priority = "high",
                 width = 138,
                 height = 270,
@@ -117,7 +117,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/power/substation/hr-substation-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/power/substation/substation-highlights.png",
                 priority = "high",
                 width = 138,
                 height = 270,
@@ -128,7 +128,7 @@ for name, map in pairs(tier_map) do
             },
             -- Shadow
             {
-                filename = "__reskins-bobs__/graphics/entity/power/substation/base/hr-substation-shadow.png",
+                filename = "__reskins-bobs__/graphics/entity/power/substation/base/substation-shadow.png",
                 priority = "high",
                 width = 370,
                 height = 104,

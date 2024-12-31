@@ -26,7 +26,7 @@ local function steel_furnace_entity_skin(furnace, tint)
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/hr-" .. furnace .. "-base.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/" .. furnace .. "-base.png",
                 priority = "high",
                 width = 172,
                 height = 174,
@@ -35,7 +35,7 @@ local function steel_furnace_entity_skin(furnace, tint)
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/hr-" .. furnace .. "-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/" .. furnace .. "-mask.png",
                 priority = "high",
                 width = 172,
                 height = 174,
@@ -45,7 +45,7 @@ local function steel_furnace_entity_skin(furnace, tint)
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/hr-" .. furnace .. "-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/" .. furnace .. "-highlights.png",
                 priority = "high",
                 width = 172,
                 height = 174,
@@ -55,7 +55,7 @@ local function steel_furnace_entity_skin(furnace, tint)
             },
             -- Shadow
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/shadows/hr-" .. furnace .. "-shadow.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/shadows/" .. furnace .. "-shadow.png",
                 priority = "high",
                 width = 282,
                 height = 142,
@@ -73,7 +73,7 @@ local function steel_furnace_remnant_skin(furnace, tint, count)
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/remnants/hr-" .. furnace .. "-remnants-base.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/remnants/" .. furnace .. "-remnants-base.png",
                 line_length = count,
                 width = 268,
                 height = 238,
@@ -84,7 +84,7 @@ local function steel_furnace_remnant_skin(furnace, tint, count)
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/remnants/hr-" .. furnace .. "-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/remnants/" .. furnace .. "-remnants-mask.png",
                 line_length = count,
                 width = 268,
                 height = 238,
@@ -96,7 +96,7 @@ local function steel_furnace_remnant_skin(furnace, tint, count)
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/remnants/hr-" .. furnace .. "-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/remnants/" .. furnace .. "-remnants-highlights.png",
                 line_length = count,
                 width = 268,
                 height = 238,
@@ -119,7 +119,7 @@ local function steel_furnace_working(type)
 
     return
     {
-        filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/working/hr-" .. working_type .. ".png",
+        filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/working/" .. working_type .. ".png",
         priority = "high",
         width = 172,
         height = 174,
@@ -156,7 +156,7 @@ local function steel_furnace_fire(type)
 
     return
     {
-        filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/working/hr-" .. fire_type .. ".png",
+        filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/working/" .. fire_type .. ".png",
         priority = "high",
         line_length = 8,
         width = 57,
@@ -176,7 +176,7 @@ local function steel_furnace_ground_light(type)
     end
     return
     {
-        filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/lights/hr-" .. ground_type .. ".png",
+        filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/lights/" .. ground_type .. ".png",
         priority = "high",
         line_length = 1,
         draw_as_light = true,

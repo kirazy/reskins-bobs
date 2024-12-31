@@ -51,7 +51,7 @@ for name, map in pairs(laser_defense) do
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/equipment/equipment/laser-defense/hr-laser-defense-equipment-base.png",
+                filename = "__reskins-bobs__/graphics/equipment/equipment/laser-defense/laser-defense-equipment-base.png",
                 size = 128,
                 priority = "medium",
                 flags = { "no-crop" },
@@ -59,7 +59,7 @@ for name, map in pairs(laser_defense) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/equipment/equipment/laser-defense/hr-laser-defense-equipment-mask.png",
+                filename = "__reskins-bobs__/graphics/equipment/equipment/laser-defense/laser-defense-equipment-mask.png",
                 size = 128,
                 priority = "medium",
                 flags = { "no-crop" },
@@ -68,7 +68,7 @@ for name, map in pairs(laser_defense) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/equipment/equipment/laser-defense/hr-laser-defense-equipment-highlights.png",
+                filename = "__reskins-bobs__/graphics/equipment/equipment/laser-defense/laser-defense-equipment-highlights.png",
                 size = 128,
                 priority = "medium",
                 flags = { "no-crop" },

@@ -20,7 +20,7 @@ local inputs = {
 local function robot_animation()
     return
     {
-        filename = "__reskins-bobs__/graphics/entity/warfare/laser-robot/hr-bob-laser-robot.png",
+        filename = "__reskins-bobs__/graphics/entity/warfare/laser-robot/bob-laser-robot.png",
         width = 64,
         height = 64,
         frame_count = 1,
@@ -32,7 +32,7 @@ end
 local function robot_shadow()
     return
     {
-        filename = "__reskins-bobs__/graphics/entity/warfare/laser-robot/hr-bob-laser-robot-shadow.png",
+        filename = "__reskins-bobs__/graphics/entity/warfare/laser-robot/bob-laser-robot-shadow.png",
         width = 64,
         height = 64,
         frame_count = 1,
@@ -57,7 +57,7 @@ local remnant = data.raw["corpse"][name .. "-remnants"]
 
 -- Reskin remants
 remnant.animation = {
-    filename = "__reskins-bobs__/graphics/entity/warfare/laser-robot/remnants/hr-laser-robot-remnants.png",
+    filename = "__reskins-bobs__/graphics/entity/warfare/laser-robot/remnants/laser-robot-remnants.png",
     line_length = 1,
     width = 98,
     height = 94,

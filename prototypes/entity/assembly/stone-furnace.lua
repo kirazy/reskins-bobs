@@ -18,7 +18,7 @@ local function stone_furnace_entities(furnace, tint)
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/stone-furnace/hr-" .. furnace .. "-base.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/stone-furnace/" .. furnace .. "-base.png",
                 priority = "high",
                 width = 152,
                 height = 152,
@@ -27,7 +27,7 @@ local function stone_furnace_entities(furnace, tint)
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/stone-furnace/hr-" .. furnace .. "-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/stone-furnace/" .. furnace .. "-mask.png",
                 priority = "high",
                 width = 152,
                 height = 152,
@@ -37,7 +37,7 @@ local function stone_furnace_entities(furnace, tint)
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/stone-furnace/hr-" .. furnace .. "-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/stone-furnace/" .. furnace .. "-highlights.png",
                 priority = "high",
                 width = 152,
                 height = 152,
@@ -47,7 +47,7 @@ local function stone_furnace_entities(furnace, tint)
             },
             -- Shadow
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/stone-furnace/shadows/hr-" .. furnace .. "-shadow.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/stone-furnace/shadows/" .. furnace .. "-shadow.png",
                 priority = "high",
                 width = 176,
                 height = 140,
@@ -65,7 +65,7 @@ local function stone_furnace_remnants(furnace, tint, count)
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/stone-furnace/remnants/hr-" .. furnace .. "-remnants-base.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/stone-furnace/remnants/" .. furnace .. "-remnants-base.png",
                 width = 202,
                 height = 180,
                 line_length = count,
@@ -75,7 +75,7 @@ local function stone_furnace_remnants(furnace, tint, count)
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/stone-furnace/remnants/hr-" .. furnace .. "-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/stone-furnace/remnants/" .. furnace .. "-remnants-mask.png",
                 width = 202,
                 height = 180,
                 line_length = count,
@@ -86,7 +86,7 @@ local function stone_furnace_remnants(furnace, tint, count)
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/stone-furnace/remnants/hr-" .. furnace .. "-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/stone-furnace/remnants/" .. furnace .. "-remnants-highlights.png",
                 width = 202,
                 height = 180,
                 line_length = count,
@@ -118,7 +118,7 @@ end
 
 local function working_light_4way(direction)
     local furnace_4way_lights = reskins.lib.sprites.make_4way_animation_from_spritesheet({
-        filename = "__reskins-bobs__/graphics/entity/assembly/stone-furnace/lights/hr-stone-furnace-light-4way.png",
+        filename = "__reskins-bobs__/graphics/entity/assembly/stone-furnace/lights/stone-furnace-light-4way.png",
         blend_mode = "additive",
         width = 152,
         height = 172,
@@ -152,7 +152,7 @@ local function working_light_with_fire()
         layers = {
             base_fire_animation(),
             {
-                filename = "__reskins-bobs__/graphics/entity/assembly/stone-furnace/lights/hr-stone-furnace-light.png",
+                filename = "__reskins-bobs__/graphics/entity/assembly/stone-furnace/lights/stone-furnace-light.png",
                 blend_mode = "additive",
                 width = 152,
                 height = 172,

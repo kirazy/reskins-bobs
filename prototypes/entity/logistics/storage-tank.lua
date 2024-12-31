@@ -64,7 +64,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank/remnants/hr-storage-tank-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank/remnants/storage-tank-remnants-mask.png",
                 line_length = 1,
                 width = 426,
                 height = 282,
@@ -76,7 +76,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank/remnants/hr-storage-tank-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank/remnants/storage-tank-remnants-highlights.png",
                 line_length = 1,
                 width = 426,
                 height = 282,
@@ -105,7 +105,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Mask
                 {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank/hr-storage-tank-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank/storage-tank-mask.png",
                     priority = "extra-high",
                     frames = 2,
                     width = 219,
@@ -116,7 +116,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Highlights
                 {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank/hr-storage-tank-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank/storage-tank-highlights.png",
                     priority = "extra-high",
                     frames = 2,
                     width = 219,

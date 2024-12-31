@@ -54,7 +54,7 @@ for name, params in pairs(ores) do
 
     entity.stages = {
         sheet = {
-            filename = "__reskins-bobs__/graphics/entity/ores/" .. name .. "/hr-" .. name .. ".png",
+            filename = "__reskins-bobs__/graphics/entity/ores/" .. name .. "/" .. name .. ".png",
             priority = "extra-high",
             size = 128,
             frame_count = 8,
@@ -67,7 +67,7 @@ for name, params in pairs(ores) do
     if name == "thorium" then
         entity.stages_effect = {
             sheet = {
-                filename = "__reskins-bobs__/graphics/entity/ores/" .. name .. "/hr-" .. name .. "-glow.png",
+                filename = "__reskins-bobs__/graphics/entity/ores/" .. name .. "/" .. name .. "-glow.png",
                 priority = "extra-high",
                 width = 128,
                 height = 128,

@@ -72,7 +72,7 @@ for name, map in pairs(tier_map) do
             layers = {
                 -- Base
                 {
-                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel-small/remnants/hr-small-solar-panel-remnants-base.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel-small/remnants/small-solar-panel-remnants-base.png",
                     line_length = 1,
                     width = 246,
                     height = 198,
@@ -84,7 +84,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Mask
                 {
-                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel-small/remnants/hr-small-solar-panel-remnants-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel-small/remnants/small-solar-panel-remnants-mask.png",
                     line_length = 1,
                     width = 246,
                     height = 198,
@@ -97,7 +97,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Highlights
                 {
-                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel-small/remnants/hr-small-solar-panel-remnants-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel-small/remnants/small-solar-panel-remnants-highlights.png",
                     line_length = 1,
                     width = 246,
                     height = 198,
@@ -116,7 +116,7 @@ for name, map in pairs(tier_map) do
             layers = {
                 -- Base
                 {
-                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel-small/base/hr-solar-panel-small.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel-small/base/solar-panel-small.png",
                     priority = "high",
                     width = 180,
                     height = 150,
@@ -125,7 +125,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Mask
                 {
-                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel-small/hr-solar-panel-small-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel-small/solar-panel-small-mask.png",
                     priority = "high",
                     width = 180,
                     height = 150,
@@ -135,7 +135,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Highlights
                 {
-                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel-small/hr-solar-panel-small-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel-small/solar-panel-small-highlights.png",
                     priority = "high",
                     width = 180,
                     height = 150,
@@ -145,7 +145,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Shadow
                 {
-                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel-small/base/hr-solar-panel-small-shadow.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel-small/base/solar-panel-small-shadow.png",
                     priority = "high",
                     width = 180,
                     height = 150,
@@ -160,7 +160,7 @@ for name, map in pairs(tier_map) do
         entity.overlay = {
             layers = {
                 {
-                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel-small/base/hr-solar-panel-small-shadow-overlay.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel-small/base/solar-panel-small-shadow-overlay.png",
                     priority = "high",
                     width = 180,
                     height = 150,
@@ -188,7 +188,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Mask
                 {
-                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel/remnants/hr-solar-panel-remnants-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel/remnants/solar-panel-remnants-mask.png",
                     line_length = 1,
                     width = 290,
                     height = 282,
@@ -202,7 +202,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Highlights
                 {
-                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel/remnants/hr-solar-panel-remnants-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel/remnants/solar-panel-remnants-highlights.png",
                     line_length = 1,
                     width = 290,
                     height = 282,
@@ -232,7 +232,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Mask
                 {
-                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel/hr-solar-panel-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel/solar-panel-mask.png",
                     priority = "high",
                     width = 230,
                     height = 224,
@@ -242,7 +242,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Highlights
                 {
-                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel/hr-solar-panel-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel/solar-panel-highlights.png",
                     priority = "high",
                     width = 230,
                     height = 224,
@@ -284,7 +284,7 @@ for name, map in pairs(tier_map) do
             layers = {
                 -- Base
                 {
-                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel-large/base/hr-solar-panel-large.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel-large/base/solar-panel-large.png",
                     priority = "high",
                     width = 308,
                     height = 274,
@@ -293,7 +293,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Mask
                 {
-                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel-large/hr-solar-panel-large-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel-large/solar-panel-large-mask.png",
                     priority = "high",
                     width = 308,
                     height = 274,
@@ -303,7 +303,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Highlights
                 {
-                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel-large/hr-solar-panel-large-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel-large/solar-panel-large-highlights.png",
                     priority = "high",
                     width = 308,
                     height = 274,
@@ -313,7 +313,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Shadow
                 {
-                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel-large/base/hr-solar-panel-large-shadow.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel-large/base/solar-panel-large-shadow.png",
                     priority = "high",
                     width = 308,
                     height = 274,
@@ -328,7 +328,7 @@ for name, map in pairs(tier_map) do
         entity.overlay = {
             layers = {
                 {
-                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel-large/base/hr-solar-panel-large-shadow-overlay.png",
+                    filename = "__reskins-bobs__/graphics/entity/power/solar-panel-large/base/solar-panel-large-shadow-overlay.png",
                     priority = "high",
                     width = 308,
                     height = 274,

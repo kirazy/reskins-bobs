@@ -63,7 +63,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/remnants/hr-steam-turbine-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/remnants/steam-turbine-remnants-mask.png",
                 line_length = 1,
                 width = 460,
                 height = 408,
@@ -77,7 +77,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/remnants/hr-steam-turbine-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/remnants/steam-turbine-remnants-highlights.png",
                 line_length = 1,
                 width = 460,
                 height = 408,
@@ -107,7 +107,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/hr-steam-turbine-H-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/steam-turbine-H-mask.png",
                 width = 320,
                 height = 245,
                 frame_count = 1,
@@ -119,7 +119,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/hr-steam-turbine-H-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/steam-turbine-H-highlights.png",
                 width = 320,
                 height = 245,
                 frame_count = 1,
@@ -158,7 +158,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/hr-steam-turbine-V-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/steam-turbine-V-mask.png",
                 width = 217,
                 height = 347,
                 frame_count = 1,
@@ -170,7 +170,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/hr-steam-turbine-V-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/steam-turbine-V-highlights.png",
                 width = 217,
                 height = 347,
                 frame_count = 1,

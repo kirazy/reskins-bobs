@@ -28,7 +28,7 @@ local tier_map = {
 -- All-way small storage tank
 local all_way_sheets = {
     {
-        filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/hr-small-storage-tank.png",
+        filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/small-storage-tank.png",
         priority = "extra-high",
         frames = 1,
         width = 64,
@@ -37,7 +37,7 @@ local all_way_sheets = {
         scale = 0.5,
     },
     {
-        filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/hr-small-storage-tank-shadow.png",
+        filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/small-storage-tank-shadow.png",
         priority = "extra-high",
         frames = 1,
         width = 128,
@@ -50,7 +50,7 @@ local all_way_sheets = {
 
 local inline_sheets = {
     {
-        filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/hr-inline-storage-tank.png",
+        filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/inline-storage-tank.png",
         priority = "extra-high",
         frames = 2,
         width = 64,
@@ -59,7 +59,7 @@ local inline_sheets = {
         scale = 0.5,
     },
     {
-        filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/hr-inline-storage-tank-shadow.png",
+        filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/inline-storage-tank-shadow.png",
         priority = "extra-high",
         frames = 2,
         width = 128,
@@ -94,7 +94,7 @@ for name, map in pairs(tier_map) do
             height = 18,
         },
         window_background = {
-            filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/hr-window-background.png",
+            filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/window-background.png",
             priority = "extra-high",
             width = 10,
             height = 36,
@@ -107,7 +107,7 @@ for name, map in pairs(tier_map) do
             height = 10,
         },
         gas_flow = {
-            filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/hr-steam.png",
+            filename = "__reskins-bobs__/graphics/entity/plates/small-storage-tank/steam.png",
             priority = "extra-high",
             line_length = 10,
             width = 14,

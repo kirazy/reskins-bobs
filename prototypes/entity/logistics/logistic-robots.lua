@@ -45,7 +45,7 @@ local function generate_robot_animations(tint)
                 },
                 -- Mask
                 {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/hr-logistic-robot-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/logistic-robot-mask.png",
                     priority = "high",
                     line_length = 16,
                     width = 80,
@@ -59,7 +59,7 @@ local function generate_robot_animations(tint)
                 },
                 -- Highlights
                 {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/hr-logistic-robot-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/logistic-robot-highlights.png",
                     priority = "high",
                     line_length = 16,
                     width = 80,
@@ -89,7 +89,7 @@ local function generate_robot_animations(tint)
                 },
                 -- Mask
                 {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/hr-logistic-robot-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/logistic-robot-mask.png",
                     priority = "high",
                     line_length = 16,
                     width = 80,
@@ -102,7 +102,7 @@ local function generate_robot_animations(tint)
                 },
                 -- Highlights
                 {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/hr-logistic-robot-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/logistic-robot-highlights.png",
                     priority = "high",
                     line_length = 16,
                     width = 80,
@@ -132,7 +132,7 @@ local function generate_robot_animations(tint)
                 },
                 -- Mask
                 {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/hr-logistic-robot-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/logistic-robot-mask.png",
                     priority = "high",
                     line_length = 16,
                     width = 80,
@@ -146,7 +146,7 @@ local function generate_robot_animations(tint)
                 },
                 -- Highlights
                 {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/hr-logistic-robot-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/logistic-robot-highlights.png",
                     priority = "high",
                     line_length = 16,
                     width = 80,
@@ -177,7 +177,7 @@ local function generate_robot_animations(tint)
                 },
                 -- Mask
                 {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/hr-logistic-robot-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/logistic-robot-mask.png",
                     priority = "high",
                     line_length = 16,
                     width = 80,
@@ -191,7 +191,7 @@ local function generate_robot_animations(tint)
                 },
                 -- Highlights
                 {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/hr-logistic-robot-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/logistic-robot-highlights.png",
                     priority = "high",
                     line_length = 16,
                     width = 80,
@@ -304,7 +304,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/remnants/hr-logistic-robot-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/remnants/logistic-robot-remnants-mask.png",
                 line_length = 1,
                 width = 116,
                 height = 114,
@@ -318,7 +318,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/remnants/hr-logistic-robot-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/logistic-robot/remnants/logistic-robot-remnants-highlights.png",
                 line_length = 1,
                 width = 116,
                 height = 114,

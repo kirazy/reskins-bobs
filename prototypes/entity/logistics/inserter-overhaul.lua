@@ -71,7 +71,7 @@ local function inserter_remnants(parameters)
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/remnants/hr-" .. prefix .. "-remnants-base.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/remnants/" .. prefix .. "-remnants-base.png",
                 line_length = 1,
                 width = 134,
                 height = 94,
@@ -84,7 +84,7 @@ local function inserter_remnants(parameters)
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/remnants/hr-" .. prefix .. "-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/remnants/" .. prefix .. "-remnants-mask.png",
                 line_length = 1,
                 width = 134,
                 height = 94,
@@ -98,7 +98,7 @@ local function inserter_remnants(parameters)
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/remnants/hr-" .. prefix .. "-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/remnants/" .. prefix .. "-remnants-highlights.png",
                 line_length = 1,
                 width = 134,
                 height = 94,
@@ -121,7 +121,7 @@ local function inserter_arm_picture(parameters)
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/arms/hr-inserter-arm-base.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/arms/inserter-arm-base.png",
                 priority = "extra-high",
                 width = 32,
                 height = 136,
@@ -130,7 +130,7 @@ local function inserter_arm_picture(parameters)
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/arms/hr-inserter-arm-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/arms/inserter-arm-mask.png",
                 priority = "extra-high",
                 width = 32,
                 height = 136,
@@ -140,7 +140,7 @@ local function inserter_arm_picture(parameters)
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/arms/hr-inserter-arm-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/arms/inserter-arm-highlights.png",
                 priority = "extra-high",
                 width = 32,
                 height = 136,
@@ -153,8 +153,8 @@ local function inserter_arm_picture(parameters)
 
     -- Check to see if we're a filter inserter, and if so, replace the mask/highlights
     if parameters.is_filter then
-        arm_picture.layers[2].filename = "__reskins-bobs__/graphics/entity/logistics/inserter/arms/hr-filter-inserter-arm-mask.png"
-        arm_picture.layers[3].filename = "__reskins-bobs__/graphics/entity/logistics/inserter/arms/hr-filter-inserter-arm-highlights.png"
+        arm_picture.layers[2].filename = "__reskins-bobs__/graphics/entity/logistics/inserter/arms/filter-inserter-arm-mask.png"
+        arm_picture.layers[3].filename = "__reskins-bobs__/graphics/entity/logistics/inserter/arms/filter-inserter-arm-highlights.png"
     end
 
     return arm_picture
@@ -163,7 +163,7 @@ end
 local function inserter_arm_shadow()
     return
     {
-        filename = "__reskins-bobs__/graphics/entity/logistics/inserter/shadows/hr-inserter-arm-shadow.png",
+        filename = "__reskins-bobs__/graphics/entity/logistics/inserter/shadows/inserter-arm-shadow.png",
         priority = "extra-high",
         width = 32,
         height = 136,
@@ -179,7 +179,7 @@ local function inserter_hand_picture(parameters)
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/hr-" .. parameters.type .. "-hand-" .. parameters.hand .. "-base.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/" .. parameters.type .. "-hand-" .. parameters.hand .. "-base.png",
                 priority = "extra-high",
                 width = 130,
                 height = 164,
@@ -188,7 +188,7 @@ local function inserter_hand_picture(parameters)
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/hr-" .. parameters.type .. "-hand-" .. parameters.hand .. "-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/" .. parameters.type .. "-hand-" .. parameters.hand .. "-mask.png",
                 priority = "extra-high",
                 width = 130,
                 height = 164,
@@ -198,7 +198,7 @@ local function inserter_hand_picture(parameters)
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/hr-" .. parameters.type .. "-hand-" .. parameters.hand .. "-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/" .. parameters.type .. "-hand-" .. parameters.hand .. "-highlights.png",
                 priority = "extra-high",
                 width = 130,
                 height = 164,
@@ -211,8 +211,8 @@ local function inserter_hand_picture(parameters)
 
     -- Check to see if we're a filter inserter, and if so, replace the mask/highlights
     if parameters.is_filter then
-        hand_picture.layers[2].filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/hr-filter-" .. parameters.type .. "-hand-mask.png"
-        hand_picture.layers[3].filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/hr-filter-" .. parameters.type .. "-hand-highlights.png"
+        hand_picture.layers[2].filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/filter-" .. parameters.type .. "-hand-mask.png"
+        hand_picture.layers[3].filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/filter-" .. parameters.type .. "-hand-highlights.png"
     end
 
     return hand_picture
@@ -229,7 +229,7 @@ local function inserter_hand_shadow(parameters)
 
     -- Shadow
     {
-        filename = "__reskins-bobs__/graphics/entity/logistics/inserter/shadows/hr-" .. parameters.shadow .. "-hand-" .. parameters.hand .. "-shadow.png",
+        filename = "__reskins-bobs__/graphics/entity/logistics/inserter/shadows/" .. parameters.shadow .. "-hand-" .. parameters.hand .. "-shadow.png",
         priority = "extra-high",
         width = 130,
         height = 164,
@@ -246,7 +246,7 @@ local function inserter_platform_picture(parameters)
         sheets = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/platform/hr-inserter-platform-base.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/platform/inserter-platform-base.png",
                 priority = "extra-high",
                 width = 106,
                 height = 80,
@@ -255,7 +255,7 @@ local function inserter_platform_picture(parameters)
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/platform/hr-inserter-platform-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/platform/inserter-platform-mask.png",
                 priority = "extra-high",
                 width = 106,
                 height = 80,
@@ -265,7 +265,7 @@ local function inserter_platform_picture(parameters)
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/platform/hr-inserter-platform-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/platform/inserter-platform-highlights.png",
                 priority = "extra-high",
                 width = 106,
                 height = 80,
@@ -275,7 +275,7 @@ local function inserter_platform_picture(parameters)
             },
             -- Shadow
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/shadows/hr-inserter-platform-shadow.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/inserter/shadows/inserter-platform-shadow.png",
                 priority = "extra-high",
                 width = 106,
                 height = 80,

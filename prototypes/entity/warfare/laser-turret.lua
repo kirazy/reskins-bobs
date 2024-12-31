@@ -124,7 +124,7 @@ end
 local function turret_shooting_glow(lens)
     return
     {
-        filename = "__reskins-bobs__/graphics/entity/warfare/beam/" .. lens .. "/hr-" .. lens .. "-laser-turret-shooting-light.png",
+        filename = "__reskins-bobs__/graphics/entity/warfare/beam/" .. lens .. "/" .. lens .. "-laser-turret-shooting-light.png",
         line_length = 8,
         width = 122,
         height = 116,
@@ -174,7 +174,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/warfare/laser-turret/remnants/hr-laser-turret-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/warfare/laser-turret/remnants/laser-turret-remnants-mask.png",
                 line_length = 1,
                 width = 198,
                 height = 194,
@@ -188,7 +188,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/warfare/laser-turret/remnants/hr-laser-turret-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/warfare/laser-turret/remnants/laser-turret-remnants-highlights.png",
                 line_length = 1,
                 width = 198,
                 height = 194,
@@ -273,7 +273,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/warfare/laser-turret/hr-laser-turret-base-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/warfare/laser-turret/laser-turret-base-mask.png",
                 priority = "high",
                 width = 138,
                 height = 104,
@@ -285,7 +285,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/warfare/laser-turret/hr-laser-turret-base-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/warfare/laser-turret/laser-turret-base-highlights.png",
                 priority = "high",
                 width = 138,
                 height = 104,

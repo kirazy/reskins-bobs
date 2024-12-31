@@ -57,7 +57,7 @@ for name, map in pairs(exoskeletons) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/equipment/equipment/exoskeleton/hr-exoskeleton-equipment-mask.png",
+                filename = "__reskins-bobs__/graphics/equipment/equipment/exoskeleton/exoskeleton-equipment-mask.png",
                 width = 128,
                 height = 256,
                 priority = "medium",
@@ -67,7 +67,7 @@ for name, map in pairs(exoskeletons) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/equipment/equipment/exoskeleton/hr-exoskeleton-equipment-highlights.png",
+                filename = "__reskins-bobs__/graphics/equipment/equipment/exoskeleton/exoskeleton-equipment-highlights.png",
                 width = 128,
                 height = 256,
                 priority = "medium",

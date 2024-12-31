@@ -52,7 +52,7 @@ for name, map in pairs(fusion_reactors) do
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-fusion-reactor/hr-vehicle-fusion-reactor-equipment-base.png",
+                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-fusion-reactor/vehicle-fusion-reactor-equipment-base.png",
                 width = 128,
                 height = 256,
                 priority = "medium",
@@ -61,7 +61,7 @@ for name, map in pairs(fusion_reactors) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-fusion-reactor/hr-vehicle-fusion-reactor-equipment-mask.png",
+                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-fusion-reactor/vehicle-fusion-reactor-equipment-mask.png",
                 width = 128,
                 height = 256,
                 priority = "medium",
@@ -71,7 +71,7 @@ for name, map in pairs(fusion_reactors) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-fusion-reactor/hr-vehicle-fusion-reactor-equipment-highlights.png",
+                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-fusion-reactor/vehicle-fusion-reactor-equipment-highlights.png",
                 width = 128,
                 height = 256,
                 priority = "medium",

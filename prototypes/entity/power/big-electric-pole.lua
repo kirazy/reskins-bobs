@@ -51,7 +51,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/base/remnants/hr-big-electric-pole-base-remnants.png",
+                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/base/remnants/big-electric-pole-base-remnants.png",
                 line_length = 1,
                 width = 366,
                 height = 188,
@@ -62,7 +62,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/remnants/hr-big-electric-pole-base-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/remnants/big-electric-pole-base-remnants-mask.png",
                 line_length = 1,
                 width = 366,
                 height = 188,
@@ -74,7 +74,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/remnants/hr-big-electric-pole-base-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/remnants/big-electric-pole-base-remnants-highlights.png",
                 line_length = 1,
                 width = 366,
                 height = 188,
@@ -91,7 +91,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/base/remnants/hr-big-electric-pole-top-remnants.png",
+                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/base/remnants/big-electric-pole-top-remnants.png",
                 line_length = 1,
                 width = 148,
                 height = 252,
@@ -102,7 +102,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/remnants/hr-big-electric-pole-top-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/remnants/big-electric-pole-top-remnants-mask.png",
                 line_length = 1,
                 width = 148,
                 height = 252,
@@ -114,7 +114,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/remnants/hr-big-electric-pole-top-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/remnants/big-electric-pole-top-remnants-highlights.png",
                 line_length = 1,
                 width = 148,
                 height = 252,
@@ -132,7 +132,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/base/hr-big-electric-pole.png",
+                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/base/big-electric-pole.png",
                 priority = "extra-high",
                 width = 148,
                 height = 312,
@@ -142,7 +142,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/hr-big-electric-pole-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/big-electric-pole-mask.png",
                 priority = "extra-high",
                 width = 148,
                 height = 312,
@@ -153,7 +153,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/hr-big-electric-pole-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/big-electric-pole-highlights.png",
                 priority = "extra-high",
                 width = 148,
                 height = 312,
@@ -164,7 +164,7 @@ for name, map in pairs(tier_map) do
             },
             -- Shadow
             {
-                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/base/hr-big-electric-pole-shadow.png",
+                filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/base/big-electric-pole-shadow.png",
                 priority = "extra-high",
                 width = 374,
                 height = 94,

@@ -52,7 +52,7 @@ for name, map in pairs(plasma_turret) do
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-plasma-turret/hr-vehicle-plasma-turret-equipment-base.png",
+                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-plasma-turret/vehicle-plasma-turret-equipment-base.png",
                 size = 256,
                 priority = "medium",
                 flags = { "no-crop" },
@@ -60,7 +60,7 @@ for name, map in pairs(plasma_turret) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-plasma-turret/hr-vehicle-plasma-turret-equipment-mask.png",
+                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-plasma-turret/vehicle-plasma-turret-equipment-mask.png",
                 size = 256,
                 priority = "medium",
                 flags = { "no-crop" },
@@ -69,7 +69,7 @@ for name, map in pairs(plasma_turret) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-plasma-turret/hr-vehicle-plasma-turret-equipment-highlights.png",
+                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-plasma-turret/vehicle-plasma-turret-equipment-highlights.png",
                 size = 256,
                 priority = "medium",
                 flags = { "no-crop" },

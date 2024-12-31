@@ -29,7 +29,7 @@ local tier_map = {
 
 local function generate_recipe_mask(pump_type, layer, blend_mode)
     local recipe_mask = reskins.lib.sprites.make_4way_animation_from_spritesheet({
-        filename = "__reskins-bobs__/graphics/entity/plates/" .. pump_type .. "-pump/hr-" .. pump_type .. "-pump-recipe-" .. layer .. ".png",
+        filename = "__reskins-bobs__/graphics/entity/plates/" .. pump_type .. "-pump/" .. pump_type .. "-pump-recipe-" .. layer .. ".png",
         width = 128,
         height = 176,
         shift = util.by_pixel(0, -12),
@@ -81,7 +81,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/plates/" .. map.pump_type .. "-pump/hr-" .. map.pump_type .. "-pump-base.png",
+                filename = "__reskins-bobs__/graphics/entity/plates/" .. map.pump_type .. "-pump/" .. map.pump_type .. "-pump-base.png",
                 width = 148,
                 height = 186,
                 frame_count = 4,
@@ -93,7 +93,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/plates/" .. map.pump_type .. "-pump/hr-" .. map.pump_type .. "-pump-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/plates/" .. map.pump_type .. "-pump/" .. map.pump_type .. "-pump-mask.png",
                 width = 148,
                 height = 186,
                 frame_count = 4,
@@ -106,7 +106,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/plates/" .. map.pump_type .. "-pump/hr-" .. map.pump_type .. "-pump-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/plates/" .. map.pump_type .. "-pump/" .. map.pump_type .. "-pump-highlights.png",
                 width = 148,
                 height = 186,
                 frame_count = 4,
@@ -119,7 +119,7 @@ for name, map in pairs(tier_map) do
             },
             -- Shadow
             {
-                filename = "__reskins-bobs__/graphics/entity/plates/" .. map.pump_type .. "-pump/hr-" .. map.pump_type .. "-pump-shadow.png",
+                filename = "__reskins-bobs__/graphics/entity/plates/" .. map.pump_type .. "-pump/" .. map.pump_type .. "-pump-shadow.png",
                 width = 172,
                 height = 134,
                 frame_count = 4,
@@ -155,7 +155,7 @@ for name, map in pairs(tier_map) do
         {
             always_draw = true,
             west_animation = {
-                filename = "__reskins-bobs__/graphics/entity/plates/air-pump/hr-pump-light.png",
+                filename = "__reskins-bobs__/graphics/entity/plates/air-pump/pump-light.png",
                 width = 148,
                 height = 186,
                 shift = util.by_pixel(0, -9.5),

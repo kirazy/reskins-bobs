@@ -48,7 +48,7 @@ local function skin_reactor_entity(name, tint, material)
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/hr-reactor-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/reactor-mask.png",
                 width = 302,
                 height = 318,
                 scale = 0.5,
@@ -57,7 +57,7 @@ local function skin_reactor_entity(name, tint, material)
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/hr-reactor-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/reactor-highlights.png",
                 width = 302,
                 height = 318,
                 scale = 0.5,
@@ -66,7 +66,7 @@ local function skin_reactor_entity(name, tint, material)
             },
             -- Pipes
             {
-                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/hr-reactor-piping.png",
+                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-piping.png",
                 width = 302,
                 height = 318,
                 scale = 0.5,
@@ -87,7 +87,7 @@ local function skin_reactor_entity(name, tint, material)
     -- Pipes
     entity.lower_layer_picture =
     {
-        filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/hr-reactor-base-pipes.png",
+        filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-base-pipes.png",
         width = 320,
         height = 316,
         scale = 0.5,
@@ -98,7 +98,7 @@ local function skin_reactor_entity(name, tint, material)
     {
         sheet =
         {
-            filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/hr-reactor-connect-patches.png",
+            filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-connect-patches.png",
             width = 64,
             height = 64,
             variation_count = 12,
@@ -110,7 +110,7 @@ local function skin_reactor_entity(name, tint, material)
     {
         sheet =
         {
-            filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/hr-reactor-connect-patches.png",
+            filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-connect-patches.png",
             width = 64,
             height = 64,
             variation_count = 12,
@@ -146,7 +146,7 @@ local function skin_reactor_remnants(name, tint, material)
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/remnants/hr-nuclear-reactor-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/remnants/nuclear-reactor-remnants-mask.png",
                 line_length = 1,
                 width = 410,
                 height = 396,
@@ -160,7 +160,7 @@ local function skin_reactor_remnants(name, tint, material)
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/remnants/hr-nuclear-reactor-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/remnants/nuclear-reactor-remnants-highlights.png",
                 line_length = 1,
                 width = 410,
                 height = 396,
@@ -174,7 +174,7 @@ local function skin_reactor_remnants(name, tint, material)
             },
             -- Pipes
             {
-                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/hr-reactor-remnants.png",
+                filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-remnants.png",
                 line_length = 1,
                 width = 410,
                 height = 396,

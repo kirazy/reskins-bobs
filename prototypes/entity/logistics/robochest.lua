@@ -52,7 +52,7 @@ for name, map in pairs(tier_map) do
     entity.base = {
         layers = {
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/robochest/hr-robochest-base.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/robochest/robochest-base.png",
                 width = 130,
                 height = 138,
                 shift = util.by_pixel(0, -2.75),
@@ -60,7 +60,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/robochest/hr-robochest-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/robochest/robochest-mask.png",
                 width = 130,
                 height = 138,
                 shift = util.by_pixel(0, -2.75),
@@ -69,7 +69,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/robochest/hr-robochest-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/robochest/robochest-highlights.png",
                 width = 130,
                 height = 138,
                 shift = util.by_pixel(0, -2.75),
@@ -78,7 +78,7 @@ for name, map in pairs(tier_map) do
             },
             -- Shadow
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/robochest/hr-robochest-shadow.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/robochest/robochest-shadow.png",
                 width = 174,
                 height = 108,
                 shift = util.by_pixel(12, 5),
@@ -100,7 +100,7 @@ for name, map in pairs(tier_map) do
             },
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/robochest/hr-robochest-base-patch.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/robochest/robochest-base-patch.png",
                 width = 110,
                 height = 80,
                 shift = util.by_pixel(0, 5.5),
@@ -108,7 +108,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/robochest/hr-robochest-base-patch-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/robochest/robochest-base-patch-mask.png",
                 width = 110,
                 height = 80,
                 shift = util.by_pixel(0, 5.5),
@@ -117,7 +117,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/robochest/hr-robochest-base-patch-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/robochest/robochest-base-patch-highlights.png",
                 width = 110,
                 height = 80,
                 shift = util.by_pixel(0, 5.5),
@@ -130,7 +130,7 @@ for name, map in pairs(tier_map) do
     entity.base_animation = util.empty_sprite()
 
     entity.door_animation_up = {
-        filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/doors/hr-roboport-" .. subtier .. "-door-up.png",
+        filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/doors/roboport-" .. subtier .. "-door-up.png",
         priority = "medium",
         width = 97,
         height = 38,
@@ -140,7 +140,7 @@ for name, map in pairs(tier_map) do
     }
 
     entity.door_animation_down = {
-        filename = "__reskins-bobs__/graphics/entity/logistics/robochest/doors/hr-robochest-" .. subtier .. "-door-down.png",
+        filename = "__reskins-bobs__/graphics/entity/logistics/robochest/doors/robochest-" .. subtier .. "-door-down.png",
         priority = "medium",
         width = 97,
         height = 45,

@@ -25,7 +25,7 @@ if not entity then return end
 reskins.lib.setup_standard_entity("bob-greenhouse", 0, inputs)
 
 local greenhouse_base = reskins.lib.sprites.make_4way_animation_from_spritesheet({
-    filename = "__reskins-bobs__/graphics/entity/greenhouse/hr-greenhouse-base.png",
+    filename = "__reskins-bobs__/graphics/entity/greenhouse/greenhouse-base.png",
     width = 194,
     height = 192,
     shift = util.by_pixel(0, 0),
@@ -87,7 +87,7 @@ local greenhouse_working = reskins.lib.sprites.make_4way_animation_from_spritesh
     layers = {
         -- Light Underlayer
         {
-            filename = "__reskins-bobs__/graphics/entity/greenhouse/hr-greenhouse-lit.png",
+            filename = "__reskins-bobs__/graphics/entity/greenhouse/greenhouse-lit.png",
             width = 194,
             height = 192,
             shift = util.by_pixel(0, 0),
@@ -95,7 +95,7 @@ local greenhouse_working = reskins.lib.sprites.make_4way_animation_from_spritesh
         },
         -- Light
         {
-            filename = "__reskins-bobs__/graphics/entity/greenhouse/hr-greenhouse-light.png",
+            filename = "__reskins-bobs__/graphics/entity/greenhouse/greenhouse-light.png",
             width = 194,
             height = 192,
             shift = util.by_pixel(0, 0),

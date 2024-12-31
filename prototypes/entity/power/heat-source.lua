@@ -45,7 +45,7 @@ end
 local function heat_source_base_pipes(material)
     ---@type data.Sprite
     local sprite = {
-        filename = "__reskins-bobs__/graphics/entity/power/heat-source/hr-heat-source-base-pipes-" .. material .. ".png",
+        filename = "__reskins-bobs__/graphics/entity/power/heat-source/heat-source-base-pipes-" .. material .. ".png",
         width = 192,
         height = 192,
         scale = 0.5,
@@ -62,7 +62,7 @@ local function connect_patches_connected(material)
     ---@type data.SpriteVariations
     local sprite = {
         sheet = {
-            filename = "__reskins-bobs__/graphics/entity/power/heat-source/hr-reactor-connect-patches-" .. material .. ".png",
+            filename = "__reskins-bobs__/graphics/entity/power/heat-source/reactor-connect-patches-" .. material .. ".png",
             width = 64,
             height = 64,
             variation_count = 12,
@@ -80,7 +80,7 @@ local function connect_patches_disconnected(material)
     ---@type data.SpriteVariations
     local sprite = {
         sheet = {
-            filename = "__reskins-bobs__/graphics/entity/power/heat-source/hr-reactor-connect-patches-" .. material .. ".png",
+            filename = "__reskins-bobs__/graphics/entity/power/heat-source/reactor-connect-patches-" .. material .. ".png",
             width = 64,
             height = 64,
             y = 64,

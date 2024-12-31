@@ -49,7 +49,7 @@ for name, lens in pairs(beam_map) do
     -- Reskin beams
     beam.head =
     {
-        filename = "__reskins-bobs__/graphics/entity/warfare/beam/" .. lens .. "/hr-" .. lens .. "-laser-body.png",
+        filename = "__reskins-bobs__/graphics/entity/warfare/beam/" .. lens .. "/" .. lens .. "-laser-body.png",
         flags = beam_non_light_flags,
         line_length = 8,
         width = 64,
@@ -62,7 +62,7 @@ for name, lens in pairs(beam_map) do
 
     beam.tail =
     {
-        filename = "__reskins-bobs__/graphics/entity/warfare/beam/" .. lens .. "/hr-" .. lens .. "-laser-end.png",
+        filename = "__reskins-bobs__/graphics/entity/warfare/beam/" .. lens .. "/" .. lens .. "-laser-end.png",
         flags = beam_non_light_flags,
         width = 110,
         height = 62,
@@ -76,7 +76,7 @@ for name, lens in pairs(beam_map) do
     beam.body =
     {
         {
-            filename = "__reskins-bobs__/graphics/entity/warfare/beam/" .. lens .. "/hr-" .. lens .. "-laser-body.png",
+            filename = "__reskins-bobs__/graphics/entity/warfare/beam/" .. lens .. "/" .. lens .. "-laser-body.png",
             flags = beam_non_light_flags,
             line_length = 8,
             width = 64,
@@ -92,7 +92,7 @@ for name, lens in pairs(beam_map) do
     {
         head =
         {
-            filename = "__reskins-bobs__/graphics/entity/warfare/beam/base/hr-laser-body-light.png",
+            filename = "__reskins-bobs__/graphics/entity/warfare/beam/base/laser-body-light.png",
             line_length = 8,
             width = 64,
             height = 12,
@@ -102,7 +102,7 @@ for name, lens in pairs(beam_map) do
         },
         tail =
         {
-            filename = "__reskins-bobs__/graphics/entity/warfare/beam/base/hr-laser-end-light.png",
+            filename = "__reskins-bobs__/graphics/entity/warfare/beam/base/laser-end-light.png",
             width = 110,
             height = 62,
             frame_count = 8,
@@ -113,7 +113,7 @@ for name, lens in pairs(beam_map) do
         body =
         {
             {
-                filename = "__reskins-bobs__/graphics/entity/warfare/beam/base/hr-laser-body-light.png",
+                filename = "__reskins-bobs__/graphics/entity/warfare/beam/base/laser-body-light.png",
                 line_length = 8,
                 width = 64,
                 height = 12,

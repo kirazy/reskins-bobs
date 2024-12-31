@@ -63,7 +63,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/pump/remnants/hr-pump-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/pump/remnants/pump-remnants-mask.png",
                 line_length = 1,
                 width = 188,
                 height = 186,
@@ -77,7 +77,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/pump/remnants/hr-pump-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/pump/remnants/pump-remnants-highlights.png",
                 line_length = 1,
                 width = 188,
                 height = 186,
@@ -109,7 +109,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Mask
                 {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/pump/hr-pump-north-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/pump/pump-north-mask.png",
                     width = 103,
                     height = 164,
                     scale = 0.5,
@@ -121,7 +121,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Highlights
                 {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/pump/hr-pump-north-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/pump/pump-north-highlights.png",
                     width = 103,
                     height = 164,
                     scale = 0.5,
@@ -148,7 +148,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Mask
                 {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/pump/hr-pump-east-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/pump/pump-east-mask.png",
                     width = 130,
                     height = 109,
                     scale = 0.5,
@@ -160,7 +160,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Highlights
                 {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/pump/hr-pump-east-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/pump/pump-east-highlights.png",
                     width = 130,
                     height = 109,
                     scale = 0.5,
@@ -187,7 +187,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Mask
                 {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/pump/hr-pump-south-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/pump/pump-south-mask.png",
                     width = 114,
                     height = 160,
                     scale = 0.5,
@@ -199,7 +199,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Highlights
                 {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/pump/hr-pump-south-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/pump/pump-south-highlights.png",
                     width = 114,
                     height = 160,
                     scale = 0.5,
@@ -226,7 +226,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Mask
                 {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/pump/hr-pump-west-mask.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/pump/pump-west-mask.png",
                     width = 131,
                     height = 111,
                     scale = 0.5,
@@ -238,7 +238,7 @@ for name, map in pairs(tier_map) do
                 },
                 -- Highlights
                 {
-                    filename = "__reskins-bobs__/graphics/entity/logistics/pump/hr-pump-west-highlights.png",
+                    filename = "__reskins-bobs__/graphics/entity/logistics/pump/pump-west-highlights.png",
                     width = 131,
                     height = 111,
                     scale = 0.5,

@@ -72,7 +72,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/modules/beacon/remnants/hr-beacon-remnants-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/modules/beacon/remnants/beacon-remnants-mask.png",
                 line_length = 1,
                 width = 212,
                 height = 206,
@@ -86,7 +86,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/modules/beacon/remnants/hr-beacon-remnants-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/modules/beacon/remnants/beacon-remnants-highlights.png",
                 line_length = 1,
                 width = 212,
                 height = 206,
@@ -116,7 +116,7 @@ for name, map in pairs(tier_map) do
                 layers = {
                     -- Base
                     {
-                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/hr-beacon-" .. beacon_base .. "-bottom.png",
+                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/beacon-" .. beacon_base .. "-bottom.png",
                         width = 212,
                         height = 192,
                         scale = 0.5,
@@ -124,7 +124,7 @@ for name, map in pairs(tier_map) do
                     },
                     -- Mask
                     {
-                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/hr-beacon-" .. beacon_base .. "-bottom-mask.png",
+                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/beacon-" .. beacon_base .. "-bottom-mask.png",
                         width = 212,
                         height = 192,
                         shift = util.by_pixel(0.5, 1),
@@ -133,7 +133,7 @@ for name, map in pairs(tier_map) do
                     },
                     -- Highlights
                     {
-                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/hr-beacon-" .. beacon_base .. "-bottom-highlights.png",
+                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/beacon-" .. beacon_base .. "-bottom-highlights.png",
                         width = 212,
                         height = 192,
                         shift = util.by_pixel(0.5, 1),
@@ -157,7 +157,7 @@ for name, map in pairs(tier_map) do
             render_layer = "object",
             always_draw = true,
             animation = {
-                filename = "__reskins-bobs__/graphics/entity/modules/beacon/hr-beacon-" .. beacon_base .. "-top.png",
+                filename = "__reskins-bobs__/graphics/entity/modules/beacon/beacon-" .. beacon_base .. "-top.png",
                 width = 96,
                 height = 140,
                 scale = 0.5,
@@ -197,7 +197,7 @@ for name, map in pairs(tier_map) do
                 layers = {
                     -- Base
                     {
-                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/hr-beacon-2-bottom-slot-overlay.png",
+                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/beacon-2-bottom-slot-overlay.png",
                         width = 212,
                         height = 192,
                         scale = 0.5,
@@ -215,7 +215,7 @@ for name, map in pairs(tier_map) do
                 layers = {
                     -- Base
                     {
-                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/hr-beacon-3-bottom-slot-overlay.png",
+                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/beacon-3-bottom-slot-overlay.png",
                         width = 212,
                         height = 192,
                         scale = 0.5,
@@ -223,7 +223,7 @@ for name, map in pairs(tier_map) do
                     },
                     -- Mask
                     {
-                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/hr-beacon-3-bottom-slot-overlay-mask.png",
+                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/beacon-3-bottom-slot-overlay-mask.png",
                         width = 212,
                         height = 192,
                         scale = 0.5,
@@ -232,7 +232,7 @@ for name, map in pairs(tier_map) do
                     },
                     -- Highlights
                     {
-                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/hr-beacon-3-bottom-slot-overlay-highlights.png",
+                        filename = "__reskins-bobs__/graphics/entity/modules/beacon/beacon-3-bottom-slot-overlay-highlights.png",
                         width = 212,
                         height = 192,
                         scale = 0.5,

@@ -52,7 +52,7 @@ for name, map in pairs(fusion_cells) do
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-fusion-cell/hr-vehicle-fusion-cell-equipment-base.png",
+                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-fusion-cell/vehicle-fusion-cell-equipment-base.png",
                 size = 128,
                 priority = "medium",
                 flags = { "no-crop" },
@@ -60,7 +60,7 @@ for name, map in pairs(fusion_cells) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-fusion-cell/hr-vehicle-fusion-cell-equipment-mask.png",
+                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-fusion-cell/vehicle-fusion-cell-equipment-mask.png",
                 size = 128,
                 priority = "medium",
                 flags = { "no-crop" },
@@ -69,7 +69,7 @@ for name, map in pairs(fusion_cells) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-fusion-cell/hr-vehicle-fusion-cell-equipment-highlights.png",
+                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-fusion-cell/vehicle-fusion-cell-equipment-highlights.png",
                 size = 128,
                 priority = "medium",
                 flags = { "no-crop" },

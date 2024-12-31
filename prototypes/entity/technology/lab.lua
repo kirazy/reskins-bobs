@@ -27,7 +27,7 @@ local function reskin_lab(name)
         layers =
         {
             {
-                filename = "__reskins-bobs__/graphics/entity/technology/lab/hr-" .. name .. ".png",
+                filename = "__reskins-bobs__/graphics/entity/technology/lab/" .. name .. ".png",
                 width = 194,
                 height = 174,
                 frame_count = 33,
@@ -67,7 +67,7 @@ local function reskin_lab(name)
         layers =
         {
             {
-                filename = "__reskins-bobs__/graphics/entity/technology/lab/hr-" .. name .. ".png",
+                filename = "__reskins-bobs__/graphics/entity/technology/lab/" .. name .. ".png",
                 width = 194,
                 height = 174,
                 frame_count = 1,

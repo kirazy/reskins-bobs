@@ -50,7 +50,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/zone-expander/hr-zone-expander-" .. subtier .. "-base.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/zone-expander/zone-expander-" .. subtier .. "-base.png",
                 width = 56,
                 height = 156,
                 shift = util.by_pixel(0.5, -29.5),
@@ -58,7 +58,7 @@ for name, map in pairs(tier_map) do
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/zone-expander/hr-zone-expander-mask.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/zone-expander/zone-expander-mask.png",
                 width = 38,
                 height = 30,
                 shift = util.by_pixel(0.5, 0),
@@ -67,7 +67,7 @@ for name, map in pairs(tier_map) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/zone-expander/hr-zone-expander-highlights.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/zone-expander/zone-expander-highlights.png",
                 width = 38,
                 height = 30,
                 shift = util.by_pixel(0.5, 0),
@@ -81,7 +81,7 @@ for name, map in pairs(tier_map) do
         layers = {
             -- Antenna
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/antennas/hr-roboport-" .. subtier .. "-base-animation.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/antennas/roboport-" .. subtier .. "-base-animation.png",
                 priority = "medium",
                 width = 83,
                 height = 59,
@@ -92,7 +92,7 @@ for name, map in pairs(tier_map) do
             },
             -- Shadow
             {
-                filename = "__reskins-bobs__/graphics/entity/logistics/zone-expander/hr-zone-expander-shadow.png",
+                filename = "__reskins-bobs__/graphics/entity/logistics/zone-expander/zone-expander-shadow.png",
                 width = 228,
                 height = 60,
                 frame_count = 8,
