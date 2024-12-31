@@ -54,7 +54,7 @@ local function get_circuit_overrides(subgroup, tier, prog_tier, name)
                 filename = "__reskins-bobs__/graphics/icons/electronics/circuits-custom/" .. name .. "/" .. name .. "-circuitry.png",
                 size = 64,
                 mipmaps = 4,
-                scale = 0.25,
+                scale = 0.5,
             },
         },
         flat_icon = false,

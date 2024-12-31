@@ -65,7 +65,7 @@ local function icon_sets(sprite_set, tint, flags)
                     filename = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/smoke-stack.png",
                     size = 64,
                     mipmaps = 4,
-                    scale = 0.25,
+                    scale = 0.5,
                 },
             }
         else

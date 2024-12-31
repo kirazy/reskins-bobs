@@ -81,7 +81,7 @@ local intermediates = {
             blend_mode = "additive",
             size = 64,
             filename = "__reskins-bobs__/graphics/icons/plates/nuclear/plutonium-239.png",
-            scale = 0.25,
+            scale = 0.5,
             tint = { r = 0.3, g = 0.3, b = 0.3, a = 0.3 },
             mipmap_count = 4,
         } },
