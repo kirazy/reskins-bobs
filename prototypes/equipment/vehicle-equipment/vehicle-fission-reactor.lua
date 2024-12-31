@@ -9,26 +9,26 @@ if not (reskins.bobs and reskins.bobs.triggers.vehicle_equipment.equipment) then
 -- Note that for equipment, the icons property is not used, so omit type information
 -- so that an icon is not set on the equipment prototype.
 local inputs = {
-    icon_name = "vehicle-fusion-cell",
+    icon_name = "fission-reactor",
     equipment_category = "energy",
     mod = "bobs",
-    group = "vehicle-equipment",
+    group = "equipment",
 }
 
 -- Setup defaults
 reskins.lib.set_inputs_defaults(inputs)
 
-local fusion_cells = {
-    ["vehicle-fusion-cell-1"] = { tier = 0 },
-    ["vehicle-fusion-cell-2"] = { tier = 1 },
-    ["vehicle-fusion-cell-3"] = { tier = 2 },
-    ["vehicle-fusion-cell-4"] = { tier = 3 },
-    ["vehicle-fusion-cell-5"] = { tier = 4 },
-    ["vehicle-fusion-cell-6"] = { tier = 5 },
+local fission_reactors = {
+    ["vehicle-fission-reactor-equipment-1"] = { tier = 0 },
+    ["vehicle-fission-reactor-equipment-2"] = { tier = 1 },
+    ["vehicle-fission-reactor-equipment-3"] = { tier = 2 },
+    ["vehicle-fission-reactor-equipment-4"] = { tier = 3 },
+    ["vehicle-fission-reactor-equipment-5"] = { tier = 4 },
+    ["vehicle-fission-reactor-equipment-6"] = { tier = 5 },
 }
 
 -- Reskin equipment
-for name, map in pairs(fusion_cells) do
+for name, map in pairs(fission_reactors) do
     -- Fetch equipment
     local equipment = data.raw["generator-equipment"][name]
 
@@ -52,16 +52,18 @@ for name, map in pairs(fusion_cells) do
         layers = {
             -- Base
             {
-                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-fusion-cell/vehicle-fusion-cell-equipment-base.png",
-                size = 128,
+                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-fission-reactor/vehicle-fission-reactor-equipment-base.png",
+                width = 128,
+                height = 256,
                 priority = "medium",
                 flags = { "no-crop" },
                 scale = 0.5,
             },
             -- Mask
             {
-                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-fusion-cell/vehicle-fusion-cell-equipment-mask.png",
-                size = 128,
+                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-fission-reactor/vehicle-fission-reactor-equipment-mask.png",
+                width = 128,
+                height = 256,
                 priority = "medium",
                 flags = { "no-crop" },
                 tint = inputs.tint,
@@ -69,8 +71,9 @@ for name, map in pairs(fusion_cells) do
             },
             -- Highlights
             {
-                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-fusion-cell/vehicle-fusion-cell-equipment-highlights.png",
-                size = 128,
+                filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-fission-reactor/vehicle-fission-reactor-equipment-highlights.png",
+                width = 128,
+                height = 256,
                 priority = "medium",
                 flags = { "no-crop" },
                 blend_mode = reskins.lib.settings.blend_mode, -- "additive",

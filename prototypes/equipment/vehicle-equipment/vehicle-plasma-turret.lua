@@ -19,12 +19,12 @@ local inputs = {
 reskins.lib.set_inputs_defaults(inputs)
 
 local plasma_turret = {
-    ["vehicle-big-turret-1"] = { tier = 0 },
-    ["vehicle-big-turret-2"] = { tier = 1 },
-    ["vehicle-big-turret-3"] = { tier = 2 },
-    ["vehicle-big-turret-4"] = { tier = 3 },
-    ["vehicle-big-turret-5"] = { tier = 4 },
-    ["vehicle-big-turret-6"] = { tier = 5 },
+    ["vehicle-big-turret-equipment-1"] = { tier = 0 },
+    ["vehicle-big-turret-equipment-2"] = { tier = 1 },
+    ["vehicle-big-turret-equipment-3"] = { tier = 2 },
+    ["vehicle-big-turret-equipment-4"] = { tier = 3 },
+    ["vehicle-big-turret-equipment-5"] = { tier = 4 },
+    ["vehicle-big-turret-equipment-6"] = { tier = 5 },
 }
 
 -- Reskin equipment

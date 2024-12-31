@@ -24,21 +24,22 @@ local equipment_list = {
 }
 
 -- Reskin equipment
-for _, name in pairs(equipment_list) do
+for _, icon_name in pairs(equipment_list) do
     -- Fetch equipment
+    local name = icon_name .. "-equipment"
     local equipment = data.raw["movement-bonus-equipment"][name]
 
     -- Check if entity exists, if not, skip this iteration
     if not equipment then goto continue end
 
-    inputs.icon_name = name
+    inputs.icon_name = icon_name
 
     -- Construct icon
     reskins.lib.construct_icon(name, 0, inputs)
 
     -- Reskin the equipment
     equipment.sprite = {
-        filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/" .. name .. "/" .. name .. "-equipment.png",
+        filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/" .. icon_name .. "/" .. name .. ".png",
         size = 128,
         priority = "medium",
         scale = 0.5,
