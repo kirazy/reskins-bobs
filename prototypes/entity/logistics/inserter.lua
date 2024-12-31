@@ -26,12 +26,12 @@ if reskins.lib.settings.get_value("bobmods-logistics-inserteroverhaul") == false
         -- Filter inserters
         ["filter-inserter"] = { 3, false },
         ["express-filter-inserter"] = { 4, true, "df57c2" },
-        -- Stack inserters
-        ["stack-inserter"] = { 3, false },
-        ["express-stack-inserter"] = { 4, true, "2dcd3f" },
-        -- Stack filter inserters
-        ["stack-filter-inserter"] = { 3, false },
-        ["express-stack-filter-inserter"] = { 4, true, "7e7e7e" },
+        -- Bulk inserters
+        ["bulk-inserter"] = { 3, false },
+        ["express-bulk-inserter"] = { 4, true, "2dcd3f" },
+        -- Bulk filter inserters
+        ["bulk-filter-inserter"] = { 3, false },
+        ["express-bulk-filter-inserter"] = { 4, true, "7e7e7e" },
     }
 else
     inserter_map = {
@@ -79,7 +79,7 @@ local function inserter_arm_shadow()
     }
 end
 
--- Hand open, closed for stack, standard, and long-handed inserters
+-- Hand open, closed for bulk, standard, and long-handed inserters
 local function inserter_hand_picture(parameters)
     return
     {
@@ -161,8 +161,8 @@ for name, map in pairs(inserter_map) do
     end
 
     -- Handle base_entity
-    if string.find(name, "stack%-inserter") then
-        inputs.base_entity_name = "stack-inserter"
+    if string.find(name, "bulk%-inserter") then
+        inputs.base_entity_name = "bulk-inserter"
     else
         inputs.base_entity_name = "inserter"
     end
@@ -178,8 +178,8 @@ for name, map in pairs(inserter_map) do
 
     -- Handle the type of inserter we're dealing with
     local inserter_type, hand_name
-    if string.find(name, "stack") then
-        inserter_type = "stack-inserter"
+    if string.find(name, "bulk") then
+        inserter_type = "bulk-inserter"
         hand_name = name
     elseif mods["bobinserters"] and name ~= "long-handed-inserter" then
         inserter_type = "long-inserter"

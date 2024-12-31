@@ -15,7 +15,7 @@ local inputs = {
 }
 
 -- Filenames and effect overlays
-local stack_inserter_icon = "__base__/graphics/technology/bulk-inserter.png"
+local bulk_inserter_icon = "__base__/graphics/technology/bulk-inserter.png"
 local inserter_icon = "__base__/graphics/technology/inserter-capacity.png"
 local toolbelt_icon = "__base__/graphics/technology/toolbelt.png"
 
@@ -85,15 +85,15 @@ local technologies = {
     -- ["logistic-system-3"] = {tier = 3, prog_tier = 4},
 
     -- TECHNOLOGY EFFECTS
-    -- Stack inserter capacities
-    ["inserter-capacity-bonus-1"] = get_capacity_override(stack_inserter_icon),
-    ["inserter-capacity-bonus-2"] = get_capacity_override(stack_inserter_icon),
-    ["inserter-capacity-bonus-3"] = get_capacity_override(stack_inserter_icon),
-    ["inserter-capacity-bonus-4"] = get_capacity_override(stack_inserter_icon),
-    ["inserter-capacity-bonus-5"] = get_capacity_override(stack_inserter_icon),
-    ["inserter-capacity-bonus-6"] = get_capacity_override(stack_inserter_icon),
-    ["inserter-capacity-bonus-7"] = get_capacity_override(stack_inserter_icon),
-    ["inserter-capacity-bonus-8"] = get_capacity_override(stack_inserter_icon),
+    -- Bulk inserter capacities
+    ["inserter-capacity-bonus-1"] = get_capacity_override(bulk_inserter_icon),
+    ["inserter-capacity-bonus-2"] = get_capacity_override(bulk_inserter_icon),
+    ["inserter-capacity-bonus-3"] = get_capacity_override(bulk_inserter_icon),
+    ["inserter-capacity-bonus-4"] = get_capacity_override(bulk_inserter_icon),
+    ["inserter-capacity-bonus-5"] = get_capacity_override(bulk_inserter_icon),
+    ["inserter-capacity-bonus-6"] = get_capacity_override(bulk_inserter_icon),
+    ["inserter-capacity-bonus-7"] = get_capacity_override(bulk_inserter_icon),
+    ["inserter-capacity-bonus-8"] = get_capacity_override(bulk_inserter_icon),
 
     -- Inserter capacities
     ["inserter-stack-size-bonus-1"] = get_capacity_override(inserter_icon),
@@ -134,21 +134,21 @@ if reskins.lib.settings.get_value("bobmods-logistics-inserteroverhaul") == true 
     technologies["turbo-inserter"] = { icon_name = "inserter", tier = 4 }
     technologies["ultimate-inserter"] = { icon_name = "inserter", tier = 5 }
 
-    -- Stack inserters
-    technologies["stack-inserter"] = { icon_name = "stack-inserter", tier = 2 }
-    technologies["stack-inserter-2"] = { icon_name = "stack-inserter", tier = 3 }
-    technologies["stack-inserter-3"] = { icon_name = "stack-inserter", tier = 4 }
-    technologies["stack-inserter-4"] = { icon_name = "stack-inserter", tier = 5 }
+    -- Bulk inserters
+    technologies["bulk-inserter"] = { icon_name = "bulk-inserter", tier = 2 }
+    technologies["bulk-inserter-2"] = { icon_name = "bulk-inserter", tier = 3 }
+    technologies["bulk-inserter-3"] = { icon_name = "bulk-inserter", tier = 4 }
+    technologies["bulk-inserter-4"] = { icon_name = "bulk-inserter", tier = 5 }
 else
     technologies["long-inserters-1"] = { flat_icon = true }
     -- technologies["fast-inserter"] = {} -- fine as-is
     technologies["express-inserters"] = { flat_icon = true } -- green/pink
-    technologies["stack-inserter"] = { flat_icon = true }    -- green/white
-    technologies["stack-inserter-2"] = { flat_icon = true }  -- rich green/gray
+    technologies["bulk-inserter"] = { flat_icon = true }    -- green/white
+    technologies["bulk-inserter-2"] = { flat_icon = true }  -- rich green/gray
 end
 
 reskins.internal.create_icons_from_list(technologies, inputs)
 
 -- Overwrite icons for technology effects
 data.raw["utility-sprites"].default.bulk_inserter_capacity_bonus_modifier_icon.filename =
-"__reskins-bobs__/graphics/icons/logistics/inserter/stack-inserter-technology-effect-icon.png"
+"__reskins-bobs__/graphics/icons/logistics/inserter/bulk-inserter-technology-effect-icon.png"
