@@ -124,12 +124,12 @@ local intermediates = {
     -- ["silver-oxide"] = {subgroup = "powders"}, -- Needs made-for-resolution icon
 
     -- Gemstones
-    ["ruby-5"] = { subgroup = "gems" },
-    ["sapphire-5"] = { subgroup = "gems" },
-    ["emerald-5"] = { subgroup = "gems" },
-    ["amethyst-5"] = { subgroup = "gems" },
-    ["topaz-5"] = { subgroup = "gems" },
-    ["diamond-5"] = { subgroup = "gems" },
+    ["bob-ruby-5"] = { subgroup = "gems", image = "ruby-5" },
+    ["bob-sapphire-5"] = { subgroup = "gems", image = "sapphire-5" },
+    ["bob-emerald-5"] = { subgroup = "gems", image = "emerald-5" },
+    ["bob-amethyst-5"] = { subgroup = "gems", image = "amethyst-5" },
+    ["bob-topaz-5"] = { subgroup = "gems", image = "topaz-5" },
+    ["bob-diamond-5"] = { subgroup = "gems", image = "diamond-5" },
 
     ----------------------------------------------------------------------------------------------------
     -- Recipes
