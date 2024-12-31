@@ -112,8 +112,8 @@ for name, tier in pairs(tier_map) do
                 apply_projection = false,
                 direction_count = 64,
                 line_length = 8,
-                shift = util.by_pixel(1, -16),
-                scale = 0.5,
+                shift = util.by_pixel(1.0, -16.0),
+                scale = 0.5
             },
             -- Mask
             {
@@ -145,14 +145,14 @@ for name, tier in pairs(tier_map) do
             {
                 filename = "__base__/graphics/entity/radar/radar-shadow.png",
                 priority = "low",
-                width = 343,
-                height = 186,
+                width = 336,
+                height = 170,
                 apply_projection = false,
                 direction_count = 64,
                 line_length = 8,
-                shift = util.by_pixel(39.25, 3),
+                shift = util.by_pixel(39.0, 6.0),
                 draw_as_shadow = true,
-                scale = 0.5,
+                scale = 0.5
             },
         },
     }
