@@ -32,40 +32,18 @@ local inserter_map = {
     ["fast-inserter"] = { tier = 3, type = inserter_type, icon_name = inserter_icon_name },
     ["turbo-inserter"] = { tier = 4, type = inserter_type, icon_name = inserter_icon_name },
     ["express-inserter"] = { tier = 5, type = inserter_type, icon_name = inserter_icon_name },
-    -- Filter inserters
-    ["yellow-filter-inserter"] = { tier = 1, is_filter = true, type = inserter_type, icon_name = "filter-" .. inserter_icon_name },
-    ["red-filter-inserter"] = { tier = 2, is_filter = true, type = inserter_type, icon_name = "filter-" .. inserter_icon_name },
-    ["filter-inserter"] = { tier = 3, is_filter = true, type = inserter_type, icon_name = "filter-" .. inserter_icon_name },
-    ["turbo-filter-inserter"] = { tier = 4, is_filter = true, type = inserter_type, icon_name = "filter-" .. inserter_icon_name },
-    ["express-filter-inserter"] = { tier = 5, is_filter = true, type = inserter_type, icon_name = "filter-" .. inserter_icon_name },
+
     -- Bulk inserters
     ["red-bulk-inserter"] = { tier = 2, is_bulk_inserter = true, type = bulk_inserter_type, icon_name = bulk_inserter_icon_name },
     ["bulk-inserter"] = { tier = 3, is_bulk_inserter = true, type = bulk_inserter_type, icon_name = bulk_inserter_icon_name },
     ["turbo-bulk-inserter"] = { tier = 4, is_bulk_inserter = true, type = bulk_inserter_type, icon_name = bulk_inserter_icon_name },
     ["express-bulk-inserter"] = { tier = 5, is_bulk_inserter = true, type = bulk_inserter_type, icon_name = bulk_inserter_icon_name },
-    -- Bulk filter inserters
-    ["red-bulk-filter-inserter"] = { tier = 2, is_filter = true, is_bulk_inserter = true, type = bulk_inserter_type, icon_name = "filter-" .. bulk_inserter_icon_name },
-    ["bulk-filter-inserter"] = { tier = 3, is_filter = true, is_bulk_inserter = true, type = bulk_inserter_type, icon_name = "filter-" .. bulk_inserter_icon_name },
-    ["turbo-bulk-filter-inserter"] = { tier = 4, is_filter = true, is_bulk_inserter = true, type = bulk_inserter_type, icon_name = "filter-" .. bulk_inserter_icon_name },
-    ["express-bulk-filter-inserter"] = { tier = 5, is_filter = true, is_bulk_inserter = true, type = bulk_inserter_type, icon_name = "filter-" .. bulk_inserter_icon_name },
 }
-
--- Inserter filter icon
-local function filter_icon_symbol(tint)
-    local icon = reskins.lib.icons.get_symbol("filter", tint)
-
-    if reskins.lib.settings.get_value("reskins-bobs-do-inserter-filter-symbol") then
-        return icon
-    end
-end
 
 -- Inserter Remnants
 local function inserter_remnants(parameters)
     -- Remap long-inserter type to inserter
     local prefix = (parameters.type == "long-inserter") and "inserter" or parameters.type
-    if parameters.is_filter then
-        prefix = "filter-" .. prefix
-    end
 
     local remnant = make_rotated_animation_variations_from_sheet(4, {
         layers = {
@@ -151,12 +129,6 @@ local function inserter_arm_picture(parameters)
         },
     }
 
-    -- Check to see if we're a filter inserter, and if so, replace the mask/highlights
-    if parameters.is_filter then
-        arm_picture.layers[2].filename = "__reskins-bobs__/graphics/entity/logistics/inserter/arms/filter-inserter-arm-mask.png"
-        arm_picture.layers[3].filename = "__reskins-bobs__/graphics/entity/logistics/inserter/arms/filter-inserter-arm-highlights.png"
-    end
-
     return arm_picture
 end
 
@@ -208,12 +180,6 @@ local function inserter_hand_picture(parameters)
             },
         },
     }
-
-    -- Check to see if we're a filter inserter, and if so, replace the mask/highlights
-    if parameters.is_filter then
-        hand_picture.layers[2].filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/filter-" .. parameters.type .. "-hand-mask.png"
-        hand_picture.layers[3].filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/filter-" .. parameters.type .. "-hand-highlights.png"
-    end
 
     return hand_picture
 end
@@ -308,10 +274,8 @@ for name, map in pairs(inserter_map) do
     inputs.tint = reskins.lib.tiers.get_tint(tier)
 
     -- Construct input properties from map properties
-    inputs.platform_tint = map.is_filter and util.color("bfbfbf") or inputs.tint -- Whiteish for filter inserters
     inputs.base_entity_name = map.is_bulk_inserter and "bulk-inserter" or "inserter"
     inputs.icon_name = map.icon_name
-    inputs.icon_extras = map.is_filter and filter_icon_symbol(inputs.tint)
 
     reskins.lib.setup_standard_entity(name, tier, inputs)
 
@@ -319,16 +283,16 @@ for name, map in pairs(inserter_map) do
     local remnant = data.raw["corpse"][name .. "-remnants"]
 
     -- Reskin remnnant
-    remnant.animation = inserter_remnants { type = map.type, tint = inputs.tint, is_filter = map.is_filter }
+    remnant.animation = inserter_remnants { type = map.type, tint = inputs.tint }
 
     -- Common to all inserters
-    entity.hand_base_picture = inserter_arm_picture { tint = inputs.tint, is_filter = map.is_filter }
+    entity.hand_base_picture = inserter_arm_picture { tint = inputs.tint }
     entity.hand_base_shadow = inserter_arm_shadow()
-    entity.platform_picture = inserter_platform_picture { tint = inputs.platform_tint }
+    entity.platform_picture = inserter_platform_picture { tint = inputs.tint }
 
     -- Inserter hands
-    entity.hand_open_picture = inserter_hand_picture { type = map.type, tint = inputs.tint, hand = "open", is_filter = map.is_filter }
-    entity.hand_closed_picture = inserter_hand_picture { type = map.type, tint = inputs.tint, hand = "closed", is_filter = map.is_filter }
+    entity.hand_open_picture = inserter_hand_picture { type = map.type, tint = inputs.tint, hand = "open" }
+    entity.hand_closed_picture = inserter_hand_picture { type = map.type, tint = inputs.tint, hand = "closed" }
     entity.hand_open_shadow = inserter_hand_shadow { type = map.type, hand = "open" }
     entity.hand_closed_shadow = inserter_hand_shadow { type = map.type, hand = "closed" }
 

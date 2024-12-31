@@ -17,7 +17,7 @@ local inputs = {
 
 ---@type CreateIconsFromListTable
 local technologies = {
-    -- solder, solder plate, insulated wire, basic circuit, filter inserter, resistor, tin wire
+    -- solder, solder plate, insulated wire, basic circuit, resistor, tin wire
     -- ["electronics"] = {},
 
     -- Advanced electronics

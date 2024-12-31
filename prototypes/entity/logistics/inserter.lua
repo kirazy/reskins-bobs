@@ -23,15 +23,10 @@ if reskins.lib.settings.get_value("bobmods-logistics-inserteroverhaul") == false
         ["long-handed-inserter"] = { 2, false },
         ["fast-inserter"] = { 3, false },
         ["express-inserter"] = { 4, true, "30d79c" },
-        -- Filter inserters
-        ["filter-inserter"] = { 3, false },
-        ["express-filter-inserter"] = { 4, true, "df57c2" },
+
         -- Bulk inserters
         ["bulk-inserter"] = { 3, false },
         ["express-bulk-inserter"] = { 4, true, "2dcd3f" },
-        -- Bulk filter inserters
-        ["bulk-filter-inserter"] = { 3, false },
-        ["express-bulk-filter-inserter"] = { 4, true, "7e7e7e" },
     }
 else
     inserter_map = {
