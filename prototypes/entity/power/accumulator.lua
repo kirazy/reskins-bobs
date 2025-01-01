@@ -212,13 +212,13 @@ for name, map in pairs(tier_map) do
     })
 
     -- Reskin entities
-    entity.picture = accumulator_picture_tinted(inputs)
-    entity.charge_animation = accumulator_charge_tinted(inputs)
-    entity.discharge_animation = accumulator_discharge_tinted(inputs)
+    entity.chargable_graphics.picture = accumulator_picture_tinted(inputs)
+    entity.chargable_graphics.charge_animation = accumulator_charge_tinted(inputs)
+    entity.chargable_graphics.discharge_animation = accumulator_discharge_tinted(inputs)
 
     -- Remove lights
-    entity.charge_light = nil
-    entity.discharge_light = nil
+    entity.chargable_graphics.charge_light = nil
+    entity.chargable_graphics.discharge_light = nil
 
     -- Label to skip to next iteration
     ::continue::

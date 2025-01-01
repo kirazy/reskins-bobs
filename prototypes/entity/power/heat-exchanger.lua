@@ -126,213 +126,214 @@ for name, mapping in pairs(tier_map) do
 
 
     -- Reskin entities
-    entity.structure = {
-        north = {
-            layers = {
-                -- Base
-                {
-                    filename = "__base__/graphics/entity/heat-exchanger/heatex-N-idle.png",
-                    priority = "extra-high",
-                    width = 269,
-                    height = 221,
-                    shift = util.by_pixel(-1.25, 5.25),
-                    scale = 0.5,
-                },
-                -- Mask
-                {
-                    filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heatex-N-idle-mask.png",
-                    priority = "extra-high",
-                    width = 269,
-                    height = 221,
-                    shift = util.by_pixel(-1.25, 5.25),
-                    tint = inputs.tint,
-                    scale = 0.5,
-                },
-                -- Highlights
-                {
-                    filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heatex-N-idle-highlights.png",
-                    priority = "extra-high",
-                    width = 269,
-                    height = 221,
-                    shift = util.by_pixel(-1.25, 5.25),
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5,
-                },
-                -- Pipes
-                {
-                    filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heat-pipes/" .. mapping.material .. "/heatex-N-idle.png",
-                    priority = "extra-high",
-                    width = 269,
-                    height = 221,
-                    shift = util.by_pixel(-1.25, 5.25),
-                    scale = 0.5,
-                },
-                -- Shadow
-                {
-                    filename = "__base__/graphics/entity/boiler/boiler-N-shadow.png",
-                    priority = "extra-high",
-                    width = 274,
-                    height = 164,
-                    scale = 0.5,
-                    shift = util.by_pixel(20.5, 9),
-                    draw_as_shadow = true,
-                },
+    entity.pictures.north.structure = {
+        layers = {
+            -- Base
+            {
+                filename = "__base__/graphics/entity/heat-exchanger/heatex-N-idle.png",
+                priority = "extra-high",
+                width = 269,
+                height = 221,
+                shift = util.by_pixel(-1.25, 5.25),
+                scale = 0.5,
+            },
+            -- Mask
+            {
+                filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heatex-N-idle-mask.png",
+                priority = "extra-high",
+                width = 269,
+                height = 221,
+                shift = util.by_pixel(-1.25, 5.25),
+                tint = inputs.tint,
+                scale = 0.5,
+            },
+            -- Highlights
+            {
+                filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heatex-N-idle-highlights.png",
+                priority = "extra-high",
+                width = 269,
+                height = 221,
+                shift = util.by_pixel(-1.25, 5.25),
+                blend_mode = reskins.lib.settings.blend_mode,     -- "additive",
+                scale = 0.5,
+            },
+            -- Pipes
+            {
+                filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heat-pipes/" .. mapping.material .. "/heatex-N-idle.png",
+                priority = "extra-high",
+                width = 269,
+                height = 221,
+                shift = util.by_pixel(-1.25, 5.25),
+                scale = 0.5,
+            },
+            -- Shadow
+            {
+                filename = "__base__/graphics/entity/boiler/boiler-N-shadow.png",
+                priority = "extra-high",
+                width = 274,
+                height = 164,
+                scale = 0.5,
+                shift = util.by_pixel(20.5, 9),
+                draw_as_shadow = true,
             },
         },
-        east = {
-            layers = {
-                -- Base
-                {
-                    filename = "__base__/graphics/entity/heat-exchanger/heatex-E-idle.png",
-                    priority = "extra-high",
-                    width = 211,
-                    height = 301,
-                    shift = util.by_pixel(-1.75, 1.25),
-                    scale = 0.5,
-                },
-                -- Mask
-                {
-                    filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heatex-E-idle-mask.png",
-                    priority = "extra-high",
-                    width = 211,
-                    height = 301,
-                    shift = util.by_pixel(-1.75, 1.25),
-                    tint = inputs.tint,
-                    scale = 0.5,
-                },
-                -- Highlights
-                {
-                    filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heatex-E-idle-highlights.png",
-                    priority = "extra-high",
-                    width = 211,
-                    height = 301,
-                    shift = util.by_pixel(-1.75, 1.25),
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5,
-                },
-                -- Pipes
-                {
-                    filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heat-pipes/" .. mapping.material .. "/heatex-E-idle.png",
-                    priority = "extra-high",
-                    width = 211,
-                    height = 301,
-                    shift = util.by_pixel(-1.75, 1.25),
-                    scale = 0.5,
-                },
-                -- Shadow
-                {
-                    filename = "__base__/graphics/entity/boiler/boiler-E-shadow.png",
-                    priority = "extra-high",
-                    width = 184,
-                    height = 194,
-                    scale = 0.5,
-                    shift = util.by_pixel(30, 9.5),
-                    draw_as_shadow = true,
-                },
+    }
+
+    entity.pictures.east.structure = {
+        layers = {
+            -- Base
+            {
+                filename = "__base__/graphics/entity/heat-exchanger/heatex-E-idle.png",
+                priority = "extra-high",
+                width = 211,
+                height = 301,
+                shift = util.by_pixel(-1.75, 1.25),
+                scale = 0.5,
+            },
+            -- Mask
+            {
+                filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heatex-E-idle-mask.png",
+                priority = "extra-high",
+                width = 211,
+                height = 301,
+                shift = util.by_pixel(-1.75, 1.25),
+                tint = inputs.tint,
+                scale = 0.5,
+            },
+            -- Highlights
+            {
+                filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heatex-E-idle-highlights.png",
+                priority = "extra-high",
+                width = 211,
+                height = 301,
+                shift = util.by_pixel(-1.75, 1.25),
+                blend_mode = reskins.lib.settings.blend_mode,     -- "additive",
+                scale = 0.5,
+            },
+            -- Pipes
+            {
+                filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heat-pipes/" .. mapping.material .. "/heatex-E-idle.png",
+                priority = "extra-high",
+                width = 211,
+                height = 301,
+                shift = util.by_pixel(-1.75, 1.25),
+                scale = 0.5,
+            },
+            -- Shadow
+            {
+                filename = "__base__/graphics/entity/boiler/boiler-E-shadow.png",
+                priority = "extra-high",
+                width = 184,
+                height = 194,
+                scale = 0.5,
+                shift = util.by_pixel(30, 9.5),
+                draw_as_shadow = true,
             },
         },
-        south = {
-            layers = {
-                -- Base
-                {
-                    filename = "__base__/graphics/entity/heat-exchanger/heatex-S-idle.png",
-                    priority = "extra-high",
-                    width = 260,
-                    height = 201,
-                    shift = util.by_pixel(4, 10.75),
-                    scale = 0.5,
-                },
-                -- Mask
-                {
-                    filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heatex-S-idle-mask.png",
-                    priority = "extra-high",
-                    width = 260,
-                    height = 201,
-                    shift = util.by_pixel(4, 10.75),
-                    tint = inputs.tint,
-                    scale = 0.5,
-                },
-                -- Highlights
-                {
-                    filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heatex-S-idle-highlights.png",
-                    priority = "extra-high",
-                    width = 260,
-                    height = 201,
-                    shift = util.by_pixel(4, 10.75),
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5,
-                },
-                -- Pipes
-                {
-                    filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heat-pipes/" .. mapping.material .. "/heatex-S-idle.png",
-                    priority = "extra-high",
-                    width = 260,
-                    height = 201,
-                    shift = util.by_pixel(4, 10.75),
-                    scale = 0.5,
-                },
-                -- Shadow
-                {
-                    filename = "__base__/graphics/entity/boiler/boiler-S-shadow.png",
-                    priority = "extra-high",
-                    width = 311,
-                    height = 131,
-                    scale = 0.5,
-                    shift = util.by_pixel(29.75, 15.75),
-                    draw_as_shadow = true,
-                },
+    }
+
+    entity.pictures.south.structure = {
+        layers = {
+            -- Base
+            {
+                filename = "__base__/graphics/entity/heat-exchanger/heatex-S-idle.png",
+                priority = "extra-high",
+                width = 260,
+                height = 201,
+                shift = util.by_pixel(4, 10.75),
+                scale = 0.5,
+            },
+            -- Mask
+            {
+                filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heatex-S-idle-mask.png",
+                priority = "extra-high",
+                width = 260,
+                height = 201,
+                shift = util.by_pixel(4, 10.75),
+                tint = inputs.tint,
+                scale = 0.5,
+            },
+            -- Highlights
+            {
+                filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heatex-S-idle-highlights.png",
+                priority = "extra-high",
+                width = 260,
+                height = 201,
+                shift = util.by_pixel(4, 10.75),
+                blend_mode = reskins.lib.settings.blend_mode,     -- "additive",
+                scale = 0.5,
+            },
+            -- Pipes
+            {
+                filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heat-pipes/" .. mapping.material .. "/heatex-S-idle.png",
+                priority = "extra-high",
+                width = 260,
+                height = 201,
+                shift = util.by_pixel(4, 10.75),
+                scale = 0.5,
+            },
+            -- Shadow
+            {
+                filename = "__base__/graphics/entity/boiler/boiler-S-shadow.png",
+                priority = "extra-high",
+                width = 311,
+                height = 131,
+                scale = 0.5,
+                shift = util.by_pixel(29.75, 15.75),
+                draw_as_shadow = true,
             },
         },
-        west = {
-            layers = {
-                -- Base
-                {
-                    filename = "__base__/graphics/entity/heat-exchanger/heatex-W-idle.png",
-                    priority = "extra-high",
-                    width = 196,
-                    height = 273,
-                    shift = util.by_pixel(1.5, 7.75),
-                    scale = 0.5,
-                },
-                -- Mask
-                {
-                    filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heatex-W-idle-mask.png",
-                    priority = "extra-high",
-                    width = 196,
-                    height = 273,
-                    shift = util.by_pixel(1.5, 7.75),
-                    tint = inputs.tint,
-                    scale = 0.5,
-                },
-                -- Highlights
-                {
-                    filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heatex-W-idle-highlights.png",
-                    priority = "extra-high",
-                    width = 196,
-                    height = 273,
-                    shift = util.by_pixel(1.5, 7.75),
-                    blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                    scale = 0.5,
-                },
-                -- Pipes
-                {
-                    filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heat-pipes/" .. mapping.material .. "/heatex-W-idle.png",
-                    priority = "extra-high",
-                    width = 196,
-                    height = 273,
-                    shift = util.by_pixel(1.5, 7.75),
-                    scale = 0.5,
-                },
-                -- Shadow
-                {
-                    filename = "__base__/graphics/entity/boiler/boiler-W-shadow.png",
-                    priority = "extra-high",
-                    width = 206,
-                    height = 218,
-                    scale = 0.5,
-                    shift = util.by_pixel(19.5, 6.5),
-                    draw_as_shadow = true,
-                },
+    }
+
+    entity.pictures.west.structure = {
+        layers = {
+            -- Base
+            {
+                filename = "__base__/graphics/entity/heat-exchanger/heatex-W-idle.png",
+                priority = "extra-high",
+                width = 196,
+                height = 273,
+                shift = util.by_pixel(1.5, 7.75),
+                scale = 0.5,
+            },
+            -- Mask
+            {
+                filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heatex-W-idle-mask.png",
+                priority = "extra-high",
+                width = 196,
+                height = 273,
+                shift = util.by_pixel(1.5, 7.75),
+                tint = inputs.tint,
+                scale = 0.5,
+            },
+            -- Highlights
+            {
+                filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heatex-W-idle-highlights.png",
+                priority = "extra-high",
+                width = 196,
+                height = 273,
+                shift = util.by_pixel(1.5, 7.75),
+                blend_mode = reskins.lib.settings.blend_mode,     -- "additive",
+                scale = 0.5,
+            },
+            -- Pipes
+            {
+                filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heat-pipes/" .. mapping.material .. "/heatex-W-idle.png",
+                priority = "extra-high",
+                width = 196,
+                height = 273,
+                shift = util.by_pixel(1.5, 7.75),
+                scale = 0.5,
+            },
+            -- Shadow
+            {
+                filename = "__base__/graphics/entity/boiler/boiler-W-shadow.png",
+                priority = "extra-high",
+                width = 206,
+                height = 218,
+                scale = 0.5,
+                shift = util.by_pixel(19.5, 6.5),
+                draw_as_shadow = true,
             },
         },
     }

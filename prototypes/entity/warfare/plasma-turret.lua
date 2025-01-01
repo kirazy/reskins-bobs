@@ -167,38 +167,42 @@ for name, map in pairs(tier_map) do
 
     -- Reskin entity
     entity.corpse = "big-remnants"
-    entity.base_picture_render_layer = "lower-object-above-shadow"
-    entity.base_picture = {
-        layers = {
-            -- Base
-            {
-                filename = "__reskins-bobs__/graphics/entity/warfare/plasma-turret/plasma-turret-base.png",
-                priority = "high",
-                width = 208,
-                height = 178,
-                shift = util.by_pixel(0, 0),
-                scale = 0.5,
+    entity.graphics_set = {
+        base_visualisation = {
+            animation = {
+                layers = {
+                    -- Base
+                    {
+                        filename = "__reskins-bobs__/graphics/entity/warfare/plasma-turret/plasma-turret-base.png",
+                        priority = "high",
+                        width = 208,
+                        height = 178,
+                        shift = util.by_pixel(0, 0),
+                        scale = 0.5,
+                    },
+                    -- Runtime Mask
+                    {
+                        filename = "__reskins-bobs__/graphics/entity/warfare/plasma-turret/plasma-turret-runtime-mask.png",
+                        priority = "high",
+                        width = 208,
+                        height = 178,
+                        shift = util.by_pixel(0, 0),
+                        apply_runtime_tint = true,
+                        scale = 0.5,
+                    },
+                    -- Shadow
+                    {
+                        filename = "__reskins-bobs__/graphics/entity/warfare/plasma-turret/plasma-turret-base-shadow.png",
+                        priority = "high",
+                        width = 244,
+                        height = 150,
+                        shift = util.by_pixel(18.5, 11),
+                        draw_as_shadow = true,
+                        scale = 0.5,
+                    },
+                },
             },
-            -- Runtime Mask
-            {
-                filename = "__reskins-bobs__/graphics/entity/warfare/plasma-turret/plasma-turret-runtime-mask.png",
-                priority = "high",
-                width = 208,
-                height = 178,
-                shift = util.by_pixel(0, 0),
-                apply_runtime_tint = true,
-                scale = 0.5,
-            },
-            -- Shadow
-            {
-                filename = "__reskins-bobs__/graphics/entity/warfare/plasma-turret/plasma-turret-base-shadow.png",
-                priority = "high",
-                width = 244,
-                height = 150,
-                shift = util.by_pixel(18.5, 11),
-                draw_as_shadow = true,
-                scale = 0.5,
-            },
+            render_layer = "lower-object-above-shadow",
         },
     }
 

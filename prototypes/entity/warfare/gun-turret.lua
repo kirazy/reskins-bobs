@@ -392,31 +392,35 @@ for name, tier in pairs(tier_map) do
             turret_extension_shadow(inputs, { run_mode = "backward" }),
         },
     }
-    entity.base_picture = {
-        layers = {
-            {
-                filename = "__base__/graphics/entity/gun-turret/gun-turret-base.png",
-                priority = "high",
-                width = 150,
-                height = 118,
-                axially_symmetrical = false,
-                direction_count = 1,
-                frame_count = 1,
-                shift = util.by_pixel(0.5, -1),
-                scale = 0.5,
-            },
-            {
-                filename = "__base__/graphics/entity/gun-turret/gun-turret-base-mask.png",
-                inputs = { "mask", "low-object" },
-                line_length = 1,
-                width = 122,
-                height = 102,
-                axially_symmetrical = false,
-                direction_count = 1,
-                frame_count = 1,
-                shift = util.by_pixel(0, -4.5),
-                apply_runtime_tint = true,
-                scale = 0.5,
+    entity.graphics_set = {
+        base_visualisation = {
+            animation = {
+                layers = {
+                    {
+                        filename = "__base__/graphics/entity/gun-turret/gun-turret-base.png",
+                        priority = "high",
+                        width = 150,
+                        height = 118,
+                        axially_symmetrical = false,
+                        direction_count = 1,
+                        frame_count = 1,
+                        shift = util.by_pixel(0.5, -1),
+                        scale = 0.5,
+                    },
+                    {
+                        filename = "__base__/graphics/entity/gun-turret/gun-turret-base-mask.png",
+                        inputs = { "mask", "low-object" },
+                        line_length = 1,
+                        width = 122,
+                        height = 102,
+                        axially_symmetrical = false,
+                        direction_count = 1,
+                        frame_count = 1,
+                        shift = util.by_pixel(0, -4.5),
+                        apply_runtime_tint = true,
+                        scale = 0.5,
+                    },
+                },
             },
         },
     }

@@ -258,54 +258,58 @@ for name, map in pairs(tier_map) do
         },
     }
 
-    entity.base_picture = {
-        layers = {
-            -- Base
-            {
-                filename = "__base__/graphics/entity/laser-turret/laser-turret-base.png",
-                priority = "high",
-                width = 138,
-                height = 104,
-                direction_count = 1,
-                frame_count = 1,
-                shift = util.by_pixel(-0.5, 2),
-                scale = 0.5,
-            },
-            -- Mask
-            {
-                filename = "__reskins-bobs__/graphics/entity/warfare/laser-turret/laser-turret-base-mask.png",
-                priority = "high",
-                width = 138,
-                height = 104,
-                direction_count = 1,
-                frame_count = 1,
-                shift = util.by_pixel(-0.5, 2),
-                tint = inputs.tint,
-                scale = 0.5,
-            },
-            -- Highlights
-            {
-                filename = "__reskins-bobs__/graphics/entity/warfare/laser-turret/laser-turret-base-highlights.png",
-                priority = "high",
-                width = 138,
-                height = 104,
-                direction_count = 1,
-                frame_count = 1,
-                shift = util.by_pixel(-0.5, 2),
-                blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                scale = 0.5,
-            },
-            -- Shadow
-            {
-                filename = "__base__/graphics/entity/laser-turret/laser-turret-base-shadow.png",
-                line_length = 1,
-                width = 132,
-                height = 82,
-                draw_as_shadow = true,
-                direction_count = 1,
-                frame_count = 1,
-                shift = util.by_pixel(6, 3),
-                scale = 0.5,
+    entity.graphics_set = {
+        base_visualisation = {
+            animation = {
+                layers = {
+                    -- Base
+                    {
+                        filename = "__base__/graphics/entity/laser-turret/laser-turret-base.png",
+                        priority = "high",
+                        width = 138,
+                        height = 104,
+                        direction_count = 1,
+                        frame_count = 1,
+                        shift = util.by_pixel(-0.5, 2),
+                        scale = 0.5,
+                    },
+                    -- Mask
+                    {
+                        filename = "__reskins-bobs__/graphics/entity/warfare/laser-turret/laser-turret-base-mask.png",
+                        priority = "high",
+                        width = 138,
+                        height = 104,
+                        direction_count = 1,
+                        frame_count = 1,
+                        shift = util.by_pixel(-0.5, 2),
+                        tint = inputs.tint,
+                        scale = 0.5,
+                    },
+                    -- Highlights
+                    {
+                        filename = "__reskins-bobs__/graphics/entity/warfare/laser-turret/laser-turret-base-highlights.png",
+                        priority = "high",
+                        width = 138,
+                        height = 104,
+                        direction_count = 1,
+                        frame_count = 1,
+                        shift = util.by_pixel(-0.5, 2),
+                        blend_mode = reskins.lib.settings.blend_mode, -- "additive",
+                        scale = 0.5,
+                    },
+                    -- Shadow
+                    {
+                        filename = "__base__/graphics/entity/laser-turret/laser-turret-base-shadow.png",
+                        line_length = 1,
+                        width = 132,
+                        height = 82,
+                        draw_as_shadow = true,
+                        direction_count = 1,
+                        frame_count = 1,
+                        shift = util.by_pixel(6, 3),
+                        scale = 0.5,
+                    },
+                },
             },
         },
     }
