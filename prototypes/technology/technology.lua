@@ -19,7 +19,6 @@ local inputs = {
 local technologies = {
     -- Steam power-related unlocks
     ["basic-automation"] = { group = "assembly", icon_name = "automation", tint = util.color("262626") },
-    ["steam-power"] = { flat_icon = true }, -- unlocks boiler/steam drill/inserter/pump, conditional on steam setting, currently a steam cloud
     -- ["electricity"] = {}, -- inserter/miner/radar/pole/fluid burner gen
 
     -- Labs
