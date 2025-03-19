@@ -19,12 +19,12 @@ local inputs = {
 reskins.lib.set_inputs_defaults(inputs)
 
 local batteries = {
-    ["vehicle-battery-equipment-1"] = { tier = 0 },
-    ["vehicle-battery-equipment-2"] = { tier = 1 },
-    ["vehicle-battery-equipment-3"] = { tier = 2 },
-    ["vehicle-battery-equipment-4"] = { tier = 3 },
-    ["vehicle-battery-equipment-5"] = { tier = 4 },
-    ["vehicle-battery-equipment-6"] = { tier = 5 },
+    ["bob-vehicle-battery-equipment-1"] = { tier = 0 },
+    ["bob-vehicle-battery-equipment-2"] = { tier = 1 },
+    ["bob-vehicle-battery-equipment-3"] = { tier = 2 },
+    ["bob-vehicle-battery-equipment-4"] = { tier = 3 },
+    ["bob-vehicle-battery-equipment-5"] = { tier = 4 },
+    ["bob-vehicle-battery-equipment-6"] = { tier = 5 },
 }
 
 -- Reskin equipment

@@ -18,25 +18,25 @@ local inputs = {
 ---@type CreateIconsFromListTable
 local technologies = {
     -- Roboport modular equipment
-    ["personal-roboport-modular-equipment-1"] = {
+    ["bob-personal-roboport-modular-equipment-1"] = {
         icon_name = "modular-equipment",
         icon_base = "modular-equipment-1",
         tier = 1,
         prog_tier = 2,
     },
-    ["personal-roboport-modular-equipment-2"] = {
+    ["bob-personal-roboport-modular-equipment-2"] = {
         icon_name = "modular-equipment",
         icon_base = "modular-equipment-2",
         tier = 2,
         prog_tier = 3,
     },
-    ["personal-roboport-modular-equipment-3"] = {
+    ["bob-personal-roboport-modular-equipment-3"] = {
         icon_name = "modular-equipment",
         icon_base = "modular-equipment-3",
         tier = 3,
         prog_tier = 4,
     },
-    ["personal-roboport-modular-equipment-4"] = {
+    ["bob-personal-roboport-modular-equipment-4"] = {
         icon_name = "modular-equipment",
         icon_base = "modular-equipment-4",
         tier = 4,
@@ -49,17 +49,17 @@ local technologies = {
         tier = 1,
         prog_tier = 2,
     },
-    ["solar-panel-equipment-2"] = {
+    ["bob-solar-panel-equipment-2"] = {
         icon_name = "solar-panel",
         tier = 2,
         prog_tier = 3,
     },
-    ["solar-panel-equipment-3"] = {
+    ["bob-solar-panel-equipment-3"] = {
         icon_name = "solar-panel",
         tier = 3,
         prog_tier = 4,
     },
-    ["solar-panel-equipment-4"] = {
+    ["bob-solar-panel-equipment-4"] = {
         icon_name = "solar-panel",
         tier = 4,
         prog_tier = 5,
@@ -122,45 +122,45 @@ local technologies = {
         icon_name = "laser-defense",
         tier = 0,
     },
-    ["personal-laser-defense-equipment-2"] = {
+    ["bob-personal-laser-defense-equipment-2"] = {
         icon_name = "laser-defense",
         tier = 1,
     },
-    ["personal-laser-defense-equipment-3"] = {
+    ["bob-personal-laser-defense-equipment-3"] = {
         icon_name = "laser-defense",
         tier = 2,
     },
-    ["personal-laser-defense-equipment-4"] = {
+    ["bob-personal-laser-defense-equipment-4"] = {
         icon_name = "laser-defense",
         tier = 3,
     },
-    ["personal-laser-defense-equipment-5"] = {
+    ["bob-personal-laser-defense-equipment-5"] = {
         icon_name = "laser-defense",
         tier = 4,
     },
-    ["personal-laser-defense-equipment-6"] = {
+    ["bob-personal-laser-defense-equipment-6"] = {
         icon_name = "laser-defense",
         tier = 5,
     },
 
     -- Fusion Reactors
-    ["fusion-reactor-equipment"] = {
-        icon_name = "fusion-reactor",
+    ["fission-reactor-equipment"] = {
+        icon_name = "fission-reactor",
         tier = 1,
         prog_tier = 2,
     },
-    ["fusion-reactor-equipment-2"] = {
-        icon_name = "fusion-reactor",
+    ["bob-fission-reactor-equipment-2"] = {
+        icon_name = "fission-reactor",
         tier = 2,
         prog_tier = 3,
     },
-    ["fusion-reactor-equipment-3"] = {
-        icon_name = "fusion-reactor",
+    ["bob-fission-reactor-equipment-3"] = {
+        icon_name = "fission-reactor",
         tier = 3,
         prog_tier = 4,
     },
-    ["fusion-reactor-equipment-4"] = {
-        icon_name = "fusion-reactor",
+    ["bob-fission-reactor-equipment-4"] = {
+        icon_name = "fission-reactor",
         tier = 4,
         prog_tier = 5,
     },
@@ -171,12 +171,12 @@ local technologies = {
         tier = 1,
         prog_tier = 2,
     },
-    ["night-vision-equipment-2"] = {
+    ["bob-night-vision-equipment-2"] = {
         icon_name = "night-vision",
         tier = 2,
         prog_tier = 3,
     },
-    ["night-vision-equipment-3"] = {
+    ["bob-night-vision-equipment-3"] = {
         icon_name = "night-vision",
         tier = 3,
         prog_tier = 4,
@@ -188,12 +188,12 @@ local technologies = {
         tier = 1,
         prog_tier = 2,
     },
-    ["exoskeleton-equipment-2"] = {
+    ["bob-exoskeleton-equipment-2"] = {
         icon_name = "exoskeleton",
         tier = 2,
         prog_tier = 3,
     },
-    ["exoskeleton-equipment-3"] = {
+    ["bob-exoskeleton-equipment-3"] = {
         icon_name = "exoskeleton",
         tier = 3,
         prog_tier = 4,
@@ -210,12 +210,12 @@ local technologies = {
         tier = 2,
         prog_tier = 3,
     },
-    ["personal-roboport-mk3-equipment"] = {
+    ["bob-personal-roboport-mk3-equipment"] = {
         icon_name = "personal-roboport-2",
         tier = 3,
         prog_tier = 4,
     },
-    ["personal-roboport-mk4-equipment"] = {
+    ["bob-personal-roboport-mk4-equipment"] = {
         icon_name = "personal-roboport-2",
         tier = 4,
         prog_tier = 5,

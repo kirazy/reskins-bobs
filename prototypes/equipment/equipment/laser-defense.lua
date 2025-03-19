@@ -19,11 +19,11 @@ reskins.lib.set_inputs_defaults(inputs)
 
 local laser_defense = {
     ["personal-laser-defense-equipment"] = { tier = 0 },
-    ["personal-laser-defense-equipment-2"] = { tier = 1 },
-    ["personal-laser-defense-equipment-3"] = { tier = 2 },
-    ["personal-laser-defense-equipment-4"] = { tier = 3 },
-    ["personal-laser-defense-equipment-5"] = { tier = 4 },
-    ["personal-laser-defense-equipment-6"] = { tier = 5 },
+    ["bob-personal-laser-defense-equipment-2"] = { tier = 1 },
+    ["bob-personal-laser-defense-equipment-3"] = { tier = 2 },
+    ["bob-personal-laser-defense-equipment-4"] = { tier = 3 },
+    ["bob-personal-laser-defense-equipment-5"] = { tier = 4 },
+    ["bob-personal-laser-defense-equipment-6"] = { tier = 5 },
 }
 
 -- Reskin equipment

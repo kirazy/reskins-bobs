@@ -26,7 +26,7 @@ local equipment_list = {
 -- Reskin equipment
 for _, icon_name in pairs(equipment_list) do
     -- Fetch equipment
-    local name = icon_name .. "-equipment"
+    local name = 'bob-' .. icon_name .. "-equipment"
     local equipment = data.raw["movement-bonus-equipment"][name]
 
     -- Check if entity exists, if not, skip this iteration

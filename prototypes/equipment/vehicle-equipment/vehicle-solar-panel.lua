@@ -19,12 +19,11 @@ local inputs = {
 reskins.lib.set_inputs_defaults(inputs)
 
 local solar_panels = {
-    ["vehicle-solar-panel-equipment-1"] = { tier = 0 },
-    ["vehicle-solar-panel-equipment-2"] = { tier = 1 },
-    ["vehicle-solar-panel-equipment-3"] = { tier = 2 },
-    ["vehicle-solar-panel-equipment-4"] = { tier = 3 },
-    ["vehicle-solar-panel-equipment-5"] = { tier = 4 },
-    ["vehicle-solar-panel-equipment-6"] = { tier = 5 },
+    ["bob-vehicle-solar-panel-equipment-1"] = { tier = 0 },
+    ["bob-vehicle-solar-panel-equipment-2"] = { tier = 1 },
+    ["bob-vehicle-solar-panel-equipment-3"] = { tier = 2 },
+    ["bob-vehicle-solar-panel-equipment-4"] = { tier = 3 },
+    ["bob-vehicle-solar-panel-equipment-5"] = { tier = 4 },
 }
 
 -- Reskin equipment

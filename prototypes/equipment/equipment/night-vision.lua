@@ -19,8 +19,8 @@ reskins.lib.set_inputs_defaults(inputs)
 
 local night_vision = {
     ["night-vision-equipment"] = { tier = 1, prog_tier = 2 },
-    ["night-vision-equipment-2"] = { tier = 2, prog_tier = 3 },
-    ["night-vision-equipment-3"] = { tier = 3, prog_tier = 4 },
+    ["bob-night-vision-equipment-2"] = { tier = 2, prog_tier = 3 },
+    ["bob-night-vision-equipment-3"] = { tier = 3, prog_tier = 4 },
 }
 
 -- Reskin equipment

@@ -34,7 +34,7 @@ local properties = {
 for _, category in pairs(categories) do
     for index, map in pairs(properties) do
         -- Fetch equipment
-        local name = "vehicle-roboport-" .. category .. "-equipment" .. map.suffix
+        local name = "bob-vehicle-roboport-" .. category .. "-equipment" .. map.suffix
         local equipment = data.raw["roboport-equipment"][name]
 
         -- Check if entity exists, if not, skip this iteration
