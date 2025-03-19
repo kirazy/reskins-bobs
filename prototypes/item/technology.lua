@@ -31,11 +31,6 @@ if reskins.lib.settings.get_value("bobmods-tech-colorupdate") == true
     items["utility-science-pack"] = { tier = 5 }
 end
 
--- Burner phase is enabled
-if reskins.lib.settings.get_value("bobmods-burnerphase") == true then
-    items["steam-science-pack"] = { subgroup = "science-pack", flat_icon = true }
-end
-
 -- Alien science packs
 if reskins.lib.settings.get_value("bobmods-enemies-enablenewartifacts") == true then
     items["bob-alien-science-pack"] = { subgroup = "alien-science-pack", flat_icon = true }

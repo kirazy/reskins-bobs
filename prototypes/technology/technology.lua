@@ -22,12 +22,12 @@ local technologies = {
     -- ["electricity"] = {}, -- inserter/miner/radar/pole/fluid burner gen
 
     -- Labs
-    ["lab"] = { flat_icon = true },             -- lab 1
-    ["advanced-research"] = { flat_icon = true }, -- lab 2
-    ["alien-research"] = { flat_icon = true },
+    ["bob-lab"] = { flat_icon = true },             -- lab 1
+    ["bob-advanced-research"] = { flat_icon = true }, -- lab 2
+    ["bob-alien-research"] = { flat_icon = true },
 
     -- TECHNOLOGY EFFECTS
-    ["bob-infinite-worker-robots-storage-1"] = { technology_icon_filename = "__base__/graphics/technology/worker-robots-storage.png", technology_icon_extras = { reskins.lib.return_technology_effect_icon("capacity") }, technology_icon_size = 256, flat_icon = true },
+    ["bob-infinite-worker-robots-storage-4"] = { technology_icon_filename = "__base__/graphics/technology/worker-robots-storage.png", technology_icon_extras = { reskins.lib.return_technology_effect_icon("capacity") }, technology_icon_size = 256, flat_icon = true },
 }
 
 if reskins.lib.version.is_same_or_newer(mods["bobassembly"], "1.3.0") then
@@ -57,7 +57,7 @@ local technology_infer_icon_list = {
     "worker-robots-storage-1",
     "worker-robots-storage-2",
     "worker-robots-storage-3",
-    "bob-infinite-worker-robots-storage-1",
+    "bob-infinite-worker-robots-storage-4",
     "worker-robots-speed-1",
     "worker-robots-speed-2",
     "worker-robots-speed-3",
