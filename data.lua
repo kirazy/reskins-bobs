@@ -17,6 +17,7 @@ require("prototypes.entity.assembly.centrifuge")
 require("prototypes.entity.assembly.distillery")
 require("prototypes.entity.assembly.electrolyser")
 require("prototypes.entity.assembly.electric-furnace")
+require("prototypes.entity.assembly.oil-refinery")
 require("prototypes.entity.assembly.steel-furnace")
 require("prototypes.entity.assembly.stone-furnace")
 

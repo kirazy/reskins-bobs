@@ -12,24 +12,24 @@ if reskins.compatibility then reskins.compatibility.triggers.minimachines.furnac
 local electric_furnace_map = {
     -- Standard furnaces
     ["electric-furnace"] = { icon_name = "electric-furnace", furnace = "standard", tier = 3, type = "furnace", tint = reskins.bobs.furnace_tint_index.standard },
-    ["electric-furnace-2"] = { icon_name = "electric-furnace", furnace = "standard", tier = 4, type = "furnace" },
-    ["electric-furnace-3"] = { icon_name = "electric-furnace", furnace = "standard", tier = 5, type = "furnace" },
+    ["bob-electric-furnace-2"] = { icon_name = "electric-furnace", furnace = "standard", tier = 4, type = "furnace" },
+    ["bob-electric-furnace-3"] = { icon_name = "electric-furnace", furnace = "standard", tier = 5, type = "furnace" },
     -- Mixing furnace
-    ["electric-mixing-furnace"] = { furnace = "mixing", tier = 3, type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.mixing },
+    ["bob-electric-mixing-furnace"] = { furnace = "mixing", tier = 3, type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.mixing },
     -- Chemical furnace
-    ["electric-chemical-furnace"] = { furnace = "chemical", tier = 3, type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.chemical, has_fluids = true },
+    ["bob-electric-chemical-furnace"] = { furnace = "chemical", tier = 3, type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.chemical, has_fluids = true },
     -- Chemical mixing furnaces
-    ["electric-chemical-mixing-furnace"] = { icon_name = "electric-chemical-mixing-furnace", furnace = "chemical-mixing", tier = 4, type = "assembling-machine", has_fluids = true },
-    ["electric-chemical-mixing-furnace-2"] = { icon_name = "electric-chemical-mixing-furnace", furnace = "chemical-mixing", tier = 5, type = "assembling-machine", has_fluids = true },
+    ["bob-electric-chemical-mixing-furnace"] = { icon_name = "bob-electric-chemical-mixing-furnace", furnace = "chemical-mixing", tier = 4, type = "assembling-machine", has_fluids = true },
+    ["bob-electric-chemical-mixing-furnace-2"] = { icon_name = "bob-electric-chemical-mixing-furnace", furnace = "chemical-mixing", tier = 5, type = "assembling-machine", has_fluids = true },
 }
 
 -- Angel's Compatibility
 if mods["angelssmelting"] then
     -- Use metal-mixing sprites to be consistent with new "Filtering Furnace" progression
-    electric_furnace_map["electric-chemical-mixing-furnace"].furnace = "mixing"
-    electric_furnace_map["electric-chemical-mixing-furnace"].icon_name = "electric-mixing-furnace"
-    electric_furnace_map["electric-chemical-mixing-furnace-2"].furnace = "mixing"
-    electric_furnace_map["electric-chemical-mixing-furnace-2"].icon_name = "electric-mixing-furnace"
+    electric_furnace_map["bob-electric-chemical-mixing-furnace"].furnace = "mixing"
+    electric_furnace_map["bob-electric-chemical-mixing-furnace"].icon_name = "electric-mixing-furnace"
+    electric_furnace_map["bob-electric-chemical-mixing-furnace-2"].furnace = "mixing"
+    electric_furnace_map["bob-electric-chemical-mixing-furnace-2"].icon_name = "electric-mixing-furnace"
 end
 
 local function furnace_heater_animation()

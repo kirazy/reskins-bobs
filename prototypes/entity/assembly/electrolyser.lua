@@ -21,11 +21,11 @@ local inputs = {
 }
 
 local tier_map = {
-    ["electrolyser"] = { 1, 1 },
-    ["electrolyser-2"] = { 2, 2 },
-    ["electrolyser-3"] = { 3, 3 },
-    ["electrolyser-4"] = { 4, 3 },
-    ["electrolyser-5"] = { 5, 5 },
+    ["bob-electrolyser"] = { 1, 1 },
+    ["bob-electrolyser-2"] = { 2, 2 },
+    ["bob-electrolyser-3"] = { 3, 3 },
+    ["bob-electrolyser-4"] = { 4, 3 },
+    ["bob-electrolyser-5"] = { 5, 5 },
 }
 
 -- Reskin entities, create and assign extra details

@@ -9,15 +9,15 @@ if not (reskins.bobs and (reskins.bobs.triggers.assembly.entities or reskins.bob
 local steel_furnace_map = {
     -- Standard furnaces
     ["steel-furnace"] = { type = "furnace", tint = reskins.bobs.furnace_tint_index.standard },
-    ["fluid-furnace"] = { type = "furnace", tint = reskins.bobs.furnace_tint_index.standard, has_fluids = true, is_fluid_burning = true },
+    ["bob-fluid-furnace"] = { type = "furnace", tint = reskins.bobs.furnace_tint_index.standard, has_fluids = true, is_fluid_burning = true },
 
     -- Mixing furnaces
-    ["steel-mixing-furnace"] = { type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.mixing },
-    ["fluid-mixing-furnace"] = { type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.mixing, has_fluids = true, is_fluid_burning = true },
+    ["bob-steel-mixing-furnace"] = { type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.mixing },
+    ["bob-fluid-mixing-furnace"] = { type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.mixing, has_fluids = true, is_fluid_burning = true },
 
     -- Chemical furnaces
-    ["steel-chemical-furnace"] = { type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.chemical, has_fluids = true, is_chemical = true },
-    ["fluid-chemical-furnace"] = { type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.chemical, has_fluids = true, is_fluid_burning = true, is_chemical = true },
+    ["bob-steel-chemical-furnace"] = { type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.chemical, has_fluids = true, is_chemical = true },
+    ["bob-fluid-chemical-furnace"] = { type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.chemical, has_fluids = true, is_fluid_burning = true, is_chemical = true },
 }
 
 local function steel_furnace_entity_skin(furnace, tint)
