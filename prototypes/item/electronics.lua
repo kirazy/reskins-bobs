@@ -36,7 +36,7 @@ if not mods["bobplates"] then
 
     -- Recipes
     intermediates["coal-cracking"] = { type = "recipe", group = "plates", subgroup = "recipes" }
-    intermediates["synthetic-wood"] = { type = "recipe", group = "plates", subgroup = "recipes" }
+    intermediates["bob-synthetic-wood"] = { type = "recipe", group = "plates", subgroup = "recipes" }
     intermediates["bob-resin-wood"] = { type = "recipe", group = "plates", subgroup = "recipes" }
     intermediates["bob-resin-oil"] = { type = "recipe", group = "plates", subgroup = "recipes" }
 end
