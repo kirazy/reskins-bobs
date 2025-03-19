@@ -27,17 +27,17 @@ local inserter_type = (mods["bobsinserters"] or reskins.lib.settings.get_value("
 local inserter_map = {
     -- Standard inserters
     ["inserter"] = { tier = 1, type = inserter_type, icon_name = inserter_icon_name },
-    ["red-inserter"] = { tier = 2, type = inserter_type, icon_name = inserter_icon_name },
+    ["bob-red-inserter"] = { tier = 2, type = inserter_type, icon_name = inserter_icon_name },
     ["long-handed-inserter"] = { tier = 2, type = inserter_type, icon_name = inserter_icon_name },
     ["fast-inserter"] = { tier = 3, type = inserter_type, icon_name = inserter_icon_name },
-    ["turbo-inserter"] = { tier = 4, type = inserter_type, icon_name = inserter_icon_name },
-    ["express-inserter"] = { tier = 5, type = inserter_type, icon_name = inserter_icon_name },
+    ["bob-turbo-inserter"] = { tier = 4, type = inserter_type, icon_name = inserter_icon_name },
+    ["bob-express-inserter"] = { tier = 5, type = inserter_type, icon_name = inserter_icon_name },
 
     -- Bulk inserters
-    ["red-bulk-inserter"] = { tier = 2, is_bulk_inserter = true, type = bulk_inserter_type, icon_name = bulk_inserter_icon_name },
+    ["bob-red-bulk-inserter"] = { tier = 2, is_bulk_inserter = true, type = bulk_inserter_type, icon_name = bulk_inserter_icon_name },
     ["bulk-inserter"] = { tier = 3, is_bulk_inserter = true, type = bulk_inserter_type, icon_name = bulk_inserter_icon_name },
-    ["turbo-bulk-inserter"] = { tier = 4, is_bulk_inserter = true, type = bulk_inserter_type, icon_name = bulk_inserter_icon_name },
-    ["express-bulk-inserter"] = { tier = 5, is_bulk_inserter = true, type = bulk_inserter_type, icon_name = bulk_inserter_icon_name },
+    ["bob-turbo-bulk-inserter"] = { tier = 4, is_bulk_inserter = true, type = bulk_inserter_type, icon_name = bulk_inserter_icon_name },
+    ["bob-express-bulk-inserter"] = { tier = 5, is_bulk_inserter = true, type = bulk_inserter_type, icon_name = bulk_inserter_icon_name },
 }
 
 -- Inserter Remnants

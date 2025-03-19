@@ -69,17 +69,17 @@ end
 
 ---@type { [PipeNamePrefix]: PipeReskinParams }
 local pipe_material_map = {
-    ["copper"] = { material_type = "copper", tier = 1, tint = util.color("d45539") },
-    ["stone"] = { material_type = "stone", tier = 1, tint = util.color("cfcfcf") },
-    ["bronze"] = { material_type = "bronze", tier = 2, tint = util.color("b09954") },
-    ["steel"] = { material_type = "steel", tier = 2, tint = util.color("877c76") },
-    ["plastic"] = { material_type = "plastic", tier = 3, tint = util.color("0078ff") },
-    ["brass"] = { material_type = "brass", tier = 3, tint = util.color("f9c854") },
-    ["titanium"] = { material_type = "titanium", tier = 4, tint = util.color("adadb2") },
-    ["ceramic"] = { material_type = "ceramic", tier = 4, tint = util.color("8f7967") },
-    ["tungsten"] = { material_type = "tungsten", tier = 4, tint = util.color("3b3b3b") },
-    ["nitinol"] = { material_type = "nitinol", tier = 5, tint = util.color("706f6b") },
-    ["copper-tungsten"] = { material_type = "copper-tungsten", tier = 5, tint = util.color("99593d") },
+    ["bob-copper"] = { material_type = "copper", tier = 1, tint = util.color("d45539") },
+    ["bob-stone"] = { material_type = "stone", tier = 1, tint = util.color("cfcfcf") },
+    ["bob-bronze"] = { material_type = "bronze", tier = 2, tint = util.color("b09954") },
+    ["bob-steel"] = { material_type = "steel", tier = 2, tint = util.color("877c76") },
+    ["bob-plastic"] = { material_type = "plastic", tier = 3, tint = util.color("0078ff") },
+    ["bob-brass"] = { material_type = "brass", tier = 3, tint = util.color("f9c854") },
+    ["bob-titanium"] = { material_type = "titanium", tier = 4, tint = util.color("adadb2") },
+    ["bob-ceramic"] = { material_type = "ceramic", tier = 4, tint = util.color("8f7967") },
+    ["bob-tungsten"] = { material_type = "tungsten", tier = 4, tint = util.color("3b3b3b") },
+    ["bob-nitinol"] = { material_type = "nitinol", tier = 5, tint = util.color("706f6b") },
+    ["bob-copper-tungsten"] = { material_type = "copper-tungsten", tier = 5, tint = util.color("99593d") },
 }
 
 -- One-off fixes of the standard pipes.
