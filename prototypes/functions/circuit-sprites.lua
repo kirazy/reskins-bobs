@@ -10,7 +10,7 @@ local circuits = {
     ["electronic-circuit"] = { tier = 1, prog_tier = 2 },
     ["advanced-circuit"] = { tier = 2, prog_tier = 3 },
     ["processing-unit"] = { tier = 3, prog_tier = 4 },
-    ["advanced-processing-unit"] = { tier = 4, prog_tier = 5 },
+    ["bob-advanced-processing-unit"] = { tier = 4, prog_tier = 5 },
 }
 
 for circuit, map in pairs(circuits) do
@@ -54,20 +54,20 @@ for circuit, map in pairs(circuits) do
             name = "reskins-bob-" .. circuit .. "-tier",
             layers = {
                 {
-                    filename = "__reskins-library__/graphics/icons/sprites/circuits/" .. circuit .. "/" .. circuit .. "-base.png",
+                    filename = "__reskins-bobs__/graphics/icons/sprites/circuits/tier/" .. circuit .. "/" .. circuit .. "-base.png",
                     size = 40,
                     mipmap_count = 2,
                     flags = { "gui-icon" },
                 },
                 {
-                    filename = "__reskins-library__/graphics/icons/sprites/circuits/" .. circuit .. "/" .. circuit .. "-mask.png",
+                    filename = "__reskins-bobs__/graphics/icons/sprites/circuits/tier/" .. circuit .. "/" .. circuit .. "-mask.png",
                     size = 40,
                     tint = tint,
                     mipmap_count = 2,
                     flags = { "gui-icon" },
                 },
                 {
-                    filename = "__reskins-library__/graphics/icons/sprites/circuits/" .. circuit .. "/" .. circuit .. "-highlights.png",
+                    filename = "__reskins-bobs__/graphics/icons/sprites/circuits/tier/" .. circuit .. "/" .. circuit .. "-highlights.png",
                     size = 40,
                     blend_mode = "additive",
                     mipmap_count = 2,

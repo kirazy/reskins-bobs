@@ -22,7 +22,9 @@ local technologies = {
 
     -- Advanced electronics
     -- ["advanced-electronics"] = {},
-    ["advanced-electronics-3"] = { technology_icon_filename = "__base__/graphics/technology/advanced-electronics-2.png" },
+
+    -- FIXME: The icon is gone in 2.0. Bundled from 1.1 for now.
+    ["bob-advanced-processing-unit"] = { },
 }
 
 reskins.internal.create_icons_from_list(technologies, inputs)
