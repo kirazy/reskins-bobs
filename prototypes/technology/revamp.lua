@@ -19,10 +19,10 @@ local inputs = {
 local technologies = {
     -- ["pumpjack"] = {group = "mining", tier = 1}, -- pumpjack 1
 
-    ["solid-fuel"] = {}, -- Solid fuels! all of the, black/white
+    -- ["solid-fuel"] = {}, -- Solid fuels! all of the, black/white
     -- ["hydrazine"] = {}, -- Hydrazine, enriched fuel block from hydrazine
     -- ["rtg"] = {}, -- radio thermoelec gen, fluids, powders
-    ["heat-shield"] = {}, -- also need to do item, heat-shield-tile
+    ["bob-heat-shield"] = {}, -- also need to do item, heat-shield-tile
 }
 
 reskins.internal.create_icons_from_list(technologies, inputs)
