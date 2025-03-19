@@ -19,7 +19,6 @@ local inputs = {
 local technologies = {
     -- Module unlocks
     ["modules"] = {},        -- Basics (Blue/Red/Yellow)
-    ["module-merging"] = {}, -- Pures/Raws (Cyan/Pink/Green)
 
     -- Beacons
     -- ["effect-transmission"] = {tier = 1, prog_tier = 3},   -- t3 beacon
@@ -29,7 +28,6 @@ local technologies = {
 
 if mods["CircuitProcessing"] then
     technologies["modules"] = nil
-    technologies["module-merging"] = nil
 end
 
 reskins.internal.create_icons_from_list(technologies, inputs)

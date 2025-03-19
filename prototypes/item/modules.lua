@@ -11,14 +11,12 @@ end
 if not (reskins.bobs and reskins.bobs.triggers.modules.items) then return end
 
 local modules_map = {
-    ["speed"] = { color = "blue", has_no_number_at_tier_one = true },
-    ["effectivity"] = { color = "yellow", has_no_number_at_tier_one = true },
-    ["productivity"] = { color = "red", has_no_number_at_tier_one = true },
+    ["speed"] = { color = "blue" },
+    ["efficiency"] = { color = "yellow" },
+    ["productivity"] = { color = "red" },
     ["pollution-create"] = { color = "brown" },
     ["pollution-clean"] = { color = "pine" },
-    ["raw-speed"] = { color = "cyan" },
     ["green"] = { color = "green" },
-    ["raw-productivity"] = { color = "pink" },
 }
 
 ---@type SetupStandardEntityInputs
@@ -31,12 +29,32 @@ local inputs = {
 
 reskins.lib.set_inputs_defaults(inputs)
 
+local function get_real_module_name(class, tier)
+    -- Vanilla modules have no 'bob-' prefix
+    local modules_name_map = {
+        ["bob-productivity-module-1"] = "productivity-module",
+        ["bob-productivity-module-2"] = "productivity-module-2",
+        ["bob-productivity-module-3"] = "productivity-module-3",
+        ["bob-efficiency-module-1"] = "efficiency-module",
+        ["bob-efficiency-module-2"] = "efficiency-module-2",
+        ["bob-efficiency-module-3"] = "efficiency-module-3",
+        ["bob-speed-module-1"] = "speed-module",
+        ["bob-speed-module-2"] = "speed-module-2",
+        ["bob-speed-module-3"] = "speed-module-3",
+    }
+
+    local name = 'bob-' .. class .. "-module-" .. tier
+
+    if modules_name_map[name] then
+        name = modules_name_map[name]
+    end
+
+    return name
+end
+
 for class, map in pairs(modules_map) do
-    for tier = 1, 8 do
-        local name = class .. "-module-" .. tier
-        if tier == 1 and map.has_no_number_at_tier_one then
-            name = class .. "-module"
-        end
+    for tier = 1, 5 do
+        local name = get_real_module_name(class, tier)
 
         ---@type data.ModulePrototype
         local entity = data.raw[inputs.type][name]
@@ -55,10 +73,13 @@ end
 
 -- Reskin God module entities
 if reskins.lib.settings.get_value("bobmods-modules-enablegodmodules") then
-    if not data.raw.module["god-module-6"] then
-        for i = 1, 5 do
-            local name = "god-module-" .. i
-
+    local bob_god_modules = {
+        "bob-god-module",
+        -- "bob-god-module-productivity",
+        -- "bob-god-module-quality",
+    }
+    for _, name in ipairs(bob_god_modules) do
+        if data.raw.module[name] then
             ---@type data.ModulePrototype
             local entity = data.raw[inputs.type][name]
             if not entity then goto continue end

@@ -19,24 +19,24 @@ local intermediate_inputs = {
 
 ---@type CreateIconsFromListTable
 local items = {
-    ["module-contact"] = { subgroup = "intermediates" },
-    ["module-processor-board"] = { subgroup = "intermediates" },
-    ["module-processor-board-2"] = { subgroup = "intermediates" },
-    ["module-processor-board-3"] = { subgroup = "intermediates" },
+    ["bob-module-contact"] = { subgroup = "intermediates" },
+    ["bob-module-processor-board"] = { subgroup = "intermediates" },
+    ["bob-module-processor-board-2"] = { subgroup = "intermediates" },
+    ["bob-module-processor-board-3"] = { subgroup = "intermediates" },
 }
 
 ---@type CreateIconsFromListTable
 local tools = {
-    ["module-case"] = { subgroup = "intermediates" },
-    ["module-circuit-board"] = { subgroup = "intermediates" },
+    ["bob-module-case"] = { subgroup = "intermediates" },
+    ["bob-module-circuit-board"] = { subgroup = "intermediates" },
 }
 
 local intermediates_map = {
-    ["speed"] = { color = "blue" },
-    ["effectivity"] = { color = "yellow" },
-    ["productivity"] = { color = "red" },
-    ["pollution-create"] = { color = "brown" },
-    ["pollution-clean"] = { color = "green" },
+    ["bob-speed"] = { color = "blue" },
+    ["bob-efficiency"] = { color = "yellow" },
+    ["bob-productivity"] = { color = "red" },
+    ["bob-pollution-create"] = { color = "brown" },
+    ["bob-pollution-clean"] = { color = "green" },
 }
 
 for name, map in pairs(intermediates_map) do
