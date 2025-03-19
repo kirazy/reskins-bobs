@@ -19,20 +19,20 @@ local inputs = {
 
 local tier_map = {
     ["heat-exchanger"] = { tier = 1, prog_tier = 3, material = "base" },
-    ["heat-exchanger-2"] = { tier = 2, prog_tier = 4, material = "silver-aluminum" },
-    ["heat-exchanger-3"] = { tier = 3, prog_tier = 5, material = "gold-copper" },
+    ["bob-heat-exchanger-2"] = { tier = 2, prog_tier = 4, material = "silver-aluminum" },
+    ["bob-heat-exchanger-3"] = { tier = 3, prog_tier = 5, material = "gold-copper" },
 }
 
 if reskins.lib.version.is_same_or_newer(mods["bobpower"], "1.1.6") then
     tier_map["heat-exchanger"].prog_tier = 2
 
-    tier_map["heat-exchanger-2"].material = "aluminum-invar"
-    tier_map["heat-exchanger-2"].prog_tier = 3
+    tier_map["bob-heat-exchanger-2"].material = "aluminum-invar"
+    tier_map["bob-heat-exchanger-2"].prog_tier = 3
 
-    tier_map["heat-exchanger-3"].material = "silver-titanium"
-    tier_map["heat-exchanger-3"].prog_tier = 4
+    tier_map["bob-heat-exchanger-3"].material = "silver-titanium"
+    tier_map["bob-heat-exchanger-3"].prog_tier = 4
 
-    tier_map["heat-exchanger-4"] = {
+    tier_map["bob-heat-exchanger-4"] = {
         tier = 4,
         prog_tier = 5,
         material = "gold-copper",

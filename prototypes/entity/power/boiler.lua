@@ -18,14 +18,14 @@ local inputs = {
 
 local tier_map = {
     ["boiler"] = { 1, 1 },
-    ["boiler-2"] = { 2, 2 },
-    ["boiler-3"] = { 3, 3 },
-    ["boiler-4"] = { 4, 4 },
-    ["boiler-5"] = { 5, 5 },
-    ["oil-boiler"] = { 1, 2, true },
-    ["oil-boiler-2"] = { 2, 3, true },
-    ["oil-boiler-3"] = { 3, 4, true },
-    ["oil-boiler-4"] = { 4, 5, true },
+    ["bob-boiler-2"] = { 2, 2 },
+    ["bob-boiler-3"] = { 3, 3 },
+    ["bob-boiler-4"] = { 4, 4 },
+    ["bob-boiler-5"] = { 5, 5 },
+    ["bob-oil-boiler"] = { 1, 2, true },
+    ["bob-oil-boiler-2"] = { 2, 3, true },
+    ["bob-oil-boiler-3"] = { 3, 4, true },
+    ["bob-oil-boiler-4"] = { 4, 5, true },
 }
 
 -- Reskin entities, create and assign extra details

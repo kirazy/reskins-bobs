@@ -18,13 +18,13 @@ local inputs = {
 
 local reactors = {
     ["nuclear-reactor"] = { tier = 1, prog_tier = 3, material = "base" },
-    ["nuclear-reactor-2"] = { tier = 2, prog_tier = 4, material = "silver-aluminum" },
-    ["nuclear-reactor-3"] = { tier = 3, prog_tier = 5, material = "gold-copper" },
+    ["bob-nuclear-reactor-2"] = { tier = 2, prog_tier = 4, material = "silver-aluminum" },
+    ["bob-nuclear-reactor-3"] = { tier = 3, prog_tier = 5, material = "gold-copper" },
 }
 
 if reskins.lib.version.is_same_or_newer(mods["bobpower"], "1.1.6") then
     reactors["nuclear-reactor"].material = "aluminum-invar"
-    reactors["nuclear-reactor-2"].material = "silver-titanium"
+    reactors["bob-nuclear-reactor-2"].material = "silver-titanium"
 end
 
 local function skin_reactor_entity(name, tint, material)

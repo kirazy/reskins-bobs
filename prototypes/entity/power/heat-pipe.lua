@@ -15,19 +15,19 @@ local inputs = {
 
 local tier_map = {
     ["heat-pipe"] = { tier = 1, prog_tier = 2, material = "base" },
-    ["heat-pipe-2"] = { tier = 2, prog_tier = 3, material = "silver-aluminum", particle_colors = { "d4d4d4", "dff5ff" } },
-    ["heat-pipe-3"] = { tier = 3, prog_tier = 5, material = "gold-copper", particle_colors = { "d6b968", "ff7f3f" } },
+    ["bob-heat-pipe-2"] = { tier = 2, prog_tier = 3, material = "silver-aluminum", particle_colors = { "d4d4d4", "dff5ff" } },
+    ["bob-heat-pipe-3"] = { tier = 3, prog_tier = 5, material = "gold-copper", particle_colors = { "d6b968", "ff7f3f" } },
 }
 
 if reskins.lib.version.is_same_or_newer(mods["bobpower"], "1.1.6") then
-    tier_map["heat-pipe-2"].material = "aluminum-invar"
-    tier_map["heat-pipe-3"].particle_colors = { "dff5ff", "a99b84" }
+    tier_map["bob-heat-pipe-2"].material = "aluminum-invar"
+    tier_map["bob-heat-pipe-3"].particle_colors = { "dff5ff", "a99b84" }
 
-    tier_map["heat-pipe-3"].prog_tier = 4
-    tier_map["heat-pipe-3"].material = "silver-titanium"
-    tier_map["heat-pipe-3"].particle_colors = { "d4d4d4", "cfd2d4" }
+    tier_map["bob-heat-pipe-3"].prog_tier = 4
+    tier_map["bob-heat-pipe-3"].material = "silver-titanium"
+    tier_map["bob-heat-pipe-3"].particle_colors = { "d4d4d4", "cfd2d4" }
 
-    tier_map["heat-pipe-4"] = {
+    tier_map["bob-heat-pipe-4"] = {
         tier = 4,
         prog_tier = 5,
         material = "gold-copper",

@@ -19,20 +19,20 @@ local inputs = {
 
 local tier_map = {
     ["accumulator"] = { tier = 1, prog_tier = 2 },
-    ["large-accumulator"] = { tier = 1, prog_tier = 2, wire = 1, letter = "H" },
-    ["large-accumulator-2"] = { tier = 2, prog_tier = 3, wire = 1, letter = "H" },
-    ["large-accumulator-3"] = { tier = 3, prog_tier = 4, wire = 1, letter = "H" },
-    ["slow-accumulator"] = { tier = 1, prog_tier = 2, wire = 2, letter = "S" },
-    ["slow-accumulator-2"] = { tier = 2, prog_tier = 3, wire = 2, letter = "S" },
-    ["slow-accumulator-3"] = { tier = 3, prog_tier = 4, wire = 2, letter = "S" },
-    ["fast-accumulator"] = { tier = 1, prog_tier = 2, wire = 3, letter = "F" },
-    ["fast-accumulator-2"] = { tier = 2, prog_tier = 3, wire = 3, letter = "F" },
-    ["fast-accumulator-3"] = { tier = 3, prog_tier = 4, wire = 3, letter = "F" },
+    ["bob-large-accumulator"] = { tier = 1, prog_tier = 2, wire = 1, letter = "H" },
+    ["bob-large-accumulator-2"] = { tier = 2, prog_tier = 3, wire = 1, letter = "H" },
+    ["bob-large-accumulator-3"] = { tier = 3, prog_tier = 4, wire = 1, letter = "H" },
+    ["bob-slow-accumulator"] = { tier = 1, prog_tier = 2, wire = 2, letter = "S" },
+    ["bob-slow-accumulator-2"] = { tier = 2, prog_tier = 3, wire = 2, letter = "S" },
+    ["bob-slow-accumulator-3"] = { tier = 3, prog_tier = 4, wire = 2, letter = "S" },
+    ["bob-fast-accumulator"] = { tier = 1, prog_tier = 2, wire = 3, letter = "F" },
+    ["bob-fast-accumulator-2"] = { tier = 2, prog_tier = 3, wire = 3, letter = "F" },
+    ["bob-fast-accumulator-3"] = { tier = 3, prog_tier = 4, wire = 3, letter = "F" },
 }
 
 if reskins.lib.version.is_same_or_newer(mods["bobpower"], "1.1.6") then
     tier_map["accumulator"] = { tier = 1, prog_tier = 2, wire = 1, letter = "H" }
-    tier_map["large-accumulator"] = nil
+    tier_map["bob-large-accumulator"] = nil
 end
 
 local function accumulator_picture_tinted(inputs, repeat_count)

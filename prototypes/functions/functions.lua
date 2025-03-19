@@ -43,30 +43,30 @@ local nuclear_tint_index = {
 -- Map fuel type to reactor entity name
 reskins.bobs.nuclear_reactor_index = {
     ["nuclear-reactor"] = { name = "uranium", tint = nuclear_tint_index["uranium"] },
-    ["nuclear-reactor-2"] = { name = "uranium", tint = nuclear_tint_index["uranium"] },
-    ["nuclear-reactor-3"] = { name = "uranium", tint = nuclear_tint_index["uranium"] },
+    ["bob-nuclear-reactor-2"] = { name = "uranium", tint = nuclear_tint_index["uranium"] },
+    ["bob-nuclear-reactor-3"] = { name = "uranium", tint = nuclear_tint_index["uranium"] },
 }
 
 -- Nucelar reactors have two modes, revamped or standard; determine which we are using
 if reskins.lib.settings.get_value("bobmods-revamp-nuclear") == true then
     -- Map fuel type to reactor entity name
-    reskins.bobs.nuclear_reactor_index["nuclear-reactor-2"].name = "thorium"
-    reskins.bobs.nuclear_reactor_index["nuclear-reactor-2"].tint = nuclear_tint_index["thorium"]
+    reskins.bobs.nuclear_reactor_index["bob-nuclear-reactor-2"].name = "thorium"
+    reskins.bobs.nuclear_reactor_index["bob-nuclear-reactor-2"].tint = nuclear_tint_index["thorium"]
 
     if reskins.lib.settings.get_value("bobmods-plates-bluedeuterium") == true then
-        reskins.bobs.nuclear_reactor_index["nuclear-reactor-3"].name = "deuterium-blue"
-        reskins.bobs.nuclear_reactor_index["nuclear-reactor-3"].tint = nuclear_tint_index["deuterium-blue"]
+        reskins.bobs.nuclear_reactor_index["bob-nuclear-reactor-3"].name = "deuterium-blue"
+        reskins.bobs.nuclear_reactor_index["bob-nuclear-reactor-3"].tint = nuclear_tint_index["deuterium-blue"]
     else
-        reskins.bobs.nuclear_reactor_index["nuclear-reactor-3"].name = "deuterium-pink"
-        reskins.bobs.nuclear_reactor_index["nuclear-reactor-3"].tint = nuclear_tint_index["deuterium-pink"]
+        reskins.bobs.nuclear_reactor_index["bob-nuclear-reactor-3"].name = "deuterium-pink"
+        reskins.bobs.nuclear_reactor_index["bob-nuclear-reactor-3"].tint = nuclear_tint_index["deuterium-pink"]
     end
 end
 
 -- Permit tier-based tint lookup
 if not (reskins.lib.settings.get_value("bobmods-revamp-nuclear") and reskins.lib.settings.get_value("reskins-bobs-do-bobrevamp-reactor-color")) then
     reskins.bobs.nuclear_reactor_index["nuclear-reactor"].tint = nil
-    reskins.bobs.nuclear_reactor_index["nuclear-reactor-2"].tint = nil
-    reskins.bobs.nuclear_reactor_index["nuclear-reactor-3"].tint = nil
+    reskins.bobs.nuclear_reactor_index["bob-nuclear-reactor-2"].tint = nil
+    reskins.bobs.nuclear_reactor_index["bob-nuclear-reactor-3"].tint = nil
 end
 
 -- ROBOT PARTICLE AND DEATH ANIMATIONS
