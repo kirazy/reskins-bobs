@@ -417,27 +417,27 @@ if reskins.lib.settings.get_value("bobmods-plates-nuclearupdate") == true then
 
     -- Handle deuterium's default process color
     if reskins.lib.settings.get_value("bobmods-plates-bluedeuterium") == true then
-        technologies["deuterium-fuel-reprocessing"].image = "deuterium-fuel-reprocessing-blue"
+        technologies["bob-deuterium-fuel-reprocessing"].image = "bob-deuterium-fuel-reprocessing-blue"
     end
 else
-    technologies["thorium-fuel-reprocessing"].image = "thorium-fuel-reprocessing-alternate"
+    technologies["bob-thorium-fuel-reprocessing"].image = "bob-thorium-fuel-reprocessing-alternate"
 
     -- Handle deuterium's alternate process color
     if reskins.lib.settings.get_value("bobmods-plates-bluedeuterium") == true then
-        technologies["deuterium-fuel-reprocessing"].image = "deuterium-fuel-reprocessing-alternate-blue"
+        technologies["bob-deuterium-fuel-reprocessing"].image = "bob-deuterium-fuel-reprocessing-alternate-blue"
     else
-        technologies["deuterium-fuel-reprocessing"].image = "deuterium-fuel-reprocessing-alternate-pink"
+        technologies["bob-deuterium-fuel-reprocessing"].image = "bob-deuterium-fuel-reprocessing-alternate-pink"
     end
 end
 
 -- Angel's Compatibility
 if mods["angelssmelting"] then
     -- Use metal-mixing sprites to be consistent with new "Filtering Furnace" progression
-    technologies["multi-purpose-furnace-1"].icon_name = "electric-mixing-furnace"
-    technologies["multi-purpose-furnace-1"].technology_icon_extras = get_technology_light_layer("electric-mixing-furnace")
+    technologies["bob-multi-purpose-furnace-1"].icon_name = "electric-mixing-furnace"
+    technologies["bob-multi-purpose-furnace-1"].technology_icon_extras = get_technology_light_layer("electric-mixing-furnace")
 
-    technologies["multi-purpose-furnace-2"].icon_name = "electric-mixing-furnace"
-    technologies["multi-purpose-furnace-2"].technology_icon_extras = get_technology_light_layer("electric-mixing-furnace")
+    technologies["bob-multi-purpose-furnace-2"].icon_name = "electric-mixing-furnace"
+    technologies["bob-multi-purpose-furnace-2"].technology_icon_extras = get_technology_light_layer("electric-mixing-furnace")
 end
 
 reskins.internal.create_icons_from_list(technologies, inputs)
