@@ -8,22 +8,22 @@ if not mods["bobores"] then return end
 
 local ores = {
     -- Pure Bob's
-    "ground-water",
-    "lithia-water",
-    "gem-ore",
-    "lead-ore",
-    "rutile-ore",
-    "sulfur",
-    "thorium-ore",
-    "tin-ore",
-    "bauxite-ore",
-    "cobalt-ore",
-    "gold-ore",
-    "nickel-ore",
-    "quartz",
-    "silver-ore",
-    "tungsten-ore",
-    "zinc-ore",
+    "bob-ground-water",
+    "bob-lithia-water",
+    "bob-gem-ore",
+    "bob-lead-ore",
+    "bob-rutile-ore",
+    "bob-sulfur",
+    "bob-thorium-ore",
+    "bob-tin-ore",
+    "bob-bauxite-ore",
+    "bob-cobalt-ore",
+    "bob-gold-ore",
+    "bob-nickel-ore",
+    "bob-quartz",
+    "bob-silver-ore",
+    "bob-tungsten-ore",
+    "bob-zinc-ore",
 }
 
 for _, name in pairs(ores) do
