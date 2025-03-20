@@ -27,9 +27,9 @@ local electric_furnace_map = {
 if mods["angelssmelting"] then
     -- Use metal-mixing sprites to be consistent with new "Filtering Furnace" progression
     electric_furnace_map["bob-electric-chemical-mixing-furnace"].furnace = "mixing"
-    electric_furnace_map["bob-electric-chemical-mixing-furnace"].icon_name = "electric-mixing-furnace"
+    electric_furnace_map["bob-electric-chemical-mixing-furnace"].icon_name = "bob-electric-mixing-furnace"
     electric_furnace_map["bob-electric-chemical-mixing-furnace-2"].furnace = "mixing"
-    electric_furnace_map["bob-electric-chemical-mixing-furnace-2"].icon_name = "electric-mixing-furnace"
+    electric_furnace_map["bob-electric-chemical-mixing-furnace-2"].icon_name = "bob-electric-mixing-furnace"
 end
 
 local function furnace_heater_animation()
