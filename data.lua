@@ -22,6 +22,7 @@ require("prototypes.entity.assembly.steel-furnace")
 require("prototypes.entity.assembly.stone-furnace")
 
 -- Bob's Logistics
+require("prototypes.entity.logistics.belt-entities")
 require("prototypes.entity.logistics.cargo-wagon")
 require("prototypes.entity.logistics.chest")
 require("prototypes.entity.logistics.construction-robots")
