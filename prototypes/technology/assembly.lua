@@ -17,17 +17,17 @@ local inputs = {
 ---@type CreateIconsFromListTable
 local technologies = {
 	-- Assemblers
-	["automation"] = { tier = 0, icon_name = "automation" },
-	["automation-2"] = { tier = 1, icon_name = "automation" },
-	["automation-3"] = { tier = 2, icon_name = "automation" },
-	["automation-4"] = { tier = 3, icon_name = "automation" },
-	["automation-5"] = { tier = 4, icon_name = "automation" },
-	["automation-6"] = { tier = 5, icon_name = "automation" },
+	["automation"] = { tier = 1, icon_name = "automation" },
+	["automation-2"] = { tier = 2, icon_name = "automation" },
+	["automation-3"] = { tier = 3, icon_name = "automation" },
+	["automation-4"] = { tier = 4, icon_name = "automation" },
+	["automation-5"] = { tier = 5, icon_name = "automation" },
+	["automation-6"] = { tier = 6, icon_name = "automation" },
 
 	-- Electronics Assemblers
-	["bob-electronics-machine-1"] = { tier = 1, prog_tier = 0, icon_name = "electronics-machines" },
-	["bob-electronics-machine-2"] = { tier = 2, prog_tier = 2, icon_name = "electronics-machines" },
-	["bob-electronics-machine-3"] = { tier = 3, prog_tier = 4, icon_name = "electronics-machines" },
+	["bob-electronics-machine-1"] = { tier = 1, prog_tier = 2, icon_name = "electronics-machines" },
+	["bob-electronics-machine-2"] = { tier = 2, prog_tier = 4, icon_name = "electronics-machines" },
+	["bob-electronics-machine-3"] = { tier = 3, prog_tier = 6, icon_name = "electronics-machines" },
 
 	-- Centrifuges
 	["bob-centrifuge-2"] = { icon_name = "centrifuge", tier = 1, prog_tier = 4 },
@@ -56,17 +56,5 @@ local technologies = {
 	["bob-distillery-4"] = { tier = 4, icon_name = "distillery", technology_icon_size = 128 },
 	["bob-distillery-5"] = { tier = 5, icon_name = "distillery", technology_icon_size = 128 },
 }
-
-if reskins.lib.version.is_same_or_newer(mods["bobassembly"], "1.3.0") then
-	technologies["automation"].tier = 1
-	technologies["automation-2"].tier = 2
-	technologies["automation-3"].tier = 3
-	technologies["automation-4"].tier = 4
-	technologies["automation-5"].tier = 5
-	technologies["automation-6"].tier = 6
-	technologies["bob-electronics-machine-1"].prog_tier = 1
-	technologies["bob-electronics-machine-2"].prog_tier = 3
-	technologies["bob-electronics-machine-3"].prog_tier = 5
-end
 
 reskins.internal.create_icons_from_list(technologies, inputs)

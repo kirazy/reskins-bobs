@@ -14,42 +14,20 @@ local is_progression = reskins.lib.settings.get_value("reskins-lib-tier-mapping"
 
 local assembling_machines = {
 	-- Standard assembly machines
-	["assembling-machine-1"] = { tier = 0, flags = { sprite_set = 0 } },
-	["assembling-machine-2"] = { tier = 1, flags = { sprite_set = 1 } },
-	["assembling-machine-3"] = { tier = 2, flags = { sprite_set = 2 } },
-	["bob-assembling-machine-4"] = { tier = 3, flags = { sprite_set = 3 } },
-	["bob-assembling-machine-5"] = { tier = 4, flags = { sprite_set = 4 } },
-	["bob-assembling-machine-6"] = { tier = 5, flags = { sprite_set = 5 } },
+	["assembling-machine-1"] = { tier = 1, flags = { sprite_set = 0 } },
+	["assembling-machine-2"] = { tier = 2, flags = { sprite_set = 1 } },
+	["assembling-machine-3"] = { tier = 3, flags = { sprite_set = 2 } },
+	["bob-assembling-machine-4"] = { tier = 4, flags = { sprite_set = 3 } },
+	["bob-assembling-machine-5"] = { tier = 5, flags = { sprite_set = 4 } },
+	["bob-assembling-machine-6"] = { tier = 6, flags = { sprite_set = 5 } },
 	-- Smoke stacks
-	["bob-burner-assembling-machine"] = { tier = 0, tint = util.color("262626"), flags = { use_burner_set = true, is_small = reskins.bobs.triggers.assembly.burner_assembling_machine_is_small } },
-	["bob-steam-assembling-machine"] = { tier = 0, tint = util.color("d9d9d9"), flags = { use_steam_set = true } },
+	["bob-burner-assembling-machine"] = {tier = 0, flags = {use_burner_set = true, is_small = reskins.bobs.triggers.assembly.burner_assembling_machine_is_small}},
+	["bob-steam-assembling-machine"] = {tier = 0, flags = {use_steam_set = true}}, 
 	-- Electronics
-	["bob-electronics-machine-1"] = { tier = 1, prog_tier = 0, flags = { use_electronics_set = true, lights = 1, is_small = true } },
-	["bob-electronics-machine-2"] = { tier = 2, prog_tier = 2, flags = { use_electronics_set = true, lights = 2, is_small = true } },
-	["bob-electronics-machine-3"] = { tier = 3, prog_tier = 4, flags = { use_electronics_set = true, lights = 3, is_small = true } },
+	["bob-electronics-machine-1"] = { tier = 1, prog_tier = 2, flags = { use_electronics_set = true, lights = 1, is_small = true } },
+	["bob-electronics-machine-2"] = { tier = 2, prog_tier = 4, flags = { use_electronics_set = true, lights = 2, is_small = true } },
+	["bob-electronics-machine-3"] = { tier = 3, prog_tier = 6, flags = { use_electronics_set = true, lights = 3, is_small = true } },
 }
-
-if reskins.lib.version.is_same_or_newer(mods["bobassembly"], "1.3.0") then
-	-- Remove the custom tint, use tier 0 directly.
-	assembling_machines["bob-burner-assembling-machine"].tint = nil
-	assembling_machines["bob-steam-assembling-machine"].tint = nil
-
-	assembling_machines["assembling-machine-1"].tier = 1
-	assembling_machines["assembling-machine-2"].tier = 2
-	assembling_machines["assembling-machine-3"].tier = 3
-	assembling_machines["bob-assembling-machine-4"].tier = 4
-	assembling_machines["bob-assembling-machine-5"].tier = 5
-	assembling_machines["bob-assembling-machine-6"].tier = 6
-
-	assembling_machines["bob-electronics-machine-1"].tier = 1
-	assembling_machines["bob-electronics-machine-1"].prog_tier = 1
-
-	assembling_machines["bob-electronics-machine-2"].tier = 2
-	assembling_machines["bob-electronics-machine-2"].prog_tier = 3
-
-	assembling_machines["bob-electronics-machine-3"].tier = 3
-	assembling_machines["bob-electronics-machine-3"].prog_tier = 5
-end
 
 for name, map in pairs(assembling_machines) do
 	reskins.lib.apply_skin.assembling_machine(name, is_progression and map.prog_tier or map.tier, map.tint, nil, map.flags)

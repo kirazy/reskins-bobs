@@ -201,10 +201,10 @@ local technologies = {
 	},
 
 	-- raw gems
-	-- ["gem-processing-1"] = {
-	--     subgroup = "processing-steps",
-	--     technology_icon_size = 256,
-	-- },
+	["bob-gem-processing-1"] = {
+		subgroup = "processing-steps",
+		technology_icon_size = 256,
+	},
 
 	-- cut gems
 	["bob-gem-processing-2"] = {
