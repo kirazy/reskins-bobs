@@ -8,43 +8,41 @@ if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then return end
 
 -- Set input parameters
 local inputs = {
-    type = "artillery-wagon",
-    icon_name = "artillery-wagon",
-    base_entity_name = "artillery-wagon",
-    mod = "bobs",
-    group = "warfare",
-    particles = { ["big"] = 4 },
+	type = "artillery-wagon",
+	icon_name = "artillery-wagon",
+	base_entity_name = "artillery-wagon",
+	mod = "bobs",
+	group = "warfare",
+	particles = { ["big"] = 4 },
 }
 
 local tier_map = {
-    ["artillery-wagon"] = { 1, 3 },
-    ["bob-artillery-wagon-2"] = { 2, 4 },
-    ["bob-artillery-wagon-3"] = { 3, 5 },
+	["artillery-wagon"] = { 1, 3 },
+	["bob-artillery-wagon-2"] = { 2, 4 },
+	["bob-artillery-wagon-3"] = { 3, 5 },
 }
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
-    ---@type data.ArtilleryWagonPrototype
-    local entity = data.raw[inputs.type][name]
+	---@type data.ArtilleryWagonPrototype
+	local entity = data.raw[inputs.type][name]
 
-    -- Check if entity exists, if not, skip this iteration
-    if not entity then goto continue end
+	-- Check if entity exists, if not, skip this iteration
+	if not entity then goto continue end
 
-    -- Parse map
-    local tier = map[1]
-    if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
-        tier = map[2]
-    end
+	-- Parse map
+	local tier = map[1]
+	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then tier = map[2] end
 
-    -- Determine what tint we're using
-    inputs.tint = reskins.lib.tiers.get_tint(tier)
+	-- Determine what tint we're using
+	inputs.tint = reskins.lib.tiers.get_tint(tier)
 
-    reskins.lib.setup_standard_entity(name, tier, inputs)
+	reskins.lib.setup_standard_entity(name, tier, inputs)
 
-    -- TODO: Reskin remnants?
+	-- TODO: Reskin remnants?
 
-    -- TODO: Reskin entity?
+	-- TODO: Reskin entity?
 
-    -- Label to skip to next iteration
-    ::continue::
+	-- Label to skip to next iteration
+	::continue::
 end

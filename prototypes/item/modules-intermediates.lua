@@ -10,39 +10,39 @@ if not (reskins.bobs and reskins.bobs.triggers.modules.items) then return end
 
 ---@type CreateIconsFromListInputs
 local intermediate_inputs = {
-    directory = reskins.bobs.directory,
-    mod = "bobs",
-    group = "modules",
-    make_icon_pictures = false,
-    flat_icon = true,
+	directory = reskins.bobs.directory,
+	mod = "bobs",
+	group = "modules",
+	make_icon_pictures = false,
+	flat_icon = true,
 }
 
 ---@type CreateIconsFromListTable
 local items = {
-    ["bob-module-contact"] = { subgroup = "intermediates" },
-    ["bob-module-processor-board"] = { subgroup = "intermediates" },
-    ["bob-module-processor-board-2"] = { subgroup = "intermediates" },
-    ["bob-module-processor-board-3"] = { subgroup = "intermediates" },
+	["bob-module-contact"] = { subgroup = "intermediates" },
+	["bob-module-processor-board"] = { subgroup = "intermediates" },
+	["bob-module-processor-board-2"] = { subgroup = "intermediates" },
+	["bob-module-processor-board-3"] = { subgroup = "intermediates" },
 }
 
 ---@type CreateIconsFromListTable
 local tools = {
-    ["bob-module-case"] = { subgroup = "intermediates" },
-    ["bob-module-circuit-board"] = { subgroup = "intermediates" },
+	["bob-module-case"] = { subgroup = "intermediates" },
+	["bob-module-circuit-board"] = { subgroup = "intermediates" },
 }
 
 local intermediates_map = {
-    ["bob-speed"] = { color = "blue" },
-    ["bob-efficiency"] = { color = "yellow" },
-    ["bob-productivity"] = { color = "red" },
-    ["bob-pollution-create"] = { color = "brown" },
-    ["bob-pollution-clean"] = { color = "green" },
+	["bob-speed"] = { color = "blue" },
+	["bob-efficiency"] = { color = "yellow" },
+	["bob-productivity"] = { color = "red" },
+	["bob-pollution-create"] = { color = "brown" },
+	["bob-pollution-clean"] = { color = "green" },
 }
 
 for name, map in pairs(intermediates_map) do
-    tools[name .. "-processor"] = { subgroup = "intermediates/" .. map.color, image = map.color .. "-processor" }
-    items[name .. "-processor-2"] = { subgroup = "intermediates/" .. map.color, image = map.color .. "-processor-2" }
-    items[name .. "-processor-3"] = { subgroup = "intermediates/" .. map.color, image = map.color .. "-processor-3" }
+	tools[name .. "-processor"] = { subgroup = "intermediates/" .. map.color, image = map.color .. "-processor" }
+	items[name .. "-processor-2"] = { subgroup = "intermediates/" .. map.color, image = map.color .. "-processor-2" }
+	items[name .. "-processor-3"] = { subgroup = "intermediates/" .. map.color, image = map.color .. "-processor-3" }
 end
 
 reskins.internal.create_icons_from_list(items, intermediate_inputs)

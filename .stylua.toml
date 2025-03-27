@@ -1,0 +1,5 @@
+syntax = "Lua52"
+column_width = 240
+indent_type = "Tabs"
+indent_width = 2
+collapse_simple_statement = "ConditionalOnly"

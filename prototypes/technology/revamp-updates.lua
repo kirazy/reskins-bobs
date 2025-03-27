@@ -8,15 +8,15 @@ if not (reskins.bobs and reskins.bobs.triggers.revamp.technologies) then return 
 
 ---@type CreateIconsFromListInputs
 local inputs = {
-    mod = "bobs",
-    group = "revamp",
-    type = "technology",
+	mod = "bobs",
+	group = "revamp",
+	type = "technology",
 }
 
 ---@type CreateIconsFromListTable
 local technologies = {
-    -- Chemical plant
-    ["bob-chemical-plant"] = { group = "assembly", tier = 1, prog_tier = 2, icon_name = "chemical-plant" },
+	-- Chemical plant
+	["bob-chemical-plant"] = { group = "assembly", tier = 1, prog_tier = 2, icon_name = "chemical-plant" },
 }
 
 reskins.internal.create_icons_from_list(technologies, inputs)

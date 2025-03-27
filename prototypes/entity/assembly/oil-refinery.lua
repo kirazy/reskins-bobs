@@ -10,13 +10,13 @@ if not (reskins.bobs and reskins.bobs.triggers.assembly.entities) then return en
 if reskins.compatibility then reskins.compatibility.triggers.minimachines.refineries = true end
 
 local tier_map = {
-    ["oil-refinery"]   = { tier = 1, prog_tier = 2 },
-    ["bob-oil-refinery-2"] = { tier = 2, prog_tier = 3 },
-    ["bob-oil-refinery-3"] = { tier = 3, prog_tier = 4 },
-    ["bob-oil-refinery-4"] = { tier = 4, prog_tier = 5 },
+	["oil-refinery"] = { tier = 1, prog_tier = 2 },
+	["bob-oil-refinery-2"] = { tier = 2, prog_tier = 3 },
+	["bob-oil-refinery-3"] = { tier = 3, prog_tier = 4 },
+	["bob-oil-refinery-4"] = { tier = 4, prog_tier = 5 },
 }
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
-    reskins.lib.apply_skin.oil_refinery(name, (reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map") and map.prog_tier or map.tier)
+	reskins.lib.apply_skin.oil_refinery(name, (reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map") and map.prog_tier or map.tier)
 end

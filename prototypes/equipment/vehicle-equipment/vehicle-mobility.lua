@@ -9,42 +9,42 @@ if not (reskins.bobs and reskins.bobs.triggers.vehicle_equipment.equipment) then
 -- Note that for equipment, the icons property is not used, so omit type information
 -- so that an icon is not set on the equipment prototype.
 local inputs = {
-    equipment_category = "utility",
-    mod = "bobs",
-    group = "vehicle-equipment",
-    icon_layers = 1,
+	equipment_category = "utility",
+	mod = "bobs",
+	group = "vehicle-equipment",
+	icon_layers = 1,
 }
 
 -- Setup defaults
 reskins.lib.set_inputs_defaults(inputs)
 
 local equipment_list = {
-    "vehicle-motor",
-    "vehicle-engine",
+	"vehicle-motor",
+	"vehicle-engine",
 }
 
 -- Reskin equipment
 for _, icon_name in pairs(equipment_list) do
-    -- Fetch equipment
-    local name = 'bob-' .. icon_name .. "-equipment"
-    local equipment = data.raw["movement-bonus-equipment"][name]
+	-- Fetch equipment
+	local name = "bob-" .. icon_name .. "-equipment"
+	local equipment = data.raw["movement-bonus-equipment"][name]
 
-    -- Check if entity exists, if not, skip this iteration
-    if not equipment then goto continue end
+	-- Check if entity exists, if not, skip this iteration
+	if not equipment then goto continue end
 
-    inputs.icon_name = icon_name
+	inputs.icon_name = icon_name
 
-    -- Construct icon
-    reskins.lib.construct_icon(name, 0, inputs)
+	-- Construct icon
+	reskins.lib.construct_icon(name, 0, inputs)
 
-    -- Reskin the equipment
-    equipment.sprite = {
-        filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/" .. icon_name .. "/" .. name .. ".png",
-        size = 128,
-        priority = "medium",
-        scale = 0.5,
-    }
+	-- Reskin the equipment
+	equipment.sprite = {
+		filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/" .. icon_name .. "/" .. name .. ".png",
+		size = 128,
+		priority = "medium",
+		scale = 0.5,
+	}
 
-    -- Label to skip to next iteration
-    ::continue::
+	-- Label to skip to next iteration
+	::continue::
 end

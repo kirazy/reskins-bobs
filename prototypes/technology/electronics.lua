@@ -8,23 +8,23 @@ if not (reskins.bobs and reskins.bobs.triggers.electronics.technologies) then re
 
 ---@type CreateIconsFromListInputs
 local inputs = {
-    mod = "bobs",
-    group = "electronics",
-    type = "technology",
-    technology_icon_size = 256,
-    flat_icon = true,
+	mod = "bobs",
+	group = "electronics",
+	type = "technology",
+	technology_icon_size = 256,
+	flat_icon = true,
 }
 
 ---@type CreateIconsFromListTable
 local technologies = {
-    -- solder, solder plate, insulated wire, basic circuit, resistor, tin wire
-    -- ["electronics"] = {},
+	-- solder, solder plate, insulated wire, basic circuit, resistor, tin wire
+	-- ["electronics"] = {},
 
-    -- Advanced electronics
-    -- ["advanced-electronics"] = {},
+	-- Advanced electronics
+	-- ["advanced-electronics"] = {},
 
-    -- FIXME: The icon is gone in 2.0. Bundled from 1.1 for now.
-    ["bob-advanced-processing-unit"] = { },
+	-- FIXME: The icon is gone in 2.0. Bundled from 1.1 for now.
+	["bob-advanced-processing-unit"] = {},
 }
 
 reskins.internal.create_icons_from_list(technologies, inputs)
