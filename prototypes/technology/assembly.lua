@@ -16,18 +16,18 @@ local inputs = {
 
 ---@type CreateIconsFromListTable
 local technologies = {
-    -- Assemblers
-    ["automation"] = { tier = 1, icon_name = "automation" },
-    ["automation-2"] = { tier = 2, icon_name = "automation" },
-    ["automation-3"] = { tier = 3, icon_name = "automation" },
-    ["automation-4"] = { tier = 4, icon_name = "automation" },
-    ["automation-5"] = { tier = 5, icon_name = "automation" },
-    ["automation-6"] = { tier = 6, icon_name = "automation" },
+	-- Assemblers
+	["automation"] = { tier = 1, icon_name = "automation" },
+	["automation-2"] = { tier = 2, icon_name = "automation" },
+	["automation-3"] = { tier = 3, icon_name = "automation" },
+	["automation-4"] = { tier = 4, icon_name = "automation" },
+	["automation-5"] = { tier = 5, icon_name = "automation" },
+	["automation-6"] = { tier = 6, icon_name = "automation" },
 
-    -- Electronics Assemblers
-    ["bob-electronics-machine-1"] = { tier = 1, prog_tier = 2, icon_name = "electronics-machines" },
-    ["bob-electronics-machine-2"] = { tier = 2, prog_tier = 4, icon_name = "electronics-machines" },
-    ["bob-electronics-machine-3"] = { tier = 3, prog_tier = 6, icon_name = "electronics-machines" },
+	-- Electronics Assemblers
+	["bob-electronics-machine-1"] = { tier = 1, prog_tier = 2, icon_name = "electronics-machines" },
+	["bob-electronics-machine-2"] = { tier = 2, prog_tier = 4, icon_name = "electronics-machines" },
+	["bob-electronics-machine-3"] = { tier = 3, prog_tier = 6, icon_name = "electronics-machines" },
 
 	-- Centrifuges
 	["bob-centrifuge-2"] = { icon_name = "centrifuge", tier = 1, prog_tier = 4 },
