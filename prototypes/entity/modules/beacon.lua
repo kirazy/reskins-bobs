@@ -22,8 +22,8 @@ local inputs = {
 
 local tier_map = {
     ["beacon"] = { tier = 1, prog_tier = 3 },
-    ["beacon-2"] = { tier = 2, prog_tier = 4 },
-    ["beacon-3"] = { tier = 3, prog_tier = 5 },
+    ["bob-beacon-2"] = { tier = 2, prog_tier = 4 },
+    ["bob-beacon-3"] = { tier = 3, prog_tier = 5 },
 }
 
 -- Reskin entities, create and assign extra details

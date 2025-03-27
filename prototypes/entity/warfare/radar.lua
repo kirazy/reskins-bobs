@@ -21,10 +21,10 @@ local inputs = {
 
 local tier_map = {
     ["radar"] = 1,
-    ["radar-2"] = 2,
-    ["radar-3"] = 3,
-    ["radar-4"] = 4,
-    ["radar-5"] = 5,
+    ["bob-radar-2"] = 2,
+    ["bob-radar-3"] = 3,
+    ["bob-radar-4"] = 4,
+    ["bob-radar-5"] = 5,
 }
 
 -- Reskin entities, create and assign extra details

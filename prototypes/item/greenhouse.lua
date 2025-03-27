@@ -16,9 +16,9 @@ local inputs = {
 
 ---@type CreateIconsFromListTable
 local intermediates = {
-    ["seedling"] = { subgroup = "items" },
-    ["fertiliser"] = { subgroup = "items" },
-    ["wood-pellets"] = { subgroup = "items" },
+    ["bob-seedling"] = { subgroup = "items" },
+    ["bob-fertiliser"] = { subgroup = "items" },
+    ["bob-wood-pellets"] = { subgroup = "items" },
     ["bob-basic-greenhouse-cycle"] = { type = "recipe", subgroup = "recipes" },
     ["bob-advanced-greenhouse-cycle"] = { type = "recipe", subgroup = "recipes" },
 }

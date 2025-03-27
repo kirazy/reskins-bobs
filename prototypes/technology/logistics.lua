@@ -130,9 +130,9 @@ end
 if reskins.lib.settings.get_value("bobmods-logistics-inserteroverhaul") == true then
     -- Standard inserters
     technologies["fast-inserter"] = { icon_name = "inserter", tier = 2 }
-    technologies["express-inserters"] = { icon_name = "inserter", tier = 3 }
-    technologies["turbo-inserter"] = { icon_name = "inserter", tier = 4 }
-    technologies["ultimate-inserter"] = { icon_name = "inserter", tier = 5 }
+    technologies["bob-express-inserter"] = { icon_name = "inserter", tier = 3 }
+    technologies["bob-turbo-inserter"] = { icon_name = "inserter", tier = 4 }
+    technologies["bob-ultimate-inserter"] = { icon_name = "inserter", tier = 5 }
 
     -- Bulk inserters
     technologies["bulk-inserter"] = { icon_name = "bulk-inserter", tier = 2 }
@@ -140,9 +140,9 @@ if reskins.lib.settings.get_value("bobmods-logistics-inserteroverhaul") == true 
     technologies["bulk-inserter-3"] = { icon_name = "bulk-inserter", tier = 4 }
     technologies["bulk-inserter-4"] = { icon_name = "bulk-inserter", tier = 5 }
 else
-    technologies["long-inserters-1"] = { flat_icon = true }
+    technologies["bob-long-inserters-1"] = { flat_icon = true }
     -- technologies["fast-inserter"] = {} -- fine as-is
-    technologies["express-inserters"] = { flat_icon = true } -- green/pink
+    technologies["bob-express-inserter"] = { flat_icon = true } -- green/pink
     technologies["bulk-inserter"] = { flat_icon = true }    -- green/white
     technologies["bulk-inserter-2"] = { flat_icon = true }  -- rich green/gray
 end

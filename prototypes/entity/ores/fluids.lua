@@ -6,8 +6,8 @@
 if not (reskins.bobs and reskins.bobs.triggers.ores.entities) then return end
 
 local fluids = {
-    "ground-water",
-    "lithia-water",
+    "bob-ground-water",
+    "bob-lithia-water",
 }
 
 for _, name in pairs(fluids) do

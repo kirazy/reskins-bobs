@@ -20,10 +20,10 @@ local inputs = {
 reskins.lib.set_inputs_defaults(inputs)
 
 local vehicle_roboports = {
-    ["vehicle-roboport-equipment-1"] = { tier = 1, prog_tier = 2, base = 1 },
-    ["vehicle-roboport-equipment-2"] = { tier = 2, prog_tier = 3, base = 1 },
-    ["vehicle-roboport-equipment-3"] = { tier = 3, prog_tier = 4, base = 2 },
-    ["vehicle-roboport-equipment-4"] = { tier = 4, prog_tier = 5, base = 2 },
+    ["bob-vehicle-roboport-equipment-1"] = { tier = 1, prog_tier = 2, base = 1 },
+    ["bob-vehicle-roboport-equipment-2"] = { tier = 2, prog_tier = 3, base = 1 },
+    ["bob-vehicle-roboport-equipment-3"] = { tier = 3, prog_tier = 4, base = 2 },
+    ["bob-vehicle-roboport-equipment-4"] = { tier = 4, prog_tier = 5, base = 2 },
 }
 
 -- Reskin equipment

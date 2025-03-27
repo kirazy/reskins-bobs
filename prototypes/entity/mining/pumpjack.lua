@@ -21,12 +21,10 @@ local tier_map = {
     ["bob-pumpjack-1"] = { tier = 2 },
     ["bob-pumpjack-2"] = { tier = 3 },
     ["bob-pumpjack-3"] = { tier = 4 },
-    ["bob-pumpjack-4"] = { tier = 5 },
-    ["water-miner-1"] = { tier = 1, is_water_miner = true },
-    ["water-miner-2"] = { tier = 2, is_water_miner = true },
-    ["water-miner-3"] = { tier = 3, is_water_miner = true },
-    ["water-miner-4"] = { tier = 4, is_water_miner = true },
-    ["water-miner-5"] = { tier = 5, is_water_miner = true },
+    ["bob-water-miner-1"] = { tier = 1, is_water_miner = true },
+    ["bob-water-miner-2"] = { tier = 2, is_water_miner = true },
+    ["bob-water-miner-3"] = { tier = 3, is_water_miner = true },
+    ["bob-water-miner-4"] = { tier = 4, is_water_miner = true },
 }
 
 -- Rescale pumpjack animation playback speed to something visually appealing

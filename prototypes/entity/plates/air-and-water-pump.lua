@@ -17,14 +17,14 @@ local inputs = {
 }
 
 local tier_map = {
-    ["water-pump"] = { tier = 1, prog_tier = 2, pump_type = "water" },
-    ["water-pump-2"] = { tier = 2, prog_tier = 3, pump_type = "water" },
-    ["water-pump-3"] = { tier = 3, prog_tier = 4, pump_type = "water" },
-    ["water-pump-4"] = { tier = 4, prog_tier = 5, pump_type = "water" },
-    ["air-pump"] = { tier = 1, prog_tier = 2, pump_type = "air" },
-    ["air-pump-2"] = { tier = 2, prog_tier = 3, pump_type = "air" },
-    ["air-pump-3"] = { tier = 3, prog_tier = 4, pump_type = "air" },
-    ["air-pump-4"] = { tier = 4, prog_tier = 5, pump_type = "air" },
+    ["bob-water-pump"] = { tier = 1, prog_tier = 2, pump_type = "water" },
+    ["bob-water-pump-2"] = { tier = 2, prog_tier = 3, pump_type = "water" },
+    ["bob-water-pump-3"] = { tier = 3, prog_tier = 4, pump_type = "water" },
+    ["bob-water-pump-4"] = { tier = 4, prog_tier = 5, pump_type = "water" },
+    ["bob-air-pump"] = { tier = 1, prog_tier = 2, pump_type = "air" },
+    ["bob-air-pump-2"] = { tier = 2, prog_tier = 3, pump_type = "air" },
+    ["bob-air-pump-3"] = { tier = 3, prog_tier = 4, pump_type = "air" },
+    ["bob-air-pump-4"] = { tier = 4, prog_tier = 5, pump_type = "air" },
 }
 
 local function generate_recipe_mask(pump_type, layer, blend_mode)

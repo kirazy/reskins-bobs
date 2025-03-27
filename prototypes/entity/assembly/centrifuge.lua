@@ -18,8 +18,8 @@ local inputs = {
 
 local tier_map = {
     ["centrifuge"] = { tier = 1, prog_tier = 3 },
-    ["centrifuge-2"] = { tier = 2, prog_tier = 4 },
-    ["centrifuge-3"] = { tier = 3, prog_tier = 5 },
+    ["bob-centrifuge-2"] = { tier = 2, prog_tier = 4 },
+    ["bob-centrifuge-3"] = { tier = 3, prog_tier = 5 },
 }
 
 for name, map in pairs(tier_map) do

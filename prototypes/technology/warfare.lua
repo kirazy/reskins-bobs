@@ -40,7 +40,6 @@ local technologies = {
     ["bob-plasma-turrets-2"] = { icon_name = "plasma-turrets", tier = 2 },
     ["bob-plasma-turrets-3"] = { icon_name = "plasma-turrets", tier = 3 },
     ["bob-plasma-turrets-4"] = { icon_name = "plasma-turrets", tier = 4 },
-    ["bob-plasma-turrets-5"] = { icon_name = "plasma-turrets", tier = 5 },
 
     -- Artillery and artillery wagons
     ["artillery"] = { icon_name = "artillery", tier = 1, prog_tier = 3 },                    -- t3 arty/train arty
@@ -56,8 +55,8 @@ local technologies = {
 
     -- Armor
     -- ["heavy-armor"] = {}, -- probably fine? Depends how armor is handled
-    ["bob-armor-making-3"] = { subgroup = "armor", flat_icon = true }, -- invar cobalt-steel armor (heavy-armor-2)
-    ["bob-armor-making-4"] = { subgroup = "armor", flat_icon = true }, -- titanium-ceramic armor
+    -- ["bob-armor-making-3"] = { subgroup = "armor", flat_icon = true }, -- invar cobalt-steel armor (heavy-armor-2)
+    -- ["bob-armor-making-4"] = { subgroup = "armor", flat_icon = true }, -- titanium-ceramic armor
     -- ["power-armor"] = {}, -- power armor first entry
     -- ["power-armor-mk2"] = {}, -- 2nd power armor
     ["bob-power-armor-3"] = { subgroup = "armor", flat_icon = true },
@@ -79,11 +78,11 @@ local technologies = {
     ["bob-laser-robot"] = { subgroup = "robots", flat_icon = true },
 
     -- Spidertrons
-    ["walking-vehicle"] = { subgroup = "spidertron", flat_icon = true },     -- "Antron"
-    ["tankotron"] = { subgroup = "spidertron", flat_icon = true },           -- "Tankotron"
-    ["logistic-spidertron"] = { subgroup = "spidertron", flat_icon = true }, -- "Logitron"
+    ["bob-walking-vehicle"] = { subgroup = "spidertron", flat_icon = true },     -- "Antron"
+    ["bob-tankotron"] = { subgroup = "spidertron", flat_icon = true },           -- "Tankotron"
+    ["bob-logistic-spidertron"] = { subgroup = "spidertron", flat_icon = true }, -- "Logitron"
     -- ["spidertron"] = {}, -- "Spidertron"
-    ["heavy-spidertron"] = { subgroup = "spidertron", flat_icon = true },    -- "Heavy spidertron"
+    ["bob-heavy-spidertron"] = { subgroup = "spidertron", flat_icon = true },    -- "Heavy spidertron"
 }
 
 -- Sea Block 0.5.5 recalibrates turret 1 and 2 to tiers 3 and 4, and hides the rest

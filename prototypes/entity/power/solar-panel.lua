@@ -17,15 +17,15 @@ local inputs = {
 }
 
 local tier_map = {
-    ["solar-panel-small"] = { 1, 2 },
-    ["solar-panel-small-2"] = { 2, 3 },
-    ["solar-panel-small-3"] = { 3, 4 },
+    ["bob-solar-panel-small"] = { 1, 2 },
+    ["bob-solar-panel-small-2"] = { 2, 3 },
+    ["bob-solar-panel-small-3"] = { 3, 4 },
     ["solar-panel"] = { 1, 2 },
-    ["solar-panel-2"] = { 2, 3 },
-    ["solar-panel-3"] = { 3, 4 },
-    ["solar-panel-large"] = { 1, 2 },
-    ["solar-panel-large-2"] = { 2, 3 },
-    ["solar-panel-large-3"] = { 3, 4 },
+    ["bob-solar-panel-2"] = { 2, 3 },
+    ["bob-solar-panel-3"] = { 3, 4 },
+    ["bob-solar-panel-large"] = { 1, 2 },
+    ["bob-solar-panel-large-2"] = { 2, 3 },
+    ["bob-solar-panel-large-3"] = { 3, 4 },
 }
 
 -- Reskin entities, create and assign extra details

@@ -18,16 +18,16 @@ local inputs = {
 ---@type CreateIconsFromListTable
 local technologies = {
     -- Radars
-    ["radars"] = { tier = 2, icon_name = "radar", flat_icon = false, technology_icon_size = 128 },
-    ["radars-2"] = { tier = 3, icon_name = "radar", flat_icon = false, technology_icon_size = 128 },
-    ["radars-3"] = { tier = 4, icon_name = "radar", flat_icon = false, technology_icon_size = 128 },
-    ["radars-4"] = { tier = 5, icon_name = "radar", flat_icon = false, technology_icon_size = 128 },
+    ["radar"] = { tier = 2, icon_name = "radar", flat_icon = false, technology_icon_size = 128 },
+    ["bob-radar-2"] = { tier = 3, icon_name = "radar", flat_icon = false, technology_icon_size = 128 },
+    ["bob-radar-3"] = { tier = 4, icon_name = "radar", flat_icon = false, technology_icon_size = 128 },
+    ["bob-radar-4"] = { tier = 5, icon_name = "radar", flat_icon = false, technology_icon_size = 128 },
 
     -- Miscellaneous
-    ["reinforced-wall"] = {},
+    ["bob-reinforced-wall"] = {},
     ["bob-laser-rifle"] = {},
     ["bob-scatter-cannon-shells"] = {},
-    ["cordite-processing"] = {},
+    ["bob-cordite-processing"] = {},
 
     -- Laser rifle ammo
     ["bob-laser-rifle-ammo-1"] = { subgroup = "laser-rifle-ammo" },
@@ -56,9 +56,9 @@ local technologies = {
     ["bob-atomic-artillery-shell"] = { subgroup = "artillery-shells" },
 
     -- Mines
-    ["poison-mine"] = { subgroup = "mines" },
-    ["slowdown-mine"] = { subgroup = "mines" },
-    ["distractor-mine"] = { subgroup = "mines" },
+    ["bob-poison-mine"] = { subgroup = "mines" },
+    ["bob-slowdown-mine"] = { subgroup = "mines" },
+    ["bob-distractor-mine"] = { subgroup = "mines" },
 
     -- Shotgun shells
     ["bob-shotgun-acid-shells"] = { subgroup = "shotgun-shells" },
@@ -69,7 +69,6 @@ local technologies = {
     ["bob-shotgun-plasma-shells"] = { subgroup = "shotgun-shells" },
     ["bob-shotgun-poison-shells"] = { subgroup = "shotgun-shells" },
     ["bob-shotgun-shells"] = { subgroup = "shotgun-shells" },
-    ["bob-shotgun-uranium-shells"] = { subgroup = "shotgun-shells" },
 
     -- Bullet magazines
     ["bob-acid-bullets"] = { subgroup = "bullet-magazines" },
@@ -85,11 +84,11 @@ local technologies = {
 
 if reskins.lib.version.is_same_or_newer(mods["bobwarfare"], "1.1.6") then
     technologies["radars"] = nil
-    technologies["radars-1"] = { tier = 1, icon_name = "radar", flat_icon = false, technology_icon_size = 128 }
-    technologies["radars-2"] = { tier = 2, icon_name = "radar", flat_icon = false, technology_icon_size = 128 }
-    technologies["radars-3"] = { tier = 3, icon_name = "radar", flat_icon = false, technology_icon_size = 128 }
-    technologies["radars-4"] = { tier = 4, icon_name = "radar", flat_icon = false, technology_icon_size = 128 }
-    technologies["radars-5"] = { tier = 5, icon_name = "radar", flat_icon = false, technology_icon_size = 128 }
+    technologies["radar"]       = { tier = 1, icon_name = "radar", flat_icon = false, technology_icon_size = 128 }
+    technologies["bob-radar-2"] = { tier = 2, icon_name = "radar", flat_icon = false, technology_icon_size = 128 }
+    technologies["bob-radar-3"] = { tier = 3, icon_name = "radar", flat_icon = false, technology_icon_size = 128 }
+    technologies["bob-radar-4"] = { tier = 4, icon_name = "radar", flat_icon = false, technology_icon_size = 128 }
+    technologies["bob-radar-5"] = { tier = 5, icon_name = "radar", flat_icon = false, technology_icon_size = 128 }
 end
 
 if mods["aai-industry"] then

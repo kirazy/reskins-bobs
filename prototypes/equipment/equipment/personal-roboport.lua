@@ -21,8 +21,8 @@ reskins.lib.set_inputs_defaults(inputs)
 local personal_roboports = {
     ["personal-roboport-equipment"] = { tier = 1, prog_tier = 2, base = 1 },
     ["personal-roboport-mk2-equipment"] = { tier = 2, prog_tier = 3, base = 1 },
-    ["personal-roboport-mk3-equipment"] = { tier = 3, prog_tier = 4, base = 2 },
-    ["personal-roboport-mk4-equipment"] = { tier = 4, prog_tier = 5, base = 2 },
+    ["bob-personal-roboport-mk3-equipment"] = { tier = 3, prog_tier = 4, base = 2 },
+    ["bob-personal-roboport-mk4-equipment"] = { tier = 4, prog_tier = 5, base = 2 },
 }
 
 -- Reskin equipment

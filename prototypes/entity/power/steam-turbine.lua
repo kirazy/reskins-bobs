@@ -19,8 +19,8 @@ local inputs = {
 
 local tier_map = {
     ["steam-turbine"] = { 1, 3 },
-    ["steam-turbine-2"] = { 2, 4 },
-    ["steam-turbine-3"] = { 3, 5 },
+    ["bob-steam-turbine-2"] = { 2, 4 },
+    ["bob-steam-turbine-3"] = { 3, 5 },
 }
 
 -- Reskin entities, create and assign extra details

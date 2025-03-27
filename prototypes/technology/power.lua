@@ -58,13 +58,13 @@ end
 if reskins.bobs.triggers.power.poles then
     -- Electric poles
     technologies["electric-energy-distribution-1"] = { icon_name = "power-poles", tier = 1, prog_tier = 2 } -- t2 poles
-    technologies["electric-pole-2"] = { icon_name = "power-poles", tier = 2, prog_tier = 3 }                -- t3 poles
-    technologies["electric-pole-3"] = { icon_name = "power-poles", tier = 3, prog_tier = 4 }                -- t4 poles
-    technologies["electric-pole-4"] = { icon_name = "power-poles", tier = 4, prog_tier = 5 }                -- t5 poles
+    technologies["bob-electric-pole-2"] = { icon_name = "power-poles", tier = 2, prog_tier = 3 }                -- t3 poles
+    technologies["bob-electric-pole-3"] = { icon_name = "power-poles", tier = 3, prog_tier = 4 }                -- t4 poles
+    technologies["bob-electric-pole-4"] = { icon_name = "power-poles", tier = 4, prog_tier = 5 }                -- t5 poles
     technologies["electric-energy-distribution-2"] = { icon_name = "substation", tier = 1, prog_tier = 2 }  -- t2 substation
-    technologies["electric-substation-2"] = { icon_name = "substation", tier = 2, prog_tier = 3 }           -- t3 substation
-    technologies["electric-substation-3"] = { icon_name = "substation", tier = 3, prog_tier = 4 }           -- t4 substation
-    technologies["electric-substation-4"] = { icon_name = "substation", tier = 4, prog_tier = 5 }           -- t5 substation
+    technologies["bob-electric-substation-2"] = { icon_name = "substation", tier = 2, prog_tier = 3 }           -- t3 substation
+    technologies["bob-electric-substation-3"] = { icon_name = "substation", tier = 3, prog_tier = 4 }           -- t4 substation
+    technologies["bob-electric-substation-4"] = { icon_name = "substation", tier = 4, prog_tier = 5 }           -- t5 substation
 end
 
 if reskins.bobs.triggers.power.steam then
@@ -111,20 +111,20 @@ end
 
 if reskins.bobs.triggers.power.fluidgenerator then
     -- Fluid generators
-    technologies["fluid-generator-1"] = { tier = 1, prog_tier = 2, icon_name = "fluid-generator" }
-    technologies["fluid-generator-2"] = { tier = 2, prog_tier = 3, icon_name = "fluid-generator" }
-    technologies["fluid-generator-3"] = { tier = 3, prog_tier = 4, icon_name = "fluid-generator" }
-    technologies["hydrazine-generator"] = { tier = 4, prog_tier = 5, icon_name = "fluid-generator", tint = reskins.bobs.hydrazine_tint }
+    technologies["bob-fluid-generator-1"] = { tier = 1, prog_tier = 2, icon_name = "fluid-generator" }
+    technologies["bob-fluid-generator-2"] = { tier = 2, prog_tier = 3, icon_name = "fluid-generator" }
+    technologies["bob-fluid-generator-3"] = { tier = 3, prog_tier = 4, icon_name = "fluid-generator" }
+    technologies["bob-hydrazine-generator"] = { tier = 4, prog_tier = 5, icon_name = "fluid-generator", tint = reskins.bobs.hydrazine_tint }
 end
 
 if reskins.bobs.triggers.power.heatsources then
     -- Heat sources
-    -- technologies["fluid-reactor-1"] = {} -- t3 fluid burning heat sources
-    -- technologies["fluid-reactor-2"] = {} -- t4 fluid heat source
-    -- technologies["fluid-reactor-3"] = {} -- t5
-    -- technologies["burner-reactor-1"] = {} -- t3 burner heat sources
-    -- technologies["burner-reactor-2"] = {} -- t4 burner
-    -- technologies["burner-reactor-3"] = {} -- t5
+    -- technologies["bob-fluid-reactor-1"] = {} -- t3 fluid burning heat sources
+    -- technologies["bob-fluid-reactor-2"] = {} -- t4 fluid heat source
+    -- technologies["bob-fluid-reactor-3"] = {} -- t5
+    -- technologies["bob-burner-reactor-1"] = {} -- t3 burner heat sources
+    -- technologies["bob-burner-reactor-2"] = {} -- t4 burner
+    -- technologies["bob-burner-reactor-3"] = {} -- t5
 end
 
 if reskins.bobs.triggers.power.solar then

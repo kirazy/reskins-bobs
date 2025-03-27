@@ -17,11 +17,11 @@ local inputs = {
 
 ---@type CreateIconsFromListTable
 local technologies = {
-    -- ["long-inserters-1"] = {},
-    -- ["long-inserters-2"] = {},
-    -- ["near-inserters"] = {},
-    -- ["more-inserters-1"] = {},
-    -- ["more-inserters-2"] = {},
+    -- ["bob-long-inserters-1"] = {},
+    -- ["bob-long-inserters-2"] = {},
+    -- ["bob-near-inserters"] = {},
+    -- ["bob-more-inserters-1"] = {},
+    -- ["bob-more-inserters-2"] = {},
 }
 
 -- For non-overhaul condition, long-handed inserters are unlocked by this technology

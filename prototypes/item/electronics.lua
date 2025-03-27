@@ -17,12 +17,12 @@ local inputs = {
 ---@type CreateIconsFromListTable
 local intermediates = {
     -- Wires
-    ["gilded-copper-cable"] = { mod = "lib", group = "shared", subgroup = "items" },
-    ["tinned-copper-cable"] = { subgroup = "wires" },
-    ["insulated-cable"] = { subgroup = "wires" },
+    ["bob-gilded-copper-cable"] = { mod = "lib", group = "shared", subgroup = "items", image = "gilded-copper-cable" },
+    ["bob-tinned-copper-cable"] = { subgroup = "wires" },
+    ["bob-insulated-cable"] = { subgroup = "wires" },
 
     -- Intermediates
-    ["solder"] = { mod = "lib", group = "shared", subgroup = "items" },
+    ["bob-solder"] = { mod = "lib", group = "shared", subgroup = "items", image = "solder" },
 }
 
 -- Items and recipes shared with other mods within Bob's suite
@@ -36,7 +36,7 @@ if not mods["bobplates"] then
 
     -- Recipes
     intermediates["coal-cracking"] = { type = "recipe", group = "plates", subgroup = "recipes" }
-    intermediates["synthetic-wood"] = { type = "recipe", group = "plates", subgroup = "recipes" }
+    intermediates["bob-synthetic-wood"] = { type = "recipe", group = "plates", subgroup = "recipes" }
     intermediates["bob-resin-wood"] = { type = "recipe", group = "plates", subgroup = "recipes" }
     intermediates["bob-resin-oil"] = { type = "recipe", group = "plates", subgroup = "recipes" }
 end

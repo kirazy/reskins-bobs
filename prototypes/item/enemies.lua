@@ -16,21 +16,21 @@ local inputs = {
 
 ---@type CreateIconsFromListTable
 local items = {
-    ["alien-artifact"] = { subgroup = "artifacts" },
-    ["alien-artifact-blue"] = { subgroup = "artifacts" },
-    ["alien-artifact-green"] = { subgroup = "artifacts" },
-    ["alien-artifact-orange"] = { subgroup = "artifacts" },
-    ["alien-artifact-purple"] = { subgroup = "artifacts" },
-    ["alien-artifact-red"] = { subgroup = "artifacts" },
-    ["alien-artifact-yellow"] = { subgroup = "artifacts" },
+    ["bob-alien-artifact"] = { subgroup = "artifacts" },
+    ["bob-alien-artifact-blue"] = { subgroup = "artifacts" },
+    ["bob-alien-artifact-green"] = { subgroup = "artifacts" },
+    ["bob-alien-artifact-orange"] = { subgroup = "artifacts" },
+    ["bob-alien-artifact-purple"] = { subgroup = "artifacts" },
+    ["bob-alien-artifact-red"] = { subgroup = "artifacts" },
+    ["bob-alien-artifact-yellow"] = { subgroup = "artifacts" },
 
-    ["small-alien-artifact"] = { subgroup = "artifacts" },
-    ["small-alien-artifact-blue"] = { subgroup = "artifacts" },
-    ["small-alien-artifact-green"] = { subgroup = "artifacts" },
-    ["small-alien-artifact-orange"] = { subgroup = "artifacts" },
-    ["small-alien-artifact-purple"] = { subgroup = "artifacts" },
-    ["small-alien-artifact-red"] = { subgroup = "artifacts" },
-    ["small-alien-artifact-yellow"] = { subgroup = "artifacts" },
+    ["bob-small-alien-artifact"] = { subgroup = "artifacts" },
+    ["bob-small-alien-artifact-blue"] = { subgroup = "artifacts" },
+    ["bob-small-alien-artifact-green"] = { subgroup = "artifacts" },
+    ["bob-small-alien-artifact-orange"] = { subgroup = "artifacts" },
+    ["bob-small-alien-artifact-purple"] = { subgroup = "artifacts" },
+    ["bob-small-alien-artifact-red"] = { subgroup = "artifacts" },
+    ["bob-small-alien-artifact-yellow"] = { subgroup = "artifacts" },
 }
 
 reskins.internal.create_icons_from_list(items, inputs)

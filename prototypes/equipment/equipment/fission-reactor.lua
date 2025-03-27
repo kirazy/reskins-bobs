@@ -19,9 +19,9 @@ reskins.lib.set_inputs_defaults(inputs)
 
 local fission_reactors = {
     ["fission-reactor-equipment"] = { tier = 1, prog_tier = 2 },
-    ["fission-reactor-equipment-2"] = { tier = 2, prog_tier = 3 },
-    ["fission-reactor-equipment-3"] = { tier = 3, prog_tier = 4 },
-    ["fission-reactor-equipment-4"] = { tier = 4, prog_tier = 5 },
+    ["bob-fission-reactor-equipment-2"] = { tier = 2, prog_tier = 3 },
+    ["bob-fission-reactor-equipment-3"] = { tier = 3, prog_tier = 4 },
+    ["bob-fission-reactor-equipment-4"] = { tier = 4, prog_tier = 5 },
 }
 
 -- Reskin equipment

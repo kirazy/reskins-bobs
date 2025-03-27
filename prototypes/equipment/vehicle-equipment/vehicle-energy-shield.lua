@@ -19,12 +19,12 @@ local inputs = {
 reskins.lib.set_inputs_defaults(inputs)
 
 local vehicle_shield = {
-    ["vehicle-shield-equipment-1"] = { tier = 0 },
-    ["vehicle-shield-equipment-2"] = { tier = 1 },
-    ["vehicle-shield-equipment-3"] = { tier = 2 },
-    ["vehicle-shield-equipment-4"] = { tier = 3 },
-    ["vehicle-shield-equipment-5"] = { tier = 4 },
-    ["vehicle-shield-equipment-6"] = { tier = 5 },
+    ["bob-vehicle-shield-equipment-1"] = { tier = 0 },
+    ["bob-vehicle-shield-equipment-2"] = { tier = 1 },
+    ["bob-vehicle-shield-equipment-3"] = { tier = 2 },
+    ["bob-vehicle-shield-equipment-4"] = { tier = 3 },
+    ["bob-vehicle-shield-equipment-5"] = { tier = 4 },
+    ["bob-vehicle-shield-equipment-6"] = { tier = 5 },
 }
 
 -- Reskin equipment

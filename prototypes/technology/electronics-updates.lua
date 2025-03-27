@@ -17,7 +17,8 @@ local inputs = {
 
 ---@type CreateIconsFromListTable
 local technologies = {
-    ["advanced-electronics-2"] = { technology_icon_filename = "__base__/graphics/technology/electronics.png" },
+    -- FIXME: The icon is gone in 2.0. Bundled from 1.1 for now.
+    ["processing-unit"] = { image = "electronics-1.1" },
 }
 
 reskins.internal.create_icons_from_list(technologies, inputs)

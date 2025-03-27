@@ -19,9 +19,9 @@ reskins.lib.set_inputs_defaults(inputs)
 
 local solar_panels = {
     ["solar-panel-equipment"] = { tier = 1, prog_tier = 2 },
-    ["solar-panel-equipment-2"] = { tier = 2, prog_tier = 3 },
-    ["solar-panel-equipment-3"] = { tier = 3, prog_tier = 4 },
-    ["solar-panel-equipment-4"] = { tier = 4, prog_tier = 5 },
+    ["bob-solar-panel-equipment-2"] = { tier = 2, prog_tier = 3 },
+    ["bob-solar-panel-equipment-3"] = { tier = 3, prog_tier = 4 },
+    ["bob-solar-panel-equipment-4"] = { tier = 4, prog_tier = 5 },
 }
 
 -- Reskin equipment

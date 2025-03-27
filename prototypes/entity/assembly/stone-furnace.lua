@@ -8,8 +8,8 @@ if not (reskins.bobs and (reskins.bobs.triggers.assembly.entities or reskins.bob
 
 local stone_furnace_map = {
     ["stone-furnace"] = { type = "furnace", tint = reskins.bobs.furnace_tint_index.standard },
-    ["stone-mixing-furnace"] = { type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.mixing },
-    ["stone-chemical-furnace"] = { type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.chemical, is_chemical = true },
+    ["bob-stone-mixing-furnace"] = { type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.mixing },
+    ["bob-stone-chemical-furnace"] = { type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.chemical, is_chemical = true },
 }
 
 local function stone_furnace_entities(furnace, tint)

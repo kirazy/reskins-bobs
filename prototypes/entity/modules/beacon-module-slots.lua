@@ -328,7 +328,7 @@ local function setup_vanilla_module_slot(parameters)
 end
 
 -- List of beacons
-local beacons = { "beacon", "beacon-2", "beacon-3" }
+local beacons = { "beacon", "bob-beacon-2", "bob-beacon-3" }
 
 -- Setup module slots
 for _, name in pairs(beacons) do
