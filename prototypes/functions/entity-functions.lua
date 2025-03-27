@@ -7,4 +7,4 @@
 if not reskins.lib.apply_skin then reskins.lib.apply_skin = {} end
 
 -- Bob's Assembly
-require('entities.assembly.assembling-machine')
+require("entities.assembly.assembling-machine")

@@ -22,7 +22,7 @@ require("prototypes.entity.ores.ores-updates")
 -- ITEMS
 ----------------------------------------------------------------------------------------------------
 require("prototypes.item.electronics.circuits") -- Bob has circuit coloring in data-updates
-require("prototypes.item.plates.battery")       -- Bob has some battery updates in data-updates
+require("prototypes.item.plates.battery") -- Bob has some battery updates in data-updates
 require("prototypes.item.plates-updates")
 
 ----------------------------------------------------------------------------------------------------
@@ -30,9 +30,9 @@ require("prototypes.item.plates-updates")
 ----------------------------------------------------------------------------------------------------
 require("prototypes.technology.electronics-updates")
 require("prototypes.technology.power-updates")
-require("prototypes.technology.revamp-updates")     -- Bob does tech updates in data-updates
+require("prototypes.technology.revamp-updates") -- Bob does tech updates in data-updates
 require("prototypes.technology.technology-updates") -- Bob does tech updates in data-updates
-require("prototypes.technology.warfare-updates")    -- Bob does tech updates in data-updates
+require("prototypes.technology.warfare-updates") -- Bob does tech updates in data-updates
 
 ----------------------------------------------------------------------------------------------------
 -- GUI Modifications

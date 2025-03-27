@@ -8,17 +8,17 @@ if not (reskins.bobs and reskins.bobs.triggers.greenhouse.technologies) then ret
 
 ---@type CreateIconsFromListInputs
 local inputs = {
-    mod = "bobs",
-    group = "greenhouse",
-    type = "technology",
-    flat_icon = true,
-    technology_icon_size = 256,
+	mod = "bobs",
+	group = "greenhouse",
+	type = "technology",
+	flat_icon = true,
+	technology_icon_size = 256,
 }
 
 ---@type CreateIconsFromListTable
 local technologies = {
-    ["bob-fertiliser"] = {},
-    ["bob-greenhouse"] = {}, -- greenhouse, recipies
+	["bob-fertiliser"] = {},
+	["bob-greenhouse"] = {}, -- greenhouse, recipies
 }
 
 reskins.internal.create_icons_from_list(technologies, inputs)

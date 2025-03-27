@@ -11,156 +11,154 @@ if reskins.compatibility then reskins.compatibility.triggers.minimachines.radar 
 
 -- Set input parameters
 local inputs = {
-    type = "radar",
-    icon_name = "radar",
-    base_entity_name = "radar",
-    mod = "bobs",
-    group = "warfare",
-    particles = { ["medium"] = 2 },
+	type = "radar",
+	icon_name = "radar",
+	base_entity_name = "radar",
+	mod = "bobs",
+	group = "warfare",
+	particles = { ["medium"] = 2 },
 }
 
 local tier_map = {
-    ["radar"] = 1,
-    ["bob-radar-2"] = 2,
-    ["bob-radar-3"] = 3,
-    ["bob-radar-4"] = 4,
-    ["bob-radar-5"] = 5,
+	["radar"] = 1,
+	["bob-radar-2"] = 2,
+	["bob-radar-3"] = 3,
+	["bob-radar-4"] = 4,
+	["bob-radar-5"] = 5,
 }
 
 -- Reskin entities, create and assign extra details
 for name, tier in pairs(tier_map) do
-    ---@type data.RadarPrototype
-    local entity = data.raw[inputs.type][name]
+	---@type data.RadarPrototype
+	local entity = data.raw[inputs.type][name]
 
-    -- Check if entity exists, if not, skip this iteration
-    if not entity then goto continue end
+	-- Check if entity exists, if not, skip this iteration
+	if not entity then goto continue end
 
-    -- Determine what tint we're using
-    inputs.tint = reskins.lib.tiers.get_tint(tier)
+	-- Determine what tint we're using
+	inputs.tint = reskins.lib.tiers.get_tint(tier)
 
-    reskins.lib.setup_standard_entity(name, tier, inputs)
+	reskins.lib.setup_standard_entity(name, tier, inputs)
 
-    -- Fetch remnant
-    local remnant = data.raw["corpse"][name .. "-remnants"]
+	-- Fetch remnant
+	local remnant = data.raw["corpse"][name .. "-remnants"]
 
-    -- Reskin remnants
-    remnant.animation = make_rotated_animation_variations_from_sheet(1, {
-        layers = {
-            -- Base
-            {
-                filename = "__base__/graphics/entity/radar/remnants/radar-remnants.png",
-                line_length = 1,
-                width = 282,
-                height = 212,
-                frame_count = 1,
-                variation_count = 1,
-                axially_symmetrical = false,
-                direction_count = 1,
-                shift = util.by_pixel(12, 4.5),
-                scale = 0.5,
-            },
-            -- Mask
-            {
-                filename = "__reskins-bobs__/graphics/entity/warfare/radar/remnants/radar-remnants-mask.png",
-                line_length = 1,
-                width = 282,
-                height = 212,
-                frame_count = 1,
-                variation_count = 1,
-                axially_symmetrical = false,
-                direction_count = 1,
-                shift = util.by_pixel(12, 4.5),
-                tint = inputs.tint,
-                scale = 0.5,
-            },
-            -- Highlights
-            {
-                filename = "__reskins-bobs__/graphics/entity/warfare/radar/remnants/radar-remnants-highlights.png",
-                line_length = 1,
-                width = 282,
-                height = 212,
-                frame_count = 1,
-                variation_count = 1,
-                axially_symmetrical = false,
-                direction_count = 1,
-                shift = util.by_pixel(12, 4.5),
-                blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                scale = 0.5,
-            },
-        },
-    })
+	-- Reskin remnants
+	remnant.animation = make_rotated_animation_variations_from_sheet(1, {
+		layers = {
+			-- Base
+			{
+				filename = "__base__/graphics/entity/radar/remnants/radar-remnants.png",
+				line_length = 1,
+				width = 282,
+				height = 212,
+				frame_count = 1,
+				variation_count = 1,
+				axially_symmetrical = false,
+				direction_count = 1,
+				shift = util.by_pixel(12, 4.5),
+				scale = 0.5,
+			},
+			-- Mask
+			{
+				filename = "__reskins-bobs__/graphics/entity/warfare/radar/remnants/radar-remnants-mask.png",
+				line_length = 1,
+				width = 282,
+				height = 212,
+				frame_count = 1,
+				variation_count = 1,
+				axially_symmetrical = false,
+				direction_count = 1,
+				shift = util.by_pixel(12, 4.5),
+				tint = inputs.tint,
+				scale = 0.5,
+			},
+			-- Highlights
+			{
+				filename = "__reskins-bobs__/graphics/entity/warfare/radar/remnants/radar-remnants-highlights.png",
+				line_length = 1,
+				width = 282,
+				height = 212,
+				frame_count = 1,
+				variation_count = 1,
+				axially_symmetrical = false,
+				direction_count = 1,
+				shift = util.by_pixel(12, 4.5),
+				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
+				scale = 0.5,
+			},
+		},
+	})
 
-    -- Reskin entity
-    entity.integration_patch = {
-        filename = "__base__/graphics/entity/radar/radar-integration.png",
-        priority = "low",
-        width = 238,
-        height = 216,
-        direction_count = 1,
-        shift = util.by_pixel(1.5, 4),
-        scale = 0.5,
-    }
+	-- Reskin entity
+	entity.integration_patch = {
+		filename = "__base__/graphics/entity/radar/radar-integration.png",
+		priority = "low",
+		width = 238,
+		height = 216,
+		direction_count = 1,
+		shift = util.by_pixel(1.5, 4),
+		scale = 0.5,
+	}
 
-    entity.pictures = {
-        layers = {
-            -- Base
-            {
-                filename = "__base__/graphics/entity/radar/radar.png",
-                priority = "low",
-                width = 196,
-                height = 254,
-                apply_projection = false,
-                direction_count = 64,
-                line_length = 8,
-                shift = util.by_pixel(1.0, -16.0),
-                scale = 0.5
-            },
-            -- Mask
-            {
-                filename = "__reskins-bobs__/graphics/entity/warfare/radar/radar-mask.png",
-                priority = "low",
-                width = 196,
-                height = 254,
-                apply_projection = false,
-                direction_count = 64,
-                line_length = 8,
-                shift = util.by_pixel(1, -16),
-                tint = inputs.tint,
-                scale = 0.5,
-            },
-            -- Highlights
-            {
-                filename = "__reskins-bobs__/graphics/entity/warfare/radar/radar-highlights.png",
-                priority = "low",
-                width = 196,
-                height = 254,
-                apply_projection = false,
-                direction_count = 64,
-                line_length = 8,
-                shift = util.by_pixel(1, -16),
-                blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-                scale = 0.5,
-            },
-            -- Shadow
-            {
-                filename = "__base__/graphics/entity/radar/radar-shadow.png",
-                priority = "low",
-                width = 336,
-                height = 170,
-                apply_projection = false,
-                direction_count = 64,
-                line_length = 8,
-                shift = util.by_pixel(39.0, 6.0),
-                draw_as_shadow = true,
-                scale = 0.5
-            },
-        },
-    }
+	entity.pictures = {
+		layers = {
+			-- Base
+			{
+				filename = "__base__/graphics/entity/radar/radar.png",
+				priority = "low",
+				width = 196,
+				height = 254,
+				apply_projection = false,
+				direction_count = 64,
+				line_length = 8,
+				shift = util.by_pixel(1.0, -16.0),
+				scale = 0.5,
+			},
+			-- Mask
+			{
+				filename = "__reskins-bobs__/graphics/entity/warfare/radar/radar-mask.png",
+				priority = "low",
+				width = 196,
+				height = 254,
+				apply_projection = false,
+				direction_count = 64,
+				line_length = 8,
+				shift = util.by_pixel(1, -16),
+				tint = inputs.tint,
+				scale = 0.5,
+			},
+			-- Highlights
+			{
+				filename = "__reskins-bobs__/graphics/entity/warfare/radar/radar-highlights.png",
+				priority = "low",
+				width = 196,
+				height = 254,
+				apply_projection = false,
+				direction_count = 64,
+				line_length = 8,
+				shift = util.by_pixel(1, -16),
+				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
+				scale = 0.5,
+			},
+			-- Shadow
+			{
+				filename = "__base__/graphics/entity/radar/radar-shadow.png",
+				priority = "low",
+				width = 336,
+				height = 170,
+				apply_projection = false,
+				direction_count = 64,
+				line_length = 8,
+				shift = util.by_pixel(39.0, 6.0),
+				draw_as_shadow = true,
+				scale = 0.5,
+			},
+		},
+	}
 
-    if name ~= "radar" then
-        entity.water_reflection = util.copy(data.raw[inputs.type]["radar"].water_reflection)
-    end
+	if name ~= "radar" then entity.water_reflection = util.copy(data.raw[inputs.type]["radar"].water_reflection) end
 
-    -- Label to skip to next iteration
-    ::continue::
+	-- Label to skip to next iteration
+	::continue::
 end

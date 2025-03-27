@@ -8,10 +8,10 @@ if not (reskins.bobs and reskins.bobs.triggers.plates.items) then return end
 
 ---@type CreateIconsFromListInputs
 local inputs = {
-    mod = "bobs",
-    group = "plates",
-    make_icon_pictures = false,
-    flat_icon = true,
+	mod = "bobs",
+	group = "plates",
+	make_icon_pictures = false,
+	flat_icon = true,
 }
 
 ---
@@ -29,17 +29,17 @@ local inputs = {
 ---@param ... string|integer # Keys that describe a path to a value in `root`.
 ---@return any # The value at the end of the path if it is exists; otherwise, `nil`.
 local function get_value(root, ...)
-    local current_obj = root
+	local current_obj = root
 
-    for _, key in pairs({ ... }) do
-        if type(current_obj) == "table" and current_obj[key] ~= nil then
-            current_obj = current_obj[key]
-        else
-            return nil
-        end
-    end
+	for _, key in pairs({ ... }) do
+		if type(current_obj) == "table" and current_obj[key] ~= nil then
+			current_obj = current_obj[key]
+		else
+			return nil
+		end
+	end
 
-    return current_obj
+	return current_obj
 end
 
 ---
@@ -56,7 +56,7 @@ end
 ---@param ... string|integer # Keys that describe a path to a value in `root`.
 ---@return boolean # `true` if the value at the end of the path is exists; otherwise, `false`.
 local function value_exists(root, ...)
-    return get_value(root, ...) == nil
+	return get_value(root, ...) == nil
 end
 
 ---
@@ -70,22 +70,22 @@ end
 ---@param if_false any # The value returned when `condition` is `false`.
 ---@return any # When `condition == true`, returns `if_true`; otherwise, returns `if_false`.
 local function ternary(condition, if_true, if_false)
-    if condition then
-        return if_true
-    else
-        return if_false
-    end
+	if condition then
+		return if_true
+	else
+		return if_false
+	end
 end
 
 ---@type CreateIconsFromListTable
 local intermediates = {
-    -- Powders
-    ["bob-alumina"] = ternary(get_value(angelsmods, "trigger", "smelting_products", "aluminium", "ingot"), nil, { subgroup = "powders" }),
-    ["bob-cobalt-oxide"] = ternary(get_value(angelsmods, "trigger", "smelting_products", "cobalt", "ingot"), nil, { subgroup = "powders" }),
-    ["bob-tungsten-oxide"] = ternary(get_value(angelsmods, "trigger", "smelting_products", "tungsten", "powder"), nil, { subgroup = "powders" }),
-    ["bob-powdered-tungsten"] = ternary(get_value(angelsmods, "trigger", "smelting_products", "tungsten", "powder"), nil, { subgroup = "powders" }),
-    ["bob-lead-oxide"] = ternary(get_value(angelsmods, "triggers", "smelting_products", "lead", "ingot"), nil, { subgroup = "powders" }),
-    ["bob-silver-nitrate"] = ternary(get_value(angelsmods, "triggers", "smelting_products", "silver", "ingot"), nil, { subgroup = "powders" }),
+	-- Powders
+	["bob-alumina"] = ternary(get_value(angelsmods, "trigger", "smelting_products", "aluminium", "ingot"), nil, { subgroup = "powders" }),
+	["bob-cobalt-oxide"] = ternary(get_value(angelsmods, "trigger", "smelting_products", "cobalt", "ingot"), nil, { subgroup = "powders" }),
+	["bob-tungsten-oxide"] = ternary(get_value(angelsmods, "trigger", "smelting_products", "tungsten", "powder"), nil, { subgroup = "powders" }),
+	["bob-powdered-tungsten"] = ternary(get_value(angelsmods, "trigger", "smelting_products", "tungsten", "powder"), nil, { subgroup = "powders" }),
+	["bob-lead-oxide"] = ternary(get_value(angelsmods, "triggers", "smelting_products", "lead", "ingot"), nil, { subgroup = "powders" }),
+	["bob-silver-nitrate"] = ternary(get_value(angelsmods, "triggers", "smelting_products", "silver", "ingot"), nil, { subgroup = "powders" }),
 }
 
 reskins.internal.create_icons_from_list(intermediates, inputs)

@@ -8,21 +8,21 @@ if not (reskins.bobs and reskins.bobs.triggers.revamp.technologies) then return 
 
 ---@type CreateIconsFromListInputs
 local inputs = {
-    mod = "bobs",
-    group = "revamp",
-    type = "technology",
-    flat_icon = true,
-    technology_icon_size = 256,
+	mod = "bobs",
+	group = "revamp",
+	type = "technology",
+	flat_icon = true,
+	technology_icon_size = 256,
 }
 
 ---@type CreateIconsFromListTable
 local technologies = {
-    -- ["pumpjack"] = {group = "mining", tier = 1}, -- pumpjack 1
+	-- ["pumpjack"] = {group = "mining", tier = 1}, -- pumpjack 1
 
-    -- ["solid-fuel"] = {}, -- Solid fuels! all of the, black/white
-    -- ["hydrazine"] = {}, -- Hydrazine, enriched fuel block from hydrazine
-    -- ["rtg"] = {}, -- radio thermoelec gen, fluids, powders
-    ["bob-heat-shield"] = {}, -- also need to do item, heat-shield-tile
+	-- ["solid-fuel"] = {}, -- Solid fuels! all of the, black/white
+	-- ["hydrazine"] = {}, -- Hydrazine, enriched fuel block from hydrazine
+	-- ["rtg"] = {}, -- radio thermoelec gen, fluids, powders
+	["bob-heat-shield"] = {}, -- also need to do item, heat-shield-tile
 }
 
 reskins.internal.create_icons_from_list(technologies, inputs)
