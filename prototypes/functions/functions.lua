@@ -6,7 +6,7 @@
 ---Mod path for Artisanal Reskins: Bob's Mods.
 reskins.bobs.directory = "__reskins-bobs__"
 
----@type data.BeaconVisualizationTints
+---@type data.ModuleTint[]
 reskins.bobs.module_color_map = {
     ["blue"] = { primary = util.color("70b6ff"), secondary = util.color("30d2ff") },
     ["brown"] = { primary = util.color("9c7c60"), secondary = util.color("fff0d9") },
