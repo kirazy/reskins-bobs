@@ -21,8 +21,8 @@ local assembling_machines = {
 	["bob-assembling-machine-5"] = { tier = 5, flags = { sprite_set = 4 } },
 	["bob-assembling-machine-6"] = { tier = 6, flags = { sprite_set = 5 } },
 	-- Smoke stacks
-	["bob-burner-assembling-machine"] = {tier = 0, flags = {use_burner_set = true, is_small = reskins.bobs.triggers.assembly.burner_assembling_machine_is_small}},
-	["bob-steam-assembling-machine"] = {tier = 0, flags = {use_steam_set = true}}, 
+	["bob-burner-assembling-machine"] = { tier = 0, flags = { use_burner_set = true, is_small = reskins.bobs.triggers.assembly.burner_assembling_machine_is_small } },
+	["bob-steam-assembling-machine"] = { tier = 0, flags = { use_steam_set = true } },
 	-- Electronics
 	["bob-electronics-machine-1"] = { tier = 1, prog_tier = 2, flags = { use_electronics_set = true, lights = 1, is_small = true } },
 	["bob-electronics-machine-2"] = { tier = 2, prog_tier = 4, flags = { use_electronics_set = true, lights = 2, is_small = true } },
