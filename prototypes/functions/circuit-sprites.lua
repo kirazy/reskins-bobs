@@ -4,7 +4,9 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check if the setting exists
-if not reskins.lib.settings.get_value("reskins-bobs-do-bobelectronics-circuit-style") then return end
+if not reskins.lib.settings.get_value("reskins-bobs-do-bobelectronics-circuit-style") then
+	return
+end
 
 local circuits = {
 	["electronic-circuit"] = { tier = 1, prog_tier = 2 },
@@ -40,7 +42,9 @@ for circuit, map in pairs(circuits) do
 
 	-- Parse map
 	local tier = map.tier
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then tier = map.prog_tier end
+	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
+		tier = map.prog_tier
+	end
 
 	-- Fetch tint
 	local tint = reskins.lib.tiers.get_tint(tier)

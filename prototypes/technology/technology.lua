@@ -4,8 +4,12 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if mods["ScienceCostTweakerM"] then return end -- May not be needed, but labs?...
-if not (reskins.bobs and reskins.bobs.triggers.technology.technologies) then return end
+if mods["ScienceCostTweakerM"] then
+	return
+end -- May not be needed, but labs?...
+if not (reskins.bobs and reskins.bobs.triggers.technology.technologies) then
+	return
+end
 
 ---@type CreateIconsFromListInputs
 local inputs = {
@@ -74,7 +78,9 @@ local technology_infer_icon_list = {
 }
 
 for _, tech in pairs(technology_infer_icon_list) do
-	if data.raw.technology[tech] then data.raw.technology[tech].effects[1].infer_icon = false end
+	if data.raw.technology[tech] then
+		data.raw.technology[tech].effects[1].infer_icon = false
+	end
 end
 -- TODO: Redesign this to be a function that scans through technology table for a whitelist of effects and then sets infer_icon for those effects
 -- TODO: Move tech effect icon overwrites to its own function/file, along with the above

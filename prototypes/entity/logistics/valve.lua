@@ -4,7 +4,9 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check if reskinning needs to be done
-if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then return end
+if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then
+	return
+end
 
 -- Set input parameters
 local inputs = {
@@ -59,7 +61,9 @@ for name, tint in pairs(tint_map) do
 	local entity = data.raw[inputs.type][name]
 
 	-- Check if entity exists, if not, skip this iteration
-	if not entity then goto continue end
+	if not entity then
+		goto continue
+	end
 
 	-- Assign tint
 	inputs.tint = tint

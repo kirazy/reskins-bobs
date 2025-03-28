@@ -4,8 +4,12 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if mods["classic-beacon"] then return end
-if not (reskins.bobs and reskins.bobs.triggers.modules.entities) then return end
+if mods["classic-beacon"] then
+	return
+end
+if not (reskins.bobs and reskins.bobs.triggers.modules.entities) then
+	return
+end
 
 local empty_fill_layer = {
 	pictures = {
@@ -166,7 +170,9 @@ local function setup_reskins_module_slot(parameters)
 	end
 
 	-- Fix interleaved render orders
-	if parameters.needs_padding then table.insert(slot, 1, empty_fill_layer) end
+	if parameters.needs_padding then
+		table.insert(slot, 1, empty_fill_layer)
+	end
 
 	return slot
 end
@@ -316,7 +322,9 @@ local function setup_vanilla_module_slot(parameters)
 	end
 
 	-- Fix interleaved render orders
-	if parameters.needs_padding then table.insert(slot, 1, empty_fill_layer) end
+	if parameters.needs_padding then
+		table.insert(slot, 1, empty_fill_layer)
+	end
 
 	return slot
 end
@@ -330,7 +338,9 @@ for _, name in pairs(beacons) do
 	local entity = data.raw["beacon"][name]
 
 	-- Check if entity exists, if not, skip this iteration
-	if not entity then goto continue end
+	if not entity then
+		goto continue
+	end
 
 	-- Determine the number of slots to generate
 	local module_slots = mods["SeaBlock"] and 2 or entity.module_slots

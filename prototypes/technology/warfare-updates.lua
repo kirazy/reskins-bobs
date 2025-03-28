@@ -4,7 +4,9 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.warfare.technologies) then return end
+if not (reskins.bobs and reskins.bobs.triggers.warfare.technologies) then
+	return
+end
 
 ---@type CreateIconsFromListInputs
 local inputs = {
@@ -91,6 +93,8 @@ if reskins.lib.version.is_same_or_newer(mods["bobwarfare"], "1.1.6") then
 	technologies["bob-radar-5"] = { tier = 5, icon_name = "radar", flat_icon = false, technology_icon_size = 128 }
 end
 
-if mods["aai-industry"] then technologies["radar"] = { tier = 1, icon_name = "radar", flat_icon = false, technology_icon_size = 128 } end
+if mods["aai-industry"] then
+	technologies["radar"] = { tier = 1, icon_name = "radar", flat_icon = false, technology_icon_size = 128 }
+end
 
 reskins.internal.create_icons_from_list(technologies, inputs)

@@ -4,7 +4,9 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.warfare.items) then return end
+if not (reskins.bobs and reskins.bobs.triggers.warfare.items) then
+	return
+end
 
 ---@type CreateIconsFromListInputs
 local inputs = {
@@ -203,4 +205,6 @@ reskins.internal.create_icons_from_list(items, inputs)
 -- Handle shot variations
 local shot_item = data.raw.item["shot"]
 
-if shot_item then shot_item.pictures = reskins.internal.create_sprite_variations("bobs", "warfare/components", "shot", 5) end
+if shot_item then
+	shot_item.pictures = reskins.internal.create_sprite_variations("bobs", "warfare/components", "shot", 5)
+end

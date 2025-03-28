@@ -4,7 +4,9 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.mining.technologies) then return end
+if not (reskins.bobs and reskins.bobs.triggers.mining.technologies) then
+	return
+end
 
 -- Setup standard inputs
 local inputs = {
@@ -119,6 +121,8 @@ local technologies = {
 	["bob-steel-axe-6"] = get_steel_axe_overrides(),
 }
 
-if mods["aai-industry"] then technologies["electric-mining"] = { tier = 1, icon_name = "mining-drill", technology_icon_size = 128 } end
+if mods["aai-industry"] then
+	technologies["electric-mining"] = { tier = 1, icon_name = "mining-drill", technology_icon_size = 128 }
+end
 
 reskins.internal.create_icons_from_list(technologies, inputs)

@@ -4,8 +4,12 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.power.entities) then return end
-if not (reskins.bobs and reskins.bobs.triggers.power.heatsources) then return end
+if not (reskins.bobs and reskins.bobs.triggers.power.entities) then
+	return
+end
+if not (reskins.bobs and reskins.bobs.triggers.power.heatsources) then
+	return
+end
 
 -- Set input parameters
 local inputs = {
@@ -95,10 +99,14 @@ end
 for name, mapping in pairs(tier_map) do
 	---@type data.ReactorPrototype
 	local entity = data.raw[inputs.type][name]
-	if not entity then goto continue end
+	if not entity then
+		goto continue
+	end
 
 	local tier = mapping.tier
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then tier = mapping.prog_tier or mapping.tier end
+	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
+		tier = mapping.prog_tier or mapping.tier
+	end
 
 	inputs.icon_name = mapping.icon_name
 	inputs.tint = mapping.tint or reskins.lib.tiers.get_tint(tier)
@@ -171,9 +179,11 @@ for name, mapping in pairs(tier_map) do
 	entity.connection_patches_disconnected = connect_patches_disconnected(mapping.material)
 
 	-- Overlay tinted pipe pictures
-	if entity.energy_source.fluid_box then entity.energy_source = util.merge({ entity.energy_source, {
-		fluid_box = { pipe_picture = reskins.bobs.assembly_pipe_pictures(inputs.tint) },
-	} }) end
+	if entity.energy_source.fluid_box then
+		entity.energy_source = util.merge({ entity.energy_source, {
+			fluid_box = { pipe_picture = reskins.bobs.assembly_pipe_pictures(inputs.tint) },
+		} })
+	end
 
 	-- Label to skip to next iteration
 	::continue::

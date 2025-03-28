@@ -4,11 +4,15 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.assembly.entities) then return end
+if not (reskins.bobs and reskins.bobs.triggers.assembly.entities) then
+	return
+end
 
 -- ASSEMBLY MACHINES (Note: Bob sets up in data-updates)
 -- Flag available for Mini-Machines compatibility pass
-if reskins.compatibility then reskins.compatibility.triggers.minimachines.assemblers = true end
+if reskins.compatibility then
+	reskins.compatibility.triggers.minimachines.assemblers = true
+end
 
 local is_progression = reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map"
 
@@ -36,7 +40,9 @@ end
 -- CHEMICAL PLANTS (Note: Bob sets up in data-updates)
 if reskins.lib.settings.get_value("bobmods-assembly-chemicalplants") then
 	-- Set flag for availability for Mini-Machines compatibility pass
-	if reskins.compatibility then reskins.compatibility.triggers.minimachines.chemplants.bobs = true end
+	if reskins.compatibility then
+		reskins.compatibility.triggers.minimachines.chemplants.bobs = true
+	end
 
 	local tier_map = {
 		["chemical-plant"] = { tier = 1, prog_tier = 2 },

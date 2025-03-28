@@ -4,7 +4,9 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.logistics.items) then return end
+if not (reskins.bobs and reskins.bobs.triggers.logistics.items) then
+	return
+end
 
 ---@type CreateIconsFromListInputs
 local inputs = {
@@ -55,6 +57,8 @@ local items = {
 }
 
 -- Disable select items based on Bob's settings
-if reskins.lib.settings.get_value("bobmods-logistics-flyingrobotframes") == false or reskins.lib.settings.get_value("bobmods-logistics-robotparts") == false then items["flying-robot-frame"] = nil end
+if reskins.lib.settings.get_value("bobmods-logistics-flyingrobotframes") == false or reskins.lib.settings.get_value("bobmods-logistics-robotparts") == false then
+	items["flying-robot-frame"] = nil
+end
 
 reskins.internal.create_icons_from_list(items, inputs)

@@ -4,7 +4,9 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.vehicle_equipment.equipment) then return end
+if not (reskins.bobs and reskins.bobs.triggers.vehicle_equipment.equipment) then
+	return
+end
 
 -- Note that for equipment, the icons property is not used, so omit type information
 -- so that an icon is not set on the equipment prototype.
@@ -30,7 +32,9 @@ for _, icon_name in pairs(equipment_list) do
 	local equipment = data.raw["movement-bonus-equipment"][name]
 
 	-- Check if entity exists, if not, skip this iteration
-	if not equipment then goto continue end
+	if not equipment then
+		goto continue
+	end
 
 	inputs.icon_name = icon_name
 

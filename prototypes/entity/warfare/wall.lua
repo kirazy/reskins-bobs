@@ -4,11 +4,15 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then return end
+if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then
+	return
+end
 
 -- Make sure the wall exists
 local entity = data.raw["wall"]["reinforced-wall"]
-if not entity then return end
+if not entity then
+	return
+end
 
 -- Set input parameters
 local inputs = {
@@ -18,7 +22,9 @@ local inputs = {
 	particles = { ["tiny-stone"] = 3, ["small-stone"] = 2, ["medium-stone"] = 1 },
 }
 
-if mods["NauvisDay"] then inputs.make_explosions = false end
+if mods["NauvisDay"] then
+	inputs.make_explosions = false
+end
 
 inputs.icon_filename = "__reskins-bobs__/graphics/icons/warfare/reinforced-wall/wall.png"
 

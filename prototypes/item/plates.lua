@@ -4,7 +4,9 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.plates.items) then return end
+if not (reskins.bobs and reskins.bobs.triggers.plates.items) then
+	return
+end
 
 ---@type CreateIconsFromListInputs
 local inputs = {
@@ -176,7 +178,9 @@ if reskins.lib.settings.get_value("bobmods-plates-nuclearupdate") == true then
 	intermediates["nuclear-fuel-reprocessing"] = { type = "recipe", subgroup = "recipes", defer_to_data_updates = true }
 
 	-- Handle deuterium's default process color
-	if reskins.lib.settings.get_value("bobmods-plates-bluedeuterium") == true then intermediates["bob-deuterium-fuel-reprocessing"].image = "bob-deuterium-fuel-reprocessing-blue" end
+	if reskins.lib.settings.get_value("bobmods-plates-bluedeuterium") == true then
+		intermediates["bob-deuterium-fuel-reprocessing"].image = "bob-deuterium-fuel-reprocessing-blue"
+	end
 else
 	intermediates["bob-thorium-fuel-reprocessing"].image = "bob-thorium-fuel-reprocessing-alternate"
 
@@ -189,11 +193,19 @@ else
 end
 
 -- Advanced processing unit absent Bob's Electronics
-if not mods["bobelectronics"] then intermediates["bob-advanced-processing-unit"] = { subgroup = "items" } end
+if not mods["bobelectronics"] then
+	intermediates["bob-advanced-processing-unit"] = { subgroup = "items" }
+end
 
 reskins.internal.create_icons_from_list(intermediates, inputs)
 
 -- One-off fixes
-if data.raw.item["bob-nickel-plate"] then reskins.lib.icons.clear_icon_from_prototype_by_name("bob-bob-nickel-plate", "recipe") end
-if data.raw.fluid["bob-liquid-air"] then reskins.lib.icons.clear_icon_from_prototype_by_name("bob-liquid-air", "recipe") end
-if data.raw.item["bob-lead-oxide"] then reskins.lib.icons.clear_icon_from_prototype_by_name("bob-lead-oxide-2", "recipe") end
+if data.raw.item["bob-nickel-plate"] then
+	reskins.lib.icons.clear_icon_from_prototype_by_name("bob-bob-nickel-plate", "recipe")
+end
+if data.raw.fluid["bob-liquid-air"] then
+	reskins.lib.icons.clear_icon_from_prototype_by_name("bob-liquid-air", "recipe")
+end
+if data.raw.item["bob-lead-oxide"] then
+	reskins.lib.icons.clear_icon_from_prototype_by_name("bob-lead-oxide-2", "recipe")
+end

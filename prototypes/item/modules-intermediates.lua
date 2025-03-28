@@ -3,7 +3,9 @@
 --
 -- See LICENSE in the project directory for license information.
 
-if not (reskins.bobs and reskins.bobs.triggers.modules.items) then return end
+if not (reskins.bobs and reskins.bobs.triggers.modules.items) then
+	return
+end
 
 -- Intermediates, courtesy of Maxi (mxcop).
 -- https://github.com/mxcop/maxi-reskins/tree/main

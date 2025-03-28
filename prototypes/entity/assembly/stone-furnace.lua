@@ -4,7 +4,9 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and (reskins.bobs.triggers.assembly.entities or reskins.bobs.triggers.plates.entities)) then return end
+if not (reskins.bobs and (reskins.bobs.triggers.assembly.entities or reskins.bobs.triggers.plates.entities)) then
+	return
+end
 
 local stone_furnace_map = {
 	["stone-furnace"] = { type = "furnace", tint = reskins.bobs.furnace_tint_index.standard },
@@ -191,7 +193,9 @@ for name, map in pairs(stone_furnace_map) do
 	local entity = data.raw[inputs.type][name]
 
 	-- Check if entity exists, if not, skip this iteration
-	if not entity then goto continue end
+	if not entity then
+		goto continue
+	end
 
 	-- Abstract from entity name to sprite sheet name
 	inputs.icon_name = map.is_chemical and "stone-chemical-furnace" or "stone-furnace"
@@ -257,7 +261,9 @@ for name, map in pairs(stone_furnace_map) do
 		light_intensity_to_size_coefficient = 0,
 	}
 
-	if name ~= "stone-furnace" then entity.water_reflection = util.copy(data.raw["furnace"]["stone-furnace"].water_reflection) end
+	if name ~= "stone-furnace" then
+		entity.water_reflection = util.copy(data.raw["furnace"]["stone-furnace"].water_reflection)
+	end
 
 	-- Label to skip to next iteration
 	::continue::

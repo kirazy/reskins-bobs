@@ -4,7 +4,9 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.plates.items) then return end
+if not (reskins.bobs and reskins.bobs.triggers.plates.items) then
+	return
+end
 
 -- Battery
 local inputs = {
@@ -31,11 +33,15 @@ for name, map in pairs(batteries) do
 	local item = data.raw.item[name]
 
 	-- Check if item exists, if not, skip this iteration
-	if not item then goto continue end
+	if not item then
+		goto continue
+	end
 
 	-- Handle tier
 	local tier = map.tier
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then tier = map.prog_tier or map.tier end
+	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
+		tier = map.prog_tier or map.tier
+	end
 
 	-- Determine what tint we're using
 	if reskins.lib.settings.get_value("bobmods-colorupdate") then
@@ -49,7 +55,9 @@ for name, map in pairs(batteries) do
 
 	reskins.lib.construct_icon(name, tier, inputs)
 
-	if data.raw.technology[map.technology] then reskins.lib.construct_technology_icon(map.technology, inputs) end
+	if data.raw.technology[map.technology] then
+		reskins.lib.construct_technology_icon(map.technology, inputs)
+	end
 
 	-- Label to skip to next iteration
 	::continue::

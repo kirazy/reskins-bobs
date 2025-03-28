@@ -4,8 +4,12 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.power.entities) then return end
-if not (reskins.bobs and reskins.bobs.triggers.power.fluidgenerator) then return end
+if not (reskins.bobs and reskins.bobs.triggers.power.entities) then
+	return
+end
+if not (reskins.bobs and reskins.bobs.triggers.power.fluidgenerator) then
+	return
+end
 
 -- Set input parameters
 local inputs = {
@@ -85,11 +89,15 @@ for name, map in pairs(fluid_generators) do
 	local entity = data.raw[inputs.type][name]
 
 	-- Check if entity exists, if not, skip this iteration
-	if not entity then goto continue end
+	if not entity then
+		goto continue
+	end
 
 	-- Parse map
 	local tier = map.tier
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then tier = map.prog_tier end
+	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
+		tier = map.prog_tier
+	end
 
 	-- Determine what tint we're using
 	inputs.tint = map.tint or reskins.lib.tiers.get_tint(tier)

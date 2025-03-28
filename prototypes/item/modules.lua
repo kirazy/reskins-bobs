@@ -8,7 +8,9 @@ if reskins.lib.settings.get_value("cp-override-modules") == false then
 elseif mods["CircuitProcessing"] then
 	return
 end
-if not (reskins.bobs and reskins.bobs.triggers.modules.items) then return end
+if not (reskins.bobs and reskins.bobs.triggers.modules.items) then
+	return
+end
 
 local modules_map = {
 	["speed"] = { color = "blue" },
@@ -45,7 +47,9 @@ local function get_real_module_name(class, tier)
 
 	local name = "bob-" .. class .. "-module-" .. tier
 
-	if modules_name_map[name] then name = modules_name_map[name] end
+	if modules_name_map[name] then
+		name = modules_name_map[name]
+	end
 
 	return name
 end
@@ -56,7 +60,9 @@ for class, map in pairs(modules_map) do
 
 		---@type data.ModulePrototype
 		local entity = data.raw[inputs.type][name]
-		if not entity then goto continue end
+		if not entity then
+			goto continue
+		end
 
 		inputs.icon_filename = "__reskins-bobs__/graphics/icons/modules/module/" .. map.color .. "/" .. map.color .. "_" .. tier .. ".png"
 
@@ -80,7 +86,9 @@ if reskins.lib.settings.get_value("bobmods-modules-enablegodmodules") then
 		if data.raw.module[name] then
 			---@type data.ModulePrototype
 			local entity = data.raw[inputs.type][name]
-			if not entity then goto continue end
+			if not entity then
+				goto continue
+			end
 
 			inputs.icon_filename = "__reskins-bobs__/graphics/icons/modules/god-module/" .. name .. ".png"
 			inputs.icon_layers = 1

@@ -4,11 +4,17 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if mods["classic-beacon"] then return end
-if not (reskins.bobs and reskins.bobs.triggers.modules.entities) then return end
+if mods["classic-beacon"] then
+	return
+end
+if not (reskins.bobs and reskins.bobs.triggers.modules.entities) then
+	return
+end
 
 -- Flag available for Mini-Machines compatibility pass
-if reskins.compatibility then reskins.compatibility.triggers.minimachines.beacons = true end
+if reskins.compatibility then
+	reskins.compatibility.triggers.minimachines.beacons = true
+end
 
 -- Set input parameters
 local inputs = {
@@ -32,7 +38,9 @@ for name, map in pairs(tier_map) do
 	local entity = data.raw[inputs.type][name]
 
 	-- Check if entity exists, if not, skip this iteration
-	if not entity then goto continue end
+	if not entity then
+		goto continue
+	end
 
 	-- Fix order shenanigans
 	if name == "beacon" then
@@ -42,7 +50,9 @@ for name, map in pairs(tier_map) do
 
 	-- Handle tier
 	local tier = map.tier
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then tier = map.prog_tier or map.tier end
+	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
+		tier = map.prog_tier or map.tier
+	end
 
 	-- Determine what tint we're using
 	inputs.tint = reskins.lib.tiers.get_tint(tier)

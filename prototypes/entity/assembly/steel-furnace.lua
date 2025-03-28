@@ -4,7 +4,9 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and (reskins.bobs.triggers.assembly.entities or reskins.bobs.triggers.plates.entities)) then return end
+if not (reskins.bobs and (reskins.bobs.triggers.assembly.entities or reskins.bobs.triggers.plates.entities)) then
+	return
+end
 
 ---Defines the supported filenames for steel furnacews.
 ---@alias FurnaceTypeName
@@ -172,7 +174,9 @@ end
 ---@return data.Animation
 local function get_steel_furnace_working_light(orientation)
 	local file_name = "steel-furnace-working"
-	if orientation then file_name = "steel-furnace-working-" .. orientation end
+	if orientation then
+		file_name = "steel-furnace-working-" .. orientation
+	end
 
 	---@type data.Animation
 	local animation = {
@@ -211,7 +215,9 @@ end
 ---@return data.Animation
 local function get_steel_furnace_fire_animation(orientation)
 	local file_name = "steel-furnace-fire"
-	if orientation then file_name = "steel-furnace-fire-" .. orientation end
+	if orientation then
+		file_name = "steel-furnace-fire-" .. orientation
+	end
 
 	---@type data.Animation
 	local animation = {
@@ -234,7 +240,9 @@ end
 ---@return data.Animation
 local function get_steel_furnace_ground_light(orientation)
 	local file_name = "steel-furnace-ground-light"
-	if orientation then file_name = "steel-furnace-ground-light-" .. orientation end
+	if orientation then
+		file_name = "steel-furnace-ground-light-" .. orientation
+	end
 
 	---@type data.Animation
 	local animation = {
@@ -263,7 +271,9 @@ local function apply_fluid_box_fixes(entity)
 		end
 	end
 
-	if entity.energy_source and entity.energy_source.fluid_box then entity.energy_source.fluid_box.pipe_picture = nil end
+	if entity.energy_source and entity.energy_source.fluid_box then
+		entity.energy_source.fluid_box.pipe_picture = nil
+	end
 end
 
 -- Reskin entities, create and assign extra details
@@ -283,7 +293,9 @@ for name, map in pairs(steel_furnace_map) do
 
 	---@type data.FurnacePrototype|data.AssemblingMachinePrototype
 	local entity = data.raw[inputs.type][name]
-	if not entity then goto continue end
+	if not entity then
+		goto continue
+	end
 
 	-- Construct the file names based on the type of furnace.
 	inputs.icon_name = map.is_chemical and "steel-chemical-furnace" or "steel-furnace"
@@ -291,7 +303,9 @@ for name, map in pairs(steel_furnace_map) do
 
 	reskins.lib.setup_standard_entity(name, 2, inputs)
 
-	if map.is_chemical or map.is_fluid_burning then apply_fluid_box_fixes(entity) end
+	if map.is_chemical or map.is_fluid_burning then
+		apply_fluid_box_fixes(entity)
+	end
 
 	local remnant = data.raw["corpse"][name .. "-remnants"]
 
@@ -493,7 +507,9 @@ for name, map in pairs(steel_furnace_map) do
 		light_intensity_to_size_coefficient = 0,
 	}
 
-	if name ~= "steel-furnace" then entity.water_reflection = util.copy(data.raw["furnace"]["steel-furnace"].water_reflection) end
+	if name ~= "steel-furnace" then
+		entity.water_reflection = util.copy(data.raw["furnace"]["steel-furnace"].water_reflection)
+	end
 
 	::continue::
 end

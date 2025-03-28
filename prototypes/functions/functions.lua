@@ -168,7 +168,9 @@ function reskins.bobs.make_robot_particle(prototype)
 		},
 	}
 
-	if prototype.type == "construction-robot" or prototype.type == "logistic-robot" then return end
+	if prototype.type == "construction-robot" or prototype.type == "logistic-robot" then
+		return
+	end
 
 	prototype.destroy_action = {
 		type = "direct",

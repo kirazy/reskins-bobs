@@ -4,7 +4,9 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.mining.entities) then return end
+if not (reskins.bobs and reskins.bobs.triggers.mining.entities) then
+	return
+end
 
 -- Set input parameters
 local inputs = {
@@ -38,7 +40,9 @@ local index = 1
 for name, _ in pairs(tier_map) do
 	---@type data.MiningDrillPrototype
 	local entity = data.raw[inputs.type][name]
-	if not entity then goto continue end
+	if not entity then
+		goto continue
+	end
 
 	-- Fetch mining speed
 	pumpjack_speeds[index] = data.raw[inputs.type][name].mining_speed
@@ -57,7 +61,9 @@ local min_speed = pumpjack_speeds[1]
 for name, map in pairs(tier_map) do
 	---@type data.MiningDrillPrototype
 	local entity = data.raw[inputs.type][name]
-	if not entity then goto continue end
+	if not entity then
+		goto continue
+	end
 
 	-- Determine what tint we're using
 	inputs.tint = reskins.lib.tiers.get_tint(map.tier)

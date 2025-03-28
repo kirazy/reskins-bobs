@@ -4,8 +4,12 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if mods["ScienceCostTweakerM"] then return end
-if not (reskins.bobs and reskins.bobs.triggers.technology.items) then return end
+if mods["ScienceCostTweakerM"] then
+	return
+end
+if not (reskins.bobs and reskins.bobs.triggers.technology.items) then
+	return
+end
 
 ---@type CreateIconsFromListInputs
 local inputs = {

@@ -4,10 +4,14 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then return end
+if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then
+	return
+end
 
 -- Flag available for Mini-Machines compatibility pass
-if reskins.compatibility then reskins.compatibility.triggers.minimachines.storagetanks = true end
+if reskins.compatibility then
+	reskins.compatibility.triggers.minimachines.storagetanks = true
+end
 
 -- Set input parameters
 local inputs = {
@@ -32,11 +36,15 @@ for name, map in pairs(tier_map) do
 	local entity = data.raw[inputs.type][name]
 
 	-- Check if entity exists, if not, skip this iteration
-	if not entity then goto continue end
+	if not entity then
+		goto continue
+	end
 
 	-- Parse map
 	local tier = map[1]
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then tier = map[2] end
+	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
+		tier = map[2]
+	end
 
 	-- Determine what tint we're using
 	inputs.tint = reskins.lib.tiers.get_tint(tier)
@@ -169,7 +177,9 @@ for name, map in pairs(tier_map) do
 		},
 	}
 
-	if name ~= "storage-tank" then entity.water_reflection = util.copy(data.raw[inputs.type]["storage-tank"].water_reflection) end
+	if name ~= "storage-tank" then
+		entity.water_reflection = util.copy(data.raw[inputs.type]["storage-tank"].water_reflection)
+	end
 
 	-- Label to skip to next iteration
 	::continue::

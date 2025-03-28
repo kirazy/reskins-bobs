@@ -4,7 +4,9 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.modules.technologies) then return end
+if not (reskins.bobs and reskins.bobs.triggers.modules.technologies) then
+	return
+end
 
 ---@type CreateIconsFromListInputs
 local inputs = {
@@ -26,6 +28,8 @@ local technologies = {
 	-- ["effect-transmission-3"] = {tier = 3, prog_tier = 5}, -- t5 beacon
 }
 
-if mods["CircuitProcessing"] then technologies["modules"] = nil end
+if mods["CircuitProcessing"] then
+	technologies["modules"] = nil
+end
 
 reskins.internal.create_icons_from_list(technologies, inputs)

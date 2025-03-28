@@ -4,7 +4,9 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.plates.technologies) then return end
+if not (reskins.bobs and reskins.bobs.triggers.plates.technologies) then
+	return
+end
 
 ---@type CreateIconsFromListInputs
 local inputs = {
@@ -418,7 +420,9 @@ if reskins.lib.settings.get_value("bobmods-plates-nuclearupdate") == true then
 	}
 
 	-- Handle deuterium's default process color
-	if reskins.lib.settings.get_value("bobmods-plates-bluedeuterium") == true then technologies["bob-deuterium-fuel-reprocessing"].image = "bob-deuterium-fuel-reprocessing-blue" end
+	if reskins.lib.settings.get_value("bobmods-plates-bluedeuterium") == true then
+		technologies["bob-deuterium-fuel-reprocessing"].image = "bob-deuterium-fuel-reprocessing-blue"
+	end
 else
 	technologies["bob-thorium-fuel-reprocessing"].image = "bob-thorium-fuel-reprocessing-alternate"
 

@@ -4,7 +4,9 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then return end
+if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then
+	return
+end
 
 -- Set input parameters
 local inputs = {
@@ -44,7 +46,9 @@ for name, lens in pairs(beam_map) do
 	local beam = data.raw[inputs.type][name]
 
 	-- Check if beam exists, if not, skip this iteration
-	if not beam then goto continue end
+	if not beam then
+		goto continue
+	end
 
 	-- Reskin beams
 	beam.head = {

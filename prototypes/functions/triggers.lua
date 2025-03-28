@@ -136,6 +136,8 @@ triggers.warfare = {
 }
 
 -- aai-industry is optionally dependent on angelsrefining and will perform final edits to the burner assembling machine
-if mods["aai-industry"] and mods["angelsrefining"] then triggers.assembly.burner_assembling_machine_is_small = false end
+if mods["aai-industry"] and mods["angelsrefining"] then
+	triggers.assembly.burner_assembling_machine_is_small = false
+end
 
 return triggers

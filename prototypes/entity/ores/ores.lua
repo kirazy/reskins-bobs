@@ -3,7 +3,9 @@
 --
 -- See LICENSE in the project directory for license information.
 
-if not (reskins.bobs and reskins.bobs.triggers.ores.entities) then return end
+if not (reskins.bobs and reskins.bobs.triggers.ores.entities) then
+	return
+end
 
 local ores = {
 	-- Pure Bob's
@@ -27,7 +29,9 @@ local ores = {
 
 for name, params in pairs(ores) do
 	local entity = data.raw["resource"][name]
-	if not entity then goto continue end
+	if not entity then
+		goto continue
+	end
 
 	if name == "bob-sulfur" then
 		reskins.lib.icons.assign_deferrable_icon({

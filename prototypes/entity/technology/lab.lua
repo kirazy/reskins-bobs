@@ -4,7 +4,9 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.technology.entities) then return end
+if not (reskins.bobs and reskins.bobs.triggers.technology.entities) then
+	return
+end
 
 -- Set input parameters
 local inputs = {
@@ -19,7 +21,9 @@ local inputs = {
 local function reskin_lab(name)
 	local entity = data.raw["bob-lab"][name]
 
-	if not entity then return end
+	if not entity then
+		return
+	end
 
 	entity.on_animation = {
 		layers = {
@@ -99,7 +103,11 @@ reskin_lab("lab-alien")
 -- burner-lab
 
 -- Check to see if reskinning needs to be done.
-if not mods["bobmodules"] then return end
-if reskins.lib.settings.get_value("reskins-bobs-do-bobmodules") == false then return end
+if not mods["bobmodules"] then
+	return
+end
+if reskins.lib.settings.get_value("reskins-bobs-do-bobmodules") == false then
+	return
+end
 
 -- lab-module

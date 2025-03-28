@@ -4,10 +4,14 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and (reskins.bobs.triggers.assembly.entities or reskins.bobs.triggers.plates.entities)) then return end
+if not (reskins.bobs and (reskins.bobs.triggers.assembly.entities or reskins.bobs.triggers.plates.entities)) then
+	return
+end
 
 -- Flag available for Mini-Machines compatibility pass
-if reskins.compatibility then reskins.compatibility.triggers.minimachines.furnaces = true end
+if reskins.compatibility then
+	reskins.compatibility.triggers.minimachines.furnaces = true
+end
 
 local electric_furnace_map = {
 	-- Standard furnaces
@@ -113,7 +117,9 @@ end
 
 local function furnace_small_propeller(is_shifted)
 	local shift = util.by_pixel(4, -37.5)
-	if is_shifted then shift = util.by_pixel(1, -24) end
+	if is_shifted then
+		shift = util.by_pixel(1, -24)
+	end
 
 	return {
 		animation = {
@@ -155,7 +161,9 @@ for name, map in pairs(electric_furnace_map) do
 	local entity = data.raw[inputs.type][name]
 
 	-- Check if entity exists, if not, skip this iteration
-	if not entity then goto continue end
+	if not entity then
+		goto continue
+	end
 
 	reskins.lib.setup_standard_entity(name, tier, inputs)
 
@@ -380,7 +388,9 @@ for name, map in pairs(electric_furnace_map) do
 	--     }
 	-- end
 
-	if name ~= "electric-furnace" then entity.water_reflection = util.copy(data.raw["furnace"]["electric-furnace"].water_reflection) end
+	if name ~= "electric-furnace" then
+		entity.water_reflection = util.copy(data.raw["furnace"]["electric-furnace"].water_reflection)
+	end
 
 	-- Label to skip to next iteration
 	::continue::

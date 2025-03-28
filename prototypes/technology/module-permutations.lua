@@ -8,7 +8,9 @@ if reskins.lib.settings.get_value("cp-override-modules") == false then --[[ Do n
 elseif mods["CircuitProcessing"] then
 	return
 end
-if not (reskins.bobs and reskins.bobs.triggers.modules.technologies) then return end
+if not (reskins.bobs and reskins.bobs.triggers.modules.technologies) then
+	return
+end
 
 -- Modules
 local modules_map = {
@@ -48,7 +50,9 @@ local function get_real_module_name(class, tier)
 
 	local name = "bob-" .. class .. "-module-" .. tier
 
-	if modules_name_map[name] then name = modules_name_map[name] end
+	if modules_name_map[name] then
+		name = modules_name_map[name]
+	end
 
 	return name
 end
@@ -63,7 +67,9 @@ for class, map in pairs(modules_map) do
 		local technology = data.raw[inputs.type][name]
 
 		-- Check if technology exists, if not, skip this iteration
-		if not technology then goto continue end
+		if not technology then
+			goto continue
+		end
 
 		-- Setup icon path
 		inputs.technology_icon_filename = "__reskins-bobs__/graphics/technology/modules/module/" .. map.color .. "/" .. map.color .. "_" .. tier .. ".png"
@@ -82,7 +88,9 @@ if reskins.lib.settings.get_value("bobmods-modules-enablegodmodules") then
 	local technology = data.raw[inputs.type][name]
 
 	-- Check if technology exists, if not, skip this iteration
-	if not technology then goto continue end
+	if not technology then
+		goto continue
+	end
 
 	-- Setup icon path
 	inputs.technology_icon_filename = "__reskins-bobs__/graphics/technology/modules/god-module/" .. name .. ".png"

@@ -4,8 +4,12 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not mods["bobelectronics"] then return end
-if reskins.lib.settings.get_value("reskins-bobs-do-bobelectronics-circuit-style") == "off" then return end
+if not mods["bobelectronics"] then
+	return
+end
+if reskins.lib.settings.get_value("reskins-bobs-do-bobelectronics-circuit-style") == "off" then
+	return
+end
 
 ---@type CreateIconsFromListInputs
 local inputs = {

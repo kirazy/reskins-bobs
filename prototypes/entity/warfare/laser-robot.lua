@@ -4,7 +4,9 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then return end
+if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then
+	return
+end
 
 -- Set input parameters
 local inputs = {
@@ -43,7 +45,9 @@ end
 local name = "bob-laser-robot"
 
 local robot = data.raw["combat-robot"][name]
-if not robot then return end
+if not robot then
+	return
+end
 
 reskins.lib.set_inputs_defaults(inputs)
 reskins.lib.create_explosions_and_particles(name, inputs)

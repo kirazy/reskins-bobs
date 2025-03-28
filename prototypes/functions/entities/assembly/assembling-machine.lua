@@ -382,7 +382,9 @@ end
 ---@param make_tier_labels? boolean
 ---@param flags? AssemblyMachineFlags
 function reskins.lib.apply_skin.assembling_machine(name, tier, tint, make_tier_labels, flags)
-	if not flags then flags = {} end
+	if not flags then
+		flags = {}
+	end
 
 	local inputs = util.merge({
 		{
@@ -400,7 +402,9 @@ function reskins.lib.apply_skin.assembling_machine(name, tier, tint, make_tier_l
 
 	---@type data.AssemblingMachinePrototype
 	local entity = data.raw[inputs.type][name]
-	if not entity then return end
+	if not entity then
+		return
+	end
 
 	reskins.lib.setup_standard_entity(name, tier, inputs)
 

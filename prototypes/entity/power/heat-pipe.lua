@@ -4,7 +4,9 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.power.entities) then return end
+if not (reskins.bobs and reskins.bobs.triggers.power.entities) then
+	return
+end
 
 -- Set input parameters
 local inputs = {
@@ -41,11 +43,15 @@ for name, mapping in pairs(tier_map) do
 	local entity = data.raw[inputs.type][name]
 
 	-- Check if entity exists, if not, skip this iteration
-	if not entity then goto continue end
+	if not entity then
+		goto continue
+	end
 
 	-- Parse map
 	local tier = mapping.tier
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then tier = mapping.prog_tier or mapping.tier end
+	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
+		tier = mapping.prog_tier or mapping.tier
+	end
 
 	-- Setup inputs defaults
 	reskins.lib.set_inputs_defaults(inputs)
@@ -71,7 +77,9 @@ for name, mapping in pairs(tier_map) do
 	reskins.lib.icons.assign_deferrable_icon(deferrable_icon)
 
 	--- Don't reskin the base pipes
-	if name == "heat-pipe" then goto continue end
+	if name == "heat-pipe" then
+		goto continue
+	end
 
 	-- Create particles and explosions
 	reskins.lib.create_explosion(name, inputs)

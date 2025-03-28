@@ -4,7 +4,9 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then return end
+if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then
+	return
+end
 
 -- Setup capsule projectiles
 local capsule_projectiles = {
@@ -18,7 +20,9 @@ local capsule_projectiles = {
 ---@param name string
 local function capsule_projectile(name)
 	local projectile = data.raw["projectile"][name]
-	if not projectile then return end
+	if not projectile then
+		return
+	end
 
 	projectile.animation = {
 		filename = "__reskins-bobs__/graphics/entity/warfare/capsules/" .. name .. ".png",

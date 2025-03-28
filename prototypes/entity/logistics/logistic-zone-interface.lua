@@ -4,7 +4,9 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then return end
+if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then
+	return
+end
 
 -- Set input parameters
 local inputs = {
@@ -23,7 +25,9 @@ local tier = 0
 
 ---@type data.RoboportPrototype
 local entity = data.raw[inputs.type][name]
-if not entity then return end
+if not entity then
+	return
+end
 
 reskins.lib.setup_standard_entity(name, tier, inputs)
 

@@ -4,7 +4,9 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then return end
+if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then
+	return
+end
 
 local spidertrons = {
 	"antron",
@@ -15,7 +17,9 @@ local spidertrons = {
 
 local function do_spidertron_icons(name)
 	local item_with_entity_data = data.raw["item-with-entity-data"][name]
-	if not item_with_entity_data then return end
+	if not item_with_entity_data then
+		return
+	end
 
 	---@type DeferrableIconData
 	local deferrable_icon = {
@@ -93,7 +97,9 @@ local guns = {
 
 for gun, attack_parameters in pairs(guns) do
 	local spidertron_gun = data.raw["gun"][gun]
-	if spidertron_gun then spidertron_gun.attack_parameters = util.merge({ spidertron_gun.attack_parameters, attack_parameters }) end
+	if spidertron_gun then
+		spidertron_gun.attack_parameters = util.merge({ spidertron_gun.attack_parameters, attack_parameters })
+	end
 end
 
 -- Beam weapon projectile centers cannot be adjusted on player/unit prototypes, unfortunately.

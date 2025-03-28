@@ -3,7 +3,9 @@
 --
 -- See LICENSE in the project directory for license information.
 
-if not (reskins.bobs and reskins.bobs.triggers.ores.entities) then return end
+if not (reskins.bobs and reskins.bobs.triggers.ores.entities) then
+	return
+end
 
 local fluids = {
 	"bob-ground-water",
@@ -12,7 +14,9 @@ local fluids = {
 
 for _, name in pairs(fluids) do
 	local entity = data.raw["resource"][name]
-	if not entity then goto continue end
+	if not entity then
+		goto continue
+	end
 
 	---@type DeferrableIconDatum
 	local deferrable_icon = {

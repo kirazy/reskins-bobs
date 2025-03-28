@@ -4,7 +4,9 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then return end
+if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then
+	return
+end
 
 -- Set input parameters
 local inputs = {
@@ -29,11 +31,15 @@ for name, map in pairs(tier_map) do
 	local entity = data.raw[inputs.type][name]
 
 	-- Check if entity exists, if not, skip this iteration
-	if not entity then goto continue end
+	if not entity then
+		goto continue
+	end
 
 	-- Parse map
 	local tier = map[1]
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then tier = map[2] end
+	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
+		tier = map[2]
+	end
 	local subtier = map[1]
 
 	-- Determine what tint we're using
@@ -249,7 +255,9 @@ for name, map in pairs(tier_map) do
 		animation_speed = 0.5,
 	}
 
-	if name ~= "roboport" then entity.water_reflection = util.copy(data.raw[inputs.type]["roboport"].water_reflection) end
+	if name ~= "roboport" then
+		entity.water_reflection = util.copy(data.raw[inputs.type]["roboport"].water_reflection)
+	end
 
 	-- Label to skip to next iteration
 	::continue::

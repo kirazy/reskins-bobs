@@ -4,8 +4,12 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done
-if not mods["boblogistics"] then return end
-if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then return end
+if not mods["boblogistics"] then
+	return
+end
+if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then
+	return
+end
 
 ---
 ---Reskins the given pipe `prototype` using the provided `params`.

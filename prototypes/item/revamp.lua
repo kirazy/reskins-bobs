@@ -4,7 +4,9 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.revamp.items) then return end
+if not (reskins.bobs and reskins.bobs.triggers.revamp.items) then
+	return
+end
 
 ---@type CreateIconsFromListInputs
 local inputs = {
@@ -22,7 +24,9 @@ local intermediates = {
 }
 
 -- Items and recipes shared with other mods within Bob's suite
-if not mods["bobplates"] then intermediates["bob-solid-fuel-from-sour-gas"] = { type = "recipe", group = "plates", subgroup = "recipes" } end
+if not mods["bobplates"] then
+	intermediates["bob-solid-fuel-from-sour-gas"] = { type = "recipe", group = "plates", subgroup = "recipes" }
+end
 
 reskins.internal.create_icons_from_list(intermediates, inputs)
 

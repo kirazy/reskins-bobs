@@ -4,7 +4,9 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check to see if reskinning needs to be done.
-if not (reskins.bobs and reskins.bobs.triggers.vehicle_equipment.equipment) then return end
+if not (reskins.bobs and reskins.bobs.triggers.vehicle_equipment.equipment) then
+	return
+end
 
 -- Note that for equipment, the icons property is not used, so omit type information
 -- so that an icon is not set on the equipment prototype.
@@ -23,7 +25,9 @@ local name = "vehicle-belt-immunity-equipment"
 local equipment = data.raw["belt-immunity-equipment"][name]
 
 -- Check if entity exists, if not, return
-if not equipment then return end
+if not equipment then
+	return
+end
 
 -- Construct icon
 reskins.lib.construct_icon(name, 0, inputs)

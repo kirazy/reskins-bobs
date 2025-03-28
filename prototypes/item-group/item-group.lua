@@ -13,7 +13,9 @@ local item_groups = {
 
 local function set_item_group_icon(prototype_name)
 	local item_group = data.raw["item-group"][prototype_name]
-	if not item_group then return end
+	if not item_group then
+		return
+	end
 
 	item_group.icon = "__reskins-bobs__/graphics/item-group/" .. prototype_name .. ".png"
 	item_group.icon_size = 128
@@ -27,6 +29,8 @@ for prototype_name, params in pairs(item_groups) do
 			set_item_group_icon(params.related_item_group)
 		end
 	else
-		if data.raw["item-group"][prototype_name] then set_item_group_icon(prototype_name) end
+		if data.raw["item-group"][prototype_name] then
+			set_item_group_icon(prototype_name)
+		end
 	end
 end

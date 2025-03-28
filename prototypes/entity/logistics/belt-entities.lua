@@ -4,7 +4,9 @@
 -- See LICENSE in the project directory for license information.
 
 -- Check if reskinning needs to be done
-if reskins.bobs and (reskins.bobs.triggers.logistics.entities == false) then return end
+if reskins.bobs and (reskins.bobs.triggers.logistics.entities == false) then
+	return
+end
 
 local reskin_vanilla_entity = reskins.lib.settings.get_value("reskins-lib-customize-tier-colors")
 local make_tier_labels = reskins.lib.settings.get_value("reskins-bobs-do-belt-entity-tier-labeling") and true or false

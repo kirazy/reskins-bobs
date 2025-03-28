@@ -91,42 +91,50 @@ if mods["bobelectronics"] then
 	})
 end
 
-if mods["bobenemies"] then data:extend({
-	{
-		type = "bool-setting",
-		name = "reskins-bobs-do-bobenemies",
-		setting_type = "startup",
-		default_value = true,
-	},
-}) end
+if mods["bobenemies"] then
+	data:extend({
+		{
+			type = "bool-setting",
+			name = "reskins-bobs-do-bobenemies",
+			setting_type = "startup",
+			default_value = true,
+		},
+	})
+end
 
-if mods["bobequipment"] then data:extend({
-	{
-		type = "bool-setting",
-		name = "reskins-bobs-do-bobequipment",
-		setting_type = "startup",
-		default_value = true,
-	},
-}) end
+if mods["bobequipment"] then
+	data:extend({
+		{
+			type = "bool-setting",
+			name = "reskins-bobs-do-bobequipment",
+			setting_type = "startup",
+			default_value = true,
+		},
+	})
+end
 
-if mods["bobgreenhouse"] then data:extend({
-	{
-		type = "bool-setting",
-		name = "reskins-bobs-do-bobgreenhouse",
-		setting_type = "startup",
-		default_value = true,
-	},
-}) end
+if mods["bobgreenhouse"] then
+	data:extend({
+		{
+			type = "bool-setting",
+			name = "reskins-bobs-do-bobgreenhouse",
+			setting_type = "startup",
+			default_value = true,
+		},
+	})
+end
 
-if mods["boblogistics"] or mods["bobpower"] then data:extend({
-	{
-		type = "bool-setting",
-		name = "reskins-bobs-do-pipe-tier-labeling",
-		setting_type = "startup",
-		order = "x",
-		default_value = true,
-	},
-}) end
+if mods["boblogistics"] or mods["bobpower"] then
+	data:extend({
+		{
+			type = "bool-setting",
+			name = "reskins-bobs-do-pipe-tier-labeling",
+			setting_type = "startup",
+			order = "x",
+			default_value = true,
+		},
+	})
+end
 
 if mods["boblogistics"] then
 	data:extend({
@@ -190,41 +198,49 @@ if mods["boblogistics"] then
 	})
 end
 
-if mods["bobmining"] then data:extend({
-	{
-		type = "bool-setting",
-		name = "reskins-bobs-do-bobmining",
-		setting_type = "startup",
-		default_value = true,
-	},
-}) end
+if mods["bobmining"] then
+	data:extend({
+		{
+			type = "bool-setting",
+			name = "reskins-bobs-do-bobmining",
+			setting_type = "startup",
+			default_value = true,
+		},
+	})
+end
 
-if mods["bobmodules"] then data:extend({
-	{
-		type = "bool-setting",
-		name = "reskins-bobs-do-bobmodules",
-		setting_type = "startup",
-		default_value = true,
-	},
-}) end
+if mods["bobmodules"] then
+	data:extend({
+		{
+			type = "bool-setting",
+			name = "reskins-bobs-do-bobmodules",
+			setting_type = "startup",
+			default_value = true,
+		},
+	})
+end
 
-if mods["bobores"] then data:extend({
-	{
-		type = "bool-setting",
-		name = "reskins-bobs-do-bobores",
-		setting_type = "startup",
-		default_value = true,
-	},
-}) end
+if mods["bobores"] then
+	data:extend({
+		{
+			type = "bool-setting",
+			name = "reskins-bobs-do-bobores",
+			setting_type = "startup",
+			default_value = true,
+		},
+	})
+end
 
-if mods["bobplates"] then data:extend({
-	{
-		type = "bool-setting",
-		name = "reskins-bobs-do-bobplates",
-		setting_type = "startup",
-		default_value = true,
-	},
-}) end
+if mods["bobplates"] then
+	data:extend({
+		{
+			type = "bool-setting",
+			name = "reskins-bobs-do-bobplates",
+			setting_type = "startup",
+			default_value = true,
+		},
+	})
+end
 
 if mods["bobpower"] then
 	data:extend({
@@ -278,20 +294,24 @@ if mods["bobtech"] then
 	})
 end
 
-if mods["bobvehicleequipment"] then data:extend({
-	{
-		type = "bool-setting",
-		name = "reskins-bobs-do-bobvehicleequipment",
-		setting_type = "startup",
-		default_value = true,
-	},
-}) end
+if mods["bobvehicleequipment"] then
+	data:extend({
+		{
+			type = "bool-setting",
+			name = "reskins-bobs-do-bobvehicleequipment",
+			setting_type = "startup",
+			default_value = true,
+		},
+	})
+end
 
-if mods["bobwarfare"] then data:extend({
-	{
-		type = "bool-setting",
-		name = "reskins-bobs-do-bobwarfare",
-		setting_type = "startup",
-		default_value = true,
-	},
-}) end
+if mods["bobwarfare"] then
+	data:extend({
+		{
+			type = "bool-setting",
+			name = "reskins-bobs-do-bobwarfare",
+			setting_type = "startup",
+			default_value = true,
+		},
+	})
+end
