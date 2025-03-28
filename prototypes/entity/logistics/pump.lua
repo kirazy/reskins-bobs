@@ -15,7 +15,7 @@ local inputs = {
 	base_entity_name = "pump",
 	mod = "bobs",
 	group = "logistics",
-	particles = { ["medium"] = 3 },
+	particles = { ["medium"] = 2 },
 }
 
 local tier_map = {
