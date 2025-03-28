@@ -122,7 +122,7 @@ end
 --- Gets a rotated animation for the remnants of the given `furnace` type, tinted with `tint` and using `count` frames.
 ---@param furnace FurnaceTypeName The type of furnace to create a remnant for.
 ---@param tint data.Color The tint to apply to the remnant.
----@return data.Animation
+---@return data.RotatedAnimation
 local function get_steel_furnace_remnant_animation(furnace, tint)
 	local count = furnace == "steel-furnace" and 1 or 4
 
