@@ -130,3 +130,22 @@ for name, map in pairs(tier_map) do
 	-- Label to skip to next iteration
 	::continue::
 end
+
+-- Fix the pipe connection positions.
+local all_way_storage_tank = data.raw["storage-tank"]["bob-small-storage-tank"]
+if all_way_storage_tank then
+	all_way_storage_tank.fluid_box.pipe_connections = {
+		{ direction = defines.direction.north, position = { 0, 0 } },
+		{ direction = defines.direction.south, position = { 0, 0 } },
+		{ direction = defines.direction.west, position = { 0, 0 } },
+		{ direction = defines.direction.east, position = { 0, 0 } },
+	}
+end
+
+local inline_storage_tank = data.raw["storage-tank"]["bob-small-inline-storage-tank"]
+if inline_storage_tank then
+	inline_storage_tank.fluid_box.pipe_connections = {
+		{ direction = defines.direction.north, position = { 0, 0 } },
+		{ direction = defines.direction.south, position = { 0, 0 } },
+	}
+end
