@@ -19,17 +19,11 @@ local inputs = {
 
 ---@type CreateIconsFromListTable
 local technologies = {
-	-- Module unlocks
-	["modules"] = {}, -- Basics (Blue/Red/Yellow)
-
 	-- Beacons
+	-- FIXME These techs do not have sprite support yet.
 	-- ["effect-transmission"] = {tier = 1, prog_tier = 3},   -- t3 beacon
 	-- ["effect-transmission-2"] = {tier = 2, prog_tier = 4}, -- t4 beacon
 	-- ["effect-transmission-3"] = {tier = 3, prog_tier = 5}, -- t5 beacon
 }
-
-if mods["CircuitProcessing"] then
-	technologies["modules"] = nil
-end
 
 reskins.internal.create_icons_from_list(technologies, inputs)
