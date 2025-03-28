@@ -19,7 +19,7 @@ local inputs = {
 	icon_size = 64,
 }
 
-local name = "vehicle-belt-immunity-equipment"
+local name = "bob-vehicle-belt-immunity-equipment"
 
 -- Reskin equipment; fetch the equipment
 local equipment = data.raw["belt-immunity-equipment"][name]
