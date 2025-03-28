@@ -9,7 +9,8 @@ if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then
 end
 
 -- Make sure the wall exists
-local entity = data.raw["wall"]["reinforced-wall"]
+local entity_name = "bob-reinforced-wall"
+local entity = data.raw["wall"][entity_name]
 if not entity then
 	return
 end
@@ -39,21 +40,21 @@ reskins.lib.set_inputs_defaults(inputs)
 
 if inputs.make_explosions then
 	-- Create particles and explosions
-	reskins.lib.create_explosion("reinforced-wall", inputs)
+	reskins.lib.create_explosion(entity_name, inputs)
 
 	for particle, key in pairs(inputs.particles) do
-		reskins.lib.create_particle("reinforced-wall", inputs.base_entity_name, reskins.lib.particle_index[particle], key, reinforced_tint_index[particle])
+		reskins.lib.create_particle(entity_name, inputs.base_entity_name, reskins.lib.particle_index[particle], key, reinforced_tint_index[particle])
 	end
 end
 
 -- Create remnants
-reskins.lib.create_remnant("reinforced-wall", inputs)
+reskins.lib.create_remnant(entity_name, inputs)
 
 -- Create icons
-reskins.lib.construct_icon("reinforced-wall", 0, inputs)
+reskins.lib.construct_icon(entity_name, 0, inputs)
 
 -- Reskin the gate
-local remnant = data.raw["corpse"]["reinforced-wall-remnants"]
+local remnant = data.raw["corpse"][entity_name .. "-remnants"]
 
 -- Reskin remnants
 remnant.animation = make_rotated_animation_variations_from_sheet(4, {

@@ -9,7 +9,8 @@ if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then
 end
 
 -- Make sure the gate exists
-local entity = data.raw["gate"]["reinforced-gate"]
+local entity_name = "bob-reinforced-gate"
+local entity = data.raw["gate"][entity_name]
 if not entity then
 	return
 end
@@ -33,30 +34,27 @@ local reinforced_tint_index = {
 reskins.lib.set_inputs_defaults(inputs)
 
 -- Create particles and explosions
-reskins.lib.create_explosion("reinforced-gate", inputs)
+reskins.lib.create_explosion(entity_name, inputs)
 
 for particle, key in pairs(inputs.particles) do
-	reskins.lib.create_particle("reinforced-gate", inputs.base_entity_name, reskins.lib.particle_index[particle], key, reinforced_tint_index[particle])
+	reskins.lib.create_particle(entity_name, inputs.base_entity_name, reskins.lib.particle_index[particle], key, reinforced_tint_index[particle])
 end
 
 -- Create remnants
-reskins.lib.create_remnant("reinforced-gate", inputs)
+reskins.lib.create_remnant(entity_name, inputs)
 
 -- Create icons
-reskins.lib.construct_icon("reinforced-gate", 0, inputs)
+reskins.lib.construct_icon(entity_name, 0, inputs)
 
 -- Reskin the gate
-local remnant = data.raw["corpse"]["reinforced-gate-remnants"]
+local remnant = data.raw["corpse"][entity_name .. "-remnants"]
 
 -- Reskin remnants
 remnant.animation = {
 	{
 		filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/remnants/reinforced-gate-remnants-var-1.png",
-		line_length = 1,
 		width = 86,
 		height = 82,
-		frame_count = 1,
-		variation_count = 1,
 		axially_symmetrical = false,
 		direction_count = 4,
 		shift = util.by_pixel(0, 1),
@@ -64,11 +62,8 @@ remnant.animation = {
 	},
 	{
 		filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/remnants/reinforced-gate-remnants-var-2.png",
-		line_length = 1,
 		width = 84,
 		height = 82,
-		frame_count = 1,
-		variation_count = 1,
 		axially_symmetrical = false,
 		direction_count = 4,
 		shift = util.by_pixel(-0.5, 0),
@@ -76,11 +71,8 @@ remnant.animation = {
 	},
 	{
 		filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/remnants/reinforced-gate-remnants-var-3.png",
-		line_length = 1,
 		width = 82,
 		height = 84,
-		frame_count = 1,
-		variation_count = 1,
 		axially_symmetrical = false,
 		direction_count = 4,
 		shift = util.by_pixel(0, 0.5),
