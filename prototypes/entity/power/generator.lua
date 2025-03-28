@@ -30,7 +30,7 @@ else
 end
 
 local fluid_generators = {
-	["bob-fluid-generator-1"] = { tier = 1, prog_tier = 2, frequency = 2 / 16 },
+	["bob-fluid-generator"] = { tier = 1, prog_tier = 2, frequency = 2 / 16 },
 	["bob-fluid-generator-2"] = { tier = 2, prog_tier = 3, frequency = 3 / 16 },
 	["bob-fluid-generator-3"] = { tier = 3, prog_tier = 4, frequency = 4 / 16 },
 	["bob-hydrazine-generator"] = { tier = 4, prog_tier = 5, frequency = 5 / 16, tint = reskins.bobs.hydrazine_tint },
