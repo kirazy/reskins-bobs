@@ -54,54 +54,62 @@ end
 
 -- ROBOT PARTICLE AND DEATH ANIMATIONS
 
----Converts the directional spritesheet to a non-directional, animated spritesheet, for use with robot death animations.
----@param animation table #[Types/RotatedAnimation](https://wiki.factorio.com/Types/RotatedAnimation)
----@param shift table #[Types/vector](https://wiki.factorio.com/Types/vector)
----@return table animation #[Types/RotatedAnimation](https://wiki.factorio.com/Types/RotatedAnimation)
-local function adjust_animation(animation, shift)
-	local animation = util.copy(animation)
-	local layers = animation.layers or { animation }
+---Converts the directional sprite sheet to a non-directional, animated sprite sheet, for use with robot death animations.
+---@param animation data.RotatedAnimation
+---@param shift data.Vector
+---@return data.Animation
+local function convert_rotated_animation_to_animation(animation, shift)
+	---@type data.RotatedAnimation
+	local animation_copy = util.copy(animation)
+	local layers = animation_copy.layers or { animation_copy }
 
 	for _, layer in pairs(layers) do
+		--- Extract the direction count, use it as frames.
 		layer.frame_count = layer.direction_count
-		layer.direction_count = 0
+
+		--- Remove it from the returned prototype.
+		layer.direction_count = nil
 		layer.animation_speed = 1
 		layer.shift = util.add_shift(layer.shift, shift)
 	end
 
-	return animation
+	return animation_copy --[[@as data.Animation]]
 end
 
 ---Sets the `run_mode` field of a given animation to `"backward"` everywhere it is required.
----@param animation table #[Types/Animation](https://wiki.factorio.com/Types/Animation)
----@return table animation #[Types/Animation](https://wiki.factorio.com/Types/Animation)
-local function reverse_animation(animation)
-	local animation = util.copy(animation)
-	local layers = animation.layers or { animation }
+---@param animation data.Animation
+---@return data.Animation
+local function get_reversed_animation(animation)
+	---@type data.Animation
+	local animation_copy = util.copy(animation)
+
+	--- Ensure working with an array of layers if animation was a single layer.
+	local layers = animation_copy.layers or { animation_copy }
 
 	for _, layer in pairs(layers) do
 		layer.run_mode = "backward"
 	end
 
-	return animation
+	return animation_copy
 end
 
 ---Creates the necessary particles and animations for a flying robot's death spiral, and links it to the prototype.
----@param prototype table #[Types/FlyingRobot](https://wiki.factorio.com/Prototype/FlyingRobot)
+---@param prototype data.CombatRobotPrototype|data.RobotWithLogisticInterfacePrototype
 function reskins.bobs.make_robot_particle(prototype)
 	local shadow_shift = { -0.75, -0.40 }
 	local animation_shift = { 0, 0 }
 
 	local particle_name = prototype.name .. "-dying-particle"
 
-	local animation = adjust_animation(prototype.in_motion, animation_shift)
-	local shadow_animation = adjust_animation(prototype.shadow_in_motion, shadow_shift)
+	local animation = convert_rotated_animation_to_animation(prototype.in_motion, animation_shift)
+	local shadow_animation = convert_rotated_animation_to_animation(prototype.shadow_in_motion, shadow_shift)
 
+	---@type data.ParticlePrototype
 	local particle = {
 		type = "optimized-particle",
 		name = particle_name,
-		pictures = { animation, reverse_animation(animation) },
-		shadows = { shadow_animation, reverse_animation(shadow_animation) },
+		pictures = { animation, get_reversed_animation(animation) },
+		shadows = { shadow_animation, get_reversed_animation(shadow_animation) },
 		movement_modifier = 0.95,
 		life_time = 1000,
 		regular_trigger_effect_frequency = 2,
