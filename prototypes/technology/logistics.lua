@@ -137,9 +137,9 @@ if reskins.lib.settings.get_value("bobmods-logistics-inserteroverhaul") == true 
 
 	-- Bulk inserters
 	technologies["bulk-inserter"] = { icon_name = "bulk-inserter", tier = 2 }
-	technologies["bulk-inserter-2"] = { icon_name = "bulk-inserter", tier = 3 }
-	technologies["bulk-inserter-3"] = { icon_name = "bulk-inserter", tier = 4 }
-	technologies["bulk-inserter-4"] = { icon_name = "bulk-inserter", tier = 5 }
+	technologies["bob-bulk-inserter-2"] = { icon_name = "bulk-inserter", tier = 3 }
+	technologies["bob-bulk-inserter-3"] = { icon_name = "bulk-inserter", tier = 4 }
+	technologies["bob-bulk-inserter-4"] = { icon_name = "bulk-inserter", tier = 5 }
 else
 	technologies["bob-long-inserters-1"] = { flat_icon = true }
 	-- technologies["fast-inserter"] = {} -- fine as-is

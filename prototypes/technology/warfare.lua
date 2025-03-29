@@ -38,10 +38,10 @@ local technologies = {
 	["bob-laser-turrets-5"] = { icon_name = "laser-turrets", tier = 5 }, -- t5 laser
 
 	-- Plasma turrets
-	["bob-plasma-turrets-1"] = { icon_name = "plasma-turrets", tier = 1 }, -- t1 plasma
-	["bob-plasma-turrets-2"] = { icon_name = "plasma-turrets", tier = 2 },
-	["bob-plasma-turrets-3"] = { icon_name = "plasma-turrets", tier = 3 },
-	["bob-plasma-turrets-4"] = { icon_name = "plasma-turrets", tier = 4 },
+	["bob-plasma-turrets-1"] = { icon_name = "plasma-turrets", tier = 1, prog_tier = 3 }, -- t1 plasma
+	["bob-plasma-turrets-2"] = { icon_name = "plasma-turrets", tier = 2, prog_tier = 4 },
+	["bob-plasma-turrets-3"] = { icon_name = "plasma-turrets", tier = 3, prog_tier = 5 },
+	["bob-plasma-turrets-4"] = { icon_name = "plasma-turrets", tier = 4, prog_tier = 6 },
 
 	-- Artillery and artillery wagons
 	["artillery"] = { icon_name = "artillery", tier = 1, prog_tier = 3 }, -- t3 arty/train arty

@@ -21,12 +21,12 @@ local inputs = {
 reskins.lib.set_inputs_defaults(inputs)
 
 local fission_reactors = {
-	["bob-vehicle-fission-reactor-equipment-1"] = { tier = 0, prog_tier = 1 },
-	["bob-vehicle-fission-reactor-equipment-2"] = { tier = 1, prog_tier = 2 },
-	["bob-vehicle-fission-reactor-equipment-3"] = { tier = 2, prog_tier = 3 },
-	["bob-vehicle-fission-reactor-equipment-4"] = { tier = 3, prog_tier = 4 },
-	["bob-vehicle-fission-reactor-equipment-5"] = { tier = 4, prog_tier = 5 },
-	["bob-vehicle-fission-reactor-equipment-6"] = { tier = 5, prog_tier = 6 },
+	["bob-vehicle-fission-reactor-equipment-1"] = { tier = 1 },
+	["bob-vehicle-fission-reactor-equipment-2"] = { tier = 2 },
+	["bob-vehicle-fission-reactor-equipment-3"] = { tier = 3 },
+	["bob-vehicle-fission-reactor-equipment-4"] = { tier = 4 },
+	["bob-vehicle-fission-reactor-equipment-5"] = { tier = 5 },
+	["bob-vehicle-fission-reactor-equipment-6"] = { tier = 6 },
 }
 
 -- Reskin equipment

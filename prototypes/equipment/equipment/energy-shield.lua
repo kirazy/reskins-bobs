@@ -20,12 +20,12 @@ local inputs = {
 reskins.lib.set_inputs_defaults(inputs)
 
 local batteries = {
-	["energy-shield-equipment"] = { tier = 0, prog_tier = 1 },
-	["energy-shield-mk2-equipment"] = { tier = 1, prog_tier = 2 },
-	["bob-energy-shield-mk3-equipment"] = { tier = 2, prog_tier = 3 },
-	["bob-energy-shield-mk4-equipment"] = { tier = 3, prog_tier = 4 },
-	["bob-energy-shield-mk5-equipment"] = { tier = 4, prog_tier = 5 },
-	["bob-energy-shield-mk6-equipment"] = { tier = 5, prog_tier = 6 },
+	["energy-shield-equipment"] = { tier = 1 },
+	["energy-shield-mk2-equipment"] = { tier = 2 },
+	["bob-energy-shield-mk3-equipment"] = { tier = 3 },
+	["bob-energy-shield-mk4-equipment"] = { tier = 4 },
+	["bob-energy-shield-mk5-equipment"] = { tier = 5 },
+	["bob-energy-shield-mk6-equipment"] = { tier = 6 },
 }
 
 -- Reskin equipment

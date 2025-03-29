@@ -21,12 +21,12 @@ local inputs = {
 reskins.lib.set_inputs_defaults(inputs)
 
 local fusion_cells = {
-	["bob-vehicle-fission-cell-equipment-1"] = { tier = 0, prog_tier = 1 },
-	["bob-vehicle-fission-cell-equipment-2"] = { tier = 1, prog_tier = 2 },
-	["bob-vehicle-fission-cell-equipment-3"] = { tier = 2, prog_tier = 3 },
-	["bob-vehicle-fission-cell-equipment-4"] = { tier = 3, prog_tier = 4 },
-	["bob-vehicle-fission-cell-equipment-5"] = { tier = 4, prog_tier = 5 },
-	["bob-vehicle-fission-cell-equipment-6"] = { tier = 5, prog_tier = 6 },
+	["bob-vehicle-fission-cell-equipment-1"] = { tier = 1 },
+	["bob-vehicle-fission-cell-equipment-2"] = { tier = 2 },
+	["bob-vehicle-fission-cell-equipment-3"] = { tier = 3 },
+	["bob-vehicle-fission-cell-equipment-4"] = { tier = 4 },
+	["bob-vehicle-fission-cell-equipment-5"] = { tier = 5 },
+	["bob-vehicle-fission-cell-equipment-6"] = { tier = 6 },
 }
 
 -- Reskin equipment

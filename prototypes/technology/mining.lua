@@ -90,9 +90,9 @@ end
 
 local technologies = {
 	-- Standard Drills
-	["bob-drills-2"] = get_mining_drill_overrides(3),
-	["bob-drills-3"] = get_mining_drill_overrides(4),
-	["bob-drills-4"] = get_mining_drill_overrides(5),
+	["bob-drills-2"] = get_mining_drill_overrides(2),
+	["bob-drills-3"] = get_mining_drill_overrides(3),
+	["bob-drills-4"] = get_mining_drill_overrides(4),
 
 	-- Area Drills
 	["bob-area-drills-1"] = get_area_mining_drill_overrides(1, 2),
@@ -107,10 +107,10 @@ local technologies = {
 	["bob-water-miner-4"] = get_water_pumpjack_overrides(4),
 
 	-- Oil pumpjacks
-	["oil-gathering"] = get_pumpjack_overrides(1),
-	["bob-pumpjacks-2"] = get_pumpjack_overrides(2),
-	["bob-pumpjacks-3"] = get_pumpjack_overrides(3),
-	["bob-pumpjacks-4"] = get_pumpjack_overrides(4),
+	["oil-gathering"] = get_pumpjack_overrides(1, 2),
+	["bob-pumpjacks-2"] = get_pumpjack_overrides(2, 3),
+	["bob-pumpjacks-3"] = get_pumpjack_overrides(3, 4),
+	["bob-pumpjacks-4"] = get_pumpjack_overrides(4, 5),
 
 	-- Technology effects
 	["steel-axe"] = get_steel_axe_overrides(),

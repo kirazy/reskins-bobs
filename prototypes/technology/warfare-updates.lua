@@ -20,10 +20,11 @@ local inputs = {
 ---@type CreateIconsFromListTable
 local technologies = {
 	-- Radars
-	["radar"] = { tier = 2, icon_name = "radar", flat_icon = false, technology_icon_size = 128 },
-	["bob-radar-2"] = { tier = 3, icon_name = "radar", flat_icon = false, technology_icon_size = 128 },
-	["bob-radar-3"] = { tier = 4, icon_name = "radar", flat_icon = false, technology_icon_size = 128 },
-	["bob-radar-4"] = { tier = 5, icon_name = "radar", flat_icon = false, technology_icon_size = 128 },
+	["radar"] = { tier = 1, icon_name = "radar", flat_icon = false, technology_icon_size = 128 },
+	["bob-radar-2"] = { tier = 2, icon_name = "radar", flat_icon = false, technology_icon_size = 128 },
+	["bob-radar-3"] = { tier = 3, icon_name = "radar", flat_icon = false, technology_icon_size = 128 },
+	["bob-radar-4"] = { tier = 4, icon_name = "radar", flat_icon = false, technology_icon_size = 128 },
+	["bob-radar-5"] = { tier = 5, icon_name = "radar", flat_icon = false, technology_icon_size = 128 },
 
 	-- Miscellaneous
 	["bob-reinforced-wall"] = {},
@@ -83,15 +84,6 @@ local technologies = {
 	["bob-poison-bullets"] = { subgroup = "bullet-magazines" },
 	["uranium-ammo"] = { subgroup = "bullet-magazines" },
 }
-
-if reskins.lib.version.is_same_or_newer(mods["bobwarfare"], "1.1.6") then
-	technologies["radars"] = nil
-	technologies["radar"] = { tier = 1, icon_name = "radar", flat_icon = false, technology_icon_size = 128 }
-	technologies["bob-radar-2"] = { tier = 2, icon_name = "radar", flat_icon = false, technology_icon_size = 128 }
-	technologies["bob-radar-3"] = { tier = 3, icon_name = "radar", flat_icon = false, technology_icon_size = 128 }
-	technologies["bob-radar-4"] = { tier = 4, icon_name = "radar", flat_icon = false, technology_icon_size = 128 }
-	technologies["bob-radar-5"] = { tier = 5, icon_name = "radar", flat_icon = false, technology_icon_size = 128 }
-end
 
 if mods["aai-industry"] then
 	technologies["radar"] = { tier = 1, icon_name = "radar", flat_icon = false, technology_icon_size = 128 }
