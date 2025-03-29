@@ -15,11 +15,11 @@ for tier, circuit_name in pairs(circuit_names) do
 	---@type data.SpritePrototype
 	local standard_sprite = {
 		type = "sprite",
-		name = "ar-" .. circuit_name .. "-standard",
 		filename = "__reskins-bobs__/graphics/icons/sprites/circuits/standard/" .. circuit_name .. ".png",
-		size = 40,
-		mipmap_count = 2,
 		flags = { "gui-icon" },
+		size = 40,
+		name = "ar-" .. circuit_name .. "-standard",
+		mipmap_count = 2,
 	}
 
 	data:extend({ standard_sprite })
@@ -35,23 +35,23 @@ for tier, circuit_name in pairs(circuit_names) do
 		layers = {
 			{
 				filename = "__reskins-bobs__/graphics/icons/sprites/circuits/colored/" .. circuit_name .. "/" .. circuit_name .. "-base.png",
+				flags = { "gui-icon" },
 				size = 40,
 				tint = sanitized_tint,
 				mipmap_count = 2,
-				flags = { "gui-icon" },
 			},
 			{
 				filename = "__reskins-bobs__/graphics/icons/sprites/circuits/colored/" .. circuit_name .. "/" .. circuit_name .. "-highlights.png",
+				flags = { "gui-icon" },
 				size = 40,
 				blend_mode = "additive",
 				mipmap_count = 2,
-				flags = { "gui-icon" },
 			},
 			{
 				filename = "__reskins-bobs__/graphics/icons/sprites/circuits/colored/" .. circuit_name .. "/" .. circuit_name .. "-traces.png",
+				flags = { "gui-icon" },
 				size = 40,
 				mipmap_count = 2,
-				flags = { "gui-icon" },
 			},
 		},
 	}
