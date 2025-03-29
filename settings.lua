@@ -61,26 +61,19 @@ if mods["bobassembly"] or mods["bobplates"] then
 end
 
 if mods["bobelectronics"] then
-	local circuit_style_locale = {
+	local colored_circuits_locale = {
 		"",
-		{ "mod-setting-description.reskins-bobs-do-bobelectronics-circuit-style" },
-		{ "reskins-bobs.reskins-bobs-circuit-style-material" },
-		{ "reskins-bobs.reskins-bobs-circuit-style-vanilla" },
-		{ "reskins-bobs.reskins-bobs-circuit-style-tier" },
-		"\n\n",
-		{ "reskins-defaults.default" },
-		" [color=" .. reskins.lib.default_tint .. "]",
-		{ "string-mod-setting.reskins-bobs-do-bobelectronics-circuit-style-colored-tier" },
-		"[/color]",
+		{ "mod-setting-description.reskins-bobs-do-bobelectronics-colored-circuits" },
+		{ "reskins-bobs.reskins-bobs-colored-circuits-off" },
+		{ "reskins-bobs.reskins-bobs-colored-circuits-on" },
 	}
 	data:extend({
 		{
-			type = "string-setting",
-			name = "reskins-bobs-do-bobelectronics-circuit-style",
+			type = "bool-setting",
+			name = "reskins-bobs-do-bobelectronics-colored-circuits",
 			setting_type = "startup",
-			default_value = "colored-tier",
-			allowed_values = { "off", "colored-material", "colored-vanilla", "colored-tier" },
-			localised_description = circuit_style_locale,
+			default_value = false,
+			localised_description = colored_circuits_locale,
 		},
 		{
 			type = "bool-setting",

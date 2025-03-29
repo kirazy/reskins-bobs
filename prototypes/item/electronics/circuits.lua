@@ -7,114 +7,74 @@
 if not mods["bobelectronics"] then
 	return
 end
-if reskins.lib.settings.get_value("reskins-bobs-do-bobelectronics-circuit-style") == "off" then
+if not reskins.lib.settings.get_value("reskins-bobs-do-bobelectronics-colored-circuits") then
 	return
 end
 
----@type CreateIconsFromListInputs
-local inputs = {
-	mod = "bobs",
-	group = "electronics",
-	make_icon_pictures = false,
-	flat_icon = true,
-	tier_labels = false,
+local circuit_map = {
+	["bob-basic-circuit-board"] = { tier = 1, image_name = "basic-circuit-board" },
+	["electronic-circuit"] = { tier = 2, image_name = "basic-electronic-circuit-board" },
+	["advanced-circuit"] = { tier = 3, image_name = "electronic-circuit-board" },
+	["processing-unit"] = { tier = 4, image_name = "electronic-logic-board" },
+	["bob-advanced-processing-unit"] = { tier = 5, image_name = "electronic-processing-board" },
+
+	["bob-circuit-board"] = { tier = 3, image_name = "circuit-board" },
+	["bob-multi-layer-circuit-board"] = { tier = 4, image_name = "multi-layer-circuit-board" },
+	["bob-superior-circuit-board"] = { tier = 5, image_name = "superior-circuit-board" },
 }
 
----@type CreateIconsFromListTable
-local circuits = {
-	-- Boards
-	["bob-wooden-board"] = { subgroup = "circuits" },
-	["bob-phenolic-board"] = { subgroup = "circuits" },
-	["bob-fibreglass-board"] = { subgroup = "circuits" },
+local do_custom_color = reskins.lib.settings.get_value("reskins-lib-customize-tier-colors")
 
-	-- Circuits, standard coloring
-	["bob-basic-circuit-board"] = { subgroup = "circuits" },
-	["bob-circuit-board"] = { subgroup = "circuits" },
-	["bob-superior-circuit-board"] = { subgroup = "circuits" },
-	["bob-multi-layer-circuit-board"] = { subgroup = "circuits" },
-	["electronic-circuit"] = { subgroup = "circuits" },
-	["advanced-circuit"] = { subgroup = "circuits" },
-	["processing-unit"] = { subgroup = "circuits" },
-	["bob-advanced-processing-unit"] = { subgroup = "circuits" },
-}
-
-local circuit_color_style = reskins.lib.settings.get_value("reskins-bobs-do-bobelectronics-circuit-style")
-local tier_mapping = reskins.lib.settings.get_value("reskins-lib-tier-mapping")
-local custom_color = reskins.lib.settings.get_value("reskins-lib-customize-tier-colors")
-
----@param subgroup? string # The directory under `graphics/icons/electronics` where the icon is located.
----@param tier? integer # The tier of the icon. An integer value from 0 to 6. Default `0`.
----@param prog_tier? integer # The tier of the icon, as determined by the progression map. An integer value from 0 to 6. Default `0`.
----@param name? string # The name of the icon.
-local function get_circuit_overrides(subgroup, tier, prog_tier, name)
-	---@type CreateIconsFromListOverrides
-	local override = {
-		subgroup = subgroup,
-		tier = tier,
-		prog_tier = prog_tier,
-		icon_name = name,
-		icon_picture_extras = {
-			{
-				filename = "__reskins-bobs__/graphics/icons/electronics/circuits-custom/" .. name .. "/" .. name .. "-circuitry.png",
-				size = 64,
-				mipmaps = 4,
-				scale = 0.5,
-			},
+---Gets a pre-rendered colored circuit icon assignable to the item prototype with the given `prototype_name`.
+---@param prototype_name data.ItemID The name of the item prototype associated with the icon.
+---@param icon_name string The name of the icon without extension or suffixes.
+---@return DeferrableIconDatum
+local function get_rendered_circuit_icon(prototype_name, icon_name)
+	---@type DeferrableIconDatum
+	local deferrable_icon = {
+		name = prototype_name,
+		type_name = "item",
+		icon_datum = {
+			icon = "__reskins-bobs__/graphics/icons/electronics/circuits-rendered/" .. icon_name .. ".png",
+			icon_size = 64,
 		},
-		flat_icon = false,
-		make_icon_pictures = true,
 	}
 
-	return override
+	return deferrable_icon
 end
 
--- Check if we're using tier or vanilla coloring
-if circuit_color_style == "colored-tier" then
-	if custom_color then
-		-- Intermediates
-		circuits["bob-basic-circuit-board"] = get_circuit_overrides("circuits-custom", 1, 2, "bob-basic-circuit-board")
-		circuits["bob-circuit-board"] = get_circuit_overrides("circuits-custom", 2, 3, "bob-circuit-board")
-		circuits["bob-superior-circuit-board"] = get_circuit_overrides("circuits-custom", 3, 4, "bob-superior-circuit-board")
-		circuits["bob-multi-layer-circuit-board"] = get_circuit_overrides("circuits-custom", 4, 5, "bob-multi-layer-circuit-board")
+---Gets a tinted colored circuit icon assignable to the item prototype with the given `prototype_name`.
+---@param prototype_name data.ItemID The name of the item prototype associated with the icon.
+---@param icon_name string The name of the icon without extension or suffixes.
+---@return DeferrableIconData
+local function get_tinted_circuit_icon(prototype_name, icon_name, tier)
+	---@type DeferrableIconData
+	local deferrable_icon = {
+		name = prototype_name,
+		type_name = "item",
+		icon_data = {
+			{
+				icon = "__reskins-bobs__/graphics/icons/electronics/circuits-tintable/" .. icon_name .. "/" .. icon_name .. "-icon-base.png",
+				icon_size = 64,
+				tint = util.get_color_with_alpha(reskins.lib.tiers.get_tint(tier), 1),
+			},
+			{
+				icon = "__reskins-bobs__/graphics/icons/electronics/circuits-tintable/" .. icon_name .. "/" .. icon_name .. "-icon-highlights.png",
+				icon_size = 64,
+				tint = { 1, 1, 1, 0 },
+			},
+			{
+				icon = "__reskins-bobs__/graphics/icons/electronics/circuits-tintable/" .. icon_name .. "/" .. icon_name .. "-traces.png",
+				icon_size = 64,
+			},
+		},
+	}
 
-		-- Completed
-		circuits["electronic-circuit"] = get_circuit_overrides("circuits-custom", 1, 2, "electronic-circuit")
-		circuits["advanced-circuit"] = get_circuit_overrides("circuits-custom", 2, 3, "advanced-circuit")
-		circuits["processing-unit"] = get_circuit_overrides("circuits-custom", 3, 4, "processing-unit")
-		circuits["bob-advanced-processing-unit"] = get_circuit_overrides("circuits-custom", 4, 5, "bob-advanced-processing-unit")
-	else
-		if tier_mapping == "traditional-map" then
-			circuits["bob-basic-circuit-board"] = { subgroup = "circuits-name" }
-			circuits["bob-circuit-board"] = { subgroup = "circuits-name" }
-			circuits["bob-superior-circuit-board"] = { subgroup = "circuits-name" }
-			circuits["bob-multi-layer-circuit-board"] = { subgroup = "circuits-name" }
-
-			circuits["electronic-circuit"] = { subgroup = "circuits-name" }
-			circuits["advanced-circuit"] = { subgroup = "circuits-name" }
-			circuits["processing-unit"] = { subgroup = "circuits-name" }
-			circuits["bob-advanced-processing-unit"] = { subgroup = "circuits-name" }
-		elseif tier_mapping == "progression-map" then
-			circuits["bob-basic-circuit-board"] = { subgroup = "circuits-progression" }
-			circuits["bob-circuit-board"] = { subgroup = "circuits-progression" }
-			circuits["bob-superior-circuit-board"] = { subgroup = "circuits-progression" }
-			circuits["bob-multi-layer-circuit-board"] = { subgroup = "circuits-progression" }
-
-			circuits["electronic-circuit"] = { subgroup = "circuits-progression" }
-			circuits["advanced-circuit"] = { subgroup = "circuits-progression" }
-			circuits["processing-unit"] = { subgroup = "circuits-progression" }
-			circuits["bob-advanced-processing-unit"] = { subgroup = "circuits-progression" }
-		end
-	end
-elseif circuit_color_style == "colored-vanilla" then
-	circuits["bob-basic-circuit-board"] = { subgroup = "circuits-vanilla" }
-	circuits["bob-circuit-board"] = { subgroup = "circuits-vanilla" }
-	circuits["bob-superior-circuit-board"] = { subgroup = "circuits-vanilla" }
-	circuits["bob-multi-layer-circuit-board"] = { subgroup = "circuits-vanilla" }
-
-	circuits["electronic-circuit"] = { subgroup = "circuits-vanilla" }
-	circuits["advanced-circuit"] = { subgroup = "circuits-vanilla" }
-	circuits["processing-unit"] = { subgroup = "circuits-vanilla" }
-	circuits["bob-advanced-processing-unit"] = { subgroup = "circuits-vanilla" }
+	return deferrable_icon
 end
 
-reskins.internal.create_icons_from_list(circuits, inputs)
+for name, data in pairs(circuit_map) do
+	local deferrable_icon = do_custom_color and get_tinted_circuit_icon(name, data.image_name, data.tier) or get_rendered_circuit_icon(name, data.image_name)
+
+	reskins.lib.icons.assign_deferrable_icon(deferrable_icon)
+end
