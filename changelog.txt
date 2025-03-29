@@ -1,6 +1,8 @@
 ---------------------------------------------------------------------------------------------------
-Version: 2.2.1
+Version: 2.3.0
 Date: ????
+  Features:
+    - Migration to Factorio 2.0!
   Changes:
     - Added support for the revised assembly machine tiers in Bob's Assembling machines, version 1.3.0
     - Added `sprite_set` flag to the AssemblingMachineFlags type on the reskins.lib.apply_skin.assembling_machine method.
