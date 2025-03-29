@@ -134,17 +134,11 @@ end
 for name, map in pairs(tier_map) do
 	---@type data.AccumulatorPrototype
 	local entity = data.raw[inputs.type][name]
-
-	-- Check if entity exists, if not, skip this iteration
 	if not entity then
 		goto continue
 	end
 
-	-- Parse map
-	local tier = map.tier
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
-		tier = map.prog_tier or map.tier
-	end
+	local tier = reskins.lib.tiers.get_tier(map)
 	inputs.wire = map.wire
 
 	-- Stick tier labels on the vanilla accumulator
@@ -153,7 +147,6 @@ for name, map in pairs(tier_map) do
 		goto continue
 	end
 
-	-- Determine what tint we're using
 	inputs.tint = reskins.lib.tiers.get_tint(tier)
 
 	-- Setup icon base details
@@ -223,6 +216,5 @@ for name, map in pairs(tier_map) do
 	entity.chargable_graphics.charge_light = nil
 	entity.chargable_graphics.discharge_light = nil
 
-	-- Label to skip to next iteration
 	::continue::
 end

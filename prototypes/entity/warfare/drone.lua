@@ -266,13 +266,9 @@ for drone, map in pairs(drones) do
 
 	---@type data.UnitPrototype
 	local entity = data.raw[inputs.type][name]
-
-	-- Check if entity exists, if not, skip this iteration
 	if not entity then
 		goto continue
 	end
-
-	-- Determine what tint we're using
 	inputs.tint = map.tint
 
 	reskins.lib.setup_standard_entity(name, 0, inputs)
@@ -289,6 +285,5 @@ for drone, map in pairs(drones) do
 	entity.run_animation = build_drone_animation(map.scale, map.tint)
 	entity.rotation_speed = map.rotation_speed
 
-	-- Label to skip to next iteration
 	::continue::
 end

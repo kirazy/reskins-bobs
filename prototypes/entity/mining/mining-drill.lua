@@ -1376,7 +1376,6 @@ for name, _ in pairs(tier_map) do
 	mining_speeds[index] = data.raw[inputs.type][name].mining_speed
 	index = index + 1
 
-	-- Label to skip to next iteration
 	::continue::
 end
 
@@ -1393,11 +1392,7 @@ for name, map in pairs(tier_map) do
 		goto continue
 	end
 
-	-- Parse map
-	local tier = map.tier
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
-		tier = map.prog_tier or map.tier
-	end
+	local tier = reskins.lib.tiers.get_tier(map)
 
 	-- AAI Industry Compatibility
 	if name == "electric-mining-drill" then
@@ -1417,7 +1412,6 @@ for name, map in pairs(tier_map) do
 		inputs.icon_extras = nil
 	end
 
-	-- Determine what tint we're using
 	inputs.tint = reskins.lib.tiers.get_tint(tier)
 
 	reskins.lib.setup_standard_entity(name, tier, inputs)
@@ -1490,6 +1484,5 @@ for name, map in pairs(tier_map) do
 	entity.wet_mining_graphics_set.shift_animation_transition_duration = 30 / speed
 	entity.wet_mining_graphics_set.working_visualisations = drill_wet_working_visualisation(speed, inputs)
 
-	-- Label to skip to next iteration
 	::continue::
 end

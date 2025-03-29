@@ -31,24 +31,16 @@ local personal_roboports = {
 for name, map in pairs(personal_roboports) do
 	-- Fetch equipment
 	local equipment = data.raw["roboport-equipment"][name]
-
-	-- Check if entity exists, if not, skip this iteration
 	if not equipment then
 		goto continue
 	end
 
-	-- Handle tier
-	local tier = map.tier
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
-		tier = map.prog_tier or map.tier
-	end
+	local tier = reskins.lib.tiers.get_tier(map)
 
 	-- Setup icon handling
 	inputs.icon_base = inputs.icon_name .. "-" .. map.base
 	inputs.icon_mask = inputs.icon_base
 	inputs.icon_highlights = inputs.icon_base
-
-	-- Determine what tint we're using
 	inputs.tint = reskins.lib.tiers.get_tint(tier)
 
 	-- Construct icon
@@ -86,6 +78,5 @@ for name, map in pairs(personal_roboports) do
 		},
 	}
 
-	-- Label to skip to next iteration
 	::continue::
 end

@@ -19,11 +19,10 @@ local inputs = {
 }
 
 local tier_map = {
-	["bob-plasma-turret-1"] = { tier = 1 },
-	["bob-plasma-turret-2"] = { tier = 2 },
-	["bob-plasma-turret-3"] = { tier = 3 },
-	["bob-plasma-turret-4"] = { tier = 4 },
-	["bob-plasma-turret-5"] = { tier = 5 },
+	["bob-plasma-turret-1"] = { tier = 1, prog_tier = 3 },
+	["bob-plasma-turret-2"] = { tier = 2, prog_tier = 4 },
+	["bob-plasma-turret-3"] = { tier = 3, prog_tier = 5 },
+	["bob-plasma-turret-4"] = { tier = 4, prog_tier = 6 },
 }
 
 -- Sea Block 0.5.5 recalibrates turret 1 and 2 to tiers 3 and 4, and hides the rest
@@ -151,13 +150,7 @@ for name, map in pairs(tier_map) do
 		goto continue
 	end
 
-	-- Handle tier
-	local tier = map.tier
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
-		tier = map.prog_tier or map.tier
-	end
-
-	-- Determine what tint we're using
+	local tier = reskins.lib.tiers.get_tier(map)
 	inputs.tint = reskins.lib.tiers.get_tint(tier)
 
 	reskins.lib.setup_standard_entity(name, tier, inputs)
@@ -330,6 +323,5 @@ for name, map in pairs(tier_map) do
 		orientation_to_variation = false,
 	}
 
-	-- Label to skip to next iteration
 	::continue::
 end

@@ -25,28 +25,22 @@ local inputs = {
 }
 
 local tier_map = {
-	["bob-electrolyser"] = { 1, 1 },
-	["bob-electrolyser-2"] = { 2, 2 },
-	["bob-electrolyser-3"] = { 3, 3 },
-	["bob-electrolyser-4"] = { 4, 3 },
-	["bob-electrolyser-5"] = { 5, 5 },
+	["bob-electrolyser"] = { tier = 1, shadow_tier = 1 },
+	["bob-electrolyser-2"] = { tier = 2, shadow_tier = 2 },
+	["bob-electrolyser-3"] = { tier = 3, shadow_tier = 3 },
+	["bob-electrolyser-4"] = { tier = 4, shadow_tier = 3 },
+	["bob-electrolyser-5"] = { tier = 5, shadow_tier = 5 },
 }
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
 	---@type data.AssemblingMachinePrototype
 	local entity = data.raw[inputs.type][name]
-
-	-- Check if entity exists, if not, skip this iteration
 	if not entity then
 		goto continue
 	end
 
-	-- Parse map
-	local tier = map[1]
-	local shadow = map[2]
-
-	-- Determine what tint we're using
+	local tier = reskins.lib.tiers.get_tier(map)
 	inputs.tint = reskins.lib.tiers.get_tint(tier)
 
 	-- Handle unique icons
@@ -90,7 +84,7 @@ for name, map in pairs(tier_map) do
 			},
 			-- Shadow
 			{
-				filename = "__reskins-bobs__/graphics/entity/assembly/electrolyser/electrolyser-" .. shadow .. "-shadow.png",
+				filename = "__reskins-bobs__/graphics/entity/assembly/electrolyser/electrolyser-" .. map.shadow_tier .. "-shadow.png",
 				width = 272,
 				height = 260,
 				frame_count = 1,
@@ -103,6 +97,5 @@ for name, map in pairs(tier_map) do
 
 	entity.water_reflection = util.copy(data.raw["storage-tank"]["storage-tank"].water_reflection)
 
-	-- Label to skip to next iteration
 	::continue::
 end

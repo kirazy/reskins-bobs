@@ -22,48 +22,25 @@ local inputs = {
 }
 
 local tier_map = {
-	["heat-exchanger"] = { tier = 1, prog_tier = 3, material = "base" },
-	["bob-heat-exchanger-2"] = { tier = 2, prog_tier = 4, material = "silver-aluminum" },
-	["bob-heat-exchanger-3"] = { tier = 3, prog_tier = 5, material = "gold-copper" },
+	["heat-exchanger"] = { tier = 1, prog_tier = 2, material = "base" },
+	["bob-heat-exchanger-2"] = { tier = 2, prog_tier = 3, material = "aluminum-invar" },
+	["bob-heat-exchanger-3"] = { tier = 3, prog_tier = 4, material = "silver-titanium" },
+	["bob-heat-exchanger-4"] = { tier = 4, prog_tier = 5, material = "gold-copper" },
 }
 
-if reskins.lib.version.is_same_or_newer(mods["bobpower"], "1.1.6") then
-	tier_map["heat-exchanger"].prog_tier = 2
-
-	tier_map["bob-heat-exchanger-2"].material = "aluminum-invar"
-	tier_map["bob-heat-exchanger-2"].prog_tier = 3
-
-	tier_map["bob-heat-exchanger-3"].material = "silver-titanium"
-	tier_map["bob-heat-exchanger-3"].prog_tier = 4
-
-	tier_map["bob-heat-exchanger-4"] = {
-		tier = 4,
-		prog_tier = 5,
-		material = "gold-copper",
-	}
-end
-
 -- Reskin entities, create and assign extra details
-for name, mapping in pairs(tier_map) do
+for name, map in pairs(tier_map) do
 	---@type data.BoilerPrototype
 	local entity = data.raw[inputs.type][name]
-
-	-- Parse map
-	local tier = mapping.tier
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
-		tier = mapping.prog_tier or mapping.tier
-	end
-
-	-- Check if entity exists, if not, skip this iteration
 	if not entity then
 		goto continue
 	end
 
-	-- Determine what tint we're using
+	local tier = reskins.lib.tiers.get_tier(map)
 	inputs.tint = reskins.lib.tiers.get_tint(tier)
 
 	-- Setup icon details
-	inputs.icon_base = "heat-exchanger-" .. mapping.material
+	inputs.icon_base = "heat-exchanger-" .. map.material
 
 	reskins.lib.setup_standard_entity(name, tier, inputs)
 
@@ -116,7 +93,7 @@ for name, mapping in pairs(tier_map) do
 			},
 			-- Pipes
 			{
-				filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heat-pipes/" .. mapping.material .. "/heatex-remnants.png",
+				filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heat-pipes/" .. map.material .. "/heatex-remnants.png",
 				line_length = 1,
 				width = 272,
 				height = 262,
@@ -164,7 +141,7 @@ for name, mapping in pairs(tier_map) do
 			},
 			-- Pipes
 			{
-				filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heat-pipes/" .. mapping.material .. "/heatex-N-idle.png",
+				filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heat-pipes/" .. map.material .. "/heatex-N-idle.png",
 				priority = "extra-high",
 				width = 269,
 				height = 221,
@@ -217,7 +194,7 @@ for name, mapping in pairs(tier_map) do
 			},
 			-- Pipes
 			{
-				filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heat-pipes/" .. mapping.material .. "/heatex-E-idle.png",
+				filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heat-pipes/" .. map.material .. "/heatex-E-idle.png",
 				priority = "extra-high",
 				width = 211,
 				height = 301,
@@ -270,7 +247,7 @@ for name, mapping in pairs(tier_map) do
 			},
 			-- Pipes
 			{
-				filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heat-pipes/" .. mapping.material .. "/heatex-S-idle.png",
+				filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heat-pipes/" .. map.material .. "/heatex-S-idle.png",
 				priority = "extra-high",
 				width = 260,
 				height = 201,
@@ -323,7 +300,7 @@ for name, mapping in pairs(tier_map) do
 			},
 			-- Pipes
 			{
-				filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heat-pipes/" .. mapping.material .. "/heatex-W-idle.png",
+				filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heat-pipes/" .. map.material .. "/heatex-W-idle.png",
 				priority = "extra-high",
 				width = 196,
 				height = 273,
@@ -344,13 +321,12 @@ for name, mapping in pairs(tier_map) do
 	}
 
 	entity.energy_source.pipe_covers = reskins.lib.sprites.make_4way_animation_from_spritesheet({
-		filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heat-pipes/" .. mapping.material .. "/heatex-endings.png",
+		filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heat-pipes/" .. map.material .. "/heatex-endings.png",
 		width = 64,
 		height = 64,
 		direction_count = 4,
 		scale = 0.5,
 	})
 
-	-- Label to skip to next iteration
 	::continue::
 end

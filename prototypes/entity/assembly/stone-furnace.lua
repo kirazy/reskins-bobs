@@ -172,7 +172,6 @@ end
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(stone_furnace_map) do
-	-- Setup inputs, parse map
 	local inputs = {
 		type = map.type,
 		base_entity_name = "stone-furnace",
@@ -191,8 +190,6 @@ for name, map in pairs(stone_furnace_map) do
 
 	---@type data.FurnacePrototype|data.AssemblingMachinePrototype
 	local entity = data.raw[inputs.type][name]
-
-	-- Check if entity exists, if not, skip this iteration
 	if not entity then
 		goto continue
 	end
@@ -265,6 +262,5 @@ for name, map in pairs(stone_furnace_map) do
 		entity.water_reflection = util.copy(data.raw["furnace"]["stone-furnace"].water_reflection)
 	end
 
-	-- Label to skip to next iteration
 	::continue::
 end

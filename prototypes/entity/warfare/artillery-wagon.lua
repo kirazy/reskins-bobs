@@ -19,28 +19,20 @@ local inputs = {
 }
 
 local tier_map = {
-	["artillery-wagon"] = { 1, 3 },
-	["bob-artillery-wagon-2"] = { 2, 4 },
-	["bob-artillery-wagon-3"] = { 3, 5 },
+	["artillery-wagon"] = { tier = 1, prog_tier = 3 },
+	["bob-artillery-wagon-2"] = { tier = 2, prog_tier = 4 },
+	["bob-artillery-wagon-3"] = { tier = 3, prog_tier = 5 },
 }
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
 	---@type data.ArtilleryWagonPrototype
 	local entity = data.raw[inputs.type][name]
-
-	-- Check if entity exists, if not, skip this iteration
 	if not entity then
 		goto continue
 	end
 
-	-- Parse map
-	local tier = map[1]
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
-		tier = map[2]
-	end
-
-	-- Determine what tint we're using
+	local tier = reskins.lib.tiers.get_tier(map)
 	inputs.tint = reskins.lib.tiers.get_tint(tier)
 
 	reskins.lib.setup_standard_entity(name, tier, inputs)
@@ -49,6 +41,5 @@ for name, map in pairs(tier_map) do
 
 	-- TODO: Reskin entity?
 
-	-- Label to skip to next iteration
 	::continue::
 end

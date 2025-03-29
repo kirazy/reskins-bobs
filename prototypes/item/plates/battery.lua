@@ -37,13 +37,7 @@ for name, map in pairs(batteries) do
 		goto continue
 	end
 
-	-- Handle tier
-	local tier = map.tier
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
-		tier = map.prog_tier or map.tier
-	end
-
-	-- Determine what tint we're using
+	local tier = reskins.lib.tiers.get_tier(map)
 	if reskins.lib.settings.get_value("bobmods-colorupdate") then
 		inputs.tint = reskins.lib.tiers.get_tint(tier)
 	else
@@ -59,6 +53,5 @@ for name, map in pairs(batteries) do
 		reskins.lib.construct_technology_icon(map.technology, inputs)
 	end
 
-	-- Label to skip to next iteration
 	::continue::
 end

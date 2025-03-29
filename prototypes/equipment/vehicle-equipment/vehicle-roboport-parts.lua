@@ -35,20 +35,14 @@ local properties = {
 -- Reskin equipment
 for _, category in pairs(categories) do
 	for index, map in pairs(properties) do
-		-- Fetch equipment
 		local name = "bob-vehicle-roboport-" .. category .. "-equipment" .. map.suffix
-		local equipment = data.raw["roboport-equipment"][name]
 
-		-- Check if entity exists, if not, skip this iteration
+		local equipment = data.raw["roboport-equipment"][name]
 		if not equipment then
 			goto continue
 		end
 
-		-- Handle tier
-		local tier = map.tier
-		if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
-			tier = map.prog_tier or map.tier
-		end
+		local tier = reskins.lib.tiers.get_tier(map)
 
 		-- Setup icon handling
 		inputs.icon_name = "vehicle-part-" .. category
@@ -62,7 +56,6 @@ for _, category in pairs(categories) do
 			inputs.icon_base = nil
 		end
 
-		-- Determine what tint we're using
 		inputs.tint = reskins.lib.tiers.get_tint(tier)
 
 		-- Construct icon

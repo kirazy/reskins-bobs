@@ -21,30 +21,22 @@ local inputs = {
 reskins.lib.set_inputs_defaults(inputs)
 
 local solar_panels = {
-	["bob-vehicle-solar-panel-equipment-1"] = { tier = 0 },
-	["bob-vehicle-solar-panel-equipment-2"] = { tier = 1 },
-	["bob-vehicle-solar-panel-equipment-3"] = { tier = 2 },
-	["bob-vehicle-solar-panel-equipment-4"] = { tier = 3 },
-	["bob-vehicle-solar-panel-equipment-5"] = { tier = 4 },
+	["bob-vehicle-solar-panel-equipment-1"] = { tier = 1, prog_tier = 2 },
+	["bob-vehicle-solar-panel-equipment-2"] = { tier = 2, prog_tier = 3 },
+	["bob-vehicle-solar-panel-equipment-3"] = { tier = 3, prog_tier = 4 },
+	["bob-vehicle-solar-panel-equipment-4"] = { tier = 4, prog_tier = 5 },
+	["bob-vehicle-solar-panel-equipment-5"] = { tier = 5, prog_tier = 6 },
 }
 
 -- Reskin equipment
 for name, map in pairs(solar_panels) do
 	-- Fetch equipment
 	local equipment = data.raw["solar-panel-equipment"][name]
-
-	-- Check if entity exists, if not, skip this iteration
 	if not equipment then
 		goto continue
 	end
 
-	-- Handle tier
-	local tier = map.tier
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
-		tier = map.prog_tier or map.tier
-	end
-
-	-- Determine what tint we're using
+	local tier = reskins.lib.tiers.get_tier(map)
 	inputs.tint = reskins.lib.tiers.get_tint(tier)
 
 	-- Construct icon
@@ -85,6 +77,5 @@ for name, map in pairs(solar_panels) do
 		},
 	}
 
-	-- Label to skip to next iteration
 	::continue::
 end

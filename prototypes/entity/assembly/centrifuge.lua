@@ -31,11 +31,7 @@ for name, map in pairs(tier_map) do
 		goto continue
 	end
 
-	local tier = map.tier
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
-		tier = map.prog_tier or map.tier
-	end
-
+	local tier = reskins.lib.tiers.get_tier(map)
 	inputs.tint = reskins.lib.tiers.get_tint(tier)
 
 	reskins.lib.setup_standard_entity(name, tier, inputs)
@@ -263,7 +259,6 @@ for name, map in pairs(tier_map) do
 		},
 	}
 
-	-- Label to skip to next iteration
 	::continue::
 end
 

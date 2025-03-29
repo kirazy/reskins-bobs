@@ -19,10 +19,10 @@ local inputs = {
 }
 
 local tier_map = {
-	["pumpjack"] = { tier = 1 },
-	["bob-pumpjack-1"] = { tier = 2 },
-	["bob-pumpjack-2"] = { tier = 3 },
-	["bob-pumpjack-3"] = { tier = 4 },
+	["pumpjack"] = { tier = 1, prog_tier = 2 },
+	["bob-pumpjack-1"] = { tier = 2, prog_tier = 3 },
+	["bob-pumpjack-2"] = { tier = 3, prog_tier = 4 },
+	["bob-pumpjack-3"] = { tier = 4, prog_tier = 5 },
 	["bob-water-miner-1"] = { tier = 1, is_water_miner = true },
 	["bob-water-miner-2"] = { tier = 2, is_water_miner = true },
 	["bob-water-miner-3"] = { tier = 3, is_water_miner = true },
@@ -48,7 +48,6 @@ for name, _ in pairs(tier_map) do
 	pumpjack_speeds[index] = data.raw[inputs.type][name].mining_speed
 	index = index + 1
 
-	-- Label to skip to next iteration
 	::continue::
 end
 
@@ -64,9 +63,8 @@ for name, map in pairs(tier_map) do
 	if not entity then
 		goto continue
 	end
-
-	-- Determine what tint we're using
-	inputs.tint = reskins.lib.tiers.get_tint(map.tier)
+	local tier = reskins.lib.tiers.get_tier(map)
+	inputs.tint = reskins.lib.tiers.get_tint(tier)
 
 	-- Setup icon base details
 	if map.is_water_miner then
@@ -75,7 +73,7 @@ for name, map in pairs(tier_map) do
 		inputs.icon_base = "pumpjack"
 	end
 
-	reskins.lib.setup_standard_entity(name, map.tier, inputs)
+	reskins.lib.setup_standard_entity(name, tier, inputs)
 
 	-- Calculate new animation speed
 	local animation_speed
@@ -221,6 +219,5 @@ for name, map in pairs(tier_map) do
 		},
 	}
 
-	-- Label to skip to next iteration
 	::continue::
 end

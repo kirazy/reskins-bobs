@@ -22,26 +22,18 @@ reskins.lib.set_inputs_defaults(inputs)
 local night_vision = {
 	["night-vision-equipment"] = { tier = 1, prog_tier = 2 },
 	["bob-night-vision-equipment-2"] = { tier = 2, prog_tier = 3 },
-	["bob-night-vision-equipment-3"] = { tier = 3, prog_tier = 4 },
+	["bob-night-vision-equipment-3"] = { tier = 3, prog_tier = 5 },
 }
 
 -- Reskin equipment
 for name, map in pairs(night_vision) do
 	-- Fetch equipment
 	local equipment = data.raw["night-vision-equipment"][name]
-
-	-- Check if entity exists, if not, skip this iteration
 	if not equipment then
 		goto continue
 	end
 
-	-- Handle tier
-	local tier = map.tier
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
-		tier = map.prog_tier or map.tier
-	end
-
-	-- Determine what tint we're using
+	local tier = reskins.lib.tiers.get_tier(map)
 	inputs.tint = reskins.lib.tiers.get_tint(tier)
 
 	-- Construct icon
@@ -79,6 +71,5 @@ for name, map in pairs(night_vision) do
 		},
 	}
 
-	-- Label to skip to next iteration
 	::continue::
 end

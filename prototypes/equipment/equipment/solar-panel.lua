@@ -30,19 +30,11 @@ local solar_panels = {
 for name, map in pairs(solar_panels) do
 	-- Fetch equipment
 	local equipment = data.raw["solar-panel-equipment"][name]
-
-	-- Check if entity exists, if not, skip this iteration
 	if not equipment then
 		goto continue
 	end
 
-	-- Handle tier
-	local tier = map.tier
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
-		tier = map.prog_tier or map.tier
-	end
-
-	-- Determine what tint we're using
+	local tier = reskins.lib.tiers.get_tier(map)
 	inputs.tint = reskins.lib.tiers.get_tint(tier)
 
 	-- Construct icon
@@ -80,6 +72,5 @@ for name, map in pairs(solar_panels) do
 		},
 	}
 
-	-- Label to skip to next iteration
 	::continue::
 end

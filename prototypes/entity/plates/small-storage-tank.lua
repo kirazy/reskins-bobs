@@ -76,8 +76,6 @@ local inline_sheets = {
 for name, map in pairs(tier_map) do
 	---@type data.StorageTankPrototype
 	local entity = data.raw[inputs.type][name]
-
-	-- Check if entity exists, if not, skip this iteration
 	if not entity then
 		goto continue
 	end
@@ -127,7 +125,6 @@ for name, map in pairs(tier_map) do
 	-- Clear assembling machine pipe pictures
 	entity.fluid_box.pipe_picture = nil
 
-	-- Label to skip to next iteration
 	::continue::
 end
 

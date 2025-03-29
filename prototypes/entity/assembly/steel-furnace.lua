@@ -278,7 +278,6 @@ end
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(steel_furnace_map) do
-	-- Setup inputs, parse map
 	local inputs = {
 		type = map.type,
 		base_entity_name = "steel-furnace",

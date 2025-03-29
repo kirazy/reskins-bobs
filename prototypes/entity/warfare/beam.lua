@@ -156,6 +156,5 @@ for name, lens in pairs(beam_map) do
 		},
 	}
 
-	-- Label to skip to next iteration
 	::continue::
 end

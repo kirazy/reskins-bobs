@@ -19,14 +19,17 @@ local inputs = {
 }
 
 local tier_map = {
-	["construction-robot"] = { 1, 2 },
-	["bob-construction-robot-2"] = { 2, 3 },
-	["bob-construction-robot-3"] = { 3, 4 },
-	["bob-construction-robot-4"] = { 4, 5 },
-	["bob-construction-robot-5"] = { 5, 5, reskins.lib.settings.get_value("reskins-bobs-fusion-robot-color") },
+	["construction-robot"] = { tier = 1, prog_tier = 2 },
+	["bob-construction-robot-2"] = { tier = 2, prog_tier = 3 },
+	["bob-construction-robot-3"] = { tier = 3, prog_tier = 4 },
+	["bob-construction-robot-4"] = { tier = 4, prog_tier = 5 },
+	["bob-construction-robot-5"] = { tier = 5, prog_tier = 6, fusion_robot_color = reskins.lib.settings.get_value("reskins-bobs-fusion-robot-color") },
 }
 
 -- Animations
+---comment
+---@param tint data.Color
+---@return table
 local function generate_robot_animations(tint)
 	return {
 		idle = {
@@ -201,30 +204,25 @@ local function generate_robot_animations(tint)
 	}
 end
 
--- Reskin entities, create and assign extra details
+local function get_tint(fusion_robot_color, tier)
+	if fusion_robot_color and reskins.lib.settings.get_value("reskins-bobs-do-progression-based-robots") then
+		return fusion_robot_color
+	else
+		return reskins.lib.tiers.get_tint(tier)
+	end
+end
+
 for name, map in pairs(tier_map) do
 	---@type data.ConstructionRobotPrototype
 	local entity = data.raw[inputs.type][name]
-
-	-- Check if entity exists, if not, skip this iteration
 	if not entity then
 		goto continue
 	end
 
-	-- Parse map
-	local tier = map[1]
-	local fusion_robot_color
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" and reskins.lib.settings.get_value("reskins-bobs-do-progression-based-robots") then
-		tier = map[2]
-		fusion_robot_color = map[3]
-	end
-
-	-- Determine what tint we're using
-	inputs.tint = fusion_robot_color or reskins.lib.tiers.get_tint(tier)
+	local tier = reskins.lib.tiers.get_tier(map)
+	inputs.tint = get_tint(map.fusion_robot_color, tier)
 
 	reskins.lib.setup_standard_entity(name, tier, inputs)
-
-	-- Generate robot animations
 	local animations = generate_robot_animations(inputs.tint)
 
 	-- Fetch remnant
@@ -291,6 +289,5 @@ for name, map in pairs(tier_map) do
 	-- Setup remnants and destruction animation
 	reskins.bobs.make_robot_particle(entity)
 
-	-- Label to skip to next iteration
 	::continue::
 end

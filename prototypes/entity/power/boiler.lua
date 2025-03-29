@@ -21,39 +21,30 @@ local inputs = {
 }
 
 local tier_map = {
-	["boiler"] = { 1, 1 },
-	["bob-boiler-2"] = { 2, 2 },
-	["bob-boiler-3"] = { 3, 3 },
-	["bob-boiler-4"] = { 4, 4 },
-	["bob-boiler-5"] = { 5, 5 },
-	["bob-oil-boiler"] = { 1, 2, true },
-	["bob-oil-boiler-2"] = { 2, 3, true },
-	["bob-oil-boiler-3"] = { 3, 4, true },
-	["bob-oil-boiler-4"] = { 4, 5, true },
+	["boiler"] = { tier = 1, prog_tier = 1 },
+	["bob-boiler-2"] = { tier = 2, prog_tier = 2 },
+	["bob-boiler-3"] = { tier = 3, prog_tier = 3 },
+	["bob-boiler-4"] = { tier = 4, prog_tier = 4 },
+	["bob-boiler-5"] = { tier = 5, prog_tier = 5 },
+	["bob-oil-boiler"] = { tier = 1, prog_tier = 2, has_fluids = true },
+	["bob-oil-boiler-2"] = { tier = 2, prog_tier = 3, has_fluids = true },
+	["bob-oil-boiler-3"] = { tier = 3, prog_tier = 4, has_fluids = true },
+	["bob-oil-boiler-4"] = { tier = 4, prog_tier = 5, has_fluids = true },
 }
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
 	---@type data.BoilerPrototype
 	local entity = data.raw[inputs.type][name]
-
-	-- Check if entity exists, if not, skip this iteration
 	if not entity then
 		goto continue
 	end
 
-	-- Parse map
-	local tier = map[1]
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
-		tier = map[2]
-	end
-	local has_fluids = map[3]
-
-	-- Determine what tint we're using
+	local tier = reskins.lib.tiers.get_tier(map)
 	inputs.tint = reskins.lib.tiers.get_tint(tier)
 
 	-- Setup icon details
-	if has_fluids == true then
+	if map.has_fluids == true then
 		inputs.icon_name = "oil-boiler"
 	else
 		inputs.icon_name = "boiler"
@@ -296,11 +287,10 @@ for name, map in pairs(tier_map) do
 	}
 
 	-- Handle pipes
-	if has_fluids then
+	if map.has_fluids then
 		entity.energy_source.fluid_box.pipe_covers = pipecoverspictures()
 		entity.energy_source.fluid_box.pipe_picture = reskins.bobs.assembly_pipe_pictures(inputs.tint)
 	end
 
-	-- Label to skip to next iteration
 	::continue::
 end

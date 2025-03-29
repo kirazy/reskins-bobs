@@ -17,41 +17,20 @@ local inputs = {
 
 local tier_map = {
 	["heat-pipe"] = { tier = 1, prog_tier = 2, material = "base" },
-	["bob-heat-pipe-2"] = { tier = 2, prog_tier = 3, material = "silver-aluminum", particle_colors = { "d4d4d4", "dff5ff" } },
-	["bob-heat-pipe-3"] = { tier = 3, prog_tier = 5, material = "gold-copper", particle_colors = { "d6b968", "ff7f3f" } },
+	["bob-heat-pipe-2"] = { tier = 2, prog_tier = 3, material = "aluminum-invar", particle_colors = { "dff5ff", "a99b84" } },
+	["bob-heat-pipe-3"] = { tier = 3, prog_tier = 5, material = "silver-titanium", particle_colors = { "d4d4d4", "cfd2d4" } },
+	["bob-heat-pipe-4"] = { tier = 4, prog_tier = 5, material = "gold-copper", particle_colors = { "d6b968", "ff7f3f" } },
 }
 
-if reskins.lib.version.is_same_or_newer(mods["bobpower"], "1.1.6") then
-	tier_map["bob-heat-pipe-2"].material = "aluminum-invar"
-	tier_map["bob-heat-pipe-3"].particle_colors = { "dff5ff", "a99b84" }
-
-	tier_map["bob-heat-pipe-3"].prog_tier = 4
-	tier_map["bob-heat-pipe-3"].material = "silver-titanium"
-	tier_map["bob-heat-pipe-3"].particle_colors = { "d4d4d4", "cfd2d4" }
-
-	tier_map["bob-heat-pipe-4"] = {
-		tier = 4,
-		prog_tier = 5,
-		material = "gold-copper",
-		particle_colors = { "d6b968", "ff7f3f" },
-	}
-end
-
 -- Reskin entities, create and assign extra details
-for name, mapping in pairs(tier_map) do
+for name, map in pairs(tier_map) do
 	---@type data.HeatPipePrototype
 	local entity = data.raw[inputs.type][name]
-
-	-- Check if entity exists, if not, skip this iteration
 	if not entity then
 		goto continue
 	end
 
-	-- Parse map
-	local tier = mapping.tier
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
-		tier = mapping.prog_tier or mapping.tier
-	end
+	local tier = reskins.lib.tiers.get_tier(map)
 
 	-- Setup inputs defaults
 	reskins.lib.set_inputs_defaults(inputs)
@@ -59,7 +38,7 @@ for name, mapping in pairs(tier_map) do
 	-- Setup icons
 	---@type data.IconData[]
 	local icon_data = { {
-		icon = "__reskins-bobs__/graphics/icons/power/heat-pipe/heat-pipe-" .. mapping.material .. "-icon-base.png",
+		icon = "__reskins-bobs__/graphics/icons/power/heat-pipe/heat-pipe-" .. map.material .. "-icon-base.png",
 		icon_size = 64,
 		scale = 0.5,
 	} }
@@ -83,14 +62,14 @@ for name, mapping in pairs(tier_map) do
 
 	-- Create particles and explosions
 	reskins.lib.create_explosion(name, inputs)
-	reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["small"], 1, util.color(mapping.particle_colors[1]))
-	reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["medium"], 2, util.color(mapping.particle_colors[2]))
+	reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["small"], 1, util.color(map.particle_colors[1]))
+	reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["medium"], 2, util.color(map.particle_colors[2]))
 
 	-- Create and skin remnants
 	reskins.lib.create_remnant(name, inputs)
 	local remnant = data.raw["corpse"][name .. "-remnants"]
 	remnant.animation = make_rotated_animation_variations_from_sheet(6, {
-		filename = "__reskins-bobs__/graphics/entity/power/heat-pipe/" .. mapping.material .. "/remnants/heat-pipe-remnants.png",
+		filename = "__reskins-bobs__/graphics/entity/power/heat-pipe/" .. map.material .. "/remnants/heat-pipe-remnants.png",
 		line_length = 1,
 		width = 122,
 		height = 100,
@@ -101,7 +80,7 @@ for name, mapping in pairs(tier_map) do
 	})
 
 	-- Reskin entities
-	entity.connection_sprites = make_heat_pipe_pictures("__reskins-bobs__/graphics/entity/power/heat-pipe/" .. mapping.material .. "/", "heat-pipe", {
+	entity.connection_sprites = make_heat_pipe_pictures("__reskins-bobs__/graphics/entity/power/heat-pipe/" .. map.material .. "/", "heat-pipe", {
 		single = { name = "straight-vertical-single", ommit_number = true },
 		straight_vertical = { variations = 6 },
 		straight_horizontal = { variations = 6 },
@@ -120,6 +99,5 @@ for name, mapping in pairs(tier_map) do
 		ending_left = {},
 	})
 
-	-- Label to skip to next iteration
 	::continue::
 end

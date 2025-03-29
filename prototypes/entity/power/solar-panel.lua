@@ -21,33 +21,29 @@ local inputs = {
 }
 
 local tier_map = {
-	["bob-solar-panel-small"] = { 1, 2 },
-	["bob-solar-panel-small-2"] = { 2, 3 },
-	["bob-solar-panel-small-3"] = { 3, 4 },
-	["solar-panel"] = { 1, 2 },
-	["bob-solar-panel-2"] = { 2, 3 },
-	["bob-solar-panel-3"] = { 3, 4 },
-	["bob-solar-panel-large"] = { 1, 2 },
-	["bob-solar-panel-large-2"] = { 2, 3 },
-	["bob-solar-panel-large-3"] = { 3, 4 },
+	["bob-solar-panel-small"] = { tier = 1, prog_tier = 2 },
+	["bob-solar-panel-small-2"] = { tier = 2, prog_tier = 3 },
+	["bob-solar-panel-small-3"] = { tier = 3, prog_tier = 4 },
+	["solar-panel"] = { tier = 1, prog_tier = 2 },
+	["bob-solar-panel-2"] = { tier = 2, prog_tier = 3 },
+	["bob-solar-panel-3"] = { tier = 3, prog_tier = 4 },
+	["bob-solar-panel-large"] = { tier = 1, prog_tier = 2 },
+	["bob-solar-panel-large-2"] = { tier = 2, prog_tier = 3 },
+	["bob-solar-panel-large-3"] = { tier = 3, prog_tier = 4 },
 }
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
 	---@type data.SolarPanelPrototype
 	local entity = data.raw[inputs.type][name]
-
-	-- Check if entity exists, if not, skip this iteration
 	if not entity then
 		goto continue
 	end
 
-	-- Parse map
-	local tier = map[1]
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
-		tier = map[2]
-	end
+	local tier = reskins.lib.tiers.get_tier(map)
+	inputs.tint = reskins.lib.tiers.get_tint(tier)
 
+	-- Solar panels have a letter annotation to help distinguish them at a glance.
 	local letter
 	if string.find(name, "small", 1, true) then
 		letter = "S"
@@ -60,11 +56,7 @@ for name, map in pairs(tier_map) do
 		inputs.icon_name = "solar-panel"
 	end
 
-	-- Setup additional icon details
-	inputs.icon_extras = reskins.lib.icons.get_letter(letter, reskins.lib.tiers.get_tint(tier))
-
-	-- Determine what tint we're using
-	inputs.tint = reskins.lib.tiers.get_tint(tier)
+	inputs.icon_extras = reskins.lib.icons.get_letter(letter, inputs.tint)
 
 	reskins.lib.setup_standard_entity(name, tier, inputs)
 
@@ -344,6 +336,5 @@ for name, map in pairs(tier_map) do
 		}
 	end
 
-	-- Label to skip to next iteration
 	::continue::
 end

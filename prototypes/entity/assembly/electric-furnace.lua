@@ -137,8 +137,7 @@ end
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(electric_furnace_map) do
-	-- Setup inputs, parse map
-	local tier = map.tier
+	local tier = reskins.lib.tiers.get_tier(map)
 
 	local inputs = {
 		type = map.type,
@@ -159,8 +158,6 @@ for name, map in pairs(electric_furnace_map) do
 
 	---@type data.FurnacePrototype|data.AssemblingMachinePrototype
 	local entity = data.raw[inputs.type][name]
-
-	-- Check if entity exists, if not, skip this iteration
 	if not entity then
 		goto continue
 	end
@@ -392,6 +389,5 @@ for name, map in pairs(electric_furnace_map) do
 		entity.water_reflection = util.copy(data.raw["furnace"]["electric-furnace"].water_reflection)
 	end
 
-	-- Label to skip to next iteration
 	::continue::
 end

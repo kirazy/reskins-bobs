@@ -19,34 +19,25 @@ local inputs = {
 }
 
 local tier_map = {
-	["roboport"] = { 1, 2 },
-	["bob-roboport-2"] = { 2, 3 },
-	["bob-roboport-3"] = { 3, 4 },
-	["bob-roboport-4"] = { 4, 5 },
+	["roboport"] = { tier = 1, prog_tier = 2, image_index = 1 },
+	["bob-roboport-2"] = { tier = 2, prog_tier = 3, image_index = 2 },
+	["bob-roboport-3"] = { tier = 3, prog_tier = 4, image_index = 3 },
+	["bob-roboport-4"] = { tier = 4, prog_tier = 5, image_index = 4 },
 }
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
 	---@type data.RoboportPrototype
 	local entity = data.raw[inputs.type][name]
-
-	-- Check if entity exists, if not, skip this iteration
 	if not entity then
 		goto continue
 	end
 
-	-- Parse map
-	local tier = map[1]
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
-		tier = map[2]
-	end
-	local subtier = map[1]
-
-	-- Determine what tint we're using
+	local tier = reskins.lib.tiers.get_tier(map)
 	inputs.tint = reskins.lib.tiers.get_tint(tier)
 
 	-- Setup icon details
-	inputs.icon_base = "roboport-" .. subtier
+	inputs.icon_base = "roboport-" .. map.image_index
 
 	reskins.lib.setup_standard_entity(name, tier, inputs)
 
@@ -99,7 +90,7 @@ for name, map in pairs(tier_map) do
 			},
 			-- Antenna
 			{
-				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/remnants/antennas/roboport-" .. subtier .. "-antenna-remnants.png",
+				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/remnants/antennas/roboport-" .. map.image_index .. "-antenna-remnants.png",
 				line_length = 1,
 				width = 364,
 				height = 358,
@@ -112,7 +103,7 @@ for name, map in pairs(tier_map) do
 			},
 			-- Door
 			{
-				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/remnants/doors/roboport-" .. subtier .. "-door-remnants.png",
+				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/remnants/doors/roboport-" .. map.image_index .. "-door-remnants.png",
 				line_length = 1,
 				width = 364,
 				height = 358,
@@ -215,7 +206,7 @@ for name, map in pairs(tier_map) do
 	}
 
 	entity.base_animation = {
-		filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/antennas/roboport-" .. subtier .. "-base-animation.png",
+		filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/antennas/roboport-" .. map.image_index .. "-base-animation.png",
 		priority = "medium",
 		width = 83,
 		height = 59,
@@ -226,7 +217,7 @@ for name, map in pairs(tier_map) do
 	}
 
 	entity.door_animation_up = {
-		filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/doors/roboport-" .. subtier .. "-door-up.png",
+		filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/doors/roboport-" .. map.image_index .. "-door-up.png",
 		priority = "medium",
 		width = 97,
 		height = 38,
@@ -236,7 +227,7 @@ for name, map in pairs(tier_map) do
 	}
 
 	entity.door_animation_down = {
-		filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/doors/roboport-" .. subtier .. "-door-down.png",
+		filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/doors/roboport-" .. map.image_index .. "-door-down.png",
 		priority = "medium",
 		width = 97,
 		height = 41,
@@ -259,6 +250,5 @@ for name, map in pairs(tier_map) do
 		entity.water_reflection = util.copy(data.raw[inputs.type]["roboport"].water_reflection)
 	end
 
-	-- Label to skip to next iteration
 	::continue::
 end

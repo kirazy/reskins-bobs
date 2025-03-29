@@ -20,34 +20,25 @@ local inputs = {
 }
 
 local tier_map = {
-	["bob-robochest"] = { 1, 2 },
-	["bob-robochest-2"] = { 2, 3 },
-	["bob-robochest-3"] = { 3, 4 },
-	["bob-robochest-4"] = { 4, 5 },
+	["bob-robochest"] = { tier = 1, prog_tier = 2, image_index = 1 },
+	["bob-robochest-2"] = { tier = 2, prog_tier = 3, image_index = 2 },
+	["bob-robochest-3"] = { tier = 3, prog_tier = 4, image_index = 3 },
+	["bob-robochest-4"] = { tier = 4, prog_tier = 5, image_index = 4 },
 }
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
 	---@type data.RoboportPrototype
 	local entity = data.raw[inputs.type][name]
-
-	-- Check if entity exists, if not, skip this iteration
 	if not entity then
 		goto continue
 	end
 
-	-- Parse map
-	local tier = map[1]
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
-		tier = map[2]
-	end
-	local subtier = map[1]
-
-	-- Determine what tint we're using
+	local tier = reskins.lib.tiers.get_tier(map)
 	inputs.tint = reskins.lib.tiers.get_tint(tier)
 
 	-- Setup icon details
-	inputs.icon_base = "robochest-" .. subtier
+	inputs.icon_base = "robochest-" .. map.image_index
 
 	reskins.lib.setup_standard_entity(name, tier, inputs)
 
@@ -134,7 +125,7 @@ for name, map in pairs(tier_map) do
 	entity.base_animation = util.empty_sprite()
 
 	entity.door_animation_up = {
-		filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/doors/roboport-" .. subtier .. "-door-up.png",
+		filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/doors/roboport-" .. map.image_index .. "-door-up.png",
 		priority = "medium",
 		width = 97,
 		height = 38,
@@ -144,7 +135,7 @@ for name, map in pairs(tier_map) do
 	}
 
 	entity.door_animation_down = {
-		filename = "__reskins-bobs__/graphics/entity/logistics/robochest/doors/robochest-" .. subtier .. "-door-down.png",
+		filename = "__reskins-bobs__/graphics/entity/logistics/robochest/doors/robochest-" .. map.image_index .. "-door-down.png",
 		priority = "medium",
 		width = 97,
 		height = 45,
@@ -153,6 +144,5 @@ for name, map in pairs(tier_map) do
 		scale = 0.5,
 	}
 
-	-- Label to skip to next iteration
 	::continue::
 end

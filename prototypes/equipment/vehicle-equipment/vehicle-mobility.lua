@@ -30,8 +30,6 @@ for _, icon_name in pairs(equipment_list) do
 	-- Fetch equipment
 	local name = "bob-" .. icon_name .. "-equipment"
 	local equipment = data.raw["movement-bonus-equipment"][name]
-
-	-- Check if entity exists, if not, skip this iteration
 	if not equipment then
 		goto continue
 	end
@@ -49,6 +47,5 @@ for _, icon_name in pairs(equipment_list) do
 		scale = 0.5,
 	}
 
-	-- Label to skip to next iteration
 	::continue::
 end

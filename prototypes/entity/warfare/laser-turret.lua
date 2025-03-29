@@ -19,11 +19,11 @@ local inputs = {
 }
 
 local tier_map = {
-	["laser-turret"] = { 1 },
-	["bob-laser-turret-2"] = { 2, "sapphire" },
-	["bob-laser-turret-3"] = { 3, "emerald" },
-	["bob-laser-turret-4"] = { 4, "topaz" },
-	["bob-laser-turret-5"] = { 5, "diamond" },
+	["laser-turret"] = { tier = 1 },
+	["bob-laser-turret-2"] = { tier = 2, lens_type = "sapphire" },
+	["bob-laser-turret-3"] = { tier = 3, lens_type = "emerald" },
+	["bob-laser-turret-4"] = { tier = 4, lens_type = "topaz" },
+	["bob-laser-turret-5"] = { tier = 5, lens_type = "diamond" },
 }
 
 local function turret_extension(parameters)
@@ -135,17 +135,11 @@ end
 for name, map in pairs(tier_map) do
 	---@type data.ElectricTurretPrototype
 	local entity = data.raw[inputs.type][name]
-
-	-- Check if entity exists, if not, skip this iteration
 	if not entity then
 		goto continue
 	end
 
-	-- Parse map
-	local tier = map[1]
-	local lens = map[2]
-
-	-- Determine what tint we're using
+	local tier = reskins.lib.tiers.get_tier(map)
 	inputs.tint = reskins.lib.tiers.get_tint(tier)
 
 	reskins.lib.setup_standard_entity(name, tier, inputs)
@@ -237,9 +231,9 @@ for name, map in pairs(tier_map) do
 		},
 	}
 
-	if lens then
+	if map.lens_type then
 		-- Light up laser turret when firing
-		entity.energy_glow_animation = turret_shooting_glow(lens)
+		entity.energy_glow_animation = turret_shooting_glow(map.lens_type)
 		entity.glow_light_intensity = 0.5
 
 		-- Fix laser offset
@@ -315,6 +309,5 @@ for name, map in pairs(tier_map) do
 		entity.water_reflection = util.copy(data.raw[inputs.type]["laser-turret"].water_reflection)
 	end
 
-	-- Label to skip to next iteration
 	::continue::
 end

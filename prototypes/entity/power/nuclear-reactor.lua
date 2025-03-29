@@ -21,15 +21,10 @@ local inputs = {
 }
 
 local reactors = {
-	["nuclear-reactor"] = { tier = 1, prog_tier = 3, material = "base" },
-	["bob-nuclear-reactor-2"] = { tier = 2, prog_tier = 4, material = "silver-aluminum" },
+	["nuclear-reactor"] = { tier = 1, prog_tier = 3, material = "aluminum-invar" },
+	["bob-nuclear-reactor-2"] = { tier = 2, prog_tier = 4, material = "silver-titanium" },
 	["bob-nuclear-reactor-3"] = { tier = 3, prog_tier = 5, material = "gold-copper" },
 }
-
-if reskins.lib.version.is_same_or_newer(mods["bobpower"], "1.1.6") then
-	reactors["nuclear-reactor"].material = "aluminum-invar"
-	reactors["bob-nuclear-reactor-2"].material = "silver-titanium"
-end
 
 local function skin_reactor_entity(name, tint, material)
 	-- tint        - rgb table to tint the reactor, e.g. {0.5, 0.5, 0.5}
@@ -188,23 +183,17 @@ end
 reskins.lib.set_inputs_defaults(inputs)
 
 -- Reskin entities
-for name, mapping in pairs(reactors) do
+for name, map in pairs(reactors) do
 	-- Initialize table address
 	local entity = data.raw[inputs.type][name]
-
-	-- Check if entity exists, if not, skip this iteration
 	if not entity then
 		goto continue
 	end
 
-	-- Parse map
-	local tier = mapping.tier
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
-		tier = mapping.prog_tier or mapping.tier
-	end
+	local tier = reskins.lib.tiers.get_tier(map)
 
 	-- We need to assaign fuel, pipe-tier, and reactor inputs
-	inputs.pipe_tier = mapping.tier
+	inputs.pipe_tier = map.tier
 	inputs.fuel = reskins.bobs.nuclear_reactor_index[name]
 
 	-- Create explosions
@@ -230,15 +219,14 @@ for name, mapping in pairs(reactors) do
 	reskins.lib.create_remnant(name, inputs)
 
 	-- Reskin remnants
-	skin_reactor_remnants(name, inputs.tint, mapping.material)
+	skin_reactor_remnants(name, inputs.tint, map.material)
 
 	-- Reskin entities
-	skin_reactor_entity(name, inputs.tint, mapping.material)
+	skin_reactor_entity(name, inputs.tint, map.material)
 
 	-- Reskin icons
-	inputs.icon_base = "nuclear-reactor-" .. reskins.bobs.nuclear_reactor_index[name].name .. "-" .. mapping.material
+	inputs.icon_base = "nuclear-reactor-" .. reskins.bobs.nuclear_reactor_index[name].name .. "-" .. map.material
 	reskins.lib.construct_icon(name, tier, inputs)
 
-	-- Label to skip to next iteration
 	::continue::
 end

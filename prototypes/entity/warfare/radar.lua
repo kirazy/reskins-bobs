@@ -35,13 +35,9 @@ local tier_map = {
 for name, tier in pairs(tier_map) do
 	---@type data.RadarPrototype
 	local entity = data.raw[inputs.type][name]
-
-	-- Check if entity exists, if not, skip this iteration
 	if not entity then
 		goto continue
 	end
-
-	-- Determine what tint we're using
 	inputs.tint = reskins.lib.tiers.get_tint(tier)
 
 	reskins.lib.setup_standard_entity(name, tier, inputs)
@@ -167,6 +163,5 @@ for name, tier in pairs(tier_map) do
 		entity.water_reflection = util.copy(data.raw[inputs.type]["radar"].water_reflection)
 	end
 
-	-- Label to skip to next iteration
 	::continue::
 end

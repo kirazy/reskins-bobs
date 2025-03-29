@@ -28,8 +28,6 @@ local tier_map = {
 for _, name in pairs(tier_map) do
 	---@type data.LandMinePrototype
 	local entity = data.raw[inputs.type][name]
-
-	-- Check if entity exists, if not, skip this iteration
 	if not entity then
 		goto continue
 	end
@@ -53,6 +51,5 @@ for _, name in pairs(tier_map) do
 		scale = 0.5,
 	}
 
-	-- Label to skip to next iteration
 	::continue::
 end

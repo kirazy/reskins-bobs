@@ -20,19 +20,19 @@ local inserter_map
 if reskins.lib.settings.get_value("bobmods-logistics-inserteroverhaul") == false then
 	inserter_map = {
 		-- Standard inserters
-		["burner-inserter"] = { 0, false },
-		["inserter"] = { 1, false },
-		["long-handed-inserter"] = { 2, false },
-		["fast-inserter"] = { 3, false },
-		["express-inserter"] = { 4, true, "30d79c" },
+		["burner-inserter"] = { tier = 0 },
+		["inserter"] = { tier = 1 },
+		["long-handed-inserter"] = { tier = 2 },
+		["fast-inserter"] = { tier = 3 },
+		["express-inserter"] = { tier = 4, particle_tint = "30d79c" },
 
 		-- Bulk inserters
-		["bulk-inserter"] = { 3, false },
-		["express-bulk-inserter"] = { 4, true, "2dcd3f" },
+		["bulk-inserter"] = { tier = 3 },
+		["express-bulk-inserter"] = { tier = 4, particle_tint = "2dcd3f" },
 	}
 else
 	inserter_map = {
-		["burner-inserter"] = { 0, false },
+		["burner-inserter"] = { tier = 0 },
 	}
 end
 
@@ -133,19 +133,15 @@ end
 for name, map in pairs(inserter_map) do
 	---@type data.InserterPrototype
 	local entity = data.raw[inputs.type][name]
-
-	-- Check if entity exists, if not, skip this iteration
 	if not entity then
 		goto continue
 	end
 
-	-- Parse map
-	local tier = map[1]
-	local do_details = map[2]
+	local tier = reskins.lib.tiers.get_tier(map)
 
 	-- Only do complete setup for non-vanilla inserters
-	if do_details then
-		inputs.tint = util.color(map[3])
+	if map.particle_tint then
+		inputs.tint = util.color(map.particle_tint)
 		inputs.make_explosions = true
 		inputs.make_remnants = true
 	else
@@ -200,6 +196,5 @@ for name, map in pairs(inserter_map) do
 	entity.hand_open_shadow = inserter_hand_shadow({ type = inserter_type, hand = "open" })
 	entity.hand_closed_shadow = inserter_hand_shadow({ type = inserter_type, hand = "closed" })
 
-	-- Label to skip to next iteration
 	::continue::
 end

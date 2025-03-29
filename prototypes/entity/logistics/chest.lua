@@ -46,17 +46,11 @@ local logistic_map = {
 for name, map in pairs(logistic_map) do
 	---@type data.LogisticContainerPrototype
 	local entity = data.raw[inputs.type][name]
-
-	-- Check if entity exists, if not, skip this iteration
 	if not entity then
 		goto continue
 	end
 
-	-- Parse map
-	local tier = map.tier
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
-		tier = map.prog_tier
-	end
+	local tier = reskins.lib.tiers.get_tier(map)
 
 	-- Stick tier labels on the vanilla logistic chests
 	if not map.material then
@@ -140,7 +134,6 @@ for name, map in pairs(logistic_map) do
 		},
 	}
 
-	-- Label to skip to next iteration
 	::continue::
 end
 

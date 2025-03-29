@@ -59,8 +59,6 @@ end
 for name, tint in pairs(tint_map) do
 	---@type data.StorageTankPrototype
 	local entity = data.raw[inputs.type][name]
-
-	-- Check if entity exists, if not, skip this iteration
 	if not entity then
 		goto continue
 	end
@@ -76,6 +74,5 @@ for name, tint in pairs(tint_map) do
 	entity.pictures.picture.south = cardinal_pictures(2, inputs.tint)
 	entity.pictures.picture.west = cardinal_pictures(3, inputs.tint)
 
-	-- Label to skip to next iteration
 	::continue::
 end

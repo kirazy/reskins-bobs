@@ -96,20 +96,16 @@ local function connect_patches_disconnected(material)
 	return sprite
 end
 
-for name, mapping in pairs(tier_map) do
+for name, map in pairs(tier_map) do
 	---@type data.ReactorPrototype
 	local entity = data.raw[inputs.type][name]
 	if not entity then
 		goto continue
 	end
 
-	local tier = mapping.tier
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
-		tier = mapping.prog_tier or mapping.tier
-	end
-
-	inputs.icon_name = mapping.icon_name
-	inputs.tint = mapping.tint or reskins.lib.tiers.get_tint(tier)
+	local tier = reskins.lib.tiers.get_tier(map)
+	inputs.tint = map.tint or reskins.lib.tiers.get_tint(tier)
+	inputs.icon_name = map.icon_name
 
 	reskins.lib.setup_standard_entity(name, tier, inputs)
 
@@ -174,9 +170,9 @@ for name, mapping in pairs(tier_map) do
 	}
 
 	-- Heat pipes
-	entity.lower_layer_picture = heat_source_base_pipes(mapping.material)
-	entity.connection_patches_connected = connect_patches_connected(mapping.material)
-	entity.connection_patches_disconnected = connect_patches_disconnected(mapping.material)
+	entity.lower_layer_picture = heat_source_base_pipes(map.material)
+	entity.connection_patches_connected = connect_patches_connected(map.material)
+	entity.connection_patches_disconnected = connect_patches_disconnected(map.material)
 
 	-- Overlay tinted pipe pictures
 	if entity.energy_source.fluid_box then
@@ -185,6 +181,5 @@ for name, mapping in pairs(tier_map) do
 		} })
 	end
 
-	-- Label to skip to next iteration
 	::continue::
 end

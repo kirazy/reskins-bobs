@@ -38,6 +38,5 @@ for _, name in pairs(ores) do
 	-- Setup rich text localized name
 	control.localised_name = { "", "[entity=" .. name .. "] ", { "entity-name." .. name } }
 
-	-- Label to skip to next iteration
 	::continue::
 end

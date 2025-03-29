@@ -20,22 +20,22 @@ local inputs = {
 }
 
 local tier_map = {
-	["bob-robo-charge-port"] = { 1, 2 },
-	["bob-robo-charge-port-large"] = { 1, 2, true },
-	["bob-robo-charge-port-2"] = { 2, 3 },
-	["bob-robo-charge-port-large-2"] = { 2, 3, true },
-	["bob-robo-charge-port-3"] = { 3, 4 },
-	["bob-robo-charge-port-large-3"] = { 3, 4, true },
-	["bob-robo-charge-port-4"] = { 4, 5 },
-	["bob-robo-charge-port-large-4"] = { 4, 5, true },
+	["bob-robo-charge-port"] = { tier = 1, prog_tier = 2, image_index = 1 },
+	["bob-robo-charge-port-large"] = { tier = 1, prog_tier = 2, image_index = 1, is_large = true },
+	["bob-robo-charge-port-2"] = { tier = 2, prog_tier = 3, image_index = 2 },
+	["bob-robo-charge-port-large-2"] = { tier = 2, prog_tier = 3, image_index = 2, is_large = true },
+	["bob-robo-charge-port-3"] = { tier = 3, prog_tier = 4, image_index = 3 },
+	["bob-robo-charge-port-large-3"] = { tier = 3, prog_tier = 4, image_index = 3, is_large = true },
+	["bob-robo-charge-port-4"] = { tier = 4, prog_tier = 5, image_index = 4 },
+	["bob-robo-charge-port-large-4"] = { tier = 4, prog_tier = 5, image_index = 4, is_large = true },
 }
 
-local function charge_port_base(shift_x, shift_y, subtier, tint)
+local function charge_port_base(shift_x, shift_y, image_index, tint)
 	local shift = { shift_x, shift_y }
 	return {
 		-- Base
 		{
-			filename = "__reskins-bobs__/graphics/entity/logistics/robo-charge-port/robo-charge-port-" .. subtier .. "-base.png",
+			filename = "__reskins-bobs__/graphics/entity/logistics/robo-charge-port/robo-charge-port-" .. image_index .. "-base.png",
 			priority = "medium",
 			animation_speed = 0.2,
 			width = 60,
@@ -113,31 +113,19 @@ end
 for name, map in pairs(tier_map) do
 	---@type data.RoboportPrototype
 	local entity = data.raw[inputs.type][name]
-
-	-- Check if entity exists, if not, skip this iteration
 	if not entity then
 		goto continue
 	end
 
-	-- Parse map
-	local tier = map[1]
-	if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" then
-		tier = map[2]
-	end
-	local subtier = map[1]
-	local is_large = map[3]
-
-	-- Determine what tint we're using
+	local tier = reskins.lib.tiers.get_tier(map)
 	inputs.tint = reskins.lib.tiers.get_tint(tier)
 
-	-- Icon handling
-
-	if is_large then
-		inputs.icon_base = "large-" .. inputs.icon_name .. "-" .. subtier
+	if map.is_large then
+		inputs.icon_base = "large-" .. inputs.icon_name .. "-" .. map.image_index
 		inputs.icon_mask = "large-" .. inputs.icon_name
 		inputs.icon_highlights = "large-" .. inputs.icon_name
 	else
-		inputs.icon_base = inputs.icon_name .. "-" .. subtier
+		inputs.icon_base = inputs.icon_name .. "-" .. map.image_index
 		inputs.icon_mask = nil
 		inputs.icon_highlights = nil
 	end
@@ -149,7 +137,7 @@ for name, map in pairs(tier_map) do
 
 	-- Setup array bounds
 	local array_start, array_end = -0.5, 0.5
-	if is_large then
+	if map.is_large then
 		array_start = -1
 		array_end = 1
 	end
@@ -157,7 +145,7 @@ for name, map in pairs(tier_map) do
 	-- Generate charge port array
 	for i = array_start, array_end do
 		for j = array_start, array_end do
-			local charge_port_array = charge_port_base(i, j, subtier, inputs.tint)
+			local charge_port_array = charge_port_base(i, j, map.image_index, inputs.tint)
 			for k = 1, #charge_port_array do
 				table.insert(entity.base_animation.layers, charge_port_array[k])
 			end
@@ -175,6 +163,5 @@ for name, map in pairs(tier_map) do
 		animation_speed = 0.5,
 	}
 
-	-- Label to skip to next iteration
 	::continue::
 end
