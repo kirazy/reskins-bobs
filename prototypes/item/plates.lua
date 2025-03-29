@@ -18,9 +18,6 @@ local inputs = {
 
 ---@type CreateIconsFromListTable
 local intermediates = {
-	----------------------------------------------------------------------------------------------------
-	-- Intermediates
-	----------------------------------------------------------------------------------------------------
 	-- Plates
 	["bob-aluminium-plate"] = { subgroup = "plates" },
 	["bob-brass-alloy"] = { subgroup = "plates" },
@@ -80,13 +77,14 @@ local intermediates = {
 		make_icon_pictures = true,
 		icon_picture_extras = {
 			{
-				draw_as_light = true,
-				blend_mode = "additive",
-				size = 64,
 				filename = "__reskins-bobs__/graphics/icons/plates/nuclear/bob-plutonium-239.png",
-				scale = 0.5,
-				tint = { r = 0.3, g = 0.3, b = 0.3, a = 0.3 },
+				flags = { "icon" },
+				size = 64,
 				mipmap_count = 4,
+				tint = { r = 0.3, g = 0.3, b = 0.3, a = 0.3 },
+				blend_mode = "additive",
+				draw_as_light = true,
+				scale = 0.5,
 			},
 		},
 	},
@@ -133,10 +131,10 @@ local intermediates = {
 	["bob-amethyst-5"] = { subgroup = "gems", image = "amethyst-5" },
 	["bob-topaz-5"] = { subgroup = "gems", image = "topaz-5" },
 	["bob-diamond-5"] = { subgroup = "gems", image = "diamond-5" },
+}
 
-	----------------------------------------------------------------------------------------------------
-	-- Recipes
-	----------------------------------------------------------------------------------------------------
+-- Separate so that items and recipes with the same name can be handled differently.
+local recipes = {
 	-- Plates
 	["bob-cobalt-oxide-from-copper"] = { type = "recipe", subgroup = "recipes" },
 	["bob-silver-from-lead"] = { type = "recipe", subgroup = "recipes" },
@@ -166,6 +164,11 @@ local intermediates = {
 	["bob-synthetic-wood"] = { type = "recipe", subgroup = "recipes" }, -- Shared with Bob's Electronics
 }
 
+-- Advanced processing unit absent Bob's Electronics
+if not mods["bobelectronics"] then
+	intermediates["bob-advanced-processing-unit"] = { subgroup = "items" }
+end
+
 -- Handle deuterium color
 if reskins.lib.settings.get_value("bobmods-plates-bluedeuterium") == true then
 	intermediates["bob-deuterium-fuel-cell"].image = "bob-deuterium-fuel-cell-blue"
@@ -175,29 +178,25 @@ end
 
 -- Handle nuclear update
 if reskins.lib.settings.get_value("bobmods-plates-nuclearupdate") == true then
-	intermediates["nuclear-fuel-reprocessing"] = { type = "recipe", subgroup = "recipes", defer_to_data_updates = true }
+	recipes["nuclear-fuel-reprocessing"] = { type = "recipe", subgroup = "recipes", defer_to_data_updates = true }
 
 	-- Handle deuterium's default process color
 	if reskins.lib.settings.get_value("bobmods-plates-bluedeuterium") == true then
-		intermediates["bob-deuterium-fuel-reprocessing"].image = "bob-deuterium-fuel-reprocessing-blue"
+		recipes["bob-deuterium-fuel-reprocessing"].image = "bob-deuterium-fuel-reprocessing-blue"
 	end
 else
-	intermediates["bob-thorium-fuel-reprocessing"].image = "bob-thorium-fuel-reprocessing-alternate"
+	recipes["bob-thorium-fuel-reprocessing"].image = "bob-thorium-fuel-reprocessing-alternate"
 
 	-- Handle deuterium's alternate process color
 	if reskins.lib.settings.get_value("bobmods-plates-bluedeuterium") == true then
-		intermediates["bob-deuterium-fuel-reprocessing"].image = "bob-deuterium-fuel-reprocessing-alternate-blue"
+		recipes["bob-deuterium-fuel-reprocessing"].image = "bob-deuterium-fuel-reprocessing-alternate-blue"
 	else
-		intermediates["bob-deuterium-fuel-reprocessing"].image = "bob-deuterium-fuel-reprocessing-alternate-pink"
+		recipes["bob-deuterium-fuel-reprocessing"].image = "bob-deuterium-fuel-reprocessing-alternate-pink"
 	end
 end
 
--- Advanced processing unit absent Bob's Electronics
-if not mods["bobelectronics"] then
-	intermediates["bob-advanced-processing-unit"] = { subgroup = "items" }
-end
-
 reskins.internal.create_icons_from_list(intermediates, inputs)
+reskins.internal.create_icons_from_list(recipes, inputs)
 
 -- One-off fixes
 if data.raw.item["bob-nickel-plate"] then
