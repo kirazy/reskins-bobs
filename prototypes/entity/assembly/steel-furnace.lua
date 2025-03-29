@@ -8,20 +8,20 @@ if not (reskins.bobs and (reskins.bobs.triggers.assembly.entities or reskins.bob
 	return
 end
 
----Defines the supported filenames for steel furnacews.
----@alias FurnaceTypeName
+---Defines the supported filenames for steel furnaces.
+---@alias SteelFurnaceImageName
 ---| "fluid-steel-chemical-furnace"
 ---| "fluid-steel-furnace"
 ---| "steel-chemical-furnace"
 ---| "steel-furnace"
 
----Defines the supported filenames for mirrorable steel furnaces.
----@alias MirrorableFurnaceTypeName FurnaceTypeName
+---Defines the supported filenames for mirrored steel furnaces.
+---@alias MirroredSteelFurnaceImageName SteelFurnaceImageName
 ---| "fluid-steel-chemical-furnace-mirror"
 ---| "steel-chemical-furnace-mirror"
 
 ---Defines the supported filenames for working lights.
----@alias FurnaceWorkingLightOrientation
+---@alias SteelFurnaceLightOrientation
 ---| "left"
 ---| "right"
 
@@ -66,17 +66,17 @@ local steel_furnace_map = {
 	},
 }
 
----Gets an animation for the given `furnace` type, tinted with `tint`.
----@param furnace MirrorableFurnaceTypeName The type of furnace to create an animation for.
+---Gets an animation built for the given `image_name`, tinted with `tint`.
+---@param image_name MirroredSteelFurnaceImageName The name of the image to use.
 ---@param tint data.Color The tint to apply to the animation.
----@return data.Animation --The animation for the given `furnace` type, tinted with `tint`.
-local function steel_furnace_entity_skin(furnace, tint)
+---@return data.Animation --The animation for the given `image_name` type, tinted with `tint`.
+local function get_steel_furnace_animation(image_name, tint)
 	---@type data.Animation
 	local animation = {
 		layers = {
 			-- Base
 			{
-				filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/" .. furnace .. "-base.png",
+				filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/" .. image_name .. "-base.png",
 				priority = "high",
 				width = 172,
 				height = 174,
@@ -85,27 +85,27 @@ local function steel_furnace_entity_skin(furnace, tint)
 			},
 			-- Mask
 			{
-				filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/" .. furnace .. "-mask.png",
+				filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/" .. image_name .. "-mask.png",
 				priority = "high",
 				width = 172,
 				height = 174,
-				shift = util.by_pixel(-1, 2),
 				tint = tint,
+				shift = util.by_pixel(-1, 2),
 				scale = 0.5,
 			},
 			-- Highlights
 			{
-				filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/" .. furnace .. "-highlights.png",
+				filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/" .. image_name .. "-highlights.png",
 				priority = "high",
 				width = 172,
 				height = 174,
-				shift = util.by_pixel(-1, 2),
 				blend_mode = reskins.lib.settings.blend_mode,
+				shift = util.by_pixel(-1, 2),
 				scale = 0.5,
 			},
 			-- Shadow
 			{
-				filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/shadows/" .. furnace .. "-shadow.png",
+				filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/shadows/" .. image_name .. "-shadow.png",
 				priority = "high",
 				width = 282,
 				height = 142,
@@ -119,46 +119,46 @@ local function steel_furnace_entity_skin(furnace, tint)
 	return animation
 end
 
---- Gets a rotated animation for the remnants of the given `furnace` type, tinted with `tint` and using `count` frames.
----@param furnace FurnaceTypeName The type of furnace to create a remnant for.
----@param tint data.Color The tint to apply to the remnant.
+--- Gets a remnants animation built for the given `image_name`, tinted with `tint`.
+---@param image_name SteelFurnaceImageName The name of the image to use.
+---@param tint data.Color The tint to apply to the animation.
 ---@return data.RotatedAnimation
-local function get_steel_furnace_remnant_animation(furnace, tint)
-	local count = furnace == "steel-furnace" and 1 or 4
+local function get_steel_furnace_remnant_animation(image_name, tint)
+	local count = image_name == "steel-furnace" and 1 or 4
 
 	---@type data.RotatedAnimation
 	local animation = {
 		layers = {
 			-- Base
 			{
-				filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/remnants/" .. furnace .. "-remnants-base.png",
-				line_length = count,
+				filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/remnants/" .. image_name .. "-remnants-base.png",
 				width = 268,
 				height = 238,
+				line_length = count,
 				direction_count = count,
 				shift = util.by_pixel(4, 0.5),
 				scale = 0.5,
 			},
 			-- Mask
 			{
-				filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/remnants/" .. furnace .. "-remnants-mask.png",
-				line_length = count,
+				filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/remnants/" .. image_name .. "-remnants-mask.png",
 				width = 268,
 				height = 238,
+				line_length = count,
 				direction_count = count,
-				shift = util.by_pixel(4, 0.5),
 				tint = tint,
+				shift = util.by_pixel(4, 0.5),
 				scale = 0.5,
 			},
 			-- Highlights
 			{
-				filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/remnants/" .. furnace .. "-remnants-highlights.png",
-				line_length = count,
+				filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/remnants/" .. image_name .. "-remnants-highlights.png",
 				width = 268,
 				height = 238,
+				line_length = count,
 				direction_count = count,
-				shift = util.by_pixel(4, 0.5),
 				blend_mode = reskins.lib.settings.blend_mode,
+				shift = util.by_pixel(4, 0.5),
 				scale = 0.5,
 			},
 		},
@@ -170,7 +170,7 @@ end
 ---Gets the working light animation for the steel furnace.
 ---
 ---When `orientation` is provided, the sprite is for the given orientation, otherwise the full sprite is returned.
----@param orientation? FurnaceWorkingLightOrientation
+---@param orientation? SteelFurnaceLightOrientation
 ---@return data.Animation
 local function get_steel_furnace_working_light(orientation)
 	local file_name = "steel-furnace-working"
@@ -211,7 +211,7 @@ local function get_steel_furnace_glow()
 end
 
 ---Gets the fire animation for the steel furnace.
----@param orientation? FurnaceWorkingLightOrientation
+---@param orientation? SteelFurnaceLightOrientation
 ---@return data.Animation
 local function get_steel_furnace_fire_animation(orientation)
 	local file_name = "steel-furnace-fire"
@@ -236,7 +236,7 @@ local function get_steel_furnace_fire_animation(orientation)
 end
 
 ---Gets the ground light animation for the steel furnace.
----@param orientation? FurnaceWorkingLightOrientation
+---@param orientation? SteelFurnaceLightOrientation
 ---@return data.Animation
 local function get_steel_furnace_ground_light(orientation)
 	local file_name = "steel-furnace-ground-light"
@@ -276,7 +276,6 @@ local function apply_fluid_box_fixes(entity)
 	end
 end
 
--- Reskin entities, create and assign extra details
 for name, map in pairs(steel_furnace_map) do
 	local inputs = {
 		type = map.type,
@@ -286,9 +285,8 @@ for name, map in pairs(steel_furnace_map) do
 		group = "assembly",
 		tint = map.tint,
 		particles = { ["medium"] = 2 },
+		tier_labels = reskins.lib.settings.get_value("reskins-bobs-do-furnace-tier-labeling") == true,
 	}
-
-	inputs.tier_labels = reskins.lib.settings.get_value("reskins-bobs-do-furnace-tier-labeling") == true
 
 	---@type data.FurnacePrototype|data.AssemblingMachinePrototype
 	local entity = data.raw[inputs.type][name]
@@ -296,7 +294,6 @@ for name, map in pairs(steel_furnace_map) do
 		goto continue
 	end
 
-	-- Construct the file names based on the type of furnace.
 	inputs.icon_name = map.is_chemical and "steel-chemical-furnace" or "steel-furnace"
 	inputs.icon_base = map.is_fluid_burning and "fluid-" .. inputs.icon_name or inputs.icon_name
 
@@ -311,19 +308,19 @@ for name, map in pairs(steel_furnace_map) do
 	if map.has_fluids == true then
 		remnant.animation = get_steel_furnace_remnant_animation(inputs.icon_base, inputs.tint)
 
-		local animation = steel_furnace_entity_skin(inputs.icon_base, inputs.tint)
+		local animation = get_steel_furnace_animation(inputs.icon_base, inputs.tint)
 		entity.graphics_set.animation = reskins.lib.sprites.make_4way_animation_from_spritesheet(animation)
 	else
 		local animation = get_steel_furnace_remnant_animation(inputs.icon_base, inputs.tint)
 		remnant.animation = make_rotated_animation_variations_from_sheet(1, animation)
-		entity.graphics_set.animation = steel_furnace_entity_skin(inputs.icon_base, inputs.tint)
+		entity.graphics_set.animation = get_steel_furnace_animation(inputs.icon_base, inputs.tint)
 	end
 
 	if map.is_chemical then
 		-- Only the chemical furnaces have mirrored sprites due to the asymmetry.
-		local animation = steel_furnace_entity_skin(inputs.icon_base .. "-mirror", inputs.tint)
+		local animation = get_steel_furnace_animation(inputs.icon_base .. "-mirror", inputs.tint)
 
-		entity.graphics_set_flipped = util.copy(entity.graphics_set)
+		entity.graphics_set_flipped = {}
 		entity.graphics_set_flipped.animation = reskins.lib.sprites.make_4way_animation_from_spritesheet(animation)
 	end
 
