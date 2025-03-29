@@ -19,8 +19,8 @@ local circuit_map = {
 	["bob-advanced-processing-unit"] = { tier = 5, image_name = "electronic-processing-board" },
 
 	["bob-circuit-board"] = { tier = 3, image_name = "circuit-board" },
-	["bob-multi-layer-circuit-board"] = { tier = 4, image_name = "multi-layer-circuit-board" },
-	["bob-superior-circuit-board"] = { tier = 5, image_name = "superior-circuit-board" },
+	["bob-superior-circuit-board"] = { tier = 4, image_name = "superior-circuit-board" },
+	["bob-multi-layer-circuit-board"] = { tier = 5, image_name = "multi-layer-circuit-board" },
 }
 
 local do_custom_color = reskins.lib.settings.get_value("reskins-lib-customize-tier-colors")
