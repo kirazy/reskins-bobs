@@ -135,6 +135,27 @@ local function furnace_small_propeller(is_shifted)
 	}
 end
 
+---Gets the water reflection of a generic electric furnace.
+---@return data.WaterReflectionDefinition
+local function get_electric_furnace_water_reflection()
+	---@type data.WaterReflectionDefinition
+	local water_reflection = {
+		pictures = {
+			filename = "__base__/graphics/entity/electric-furnace/electric-furnace-reflection.png",
+			priority = "extra-high",
+			width = 24,
+			height = 24,
+			shift = util.by_pixel(5, 40),
+			variation_count = 1,
+			scale = 5,
+		},
+		rotate = false,
+		orientation_to_variation = false,
+	}
+
+	return water_reflection
+end
+
 -- Reskin entities, create and assign extra details
 for name, map in pairs(electric_furnace_map) do
 	local tier = reskins.lib.tiers.get_tier(map)
@@ -386,7 +407,7 @@ for name, map in pairs(electric_furnace_map) do
 	-- end
 
 	if name ~= "electric-furnace" then
-		entity.water_reflection = util.copy(data.raw["furnace"]["electric-furnace"].water_reflection)
+		entity.water_reflection = get_electric_furnace_water_reflection()
 	end
 
 	::continue::

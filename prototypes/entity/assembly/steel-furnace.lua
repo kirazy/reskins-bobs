@@ -259,6 +259,27 @@ local function get_steel_furnace_ground_light(orientation)
 	return animation
 end
 
+---Gets the water reflection of a generic steel furnace.
+---@return data.WaterReflectionDefinition
+local function get_steel_furnace_water_reflection()
+	---@type data.WaterReflectionDefinition
+	local water_reflection = {
+		pictures = {
+			filename = "__base__/graphics/entity/steel-furnace/steel-furnace-reflection.png",
+			priority = "extra-high",
+			width = 20,
+			height = 24,
+			shift = util.by_pixel(0, 45),
+			variation_count = 1,
+			scale = 5,
+		},
+		rotate = false,
+		orientation_to_variation = false,
+	}
+
+	return water_reflection
+end
+
 ---This method applies fixes to the fluid box of the given `entity`, by removing all pipe pictures
 ---from any defined fluid boxes and by setting `fluid_boxes_off_when_no_fluid_recipe` to `false`.
 ---@param entity data.FurnacePrototype|data.AssemblingMachinePrototype The entity to apply fixes to.
@@ -504,7 +525,7 @@ for name, map in pairs(steel_furnace_map) do
 	}
 
 	if name ~= "steel-furnace" then
-		entity.water_reflection = util.copy(data.raw["furnace"]["steel-furnace"].water_reflection)
+		entity.water_reflection = get_steel_furnace_water_reflection()
 	end
 
 	::continue::

@@ -202,6 +202,27 @@ local function get_stone_furnace_fire_animation()
 	return animation
 end
 
+---Gets the water reflection of a generic stone furnace.
+---@return data.WaterReflectionDefinition
+local function get_stone_furnace_water_reflection()
+	---@type data.WaterReflectionDefinition
+	local water_reflection = {
+		pictures = {
+			filename = "__base__/graphics/entity/stone-furnace/stone-furnace-reflection.png",
+			priority = "extra-high",
+			width = 16,
+			height = 16,
+			shift = util.by_pixel(0, 35),
+			variation_count = 1,
+			scale = 5,
+		},
+		rotate = false,
+		orientation_to_variation = false,
+	}
+
+	return water_reflection
+end
+
 ---This method applies fixes to the fluid box of the given `entity`, by removing all pipe pictures
 ---from any defined fluid boxes and by setting `fluid_boxes_off_when_no_fluid_recipe` to `false`.
 ---@param entity data.FurnacePrototype|data.AssemblingMachinePrototype The entity to apply fixes to.
@@ -338,7 +359,7 @@ for name, map in pairs(stone_furnace_map) do
 	}
 
 	if name ~= "stone-furnace" then
-		entity.water_reflection = util.copy(data.raw["furnace"]["stone-furnace"].water_reflection)
+		entity.water_reflection = get_stone_furnace_water_reflection()
 	end
 
 	::continue::
