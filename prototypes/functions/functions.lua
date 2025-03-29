@@ -436,9 +436,10 @@ end
 -- Apparently relying on vanilla globals can be dangerous when other mods break them
 
 ---Duplicate of vanilla Factorio `electric_mining_drill_smoke()` for compatibility purposes.
----@return table animation #[Types/Animation](https://wiki.factorio.com/Types/Animation)
+---@return data.Animation
 function reskins.bobs.electric_mining_drill_smoke()
-	return {
+	---@type data.Animation
+	local animation = {
 		priority = "high",
 		filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-smoke.png",
 		line_length = 6,
@@ -446,16 +447,18 @@ function reskins.bobs.electric_mining_drill_smoke()
 		height = 72,
 		frame_count = 30,
 		animation_speed = 0.4,
-		direction_count = 1,
 		shift = util.by_pixel(0, 3),
 		scale = 0.5,
 	}
+
+	return animation
 end
 
 ---Duplicate of vanilla Factorio `electric_mining_drill_smoke_front()` for compatibility purposes.
----@return table animation #[Types/Animation](https://wiki.factorio.com/Types/Animation)
+---@return data.Animation
 function reskins.bobs.electric_mining_drill_smoke_front()
-	return {
+	---@type data.Animation
+	local animation = {
 		priority = "high",
 		filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-smoke-front.png",
 		line_length = 6,
@@ -463,10 +466,11 @@ function reskins.bobs.electric_mining_drill_smoke_front()
 		height = 132,
 		frame_count = 30,
 		animation_speed = 0.4,
-		direction_count = 1,
 		shift = util.by_pixel(-3, 9),
 		scale = 0.5,
 	}
+
+	return animation
 end
 
 ---Duplicate of vanilla Factorio `electric_drill_animation_sequence` for compatibility purposes.
@@ -515,8 +519,8 @@ reskins.bobs.electric_drill_animation_shadow_sequence = {
 
 ---Duplicate of vanilla Factorio `electric_mining_drill_add_light_offsets()` for compatibility purposes.\
 ---Sets the north/south/east/west positions in table `t` to those of the current electric mining drill sprites.
----@param t table [Types/WorkingVisualisation](https://wiki.factorio.com/Types/WorkingVisualisation)
----@return table t [Types/WorkingVisualisation](https://wiki.factorio.com/Types/WorkingVisualisation)
+---@param t data.WorkingVisualisation
+---@return data.WorkingVisualisation --`t` with the north, east, south and west positions modified.
 local function electric_mining_drill_add_light_offsets(t)
 	t.north_position = { 0.8, -1.5 }
 	t.east_position = { 1.2, -1 }
