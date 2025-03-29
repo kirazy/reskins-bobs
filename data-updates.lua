@@ -37,4 +37,5 @@ require("prototypes.technology.warfare-updates") -- Bob does tech updates in dat
 ----------------------------------------------------------------------------------------------------
 -- GUI Modifications
 ----------------------------------------------------------------------------------------------------
-require("prototypes.item-group.item-group")
+-- FIXME: This is a temporary disablement of the item group icons, until new ones are created.
+-- require("prototypes.item-group.item-group")
