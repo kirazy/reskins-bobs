@@ -22,26 +22,11 @@ local inputs = {
 }
 
 local tier_map = {
-	["bob-burner-reactor"] = { tier = 1, prog_tier = 3, icon_name = "heat-source-burner", material = "base" },
-	["bob-burner-reactor-2"] = { tier = 2, prog_tier = 4, icon_name = "heat-source-burner", material = "silver-aluminum" },
-	["bob-burner-reactor-3"] = { tier = 3, prog_tier = 5, icon_name = "heat-source-burner", material = "gold-copper" },
-	["bob-fluid-reactor"] = { tier = 1, prog_tier = 3, icon_name = "heat-source-fluid", material = "base" },
-	["bob-fluid-reactor-2"] = { tier = 2, prog_tier = 4, icon_name = "heat-source-fluid", material = "silver-aluminum" },
-	["bob-fluid-reactor-3"] = { tier = 3, prog_tier = 5, icon_name = "heat-source-fluid", material = "gold-copper" },
+	["bob-burner-reactor"] = { tier = 1, prog_tier = 2, icon_name = "heat-source-burner", material = "base" },
+	["bob-burner-reactor-2"] = { tier = 2, prog_tier = 3, icon_name = "heat-source-burner", material = "aluminum-invar" },
+	["bob-fluid-reactor"] = { tier = 1, prog_tier = 2, icon_name = "heat-source-fluid", material = "base" },
+	["bob-fluid-reactor-2"] = { tier = 2, prog_tier = 3, icon_name = "heat-source-fluid", material = "aluminum-invar" },
 }
-
-if reskins.lib.version.is_same_or_newer(mods["bobpower"], "1.1.6") then
-	tier_map["bob-burner-reactor"].prog_tier = 2
-	tier_map["bob-fluid-reactor"].prog_tier = 2
-
-	tier_map["bob-burner-reactor-2"].material = "aluminum-invar"
-	tier_map["bob-burner-reactor-2"].prog_tier = 3
-	tier_map["bob-fluid-reactor-2"].material = "aluminum-invar"
-	tier_map["bob-fluid-reactor-2"].prog_tier = 3
-
-	tier_map["bob-burner-reactor-3"] = nil
-	tier_map["bob-fluid-reactor-3"] = nil
-end
 
 ---comment
 ---@param material any

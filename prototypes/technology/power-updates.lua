@@ -22,18 +22,10 @@ local technologies = {
 }
 
 local material_tiers = {
-	"base",
-	"silver-aluminum",
+	"aluminum-invar",
+	"silver-titanium",
 	"gold-copper",
 }
-
-if reskins.lib.version.is_same_or_newer(mods["bobpower"], "1.1.6") then
-	material_tiers = {
-		"aluminum-invar",
-		"silver-titanium",
-		"gold-copper",
-	}
-end
 
 -- Nuclear reactors
 if reskins.bobs.triggers.power.nuclear then

@@ -22,8 +22,7 @@ local inputs = {
 }
 
 local tier_map = {
-	["accumulator"] = { tier = 1, prog_tier = 2 },
-	["bob-large-accumulator"] = { tier = 1, prog_tier = 2, wire = 1, letter = "H" },
+	["accumulator"] = { tier = 1, prog_tier = 2, wire = 1, letter = "H" },
 	["bob-large-accumulator-2"] = { tier = 2, prog_tier = 3, wire = 1, letter = "H" },
 	["bob-large-accumulator-3"] = { tier = 3, prog_tier = 4, wire = 1, letter = "H" },
 	["bob-slow-accumulator"] = { tier = 1, prog_tier = 2, wire = 2, letter = "S" },
@@ -33,11 +32,6 @@ local tier_map = {
 	["bob-fast-accumulator-2"] = { tier = 2, prog_tier = 3, wire = 3, letter = "F" },
 	["bob-fast-accumulator-3"] = { tier = 3, prog_tier = 4, wire = 3, letter = "F" },
 }
-
-if reskins.lib.version.is_same_or_newer(mods["bobpower"], "1.1.6") then
-	tier_map["accumulator"] = { tier = 1, prog_tier = 2, wire = 1, letter = "H" }
-	tier_map["bob-large-accumulator"] = nil
-end
 
 local function accumulator_picture_tinted(inputs, repeat_count)
 	return {
@@ -140,12 +134,6 @@ for name, map in pairs(tier_map) do
 
 	local tier = reskins.lib.tiers.get_tier(map)
 	inputs.wire = map.wire
-
-	-- Stick tier labels on the vanilla accumulator
-	if name == "accumulator" and reskins.lib.version.is_older(mods["bobpower"], "1.1.6") then
-		reskins.lib.tiers.add_tier_labels_to_prototype_by_reference(tier, entity)
-		goto continue
-	end
 
 	inputs.tint = reskins.lib.tiers.get_tint(tier)
 

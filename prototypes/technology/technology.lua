@@ -22,7 +22,7 @@ local inputs = {
 ---@type CreateIconsFromListTable
 local technologies = {
 	-- Steam power-related unlocks
-	["basic-automation"] = { group = "assembly", icon_name = "automation", tint = util.color("262626") },
+	["basic-automation"] = { group = "assembly", icon_name = "automation", tier = 0 },
 	-- ["electricity"] = {}, -- inserter/miner/radar/pole/fluid burner gen
 
 	-- Labs
@@ -38,11 +38,6 @@ local technologies = {
 		flat_icon = true,
 	},
 }
-
-if reskins.lib.version.is_same_or_newer(mods["bobassembly"], "1.3.0") then
-	technologies["basic-automation"].tint = nil
-	technologies["basic-automation"].tier = 0
-end
 
 reskins.internal.create_icons_from_list(technologies, inputs)
 

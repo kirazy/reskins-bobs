@@ -25,12 +25,6 @@ local tier_map = {
 	["bob-plasma-turret-4"] = { tier = 4, prog_tier = 6 },
 }
 
--- Sea Block 0.5.5 recalibrates turret 1 and 2 to tiers 3 and 4, and hides the rest
-if reskins.lib.version.is_same_or_newer(mods["SeaBlock"], "0.5.5") then
-	tier_map["bob-plasma-turret-1"].prog_tier = 3
-	tier_map["bob-plasma-turret-2"].prog_tier = 4
-end
-
 local raising_frame_sequence = { 1, 2, 2, 2, 3, 4, 4, 4, 1, 2, 2, 2, 3, 4, 4, 4 }
 
 local function plasma_turret_extension_base(parameters)
