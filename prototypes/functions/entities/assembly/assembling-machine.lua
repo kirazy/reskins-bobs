@@ -17,8 +17,9 @@
 ---@param sprite_set integer # An integer between 0 and 5. Tier gear icon decoratives
 ---@param tint? data.Color
 ---@param flags AssemblyMachineFlags
----@return table inputs
+---@return SetupStandardEntityInputs
 local function icon_sets(sprite_set, tint, flags)
+	---@type SetupStandardEntityInputs
 	local inputs = {}
 
 	if flags.use_electronics_set then
@@ -40,8 +41,9 @@ local function icon_sets(sprite_set, tint, flags)
 			{
 				filename = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/electronics-machine-" .. flags.lights .. ".png",
 				size = 64,
-				mipmaps = 4,
+				mipmap_count = 4,
 				scale = 0.5,
+				flags = { "icon" },
 			},
 		}
 	elseif flags.use_burner_set then
@@ -64,8 +66,9 @@ local function icon_sets(sprite_set, tint, flags)
 				{
 					filename = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/smoke-stack.png",
 					size = 64,
-					mipmaps = 4,
+					mipmap_count = 4,
 					scale = 0.5,
+					flags = { "icon" },
 				},
 			}
 		else
@@ -82,8 +85,9 @@ local function icon_sets(sprite_set, tint, flags)
 				{
 					filename = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/smoke-stack.png",
 					size = 64,
-					mipmaps = 4,
+					mipmap_count = 4,
 					scale = 0.5,
+					flags = { "icon" },
 				},
 			}
 		end
@@ -113,21 +117,24 @@ local function icon_sets(sprite_set, tint, flags)
 			{
 				filename = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/steam-smoke-stack-base.png",
 				size = 64,
-				mipmaps = 4,
+				mipmap_count = 4,
 				scale = 0.5,
+				flags = { "icon" },
 			},
 			{
 				filename = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/steam-smoke-stack-mask.png",
 				size = 64,
-				mipmaps = 4,
+				mipmap_count = 4,
 				scale = 0.5,
+				flags = { "icon" },
 				tint = tint,
 			},
 			{
 				filename = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/steam-smoke-stack-highlights.png",
 				size = 64,
-				mipmaps = 4,
+				mipmap_count = 4,
 				scale = 0.5,
+				flags = { "icon" },
 				blend_mode = reskins.lib.settings.blend_mode,
 			},
 		}
@@ -151,8 +158,9 @@ local function icon_sets(sprite_set, tint, flags)
 				{
 					filename = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/mini-gear-" .. sprite_set .. ".png",
 					size = 64,
-					mipmaps = 4,
+					mipmap_count = 4,
 					scale = 0.5,
+					flags = { "icon" },
 				},
 			}
 		else
@@ -169,8 +177,9 @@ local function icon_sets(sprite_set, tint, flags)
 				{
 					filename = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/gear-" .. sprite_set .. ".png",
 					size = 64,
-					mipmaps = 4,
+					mipmap_count = 4,
 					scale = 0.5,
+					flags = { "icon" },
 				},
 			}
 		end
@@ -180,8 +189,8 @@ local function icon_sets(sprite_set, tint, flags)
 end
 
 ---Provides vanilla-style sprite definition for assembling machine corpse `animation` field. See [Prototype/Corpse](https://wiki.factorio.com/Prototype/Corpse).
----@param tint table # [Types/Color](https://wiki.factorio.com/Types/Color)
----@return table animation # [Types/RotatedAnimation](https://wiki.factorio.com/Types/RotatedAnimation)
+---@param tint data.Color
+---@return data.RotatedAnimation
 local function corpse_animation(tint)
 	return make_rotated_animation_variations_from_sheet(3, {
 		layers = {
@@ -376,9 +385,9 @@ local function entity_animation(sprite_set, tint, flags)
 end
 
 ---Reskins the named splitter with vanilla-style splitter sprites and color masking, and sets up appropriate corpse, explosion, and particle prototypes
----@param name string # [Prototype name](https://wiki.factorio.com/PrototypeBase#name)
+---@param name data.EntityID
 ---@param tier integer # 1-6 are supported, 0 to disable
----@param tint? table # [Types/Color](https://wiki.factorio.com/Types/Color)
+---@param tint? data.Color
 ---@param make_tier_labels? boolean
 ---@param flags? AssemblyMachineFlags
 function reskins.lib.apply_skin.assembling_machine(name, tier, tint, make_tier_labels, flags)
@@ -386,6 +395,7 @@ function reskins.lib.apply_skin.assembling_machine(name, tier, tint, make_tier_l
 		flags = {}
 	end
 
+	---@type SetupStandardEntityInputs
 	local inputs = util.merge({
 		{
 			type = "assembling-machine",
