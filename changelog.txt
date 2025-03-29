@@ -3,10 +3,19 @@ Version: 2.3.0
 Date: ????
   Features:
     - Migration to Factorio 2.0!
+    - Added mirrored versions of stone and steel chemical furnace sprites.
   Changes:
     - Added support for the revised assembly machine tiers in Bob's Assembling machines, version 1.3.0
     - Added `sprite_set` flag to the AssemblingMachineFlags type on the reskins.lib.apply_skin.assembling_machine method.
       - Indicates which sprite set to use. If omitted, defaults to the tier. Supports integers between 0 and 5.
+    - Many personal and vehicle equipment entities have had their tier and progression tiers recalibrated.
+    - Adjusted progression tiers for several entities.
+    - Disabled the item group GUI overrides.
+    - Updated circuit sprites with newer versions, and improved the customer color sprites.
+    - Removed the module sprites now that they have natively been implemented in Bob's Modules.
+    - Removed the module slot art style `artisan-reskin-8-lights` and `artisan-reskin-5-lights`.
+    - Minor improvements to several sprites and color masks.
+
 ---------------------------------------------------------------------------------------------------
 Version: 2.2.0
 Date: 2024-05-04
