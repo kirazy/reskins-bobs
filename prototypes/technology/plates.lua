@@ -404,8 +404,6 @@ local technologies = {
 
 -- Prefer the technology icon added for bobselectronics
 if not mods["bobelectronics"] then
-	-- TODO: https://github.com/kirazy/reskins-bobs/issues/30
-	-- This is an angel circuit, when angel circuits are remodeled, produce something for this as well
 	technologies["bob-advanced-processing-unit"] = {
 		subgroup = "processing-steps",
 		technology_icon_size = 256,
