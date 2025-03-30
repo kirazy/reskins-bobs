@@ -397,7 +397,7 @@ for name, map in pairs(electric_furnace_map) do
 	-- end
 
 	if name ~= "electric-furnace" then
-		entity.water_reflection = get_electric_furnace_water_reflection()
+		entity.graphics_set.water_reflection = get_electric_furnace_water_reflection()
 	end
 
 	::continue::

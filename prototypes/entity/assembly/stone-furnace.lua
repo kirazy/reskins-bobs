@@ -359,7 +359,7 @@ for name, map in pairs(stone_furnace_map) do
 	}
 
 	if name ~= "stone-furnace" then
-		entity.water_reflection = get_stone_furnace_water_reflection()
+		entity.graphics_set.water_reflection = get_stone_furnace_water_reflection()
 	end
 
 	::continue::
