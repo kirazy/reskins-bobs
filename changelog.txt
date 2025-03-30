@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.3.0
-Date: ????
+Date: 2025-03-30
   Features:
     - Migration to Factorio 2.0!
     - Added mirrored versions of stone and steel chemical furnace sprites.
