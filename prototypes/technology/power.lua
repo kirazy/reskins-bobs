@@ -44,9 +44,9 @@ local technologies = {
 
 if reskins.bobs.triggers.power.accumulators then
 	-- Accumulators
-	technologies["electric-energy-accumulators"] = { tier = 1, prog_tier = 2, icon_name = "accumulator", technology_icon_size = 128 }
-	technologies["bob-electric-energy-accumulators-2"] = { tier = 2, prog_tier = 3, icon_name = "accumulator", technology_icon_size = 128 }
-	technologies["bob-electric-energy-accumulators-3"] = { tier = 3, prog_tier = 4, icon_name = "accumulator", technology_icon_size = 128 }
+	technologies["electric-energy-accumulators"] = { tier = 1, prog_tier = 2, icon_name = "accumulator" }
+	technologies["bob-electric-energy-accumulators-2"] = { tier = 2, prog_tier = 3, icon_name = "accumulator" }
+	technologies["bob-electric-energy-accumulators-3"] = { tier = 3, prog_tier = 4, icon_name = "accumulator" }
 end
 
 if reskins.bobs.triggers.power.poles then
