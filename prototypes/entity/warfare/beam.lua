@@ -30,19 +30,19 @@ local beam_map = {
 }
 
 local light_tint_map = {
-	["glass"] = util.color("4F4F4F"),
-	["ruby"] = util.color("800223"),
-	["emerald"] = util.color("0D802A"),
-	["sapphire"] = util.color("023B80"),
-	["topaz"] = util.color("80590D"),
-	["amethyst"] = util.color("1E0D80"),
-	["diamond"] = util.color("F9F9F9"),
+	["glass"] = util.color("#4F4F4F"),
+	["ruby"] = util.color("#800223"),
+	["emerald"] = util.color("#0D802A"),
+	["sapphire"] = util.color("#023B80"),
+	["topaz"] = util.color("#80590D"),
+	["amethyst"] = util.color("#1E0D80"),
+	["diamond"] = util.color("#F9F9F9"),
 }
 
 local laser_beam_blend_mode = "additive"
 
 for name, lens in pairs(beam_map) do
-	-- Fetch beam
+	---@type data.BeamPrototype
 	local beam = data.raw[inputs.type][name]
 
 	-- Check if beam exists, if not, skip this iteration
@@ -50,109 +50,123 @@ for name, lens in pairs(beam_map) do
 		goto continue
 	end
 
-	-- Reskin beams
-	beam.head = {
-		filename = "__reskins-bobs__/graphics/entity/warfare/beam/" .. lens .. "/" .. lens .. "-laser-body.png",
-		flags = beam_non_light_flags,
-		line_length = 8,
-		width = 64,
-		height = 12,
-		frame_count = 8,
-		scale = 0.5,
-		animation_speed = 0.5,
-		blend_mode = laser_beam_blend_mode,
-	}
-
-	beam.tail = {
-		filename = "__reskins-bobs__/graphics/entity/warfare/beam/" .. lens .. "/" .. lens .. "-laser-end.png",
-		flags = beam_non_light_flags,
-		width = 110,
-		height = 62,
-		frame_count = 8,
-		shift = util.by_pixel(11.5, 1),
-		scale = 0.5,
-		animation_speed = 0.5,
-		blend_mode = laser_beam_blend_mode,
-	}
-
-	beam.body = {
-		{
-			filename = "__reskins-bobs__/graphics/entity/warfare/beam/" .. lens .. "/" .. lens .. "-laser-body.png",
-			flags = beam_non_light_flags,
-			line_length = 8,
-			width = 64,
-			height = 12,
-			frame_count = 8,
-			scale = 0.5,
-			animation_speed = 0.5,
-			blend_mode = laser_beam_blend_mode,
-		},
-	}
-
-	beam.light_animations = {
-		head = {
-			filename = "__reskins-bobs__/graphics/entity/warfare/beam/base/laser-body-light.png",
-			line_length = 8,
-			width = 64,
-			height = 12,
-			frame_count = 8,
-			scale = 0.5,
-			animation_speed = 0.5,
-		},
-		tail = {
-			filename = "__reskins-bobs__/graphics/entity/warfare/beam/base/laser-end-light.png",
-			width = 110,
-			height = 62,
-			frame_count = 8,
-			shift = util.by_pixel(11.5, 1),
-			scale = 0.5,
-			animation_speed = 0.5,
-		},
-		body = {
-			{
-				filename = "__reskins-bobs__/graphics/entity/warfare/beam/base/laser-body-light.png",
-				line_length = 8,
-				width = 64,
-				height = 12,
-				frame_count = 8,
-				scale = 0.5,
-				animation_speed = 0.5,
+	beam.graphics_set = {
+		beam = {
+			head = {
+				layers = {
+					{
+						filename = "__reskins-bobs__/graphics/entity/warfare/beam/" .. lens .. "/" .. lens .. "-laser-body.png",
+						flags = beam_non_light_flags,
+						line_length = 8,
+						width = 64,
+						height = 12,
+						frame_count = 8,
+						scale = 0.5,
+						animation_speed = 0.5,
+						blend_mode = laser_beam_blend_mode,
+					},
+					{
+						filename = "__reskins-bobs__/graphics/entity/warfare/beam/base/laser-body-light.png",
+						draw_as_light = true,
+						flags = { "light" },
+						line_length = 8,
+						width = 64,
+						height = 12,
+						frame_count = 8,
+						scale = 0.5,
+						animation_speed = 0.5,
+					},
+				},
+			},
+			tail = {
+				layers = {
+					{
+						filename = "__reskins-bobs__/graphics/entity/warfare/beam/" .. lens .. "/" .. lens .. "-laser-end.png",
+						flags = beam_non_light_flags,
+						width = 110,
+						height = 62,
+						frame_count = 8,
+						shift = util.by_pixel(11.5, 1),
+						scale = 0.5,
+						animation_speed = 0.5,
+						blend_mode = laser_beam_blend_mode,
+					},
+					{
+						filename = "__reskins-bobs__/graphics/entity/warfare/beam/base/laser-end-light.png",
+						draw_as_light = true,
+						flags = { "light" },
+						width = 110,
+						height = 62,
+						frame_count = 8,
+						shift = util.by_pixel(11.5, 1),
+						scale = 0.5,
+						animation_speed = 0.5,
+					},
+				},
+			},
+			body = {
+				layers = {
+					{
+						filename = "__reskins-bobs__/graphics/entity/warfare/beam/" .. lens .. "/" .. lens .. "-laser-body.png",
+						flags = beam_non_light_flags,
+						line_length = 8,
+						width = 64,
+						height = 12,
+						frame_count = 8,
+						scale = 0.5,
+						animation_speed = 0.5,
+						blend_mode = laser_beam_blend_mode,
+					},
+					{
+						filename = "__reskins-bobs__/graphics/entity/warfare/beam/base/laser-body-light.png",
+						draw_as_light = true,
+						flags = { "light" },
+						line_length = 8,
+						width = 64,
+						height = 12,
+						frame_count = 8,
+						scale = 0.5,
+						animation_speed = 0.5,
+					},
+				},
 			},
 		},
-	}
-
-	beam.ground_light_animations = {
-		head = {
-			filename = "__reskins-bobs__/graphics/entity/warfare/beam/base/laser-ground-light-head.png",
-			line_length = 1,
-			width = 256,
-			height = 256,
-			repeat_count = 8,
-			scale = 0.5,
-			shift = util.by_pixel(-32, 0),
-			animation_speed = 0.5,
-			tint = light_tint_map[lens],
-		},
-		tail = {
-			filename = "__reskins-bobs__/graphics/entity/warfare/beam/base/laser-ground-light-tail.png",
-			line_length = 1,
-			width = 256,
-			height = 256,
-			repeat_count = 8,
-			scale = 0.5,
-			shift = util.by_pixel(32, 0),
-			animation_speed = 0.5,
-			tint = light_tint_map[lens],
-		},
-		body = {
-			filename = "__reskins-bobs__/graphics/entity/warfare/beam/base/laser-ground-light-body.png",
-			line_length = 1,
-			width = 64,
-			height = 256,
-			repeat_count = 8,
-			scale = 0.5,
-			animation_speed = 0.5,
-			tint = light_tint_map[lens],
+		ground = {
+			head = {
+				filename = "__reskins-bobs__/graphics/entity/warfare/beam/base/laser-ground-light-head.png",
+				draw_as_light = true,
+				flags = { "light" },
+				width = 256,
+				height = 256,
+				repeat_count = 8,
+				scale = 0.5,
+				shift = util.by_pixel(-32, 0),
+				animation_speed = 0.5,
+				tint = light_tint_map[lens],
+			},
+			tail = {
+				filename = "__reskins-bobs__/graphics/entity/warfare/beam/base/laser-ground-light-tail.png",
+				draw_as_light = true,
+				flags = { "light" },
+				width = 256,
+				height = 256,
+				repeat_count = 8,
+				scale = 0.5,
+				shift = util.by_pixel(32, 0),
+				animation_speed = 0.5,
+				tint = light_tint_map[lens],
+			},
+			body = {
+				filename = "__reskins-bobs__/graphics/entity/warfare/beam/base/laser-ground-light-body.png",
+				draw_as_light = true,
+				flags = { "light" },
+				width = 64,
+				height = 256,
+				repeat_count = 8,
+				scale = 0.5,
+				animation_speed = 0.5,
+				tint = light_tint_map[lens],
+			},
 		},
 	}
 
