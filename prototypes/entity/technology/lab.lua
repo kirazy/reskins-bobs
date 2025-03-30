@@ -19,7 +19,8 @@ local inputs = {
 }
 
 local function reskin_lab(name)
-	local entity = data.raw["bob-lab"][name]
+	---@type data.LabPrototype
+	local entity = data.raw["lab"][name]
 
 	if not entity then
 		return
@@ -41,8 +42,6 @@ local function reskin_lab(name)
 				filename = "__base__/graphics/entity/lab/lab-integration.png",
 				width = 242,
 				height = 162,
-				frame_count = 1,
-				line_length = 1,
 				repeat_count = 33,
 				animation_speed = 1 / 3,
 				shift = util.by_pixel(0, 15.5),
@@ -52,8 +51,6 @@ local function reskin_lab(name)
 				filename = "__base__/graphics/entity/lab/lab-shadow.png",
 				width = 242,
 				height = 136,
-				frame_count = 1,
-				line_length = 1,
 				repeat_count = 33,
 				animation_speed = 1 / 3,
 				shift = util.by_pixel(13, 11),
@@ -69,7 +66,6 @@ local function reskin_lab(name)
 				filename = "__reskins-bobs__/graphics/entity/technology/lab/" .. name .. ".png",
 				width = 194,
 				height = 174,
-				frame_count = 1,
 				shift = util.by_pixel(0, 1.5),
 				scale = 0.5,
 			},
@@ -77,7 +73,6 @@ local function reskin_lab(name)
 				filename = "__base__/graphics/entity/lab/lab-integration.png",
 				width = 242,
 				height = 162,
-				frame_count = 1,
 				shift = util.by_pixel(0, 15.5),
 				scale = 0.5,
 			},
@@ -85,7 +80,6 @@ local function reskin_lab(name)
 				filename = "__base__/graphics/entity/lab/lab-shadow.png",
 				width = 242,
 				height = 136,
-				frame_count = 1,
 				shift = util.by_pixel(13, 11),
 				draw_as_shadow = true,
 				scale = 0.5,
@@ -94,8 +88,8 @@ local function reskin_lab(name)
 	}
 end
 
-reskin_lab("lab-2")
-reskin_lab("lab-alien")
+reskin_lab("bob-lab-2")
+reskin_lab("bob-lab-alien")
 
 -- lab
 -- lab-2
