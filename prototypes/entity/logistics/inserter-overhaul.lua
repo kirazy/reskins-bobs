@@ -25,7 +25,7 @@ local bulk_inserter_icon_name = reskins.lib.settings.get_value("reskins-bobs-fli
 local bulk_inserter_type = "bulk-inserter"
 
 local inserter_icon_name = "inserter"
-local inserter_type = (mods["bobsinserters"] or reskins.lib.settings.get_value("bobmods-logistics-inserteroverhaul")) and "long-inserter" or "inserter"
+local inserter_type = (mods["bobinserters"] or reskins.lib.settings.get_value("bobmods-logistics-inserteroverhaul")) and "long-inserter" or "inserter"
 
 local inserter_map = {
 	-- Standard inserters
