@@ -158,9 +158,7 @@ for name, map in pairs(tier_map) do
 
 	-- Overlay tinted pipe pictures
 	if entity.energy_source.fluid_box then
-		entity.energy_source = util.merge({ entity.energy_source, {
-			fluid_box = { pipe_picture = reskins.bobs.assembly_pipe_pictures(inputs.tint) },
-		} })
+		entity.energy_source.fluid_box.pipe_picture = reskins.bobs.assembly_pipe_pictures(inputs.tint)
 	end
 
 	::continue::
