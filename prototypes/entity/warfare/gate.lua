@@ -26,8 +26,8 @@ local inputs = {
 inputs.icon_filename = "__reskins-bobs__/graphics/icons/warfare/reinforced-gate/gate.png"
 
 local reinforced_tint_index = {
-	["big"] = util.color("6f647d"),
-	["medium"] = util.color("a695ba"),
+	["big"] = util.color("#6f647d"),
+	["medium"] = util.color("#a695ba"),
 }
 
 -- Parse inputs
@@ -55,7 +55,6 @@ remnant.animation = {
 		filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/remnants/reinforced-gate-remnants-var-1.png",
 		width = 86,
 		height = 82,
-		axially_symmetrical = false,
 		direction_count = 4,
 		shift = util.by_pixel(0, 1),
 		scale = 0.5,
@@ -64,7 +63,6 @@ remnant.animation = {
 		filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/remnants/reinforced-gate-remnants-var-2.png",
 		width = 84,
 		height = 82,
-		axially_symmetrical = false,
 		direction_count = 4,
 		shift = util.by_pixel(-0.5, 0),
 		scale = 0.5,
@@ -73,7 +71,6 @@ remnant.animation = {
 		filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-gate/remnants/reinforced-gate-remnants-var-3.png",
 		width = 82,
 		height = 84,
-		axially_symmetrical = false,
 		direction_count = 4,
 		shift = util.by_pixel(0, 0.5),
 		scale = 0.5,

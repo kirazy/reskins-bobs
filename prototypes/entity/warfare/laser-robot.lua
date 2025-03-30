@@ -16,30 +16,34 @@ local inputs = {
 	mod = "bobs",
 	group = "warfare",
 	particles = { ["small"] = 3 },
-	tint = util.color("7f4eca"),
+	tint = util.color("#7f4eca"),
 }
 
+---@return data.RotatedAnimation
 local function robot_animation()
-	return {
+	---@type data.RotatedAnimation
+	local animation = {
 		filename = "__reskins-bobs__/graphics/entity/warfare/laser-robot/bob-laser-robot.png",
 		width = 64,
 		height = 64,
-		frame_count = 1,
-		direction_count = 1,
 		scale = 0.5,
 	}
+
+	return animation
 end
 
+---@return data.RotatedAnimation
 local function robot_shadow()
-	return {
+	---@type data.RotatedAnimation
+	local animation = {
 		filename = "__reskins-bobs__/graphics/entity/warfare/laser-robot/bob-laser-robot-shadow.png",
 		width = 64,
 		height = 64,
-		frame_count = 1,
-		direction_count = 1,
 		draw_as_shadow = true,
 		scale = 0.5,
 	}
+
+	return animation
 end
 
 local name = "bob-laser-robot"
@@ -60,13 +64,8 @@ local remnant = data.raw["corpse"][name .. "-remnants"]
 -- Reskin remants
 remnant.animation = {
 	filename = "__reskins-bobs__/graphics/entity/warfare/laser-robot/remnants/laser-robot-remnants.png",
-	line_length = 1,
 	width = 98,
 	height = 94,
-	frame_count = 1,
-	variation_count = 1,
-	axially_symmetrical = false,
-	direction_count = 1,
 	scale = 0.5,
 }
 

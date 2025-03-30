@@ -31,6 +31,47 @@ local tier_map = {
 	["bob-radar-5"] = 5,
 }
 
+---@param tint data.Color
+---@return data.RotatedAnimation
+local function get_radar_remnant_animation(tint)
+	---@type data.RotatedAnimation
+	local remnant_animation = {
+		layers = {
+			-- Base
+			{
+				filename = "__base__/graphics/entity/radar/remnants/radar-remnants.png",
+				width = 282,
+				height = 212,
+				direction_count = 1,
+				shift = util.by_pixel(12, 4.5),
+				scale = 0.5,
+			},
+			-- Mask
+			{
+				filename = "__reskins-bobs__/graphics/entity/warfare/radar/remnants/radar-remnants-mask.png",
+				width = 282,
+				height = 212,
+				direction_count = 1,
+				shift = util.by_pixel(12, 4.5),
+				tint = tint,
+				scale = 0.5,
+			},
+			-- Highlights
+			{
+				filename = "__reskins-bobs__/graphics/entity/warfare/radar/remnants/radar-remnants-highlights.png",
+				width = 282,
+				height = 212,
+				direction_count = 1,
+				shift = util.by_pixel(12, 4.5),
+				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
+				scale = 0.5,
+			},
+		},
+	}
+
+	return remnant_animation
+end
+
 -- Reskin entities, create and assign extra details
 for name, tier in pairs(tier_map) do
 	---@type data.RadarPrototype
@@ -46,51 +87,8 @@ for name, tier in pairs(tier_map) do
 	local remnant = data.raw["corpse"][name .. "-remnants"]
 
 	-- Reskin remnants
-	remnant.animation = make_rotated_animation_variations_from_sheet(1, {
-		layers = {
-			-- Base
-			{
-				filename = "__base__/graphics/entity/radar/remnants/radar-remnants.png",
-				line_length = 1,
-				width = 282,
-				height = 212,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
-				direction_count = 1,
-				shift = util.by_pixel(12, 4.5),
-				scale = 0.5,
-			},
-			-- Mask
-			{
-				filename = "__reskins-bobs__/graphics/entity/warfare/radar/remnants/radar-remnants-mask.png",
-				line_length = 1,
-				width = 282,
-				height = 212,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
-				direction_count = 1,
-				shift = util.by_pixel(12, 4.5),
-				tint = inputs.tint,
-				scale = 0.5,
-			},
-			-- Highlights
-			{
-				filename = "__reskins-bobs__/graphics/entity/warfare/radar/remnants/radar-remnants-highlights.png",
-				line_length = 1,
-				width = 282,
-				height = 212,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
-				direction_count = 1,
-				shift = util.by_pixel(12, 4.5),
-				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				scale = 0.5,
-			},
-		},
-	})
+	local remnant_animation = get_radar_remnant_animation(inputs.tint)
+	remnant.animation = make_rotated_animation_variations_from_sheet(1, remnant_animation)
 
 	-- Reskin entity
 	entity.integration_patch = {
@@ -98,7 +96,6 @@ for name, tier in pairs(tier_map) do
 		priority = "low",
 		width = 238,
 		height = 216,
-		direction_count = 1,
 		shift = util.by_pixel(1.5, 4),
 		scale = 0.5,
 	}

@@ -21,9 +21,9 @@ local inputs = {
 }
 
 local tint_map = {
-	["bob-valve"] = util.color("2ac0ff"),
-	["bob-overflow-valve"] = util.color("ff3b29"),
-	["bob-topup-valve"] = util.color("4dff2a"),
+	["bob-valve"] = util.color("#2ac0ff"),
+	["bob-overflow-valve"] = util.color("#ff3b29"),
+	["bob-topup-valve"] = util.color("#4dff2a"),
 }
 
 local function cardinal_pictures(x, tint)

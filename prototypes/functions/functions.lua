@@ -8,19 +8,19 @@ reskins.bobs.directory = "__reskins-bobs__"
 
 ---Table of colors for the three types of furnaces added by bobplates.
 reskins.bobs.furnace_tint_index = {
-	standard = reskins.lib.settings.get_value("reskins-bobs-do-custom-furnace-variants") and reskins.lib.settings.get_value("reskins-bobs-standard-furnace-color") or util.color("ffb700"),
-	mixing = reskins.lib.settings.get_value("reskins-bobs-do-custom-furnace-variants") and reskins.lib.settings.get_value("reskins-bobs-mixing-furnace-color") or util.color("00bfff"),
-	chemical = reskins.lib.settings.get_value("reskins-bobs-do-custom-furnace-variants") and reskins.lib.settings.get_value("reskins-bobs-chemical-furnace-color") or util.color("f21f0c"),
+	standard = reskins.lib.settings.get_value("reskins-bobs-do-custom-furnace-variants") and reskins.lib.settings.get_value("reskins-bobs-standard-furnace-color") or util.color("#ffb700"),
+	mixing = reskins.lib.settings.get_value("reskins-bobs-do-custom-furnace-variants") and reskins.lib.settings.get_value("reskins-bobs-mixing-furnace-color") or util.color("#00bfff"),
+	chemical = reskins.lib.settings.get_value("reskins-bobs-do-custom-furnace-variants") and reskins.lib.settings.get_value("reskins-bobs-chemical-furnace-color") or util.color("#f21f0c"),
 }
 
 -- NUCLEAR REACTOR COLORS AND ICON COMPOSITIONS
 
 -- Nuclear fuel tints
 local nuclear_tint_index = {
-	["uranium"] = util.color("3acc0b"),
-	["thorium"] = util.color("cca500"),
-	["deuterium-blue"] = util.color("008ed0"),
-	["deuterium-pink"] = util.color("d00049"),
+	["uranium"] = util.color("#3acc0b"),
+	["thorium"] = util.color("#cca500"),
+	["deuterium-blue"] = util.color("#008ed0"),
+	["deuterium-pink"] = util.color("#d00049"),
 }
 
 -- Map fuel type to reactor entity name
@@ -186,7 +186,7 @@ end
 -- PIPE-RELATED PICTURE AND COVER GENERATION
 
 ---Returns a table of colored assembly machine style pipe pictures.
----@param tint table #[Types/Color](https://wiki.factorio.com/Types/Color)
+---@param tint data.Color
 ---@return table animation #[Types/Animation4Way](https://wiki.factorio.com/Types/Animation4Way)
 function reskins.bobs.assembly_pipe_pictures(tint)
 	return {
@@ -326,7 +326,7 @@ function reskins.bobs.assembly_pipe_pictures(tint)
 end
 
 ---Returns a table of colored electric chemical furnace style pipe pictures.
----@param tint table #[Types/Color](https://wiki.factorio.com/Types/Color)
+---@param tint data.Color
 ---@return table animation #[Types/Animation4Way](https://wiki.factorio.com/Types/Animation4Way)
 function reskins.bobs.furnace_pipe_pictures(tint)
 	return {

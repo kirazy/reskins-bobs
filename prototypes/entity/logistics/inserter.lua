@@ -40,12 +40,8 @@ end
 local function inserter_remnants(parameters)
 	return make_rotated_animation_variations_from_sheet(4, {
 		filename = "__reskins-bobs__/graphics/entity/logistics/inserter/standard/" .. parameters.name .. "/remnants/" .. parameters.name .. "-remnants.png",
-		line_length = 1,
 		width = 134,
 		height = 94,
-		frame_count = 1,
-		variation_count = 1,
-		axially_symmetrical = false,
 		direction_count = 1,
 		shift = util.by_pixel(3, -1.5),
 		scale = 0.5,
@@ -182,7 +178,7 @@ for name, map in pairs(inserter_map) do
 	-- Fetch remnant
 	local remnant = data.raw["corpse"][name .. "-remnants"]
 
-	-- Reskin remnnant
+	-- Reskin remnant
 	remnant.animation = inserter_remnants({ name = name })
 
 	-- Common to all inserters

@@ -30,9 +30,9 @@ end
 inputs.icon_filename = "__reskins-bobs__/graphics/icons/warfare/reinforced-wall/wall.png"
 
 local reinforced_tint_index = {
-	["tiny-stone"] = util.color("a793bf"),
-	["small-stone"] = util.color("a793bf"),
-	["medium-stone"] = util.color("9584ab"),
+	["tiny-stone"] = util.color("#a793bf"),
+	["small-stone"] = util.color("#a793bf"),
+	["medium-stone"] = util.color("#9584ab"),
 }
 
 -- Parse inputs
@@ -61,8 +61,6 @@ remnant.animation = make_rotated_animation_variations_from_sheet(4, {
 	filename = "__reskins-bobs__/graphics/entity/warfare/reinforced-wall/remnants/reinforced-wall-remnants.png",
 	width = 118,
 	height = 114,
-	line_length = 1,
-	frame_count = 1,
 	direction_count = 2,
 	shift = util.by_pixel(3, 7.5),
 	scale = 0.5,

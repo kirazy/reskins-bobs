@@ -47,12 +47,8 @@ for name, map in pairs(tier_map) do
 			-- Base
 			{
 				filename = "__base__/graphics/entity/pump/remnants/pump-remnants.png",
-				line_length = 1,
 				width = 188,
 				height = 186,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
 				direction_count = 4,
 				shift = util.by_pixel(2, 2),
 				scale = 0.5,
@@ -60,12 +56,8 @@ for name, map in pairs(tier_map) do
 			-- Mask
 			{
 				filename = "__reskins-bobs__/graphics/entity/logistics/pump/remnants/pump-remnants-mask.png",
-				line_length = 1,
 				width = 188,
 				height = 186,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
 				direction_count = 4,
 				shift = util.by_pixel(2, 2),
 				tint = inputs.tint,
@@ -74,12 +66,8 @@ for name, map in pairs(tier_map) do
 			-- Highlights
 			{
 				filename = "__reskins-bobs__/graphics/entity/logistics/pump/remnants/pump-remnants-highlights.png",
-				line_length = 1,
 				width = 188,
 				height = 186,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
 				direction_count = 4,
 				shift = util.by_pixel(2, 2),
 				blend_mode = reskins.lib.settings.blend_mode, -- "additive",

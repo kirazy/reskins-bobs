@@ -19,13 +19,21 @@ local inputs = {
 }
 
 ---Expands a single frame into an n-by-m stripes table
----@param filename string [Types/FileName](https://wiki.factorio.com/Types/FileName)
+---@param filename data.FileName
 ---@param n integer
 ---@param m? integer
----@return table stripes #Table of [Types/Stripe](https://wiki.factorio.com/Types/Stripe)
+---@return data.Stripe[]
 local function expand_to_stripes(filename, n, m)
 	local m = m or 1
-	local stripe = { filename = filename, width_in_frames = 1, height_in_frames = 1 }
+
+	---@type data.Stripe
+	local stripe = {
+		filename = filename,
+		width_in_frames = 1,
+		height_in_frames = 1,
+	}
+
+	---@return data.Stripe[]
 	local stripes = {}
 
 	for i = 1, n do
@@ -41,11 +49,12 @@ end
 
 ---Returns an appropriately scaled and tinted robot drone unit sprite definition
 ---@param scale number
----@param tint table #[Types/Color](https://wiki.factorio.com/Types/Color)
----@return table #[Types/RotatedAnimation](https://wiki.factorio.com/Types/RotatedAnimation)
+---@param tint data.Color
+---@return data.RotatedAnimation
 local function build_drone_animation(scale, tint)
 	local animation_speed = 8
 
+	---@type data.RotatedAnimation
 	local animation = {
 		layers = {
 			-- Base
@@ -174,17 +183,15 @@ end
 
 ---Returns an appropriately scaled and tinted robot drone corpse sprite definition
 ---@param scale number
----@param tint table #[Types/Color](https://wiki.factorio.com/Types/Color)
----@return table #[Types/RotatedAnimation](https://wiki.factorio.com/Types/RotatedAnimation)
+---@param tint data.Color
+---@return data.RotatedAnimation
 local function build_drone_remnants(scale, tint)
 	local animation = {
 		layers = {
 			{
 				filename = "__reskins-bobs__/graphics/entity/warfare/drone/remnants/drone-remnants.png",
-				line_length = 1,
 				width = 414,
 				height = 380,
-				frame_count = 1,
 				direction_count = 4,
 				shift = util.by_pixel(4, 0.5),
 				scale = 0.5,
@@ -193,10 +200,8 @@ local function build_drone_remnants(scale, tint)
 			-- Mask
 			{
 				filename = "__reskins-bobs__/graphics/entity/warfare/drone/remnants/drone-remnants-mask.png",
-				line_length = 1,
 				width = 414,
 				height = 380,
-				frame_count = 1,
 				direction_count = 4,
 				shift = util.by_pixel(4, 0.5),
 				tint = tint,
@@ -206,10 +211,8 @@ local function build_drone_remnants(scale, tint)
 			-- Highlights
 			{
 				filename = "__reskins-bobs__/graphics/entity/warfare/drone/remnants/drone-remnants-highlights.png",
-				line_length = 1,
 				width = 414,
 				height = 380,
-				frame_count = 1,
 				direction_count = 4,
 				shift = util.by_pixel(4, 0.5),
 				blend_mode = reskins.lib.settings.blend_mode,
@@ -225,7 +228,7 @@ end
 
 local drones = {
 	["gun-drone"] = {
-		tint = util.color("f2f230"), -- Yellow tint, sat 80%
+		tint = util.color("#f2f230"), -- Yellow tint, sat 80%
 		scale = 0.5,
 		rotation_speed = 0.015,
 		attack_parameters = {
@@ -234,7 +237,7 @@ local drones = {
 		},
 	},
 	["laser-drone"] = {
-		tint = util.color("30f271"), -- Green/teal
+		tint = util.color("#30f271"), -- Green/teal
 		scale = 0.5,
 		rotation_speed = 0.015,
 		attack_parameters = {
@@ -242,7 +245,7 @@ local drones = {
 		},
 	},
 	["flamethrower-drone"] = {
-		tint = util.color("f25730"), -- Orange
+		tint = util.color("#f25730"), -- Orange
 		scale = 0.5,
 		rotation_speed = 0.015,
 		attack_parameters = {
@@ -250,7 +253,7 @@ local drones = {
 		},
 	},
 	["plasma-drone"] = {
-		tint = util.color("30a5f2"),
+		tint = util.color("#30a5f2"),
 		scale = 0.75,
 		rotation_speed = 0.007,
 		attack_parameters = {

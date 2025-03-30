@@ -52,22 +52,16 @@ for name, map in pairs(tier_map) do
 			-- Base
 			{
 				filename = "__base__/graphics/entity/storage-tank/remnants/storage-tank-remnants.png",
-				line_length = 1,
 				width = 426,
 				height = 282,
-				frame_count = 1,
-				direction_count = 1,
 				shift = util.by_pixel(27, 21),
 				scale = 0.5,
 			},
 			-- Mask
 			{
 				filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank/remnants/storage-tank-remnants-mask.png",
-				line_length = 1,
 				width = 426,
 				height = 282,
-				frame_count = 1,
-				direction_count = 1,
 				shift = util.by_pixel(27, 21),
 				tint = inputs.tint,
 				scale = 0.5,
@@ -75,11 +69,8 @@ for name, map in pairs(tier_map) do
 			-- Highlights
 			{
 				filename = "__reskins-bobs__/graphics/entity/logistics/storage-tank/remnants/storage-tank-remnants-highlights.png",
-				line_length = 1,
 				width = 426,
 				height = 282,
-				frame_count = 1,
-				direction_count = 1,
 				shift = util.by_pixel(27, 21),
 				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
 				scale = 0.5,
@@ -162,9 +153,7 @@ for name, map in pairs(tier_map) do
 			width = 48,
 			height = 30,
 			frame_count = 60,
-			axially_symmetrical = false,
 			animation_speed = 0.25,
-			direction_count = 1,
 			scale = 0.5,
 		},
 	}

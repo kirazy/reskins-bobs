@@ -71,10 +71,10 @@ local technologies = {
 	["bob-tanks-3"] = { icon_name = "tank", tier = 3, prog_tier = 5 },
 
 	-- Tank robots
-	["bob-robot-gun-drones"] = { icon_name = "drone", tint = util.color("f2f230") },
-	["bob-robot-laser-drones"] = { icon_name = "drone", tint = util.color("30f271") },
-	["bob-robot-flamethrower-drones"] = { icon_name = "drone", tint = util.color("f25730") },
-	["bob-robot-plasma-drones"] = { icon_name = "drone", tint = util.color("30a5f2") },
+	["bob-robot-gun-drones"] = { icon_name = "drone", tint = util.color("#f2f230") },
+	["bob-robot-laser-drones"] = { icon_name = "drone", tint = util.color("#30f271") },
+	["bob-robot-flamethrower-drones"] = { icon_name = "drone", tint = util.color("#f25730") },
+	["bob-robot-plasma-drones"] = { icon_name = "drone", tint = util.color("#30a5f2") },
 
 	-- Robots
 	["bob-laser-robot"] = { subgroup = "robots", flat_icon = true },

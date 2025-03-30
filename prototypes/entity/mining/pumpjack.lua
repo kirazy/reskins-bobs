@@ -56,6 +56,48 @@ table.sort(pumpjack_speeds)
 local max_speed = pumpjack_speeds[#pumpjack_speeds]
 local min_speed = pumpjack_speeds[1]
 
+---@param tint data.Color
+---@param is_water_miner boolean When `true`, uses the water pumpjack base sprite, otherwise, uses the pumpjack base sprite.
+---@return data.RotatedAnimation
+local function get_remnant_animation(tint, is_water_miner)
+	---@type data.RotatedAnimation
+	local remnant_animation = {
+		layers = {
+			-- Base
+			{
+				filename = is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/remnants/water-pumpjack-remnants-base.png" or "__base__/graphics/entity/pumpjack/remnants/pumpjack-remnants.png",
+				width = 274,
+				height = 284,
+				direction_count = 1,
+				shift = util.by_pixel(0, 3.5),
+				scale = 0.5,
+			},
+			-- Mask
+			{
+				filename = "__reskins-bobs__/graphics/entity/mining/pumpjack/remnants/pumpjack-remnants-mask.png",
+				width = 274,
+				height = 284,
+				direction_count = 1,
+				shift = util.by_pixel(0, 3.5),
+				tint = tint,
+				scale = 0.5,
+			},
+			-- Highlights
+			{
+				filename = "__reskins-bobs__/graphics/entity/mining/pumpjack/remnants/pumpjack-remnants-highlights.png",
+				width = 274,
+				height = 284,
+				direction_count = 1,
+				shift = util.by_pixel(0, 3.5),
+				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
+				scale = 0.5,
+			},
+		},
+	}
+
+	return remnant_animation
+end
+
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
 	---@type data.MiningDrillPrototype
@@ -85,53 +127,16 @@ for name, map in pairs(tier_map) do
 
 	-- Reskin base particles if we're a water pump
 	if map.is_water_miner then
-		reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["big"], 1, util.color("3083bf"))
-		reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["medium"], 2, util.color("3083bf"))
+		reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["big"], 1, util.color("#3083bf"))
+		reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["medium"], 2, util.color("#3083bf"))
 	end
 
 	-- Fetch remnants
 	local remnant = data.raw["corpse"][name .. "-remnants"]
 
 	-- Reskin remnants
-	remnant.animation = make_rotated_animation_variations_from_sheet(2, {
-		layers = {
-			-- Base
-			{
-				filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/remnants/water-pumpjack-remnants-base.png" or "__base__/graphics/entity/pumpjack/remnants/pumpjack-remnants.png",
-				line_length = 1,
-				width = 274,
-				height = 284,
-				frame_count = 1,
-				direction_count = 1,
-				shift = util.by_pixel(0, 3.5),
-				scale = 0.5,
-			},
-			-- Mask
-			{
-				filename = "__reskins-bobs__/graphics/entity/mining/pumpjack/remnants/pumpjack-remnants-mask.png",
-				line_length = 1,
-				width = 274,
-				height = 284,
-				frame_count = 1,
-				direction_count = 1,
-				shift = util.by_pixel(0, 3.5),
-				tint = inputs.tint,
-				scale = 0.5,
-			},
-			-- Highlights
-			{
-				filename = "__reskins-bobs__/graphics/entity/mining/pumpjack/remnants/pumpjack-remnants-highlights.png",
-				line_length = 1,
-				width = 274,
-				height = 284,
-				frame_count = 1,
-				direction_count = 1,
-				shift = util.by_pixel(0, 3.5),
-				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				scale = 0.5,
-			},
-		},
-	})
+	local remnant_animation = get_remnant_animation(inputs.tint, map.is_water_miner)
+	remnant.animation = make_rotated_animation_variations_from_sheet(2, remnant_animation)
 
 	-- Reskin entities
 	entity.base_picture = {

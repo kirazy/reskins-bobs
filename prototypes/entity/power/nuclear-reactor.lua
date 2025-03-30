@@ -124,12 +124,8 @@ local function skin_reactor_remnants(name, tint, material)
 			-- Base
 			{
 				filename = "__base__/graphics/entity/nuclear-reactor/remnants/nuclear-reactor-remnants.png",
-				line_length = 1,
 				width = 410,
 				height = 396,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
 				direction_count = 1,
 				shift = util.by_pixel(7, 4),
 				scale = 0.5,
@@ -137,12 +133,8 @@ local function skin_reactor_remnants(name, tint, material)
 			-- Mask
 			{
 				filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/remnants/nuclear-reactor-remnants-mask.png",
-				line_length = 1,
 				width = 410,
 				height = 396,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
 				direction_count = 1,
 				shift = util.by_pixel(7, 4),
 				tint = tint,
@@ -151,12 +143,8 @@ local function skin_reactor_remnants(name, tint, material)
 			-- Highlights
 			{
 				filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/remnants/nuclear-reactor-remnants-highlights.png",
-				line_length = 1,
 				width = 410,
 				height = 396,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
 				direction_count = 1,
 				shift = util.by_pixel(7, 4),
 				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
@@ -165,12 +153,8 @@ local function skin_reactor_remnants(name, tint, material)
 			-- Pipes
 			{
 				filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-remnants.png",
-				line_length = 1,
 				width = 410,
 				height = 396,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
 				direction_count = 1,
 				shift = util.by_pixel(7, 4),
 				scale = 0.5,
@@ -192,7 +176,7 @@ for name, map in pairs(reactors) do
 
 	local tier = reskins.lib.tiers.get_tier(map)
 
-	-- We need to assaign fuel, pipe-tier, and reactor inputs
+	-- We need to assign fuel, pipe-tier, and reactor inputs
 	inputs.pipe_tier = map.tier
 	inputs.fuel = reskins.bobs.nuclear_reactor_index[name]
 

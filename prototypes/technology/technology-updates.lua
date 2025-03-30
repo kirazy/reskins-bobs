@@ -23,7 +23,7 @@ local inputs = {
 ---@type CreateIconsFromListTable
 local technologies = {
 	-- Science Packs
-	["bob-advanced-logistic-science-pack"] = { icon_name = "science-pack", tint = util.color("de00a3"), flat_icon = false },
+	["bob-advanced-logistic-science-pack"] = { icon_name = "science-pack", tint = util.color("#de00a3"), flat_icon = false },
 }
 
 -- Color overhaul for science packs

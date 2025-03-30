@@ -29,6 +29,47 @@ local tier_map = {
 	["bob-steam-engine-5"] = { tier = 5 },
 }
 
+---@param tint data.Color
+---@return data.RotatedAnimation
+local function get_steam_engine_remnant_animation(tint)
+	---@type data.RotatedAnimation
+	local remnant_animation = {
+		layers = {
+			-- Base
+			{
+				filename = "__base__/graphics/entity/steam-engine/remnants/steam-engine-remnants.png",
+				width = 462,
+				height = 386,
+				direction_count = 4,
+				shift = util.by_pixel(17, 6.5),
+				scale = 0.5,
+			},
+			-- Color Mask
+			{
+				filename = "__reskins-bobs__/graphics/entity/power/steam-engine/remnants/steam-engine-remnants-mask.png",
+				width = 462,
+				height = 386,
+				direction_count = 4,
+				shift = util.by_pixel(17, 6.5),
+				tint = tint,
+				scale = 0.5,
+			},
+			-- Highlights
+			{
+				filename = "__reskins-bobs__/graphics/entity/power/steam-engine/remnants/steam-engine-remnants-highlights.png",
+				width = 462,
+				height = 386,
+				direction_count = 4,
+				shift = util.by_pixel(17, 6.5),
+				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
+				scale = 0.5,
+			},
+		},
+	}
+
+	return remnant_animation
+end
+
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
 	---@type data.GeneratorPrototype
@@ -44,51 +85,8 @@ for name, map in pairs(tier_map) do
 	local remnant = data.raw["corpse"][name .. "-remnants"]
 
 	-- Reskin remnants
-	remnant.animation = make_rotated_animation_variations_from_sheet(1, {
-		layers = {
-			-- Base
-			{
-				filename = "__base__/graphics/entity/steam-engine/remnants/steam-engine-remnants.png",
-				line_length = 1,
-				width = 462,
-				height = 386,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
-				direction_count = 4,
-				shift = util.by_pixel(17, 6.5),
-				scale = 0.5,
-			},
-			-- Color Mask
-			{
-				filename = "__reskins-bobs__/graphics/entity/power/steam-engine/remnants/steam-engine-remnants-mask.png",
-				line_length = 1,
-				width = 462,
-				height = 386,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
-				direction_count = 4,
-				shift = util.by_pixel(17, 6.5),
-				tint = inputs.tint,
-				scale = 0.5,
-			},
-			-- Highlights
-			{
-				filename = "__reskins-bobs__/graphics/entity/power/steam-engine/remnants/steam-engine-remnants-highlights.png",
-				line_length = 1,
-				width = 462,
-				height = 386,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
-				direction_count = 4,
-				shift = util.by_pixel(17, 6.5),
-				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				scale = 0.5,
-			},
-		},
-	})
+	local remnant_animation = get_steam_engine_remnant_animation(inputs.tint)
+	remnant.animation = make_rotated_animation_variations_from_sheet(1, remnant_animation)
 
 	-- Reskin entities
 	entity.horizontal_animation = {

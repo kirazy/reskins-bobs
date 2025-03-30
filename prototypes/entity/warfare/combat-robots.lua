@@ -18,7 +18,7 @@ local capsule_projectiles = {
 
 ---Reskins capsule projectiles
 ---@param name string
-local function capsule_projectile(name)
+local function reskin_capsule_projectile(name)
 	local projectile = data.raw["projectile"][name]
 	if not projectile then
 		return
@@ -28,7 +28,6 @@ local function capsule_projectile(name)
 		filename = "__reskins-bobs__/graphics/entity/warfare/capsules/" .. name .. ".png",
 		priority = "high",
 		flags = { "no-crop" },
-		frame_count = 1,
 		size = 48,
 		scale = 0.5,
 	}
@@ -37,12 +36,11 @@ local function capsule_projectile(name)
 		filename = "__reskins-bobs__/graphics/entity/warfare/capsules/combat-robot-capsule-shadow.png",
 		priority = "high",
 		flags = { "no-crop" },
-		frame_count = 1,
 		size = 48,
 		scale = 0.5,
 	}
 end
 
 for _, name in pairs(capsule_projectiles) do
-	capsule_projectile(name)
+	reskin_capsule_projectile(name)
 end

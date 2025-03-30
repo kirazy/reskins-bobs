@@ -15,7 +15,7 @@ local inputs = {
 	mod = "bobs",
 	group = "power",
 	particles = { ["medium"] = 2, ["big"] = 1 },
-	tint = util.color("26262660"),
+	tint = util.color("#26262660"),
 	make_remnants = false,
 }
 
@@ -52,7 +52,6 @@ entity.animation = {
 			width = 58,
 			height = 82,
 			frame_count = 48,
-			direction_count = 1,
 			repeat_count = 2,
 			blend_mode = "additive",
 			shift = util.by_pixel(-1, 9.5),

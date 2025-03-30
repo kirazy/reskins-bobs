@@ -42,12 +42,8 @@ for name, map in pairs(tier_map) do
 			-- Base
 			{
 				filename = "__base__/graphics/entity/centrifuge/remnants/centrifuge-remnants.png",
-				line_length = 1,
 				width = 286,
 				height = 284,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
 				direction_count = 1,
 				shift = util.by_pixel(7, 4),
 				scale = 0.5,
@@ -55,12 +51,8 @@ for name, map in pairs(tier_map) do
 			-- Mask
 			{
 				filename = "__reskins-bobs__/graphics/entity/assembly/centrifuge/remnants/centrifuge-remnants-mask.png",
-				line_length = 1,
 				width = 286,
 				height = 284,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
 				direction_count = 1,
 				shift = util.by_pixel(7, 4),
 				tint = inputs.tint,
@@ -69,12 +61,8 @@ for name, map in pairs(tier_map) do
 			-- Highlights
 			{
 				filename = "__reskins-bobs__/graphics/entity/assembly/centrifuge/remnants/centrifuge-remnants-highlights.png",
-				line_length = 1,
 				width = 286,
 				height = 284,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
 				direction_count = 1,
 				shift = util.by_pixel(7, 4),
 				blend_mode = reskins.lib.settings.blend_mode, -- "additive",

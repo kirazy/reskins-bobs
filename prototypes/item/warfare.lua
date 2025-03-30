@@ -16,8 +16,8 @@ local inputs = {
 	flat_icon = true,
 }
 
-local plasma_tint = util.color("1280b2")
-local uranium_tint = util.color("12b222")
+local plasma_tint = util.color("#1280b2")
+local uranium_tint = util.color("#12b222")
 
 ---@param subgroup string
 ---@param light_name? LightSpriteNames
@@ -121,13 +121,13 @@ local items = {
 	["bob-shotgun-uranium-shell"] = get_ammo_overrides("shells", "aura-shotgun-shell", uranium_tint),
 
 	-- Laser rifle batteries
-	["bob-laser-rifle-battery"] = get_ammo_overrides("laser-rifle-batteries", "laser-rifle-battery", util.color("b3b3b3")),
-	["bob-laser-rifle-battery-ruby"] = get_ammo_overrides("laser-rifle-batteries", "laser-rifle-battery", util.color("fa1928")),
-	["bob-laser-rifle-battery-sapphire"] = get_ammo_overrides("laser-rifle-batteries", "laser-rifle-battery", util.color("0033ff")),
-	["bob-laser-rifle-battery-emerald"] = get_ammo_overrides("laser-rifle-batteries", "laser-rifle-battery", util.color("13e35c")),
-	["bob-laser-rifle-battery-amethyst"] = get_ammo_overrides("laser-rifle-batteries", "laser-rifle-battery", util.color("d414ff")),
-	["bob-laser-rifle-battery-topaz"] = get_ammo_overrides("laser-rifle-batteries", "laser-rifle-battery", util.color("f0b414")),
-	["bob-laser-rifle-battery-diamond"] = get_ammo_overrides("laser-rifle-batteries", "laser-rifle-battery", util.color("ffffff")),
+	["bob-laser-rifle-battery"] = get_ammo_overrides("laser-rifle-batteries", "laser-rifle-battery", util.color("#b3b3b3")),
+	["bob-laser-rifle-battery-ruby"] = get_ammo_overrides("laser-rifle-batteries", "laser-rifle-battery", util.color("#fa1928")),
+	["bob-laser-rifle-battery-sapphire"] = get_ammo_overrides("laser-rifle-batteries", "laser-rifle-battery", util.color("#0033ff")),
+	["bob-laser-rifle-battery-emerald"] = get_ammo_overrides("laser-rifle-batteries", "laser-rifle-battery", util.color("#13e35c")),
+	["bob-laser-rifle-battery-amethyst"] = get_ammo_overrides("laser-rifle-batteries", "laser-rifle-battery", util.color("#d414ff")),
+	["bob-laser-rifle-battery-topaz"] = get_ammo_overrides("laser-rifle-batteries", "laser-rifle-battery", util.color("#f0b414")),
+	["bob-laser-rifle-battery-diamond"] = get_ammo_overrides("laser-rifle-batteries", "laser-rifle-battery", util.color("#ffffff")),
 
 	-- Artillery shells
 	["bob-atomic-artillery-shell"] = get_ammo_overrides("artillery-shells", "atomic-artillery-shell", uranium_tint),

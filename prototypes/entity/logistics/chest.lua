@@ -20,8 +20,8 @@ local inputs = {
 }
 
 local material_tints = {
-	["brass"] = util.color("f9c854"),
-	["titanium"] = util.color("adadb2"),
+	["brass"] = util.color("#f9c854"),
+	["titanium"] = util.color("#adadb2"),
 }
 
 local logistic_map = {
@@ -75,10 +75,8 @@ for name, map in pairs(logistic_map) do
 			-- Base
 			{
 				filename = "__base__/graphics/entity/logistic-chest/remnants/" .. map.chest_type .. "-chest-remnants.png",
-				line_length = 1,
 				width = 116,
 				height = 82,
-				frame_count = 1,
 				direction_count = 1,
 				shift = util.by_pixel(10, -3),
 				scale = 0.5,
@@ -86,10 +84,8 @@ for name, map in pairs(logistic_map) do
 			-- Mask
 			{
 				filename = "__reskins-bobs__/graphics/entity/logistics/chest/remnants/" .. map.material .. "-logistic-chest-remnants.png",
-				line_length = 1,
 				width = 116,
 				height = 82,
-				frame_count = 1,
 				direction_count = 1,
 				shift = util.by_pixel(10, -3),
 				scale = 0.5,

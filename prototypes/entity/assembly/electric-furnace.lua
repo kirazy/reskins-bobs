@@ -194,10 +194,8 @@ for name, map in pairs(electric_furnace_map) do
 			-- Base
 			{
 				filename = "__base__/graphics/entity/electric-furnace/remnants/electric-furnace-remnants.png",
-				line_length = 1,
 				width = 454,
 				height = 448,
-				frame_count = 1,
 				direction_count = 1,
 				shift = util.by_pixel(-3.25, 7.25),
 				scale = 0.5,
@@ -205,10 +203,8 @@ for name, map in pairs(electric_furnace_map) do
 			-- Mask
 			{
 				filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/remnants/electric-furnace-remnants-mask.png",
-				line_length = 1,
 				width = 214,
 				height = 208,
-				frame_count = 1,
 				direction_count = 1,
 				shift = util.by_pixel(-3.25, 7.25),
 				tint = inputs.tint,
@@ -217,10 +213,8 @@ for name, map in pairs(electric_furnace_map) do
 			-- Highlights
 			{
 				filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/remnants/electric-furnace-remnants-highlights.png",
-				line_length = 1,
 				width = 214,
 				height = 208,
-				frame_count = 1,
 				direction_count = 1,
 				shift = util.by_pixel(-3.25, 7.25),
 				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
@@ -299,10 +293,8 @@ for name, map in pairs(electric_furnace_map) do
 		-- Add chemical furnace remnants details
 		table.insert(remnant.animation.layers, {
 			filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/remnants/chemical-furnace-remnants-overlay.png",
-			line_length = 1,
 			width = 214,
 			height = 208,
-			frame_count = 1,
 			direction_count = 1,
 			shift = util.by_pixel(-3.25, 7.25),
 			scale = 0.5,
@@ -357,10 +349,8 @@ for name, map in pairs(electric_furnace_map) do
 		-- Add chemical-mixing furnace remnants details
 		table.insert(remnant.animation.layers, {
 			filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/remnants/chemical-mixing-furnace-remnants-overlay.png",
-			line_length = 1,
 			width = 214,
 			height = 208,
-			frame_count = 1,
 			direction_count = 1,
 			shift = util.by_pixel(-3.25, 7.25),
 			scale = 0.5,

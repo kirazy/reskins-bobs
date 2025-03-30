@@ -44,7 +44,6 @@ local function accumulator_picture_tinted(inputs, repeat_count)
 				height = 189,
 				repeat_count = repeat_count,
 				shift = util.by_pixel(0, -11),
-				animation_speed = 0.5,
 				scale = 0.5,
 			},
 			-- Mask
@@ -56,7 +55,6 @@ local function accumulator_picture_tinted(inputs, repeat_count)
 				repeat_count = repeat_count,
 				shift = util.by_pixel(0, -11),
 				tint = inputs.tint,
-				animation_speed = 0.5,
 				scale = 0.5,
 			},
 			-- Highlights
@@ -68,7 +66,6 @@ local function accumulator_picture_tinted(inputs, repeat_count)
 				repeat_count = repeat_count,
 				shift = util.by_pixel(0, -11),
 				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				animation_speed = 0.5,
 				scale = 0.5,
 			},
 			-- Shadow
@@ -154,12 +151,8 @@ for name, map in pairs(tier_map) do
 			-- Base
 			{
 				filename = "__reskins-bobs__/graphics/entity/power/accumulator/remnants/wires/accumulator-" .. inputs.wire .. "-remnants.png",
-				line_length = 1,
 				width = 172,
 				height = 146,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
 				direction_count = 1,
 				shift = util.by_pixel(2.5, 3.5),
 				scale = 0.5,
@@ -167,12 +160,8 @@ for name, map in pairs(tier_map) do
 			-- Mask
 			{
 				filename = "__reskins-bobs__/graphics/entity/power/accumulator/remnants/accumulator-remnants-mask.png",
-				line_length = 1,
 				width = 172,
 				height = 146,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
 				direction_count = 1,
 				shift = util.by_pixel(2.5, 3.5),
 				tint = inputs.tint,
@@ -181,12 +170,8 @@ for name, map in pairs(tier_map) do
 			-- Highlights
 			{
 				filename = "__reskins-bobs__/graphics/entity/power/accumulator/remnants/accumulator-remnants-highlights.png",
-				line_length = 1,
 				width = 172,
 				height = 146,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
 				direction_count = 1,
 				shift = util.by_pixel(2.5, 3.5),
 				blend_mode = reskins.lib.settings.blend_mode, -- "additive",

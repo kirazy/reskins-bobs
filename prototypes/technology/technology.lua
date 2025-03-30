@@ -45,6 +45,7 @@ reskins.internal.create_icons_from_list(technologies, inputs)
 data.raw["utility-sprites"].default.worker_robot_storage_modifier_icon =
 	util.merge({ data.raw["utility-sprites"].default.worker_robot_storage_modifier_icon, {
 		filename = "__base__/graphics/icons/logistic-robot.png",
+		flags = { "gui-icon" },
 		width = 64,
 		height = 64,
 		mipmap_count = 4,
@@ -53,6 +54,7 @@ data.raw["utility-sprites"].default.worker_robot_storage_modifier_icon =
 data.raw["utility-sprites"].default.worker_robot_speed_modifier_icon =
 	util.merge({ data.raw["utility-sprites"].default.worker_robot_speed_modifier_icon, {
 		filename = "__base__/graphics/icons/logistic-robot.png",
+		flags = { "gui-icon" },
 		width = 64,
 		height = 64,
 		mipmap_count = 4,

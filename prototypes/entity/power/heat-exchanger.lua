@@ -53,12 +53,8 @@ for name, map in pairs(tier_map) do
 			-- Base
 			{
 				filename = "__base__/graphics/entity/heat-exchanger/remnants/heat-exchanger-remnants.png",
-				line_length = 1,
 				width = 272,
 				height = 262,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
 				direction_count = 4,
 				shift = util.by_pixel(0.5, 8),
 				scale = 0.5,
@@ -66,12 +62,8 @@ for name, map in pairs(tier_map) do
 			-- Mask
 			{
 				filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/remnants/heatex-remnants-mask.png",
-				line_length = 1,
 				width = 272,
 				height = 262,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
 				direction_count = 4,
 				shift = util.by_pixel(0.5, 8),
 				tint = inputs.tint,
@@ -80,12 +72,8 @@ for name, map in pairs(tier_map) do
 			-- Highlights
 			{
 				filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/remnants/heatex-remnants-highlights.png",
-				line_length = 1,
 				width = 272,
 				height = 262,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
 				direction_count = 4,
 				shift = util.by_pixel(0.5, 8),
 				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
@@ -94,12 +82,8 @@ for name, map in pairs(tier_map) do
 			-- Pipes
 			{
 				filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heat-pipes/" .. map.material .. "/heatex-remnants.png",
-				line_length = 1,
 				width = 272,
 				height = 262,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
 				direction_count = 4,
 				shift = util.by_pixel(0.5, 8),
 				scale = 0.5,

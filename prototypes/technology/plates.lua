@@ -71,7 +71,7 @@ local technologies = {
 	["advanced-material-processing-2"] = {
 		technology_icon_size = 256,
 		flat_icon = false,
-		tint = util.color("ffb700"),
+		tint = util.color("#ffb700"),
 		icon_name = "advanced-material-processing",
 		technology_icon_extras = get_technology_light_layer("advanced-material-processing"),
 	},
@@ -93,7 +93,7 @@ local technologies = {
 	["bob-electric-chemical-furnace"] = {
 		technology_icon_size = 256,
 		flat_icon = false,
-		tint = util.color("e50000"),
+		tint = util.color("#e50000"),
 		icon_name = "electric-chemical-furnace",
 		technology_icon_extras = get_technology_light_layer("electric-chemical-furnace"),
 	},
@@ -101,7 +101,7 @@ local technologies = {
 	["bob-electric-mixing-furnace"] = {
 		technology_icon_size = 256,
 		flat_icon = false,
-		tint = util.color("00bfff"),
+		tint = util.color("#00bfff"),
 		icon_name = "electric-mixing-furnace",
 		technology_icon_extras = get_technology_light_layer("electric-mixing-furnace"),
 	},

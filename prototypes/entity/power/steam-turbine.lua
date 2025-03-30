@@ -27,6 +27,47 @@ local tier_map = {
 	["bob-steam-turbine-3"] = { tier = 3, prog_tier = 5 },
 }
 
+---@param tint data.Color
+---@return data.RotatedAnimation
+local function get_steam_turbine_remnant_animation(tint)
+	---@type data.RotatedAnimation
+	local remnant_animation = {
+		layers = {
+			-- Base
+			{
+				filename = "__base__/graphics/entity/steam-turbine/remnants/steam-turbine-remnants.png",
+				width = 460,
+				height = 408,
+				direction_count = 4,
+				shift = util.by_pixel(6, 0),
+				scale = 0.5,
+			},
+			-- Mask
+			{
+				filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/remnants/steam-turbine-remnants-mask.png",
+				width = 460,
+				height = 408,
+				direction_count = 4,
+				shift = util.by_pixel(6, 0),
+				tint = tint,
+				scale = 0.5,
+			},
+			-- Highlights
+			{
+				filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/remnants/steam-turbine-remnants-highlights.png",
+				width = 460,
+				height = 408,
+				direction_count = 4,
+				shift = util.by_pixel(6, 0),
+				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
+				scale = 0.5,
+			},
+		},
+	}
+
+	return remnant_animation
+end
+
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
 	---@type data.GeneratorPrototype
@@ -44,51 +85,8 @@ for name, map in pairs(tier_map) do
 	local remnant = data.raw["corpse"][name .. "-remnants"]
 
 	-- Reskin remnants
-	remnant.animation = make_rotated_animation_variations_from_sheet(1, {
-		layers = {
-			-- Base
-			{
-				filename = "__base__/graphics/entity/steam-turbine/remnants/steam-turbine-remnants.png",
-				line_length = 1,
-				width = 460,
-				height = 408,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
-				direction_count = 4,
-				shift = util.by_pixel(6, 0),
-				scale = 0.5,
-			},
-			-- Mask
-			{
-				filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/remnants/steam-turbine-remnants-mask.png",
-				line_length = 1,
-				width = 460,
-				height = 408,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
-				direction_count = 4,
-				shift = util.by_pixel(6, 0),
-				tint = inputs.tint,
-				scale = 0.5,
-			},
-			-- Highlights
-			{
-				filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/remnants/steam-turbine-remnants-highlights.png",
-				line_length = 1,
-				width = 460,
-				height = 408,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
-				direction_count = 4,
-				shift = util.by_pixel(6, 0),
-				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				scale = 0.5,
-			},
-		},
-	})
+	local remnant_animation = get_steam_turbine_remnant_animation(inputs.tint)
+	remnant.animation = make_rotated_animation_variations_from_sheet(1, remnant_animation)
 
 	-- Reskin entities
 	entity.horizontal_animation = {
@@ -108,8 +106,6 @@ for name, map in pairs(tier_map) do
 				filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/steam-turbine-H-mask.png",
 				width = 320,
 				height = 245,
-				frame_count = 1,
-				line_length = 1,
 				repeat_count = 8,
 				shift = util.by_pixel(0, -2.75),
 				tint = inputs.tint,
@@ -120,8 +116,6 @@ for name, map in pairs(tier_map) do
 				filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/steam-turbine-H-highlights.png",
 				width = 320,
 				height = 245,
-				frame_count = 1,
-				line_length = 1,
 				repeat_count = 8,
 				shift = util.by_pixel(0, -2.75),
 				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
@@ -133,8 +127,6 @@ for name, map in pairs(tier_map) do
 				width = 435,
 				height = 150,
 				repeat_count = 8,
-				frame_count = 1,
-				line_length = 1,
 				draw_as_shadow = true,
 				shift = util.by_pixel(28.5, 18),
 				scale = 0.5,
@@ -159,8 +151,6 @@ for name, map in pairs(tier_map) do
 				filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/steam-turbine-V-mask.png",
 				width = 217,
 				height = 347,
-				frame_count = 1,
-				line_length = 1,
 				repeat_count = 8,
 				shift = util.by_pixel(4.75, 6.75),
 				tint = inputs.tint,
@@ -171,8 +161,6 @@ for name, map in pairs(tier_map) do
 				filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/steam-turbine-V-highlights.png",
 				width = 217,
 				height = 347,
-				frame_count = 1,
-				line_length = 1,
 				repeat_count = 8,
 				shift = util.by_pixel(4.75, 6.75),
 				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
@@ -184,8 +172,6 @@ for name, map in pairs(tier_map) do
 				width = 302,
 				height = 260,
 				repeat_count = 8,
-				frame_count = 1,
-				line_length = 1,
 				draw_as_shadow = true,
 				shift = util.by_pixel(39.5, 24.5),
 				scale = 0.5,

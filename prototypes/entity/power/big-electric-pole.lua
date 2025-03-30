@@ -50,10 +50,8 @@ for name, map in pairs(tier_map) do
 			-- Base
 			{
 				filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/base/remnants/big-electric-pole-base-remnants.png",
-				line_length = 1,
 				width = 366,
 				height = 188,
-				frame_count = 1,
 				direction_count = 1,
 				shift = util.by_pixel(43, 0.5),
 				scale = 0.5,
@@ -61,10 +59,8 @@ for name, map in pairs(tier_map) do
 			-- Mask
 			{
 				filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/remnants/big-electric-pole-base-remnants-mask.png",
-				line_length = 1,
 				width = 366,
 				height = 188,
-				frame_count = 1,
 				direction_count = 1,
 				shift = util.by_pixel(43, 0.5),
 				tint = inputs.tint,
@@ -73,10 +69,8 @@ for name, map in pairs(tier_map) do
 			-- Highlights
 			{
 				filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/remnants/big-electric-pole-base-remnants-highlights.png",
-				line_length = 1,
 				width = 366,
 				height = 188,
-				frame_count = 1,
 				direction_count = 1,
 				shift = util.by_pixel(43, 0.5),
 				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
@@ -90,10 +84,8 @@ for name, map in pairs(tier_map) do
 			-- Base
 			{
 				filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/base/remnants/big-electric-pole-top-remnants.png",
-				line_length = 1,
 				width = 148,
 				height = 252,
-				frame_count = 1,
 				direction_count = 1,
 				shift = util.by_pixel(-1.5, -48),
 				scale = 0.5,
@@ -101,10 +93,8 @@ for name, map in pairs(tier_map) do
 			-- Mask
 			{
 				filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/remnants/big-electric-pole-top-remnants-mask.png",
-				line_length = 1,
 				width = 148,
 				height = 252,
-				frame_count = 1,
 				direction_count = 1,
 				shift = util.by_pixel(-1.5, -48),
 				tint = inputs.tint,
@@ -113,10 +103,8 @@ for name, map in pairs(tier_map) do
 			-- Highlights
 			{
 				filename = "__reskins-bobs__/graphics/entity/power/big-electric-pole/remnants/big-electric-pole-top-remnants-highlights.png",
-				line_length = 1,
 				width = 148,
 				height = 252,
-				frame_count = 1,
 				direction_count = 1,
 				shift = util.by_pixel(-1.5, -48),
 				blend_mode = reskins.lib.settings.blend_mode, -- "additive",

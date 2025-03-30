@@ -17,7 +17,7 @@ local inputs = {
 	mod = "bobs",
 	group = "plates",
 	particles = { ["big"] = 1 },
-	tint = util.color("b29270"),
+	tint = util.color("#b29270"),
 	icon_layers = 1,
 	make_remnants = false,
 }
@@ -115,9 +115,7 @@ for name, map in pairs(tier_map) do
 			width = 14,
 			height = 30,
 			frame_count = 60,
-			axially_symmetrical = false,
 			animation_speed = 0.25,
-			direction_count = 1,
 			scale = 0.5,
 		},
 	}

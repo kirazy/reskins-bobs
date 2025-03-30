@@ -32,6 +32,88 @@ local tier_map = {
 	["bob-solar-panel-large-3"] = { tier = 3, prog_tier = 4 },
 }
 
+---@param tint data.Color
+---@return data.RotatedAnimation
+local function get_small_solar_panel_remnant_animation(tint)
+	---@type data.RotatedAnimation
+	local remnant_animation = {
+		layers = {
+			-- Base
+			{
+				filename = "__reskins-bobs__/graphics/entity/power/solar-panel-small/remnants/small-solar-panel-remnants-base.png",
+				width = 246,
+				height = 198,
+				direction_count = 1,
+				shift = util.by_pixel(-1, -0.5),
+				scale = 0.5,
+			},
+			-- Mask
+			{
+				filename = "__reskins-bobs__/graphics/entity/power/solar-panel-small/remnants/small-solar-panel-remnants-mask.png",
+				width = 246,
+				height = 198,
+				direction_count = 1,
+				shift = util.by_pixel(-1, -0.5),
+				tint = tint,
+				scale = 0.5,
+			},
+			-- Highlights
+			{
+				filename = "__reskins-bobs__/graphics/entity/power/solar-panel-small/remnants/small-solar-panel-remnants-highlights.png",
+				width = 246,
+				height = 198,
+				direction_count = 1,
+				shift = util.by_pixel(-1, -0.5),
+				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
+				scale = 0.5,
+			},
+		},
+	}
+
+	return remnant_animation
+end
+
+---@param tint data.Color
+---@return data.RotatedAnimation
+local function get_solar_panel_remnant_animation(tint)
+	---@type data.RotatedAnimation
+	local remnant_animation = {
+		layers = {
+			-- Base
+			{
+				filename = "__base__/graphics/entity/solar-panel/remnants/solar-panel-remnants.png",
+				width = 290,
+				height = 282,
+				direction_count = 1,
+				shift = util.by_pixel(3.5, 0),
+				scale = 0.5,
+			},
+			-- Mask
+			{
+				filename = "__reskins-bobs__/graphics/entity/power/solar-panel/remnants/solar-panel-remnants-mask.png",
+				width = 290,
+				height = 282,
+				direction_count = 1,
+				shift = util.by_pixel(3.5, 0),
+				tint = tint,
+				scale = 0.5,
+			},
+			-- Highlights
+			{
+				filename = "__reskins-bobs__/graphics/entity/power/solar-panel/remnants/solar-panel-remnants-highlights.png",
+				width = 290,
+				height = 282,
+				direction_count = 1,
+				shift = util.by_pixel(3.5, 0),
+				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
+				scale = 0.5,
+			},
+		},
+	}
+
+	return remnant_animation
+end
+
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
 	---@type data.SolarPanelPrototype
@@ -66,48 +148,8 @@ for name, map in pairs(tier_map) do
 	-- Reskin entities
 	if inputs.icon_name == "solar-panel-small" then
 		-- Reskin remnants
-		remnant.animation = make_rotated_animation_variations_from_sheet(2, {
-			layers = {
-				-- Base
-				{
-					filename = "__reskins-bobs__/graphics/entity/power/solar-panel-small/remnants/small-solar-panel-remnants-base.png",
-					line_length = 1,
-					width = 246,
-					height = 198,
-					frame_count = 1,
-					variation_count = 1,
-					direction_count = 1,
-					shift = util.by_pixel(-1, -0.5),
-					scale = 0.5,
-				},
-				-- Mask
-				{
-					filename = "__reskins-bobs__/graphics/entity/power/solar-panel-small/remnants/small-solar-panel-remnants-mask.png",
-					line_length = 1,
-					width = 246,
-					height = 198,
-					frame_count = 1,
-					variation_count = 1,
-					direction_count = 1,
-					shift = util.by_pixel(-1, -0.5),
-					tint = inputs.tint,
-					scale = 0.5,
-				},
-				-- Highlights
-				{
-					filename = "__reskins-bobs__/graphics/entity/power/solar-panel-small/remnants/small-solar-panel-remnants-highlights.png",
-					line_length = 1,
-					width = 246,
-					height = 198,
-					frame_count = 1,
-					variation_count = 1,
-					direction_count = 1,
-					shift = util.by_pixel(-1, -0.5),
-					blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-					scale = 0.5,
-				},
-			},
-		})
+		local remnant_animation = get_small_solar_panel_remnant_animation(inputs.tint)
+		remnant.animation = make_rotated_animation_variations_from_sheet(2, remnant_animation)
 
 		-- Overwrite picture table in target entity
 		entity.picture = {
@@ -169,51 +211,8 @@ for name, map in pairs(tier_map) do
 		}
 	elseif inputs.icon_name == "solar-panel" then
 		-- Reskin remnants
-		remnant.animation = make_rotated_animation_variations_from_sheet(2, {
-			layers = {
-				-- Base
-				{
-					filename = "__base__/graphics/entity/solar-panel/remnants/solar-panel-remnants.png",
-					line_length = 1,
-					width = 290,
-					height = 282,
-					frame_count = 1,
-					variation_count = 1,
-					axially_symmetrical = false,
-					direction_count = 1,
-					shift = util.by_pixel(3.5, 0),
-					scale = 0.5,
-				},
-				-- Mask
-				{
-					filename = "__reskins-bobs__/graphics/entity/power/solar-panel/remnants/solar-panel-remnants-mask.png",
-					line_length = 1,
-					width = 290,
-					height = 282,
-					frame_count = 1,
-					variation_count = 1,
-					axially_symmetrical = false,
-					direction_count = 1,
-					shift = util.by_pixel(3.5, 0),
-					tint = inputs.tint,
-					scale = 0.5,
-				},
-				-- Highlights
-				{
-					filename = "__reskins-bobs__/graphics/entity/power/solar-panel/remnants/solar-panel-remnants-highlights.png",
-					line_length = 1,
-					width = 290,
-					height = 282,
-					frame_count = 1,
-					variation_count = 1,
-					axially_symmetrical = false,
-					direction_count = 1,
-					shift = util.by_pixel(3.5, 0),
-					blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-					scale = 0.5,
-				},
-			},
-		})
+		local remnant_animation = get_solar_panel_remnant_animation(inputs.tint)
+		remnant.animation = make_rotated_animation_variations_from_sheet(2, remnant_animation)
 
 		-- Overwrite picture table in target entity
 		entity.picture = {

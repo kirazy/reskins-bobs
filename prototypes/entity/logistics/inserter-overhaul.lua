@@ -53,12 +53,8 @@ local function inserter_remnants(parameters)
 			-- Base
 			{
 				filename = "__reskins-bobs__/graphics/entity/logistics/inserter/remnants/" .. prefix .. "-remnants-base.png",
-				line_length = 1,
 				width = 134,
 				height = 94,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
 				direction_count = 1,
 				shift = util.by_pixel(3, -1.5),
 				scale = 0.5,
@@ -66,13 +62,9 @@ local function inserter_remnants(parameters)
 			-- Mask
 			{
 				filename = "__reskins-bobs__/graphics/entity/logistics/inserter/remnants/" .. prefix .. "-remnants-mask.png",
-				line_length = 1,
 				width = 134,
 				height = 94,
 				tint = parameters.tint,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
 				direction_count = 1,
 				shift = util.by_pixel(3, -1.5),
 				scale = 0.5,
@@ -80,13 +72,9 @@ local function inserter_remnants(parameters)
 			-- Highlights
 			{
 				filename = "__reskins-bobs__/graphics/entity/logistics/inserter/remnants/" .. prefix .. "-remnants-highlights.png",
-				line_length = 1,
 				width = 134,
 				height = 94,
 				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
 				direction_count = 1,
 				shift = util.by_pixel(3, -1.5),
 				scale = 0.5,
@@ -276,7 +264,7 @@ for name, map in pairs(inserter_map) do
 	-- Fetch remnant
 	local remnant = data.raw["corpse"][name .. "-remnants"]
 
-	-- Reskin remnnant
+	-- Reskin remnant
 	remnant.animation = inserter_remnants({ type = map.type, tint = inputs.tint })
 
 	-- Common to all inserters

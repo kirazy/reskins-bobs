@@ -28,7 +28,6 @@ local tier_map = {
 	["bob-fluid-reactor-2"] = { tier = 2, prog_tier = 3, icon_name = "heat-source-fluid", material = "aluminum-invar" },
 }
 
----comment
 ---@param material any
 ---@return data.Sprite
 local function heat_source_base_pipes(material)
@@ -44,7 +43,6 @@ local function heat_source_base_pipes(material)
 	return sprite
 end
 
----comment
 ---@param material any
 ---@return data.SpriteVariations
 local function connect_patches_connected(material)
@@ -62,7 +60,6 @@ local function connect_patches_connected(material)
 	return sprite
 end
 
----comment
 ---@param material any
 ---@return data.SpriteVariations
 local function connect_patches_disconnected(material)

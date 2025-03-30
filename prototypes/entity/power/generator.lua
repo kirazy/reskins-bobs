@@ -24,7 +24,7 @@ local inputs = {
 
 -- Determine which tint we're using for the bob-hydrazine-generator
 if reskins.lib.settings.get_value("reskins-bobs-hydrazine-is-blue") == true then
-	reskins.bobs.hydrazine_tint = util.color("7ac1de")
+	reskins.bobs.hydrazine_tint = util.color("#7ac1de")
 else
 	reskins.bobs.hydrazine_tint = nil
 end
@@ -109,7 +109,6 @@ for name, map in pairs(fluid_generators) do
 				east_position = util.by_pixel(-30, -44),
 				frequency = map.frequency,
 				starting_vertical_speed = 0.08,
-				slow_down_factor = 1,
 				starting_frame_deviation = 60,
 			},
 		}
@@ -121,7 +120,6 @@ for name, map in pairs(fluid_generators) do
 				east_position = util.by_pixel(-30, -44),
 				frequency = map.frequency,
 				starting_vertical_speed = 0.08,
-				slow_down_factor = 1,
 				starting_frame_deviation = 60,
 			},
 		}

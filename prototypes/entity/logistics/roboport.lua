@@ -50,12 +50,8 @@ for name, map in pairs(tier_map) do
 			-- Base
 			{
 				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/remnants/roboport-remnants.png",
-				line_length = 1,
 				width = 364,
 				height = 358,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
 				direction_count = 1,
 				shift = util.by_pixel(2, 8),
 				scale = 0.5,
@@ -63,12 +59,8 @@ for name, map in pairs(tier_map) do
 			-- Mask
 			{
 				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/remnants/roboport-remnants-mask.png",
-				line_length = 1,
 				width = 364,
 				height = 358,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
 				direction_count = 1,
 				shift = util.by_pixel(2, 8),
 				tint = inputs.tint,
@@ -77,12 +69,8 @@ for name, map in pairs(tier_map) do
 			-- Highlights
 			{
 				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/remnants/roboport-remnants-highlights.png",
-				line_length = 1,
 				width = 364,
 				height = 358,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
 				direction_count = 1,
 				shift = util.by_pixel(2, 8),
 				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
@@ -91,12 +79,8 @@ for name, map in pairs(tier_map) do
 			-- Antenna
 			{
 				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/remnants/antennas/roboport-" .. map.image_index .. "-antenna-remnants.png",
-				line_length = 1,
 				width = 364,
 				height = 358,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
 				direction_count = 1,
 				shift = util.by_pixel(2, 8),
 				scale = 0.5,
@@ -104,12 +88,8 @@ for name, map in pairs(tier_map) do
 			-- Door
 			{
 				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/remnants/doors/roboport-" .. map.image_index .. "-door-remnants.png",
-				line_length = 1,
 				width = 364,
 				height = 358,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
 				direction_count = 1,
 				shift = util.by_pixel(2, 8),
 				scale = 0.5,
@@ -153,7 +133,6 @@ for name, map in pairs(tier_map) do
 				width = 294,
 				height = 201,
 				draw_as_shadow = true,
-				force_hr_shadow = true,
 				shift = util.by_pixel(28.5, 19.25),
 				scale = 0.5,
 			},
@@ -168,7 +147,6 @@ for name, map in pairs(tier_map) do
 				priority = "medium",
 				width = 1,
 				height = 1,
-				frame_count = 1,
 			},
 			-- Base
 			{
@@ -176,7 +154,6 @@ for name, map in pairs(tier_map) do
 				priority = "medium",
 				width = 138,
 				height = 100,
-				frame_count = 1,
 				shift = util.by_pixel(1.5, 5),
 				scale = 0.5,
 			},
@@ -186,7 +163,6 @@ for name, map in pairs(tier_map) do
 				priority = "medium",
 				width = 138,
 				height = 100,
-				frame_count = 1,
 				shift = util.by_pixel(1.5, 5),
 				tint = inputs.tint,
 				scale = 0.5,
@@ -197,7 +173,6 @@ for name, map in pairs(tier_map) do
 				priority = "medium",
 				width = 138,
 				height = 100,
-				frame_count = 1,
 				shift = util.by_pixel(1.5, 5),
 				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
 				scale = 0.5,

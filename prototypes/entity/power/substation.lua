@@ -27,6 +27,46 @@ local tier_map = {
 	["bob-substation-4"] = { tier = 4, prog_tier = 5 },
 }
 
+---@param tint data.Color
+---@return data.RotatedAnimation
+local function get_substation_remnant_animation(tint)
+	---@type data.RotatedAnimation
+	local remnant_animation = {
+		layers = {
+			-- Base
+			{
+				filename = "__reskins-bobs__/graphics/entity/power/substation/base/remnants/substation-remnants.png",
+				width = 182,
+				height = 134,
+				direction_count = 1,
+				shift = util.by_pixel(2.5, 0.5),
+				scale = 0.5,
+			},
+			-- Mask
+			{
+				filename = "__reskins-bobs__/graphics/entity/power/substation/remnants/substation-remnants-mask.png",
+				width = 182,
+				height = 134,
+				direction_count = 1,
+				shift = util.by_pixel(2.5, 0.5),
+				tint = tint,
+				scale = 0.5,
+			},
+			{
+				filename = "__reskins-bobs__/graphics/entity/power/substation/remnants/substation-remnants-highlights.png",
+				width = 182,
+				height = 134,
+				direction_count = 1,
+				shift = util.by_pixel(2.5, 0.5),
+				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
+				scale = 0.5,
+			},
+		},
+	}
+
+	return remnant_animation
+end
+
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
 	-- Initialize table address
@@ -44,50 +84,8 @@ for name, map in pairs(tier_map) do
 	local remnant = data.raw["corpse"][name .. "-remnants"]
 
 	-- Reskin remnants
-	remnant.animation = make_rotated_animation_variations_from_sheet(1, {
-		layers = {
-			-- Base
-			{
-				filename = "__reskins-bobs__/graphics/entity/power/substation/base/remnants/substation-remnants.png",
-				line_length = 1,
-				width = 182,
-				height = 134,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
-				direction_count = 1,
-				shift = util.by_pixel(2.5, 0.5),
-				scale = 0.5,
-			},
-			-- Mask
-			{
-				filename = "__reskins-bobs__/graphics/entity/power/substation/remnants/substation-remnants-mask.png",
-				line_length = 1,
-				width = 182,
-				height = 134,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
-				direction_count = 1,
-				shift = util.by_pixel(2.5, 0.5),
-				tint = inputs.tint,
-				scale = 0.5,
-			},
-			{
-				filename = "__reskins-bobs__/graphics/entity/power/substation/remnants/substation-remnants-highlights.png",
-				line_length = 1,
-				width = 182,
-				height = 134,
-				frame_count = 1,
-				variation_count = 1,
-				axially_symmetrical = false,
-				direction_count = 1,
-				shift = util.by_pixel(2.5, 0.5),
-				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				scale = 0.5,
-			},
-		},
-	})
+	local remnant_animation = get_substation_remnant_animation(inputs.tint)
+	remnant.animation = make_rotated_animation_variations_from_sheet(1, remnant_animation)
 
 	-- Reskin entities
 	entity.pictures = {
