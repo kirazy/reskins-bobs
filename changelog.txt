@@ -1,6 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.3.2
 Date: ????
+  Changes:
+    - Added support for Mini Machine overrides for the mini centrifuges.
   Bugfixes:
     - Fixed that attempting to load with the Inserter Overhaul disabled would fail due to a missing image file.
     - Fixed that the 5th tier of mining drill research did not use the intended sprite.
