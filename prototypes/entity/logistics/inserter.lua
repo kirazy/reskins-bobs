@@ -24,11 +24,11 @@ if reskins.lib.settings.get_value("bobmods-logistics-inserteroverhaul") == false
 		["inserter"] = { tier = 1 },
 		["long-handed-inserter"] = { tier = 2 },
 		["fast-inserter"] = { tier = 3 },
-		["express-inserter"] = { tier = 4, particle_tint = "30d79c" },
+		["bob-express-inserter"] = { tier = 4, particle_tint = "30d79c", file_name = "express-inserter" },
 
 		-- Bulk inserters
 		["bulk-inserter"] = { tier = 3 },
-		["express-bulk-inserter"] = { tier = 4, particle_tint = "2dcd3f" },
+		["bob-express-bulk-inserter"] = { tier = 4, particle_tint = "2dcd3f", file_name = "express-bulk-inserter" },
 	}
 else
 	inserter_map = {
@@ -39,7 +39,7 @@ end
 -- Inserter Remnants
 local function inserter_remnants(parameters)
 	return make_rotated_animation_variations_from_sheet(4, {
-		filename = "__reskins-bobs__/graphics/entity/logistics/inserter/standard/" .. parameters.name .. "/remnants/" .. parameters.name .. "-remnants.png",
+		filename = "__reskins-bobs__/graphics/entity/logistics/inserter/standard/" .. parameters.file_name .. "/remnants/" .. parameters.file_name .. "-remnants.png",
 		width = 134,
 		height = 94,
 		direction_count = 1,
@@ -51,7 +51,7 @@ end
 -- Inserter Arms
 local function inserter_arm_picture(parameters)
 	return {
-		filename = "__reskins-bobs__/graphics/entity/logistics/inserter/standard/" .. parameters.name .. "/" .. parameters.name .. "-arm.png",
+		filename = "__reskins-bobs__/graphics/entity/logistics/inserter/standard/" .. parameters.file_name .. "/" .. parameters.file_name .. "-arm.png",
 		priority = "extra-high",
 		width = 32,
 		height = 136,
@@ -73,7 +73,7 @@ end
 -- Hand open, closed for bulk, standard, and long-handed inserters
 local function inserter_hand_picture(parameters)
 	return {
-		filename = "__reskins-bobs__/graphics/entity/logistics/inserter/standard/" .. parameters.name .. "/" .. parameters.hand_name .. "-hand-" .. parameters.hand .. ".png",
+		filename = "__reskins-bobs__/graphics/entity/logistics/inserter/standard/" .. parameters.file_name .. "/" .. parameters.hand_name .. "-hand-" .. parameters.hand .. ".png",
 		priority = "extra-high",
 		width = 130,
 		height = 164,
@@ -104,7 +104,7 @@ local function inserter_platform_picture(parameters)
 		sheets = {
 			-- Base
 			{
-				filename = "__reskins-bobs__/graphics/entity/logistics/inserter/standard/" .. parameters.name .. "/" .. parameters.name .. "-platform.png",
+				filename = "__reskins-bobs__/graphics/entity/logistics/inserter/standard/" .. parameters.file_name .. "/" .. parameters.file_name .. "-platform.png",
 				priority = "extra-high",
 				width = 106,
 				height = 80,
@@ -133,6 +133,7 @@ for name, map in pairs(inserter_map) do
 		goto continue
 	end
 
+	local file_name = map.file_name or name
 	local tier = reskins.lib.tiers.get_tier(map)
 
 	-- Only do complete setup for non-vanilla inserters
@@ -147,7 +148,7 @@ for name, map in pairs(inserter_map) do
 	end
 
 	-- Handle base_entity
-	if string.find(name, "bulk%-inserter") then
+	if string.find(file_name, "bulk%-inserter") then
 		inputs.base_entity_name = "bulk-inserter"
 	else
 		inputs.base_entity_name = "inserter"
@@ -158,37 +159,37 @@ for name, map in pairs(inserter_map) do
 		inputs.tier_labels = false
 	end
 
-	inputs.icon_filename = "__reskins-bobs__/graphics/icons/logistics/inserter/standard/" .. name .. "-icon.png"
+	inputs.icon_filename = "__reskins-bobs__/graphics/icons/logistics/inserter/standard/" .. file_name .. "-icon.png"
 
 	reskins.lib.setup_standard_entity(name, tier, inputs)
 
 	-- Handle the type of inserter we're dealing with
 	local inserter_type, hand_name
-	if string.find(name, "bulk") then
+	if string.find(file_name, "bulk") then
 		inserter_type = "bulk-inserter"
-		hand_name = name
-	elseif mods["bobinserters"] and name ~= "long-handed-inserter" then
+		hand_name = file_name
+	elseif mods["bobinserters"] and file_name ~= "long-handed-inserter" then
 		inserter_type = "long-inserter"
-		hand_name = "long-" .. name
+		hand_name = "long-" .. file_name
 	else
 		inserter_type = "inserter"
-		hand_name = name
+		hand_name = file_name
 	end
 
 	-- Fetch remnant
 	local remnant = data.raw["corpse"][name .. "-remnants"]
 
 	-- Reskin remnant
-	remnant.animation = inserter_remnants({ name = name })
+	remnant.animation = inserter_remnants({ file_name = file_name })
 
 	-- Common to all inserters
-	entity.hand_base_picture = inserter_arm_picture({ name = name })
+	entity.hand_base_picture = inserter_arm_picture({ file_name = file_name })
 	entity.hand_base_shadow = inserter_arm_shadow()
-	entity.platform_picture = inserter_platform_picture({ name = name })
+	entity.platform_picture = inserter_platform_picture({ file_name = file_name })
 
 	-- Inserter hands
-	entity.hand_open_picture = inserter_hand_picture({ name = name, hand_name = hand_name, hand = "open" })
-	entity.hand_closed_picture = inserter_hand_picture({ name = name, hand_name = hand_name, hand = "closed" })
+	entity.hand_open_picture = inserter_hand_picture({ file_name = file_name, hand_name = hand_name, hand = "open" })
+	entity.hand_closed_picture = inserter_hand_picture({ file_name = file_name, hand_name = hand_name, hand = "closed" })
 	entity.hand_open_shadow = inserter_hand_shadow({ type = inserter_type, hand = "open" })
 	entity.hand_closed_shadow = inserter_hand_shadow({ type = inserter_type, hand = "closed" })
 
