@@ -93,6 +93,7 @@ local technologies = {
 	["bob-drills-2"] = get_mining_drill_overrides(2),
 	["bob-drills-3"] = get_mining_drill_overrides(3),
 	["bob-drills-4"] = get_mining_drill_overrides(4),
+	["bob-drills-5"] = get_mining_drill_overrides(5),
 
 	-- Area Drills
 	["bob-area-drills-1"] = get_area_mining_drill_overrides(1, 2),

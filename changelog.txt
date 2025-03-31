@@ -3,6 +3,7 @@ Version: 2.3.2
 Date: ????
   Bugfixes:
     - Fixed that attempting to load with the Inserter Overhaul disabled would fail due to a missing image file.
+    - Fixed that the 5th tier of mining drill research did not use the intended sprite.
 ---------------------------------------------------------------------------------------------------
 Version: 2.3.1
 Date: 2025-03-31
