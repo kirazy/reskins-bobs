@@ -3,6 +3,7 @@ Version: 2.3.1
 Date: ????
   Bugfixes:
     - Fixed that the electric chemical furnace and multi-purpose furnaces did not use the correct pipe pictures.
+    - Fixed the the mirrored barreling machine, compressor, and distillery did not use the correct sprites.
 ---------------------------------------------------------------------------------------------------
 Version: 2.3.0
 Date: 2025-03-30

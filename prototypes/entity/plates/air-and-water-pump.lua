@@ -161,6 +161,48 @@ for name, map in pairs(tier_map) do
 		},
 	}
 
+	-- The fluid flow is directional, a mirrored graphics set is required, but is basically just the original graphics
+	-- set with north/south and east/west swapped.
+	entity.graphics_set_flipped = {
+		animation = {
+			north = entity.graphics_set.animation.south,
+			east = entity.graphics_set.animation.west,
+			south = entity.graphics_set.animation.north,
+			west = entity.graphics_set.animation.east,
+		},
+		working_visualisations = {
+			-- Recipe Tint Mask
+			{
+				apply_recipe_tint = "primary",
+				always_draw = true,
+				north_animation = recipe_tint_mask[map.pump_type].south,
+				east_animation = recipe_tint_mask[map.pump_type].west,
+				south_animation = recipe_tint_mask[map.pump_type].north,
+				west_animation = recipe_tint_mask[map.pump_type].east,
+			},
+			-- Recipe Lightening Mask
+			{
+				always_draw = true,
+				north_animation = recipe_ligtening_mask[map.pump_type].south,
+				east_animation = recipe_ligtening_mask[map.pump_type].west,
+				south_animation = recipe_ligtening_mask[map.pump_type].north,
+				west_animation = recipe_ligtening_mask[map.pump_type].east,
+			},
+			-- Light
+			{
+				always_draw = true,
+				east_animation = {
+					filename = "__reskins-bobs__/graphics/entity/plates/air-pump/pump-light.png",
+					width = 148,
+					height = 186,
+					shift = util.by_pixel(0, -9.5),
+					draw_as_light = true,
+					scale = 0.5,
+				},
+			},
+		},
+	}
+
 	if map.pump_type == "water" then
 		table.insert(entity.graphics_set.working_visualisations, {
 			apply_recipe_tint = "primary",
@@ -169,6 +211,15 @@ for name, map in pairs(tier_map) do
 			east_animation = recipe_tint_highlights.east,
 			south_animation = recipe_tint_highlights.south,
 			west_animation = recipe_tint_highlights.west,
+		})
+
+		table.insert(entity.graphics_set_flipped.working_visualisations, {
+			apply_recipe_tint = "primary",
+			always_draw = true,
+			north_animation = recipe_tint_highlights.south,
+			east_animation = recipe_tint_highlights.west,
+			south_animation = recipe_tint_highlights.north,
+			west_animation = recipe_tint_highlights.east,
 		})
 	end
 

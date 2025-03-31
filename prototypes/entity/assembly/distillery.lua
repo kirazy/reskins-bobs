@@ -126,6 +126,31 @@ for name, tier in pairs(tier_map) do
 		},
 	}
 
+	-- The fluid flow is directional, a mirrored graphics set is required, but is basically just the original graphics
+	-- set with north/south and east/west swapped.
+	entity.graphics_set_flipped = {
+		animation = {
+			north = entity.graphics_set.animation.south,
+			east = entity.graphics_set.animation.west,
+			south = entity.graphics_set.animation.north,
+			west = entity.graphics_set.animation.east,
+		},
+		working_visualisations = {
+			{
+				effect = "uranium-glow",
+				fadeout = true,
+				north_position = entity.graphics_set.working_visualisations[1].south_position,
+				east_position = entity.graphics_set.working_visualisations[1].west_position,
+				south_position = entity.graphics_set.working_visualisations[1].north_position,
+				west_position = entity.graphics_set.working_visualisations[1].east_position,
+				north_animation = entity.graphics_set.working_visualisations[1].south_animation,
+				east_animation = entity.graphics_set.working_visualisations[1].west_animation,
+				south_animation = entity.graphics_set.working_visualisations[1].north_animation,
+				west_animation = entity.graphics_set.working_visualisations[1].east_animation,
+			},
+		},
+	}
+
 	entity.water_reflection = {
 		pictures = {
 			filename = "__reskins-bobs__/graphics/entity/assembly/distillery/distillery-reflection.png",
