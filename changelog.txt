@@ -3,6 +3,8 @@ Version: 2.3.3
 Date: ????
   Bugfixes:
     - Fixed that the steam turbines were jumping for joy when vertically oriented.
+  Locale:
+    - Removed outdated translations for changed locale strings.
 ---------------------------------------------------------------------------------------------------
 Version: 2.3.2
 Date: 2025-03-31
