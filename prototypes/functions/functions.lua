@@ -525,6 +525,61 @@ reskins.bobs.electric_drill_animation_shadow_sequence = {
 	21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 1
 }
 
+---Duplicate of vanilla Factory `electric_mining_drill_status_leds_working_visualisation()` for compatibility purposes.
+---@return data.WorkingVisualisation
+function reskins.bobs.electric_mining_drill_status_leds_working_visualisation()
+	local led_blend_mode = nil -- "additive"
+	local led_tint = { 1, 1, 1 }
+
+	---@type data.WorkingVisualisation
+	local status_leds_working_visualisation = {
+		apply_tint = "status",
+		always_draw = true,
+		north_animation = {
+			filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-light.png",
+			width = 32,
+			height = 32,
+			blend_mode = led_blend_mode,
+			tint = led_tint,
+			draw_as_glow = true,
+			shift = util.by_pixel(26, -48),
+			scale = 0.5,
+		},
+		east_animation = {
+			filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-light.png",
+			width = 32,
+			height = 34,
+			blend_mode = led_blend_mode,
+			tint = led_tint,
+			draw_as_glow = true,
+			shift = util.by_pixel(38, -32),
+			scale = 0.5,
+		},
+		south_animation = {
+			filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-light.png",
+			width = 38,
+			height = 46,
+			blend_mode = led_blend_mode,
+			tint = led_tint,
+			draw_as_glow = true,
+			shift = util.by_pixel(26, 26),
+			scale = 0.5,
+		},
+		west_animation = {
+			filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-light.png",
+			width = 32,
+			height = 34,
+			blend_mode = led_blend_mode,
+			tint = led_tint,
+			draw_as_glow = true,
+			shift = util.by_pixel(-39, -32),
+			scale = 0.5,
+		},
+	}
+
+	return status_leds_working_visualisation
+end
+
 ---Duplicate of vanilla Factorio `electric_mining_drill_add_light_offsets()` for compatibility purposes.\
 ---Sets the north/south/east/west positions in table `t` to those of the current electric mining drill sprites.
 ---@param t data.WorkingVisualisation
@@ -546,5 +601,5 @@ reskins.bobs.electric_mining_drill_primary_light = electric_mining_drill_add_lig
 reskins.bobs.electric_mining_drill_secondary_light = electric_mining_drill_add_light_offsets({
 	always_draw = true,
 	apply_tint = "status",
-	light = { intensity = 0.8, size = 1.5, color = { r = 1, g = 1, b = 1 }, minimum_darkness = 0.1 },
+	light = { intensity = 0.2, size = 2, color = { r = 1, g = 1, b = 1 }, minimum_darkness = 0.1 },
 })

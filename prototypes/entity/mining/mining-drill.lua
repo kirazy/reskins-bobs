@@ -545,10 +545,10 @@ local function drill_dry_working_visualisation(speed, inputs)
 		},
 
 		-- LEDs
-		electric_mining_drill_status_leds_working_visualisation(),
+		reskins.bobs.electric_mining_drill_status_leds_working_visualisation(),
 
 		-- Light
-		reskins.bobs.electric_mining_drill_primary_light,
+		-- reskins.bobs.electric_mining_drill_primary_light,
 		reskins.bobs.electric_mining_drill_secondary_light,
 	}
 end
@@ -1204,11 +1204,11 @@ local function drill_wet_working_visualisation(speed, inputs)
 		},
 
 		-- LEDs
-		electric_mining_drill_status_leds_working_visualisation(),
+		reskins.bobs.electric_mining_drill_status_leds_working_visualisation(),
 
 		-- Light
-		electric_mining_drill_primary_light,
-		electric_mining_drill_secondary_light,
+		-- reskins.bobs.electric_mining_drill_primary_light,
+		reskins.bobs.electric_mining_drill_secondary_light,
 	}
 end
 
