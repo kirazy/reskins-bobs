@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.3.4
-Date: ????
+Date: 2025-05-10
   Bugfixes:
     - Fixed that the storage tank and pump sprites were not properly aligned, due to changes in 2.0.46.
     - Fixed that the mining drill status LED sprites had alignment issues when using AAI Industries.
