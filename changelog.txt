@@ -1,7 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.3.4
 Date: ????
-  Changes:
+  Bugfixes:
+    - Fixed that the storage tank and pump sprites were not properly aligned, due to changes in 2.0.46.
 ---------------------------------------------------------------------------------------------------
 Version: 2.3.3
 Date: 2025-05-10
