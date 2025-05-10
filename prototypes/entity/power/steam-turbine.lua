@@ -99,6 +99,7 @@ for name, map in pairs(tier_map) do
 				frame_count = 8,
 				line_length = 4,
 				shift = util.by_pixel(0, -2.75),
+				run_mode = "backward",
 				scale = 0.5,
 			},
 			-- Mask
@@ -129,6 +130,7 @@ for name, map in pairs(tier_map) do
 				repeat_count = 8,
 				draw_as_shadow = true,
 				shift = util.by_pixel(28.5, 18),
+				run_mode = "backward",
 				scale = 0.5,
 			},
 		},
@@ -140,10 +142,11 @@ for name, map in pairs(tier_map) do
 			{
 				filename = "__base__/graphics/entity/steam-turbine/steam-turbine-V.png",
 				width = 217,
-				height = 347,
+				height = 374,
 				frame_count = 8,
 				line_length = 4,
-				shift = util.by_pixel(4.75, 6.75),
+				shift = util.by_pixel(4.75, 0.0),
+				run_mode = "backward",
 				scale = 0.5,
 			},
 			-- Mask
@@ -174,6 +177,7 @@ for name, map in pairs(tier_map) do
 				repeat_count = 8,
 				draw_as_shadow = true,
 				shift = util.by_pixel(39.5, 24.5),
+				run_mode = "backward",
 				scale = 0.5,
 			},
 		},
