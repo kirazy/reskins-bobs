@@ -18,7 +18,7 @@ local inputs = {
 local tier_map = {
 	["heat-pipe"] = { tier = 1, prog_tier = 2, material = "base" },
 	["bob-heat-pipe-2"] = { tier = 2, prog_tier = 3, material = "aluminum-invar", particle_colors = { "dff5ff", "a99b84" } },
-	["bob-heat-pipe-3"] = { tier = 3, prog_tier = 5, material = "silver-titanium", particle_colors = { "d4d4d4", "cfd2d4" } },
+	["bob-heat-pipe-3"] = { tier = 3, prog_tier = 4, material = "silver-titanium", particle_colors = { "d4d4d4", "cfd2d4" } },
 	["bob-heat-pipe-4"] = { tier = 4, prog_tier = 5, material = "gold-copper", particle_colors = { "d6b968", "ff7f3f" } },
 }
 
