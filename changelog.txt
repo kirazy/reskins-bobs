@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.3.6
-Date: ????
+Date: 2026-01-03
   Bugfixes:
     - Fixed that several item prototypes were left in an unhealthy state due to two separate icon definitions, resolving unused prototype data warnings.
 ---------------------------------------------------------------------------------------------------
