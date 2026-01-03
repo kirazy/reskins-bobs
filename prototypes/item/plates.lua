@@ -20,18 +20,18 @@ local inputs = {
 local intermediates = {
 	-- Plates
 	["bob-aluminium-plate"] = { subgroup = "plates" },
-	["bob-brass-alloy"] = { subgroup = "plates" },
-	["bob-bronze-alloy"] = { subgroup = "plates" },
+	["bob-brass-alloy"] = { subgroup = "plates", defer_to_data_updates = true },
+	["bob-bronze-alloy"] = { subgroup = "plates", defer_to_data_updates = true },
 	["bob-cobalt-plate"] = { subgroup = "plates" },
-	["bob-cobalt-steel-alloy"] = { subgroup = "plates" },
+	["bob-cobalt-steel-alloy"] = { subgroup = "plates", defer_to_data_updates = true },
 	["bob-copper-tungsten-alloy"] = { subgroup = "plates" },
 	["bob-gold-plate"] = { mod = "lib", group = "shared", subgroup = "items", image = "gold-plate" }, -- Shared with Angels
-	["bob-gunmetal-alloy"] = { subgroup = "plates" },
-	["bob-invar-alloy"] = { subgroup = "plates" },
+	["bob-gunmetal-alloy"] = { subgroup = "plates", defer_to_data_updates = true },
+	["bob-invar-alloy"] = { subgroup = "plates", defer_to_data_updates = true },
 	["bob-lead-plate"] = { subgroup = "plates" },
 	["bob-lithium"] = { subgroup = "plates" },
 	["bob-nickel-plate"] = { subgroup = "plates" },
-	["bob-nitinol-alloy"] = { subgroup = "plates" },
+	["bob-nitinol-alloy"] = { subgroup = "plates", defer_to_data_updates = true },
 	["bob-silver-plate"] = { subgroup = "plates" },
 	["bob-solder-alloy"] = { subgroup = "plates" }, -- Shared with Bob's Electronics
 	["bob-tin-plate"] = { subgroup = "plates" },
@@ -121,7 +121,7 @@ local intermediates = {
 	["bob-salt"] = { subgroup = "powders" },
 	["bob-silicon-carbide"] = { subgroup = "powders" },
 	["bob-silicon-nitride"] = { subgroup = "powders" },
-	["bob-silicon-powder"] = { subgroup = "powders" },
+	["bob-silicon-powder"] = { subgroup = "powders", defer_to_data_updates = true },
 	-- ["bob-silver-oxide"] = {subgroup = "powders"}, -- Needs made-for-resolution icon
 
 	-- Gemstones
