@@ -1,7 +1,9 @@
 ---------------------------------------------------------------------------------------------------
-Version: 2.3.7
+Version: 3.0.0
 Date: ????
   Changes:
+    - Moved icons and sprites into a new set of Artisanal Reskin Asset mods.
+    - Reorganized Artisanal Reskin core; now depends on Artisanal Reskins: Framework.
 ---------------------------------------------------------------------------------------------------
 Version: 2.3.6
 Date: 2026-01-03

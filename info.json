@@ -1,13 +1,14 @@
 {
     "name": "reskins-bobs",
-    "version": "2.3.7",
+    "version": "3.0.0",
     "factorio_version": "2.0",
     "title": "Artisanal Reskins: Bob's Mods",
     "author": "Kirazy",
-    "contact": "kirazy@live.com",
+    "contact": "https://discord.gg/qAvSyzZFPr",
+    "homepage": "https://github.com/kirazy/reskins-bobs",
     "dependencies": [
         "base",
-        "reskins-library >= 2.3.0",
+        "reskins-framework >= 1.0.0",
         "? bobassembly",
         "? bobelectronics",
         "? bobgreenhouse",
@@ -24,7 +25,6 @@
         "? bobwarfare",
         "(?) angelssmelting",
         "(?) CircuitProcessing",
-        "(?) NauvisDay",
-        "! bobmods_gfxtweak"
+        "(?) NauvisDay"
     ]
 }
