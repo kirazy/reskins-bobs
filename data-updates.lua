@@ -33,4 +33,5 @@ require("prototypes.technology.warfare-updates") -- Bob does tech updates in dat
 -- GUI Modifications
 ----------------------------------------------------------------------------------------------------
 -- FIXME: This is a temporary disablement of the item group icons, until new ones are created.
+-- https://github.com/kirazy/reskins-bobs/issues/100
 -- require("prototypes.item-group.item-group")
