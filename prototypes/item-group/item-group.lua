@@ -1,8 +1,3 @@
--- Copyright (c) 2024 Kirazy
--- Part of Artisanal Reskins: Bob's Mods
---
--- See LICENSE in the project directory for license information.
-
 local item_groups = {
 	["bob-logistics"] = { related_item_group = "logistics" },
 	["bob-fluid-products"] = {},

@@ -1,8 +1,3 @@
--- Copyright (c) 2024 Kirazy
--- Part of Artisanal Reskins: Bob's Mods
---
--- See LICENSE in the project directory for license information.
-
 -- Core functions
 require("prototypes.functions.functions")
 require("prototypes.functions.circuit-sprites")

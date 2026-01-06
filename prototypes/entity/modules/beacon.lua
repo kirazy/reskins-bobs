@@ -1,8 +1,3 @@
--- Copyright (c) 2024 Kirazy
--- Part of Artisanal Reskins: Bob's Mods
---
--- See LICENSE in the project directory for license information.
-
 -- Check to see if reskinning needs to be done.
 if mods["classic-beacon"] or not (reskins.bobs and reskins.bobs.triggers.modules.entities) then
 	return

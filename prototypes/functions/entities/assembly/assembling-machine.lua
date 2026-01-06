@@ -1,8 +1,3 @@
--- Copyright (c) 2024 Kirazy
--- Part of Artisanal Reskins: Bob's Mods
---
--- See LICENSE in the project directory for license information.
-
 ---Boolean toggles to customize the type of assembling machine sprites used.
 ---Note that the `use_` flags are mutually exclusive, and if omitted the standard sprite set will be used.
 ---@class AssemblyMachineFlags

@@ -1,8 +1,3 @@
--- Copyright (c) 2024 Kirazy
--- Part of Artisanal Reskins: Bob's Mods
---
--- See LICENSE in the project directory for license information.
-
 ---Mod path for Artisanal Reskins: Bob's Mods.
 reskins.bobs.directory = "__reskins-bobs__"
 
