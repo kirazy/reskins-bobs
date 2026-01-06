@@ -55,6 +55,11 @@ data.raw["utility-sprites"].default.worker_robot_speed_modifier_icon =
 		mipmap_count = 4,
 	} })
 
+-- TODO: Do we still need to do the infer_icon iteration?
+-- https://github.com/kirazy/reskins-bobs/issues/103
+-- TODO (STALE): Redesign this to be a function that scans through technology table for a whitelist of effects and then sets infer_icon for those effects
+-- TODO (STALE): Move tech effect icon overwrites to its own function/file, along with the below
+
 -- Set infer_icon properties for associated technologies
 local technology_infer_icon_list = {
 	"worker-robots-storage-1",
@@ -74,5 +79,3 @@ for _, tech in pairs(technology_infer_icon_list) do
 		data.raw.technology[tech].effects[1].infer_icon = false
 	end
 end
--- TODO: Redesign this to be a function that scans through technology table for a whitelist of effects and then sets infer_icon for those effects
--- TODO: Move tech effect icon overwrites to its own function/file, along with the above
