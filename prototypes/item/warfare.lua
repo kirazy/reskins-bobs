@@ -185,7 +185,6 @@ local items = {
 
 	-- Mech parts
 	["bob-mech-armor-plate"] = { type = "item", subgroup = "mech-parts" },
-	-- TODO: https://github.com/kirazy/reskins-bobs/issues/32 Model and render out robot/mech brains
 	-- ["mech-brain"] = {type = "item", subgroup = "mech-parts"},
 	["bob-mech-frame"] = { type = "item", subgroup = "mech-parts" },
 	["bob-mech-foot"] = { type = "item", subgroup = "mech-parts" },

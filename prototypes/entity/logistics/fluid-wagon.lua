@@ -44,9 +44,5 @@ for name, map in pairs(tier_map) do
 
 	reskins.lib.setup_standard_entity(name, tier, inputs)
 
-	-- TODO: Reskin remnants?
-
-	-- TODO: Reskin entity?
-
 	::continue::
 end

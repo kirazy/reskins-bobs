@@ -107,7 +107,7 @@ local intermediates = {
 	["bob-polishing-wheel"] = { subgroup = "items", image = "polishing-wheel" },
 	["bob-polishing-compound"] = { subgroup = "items", image = "polishing-compound" },
 
-	-- Powders -- TODO: https://github.com/kirazy/reskins-bobs/issues/31 Model and render out powder/particulate icons
+	-- Powders
 	["bob-calcium-chloride"] = { subgroup = "powders" },
 	["bob-sodium-hydroxide"] = { subgroup = "powders" },
 	-- ["bob-lithium-chloride"] = {subgroup = "powders"}, -- Needs made-for-resolution icon

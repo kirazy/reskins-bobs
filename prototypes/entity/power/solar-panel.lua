@@ -268,8 +268,6 @@ for name, map in pairs(tier_map) do
 			},
 		}
 	elseif inputs.icon_name == "solar-panel-large" then
-		-- TODO: Large remnants
-
 		-- Overwrite picture table in target entity
 		entity.picture = {
 			layers = {
