@@ -15,6 +15,7 @@ local inputs = {
 ---@type CreateIconsFromListTable
 local technologies = {
 	-- FIXME: The icon is gone in 2.0. Bundled from 1.1 for now.
+	-- https://github.com/kirazy/reskins-bobs/issues/101
 	["processing-unit"] = { image = "electronics-1.1" },
 }
 

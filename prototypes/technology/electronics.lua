@@ -21,6 +21,7 @@ local technologies = {
 	-- ["advanced-electronics"] = {},
 
 	-- FIXME: The icon is gone in 2.0. Bundled from 1.1 for now.
+	-- https://github.com/kirazy/reskins-bobs/issues/101
 	["bob-advanced-processing-unit"] = {},
 }
 
