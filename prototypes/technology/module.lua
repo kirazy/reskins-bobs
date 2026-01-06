@@ -16,6 +16,7 @@ local inputs = {
 local technologies = {
 	-- Beacons
 	-- FIXME These techs do not have sprite support yet.
+	-- https://github.com/kirazy/reskins-bobs/issues/102
 	-- ["effect-transmission"] = {tier = 1, prog_tier = 3},   -- t3 beacon
 	-- ["effect-transmission-2"] = {tier = 2, prog_tier = 4}, -- t4 beacon
 	-- ["effect-transmission-3"] = {tier = 3, prog_tier = 5}, -- t5 beacon
