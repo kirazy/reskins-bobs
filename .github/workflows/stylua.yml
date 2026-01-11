@@ -1,26 +1,29 @@
 name: StyLuaFormatter
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
+      - dev
 
 jobs:
-  prettier:
+  format:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           # Make sure the actual branch is checked out when running on pull requests
           ref: ${{ github.head_ref }}
       - name: Format code
-        uses: JohnnyMorganz/stylua-action@v1
+        uses: JohnnyMorganz/stylua-action@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          version: latest # NOTE: we recommend pinning to a specific version in case of formatting changes
-          # CLI arguments
-          args: .
+            token: ${{ secrets.GITHUB_TOKEN }}
+            version: latest
+            args: .
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
         with:
           author_name: StyLuaFormatter
-          message: 'style: enforce code style'
-          add: '*.lua'
+          message: "style: enforce code style"
+          add: "*.lua"
