@@ -1271,7 +1271,8 @@ for name, map in pairs(tier_map) do
 	if max_speed - min_speed == 0 then
 		speed = entity.mining_speed
 	else
-		speed = ((entity.mining_speed / (max_speed - min_speed)) - (min_speed / (max_speed - min_speed))) * max_playback + ((max_speed / (max_speed - min_speed)) - (entity.mining_speed / (max_speed - min_speed))) * min_playback
+		speed = ((entity.mining_speed / (max_speed - min_speed)) - (min_speed / (max_speed - min_speed))) * max_playback
+			+ ((max_speed / (max_speed - min_speed)) - (entity.mining_speed / (max_speed - min_speed))) * min_playback
 	end
 
 	-- Fetch remnant

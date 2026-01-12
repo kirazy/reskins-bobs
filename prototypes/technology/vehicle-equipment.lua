@@ -21,10 +21,34 @@ local technologies = {
 	["bob-vehicle-big-turret-equipment-4"] = { icon_name = "vehicle-plasma-turret", tier = 4, prog_tier = 6 },
 
 	-- Roboport modular equipment
-	["bob-vehicle-roboport-modular-equipment-1"] = { group = "equipment", icon_name = "modular-equipment", icon_base = "modular-equipment-1", tier = 1, prog_tier = 2 },
-	["bob-vehicle-roboport-modular-equipment-2"] = { group = "equipment", icon_name = "modular-equipment", icon_base = "modular-equipment-2", tier = 2, prog_tier = 3 },
-	["bob-vehicle-roboport-modular-equipment-3"] = { group = "equipment", icon_name = "modular-equipment", icon_base = "modular-equipment-3", tier = 3, prog_tier = 4 },
-	["bob-vehicle-roboport-modular-equipment-4"] = { group = "equipment", icon_name = "modular-equipment", icon_base = "modular-equipment-4", tier = 4, prog_tier = 5 },
+	["bob-vehicle-roboport-modular-equipment-1"] = {
+		group = "equipment",
+		icon_name = "modular-equipment",
+		icon_base = "modular-equipment-1",
+		tier = 1,
+		prog_tier = 2,
+	},
+	["bob-vehicle-roboport-modular-equipment-2"] = {
+		group = "equipment",
+		icon_name = "modular-equipment",
+		icon_base = "modular-equipment-2",
+		tier = 2,
+		prog_tier = 3,
+	},
+	["bob-vehicle-roboport-modular-equipment-3"] = {
+		group = "equipment",
+		icon_name = "modular-equipment",
+		icon_base = "modular-equipment-3",
+		tier = 3,
+		prog_tier = 4,
+	},
+	["bob-vehicle-roboport-modular-equipment-4"] = {
+		group = "equipment",
+		icon_name = "modular-equipment",
+		icon_base = "modular-equipment-4",
+		tier = 4,
+		prog_tier = 5,
+	},
 
 	-- Fusion cells
 	["bob-vehicle-fission-cell-equipment-1"] = { icon_name = "vehicle-fission-cell", tier = 1 },
@@ -79,10 +103,30 @@ local technologies = {
 	["bob-vehicle-shield-equipment-6"] = { icon_name = "vehicle-energy-shield", tier = 6 },
 
 	-- Roboports
-	["bob-vehicle-roboport-equipment-1"] = { group = "equipment", icon_name = "personal-roboport-1", tier = 1, prog_tier = 2 },
-	["bob-vehicle-roboport-equipment-2"] = { group = "equipment", icon_name = "personal-roboport-1", tier = 2, prog_tier = 3 },
-	["bob-vehicle-roboport-equipment-3"] = { group = "equipment", icon_name = "personal-roboport-2", tier = 3, prog_tier = 4 },
-	["bob-vehicle-roboport-equipment-4"] = { group = "equipment", icon_name = "personal-roboport-2", tier = 4, prog_tier = 5 },
+	["bob-vehicle-roboport-equipment-1"] = {
+		group = "equipment",
+		icon_name = "personal-roboport-1",
+		tier = 1,
+		prog_tier = 2,
+	},
+	["bob-vehicle-roboport-equipment-2"] = {
+		group = "equipment",
+		icon_name = "personal-roboport-1",
+		tier = 2,
+		prog_tier = 3,
+	},
+	["bob-vehicle-roboport-equipment-3"] = {
+		group = "equipment",
+		icon_name = "personal-roboport-2",
+		tier = 3,
+		prog_tier = 4,
+	},
+	["bob-vehicle-roboport-equipment-4"] = {
+		group = "equipment",
+		icon_name = "personal-roboport-2",
+		tier = 4,
+		prog_tier = 5,
+	},
 }
 
 reskins.internal.create_icons_from_list(technologies, inputs)

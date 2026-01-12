@@ -34,7 +34,11 @@ end
 -- Inserter Remnants
 local function inserter_remnants(parameters)
 	return make_rotated_animation_variations_from_sheet(4, {
-		filename = "__reskins-bobs__/graphics/entity/logistics/inserter/standard/" .. parameters.file_name .. "/remnants/" .. parameters.file_name .. "-remnants.png",
+		filename = "__reskins-bobs__/graphics/entity/logistics/inserter/standard/"
+			.. parameters.file_name
+			.. "/remnants/"
+			.. parameters.file_name
+			.. "-remnants.png",
 		width = 134,
 		height = 94,
 		direction_count = 1,
@@ -46,7 +50,11 @@ end
 -- Inserter Arms
 local function inserter_arm_picture(parameters)
 	return {
-		filename = "__reskins-bobs__/graphics/entity/logistics/inserter/standard/" .. parameters.file_name .. "/" .. parameters.file_name .. "-arm.png",
+		filename = "__reskins-bobs__/graphics/entity/logistics/inserter/standard/"
+			.. parameters.file_name
+			.. "/"
+			.. parameters.file_name
+			.. "-arm.png",
 		priority = "extra-high",
 		width = 32,
 		height = 136,
@@ -68,7 +76,13 @@ end
 -- Hand open, closed for bulk, standard, and long-handed inserters
 local function inserter_hand_picture(parameters)
 	return {
-		filename = "__reskins-bobs__/graphics/entity/logistics/inserter/standard/" .. parameters.file_name .. "/" .. parameters.hand_name .. "-hand-" .. parameters.hand .. ".png",
+		filename = "__reskins-bobs__/graphics/entity/logistics/inserter/standard/"
+			.. parameters.file_name
+			.. "/"
+			.. parameters.hand_name
+			.. "-hand-"
+			.. parameters.hand
+			.. ".png",
 		priority = "extra-high",
 		width = 130,
 		height = 164,
@@ -84,7 +98,11 @@ local function inserter_hand_shadow(parameters)
 		parameters.shadow = parameters.type
 	end
 	return {
-		filename = "__reskins-bobs__/graphics/entity/logistics/inserter/shadows/" .. parameters.shadow .. "-hand-" .. parameters.hand .. "-shadow.png",
+		filename = "__reskins-bobs__/graphics/entity/logistics/inserter/shadows/"
+			.. parameters.shadow
+			.. "-hand-"
+			.. parameters.hand
+			.. "-shadow.png",
 		priority = "extra-high",
 		width = 130,
 		height = 164,
@@ -99,7 +117,11 @@ local function inserter_platform_picture(parameters)
 		sheets = {
 			-- Base
 			{
-				filename = "__reskins-bobs__/graphics/entity/logistics/inserter/standard/" .. parameters.file_name .. "/" .. parameters.file_name .. "-platform.png",
+				filename = "__reskins-bobs__/graphics/entity/logistics/inserter/standard/"
+					.. parameters.file_name
+					.. "/"
+					.. parameters.file_name
+					.. "-platform.png",
 				priority = "extra-high",
 				width = 106,
 				height = 80,

@@ -113,7 +113,10 @@ local technologies = {
 -- end
 
 -- Set fusion robot color
-if reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map" and reskins.lib.settings.get_value("reskins-bobs-do-progression-based-robots") then
+if
+	reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map"
+	and reskins.lib.settings.get_value("reskins-bobs-do-progression-based-robots")
+then
 	-- technologies["construction-robots"].prog_tier = 2
 	-- technologies["logistic-robots"].prog_tier = 2
 	technologies["bob-robots-1"].prog_tier = 3
@@ -146,4 +149,5 @@ end
 reskins.internal.create_icons_from_list(technologies, inputs)
 
 -- Overwrite icons for technology effects
-data.raw["utility-sprites"].default.bulk_inserter_capacity_bonus_modifier_icon.filename = "__reskins-bobs__/graphics/icons/logistics/inserter/bulk-inserter-technology-effect-icon.png"
+data.raw["utility-sprites"].default.bulk_inserter_capacity_bonus_modifier_icon.filename =
+	"__reskins-bobs__/graphics/icons/logistics/inserter/bulk-inserter-technology-effect-icon.png"

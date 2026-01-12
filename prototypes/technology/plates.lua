@@ -431,10 +431,12 @@ end
 if mods["angelssmelting"] then
 	-- Use metal-mixing sprites to be consistent with new "Filtering Furnace" progression
 	technologies["bob-multi-purpose-furnace-1"].icon_name = "electric-mixing-furnace"
-	technologies["bob-multi-purpose-furnace-1"].technology_icon_extras = get_technology_light_layer("electric-mixing-furnace")
+	technologies["bob-multi-purpose-furnace-1"].technology_icon_extras =
+		get_technology_light_layer("electric-mixing-furnace")
 
 	technologies["bob-multi-purpose-furnace-2"].icon_name = "electric-mixing-furnace"
-	technologies["bob-multi-purpose-furnace-2"].technology_icon_extras = get_technology_light_layer("electric-mixing-furnace")
+	technologies["bob-multi-purpose-furnace-2"].technology_icon_extras =
+		get_technology_light_layer("electric-mixing-furnace")
 end
 
 reskins.internal.create_icons_from_list(technologies, inputs)

@@ -21,7 +21,10 @@ local items = {
 }
 
 -- Color overhaul for science packs
-if reskins.lib.settings.get_value("bobmods-tech-colorupdate") == true and reskins.lib.settings.get_value("reskins-lib-customize-tier-colors") == true then
+if
+	reskins.lib.settings.get_value("bobmods-tech-colorupdate") == true
+	and reskins.lib.settings.get_value("reskins-lib-customize-tier-colors") == true
+then
 	items["automation-science-pack"] = { tier = 1 }
 	items["logistic-science-pack"] = { tier = 2 }
 	items["chemical-science-pack"] = { tier = 3 }

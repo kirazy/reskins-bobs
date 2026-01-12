@@ -17,5 +17,8 @@ local tier_map = {
 
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
-	reskins.lib.apply_skin.oil_refinery(name, (reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map") and map.prog_tier or map.tier)
+	reskins.lib.apply_skin.oil_refinery(
+		name,
+		(reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map") and map.prog_tier or map.tier
+	)
 end

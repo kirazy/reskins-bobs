@@ -42,7 +42,9 @@ for name, map in pairs(tier_map) do
 		layers = {
 			-- Base
 			{
-				filename = "__reskins-bobs__/graphics/entity/logistics/zone-expander/zone-expander-" .. map.image_index .. "-base.png",
+				filename = "__reskins-bobs__/graphics/entity/logistics/zone-expander/zone-expander-"
+					.. map.image_index
+					.. "-base.png",
 				width = 56,
 				height = 156,
 				shift = util.by_pixel(0.5, -29.5),
@@ -73,7 +75,9 @@ for name, map in pairs(tier_map) do
 		layers = {
 			-- Antenna
 			{
-				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/antennas/roboport-" .. map.image_index .. "-base-animation.png",
+				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/antennas/roboport-"
+					.. map.image_index
+					.. "-base-animation.png",
 				priority = "medium",
 				width = 83,
 				height = 59,

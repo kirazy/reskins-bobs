@@ -126,7 +126,9 @@ local function get_steel_furnace_remnant_animation(image_name, tint)
 		layers = {
 			-- Base
 			{
-				filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/remnants/" .. image_name .. "-remnants-base.png",
+				filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/remnants/"
+					.. image_name
+					.. "-remnants-base.png",
 				width = 268,
 				height = 238,
 				line_length = count,
@@ -136,7 +138,9 @@ local function get_steel_furnace_remnant_animation(image_name, tint)
 			},
 			-- Mask
 			{
-				filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/remnants/" .. image_name .. "-remnants-mask.png",
+				filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/remnants/"
+					.. image_name
+					.. "-remnants-mask.png",
 				width = 268,
 				height = 238,
 				line_length = count,
@@ -147,7 +151,9 @@ local function get_steel_furnace_remnant_animation(image_name, tint)
 			},
 			-- Highlights
 			{
-				filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/remnants/" .. image_name .. "-remnants-highlights.png",
+				filename = "__reskins-bobs__/graphics/entity/assembly/steel-furnace/remnants/"
+					.. image_name
+					.. "-remnants-highlights.png",
 				width = 268,
 				height = 238,
 				line_length = count,

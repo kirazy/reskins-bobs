@@ -45,7 +45,9 @@ for name, map in pairs(vehicle_roboports) do
 		layers = {
 			-- Base
 			{
-				filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-roboport/" .. inputs.icon_base .. "-equipment-base.png",
+				filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-roboport/"
+					.. inputs.icon_base
+					.. "-equipment-base.png",
 				size = 128,
 				priority = "medium",
 				flags = { "no-crop" },

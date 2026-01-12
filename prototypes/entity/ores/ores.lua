@@ -44,12 +44,25 @@ for name, params in pairs(ores) do
 			type_name = entity.type,
 			icon_data = {
 				{
-					icon = reskins[params.key].directory .. "/graphics/icons/" .. params.subfolder .. "/ores/" .. name .. "/" .. name .. ".png",
+					icon = reskins[params.key].directory
+						.. "/graphics/icons/"
+						.. params.subfolder
+						.. "/ores/"
+						.. name
+						.. "/"
+						.. name
+						.. ".png",
 					icon_size = 64,
 					scale = 0.5,
 				},
 			},
-			pictures = reskins.internal.create_sprite_variations(params.key, params.subfolder .. "/ores", name, params.num_variations or 4, params.is_light),
+			pictures = reskins.internal.create_sprite_variations(
+				params.key,
+				params.subfolder .. "/ores",
+				name,
+				params.num_variations or 4,
+				params.is_light
+			),
 		})
 	end
 

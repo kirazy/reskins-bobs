@@ -29,21 +29,33 @@ for tier, circuit_name in pairs(circuit_names) do
 		name = "ar-" .. circuit_name .. "-colored",
 		layers = {
 			{
-				filename = "__reskins-bobs__/graphics/icons/sprites/circuits/colored/" .. circuit_name .. "/" .. circuit_name .. "-base.png",
+				filename = "__reskins-bobs__/graphics/icons/sprites/circuits/colored/"
+					.. circuit_name
+					.. "/"
+					.. circuit_name
+					.. "-base.png",
 				flags = { "gui-icon" },
 				size = 40,
 				tint = sanitized_tint,
 				mipmap_count = 2,
 			},
 			{
-				filename = "__reskins-bobs__/graphics/icons/sprites/circuits/colored/" .. circuit_name .. "/" .. circuit_name .. "-highlights.png",
+				filename = "__reskins-bobs__/graphics/icons/sprites/circuits/colored/"
+					.. circuit_name
+					.. "/"
+					.. circuit_name
+					.. "-highlights.png",
 				flags = { "gui-icon" },
 				size = 40,
 				blend_mode = "additive",
 				mipmap_count = 2,
 			},
 			{
-				filename = "__reskins-bobs__/graphics/icons/sprites/circuits/colored/" .. circuit_name .. "/" .. circuit_name .. "-traces.png",
+				filename = "__reskins-bobs__/graphics/icons/sprites/circuits/colored/"
+					.. circuit_name
+					.. "/"
+					.. circuit_name
+					.. "-traces.png",
 				flags = { "gui-icon" },
 				size = 40,
 				mipmap_count = 2,

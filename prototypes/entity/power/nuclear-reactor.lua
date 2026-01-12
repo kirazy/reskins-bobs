@@ -58,7 +58,9 @@ local function skin_reactor_entity(name, tint, material)
 			},
 			-- Pipes
 			{
-				filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-piping.png",
+				filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/"
+					.. material
+					.. "/reactor-piping.png",
 				width = 302,
 				height = 318,
 				scale = 0.5,
@@ -78,7 +80,9 @@ local function skin_reactor_entity(name, tint, material)
 
 	-- Pipes
 	entity.lower_layer_picture = {
-		filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-base-pipes.png",
+		filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/"
+			.. material
+			.. "/reactor-base-pipes.png",
 		width = 320,
 		height = 316,
 		scale = 0.5,
@@ -87,7 +91,9 @@ local function skin_reactor_entity(name, tint, material)
 
 	entity.connection_patches_connected = {
 		sheet = {
-			filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-connect-patches.png",
+			filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/"
+				.. material
+				.. "/reactor-connect-patches.png",
 			width = 64,
 			height = 64,
 			variation_count = 12,
@@ -97,7 +103,9 @@ local function skin_reactor_entity(name, tint, material)
 
 	entity.connection_patches_disconnected = {
 		sheet = {
-			filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-connect-patches.png",
+			filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/"
+				.. material
+				.. "/reactor-connect-patches.png",
 			width = 64,
 			height = 64,
 			variation_count = 12,
@@ -147,7 +155,9 @@ local function skin_reactor_remnants(name, tint, material)
 			},
 			-- Pipes
 			{
-				filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-remnants.png",
+				filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/"
+					.. material
+					.. "/reactor-remnants.png",
 				width = 410,
 				height = 396,
 				direction_count = 1,
@@ -178,7 +188,10 @@ for name, map in pairs(reactors) do
 	-- Create explosions
 	reskins.lib.create_explosion(name, inputs)
 
-	if reskins.lib.settings.get_value("bobmods-revamp-nuclear") == true and reskins.lib.settings.get_value("reskins-bobs-do-bobrevamp-reactor-color") == true then
+	if
+		reskins.lib.settings.get_value("bobmods-revamp-nuclear") == true
+		and reskins.lib.settings.get_value("reskins-bobs-do-bobrevamp-reactor-color") == true
+	then
 		inputs.reactor = reskins.bobs.nuclear_reactor_index[name]
 		inputs.tint = reskins.bobs.nuclear_reactor_index[name].tint
 

@@ -31,10 +31,34 @@ local technologies = {
 	["bob-centrifuge-3"] = { icon_name = "centrifuge", tier = 2, prog_tier = 5 },
 
 	-- Electrolysers
-	["bob-electrolyser-2"] = { tier = 2, icon_name = "electrolyser", icon_base = "electrolyser-2", icon_mask = "electrolyser-2", icon_highlights = "electrolyser-2" },
-	["bob-electrolyser-3"] = { tier = 3, icon_name = "electrolyser", icon_base = "electrolyser-3", icon_mask = "electrolyser-3", icon_highlights = "electrolyser-3" },
-	["bob-electrolyser-4"] = { tier = 4, icon_name = "electrolyser", icon_base = "electrolyser-4", icon_mask = "electrolyser-4", icon_highlights = "electrolyser-4" },
-	["bob-electrolyser-5"] = { tier = 5, icon_name = "electrolyser", icon_base = "electrolyser-5", icon_mask = "electrolyser-5", icon_highlights = "electrolyser-5" },
+	["bob-electrolyser-2"] = {
+		tier = 2,
+		icon_name = "electrolyser",
+		icon_base = "electrolyser-2",
+		icon_mask = "electrolyser-2",
+		icon_highlights = "electrolyser-2",
+	},
+	["bob-electrolyser-3"] = {
+		tier = 3,
+		icon_name = "electrolyser",
+		icon_base = "electrolyser-3",
+		icon_mask = "electrolyser-3",
+		icon_highlights = "electrolyser-3",
+	},
+	["bob-electrolyser-4"] = {
+		tier = 4,
+		icon_name = "electrolyser",
+		icon_base = "electrolyser-4",
+		icon_mask = "electrolyser-4",
+		icon_highlights = "electrolyser-4",
+	},
+	["bob-electrolyser-5"] = {
+		tier = 5,
+		icon_name = "electrolyser",
+		icon_base = "electrolyser-5",
+		icon_mask = "electrolyser-5",
+		icon_highlights = "electrolyser-5",
+	},
 
 	-- Chemical Plants
 	["bob-chemical-plant-2"] = { tier = 2, prog_tier = 3, icon_name = "chemical-plant", technology_icon_size = 128 },

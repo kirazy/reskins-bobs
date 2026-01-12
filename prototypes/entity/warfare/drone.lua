@@ -81,10 +81,26 @@ local function build_drone_animation(scale, tint)
 				-- line_length = 2,
 				tint = tint,
 				stripes = util.multiplystripes(2, {
-					{ filename = "__reskins-bobs__/graphics/entity/warfare/drone/drone-mask_01.png", width_in_frames = 1, height_in_frames = 16 },
-					{ filename = "__reskins-bobs__/graphics/entity/warfare/drone/drone-mask_02.png", width_in_frames = 1, height_in_frames = 16 },
-					{ filename = "__reskins-bobs__/graphics/entity/warfare/drone/drone-mask_03.png", width_in_frames = 1, height_in_frames = 16 },
-					{ filename = "__reskins-bobs__/graphics/entity/warfare/drone/drone-mask_04.png", width_in_frames = 1, height_in_frames = 16 },
+					{
+						filename = "__reskins-bobs__/graphics/entity/warfare/drone/drone-mask_01.png",
+						width_in_frames = 1,
+						height_in_frames = 16,
+					},
+					{
+						filename = "__reskins-bobs__/graphics/entity/warfare/drone/drone-mask_02.png",
+						width_in_frames = 1,
+						height_in_frames = 16,
+					},
+					{
+						filename = "__reskins-bobs__/graphics/entity/warfare/drone/drone-mask_03.png",
+						width_in_frames = 1,
+						height_in_frames = 16,
+					},
+					{
+						filename = "__reskins-bobs__/graphics/entity/warfare/drone/drone-mask_04.png",
+						width_in_frames = 1,
+						height_in_frames = 16,
+					},
 				}),
 				scale = 0.5,
 			},
@@ -100,10 +116,26 @@ local function build_drone_animation(scale, tint)
 				-- line_length = 2,
 				blend_mode = reskins.lib.settings.blend_mode,
 				stripes = util.multiplystripes(2, {
-					{ filename = "__reskins-bobs__/graphics/entity/warfare/drone/drone-highlights_01.png", width_in_frames = 1, height_in_frames = 16 },
-					{ filename = "__reskins-bobs__/graphics/entity/warfare/drone/drone-highlights_02.png", width_in_frames = 1, height_in_frames = 16 },
-					{ filename = "__reskins-bobs__/graphics/entity/warfare/drone/drone-highlights_03.png", width_in_frames = 1, height_in_frames = 16 },
-					{ filename = "__reskins-bobs__/graphics/entity/warfare/drone/drone-highlights_04.png", width_in_frames = 1, height_in_frames = 16 },
+					{
+						filename = "__reskins-bobs__/graphics/entity/warfare/drone/drone-highlights_01.png",
+						width_in_frames = 1,
+						height_in_frames = 16,
+					},
+					{
+						filename = "__reskins-bobs__/graphics/entity/warfare/drone/drone-highlights_02.png",
+						width_in_frames = 1,
+						height_in_frames = 16,
+					},
+					{
+						filename = "__reskins-bobs__/graphics/entity/warfare/drone/drone-highlights_03.png",
+						width_in_frames = 1,
+						height_in_frames = 16,
+					},
+					{
+						filename = "__reskins-bobs__/graphics/entity/warfare/drone/drone-highlights_04.png",
+						width_in_frames = 1,
+						height_in_frames = 16,
+					},
 				}),
 				scale = 0.5,
 			},
@@ -161,10 +193,26 @@ local function build_drone_animation(scale, tint)
 				shift = util.by_pixel(22.5, 7),
 				max_advance = 1,
 				stripes = util.multiplystripes(2, {
-					{ filename = "__base__/graphics/entity/tank/tank-base-shadow-1.png", width_in_frames = 1, height_in_frames = 16 },
-					{ filename = "__base__/graphics/entity/tank/tank-base-shadow-2.png", width_in_frames = 1, height_in_frames = 16 },
-					{ filename = "__base__/graphics/entity/tank/tank-base-shadow-3.png", width_in_frames = 1, height_in_frames = 16 },
-					{ filename = "__base__/graphics/entity/tank/tank-base-shadow-4.png", width_in_frames = 1, height_in_frames = 16 },
+					{
+						filename = "__base__/graphics/entity/tank/tank-base-shadow-1.png",
+						width_in_frames = 1,
+						height_in_frames = 16,
+					},
+					{
+						filename = "__base__/graphics/entity/tank/tank-base-shadow-2.png",
+						width_in_frames = 1,
+						height_in_frames = 16,
+					},
+					{
+						filename = "__base__/graphics/entity/tank/tank-base-shadow-3.png",
+						width_in_frames = 1,
+						height_in_frames = 16,
+					},
+					{
+						filename = "__base__/graphics/entity/tank/tank-base-shadow-4.png",
+						width_in_frames = 1,
+						height_in_frames = 16,
+					},
 				}),
 				scale = 0.5,
 			},

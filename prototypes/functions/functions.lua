@@ -3,9 +3,15 @@ reskins.bobs.directory = "__reskins-bobs__"
 
 ---Table of colors for the three types of furnaces added by bobplates.
 reskins.bobs.furnace_tint_index = {
-	standard = reskins.lib.settings.get_value("reskins-bobs-do-custom-furnace-variants") and reskins.lib.settings.get_value("reskins-bobs-standard-furnace-color") or util.color("#ffb700"),
-	mixing = reskins.lib.settings.get_value("reskins-bobs-do-custom-furnace-variants") and reskins.lib.settings.get_value("reskins-bobs-mixing-furnace-color") or util.color("#00bfff"),
-	chemical = reskins.lib.settings.get_value("reskins-bobs-do-custom-furnace-variants") and reskins.lib.settings.get_value("reskins-bobs-chemical-furnace-color") or util.color("#f21f0c"),
+	standard = reskins.lib.settings.get_value("reskins-bobs-do-custom-furnace-variants")
+			and reskins.lib.settings.get_value("reskins-bobs-standard-furnace-color")
+		or util.color("#ffb700"),
+	mixing = reskins.lib.settings.get_value("reskins-bobs-do-custom-furnace-variants")
+			and reskins.lib.settings.get_value("reskins-bobs-mixing-furnace-color")
+		or util.color("#00bfff"),
+	chemical = reskins.lib.settings.get_value("reskins-bobs-do-custom-furnace-variants")
+			and reskins.lib.settings.get_value("reskins-bobs-chemical-furnace-color")
+		or util.color("#f21f0c"),
 }
 
 -- NUCLEAR REACTOR COLORS AND ICON COMPOSITIONS
@@ -41,7 +47,12 @@ if reskins.lib.settings.get_value("bobmods-revamp-nuclear") == true then
 end
 
 -- Permit tier-based tint lookup
-if not (reskins.lib.settings.get_value("bobmods-revamp-nuclear") and reskins.lib.settings.get_value("reskins-bobs-do-bobrevamp-reactor-color")) then
+if
+	not (
+		reskins.lib.settings.get_value("bobmods-revamp-nuclear")
+		and reskins.lib.settings.get_value("reskins-bobs-do-bobrevamp-reactor-color")
+	)
+then
 	reskins.bobs.nuclear_reactor_index["nuclear-reactor"].tint = nil
 	reskins.bobs.nuclear_reactor_index["bob-nuclear-reactor-2"].tint = nil
 	reskins.bobs.nuclear_reactor_index["bob-nuclear-reactor-3"].tint = nil

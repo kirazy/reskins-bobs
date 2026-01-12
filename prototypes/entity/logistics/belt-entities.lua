@@ -14,7 +14,14 @@ local transport_belts = {
 }
 
 for name, map in pairs(transport_belts) do
-	reskins.lib.apply_skin.transport_belt(name, map.tier, nil, make_tier_labels, map.use_express_spritesheet, map.reskin_vanilla_entity)
+	reskins.lib.apply_skin.transport_belt(
+		name,
+		map.tier,
+		nil,
+		make_tier_labels,
+		map.use_express_spritesheet,
+		map.reskin_vanilla_entity
+	)
 end
 
 -- UNDERGROUND BELTS

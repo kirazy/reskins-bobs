@@ -15,10 +15,30 @@ local inputs = {
 ---@type CreateIconsFromListTable
 local technologies = {
 	-- Roboport modular equipment
-	["bob-personal-roboport-modular-equipment-1"] = { icon_name = "modular-equipment", icon_base = "modular-equipment-1", tier = 1, prog_tier = 2 },
-	["bob-personal-roboport-modular-equipment-2"] = { icon_name = "modular-equipment", icon_base = "modular-equipment-2", tier = 2, prog_tier = 3 },
-	["bob-personal-roboport-modular-equipment-3"] = { icon_name = "modular-equipment", icon_base = "modular-equipment-3", tier = 3, prog_tier = 4 },
-	["bob-personal-roboport-modular-equipment-4"] = { icon_name = "modular-equipment", icon_base = "modular-equipment-4", tier = 4, prog_tier = 5 },
+	["bob-personal-roboport-modular-equipment-1"] = {
+		icon_name = "modular-equipment",
+		icon_base = "modular-equipment-1",
+		tier = 1,
+		prog_tier = 2,
+	},
+	["bob-personal-roboport-modular-equipment-2"] = {
+		icon_name = "modular-equipment",
+		icon_base = "modular-equipment-2",
+		tier = 2,
+		prog_tier = 3,
+	},
+	["bob-personal-roboport-modular-equipment-3"] = {
+		icon_name = "modular-equipment",
+		icon_base = "modular-equipment-3",
+		tier = 3,
+		prog_tier = 4,
+	},
+	["bob-personal-roboport-modular-equipment-4"] = {
+		icon_name = "modular-equipment",
+		icon_base = "modular-equipment-4",
+		tier = 4,
+		prog_tier = 5,
+	},
 
 	-- Solar panels
 	["solar-panel-equipment"] = { icon_name = "solar-panel", tier = 1, prog_tier = 2 },

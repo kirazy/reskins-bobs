@@ -19,10 +19,30 @@ local items = {
 	["bob-repair-pack-5"] = { tier = 5, icon_name = "repair-pack", type = "repair-tool", make_entity_pictures = true },
 
 	-- Roboport parts
-	["bob-roboport-chargepad-1"] = { tier = 1, prog_tier = 2, icon_name = "roboport-chargepad", icon_base = "roboport-chargepad-1" },
-	["bob-roboport-chargepad-2"] = { tier = 2, prog_tier = 3, icon_name = "roboport-chargepad", icon_base = "roboport-chargepad-2" },
-	["bob-roboport-chargepad-3"] = { tier = 3, prog_tier = 4, icon_name = "roboport-chargepad", icon_base = "roboport-chargepad-3" },
-	["bob-roboport-chargepad-4"] = { tier = 4, prog_tier = 5, icon_name = "roboport-chargepad", icon_base = "roboport-chargepad-4" },
+	["bob-roboport-chargepad-1"] = {
+		tier = 1,
+		prog_tier = 2,
+		icon_name = "roboport-chargepad",
+		icon_base = "roboport-chargepad-1",
+	},
+	["bob-roboport-chargepad-2"] = {
+		tier = 2,
+		prog_tier = 3,
+		icon_name = "roboport-chargepad",
+		icon_base = "roboport-chargepad-2",
+	},
+	["bob-roboport-chargepad-3"] = {
+		tier = 3,
+		prog_tier = 4,
+		icon_name = "roboport-chargepad",
+		icon_base = "roboport-chargepad-3",
+	},
+	["bob-roboport-chargepad-4"] = {
+		tier = 4,
+		prog_tier = 5,
+		icon_name = "roboport-chargepad",
+		icon_base = "roboport-chargepad-4",
+	},
 
 	["bob-roboport-antenna-1"] = { subgroup = "roboport-antenna", flat_icon = true, make_icon_pictures = false },
 	["bob-roboport-antenna-2"] = { subgroup = "roboport-antenna", flat_icon = true, make_icon_pictures = false },
@@ -52,7 +72,10 @@ local items = {
 }
 
 -- Disable select items based on Bob's settings
-if reskins.lib.settings.get_value("bobmods-logistics-flyingrobotframes") == false or reskins.lib.settings.get_value("bobmods-logistics-robotparts") == false then
+if
+	reskins.lib.settings.get_value("bobmods-logistics-flyingrobotframes") == false
+	or reskins.lib.settings.get_value("bobmods-logistics-robotparts") == false
+then
 	items["flying-robot-frame"] = nil
 end
 

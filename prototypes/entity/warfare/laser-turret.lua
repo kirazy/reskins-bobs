@@ -143,7 +143,11 @@ end
 local function turret_shooting_glow(lens)
 	---@type data.RotatedAnimation
 	local rotated_animation = {
-		filename = "__reskins-bobs__/graphics/entity/warfare/beam/" .. lens .. "/" .. lens .. "-laser-turret-shooting-light.png",
+		filename = "__reskins-bobs__/graphics/entity/warfare/beam/"
+			.. lens
+			.. "/"
+			.. lens
+			.. "-laser-turret-shooting-light.png",
 		line_length = 8,
 		width = 122,
 		height = 116,

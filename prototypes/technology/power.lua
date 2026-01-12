@@ -59,22 +59,74 @@ end
 
 if reskins.bobs.triggers.power.steam then
 	-- Boilers
-	technologies["bob-boiler-2"] = { tier = 2, icon_name = "boiler", technology_icon_size = 128, technology_icon_extras = boiler_icon_extra }
-	technologies["bob-boiler-3"] = { tier = 3, icon_name = "boiler", technology_icon_size = 128, technology_icon_extras = boiler_icon_extra }
-	technologies["bob-boiler-4"] = { tier = 4, icon_name = "boiler", technology_icon_size = 128, technology_icon_extras = boiler_icon_extra }
-	technologies["bob-boiler-5"] = { tier = 5, icon_name = "boiler", technology_icon_size = 128, technology_icon_extras = boiler_icon_extra }
+	technologies["bob-boiler-2"] =
+		{ tier = 2, icon_name = "boiler", technology_icon_size = 128, technology_icon_extras = boiler_icon_extra }
+	technologies["bob-boiler-3"] =
+		{ tier = 3, icon_name = "boiler", technology_icon_size = 128, technology_icon_extras = boiler_icon_extra }
+	technologies["bob-boiler-4"] =
+		{ tier = 4, icon_name = "boiler", technology_icon_size = 128, technology_icon_extras = boiler_icon_extra }
+	technologies["bob-boiler-5"] =
+		{ tier = 5, icon_name = "boiler", technology_icon_size = 128, technology_icon_extras = boiler_icon_extra }
 
 	-- Oil boilers
-	technologies["bob-oil-boiler-1"] = { tier = 1, prog_tier = 2, icon_name = "oil-boiler", technology_icon_size = 128, technology_icon_extras = oil_boiler_icon_extra }
-	technologies["bob-oil-boiler-2"] = { tier = 2, prog_tier = 3, icon_name = "oil-boiler", technology_icon_size = 128, technology_icon_extras = oil_boiler_icon_extra }
-	technologies["bob-oil-boiler-3"] = { tier = 3, prog_tier = 4, icon_name = "oil-boiler", technology_icon_size = 128, technology_icon_extras = oil_boiler_icon_extra }
-	technologies["bob-oil-boiler-4"] = { tier = 4, prog_tier = 5, icon_name = "oil-boiler", technology_icon_size = 128, technology_icon_extras = oil_boiler_icon_extra }
+	technologies["bob-oil-boiler-1"] = {
+		tier = 1,
+		prog_tier = 2,
+		icon_name = "oil-boiler",
+		technology_icon_size = 128,
+		technology_icon_extras = oil_boiler_icon_extra,
+	}
+	technologies["bob-oil-boiler-2"] = {
+		tier = 2,
+		prog_tier = 3,
+		icon_name = "oil-boiler",
+		technology_icon_size = 128,
+		technology_icon_extras = oil_boiler_icon_extra,
+	}
+	technologies["bob-oil-boiler-3"] = {
+		tier = 3,
+		prog_tier = 4,
+		icon_name = "oil-boiler",
+		technology_icon_size = 128,
+		technology_icon_extras = oil_boiler_icon_extra,
+	}
+	technologies["bob-oil-boiler-4"] = {
+		tier = 4,
+		prog_tier = 5,
+		icon_name = "oil-boiler",
+		technology_icon_size = 128,
+		technology_icon_extras = oil_boiler_icon_extra,
+	}
 
 	-- Heat exchangers
-	technologies["bob-heat-exchanger-1"] = { tier = 1, prog_tier = 2, icon_name = "heat-exchanger", technology_icon_size = 128, icon_base = "heat-exchanger-base" }
-	technologies["bob-heat-exchanger-2"] = { tier = 2, prog_tier = 3, icon_name = "heat-exchanger", technology_icon_size = 128, icon_base = "heat-exchanger-aluminum-invar" }
-	technologies["bob-heat-exchanger-3"] = { tier = 3, prog_tier = 4, icon_name = "heat-exchanger", technology_icon_size = 128, icon_base = "heat-exchanger-silver-titanium" }
-	technologies["bob-heat-exchanger-4"] = { tier = 4, prog_tier = 5, icon_name = "heat-exchanger", technology_icon_size = 128, icon_base = "heat-exchanger-gold-copper" }
+	technologies["bob-heat-exchanger-1"] = {
+		tier = 1,
+		prog_tier = 2,
+		icon_name = "heat-exchanger",
+		technology_icon_size = 128,
+		icon_base = "heat-exchanger-base",
+	}
+	technologies["bob-heat-exchanger-2"] = {
+		tier = 2,
+		prog_tier = 3,
+		icon_name = "heat-exchanger",
+		technology_icon_size = 128,
+		icon_base = "heat-exchanger-aluminum-invar",
+	}
+	technologies["bob-heat-exchanger-3"] = {
+		tier = 3,
+		prog_tier = 4,
+		icon_name = "heat-exchanger",
+		technology_icon_size = 128,
+		icon_base = "heat-exchanger-silver-titanium",
+	}
+	technologies["bob-heat-exchanger-4"] = {
+		tier = 4,
+		prog_tier = 5,
+		icon_name = "heat-exchanger",
+		technology_icon_size = 128,
+		icon_base = "heat-exchanger-gold-copper",
+	}
 
 	-- Steam engines
 	technologies["bob-steam-engine-2"] = { tier = 2, icon_name = "steam-engine", technology_icon_size = 128 }
@@ -83,9 +135,12 @@ if reskins.bobs.triggers.power.steam then
 	technologies["bob-steam-engine-5"] = { tier = 5, icon_name = "steam-engine", technology_icon_size = 128 }
 
 	-- Steam turbines
-	technologies["bob-steam-turbine-1"] = { tier = 1, prog_tier = 3, icon_name = "steam-turbine", technology_icon_size = 128 }
-	technologies["bob-steam-turbine-2"] = { tier = 2, prog_tier = 4, icon_name = "steam-turbine", technology_icon_size = 128 }
-	technologies["bob-steam-turbine-3"] = { tier = 3, prog_tier = 5, icon_name = "steam-turbine", technology_icon_size = 128 }
+	technologies["bob-steam-turbine-1"] =
+		{ tier = 1, prog_tier = 3, icon_name = "steam-turbine", technology_icon_size = 128 }
+	technologies["bob-steam-turbine-2"] =
+		{ tier = 2, prog_tier = 4, icon_name = "steam-turbine", technology_icon_size = 128 }
+	technologies["bob-steam-turbine-3"] =
+		{ tier = 3, prog_tier = 5, icon_name = "steam-turbine", technology_icon_size = 128 }
 end
 
 if reskins.bobs.triggers.power.fluidgenerator then
@@ -93,7 +148,8 @@ if reskins.bobs.triggers.power.fluidgenerator then
 	technologies["bob-fluid-generator-1"] = { tier = 1, prog_tier = 2, icon_name = "fluid-generator" }
 	technologies["bob-fluid-generator-2"] = { tier = 2, prog_tier = 3, icon_name = "fluid-generator" }
 	technologies["bob-fluid-generator-3"] = { tier = 3, prog_tier = 4, icon_name = "fluid-generator" }
-	technologies["bob-hydrazine-generator"] = { tier = 4, prog_tier = 5, icon_name = "fluid-generator", tint = reskins.bobs.hydrazine_tint }
+	technologies["bob-hydrazine-generator"] =
+		{ tier = 4, prog_tier = 5, icon_name = "fluid-generator", tint = reskins.bobs.hydrazine_tint }
 end
 
 if reskins.bobs.triggers.power.heatsources then

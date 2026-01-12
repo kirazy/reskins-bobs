@@ -95,7 +95,9 @@ local function get_beacon_base_animation_element(beacon_tier, tint)
 				},
 				-- Highlights
 				{
-					filename = "__reskins-bobs__/graphics/entity/modules/beacon/beacon-" .. beacon_tier .. "-bottom-highlights.png",
+					filename = "__reskins-bobs__/graphics/entity/modules/beacon/beacon-"
+						.. beacon_tier
+						.. "-bottom-highlights.png",
 					width = 212,
 					height = 192,
 					shift = util.by_pixel(0.5, 1),
@@ -239,7 +241,8 @@ for name, map in pairs(tier_map) do
 		goto continue
 	end
 
-	local tier = (reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map") and map.prog_tier or map.tier
+	local tier = (reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map") and map.prog_tier
+		or map.tier
 
 	inputs.tint = reskins.lib.tiers.get_tint(tier)
 

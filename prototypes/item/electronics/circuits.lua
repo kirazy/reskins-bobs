@@ -49,17 +49,29 @@ local function get_tinted_circuit_icon(prototype_name, icon_name, tier)
 		type_name = "item",
 		icon_data = {
 			{
-				icon = "__reskins-bobs__/graphics/icons/electronics/circuits-tintable/" .. icon_name .. "/" .. icon_name .. "-icon-base.png",
+				icon = "__reskins-bobs__/graphics/icons/electronics/circuits-tintable/"
+					.. icon_name
+					.. "/"
+					.. icon_name
+					.. "-icon-base.png",
 				icon_size = 64,
 				tint = util.get_color_with_alpha(reskins.lib.tiers.get_tint(tier), 1),
 			},
 			{
-				icon = "__reskins-bobs__/graphics/icons/electronics/circuits-tintable/" .. icon_name .. "/" .. icon_name .. "-icon-highlights.png",
+				icon = "__reskins-bobs__/graphics/icons/electronics/circuits-tintable/"
+					.. icon_name
+					.. "/"
+					.. icon_name
+					.. "-icon-highlights.png",
 				icon_size = 64,
 				tint = { 1, 1, 1, 0 },
 			},
 			{
-				icon = "__reskins-bobs__/graphics/icons/electronics/circuits-tintable/" .. icon_name .. "/" .. icon_name .. "-traces.png",
+				icon = "__reskins-bobs__/graphics/icons/electronics/circuits-tintable/"
+					.. icon_name
+					.. "/"
+					.. icon_name
+					.. "-traces.png",
 				icon_size = 64,
 			},
 		},
@@ -69,7 +81,8 @@ local function get_tinted_circuit_icon(prototype_name, icon_name, tier)
 end
 
 for name, data in pairs(circuit_map) do
-	local deferrable_icon = do_custom_color and get_tinted_circuit_icon(name, data.image_name, data.tier) or get_rendered_circuit_icon(name, data.image_name)
+	local deferrable_icon = do_custom_color and get_tinted_circuit_icon(name, data.image_name, data.tier)
+		or get_rendered_circuit_icon(name, data.image_name)
 
 	reskins.lib.icons.assign_deferrable_icon(deferrable_icon)
 end

@@ -20,16 +20,37 @@ local assembling_machines = {
 	["bob-assembling-machine-5"] = { tier = 5, flags = { sprite_set = 4 } },
 	["bob-assembling-machine-6"] = { tier = 6, flags = { sprite_set = 5 } },
 	-- Smoke stacks
-	["bob-burner-assembling-machine"] = { tier = 0, flags = { use_burner_set = true, is_small = reskins.bobs.triggers.assembly.burner_assembling_machine_is_small } },
+	["bob-burner-assembling-machine"] = {
+		tier = 0,
+		flags = { use_burner_set = true, is_small = reskins.bobs.triggers.assembly.burner_assembling_machine_is_small },
+	},
 	["bob-steam-assembling-machine"] = { tier = 0, flags = { use_steam_set = true } },
 	-- Electronics
-	["bob-electronics-machine-1"] = { tier = 1, prog_tier = 2, flags = { use_electronics_set = true, lights = 1, is_small = true } },
-	["bob-electronics-machine-2"] = { tier = 2, prog_tier = 4, flags = { use_electronics_set = true, lights = 2, is_small = true } },
-	["bob-electronics-machine-3"] = { tier = 3, prog_tier = 6, flags = { use_electronics_set = true, lights = 3, is_small = true } },
+	["bob-electronics-machine-1"] = {
+		tier = 1,
+		prog_tier = 2,
+		flags = { use_electronics_set = true, lights = 1, is_small = true },
+	},
+	["bob-electronics-machine-2"] = {
+		tier = 2,
+		prog_tier = 4,
+		flags = { use_electronics_set = true, lights = 2, is_small = true },
+	},
+	["bob-electronics-machine-3"] = {
+		tier = 3,
+		prog_tier = 6,
+		flags = { use_electronics_set = true, lights = 3, is_small = true },
+	},
 }
 
 for name, map in pairs(assembling_machines) do
-	reskins.lib.apply_skin.assembling_machine(name, is_progression and map.prog_tier or map.tier, map.tint, nil, map.flags)
+	reskins.lib.apply_skin.assembling_machine(
+		name,
+		is_progression and map.prog_tier or map.tier,
+		map.tint,
+		nil,
+		map.flags
+	)
 end
 
 -- CHEMICAL PLANTS (Note: Bob sets up in data-updates)

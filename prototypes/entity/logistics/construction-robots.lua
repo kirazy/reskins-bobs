@@ -18,7 +18,11 @@ local tier_map = {
 	["bob-construction-robot-2"] = { tier = 2, prog_tier = 3 },
 	["bob-construction-robot-3"] = { tier = 3, prog_tier = 4 },
 	["bob-construction-robot-4"] = { tier = 4, prog_tier = 5 },
-	["bob-construction-robot-5"] = { tier = 5, prog_tier = 6, fusion_robot_color = reskins.lib.settings.get_value("reskins-bobs-fusion-robot-color") },
+	["bob-construction-robot-5"] = {
+		tier = 5,
+		prog_tier = 6,
+		fusion_robot_color = reskins.lib.settings.get_value("reskins-bobs-fusion-robot-color"),
+	},
 }
 
 -- Animations

@@ -20,26 +20,32 @@ local function do_spidertron_icons(name)
 	local deferrable_icon = {
 		name = name,
 		type_name = "spider-vehicle",
-		icon_data = { {
-			icon = "__reskins-bobs__/graphics/icons/warfare/spidertron/" .. name .. ".png",
-			icon_size = 64,
-			scale = 0.5,
-		} },
+		icon_data = {
+			{
+				icon = "__reskins-bobs__/graphics/icons/warfare/spidertron/" .. name .. ".png",
+				icon_size = 64,
+				scale = 0.5,
+			},
+		},
 	}
 
 	reskins.lib.icons.assign_deferrable_icon(deferrable_icon)
 
-	item_with_entity_data.icon_tintables = { {
-		icon = "__reskins-bobs__/graphics/icons/warfare/spidertron/" .. name .. "-tintable.png",
-		icon_size = 64,
-		scale = 0.5,
-	} }
+	item_with_entity_data.icon_tintables = {
+		{
+			icon = "__reskins-bobs__/graphics/icons/warfare/spidertron/" .. name .. "-tintable.png",
+			icon_size = 64,
+			scale = 0.5,
+		},
+	}
 
-	item_with_entity_data.icon_tintable_masks = { {
-		icon = "__reskins-bobs__/graphics/icons/warfare/spidertron/" .. name .. "-tintable-mask.png",
-		icon_size = 64,
-		scale = 0.5,
-	} }
+	item_with_entity_data.icon_tintable_masks = {
+		{
+			icon = "__reskins-bobs__/graphics/icons/warfare/spidertron/" .. name .. "-tintable-mask.png",
+			icon_size = 64,
+			scale = 0.5,
+		},
+	}
 end
 
 for _, name in pairs(spidertrons) do

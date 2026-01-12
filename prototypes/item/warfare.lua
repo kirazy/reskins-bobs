@@ -46,10 +46,34 @@ end
 ---@type CreateIconsFromListTable
 local items = {
 	-- Robot tools
-	["bob-robot-tool-combat"] = { tier = 1, prog_tier = 2, icon_name = "robot-tool-combat", flat_icon = false, make_icon_pictures = true },
-	["bob-robot-tool-combat-2"] = { tier = 2, prog_tier = 3, icon_name = "robot-tool-combat", flat_icon = false, make_icon_pictures = true },
-	["bob-robot-tool-combat-3"] = { tier = 3, prog_tier = 4, icon_name = "robot-tool-combat", flat_icon = false, make_icon_pictures = true },
-	["bob-robot-tool-combat-4"] = { tier = 4, prog_tier = 5, icon_name = "robot-tool-combat", flat_icon = false, make_icon_pictures = true },
+	["bob-robot-tool-combat"] = {
+		tier = 1,
+		prog_tier = 2,
+		icon_name = "robot-tool-combat",
+		flat_icon = false,
+		make_icon_pictures = true,
+	},
+	["bob-robot-tool-combat-2"] = {
+		tier = 2,
+		prog_tier = 3,
+		icon_name = "robot-tool-combat",
+		flat_icon = false,
+		make_icon_pictures = true,
+	},
+	["bob-robot-tool-combat-3"] = {
+		tier = 3,
+		prog_tier = 4,
+		icon_name = "robot-tool-combat",
+		flat_icon = false,
+		make_icon_pictures = true,
+	},
+	["bob-robot-tool-combat-4"] = {
+		tier = 4,
+		prog_tier = 5,
+		icon_name = "robot-tool-combat",
+		flat_icon = false,
+		make_icon_pictures = true,
+	},
 
 	-- Bullets
 	["bob-bullet"] = get_item_overrides("bullets"),
@@ -116,13 +140,41 @@ local items = {
 	["bob-shotgun-uranium-shell"] = get_ammo_overrides("shells", "aura-shotgun-shell", uranium_tint),
 
 	-- Laser rifle batteries
-	["bob-laser-rifle-battery"] = get_ammo_overrides("laser-rifle-batteries", "laser-rifle-battery", util.color("#b3b3b3")),
-	["bob-laser-rifle-battery-ruby"] = get_ammo_overrides("laser-rifle-batteries", "laser-rifle-battery", util.color("#fa1928")),
-	["bob-laser-rifle-battery-sapphire"] = get_ammo_overrides("laser-rifle-batteries", "laser-rifle-battery", util.color("#0033ff")),
-	["bob-laser-rifle-battery-emerald"] = get_ammo_overrides("laser-rifle-batteries", "laser-rifle-battery", util.color("#13e35c")),
-	["bob-laser-rifle-battery-amethyst"] = get_ammo_overrides("laser-rifle-batteries", "laser-rifle-battery", util.color("#d414ff")),
-	["bob-laser-rifle-battery-topaz"] = get_ammo_overrides("laser-rifle-batteries", "laser-rifle-battery", util.color("#f0b414")),
-	["bob-laser-rifle-battery-diamond"] = get_ammo_overrides("laser-rifle-batteries", "laser-rifle-battery", util.color("#ffffff")),
+	["bob-laser-rifle-battery"] = get_ammo_overrides(
+		"laser-rifle-batteries",
+		"laser-rifle-battery",
+		util.color("#b3b3b3")
+	),
+	["bob-laser-rifle-battery-ruby"] = get_ammo_overrides(
+		"laser-rifle-batteries",
+		"laser-rifle-battery",
+		util.color("#fa1928")
+	),
+	["bob-laser-rifle-battery-sapphire"] = get_ammo_overrides(
+		"laser-rifle-batteries",
+		"laser-rifle-battery",
+		util.color("#0033ff")
+	),
+	["bob-laser-rifle-battery-emerald"] = get_ammo_overrides(
+		"laser-rifle-batteries",
+		"laser-rifle-battery",
+		util.color("#13e35c")
+	),
+	["bob-laser-rifle-battery-amethyst"] = get_ammo_overrides(
+		"laser-rifle-batteries",
+		"laser-rifle-battery",
+		util.color("#d414ff")
+	),
+	["bob-laser-rifle-battery-topaz"] = get_ammo_overrides(
+		"laser-rifle-batteries",
+		"laser-rifle-battery",
+		util.color("#f0b414")
+	),
+	["bob-laser-rifle-battery-diamond"] = get_ammo_overrides(
+		"laser-rifle-batteries",
+		"laser-rifle-battery",
+		util.color("#ffffff")
+	),
 
 	-- Artillery shells
 	["bob-atomic-artillery-shell"] = get_ammo_overrides("artillery-shells", "atomic-artillery-shell", uranium_tint),

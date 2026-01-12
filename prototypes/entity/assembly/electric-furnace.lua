@@ -10,16 +10,45 @@ end
 
 local electric_furnace_map = {
 	-- Standard furnaces
-	["electric-furnace"] = { icon_name = "electric-furnace", furnace = "standard", tier = 3, type = "furnace", tint = reskins.bobs.furnace_tint_index.standard },
+	["electric-furnace"] = {
+		icon_name = "electric-furnace",
+		furnace = "standard",
+		tier = 3,
+		type = "furnace",
+		tint = reskins.bobs.furnace_tint_index.standard,
+	},
 	["bob-electric-furnace-2"] = { icon_name = "electric-furnace", furnace = "standard", tier = 4, type = "furnace" },
 	["bob-electric-furnace-3"] = { icon_name = "electric-furnace", furnace = "standard", tier = 5, type = "furnace" },
 	-- Mixing furnace
-	["bob-electric-mixing-furnace"] = { furnace = "mixing", tier = 3, type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.mixing },
+	["bob-electric-mixing-furnace"] = {
+		furnace = "mixing",
+		tier = 3,
+		type = "assembling-machine",
+		tint = reskins.bobs.furnace_tint_index.mixing,
+	},
 	-- Chemical furnace
-	["bob-electric-chemical-furnace"] = { furnace = "chemical", tier = 3, type = "assembling-machine", tint = reskins.bobs.furnace_tint_index.chemical, has_fluids = true },
+	["bob-electric-chemical-furnace"] = {
+		furnace = "chemical",
+		tier = 3,
+		type = "assembling-machine",
+		tint = reskins.bobs.furnace_tint_index.chemical,
+		has_fluids = true,
+	},
 	-- Chemical mixing furnaces
-	["bob-electric-chemical-mixing-furnace"] = { icon_name = "bob-electric-chemical-mixing-furnace", furnace = "chemical-mixing", tier = 4, type = "assembling-machine", has_fluids = true },
-	["bob-electric-chemical-mixing-furnace-2"] = { icon_name = "bob-electric-chemical-mixing-furnace", furnace = "chemical-mixing", tier = 5, type = "assembling-machine", has_fluids = true },
+	["bob-electric-chemical-mixing-furnace"] = {
+		icon_name = "bob-electric-chemical-mixing-furnace",
+		furnace = "chemical-mixing",
+		tier = 4,
+		type = "assembling-machine",
+		has_fluids = true,
+	},
+	["bob-electric-chemical-mixing-furnace-2"] = {
+		icon_name = "bob-electric-chemical-mixing-furnace",
+		furnace = "chemical-mixing",
+		tier = 5,
+		type = "assembling-machine",
+		has_fluids = true,
+	},
 }
 
 -- Angel's Compatibility
@@ -242,7 +271,9 @@ for name, map in pairs(electric_furnace_map) do
 			},
 			-- Highlights
 			{
-				filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/" .. inputs.icon_name .. "-highlights.png",
+				filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/"
+					.. inputs.icon_name
+					.. "-highlights.png",
 				priority = "high",
 				width = 238,
 				height = 212,

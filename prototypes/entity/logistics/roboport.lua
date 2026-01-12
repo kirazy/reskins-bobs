@@ -73,7 +73,9 @@ for name, map in pairs(tier_map) do
 			},
 			-- Antenna
 			{
-				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/remnants/antennas/roboport-" .. map.image_index .. "-antenna-remnants.png",
+				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/remnants/antennas/roboport-"
+					.. map.image_index
+					.. "-antenna-remnants.png",
 				width = 364,
 				height = 358,
 				direction_count = 1,
@@ -82,7 +84,9 @@ for name, map in pairs(tier_map) do
 			},
 			-- Door
 			{
-				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/remnants/doors/roboport-" .. map.image_index .. "-door-remnants.png",
+				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/remnants/doors/roboport-"
+					.. map.image_index
+					.. "-door-remnants.png",
 				width = 364,
 				height = 358,
 				direction_count = 1,
@@ -176,7 +180,9 @@ for name, map in pairs(tier_map) do
 	}
 
 	entity.base_animation = {
-		filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/antennas/roboport-" .. map.image_index .. "-base-animation.png",
+		filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/antennas/roboport-"
+			.. map.image_index
+			.. "-base-animation.png",
 		priority = "medium",
 		width = 83,
 		height = 59,
@@ -187,7 +193,9 @@ for name, map in pairs(tier_map) do
 	}
 
 	entity.door_animation_up = {
-		filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/doors/roboport-" .. map.image_index .. "-door-up.png",
+		filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/doors/roboport-"
+			.. map.image_index
+			.. "-door-up.png",
 		priority = "medium",
 		width = 97,
 		height = 38,
@@ -197,7 +205,9 @@ for name, map in pairs(tier_map) do
 	}
 
 	entity.door_animation_down = {
-		filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/doors/roboport-" .. map.image_index .. "-door-down.png",
+		filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/doors/roboport-"
+			.. map.image_index
+			.. "-door-down.png",
 		priority = "medium",
 		width = 97,
 		height = 41,

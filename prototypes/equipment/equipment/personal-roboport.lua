@@ -46,7 +46,9 @@ for name, map in pairs(personal_roboports) do
 		layers = {
 			-- Base
 			{
-				filename = "__reskins-bobs__/graphics/equipment/equipment/personal-roboport/" .. inputs.icon_base .. "-equipment-base.png",
+				filename = "__reskins-bobs__/graphics/equipment/equipment/personal-roboport/"
+					.. inputs.icon_base
+					.. "-equipment-base.png",
 				size = 128,
 				priority = "medium",
 				flags = { "no-crop" },
@@ -54,7 +56,9 @@ for name, map in pairs(personal_roboports) do
 			},
 			-- Mask
 			{
-				filename = "__reskins-bobs__/graphics/equipment/equipment/personal-roboport/" .. inputs.icon_base .. "-equipment-mask.png",
+				filename = "__reskins-bobs__/graphics/equipment/equipment/personal-roboport/"
+					.. inputs.icon_base
+					.. "-equipment-mask.png",
 				size = 128,
 				priority = "medium",
 				flags = { "no-crop" },
@@ -63,7 +67,9 @@ for name, map in pairs(personal_roboports) do
 			},
 			-- Highlights
 			{
-				filename = "__reskins-bobs__/graphics/equipment/equipment/personal-roboport/" .. inputs.icon_base .. "-equipment-highlights.png",
+				filename = "__reskins-bobs__/graphics/equipment/equipment/personal-roboport/"
+					.. inputs.icon_base
+					.. "-equipment-highlights.png",
 				size = 128,
 				priority = "medium",
 				flags = { "no-crop" },

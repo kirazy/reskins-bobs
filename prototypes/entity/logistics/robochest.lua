@@ -119,7 +119,9 @@ for name, map in pairs(tier_map) do
 	entity.base_animation = util.empty_sprite()
 
 	entity.door_animation_up = {
-		filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/doors/roboport-" .. map.image_index .. "-door-up.png",
+		filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/doors/roboport-"
+			.. map.image_index
+			.. "-door-up.png",
 		priority = "medium",
 		width = 97,
 		height = 38,
@@ -129,7 +131,9 @@ for name, map in pairs(tier_map) do
 	}
 
 	entity.door_animation_down = {
-		filename = "__reskins-bobs__/graphics/entity/logistics/robochest/doors/robochest-" .. map.image_index .. "-door-down.png",
+		filename = "__reskins-bobs__/graphics/entity/logistics/robochest/doors/robochest-"
+			.. map.image_index
+			.. "-door-down.png",
 		priority = "medium",
 		width = 97,
 		height = 45,

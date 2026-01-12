@@ -60,11 +60,33 @@ local intermediates = {
 	["bob-tungsten-gear-wheel"] = { subgroup = "gears" },
 
 	-- Nuclear
-	["bob-plutonium-fuel-cell"] = { subgroup = "nuclear", make_icon_pictures = true, icon_picture_extras = { reskins.lib.sprites.get_sprite_light_layer("fuel-cell") } },
-	["bob-thorium-fuel-cell"] = { subgroup = "nuclear", make_icon_pictures = true, icon_picture_extras = { reskins.lib.sprites.get_sprite_light_layer("fuel-cell") } },
-	["bob-thorium-plutonium-fuel-cell"] = { subgroup = "nuclear", make_icon_pictures = true, icon_picture_extras = { reskins.lib.sprites.get_sprite_light_layer("fuel-cell") } },
-	["bob-deuterium-fuel-cell"] = { subgroup = "nuclear", image = "bob-deuterium-fuel-cell-pink", make_icon_pictures = true, icon_picture_extras = { reskins.lib.sprites.get_sprite_light_layer("fuel-cell") } },
-	["bob-deuterium-fuel-cell-2"] = { subgroup = "nuclear", image = "bob-deuterium-fuel-cell-2-pink", make_icon_pictures = true, icon_picture_extras = { reskins.lib.sprites.get_sprite_light_layer("fuel-cell") } },
+	["bob-plutonium-fuel-cell"] = {
+		subgroup = "nuclear",
+		make_icon_pictures = true,
+		icon_picture_extras = { reskins.lib.sprites.get_sprite_light_layer("fuel-cell") },
+	},
+	["bob-thorium-fuel-cell"] = {
+		subgroup = "nuclear",
+		make_icon_pictures = true,
+		icon_picture_extras = { reskins.lib.sprites.get_sprite_light_layer("fuel-cell") },
+	},
+	["bob-thorium-plutonium-fuel-cell"] = {
+		subgroup = "nuclear",
+		make_icon_pictures = true,
+		icon_picture_extras = { reskins.lib.sprites.get_sprite_light_layer("fuel-cell") },
+	},
+	["bob-deuterium-fuel-cell"] = {
+		subgroup = "nuclear",
+		image = "bob-deuterium-fuel-cell-pink",
+		make_icon_pictures = true,
+		icon_picture_extras = { reskins.lib.sprites.get_sprite_light_layer("fuel-cell") },
+	},
+	["bob-deuterium-fuel-cell-2"] = {
+		subgroup = "nuclear",
+		image = "bob-deuterium-fuel-cell-2-pink",
+		make_icon_pictures = true,
+		icon_picture_extras = { reskins.lib.sprites.get_sprite_light_layer("fuel-cell") },
+	},
 	["bob-depleted-thorium-fuel-cell"] = { subgroup = "nuclear" },
 	["bob-depleted-deuterium-fuel-cell"] = { subgroup = "nuclear", image = "bob-depleted-deuterium-fuel-cell-pink" },
 	["bob-plutonium-239"] = {
@@ -137,7 +159,11 @@ local recipes = {
 	-- Nuclear
 	["bob-thorium-processing"] = { type = "recipe", subgroup = "recipes" },
 	["bob-thorium-fuel-reprocessing"] = { type = "recipe", subgroup = "recipes" },
-	["bob-deuterium-fuel-reprocessing"] = { type = "recipe", subgroup = "recipes", image = "bob-deuterium-fuel-reprocessing-pink" },
+	["bob-deuterium-fuel-reprocessing"] = {
+		type = "recipe",
+		subgroup = "recipes",
+		image = "bob-deuterium-fuel-reprocessing-pink",
+	},
 	["bobingabout-enrichment-process"] = { type = "recipe", subgroup = "recipes" },
 
 	-- Solid Fuels

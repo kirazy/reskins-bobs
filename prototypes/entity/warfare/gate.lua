@@ -32,7 +32,13 @@ reskins.lib.set_inputs_defaults(inputs)
 reskins.lib.create_explosion(entity_name, inputs)
 
 for particle, key in pairs(inputs.particles) do
-	reskins.lib.create_particle(entity_name, inputs.base_entity_name, reskins.lib.particle_index[particle], key, reinforced_tint_index[particle])
+	reskins.lib.create_particle(
+		entity_name,
+		inputs.base_entity_name,
+		reskins.lib.particle_index[particle],
+		key,
+		reinforced_tint_index[particle]
+	)
 end
 
 -- Create remnants

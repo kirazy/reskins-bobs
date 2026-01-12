@@ -60,7 +60,9 @@ local function get_remnant_animation(tint, is_water_miner)
 		layers = {
 			-- Base
 			{
-				filename = is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/remnants/water-pumpjack-remnants-base.png" or "__base__/graphics/entity/pumpjack/remnants/pumpjack-remnants.png",
+				filename = is_water_miner
+						and "__reskins-bobs__/graphics/entity/mining/pumpjack/remnants/water-pumpjack-remnants-base.png"
+					or "__base__/graphics/entity/pumpjack/remnants/pumpjack-remnants.png",
 				width = 274,
 				height = 284,
 				direction_count = 1,
@@ -117,13 +119,27 @@ for name, map in pairs(tier_map) do
 	if max_speed - min_speed == 0 then
 		animation_speed = entity.mining_speed
 	else
-		animation_speed = ((entity.mining_speed / (max_speed - min_speed)) - (min_speed / (max_speed - min_speed))) * max_playback + ((max_speed / (max_speed - min_speed)) - (entity.mining_speed / (max_speed - min_speed))) * min_playback
+		animation_speed = ((entity.mining_speed / (max_speed - min_speed)) - (min_speed / (max_speed - min_speed)))
+				* max_playback
+			+ ((max_speed / (max_speed - min_speed)) - (entity.mining_speed / (max_speed - min_speed))) * min_playback
 	end
 
 	-- Reskin base particles if we're a water pump
 	if map.is_water_miner then
-		reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["big"], 1, util.color("#3083bf"))
-		reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["medium"], 2, util.color("#3083bf"))
+		reskins.lib.create_particle(
+			name,
+			inputs.base_entity_name,
+			reskins.lib.particle_index["big"],
+			1,
+			util.color("#3083bf")
+		)
+		reskins.lib.create_particle(
+			name,
+			inputs.base_entity_name,
+			reskins.lib.particle_index["medium"],
+			2,
+			util.color("#3083bf")
+		)
 	end
 
 	-- Fetch remnants
@@ -138,7 +154,8 @@ for name, map in pairs(tier_map) do
 		sheets = {
 			-- Base
 			{
-				filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/water-pumpjack-base.png" or "__base__/graphics/entity/pumpjack/pumpjack-base.png",
+				filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/water-pumpjack-base.png"
+					or "__base__/graphics/entity/pumpjack/pumpjack-base.png",
 				priority = "extra-high",
 				width = 261,
 				height = 273,
@@ -163,7 +180,9 @@ for name, map in pairs(tier_map) do
 				-- Base
 				{
 					priority = "high",
-					filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/water-pumpjack-horsehead.png" or "__base__/graphics/entity/pumpjack/pumpjack-horsehead.png",
+					filename = map.is_water_miner
+							and "__reskins-bobs__/graphics/entity/mining/pumpjack/water-pumpjack-horsehead.png"
+						or "__base__/graphics/entity/pumpjack/pumpjack-horsehead.png",
 					animation_speed = animation_speed,
 					repeat_count = 6,
 					scale = 0.5,
