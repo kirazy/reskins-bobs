@@ -23,7 +23,7 @@ local ores = {
 	["bob-nickel-ore"] = { key = "lib", subfolder = "shared" }, -- 408073
 	["bob-quartz"] = { key = "lib", subfolder = "shared" }, -- 999999
 	["bob-silver-ore"] = { key = "lib", subfolder = "shared" },
-	["tungsten-ore"] = { key = "lib", subfolder = "shared", num_variations = 8 },
+	["tungsten-ore"] = { key = "lib", subfolder = "shared", filename = "bob-tungsten-ore", num_variations = 8 },
 	["bob-zinc-ore"] = { key = "lib", subfolder = "shared" },
 }
 
@@ -44,17 +44,18 @@ for name, params in pairs(ores) do
 			},
 		})
 	else
+		local sprite_name = params.filename or name
 		reskins.lib.icons.assign_deferrable_icon({
 			name = entity.name,
 			type_name = entity.type,
 			icon_data = {
 				{
-					icon = reskins[params.key].directory .. "/graphics/icons/" .. params.subfolder .. "/ores/" .. name .. "/" .. name .. ".png",
+					icon = reskins[params.key].directory .. "/graphics/icons/" .. params.subfolder .. "/ores/" .. sprite_name .. "/" .. sprite_name .. ".png",
 					icon_size = 64,
 					scale = 0.5,
 				},
 			},
-			pictures = reskins.internal.create_sprite_variations(params.key, params.subfolder .. "/ores", name, params.num_variations or 4, params.is_light),
+			pictures = reskins.internal.create_sprite_variations(params.key, params.subfolder .. "/ores", sprite_name, params.num_variations or 4, params.is_light),
 		})
 	end
 
