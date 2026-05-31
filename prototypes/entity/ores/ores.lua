@@ -23,7 +23,7 @@ local ores = {
 	["bob-nickel-ore"] = { key = "lib", subfolder = "shared" }, -- 408073
 	["bob-quartz"] = { key = "lib", subfolder = "shared" }, -- 999999
 	["bob-silver-ore"] = { key = "lib", subfolder = "shared" },
-	["bob-tungsten-ore"] = { key = "lib", subfolder = "shared", num_variations = 8 },
+	["tungsten-ore"] = { key = "lib", subfolder = "shared", num_variations = 8 },
 	["bob-zinc-ore"] = { key = "lib", subfolder = "shared" },
 }
 

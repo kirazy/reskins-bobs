@@ -20,7 +20,7 @@ local inputs = {
 }
 
 local tier_map = {
-	["bob-sniper-turret-1"] = { tier = 1, prog_tier = 1 },
+	["bob-sniper-turret-1"] = { tier = 1, prog_tier = 2 },
 	["bob-sniper-turret-2"] = { tier = 2, prog_tier = 3 },
 	["bob-sniper-turret-3"] = { tier = 3, prog_tier = 5 },
 }

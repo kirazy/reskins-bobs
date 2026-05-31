@@ -24,7 +24,7 @@ local ores = {
 	"bob-nickel-ore",
 	"bob-quartz",
 	"bob-silver-ore",
-	"bob-tungsten-ore",
+	"tungsten-ore",
 	"bob-zinc-ore",
 }
 

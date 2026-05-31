@@ -275,12 +275,6 @@ local technologies = {
 		technology_icon_size = 256,
 	},
 
-	-- copper-tungsten, tungsten carbide, c-tun-pipes
-	["bob-tungsten-alloy-processing"] = {
-		subgroup = "plates",
-		technology_icon_size = 256,
-	},
-
 	-- nitinol plate, gear, bearing, ball,. pipes
 	["bob-nitinol-processing"] = {
 		subgroup = "plates",
@@ -294,6 +288,7 @@ local technologies = {
 	},
 
 	-- tungsten plate, gear, pipe, acid, oxide, powdered
+	-- copper-tungsten, tungsten carbide, c-tun-pipes
 	["bob-tungsten-processing"] = {
 		subgroup = "plates",
 		technology_icon_size = 256,
