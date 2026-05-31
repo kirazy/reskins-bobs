@@ -77,7 +77,7 @@ local pipe_material_map = {
 	["bob-bronze"] = { material_type = "bronze", tier = 2, tint = util.color("#b09954") },
 	["bob-steel"] = { material_type = "steel", tier = 2, tint = util.color("#877c76") },
 	["bob-plastic"] = { material_type = "plastic", tier = 3, tint = util.color("#0078ff") },
-	["bob-aluminium"] = { material_type = "ceramic", tier = 3, tint = util.color("#8f7967") },
+	["bob-aluminium"] = { material_type = "aluminum", tier = 3, tint = util.color("#b3b7b9") },
 	["bob-brass"] = { material_type = "brass", tier = 4, tint = util.color("#f9c854") },
 	["bob-titanium"] = { material_type = "titanium", tier = 4, tint = util.color("#adadb2") },
 	["bob-tungsten"] = { material_type = "tungsten", tier = 5, tint = util.color("#3b3b3b") },
