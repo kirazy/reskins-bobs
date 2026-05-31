@@ -20,9 +20,9 @@ local inputs = {
 reskins.lib.set_inputs_defaults(inputs)
 
 local exoskeletons = {
-	["exoskeleton-equipment"] = { tier = 1, prog_tier = 3 },
-	["bob-exoskeleton-equipment-2"] = { tier = 2, prog_tier = 4 },
-	["bob-exoskeleton-equipment-3"] = { tier = 3, prog_tier = 5 },
+	["exoskeleton-equipment"] = { tier = 1, prog_tier = 2 },
+	["bob-exoskeleton-equipment-2"] = { tier = 2, prog_tier = 3 },
+	["bob-exoskeleton-equipment-3"] = { tier = 3, prog_tier = 4 },
 }
 
 -- Reskin equipment
