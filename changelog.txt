@@ -10,6 +10,8 @@ Date: ????
       - Barrelling Pumps and Compressors (2, 3, -> 1, 2)
       - Exoskeletons (3, 4, 5 -> 2, 3, 4)
       - Sniper Turrets (1 -> 2)
+  Bugfixes:
+    - Fixed that Bob's overflow, top-up and one-way valves were not reskinned
 ---------------------------------------------------------------------------------------------------
 Version: 2.3.6
 Date: 2026-01-03
