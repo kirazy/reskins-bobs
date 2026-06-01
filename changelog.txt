@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.3.7
-Date: ????
+Date: 2026-05-31
   Changes:
     - Adjustments to support changes made for Bob's mods 2.1+.
     - Progression tiers have changed for the following entities when used with Bob's mods 2.1+:
