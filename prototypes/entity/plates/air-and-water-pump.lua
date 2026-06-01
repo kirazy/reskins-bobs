@@ -29,6 +29,13 @@ local tier_map = {
 	["bob-air-pump-4"] = { tier = 4, prog_tier = 4, pump_type = "air" },
 }
 
+if reskins.lib.version.is_older(mods["boblibrary"], "2.1.0") then
+	tier_map["bob-water-pump-3"].prog_tier = 4
+	tier_map["bob-water-pump-4"].prog_tier = 5
+	tier_map["bob-air-pump-3"].prog_tier = 4
+	tier_map["bob-air-pump-4"].prog_tier = 5
+end
+
 local function generate_recipe_mask(pump_type, layer, blend_mode)
 	local recipe_mask = reskins.lib.sprites.make_4way_animation_from_spritesheet({
 		filename = "__reskins-bobs__/graphics/entity/plates/" .. pump_type .. "-pump/" .. pump_type .. "-pump-recipe-" .. layer .. ".png",

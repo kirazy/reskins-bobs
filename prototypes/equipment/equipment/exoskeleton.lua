@@ -25,6 +25,12 @@ local exoskeletons = {
 	["bob-exoskeleton-equipment-3"] = { tier = 3, prog_tier = 4 },
 }
 
+if reskins.lib.version.is_older(mods["boblibrary"], "2.1.0") then
+	exoskeletons["exoskeleton-equipment"].prog_tier = 3
+	exoskeletons["bob-exoskeleton-equipment-2"].prog_tier = 4
+	exoskeletons["bob-exoskeleton-equipment-3"].prog_tier = 5
+end
+
 -- Reskin equipment
 for name, map in pairs(exoskeletons) do
 	-- Fetch equipment

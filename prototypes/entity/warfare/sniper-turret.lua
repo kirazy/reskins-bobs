@@ -25,6 +25,10 @@ local tier_map = {
 	["bob-sniper-turret-3"] = { tier = 3, prog_tier = 5 },
 }
 
+if reskins.lib.version.is_older(mods["boblibrary"], "2.1.0") then
+	tier_map["bob-sniper-turret-1"].prog_tier = 1
+end
+
 ---@param parameters? TurretAnimationParameters
 ---@return data.RotatedAnimation
 local function get_sniper_turret_extension_base(parameters)

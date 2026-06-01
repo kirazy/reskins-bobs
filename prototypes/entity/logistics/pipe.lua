@@ -84,6 +84,15 @@ local pipe_material_map = {
 	["bob-copper-tungsten"] = { material_type = "copper-tungsten", tier = 5, tint = util.color("#99593d") },
 }
 
+if reskins.lib.version.is_older(mods["boblibrary"], "2.1.0") then
+	pipe_material_map["bob-stone"] = { material_type = "stone", tier = 1, tint = util.color("#cfcfcf") }
+	pipe_material_map["bob-ceramic"] = { material_type = "ceramic", tier = 4, tint = util.color("#8f7967") }
+	pipe_material_map["bob-nitinol"] = { material_type = "nitinol", tier = 5, tint = util.color("#706f6b") }
+
+	pipe_material_map["bob-brass"].tier = 3
+	pipe_material_map["bob-tungsten"].tier = 4
+end
+
 -- One-off fixes of the standard pipes.
 if reskins.lib.tiers.is_pipe_tier_labeling_enabled then
 	reskins.lib.tiers.add_tier_labels_to_prototype_by_name(1, "pipe", "pipe")
