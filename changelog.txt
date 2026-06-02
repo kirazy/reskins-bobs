@@ -2,6 +2,7 @@
 Version: 2.3.8
 Date: ????
   Changes:
+    - Revised how heat pipe sprites are handled to avoid issues related to modified base-mod global functions
 ---------------------------------------------------------------------------------------------------
 Version: 2.3.7
 Date: 2026-05-31
