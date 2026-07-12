@@ -40,6 +40,7 @@ local light_tint_map = {
 }
 
 local laser_beam_blend_mode = "additive"
+local beam_non_light_flags = { "trilinear-filtering" }
 
 for name, lens in pairs(beam_map) do
 	---@type data.BeamPrototype
