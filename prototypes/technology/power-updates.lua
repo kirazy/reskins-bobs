@@ -29,12 +29,27 @@ local material_tiers = {
 
 -- Nuclear reactors
 if reskins.bobs.triggers.power.nuclear then
-	technologies["nuclear-power"] = { tier = 1, prog_tier = 3, icon_name = "nuclear-power", tint = reskins.bobs.nuclear_reactor_index["nuclear-reactor"].tint } -- t3 reactor
-	technologies["nuclear-power"].icon_base = "nuclear-power-uranium-" .. material_tiers[1]
-	technologies["bob-nuclear-power-2"] = { tier = 2, prog_tier = 4, icon_name = "nuclear-power", tint = reskins.bobs.nuclear_reactor_index["bob-nuclear-reactor-2"].tint } -- t4 reactor
-	technologies["bob-nuclear-power-2"].icon_base = "nuclear-power-uranium-" .. material_tiers[2]
-	technologies["bob-nuclear-power-3"] = { tier = 3, prog_tier = 5, icon_name = "nuclear-power", tint = reskins.bobs.nuclear_reactor_index["bob-nuclear-reactor-3"].tint } -- t5 reactor
-	technologies["bob-nuclear-power-3"].icon_base = "nuclear-power-uranium-" .. material_tiers[3]
+	technologies["nuclear-power"] = {
+		tier = 1,
+		prog_tier = 3,
+		icon_name = "nuclear-power",
+		icon_base = "nuclear-power-uranium-" .. material_tiers[1],
+		tint = reskins.bobs.nuclear_reactor_index["nuclear-reactor"].tint,
+	}
+	technologies["bob-nuclear-power-2"] = {
+		tier = 2,
+		prog_tier = 4,
+		icon_name = "nuclear-power",
+		icon_base = "nuclear-power-uranium-" .. material_tiers[2],
+		tint = reskins.bobs.nuclear_reactor_index["bob-nuclear-reactor-2"].tint,
+	}
+	technologies["bob-nuclear-power-3"] = {
+		tier = 3,
+		prog_tier = 5,
+		icon_name = "nuclear-power",
+		icon_base = "nuclear-power-uranium-" .. material_tiers[3],
+		tint = reskins.bobs.nuclear_reactor_index["bob-nuclear-reactor-3"].tint,
+	}
 
 	if reskins.lib.settings.get_value("bobmods-revamp-nuclear") == true then
 		technologies["bob-nuclear-power-2"].icon_base = "nuclear-power-thorium-" .. material_tiers[2]

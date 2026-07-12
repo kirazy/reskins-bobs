@@ -150,6 +150,7 @@ for name, map in pairs(tier_map) do
 		layers = {
 			-- Base
 			{
+				--stylua: ignore
 				filename = "__reskins-bobs__/graphics/entity/power/accumulator/remnants/wires/accumulator-" .. inputs.wire .. "-remnants.png",
 				width = 172,
 				height = 146,

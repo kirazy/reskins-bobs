@@ -38,6 +38,7 @@ end
 
 local function generate_recipe_mask(pump_type, layer, blend_mode)
 	local recipe_mask = reskins.lib.sprites.make_4way_animation_from_spritesheet({
+		--stylua: ignore
 		filename = "__reskins-bobs__/graphics/entity/plates/" .. pump_type .. "-pump/" .. pump_type .. "-pump-recipe-" .. layer .. ".png",
 		width = 128,
 		height = 176,
@@ -84,6 +85,7 @@ for name, map in pairs(tier_map) do
 		layers = {
 			-- Base
 			{
+				--stylua: ignore
 				filename = "__reskins-bobs__/graphics/entity/plates/" .. map.pump_type .. "-pump/" .. map.pump_type .. "-pump-base.png",
 				width = 148,
 				height = 186,
@@ -96,6 +98,7 @@ for name, map in pairs(tier_map) do
 			},
 			-- Mask
 			{
+				--stylua: ignore
 				filename = "__reskins-bobs__/graphics/entity/plates/" .. map.pump_type .. "-pump/" .. map.pump_type .. "-pump-mask.png",
 				width = 148,
 				height = 186,
@@ -109,6 +112,7 @@ for name, map in pairs(tier_map) do
 			},
 			-- Highlights
 			{
+				--stylua: ignore
 				filename = "__reskins-bobs__/graphics/entity/plates/" .. map.pump_type .. "-pump/" .. map.pump_type .. "-pump-highlights.png",
 				width = 148,
 				height = 186,
@@ -122,6 +126,7 @@ for name, map in pairs(tier_map) do
 			},
 			-- Shadow
 			{
+				--stylua: ignore
 				filename = "__reskins-bobs__/graphics/entity/plates/" .. map.pump_type .. "-pump/" .. map.pump_type .. "-pump-shadow.png",
 				width = 172,
 				height = 134,
@@ -232,6 +237,7 @@ for name, map in pairs(tier_map) do
 
 	entity.water_reflection = {
 		pictures = {
+			--stylua: ignore
 			filename = "__reskins-bobs__/graphics/entity/plates/" .. map.pump_type .. "-pump/" .. map.pump_type .. "-pump-reflection.png",
 			priority = "extra-high",
 			width = 28,

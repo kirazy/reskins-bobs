@@ -55,11 +55,13 @@ for name, params in pairs(ores) do
 			type_name = entity.type,
 			icon_data = {
 				{
+					--stylua: ignore
 					icon = reskins[params.key].directory .. "/graphics/icons/" .. params.subfolder .. "/ores/" .. sprite_name .. "/" .. sprite_name .. ".png",
 					icon_size = 64,
 					scale = 0.5,
 				},
 			},
+			--stylua: ignore
 			pictures = reskins.internal.create_sprite_variations(params.key, params.subfolder .. "/ores", sprite_name, params.num_variations or 4, params.is_light),
 		})
 	end

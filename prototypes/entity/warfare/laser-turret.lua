@@ -148,6 +148,7 @@ end
 local function turret_shooting_glow(lens)
 	---@type data.RotatedAnimation
 	local rotated_animation = {
+		--stylua: ignore
 		filename = "__reskins-bobs__/graphics/entity/warfare/beam/" .. lens .. "/" .. lens .. "-laser-turret-shooting-light.png",
 		line_length = 8,
 		width = 122,

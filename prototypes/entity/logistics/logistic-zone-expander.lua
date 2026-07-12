@@ -47,6 +47,7 @@ for name, map in pairs(tier_map) do
 		layers = {
 			-- Base
 			{
+				--stylua: ignore
 				filename = "__reskins-bobs__/graphics/entity/logistics/zone-expander/zone-expander-" .. map.image_index .. "-base.png",
 				width = 56,
 				height = 156,
@@ -78,6 +79,7 @@ for name, map in pairs(tier_map) do
 		layers = {
 			-- Antenna
 			{
+				--stylua: ignore
 				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/antennas/roboport-" .. map.image_index .. "-base-animation.png",
 				priority = "medium",
 				width = 83,

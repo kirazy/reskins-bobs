@@ -63,6 +63,7 @@ local function skin_reactor_entity(name, tint, material)
 			},
 			-- Pipes
 			{
+				--stylua: ignore
 				filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-piping.png",
 				width = 302,
 				height = 318,
@@ -83,6 +84,7 @@ local function skin_reactor_entity(name, tint, material)
 
 	-- Pipes
 	entity.lower_layer_picture = {
+				--stylua: ignore
 		filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-base-pipes.png",
 		width = 320,
 		height = 316,
@@ -92,6 +94,7 @@ local function skin_reactor_entity(name, tint, material)
 
 	entity.connection_patches_connected = {
 		sheet = {
+				--stylua: ignore
 			filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-connect-patches.png",
 			width = 64,
 			height = 64,
@@ -102,6 +105,7 @@ local function skin_reactor_entity(name, tint, material)
 
 	entity.connection_patches_disconnected = {
 		sheet = {
+				--stylua: ignore
 			filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-connect-patches.png",
 			width = 64,
 			height = 64,
@@ -152,6 +156,7 @@ local function skin_reactor_remnants(name, tint, material)
 			},
 			-- Pipes
 			{
+				--stylua: ignore
 				filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-remnants.png",
 				width = 410,
 				height = 396,
@@ -183,7 +188,10 @@ for name, map in pairs(reactors) do
 	-- Create explosions
 	reskins.lib.create_explosion(name, inputs)
 
-	if reskins.lib.settings.get_value("bobmods-revamp-nuclear") == true and reskins.lib.settings.get_value("reskins-bobs-do-bobrevamp-reactor-color") == true then
+	if
+		reskins.lib.settings.get_value("bobmods-revamp-nuclear") == true
+		and reskins.lib.settings.get_value("reskins-bobs-do-bobrevamp-reactor-color") == true
+	then
 		inputs.reactor = reskins.bobs.nuclear_reactor_index[name]
 		inputs.tint = reskins.bobs.nuclear_reactor_index[name].tint
 

@@ -81,6 +81,7 @@ for name, map in pairs(tier_map) do
 			},
 			-- Shadow
 			{
+				--stylua: ignore
 				filename = "__reskins-bobs__/graphics/entity/assembly/electrolyser/electrolyser-" .. map.shadow_tier .. "-shadow.png",
 				width = 272,
 				height = 260,
