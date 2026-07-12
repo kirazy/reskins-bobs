@@ -33,7 +33,7 @@ local function expand_to_stripes(filename, n, m)
 		height_in_frames = 1,
 	}
 
-	---@return data.Stripe[]
+	---@type data.Stripe[]
 	local stripes = {}
 
 	for i = 1, n do
