@@ -15,7 +15,7 @@ end
 local inputs = {
 	mod = "bobs",
 	group = "technology",
-	type = "tool",
+	type = "item",
 	icon_name = "science-pack",
 	tier_labels = false,
 }
