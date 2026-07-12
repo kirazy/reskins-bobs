@@ -66,6 +66,7 @@ for _, category in pairs(categories) do
 			layers = {
 				-- Base
 				{
+				--stylua: ignore
 					filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-part-" .. category .. "/" .. equipment_path .. "-equipment-base.png",
 					size = 64,
 					priority = "medium",
@@ -74,6 +75,7 @@ for _, category in pairs(categories) do
 				},
 				-- Mask
 				{
+				--stylua: ignore
 					filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-part-" .. category .. "/vehicle-part-" .. category .. "-equipment-mask.png",
 					size = 64,
 					priority = "medium",
@@ -83,6 +85,7 @@ for _, category in pairs(categories) do
 				},
 				-- Highlights
 				{
+				--stylua: ignore
 					filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-part-" .. category .. "/vehicle-part-" .. category .. "-equipment-highlights.png",
 					size = 64,
 					priority = "medium",

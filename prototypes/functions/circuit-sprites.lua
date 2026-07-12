@@ -34,6 +34,7 @@ for tier, circuit_name in pairs(circuit_names) do
 		name = "ar-" .. circuit_name .. "-colored",
 		layers = {
 			{
+				--stylua: ignore
 				filename = "__reskins-bobs__/graphics/icons/sprites/circuits/colored/" .. circuit_name .. "/" .. circuit_name .. "-base.png",
 				flags = { "gui-icon" },
 				size = 40,
@@ -41,6 +42,7 @@ for tier, circuit_name in pairs(circuit_names) do
 				mipmap_count = 2,
 			},
 			{
+				--stylua: ignore
 				filename = "__reskins-bobs__/graphics/icons/sprites/circuits/colored/" .. circuit_name .. "/" .. circuit_name .. "-highlights.png",
 				flags = { "gui-icon" },
 				size = 40,
@@ -48,6 +50,7 @@ for tier, circuit_name in pairs(circuit_names) do
 				mipmap_count = 2,
 			},
 			{
+				--stylua: ignore
 				filename = "__reskins-bobs__/graphics/icons/sprites/circuits/colored/" .. circuit_name .. "/" .. circuit_name .. "-traces.png",
 				flags = { "gui-icon" },
 				size = 40,

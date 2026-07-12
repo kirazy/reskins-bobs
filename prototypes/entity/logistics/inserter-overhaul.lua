@@ -21,26 +21,72 @@ local inputs = {
 }
 
 -- Determine inserter permutations
-local bulk_inserter_icon_name = reskins.lib.settings.get_value("reskins-bobs-flip-bulk-inserter-icons") and "flipped-bulk-inserter" or "bulk-inserter"
+local flip_bulk_icons = reskins.lib.settings.get_value("reskins-bobs-flip-bulk-inserter-icons")
+local bulk_inserter_icon_name = flip_bulk_icons and "flipped-bulk-inserter" or "bulk-inserter"
 local bulk_inserter_type = "bulk-inserter"
 
+local use_long_inserters = mods["bobinserters"] or reskins.lib.settings.get_value("bobmods-logistics-inserteroverhaul")
 local inserter_icon_name = "inserter"
-local inserter_type = (mods["bobinserters"] or reskins.lib.settings.get_value("bobmods-logistics-inserteroverhaul")) and "long-inserter" or "inserter"
+local inserter_type = use_long_inserters and "long-inserter" or "inserter"
 
 local inserter_map = {
 	-- Standard inserters
-	["inserter"] = { tier = 1, type = inserter_type, icon_name = inserter_icon_name },
-	["bob-red-inserter"] = { tier = 2, type = inserter_type, icon_name = inserter_icon_name },
-	["long-handed-inserter"] = { tier = 2, type = inserter_type, icon_name = inserter_icon_name },
-	["fast-inserter"] = { tier = 3, type = inserter_type, icon_name = inserter_icon_name },
-	["bob-turbo-inserter"] = { tier = 4, type = inserter_type, icon_name = inserter_icon_name },
-	["bob-express-inserter"] = { tier = 5, type = inserter_type, icon_name = inserter_icon_name },
+	["inserter"] = {
+		tier = 1,
+		type = inserter_type,
+		icon_name = inserter_icon_name,
+	},
+	["bob-red-inserter"] = {
+		tier = 2,
+		type = inserter_type,
+		icon_name = inserter_icon_name,
+	},
+	["long-handed-inserter"] = {
+		tier = 2,
+		type = inserter_type,
+		icon_name = inserter_icon_name,
+	},
+	["fast-inserter"] = {
+		tier = 3,
+		type = inserter_type,
+		icon_name = inserter_icon_name,
+	},
+	["bob-turbo-inserter"] = {
+		tier = 4,
+		type = inserter_type,
+		icon_name = inserter_icon_name,
+	},
+	["bob-express-inserter"] = {
+		tier = 5,
+		type = inserter_type,
+		icon_name = inserter_icon_name,
+	},
 
 	-- Bulk inserters
-	["bob-red-bulk-inserter"] = { tier = 2, is_bulk_inserter = true, type = bulk_inserter_type, icon_name = bulk_inserter_icon_name },
-	["bulk-inserter"] = { tier = 3, is_bulk_inserter = true, type = bulk_inserter_type, icon_name = bulk_inserter_icon_name },
-	["bob-turbo-bulk-inserter"] = { tier = 4, is_bulk_inserter = true, type = bulk_inserter_type, icon_name = bulk_inserter_icon_name },
-	["bob-express-bulk-inserter"] = { tier = 5, is_bulk_inserter = true, type = bulk_inserter_type, icon_name = bulk_inserter_icon_name },
+	["bob-red-bulk-inserter"] = {
+		tier = 2,
+		is_bulk_inserter = true,
+		type = bulk_inserter_type,
+		icon_name = bulk_inserter_icon_name,
+	},
+	["bulk-inserter"] = {
+		tier = 3,
+		is_bulk_inserter = true,
+		type = bulk_inserter_type,
+		icon_name = bulk_inserter_icon_name,
+	},
+	["bob-turbo-bulk-inserter"] = {
+		tier = 4,
+		is_bulk_inserter = true,
+		type = bulk_inserter_type,
+		icon_name = bulk_inserter_icon_name,
+	},
+	["bob-express-bulk-inserter"] = {
+		tier = 5,
+		is_bulk_inserter = true,
+		type = bulk_inserter_type,
+		icon_name = bulk_inserter_icon_name,
+	},
 }
 
 -- Inserter Remnants
@@ -71,6 +117,7 @@ local function inserter_remnants(parameters)
 			},
 			-- Highlights
 			{
+				--stylua: ignore
 				filename = "__reskins-bobs__/graphics/entity/logistics/inserter/remnants/" .. prefix .. "-remnants-highlights.png",
 				width = 134,
 				height = 94,
@@ -141,6 +188,7 @@ local function inserter_hand_picture(parameters)
 		layers = {
 			-- Base
 			{
+				--stylua: ignore
 				filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/" .. parameters.type .. "-hand-" .. parameters.hand .. "-base.png",
 				priority = "extra-high",
 				width = 130,
@@ -150,6 +198,7 @@ local function inserter_hand_picture(parameters)
 			},
 			-- Mask
 			{
+				--stylua: ignore
 				filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/" .. parameters.type .. "-hand-" .. parameters.hand .. "-mask.png",
 				priority = "extra-high",
 				width = 130,
@@ -160,6 +209,7 @@ local function inserter_hand_picture(parameters)
 			},
 			-- Highlights
 			{
+				--stylua: ignore
 				filename = "__reskins-bobs__/graphics/entity/logistics/inserter/hands/" .. parameters.type .. "-hand-" .. parameters.hand .. "-highlights.png",
 				priority = "extra-high",
 				width = 130,
@@ -184,6 +234,7 @@ local function inserter_hand_shadow(parameters)
 	return
 	-- Shadow
 	{
+		--stylua: ignore
 		filename = "__reskins-bobs__/graphics/entity/logistics/inserter/shadows/" .. parameters.shadow .. "-hand-" .. parameters.hand .. "-shadow.png",
 		priority = "extra-high",
 		width = 130,

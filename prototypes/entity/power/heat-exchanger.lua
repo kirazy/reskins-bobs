@@ -81,6 +81,7 @@ for name, map in pairs(tier_map) do
 			},
 			-- Pipes
 			{
+				--stylua: ignore
 				filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heat-pipes/" .. map.material .. "/heatex-remnants.png",
 				width = 272,
 				height = 262,
@@ -125,6 +126,7 @@ for name, map in pairs(tier_map) do
 			},
 			-- Pipes
 			{
+				--stylua: ignore
 				filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heat-pipes/" .. map.material .. "/heatex-N-idle.png",
 				priority = "extra-high",
 				width = 269,
@@ -178,6 +180,7 @@ for name, map in pairs(tier_map) do
 			},
 			-- Pipes
 			{
+				--stylua: ignore
 				filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heat-pipes/" .. map.material .. "/heatex-E-idle.png",
 				priority = "extra-high",
 				width = 211,
@@ -231,6 +234,7 @@ for name, map in pairs(tier_map) do
 			},
 			-- Pipes
 			{
+				--stylua: ignore
 				filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heat-pipes/" .. map.material .. "/heatex-S-idle.png",
 				priority = "extra-high",
 				width = 260,
@@ -284,6 +288,7 @@ for name, map in pairs(tier_map) do
 			},
 			-- Pipes
 			{
+				--stylua: ignore
 				filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heat-pipes/" .. map.material .. "/heatex-W-idle.png",
 				priority = "extra-high",
 				width = 196,
@@ -305,6 +310,7 @@ for name, map in pairs(tier_map) do
 	}
 
 	entity.energy_source.pipe_covers = reskins.lib.sprites.make_4way_animation_from_spritesheet({
+		--stylua: ignore
 		filename = "__reskins-bobs__/graphics/entity/power/heat-exchanger/heat-pipes/" .. map.material .. "/heatex-endings.png",
 		width = 64,
 		height = 64,

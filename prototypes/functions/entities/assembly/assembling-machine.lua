@@ -31,6 +31,7 @@ local function icon_sets(sprite_set, tint, flags)
 		-- Add the indicator lights
 		inputs.icon_extras = {
 			{
+				--stylua: ignore
 				icon = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/electronics-machine-" .. flags.lights .. ".png",
 				icon_size = 64,
 				scale = 0.5,
@@ -39,6 +40,7 @@ local function icon_sets(sprite_set, tint, flags)
 
 		inputs.icon_picture_extras = {
 			{
+				--stylua: ignore
 				filename = "__reskins-bobs__/graphics/icons/assembly/assembling-machine/electronics-machine-" .. flags.lights .. ".png",
 				flags = { "icon" },
 				size = 64,
@@ -273,6 +275,7 @@ local function entity_animation(sprite_set, tint, flags)
 			},
 			-- Animation
 			{
+				--stylua: ignore
 				filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/animations/assembling-machine-animation-" .. sprite_set .. ".png",
 				priority = "high",
 				width = 214,
@@ -284,6 +287,7 @@ local function entity_animation(sprite_set, tint, flags)
 			},
 			-- Shadow
 			{
+				--stylua: ignore
 				filename = "__reskins-bobs__/graphics/entity/assembly/assembling-machine/shadows/assembling-machine-" .. shadow_sprite_set .. "-shadow.png",
 				priority = "high",
 				width = 264,
@@ -407,7 +411,12 @@ function reskins.lib.apply_skin.assembling_machine(name, tier, tint, make_tier_l
 			if type(fluid_box) == "table" then
 				fluid_box.pipe_picture = fluid_box.pipe_picture and reskins.bobs.assembly_pipe_pictures(inputs.tint)
 				fluid_box.pipe_covers = fluid_box.pipe_covers and pipecoverspictures()
-				fluid_box.secondary_draw_orders = { north = -1, east = draw_order_shift, south = draw_order_shift, west = draw_order_shift }
+				fluid_box.secondary_draw_orders = {
+					north = -1,
+					east = draw_order_shift,
+					south = draw_order_shift,
+					west = draw_order_shift,
+				}
 			end
 		end
 	end
@@ -416,7 +425,12 @@ function reskins.lib.apply_skin.assembling_machine(name, tier, tint, make_tier_l
 	if fluid_box then
 		fluid_box.pipe_picture = fluid_box.pipe_picture and reskins.bobs.assembly_pipe_pictures(inputs.tint)
 		fluid_box.pipe_covers = fluid_box.pipe_covers and pipecoverspictures()
-		fluid_box.secondary_draw_orders = { north = -1, east = draw_order_shift, south = draw_order_shift, west = draw_order_shift }
+		fluid_box.secondary_draw_orders = {
+			north = -1,
+			east = draw_order_shift,
+			south = draw_order_shift,
+			west = draw_order_shift,
+		}
 	end
 
 	-- Handle sounds

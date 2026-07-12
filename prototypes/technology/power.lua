@@ -63,6 +63,7 @@ if reskins.bobs.triggers.power.poles then
 end
 
 if reskins.bobs.triggers.power.steam then
+	--stylua: ignore start
 	-- Boilers
 	technologies["bob-boiler-2"] = { tier = 2, icon_name = "boiler", technology_icon_size = 128, technology_icon_extras = boiler_icon_extra }
 	technologies["bob-boiler-3"] = { tier = 3, icon_name = "boiler", technology_icon_size = 128, technology_icon_extras = boiler_icon_extra }
@@ -91,6 +92,7 @@ if reskins.bobs.triggers.power.steam then
 	technologies["bob-steam-turbine-1"] = { tier = 1, prog_tier = 3, icon_name = "steam-turbine", technology_icon_size = 128 }
 	technologies["bob-steam-turbine-2"] = { tier = 2, prog_tier = 4, icon_name = "steam-turbine", technology_icon_size = 128 }
 	technologies["bob-steam-turbine-3"] = { tier = 3, prog_tier = 5, icon_name = "steam-turbine", technology_icon_size = 128 }
+	--stylua: ignore end
 end
 
 if reskins.bobs.triggers.power.fluidgenerator then
@@ -98,7 +100,8 @@ if reskins.bobs.triggers.power.fluidgenerator then
 	technologies["bob-fluid-generator-1"] = { tier = 1, prog_tier = 2, icon_name = "fluid-generator" }
 	technologies["bob-fluid-generator-2"] = { tier = 2, prog_tier = 3, icon_name = "fluid-generator" }
 	technologies["bob-fluid-generator-3"] = { tier = 3, prog_tier = 4, icon_name = "fluid-generator" }
-	technologies["bob-hydrazine-generator"] = { tier = 4, prog_tier = 5, icon_name = "fluid-generator", tint = reskins.bobs.hydrazine_tint }
+	--stylua: ignore
+	technologies["bob-hydrazine-generator"] = {tier = 4, prog_tier = 5, icon_name = "fluid-generator", tint = reskins.bobs.hydrazine_tint }
 end
 
 if reskins.bobs.triggers.power.heatsources then

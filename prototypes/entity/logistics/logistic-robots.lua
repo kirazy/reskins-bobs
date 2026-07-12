@@ -18,12 +18,14 @@ local inputs = {
 	particles = { ["medium"] = 2 },
 }
 
+local fusion_robot_color = reskins.lib.settings.get_value("reskins-bobs-fusion-robot-color")
+
 local tier_map = {
 	["logistic-robot"] = { tier = 1, prog_tier = 2 },
 	["bob-logistic-robot-2"] = { tier = 2, prog_tier = 3 },
 	["bob-logistic-robot-3"] = { tier = 3, prog_tier = 4 },
 	["bob-logistic-robot-4"] = { tier = 4, prog_tier = 5 },
-	["bob-logistic-robot-5"] = { tier = 5, prog_tier = 6, fusion_robot_color = reskins.lib.settings.get_value("reskins-bobs-fusion-robot-color") },
+	["bob-logistic-robot-5"] = { tier = 5, prog_tier = 6, fusion_robot_color = fusion_robot_color },
 }
 
 -- Animations

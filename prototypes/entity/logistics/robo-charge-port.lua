@@ -35,6 +35,7 @@ local function charge_port_base(shift_x, shift_y, image_index, tint)
 	return {
 		-- Base
 		{
+			--stylua: ignore
 			filename = "__reskins-bobs__/graphics/entity/logistics/robo-charge-port/robo-charge-port-" .. image_index .. "-base.png",
 			priority = "medium",
 			animation_speed = 0.2,

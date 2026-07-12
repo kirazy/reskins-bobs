@@ -78,6 +78,7 @@ for name, map in pairs(tier_map) do
 			},
 			-- Antenna
 			{
+				--stylua: ignore
 				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/remnants/antennas/roboport-" .. map.image_index .. "-antenna-remnants.png",
 				width = 364,
 				height = 358,
@@ -87,6 +88,7 @@ for name, map in pairs(tier_map) do
 			},
 			-- Door
 			{
+				--stylua: ignore
 				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/remnants/doors/roboport-" .. map.image_index .. "-door-remnants.png",
 				width = 364,
 				height = 358,
@@ -181,6 +183,7 @@ for name, map in pairs(tier_map) do
 	}
 
 	entity.base_animation = {
+		--stylua: ignore
 		filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/antennas/roboport-" .. map.image_index .. "-base-animation.png",
 		priority = "medium",
 		width = 83,
@@ -192,6 +195,7 @@ for name, map in pairs(tier_map) do
 	}
 
 	entity.door_animation_up = {
+		--stylua: ignore
 		filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/doors/roboport-" .. map.image_index .. "-door-up.png",
 		priority = "medium",
 		width = 97,
@@ -202,6 +206,7 @@ for name, map in pairs(tier_map) do
 	}
 
 	entity.door_animation_down = {
+		--stylua: ignore
 		filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/doors/roboport-" .. map.image_index .. "-door-down.png",
 		priority = "medium",
 		width = 97,

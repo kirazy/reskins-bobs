@@ -83,6 +83,7 @@ for name, map in pairs(logistic_map) do
 			},
 			-- Mask
 			{
+				--stylua: ignore
 				filename = "__reskins-bobs__/graphics/entity/logistics/chest/remnants/" .. map.material .. "-logistic-chest-remnants.png",
 				width = 116,
 				height = 82,
