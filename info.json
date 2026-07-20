@@ -9,6 +9,7 @@
 	"dependencies": [
 		"base",
 		"reskins-library",
+		"reskins-assets-base",
 		"? bobassembly",
 		"? bobelectronics",
 		"? bobgreenhouse",
