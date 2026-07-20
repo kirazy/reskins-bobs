@@ -357,7 +357,7 @@ end
 ---@param variant "base"|"productivity"|"quality"
 ---@return ModuleSlotCreatorFn
 local function get_god_module_slot_1_creator_fn(variant)
-	local ASSETS_BOBS_PATH = "__reskins-assets-bobs__/graphics/entity/beacon/module-slots/god-modules/"
+	local ASSETS_BOBS_PATH = "__reskins-assets-bobs__/graphics/entity/beacon/module-slots/5-lights/"
 
 	---@param shift Vector
 	---@param secondary_draw_order int8
@@ -370,7 +370,7 @@ local function get_god_module_slot_1_creator_fn(variant)
 				render_layer = "lower-object",
 				secondary_draw_order = secondary_draw_order,
 				pictures = {
-					filename = ASSETS_BOBS_PATH .. "" .. variant .. "-module-slot-1.png",
+					filename = ASSETS_BOBS_PATH .. "god-module-" .. variant .. "-module-slot-1.png",
 					width = 50,
 					height = 66,
 					line_length = 2,
@@ -383,7 +383,7 @@ local function get_god_module_slot_1_creator_fn(variant)
 				render_layer = "lower-object",
 				secondary_draw_order = secondary_draw_order,
 				pictures = {
-					filename = ASSETS_BOBS_PATH .. "base-module-mask-box-1.png",
+					filename = ASSETS_BOBS_PATH .. "god-module-base-module-mask-box-1.png",
 					width = 36,
 					height = 32,
 					line_length = 1,
@@ -396,7 +396,7 @@ local function get_god_module_slot_1_creator_fn(variant)
 				render_layer = "lower-object-above-shadow",
 				secondary_draw_order = secondary_draw_order,
 				pictures = {
-					filename = ASSETS_BOBS_PATH .. "" .. variant .. "-module-mask-lights-1.png",
+					filename = ASSETS_BOBS_PATH .. "god-module-" .. variant .. "-module-mask-lights-1.png",
 					width = 26,
 					height = 22,
 					line_length = 1,
@@ -409,7 +409,7 @@ local function get_god_module_slot_1_creator_fn(variant)
 				render_layer = "lower-object-above-shadow",
 				secondary_draw_order = secondary_draw_order,
 				pictures = {
-					filename = ASSETS_BOBS_PATH .. "" .. variant .. "-module-lights-1.png",
+					filename = ASSETS_BOBS_PATH .. "god-module-" .. variant .. "-module-lights-1.png",
 					width = 56,
 					height = 42,
 					line_length = 1,
@@ -426,7 +426,7 @@ end
 ---@param variant "base"|"productivity"|"quality"
 ---@return ModuleSlotCreatorFn
 local function get_god_module_slot_2_creator_fn(variant)
-	local ASSETS_BOBS_PATH = "__reskins-assets-bobs__/graphics/entity/beacon/module-slots/god-modules/"
+	local ASSETS_BOBS_PATH = "__reskins-assets-bobs__/graphics/entity/beacon/module-slots/5-lights/"
 
 	---@param shift Vector
 	---@param secondary_draw_order int8
@@ -439,7 +439,7 @@ local function get_god_module_slot_2_creator_fn(variant)
 				render_layer = "lower-object",
 				secondary_draw_order = secondary_draw_order,
 				pictures = {
-					filename = ASSETS_BOBS_PATH .. variant .. "-module-slot-2.png",
+					filename = ASSETS_BOBS_PATH .. "god-module-" .. variant .. "-module-slot-2.png",
 					width = 46,
 					height = 44,
 					line_length = 2,
@@ -453,7 +453,7 @@ local function get_god_module_slot_2_creator_fn(variant)
 				render_layer = "lower-object",
 				secondary_draw_order = secondary_draw_order,
 				pictures = {
-					filename = ASSETS_BOBS_PATH .. "base-module-mask-box-2.png",
+					filename = ASSETS_BOBS_PATH .. "god-module-base-module-mask-box-2.png",
 					width = 36,
 					height = 28,
 					line_length = 1,
@@ -467,7 +467,7 @@ local function get_god_module_slot_2_creator_fn(variant)
 				render_layer = "lower-object-above-shadow",
 				secondary_draw_order = secondary_draw_order,
 				pictures = {
-					filename = ASSETS_BOBS_PATH .. variant .. "-module-mask-lights-2.png",
+					filename = ASSETS_BOBS_PATH .. "god-module-" .. variant .. "-module-mask-lights-2.png",
 					width = 24,
 					height = 16,
 					line_length = 1,
@@ -481,7 +481,7 @@ local function get_god_module_slot_2_creator_fn(variant)
 				render_layer = "lower-object-above-shadow",
 				secondary_draw_order = secondary_draw_order,
 				pictures = {
-					filename = ASSETS_BOBS_PATH .. variant .. "-module-lights-2.png",
+					filename = ASSETS_BOBS_PATH .. "god-module-" .. variant .. "-module-lights-2.png",
 					width = 66,
 					height = 46,
 					line_length = 1,
