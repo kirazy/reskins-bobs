@@ -89,96 +89,102 @@ for name, map in pairs(tier_map) do
 	remnant.animation = make_rotated_animation_variations_from_sheet(1, remnant_animation)
 
 	-- Reskin entities
-	entity.horizontal_animation = {
-		layers = {
-			-- Base
-			{
-				filename = "__base__/graphics/entity/steam-turbine/steam-turbine-H.png",
-				width = 320,
-				height = 245,
-				frame_count = 8,
-				line_length = 4,
-				shift = util.by_pixel(0, -2.75),
-				run_mode = "backward",
-				scale = 0.5,
-			},
-			-- Mask
-			{
-				filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/steam-turbine-H-mask.png",
-				width = 320,
-				height = 245,
-				repeat_count = 8,
-				shift = util.by_pixel(0, -2.75),
-				tint = inputs.tint,
-				scale = 0.5,
-			},
-			-- Highlights
-			{
-				filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/steam-turbine-H-highlights.png",
-				width = 320,
-				height = 245,
-				repeat_count = 8,
-				shift = util.by_pixel(0, -2.75),
-				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				scale = 0.5,
-			},
-			-- Shadow
-			{
-				filename = "__base__/graphics/entity/steam-turbine/steam-turbine-H-shadow.png",
-				width = 435,
-				height = 150,
-				repeat_count = 8,
-				draw_as_shadow = true,
-				shift = util.by_pixel(28.5, 18),
-				run_mode = "backward",
-				scale = 0.5,
+	entity.two_direction_only = true
+	entity.pictures = {
+		north = {
+			animation = {
+				layers = {
+					-- Base
+					{
+						filename = "__base__/graphics/entity/steam-turbine/steam-turbine-V.png",
+						width = 217,
+						height = 374,
+						frame_count = 8,
+						line_length = 4,
+						shift = util.by_pixel(4.75, 0.0),
+						run_mode = "backward",
+						scale = 0.5,
+					},
+					-- Mask
+					{
+						filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/steam-turbine-V-mask.png",
+						width = 217,
+						height = 347,
+						repeat_count = 8,
+						shift = util.by_pixel(4.75, 6.75),
+						tint = inputs.tint,
+						scale = 0.5,
+					},
+					-- Highlights
+					{
+						filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/steam-turbine-V-highlights.png",
+						width = 217,
+						height = 347,
+						repeat_count = 8,
+						shift = util.by_pixel(4.75, 6.75),
+						blend_mode = reskins.lib.settings.blend_mode, -- "additive",
+						scale = 0.5,
+					},
+					-- Shadow
+					{
+						filename = "__base__/graphics/entity/steam-turbine/steam-turbine-V-shadow.png",
+						width = 302,
+						height = 260,
+						repeat_count = 8,
+						draw_as_shadow = true,
+						shift = util.by_pixel(39.5, 24.5),
+						run_mode = "backward",
+						scale = 0.5,
+					},
+				},
 			},
 		},
-	}
-
-	entity.vertical_animation = {
-		layers = {
-			-- Base
-			{
-				filename = "__base__/graphics/entity/steam-turbine/steam-turbine-V.png",
-				width = 217,
-				height = 374,
-				frame_count = 8,
-				line_length = 4,
-				shift = util.by_pixel(4.75, 0.0),
-				run_mode = "backward",
-				scale = 0.5,
-			},
-			-- Mask
-			{
-				filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/steam-turbine-V-mask.png",
-				width = 217,
-				height = 347,
-				repeat_count = 8,
-				shift = util.by_pixel(4.75, 6.75),
-				tint = inputs.tint,
-				scale = 0.5,
-			},
-			-- Highlights
-			{
-				filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/steam-turbine-V-highlights.png",
-				width = 217,
-				height = 347,
-				repeat_count = 8,
-				shift = util.by_pixel(4.75, 6.75),
-				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				scale = 0.5,
-			},
-			-- Shadow
-			{
-				filename = "__base__/graphics/entity/steam-turbine/steam-turbine-V-shadow.png",
-				width = 302,
-				height = 260,
-				repeat_count = 8,
-				draw_as_shadow = true,
-				shift = util.by_pixel(39.5, 24.5),
-				run_mode = "backward",
-				scale = 0.5,
+		east = {
+			animation = {
+				layers = {
+					-- Base
+					{
+						filename = "__base__/graphics/entity/steam-turbine/steam-turbine-H.png",
+						width = 320,
+						height = 245,
+						frame_count = 8,
+						line_length = 4,
+						shift = util.by_pixel(0, -2.75),
+						run_mode = "backward",
+						scale = 0.5,
+					},
+					-- Mask
+					{
+						filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/steam-turbine-H-mask.png",
+						width = 320,
+						height = 245,
+						repeat_count = 8,
+						shift = util.by_pixel(0, -2.75),
+						tint = inputs.tint,
+						scale = 0.5,
+					},
+					-- Highlights
+					{
+						filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/steam-turbine-H-highlights.png",
+						width = 320,
+						height = 245,
+						repeat_count = 8,
+						shift = util.by_pixel(0, -2.75),
+						blend_mode = reskins.lib.settings.blend_mode, -- "additive",
+						scale = 0.5,
+					},
+					-- Shadow
+					{
+						filename = "__base__/graphics/entity/steam-turbine/steam-turbine-H-shadow.png",
+						width = 435,
+						height = 150,
+						repeat_count = 8,
+						draw_as_shadow = true,
+						shift = util.by_pixel(28.5, 18),
+						run_mode = "backward",
+						scale = 0.5,
+					},
+				},
 			},
 		},
 	}

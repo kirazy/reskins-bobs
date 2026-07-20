@@ -89,98 +89,104 @@ for name, map in pairs(tier_map) do
 	remnant.animation = make_rotated_animation_variations_from_sheet(1, remnant_animation)
 
 	-- Reskin entities
-	entity.horizontal_animation = {
-		layers = {
-			-- Base
-			{
-				filename = "__base__/graphics/entity/steam-engine/steam-engine-H.png",
-				width = 352,
-				height = 257,
-				frame_count = 32,
-				line_length = 8,
-				shift = util.by_pixel(1, -4.75),
-				scale = 0.5,
-			},
-			-- Color Mask
-			{
-				filename = "__reskins-bobs__/graphics/entity/power/steam-engine/steam-engine-H-mask.png",
-				width = 352,
-				height = 257,
-				frame_count = 32,
-				line_length = 8,
-				shift = util.by_pixel(1, -4.75),
-				tint = inputs.tint,
-				scale = 0.5,
-			},
-			-- Highlights
-			{
-				filename = "__reskins-bobs__/graphics/entity/power/steam-engine/steam-engine-H-highlights.png",
-				width = 352,
-				height = 257,
-				frame_count = 32,
-				line_length = 8,
-				shift = util.by_pixel(1, -4.75),
-				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				scale = 0.5,
-			},
-			-- Shadow
-			{
-				filename = "__base__/graphics/entity/steam-engine/steam-engine-H-shadow.png",
-				width = 508,
-				height = 160,
-				frame_count = 32,
-				line_length = 8,
-				draw_as_shadow = true,
-				shift = util.by_pixel(48, 24),
-				scale = 0.5,
+	entity.two_direction_only = true
+	entity.pictures = {
+		north = {
+			animation = {
+				layers = {
+					-- Base
+					{
+						filename = "__base__/graphics/entity/steam-engine/steam-engine-V.png",
+						width = 225,
+						height = 391,
+						frame_count = 32,
+						line_length = 8,
+						shift = util.by_pixel(4.75, -6.25),
+						scale = 0.5,
+					},
+					-- Color mask
+					{
+						filename = "__reskins-bobs__/graphics/entity/power/steam-engine/steam-engine-V-mask.png",
+						width = 225,
+						height = 391,
+						frame_count = 32,
+						line_length = 8,
+						shift = util.by_pixel(4.75, -6.25),
+						tint = inputs.tint,
+						scale = 0.5,
+					},
+					-- Highlights
+					{
+						filename = "__reskins-bobs__/graphics/entity/power/steam-engine/steam-engine-V-highlights.png",
+						width = 225,
+						height = 391,
+						frame_count = 32,
+						line_length = 8,
+						shift = util.by_pixel(4.75, -6.25),
+						blend_mode = reskins.lib.settings.blend_mode, -- "additive",
+						scale = 0.5,
+					},
+					-- Shadow
+					{
+						filename = "__base__/graphics/entity/steam-engine/steam-engine-V-shadow.png",
+						width = 330,
+						height = 307,
+						frame_count = 32,
+						line_length = 8,
+						draw_as_shadow = true,
+						shift = util.by_pixel(40.5, 9.25),
+						scale = 0.5,
+					},
+				},
 			},
 		},
-	}
-
-	entity.vertical_animation = {
-		layers = {
-			-- Base
-			{
-				filename = "__base__/graphics/entity/steam-engine/steam-engine-V.png",
-				width = 225,
-				height = 391,
-				frame_count = 32,
-				line_length = 8,
-				shift = util.by_pixel(4.75, -6.25),
-				scale = 0.5,
-			},
-			-- Color mask
-			{
-				filename = "__reskins-bobs__/graphics/entity/power/steam-engine/steam-engine-V-mask.png",
-				width = 225,
-				height = 391,
-				frame_count = 32,
-				line_length = 8,
-				shift = util.by_pixel(4.75, -6.25),
-				tint = inputs.tint,
-				scale = 0.5,
-			},
-			-- Highlights
-			{
-				filename = "__reskins-bobs__/graphics/entity/power/steam-engine/steam-engine-V-highlights.png",
-				width = 225,
-				height = 391,
-				frame_count = 32,
-				line_length = 8,
-				shift = util.by_pixel(4.75, -6.25),
-				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				scale = 0.5,
-			},
-			-- Shadow
-			{
-				filename = "__base__/graphics/entity/steam-engine/steam-engine-V-shadow.png",
-				width = 330,
-				height = 307,
-				frame_count = 32,
-				line_length = 8,
-				draw_as_shadow = true,
-				shift = util.by_pixel(40.5, 9.25),
-				scale = 0.5,
+		east = {
+			animation = {
+				layers = {
+					-- Base
+					{
+						filename = "__base__/graphics/entity/steam-engine/steam-engine-H.png",
+						width = 352,
+						height = 257,
+						frame_count = 32,
+						line_length = 8,
+						shift = util.by_pixel(1, -4.75),
+						scale = 0.5,
+					},
+					-- Color Mask
+					{
+						filename = "__reskins-bobs__/graphics/entity/power/steam-engine/steam-engine-H-mask.png",
+						width = 352,
+						height = 257,
+						frame_count = 32,
+						line_length = 8,
+						shift = util.by_pixel(1, -4.75),
+						tint = inputs.tint,
+						scale = 0.5,
+					},
+					-- Highlights
+					{
+						filename = "__reskins-bobs__/graphics/entity/power/steam-engine/steam-engine-H-highlights.png",
+						width = 352,
+						height = 257,
+						frame_count = 32,
+						line_length = 8,
+						shift = util.by_pixel(1, -4.75),
+						blend_mode = reskins.lib.settings.blend_mode, -- "additive",
+						scale = 0.5,
+					},
+					-- Shadow
+					{
+						filename = "__base__/graphics/entity/steam-engine/steam-engine-H-shadow.png",
+						width = 508,
+						height = 160,
+						frame_count = 32,
+						line_length = 8,
+						draw_as_shadow = true,
+						shift = util.by_pixel(48, 24),
+						scale = 0.5,
+					},
+				},
 			},
 		},
 	}
