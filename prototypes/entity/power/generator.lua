@@ -97,8 +97,11 @@ for name, map in pairs(fluid_generators) do
 	reskins.lib.setup_standard_entity(name, tier, inputs)
 
 	-- Reskin entities
-	entity.horizontal_animation = setup_fluid_generator(inputs.tint)
-	entity.vertical_animation = setup_fluid_generator(inputs.tint)
+	entity.two_direction_only = true
+	entity.pictures = {
+		north = { animation = setup_fluid_generator(inputs.tint) },
+		east = { animation = setup_fluid_generator(inputs.tint) },
+	}
 
 	-- Handle smoke
 	if name == "bob-hydrazine-generator" then
