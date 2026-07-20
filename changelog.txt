@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.4.0
-Date: ????
+Date: 2026-07-19
   Features:
     - Updated for Factorio 2.1
     - Note: this release does not include the updated models for assembling machines, oil refineries, or heat exchangers; these will follow in a future release
