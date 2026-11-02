@@ -2,6 +2,7 @@
 Version: 2.4.1
 Date: ????
   Changes:
+    - Use Artisanal Reskins: Assorted Assets for heat exchanger sprites, pending revisions to use the updated models
 ---------------------------------------------------------------------------------------------------
 Version: 2.4.0
 Date: 2026-07-19
