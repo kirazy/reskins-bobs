@@ -1,6 +1,6 @@
 {
 	"name": "reskins-bobs",
-	"version": "2.4.3",
+	"version": "2.5.0",
 	"factorio_version": "2.1",
 	"title": "Artisanal Reskins: Bob's Mods",
 	"author": "Kirazy",
@@ -9,9 +9,11 @@
 	"dependencies": [
 		"base",
 		"reskins-library",
-		"reskins-assets-assorted >= 2.2.0",
-		"reskins-assets-base >= 2.2.0",
-		"reskins-assets-bobs >= 2.2.0",
+		"reskins-framework >= 0.2.0",
+		"reskins-assets-api >= 0.2.1",
+		"reskins-assets-assorted",
+		"reskins-assets-base",
+		"reskins-assets-bobs",
 		"? bobassembly",
 		"? bobelectronics",
 		"? bobgreenhouse",
