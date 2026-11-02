@@ -1,8 +1,10 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.5.0
 Date: ????
+  Features:
+    - Improved support for frozen entity states
   Changes:
-    - Migrated centrifuge sprites to use the Artisanal Reskins: Assets API
+    - Migrated centrifuge and distillery sprites to use the Artisanal Reskins: Assets API
 ---------------------------------------------------------------------------------------------------
 Version: 2.4.2
 Date: 2026-11-05
