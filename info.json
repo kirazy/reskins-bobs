@@ -9,8 +9,8 @@
 	"dependencies": [
 		"base",
 		"reskins-library",
-		"reskins-assets-base",
-		"reskins-assets-bobs",
+		"reskins-assets-assorted >= 2.2.0",
+		"reskins-assets-bobs >= 2.2.0",
 		"? bobassembly",
 		"? bobelectronics",
 		"? bobgreenhouse",

@@ -28,6 +28,8 @@ local tier_map = {
 	["bob-heat-exchanger-4"] = { tier = 4, prog_tier = 5, material = "gold-copper" },
 }
 
+local assets_path = "__reskins-assets-assorted__/graphics/entity/heat-exchanger-original/"
+
 -- Reskin entities, create and assign extra details
 for name, map in pairs(tier_map) do
 	---@type data.BoilerPrototype
@@ -52,7 +54,7 @@ for name, map in pairs(tier_map) do
 		layers = {
 			-- Base
 			{
-				filename = "__reskins-assets-base__/graphics/entity/heat-exchanger/remnants/heat-exchanger-remnants-base.png",
+				filename = assets_path .. "remnants/heat-exchanger-remnants-base.png",
 				width = 272,
 				height = 262,
 				direction_count = 4,
@@ -61,7 +63,7 @@ for name, map in pairs(tier_map) do
 			},
 			-- Mask
 			{
-				filename = "__reskins-assets-base__/graphics/entity/heat-exchanger/remnants/heat-exchanger-remnants-mask.png",
+				filename = assets_path .. "remnants/heat-exchanger-remnants-mask.png",
 				width = 272,
 				height = 262,
 				direction_count = 4,
@@ -71,7 +73,7 @@ for name, map in pairs(tier_map) do
 			},
 			-- Highlights
 			{
-				filename = "__reskins-assets-base__/graphics/entity/heat-exchanger/remnants/heat-exchanger-remnants-highlights.png",
+				filename = assets_path .. "remnants/heat-exchanger-remnants-highlights.png",
 				width = 272,
 				height = 262,
 				direction_count = 4,
@@ -98,7 +100,7 @@ for name, map in pairs(tier_map) do
 				layers = {
 					-- Base
 					{
-						filename = "__reskins-assets-base__/graphics/entity/heat-exchanger/heat-exchanger-north-idle-base.png",
+						filename = assets_path .. "heat-exchanger-north-idle-base.png",
 						priority = "extra-high",
 						width = 269,
 						height = 221,
@@ -107,7 +109,7 @@ for name, map in pairs(tier_map) do
 					},
 					-- Mask
 					{
-						filename = "__reskins-assets-base__/graphics/entity/heat-exchanger/heat-exchanger-north-idle-mask.png",
+						filename = assets_path .. "heat-exchanger-north-idle-mask.png",
 						priority = "extra-high",
 						width = 269,
 						height = 221,
@@ -117,7 +119,7 @@ for name, map in pairs(tier_map) do
 					},
 					-- Highlights
 					{
-						filename = "__reskins-assets-base__/graphics/entity/heat-exchanger/heat-exchanger-north-idle-highlights.png",
+						filename = assets_path .. "heat-exchanger-north-idle-highlights.png",
 						priority = "extra-high",
 						width = 269,
 						height = 221,
@@ -153,7 +155,7 @@ for name, map in pairs(tier_map) do
 				layers = {
 					-- Base
 					{
-						filename = "__reskins-assets-base__/graphics/entity/heat-exchanger/heat-exchanger-east-idle-base.png",
+						filename = assets_path .. "heat-exchanger-east-idle-base.png",
 						priority = "extra-high",
 						width = 211,
 						height = 301,
@@ -162,7 +164,7 @@ for name, map in pairs(tier_map) do
 					},
 					-- Mask
 					{
-						filename = "__reskins-assets-base__/graphics/entity/heat-exchanger/heat-exchanger-east-idle-mask.png",
+						filename = assets_path .. "heat-exchanger-east-idle-mask.png",
 						priority = "extra-high",
 						width = 211,
 						height = 301,
@@ -172,7 +174,7 @@ for name, map in pairs(tier_map) do
 					},
 					-- Highlights
 					{
-						filename = "__reskins-assets-base__/graphics/entity/heat-exchanger/heat-exchanger-east-idle-highlights.png",
+						filename = assets_path .. "heat-exchanger-east-idle-highlights.png",
 						priority = "extra-high",
 						width = 211,
 						height = 301,
@@ -208,7 +210,7 @@ for name, map in pairs(tier_map) do
 				layers = {
 					-- Base
 					{
-						filename = "__reskins-assets-base__/graphics/entity/heat-exchanger/heat-exchanger-south-idle-base.png",
+						filename = assets_path .. "heat-exchanger-south-idle-base.png",
 						priority = "extra-high",
 						width = 260,
 						height = 201,
@@ -217,7 +219,7 @@ for name, map in pairs(tier_map) do
 					},
 					-- Mask
 					{
-						filename = "__reskins-assets-base__/graphics/entity/heat-exchanger/heat-exchanger-south-idle-mask.png",
+						filename = assets_path .. "heat-exchanger-south-idle-mask.png",
 						priority = "extra-high",
 						width = 260,
 						height = 201,
@@ -227,7 +229,7 @@ for name, map in pairs(tier_map) do
 					},
 					-- Highlights
 					{
-						filename = "__reskins-assets-base__/graphics/entity/heat-exchanger/heat-exchanger-south-idle-highlights.png",
+						filename = assets_path .. "heat-exchanger-south-idle-highlights.png",
 						priority = "extra-high",
 						width = 260,
 						height = 201,
@@ -263,7 +265,7 @@ for name, map in pairs(tier_map) do
 				layers = {
 					-- Base
 					{
-						filename = "__reskins-assets-base__/graphics/entity/heat-exchanger/heat-exchanger-west-idle-base.png",
+						filename = assets_path .. "heat-exchanger-west-idle-base.png",
 						priority = "extra-high",
 						width = 196,
 						height = 273,
@@ -272,7 +274,7 @@ for name, map in pairs(tier_map) do
 					},
 					-- Mask
 					{
-						filename = "__reskins-assets-base__/graphics/entity/heat-exchanger/heat-exchanger-west-idle-mask.png",
+						filename = assets_path .. "heat-exchanger-west-idle-mask.png",
 						priority = "extra-high",
 						width = 196,
 						height = 273,
@@ -282,7 +284,7 @@ for name, map in pairs(tier_map) do
 					},
 					-- Highlights
 					{
-						filename = "__reskins-assets-base__/graphics/entity/heat-exchanger/heat-exchanger-west-idle-highlights.png",
+						filename = assets_path .. "heat-exchanger-west-idle-highlights.png",
 						priority = "extra-high",
 						width = 196,
 						height = 273,
@@ -326,7 +328,7 @@ for name, map in pairs(tier_map) do
 
 	entity.energy_source.heat_pipe_covers =
 		reskins.lib.sprites.make_4way_animation_from_spritesheet(apply_heat_pipe_glow({
-			filename = "__reskins-assets-base__/graphics/entity/heat-exchanger/heat-pipes/base/heat-pipe-endings-heated.png",
+			filename = assets_path .. "heat-pipes/base/heat-pipe-endings-heated.png",
 			width = 64,
 			height = 64,
 			direction_count = 4,
@@ -335,7 +337,7 @@ for name, map in pairs(tier_map) do
 
 	entity.energy_source.heat_picture = {
 		north = apply_heat_pipe_glow({
-			filename = "__reskins-assets-base__/graphics/entity/heat-exchanger/heat-pipes/base/heat-pipe-north-heated.png",
+			filename = assets_path .. "heat-pipes/base/heat-pipe-north-heated.png",
 			priority = "extra-high",
 			width = 44,
 			height = 96,
@@ -343,7 +345,7 @@ for name, map in pairs(tier_map) do
 			scale = 0.5,
 		}),
 		east = apply_heat_pipe_glow({
-			filename = "__reskins-assets-base__/graphics/entity/heat-exchanger/heat-pipes/base/heat-pipe-east-heated.png",
+			filename = assets_path .. "heat-pipes/base/heat-pipe-east-heated.png",
 			priority = "extra-high",
 			width = 80,
 			height = 80,
@@ -351,7 +353,7 @@ for name, map in pairs(tier_map) do
 			scale = 0.5,
 		}),
 		south = apply_heat_pipe_glow({
-			filename = "__reskins-assets-base__/graphics/entity/heat-exchanger/heat-pipes/base/heat-pipe-south-heated.png",
+			filename = assets_path .. "heat-pipes/base/heat-pipe-south-heated.png",
 			priority = "extra-high",
 			width = 28,
 			height = 40,
@@ -359,7 +361,7 @@ for name, map in pairs(tier_map) do
 			scale = 0.5,
 		}),
 		west = apply_heat_pipe_glow({
-			filename = "__reskins-assets-base__/graphics/entity/heat-exchanger/heat-pipes/base/heat-pipe-west-heated.png",
+			filename = assets_path .. "heat-pipes/base/heat-pipe-west-heated.png",
 			priority = "extra-high",
 			width = 64,
 			height = 76,
