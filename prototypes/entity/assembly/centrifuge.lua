@@ -7,10 +7,7 @@
 
 local _lib = require("_lib")
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
-local _sprite_utils = {
-	icons = require("__reskins-sprite-utils__.icons"),
-	sprites = require("__reskins-sprite-utils__.sprites"),
-}
+local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 
 local Applicators = require("__reskins-assets-api__.api.applicators")
 local Centrifuge = require("__reskins-assets-api__.assets.base.entities.centrifuge")
