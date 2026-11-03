@@ -3,6 +3,15 @@
 --
 -- See LICENSE in the project directory for license information.
 
+---@using data
+
+local _lib = require("_lib")
+local _framework = { tiers = require("__reskins-framework__.api.tiers") }
+local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
+
+local Applicators = require("__reskins-assets-api__.api.applicators")
+local SteamEngine = require("__reskins-assets-api__.assets.base.entities.steam-engine")
+
 -- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.power.entities) then
 	return
@@ -11,17 +20,7 @@ if not (reskins.bobs and reskins.bobs.triggers.power.steam) then
 	return
 end
 
--- Set input parameters
-local inputs = {
-	type = "generator",
-	icon_name = "steam-engine",
-	base_entity_name = "steam-engine",
-	mod = "bobs",
-	group = "power",
-	particles = { ["medium"] = 2, ["big"] = 1 },
-}
-
-local tier_map = {
+local entities = {
 	["steam-engine"] = { tier = 1 },
 	["bob-steam-engine-2"] = { tier = 2 },
 	["bob-steam-engine-3"] = { tier = 3 },
@@ -29,167 +28,45 @@ local tier_map = {
 	["bob-steam-engine-5"] = { tier = 5 },
 }
 
----@param tint data.Color
----@return data.RotatedAnimation
-local function get_steam_engine_remnant_animation(tint)
-	---@type data.RotatedAnimation
-	local remnant_animation = {
-		layers = {
-			-- Base
-			{
-				filename = "__base__/graphics/entity/steam-engine/remnants/steam-engine-remnants.png",
-				width = 462,
-				height = 386,
-				direction_count = 4,
-				shift = util.by_pixel(17, 6.5),
-				scale = 0.5,
-			},
-			-- Color Mask
-			{
-				filename = "__reskins-bobs__/graphics/entity/power/steam-engine/remnants/steam-engine-remnants-mask.png",
-				width = 462,
-				height = 386,
-				direction_count = 4,
-				shift = util.by_pixel(17, 6.5),
-				tint = tint,
-				scale = 0.5,
-			},
-			-- Highlights
-			{
-				filename = "__reskins-bobs__/graphics/entity/power/steam-engine/remnants/steam-engine-remnants-highlights.png",
-				width = 462,
-				height = 386,
-				direction_count = 4,
-				shift = util.by_pixel(17, 6.5),
-				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				scale = 0.5,
-			},
-		},
-	}
+local TYPE = "generator"
+local BASE_ENTITY_NAME = "steam-engine"
 
-	return remnant_animation
-end
-
--- Reskin entities, create and assign extra details
-for name, map in pairs(tier_map) do
-	---@type data.GeneratorPrototype
-	local entity = data.raw[inputs.type][name]
+for name, options in pairs(entities) do
+	local entity = data.raw[TYPE][name]
 	if not entity then
 		goto continue
 	end
-	inputs.tint = reskins.lib.tiers.get_tint(map.tier)
 
-	reskins.lib.setup_standard_entity(name, map.tier, inputs)
+	local tier = _framework.tiers.get_tier(options)
+	local tint = _framework.tiers.get_tint(tier)
 
-	-- Fetch remnant
-	local remnant = data.raw["corpse"][name .. "-remnants"]
-
-	-- Reskin remnants
-	local remnant_animation = get_steam_engine_remnant_animation(inputs.tint)
-	remnant.animation = make_rotated_animation_variations_from_sheet(1, remnant_animation)
-
-	-- Reskin entities
-	entity.two_direction_only = true
-	entity.pictures = {
-		north = {
-			animation = {
-				layers = {
-					-- Base
-					{
-						filename = "__base__/graphics/entity/steam-engine/steam-engine-V.png",
-						width = 225,
-						height = 391,
-						frame_count = 32,
-						line_length = 8,
-						shift = util.by_pixel(4.75, -6.25),
-						scale = 0.5,
-					},
-					-- Color mask
-					{
-						filename = "__reskins-bobs__/graphics/entity/power/steam-engine/steam-engine-V-mask.png",
-						width = 225,
-						height = 391,
-						frame_count = 32,
-						line_length = 8,
-						shift = util.by_pixel(4.75, -6.25),
-						tint = inputs.tint,
-						scale = 0.5,
-					},
-					-- Highlights
-					{
-						filename = "__reskins-bobs__/graphics/entity/power/steam-engine/steam-engine-V-highlights.png",
-						width = 225,
-						height = 391,
-						frame_count = 32,
-						line_length = 8,
-						shift = util.by_pixel(4.75, -6.25),
-						blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-						scale = 0.5,
-					},
-					-- Shadow
-					{
-						filename = "__base__/graphics/entity/steam-engine/steam-engine-V-shadow.png",
-						width = 330,
-						height = 307,
-						frame_count = 32,
-						line_length = 8,
-						draw_as_shadow = true,
-						shift = util.by_pixel(40.5, 9.25),
-						scale = 0.5,
-					},
-				},
-			},
+	_lib.create_explosions_and_particles(entity.name, {
+		base_entity_name = BASE_ENTITY_NAME,
+		type = entity.type,
+		tint = tint,
+		particles = {
+			["big"] = 1,
+			["medium"] = 2,
 		},
-		east = {
-			animation = {
-				layers = {
-					-- Base
-					{
-						filename = "__base__/graphics/entity/steam-engine/steam-engine-H.png",
-						width = 352,
-						height = 257,
-						frame_count = 32,
-						line_length = 8,
-						shift = util.by_pixel(1, -4.75),
-						scale = 0.5,
-					},
-					-- Color Mask
-					{
-						filename = "__reskins-bobs__/graphics/entity/power/steam-engine/steam-engine-H-mask.png",
-						width = 352,
-						height = 257,
-						frame_count = 32,
-						line_length = 8,
-						shift = util.by_pixel(1, -4.75),
-						tint = inputs.tint,
-						scale = 0.5,
-					},
-					-- Highlights
-					{
-						filename = "__reskins-bobs__/graphics/entity/power/steam-engine/steam-engine-H-highlights.png",
-						width = 352,
-						height = 257,
-						frame_count = 32,
-						line_length = 8,
-						shift = util.by_pixel(1, -4.75),
-						blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-						scale = 0.5,
-					},
-					-- Shadow
-					{
-						filename = "__base__/graphics/entity/steam-engine/steam-engine-H-shadow.png",
-						width = 508,
-						height = 160,
-						frame_count = 32,
-						line_length = 8,
-						draw_as_shadow = true,
-						shift = util.by_pixel(48, 24),
-						scale = 0.5,
-					},
-				},
-			},
-		},
-	}
+	})
+
+	local corpse = _lib.create_remnant(entity.name, {
+		base_entity_name = BASE_ENTITY_NAME,
+		type = entity.type,
+	})
+
+	local sprite_set = SteamEngine.get_sprite_set({ tint = tint })
+	Applicators.apply_sprite_set(entity, sprite_set)
+	Applicators.apply_sprite_set(corpse, sprite_set)
+
+	local icon_data = SteamEngine.get_icon({ tint = tint })
+	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
+		tier = tier,
+		name = entity.name,
+		type_name = entity.type,
+		icon_data = icon_data,
+	})
+	_sprite_utils.icons.apply_icon_assignment(icon_assignment)
 
 	::continue::
 end
