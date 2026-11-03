@@ -3,6 +3,15 @@
 --
 -- See LICENSE in the project directory for license information.
 
+---@using data
+
+local _lib = require("_lib")
+local _framework = { tiers = require("__reskins-framework__.api.tiers") }
+local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
+
+local Applicators = require("__reskins-assets-api__.api.applicators")
+local Roboport = require("__reskins-assets-api__.assets.base.entities.roboport")
+
 -- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then
 	return
@@ -18,217 +27,58 @@ local inputs = {
 	particles = { ["medium"] = 2 },
 }
 
-local tier_map = {
-	["roboport"] = { tier = 1, prog_tier = 2, image_index = 1 },
-	["bob-roboport-2"] = { tier = 2, prog_tier = 3, image_index = 2 },
-	["bob-roboport-3"] = { tier = 3, prog_tier = 4, image_index = 3 },
-	["bob-roboport-4"] = { tier = 4, prog_tier = 5, image_index = 4 },
+local entities = {
+	["roboport"] = { tier = 1, prog_tier = 2, variant_index = 1 },
+	["bob-roboport-2"] = { tier = 2, prog_tier = 3, variant_index = 2 },
+	["bob-roboport-3"] = { tier = 3, prog_tier = 4, variant_index = 3 },
+	["bob-roboport-4"] = { tier = 4, prog_tier = 5, variant_index = 4 },
 }
 
--- Reskin entities, create and assign extra details
-for name, map in pairs(tier_map) do
-	---@type data.RoboportPrototype
-	local entity = data.raw[inputs.type][name]
+local TYPE = "roboport"
+local BASE_ENTITY_NAME = "roboport"
+
+for name, options in pairs(entities) do
+	local entity = data.raw[TYPE][name]
 	if not entity then
 		goto continue
 	end
 
-	local tier = reskins.lib.tiers.get_tier(map)
-	inputs.tint = reskins.lib.tiers.get_tint(tier)
+	local tier = _framework.tiers.get_tier(options)
+	local tint = _framework.tiers.get_tint(tier)
 
-	-- Setup icon details
-	inputs.icon_base = "roboport-" .. map.image_index
-
-	reskins.lib.setup_standard_entity(name, tier, inputs)
-
-	-- Fetch remnant
-	local remnant = data.raw["corpse"][name .. "-remnants"]
-
-	-- Reskin remnants
-	remnant.animation = make_rotated_animation_variations_from_sheet(2, {
-		layers = {
-			-- Base
-			{
-				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/remnants/roboport-remnants.png",
-				width = 364,
-				height = 358,
-				direction_count = 1,
-				shift = util.by_pixel(2, 8),
-				scale = 0.5,
-			},
-			-- Mask
-			{
-				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/remnants/roboport-remnants-mask.png",
-				width = 364,
-				height = 358,
-				direction_count = 1,
-				shift = util.by_pixel(2, 8),
-				tint = inputs.tint,
-				scale = 0.5,
-			},
-			-- Highlights
-			{
-				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/remnants/roboport-remnants-highlights.png",
-				width = 364,
-				height = 358,
-				direction_count = 1,
-				shift = util.by_pixel(2, 8),
-				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				scale = 0.5,
-			},
-			-- Antenna
-			{
-				--stylua: ignore
-				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/remnants/antennas/roboport-" .. map.image_index .. "-antenna-remnants.png",
-				width = 364,
-				height = 358,
-				direction_count = 1,
-				shift = util.by_pixel(2, 8),
-				scale = 0.5,
-			},
-			-- Door
-			{
-				--stylua: ignore
-				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/remnants/doors/roboport-" .. map.image_index .. "-door-remnants.png",
-				width = 364,
-				height = 358,
-				direction_count = 1,
-				shift = util.by_pixel(2, 8),
-				scale = 0.5,
-			},
+	_lib.create_explosions_and_particles(entity.name, {
+		base_entity_name = BASE_ENTITY_NAME,
+		type = entity.type,
+		tint = tint,
+		particles = {
+			["medium"] = 2,
 		},
 	})
 
-	-- Reskin entities
-	entity.spawn_and_station_height = -0.1
-	entity.base = {
-		layers = {
-			-- Base
-			{
-				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/roboport-base.png",
-				width = 228,
-				height = 277,
-				shift = util.by_pixel(2, 7.75),
-				scale = 0.5,
-			},
-			-- Mask
-			{
-				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/roboport-base-mask.png",
-				width = 228,
-				height = 277,
-				shift = util.by_pixel(2, 7.75),
-				tint = inputs.tint,
-				scale = 0.5,
-			},
-			-- Highlights
-			{
-				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/roboport-base-highlights.png",
-				width = 228,
-				height = 277,
-				shift = util.by_pixel(2, 7.75),
-				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				scale = 0.5,
-			},
-			-- Shadow
-			{
-				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/roboport-shadow.png",
-				width = 294,
-				height = 201,
-				draw_as_shadow = true,
-				shift = util.by_pixel(28.5, 19.25),
-				scale = 0.5,
-			},
-		},
-	}
+	local corpse = _lib.create_remnant(entity.name, {
+		base_entity_name = BASE_ENTITY_NAME,
+		type = entity.type,
+	})
 
-	entity.base_patch = {
-		layers = {
-			-- Padding
-			{
-				filename = "__reskins-bobs__/graphics/empty.png",
-				priority = "medium",
-				width = 1,
-				height = 1,
-			},
-			-- Base
-			{
-				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/roboport-base-patch.png",
-				priority = "medium",
-				width = 138,
-				height = 100,
-				shift = util.by_pixel(1.5, 5),
-				scale = 0.5,
-			},
-			-- Mask
-			{
-				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/roboport-base-patch-mask.png",
-				priority = "medium",
-				width = 138,
-				height = 100,
-				shift = util.by_pixel(1.5, 5),
-				tint = inputs.tint,
-				scale = 0.5,
-			},
-			-- Highlights
-			{
-				filename = "__reskins-bobs__/graphics/entity/logistics/roboport/roboport-base-patch-highlights.png",
-				priority = "medium",
-				width = 138,
-				height = 100,
-				shift = util.by_pixel(1.5, 5),
-				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				scale = 0.5,
-			},
-		},
-	}
+	local sprite_set = Roboport.get_sprite_set({
+		tint = tint,
+		antenna_variant = options.variant_index,
+		door_variant = options.variant_index,
+	})
+	Applicators.apply_sprite_set(entity, sprite_set)
+	Applicators.apply_sprite_set(corpse, sprite_set)
 
-	entity.base_animation = {
-		--stylua: ignore
-		filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/antennas/roboport-" .. map.image_index .. "-base-animation.png",
-		priority = "medium",
-		width = 83,
-		height = 59,
-		frame_count = 8,
-		animation_speed = 0.5,
-		shift = util.by_pixel(-17.75, -61.25),
-		scale = 0.5,
-	}
-
-	entity.door_animation_up = {
-		--stylua: ignore
-		filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/doors/roboport-" .. map.image_index .. "-door-up.png",
-		priority = "medium",
-		width = 97,
-		height = 38,
-		frame_count = 16,
-		shift = util.by_pixel(-0.25, -29.5),
-		scale = 0.5,
-	}
-
-	entity.door_animation_down = {
-		--stylua: ignore
-		filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/doors/roboport-" .. map.image_index .. "-door-down.png",
-		priority = "medium",
-		width = 97,
-		height = 41,
-		frame_count = 16,
-		shift = util.by_pixel(-0.25, -9.75),
-		scale = 0.5,
-	}
-
-	entity.recharging_animation = {
-		filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/roboport-recharging.png",
-		priority = "high",
-		width = 37,
-		height = 35,
-		frame_count = 16,
-		scale = 1.5,
-		animation_speed = 0.5,
-	}
-
-	if name ~= "roboport" then
-		entity.water_reflection = util.copy(data.raw[inputs.type]["roboport"].water_reflection)
-	end
+	local icon_data = Roboport.get_tier_icon({
+		tint = tint,
+		tier = options.variant_index,
+	})
+	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
+		tier = tier,
+		name = entity.name,
+		type_name = entity.type,
+		icon_data = icon_data,
+	})
+	_sprite_utils.icons.apply_icon_assignment(icon_assignment)
 
 	::continue::
 end
