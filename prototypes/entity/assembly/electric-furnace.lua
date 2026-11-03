@@ -53,20 +53,17 @@ local entities = {
 		variant = "chemical",
 		tier = 3,
 		tint = reskins.bobs.furnace_tint_index.chemical,
-		has_fluids = true,
 	},
 	-- Chemical mixing furnaces
 	["bob-electric-chemical-mixing-furnace"] = {
 		type = "assembling-machine",
 		variant = "chemical-mixing",
 		tier = 4,
-		has_fluids = true,
 	},
 	["bob-electric-chemical-mixing-furnace-2"] = {
 		type = "assembling-machine",
 		variant = "chemical-mixing",
 		tier = 5,
-		has_fluids = true,
 	},
 }
 
