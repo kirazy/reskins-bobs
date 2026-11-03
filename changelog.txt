@@ -4,7 +4,7 @@ Date: ????
   Features:
     - Improved support for frozen entity states
   Changes:
-    - Migrated centrifuge, distillery, electric furnace, steel furnace and stone furnace sprites to use the Artisanal Reskins: Assets API
+    - Migrated centrifuge, distillery, electric furnace, oil refinery, steel furnace and stone furnace sprites to use the Artisanal Reskins: Assets API
   Bugfixes:
     - Fixed that stone furnace and related entities did not display remnants when destroyed
 ---------------------------------------------------------------------------------------------------
