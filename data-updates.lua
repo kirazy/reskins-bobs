@@ -7,6 +7,7 @@
 -- ENTITIES
 ----------------------------------------------------------------------------------------------------
 -- Bob's Assembly
+require("prototypes.entity.assembly.assembling-machine")
 require("prototypes.entity.assembly-updates")
 
 -- Bob's Greenhouse

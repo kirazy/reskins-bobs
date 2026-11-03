@@ -16,43 +16,6 @@ end
 
 local is_progression = reskins.lib.settings.get_value("reskins-lib-tier-mapping") == "progression-map"
 
-local assembling_machines = {
-	-- Standard assembly machines
-	["assembling-machine-1"] = { tier = 1, flags = { sprite_set = 0 } },
-	["assembling-machine-2"] = { tier = 2, flags = { sprite_set = 1 } },
-	["assembling-machine-3"] = { tier = 3, flags = { sprite_set = 2 } },
-	["bob-assembling-machine-4"] = { tier = 4, flags = { sprite_set = 3 } },
-	["bob-assembling-machine-5"] = { tier = 5, flags = { sprite_set = 4 } },
-	["bob-assembling-machine-6"] = { tier = 6, flags = { sprite_set = 5 } },
-	-- Smoke stacks
-	["bob-burner-assembling-machine"] = {
-		tier = 0,
-		flags = { use_burner_set = true, is_small = reskins.bobs.triggers.assembly.burner_assembling_machine_is_small },
-	},
-	["bob-steam-assembling-machine"] = { tier = 0, flags = { use_steam_set = true } },
-	-- Electronics
-	["bob-electronics-machine-1"] = {
-		tier = 1,
-		prog_tier = 2,
-		flags = { use_electronics_set = true, lights = 1, is_small = true },
-	},
-	["bob-electronics-machine-2"] = {
-		tier = 2,
-		prog_tier = 4,
-		flags = { use_electronics_set = true, lights = 2, is_small = true },
-	},
-	["bob-electronics-machine-3"] = {
-		tier = 3,
-		prog_tier = 6,
-		flags = { use_electronics_set = true, lights = 3, is_small = true },
-	},
-}
-
-for name, map in pairs(assembling_machines) do
-	local tier = is_progression and map.prog_tier or map.tier
-	reskins.lib.apply_skin.assembling_machine(name, tier, nil, nil, map.flags)
-end
-
 -- CHEMICAL PLANTS (Note: Bob sets up in data-updates)
 if reskins.lib.settings.get_value("bobmods-assembly-chemicalplants") then
 	-- Set flag for availability for Mini-Machines compatibility pass
