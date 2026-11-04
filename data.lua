@@ -12,7 +12,6 @@ require("prototypes.functions.entity-functions")
 -- ENTITIES
 ----------------------------------------------------------------------------------------------------
 -- Bob's Assembly
-require("prototypes.entity.assembly")
 require("prototypes.entity.assembly.centrifuge")
 require("prototypes.entity.assembly.distillery")
 require("prototypes.entity.assembly.electrolyser")
