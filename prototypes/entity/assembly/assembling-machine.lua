@@ -6,10 +6,7 @@
 ---@using data
 
 local _lib = require("_lib")
-local _framework = {
-	tiers = require("__reskins-framework__.api.tiers"),
-	settings = require("__reskins-framework__.api.settings"),
-}
+local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 
 local Applicators = require("__reskins-assets-api__.api.applicators")
