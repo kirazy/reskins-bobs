@@ -9,7 +9,6 @@
 local _sprites = require("__reskins-sprite-utils__.sprites")
 local _utils = require("__reskins-sprite-utils__.utils")
 
--- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.mining.entities) then
 	return
 end

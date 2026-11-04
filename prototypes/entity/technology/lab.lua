@@ -3,7 +3,6 @@
 --
 -- See LICENSE in the project directory for license information.
 
--- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.technology.entities) then
 	return
 end
@@ -96,7 +95,6 @@ reskin_lab("bob-lab-alien")
 -- lab-alien
 -- burner-lab
 
--- Check to see if reskinning needs to be done.
 if not mods["bobmodules"] then
 	return
 end

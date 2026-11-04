@@ -10,7 +10,6 @@ local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 local Applicators = require("__reskins-assets-api__.api.applicators")
 local Distillery = require("__reskins-assets-api__.assets.bobs.entities.distillery")
 
--- Check to see if reskinning needs to be done.
 if not mods["bobassembly"] and not mods["bobplates"] then
 	return
 end

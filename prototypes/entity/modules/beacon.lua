@@ -5,7 +5,6 @@
 
 ---@using data
 
--- Check to see if reskinning needs to be done.
 if mods["classic-beacon"] or not (reskins.bobs and reskins.bobs.triggers.modules.entities) then
 	return
 end

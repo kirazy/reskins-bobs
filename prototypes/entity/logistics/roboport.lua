@@ -10,7 +10,6 @@ local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 local Applicators = require("__reskins-assets-api__.api.applicators")
 local Roboport = require("__reskins-assets-api__.assets.base.entities.roboport")
 
--- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then
 	return
 end

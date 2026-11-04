@@ -15,7 +15,6 @@ local Applicators = require("__reskins-assets-api__.api.applicators")
 local Boiler = require("__reskins-assets-api__.assets.base.entities.boiler")
 local AssemblingMachine = require("__reskins-assets-api__.assets.assorted.entities.assembling-machine-original")
 
--- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.power.entities) then
 	return
 end
