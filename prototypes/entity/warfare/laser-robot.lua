@@ -3,79 +3,52 @@
 --
 -- See LICENSE in the project directory for license information.
 
+---@using data
+
+local _lib = require("_lib")
+local _framework = { tiers = require("__reskins-framework__.api.tiers") }
+local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
+
+local Applicators = require("__reskins-assets-api__.api.applicators")
+local LaserRobot = require("__reskins-assets-api__.assets.bobs.entities.robot-laser")
+
 if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then
 	return
 end
 
--- Set input parameters
-local inputs = {
-	type = "combat-robot",
-	icon_filename = "__reskins-bobs__/graphics/icons/warfare/robots/bob-laser-robot.png",
-	base_entity_name = "defender-robot",
-	mod = "bobs",
-	group = "warfare",
-	particles = { ["small"] = 3 },
-	tint = util.color("#7f4eca"),
-}
-
----@return data.RotatedAnimation
-local function robot_animation()
-	---@type data.RotatedAnimation
-	local animation = {
-		filename = "__reskins-bobs__/graphics/entity/warfare/laser-robot/bob-laser-robot.png",
-		width = 64,
-		height = 64,
-		scale = 0.5,
-	}
-
-	return animation
-end
-
----@return data.RotatedAnimation
-local function robot_shadow()
-	---@type data.RotatedAnimation
-	local animation = {
-		filename = "__reskins-bobs__/graphics/entity/warfare/laser-robot/bob-laser-robot-shadow.png",
-		width = 64,
-		height = 64,
-		draw_as_shadow = true,
-		scale = 0.5,
-	}
-
-	return animation
-end
-
-local name = "bob-laser-robot"
-
-local robot = data.raw["combat-robot"][name]
-if not robot then
+local entity = data.raw["combat-robot"]["bob-laser-robot-entity"]
+if not entity then
 	return
 end
 
-reskins.lib.set_inputs_defaults(inputs)
-reskins.lib.create_explosions_and_particles(name, inputs)
-reskins.lib.create_remnant(name, { type = inputs.type, base_entity_name = "defender" })
-reskins.lib.construct_icon(name, 0, inputs)
+_lib.create_explosions_and_particles(entity.name, {
+	base_entity_name = "defender-robot",
+	type = entity.type,
+	tint = util.color("#7f4eca"),
+	particles = {
+		["small"] = 3,
+	},
+})
 
--- Fetch remnant
-local remnant = data.raw["corpse"][name .. "-remnants"]
+local corpse = _lib.create_remnant(entity.name, {
+	base_entity_name = "defender",
+	type = entity.type,
+})
 
--- Reskin remants
-remnant.animation = {
-	filename = "__reskins-bobs__/graphics/entity/warfare/laser-robot/remnants/laser-robot-remnants.png",
-	width = 98,
-	height = 94,
-	scale = 0.5,
-}
+-- Robots generate this indirectly.
+entity.corpse = nil
 
--- Remnants are generated indirectly
-robot.corpse = nil
+local sprite_set = LaserRobot.get_sprite_set()
+Applicators.apply_sprite_set(entity, sprite_set)
+Applicators.apply_sprite_set(corpse, sprite_set)
 
--- Reskin entity
-robot.idle = robot_animation()
-robot.in_motion = robot_animation()
-robot.shadow_idle = robot_shadow()
-robot.shadow_in_motion = robot_shadow()
+_lib.configure_robot_death_animation(entity, corpse.name)
 
--- Setup destruction animation
-reskins.bobs.make_robot_particle(robot)
+local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
+	tier = 0,
+	name = entity.name,
+	type_name = entity.type,
+	icon_data = LaserRobot.get_icon(),
+})
+
+_sprite_utils.icons.apply_icon_assignment(icon_assignment)

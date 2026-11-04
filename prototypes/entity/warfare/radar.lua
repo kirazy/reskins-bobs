@@ -3,6 +3,13 @@
 --
 -- See LICENSE in the project directory for license information.
 
+local _lib = require("_lib")
+local _framework = { tiers = require("__reskins-framework__.api.tiers") }
+local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
+
+local Applicators = require("__reskins-assets-api__.api.applicators")
+local Radar = require("__reskins-assets-api__.assets.base.entities.radar")
+
 if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then
 	return
 end
@@ -12,152 +19,52 @@ if reskins.compatibility then
 	reskins.compatibility.triggers.minimachines.radar = true
 end
 
--- Set input parameters
-local inputs = {
-	type = "radar",
-	icon_name = "radar",
-	base_entity_name = "radar",
-	mod = "bobs",
-	group = "warfare",
-	particles = { ["medium"] = 2 },
+local entities = {
+	["radar"] = { tier = 1 },
+	["bob-radar-2"] = { tier = 2 },
+	["bob-radar-3"] = { tier = 3 },
+	["bob-radar-4"] = { tier = 4 },
+	["bob-radar-5"] = { tier = 5 },
 }
 
-local tier_map = {
-	["radar"] = 1,
-	["bob-radar-2"] = 2,
-	["bob-radar-3"] = 3,
-	["bob-radar-4"] = 4,
-	["bob-radar-5"] = 5,
-}
+local TYPE = "radar"
+local BASE_ENTITY_NAME = "radar"
 
----@param tint data.Color
----@return data.RotatedAnimation
-local function get_radar_remnant_animation(tint)
-	---@type data.RotatedAnimation
-	local remnant_animation = {
-		layers = {
-			-- Base
-			{
-				filename = "__base__/graphics/entity/radar/remnants/radar-remnants.png",
-				width = 282,
-				height = 212,
-				direction_count = 1,
-				shift = util.by_pixel(12, 4.5),
-				scale = 0.5,
-			},
-			-- Mask
-			{
-				filename = "__reskins-bobs__/graphics/entity/warfare/radar/remnants/radar-remnants-mask.png",
-				width = 282,
-				height = 212,
-				direction_count = 1,
-				shift = util.by_pixel(12, 4.5),
-				tint = tint,
-				scale = 0.5,
-			},
-			-- Highlights
-			{
-				filename = "__reskins-bobs__/graphics/entity/warfare/radar/remnants/radar-remnants-highlights.png",
-				width = 282,
-				height = 212,
-				direction_count = 1,
-				shift = util.by_pixel(12, 4.5),
-				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				scale = 0.5,
-			},
-		},
-	}
-
-	return remnant_animation
-end
-
--- Reskin entities, create and assign extra details
-for name, tier in pairs(tier_map) do
-	---@type data.RadarPrototype
-	local entity = data.raw[inputs.type][name]
+for name, options in pairs(entities) do
+	local entity = data.raw[TYPE][name]
 	if not entity then
 		goto continue
 	end
-	inputs.tint = reskins.lib.tiers.get_tint(tier)
 
-	reskins.lib.setup_standard_entity(name, tier, inputs)
+	local tier = _framework.tiers.get_tier(options)
+	local tint = _framework.tiers.get_tint(tier)
 
-	-- Fetch remnant
-	local remnant = data.raw["corpse"][name .. "-remnants"]
-
-	-- Reskin remnants
-	local remnant_animation = get_radar_remnant_animation(inputs.tint)
-	remnant.animation = make_rotated_animation_variations_from_sheet(1, remnant_animation)
-
-	-- Reskin entity
-	entity.integration_patch = {
-		filename = "__base__/graphics/entity/radar/radar-integration.png",
-		priority = "low",
-		width = 238,
-		height = 216,
-		shift = util.by_pixel(1.5, 4),
-		scale = 0.5,
-	}
-
-	entity.pictures = {
-		layers = {
-			-- Base
-			{
-				filename = "__base__/graphics/entity/radar/radar.png",
-				priority = "low",
-				width = 196,
-				height = 254,
-				apply_projection = false,
-				direction_count = 64,
-				line_length = 8,
-				shift = util.by_pixel(1.0, -16.0),
-				scale = 0.5,
-			},
-			-- Mask
-			{
-				filename = "__reskins-bobs__/graphics/entity/warfare/radar/radar-mask.png",
-				priority = "low",
-				width = 196,
-				height = 254,
-				apply_projection = false,
-				direction_count = 64,
-				line_length = 8,
-				shift = util.by_pixel(1, -16),
-				tint = inputs.tint,
-				scale = 0.5,
-			},
-			-- Highlights
-			{
-				filename = "__reskins-bobs__/graphics/entity/warfare/radar/radar-highlights.png",
-				priority = "low",
-				width = 196,
-				height = 254,
-				apply_projection = false,
-				direction_count = 64,
-				line_length = 8,
-				shift = util.by_pixel(1, -16),
-				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				scale = 0.5,
-			},
-			-- Shadow
-			{
-				filename = "__base__/graphics/entity/radar/radar-shadow.png",
-				priority = "low",
-				width = 336,
-				height = 170,
-				apply_projection = false,
-				direction_count = 64,
-				line_length = 8,
-				shift = util.by_pixel(39.0, 6.0),
-				draw_as_shadow = true,
-				scale = 0.5,
-			},
+	_lib.create_explosions_and_particles(entity.name, {
+		base_entity_name = BASE_ENTITY_NAME,
+		type = entity.type,
+		tint = tint,
+		particles = {
+			["medium"] = 2,
 		},
-	}
+	})
 
-	if name ~= "radar" then
-		entity.water_reflection = util.copy(data.raw[inputs.type]["radar"].water_reflection)
-	end
+	local corpse = _lib.create_remnant(entity.name, {
+		base_entity_name = BASE_ENTITY_NAME,
+		type = entity.type,
+	})
+
+	local sprite_set = Radar.get_sprite_set({ tint = tint })
+	Applicators.apply_sprite_set(entity, sprite_set)
+	Applicators.apply_sprite_set(corpse, sprite_set)
+
+	local icon_data = Radar.get_icon({ tint = tint })
+	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
+		tier = tier,
+		name = entity.name,
+		type_name = entity.type,
+		icon_data = icon_data,
+	})
+	_sprite_utils.icons.apply_icon_assignment(icon_assignment)
 
 	::continue::
 end

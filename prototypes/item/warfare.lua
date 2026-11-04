@@ -190,11 +190,6 @@ local items = {
 	-- Cannon shells
 	["bob-scatter-cannon-shell"] = get_ammo_overrides("cannon-shells"),
 
-	-- Mines
-	["bob-distractor-mine"] = { subgroup = "mines" },
-	["bob-poison-mine"] = { subgroup = "mines" },
-	["bob-slowdown-mine"] = { subgroup = "mines" },
-
 	-- Components
 	["bob-laser-rifle-battery-case"] = { subgroup = "components" },
 	["bob-bullet-casing"] = { subgroup = "components" },

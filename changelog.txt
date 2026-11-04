@@ -6,6 +6,7 @@ Date: ????
     - Added support for the new assembling machine and heat exchanger sprites
   Changes:
     - Migrated some entity sprites to use the Artisanal Reskins: Assets API
+    - Removed support for Nauvis Day, which is not available for Factorio 2.0 or later
   Locale:
     - Updated Portuguese, Swedish localizations
   Bugfixes:

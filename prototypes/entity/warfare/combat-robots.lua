@@ -3,43 +3,28 @@
 --
 -- See LICENSE in the project directory for license information.
 
+local RobotCapsules = require("__reskins-assets-api__.assets.bobs.entities.robot-capsules")
+
 if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then
 	return
 end
 
--- Setup capsule projectiles
 local capsule_projectiles = {
-	"bob-laser-robot-capsule",
-	"destroyer-capsule",
-	"distractor-capsule",
-	"defender-capsule",
+	["bob-laser-robot-capsule"] = "laser-robot",
+	["destroyer-capsule"] = "destroyer",
+	["distractor-capsule"] = "distractor",
+	["defender-capsule"] = "defender",
 }
 
----Reskins capsule projectiles
----@param name string
-local function reskin_capsule_projectile(name)
+for name, robot in pairs(capsule_projectiles) do
 	local projectile = data.raw["projectile"][name]
 	if not projectile then
-		return
+		goto continue
 	end
 
-	projectile.animation = {
-		filename = "__reskins-bobs__/graphics/entity/warfare/capsules/" .. name .. ".png",
-		priority = "high",
-		flags = { "no-crop" },
-		size = 48,
-		scale = 0.5,
-	}
+	local graphics = RobotCapsules.get_projectile_graphics({ robot = robot })
+	projectile.animation = graphics.animation
+	projectile.shadow = graphics.shadow
 
-	projectile.shadow = {
-		filename = "__reskins-bobs__/graphics/entity/warfare/capsules/combat-robot-capsule-shadow.png",
-		priority = "high",
-		flags = { "no-crop" },
-		size = 48,
-		scale = 0.5,
-	}
-end
-
-for _, name in pairs(capsule_projectiles) do
-	reskin_capsule_projectile(name)
+	::continue::
 end
