@@ -3,66 +3,42 @@
 --
 -- See LICENSE in the project directory for license information.
 
+local _lib = require("_lib")
+local _framework = { tiers = require("__reskins-framework__.api.tiers") }
+local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
+
+local Applicators = require("__reskins-assets-api__.api.applicators")
+local RoboZoneInterface = require("__reskins-assets-api__.assets.bobs.entities.robo-zone-interface")
+
 if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then
 	return
 end
 
--- Set input parameters
-local inputs = {
-	type = "roboport",
-	base_entity_name = "roboport",
-	mod = "bobs",
-	group = "logistics",
-	particles = { ["medium"] = 2 },
-	make_remnants = false,
-}
-
-inputs.icon_filename = "__reskins-bobs__/graphics/icons/logistics/zone-interface/zone-interface-icon-base.png"
-
-local name = "bob-logistic-zone-interface"
-local tier = 0
-
----@type data.RoboportPrototype
-local entity = data.raw[inputs.type][name]
+local entity = data.raw["roboport"]["bob-logistic-zone-interface"]
 if not entity then
 	return
 end
 
-reskins.lib.setup_standard_entity(name, tier, inputs)
+local BASE_ENTITY_NAME = "roboport"
 
-entity.base = {
-	filename = "__reskins-bobs__/graphics/entity/logistics/zone-interface/logistic-zone-interface.png",
-	width = 64,
-	height = 70,
-	shift = util.by_pixel(0, -4),
-	scale = 0.5,
-}
-
-entity.base_animation = {
-	layers = {
-		{
-			filename = "__reskins-bobs__/graphics/entity/logistics/roboport/base/antennas/roboport-1-base-animation.png",
-			priority = "medium",
-			width = 83,
-			height = 59,
-			frame_count = 8,
-			animation_speed = 0.5,
-			shift = util.by_pixel(1, -21),
-			scale = 0.5,
-		},
-		{
-			filename = "__reskins-bobs__/graphics/entity/logistics/zone-interface/logistic-zone-interface-shadow.png",
-			priority = "medium",
-			width = 106,
-			height = 69,
-			frame_count = 8,
-			animation_speed = 0.5,
-			shift = util.by_pixel(11.5, 1.5),
-			draw_as_shadow = true,
-			scale = 0.5,
-		},
+_lib.create_explosions_and_particles(entity.name, {
+	base_entity_name = BASE_ENTITY_NAME,
+	type = entity.type,
+	particles = {
+		["medium"] = 2,
 	},
-}
+})
 
--- Fix corpse
 entity.corpse = "small-remnants"
+
+local sprite_set = RoboZoneInterface.get_sprite_set()
+Applicators.apply_sprite_set(entity, sprite_set)
+
+local icon_data = RoboZoneInterface.get_icon()
+local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
+	tier = 0,
+	name = entity.name,
+	type_name = entity.type,
+	icon_data = icon_data,
+})
+_sprite_utils.icons.apply_icon_assignment(icon_assignment)

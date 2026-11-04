@@ -3,199 +3,92 @@
 --
 -- See LICENSE in the project directory for license information.
 
+---@using data
+
+local _lib = require("_lib")
+local _framework = {
+	tiers = require("__reskins-framework__.api.tiers"),
+	settings = require("__reskins-framework__.api.settings"),
+}
+local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
+
+local Applicators = require("__reskins-assets-api__.api.applicators")
+local InserterPreset = require("__reskins-assets-api__.assets.base.entities.inserter-preset")
+
 if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then
 	return
 end
 
--- Set input parameters
-local inputs = {
-	type = "inserter",
-	mod = "bobs",
-	group = "logistics",
-	particles = { ["medium"] = 1 },
-}
-
-local inserter_map
-if reskins.lib.settings.get_value("bobmods-logistics-inserteroverhaul") == false then
-	inserter_map = {
+local entities
+if _framework.settings.get_value("bobmods-logistics-inserteroverhaul") == false then
+	entities = {
 		-- Standard inserters
-		["burner-inserter"] = { tier = 0 },
-		["inserter"] = { tier = 1 },
-		["long-handed-inserter"] = { tier = 2 },
-		["fast-inserter"] = { tier = 3 },
-		["bob-express-inserter"] = { tier = 4, particle_tint = "30d79c", file_name = "express-inserter" },
+		["burner-inserter"] = { tier = 0, preset = "inserter-burner" },
+		["inserter"] = { tier = 1, preset = "inserter" },
+		["long-handed-inserter"] = { tier = 2, preset = "inserter-long-handed" },
+		["fast-inserter"] = { tier = 3, preset = "inserter-fast" },
+		["bob-express-inserter"] = { tier = 4, preset = "inserter-express", particle_tint = util.color("30d79c") },
 
 		-- Bulk inserters
-		["bulk-inserter"] = { tier = 3 },
-		["bob-express-bulk-inserter"] = { tier = 4, particle_tint = "2dcd3f", file_name = "express-bulk-inserter" },
-	}
-else
-	inserter_map = {
-		["burner-inserter"] = { tier = 0 },
-	}
-end
-
--- Inserter Remnants
-local function inserter_remnants(parameters)
-	return make_rotated_animation_variations_from_sheet(4, {
-		--stylua: ignore
-		filename = "__reskins-bobs__/graphics/entity/logistics/inserter/standard/" .. parameters.file_name .. "/remnants/" .. parameters.file_name .. "-remnants.png",
-		width = 134,
-		height = 94,
-		direction_count = 1,
-		shift = util.by_pixel(3, -1.5),
-		scale = 0.5,
-	})
-end
-
--- Inserter Arms
-local function inserter_arm_picture(parameters)
-	return {
-		--stylua: ignore
-		filename = "__reskins-bobs__/graphics/entity/logistics/inserter/standard/" .. parameters.file_name .. "/" .. parameters.file_name .. "-arm.png",
-		priority = "extra-high",
-		width = 32,
-		height = 136,
-		scale = 0.25,
-	}
-end
-
-local function inserter_arm_shadow()
-	return {
-		filename = "__reskins-bobs__/graphics/entity/logistics/inserter/shadows/inserter-arm-shadow.png",
-		priority = "extra-high",
-		width = 32,
-		height = 136,
-		draw_as_shadow = true,
-		scale = 0.25,
-	}
-end
-
--- Hand open, closed for bulk, standard, and long-handed inserters
-local function inserter_hand_picture(parameters)
-	return {
-		--stylua: ignore
-		filename = "__reskins-bobs__/graphics/entity/logistics/inserter/standard/" .. parameters.file_name .. "/" .. parameters.hand_name .. "-hand-" .. parameters.hand .. ".png",
-		priority = "extra-high",
-		width = 130,
-		height = 164,
-		scale = 0.25,
-	}
-end
-
-local function inserter_hand_shadow(parameters)
-	-- Long-handed inserter types share a shadow with standard inserters
-	if parameters.type == "long-inserter" then
-		parameters.shadow = "inserter"
-	else
-		parameters.shadow = parameters.type
-	end
-	return {
-		--stylua: ignore
-		filename = "__reskins-bobs__/graphics/entity/logistics/inserter/shadows/" .. parameters.shadow .. "-hand-" .. parameters.hand .. "-shadow.png",
-		priority = "extra-high",
-		width = 130,
-		height = 164,
-		draw_as_shadow = true,
-		scale = 0.25,
-	}
-end
-
--- Platform
-local function inserter_platform_picture(parameters)
-	return {
-		sheets = {
-			-- Base
-			{
-				--stylua: ignore
-				filename = "__reskins-bobs__/graphics/entity/logistics/inserter/standard/" .. parameters.file_name .. "/" .. parameters.file_name .. "-platform.png",
-				priority = "extra-high",
-				width = 106,
-				height = 80,
-				shift = util.by_pixel(1.75, 6.75),
-				scale = 0.5,
-			},
-			-- Shadow
-			{
-				filename = "__reskins-bobs__/graphics/entity/logistics/inserter/shadows/inserter-platform-shadow.png",
-				priority = "extra-high",
-				width = 106,
-				height = 80,
-				draw_as_shadow = true,
-				shift = util.by_pixel(1.75, 6.75),
-				scale = 0.5,
-			},
+		["bulk-inserter"] = { tier = 3, preset = "inserter-bulk", is_bulk = true },
+		["bob-express-bulk-inserter"] = {
+			tier = 4,
+			preset = "inserter-express-bulk",
+			is_bulk = true,
+			particle_tint = util.color("2dcd3f"),
 		},
 	}
+else
+	entities = {
+		["burner-inserter"] = { tier = 0, preset = "inserter-burner", is_long = true },
+	}
 end
 
--- Reskin entities, create and assign extra details
-for name, map in pairs(inserter_map) do
-	---@type data.InserterPrototype
-	local entity = data.raw[inputs.type][name]
+local TYPE = "inserter"
+
+local do_labels = _framework.settings.get_value("reskins-bobs-do-inserter-tier-labeling") ~= false
+
+for name, options in pairs(entities) do
+	local entity = data.raw[TYPE][name]
 	if not entity then
 		goto continue
 	end
 
-	local file_name = map.file_name or name
-	local tier = reskins.lib.tiers.get_tier(map)
+	local base_entity_name = options.is_bulk and "bulk-inserter" or "inserter"
 
-	-- Only do complete setup for non-vanilla inserters
-	if map.particle_tint then
-		inputs.tint = util.color(map.particle_tint)
-		inputs.make_explosions = true
-		inputs.make_remnants = true
-	else
-		inputs.tint = nil
-		inputs.make_explosions = false
-		inputs.make_remnants = false
+	-- Only create explosions for non-vanilla inserters.
+	if options.particle_tint then
+		_lib.create_explosions_and_particles(entity.name, {
+			base_entity_name = base_entity_name,
+			type = entity.type,
+			tint = options.particle_tint,
+			particles = {
+				["medium"] = 1,
+			},
+		})
 	end
 
-	-- Handle base_entity
-	if string.find(file_name, "bulk%-inserter") then
-		inputs.base_entity_name = "bulk-inserter"
-	else
-		inputs.base_entity_name = "inserter"
-	end
+	local corpse = _lib.create_remnant(entity.name, {
+		base_entity_name = base_entity_name,
+		type = entity.type,
+	})
 
-	-- Handle tier labels
-	if reskins.lib.settings.get_value("reskins-bobs-do-inserter-tier-labeling") == false then
-		inputs.tier_labels = false
-	end
+	-- With the inserter overhaul, the burner inserter has long hands. With Bob's Adjustable Inserters, inserters other
+	-- than the bulk and long-handed inserters have long hands.
+	local is_long = options.is_long
+		or (mods["bobinserters"] ~= nil and not options.is_bulk and options.preset ~= "inserter-long-handed")
 
-	inputs.icon_filename = "__reskins-bobs__/graphics/icons/logistics/inserter/standard/" .. file_name .. "-icon.png"
+	local sprite_set = InserterPreset.get_sprite_set({ preset = options.preset, is_long = is_long })
+	Applicators.apply_sprite_set(entity, sprite_set)
+	Applicators.apply_sprite_set(corpse, sprite_set)
 
-	reskins.lib.setup_standard_entity(name, tier, inputs)
-
-	-- Handle the type of inserter we're dealing with
-	local inserter_type, hand_name
-	if string.find(file_name, "bulk") then
-		inserter_type = "bulk-inserter"
-		hand_name = file_name
-	elseif mods["bobinserters"] and file_name ~= "long-handed-inserter" then
-		inserter_type = "long-inserter"
-		hand_name = "long-" .. file_name
-	else
-		inserter_type = "inserter"
-		hand_name = file_name
-	end
-
-	-- Fetch remnant
-	local remnant = data.raw["corpse"][name .. "-remnants"]
-
-	-- Reskin remnant
-	remnant.animation = inserter_remnants({ file_name = file_name })
-
-	-- Common to all inserters
-	entity.hand_base_picture = inserter_arm_picture({ file_name = file_name })
-	entity.hand_base_shadow = inserter_arm_shadow()
-	entity.platform_picture = inserter_platform_picture({ file_name = file_name })
-
-	-- Inserter hands
-	entity.hand_open_picture = inserter_hand_picture({ file_name = file_name, hand_name = hand_name, hand = "open" })
-	entity.hand_closed_picture = inserter_hand_picture({ file_name = file_name, hand_name = hand_name, hand = "closed" })
-	entity.hand_open_shadow = inserter_hand_shadow({ type = inserter_type, hand = "open" })
-	entity.hand_closed_shadow = inserter_hand_shadow({ type = inserter_type, hand = "closed" })
+	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
+		tier = do_labels and _framework.tiers.get_tier(options) or 0,
+		name = entity.name,
+		type_name = entity.type,
+		icon_data = InserterPreset.get_icon(options.preset),
+	})
+	_sprite_utils.icons.apply_icon_assignment(icon_assignment)
 
 	::continue::
 end

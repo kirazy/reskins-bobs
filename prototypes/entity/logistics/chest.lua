@@ -3,133 +3,86 @@
 --
 -- See LICENSE in the project directory for license information.
 
+local _lib = require("_lib")
+local _framework = { tiers = require("__reskins-framework__.api.tiers") }
+local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
+
+local Applicators = require("__reskins-assets-api__.api.applicators")
+local ChestLogistic = require("__reskins-assets-api__.assets.base.entities.chest-logistic")
+
 if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then
 	return
 end
-
--- Set input parameters
-local inputs = {
-	type = "logistic-container",
-	icon_name = "logistic-chest",
-	mod = "bobs",
-	group = "logistics",
-	particles = { ["medium"] = 1 },
-	icon_layers = 2,
-	untinted_icon_mask = true,
-}
 
 local material_tints = {
 	["brass"] = util.color("#f9c854"),
 	["titanium"] = util.color("#adadb2"),
 }
 
-local logistic_map = {
+local entities = {
 	["active-provider-chest"] = { tier = 1, prog_tier = 2 },
 	["passive-provider-chest"] = { tier = 1, prog_tier = 2 },
 	["storage-chest"] = { tier = 1, prog_tier = 2 },
 	["buffer-chest"] = { tier = 1, prog_tier = 2 },
 	["requester-chest"] = { tier = 1, prog_tier = 2 },
-	["bob-active-provider-chest-2"] = { tier = 2, prog_tier = 3, material = "brass", chest_type = "active-provider" },
-	["bob-passive-provider-chest-2"] = { tier = 2, prog_tier = 3, material = "brass", chest_type = "passive-provider" },
-	["bob-storage-chest-2"] = { tier = 2, prog_tier = 3, material = "brass", chest_type = "storage" },
-	["bob-buffer-chest-2"] = { tier = 2, prog_tier = 3, material = "brass", chest_type = "buffer" },
-	["bob-requester-chest-2"] = { tier = 2, prog_tier = 3, material = "brass", chest_type = "requester" },
-	["bob-active-provider-chest-3"] = { tier = 3, prog_tier = 4, material = "titanium", chest_type = "active-provider" },
-	["bob-passive-provider-chest-3"] = { tier = 3, prog_tier = 4, material = "titanium", chest_type = "passive-provider" },
-	["bob-storage-chest-3"] = { tier = 3, prog_tier = 4, material = "titanium", chest_type = "storage" },
-	["bob-buffer-chest-3"] = { tier = 3, prog_tier = 4, material = "titanium", chest_type = "buffer" },
-	["bob-requester-chest-3"] = { tier = 3, prog_tier = 4, material = "titanium", chest_type = "requester" },
+	["bob-active-provider-chest-2"] = { tier = 2, prog_tier = 3, material = "brass", logistic_mode = "active-provider" },
+	["bob-passive-provider-chest-2"] = { tier = 2, prog_tier = 3, material = "brass", logistic_mode = "passive-provider" },
+	["bob-storage-chest-2"] = { tier = 2, prog_tier = 3, material = "brass", logistic_mode = "storage" },
+	["bob-buffer-chest-2"] = { tier = 2, prog_tier = 3, material = "brass", logistic_mode = "buffer" },
+	["bob-requester-chest-2"] = { tier = 2, prog_tier = 3, material = "brass", logistic_mode = "requester" },
+	["bob-active-provider-chest-3"] = { tier = 3, prog_tier = 4, material = "titanium", logistic_mode = "active-provider" },
+	["bob-passive-provider-chest-3"] = { tier = 3, prog_tier = 4, material = "titanium", logistic_mode = "passive-provider" },
+	["bob-storage-chest-3"] = { tier = 3, prog_tier = 4, material = "titanium", logistic_mode = "storage" },
+	["bob-buffer-chest-3"] = { tier = 3, prog_tier = 4, material = "titanium", logistic_mode = "buffer" },
+	["bob-requester-chest-3"] = { tier = 3, prog_tier = 4, material = "titanium", logistic_mode = "requester" },
 }
 
--- Reskin entities, create and assign extra details
-for name, map in pairs(logistic_map) do
-	---@type data.LogisticContainerPrototype
-	local entity = data.raw[inputs.type][name]
+local TYPE = "logistic-container"
+
+for name, options in pairs(entities) do
+	local entity = data.raw[TYPE][name]
 	if not entity then
 		goto continue
 	end
 
-	local tier = reskins.lib.tiers.get_tier(map)
+	local tier = _framework.tiers.get_tier(options)
 
 	-- Stick tier labels on the vanilla logistic chests
-	if not map.material then
-		reskins.lib.tiers.add_tier_labels_to_prototype_by_reference(tier, entity)
+	if not options.material then
+		_framework.tiers.add_tier_labels_to_prototype(tier, entity)
 		goto continue
 	end
 
-	-- Construct inputs parameters
-	inputs.base_entity_name = map.chest_type .. "-chest"
-	inputs.icon_base = map.chest_type .. "-chest"
-	inputs.icon_mask = map.material .. "-logistic-chest"
-	inputs.tint = material_tints[map.material]
+	local base_entity_name = options.logistic_mode .. "-chest"
 
-	reskins.lib.setup_standard_entity(name, tier, inputs)
-
-	-- Fetch remnant
-	local remnant = data.raw["corpse"][name .. "-remnants"]
-
-	-- Reskin remnants
-	remnant.animation = {
-		layers = {
-			-- Base
-			{
-				filename = "__base__/graphics/entity/logistic-chest/remnants/" .. map.chest_type .. "-chest-remnants.png",
-				width = 116,
-				height = 82,
-				direction_count = 1,
-				shift = util.by_pixel(10, -3),
-				scale = 0.5,
-			},
-			-- Mask
-			{
-				--stylua: ignore
-				filename = "__reskins-bobs__/graphics/entity/logistics/chest/remnants/" .. map.material .. "-logistic-chest-remnants.png",
-				width = 116,
-				height = 82,
-				direction_count = 1,
-				shift = util.by_pixel(10, -3),
-				scale = 0.5,
-			},
+	_lib.create_explosions_and_particles(entity.name, {
+		base_entity_name = base_entity_name,
+		type = entity.type,
+		tint = material_tints[options.material],
+		particles = {
+			["medium"] = 1,
 		},
-	}
+	})
 
-	-- Reskin entities
-	entity.robot_door = entity.robot_door or {}
-	entity.robot_door.animation = {
-		layers = {
-			-- Base
-			{
-				filename = "__base__/graphics/entity/logistic-chest/" .. map.chest_type .. "-chest.png",
-				priority = "extra-high",
-				width = 66,
-				height = 74,
-				frame_count = 7,
-				shift = util.by_pixel(0, -2),
-				scale = 0.5,
-			},
-			-- Mask
-			{
-				filename = "__reskins-bobs__/graphics/entity/logistics/chest/" .. map.material .. "-logistic-chest.png",
-				priority = "extra-high",
-				width = 66,
-				height = 74,
-				frame_count = 7,
-				shift = util.by_pixel(0, -2),
-				scale = 0.5,
-			},
-			-- Shadow
-			{
-				filename = "__base__/graphics/entity/logistic-chest/logistic-chest-shadow.png",
-				priority = "extra-high",
-				width = 112,
-				height = 46,
-				repeat_count = 7,
-				shift = util.by_pixel(12, 4.5),
-				draw_as_shadow = true,
-				scale = 0.5,
-			},
-		},
-	}
+	local corpse = _lib.create_remnant(entity.name, {
+		base_entity_name = base_entity_name,
+		type = entity.type,
+	})
+
+	local sprite_set = ChestLogistic.get_sprite_set({
+		logistic_mode = options.logistic_mode,
+		material = options.material,
+	})
+	Applicators.apply_sprite_set(entity, sprite_set)
+	Applicators.apply_sprite_set(corpse, sprite_set)
+
+	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
+		tier = tier,
+		name = entity.name,
+		type_name = entity.type,
+		icon_data = ChestLogistic.get_icon({ logistic_mode = options.logistic_mode, material = options.material }),
+	})
+	_sprite_utils.icons.apply_icon_assignment(icon_assignment)
 
 	::continue::
 end

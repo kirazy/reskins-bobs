@@ -11,6 +11,8 @@ Date: ????
   Bugfixes:
     - Fixed that stone furnace and related entities did not display remnants when destroyed
     - Fixed that the thorium and deuterium reactors and their technologies were drawn as uranium reactors
+    - Fixed that pumps did not draw shadows
+    - Fixed that area mining drills facing west drew the standard frame instead of the blue frame while mining with fluid
 ---------------------------------------------------------------------------------------------------
 Version: 2.4.2
 Date: 2026-11-05

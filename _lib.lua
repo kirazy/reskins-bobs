@@ -281,7 +281,7 @@ end
 ---@param base_entity_name data.EntityID The name of the source entity prototype from which the particles are copied, such as `"stone-furnace"`.
 ---@param base_particle_name string A key of `lib.particle_index` that selects the particle to copy.
 ---@param key integer The index of the particle effect within the target effects of the explosion.
----@param tint data.Color The tint to apply to the particle.
+---@param tint? data.Color The tint to apply to the particle.
 ---@deprecated
 function lib.create_particle(name, base_entity_name, base_particle_name, key, tint)
 	local particle = util.copy(data.raw["optimized-particle"][base_entity_name .. "-" .. base_particle_name])
@@ -308,7 +308,7 @@ end
 ---explosion.
 ---@field particles? table
 ---The tint applied to the particles.
----@field tint table
+---@field tint? table
 
 ---Creates the explosion and the tinted particles of the entity with the given `name`, through `create_explosion` and
 ---`create_particle`.
