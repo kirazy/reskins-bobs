@@ -34,7 +34,7 @@ local basic_belt_color = _framework.settings.get_value("reskins-bobs-do-basic-be
 local turbo_prefix = data.raw["transport-belt"]["bob-turbo-transport-belt"] and "bob-turbo" or "turbo"
 
 -- The transport belt, underground belt, and splitter of each tier. The entities of the base game are reskinned only
--- when the tier colors are customized.
+-- when the tier colors are customized, and are otherwise given tier labels if belt entity tier labeling is enabled.
 local belt_tiers = {
 	{
 		transport_belt = "bob-basic-transport-belt",
@@ -87,12 +87,22 @@ end
 
 for _, belt_tier in pairs(belt_tiers) do
 	local belt = data.raw["transport-belt"][belt_tier.transport_belt]
-	if not belt or (belt_tier.is_base and not reskin_base_entities) then
+	if not belt then
 		goto continue
 	end
 
 	local underground = data.raw["underground-belt"][belt_tier.underground_belt]
 	local splitter = data.raw["splitter"][belt_tier.splitter]
+
+	if belt_tier.is_base and not reskin_base_entities then
+		if make_tier_labels then
+			for _, entity in pairs({ belt, underground, splitter }) do
+				_framework.tiers.add_tier_labels_to_prototype(belt_tier.tier, entity)
+			end
+		end
+
+		goto continue
+	end
 
 	local tint = belt_tier.tint or _framework.tiers.get_tint(belt_tier.tier)
 	local params = { tint = tint, belt_sprite = _defines.get_belt_sprites(belt.speed) }
