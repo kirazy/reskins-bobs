@@ -9,7 +9,7 @@
 	"dependencies": [
 		"base",
 		"reskins-library",
-		"reskins-framework >= 0.2.0",
+		"reskins-framework >= 0.2.1",
 		"reskins-assets-api >= 0.2.1",
 		"reskins-assets-assorted",
 		"reskins-assets-base",
