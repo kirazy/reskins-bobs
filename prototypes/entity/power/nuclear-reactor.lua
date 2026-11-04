@@ -3,6 +3,20 @@
 --
 -- See LICENSE in the project directory for license information.
 
+---@using data
+---@using Reskins.Assets.Base.Entities
+
+local _lib = require("_lib")
+local _framework = {
+	tiers = require("__reskins-framework__.api.tiers"),
+}
+local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
+
+local Applicators = require("__reskins-assets-api__.api.applicators")
+local NuclearReactor = require("__reskins-assets-api__.assets.base.entities.nuclear-reactor")
+
+local nuclear_reactors = require("prototypes.functions.nuclear-reactors")
+
 if not (reskins.bobs and reskins.bobs.triggers.power.entities) then
 	return
 end
@@ -10,214 +24,72 @@ if not (reskins.bobs and reskins.bobs.triggers.power.nuclear) then
 	return
 end
 
--- Set input parameters
-local inputs = {
-	type = "reactor",
-	icon_name = "nuclear-reactor",
-	base_entity_name = "nuclear-reactor",
-	mod = "bobs",
-	group = "power",
+local entities = {
+	["nuclear-reactor"] = {
+		tier = 1,
+		prog_tier = 3,
+		material = "aluminum-invar",
+	},
+	["bob-nuclear-reactor-2"] = {
+		tier = 2,
+		prog_tier = 4,
+		material = "silver-titanium",
+	},
+	["bob-nuclear-reactor-3"] = {
+		tier = 3,
+		prog_tier = 5,
+		material = "gold-copper",
+	},
 }
 
-local reactors = {
-	["nuclear-reactor"] = { tier = 1, prog_tier = 3, material = "aluminum-invar" },
-	["bob-nuclear-reactor-2"] = { tier = 2, prog_tier = 4, material = "silver-titanium" },
-	["bob-nuclear-reactor-3"] = { tier = 3, prog_tier = 5, material = "gold-copper" },
-}
+local TYPE = "reactor"
+local BASE_ENTITY_NAME = "nuclear-reactor"
 
-local function skin_reactor_entity(name, tint, material)
-	-- tint        - rgb table to tint the reactor, e.g. {0.5, 0.5, 0.5}
-	-- material    - Heatpipe to use, accepted values: "base", "aluminum-invar", "silver-aluminum", "silver-titanium", "gold-copper"
-
-	-- Reskin reactor entities
-	local entity = data.raw["reactor"][name]
-
-	entity.picture = {
-		layers = {
-			-- Base
-			{
-				filename = "__base__/graphics/entity/nuclear-reactor/reactor.png",
-				width = 302,
-				height = 318,
-				scale = 0.5,
-				shift = util.by_pixel(-5, -7),
-			},
-			-- Mask
-			{
-				filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/reactor-mask.png",
-				width = 302,
-				height = 318,
-				scale = 0.5,
-				shift = util.by_pixel(-5, -7),
-				tint = tint,
-			},
-			-- Highlights
-			{
-				filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/reactor-highlights.png",
-				width = 302,
-				height = 318,
-				scale = 0.5,
-				shift = util.by_pixel(-5, -7),
-				blend_mode = reskins.lib.settings.blend_mode, -- "additive"
-			},
-			-- Pipes
-			{
-				--stylua: ignore
-				filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-piping.png",
-				width = 302,
-				height = 318,
-				scale = 0.5,
-				shift = util.by_pixel(-5, -7),
-			},
-			-- Shadow
-			{
-				filename = "__base__/graphics/entity/nuclear-reactor/reactor-shadow.png",
-				width = 525,
-				height = 323,
-				scale = 0.5,
-				shift = { 1.625, 0 },
-				draw_as_shadow = true,
-			},
-		},
-	}
-
-	-- Pipes
-	entity.lower_layer_picture = {
-				--stylua: ignore
-		filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-base-pipes.png",
-		width = 320,
-		height = 316,
-		scale = 0.5,
-		shift = util.by_pixel(-1, -5),
-	}
-
-	entity.connection_patches_connected = {
-		sheet = {
-				--stylua: ignore
-			filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-connect-patches.png",
-			width = 64,
-			height = 64,
-			variation_count = 12,
-			scale = 0.5,
-		},
-	}
-
-	entity.connection_patches_disconnected = {
-		sheet = {
-				--stylua: ignore
-			filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-connect-patches.png",
-			width = 64,
-			height = 64,
-			variation_count = 12,
-			y = 64,
-			scale = 0.5,
-		},
-	}
-end
-
-local function skin_reactor_remnants(name, tint, material)
-	-- tint        - rgb table to tint the reactor, e.g. {0.5, 0.5, 0.5}
-	-- material    - Heatpipe to use, accepted values: "base", "aluminum-invar", "silver-aluminum", "silver-titanium", "gold-copper"
-
-	-- Reskin reactor remnants
-	local remnant = data.raw["corpse"][name .. "-remnants"]
-
-	remnant.animation = {
-		layers = {
-			-- Base
-			{
-				filename = "__base__/graphics/entity/nuclear-reactor/remnants/nuclear-reactor-remnants.png",
-				width = 410,
-				height = 396,
-				direction_count = 1,
-				shift = util.by_pixel(7, 4),
-				scale = 0.5,
-			},
-			-- Mask
-			{
-				filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/remnants/nuclear-reactor-remnants-mask.png",
-				width = 410,
-				height = 396,
-				direction_count = 1,
-				shift = util.by_pixel(7, 4),
-				tint = tint,
-				scale = 0.5,
-			},
-			-- Highlights
-			{
-				filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/remnants/nuclear-reactor-remnants-highlights.png",
-				width = 410,
-				height = 396,
-				direction_count = 1,
-				shift = util.by_pixel(7, 4),
-				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				scale = 0.5,
-			},
-			-- Pipes
-			{
-				--stylua: ignore
-				filename = "__reskins-bobs__/graphics/entity/power/nuclear-reactor/heat-pipes/" .. material .. "/reactor-remnants.png",
-				width = 410,
-				height = 396,
-				direction_count = 1,
-				shift = util.by_pixel(7, 4),
-				scale = 0.5,
-			},
-		},
-	}
-end
-
--- Construct default inputs
-reskins.lib.set_inputs_defaults(inputs)
-
--- Reskin entities
-for name, map in pairs(reactors) do
-	-- Initialize table address
-	local entity = data.raw[inputs.type][name]
+for name, options in pairs(entities) do
+	local entity = data.raw[TYPE][name]
 	if not entity then
 		goto continue
 	end
 
-	local tier = reskins.lib.tiers.get_tier(map)
+	local tier = _framework.tiers.get_tier(options)
+	local reactor = nuclear_reactors[name]
+	local tint = reactor.tint or _framework.tiers.get_tint(tier)
 
-	-- We need to assign fuel, pipe-tier, and reactor inputs
-	inputs.pipe_tier = map.tier
-	inputs.fuel = reskins.bobs.nuclear_reactor_index[name]
+	_lib.create_explosions_and_particles(entity.name, {
+		base_entity_name = BASE_ENTITY_NAME,
+		type = entity.type,
+		tint = tint,
+		particles = {
+			["big"] = 1,
+			["medium"] = 2,
+		},
+	})
 
-	-- Create explosions
-	reskins.lib.create_explosion(name, inputs)
+	local corpse = _lib.create_remnant(entity.name, {
+		base_entity_name = BASE_ENTITY_NAME,
+		type = entity.type,
+	})
 
-	if
-		reskins.lib.settings.get_value("bobmods-revamp-nuclear") == true
-		and reskins.lib.settings.get_value("reskins-bobs-do-bobrevamp-reactor-color") == true
-	then
-		inputs.reactor = reskins.bobs.nuclear_reactor_index[name]
-		inputs.tint = reskins.bobs.nuclear_reactor_index[name].tint
+	local sprite_set = NuclearReactor.get_sprite_set({
+		tint = tint,
+		pipe_material = options.material,
+		use_fuel_glow_color = true,
+	})
+	Applicators.apply_sprite_set(entity, sprite_set)
+	Applicators.apply_sprite_set(corpse, sprite_set)
 
-		-- Create particles
-		reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["big"], 1, inputs.tint)
-		reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["medium"], 2, inputs.tint)
-	else
-		inputs.reactor = "reactor-" .. tier
-		inputs.tint = reskins.lib.tiers.get_tint(tier)
-
-		-- Create particles
-		reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["big"], 1, inputs.tint)
-		reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["medium"], 2, inputs.tint)
-	end
-
-	-- Create remnants
-	reskins.lib.create_remnant(name, inputs)
-
-	-- Reskin remnants
-	skin_reactor_remnants(name, inputs.tint, map.material)
-
-	-- Reskin entities
-	skin_reactor_entity(name, inputs.tint, map.material)
-
-	-- Reskin icons
-	inputs.icon_base = "nuclear-reactor-" .. reskins.bobs.nuclear_reactor_index[name].name .. "-" .. map.material
-	reskins.lib.construct_icon(name, tier, inputs)
+	local icon_data = NuclearReactor.get_fuel_icon({
+		fuel = reactor.fuel,
+		material = options.material,
+		tint = tint,
+	})
+	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
+		tier = tier,
+		name = entity.name,
+		type_name = entity.type,
+		icon_data = icon_data,
+	})
+	_sprite_utils.icons.apply_icon_assignment(icon_assignment)
 
 	::continue::
 end

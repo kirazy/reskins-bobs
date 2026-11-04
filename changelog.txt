@@ -7,8 +7,10 @@ Date: ????
   Changes:
     - Migrated some entity sprites to use the Artisanal Reskins: Assets API
     - Removed support for Nauvis Day, which is not available for Factorio 2.0 or later
+    - The reactor color setting is now available with Bob's Metals, Chemicals and Intermediates and Bob's Power, instead of Bob's Revamp
   Bugfixes:
     - Fixed that stone furnace and related entities did not display remnants when destroyed
+    - Fixed that the thorium and deuterium reactors and their technologies were drawn as uranium reactors
 ---------------------------------------------------------------------------------------------------
 Version: 2.4.2
 Date: 2026-11-05
