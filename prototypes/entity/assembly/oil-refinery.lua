@@ -3,9 +3,6 @@
 --
 -- See LICENSE.md in the project directory for license information.
 
----@using data
----@using Reskins.Assets.Assorted.Entities
-
 local _lib = require("_lib")
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }

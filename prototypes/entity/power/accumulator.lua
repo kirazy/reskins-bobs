@@ -3,8 +3,6 @@
 --
 -- See LICENSE in the project directory for license information.
 
----@using data
-
 local _lib = require("_lib")
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 local _assets = { icons = require("__reskins-assets-api__.api.icons") }
