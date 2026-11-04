@@ -10,7 +10,6 @@ local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 local Applicators = require("__reskins-assets-api__.api.applicators")
 local OilRefinery = require("__reskins-assets-api__.assets.assorted.entities.oil-refinery-original")
 
--- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.assembly.entities) then
 	return
 end

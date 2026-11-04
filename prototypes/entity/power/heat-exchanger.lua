@@ -10,7 +10,6 @@ local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 local Applicators = require("__reskins-assets-api__.api.applicators")
 local HeatExchanger = require("__reskins-assets-api__.assets.base.entities.heat-exchanger")
 
--- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.power.entities) then
 	return
 end

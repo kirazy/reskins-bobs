@@ -16,7 +16,6 @@ local SolarPanelSmall = require("__reskins-assets-api__.assets.base.entities.sol
 local SolarPanelMedium = require("__reskins-assets-api__.assets.base.entities.solar-panel-standard")
 local SolarPanelLarge = require("__reskins-assets-api__.assets.base.entities.solar-panel-large")
 
--- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.power.entities) then
 	return
 end

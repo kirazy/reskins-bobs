@@ -3,7 +3,6 @@
 --
 -- See LICENSE in the project directory for license information.
 
--- Check to see if reskinning needs to be done.
 if mods["classic-mining-drill"] or mods["semi-classic-mining-drill"] then
 	return
 end
