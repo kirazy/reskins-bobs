@@ -37,7 +37,7 @@ local function convert_rotated_animation_to_animation(animation, shift)
 		--- Remove it from the returned prototype.
 		layer.direction_count = nil
 		layer.animation_speed = 1
-		layer.shift = util.add_shift(layer.shift, shift)
+		layer.shift = util.add_shift(layer.shift or { 0, 0 }, shift)
 	end
 
 	return animation_copy --[[@as data.Animation]]
