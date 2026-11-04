@@ -7,7 +7,7 @@ Date: ????
   Changes:
     - Migrated some entity sprites to use the Artisanal Reskins: Assets API
     - Dying explosions, particles, and remnants now come from the Artisanal Reskins: Assets API, with the sprites of each entity
-    - Entities with generic remnants now use the generic remnants of the base game that match their size
+    - Entities with generic remnants now use the generic remnants of the base game that match their size, and land mines now leave the remnants of the base land mine
     - Removed support for Nauvis Day, which is not available for Factorio 2.0 or later
     - The reactor color setting is now available with Bob's Metals, Chemicals and Intermediates and Bob's Power, instead of Bob's Revamp
   Bugfixes:
