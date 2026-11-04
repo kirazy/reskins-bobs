@@ -35,8 +35,19 @@ for name, options in pairs(entities) do
 	local tier = _framework.tiers.get_tier(options)
 	local tint = _framework.tiers.get_tint(tier)
 
+	-- Bob's mods tint the glow of the centrifuge by recipe, which the base game does not; the sprite set replaces the
+	-- graphics set, so the recipe tints are restored after it is applied.
+	local default_recipe_tint = entity.graphics_set and entity.graphics_set.default_recipe_tint
+
 	local sprite_set = Centrifuge.get_sprite_set({ tint = tint })
 	Applicators.apply_sprite_set(entity, sprite_set)
+
+	if default_recipe_tint then
+		entity.graphics_set.default_recipe_tint = default_recipe_tint
+		for _, visualisation in pairs(entity.graphics_set.working_visualisations or {}) do
+			visualisation.apply_recipe_tint = "primary"
+		end
+	end
 
 	local icon_data = Centrifuge.get_icon({ tint = tint })
 	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
