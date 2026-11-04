@@ -57,10 +57,6 @@ for name, options in pairs(entities) do
 		type = entity.type,
 	})
 
-	-- TODO: Reskin remnants?
-
-	-- TODO: Reskin entity?
-
 	local composition = FluidWagon.get_icon_composition({ tint = tint })
 	if options.is_armoured then
 		composition = composition:add_symbol(_assets.icons.get_symbol(_assets.defines.symbol.shield, tint))
