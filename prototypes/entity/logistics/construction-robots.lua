@@ -3,272 +3,96 @@
 --
 -- See LICENSE in the project directory for license information.
 
+---@using data
+
+local _lib = require("_lib")
+local _framework = {
+	tiers = require("__reskins-framework__.api.tiers"),
+	settings = require("__reskins-framework__.api.settings"),
+}
+local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
+
+local Applicators = require("__reskins-assets-api__.api.applicators")
+local ConstructionRobot = require("__reskins-assets-api__.assets.base.entities.robot-construction")
+
 -- Check to see if reskinning needs to be done.
 if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then
 	return
 end
 
--- Set input parameters
-local inputs = {
-	type = "construction-robot",
-	icon_name = "construction-robot",
-	base_entity_name = "construction-robot",
-	mod = "bobs",
-	group = "logistics",
-	particles = { ["medium"] = 2 },
+-- TODO: The way robot colors work needs to be revised; this was more of an issue when a 6th tier
+-- did not exist except here, and now it's used in several places.
+local do_progression_based_robots = _framework.settings.get_value("reskins-bobs-do-progression-based-robots")
+local fusion_robot_color = _framework.settings.get_value("reskins-bobs-fusion-robot-color") --[[@as Color]]
+
+local entities = {
+	["construction-robot"] = {
+		tier = 1,
+		prog_tier = 2,
+	},
+	["bob-construction-robot-2"] = {
+		tier = 2,
+		prog_tier = 3,
+	},
+	["bob-construction-robot-3"] = {
+		tier = 3,
+		prog_tier = 4,
+	},
+	["bob-construction-robot-4"] = {
+		tier = 4,
+		prog_tier = 5,
+	},
+	["bob-construction-robot-5"] = {
+		tier = 5,
+		prog_tier = do_progression_based_robots and 5 or 6,
+		tint = do_progression_based_robots and fusion_robot_color or nil,
+	},
 }
 
-local fusion_robot_color = reskins.lib.settings.get_value("reskins-bobs-fusion-robot-color")
+local TYPE = "construction-robot"
+local BASE_ENTITY_NAME = "construction-robot"
 
-local tier_map = {
-	["construction-robot"] = { tier = 1, prog_tier = 2 },
-	["bob-construction-robot-2"] = { tier = 2, prog_tier = 3 },
-	["bob-construction-robot-3"] = { tier = 3, prog_tier = 4 },
-	["bob-construction-robot-4"] = { tier = 4, prog_tier = 5 },
-	["bob-construction-robot-5"] = { tier = 5, prog_tier = 6, fusion_robot_color = fusion_robot_color },
-}
-
--- Animations
----comment
----@param tint data.Color
----@return table
-local function generate_robot_animations(tint)
-	return {
-		idle = {
-			layers = {
-				-- Base
-				{
-					filename = "__base__/graphics/entity/construction-robot/construction-robot.png",
-					priority = "high",
-					line_length = 16,
-					width = 66,
-					height = 76,
-					shift = util.by_pixel(0, -4.5),
-					direction_count = 16,
-					scale = 0.5,
-				},
-				-- Mask
-				{
-					filename = "__reskins-bobs__/graphics/entity/logistics/construction-robot/construction-robot-mask.png",
-					priority = "high",
-					line_length = 16,
-					width = 66,
-					height = 76,
-					shift = util.by_pixel(0, -4.5),
-					tint = tint,
-					direction_count = 16,
-					scale = 0.5,
-				},
-				-- Highlights
-				{
-					filename = "__reskins-bobs__/graphics/entity/logistics/construction-robot/construction-robot-highlights.png",
-					priority = "high",
-					line_length = 16,
-					width = 66,
-					height = 76,
-					shift = util.by_pixel(0, -4.5),
-					blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-					direction_count = 16,
-					scale = 0.5,
-				},
-			},
-		},
-		in_motion = {
-			layers = {
-				-- Base
-				{
-					filename = "__base__/graphics/entity/construction-robot/construction-robot.png",
-					priority = "high",
-					line_length = 16,
-					width = 66,
-					height = 76,
-					shift = util.by_pixel(0, -4.5),
-					direction_count = 16,
-					y = 76,
-					scale = 0.5,
-				},
-				-- Mask
-				{
-					filename = "__reskins-bobs__/graphics/entity/logistics/construction-robot/construction-robot-mask.png",
-					priority = "high",
-					line_length = 16,
-					width = 66,
-					height = 76,
-					shift = util.by_pixel(0, -4.5),
-					tint = tint,
-					direction_count = 16,
-					y = 76,
-					scale = 0.5,
-				},
-				-- Highlights
-				{
-					filename = "__reskins-bobs__/graphics/entity/logistics/construction-robot/construction-robot-highlights.png",
-					priority = "high",
-					line_length = 16,
-					width = 66,
-					height = 76,
-					shift = util.by_pixel(0, -4.5),
-					blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-					direction_count = 16,
-					y = 76,
-					scale = 0.5,
-				},
-			},
-		},
-		working = {
-			layers = {
-				-- Base
-				{
-					filename = "__base__/graphics/entity/construction-robot/construction-robot-working.png",
-					priority = "high",
-					line_length = 2,
-					width = 57,
-					height = 74,
-					frame_count = 2,
-					shift = util.by_pixel(-0.25, -5),
-					direction_count = 16,
-					animation_speed = 0.3,
-					scale = 0.5,
-				},
-				-- Mask
-				{
-					filename = "__reskins-bobs__/graphics/entity/logistics/construction-robot/construction-robot-working-mask.png",
-					priority = "high",
-					line_length = 2,
-					width = 57,
-					height = 74,
-					frame_count = 2,
-					shift = util.by_pixel(-0.25, -5),
-					tint = tint,
-					direction_count = 16,
-					animation_speed = 0.3,
-					scale = 0.5,
-				},
-				-- Highlights
-				{
-					filename = "__reskins-bobs__/graphics/entity/logistics/construction-robot/construction-robot-working-highlights.png",
-					priority = "high",
-					line_length = 2,
-					width = 57,
-					height = 74,
-					frame_count = 2,
-					shift = util.by_pixel(-0.25, -5),
-					blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-					direction_count = 16,
-					animation_speed = 0.3,
-					scale = 0.5,
-				},
-			},
-		},
-		shadow_idle = {
-			filename = "__base__/graphics/entity/construction-robot/construction-robot-shadow.png",
-			priority = "high",
-			line_length = 16,
-			width = 104,
-			height = 49,
-			shift = util.by_pixel(33.5, 18.75),
-			direction_count = 16,
-			scale = 0.5,
-			draw_as_shadow = true,
-		},
-		shadow_in_motion = {
-			filename = "__base__/graphics/entity/construction-robot/construction-robot-shadow.png",
-			priority = "high",
-			line_length = 16,
-			width = 104,
-			height = 49,
-			shift = util.by_pixel(33.5, 18.75),
-			direction_count = 16,
-			scale = 0.5,
-			draw_as_shadow = true,
-		},
-		shadow_working = {
-			filename = "__base__/graphics/entity/construction-robot/construction-robot-shadow.png",
-			priority = "high",
-			line_length = 16,
-			width = 104,
-			height = 49,
-			repeat_count = 2,
-			shift = util.by_pixel(33.5, 18.75),
-			direction_count = 16,
-			scale = 0.5,
-			draw_as_shadow = true,
-		},
-	}
-end
-
-local function get_tint(fusion_robot_color, tier)
-	if fusion_robot_color and reskins.lib.settings.get_value("reskins-bobs-do-progression-based-robots") then
-		return fusion_robot_color
-	else
-		return reskins.lib.tiers.get_tint(tier)
-	end
-end
-
-for name, map in pairs(tier_map) do
-	---@type data.ConstructionRobotPrototype
-	local entity = data.raw[inputs.type][name]
+for name, options in pairs(entities) do
+	local entity = data.raw[TYPE][name]
 	if not entity then
 		goto continue
 	end
 
-	local tier = reskins.lib.tiers.get_tier(map)
-	inputs.tint = get_tint(map.fusion_robot_color, tier)
+	local tier = _framework.tiers.get_tier(options)
+	local tint = options.tint or _framework.tiers.get_tint(tier)
 
-	reskins.lib.setup_standard_entity(name, tier, inputs)
-	local animations = generate_robot_animations(inputs.tint)
-
-	-- Fetch remnant
-	local remnant = data.raw["corpse"][name .. "-remnants"]
-
-	-- Reskin remnants
-	remnant.animation = make_rotated_animation_variations_from_sheet(3, {
-		layers = {
-			-- Base
-			{
-				filename = "__base__/graphics/entity/construction-robot/remnants/construction-robot-remnants.png",
-				width = 120,
-				height = 114,
-				direction_count = 1,
-				shift = util.by_pixel(2, 1),
-				scale = 0.5,
-			},
-			-- Mask
-			{
-				filename = "__reskins-bobs__/graphics/entity/logistics/construction-robot/remnants/construction-robot-remnants-mask.png",
-				width = 120,
-				height = 114,
-				direction_count = 1,
-				shift = util.by_pixel(2, 1),
-				tint = inputs.tint,
-				scale = 0.5,
-			},
-			-- Highlights
-			{
-				filename = "__reskins-bobs__/graphics/entity/logistics/construction-robot/remnants/construction-robot-remnants-highlights.png",
-				width = 120,
-				height = 114,
-				direction_count = 1,
-				shift = util.by_pixel(2, 1),
-				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				scale = 0.5,
-			},
+	_lib.create_explosions_and_particles(name, {
+		base_entity_name = BASE_ENTITY_NAME,
+		type = entity.type,
+		tint = tint,
+		particles = {
+			["medium"] = 2,
 		},
 	})
 
-	-- Clear this, construction robots do not generate the corpse directly
+	local corpse = _lib.create_remnant(entity.name, {
+		base_entity_name = BASE_ENTITY_NAME,
+		type = entity.type,
+	})
+
+	-- Robots generate this indirectly.
 	entity.corpse = nil
 
-	-- Reskin entities
-	entity.idle = animations.idle
-	entity.in_motion = animations.in_motion
-	entity.working = animations.working
-	entity.shadow_idle = animations.shadow_idle
-	entity.shadow_in_motion = animations.shadow_in_motion
-	entity.shadow_working = animations.shadow_working
+	local sprite_set = ConstructionRobot.get_sprite_set({ tint = tint })
+	Applicators.apply_sprite_set(entity, sprite_set)
+	Applicators.apply_sprite_set(corpse, sprite_set)
 
-	-- Setup remnants and destruction animation
-	reskins.bobs.make_robot_particle(entity)
+	_lib.configure_robot_death_animation(entity, corpse.name)
+
+	local icon_data = ConstructionRobot.get_icon({ tint = tint })
+	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
+		tier = tier,
+		name = entity.name,
+		type_name = entity.type,
+		icon_data = icon_data,
+	})
+
+	_sprite_utils.icons.apply_icon_assignment(icon_assignment)
 
 	::continue::
 end
