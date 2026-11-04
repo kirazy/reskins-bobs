@@ -7,16 +7,6 @@ if not (reskins.bobs and reskins.bobs.triggers.technology.entities) then
 	return
 end
 
--- Set input parameters
-local inputs = {
-	type = "lab",
-	root_name = "lab",
-	base_entity_name = "lab",
-	mod = "bobs",
-	group = "technology",
-	-- particles = {["big"] = 3}
-}
-
 local function reskin_lab(name)
 	---@type data.LabPrototype
 	local entity = data.raw["lab"][name]

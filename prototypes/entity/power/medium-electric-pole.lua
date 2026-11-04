@@ -7,7 +7,7 @@ local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 
 local Applicators = require("__reskins-assets-api__.api.applicators")
-local ElectricPoleBig = require("__reskins-assets-api__.assets.base.entities.electric-pole-medium")
+local ElectricPoleMedium = require("__reskins-assets-api__.assets.base.entities.electric-pole-medium")
 
 if not (reskins.bobs and reskins.bobs.triggers.power.entities) then
 	return
@@ -34,10 +34,10 @@ for name, options in pairs(entities) do
 	local tier = _framework.tiers.get_tier(options)
 	local tint = _framework.tiers.get_tint(tier)
 
-	local sprite_set = ElectricPoleBig.get_sprite_set({ tint = tint })
+	local sprite_set = ElectricPoleMedium.get_sprite_set({ tint = tint })
 	Applicators.apply_sprite_set(entity, sprite_set)
 
-	local icon_data = ElectricPoleBig.get_icon({ tint = tint })
+	local icon_data = ElectricPoleMedium.get_icon({ tint = tint })
 	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
 		tier = tier,
 		name = entity.name,

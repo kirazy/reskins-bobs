@@ -30,7 +30,6 @@ local entities = {
 		type = "assembling-machine",
 		variant = "chemical",
 		tint = reskins.bobs.furnace_tint_index.chemical,
-		is_chemical = true,
 	},
 }
 

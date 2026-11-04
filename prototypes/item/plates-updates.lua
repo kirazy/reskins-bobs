@@ -44,23 +44,6 @@ local function get_value(root, ...)
 end
 
 ---
----Checks if a value is exists at the end of a path described
----by a series of keys in a given `root` table.
----
----Examples:
----```
----local leaf_exists = value_exists(root, "trunk", "branch", "twig", "leaf")
----local leaf = leaf_exists and root["trunk"]["branch"]["twig"].leaf
----```
----
----@param root table # The root table.
----@param ... string|integer # Keys that describe a path to a value in `root`.
----@return boolean # `true` if the value at the end of the path is exists; otherwise, `false`.
-local function value_exists(root, ...)
-	return get_value(root, ...) == nil
-end
-
----
 --- Evaluates the given `condition` and returns the appropriate value.
 ---
 --- Note that both `if_true` and `if_false` are evaluated. Be cautious of

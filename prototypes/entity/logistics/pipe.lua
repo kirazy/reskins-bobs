@@ -4,7 +4,6 @@
 -- See LICENSE in the project directory for license information.
 
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
-local _assets = { defines = require("__reskins-assets-api__.api.defines") }
 local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 
 local Applicators = require("__reskins-assets-api__.api.applicators")

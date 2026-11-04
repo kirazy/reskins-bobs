@@ -13,16 +13,6 @@ if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then
 	return
 end
 
--- Set input parameters
-local inputs = {
-	type = "roboport",
-	icon_name = "roboport",
-	base_entity_name = "roboport",
-	mod = "bobs",
-	group = "logistics",
-	particles = { ["medium"] = 2 },
-}
-
 local entities = {
 	["roboport"] = { tier = 1, prog_tier = 2, variant_index = 1 },
 	["bob-roboport-2"] = { tier = 2, prog_tier = 3, variant_index = 2 },
