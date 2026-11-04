@@ -3,54 +3,76 @@
 --
 -- See LICENSE in the project directory for license information.
 
+local _lib = require("_lib")
+local _framework = {
+	tiers = require("__reskins-framework__.api.tiers"),
+	settings = require("__reskins-framework__.api.settings"),
+}
+local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
+local _assets = {
+	icons = require("__reskins-assets-api__.api.icons"),
+	defines = require("__reskins-assets-api__.api.defines"),
+}
+
+local CargoWagon = require("__reskins-assets-api__.assets.base.entities.train-cargo-wagon")
+
 if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then
 	return
 end
-if reskins.lib.settings.get_value("bobmods-logistics-trains") == false then
+if _framework.settings.get_value("bobmods-logistics-trains") == false then
 	return
 end
 
--- Set input parameters
-local inputs = {
-	type = "cargo-wagon",
-	icon_name = "cargo-wagon",
-	base_entity_name = "cargo-wagon",
-	mod = "bobs",
-	group = "logistics",
-	particles = { ["small"] = 3 },
-}
-
-local tier_map = {
+local entities = {
 	["cargo-wagon"] = { tier = 1, prog_tier = 2 },
 	["bob-cargo-wagon-2"] = { tier = 2, prog_tier = 3 },
 	["bob-cargo-wagon-3"] = { tier = 3, prog_tier = 4 },
-	["bob-armoured-cargo-wagon"] = { tier = 1, prog_tier = 3 },
-	["bob-armoured-cargo-wagon-2"] = { tier = 2, prog_tier = 4 },
+	["bob-armoured-cargo-wagon"] = { tier = 1, prog_tier = 3, is_armoured = true },
+	["bob-armoured-cargo-wagon-2"] = { tier = 2, prog_tier = 4, is_armoured = true },
 }
 
--- Reskin entities, create and assign extra details
-for name, map in pairs(tier_map) do
-	---@type data.CargoWagonPrototype
-	local entity = data.raw[inputs.type][name]
+local TYPE = "cargo-wagon"
+local BASE_ENTITY_NAME = "cargo-wagon"
+
+for name, options in pairs(entities) do
+	local entity = data.raw[TYPE][name]
 	if not entity then
 		goto continue
 	end
 
-	local tier = reskins.lib.tiers.get_tier(map)
-	inputs.tint = reskins.lib.tiers.get_tint(tier)
+	local tier = _framework.tiers.get_tier(options)
+	local tint = _framework.tiers.get_tint(tier)
 
-	-- Setup icon details
-	if string.find(name, "armoured") then
-		inputs.icon_extras = reskins.lib.icons.get_symbol("shield", inputs.tint)
-	else
-		inputs.icon_extras = nil
-	end
+	_lib.create_explosions_and_particles(entity.name, {
+		base_entity_name = BASE_ENTITY_NAME,
+		type = entity.type,
+		tint = tint,
+		particles = {
+			["small"] = 3,
+		},
+	})
 
-	reskins.lib.setup_standard_entity(name, tier, inputs)
+	_lib.create_remnant(entity.name, {
+		base_entity_name = BASE_ENTITY_NAME,
+		type = entity.type,
+	})
 
 	-- TODO: Reskin remnants?
 
 	-- TODO: Reskin entity?
+
+	local composition = CargoWagon.get_icon_composition({ tint = tint })
+	if options.is_armoured then
+		composition = composition:add_symbol(_assets.icons.get_symbol(_assets.defines.symbol.shield, tint))
+	end
+
+	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
+		tier = tier,
+		name = entity.name,
+		type_name = entity.type,
+		composition = composition,
+	})
+	_sprite_utils.icons.apply_icon_assignment(icon_assignment)
 
 	::continue::
 end

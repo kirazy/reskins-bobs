@@ -3,52 +3,47 @@
 --
 -- See LICENSE in the project directory for license information.
 
+local _framework = { tiers = require("__reskins-framework__.api.tiers") }
+local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
+
+local Applicators = require("__reskins-assets-api__.api.applicators")
+local Mine = require("__reskins-assets-api__.assets.base.entities.mine")
+
 if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then
 	return
 end
 
--- Set input parameters
-local inputs = {
-	type = "land-mine",
-	mod = "bobs",
-	group = "warfare",
-	make_icons = false,
-	make_explosions = false,
-	make_remnants = false,
+local entities = {
+	["bob-distractor-mine"] = { variant = "distractor" },
+	["bob-poison-mine"] = { variant = "poison" },
+	["bob-slowdown-mine"] = { variant = "slowdown" },
 }
 
-local tier_map = {
-	"distractor-mine",
-	"poison-mine",
-	"slowdown-mine",
-}
+local TYPE = "land-mine"
 
--- Reskin entities, create and assign extra details
-for _, name in pairs(tier_map) do
-	---@type data.LandMinePrototype
-	local entity = data.raw[inputs.type][name]
+for name, options in pairs(entities) do
+	local entity = data.raw[TYPE][name]
 	if not entity then
 		goto continue
 	end
 
-	reskins.lib.setup_standard_entity(name, 0, inputs)
+	entity.corpse = "small-remnants"
 
-	-- Reskin entities
-	entity.picture_safe = {
-		filename = "__reskins-bobs__/graphics/entity/warfare/" .. name .. "/" .. name .. ".png",
-		priority = "medium",
-		width = 64,
-		height = 64,
-		scale = 0.5,
-	}
+	local sprite_set = Mine.get_sprite_set({ variant = options.variant })
+	Applicators.apply_sprite_set(entity, sprite_set)
 
-	entity.picture_set = {
-		filename = "__reskins-bobs__/graphics/entity/warfare/" .. name .. "/" .. name .. "-set.png",
-		priority = "medium",
-		width = 64,
-		height = 64,
-		scale = 0.5,
-	}
+	-- The corpse and the dying explosion are shared with other entities.
+	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
+		tier = 0,
+		name = entity.name,
+		type_name = entity.type,
+		icon_data = Mine.get_icon({ variant = options.variant }),
+		options = {
+			infer_explosion = false,
+			infer_corpse = false,
+		},
+	})
+	_sprite_utils.icons.apply_icon_assignment(icon_assignment)
 
 	::continue::
 end

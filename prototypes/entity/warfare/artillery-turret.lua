@@ -3,121 +3,61 @@
 --
 -- See LICENSE in the project directory for license information.
 
+local _lib = require("_lib")
+local _framework = { tiers = require("__reskins-framework__.api.tiers") }
+local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
+
+local Applicators = require("__reskins-assets-api__.api.applicators")
+local TurretArtillery = require("__reskins-assets-api__.assets.base.entities.turret-artillery")
+
 if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then
 	return
 end
 
--- Set input parameters
-local inputs = {
-	type = "artillery-turret",
-	icon_name = "artillery-turret",
-	base_entity_name = "artillery-turret",
-	mod = "bobs",
-	group = "warfare",
-	particles = { ["big"] = 4 },
-}
-
-local tier_map = {
+local entities = {
 	["artillery-turret"] = { tier = 1, prog_tier = 3 },
 	["bob-artillery-turret-2"] = { tier = 2, prog_tier = 4 },
 	["bob-artillery-turret-3"] = { tier = 3, prog_tier = 5 },
 }
 
--- Reskin entities, create and assign extra details
-for name, map in pairs(tier_map) do
-	---@type data.ArtilleryTurretPrototype
-	local entity = data.raw[inputs.type][name]
+local TYPE = "artillery-turret"
+local BASE_ENTITY_NAME = "artillery-turret"
+
+for name, options in pairs(entities) do
+	local entity = data.raw[TYPE][name]
 	if not entity then
 		goto continue
 	end
 
-	local tier = reskins.lib.tiers.get_tier(map)
-	inputs.tint = reskins.lib.tiers.get_tint(tier)
+	local tier = _framework.tiers.get_tier(options)
+	local tint = _framework.tiers.get_tint(tier)
 
-	reskins.lib.setup_standard_entity(name, tier, inputs)
-
-	-- Fetch remnant
-	local remnant = data.raw["corpse"][name .. "-remnants"]
-
-	-- Reskin remnants
-	remnant.animation = make_rotated_animation_variations_from_sheet(1, {
-		layers = {
-			-- Base
-			{
-				filename = "__reskins-bobs__/graphics/entity/warfare/artillery-turret/remnants/artillery-turret-remnants-base.png",
-				width = 326,
-				height = 290,
-				direction_count = 1,
-				shift = util.by_pixel(9.5, 1.5),
-				scale = 0.5,
-			},
-			-- Mask
-			{
-				filename = "__reskins-bobs__/graphics/entity/warfare/artillery-turret/remnants/artillery-turret-remnants-mask.png",
-				width = 326,
-				height = 290,
-				direction_count = 1,
-				shift = util.by_pixel(9.5, 1.5),
-				tint = inputs.tint,
-				scale = 0.5,
-			},
-			-- Highlights
-			{
-				filename = "__reskins-bobs__/graphics/entity/warfare/artillery-turret/remnants/artillery-turret-remnants-highlights.png",
-				width = 326,
-				height = 290,
-				direction_count = 1,
-				shift = util.by_pixel(9.5, 1.5),
-				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				scale = 0.5,
-			},
+	_lib.create_explosions_and_particles(entity.name, {
+		base_entity_name = BASE_ENTITY_NAME,
+		type = entity.type,
+		tint = tint,
+		particles = {
+			["big"] = 4,
 		},
 	})
 
-	-- Reskin entity
-	entity.base_picture = {
-		layers = {
-			-- Base
-			{
-				filename = "__reskins-bobs__/graphics/entity/warfare/artillery-turret/artillery-turret-base.png",
-				priority = "high",
-				width = 207,
-				height = 199,
-				shift = util.by_pixel(-0, 22),
-				scale = 0.5,
-			},
-			-- Mask
-			{
-				filename = "__reskins-bobs__/graphics/entity/warfare/artillery-turret/artillery-turret-mask.png",
-				priority = "high",
-				width = 207,
-				height = 199,
-				shift = util.by_pixel(-0, 22),
-				tint = inputs.tint,
-				scale = 0.5,
-			},
-			-- Highlights
-			{
-				filename = "__reskins-bobs__/graphics/entity/warfare/artillery-turret/artillery-turret-highlights.png",
-				priority = "high",
-				width = 207,
-				height = 199,
-				shift = util.by_pixel(-0, 22),
-				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				scale = 0.5,
-			},
-			-- Shadow
-			{
-				filename = "__base__/graphics/entity/artillery-turret/artillery-turret-base-shadow.png",
-				priority = "high",
-				width = 277,
-				height = 149,
-				shift = util.by_pixel(18 + 2, 38),
-				draw_as_shadow = true,
-				scale = 0.5,
-			},
-		},
-	}
+	local corpse = _lib.create_remnant(entity.name, {
+		base_entity_name = BASE_ENTITY_NAME,
+		type = entity.type,
+	})
+
+	local sprite_set = TurretArtillery.get_sprite_set({ tint = tint })
+	Applicators.apply_sprite_set(entity, sprite_set)
+	Applicators.apply_sprite_set(corpse, sprite_set)
+
+	local icon_data = TurretArtillery.get_icon({ tint = tint })
+	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
+		tier = tier,
+		name = entity.name,
+		type_name = entity.type,
+		icon_data = icon_data,
+	})
+	_sprite_utils.icons.apply_icon_assignment(icon_assignment)
 
 	::continue::
 end

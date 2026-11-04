@@ -10,9 +10,6 @@
 require("prototypes.entity.assembly.assembling-machine")
 require("prototypes.entity.assembly-updates")
 
--- Bob's Greenhouse
-require("prototypes.entity.greenhouse.greenhouse") -- Nauvis Day tries to operate on Bob's Greenhouse in data-updates, need to execute after
-
 -- Bob's Power
 require("prototypes.entity.power.nuclear-reactor") -- Bob reskins in data-updates
 
