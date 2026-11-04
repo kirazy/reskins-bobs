@@ -3,7 +3,6 @@
 --
 -- See LICENSE in the project directory for license information.
 
-local _lib = require("_lib")
 local _framework = {
 	tiers = require("__reskins-framework__.api.tiers"),
 	settings = require("__reskins-framework__.api.settings"),
@@ -27,24 +26,20 @@ local entities = {
 		tier = 2,
 		prog_tier = 3,
 		pipe_material = "aluminum-invar",
-		particle_colors = { "dff5ff", "a99b84" },
 	},
 	["bob-heat-pipe-3"] = {
 		tier = 3,
 		prog_tier = 4,
 		pipe_material = "silver-titanium",
-		particle_colors = { "d4d4d4", "cfd2d4" },
 	},
 	["bob-heat-pipe-4"] = {
 		tier = 4,
 		prog_tier = 5,
 		pipe_material = "gold-copper",
-		particle_colors = { "d6b968", "ff7f3f" },
 	},
 }
 
 local TYPE = "heat-pipe"
-local BASE_ENTITY_NAME = "heat-pipe"
 
 local do_labels = _framework.settings.get_value("reskins-bobs-do-pipe-tier-labeling") == true
 
@@ -69,38 +64,9 @@ for name, options in pairs(entities) do
 		goto continue
 	end
 
-	assert(options.particle_colors)
-
-	-- Create particles and explosions
-	_lib.create_explosion(entity.name, {
-		base_entity_name = BASE_ENTITY_NAME,
-		type = entity.type,
-	})
-	_lib.create_particle(
-		entity.name,
-		BASE_ENTITY_NAME,
-		_lib.particle_index["small"],
-		1,
-		util.color(options.particle_colors[1])
-	)
-	_lib.create_particle(
-		entity.name,
-		BASE_ENTITY_NAME,
-		_lib.particle_index["medium"],
-		2,
-		util.color(options.particle_colors[2])
-	)
-
-	-- Create and skin remnants
-	local corpse = _lib.create_remnant(entity.name, {
-		base_entity_name = BASE_ENTITY_NAME,
-		type = entity.type,
-	})
-
 	-- Reskin entities
 	local sprite_set = HeatPipe.get_sprite_set({ pipe_material = options.pipe_material })
 	Applicators.apply_sprite_set(entity, sprite_set)
-	Applicators.apply_sprite_set(corpse, sprite_set)
 
 	::continue::
 end

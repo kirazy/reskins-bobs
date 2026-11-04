@@ -3,7 +3,6 @@
 --
 -- See LICENSE in the project directory for license information.
 
-local _lib = require("_lib")
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 
@@ -20,8 +19,6 @@ local entities = {
 }
 
 local TYPE = "storage-tank"
-local BASE_ENTITY_NAME = "storage-tank"
-local TINT = util.color("#b29270")
 
 for name, options in pairs(entities) do
 	---@type data.StorageTankPrototype
@@ -29,17 +26,6 @@ for name, options in pairs(entities) do
 	if not entity then
 		goto continue
 	end
-
-	_lib.create_explosions_and_particles(entity.name, {
-		base_entity_name = BASE_ENTITY_NAME,
-		type = entity.type,
-		tint = TINT,
-		particles = {
-			["big"] = 1,
-		},
-	})
-
-	entity.corpse = "small-remnants"
 
 	local sprite_set = StorageTankSmall.get_sprite_set({ variant = options.variant })
 	Applicators.apply_sprite_set(entity, sprite_set)

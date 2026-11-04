@@ -3,7 +3,6 @@
 --
 -- See LICENSE in the project directory for license information.
 
-local _lib = require("_lib")
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 
@@ -13,11 +12,6 @@ local ChestLogistic = require("__reskins-assets-api__.assets.base.entities.chest
 if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then
 	return
 end
-
-local material_tints = {
-	["brass"] = util.color("#f9c854"),
-	["titanium"] = util.color("#adadb2"),
-}
 
 local entities = {
 	["active-provider-chest"] = { tier = 1, prog_tier = 2 },
@@ -30,8 +24,18 @@ local entities = {
 	["bob-storage-chest-2"] = { tier = 2, prog_tier = 3, material = "brass", logistic_mode = "storage" },
 	["bob-buffer-chest-2"] = { tier = 2, prog_tier = 3, material = "brass", logistic_mode = "buffer" },
 	["bob-requester-chest-2"] = { tier = 2, prog_tier = 3, material = "brass", logistic_mode = "requester" },
-	["bob-active-provider-chest-3"] = { tier = 3, prog_tier = 4, material = "titanium", logistic_mode = "active-provider" },
-	["bob-passive-provider-chest-3"] = { tier = 3, prog_tier = 4, material = "titanium", logistic_mode = "passive-provider" },
+	["bob-active-provider-chest-3"] = {
+		tier = 3,
+		prog_tier = 4,
+		material = "titanium",
+		logistic_mode = "active-provider",
+	},
+	["bob-passive-provider-chest-3"] = {
+		tier = 3,
+		prog_tier = 4,
+		material = "titanium",
+		logistic_mode = "passive-provider",
+	},
 	["bob-storage-chest-3"] = { tier = 3, prog_tier = 4, material = "titanium", logistic_mode = "storage" },
 	["bob-buffer-chest-3"] = { tier = 3, prog_tier = 4, material = "titanium", logistic_mode = "buffer" },
 	["bob-requester-chest-3"] = { tier = 3, prog_tier = 4, material = "titanium", logistic_mode = "requester" },
@@ -53,28 +57,11 @@ for name, options in pairs(entities) do
 		goto continue
 	end
 
-	local base_entity_name = options.logistic_mode .. "-chest"
-
-	_lib.create_explosions_and_particles(entity.name, {
-		base_entity_name = base_entity_name,
-		type = entity.type,
-		tint = material_tints[options.material],
-		particles = {
-			["medium"] = 1,
-		},
-	})
-
-	local corpse = _lib.create_remnant(entity.name, {
-		base_entity_name = base_entity_name,
-		type = entity.type,
-	})
-
 	local sprite_set = ChestLogistic.get_sprite_set({
 		logistic_mode = options.logistic_mode,
 		material = options.material,
 	})
 	Applicators.apply_sprite_set(entity, sprite_set)
-	Applicators.apply_sprite_set(corpse, sprite_set)
 
 	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
 		tier = tier,

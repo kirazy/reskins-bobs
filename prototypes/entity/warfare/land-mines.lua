@@ -27,8 +27,6 @@ for name, options in pairs(entities) do
 		goto continue
 	end
 
-	entity.corpse = "small-remnants"
-
 	local sprite_set = Mine.get_sprite_set({ variant = options.variant })
 	Applicators.apply_sprite_set(entity, sprite_set)
 

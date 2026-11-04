@@ -3,7 +3,6 @@
 --
 -- See LICENSE in the project directory for license information.
 
-local _lib = require("_lib")
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 
@@ -20,21 +19,8 @@ if not entity then
 	return
 end
 
-local BASE_ENTITY_NAME = "lab"
-
-_lib.create_explosions_and_particles(entity.name, {
-	base_entity_name = BASE_ENTITY_NAME,
-	type = entity.type,
-})
-
-local corpse = _lib.create_remnant(entity.name, {
-	base_entity_name = BASE_ENTITY_NAME,
-	type = entity.type,
-})
-
 local sprite_set = Greenhouse.get_sprite_set()
 Applicators.apply_sprite_set(entity, sprite_set)
-Applicators.apply_sprite_set(corpse, sprite_set)
 
 local icon_data = Greenhouse.get_icon()
 local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({

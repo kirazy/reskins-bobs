@@ -5,7 +5,6 @@
 --
 -- See LICENSE in the project directory for license information.
 
-local _lib = require("_lib")
 local _framework = {
 	tiers = require("__reskins-framework__.api.tiers"),
 	settings = require("__reskins-framework__.api.settings"),
@@ -43,7 +42,6 @@ local entities = {
 }
 
 local TYPE = "generator"
-local BASE_ENTITY_NAME = "steam-turbine"
 
 for name, options in pairs(entities) do
 	---@type data.GeneratorPrototype
@@ -54,18 +52,6 @@ for name, options in pairs(entities) do
 
 	local tier = _framework.tiers.get_tier(options)
 	local tint = options.tint or _framework.tiers.get_tint(tier)
-
-	_lib.create_explosions_and_particles(entity.name, {
-		base_entity_name = BASE_ENTITY_NAME,
-		type = entity.type,
-		tint = tint,
-		particles = {
-			["big"] = 1,
-			["medium"] = 2,
-		},
-	})
-
-	entity.corpse = "big-remnants"
 
 	local sprite_set = GeneratorFluid.get_sprite_set({ tint = tint })
 	Applicators.apply_sprite_set(entity, sprite_set)

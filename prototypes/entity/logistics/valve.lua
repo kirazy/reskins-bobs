@@ -3,7 +3,6 @@
 --
 -- See LICENSE in the project directory for license information.
 
-local _lib = require("_lib")
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 
@@ -22,7 +21,6 @@ local tint_map = {
 }
 
 local TYPE = "valve"
-local BASE_ENTITY_NAME = "pipe"
 
 for name, tint in pairs(tint_map) do
 	---@type data.ValvePrototype
@@ -30,13 +28,6 @@ for name, tint in pairs(tint_map) do
 	if not entity then
 		goto continue
 	end
-
-	_lib.create_explosions_and_particles(entity.name, {
-		base_entity_name = BASE_ENTITY_NAME,
-		type = entity.type,
-		tint = tint,
-		particles = { ["small"] = 2 },
-	})
 
 	local sprite_set = PipeValve.get_sprite_set({ tint = tint })
 	Applicators.apply_sprite_set(entity, sprite_set)

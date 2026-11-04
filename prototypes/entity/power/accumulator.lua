@@ -3,7 +3,6 @@
 --
 -- See LICENSE in the project directory for license information.
 
-local _lib = require("_lib")
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 local _assets = { icons = require("__reskins-assets-api__.api.icons") }
 local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
@@ -82,7 +81,6 @@ local entities = {
 }
 
 local TYPE = "accumulator"
-local BASE_ENTITY_NAME = "accumulator"
 
 for name, options in pairs(entities) do
 	local entity = data.raw[TYPE][name]
@@ -93,24 +91,8 @@ for name, options in pairs(entities) do
 	local tier = _framework.tiers.get_tier(options)
 	local tint = _framework.tiers.get_tint(tier)
 
-	_lib.create_explosions_and_particles(entity.name, {
-		base_entity_name = BASE_ENTITY_NAME,
-		type = entity.type,
-		tint = tint,
-		particles = {
-			["medium"] = 2,
-			["small"] = 3,
-		},
-	})
-
-	local corpse = _lib.create_remnant(entity.name, {
-		base_entity_name = BASE_ENTITY_NAME,
-		type = entity.type,
-	})
-
 	local sprite_set = Accumulator.get_sprite_set({ tint = tint })
 	Applicators.apply_sprite_set(entity, sprite_set)
-	Applicators.apply_sprite_set(corpse, sprite_set)
 
 	local icon_data = _sprite_utils.icons.compose_icons(
 		"default",

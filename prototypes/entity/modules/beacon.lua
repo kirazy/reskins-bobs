@@ -6,7 +6,6 @@
 ---@using data
 ---@using Reskins.Assets.Base.Entities
 
-local _lib = require("_lib")
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 
@@ -37,7 +36,6 @@ local module_art_styles = {
 }
 
 local TYPE = "beacon"
-local BASE_ENTITY_NAME = "beacon"
 
 for name, options in pairs(entities) do
 	local entity = data.raw[TYPE][name]
@@ -48,31 +46,12 @@ for name, options in pairs(entities) do
 	local tier = _framework.tiers.get_tier(options)
 	local tint = _framework.tiers.get_tint(tier)
 
-	_lib.create_explosions_and_particles(entity.name, {
-		base_entity_name = BASE_ENTITY_NAME,
-		type = entity.type,
-		tint = tint,
-		particles = {
-			["small"] = 3,
-		},
-	})
-
-	local corpse = _lib.create_remnant(entity.name, {
-		base_entity_name = BASE_ENTITY_NAME,
-		type = entity.type,
-	})
-
-	-- The base game gives the beacon remnants a selection box of 1 x 2. The sprite set is scaled to the selection box,
-	-- so the copy takes the selection box of the beacon.
-	corpse.selection_box = util.copy(entity.selection_box)
-
 	local sprite_set = Beacon.get_sprite_set({
 		tint = tint,
 		slot_count = entity.module_slots,
 		module_art_styles = module_art_styles,
 	})
 	Applicators.apply_sprite_set(entity, sprite_set)
-	Applicators.apply_sprite_set(corpse, sprite_set)
 
 	local icon_data = Beacon.get_icon({ tint = tint })
 	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({

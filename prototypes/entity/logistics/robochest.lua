@@ -5,7 +5,6 @@
 --
 -- See LICENSE in the project directory for license information.
 
-local _lib = require("_lib")
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 
@@ -24,7 +23,6 @@ local entities = {
 }
 
 local TYPE = "roboport"
-local BASE_ENTITY_NAME = "roboport"
 
 for name, options in pairs(entities) do
 	local entity = data.raw[TYPE][name]
@@ -34,17 +32,6 @@ for name, options in pairs(entities) do
 
 	local tier = _framework.tiers.get_tier(options)
 	local tint = _framework.tiers.get_tint(tier)
-
-	_lib.create_explosions_and_particles(entity.name, {
-		base_entity_name = BASE_ENTITY_NAME,
-		type = entity.type,
-		tint = tint,
-		particles = {
-			["medium"] = 2,
-		},
-	})
-
-	entity.corpse = "medium-remnants"
 
 	local sprite_set = RoboChest.get_sprite_set({ tint = tint, tier = options.variant_index })
 	Applicators.apply_sprite_set(entity, sprite_set)

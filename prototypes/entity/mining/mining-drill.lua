@@ -3,7 +3,6 @@
 --
 -- See LICENSE in the project directory for license information.
 
-local _lib = require("_lib")
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 local _assets = {
@@ -39,7 +38,6 @@ local entities = {
 }
 
 local TYPE = "mining-drill"
-local BASE_ENTITY_NAME = "electric-mining-drill"
 
 -- Rescale mining drill animation playback speed to something visually appealing
 local max_playback = 1.2 -- Maximum animation playback speed
@@ -69,20 +67,6 @@ for name, options in pairs(entities) do
 	local tier = _framework.tiers.get_tier(options)
 	local tint = _framework.tiers.get_tint(tier)
 
-	_lib.create_explosions_and_particles(entity.name, {
-		base_entity_name = BASE_ENTITY_NAME,
-		type = entity.type,
-		tint = tint,
-		particles = {
-			["medium-long"] = 3,
-		},
-	})
-
-	local corpse = _lib.create_remnant(entity.name, {
-		base_entity_name = BASE_ENTITY_NAME,
-		type = entity.type,
-	})
-
 	-- Calculate new animation playback speed
 	local speed
 	if max_speed - min_speed == 0 then
@@ -98,7 +82,6 @@ for name, options in pairs(entities) do
 		animation_speed = speed,
 	})
 	Applicators.apply_sprite_set(entity, sprite_set)
-	Applicators.apply_sprite_set(corpse, sprite_set)
 
 	local icon_assignment
 	if options.is_area_drill then

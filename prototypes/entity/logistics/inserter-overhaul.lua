@@ -6,7 +6,6 @@
 ---@using data
 ---@using Reskins.SpriteUtils
 
-local _lib = require("_lib")
 local _framework = {
 	tiers = require("__reskins-framework__.api.tiers"),
 	settings = require("__reskins-framework__.api.settings"),
@@ -66,21 +65,6 @@ for name, options in pairs(entities) do
 
 	local tier = _framework.tiers.get_tier(options)
 	local tint = _framework.tiers.get_tint(tier)
-	local base_entity_name = options.is_bulk and "bulk-inserter" or "inserter"
-
-	_lib.create_explosions_and_particles(entity.name, {
-		base_entity_name = base_entity_name,
-		type = entity.type,
-		tint = tint,
-		particles = {
-			["medium"] = 1,
-		},
-	})
-
-	local corpse = _lib.create_remnant(entity.name, {
-		base_entity_name = base_entity_name,
-		type = entity.type,
-	})
 
 	-- The inserter overhaul gives every inserter other than the bulk inserters long hands.
 	local sprite_set = Inserter.get_sprite_set({
@@ -88,7 +72,6 @@ for name, options in pairs(entities) do
 		variant = options.is_bulk and "inserter-bulk" or "inserter-long",
 	})
 	Applicators.apply_sprite_set(entity, sprite_set)
-	Applicators.apply_sprite_set(corpse, sprite_set)
 
 	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
 		tier = do_labels and tier or 0,

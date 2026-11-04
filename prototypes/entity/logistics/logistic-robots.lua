@@ -5,7 +5,6 @@
 
 ---@using data
 
-local _lib = require("_lib")
 local _framework = {
 	tiers = require("__reskins-framework__.api.tiers"),
 	settings = require("__reskins-framework__.api.settings"),
@@ -49,7 +48,6 @@ local entities = {
 }
 
 local TYPE = "logistic-robot"
-local BASE_ENTITY_NAME = "logistic-robot"
 
 for name, options in pairs(entities) do
 	local entity = data.raw[TYPE][name]
@@ -60,28 +58,8 @@ for name, options in pairs(entities) do
 	local tier = _framework.tiers.get_tier(options)
 	local tint = options.tint or _framework.tiers.get_tint(tier)
 
-	_lib.create_explosions_and_particles(name, {
-		base_entity_name = BASE_ENTITY_NAME,
-		type = entity.type,
-		tint = tint,
-		particles = {
-			["medium"] = 2,
-		},
-	})
-
-	local corpse = _lib.create_remnant(entity.name, {
-		base_entity_name = BASE_ENTITY_NAME,
-		type = entity.type,
-	})
-
-	-- Robots generate this indirectly.
-	entity.corpse = nil
-
 	local sprite_set = LogisticRobot.get_sprite_set({ tint = tint })
 	Applicators.apply_sprite_set(entity, sprite_set)
-	Applicators.apply_sprite_set(corpse, sprite_set)
-
-	_lib.configure_robot_death_animation(entity, corpse.name)
 
 	local icon_data = LogisticRobot.get_icon({ tint = tint })
 	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({

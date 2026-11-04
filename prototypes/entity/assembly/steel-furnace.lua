@@ -5,7 +5,6 @@
 
 ---@using data
 
-local _lib = require("_lib")
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 
@@ -52,8 +51,6 @@ local entities = {
 	},
 }
 
-local BASE_ENTITY_NAME = "steel-furnace"
-
 for name, options in pairs(entities) do
 	local entity = data.raw[options.type][name]
 	if not entity then
@@ -63,26 +60,11 @@ for name, options in pairs(entities) do
 	local tier = 2
 	local tint = options.tint or _framework.tiers.get_tint(tier)
 
-	_lib.create_explosions_and_particles(entity.name, {
-		base_entity_name = BASE_ENTITY_NAME,
-		type = entity.type,
-		tint = tint,
-		particles = {
-			["medium"] = 2,
-		},
-	})
-
-	local corpse = _lib.create_remnant(entity.name, {
-		base_entity_name = BASE_ENTITY_NAME,
-		type = entity.type,
-	})
-
 	local sprite_set = FurnaceSteel.get_sprite_set({
 		tint = tint,
 		variant = options.variant,
 	})
 	Applicators.apply_sprite_set(entity, sprite_set)
-	Applicators.apply_sprite_set(corpse, sprite_set)
 
 	local icon_data = FurnaceSteel.get_icon({
 		tint = tint,

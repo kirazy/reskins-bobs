@@ -5,7 +5,6 @@
 
 ---@using data
 
-local _lib = require("_lib")
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 
@@ -97,7 +96,6 @@ local function get_icon(tint, options)
 end
 
 local TYPE = "assembling-machine"
-local BASE_ENTITY_NAME = "assembling-machine-1"
 
 for name, options in pairs(entities) do
 	local entity = data.raw[TYPE][name]
@@ -108,21 +106,6 @@ for name, options in pairs(entities) do
 	local tier = _framework.tiers.get_tier(options)
 	local tint = options.tint or _framework.tiers.get_tint(tier)
 
-	_lib.create_explosions_and_particles(entity.name, {
-		base_entity_name = BASE_ENTITY_NAME,
-		type = entity.type,
-		tint = tint,
-		particles = {
-			["big"] = 1,
-			["medium"] = 2,
-		},
-	})
-
-	local corpse = _lib.create_remnant(entity.name, {
-		base_entity_name = BASE_ENTITY_NAME,
-		type = entity.type,
-	})
-
 	local sprite_set = AssemblingMachine.get_sprite_set({
 		tint = tint,
 		machine_tier = options.machine_tier,
@@ -131,7 +114,6 @@ for name, options in pairs(entities) do
 		use_steam_set = options.use_steam_set,
 	})
 	Applicators.apply_sprite_set(entity, sprite_set)
-	Applicators.apply_sprite_set(corpse, sprite_set)
 
 	local icon_data = get_icon(tint, options)
 

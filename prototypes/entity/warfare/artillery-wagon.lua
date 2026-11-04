@@ -3,10 +3,10 @@
 --
 -- See LICENSE in the project directory for license information.
 
-local _lib = require("_lib")
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 
+local Applicators = require("__reskins-assets-api__.api.applicators")
 local ArtilleryWagon = require("__reskins-assets-api__.assets.base.entities.train-artillery-wagon")
 
 if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then
@@ -20,7 +20,6 @@ local entities = {
 }
 
 local TYPE = "artillery-wagon"
-local BASE_ENTITY_NAME = "artillery-wagon"
 
 for name, options in pairs(entities) do
 	local entity = data.raw[TYPE][name]
@@ -31,19 +30,7 @@ for name, options in pairs(entities) do
 	local tier = _framework.tiers.get_tier(options)
 	local tint = _framework.tiers.get_tint(tier)
 
-	_lib.create_explosions_and_particles(entity.name, {
-		base_entity_name = BASE_ENTITY_NAME,
-		type = entity.type,
-		tint = tint,
-		particles = {
-			["big"] = 4,
-		},
-	})
-
-	_lib.create_remnant(entity.name, {
-		base_entity_name = BASE_ENTITY_NAME,
-		type = entity.type,
-	})
+	Applicators.apply_sprite_set(entity, ArtilleryWagon.get_sprite_set({ tint = tint }))
 
 	local icon_data = ArtilleryWagon.get_icon({ tint = tint })
 	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({

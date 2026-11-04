@@ -6,10 +6,15 @@ Date: ????
     - Added support for the new assembling machine and heat exchanger sprites
   Changes:
     - Migrated some entity sprites to use the Artisanal Reskins: Assets API
+    - Dying explosions, particles, and remnants now come from the Artisanal Reskins: Assets API, with the sprites of each entity
+    - Entities with generic remnants now use the generic remnants of the base game that match their size
     - Removed support for Nauvis Day, which is not available for Factorio 2.0 or later
     - The reactor color setting is now available with Bob's Metals, Chemicals and Intermediates and Bob's Power, instead of Bob's Revamp
   Bugfixes:
     - Fixed that stone furnace and related entities did not display remnants when destroyed
+    - Fixed that reskinned robots did not play the death sounds of the base game
+    - Fixed that the remnants of inserters and of 2x2 assembling machines were drawn larger than the entity
+    - Fixed that the explosion and remnants of the base heat pipe showed the icon of another heat pipe
     - Fixed that the thorium and deuterium reactors and their technologies were drawn as uranium reactors
     - Fixed that pumps did not draw shadows
     - Fixed that area mining drills facing west drew the standard frame instead of the blue frame while mining with fluid

@@ -3,7 +3,6 @@
 --
 -- See LICENSE in the project directory for license information.
 
-local _lib = require("_lib")
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 
@@ -15,7 +14,6 @@ if not (reskins.bobs and reskins.bobs.triggers.power.entities) then
 end
 
 local TYPE = "burner-generator"
-local BASE_ENTITY_NAME = "steam-engine"
 
 ---@type data.BurnerGeneratorPrototype
 local entity = data.raw[TYPE]["bob-burner-generator"]
@@ -24,19 +22,6 @@ if not entity then
 end
 
 local tier = 0
-local tint = util.color("#26262660")
-
-_lib.create_explosions_and_particles(entity.name, {
-	base_entity_name = BASE_ENTITY_NAME,
-	type = entity.type,
-	tint = tint,
-	particles = {
-		["big"] = 1,
-		["medium"] = 2,
-	},
-})
-
-entity.corpse = "big-remnants"
 
 local sprite_set = GeneratorBurner.get_sprite_set()
 Applicators.apply_sprite_set(entity, sprite_set)

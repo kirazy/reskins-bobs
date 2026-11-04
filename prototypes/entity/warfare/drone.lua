@@ -5,12 +5,8 @@
 
 ---@using data
 
-local _lib = require("_lib")
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
-local _sprite_utils = {
-	icons = require("__reskins-sprite-utils__.icons"),
-	sprites = require("__reskins-sprite-utils__.sprites"),
-}
+local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 
 local Applicators = require("__reskins-assets-api__.api.applicators")
 local Drone = require("__reskins-assets-api__.assets.bobs.entities.drone")
@@ -22,7 +18,6 @@ end
 local entities = {
 	["bob-robot-gun-drone"] = {
 		tint = util.color("#f2f230") --[[@as Color]],
-		corpse_scale_factor = 0.3,
 		rotation_speed = 0.015,
 		attack_parameters = {
 			projectile_center = { 0, 5 },
@@ -31,7 +26,6 @@ local entities = {
 	},
 	["bob-robot-laser-drone"] = {
 		tint = util.color("#30f271") --[[@as Color]],
-		corpse_scale_factor = 0.3,
 		rotation_speed = 0.015,
 		attack_parameters = {
 			source_offset = { 0, -0.5 },
@@ -39,7 +33,6 @@ local entities = {
 	},
 	["bob-robot-flamethrower-drone"] = {
 		tint = util.color("#f25730") --[[@as Color]],
-		corpse_scale_factor = 0.3,
 		rotation_speed = 0.015,
 		attack_parameters = {
 			gun_center_shift = { 0, -0.5 },
@@ -47,7 +40,6 @@ local entities = {
 	},
 	["bob-robot-plasma-drone"] = {
 		tint = util.color("#30a5f2") --[[@as Color]],
-		corpse_scale_factor = 0.45,
 		rotation_speed = 0.007,
 		attack_parameters = {
 			projectile_center = { 0, -0.5 },
@@ -57,7 +49,6 @@ local entities = {
 }
 
 local TYPE = "unit"
-local BASE_ENTITY_NAME = "tank"
 
 for name, options in pairs(entities) do
 	local entity = data.raw[TYPE][name]
@@ -65,31 +56,12 @@ for name, options in pairs(entities) do
 		goto continue
 	end
 
-	_lib.create_explosions_and_particles(entity.name, {
-		base_entity_name = BASE_ENTITY_NAME,
-		type = entity.type,
-		tint = options.tint,
-		particles = {
-			["medium"] = 2,
-		},
-	})
-
-	local corpse = _lib.create_remnant(entity.name, {
-		base_entity_name = BASE_ENTITY_NAME,
-		type = entity.type,
-	})
-
 	---@diagnostic disable-next-line: assign-type-mismatch
 	entity.attack_parameters = util.merge({ entity.attack_parameters, options.attack_parameters })
 	entity.rotation_speed = options.rotation_speed
 
 	local sprite_set = Drone.get_sprite_set({ tint = options.tint })
 	Applicators.apply_sprite_set(entity, sprite_set)
-
-	-- The remnants copied from the tank are larger than the drone.
-	-- Rescale them to the size of the drone.
-	_sprite_utils.sprites.rescale_prototype(corpse, options.corpse_scale_factor)
-	Applicators.apply_sprite_set(corpse, sprite_set)
 
 	local icon_data = Drone.get_icon({ tint = options.tint })
 	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({

@@ -3,7 +3,6 @@
 --
 -- See LICENSE in the project directory for license information.
 
-local _lib = require("_lib")
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 local _assets = { defines = require("__reskins-assets-api__.api.defines") }
 local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
@@ -69,26 +68,10 @@ local function do_pipe(name, options)
 		return
 	end
 
-	_lib.create_explosions_and_particles(name, {
-		base_entity_name = "pipe",
-		type = "pipe",
-		tint = Pipe.get_material_tint({ material = options.pipe_material }),
-		particles = {
-			["medium"] = 1,
-			["small"] = 2,
-		},
-	})
-
-	local corpse = _lib.create_remnant(name, {
-		base_entity_name = "pipe",
-		type = "pipe",
-	})
-
 	local tier = _framework.tiers.get_tier(options)
 	local sprite_set = Pipe.get_sprite_set({ pipe_material = options.pipe_material })
 
 	Applicators.apply_sprite_set(entity, sprite_set)
-	Applicators.apply_sprite_set(corpse, sprite_set)
 
 	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
 		tier = tier,
@@ -105,26 +88,10 @@ local function do_pipe_to_ground(name, options)
 		return
 	end
 
-	_lib.create_explosions_and_particles(name, {
-		base_entity_name = "pipe-to-ground",
-		type = "pipe-to-ground",
-		tint = Pipe.get_material_tint({ material = options.pipe_material }),
-		particles = {
-			["medium"] = 1,
-			["small"] = 2,
-		},
-	})
-
-	local corpse = _lib.create_remnant(name, {
-		base_entity_name = "pipe-to-ground",
-		type = "pipe-to-ground",
-	})
-
 	local tier = _framework.tiers.get_tier(options)
 	local sprite_set = PipeToGround.get_sprite_set({ pipe_material = options.pipe_material })
 
 	Applicators.apply_sprite_set(entity, sprite_set)
-	Applicators.apply_sprite_set(corpse, sprite_set)
 
 	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
 		tier = tier,

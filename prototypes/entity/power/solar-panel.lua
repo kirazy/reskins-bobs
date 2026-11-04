@@ -3,13 +3,9 @@
 --
 -- See LICENSE in the project directory for license information.
 
-local _lib = require("_lib")
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 local _assets = { icons = require("__reskins-assets-api__.api.icons") }
-local _sprite_utils = {
-	icons = require("__reskins-sprite-utils__.icons"),
-	sprites = require("__reskins-sprite-utils__.sprites"),
-}
+local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 
 local Applicators = require("__reskins-assets-api__.api.applicators")
 local SolarPanelSmall = require("__reskins-assets-api__.assets.base.entities.solar-panel-small")
@@ -29,21 +25,18 @@ local entities = {
 		prog_tier = 2,
 		letter = "S",
 		assets = SolarPanelSmall,
-		corpse_scale_factor = 2 / 3,
 	},
 	["bob-solar-panel-small-2"] = {
 		tier = 2,
 		prog_tier = 3,
 		letter = "S",
 		assets = SolarPanelSmall,
-		corpse_scale_factor = 2 / 3,
 	},
 	["bob-solar-panel-small-3"] = {
 		tier = 3,
 		prog_tier = 4,
 		letter = "S",
 		assets = SolarPanelSmall,
-		corpse_scale_factor = 2 / 3,
 	},
 	["solar-panel"] = {
 		tier = 1,
@@ -68,26 +61,22 @@ local entities = {
 		prog_tier = 2,
 		letter = "L",
 		assets = SolarPanelLarge,
-		corpse_scale_factor = 4 / 3,
 	},
 	["bob-solar-panel-large-2"] = {
 		tier = 2,
 		prog_tier = 3,
 		letter = "L",
 		assets = SolarPanelLarge,
-		corpse_scale_factor = 4 / 3,
 	},
 	["bob-solar-panel-large-3"] = {
 		tier = 3,
 		prog_tier = 4,
 		letter = "L",
 		assets = SolarPanelLarge,
-		corpse_scale_factor = 4 / 3,
 	},
 }
 
 local TYPE = "solar-panel"
-local BASE_ENTITY_NAME = "solar-panel"
 
 for name, options in pairs(entities) do
 	local entity = data.raw[TYPE][name]
@@ -98,27 +87,8 @@ for name, options in pairs(entities) do
 	local tier = _framework.tiers.get_tier(options)
 	local tint = _framework.tiers.get_tint(tier)
 
-	_lib.create_explosions_and_particles(entity.name, {
-		base_entity_name = BASE_ENTITY_NAME,
-		type = entity.type,
-		tint = tint,
-		particles = {
-			["small"] = 2,
-		},
-	})
-
-	local corpse = _lib.create_remnant(entity.name, {
-		base_entity_name = BASE_ENTITY_NAME,
-		type = entity.type,
-	})
-
-	if options.corpse_scale_factor then
-		_sprite_utils.sprites.rescale_prototype(corpse, options.corpse_scale_factor)
-	end
-
 	local sprite_set = options.assets.get_sprite_set({ tint = tint })
 	Applicators.apply_sprite_set(entity, sprite_set)
-	Applicators.apply_sprite_set(corpse, sprite_set)
 
 	local icon_data = _sprite_utils.icons.compose_icons(
 		"default",

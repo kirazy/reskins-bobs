@@ -3,7 +3,6 @@
 --
 -- See LICENSE in the project directory for license information.
 
-local _lib = require("_lib")
 local _framework = {
 	tiers = require("__reskins-framework__.api.tiers"),
 	settings = require("__reskins-framework__.api.settings"),
@@ -14,6 +13,7 @@ local _assets = {
 	defines = require("__reskins-assets-api__.api.defines"),
 }
 
+local Applicators = require("__reskins-assets-api__.api.applicators")
 local Locomotive = require("__reskins-assets-api__.assets.base.entities.train-locomotive")
 
 if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then
@@ -32,7 +32,6 @@ local entities = {
 }
 
 local TYPE = "locomotive"
-local BASE_ENTITY_NAME = "locomotive"
 
 for name, options in pairs(entities) do
 	local entity = data.raw[TYPE][name]
@@ -43,19 +42,7 @@ for name, options in pairs(entities) do
 	local tier = _framework.tiers.get_tier(options)
 	local tint = _framework.tiers.get_tint(tier)
 
-	_lib.create_explosions_and_particles(entity.name, {
-		base_entity_name = BASE_ENTITY_NAME,
-		type = entity.type,
-		tint = tint,
-		particles = {
-			["medium"] = 2,
-		},
-	})
-
-	_lib.create_remnant(entity.name, {
-		base_entity_name = BASE_ENTITY_NAME,
-		type = entity.type,
-	})
+	Applicators.apply_sprite_set(entity, Locomotive.get_sprite_set({ tint = tint }))
 
 	local composition = Locomotive.get_icon_composition({ tint = tint })
 	if options.is_armoured then
