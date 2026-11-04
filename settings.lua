@@ -287,17 +287,22 @@ if mods["bobpower"] then
 	})
 end
 
+if mods["bobplates"] and mods["bobpower"] then
+	data:extend({
+		{
+			type = "bool-setting",
+			name = "reskins-bobs-do-bobrevamp-reactor-color",
+			setting_type = "startup",
+			default_value = true,
+		},
+	})
+end
+
 if mods["bobrevamp"] then
 	data:extend({
 		{
 			type = "bool-setting",
 			name = "reskins-bobs-do-bobrevamp",
-			setting_type = "startup",
-			default_value = true,
-		},
-		{
-			type = "bool-setting",
-			name = "reskins-bobs-do-bobrevamp-reactor-color",
 			setting_type = "startup",
 			default_value = true,
 		},

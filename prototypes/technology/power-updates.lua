@@ -3,6 +3,10 @@
 --
 -- See LICENSE in the project directory for license information.
 
+---@using Reskins.Library.Internal
+
+local nuclear_reactors = require("prototypes.functions.nuclear-reactors")
+
 if not (reskins.bobs and reskins.bobs.triggers.power.technologies) then
 	return
 end
@@ -32,33 +36,23 @@ if reskins.bobs.triggers.power.nuclear then
 		tier = 1,
 		prog_tier = 3,
 		icon_name = "nuclear-power",
-		icon_base = "nuclear-power-uranium-" .. material_tiers[1],
-		tint = reskins.bobs.nuclear_reactor_index["nuclear-reactor"].tint,
+		icon_base = "nuclear-power-" .. nuclear_reactors["nuclear-reactor"].fuel .. "-" .. material_tiers[1],
+		tint = nuclear_reactors["nuclear-reactor"].tint,
 	}
 	technologies["bob-nuclear-power-2"] = {
 		tier = 2,
 		prog_tier = 4,
 		icon_name = "nuclear-power",
-		icon_base = "nuclear-power-uranium-" .. material_tiers[2],
-		tint = reskins.bobs.nuclear_reactor_index["bob-nuclear-reactor-2"].tint,
+		icon_base = "nuclear-power-" .. nuclear_reactors["bob-nuclear-reactor-2"].fuel .. "-" .. material_tiers[2],
+		tint = nuclear_reactors["bob-nuclear-reactor-2"].tint,
 	}
 	technologies["bob-nuclear-power-3"] = {
 		tier = 3,
 		prog_tier = 5,
 		icon_name = "nuclear-power",
-		icon_base = "nuclear-power-uranium-" .. material_tiers[3],
-		tint = reskins.bobs.nuclear_reactor_index["bob-nuclear-reactor-3"].tint,
+		icon_base = "nuclear-power-" .. nuclear_reactors["bob-nuclear-reactor-3"].fuel .. "-" .. material_tiers[3],
+		tint = nuclear_reactors["bob-nuclear-reactor-3"].tint,
 	}
-
-	if reskins.lib.settings.get_value("bobmods-revamp-nuclear") == true then
-		technologies["bob-nuclear-power-2"].icon_base = "nuclear-power-thorium-" .. material_tiers[2]
-
-		if reskins.lib.settings.get_value("bobmods-plates-bluedeuterium") == true then
-			technologies["bob-nuclear-power-3"].icon_base = "nuclear-power-deuterium-blue-" .. material_tiers[3]
-		else
-			technologies["bob-nuclear-power-3"].icon_base = "nuclear-power-deuterium-pink-" .. material_tiers[3]
-		end
-	end
 end
 
 reskins.internal.create_icons_from_list(technologies, inputs)
