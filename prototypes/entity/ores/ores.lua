@@ -3,6 +3,8 @@
 --
 -- See LICENSE in the project directory for license information.
 
+local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
+
 if not (reskins.bobs and reskins.bobs.triggers.ores.entities) then
 	return
 end
@@ -15,6 +17,7 @@ local ores = {
 	["bob-sulfur"] = { key = "bobs", subfolder = "ores" },
 	["bob-thorium-ore"] = { key = "bobs", subfolder = "ores", is_light = true },
 	["bob-tin-ore"] = { key = "lib", subfolder = "shared", num_variations = 8 },
+	["tungsten-ore"] = { key = "lib", subfolder = "shared", filename = "bob-tungsten-ore", num_variations = 8 },
 
 	-- Shared with Angel's
 	["bob-bauxite-ore"] = { key = "lib", subfolder = "shared", num_variations = 8 },
@@ -26,12 +29,6 @@ local ores = {
 	["bob-zinc-ore"] = { key = "lib", subfolder = "shared" },
 }
 
-if reskins.lib.version.is_same_or_newer(mods["boblibrary"], "2.1.0") then
-	ores["tungsten-ore"] = { key = "lib", subfolder = "shared", filename = "bob-tungsten-ore", num_variations = 8 }
-else
-	ores["bob-tungsten-ore"] = { key = "lib", subfolder = "shared", num_variations = 8 }
-end
-
 for name, params in pairs(ores) do
 	local entity = data.raw["resource"][name]
 	if not entity then
@@ -40,7 +37,7 @@ for name, params in pairs(ores) do
 
 	local sprite_name = params.filename or name
 	if name == "bob-sulfur" then
-		reskins.lib.icons.assign_deferrable_icon({
+		_sprite_utils.icons.apply_icon_assignment({
 			name = entity.name,
 			type_name = entity.type,
 			icon_datum = {
@@ -50,7 +47,7 @@ for name, params in pairs(ores) do
 			},
 		})
 	else
-		reskins.lib.icons.assign_deferrable_icon({
+		_sprite_utils.icons.apply_icon_assignment({
 			name = entity.name,
 			type_name = entity.type,
 			icon_data = {

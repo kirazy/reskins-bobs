@@ -24,16 +24,10 @@ local ores = {
 	"bob-quartz",
 	"bob-silver-ore",
 	"bob-zinc-ore",
+	"tungsten-ore",
 }
 
-if reskins.lib.version.is_same_or_newer(mods["boblibrary"], "2.1.0") then
-	table.insert(ores, "tungsten-ore")
-else
-	table.insert(ores, "bob-tungsten-ore")
-end
-
 for _, name in pairs(ores) do
-	-- Check for autoplace controls, skip if it does not exist
 	local control = data.raw["autoplace-control"][name]
 	if not control then
 		goto continue

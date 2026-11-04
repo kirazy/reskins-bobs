@@ -3,6 +3,8 @@
 --
 -- See LICENSE in the project directory for license information.
 
+local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
+
 if not (reskins.bobs and reskins.bobs.triggers.ores.entities) then
 	return
 end
@@ -18,8 +20,7 @@ for _, name in pairs(fluids) do
 		goto continue
 	end
 
-	---@type DeferrableIconDatum
-	local deferrable_icon = {
+	_sprite_utils.icons.apply_icon_assignment({
 		name = entity.name,
 		type_name = entity.type,
 		icon_datum = {
@@ -27,9 +28,7 @@ for _, name in pairs(fluids) do
 			icon_size = 64,
 			scale = 0.5,
 		},
-	}
-
-	reskins.lib.icons.assign_deferrable_icon(deferrable_icon)
+	})
 
 	entity.stages = {
 		sheet = {
