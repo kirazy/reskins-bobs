@@ -12,6 +12,15 @@ local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 local Applicators = require("__reskins-assets-api__.api.applicators")
 local AssemblingMachine = require("__reskins-assets-api__.assets.base.entities.assembling-machine")
 
+if not (reskins.bobs and reskins.bobs.triggers.assembly.entities) then
+	return
+end
+
+-- Flag available for Mini-Machines compatibility pass
+if reskins.compatibility then
+	reskins.compatibility.triggers.minimachines.assemblers = true
+end
+
 local entities = {
 	-- Standard assembly machines
 	["assembling-machine-1"] = {
