@@ -1,44 +1,130 @@
 -- Copyright (c) 2025 Kirazy
--- Part of Artisanal Reskins: Library
+-- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
 
-if reskins.bobs and (reskins.bobs.triggers.logistics.entities == false) then
+---@using data
+
+local _framework = {
+	tiers = require("__reskins-framework__.api.tiers"),
+	settings = require("__reskins-framework__.api.settings"),
+}
+local _sprite_utils = {
+	icons = require("__reskins-sprite-utils__.icons"),
+	belt_animation_sets = require("__reskins-sprite-utils__.belt-animation-sets"),
+}
+
+local _defines = require("__reskins-assets-api__.api.defines")
+local Applicators = require("__reskins-assets-api__.api.applicators")
+local TransportBelt = require("__reskins-assets-api__.assets.base.entities.transport-belt")
+local UndergroundBelt = require("__reskins-assets-api__.assets.base.entities.underground-belt")
+local Splitter = require("__reskins-assets-api__.assets.base.entities.splitter")
+
+if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then
 	return
 end
 
-local make_tier_labels = reskins.lib.settings.get_value("reskins-bobs-do-belt-entity-tier-labeling") and true or false
-local turbo_prefix = reskins.lib.version.is_same_or_newer(mods["boblibrary"], "2.1.0") and "turbo" or "bob-turbo"
+local make_tier_labels = _framework.settings.get_value("reskins-bobs-do-belt-entity-tier-labeling") == true
+local reskin_base_entities = _framework.settings.get_value("reskins-framework-use-custom-tier-colors") == true
+local basic_belt_color = _framework.settings.get_value("reskins-bobs-do-basic-belts-separately") == true
+		and _framework.settings.get_value("reskins-bobs-basic-belts-color") --[[@as Color]]
+	or nil
 
--- TRANSPORT BELTS
-local transport_belts = {
-	["bob-basic-transport-belt"] = { tier = 0 },
-	[turbo_prefix .. "-transport-belt"] = { tier = 4, use_express_spritesheet = true },
-	["bob-ultimate-transport-belt"] = { tier = 5, use_express_spritesheet = true },
+-- Bob's mods name the turbo belts `bob-turbo-*` before Bob's Library 2.1.0, and `turbo-*` from 2.1.0.
+local turbo_prefix = data.raw["transport-belt"]["bob-turbo-transport-belt"] and "bob-turbo" or "turbo"
+
+-- The transport belt, underground belt, and splitter of each tier. The entities of the base game are reskinned only
+-- when the tier colors are customized.
+local belt_tiers = {
+	{
+		transport_belt = "bob-basic-transport-belt",
+		underground_belt = "bob-basic-underground-belt",
+		splitter = "bob-basic-splitter",
+		tier = 0,
+		tint = basic_belt_color,
+	},
+	{
+		transport_belt = "transport-belt",
+		underground_belt = "underground-belt",
+		splitter = "splitter",
+		tier = 1,
+		is_base = true,
+	},
+	{
+		transport_belt = "fast-transport-belt",
+		underground_belt = "fast-underground-belt",
+		splitter = "fast-splitter",
+		tier = 2,
+		is_base = true,
+	},
+	{
+		transport_belt = "express-transport-belt",
+		underground_belt = "express-underground-belt",
+		splitter = "express-splitter",
+		tier = 3,
+		is_base = true,
+	},
+	{
+		transport_belt = turbo_prefix .. "-transport-belt",
+		underground_belt = turbo_prefix .. "-underground-belt",
+		splitter = turbo_prefix .. "-splitter",
+		tier = 4,
+	},
+	{
+		transport_belt = "bob-ultimate-transport-belt",
+		underground_belt = "bob-ultimate-underground-belt",
+		splitter = "bob-ultimate-splitter",
+		tier = 5,
+	},
 }
 
-for name, map in pairs(transport_belts) do
-	reskins.lib.apply_skin.transport_belt(name, map.tier, nil, make_tier_labels, map.use_express_spritesheet)
+---Gets the tier of the tier label for the given `tier`, which is 0 when belt entities are not labeled.
+---@param tier integer
+---@return integer
+local function get_label_tier(tier)
+	return make_tier_labels and tier or 0
 end
 
--- UNDERGROUND BELTS
-local underground_belts = {
-	["bob-basic-underground-belt"] = { tier = 0 },
-	[turbo_prefix .. "-underground-belt"] = { tier = 4 },
-	["bob-ultimate-underground-belt"] = { tier = 5 },
-}
+for _, belt_tier in pairs(belt_tiers) do
+	local belt = data.raw["transport-belt"][belt_tier.transport_belt]
+	if not belt or (belt_tier.is_base and not reskin_base_entities) then
+		goto continue
+	end
 
-for name, map in pairs(underground_belts) do
-	reskins.lib.apply_skin.underground_belt(name, map.tier, nil, make_tier_labels)
-end
+	local underground = data.raw["underground-belt"][belt_tier.underground_belt]
+	local splitter = data.raw["splitter"][belt_tier.splitter]
 
--- SPLITTERS
-local splitters = {
-	["bob-basic-splitter"] = { tier = 0 },
-	[turbo_prefix .. "-splitter"] = { tier = 4 },
-	["bob-ultimate-splitter"] = { tier = 5 },
-}
+	local tint = belt_tier.tint or _framework.tiers.get_tint(belt_tier.tier)
+	local params = { tint = tint, belt_sprite = _defines.get_belt_sprites(belt.speed) }
 
-for name, map in pairs(splitters) do
-	reskins.lib.apply_skin.splitter(name, map.tier, nil, make_tier_labels)
+	-- Find the entities that use the belt animation set of the belt before it is replaced.
+	local users = _sprite_utils.belt_animation_sets.find_belt_animation_set_users(belt)
+
+	Applicators.apply_sprite_set(belt, TransportBelt.get_sprite_set(params))
+	_sprite_utils.belt_animation_sets.set_belt_animation_set(users, belt.belt_animation_set)
+
+	local entities = {
+		{ belt, TransportBelt },
+		{ underground, UndergroundBelt },
+		{ splitter, Splitter },
+	}
+
+	for _, pair in pairs(entities) do
+		local entity, module = pair[1], pair[2]
+		if entity then
+			if entity ~= belt then
+				Applicators.apply_sprite_set(entity, module.get_sprite_set(params))
+			end
+
+			local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
+				tier = get_label_tier(belt_tier.tier),
+				name = entity.name,
+				type_name = entity.type,
+				icon_data = module.get_icon({ tint = tint }),
+			})
+			_sprite_utils.icons.apply_icon_assignment(icon_assignment)
+		end
+	end
+
+	::continue::
 end
