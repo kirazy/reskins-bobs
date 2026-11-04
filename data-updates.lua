@@ -8,7 +8,7 @@
 ----------------------------------------------------------------------------------------------------
 -- Bob's Assembly
 require("prototypes.entity.assembly.assembling-machine")
-require("prototypes.entity.assembly-updates")
+require("prototypes.entity.assembly.chemical-plants")
 
 -- Bob's Power
 require("prototypes.entity.power.nuclear-reactor") -- Bob reskins in data-updates

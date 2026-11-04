@@ -3,164 +3,104 @@
 --
 -- See LICENSE in the project directory for license information.
 
+local _lib = require("_lib")
+local _framework = {
+	tiers = require("__reskins-framework__.api.tiers"),
+	settings = require("__reskins-framework__.api.settings"),
+}
+local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
+
+local Applicators = require("__reskins-assets-api__.api.applicators")
+local HeatPipe = require("__reskins-assets-api__.assets.base.entities.heat-pipe")
+
 if not (reskins.bobs and reskins.bobs.triggers.power.entities) then
 	return
 end
 
-local function make_heat_pipe_pictures(path, name_prefix, data, draw_as_glow)
-	local all_pictures = {}
-	local func = draw_as_glow and apply_heat_pipe_glow or function(t)
-		return t
-	end
-	for key, t in pairs(data) do
-		if t.empty then
-			all_pictures[key] = { priority = "extra-high", filename = "__core__/graphics/empty.png", width = 1, height = 1 }
-		else
-			local tile_pictures = {}
-			for i = 1, (t.variations or 1) do
-				local sprite = func({
-					priority = "extra-high",
-					filename = path
-						.. name_prefix
-						.. "-"
-						.. (t.name or string.gsub(key, "_", "-"))
-						.. (t.omit_number and ".png" or ("-" .. tostring(i) .. ".png")),
-					width = (t.width or 32) * 2,
-					height = (t.height or 32) * 2,
-					scale = 0.5,
-					shift = t.shift,
-				})
-				table.insert(tile_pictures, sprite)
-			end
-			all_pictures[key] = tile_pictures
-		end
-	end
-	return all_pictures
-end
-
--- Set input parameters
-local inputs = {
-	type = "heat-pipe",
-	base_entity_name = "heat-pipe",
-	mod = "bobs",
-}
-
-local tier_map = {
+local entities = {
 	["heat-pipe"] = {
 		tier = 1,
 		prog_tier = 2,
-		material = "base",
+		pipe_material = "base",
 	},
 	["bob-heat-pipe-2"] = {
 		tier = 2,
 		prog_tier = 3,
-		material = "aluminum-invar",
+		pipe_material = "aluminum-invar",
 		particle_colors = { "dff5ff", "a99b84" },
 	},
 	["bob-heat-pipe-3"] = {
 		tier = 3,
 		prog_tier = 4,
-		material = "silver-titanium",
+		pipe_material = "silver-titanium",
 		particle_colors = { "d4d4d4", "cfd2d4" },
 	},
 	["bob-heat-pipe-4"] = {
 		tier = 4,
 		prog_tier = 5,
-		material = "gold-copper",
+		pipe_material = "gold-copper",
 		particle_colors = { "d6b968", "ff7f3f" },
 	},
 }
 
+local TYPE = "heat-pipe"
+local BASE_ENTITY_NAME = "heat-pipe"
+
+local do_labels = _framework.settings.get_value("reskins-bobs-do-pipe-tier-labeling") == true
+
 -- Reskin entities, create and assign extra details
-for name, map in pairs(tier_map) do
-	---@type data.HeatPipePrototype
-	local entity = data.raw[inputs.type][name]
+for name, options in pairs(entities) do
+	local entity = data.raw[TYPE][name]
 	if not entity then
 		goto continue
 	end
 
-	local tier = reskins.lib.tiers.get_tier(map)
-
-	-- Setup inputs defaults
-	reskins.lib.set_inputs_defaults(inputs)
-
 	-- Setup icons
-	---@type data.IconData[]
-	local icon_data = {
-		{
-			icon = "__reskins-bobs__/graphics/icons/power/heat-pipe/heat-pipe-" .. map.material .. "-icon-base.png",
-			icon_size = 64,
-			scale = 0.5,
-		},
-	}
-
-	local do_labels = reskins.lib.settings.get_value("reskins-bobs-do-pipe-tier-labeling") == true
-
-	---@type DeferrableIconData
-	local deferrable_icon = {
-		name = name,
-		type_name = "heat-pipe",
-		icon_data = do_labels and reskins.lib.tiers.add_tier_labels_to_icons(tier, icon_data) or icon_data,
-		pictures = do_labels and reskins.lib.sprites.create_sprite_from_icons(icon_data, 1.0) or nil,
-	}
-
-	reskins.lib.icons.assign_deferrable_icon(deferrable_icon)
+	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
+		tier = do_labels and _framework.tiers.get_tier(options) or 0,
+		name = entity.name,
+		type_name = entity.type,
+		icon_data = HeatPipe.get_icon({ pipe_material = options.pipe_material }),
+	})
+	_sprite_utils.icons.apply_icon_assignment(icon_assignment)
 
 	--- Don't reskin the base pipes
 	if name == "heat-pipe" then
 		goto continue
 	end
 
+	assert(options.particle_colors)
+
 	-- Create particles and explosions
-	reskins.lib.create_explosion(name, inputs)
-	reskins.lib.create_particle(
-		name,
-		inputs.base_entity_name,
-		reskins.lib.particle_index["small"],
+	_lib.create_explosion(entity.name, {
+		base_entity_name = BASE_ENTITY_NAME,
+		type = entity.type,
+	})
+	_lib.create_particle(
+		entity.name,
+		BASE_ENTITY_NAME,
+		_lib.particle_index["small"],
 		1,
-		util.color(map.particle_colors[1])
+		util.color(options.particle_colors[1])
 	)
-	reskins.lib.create_particle(
-		name,
-		inputs.base_entity_name,
-		reskins.lib.particle_index["medium"],
+	_lib.create_particle(
+		entity.name,
+		BASE_ENTITY_NAME,
+		_lib.particle_index["medium"],
 		2,
-		util.color(map.particle_colors[2])
+		util.color(options.particle_colors[2])
 	)
 
 	-- Create and skin remnants
-	reskins.lib.create_remnant(name, inputs)
-	local remnant = data.raw["corpse"][name .. "-remnants"]
-	remnant.animation = make_rotated_animation_variations_from_sheet(6, {
-		--stylua: ignore
-		filename = "__reskins-bobs__/graphics/entity/power/heat-pipe/" .. map.material .. "/remnants/heat-pipe-remnants.png",
-		width = 122,
-		height = 100,
-		direction_count = 2,
-		shift = util.by_pixel(0.5, -1.5),
-		scale = 0.5,
+	local corpse = _lib.create_remnant(entity.name, {
+		base_entity_name = BASE_ENTITY_NAME,
+		type = entity.type,
 	})
 
 	-- Reskin entities
-	entity.connection_sprites =
-		make_heat_pipe_pictures("__reskins-bobs__/graphics/entity/power/heat-pipe/" .. map.material .. "/", "heat-pipe", {
-			single = { name = "straight-vertical-single", omit_number = true },
-			straight_vertical = { variations = 6 },
-			straight_horizontal = { variations = 6 },
-			corner_right_up = { name = "corner-up-right", variations = 6 },
-			corner_left_up = { name = "corner-up-left", variations = 6 },
-			corner_right_down = { name = "corner-down-right", variations = 6 },
-			corner_left_down = { name = "corner-down-left", variations = 6 },
-			t_up = {},
-			t_down = {},
-			t_right = {},
-			t_left = {},
-			cross = { name = "t" },
-			ending_up = {},
-			ending_down = {},
-			ending_right = {},
-			ending_left = {},
-		})
+	local sprite_set = HeatPipe.get_sprite_set({ pipe_material = options.pipe_material })
+	Applicators.apply_sprite_set(entity, sprite_set)
+	Applicators.apply_sprite_set(corpse, sprite_set)
 
 	::continue::
 end

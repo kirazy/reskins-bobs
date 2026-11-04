@@ -37,16 +37,6 @@ local entities = {
 local TYPE = "boiler"
 local BASE_ENTITY_NAME = "boiler"
 
----@param entity BoilerPrototype
-local function strip_light_emissions(entity)
-	-- Overwrite any Bob-specific light behavior
-	entity.energy_source.light_flicker = {
-		color = { 0, 0, 0 },
-		minimum_light_size = 0,
-		light_intensity_to_size_coefficient = 0,
-	}
-end
-
 for name, options in pairs(entities) do
 	local entity = data.raw[TYPE][name]
 	if not entity then
@@ -55,8 +45,6 @@ for name, options in pairs(entities) do
 
 	local tier = _framework.tiers.get_tier(options)
 	local tint = _framework.tiers.get_tint(tier)
-
-	strip_light_emissions(entity)
 
 	_lib.create_explosions_and_particles(entity.name, {
 		base_entity_name = BASE_ENTITY_NAME,

@@ -1,7 +1,16 @@
+-- cspell: words heatsources
+
 -- Copyright (c) 2024 Kirazy
 -- Part of Artisanal Reskins: Bob's Mods
 --
 -- See LICENSE in the project directory for license information.
+
+local _lib = require("_lib")
+local _framework = { tiers = require("__reskins-framework__.api.tiers") }
+local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
+
+local Applicators = require("__reskins-assets-api__.api.applicators")
+local HeatSource = require("__reskins-assets-api__.assets.bobs.entities.heat-source")
 
 if not (reskins.bobs and reskins.bobs.triggers.power.entities) then
 	return
@@ -10,155 +19,52 @@ if not (reskins.bobs and reskins.bobs.triggers.power.heatsources) then
 	return
 end
 
--- Set input parameters
-local inputs = {
-	type = "reactor",
-	base_entity_name = "nuclear-reactor",
-	mod = "bobs",
-	group = "power",
-	particles = { ["big"] = 1, ["medium"] = 2 },
-	make_remnants = false,
+local entities = {
+	["bob-burner-reactor"] = { tier = 1, prog_tier = 2, variant = "burner", pipe_material = "base" },
+	["bob-burner-reactor-2"] = { tier = 2, prog_tier = 3, variant = "burner", pipe_material = "aluminum-invar" },
+	["bob-fluid-reactor"] = { tier = 1, prog_tier = 2, variant = "fluid", pipe_material = "base" },
+	["bob-fluid-reactor-2"] = { tier = 2, prog_tier = 3, variant = "fluid", pipe_material = "aluminum-invar" },
 }
 
-local tier_map = {
-	["bob-burner-reactor"] = { tier = 1, prog_tier = 2, icon_name = "heat-source-burner", material = "base" },
-	["bob-burner-reactor-2"] = { tier = 2, prog_tier = 3, icon_name = "heat-source-burner", material = "aluminum-invar" },
-	["bob-fluid-reactor"] = { tier = 1, prog_tier = 2, icon_name = "heat-source-fluid", material = "base" },
-	["bob-fluid-reactor-2"] = { tier = 2, prog_tier = 3, icon_name = "heat-source-fluid", material = "aluminum-invar" },
-}
+local TYPE = "reactor"
+local BASE_ENTITY_NAME = "nuclear-reactor"
 
----@param material any
----@return data.Sprite
-local function heat_source_base_pipes(material)
-	---@type data.Sprite
-	local sprite = {
-		filename = "__reskins-bobs__/graphics/entity/power/heat-source/heat-source-base-pipes-" .. material .. ".png",
-		width = 192,
-		height = 192,
-		scale = 0.5,
-		shift = { -0.03125, -0.1875 },
-	}
-
-	return sprite
-end
-
----@param material any
----@return data.SpriteVariations
-local function connect_patches_connected(material)
-	---@type data.SpriteVariations
-	local sprite = {
-		sheet = {
-			filename = "__reskins-bobs__/graphics/entity/power/heat-source/reactor-connect-patches-" .. material .. ".png",
-			width = 64,
-			height = 64,
-			variation_count = 12,
-			scale = 0.5,
-		},
-	}
-
-	return sprite
-end
-
----@param material any
----@return data.SpriteVariations
-local function connect_patches_disconnected(material)
-	---@type data.SpriteVariations
-	local sprite = {
-		sheet = {
-			filename = "__reskins-bobs__/graphics/entity/power/heat-source/reactor-connect-patches-" .. material .. ".png",
-			width = 64,
-			height = 64,
-			y = 64,
-			variation_count = 12,
-			scale = 0.5,
-		},
-	}
-
-	return sprite
-end
-
-for name, map in pairs(tier_map) do
-	---@type data.ReactorPrototype
-	local entity = data.raw[inputs.type][name]
+for name, options in pairs(entities) do
+	local entity = data.raw[TYPE][name]
 	if not entity then
 		goto continue
 	end
 
-	local tier = reskins.lib.tiers.get_tier(map)
-	inputs.tint = map.tint or reskins.lib.tiers.get_tint(tier)
-	inputs.icon_name = map.icon_name
+	local tier = _framework.tiers.get_tier(options)
+	local tint = _framework.tiers.get_tint(tier)
 
-	reskins.lib.setup_standard_entity(name, tier, inputs)
-
-	entity.picture = {
-		layers = {
-			{
-				filename = "__reskins-bobs__/graphics/entity/power/heat-source/heat-source-base.png",
-				priority = "high",
-				width = 84,
-				height = 66,
-				scale = 1.5,
-				shift = { 0.4375 * 1.5, 0.03125 * 1.5 },
-			},
-			{
-				filename = "__reskins-bobs__/graphics/entity/power/heat-source/heat-source-mask.png",
-				priority = "high",
-				width = 84,
-				height = 66,
-				scale = 1.5,
-				tint = inputs.tint,
-				shift = { 0.4375 * 1.5, 0.03125 * 1.5 },
-			},
-			{
-				filename = "__reskins-bobs__/graphics/entity/power/heat-source/heat-source-highlights.png",
-				priority = "high",
-				width = 84,
-				height = 66,
-				scale = 1.5,
-				blend_mode = reskins.lib.settings.blend_mode,
-				shift = { 0.4375 * 1.5, 0.03125 * 1.5 },
-			},
-			{
-				filename = "__reskins-bobs__/graphics/entity/power/heat-source/heat-source-shadow.png",
-				priority = "high",
-				width = 84,
-				height = 66,
-				scale = 1.5,
-				draw_as_shadow = true,
-				shift = { 0.4375 * 1.5, 0.03125 * 1.5 },
-			},
+	_lib.create_explosions_and_particles(entity.name, {
+		base_entity_name = BASE_ENTITY_NAME,
+		type = entity.type,
+		tint = tint,
+		particles = {
+			["big"] = 1,
+			["medium"] = 2,
 		},
-	}
+	})
 
-	entity.working_light_picture = {
-		filename = "__bobpower__/graphics/burner-reactor/reactor-fire.png",
-		priority = "high",
-		width = 36,
-		height = 19,
-		frame_count = 12,
-		scale = 1.5,
-		draw_as_glow = true,
-		shift = { -0.03125 * 1.5, 0.671875 * 1.5 },
-	}
+	entity.corpse = "medium-remnants"
 
-	-- Eliminate light
-	entity.use_fuel_glow_color = false
-	entity.light = { intensity = 0, size = 0, shift = { 0.0, 0.0 }, color = { r = 0, g = 0, b = 0, a = 0 } }
-	entity.energy_source.light_flicker = {
-		color = { 0, 0, 0 },
-		minimum_light_size = 0,
-		light_intensity_to_size_coefficient = 0,
-	}
+	local sprite_set = HeatSource.get_sprite_set({
+		tint = tint,
+		variant = options.variant,
+		pipe_material = options.pipe_material,
+	})
+	Applicators.apply_sprite_set(entity, sprite_set)
 
-	-- Heat pipes
-	entity.lower_layer_picture = heat_source_base_pipes(map.material)
-	entity.connection_patches_connected = connect_patches_connected(map.material)
-	entity.connection_patches_disconnected = connect_patches_disconnected(map.material)
-
-	-- Overlay tinted pipe pictures
-	if entity.energy_source.fluid_box then
-		entity.energy_source.fluid_box.pipe_picture = reskins.bobs.assembly_pipe_pictures(inputs.tint)
-	end
+	local icon_data = HeatSource.get_icon({ variant = options.variant, tint = tint })
+	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
+		tier = tier,
+		name = entity.name,
+		type_name = entity.type,
+		icon_data = icon_data,
+	})
+	_sprite_utils.icons.apply_icon_assignment(icon_assignment)
 
 	::continue::
 end
