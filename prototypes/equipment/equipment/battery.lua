@@ -3,6 +3,9 @@
 --
 -- See LICENSE in the project directory for license information.
 
+---@using data
+---@using Reskins.Framework
+
 if not (reskins.bobs and reskins.bobs.triggers.equipment.equipment) then
 	return
 end
