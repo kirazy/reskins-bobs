@@ -32,23 +32,35 @@ local function get_steel_axe_definition()
 	}
 end
 
--- The icon of each technology is created by its module, in the tint of its tier.
+-- The `params` of a technology are passed to the creator of its icon, with the tint of its tier.
 local technologies = {
 	-- Standard Drills
-	["bob-drills-2"] = { module = MiningDrill, tier = 2 },
-	["bob-drills-3"] = { module = MiningDrill, tier = 3 },
-	["bob-drills-4"] = { module = MiningDrill, tier = 4 },
-	["bob-drills-5"] = { module = MiningDrill, tier = 5 },
+	["bob-drills-2"] = { module = MiningDrill, params = { variant = "standard" }, tier = 2 },
+	["bob-drills-3"] = { module = MiningDrill, params = { variant = "standard" }, tier = 3 },
+	["bob-drills-4"] = { module = MiningDrill, params = { variant = "standard" }, tier = 4 },
+	["bob-drills-5"] = { module = MiningDrill, params = { variant = "standard" }, tier = 5 },
+
+	-- Area Drills
+	["bob-area-drills-1"] = { module = MiningDrill, params = { variant = "area" }, tier = 1, prog_tier = 2 },
+	["bob-area-drills-2"] = { module = MiningDrill, params = { variant = "area" }, tier = 2, prog_tier = 3 },
+	["bob-area-drills-3"] = { module = MiningDrill, params = { variant = "area" }, tier = 3, prog_tier = 4 },
+	["bob-area-drills-4"] = { module = MiningDrill, params = { variant = "area" }, tier = 4, prog_tier = 5 },
 
 	-- Oil pumpjacks
-	["oil-gathering"] = { module = OilGathering, tier = 1, prog_tier = 2 },
-	["bob-pumpjacks-2"] = { module = OilGathering, tier = 2, prog_tier = 3 },
-	["bob-pumpjacks-3"] = { module = OilGathering, tier = 3, prog_tier = 4 },
-	["bob-pumpjacks-4"] = { module = OilGathering, tier = 4, prog_tier = 5 },
+	["oil-gathering"] = { module = OilGathering, params = { variant = "base" }, tier = 1, prog_tier = 2 },
+	["bob-pumpjacks-2"] = { module = OilGathering, params = { variant = "base" }, tier = 2, prog_tier = 3 },
+	["bob-pumpjacks-3"] = { module = OilGathering, params = { variant = "base" }, tier = 3, prog_tier = 4 },
+	["bob-pumpjacks-4"] = { module = OilGathering, params = { variant = "base" }, tier = 4, prog_tier = 5 },
+
+	-- Water pumpjacks
+	["bob-water-miner-1"] = { module = OilGathering, params = { variant = "water" }, tier = 1 },
+	["bob-water-miner-2"] = { module = OilGathering, params = { variant = "water" }, tier = 2 },
+	["bob-water-miner-3"] = { module = OilGathering, params = { variant = "water" }, tier = 3 },
+	["bob-water-miner-4"] = { module = OilGathering, params = { variant = "water" }, tier = 4 },
 }
 
 if mods["aai-industry"] then
-	technologies["electric-mining-drill"] = { module = MiningDrill, tier = 1 }
+	technologies["electric-mining-drill"] = { module = MiningDrill, params = { variant = "standard" }, tier = 1 }
 end
 
 ---@type table<string, TieredIconDefinition>
@@ -62,66 +74,10 @@ local definitions = {
 }
 
 for name, options in pairs(technologies) do
-	local tint = _framework.tiers.get_tint(_framework.tiers.get_tier(options))
+	local params = util.copy(options.params)
+	params.tint = _framework.tiers.get_tint(_framework.tiers.get_tier(options))
 
-	definitions[name] = { composition = options.module.get_icon_composition({ tint = tint }) }
+	definitions[name] = { composition = options.module.get_icon_composition(params) }
 end
 
 _framework.tiers.assign_icons_with_tier_labels("technology", definitions)
-
--- The icons of the area drills and the water pumpjacks are assigned from the files of reskins-bobs.
-
--- Setup standard inputs
-local inputs = {
-	mod = "bobs",
-	group = "mining",
-	type = "technology",
-	technology_icon_size = 256,
-}
-
----@param tier? integer # The tier of the icon. An integer value from 0 to 6. Default `0`.
----@param prog_tier? integer # The tier of the icon, as determined by the progression map. An integer value from 0 to 6. Default `0`.
----@return CreateIconsFromListOverrides
-local function get_area_mining_drill_overrides(tier, prog_tier)
-	---@type CreateIconsFromListOverrides
-	local override = {
-		tier = tier,
-		prog_tier = prog_tier,
-		icon_name = "mining-drill",
-		icon_base = "area-mining-drill",
-		technology_icon_size = 128,
-	}
-
-	return override
-end
-
----@param tier? integer # The tier of the icon. An integer value from 0 to 6. Default `0`.
----@param prog_tier? integer # The tier of the icon, as determined by the progression map. An integer value from 0 to 6. Default `0`.
----@return CreateIconsFromListOverrides
-local function get_water_pumpjack_overrides(tier, prog_tier)
-	---@type CreateIconsFromListOverrides
-	local override = {
-		tier = tier,
-		prog_tier = prog_tier,
-		icon_name = "pumpjack",
-		icon_base = "water-pumpjack",
-	}
-
-	return override
-end
-
-local legacy_technologies = {
-	-- Area Drills
-	["bob-area-drills-1"] = get_area_mining_drill_overrides(1, 2),
-	["bob-area-drills-2"] = get_area_mining_drill_overrides(2, 3),
-	["bob-area-drills-3"] = get_area_mining_drill_overrides(3, 4),
-	["bob-area-drills-4"] = get_area_mining_drill_overrides(4, 5),
-
-	-- Water pumpjacks
-	["bob-water-miner-1"] = get_water_pumpjack_overrides(1),
-	["bob-water-miner-2"] = get_water_pumpjack_overrides(2),
-	["bob-water-miner-3"] = get_water_pumpjack_overrides(3),
-	["bob-water-miner-4"] = get_water_pumpjack_overrides(4),
-}
-
-reskins.internal.create_icons_from_list(legacy_technologies, inputs)

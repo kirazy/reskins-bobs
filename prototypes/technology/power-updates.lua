@@ -5,7 +5,6 @@
 
 ---@using data
 ---@using Reskins.Framework
----@using Reskins.Library.Internal
 
 local nuclear_reactors = require("prototypes.functions.nuclear-reactors")
 
@@ -15,6 +14,7 @@ end
 
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 
+local NuclearPower = require("__reskins-assets-api__.assets.base.technologies.nuclear-power")
 local SteamEngine = require("__reskins-assets-api__.assets.bobs.technologies.steam-engine")
 
 ---@type table<string, TieredIconDefinition>
@@ -25,50 +25,41 @@ local definitions = {
 	},
 }
 
-_framework.tiers.assign_icons_with_tier_labels("technology", definitions)
-
--- The icons of the nuclear power technologies are assigned from the files of reskins-bobs.
-
----@type CreateIconsFromListInputs
-local inputs = {
-	mod = "bobs",
-	group = "power",
-	type = "technology",
-	technology_icon_size = 256,
-}
-
----@type CreateIconsFromListTable
-local technologies = {}
-
-local material_tiers = {
-	"aluminum-invar",
-	"silver-titanium",
-	"gold-copper",
-}
-
 -- Nuclear reactors
 if reskins.bobs.triggers.power.nuclear then
-	technologies["nuclear-power"] = {
-		tier = 1,
-		prog_tier = 3,
-		icon_name = "nuclear-power",
-		icon_base = "nuclear-power-" .. nuclear_reactors["nuclear-reactor"].fuel .. "-" .. material_tiers[1],
-		tint = nuclear_reactors["nuclear-reactor"].tint,
+	-- The technology of each reactor shows its fuel and material, in the color of its fuel or of its tier.
+	local technologies = {
+		["nuclear-power"] = {
+			reactor = "nuclear-reactor",
+			material = "aluminum-invar",
+			tier = 1,
+			prog_tier = 3,
+		},
+		["bob-nuclear-power-2"] = {
+			reactor = "bob-nuclear-reactor-2",
+			material = "silver-titanium",
+			tier = 2,
+			prog_tier = 4,
+		},
+		["bob-nuclear-power-3"] = {
+			reactor = "bob-nuclear-reactor-3",
+			material = "gold-copper",
+			tier = 3,
+			prog_tier = 5,
+		},
 	}
-	technologies["bob-nuclear-power-2"] = {
-		tier = 2,
-		prog_tier = 4,
-		icon_name = "nuclear-power",
-		icon_base = "nuclear-power-" .. nuclear_reactors["bob-nuclear-reactor-2"].fuel .. "-" .. material_tiers[2],
-		tint = nuclear_reactors["bob-nuclear-reactor-2"].tint,
-	}
-	technologies["bob-nuclear-power-3"] = {
-		tier = 3,
-		prog_tier = 5,
-		icon_name = "nuclear-power",
-		icon_base = "nuclear-power-" .. nuclear_reactors["bob-nuclear-reactor-3"].fuel .. "-" .. material_tiers[3],
-		tint = nuclear_reactors["bob-nuclear-reactor-3"].tint,
-	}
+
+	for name, options in pairs(technologies) do
+		local reactor = nuclear_reactors[options.reactor]
+
+		definitions[name] = {
+			composition = NuclearPower.get_fuel_icon_composition({
+				fuel = reactor.fuel,
+				material = options.material,
+				tint = reactor.tint or _framework.tiers.get_tint(_framework.tiers.get_tier(options)),
+			}),
+		}
+	end
 end
 
-reskins.internal.create_icons_from_list(technologies, inputs)
+_framework.tiers.assign_icons_with_tier_labels("technology", definitions)
