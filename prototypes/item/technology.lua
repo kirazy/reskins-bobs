@@ -20,7 +20,6 @@ local _framework = {
 
 local AlienSciencePacks = require("__reskins-assets-api__.assets.bobs.items.alien-science-packs")
 local Icons = require("__reskins-assets-api__.assets.bobs.items.icons")
-local SciencePack = require("__reskins-assets-api__.assets.base.items.science-pack")
 
 ---@type table<string, TieredIconDefinition>
 local items = {
@@ -28,26 +27,6 @@ local items = {
 		composition = Icons.get_science_pack_advanced_logistic_icon_composition(),
 	},
 }
-
--- Color overhaul for science packs
-if
-	_framework.settings.get_value("bobmods-tech-colorupdate") == true
-	and _framework.settings.get_value("reskins-lib-customize-tier-colors") == true
-then
-	for name, tier in pairs({
-		["automation-science-pack"] = 1,
-		["logistic-science-pack"] = 2,
-		["chemical-science-pack"] = 3,
-		["production-science-pack"] = 4,
-		["utility-science-pack"] = 5,
-	}) do
-		items[name] = {
-			composition = SciencePack.get_icon_composition({
-				tint = _framework.tiers.get_tint(_framework.tiers.get_tier(tier)),
-			}),
-		}
-	end
-end
 
 -- Alien science packs
 if _framework.settings.get_value("bobmods-enemies-enablenewartifacts") == true then

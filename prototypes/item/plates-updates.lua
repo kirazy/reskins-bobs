@@ -11,7 +11,6 @@ if not (reskins.bobs and reskins.bobs.triggers.plates.items) then
 end
 
 local _framework = {
-	settings = require("__reskins-framework__.api.settings"),
 	tiers = require("__reskins-framework__.api.tiers"),
 }
 
@@ -122,8 +121,8 @@ _framework.tiers.assign_icons_with_tier_labels("fluid", {
 	["bob-lithia-water"] = { composition = Fluids.get_lithia_water_icon_composition() }, -- Shared with Bob's Ores, Angels
 })
 
--- Handle nuclear update
-if _framework.settings.get_value("bobmods-plates-nuclearupdate") == true then
+-- Angel's Petrochem replaces nuclear fuel reprocessing with a recipe and icon of its own.
+if not mods["angelspetrochem"] then
 	_framework.tiers.assign_icons_with_tier_labels("recipe", {
 		["nuclear-fuel-reprocessing"] = { composition = Icons.get_nuclear_fuel_reprocessing_icon_composition() },
 	})

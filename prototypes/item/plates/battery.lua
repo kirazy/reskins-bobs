@@ -11,7 +11,6 @@ if not (reskins.bobs and reskins.bobs.triggers.plates.items) then
 end
 
 local _framework = {
-	settings = require("__reskins-framework__.api.settings"),
 	tiers = require("__reskins-framework__.api.tiers"),
 }
 
@@ -20,9 +19,9 @@ local BatteryTechnology = require("__reskins-assets-api__.assets.base.technologi
 
 -- Batteries
 local batteries = {
-	["battery"] = { tier = 1, prog_tier = 2, technology = "battery", tint = "ff781f" },
-	["bob-battery-2"] = { tier = 2, prog_tier = 3, technology = "bob-battery-2", tint = "41ffdd" },
-	["bob-battery-3"] = { tier = 3, prog_tier = 4, technology = "bob-battery-3", tint = "3dff40" },
+	["battery"] = { technology = "battery", tint = "ff781f" },
+	["bob-battery-2"] = { technology = "bob-battery-2", tint = "41ffdd" },
+	["bob-battery-3"] = { technology = "bob-battery-3", tint = "3dff40" },
 }
 
 ---@type table<string, TieredIconDefinition>
@@ -40,12 +39,7 @@ for name, map in pairs(batteries) do
 		goto continue
 	end
 
-	local tint
-	if _framework.settings.get_value("bobmods-colorupdate") then
-		tint = _framework.tiers.get_tint(_framework.tiers.get_tier(map))
-	else
-		tint = util.color(map.tint)
-	end
+	local tint = util.color(map.tint)
 
 	-- Specify crafting recipe tint
 	data.raw["recipe"][name].crafting_machine_tint.primary = tint

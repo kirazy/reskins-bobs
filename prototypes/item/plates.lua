@@ -201,29 +201,11 @@ if is_deuterium_blue then
 	}
 end
 
--- Handle nuclear update
-if _framework.settings.get_value("bobmods-plates-nuclearupdate") == true then
-	-- Handle deuterium's default process color
-	if is_deuterium_blue then
-		recipes["bob-deuterium-fuel-reprocessing"] = {
-			composition = Icons.get_deuterium_fuel_reprocessing_blue_icon_composition(),
-		}
-	end
-else
-	recipes["bob-thorium-fuel-reprocessing"] = {
-		composition = Icons.get_thorium_fuel_reprocessing_alternate_icon_composition(),
+-- Handle deuterium's default process color
+if is_deuterium_blue then
+	recipes["bob-deuterium-fuel-reprocessing"] = {
+		composition = Icons.get_deuterium_fuel_reprocessing_blue_icon_composition(),
 	}
-
-	-- Handle deuterium's alternate process color
-	if is_deuterium_blue then
-		recipes["bob-deuterium-fuel-reprocessing"] = {
-			composition = Icons.get_deuterium_fuel_reprocessing_alternate_blue_icon_composition(),
-		}
-	else
-		recipes["bob-deuterium-fuel-reprocessing"] = {
-			composition = Icons.get_deuterium_fuel_reprocessing_alternate_pink_icon_composition(),
-		}
-	end
 end
 
 _framework.tiers.assign_icons_with_tier_labels("item", items)

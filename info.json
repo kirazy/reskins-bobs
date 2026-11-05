@@ -28,9 +28,7 @@
 		"? bobrevamp",
 		"? bobtech",
 		"? bobwarfare",
-		"(?) angelssmelting",
-		"(?) CircuitProcessing",
-		"! bobmods_gfxtweak"
+		"(?) angelssmelting"
 	],
 	"package": {
 		"git_publish_branch": "master"

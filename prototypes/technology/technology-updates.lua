@@ -14,7 +14,6 @@ if not (reskins.bobs and reskins.bobs.triggers.technology.technologies) then
 end
 
 local _framework = {
-	settings = require("__reskins-framework__.api.settings"),
 	tiers = require("__reskins-framework__.api.tiers"),
 }
 
@@ -38,29 +37,11 @@ end
 local definitions = {
 	-- Science Packs
 	["bob-advanced-logistic-science-pack"] = science_pack(util.color("#de00a3")),
+	["automation-science-pack"] = base_icon("automation-science-pack"),
+	["logistic-science-pack"] = base_icon("logistic-science-pack"),
+	["chemical-science-pack"] = base_icon("chemical-science-pack"),
+	["production-science-pack"] = base_icon("production-science-pack"),
+	["utility-science-pack"] = base_icon("utility-science-pack"),
 }
-
--- Color overhaul for science packs
-if _framework.settings.get_value("bobmods-tech-colorupdate") == true then
-	if _framework.settings.get_value("reskins-lib-customize-tier-colors") == true then
-		definitions["automation-science-pack"] = science_pack(_framework.tiers.get_tint(1))
-		definitions["logistic-science-pack"] = science_pack(_framework.tiers.get_tint(2))
-		definitions["chemical-science-pack"] = science_pack(_framework.tiers.get_tint(3))
-		definitions["production-science-pack"] = science_pack(_framework.tiers.get_tint(4))
-		definitions["utility-science-pack"] = science_pack(_framework.tiers.get_tint(5))
-	else
-		definitions["automation-science-pack"] = base_icon("utility-science-pack")
-		definitions["logistic-science-pack"] = base_icon("automation-science-pack")
-		definitions["chemical-science-pack"] = base_icon("chemical-science-pack")
-		definitions["production-science-pack"] = base_icon("production-science-pack")
-		definitions["utility-science-pack"] = base_icon("logistic-science-pack")
-	end
-else
-	definitions["automation-science-pack"] = base_icon("automation-science-pack")
-	definitions["logistic-science-pack"] = base_icon("logistic-science-pack")
-	definitions["chemical-science-pack"] = base_icon("chemical-science-pack")
-	definitions["production-science-pack"] = base_icon("production-science-pack")
-	definitions["utility-science-pack"] = base_icon("utility-science-pack")
-end
 
 _framework.tiers.assign_icons_with_tier_labels("technology", definitions)

@@ -14,6 +14,11 @@ local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 
 local Icons = require("__reskins-assets-api__.assets.bobs.technologies.icons")
 
+-- Angel's Petrochem replaces nuclear fuel reprocessing with a recipe and icon of its own.
+if mods["angelspetrochem"] then
+	return
+end
+
 ---@type table<string, TieredIconDefinition>
 local definitions = {
 	-- Bob's Plates sets the icon of nuclear fuel reprocessing in data-updates.
