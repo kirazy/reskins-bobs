@@ -49,12 +49,12 @@ for name, options in pairs(entities) do
 		end
 	end
 
-	local icon_data = Centrifuge.get_icon({ tint = tint })
+	local composition = Centrifuge.get_icon_composition({ tint = tint })
 	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
 		tier = tier,
 		name = entity.name,
 		type_name = entity.type,
-		icon_data = icon_data,
+		composition = composition,
 	})
 	_sprite_utils.icons.apply_icon_assignment(icon_assignment)
 

@@ -32,12 +32,12 @@ for name, tint in pairs(tint_map) do
 	local sprite_set = PipeValve.get_sprite_set({ tint = tint })
 	Applicators.apply_sprite_set(entity, sprite_set)
 
-	local icon_data = PipeValve.get_icon({ tint = tint })
+	local composition = PipeValve.get_icon_composition({ tint = tint })
 	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
 		tier = 0,
 		name = entity.name,
 		type_name = entity.type,
-		icon_data = icon_data,
+		composition = composition,
 	})
 	_sprite_utils.icons.apply_icon_assignment(icon_assignment)
 

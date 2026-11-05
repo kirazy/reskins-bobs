@@ -59,12 +59,12 @@ for name, options in pairs(entities) do
 	-- Handle smoke
 	entity.smoke = GeneratorFluid.get_smoke({ name = options.smoke_name, frequency = options.frequency })
 
-	local icon_data = GeneratorFluid.get_icon({ tint = tint })
+	local composition = GeneratorFluid.get_icon_composition({ tint = tint })
 	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
 		tier = tier,
 		name = entity.name,
 		type_name = entity.type,
-		icon_data = icon_data,
+		composition = composition,
 	})
 	_sprite_utils.icons.apply_icon_assignment(icon_assignment)
 

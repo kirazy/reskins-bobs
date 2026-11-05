@@ -56,7 +56,7 @@ for name, options in pairs(entities) do
 	})
 	Applicators.apply_sprite_set(entity, sprite_set)
 
-	local icon_data = HeatExchanger.get_icon({
+	local composition = HeatExchanger.get_icon_composition({
 		tint = tint,
 		pipe_material = options.pipe_material,
 	})
@@ -64,7 +64,7 @@ for name, options in pairs(entities) do
 		tier = tier,
 		name = entity.name,
 		type_name = entity.type,
-		icon_data = icon_data,
+		composition = composition,
 	})
 	_sprite_utils.icons.apply_icon_assignment(icon_assignment)
 
