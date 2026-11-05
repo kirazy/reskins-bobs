@@ -7,46 +7,37 @@ if not (reskins.bobs and reskins.bobs.triggers.equipment.equipment) then
 	return
 end
 
--- Note that for equipment, the icons property is not used, so omit type information
--- so that an icon is not set on the equipment prototype.
-local inputs = {
-	icon_name = "battery",
-	mod = "bobs",
-	group = "equipment",
-}
+local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 
--- Setup defaults
-reskins.lib.set_inputs_defaults(inputs)
+local EquipmentBattery1 = require("__reskins-assets-api__.assets.base.items.equipment-battery-1")
 
 local batteries = {
 	["battery-equipment"] = { tier = 1 },
 	["battery-mk2-equipment"] = { tier = 2 },
+	["battery-mk3-equipment"] = { tier = 3 },
 	["bob-battery-mk4-equipment"] = { tier = 4 },
 	["bob-battery-mk5-equipment"] = { tier = 5 },
-	["bob-battery-mk6-equipment"] = { tier = 6 },
 }
 
-if reskins.lib.version.is_same_or_newer(mods["boblibrary"], "2.1.0") then
-	batteries["battery-mk3-equipment"] = { tier = 3 }
-else
-	batteries["bob-battery-mk3-equipment"] = { tier = 3 }
+---@type table<string, TieredIconDefinition>
+local items = {}
+
+for name, options in pairs(batteries) do
+	local tier = _framework.tiers.get_tier(options)
+
+	options.tint = _framework.tiers.get_tint(tier)
+	items[name] = { composition = EquipmentBattery1.get_icon_composition({ tint = options.tint }), tier = tier }
 end
 
--- Reskin equipment
-for name, map in pairs(batteries) do
-	-- Fetch equipment
+_framework.tiers.assign_icons_with_tier_labels("item", items)
+
+-- Reskin the equipment.
+for name, options in pairs(batteries) do
 	local equipment = data.raw["battery-equipment"][name]
 	if not equipment then
 		goto continue
 	end
 
-	local tier = reskins.lib.tiers.get_tier(map)
-	inputs.tint = reskins.lib.tiers.get_tint(tier)
-
-	-- Construct icon
-	reskins.lib.construct_icon(name, tier, inputs)
-
-	-- Reskin the equipment
 	---@type data.Sprite
 	equipment.sprite = {
 		layers = {
@@ -66,7 +57,7 @@ for name, map in pairs(batteries) do
 				height = 128,
 				priority = "medium",
 				flags = { "no-crop" },
-				tint = inputs.tint,
+				tint = options.tint,
 				scale = 0.5,
 			},
 			-- Highlights

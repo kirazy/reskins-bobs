@@ -7,94 +7,119 @@ if not (reskins.bobs and reskins.bobs.triggers.equipment.technologies) then
 	return
 end
 
----@type CreateIconsFromListInputs
-local inputs = {
-	type = "technology",
-	mod = "bobs",
-	group = "equipment",
-	technology_icon_extras = { reskins.lib.technology_equipment_overlay({ scale = 1 }) },
-	technology_icon_size = 256,
+local _framework = { tiers = require("__reskins-framework__.api.tiers") }
+local _assets = {
+	defines = require("__reskins-assets-api__.api.defines"),
+	icons = require("__reskins-assets-api__.api.icons"),
 }
 
----@type CreateIconsFromListTable
+local EquipmentBattery = require("__reskins-assets-api__.assets.base.technologies.equipment-battery-1")
+local EquipmentEnergyShield = require("__reskins-assets-api__.assets.base.technologies.equipment-energy-shield")
+local EquipmentExoskeleton = require("__reskins-assets-api__.assets.base.technologies.equipment-exoskeleton")
+local EquipmentFissionReactor = require("__reskins-assets-api__.assets.bobs.technologies.equipment-fission-reactor")
+local EquipmentLaserDefense = require("__reskins-assets-api__.assets.base.technologies.equipment-laser-defense")
+local EquipmentModular = require("__reskins-assets-api__.assets.bobs.technologies.equipment-modular")
+local EquipmentNightVision = require("__reskins-assets-api__.assets.base.technologies.equipment-night-vision")
+local EquipmentPersonalRoboport1 =
+	require("__reskins-assets-api__.assets.base.technologies.equipment-personal-roboport-1")
+local EquipmentPersonalRoboport2 =
+	require("__reskins-assets-api__.assets.base.technologies.equipment-personal-roboport-2")
+local EquipmentSolarPanel = require("__reskins-assets-api__.assets.base.technologies.equipment-solar-panel")
+
+-- The `params` of a technology are passed to the creator of its icon, with the tint of its tier.
 local technologies = {
 	-- Roboport modular equipment
 	["bob-personal-roboport-modular-equipment-1"] = {
-		icon_name = "modular-equipment",
-		icon_base = "modular-equipment-1",
+		module = EquipmentModular,
+		params = { tier = 1 },
 		tier = 1,
 		prog_tier = 2,
 	},
 	["bob-personal-roboport-modular-equipment-2"] = {
-		icon_name = "modular-equipment",
-		icon_base = "modular-equipment-2",
+		module = EquipmentModular,
+		params = { tier = 2 },
 		tier = 2,
 		prog_tier = 3,
 	},
 	["bob-personal-roboport-modular-equipment-3"] = {
-		icon_name = "modular-equipment",
-		icon_base = "modular-equipment-3",
+		module = EquipmentModular,
+		params = { tier = 3 },
 		tier = 3,
 		prog_tier = 4,
 	},
 	["bob-personal-roboport-modular-equipment-4"] = {
-		icon_name = "modular-equipment",
-		icon_base = "modular-equipment-4",
+		module = EquipmentModular,
+		params = { tier = 4 },
 		tier = 4,
 		prog_tier = 5,
 	},
 
 	-- Solar panels
-	["solar-panel-equipment"] = { icon_name = "solar-panel", tier = 1, prog_tier = 2 },
-	["bob-solar-panel-equipment-2"] = { icon_name = "solar-panel", tier = 2, prog_tier = 3 },
-	["bob-solar-panel-equipment-3"] = { icon_name = "solar-panel", tier = 3, prog_tier = 4 },
-	["bob-solar-panel-equipment-4"] = { icon_name = "solar-panel", tier = 4, prog_tier = 5 },
+	["solar-panel-equipment"] = { module = EquipmentSolarPanel, tier = 1, prog_tier = 2 },
+	["bob-solar-panel-equipment-2"] = { module = EquipmentSolarPanel, tier = 2, prog_tier = 3 },
+	["bob-solar-panel-equipment-3"] = { module = EquipmentSolarPanel, tier = 3, prog_tier = 4 },
+	["bob-solar-panel-equipment-4"] = { module = EquipmentSolarPanel, tier = 4, prog_tier = 5 },
 
 	-- Batteries
-	["battery-equipment"] = { icon_name = "battery", tier = 1 },
-	["battery-mk2-equipment"] = { icon_name = "battery", tier = 2 },
-	["bob-battery-equipment-3"] = { icon_name = "battery", tier = 3 },
-	["bob-battery-equipment-4"] = { icon_name = "battery", tier = 4 },
-	["bob-battery-equipment-5"] = { icon_name = "battery", tier = 5 },
-	["bob-battery-equipment-6"] = { icon_name = "battery", tier = 6 },
+	["battery-equipment"] = { module = EquipmentBattery, tier = 1 },
+	["battery-mk2-equipment"] = { module = EquipmentBattery, tier = 2 },
+	["battery-mk3-equipment"] = { module = EquipmentBattery, tier = 3 },
+	["bob-battery-equipment-4"] = { module = EquipmentBattery, tier = 4 },
+	["bob-battery-equipment-5"] = { module = EquipmentBattery, tier = 5 },
 
 	-- Shields
-	["energy-shield-equipment"] = { icon_name = "energy-shield", tier = 1 },
-	["energy-shield-mk2-equipment"] = { icon_name = "energy-shield", tier = 2 },
-	["bob-energy-shield-equipment-3"] = { icon_name = "energy-shield", tier = 3 },
-	["bob-energy-shield-equipment-4"] = { icon_name = "energy-shield", tier = 4 },
-	["bob-energy-shield-equipment-5"] = { icon_name = "energy-shield", tier = 5 },
-	["bob-energy-shield-equipment-6"] = { icon_name = "energy-shield", tier = 6 },
+	["energy-shield-equipment"] = { module = EquipmentEnergyShield, tier = 1 },
+	["energy-shield-mk2-equipment"] = { module = EquipmentEnergyShield, tier = 2 },
+	["bob-energy-shield-equipment-3"] = { module = EquipmentEnergyShield, tier = 3 },
+	["bob-energy-shield-equipment-4"] = { module = EquipmentEnergyShield, tier = 4 },
+	["bob-energy-shield-equipment-5"] = { module = EquipmentEnergyShield, tier = 5 },
+	["bob-energy-shield-equipment-6"] = { module = EquipmentEnergyShield, tier = 6 },
 
 	-- Laser defense
-	["personal-laser-defense-equipment"] = { icon_name = "laser-defense", tier = 1 },
-	["bob-personal-laser-defense-equipment-2"] = { icon_name = "laser-defense", tier = 2 },
-	["bob-personal-laser-defense-equipment-3"] = { icon_name = "laser-defense", tier = 3 },
-	["bob-personal-laser-defense-equipment-4"] = { icon_name = "laser-defense", tier = 4 },
-	["bob-personal-laser-defense-equipment-5"] = { icon_name = "laser-defense", tier = 5 },
-	["bob-personal-laser-defense-equipment-6"] = { icon_name = "laser-defense", tier = 6 },
+	["personal-laser-defense-equipment"] = { module = EquipmentLaserDefense, tier = 1 },
+	["bob-personal-laser-defense-equipment-2"] = { module = EquipmentLaserDefense, tier = 2 },
+	["bob-personal-laser-defense-equipment-3"] = { module = EquipmentLaserDefense, tier = 3 },
+	["bob-personal-laser-defense-equipment-4"] = { module = EquipmentLaserDefense, tier = 4 },
+	["bob-personal-laser-defense-equipment-5"] = { module = EquipmentLaserDefense, tier = 5 },
+	["bob-personal-laser-defense-equipment-6"] = { module = EquipmentLaserDefense, tier = 6 },
 
-	-- Fusion Reactors
-	["fission-reactor-equipment"] = { icon_name = "fission-reactor", tier = 1, prog_tier = 3 },
-	["bob-fission-reactor-equipment-2"] = { icon_name = "fission-reactor", tier = 2, prog_tier = 4 },
-	["bob-fission-reactor-equipment-3"] = { icon_name = "fission-reactor", tier = 3, prog_tier = 5 },
-	["bob-fission-reactor-equipment-4"] = { icon_name = "fission-reactor", tier = 4, prog_tier = 6 },
+	-- Fission reactors
+	["fission-reactor-equipment"] = { module = EquipmentFissionReactor, tier = 1, prog_tier = 3 },
+	["bob-fission-reactor-equipment-2"] = { module = EquipmentFissionReactor, tier = 2, prog_tier = 4 },
+	["bob-fission-reactor-equipment-3"] = { module = EquipmentFissionReactor, tier = 3, prog_tier = 5 },
+	["bob-fission-reactor-equipment-4"] = { module = EquipmentFissionReactor, tier = 4, prog_tier = 6 },
 
 	-- Night vision
-	["night-vision-equipment"] = { icon_name = "night-vision", tier = 1, prog_tier = 2 },
-	["bob-night-vision-equipment-2"] = { icon_name = "night-vision", tier = 2, prog_tier = 3 },
-	["bob-night-vision-equipment-3"] = { icon_name = "night-vision", tier = 3, prog_tier = 5 },
+	["night-vision-equipment"] = { module = EquipmentNightVision, tier = 1, prog_tier = 2 },
+	["bob-night-vision-equipment-2"] = { module = EquipmentNightVision, tier = 2, prog_tier = 3 },
+	["bob-night-vision-equipment-3"] = { module = EquipmentNightVision, tier = 3, prog_tier = 5 },
 
 	-- Exoskeleton
-	["exoskeleton-equipment"] = { icon_name = "exoskeleton", tier = 1, prog_tier = 2 },
-	["bob-exoskeleton-equipment-2"] = { icon_name = "exoskeleton", tier = 2, prog_tier = 3 },
-	["bob-exoskeleton-equipment-3"] = { icon_name = "exoskeleton", tier = 3, prog_tier = 5 },
+	["exoskeleton-equipment"] = { module = EquipmentExoskeleton, tier = 1, prog_tier = 2 },
+	["bob-exoskeleton-equipment-2"] = { module = EquipmentExoskeleton, tier = 2, prog_tier = 3 },
+	["bob-exoskeleton-equipment-3"] = { module = EquipmentExoskeleton, tier = 3, prog_tier = 5 },
 
 	-- Roboports
-	["personal-roboport-equipment"] = { icon_name = "personal-roboport-1", tier = 1, prog_tier = 2 },
-	["personal-roboport-mk2-equipment"] = { icon_name = "personal-roboport-1", tier = 2, prog_tier = 3 },
-	["bob-personal-roboport-mk3-equipment"] = { icon_name = "personal-roboport-2", tier = 3, prog_tier = 4 },
-	["bob-personal-roboport-mk4-equipment"] = { icon_name = "personal-roboport-2", tier = 4, prog_tier = 5 },
+	["personal-roboport-equipment"] = { module = EquipmentPersonalRoboport1, tier = 1, prog_tier = 2 },
+	["personal-roboport-mk2-equipment"] = { module = EquipmentPersonalRoboport1, tier = 2, prog_tier = 3 },
+	["bob-personal-roboport-mk3-equipment"] = { module = EquipmentPersonalRoboport2, tier = 3, prog_tier = 4 },
+	["bob-personal-roboport-mk4-equipment"] = { module = EquipmentPersonalRoboport2, tier = 4, prog_tier = 5 },
 }
 
-reskins.internal.create_icons_from_list(technologies, inputs)
+---@type table<string, TieredIconDefinition>
+local definitions = {}
+
+for name, options in pairs(technologies) do
+	local tint = _framework.tiers.get_tint(_framework.tiers.get_tier(options))
+
+	local params = util.copy(options.params or {})
+	params.tint = tint
+
+	definitions[name] = {
+		composition = options.module.get_icon_composition(params):add_symbol(
+			_assets.icons.get_technology_equipment_overlay(_assets.defines.equipment_overlay.personal)
+		),
+	}
+end
+
+_framework.tiers.assign_icons_with_tier_labels("technology", definitions)
