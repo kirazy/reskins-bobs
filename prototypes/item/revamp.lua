@@ -3,41 +3,42 @@
 --
 -- See LICENSE in the project directory for license information.
 
+---@using data
+---@using Reskins.Framework
+
 if not (reskins.bobs and reskins.bobs.triggers.revamp.items) then
 	return
 end
 
----@type CreateIconsFromListInputs
-local inputs = {
-	mod = "bobs",
-	group = "revamp",
-	make_icon_pictures = false,
-	flat_icon = true,
-}
+local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 
----@type CreateIconsFromListTable
-local intermediates = {
-	["bob-brine"] = { type = "fluid", subgroup = "fluids" },
-	["bob-ammoniated-brine"] = { type = "fluid", subgroup = "fluids" },
-	["bob-heat-shield-tile"] = { type = "item" },
+local Fluids = require("__reskins-assets-api__.assets.bobs.items.fluids")
+local Icons = require("__reskins-assets-api__.assets.bobs.items.icons")
+
+_framework.tiers.assign_icons_with_tier_labels("fluid", {
+	["bob-brine"] = { composition = Fluids.get_brine_icon_composition() },
+	["bob-ammoniated-brine"] = { composition = Fluids.get_ammoniated_brine_icon_composition() },
+})
+
+_framework.tiers.assign_icons_with_tier_labels("item", {
+	["bob-heat-shield-tile"] = { composition = Icons.get_heat_shield_tile_icon_composition() },
+})
+
+-- Assign the recipes after the items. A composite recipe reads the icons of the items.
+---@type table<string, TieredIconDefinition>
+local recipes = {
+	["bob-ammonium-chloride-reprocessing"] = {
+		sources = {
+			{ name = "bob-ammonium-chloride", type_name = "item" },
+			{ name = "ammonia", type_name = "fluid", transform = { scale = 0.375, shift = { -10, 11 } } },
+			{ name = "bob-calcium-chloride", type_name = "item", transform = { scale = 0.375, shift = { 10, 11 } } },
+		},
+	},
 }
 
 -- Items and recipes shared with other mods within Bob's suite
 if not mods["bobplates"] then
-	intermediates["bob-solid-fuel-from-sour-gas"] = { type = "recipe", group = "plates", subgroup = "recipes" }
+	recipes["bob-solid-fuel-from-sour-gas"] = { composition = Icons.get_solid_fuel_from_sour_gas_icon_composition() }
 end
 
-reskins.internal.create_icons_from_list(intermediates, inputs)
-
--- A map of recipe names to the icon sources used to create a combined icon.
--- The first entry in each IconSources is the first layer of the created icon.
----@type { [string]: IconSources }
-local recipe_icon_source_map = {
-	["bob-ammonium-chloride-reprocessing"] = {
-		{ name = "bob-ammonium-chloride", type_name = "item" },
-		{ name = "bob-ammonia", type_name = "fluid", scale = 0.375, shift = { -10, 11 } },
-		{ name = "bob-calcium-chloride", type_name = "item", scale = 0.375, shift = { 10, 11 } },
-	},
-}
-
-reskins.lib.icons.create_and_assign_combined_icons_from_sources_to_recipe(recipe_icon_source_map)
+_framework.tiers.assign_icons_with_tier_labels("recipe", recipes)

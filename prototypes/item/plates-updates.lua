@@ -3,17 +3,21 @@
 --
 -- See LICENSE in the project directory for license information.
 
+---@using data
+---@using Reskins.Framework
+
 if not (reskins.bobs and reskins.bobs.triggers.plates.items) then
 	return
 end
 
----@type CreateIconsFromListInputs
-local inputs = {
-	mod = "bobs",
-	group = "plates",
-	make_icon_pictures = false,
-	flat_icon = true,
+local _framework = {
+	settings = require("__reskins-framework__.api.settings"),
+	tiers = require("__reskins-framework__.api.tiers"),
 }
+
+local Fluids = require("__reskins-assets-api__.assets.bobs.items.fluids")
+local Icons = require("__reskins-assets-api__.assets.bobs.items.icons")
+local Plates = require("__reskins-assets-api__.assets.bobs.items.plates")
 
 ---
 ---Validates that a value is exists at the end of a path described by a series
@@ -61,39 +65,66 @@ local function ternary(condition, if_true, if_false)
 	end
 end
 
----@type CreateIconsFromListTable
-local intermediates = {
+---Gets the definition of the alloy of the given `alloy`.
+---@param alloy string
+---@return TieredIconDefinition
+local function alloy(alloy)
+	return { composition = Plates.get_alloy_icon_composition({ alloy = alloy }) }
+end
+
+---@type table<string, TieredIconDefinition>
+local items = {
+	-- Plates
+	["bob-brass-alloy"] = alloy("brass"),
+	["bob-bronze-alloy"] = alloy("bronze"),
+	["bob-cobalt-steel-alloy"] = alloy("cobalt-steel"),
+	["bob-gunmetal-alloy"] = alloy("gunmetal"),
+	["bob-invar-alloy"] = alloy("invar"),
+	["bob-nitinol-alloy"] = alloy("nitinol"),
+
 	-- Powders
 	["bob-alumina"] = ternary(
 		get_value(angelsmods, "trigger", "smelting_products", "aluminium", "ingot"),
 		nil,
-		{ subgroup = "powders" }
+		{ composition = Icons.get_alumina_icon_composition() }
 	),
 	["bob-cobalt-oxide"] = ternary(
 		get_value(angelsmods, "trigger", "smelting_products", "cobalt", "ingot"),
 		nil,
-		{ subgroup = "powders" }
+		{ composition = Icons.get_cobalt_oxide_icon_composition() }
 	),
 	["bob-tungsten-oxide"] = ternary(
 		get_value(angelsmods, "trigger", "smelting_products", "tungsten", "powder"),
 		nil,
-		{ subgroup = "powders" }
+		{ composition = Icons.get_tungsten_oxide_icon_composition() }
 	),
 	["bob-powdered-tungsten"] = ternary(
 		get_value(angelsmods, "trigger", "smelting_products", "tungsten", "powder"),
 		nil,
-		{ subgroup = "powders" }
+		{ composition = Icons.get_powdered_tungsten_icon_composition() }
 	),
 	["bob-lead-oxide"] = ternary(
 		get_value(angelsmods, "trigger", "smelting_products", "lead", "ingot"),
 		nil,
-		{ subgroup = "powders" }
+		{ composition = Icons.get_lead_oxide_icon_composition() }
 	),
 	["bob-silver-nitrate"] = ternary(
 		get_value(angelsmods, "trigger", "smelting_products", "silver", "ingot"),
 		nil,
-		{ subgroup = "powders" }
+		{ composition = Icons.get_silver_nitrate_icon_composition() }
 	),
+	["bob-silicon-powder"] = { composition = Icons.get_silicon_powder_icon_composition() },
 }
 
-reskins.internal.create_icons_from_list(intermediates, inputs)
+_framework.tiers.assign_icons_with_tier_labels("item", items)
+
+_framework.tiers.assign_icons_with_tier_labels("fluid", {
+	["bob-lithia-water"] = { composition = Fluids.get_lithia_water_icon_composition() }, -- Shared with Bob's Ores, Angels
+})
+
+-- Handle nuclear update
+if _framework.settings.get_value("bobmods-plates-nuclearupdate") == true then
+	_framework.tiers.assign_icons_with_tier_labels("recipe", {
+		["nuclear-fuel-reprocessing"] = { composition = Icons.get_nuclear_fuel_reprocessing_icon_composition() },
+	})
+end

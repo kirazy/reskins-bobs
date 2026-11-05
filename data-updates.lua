@@ -21,6 +21,7 @@ require("prototypes.entity.ores.ores-updates")
 ----------------------------------------------------------------------------------------------------
 require("prototypes.item.electronics.circuits") -- Bob has circuit coloring in data-updates
 require("prototypes.item.plates.battery") -- Bob has some battery updates in data-updates
+require("prototypes.item.ores-updates")
 require("prototypes.item.plates-updates")
 
 ----------------------------------------------------------------------------------------------------

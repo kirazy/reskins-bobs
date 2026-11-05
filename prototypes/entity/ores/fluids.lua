@@ -3,11 +3,21 @@
 --
 -- See LICENSE in the project directory for license information.
 
-local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
+---@using data
+---@using Reskins.Framework
 
 if not (reskins.bobs and reskins.bobs.triggers.ores.entities) then
 	return
 end
+
+local _framework = { tiers = require("__reskins-framework__.api.tiers") }
+
+local Ores = require("__reskins-assets-api__.assets.bobs.items.ores")
+
+_framework.tiers.assign_icons_with_tier_labels("resource", {
+	["bob-ground-water"] = { composition = Ores.get_ground_water_icon_composition() },
+	["bob-lithia-water"] = { composition = Ores.get_lithia_water_icon_composition() },
+})
 
 local fluids = {
 	"bob-ground-water",
@@ -19,16 +29,6 @@ for _, name in pairs(fluids) do
 	if not entity then
 		goto continue
 	end
-
-	_sprite_utils.icons.apply_icon_assignment({
-		name = entity.name,
-		type_name = entity.type,
-		icon_datum = {
-			icon = "__reskins-bobs__/graphics/icons/ores/ores/" .. name .. "/" .. name .. ".png",
-			icon_size = 64,
-			scale = 0.5,
-		},
-	})
 
 	entity.stages = {
 		sheet = {

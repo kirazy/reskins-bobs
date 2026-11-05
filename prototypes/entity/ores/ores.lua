@@ -3,31 +3,39 @@
 --
 -- See LICENSE in the project directory for license information.
 
-local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
+---@using data
+---@using Reskins.Framework
 
 if not (reskins.bobs and reskins.bobs.triggers.ores.entities) then
 	return
 end
 
+local _framework = { tiers = require("__reskins-framework__.api.tiers") }
+
+local Ores = require("__reskins-assets-api__.assets.bobs.items.ores")
+
 local ores = {
 	-- Pure Bob's
 	-- ["gem-ore"] = { key = "bobs", subfolder = "ores" },
-	["bob-lead-ore"] = { key = "lib", subfolder = "shared" }, -- 404040
-	["bob-rutile-ore"] = { key = "bobs", subfolder = "ores" },
-	["bob-sulfur"] = { key = "bobs", subfolder = "ores" },
-	["bob-thorium-ore"] = { key = "bobs", subfolder = "ores", is_light = true },
-	["bob-tin-ore"] = { key = "lib", subfolder = "shared", num_variations = 8 },
-	["tungsten-ore"] = { key = "lib", subfolder = "shared", filename = "bob-tungsten-ore", num_variations = 8 },
+	["bob-lead-ore"] = { ore = "lead-ore" }, -- 404040
+	["bob-rutile-ore"] = { ore = "rutile-ore" },
+	["bob-thorium-ore"] = {},
+	["bob-tin-ore"] = { ore = "tin-ore" },
+	["tungsten-ore"] = { ore = "tungsten-ore", filename = "bob-tungsten-ore" },
 
 	-- Shared with Angel's
-	["bob-bauxite-ore"] = { key = "lib", subfolder = "shared", num_variations = 8 },
-	["bob-cobalt-ore"] = { key = "lib", subfolder = "shared" },
-	["bob-gold-ore"] = { key = "lib", subfolder = "shared" },
-	["bob-nickel-ore"] = { key = "lib", subfolder = "shared" }, -- 408073
-	["bob-quartz"] = { key = "lib", subfolder = "shared" }, -- 999999
-	["bob-silver-ore"] = { key = "lib", subfolder = "shared" },
-	["bob-zinc-ore"] = { key = "lib", subfolder = "shared" },
+	["bob-bauxite-ore"] = { ore = "bauxite-ore" },
+	["bob-cobalt-ore"] = { ore = "cobalt-ore" },
+	["bob-gold-ore"] = { ore = "gold-ore" },
+	["bob-nickel-ore"] = { ore = "nickel-ore" }, -- 408073
+	["bob-quartz"] = { ore = "quartz" }, -- 999999
+	["bob-silver-ore"] = { ore = "silver-ore" },
+	["bob-zinc-ore"] = { ore = "zinc-ore" },
 }
+
+-- The icon of a resource is assigned with its pictures to the item of the same name.
+---@type table<string, TieredIconDefinition>
+local resources = {}
 
 for name, params in pairs(ores) do
 	local entity = data.raw["resource"][name]
@@ -36,31 +44,10 @@ for name, params in pairs(ores) do
 	end
 
 	local sprite_name = params.filename or name
-	if name == "bob-sulfur" then
-		_sprite_utils.icons.apply_icon_assignment({
-			name = entity.name,
-			type_name = entity.type,
-			icon_datum = {
-				icon = "__base__/graphics/icons/sulfur.png",
-				icon_size = 64,
-				scale = 0.5,
-			},
-		})
+	if params.ore then
+		resources[name] = { composition = Ores.get_icon_composition({ ore = params.ore }) }
 	else
-		_sprite_utils.icons.apply_icon_assignment({
-			name = entity.name,
-			type_name = entity.type,
-			icon_data = {
-				{
-					--stylua: ignore
-					icon = reskins[params.key].directory .. "/graphics/icons/" .. params.subfolder .. "/ores/" .. sprite_name .. "/" .. sprite_name .. ".png",
-					icon_size = 64,
-					scale = 0.5,
-				},
-			},
-			--stylua: ignore
-			pictures = reskins.internal.create_sprite_variations(params.key, params.subfolder .. "/ores", sprite_name, params.num_variations or 4, params.is_light),
-		})
+		resources[name] = { composition = Ores.get_thorium_ore_icon_composition() }
 	end
 
 	entity.stages = {
@@ -93,3 +80,5 @@ for name, params in pairs(ores) do
 
 	::continue::
 end
+
+_framework.tiers.assign_icons_with_tier_labels("resource", resources)
