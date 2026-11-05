@@ -3,21 +3,17 @@
 --
 -- See LICENSE in the project directory for license information.
 
+---@using data
+---@using Reskins.Framework
+
 if not (reskins.bobs and reskins.bobs.triggers.vehicle_equipment.equipment) then
 	return
 end
 
--- Note that for equipment, the icons property is not used, so omit type information
--- so that an icon is not set on the equipment prototype.
-local inputs = {
-	icon_name = "solar-panel",
-	equipment_category = "energy",
-	mod = "bobs",
-	group = "equipment",
-}
+local _framework = { tiers = require("__reskins-framework__.api.tiers") }
+local _assets = { icons = require("__reskins-assets-api__.api.icons") }
 
--- Setup defaults
-reskins.lib.set_inputs_defaults(inputs)
+local EquipmentSolarPanel = require("__reskins-assets-api__.assets.base.items.equipment-solar-panel")
 
 local solar_panels = {
 	["bob-vehicle-solar-panel-equipment-1"] = { tier = 1, prog_tier = 2 },
@@ -27,21 +23,30 @@ local solar_panels = {
 	["bob-vehicle-solar-panel-equipment-5"] = { tier = 5, prog_tier = 6 },
 }
 
--- Reskin equipment
-for name, map in pairs(solar_panels) do
-	-- Fetch equipment
+---@type table<string, TieredIconDefinition>
+local items = {}
+
+for name, options in pairs(solar_panels) do
+	local tier = _framework.tiers.get_tier(options)
+
+	options.tint = _framework.tiers.get_tint(tier)
+	items[name] = {
+		composition = EquipmentSolarPanel.get_icon_composition({ tint = options.tint })
+			:add(_assets.icons.equipment_background_group, _assets.icons.get_equipment_background_layer("energy"))
+			:outline(),
+		tier = tier,
+	}
+end
+
+_framework.tiers.assign_icons_with_tier_labels("item", items)
+
+-- Reskin the equipment.
+for name, options in pairs(solar_panels) do
 	local equipment = data.raw["solar-panel-equipment"][name]
 	if not equipment then
 		goto continue
 	end
 
-	local tier = reskins.lib.tiers.get_tier(map)
-	inputs.tint = reskins.lib.tiers.get_tint(tier)
-
-	-- Construct icon
-	reskins.lib.construct_icon(name, tier, inputs)
-
-	-- Reskin the equipment
 	equipment.sprite = {
 		layers = {
 			-- Base
@@ -60,7 +65,7 @@ for name, map in pairs(solar_panels) do
 				height = 64,
 				priority = "medium",
 				flags = { "no-crop" },
-				tint = inputs.tint,
+				tint = options.tint,
 				scale = 0.5,
 			},
 			-- Highlights

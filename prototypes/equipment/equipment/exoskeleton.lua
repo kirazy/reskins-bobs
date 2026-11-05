@@ -3,20 +3,16 @@
 --
 -- See LICENSE in the project directory for license information.
 
+---@using data
+---@using Reskins.Framework
+
 if not (reskins.bobs and reskins.bobs.triggers.equipment.equipment) then
 	return
 end
 
--- Note that for equipment, the icons property is not used, so omit type information
--- so that an icon is not set on the equipment prototype.
-local inputs = {
-	icon_name = "exoskeleton",
-	mod = "bobs",
-	group = "equipment",
-}
+local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 
--- Setup defaults
-reskins.lib.set_inputs_defaults(inputs)
+local EquipmentExoskeleton = require("__reskins-assets-api__.assets.base.items.equipment-exoskeleton")
 
 local exoskeletons = {
 	["exoskeleton-equipment"] = { tier = 1, prog_tier = 2 },
@@ -24,27 +20,25 @@ local exoskeletons = {
 	["bob-exoskeleton-equipment-3"] = { tier = 3, prog_tier = 4 },
 }
 
-if reskins.lib.version.is_older(mods["boblibrary"], "2.1.0") then
-	exoskeletons["exoskeleton-equipment"].prog_tier = 3
-	exoskeletons["bob-exoskeleton-equipment-2"].prog_tier = 4
-	exoskeletons["bob-exoskeleton-equipment-3"].prog_tier = 5
+---@type table<string, TieredIconDefinition>
+local items = {}
+
+for name, options in pairs(exoskeletons) do
+	local tier = _framework.tiers.get_tier(options)
+
+	options.tint = _framework.tiers.get_tint(tier)
+	items[name] = { composition = EquipmentExoskeleton.get_icon_composition({ tint = options.tint }), tier = tier }
 end
 
--- Reskin equipment
-for name, map in pairs(exoskeletons) do
-	-- Fetch equipment
+_framework.tiers.assign_icons_with_tier_labels("item", items)
+
+-- Reskin the equipment.
+for name, options in pairs(exoskeletons) do
 	local equipment = data.raw["movement-bonus-equipment"][name]
 	if not equipment then
 		goto continue
 	end
 
-	local tier = reskins.lib.tiers.get_tier(map)
-	inputs.tint = reskins.lib.tiers.get_tint(tier)
-
-	-- Construct icon
-	reskins.lib.construct_icon(name, tier, inputs)
-
-	-- Reskin the equipment
 	equipment.sprite = {
 		layers = {
 			-- Base
@@ -63,7 +57,7 @@ for name, map in pairs(exoskeletons) do
 				height = 256,
 				priority = "medium",
 				flags = { "no-crop" },
-				tint = inputs.tint,
+				tint = options.tint,
 				scale = 0.5,
 			},
 			-- Highlights

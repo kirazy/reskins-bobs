@@ -3,19 +3,19 @@
 --
 -- See LICENSE in the project directory for license information.
 
+---@using data
+---@using Reskins.Framework
+
 if not (reskins.bobs and reskins.bobs.triggers.equipment.equipment) then
 	return
 end
 
--- Note that for equipment, the icons property is not used, so omit type information
--- so that an icon is not set on the equipment prototype.
-local inputs = {
-	mod = "bobs",
-	group = "vehicle-equipment",
-}
+local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 
--- Setup defaults
-reskins.lib.set_inputs_defaults(inputs)
+local EquipmentVehiclePartAntenna = require("__reskins-assets-api__.assets.bobs.items.equipment-vehicle-part-antenna")
+local EquipmentVehiclePartChargePad =
+	require("__reskins-assets-api__.assets.bobs.items.equipment-vehicle-part-charge-pad")
+local EquipmentVehiclePartRobot = require("__reskins-assets-api__.assets.bobs.items.equipment-vehicle-part-robot")
 
 local categories = {
 	"robot",
@@ -30,7 +30,30 @@ local properties = {
 	{ suffix = "-4", tier = 4, prog_tier = 5 },
 }
 
--- Reskin equipment
+---@type table<string, TieredIconDefinition>
+local items = {}
+
+for index, map in pairs(properties) do
+	local tier = _framework.tiers.get_tier(map)
+
+	map.tint = _framework.tiers.get_tint(tier)
+	items["bob-personal-roboport-robot-equipment" .. map.suffix] = {
+		composition = EquipmentVehiclePartRobot.get_icon_composition({ tint = map.tint }),
+		tier = tier,
+	}
+	items["bob-personal-roboport-chargepad-equipment" .. map.suffix] = {
+		composition = EquipmentVehiclePartChargePad.get_icon_composition({ tier = index, tint = map.tint }),
+		tier = tier,
+	}
+	items["bob-personal-roboport-antenna-equipment" .. map.suffix] = {
+		composition = EquipmentVehiclePartAntenna.get_icon_composition({ tier = index, tint = map.tint }),
+		tier = tier,
+	}
+end
+
+_framework.tiers.assign_icons_with_tier_labels("item", items)
+
+-- Reskin the equipment.
 for _, category in pairs(categories) do
 	for index, map in pairs(properties) do
 		local name = "bob-personal-roboport-" .. category .. "-equipment" .. map.suffix
@@ -40,26 +63,13 @@ for _, category in pairs(categories) do
 			goto continue
 		end
 
-		local tier = reskins.lib.tiers.get_tier(map)
-
-		-- Setup icon handling
-		inputs.icon_name = "vehicle-part-" .. category
-
 		local equipment_path
 		if category ~= "robot" then
 			equipment_path = "vehicle-part-" .. category .. "-" .. index
-			inputs.icon_base = "vehicle-part-" .. category .. "-" .. index
 		else
 			equipment_path = "vehicle-part-" .. category
-			inputs.icon_base = nil
 		end
 
-		inputs.tint = reskins.lib.tiers.get_tint(tier)
-
-		-- Construct icon
-		reskins.lib.construct_icon(name, tier, inputs)
-
-		-- Reskin the equipment
 		equipment.sprite = {
 			layers = {
 				-- Base
@@ -78,7 +88,7 @@ for _, category in pairs(categories) do
 					size = 64,
 					priority = "medium",
 					flags = { "no-crop" },
-					tint = inputs.tint,
+					tint = map.tint,
 					scale = 0.5,
 				},
 				-- Highlights

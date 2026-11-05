@@ -7,18 +7,24 @@ if not (reskins.bobs and reskins.bobs.triggers.vehicle_equipment.equipment) then
 	return
 end
 
--- Note that for equipment, the icons property is not used, so omit type information
--- so that an icon is not set on the equipment prototype.
-local inputs = {
-	icon_name = "vehicle-belt-immunity",
-	mod = "bobs",
-	group = "vehicle-equipment",
-	equipment_category = "utility",
-	icon_filename = "__base__/graphics/icons/belt-immunity-equipment.png",
-	icon_size = 64,
-}
+local _framework = { tiers = require("__reskins-framework__.api.tiers") }
+local _assets = { icons = require("__reskins-assets-api__.api.icons") }
+
+local IconComposition = require("__reskins-sprite-utils__.icon-composition")
 
 local name = "bob-vehicle-belt-immunity-equipment"
+
+-- The icon of the base game has 4 mipmaps.
+---@type data.IconData
+local icon_datum = { icon = "__base__/graphics/icons/belt-immunity-equipment.png", icon_size = 64 }
+
+_framework.tiers.assign_icons_with_tier_labels("item", {
+	[name] = {
+		composition = IconComposition:from_icon(icon_datum, nil, nil, 4)
+			:add(_assets.icons.equipment_background_group, _assets.icons.get_equipment_background_layer("utility"))
+			:outline(),
+	},
+})
 
 -- Reskin equipment; fetch the equipment
 local equipment = data.raw["belt-immunity-equipment"][name]
@@ -27,9 +33,6 @@ local equipment = data.raw["belt-immunity-equipment"][name]
 if not equipment then
 	return
 end
-
--- Construct icon
-reskins.lib.construct_icon(name, 0, inputs)
 
 -- Reskin equipment
 equipment.sprite = {

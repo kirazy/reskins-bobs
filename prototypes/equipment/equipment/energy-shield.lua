@@ -3,20 +3,16 @@
 --
 -- See LICENSE in the project directory for license information.
 
+---@using data
+---@using Reskins.Framework
+
 if not (reskins.bobs and reskins.bobs.triggers.equipment.equipment) then
 	return
 end
 
--- Note that for equipment, the icons property is not used, so omit type information
--- so that an icon is not set on the equipment prototype.
-local inputs = {
-	icon_name = "energy-shield",
-	mod = "bobs",
-	group = "equipment",
-}
+local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 
--- Setup defaults
-reskins.lib.set_inputs_defaults(inputs)
+local EquipmentEnergyShield1 = require("__reskins-assets-api__.assets.base.items.equipment-energy-shield-1")
 
 local batteries = {
 	["energy-shield-equipment"] = { tier = 1 },
@@ -27,21 +23,25 @@ local batteries = {
 	["bob-energy-shield-mk6-equipment"] = { tier = 6 },
 }
 
--- Reskin equipment
-for name, map in pairs(batteries) do
-	-- Fetch equipment
+---@type table<string, TieredIconDefinition>
+local items = {}
+
+for name, options in pairs(batteries) do
+	local tier = _framework.tiers.get_tier(options)
+
+	options.tint = _framework.tiers.get_tint(tier)
+	items[name] = { composition = EquipmentEnergyShield1.get_icon_composition({ tint = options.tint }), tier = tier }
+end
+
+_framework.tiers.assign_icons_with_tier_labels("item", items)
+
+-- Reskin the equipment.
+for name, options in pairs(batteries) do
 	local equipment = data.raw["energy-shield-equipment"][name]
 	if not equipment then
 		goto continue
 	end
 
-	local tier = reskins.lib.tiers.get_tier(map)
-	inputs.tint = reskins.lib.tiers.get_tint(tier)
-
-	-- Construct icon
-	reskins.lib.construct_icon(name, tier, inputs)
-
-	-- Reskin the equipment
 	equipment.sprite = {
 		layers = {
 			-- Base
@@ -58,7 +58,7 @@ for name, map in pairs(batteries) do
 				size = 128,
 				priority = "medium",
 				flags = { "no-crop" },
-				tint = inputs.tint,
+				tint = options.tint,
 				scale = 0.5,
 			},
 			-- Highlights
