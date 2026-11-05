@@ -3,21 +3,20 @@
 --
 -- See LICENSE in the project directory for license information.
 
+---@using data
+---@using Reskins.Framework
+
 if not (reskins.bobs and reskins.bobs.triggers.mining.technologies) then
 	return
 end
 
----@type CreateIconsFromListInputs
-local inputs = {
-	mod = "bobs",
-	group = "inserters",
-	type = "technology",
-	technology_icon_size = 256,
-	flat_icon = true,
+local _framework = {
+	settings = require("__reskins-framework__.api.settings"),
+	tiers = require("__reskins-framework__.api.tiers"),
 }
 
----@type CreateIconsFromListTable
-local technologies = {
+---@type table<string, TieredIconDefinition>
+local definitions = {
 	-- ["bob-long-inserters-1"] = {},
 	-- ["bob-long-inserters-2"] = {},
 	-- ["bob-near-inserters"] = {},
@@ -26,8 +25,8 @@ local technologies = {
 }
 
 -- For non-overhaul condition, long-handed inserters are unlocked by this technology
-if reskins.lib.settings.get_value("bobmods-logistics-inserteroverhaul") ~= true then
+if _framework.settings.get_value("bobmods-logistics-inserteroverhaul") ~= true then
 	-- technologies["long-inserters-1"] = nil
 end
 
-reskins.internal.create_icons_from_list(technologies, inputs)
+_framework.tiers.assign_icons_with_tier_labels("technology", definitions)

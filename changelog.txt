@@ -15,6 +15,7 @@ Date: ????
     - The in-world pictures of the items of entities that use the Artisanal Reskins: Assets API now have mipmaps
     - The reactor color setting is now available with Bob's Metals, Chemicals and Intermediates and Bob's Power, instead of Bob's Revamp
     - The icons of the personal and vehicle equipment and of their technologies now come from the Artisanal Reskins: Assets API, and the in-world pictures of the equipment items now have mipmaps
+    - The other technology icons now come from the Artisanal Reskins: Assets API, except those of the circuit, area mining drill, water pumpjack, nuclear power, air compressor, and alien research technologies
   Bugfixes:
     - Fixed that stone furnace and related entities did not display remnants when destroyed
     - Fixed that reskinned robots did not play the death sounds of the base game
@@ -24,6 +25,8 @@ Date: ????
     - Fixed that pumps did not draw shadows
     - Fixed that area mining drills facing west drew the standard frame instead of the blue frame while mining with fluid
     - Fixed that the battery MK3 equipment technology was not reskinned
+    - Fixed that the thorium and deuterium fuel reprocessing technologies showed the icons of the earlier nuclear processes, and that nuclear fuel reprocessing was not reskinned
+    - Fixed that the bulk inserter 2 technology without the inserter overhaul, and the electric mining drill technology with AAI Industry, were not reskinned
 ---------------------------------------------------------------------------------------------------
 Version: 2.4.2
 Date: 2026-11-05

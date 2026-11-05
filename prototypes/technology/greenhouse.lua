@@ -3,23 +3,21 @@
 --
 -- See LICENSE in the project directory for license information.
 
+---@using data
+---@using Reskins.Framework
+
 if not (reskins.bobs and reskins.bobs.triggers.greenhouse.technologies) then
 	return
 end
 
----@type CreateIconsFromListInputs
-local inputs = {
-	mod = "bobs",
-	group = "greenhouse",
-	type = "technology",
-	flat_icon = true,
-	technology_icon_size = 256,
+local _framework = { tiers = require("__reskins-framework__.api.tiers") }
+
+local Icons = require("__reskins-assets-api__.assets.bobs.technologies.icons")
+
+---@type table<string, TieredIconDefinition>
+local definitions = {
+	["bob-fertiliser"] = { composition = Icons.get_fertiliser_icon_composition() },
+	["bob-greenhouse"] = { composition = Icons.get_greenhouse_icon_composition() }, -- greenhouse, recipies
 }
 
----@type CreateIconsFromListTable
-local technologies = {
-	["bob-fertiliser"] = {},
-	["bob-greenhouse"] = {}, -- greenhouse, recipies
-}
-
-reskins.internal.create_icons_from_list(technologies, inputs)
+_framework.tiers.assign_icons_with_tier_labels("technology", definitions)

@@ -27,6 +27,7 @@ require("prototypes.item.plates-updates")
 -- TECHNOLOGIES
 ----------------------------------------------------------------------------------------------------
 require("prototypes.technology.electronics-updates")
+require("prototypes.technology.plates-updates")
 require("prototypes.technology.power-updates")
 require("prototypes.technology.revamp-updates") -- Bob does tech updates in data-updates
 require("prototypes.technology.technology-updates") -- Bob does tech updates in data-updates

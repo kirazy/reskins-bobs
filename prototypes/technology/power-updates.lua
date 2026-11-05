@@ -3,6 +3,8 @@
 --
 -- See LICENSE in the project directory for license information.
 
+---@using data
+---@using Reskins.Framework
 ---@using Reskins.Library.Internal
 
 local nuclear_reactors = require("prototypes.functions.nuclear-reactors")
@@ -10,6 +12,22 @@ local nuclear_reactors = require("prototypes.functions.nuclear-reactors")
 if not (reskins.bobs and reskins.bobs.triggers.power.technologies) then
 	return
 end
+
+local _framework = { tiers = require("__reskins-framework__.api.tiers") }
+
+local SteamEngine = require("__reskins-assets-api__.assets.bobs.technologies.steam-engine")
+
+---@type table<string, TieredIconDefinition>
+local definitions = {
+	-- Bob technology burner phase
+	["bob-steam-engine-1"] = {
+		composition = SteamEngine.get_icon_composition({ tint = _framework.tiers.get_tint(1) }),
+	},
+}
+
+_framework.tiers.assign_icons_with_tier_labels("technology", definitions)
+
+-- The icons of the nuclear power technologies are assigned from the files of reskins-bobs.
 
 ---@type CreateIconsFromListInputs
 local inputs = {
@@ -20,9 +38,7 @@ local inputs = {
 }
 
 ---@type CreateIconsFromListTable
-local technologies = {
-	["bob-steam-engine-1"] = { tier = 1, icon_name = "steam-engine", technology_icon_size = 128 }, -- Bob technology burner phase
-}
+local technologies = {}
 
 local material_tiers = {
 	"aluminum-invar",

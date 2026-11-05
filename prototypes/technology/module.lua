@@ -3,21 +3,17 @@
 --
 -- See LICENSE in the project directory for license information.
 
+---@using data
+---@using Reskins.Framework
+
 if not (reskins.bobs and reskins.bobs.triggers.modules.technologies) then
 	return
 end
 
----@type CreateIconsFromListInputs
-local inputs = {
-	mod = "bobs",
-	group = "modules",
-	type = "technology",
-	technology_icon_size = 256,
-	flat_icon = true,
-}
+local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 
----@type CreateIconsFromListTable
-local technologies = {
+---@type table<string, TieredIconDefinition>
+local definitions = {
 	-- Beacons
 	-- FIXME These techs do not have sprite support yet.
 	-- ["effect-transmission"] = {tier = 1, prog_tier = 3},   -- t3 beacon
@@ -25,4 +21,4 @@ local technologies = {
 	-- ["effect-transmission-3"] = {tier = 3, prog_tier = 5}, -- t5 beacon
 }
 
-reskins.internal.create_icons_from_list(technologies, inputs)
+_framework.tiers.assign_icons_with_tier_labels("technology", definitions)

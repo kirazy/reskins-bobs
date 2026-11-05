@@ -3,18 +3,17 @@
 --
 -- See LICENSE in the project directory for license information.
 
+---@using data
+---@using Reskins.Framework
+
 if not (reskins.bobs and reskins.bobs.triggers.classes.technologies) then
 	return
 end
 
--- Setup standard inputs
-local inputs = {
-	mod = "bobs",
-	group = "classes",
-	type = "technology",
-}
+local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 
-local technologies = {
+---@type table<string, TieredIconDefinition>
+local definitions = {
 	-- ["builder-body"] = {}, -- builder (hamme,r wrench, screwdriver icon)
 	-- ["builder-body-2"] = {},
 	-- ["fighter-body"] = {}, -- guns
@@ -27,4 +26,4 @@ local technologies = {
 	-- ["prospector-body"] = {},
 }
 
-reskins.internal.create_icons_from_list(technologies, inputs)
+_framework.tiers.assign_icons_with_tier_labels("technology", definitions)

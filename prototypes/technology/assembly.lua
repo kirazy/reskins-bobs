@@ -3,83 +3,76 @@
 --
 -- See LICENSE in the project directory for license information.
 
+---@using data
+---@using Reskins.Framework
+
 if not (reskins.bobs and reskins.bobs.triggers.assembly.technologies) then
 	return
 end
 
----@type CreateIconsFromListInputs
-local inputs = {
-	mod = "bobs",
-	group = "assembly",
-	type = "technology",
-	technology_icon_size = 256,
-}
+local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 
----@type CreateIconsFromListTable
+local Automation = require("__reskins-assets-api__.assets.base.technologies.automation")
+local Centrifuge = require("__reskins-assets-api__.assets.bobs.technologies.centrifuge")
+local ChemicalPlant = require("__reskins-assets-api__.assets.bobs.technologies.chemical-plant")
+local Distillery = require("__reskins-assets-api__.assets.bobs.technologies.distillery")
+local Electrolyser2 = require("__reskins-assets-api__.assets.bobs.technologies.electrolyser-2")
+local Electrolyser3 = require("__reskins-assets-api__.assets.bobs.technologies.electrolyser-3")
+local Electrolyser4 = require("__reskins-assets-api__.assets.bobs.technologies.electrolyser-4")
+local Electrolyser5 = require("__reskins-assets-api__.assets.bobs.technologies.electrolyser-5")
+local ElectronicsMachines = require("__reskins-assets-api__.assets.bobs.technologies.electronics-machines")
+local OilRefinery = require("__reskins-assets-api__.assets.bobs.technologies.oil-refinery")
+
+-- The icon of each technology is created by its module, in the tint of its tier.
 local technologies = {
 	-- Assemblers
-	["automation"] = { tier = 1, icon_name = "automation" },
-	["automation-2"] = { tier = 2, icon_name = "automation" },
-	["automation-3"] = { tier = 3, icon_name = "automation" },
-	["automation-4"] = { tier = 4, icon_name = "automation" },
-	["automation-5"] = { tier = 5, icon_name = "automation" },
-	["automation-6"] = { tier = 6, icon_name = "automation" },
+	["automation"] = { module = Automation, tier = 1 },
+	["automation-2"] = { module = Automation, tier = 2 },
+	["automation-3"] = { module = Automation, tier = 3 },
+	["automation-4"] = { module = Automation, tier = 4 },
+	["automation-5"] = { module = Automation, tier = 5 },
+	["automation-6"] = { module = Automation, tier = 6 },
 
 	-- Electronics Assemblers
-	["bob-electronics-machine-1"] = { tier = 1, prog_tier = 2, icon_name = "electronics-machines" },
-	["bob-electronics-machine-2"] = { tier = 2, prog_tier = 4, icon_name = "electronics-machines" },
-	["bob-electronics-machine-3"] = { tier = 3, prog_tier = 6, icon_name = "electronics-machines" },
+	["bob-electronics-machine-1"] = { module = ElectronicsMachines, tier = 1, prog_tier = 2 },
+	["bob-electronics-machine-2"] = { module = ElectronicsMachines, tier = 2, prog_tier = 4 },
+	["bob-electronics-machine-3"] = { module = ElectronicsMachines, tier = 3, prog_tier = 6 },
 
 	-- Centrifuges
-	["bob-centrifuge-2"] = { icon_name = "centrifuge", tier = 1, prog_tier = 4 },
-	["bob-centrifuge-3"] = { icon_name = "centrifuge", tier = 2, prog_tier = 5 },
+	["bob-centrifuge-2"] = { module = Centrifuge, tier = 1, prog_tier = 4 },
+	["bob-centrifuge-3"] = { module = Centrifuge, tier = 2, prog_tier = 5 },
 
 	-- Electrolysers
-	["bob-electrolyser-2"] = {
-		tier = 2,
-		icon_name = "electrolyser",
-		icon_base = "electrolyser-2",
-		icon_mask = "electrolyser-2",
-		icon_highlights = "electrolyser-2",
-	},
-	["bob-electrolyser-3"] = {
-		tier = 3,
-		icon_name = "electrolyser",
-		icon_base = "electrolyser-3",
-		icon_mask = "electrolyser-3",
-		icon_highlights = "electrolyser-3",
-	},
-	["bob-electrolyser-4"] = {
-		tier = 4,
-		icon_name = "electrolyser",
-		icon_base = "electrolyser-4",
-		icon_mask = "electrolyser-4",
-		icon_highlights = "electrolyser-4",
-	},
-	["bob-electrolyser-5"] = {
-		tier = 5,
-		icon_name = "electrolyser",
-		icon_base = "electrolyser-5",
-		icon_mask = "electrolyser-5",
-		icon_highlights = "electrolyser-5",
-	},
+	["bob-electrolyser-2"] = { module = Electrolyser2, tier = 2 },
+	["bob-electrolyser-3"] = { module = Electrolyser3, tier = 3 },
+	["bob-electrolyser-4"] = { module = Electrolyser4, tier = 4 },
+	["bob-electrolyser-5"] = { module = Electrolyser5, tier = 5 },
 
 	-- Chemical Plants
-	["bob-chemical-plant-2"] = { tier = 2, prog_tier = 3, icon_name = "chemical-plant", technology_icon_size = 128 },
-	["bob-chemical-plant-3"] = { tier = 3, prog_tier = 4, icon_name = "chemical-plant", technology_icon_size = 128 },
-	["bob-chemical-plant-4"] = { tier = 4, prog_tier = 5, icon_name = "chemical-plant", technology_icon_size = 128 },
+	["bob-chemical-plant-2"] = { module = ChemicalPlant, tier = 2, prog_tier = 3 },
+	["bob-chemical-plant-3"] = { module = ChemicalPlant, tier = 3, prog_tier = 4 },
+	["bob-chemical-plant-4"] = { module = ChemicalPlant, tier = 4, prog_tier = 5 },
 
 	-- Oil Refinery
 	-- ["oil-processing"] = {tier = 1, prog_tier = 2} -- refinery 1
-	["oil-processing-2"] = { tier = 2, prog_tier = 3, icon_name = "oil-refinery", technology_icon_size = 128 },
-	["oil-processing-3"] = { tier = 3, prog_tier = 4, icon_name = "oil-refinery", technology_icon_size = 128 },
-	["oil-processing-4"] = { tier = 4, prog_tier = 5, icon_name = "oil-refinery", technology_icon_size = 128 },
+	["oil-processing-2"] = { module = OilRefinery, tier = 2, prog_tier = 3 },
+	["oil-processing-3"] = { module = OilRefinery, tier = 3, prog_tier = 4 },
+	["oil-processing-4"] = { module = OilRefinery, tier = 4, prog_tier = 5 },
 
 	-- Distilleries
-	["bob-distillery-2"] = { tier = 2, icon_name = "distillery", technology_icon_size = 128 },
-	["bob-distillery-3"] = { tier = 3, icon_name = "distillery", technology_icon_size = 128 },
-	["bob-distillery-4"] = { tier = 4, icon_name = "distillery", technology_icon_size = 128 },
-	["bob-distillery-5"] = { tier = 5, icon_name = "distillery", technology_icon_size = 128 },
+	["bob-distillery-2"] = { module = Distillery, tier = 2 },
+	["bob-distillery-3"] = { module = Distillery, tier = 3 },
+	["bob-distillery-4"] = { module = Distillery, tier = 4 },
+	["bob-distillery-5"] = { module = Distillery, tier = 5 },
 }
 
-reskins.internal.create_icons_from_list(technologies, inputs)
+---@type table<string, TieredIconDefinition>
+local definitions = {}
+
+for name, options in pairs(technologies) do
+	local tint = _framework.tiers.get_tint(_framework.tiers.get_tier(options))
+
+	definitions[name] = { composition = options.module.get_icon_composition({ tint = tint }) }
+end
+
+_framework.tiers.assign_icons_with_tier_labels("technology", definitions)

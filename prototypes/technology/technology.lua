@@ -3,6 +3,9 @@
 --
 -- See LICENSE in the project directory for license information.
 
+---@using data
+---@using Reskins.Framework
+
 if mods["ScienceCostTweakerM"] then
 	return
 end -- May not be needed, but labs?...
@@ -10,35 +13,36 @@ if not (reskins.bobs and reskins.bobs.triggers.technology.technologies) then
 	return
 end
 
----@type CreateIconsFromListInputs
-local inputs = {
-	mod = "bobs",
-	group = "technology",
-	type = "technology",
-	technology_icon_size = 256,
+local _framework = { tiers = require("__reskins-framework__.api.tiers") }
+local _assets = {
+	defines = require("__reskins-assets-api__.api.defines"),
+	icons = require("__reskins-assets-api__.api.icons"),
 }
+local IconComposition = require("__reskins-sprite-utils__.icon-composition")
 
----@type CreateIconsFromListTable
-local technologies = {
+local Icons = require("__reskins-assets-api__.assets.bobs.technologies.icons")
+
+---@type table<string, TieredIconDefinition>
+local definitions = {
 	-- Steam power-related unlocks
-	["basic-automation"] = { group = "assembly", icon_name = "automation", tier = 0 },
 	-- ["electricity"] = {}, -- inserter/miner/radar/pole/fluid burner gen
 
 	-- Labs
-	["bob-lab"] = { flat_icon = true }, -- lab 1
-	["bob-advanced-research"] = { flat_icon = true }, -- lab 2
-	["bob-alien-research"] = { flat_icon = true },
+	["bob-lab"] = { composition = Icons.get_lab_icon_composition() }, -- lab 1
+	["bob-advanced-research"] = { composition = Icons.get_advanced_research_icon_composition() }, -- lab 2
+	["bob-alien-research"] = { composition = Icons.get_alien_research_icon_composition() },
 
 	-- TECHNOLOGY EFFECTS
 	["bob-infinite-worker-robots-storage-4"] = {
-		technology_icon_filename = "__base__/graphics/technology/worker-robots-storage.png",
-		technology_icon_extras = { reskins.lib.return_technology_effect_icon("capacity") },
-		technology_icon_size = 256,
-		flat_icon = true,
+		composition = IconComposition:from_icon(
+			{ icon = "__base__/graphics/technology/worker-robots-storage.png", icon_size = 256 },
+			nil,
+			"technology"
+		):add_symbol(_assets.icons.get_technology_constant(_assets.defines.technology_constant.capacity)),
 	},
 }
 
-reskins.internal.create_icons_from_list(technologies, inputs)
+_framework.tiers.assign_icons_with_tier_labels("technology", definitions)
 
 -- Overwrite icons for technology effects
 data.raw["utility-sprites"].default.worker_robot_storage_modifier_icon = util.merge({

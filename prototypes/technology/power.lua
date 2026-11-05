@@ -3,37 +3,28 @@
 --
 -- See LICENSE in the project directory for license information.
 
+---@using data
+---@using Reskins.Framework
+
 if not (reskins.bobs and reskins.bobs.triggers.power.technologies) then
 	return
 end
 
----@type CreateIconsFromListInputs
-local inputs = {
-	mod = "bobs",
-	group = "power",
-	type = "technology",
-	technology_icon_size = 256,
-}
+local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 
----@type data.IconData[]
-local boiler_icon_extra = {
-	{
-		icon = "__reskins-bobs__/graphics/technology/power/boiler/boiler-technology-light.png",
-		icon_size = 128,
-		tint = { 1, 1, 1, 0 },
-	},
-}
+local Boiler = require("__reskins-assets-api__.assets.bobs.technologies.boiler")
+local BoilerOil = require("__reskins-assets-api__.assets.bobs.technologies.boiler-oil")
+local ElectricEnergyAccumulators =
+	require("__reskins-assets-api__.assets.base.technologies.electric-energy-accumulators")
+local GeneratorFluid = require("__reskins-assets-api__.assets.bobs.technologies.generator-fluid")
+local HeatExchanger = require("__reskins-assets-api__.assets.bobs.technologies.heat-exchanger")
+local PowerPoles = require("__reskins-assets-api__.assets.base.technologies.power-poles")
+local SolarEnergy = require("__reskins-assets-api__.assets.base.technologies.solar-energy")
+local SteamEngine = require("__reskins-assets-api__.assets.bobs.technologies.steam-engine")
+local SteamTurbine = require("__reskins-assets-api__.assets.bobs.technologies.steam-turbine")
+local Substation = require("__reskins-assets-api__.assets.base.technologies.substation")
 
----@type data.IconData[]
-local oil_boiler_icon_extra = {
-	{
-		icon = "__reskins-bobs__/graphics/technology/power/oil-boiler/oil-boiler-technology-light.png",
-		icon_size = 128,
-		tint = { 1, 1, 1, 0 },
-	},
-}
-
----@type CreateIconsFromListTable
+-- The `params` of a technology are passed to the creator of its icon, with the tint of its tier or its own `tint`.
 local technologies = {
 	-- Heat pipes
 	-- ["bob-heat-pipe-1"] = {}, -- heat pipes
@@ -43,64 +34,64 @@ local technologies = {
 
 if reskins.bobs.triggers.power.accumulators then
 	-- Accumulators
-	technologies["electric-energy-accumulators"] = { tier = 1, prog_tier = 2, icon_name = "accumulator" }
-	technologies["bob-electric-energy-accumulators-2"] = { tier = 2, prog_tier = 3, icon_name = "accumulator" }
-	technologies["bob-electric-energy-accumulators-3"] = { tier = 3, prog_tier = 4, icon_name = "accumulator" }
+	technologies["electric-energy-accumulators"] = { module = ElectricEnergyAccumulators, tier = 1, prog_tier = 2 }
+	technologies["bob-electric-energy-accumulators-2"] = { module = ElectricEnergyAccumulators, tier = 2, prog_tier = 3 }
+	technologies["bob-electric-energy-accumulators-3"] = { module = ElectricEnergyAccumulators, tier = 3, prog_tier = 4 }
 end
 
 if reskins.bobs.triggers.power.poles then
 	-- Electric poles
-	technologies["electric-energy-distribution-1"] = { icon_name = "power-poles", tier = 1, prog_tier = 2 } -- t2 poles
-	technologies["bob-electric-pole-2"] = { icon_name = "power-poles", tier = 2, prog_tier = 3 } -- t3 poles
-	technologies["bob-electric-pole-3"] = { icon_name = "power-poles", tier = 3, prog_tier = 4 } -- t4 poles
-	technologies["bob-electric-pole-4"] = { icon_name = "power-poles", tier = 4, prog_tier = 5 } -- t5 poles
+	technologies["electric-energy-distribution-1"] = { module = PowerPoles, tier = 1, prog_tier = 2 } -- t2 poles
+	technologies["bob-electric-pole-2"] = { module = PowerPoles, tier = 2, prog_tier = 3 } -- t3 poles
+	technologies["bob-electric-pole-3"] = { module = PowerPoles, tier = 3, prog_tier = 4 } -- t4 poles
+	technologies["bob-electric-pole-4"] = { module = PowerPoles, tier = 4, prog_tier = 5 } -- t5 poles
 
-	technologies["electric-energy-distribution-2"] = { icon_name = "substation", tier = 1, prog_tier = 2 } -- t2 substation
-	technologies["bob-electric-substation-2"] = { icon_name = "substation", tier = 2, prog_tier = 3 } -- t3 substation
-	technologies["bob-electric-substation-3"] = { icon_name = "substation", tier = 3, prog_tier = 4 } -- t4 substation
-	technologies["bob-electric-substation-4"] = { icon_name = "substation", tier = 4, prog_tier = 5 } -- t5 substation
+	technologies["electric-energy-distribution-2"] = { module = Substation, tier = 1, prog_tier = 2 } -- t2 substation
+	technologies["bob-electric-substation-2"] = { module = Substation, tier = 2, prog_tier = 3 } -- t3 substation
+	technologies["bob-electric-substation-3"] = { module = Substation, tier = 3, prog_tier = 4 } -- t4 substation
+	technologies["bob-electric-substation-4"] = { module = Substation, tier = 4, prog_tier = 5 } -- t5 substation
 end
 
 if reskins.bobs.triggers.power.steam then
 	--stylua: ignore start
 	-- Boilers
-	technologies["bob-boiler-2"] = { tier = 2, icon_name = "boiler", technology_icon_size = 128, technology_icon_extras = boiler_icon_extra }
-	technologies["bob-boiler-3"] = { tier = 3, icon_name = "boiler", technology_icon_size = 128, technology_icon_extras = boiler_icon_extra }
-	technologies["bob-boiler-4"] = { tier = 4, icon_name = "boiler", technology_icon_size = 128, technology_icon_extras = boiler_icon_extra }
-	technologies["bob-boiler-5"] = { tier = 5, icon_name = "boiler", technology_icon_size = 128, technology_icon_extras = boiler_icon_extra }
+	technologies["bob-boiler-2"] = { module = Boiler, tier = 2 }
+	technologies["bob-boiler-3"] = { module = Boiler, tier = 3 }
+	technologies["bob-boiler-4"] = { module = Boiler, tier = 4 }
+	technologies["bob-boiler-5"] = { module = Boiler, tier = 5 }
 
 	-- Oil boilers
-	technologies["bob-oil-boiler-1"] = { tier = 1, prog_tier = 2, icon_name = "oil-boiler", technology_icon_size = 128, technology_icon_extras = oil_boiler_icon_extra }
-	technologies["bob-oil-boiler-2"] = { tier = 2, prog_tier = 3, icon_name = "oil-boiler", technology_icon_size = 128, technology_icon_extras = oil_boiler_icon_extra }
-	technologies["bob-oil-boiler-3"] = { tier = 3, prog_tier = 4, icon_name = "oil-boiler", technology_icon_size = 128, technology_icon_extras = oil_boiler_icon_extra }
-	technologies["bob-oil-boiler-4"] = { tier = 4, prog_tier = 5, icon_name = "oil-boiler", technology_icon_size = 128, technology_icon_extras = oil_boiler_icon_extra }
+	technologies["bob-oil-boiler-1"] = { module = BoilerOil, tier = 1, prog_tier = 2 }
+	technologies["bob-oil-boiler-2"] = { module = BoilerOil, tier = 2, prog_tier = 3 }
+	technologies["bob-oil-boiler-3"] = { module = BoilerOil, tier = 3, prog_tier = 4 }
+	technologies["bob-oil-boiler-4"] = { module = BoilerOil, tier = 4, prog_tier = 5 }
 
 	-- Heat exchangers
-	technologies["bob-heat-exchanger-1"] = { tier = 1, prog_tier = 2, icon_name = "heat-exchanger", technology_icon_size = 128, icon_base = "heat-exchanger-base" }
-	technologies["bob-heat-exchanger-2"] = { tier = 2, prog_tier = 3, icon_name = "heat-exchanger", technology_icon_size = 128, icon_base = "heat-exchanger-aluminum-invar" }
-	technologies["bob-heat-exchanger-3"] = { tier = 3, prog_tier = 4, icon_name = "heat-exchanger", technology_icon_size = 128, icon_base = "heat-exchanger-silver-titanium" }
-	technologies["bob-heat-exchanger-4"] = { tier = 4, prog_tier = 5, icon_name = "heat-exchanger", technology_icon_size = 128, icon_base = "heat-exchanger-gold-copper" }
+	technologies["bob-heat-exchanger-1"] = { module = HeatExchanger, params = { pipe_material = "base" }, tier = 1, prog_tier = 2 }
+	technologies["bob-heat-exchanger-2"] = { module = HeatExchanger, params = { pipe_material = "aluminum-invar" }, tier = 2, prog_tier = 3 }
+	technologies["bob-heat-exchanger-3"] = { module = HeatExchanger, params = { pipe_material = "silver-titanium" }, tier = 3, prog_tier = 4 }
+	technologies["bob-heat-exchanger-4"] = { module = HeatExchanger, params = { pipe_material = "gold-copper" }, tier = 4, prog_tier = 5 }
 
 	-- Steam engines
-	technologies["bob-steam-engine-2"] = { tier = 2, icon_name = "steam-engine", technology_icon_size = 128 }
-	technologies["bob-steam-engine-3"] = { tier = 3, icon_name = "steam-engine", technology_icon_size = 128 }
-	technologies["bob-steam-engine-4"] = { tier = 4, icon_name = "steam-engine", technology_icon_size = 128 }
-	technologies["bob-steam-engine-5"] = { tier = 5, icon_name = "steam-engine", technology_icon_size = 128 }
+	technologies["bob-steam-engine-2"] = { module = SteamEngine, tier = 2 }
+	technologies["bob-steam-engine-3"] = { module = SteamEngine, tier = 3 }
+	technologies["bob-steam-engine-4"] = { module = SteamEngine, tier = 4 }
+	technologies["bob-steam-engine-5"] = { module = SteamEngine, tier = 5 }
 
 	-- Steam turbines
-	technologies["bob-steam-turbine-1"] = { tier = 1, prog_tier = 3, icon_name = "steam-turbine", technology_icon_size = 128 }
-	technologies["bob-steam-turbine-2"] = { tier = 2, prog_tier = 4, icon_name = "steam-turbine", technology_icon_size = 128 }
-	technologies["bob-steam-turbine-3"] = { tier = 3, prog_tier = 5, icon_name = "steam-turbine", technology_icon_size = 128 }
+	technologies["bob-steam-turbine-1"] = { module = SteamTurbine, tier = 1, prog_tier = 3 }
+	technologies["bob-steam-turbine-2"] = { module = SteamTurbine, tier = 2, prog_tier = 4 }
+	technologies["bob-steam-turbine-3"] = { module = SteamTurbine, tier = 3, prog_tier = 5 }
 	--stylua: ignore end
 end
 
 if reskins.bobs.triggers.power.fluidgenerator then
 	-- Fluid generators
-	technologies["bob-fluid-generator-1"] = { tier = 1, prog_tier = 2, icon_name = "fluid-generator" }
-	technologies["bob-fluid-generator-2"] = { tier = 2, prog_tier = 3, icon_name = "fluid-generator" }
-	technologies["bob-fluid-generator-3"] = { tier = 3, prog_tier = 4, icon_name = "fluid-generator" }
+	technologies["bob-fluid-generator-1"] = { module = GeneratorFluid, tier = 1, prog_tier = 2 }
+	technologies["bob-fluid-generator-2"] = { module = GeneratorFluid, tier = 2, prog_tier = 3 }
+	technologies["bob-fluid-generator-3"] = { module = GeneratorFluid, tier = 3, prog_tier = 4 }
 	--stylua: ignore
-	technologies["bob-hydrazine-generator"] = {tier = 4, prog_tier = 5, icon_name = "fluid-generator", tint = reskins.bobs.hydrazine_tint }
+	technologies["bob-hydrazine-generator"] = { module = GeneratorFluid, tier = 4, prog_tier = 5, tint = reskins.bobs.hydrazine_tint }
 end
 
 if reskins.bobs.triggers.power.heatsources then
@@ -115,9 +106,19 @@ end
 
 if reskins.bobs.triggers.power.solar then
 	-- Solar Panels
-	technologies["solar-energy"] = { tier = 1, prog_tier = 2, icon_name = "solar-energy" }
-	technologies["bob-solar-energy-2"] = { tier = 2, prog_tier = 3, icon_name = "solar-energy" }
-	technologies["bob-solar-energy-3"] = { tier = 3, prog_tier = 4, icon_name = "solar-energy" }
+	technologies["solar-energy"] = { module = SolarEnergy, tier = 1, prog_tier = 2 }
+	technologies["bob-solar-energy-2"] = { module = SolarEnergy, tier = 2, prog_tier = 3 }
+	technologies["bob-solar-energy-3"] = { module = SolarEnergy, tier = 3, prog_tier = 4 }
 end
 
-reskins.internal.create_icons_from_list(technologies, inputs)
+---@type table<string, TieredIconDefinition>
+local definitions = {}
+
+for name, options in pairs(technologies) do
+	local params = util.copy(options.params or {})
+	params.tint = options.tint or _framework.tiers.get_tint(_framework.tiers.get_tier(options))
+
+	definitions[name] = { composition = options.module.get_icon_composition(params) }
+end
+
+_framework.tiers.assign_icons_with_tier_labels("technology", definitions)
