@@ -15,7 +15,8 @@ Date: ????
     - The in-world pictures of the items of entities that use the Artisanal Reskins: Assets API now have mipmaps
     - The reactor color setting is now available with Bob's Metals, Chemicals and Intermediates and Bob's Power, instead of Bob's Revamp
     - The icons of the personal and vehicle equipment and of their technologies now come from the Artisanal Reskins: Assets API, and the in-world pictures of the equipment items now have mipmaps
-    - The other technology icons now come from the Artisanal Reskins: Assets API, except those of the circuit, area mining drill, water pumpjack, nuclear power, air compressor, and alien research technologies
+    - The other technology icons now come from the Artisanal Reskins: Assets API, except those of the circuit, area mining drill, water pumpjack, and nuclear power technologies
+    - Each vehicle roboport now shows the artwork of its own tier
     - The icons of the items, fluids, recipes, and ores now come from the Artisanal Reskins: Assets API, except those of the circuits, and the in-world pictures of the items now have mipmaps
   Bugfixes:
     - Fixed that stone furnace and related entities did not display remnants when destroyed

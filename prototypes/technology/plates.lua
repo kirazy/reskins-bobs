@@ -15,6 +15,8 @@ local _framework = {
 	tiers = require("__reskins-framework__.api.tiers"),
 }
 
+local AirCompressor = require("__reskins-assets-api__.assets.bobs.technologies.air-compressor")
+local AlienResearch = require("__reskins-assets-api__.assets.bobs.technologies.alien-research")
 local FluidHandling = require("__reskins-assets-api__.assets.base.technologies.fluid-handling")
 local FurnaceElectric = require("__reskins-assets-api__.assets.bobs.technologies.furnace-electric")
 local FurnaceElectricChemical = require("__reskins-assets-api__.assets.bobs.technologies.furnace-electric-chemical")
@@ -24,31 +26,6 @@ local FurnaceElectricMixing = require("__reskins-assets-api__.assets.bobs.techno
 local Icons = require("__reskins-assets-api__.assets.bobs.technologies.icons")
 local SteelProcessing = require("__reskins-assets-api__.assets.bobs.technologies.steel-processing")
 local WaterBore = require("__reskins-assets-api__.assets.bobs.technologies.water-bore")
-
----Gets the definition of the alien research technology icon of the given `color`, from the files of reskins-bobs.
----@param color string
----@return TieredIconDefinition
-local function get_alien_research_definition(color)
-	return {
-		icon_datum = {
-			icon = "__reskins-bobs__/graphics/technology/plates/alien/bob-alien-" .. color .. "-research.png",
-			icon_size = 256,
-		},
-	}
-end
-
----Gets the air compressor technology icon in the given `tint`, from the files of reskins-bobs.
----@param tint Color
----@return IconData[]
-local function get_air_compressor_icon_data(tint)
-	local path = "__reskins-bobs__/graphics/technology/plates/air-compressor/air-compressor-technology-"
-
-	return {
-		{ icon = path .. "base.png", icon_size = 128 },
-		{ icon = path .. "mask.png", icon_size = 128, tint = tint },
-		{ icon = path .. "highlights.png", icon_size = 128, tint = { 1, 1, 1, 0 } },
-	}
-end
 
 -- The icon of each technology is created by its module, in the tint of its tier or in its own `tint`.
 local technologies = {
@@ -189,12 +166,12 @@ local definitions = {
 	-- ["nitroglycerin-processing"] = {}, -- Part of warfare.
 
 	-- Alien plates
-	["bob-alien-blue-research"] = get_alien_research_definition("blue"),
-	["bob-alien-orange-research"] = get_alien_research_definition("orange"),
-	["bob-alien-purple-research"] = get_alien_research_definition("purple"),
-	["bob-alien-yellow-research"] = get_alien_research_definition("yellow"),
-	["bob-alien-green-research"] = get_alien_research_definition("green"),
-	["bob-alien-red-research"] = get_alien_research_definition("red"),
+	["bob-alien-blue-research"] = { icon_data = AlienResearch.get_icon({ color = "blue" }) },
+	["bob-alien-orange-research"] = { icon_data = AlienResearch.get_icon({ color = "orange" }) },
+	["bob-alien-purple-research"] = { icon_data = AlienResearch.get_icon({ color = "purple" }) },
+	["bob-alien-yellow-research"] = { icon_data = AlienResearch.get_icon({ color = "yellow" }) },
+	["bob-alien-green-research"] = { icon_data = AlienResearch.get_icon({ color = "green" }) },
+	["bob-alien-red-research"] = { icon_data = AlienResearch.get_icon({ color = "red" }) },
 }
 
 -- Handle deuterium's default process color
@@ -222,7 +199,7 @@ end
 for name, options in pairs(air_compressors) do
 	local tint = _framework.tiers.get_tint(_framework.tiers.get_tier(options))
 
-	definitions[name] = { icon_data = get_air_compressor_icon_data(tint) }
+	definitions[name] = { icon_data = AirCompressor.get_icon({ tint = tint }) }
 end
 
 _framework.tiers.assign_icons_with_tier_labels("technology", definitions)

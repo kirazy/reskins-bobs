@@ -16,6 +16,7 @@ local _framework = {
 }
 
 local Battery = require("__reskins-assets-api__.assets.base.items.battery")
+local BatteryTechnology = require("__reskins-assets-api__.assets.base.technologies.battery")
 
 -- Batteries
 local batteries = {
@@ -23,19 +24,6 @@ local batteries = {
 	["bob-battery-2"] = { tier = 2, prog_tier = 3, technology = "bob-battery-2", tint = "41ffdd" },
 	["bob-battery-3"] = { tier = 3, prog_tier = 4, technology = "bob-battery-3", tint = "3dff40" },
 }
-
----Gets the technology icon of the battery in the given `tint`.
----@param tint Color The tint of the mask layer.
----@return IconData[]
-local function get_technology_icon(tint)
-	local path = "__reskins-bobs__/graphics/technology/plates/battery/battery-technology"
-
-	return {
-		{ icon = path .. "-base.png", icon_size = 256 },
-		{ icon = path .. "-mask.png", icon_size = 256, tint = tint },
-		{ icon = path .. "-highlights.png", icon_size = 256, tint = { 1, 1, 1, 0 } },
-	}
-end
 
 ---@type table<string, TieredIconDefinition>
 local items = {}
@@ -63,7 +51,7 @@ for name, map in pairs(batteries) do
 	data.raw["recipe"][name].crafting_machine_tint.primary = tint
 
 	items[name] = { composition = Battery.get_icon_composition({ tint = tint }) }
-	technologies[map.technology] = { icon_data = get_technology_icon(tint) }
+	technologies[map.technology] = { icon_data = BatteryTechnology.get_icon({ tint = tint }) }
 
 	::continue::
 end
