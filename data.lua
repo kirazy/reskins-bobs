@@ -55,7 +55,6 @@ require("prototypes.entity.modules.beacon")
 require("prototypes.entity.plates.air-pump")
 require("prototypes.entity.plates.water-pump")
 require("prototypes.entity.plates.small-storage-tank")
--- require("prototypes.entity.plates.void-pump")
 
 -- Bob's Ores
 require("prototypes.entity.ores.ores")
