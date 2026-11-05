@@ -202,22 +202,9 @@ for name, options in pairs(air_compressors) do
 	definitions[name] = { icon_data = AirCompressor.get_icon({ tint = tint }) }
 end
 
-_framework.tiers.assign_icons_with_tier_labels("technology", definitions)
-
 -- Prefer the technology icon added for bobelectronics
 if not mods["bobelectronics"] then
-	---@type CreateIconsFromListInputs
-	local inputs = {
-		mod = "bobs",
-		group = "plates",
-		type = "technology",
-		flat_icon = true,
-	}
-
-	reskins.internal.create_icons_from_list({
-		["bob-advanced-processing-unit"] = {
-			subgroup = "processing-steps",
-			technology_icon_size = 256,
-		},
-	}, inputs)
+	definitions["bob-advanced-processing-unit"] = { composition = Icons.get_advanced_processing_unit_icon_composition() }
 end
+
+_framework.tiers.assign_icons_with_tier_labels("technology", definitions)

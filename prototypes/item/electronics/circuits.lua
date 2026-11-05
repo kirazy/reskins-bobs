@@ -3,81 +3,51 @@
 --
 -- See LICENSE in the project directory for license information.
 
+---@using data
+---@using Reskins.Framework
+
 if not mods["bobelectronics"] then
 	return
 end
-if not reskins.lib.settings.get_value("reskins-bobs-do-bobelectronics-colored-circuits") then
+
+local _framework = {
+	settings = require("__reskins-framework__.api.settings"),
+	tiers = require("__reskins-framework__.api.tiers"),
+}
+
+if not _framework.settings.get_value("reskins-bobs-do-bobelectronics-colored-circuits") then
 	return
 end
 
-local circuit_map = {
-	["bob-basic-circuit-board"] = { tier = 1, image_name = "basic-circuit-board" },
-	["electronic-circuit"] = { tier = 2, image_name = "basic-electronic-circuit-board" },
-	["advanced-circuit"] = { tier = 3, image_name = "electronic-circuit-board" },
-	["processing-unit"] = { tier = 4, image_name = "electronic-logic-board" },
-	["bob-advanced-processing-unit"] = { tier = 5, image_name = "electronic-processing-board" },
+local CircuitsProgression = require("__reskins-assets-api__.assets.bobs.items.circuits-progression")
+local CircuitsTintable = require("__reskins-assets-api__.assets.bobs.items.circuits-tintable")
 
-	["bob-circuit-board"] = { tier = 3, image_name = "circuit-board" },
-	["bob-superior-circuit-board"] = { tier = 4, image_name = "superior-circuit-board" },
-	["bob-multi-layer-circuit-board"] = { tier = 5, image_name = "multi-layer-circuit-board" },
+local circuit_map = {
+	["bob-basic-circuit-board"] = { tier = 1, board = "basic-circuit-board" },
+	["electronic-circuit"] = { tier = 2, board = "basic-electronic-circuit-board" },
+	["advanced-circuit"] = { tier = 3, board = "electronic-circuit-board" },
+	["processing-unit"] = { tier = 4, board = "electronic-logic-board" },
+	["bob-advanced-processing-unit"] = { tier = 5, board = "electronic-processing-board" },
+
+	["bob-circuit-board"] = { tier = 3, board = "circuit-board" },
+	["bob-superior-circuit-board"] = { tier = 4, board = "superior-circuit-board" },
+	["bob-multi-layer-circuit-board"] = { tier = 5, board = "multi-layer-circuit-board" },
 }
 
-local do_custom_color = reskins.lib.settings.get_value("reskins-lib-customize-tier-colors")
+local do_custom_color = _framework.settings.get_value("reskins-framework-use-custom-tier-colors") == true
 
----Gets a pre-rendered colored circuit icon assignable to the item prototype with the given `prototype_name`.
----@param prototype_name data.ItemID The name of the item prototype associated with the icon.
----@param icon_name string The name of the icon without extension or suffixes.
----@return DeferrableIconDatum
-local function get_rendered_circuit_icon(prototype_name, icon_name)
-	---@type DeferrableIconDatum
-	local deferrable_icon = {
-		name = prototype_name,
-		type_name = "item",
-		icon_datum = {
-			icon = "__reskins-bobs__/graphics/icons/electronics/circuits-rendered/" .. icon_name .. ".png",
-			icon_size = 64,
-		},
-	}
+---@type table<string, TieredIconDefinition>
+local items = {}
 
-	return deferrable_icon
+for name, options in pairs(circuit_map) do
+	if do_custom_color then
+		-- The circuit layers do not render with partial transparency, so the alpha of the tint is set to 1.
+		local tint = util.get_color_with_alpha(_framework.tiers.get_tint(options.tier), 1)
+
+		items[name] = { composition = CircuitsTintable.get_icon_composition({ board = options.board, tint = tint }) }
+	else
+		items[name] = { composition = CircuitsProgression.get_icon_composition({ board = options.board }) }
+	end
 end
 
----Gets a tinted colored circuit icon assignable to the item prototype with the given `prototype_name`.
----@param prototype_name data.ItemID The name of the item prototype associated with the icon.
----@param icon_name string The name of the icon without extension or suffixes.
----@return DeferrableIconData
-local function get_tinted_circuit_icon(prototype_name, icon_name, tier)
-	---@type DeferrableIconData
-	local deferrable_icon = {
-		name = prototype_name,
-		type_name = "item",
-		icon_data = {
-			{
-				--stylua: ignore
-				icon = "__reskins-bobs__/graphics/icons/electronics/circuits-tintable/" .. icon_name .. "/" .. icon_name .. "-icon-base.png",
-				icon_size = 64,
-				tint = util.get_color_with_alpha(reskins.lib.tiers.get_tint(tier), 1),
-			},
-			{
-				--stylua: ignore
-				icon = "__reskins-bobs__/graphics/icons/electronics/circuits-tintable/" .. icon_name .. "/" .. icon_name .. "-icon-highlights.png",
-				icon_size = 64,
-				tint = { 1, 1, 1, 0 },
-			},
-			{
-				--stylua: ignore
-				icon = "__reskins-bobs__/graphics/icons/electronics/circuits-tintable/" .. icon_name .. "/" .. icon_name .. "-traces.png",
-				icon_size = 64,
-			},
-		},
-	}
-
-	return deferrable_icon
-end
-
-for name, data in pairs(circuit_map) do
-	local deferrable_icon = do_custom_color and get_tinted_circuit_icon(name, data.image_name, data.tier)
-		or get_rendered_circuit_icon(name, data.image_name)
-
-	reskins.lib.icons.assign_deferrable_icon(deferrable_icon)
-end
+_framework.tiers.assign_icons_with_tier_labels("item", items)

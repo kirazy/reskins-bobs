@@ -22,6 +22,7 @@ local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 
 local BearingBalls = require("__reskins-assets-api__.assets.bobs.items.bearing-balls")
 local Bearings = require("__reskins-assets-api__.assets.bobs.items.bearings")
+local Circuits = require("__reskins-assets-api__.assets.bobs.items.circuits")
 local Fluids = require("__reskins-assets-api__.assets.bobs.items.fluids")
 local FuelCells = require("__reskins-assets-api__.assets.bobs.items.fuel-cells")
 local Gears = require("__reskins-assets-api__.assets.bobs.items.gears")
@@ -208,21 +209,14 @@ if is_deuterium_blue then
 	}
 end
 
+-- Advanced processing unit absent Bob's Electronics
+if not mods["bobelectronics"] then
+	items["bob-advanced-processing-unit"] = { composition = Circuits.get_advanced_processing_unit_icon_composition() }
+end
+
 _framework.tiers.assign_icons_with_tier_labels("item", items)
 _framework.tiers.assign_icons_with_tier_labels("fluid", fluids)
 _framework.tiers.assign_icons_with_tier_labels("recipe", recipes)
-
--- Advanced processing unit absent Bob's Electronics
-if not mods["bobelectronics"] then
-	reskins.internal.create_icons_from_list({
-		["bob-advanced-processing-unit"] = { subgroup = "items" },
-	}, {
-		mod = "bobs",
-		group = "plates",
-		make_icon_pictures = false,
-		flat_icon = true,
-	})
-end
 
 -- One-off fixes
 if data.raw.item["bob-nickel-plate"] then
