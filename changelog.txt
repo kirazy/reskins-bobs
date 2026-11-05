@@ -14,7 +14,7 @@ Date: ????
     - Removed support for Nauvis Day, which is not available for Factorio 2.0 or later
     - The in-world pictures of the items of entities that use the Artisanal Reskins: Assets API now have mipmaps
     - The reactor color setting is now available with Bob's Metals, Chemicals and Intermediates and Bob's Power, instead of Bob's Revamp
-    - The icons of the battery equipment and the personal equipment technologies now come from the Artisanal Reskins: Assets API, and the item icons of the battery equipment now have in-world pictures with mipmaps
+    - The icons of the personal and vehicle equipment and of their technologies now come from the Artisanal Reskins: Assets API, and the in-world pictures of the equipment items now have mipmaps
   Bugfixes:
     - Fixed that stone furnace and related entities did not display remnants when destroyed
     - Fixed that reskinned robots did not play the death sounds of the base game
