@@ -27,6 +27,7 @@ Date: ????
     - Fixed that pumps did not draw shadows
     - Fixed that area mining drills facing west drew the standard frame instead of the blue frame while mining with fluid
     - Fixed that the battery MK3 equipment technology was not reskinned
+    - Fixed that the third exoskeleton technology did not take the tint of the exoskeleton it unlocks
     - Fixed that the thorium and deuterium fuel reprocessing recipes and technologies showed the icons of the earlier nuclear processes, and that nuclear fuel reprocessing was not reskinned
     - Fixed that the bulk inserter 2 technology without the inserter overhaul, and the electric mining drill technology with AAI Industry, were not reskinned
     - Fixed that the shotgun pellets had no picture variations

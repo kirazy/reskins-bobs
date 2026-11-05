@@ -100,7 +100,7 @@ local technologies = {
 	-- Exoskeleton
 	["exoskeleton-equipment"] = { module = EquipmentExoskeleton, tier = 1, prog_tier = 2 },
 	["bob-exoskeleton-equipment-2"] = { module = EquipmentExoskeleton, tier = 2, prog_tier = 3 },
-	["bob-exoskeleton-equipment-3"] = { module = EquipmentExoskeleton, tier = 3, prog_tier = 5 },
+	["bob-exoskeleton-equipment-3"] = { module = EquipmentExoskeleton, tier = 3, prog_tier = 4 },
 
 	-- Roboports
 	["personal-roboport-equipment"] = { module = EquipmentPersonalRoboport1, tier = 1, prog_tier = 2 },
