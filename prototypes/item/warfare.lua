@@ -4,7 +4,9 @@
 -- See LICENSE in the project directory for license information.
 
 ---@using data
+---@using Reskins.Assets
 ---@using Reskins.Framework
+---@using Reskins.SpriteUtils
 
 if not mods["bobwarfare"] then
 	return

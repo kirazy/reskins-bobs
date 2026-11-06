@@ -5,6 +5,7 @@
 
 ---@using data
 ---@using Reskins.Framework
+---@using Reskins.SpriteUtils
 
 if not mods["bobplates"] then
 	return
