@@ -23,6 +23,7 @@ Date: ????
     - The colored circuits now follow the custom tier colors setting of Artisanal Reskins: Framework instead of Artisanal Reskins: Library
     - Removed the settings that turned off the reskins of each of Bob's mods; every Bob's mod that is loaded is reskinned
     - No longer depends on Artisanal Reskins: Library, and is incompatible with it
+    - Removed the graphics of this mod; every reskin draws the artwork of the asset mods, and other mods that drew files of this mod must draw the asset mods instead
   Bugfixes:
     - Fixed that stone furnace and related entities did not display remnants when destroyed
     - Fixed that reskinned robots did not play the death sounds of the base game
