@@ -27,55 +27,64 @@ local entities = {
 		tier = 1,
 		prog_tier = 2,
 		letter = "S",
-		assets = SolarPanelSmall,
+		get_sprite_set = SolarPanelSmall.get_sprite_set,
+		get_icon = SolarPanelSmall.get_icon,
 	},
 	["bob-solar-panel-small-2"] = {
 		tier = 2,
 		prog_tier = 3,
 		letter = "S",
-		assets = SolarPanelSmall,
+		get_sprite_set = SolarPanelSmall.get_sprite_set,
+		get_icon = SolarPanelSmall.get_icon,
 	},
 	["bob-solar-panel-small-3"] = {
 		tier = 3,
 		prog_tier = 4,
 		letter = "S",
-		assets = SolarPanelSmall,
+		get_sprite_set = SolarPanelSmall.get_sprite_set,
+		get_icon = SolarPanelSmall.get_icon,
 	},
 	["solar-panel"] = {
 		tier = 1,
 		prog_tier = 2,
 		letter = "M",
-		assets = SolarPanelMedium,
+		get_sprite_set = SolarPanelMedium.get_sprite_set,
+		get_icon = SolarPanelMedium.get_three_panel_icon,
 	},
 	["bob-solar-panel-2"] = {
 		tier = 2,
 		prog_tier = 3,
 		letter = "M",
-		assets = SolarPanelMedium,
+		get_sprite_set = SolarPanelMedium.get_sprite_set,
+		get_icon = SolarPanelMedium.get_three_panel_icon,
 	},
 	["bob-solar-panel-3"] = {
 		tier = 3,
 		prog_tier = 4,
 		letter = "M",
-		assets = SolarPanelMedium,
+		get_sprite_set = SolarPanelMedium.get_sprite_set,
+		get_icon = SolarPanelMedium.get_three_panel_icon,
 	},
 	["bob-solar-panel-large"] = {
 		tier = 1,
 		prog_tier = 2,
 		letter = "L",
-		assets = SolarPanelLarge,
+		get_sprite_set = SolarPanelLarge.get_sprite_set,
+		get_icon = SolarPanelLarge.get_icon,
 	},
 	["bob-solar-panel-large-2"] = {
 		tier = 2,
 		prog_tier = 3,
 		letter = "L",
-		assets = SolarPanelLarge,
+		get_sprite_set = SolarPanelLarge.get_sprite_set,
+		get_icon = SolarPanelLarge.get_icon,
 	},
 	["bob-solar-panel-large-3"] = {
 		tier = 3,
 		prog_tier = 4,
 		letter = "L",
-		assets = SolarPanelLarge,
+		get_sprite_set = SolarPanelLarge.get_sprite_set,
+		get_icon = SolarPanelLarge.get_icon,
 	},
 }
 
@@ -90,12 +99,12 @@ for name, options in pairs(entities) do
 	local tier = _framework.tiers.get_tier(options)
 	local tint = _framework.tiers.get_tint(tier)
 
-	local sprite_set = options.assets.get_sprite_set({ tint = tint })
+	local sprite_set = options.get_sprite_set({ tint = tint })
 	Applicators.apply_sprite_set(entity, sprite_set)
 
 	local icon_data = _sprite_utils.icons.compose_icons(
 		"default",
-		options.assets.get_icon({ tint = tint }),
+		options.get_icon({ tint = tint }),
 		_assets.icons.get_letter(options.letter, tint)
 	)
 	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
