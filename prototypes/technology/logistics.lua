@@ -121,12 +121,6 @@ local definitions = {
 	["toolbelt-5"] = get_capacity_definition("toolbelt"),
 }
 
--- Disable select items based on Bob's settings
--- if (reskins.lib.setting.get_value("bobmods-logistics-flyingrobotframes") == false
---     or reskins.lib.setting.get_value("bobmods-logistics-robotparts") == false) then
---     technologies["robotics"] = nil
--- end
-
 -- Set fusion robot color
 if _framework.tiers.use_progression and _framework.settings.get_value("reskins-bobs-do-progression-based-robots") then
 	-- technologies["construction-robots"].prog_tier = 2
