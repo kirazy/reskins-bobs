@@ -5,7 +5,10 @@
 
 ---@using data
 
-local _framework = { tiers = require("__reskins-framework__.api.tiers") }
+local _framework = {
+	settings = require("__reskins-framework__.api.settings"),
+	tiers = require("__reskins-framework__.api.tiers"),
+}
 local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 local _pipe_pictures = require("__reskins-assets-api__.assets.base.entities.pipe-pictures")
 local _defines = require("__reskins-assets-api__.api.defines")
@@ -14,10 +17,10 @@ local Applicators = require("__reskins-assets-api__.api.applicators")
 local Boiler = require("__reskins-assets-api__.assets.base.entities.boiler")
 local AssemblingMachine = require("__reskins-assets-api__.assets.assorted.entities.assembling-machine-original")
 
-if not (reskins.bobs and reskins.bobs.triggers.power.entities) then
+if not mods["bobpower"] then
 	return
 end
-if not (reskins.bobs and reskins.bobs.triggers.power.steam) then
+if not _framework.settings.get_value("bobmods-power-steam") then
 	return
 end
 

@@ -16,7 +16,7 @@ local _assets = {
 local Applicators = require("__reskins-assets-api__.api.applicators")
 local CargoWagon = require("__reskins-assets-api__.assets.base.entities.train-cargo-wagon")
 
-if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then
+if not mods["boblogistics"] then
 	return
 end
 if _framework.settings.get_value("bobmods-logistics-trains") == false then

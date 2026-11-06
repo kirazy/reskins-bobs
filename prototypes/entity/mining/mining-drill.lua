@@ -16,7 +16,7 @@ local MiningDrillElectric = require("__reskins-assets-api__.assets.base.entities
 if mods["classic-mining-drill"] or mods["semi-classic-mining-drill"] then
 	return
 end
-if not (reskins.bobs and reskins.bobs.triggers.mining.entities) then
+if not mods["bobmining"] then
 	return
 end
 

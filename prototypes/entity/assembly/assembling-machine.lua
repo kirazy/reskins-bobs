@@ -6,12 +6,15 @@
 ---@using data
 
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
-local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
+local _sprite_utils = {
+	icons = require("__reskins-sprite-utils__.icons"),
+	utils = require("__reskins-sprite-utils__.utils"),
+}
 
 local Applicators = require("__reskins-assets-api__.api.applicators")
 local AssemblingMachine = require("__reskins-assets-api__.assets.base.entities.assembling-machine")
 
-if not (reskins.bobs and reskins.bobs.triggers.assembly.entities) then
+if not mods["bobassembly"] then
 	return
 end
 
@@ -90,6 +93,21 @@ local function get_icon(tint, options)
 	end
 end
 
+---Indicates whether the given `entity` is narrower than the 3 x 3 artwork of the assembling machines.
+---@param entity data.AssemblingMachinePrototype
+---@return boolean
+local function is_smaller_than_artwork(entity)
+	local selection_box = entity.selection_box
+	if not selection_box then
+		return false
+	end
+
+	local left = _sprite_utils.utils.unpack_vector((selection_box.left_top or selection_box[1]) --[[@as MapPosition]])
+	local right =
+		_sprite_utils.utils.unpack_vector((selection_box.right_bottom or selection_box[2]) --[[@as MapPosition]])
+	return right - left < 3
+end
+
 local TYPE = "assembling-machine"
 
 for name, options in pairs(entities) do
@@ -112,7 +130,7 @@ for name, options in pairs(entities) do
 
 	local icon_data = get_icon(tint, options)
 
-	if options.use_burner_set and reskins.bobs.triggers.assembly.burner_assembling_machine_is_small then
+	if is_smaller_than_artwork(entity) then
 		icon_data = _sprite_utils.icons.minify_icon(icon_data, 0.8, "default")
 	end
 

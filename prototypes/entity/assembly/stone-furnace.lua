@@ -11,7 +11,7 @@ local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 local Applicators = require("__reskins-assets-api__.api.applicators")
 local FurnaceStone = require("__reskins-assets-api__.assets.base.entities.furnace-stone")
 
-if not (reskins.bobs and (reskins.bobs.triggers.assembly.entities or reskins.bobs.triggers.plates.entities)) then
+if not (mods["bobassembly"] or mods["bobplates"]) then
 	return
 end
 

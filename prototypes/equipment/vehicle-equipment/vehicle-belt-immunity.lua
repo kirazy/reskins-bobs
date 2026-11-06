@@ -3,7 +3,7 @@
 --
 -- See LICENSE in the project directory for license information.
 
-if not (reskins.bobs and reskins.bobs.triggers.vehicle_equipment.equipment) then
+if not mods["bobvehicleequipment"] then
 	return
 end
 

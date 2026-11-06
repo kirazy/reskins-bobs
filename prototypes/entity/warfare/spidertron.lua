@@ -8,7 +8,7 @@ local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 
 local Spidertron = require("__reskins-assets-api__.assets.bobs.entities.spidertron")
 
-if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then
+if not mods["bobwarfare"] then
 	return
 end
 

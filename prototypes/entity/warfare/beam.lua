@@ -5,7 +5,7 @@
 
 local LaserBeam = require("__reskins-assets-api__.assets.base.entities.laser-beam")
 
-if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then
+if not mods["bobwarfare"] then
 	return
 end
 

@@ -7,6 +7,7 @@
 ---@using Reskins.Assets.Base.Entities
 
 local _framework = {
+	settings = require("__reskins-framework__.api.settings"),
 	tiers = require("__reskins-framework__.api.tiers"),
 }
 local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
@@ -16,10 +17,10 @@ local NuclearReactor = require("__reskins-assets-api__.assets.base.entities.nucl
 
 local nuclear_reactors = require("prototypes.functions.nuclear-reactors")
 
-if not (reskins.bobs and reskins.bobs.triggers.power.entities) then
+if not mods["bobpower"] then
 	return
 end
-if not (reskins.bobs and reskins.bobs.triggers.power.nuclear) then
+if not _framework.settings.get_value("bobmods-power-nuclear") then
 	return
 end
 

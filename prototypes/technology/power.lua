@@ -6,11 +6,14 @@
 ---@using data
 ---@using Reskins.Framework
 
-if not (reskins.bobs and reskins.bobs.triggers.power.technologies) then
+if not mods["bobpower"] then
 	return
 end
 
-local _framework = { tiers = require("__reskins-framework__.api.tiers") }
+local _framework = {
+	settings = require("__reskins-framework__.api.settings"),
+	tiers = require("__reskins-framework__.api.tiers"),
+}
 
 local Boiler = require("__reskins-assets-api__.assets.bobs.technologies.boiler")
 local BoilerOil = require("__reskins-assets-api__.assets.bobs.technologies.boiler-oil")
@@ -32,14 +35,14 @@ local technologies = {
 	-- ["bob-heat-pipe-3"] = {}, -- gold pipes
 }
 
-if reskins.bobs.triggers.power.accumulators then
+if _framework.settings.get_value("bobmods-power-accumulators") then
 	-- Accumulators
 	technologies["electric-energy-accumulators"] = { module = ElectricEnergyAccumulators, tier = 1, prog_tier = 2 }
 	technologies["bob-electric-energy-accumulators-2"] = { module = ElectricEnergyAccumulators, tier = 2, prog_tier = 3 }
 	technologies["bob-electric-energy-accumulators-3"] = { module = ElectricEnergyAccumulators, tier = 3, prog_tier = 4 }
 end
 
-if reskins.bobs.triggers.power.poles then
+if _framework.settings.get_value("bobmods-power-poles") then
 	-- Electric poles
 	technologies["electric-energy-distribution-1"] = { module = PowerPoles, tier = 1, prog_tier = 2 } -- t2 poles
 	technologies["bob-electric-pole-2"] = { module = PowerPoles, tier = 2, prog_tier = 3 } -- t3 poles
@@ -52,7 +55,7 @@ if reskins.bobs.triggers.power.poles then
 	technologies["bob-electric-substation-4"] = { module = Substation, tier = 4, prog_tier = 5 } -- t5 substation
 end
 
-if reskins.bobs.triggers.power.steam then
+if _framework.settings.get_value("bobmods-power-steam") then
 	--stylua: ignore start
 	-- Boilers
 	technologies["bob-boiler-2"] = { module = Boiler, tier = 2 }
@@ -85,7 +88,7 @@ if reskins.bobs.triggers.power.steam then
 	--stylua: ignore end
 end
 
-if reskins.bobs.triggers.power.fluidgenerator then
+if _framework.settings.get_value("bobmods-power-fluidgenerator") then
 	-- Fluid generators
 	technologies["bob-fluid-generator-1"] = { module = GeneratorFluid, tier = 1, prog_tier = 2 }
 	technologies["bob-fluid-generator-2"] = { module = GeneratorFluid, tier = 2, prog_tier = 3 }
@@ -94,7 +97,7 @@ if reskins.bobs.triggers.power.fluidgenerator then
 	technologies["bob-hydrazine-generator"] = { module = GeneratorFluid, tier = 4, prog_tier = 5, tint = reskins.bobs.hydrazine_tint }
 end
 
-if reskins.bobs.triggers.power.heatsources then
+if _framework.settings.get_value("bobmods-power-heatsources") then
 	-- Heat sources
 	-- technologies["bob-fluid-reactor-1"] = {} -- t3 fluid burning heat sources
 	-- technologies["bob-fluid-reactor-2"] = {} -- t4 fluid heat source
@@ -104,7 +107,7 @@ if reskins.bobs.triggers.power.heatsources then
 	-- technologies["bob-burner-reactor-3"] = {} -- t5
 end
 
-if reskins.bobs.triggers.power.solar then
+if _framework.settings.get_value("bobmods-power-solar") then
 	-- Solar Panels
 	technologies["solar-energy"] = { module = SolarEnergy, tier = 1, prog_tier = 2 }
 	technologies["bob-solar-energy-2"] = { module = SolarEnergy, tier = 2, prog_tier = 3 }

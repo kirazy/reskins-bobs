@@ -14,10 +14,10 @@ local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 local Applicators = require("__reskins-assets-api__.api.applicators")
 local GeneratorFluid = require("__reskins-assets-api__.assets.bobs.entities.generator-fluid")
 
-if not (reskins.bobs and reskins.bobs.triggers.power.entities) then
+if not mods["bobpower"] then
 	return
 end
-if not (reskins.bobs and reskins.bobs.triggers.power.fluidgenerator) then
+if not _framework.settings.get_value("bobmods-power-fluidgenerator") then
 	return
 end
 

@@ -3,7 +3,7 @@
 --
 -- See LICENSE in the project directory for license information.
 
-if not (reskins.bobs and reskins.bobs.triggers.technology.entities) then
+if not mods["bobtech"] then
 	return
 end
 
@@ -86,9 +86,6 @@ reskin_lab("bob-lab-alien")
 -- burner-lab
 
 if not mods["bobmodules"] then
-	return
-end
-if reskins.lib.settings.get_value("reskins-bobs-do-bobmodules") == false then
 	return
 end
 

@@ -9,7 +9,7 @@ local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 local Applicators = require("__reskins-assets-api__.api.applicators")
 local PipeValve = require("__reskins-assets-api__.assets.bobs.entities.pipe-valve")
 
-if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then
+if not mods["boblogistics"] then
 	return
 end
 

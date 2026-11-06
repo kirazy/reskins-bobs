@@ -9,7 +9,7 @@ local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 local Applicators = require("__reskins-assets-api__.api.applicators")
 local GeneratorBurner = require("__reskins-assets-api__.assets.bobs.entities.generator-burner")
 
-if not (reskins.bobs and reskins.bobs.triggers.power.entities) then
+if not mods["bobpower"] then
 	return
 end
 

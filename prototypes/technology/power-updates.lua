@@ -8,11 +8,14 @@
 
 local nuclear_reactors = require("prototypes.functions.nuclear-reactors")
 
-if not (reskins.bobs and reskins.bobs.triggers.power.technologies) then
+if not mods["bobpower"] then
 	return
 end
 
-local _framework = { tiers = require("__reskins-framework__.api.tiers") }
+local _framework = {
+	settings = require("__reskins-framework__.api.settings"),
+	tiers = require("__reskins-framework__.api.tiers"),
+}
 
 local NuclearPower = require("__reskins-assets-api__.assets.base.technologies.nuclear-power")
 local SteamEngine = require("__reskins-assets-api__.assets.bobs.technologies.steam-engine")
@@ -26,7 +29,7 @@ local definitions = {
 }
 
 -- Nuclear reactors
-if reskins.bobs.triggers.power.nuclear then
+if _framework.settings.get_value("bobmods-power-nuclear") then
 	-- The technology of each reactor shows the fuel, material, and color of the reactor it unlocks.
 	local technologies = {
 		["nuclear-power"] = "nuclear-reactor",

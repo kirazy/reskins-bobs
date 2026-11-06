@@ -6,7 +6,7 @@
 ---@using data
 ---@using Reskins.Framework
 
-if not (reskins.bobs and reskins.bobs.triggers.ores.items) then
+if not mods["bobores"] then
 	return
 end
 

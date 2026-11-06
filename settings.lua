@@ -10,12 +10,6 @@ if mods["bobassembly"] then
 	data:extend({
 		{
 			type = "bool-setting",
-			name = "reskins-bobs-do-bobassembly",
-			setting_type = "startup",
-			default_value = true,
-		},
-		{
-			type = "bool-setting",
 			name = "reskins-bobs-do-furnace-tier-labeling",
 			setting_type = "startup",
 			order = "x",
@@ -96,45 +90,6 @@ if mods["bobelectronics"] then
 			default_value = false,
 			localised_description = colored_circuits_locale,
 		},
-		{
-			type = "bool-setting",
-			name = "reskins-bobs-do-bobelectronics",
-			setting_type = "startup",
-			default_value = true,
-		},
-	})
-end
-
-if mods["bobenemies"] then
-	data:extend({
-		{
-			type = "bool-setting",
-			name = "reskins-bobs-do-bobenemies",
-			setting_type = "startup",
-			default_value = true,
-		},
-	})
-end
-
-if mods["bobequipment"] then
-	data:extend({
-		{
-			type = "bool-setting",
-			name = "reskins-bobs-do-bobequipment",
-			setting_type = "startup",
-			default_value = true,
-		},
-	})
-end
-
-if mods["bobgreenhouse"] then
-	data:extend({
-		{
-			type = "bool-setting",
-			name = "reskins-bobs-do-bobgreenhouse",
-			setting_type = "startup",
-			default_value = true,
-		},
 	})
 end
 
@@ -152,12 +107,6 @@ end
 
 if mods["boblogistics"] then
 	data:extend({
-		{
-			type = "bool-setting",
-			name = "reskins-bobs-do-boblogistics",
-			setting_type = "startup",
-			default_value = true,
-		},
 		{
 			type = "bool-setting",
 			name = "reskins-bobs-do-inserter-tier-labeling",
@@ -219,58 +168,8 @@ if mods["boblogistics"] then
 	})
 end
 
-if mods["bobmining"] then
-	data:extend({
-		{
-			type = "bool-setting",
-			name = "reskins-bobs-do-bobmining",
-			setting_type = "startup",
-			default_value = true,
-		},
-	})
-end
-
-if mods["bobmodules"] then
-	data:extend({
-		{
-			type = "bool-setting",
-			name = "reskins-bobs-do-bobmodules",
-			setting_type = "startup",
-			default_value = true,
-		},
-	})
-end
-
-if mods["bobores"] then
-	data:extend({
-		{
-			type = "bool-setting",
-			name = "reskins-bobs-do-bobores",
-			setting_type = "startup",
-			default_value = true,
-		},
-	})
-end
-
-if mods["bobplates"] then
-	data:extend({
-		{
-			type = "bool-setting",
-			name = "reskins-bobs-do-bobplates",
-			setting_type = "startup",
-			default_value = true,
-		},
-	})
-end
-
 if mods["bobpower"] then
 	data:extend({
-		{
-			type = "bool-setting",
-			name = "reskins-bobs-do-bobpower",
-			setting_type = "startup",
-			default_value = true,
-		},
 		{
 			type = "bool-setting",
 			name = "reskins-bobs-hydrazine-is-blue",
@@ -291,53 +190,14 @@ if mods["bobplates"] and mods["bobpower"] then
 	})
 end
 
-if mods["bobrevamp"] then
-	data:extend({
-		{
-			type = "bool-setting",
-			name = "reskins-bobs-do-bobrevamp",
-			setting_type = "startup",
-			default_value = true,
-		},
-	})
-end
-
 if mods["bobtech"] then
 	data:extend({
-		{
-			type = "bool-setting",
-			name = "reskins-bobs-do-bobtech",
-			setting_type = "startup",
-			default_value = true,
-		},
 		{
 			type = "bool-setting",
 			name = "reskins-bobs-show-alien-decoratives-on-lab",
 			setting_type = "startup",
 			default_value = true,
 			hidden = true,
-		},
-	})
-end
-
-if mods["bobvehicleequipment"] then
-	data:extend({
-		{
-			type = "bool-setting",
-			name = "reskins-bobs-do-bobvehicleequipment",
-			setting_type = "startup",
-			default_value = true,
-		},
-	})
-end
-
-if mods["bobwarfare"] then
-	data:extend({
-		{
-			type = "bool-setting",
-			name = "reskins-bobs-do-bobwarfare",
-			setting_type = "startup",
-			default_value = true,
 		},
 	})
 end

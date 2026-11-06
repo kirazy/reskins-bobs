@@ -9,7 +9,7 @@
 if mods["ScienceCostTweakerM"] then
 	return
 end -- May not be needed, but labs?...
-if not (reskins.bobs and reskins.bobs.triggers.technology.technologies) then
+if not mods["bobtech"] then
 	return
 end
 

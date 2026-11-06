@@ -9,7 +9,7 @@ local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 local Applicators = require("__reskins-assets-api__.api.applicators")
 local StorageTankSmall = require("__reskins-assets-api__.assets.bobs.entities.storage-tank-small")
 
-if not (reskins.bobs and reskins.bobs.triggers.plates.entities) then
+if not mods["bobplates"] then
 	return
 end
 

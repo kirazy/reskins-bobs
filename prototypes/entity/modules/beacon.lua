@@ -12,7 +12,7 @@ local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 local Applicators = require("__reskins-assets-api__.api.applicators")
 local Beacon = require("__reskins-assets-api__.assets.base.entities.beacon")
 
-if mods["classic-beacon"] or not (reskins.bobs and reskins.bobs.triggers.modules.entities) then
+if mods["classic-beacon"] or not mods["bobmodules"] then
 	return
 end
 

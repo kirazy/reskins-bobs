@@ -6,7 +6,7 @@
 ---@using data
 ---@using Reskins.Framework
 
-if not (reskins.bobs and reskins.bobs.triggers.revamp.technologies) then
+if not mods["bobrevamp"] then
 	return
 end
 

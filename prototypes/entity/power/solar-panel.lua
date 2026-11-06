@@ -3,7 +3,10 @@
 --
 -- See LICENSE in the project directory for license information.
 
-local _framework = { tiers = require("__reskins-framework__.api.tiers") }
+local _framework = {
+	settings = require("__reskins-framework__.api.settings"),
+	tiers = require("__reskins-framework__.api.tiers"),
+}
 local _assets = { icons = require("__reskins-assets-api__.api.icons") }
 local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 
@@ -12,10 +15,10 @@ local SolarPanelSmall = require("__reskins-assets-api__.assets.base.entities.sol
 local SolarPanelMedium = require("__reskins-assets-api__.assets.base.entities.solar-panel-standard")
 local SolarPanelLarge = require("__reskins-assets-api__.assets.base.entities.solar-panel-large")
 
-if not (reskins.bobs and reskins.bobs.triggers.power.entities) then
+if not mods["bobpower"] then
 	return
 end
-if not (reskins.bobs and reskins.bobs.triggers.power.solar) then
+if not _framework.settings.get_value("bobmods-power-solar") then
 	return
 end
 

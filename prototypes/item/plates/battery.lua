@@ -6,7 +6,7 @@
 ---@using data
 ---@using Reskins.Framework
 
-if not (reskins.bobs and reskins.bobs.triggers.plates.items) then
+if not mods["bobplates"] then
 	return
 end
 
@@ -19,9 +19,9 @@ local BatteryTechnology = require("__reskins-assets-api__.assets.base.technologi
 
 -- Batteries
 local batteries = {
-	["battery"] = { technology = "battery", tint = "ff781f" },
-	["bob-battery-2"] = { technology = "bob-battery-2", tint = "41ffdd" },
-	["bob-battery-3"] = { technology = "bob-battery-3", tint = "3dff40" },
+	["battery"] = { technology = "battery", tint = util.color("#ff781f") },
+	["bob-battery-2"] = { technology = "bob-battery-2", tint = util.color("#41ffdd") },
+	["bob-battery-3"] = { technology = "bob-battery-3", tint = util.color("#3dff40") },
 }
 
 ---@type table<string, TieredIconDefinition>
@@ -36,12 +36,14 @@ for name, map in pairs(batteries) do
 		goto continue
 	end
 
-	local tint = util.color(map.tint)
+	local recipe = data.raw.recipe[name]
+	if recipe then
+		recipe.crafting_machine_tint = recipe.crafting_machine_tint or {}
+		recipe.crafting_machine_tint.primary = map.tint
+	end
 
-	data.raw["recipe"][name].crafting_machine_tint.primary = tint
-
-	items[name] = { composition = Battery.get_icon_composition({ tint = tint }) }
-	technologies[map.technology] = { icon_data = BatteryTechnology.get_icon({ tint = tint }) }
+	items[name] = { composition = Battery.get_icon_composition({ tint = map.tint }) }
+	technologies[map.technology] = { icon_data = BatteryTechnology.get_icon({ tint = map.tint }) }
 
 	::continue::
 end

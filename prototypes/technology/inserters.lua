@@ -6,7 +6,7 @@
 ---@using data
 ---@using Reskins.Framework
 
-if not (reskins.bobs and reskins.bobs.triggers.mining.technologies) then
+if not mods["bobmining"] then
 	return
 end
 

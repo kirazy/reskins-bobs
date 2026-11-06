@@ -5,7 +5,7 @@
 
 local RobotCapsules = require("__reskins-assets-api__.assets.bobs.entities.robot-capsules")
 
-if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then
+if not mods["bobwarfare"] then
 	return
 end
 

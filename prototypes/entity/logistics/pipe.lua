@@ -14,9 +14,6 @@ local PipeToGround = require("__reskins-assets-api__.assets.base.entities.pipe-t
 if not mods["boblogistics"] then
 	return
 end
-if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then
-	return
-end
 
 local pipe_material_map = {
 	["pipe"] = {

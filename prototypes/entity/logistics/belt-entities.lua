@@ -20,7 +20,7 @@ local TransportBelt = require("__reskins-assets-api__.assets.base.entities.trans
 local UndergroundBelt = require("__reskins-assets-api__.assets.base.entities.underground-belt")
 local Splitter = require("__reskins-assets-api__.assets.base.entities.splitter")
 
-if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then
+if not mods["boblogistics"] then
 	return
 end
 

@@ -7,7 +7,7 @@
 ---@using Reskins.Framework
 ---@using Reskins.SpriteUtils
 
-if not (reskins.bobs and reskins.bobs.triggers.logistics.items) then
+if not mods["boblogistics"] then
 	return
 end
 

@@ -12,7 +12,7 @@ local Distillery = require("__reskins-assets-api__.assets.bobs.entities.distille
 if not mods["bobassembly"] and not mods["bobplates"] then
 	return
 end
-if not (reskins.bobs and reskins.bobs.triggers.assembly.entities) then
+if not mods["bobassembly"] then
 	return
 end
 

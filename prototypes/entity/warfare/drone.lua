@@ -11,7 +11,7 @@ local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 local Applicators = require("__reskins-assets-api__.api.applicators")
 local Drone = require("__reskins-assets-api__.assets.bobs.entities.drone")
 
-if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then
+if not mods["bobwarfare"] then
 	return
 end
 

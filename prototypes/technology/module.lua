@@ -6,7 +6,7 @@
 ---@using data
 ---@using Reskins.Framework
 
-if not (reskins.bobs and reskins.bobs.triggers.modules.technologies) then
+if not mods["bobmodules"] then
 	return
 end
 

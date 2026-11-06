@@ -9,7 +9,7 @@ local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 local Applicators = require("__reskins-assets-api__.api.applicators")
 local ChestLogistic = require("__reskins-assets-api__.assets.base.entities.chest-logistic")
 
-if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then
+if not mods["boblogistics"] then
 	return
 end
 
@@ -67,7 +67,10 @@ for name, options in pairs(entities) do
 		tier = tier,
 		name = entity.name,
 		type_name = entity.type,
-		composition = ChestLogistic.get_icon_composition({ logistic_mode = options.logistic_mode, material = options.material }),
+		composition = ChestLogistic.get_icon_composition({
+			logistic_mode = options.logistic_mode,
+			material = options.material,
+		}),
 	})
 	_sprite_utils.icons.apply_icon_assignment(icon_assignment)
 

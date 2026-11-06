@@ -9,7 +9,7 @@ local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 local Applicators = require("__reskins-assets-api__.api.applicators")
 local Electrolyser = require("__reskins-assets-api__.assets.bobs.entities.electrolyser")
 
-if not (reskins.bobs and reskins.bobs.triggers.assembly.entities) then
+if not mods["bobassembly"] then
 	return
 end
 

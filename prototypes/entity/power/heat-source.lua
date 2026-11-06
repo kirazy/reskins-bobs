@@ -5,16 +5,19 @@
 --
 -- See LICENSE in the project directory for license information.
 
-local _framework = { tiers = require("__reskins-framework__.api.tiers") }
+local _framework = {
+	settings = require("__reskins-framework__.api.settings"),
+	tiers = require("__reskins-framework__.api.tiers"),
+}
 local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 
 local Applicators = require("__reskins-assets-api__.api.applicators")
 local HeatSource = require("__reskins-assets-api__.assets.bobs.entities.heat-source")
 
-if not (reskins.bobs and reskins.bobs.triggers.power.entities) then
+if not mods["bobpower"] then
 	return
 end
-if not (reskins.bobs and reskins.bobs.triggers.power.heatsources) then
+if not _framework.settings.get_value("bobmods-power-heatsources") then
 	return
 end
 
