@@ -12,7 +12,7 @@ Date: ????
     - Dying explosions, particles, and remnants now come from the Artisanal Reskins: Assets API, with the sprites of each entity
     - Entities with generic remnants now use the generic remnants of the base game that match their size, and land mines now use the dying explosion and remnants of the base land mine
     - Removed support for Nauvis Day, which is not available for Factorio 2.0 or later
-    - The in-world pictures of the items of entities that use the Artisanal Reskins: Assets API now have mipmaps
+    - The in-world pictures of the items for entities that use the Artisanal Reskins: Assets API now have mipmaps
     - The reactor color setting is now available with Bob's Metals, Chemicals and Intermediates and Bob's Power, instead of Bob's Revamp
     - The icons of the personal and vehicle equipment and of their technologies now come from the Artisanal Reskins: Assets API, and the in-world pictures of the equipment items now have mipmaps
     - The other technology icons now come from the Artisanal Reskins: Assets API
@@ -28,7 +28,7 @@ Date: ????
     - Fixed that pumps did not draw shadows
     - Fixed that area mining drills facing west drew the standard frame instead of the blue frame while mining with fluid
     - Fixed that the battery MK3 equipment technology was not reskinned
-    - Fixed that the third exoskeleton technology did not take the tint of the exoskeleton it unlocks
+    - Fixed that the third exoskeleton technology did not use the tint of the exoskeleton it unlocks
     - Fixed that the thorium and deuterium fuel reprocessing recipes and technologies showed the icons of the earlier nuclear processes, and that nuclear fuel reprocessing was not reskinned
     - Fixed that the bulk inserter 2 technology without the inserter overhaul, and the electric mining drill technology with AAI Industry, were not reskinned
     - Fixed that the shotgun pellets had no picture variations

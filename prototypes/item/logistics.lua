@@ -5,6 +5,7 @@
 
 ---@using data
 ---@using Reskins.Framework
+---@using Reskins.SpriteUtils
 
 if not (reskins.bobs and reskins.bobs.triggers.logistics.items) then
 	return
@@ -24,7 +25,7 @@ local RobotTool = require("__reskins-assets-api__.assets.bobs.items.robot-tool")
 
 ---Gets the definition of the icon that the given `creator` returns in the tint of the tier given by `options`, with the
 ---tier label of that tier.
----@param creator fun(params: table): IconComposition The creator of the icon, which takes a `tint` parameter.
+---@param creator fun(params: table): IconComposition The creator of the icon, which accepts a `tint` parameter.
 ---@param options PrototypeTierValue The tier of the prototype.
 ---@param params? table The other parameters of the creator.
 ---@return TieredIconDefinition

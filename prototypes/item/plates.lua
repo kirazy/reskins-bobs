@@ -31,14 +31,14 @@ local Icons = require("__reskins-assets-api__.assets.bobs.items.icons")
 local Isotopes = require("__reskins-assets-api__.assets.bobs.items.isotopes")
 local Plates = require("__reskins-assets-api__.assets.bobs.items.plates")
 
----Gets the definition of the plate of the given `material`.
+---Gets the definition of the plate for the given `material`.
 ---@param material string
 ---@return TieredIconDefinition
 local function plate(material)
 	return { composition = Plates.get_icon_composition({ material = material }) }
 end
 
----Gets the definition of the alloy of the given `alloy`.
+---Gets the definition of the alloy for the given `alloy`.
 ---@param alloy string
 ---@return TieredIconDefinition
 local function alloy(alloy)

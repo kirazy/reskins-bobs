@@ -36,7 +36,7 @@ local circuit_map = {
 
 local do_custom_color = _framework.settings.get_value("reskins-framework-use-custom-tier-colors") == true
 
----@type table<string, TieredIconDefinition>
+---@type table<ItemID, TieredIconDefinition>
 local items = {}
 
 for name, options in pairs(circuit_map) do

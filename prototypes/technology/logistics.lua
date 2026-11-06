@@ -27,7 +27,7 @@ local RepairPack = require("__reskins-assets-api__.assets.bobs.technologies.repa
 local Robotics = require("__reskins-assets-api__.assets.base.technologies.robotics")
 local Robots = require("__reskins-assets-api__.assets.base.technologies.robots")
 
----Gets the definition of the technology icon of the base game with the given `name`, with the capacity constant.
+---Gets the definition of the technology icon from the base game with the given `name`, with the capacity constant.
 ---@param name string The name of the file in `__base__/graphics/technology`, without its extension.
 ---@return TieredIconDefinition
 local function get_capacity_definition(name)

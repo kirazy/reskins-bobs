@@ -64,7 +64,7 @@ local function robot_tool_combat(options)
 	}
 end
 
----Gets the definition of the icon of the base game with the given `name`.
+---Gets the definition of the icon from the base game with the given `name`.
 ---@param name string The name of the file in `__base__/graphics/icons`, without its extension.
 ---@return TieredIconDefinition
 local function base_icon(name)

@@ -20,7 +20,7 @@ local IconComposition = require("__reskins-sprite-utils__.icon-composition")
 local MiningDrill = require("__reskins-assets-api__.assets.bobs.technologies.mining-drill")
 local OilGathering = require("__reskins-assets-api__.assets.base.technologies.oil-gathering")
 
----Gets the definition of the steel axe technology icon of the base game, with the mining constant.
+---Gets the definition of the steel axe technology icon from the base game, with the mining constant.
 ---@return TieredIconDefinition
 local function get_steel_axe_definition()
 	return {

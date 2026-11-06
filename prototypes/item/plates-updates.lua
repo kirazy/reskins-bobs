@@ -64,7 +64,7 @@ local function ternary(condition, if_true, if_false)
 	end
 end
 
----Gets the definition of the alloy of the given `alloy`.
+---Gets the definition of the alloy for the given `alloy`.
 ---@param alloy string
 ---@return TieredIconDefinition
 local function alloy(alloy)

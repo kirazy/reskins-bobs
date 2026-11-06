@@ -19,7 +19,7 @@ local _framework = {
 
 local SciencePack = require("__reskins-assets-api__.assets.base.technologies.science-pack")
 
----Gets the definition of the technology icon of the base game with the given `name`.
+---Gets the definition of the technology icon from the base game with the given `name`.
 ---@param name string The name of the file in `__base__/graphics/technology`, without its extension.
 ---@return TieredIconDefinition
 local function base_icon(name)
