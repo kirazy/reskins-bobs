@@ -111,7 +111,6 @@ for _, category in pairs(categories) do
 			},
 		}
 
-		-- Label to skip to next iteration
 		::continue::
 	end
 end

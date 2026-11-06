@@ -31,17 +31,13 @@ local items = {}
 local technologies = {}
 
 for name, map in pairs(batteries) do
-	-- Fetch item
 	local item = data.raw.item[name]
-
-	-- Check if item exists, if not, skip this iteration
 	if not item then
 		goto continue
 	end
 
 	local tint = util.color(map.tint)
 
-	-- Specify crafting recipe tint
 	data.raw["recipe"][name].crafting_machine_tint.primary = tint
 
 	items[name] = { composition = Battery.get_icon_composition({ tint = tint }) }

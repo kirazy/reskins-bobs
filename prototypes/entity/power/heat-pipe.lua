@@ -43,7 +43,6 @@ local TYPE = "heat-pipe"
 
 local do_labels = _framework.settings.get_value("reskins-bobs-do-pipe-tier-labeling") == true
 
--- Reskin entities, create and assign extra details
 for name, options in pairs(entities) do
 	local entity = data.raw[TYPE][name]
 	if not entity then
@@ -64,7 +63,6 @@ for name, options in pairs(entities) do
 		goto continue
 	end
 
-	-- Reskin entities
 	local sprite_set = HeatPipe.get_sprite_set({ pipe_material = options.pipe_material })
 	Applicators.apply_sprite_set(entity, sprite_set)
 
