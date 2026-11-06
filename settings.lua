@@ -111,28 +111,6 @@ if mods["boblogistics"] then
 		},
 		{
 			type = "bool-setting",
-			name = "reskins-bobs-do-basic-belts-separately",
-			setting_type = "startup",
-			order = "y1",
-			default_value = true,
-		},
-		{
-			type = "color-setting",
-			name = "reskins-bobs-basic-belts-color",
-			setting_type = "startup",
-			order = "y1y",
-			default_value = util.color("#bfbfbf"),
-			localised_description = {
-				"",
-				{ "mod-setting-description.reskins-bobs-basic-belts-color" },
-				"\n\n",
-				{ "reskins-defaults.default" },
-				" ",
-				{ "reskins-defaults.basic-belts-color" },
-			},
-		},
-		{
-			type = "bool-setting",
 			name = "reskins-bobs-do-progression-based-robots",
 			setting_type = "startup",
 			order = "y2",

@@ -23,9 +23,6 @@ local Splitter = require("__reskins-assets-api__.assets.base.entities.splitter")
 local Logistics = require("__reskins-assets-api__.assets.base.technologies.logistics")
 
 local reskin_base_entities = _framework.settings.get_value("reskins-framework-use-custom-tier-colors") == true
-local basic_belt_color = _framework.settings.get_value("reskins-bobs-do-basic-belts-separately") == true
-		and _framework.settings.get_value("reskins-bobs-basic-belts-color") --[[@as Color]]
-	or nil
 
 -- Bob's mods name the turbo belts `bob-turbo-*` before Bob's Library 2.1.0, and `turbo-*` from 2.1.0.
 local turbo_prefix = data.raw["transport-belt"]["bob-turbo-transport-belt"] and "bob-turbo" or "turbo"
@@ -40,7 +37,6 @@ local belt_tiers = {
 		splitter = "bob-basic-splitter",
 		technology = "logistics-0",
 		tier = 0,
-		tint = basic_belt_color,
 	},
 	{
 		transport_belt = "transport-belt",
@@ -89,7 +85,7 @@ local technologies = {}
 
 for _, belt_tier in pairs(belt_tiers) do
 	local is_reskinned = not belt_tier.is_base or reskin_base_entities
-	local tint = belt_tier.tint or _framework.tiers.get_tint(belt_tier.tier)
+	local tint = _framework.tiers.get_tint(belt_tier.tier)
 
 	if is_reskinned and data.raw["technology"][belt_tier.technology] then
 		technologies[belt_tier.technology] = { composition = Logistics.get_icon_composition({ tint = tint }) }
