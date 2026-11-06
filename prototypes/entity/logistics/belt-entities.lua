@@ -20,10 +20,6 @@ local TransportBelt = require("__reskins-assets-api__.assets.base.entities.trans
 local UndergroundBelt = require("__reskins-assets-api__.assets.base.entities.underground-belt")
 local Splitter = require("__reskins-assets-api__.assets.base.entities.splitter")
 
-if not mods["boblogistics"] then
-	return
-end
-
 local reskin_base_entities = _framework.settings.get_value("reskins-framework-use-custom-tier-colors") == true
 local basic_belt_color = _framework.settings.get_value("reskins-bobs-do-basic-belts-separately") == true
 		and _framework.settings.get_value("reskins-bobs-basic-belts-color") --[[@as Color]]
@@ -68,6 +64,8 @@ local belt_tiers = {
 		underground_belt = turbo_prefix .. "-underground-belt",
 		splitter = turbo_prefix .. "-splitter",
 		tier = 4,
+		-- Without Bob's Logistics, the turbo belt entities are those of Space Age.
+		is_base = not mods["boblogistics"],
 	},
 	{
 		transport_belt = "bob-ultimate-transport-belt",
