@@ -12,7 +12,9 @@ end
 
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 
+local Applicators = require("__reskins-assets-api__.api.applicators")
 local EquipmentNightVision = require("__reskins-assets-api__.assets.base.items.equipment-night-vision")
+local EquipmentNightVisionSprites = require("__reskins-assets-api__.assets.base.equipment.equipment-night-vision")
 
 local night_vision = {
 	["night-vision-equipment"] = { tier = 1, prog_tier = 2 },
@@ -39,36 +41,7 @@ for name, options in pairs(night_vision) do
 		goto continue
 	end
 
-	equipment.sprite = {
-		layers = {
-			-- Base
-			{
-				filename = "__base__/graphics/equipment/night-vision-equipment.png",
-				size = 128,
-				priority = "medium",
-				flags = { "no-crop" },
-				scale = 0.5,
-			},
-			-- Mask
-			{
-				filename = "__reskins-bobs__/graphics/equipment/equipment/night-vision/night-vision-equipment-mask.png",
-				size = 128,
-				priority = "medium",
-				flags = { "no-crop" },
-				tint = options.tint,
-				scale = 0.5,
-			},
-			-- Highlights
-			{
-				filename = "__reskins-bobs__/graphics/equipment/equipment/night-vision/night-vision-equipment-highlights.png",
-				size = 128,
-				priority = "medium",
-				flags = { "no-crop" },
-				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				scale = 0.5,
-			},
-		},
-	}
+	Applicators.apply_sprite_set(equipment, EquipmentNightVisionSprites.get_sprite_set({ tint = options.tint }))
 
 	::continue::
 end

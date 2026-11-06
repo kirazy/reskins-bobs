@@ -12,7 +12,9 @@ end
 
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 
+local Applicators = require("__reskins-assets-api__.api.applicators")
 local EquipmentSolarPanel = require("__reskins-assets-api__.assets.base.items.equipment-solar-panel")
+local EquipmentSolarPanelSprites = require("__reskins-assets-api__.assets.base.equipment.equipment-solar-panel")
 
 local solar_panels = {
 	["solar-panel-equipment"] = { tier = 1, prog_tier = 2 },
@@ -40,36 +42,7 @@ for name, options in pairs(solar_panels) do
 		goto continue
 	end
 
-	equipment.sprite = {
-		layers = {
-			-- Base
-			{
-				filename = "__reskins-bobs__/graphics/equipment/equipment/solar-panel/solar-panel-equipment-base.png",
-				size = 64,
-				priority = "medium",
-				flags = { "no-crop" },
-				scale = 0.5,
-			},
-			-- Mask
-			{
-				filename = "__reskins-bobs__/graphics/equipment/equipment/solar-panel/solar-panel-equipment-mask.png",
-				size = 64,
-				priority = "medium",
-				flags = { "no-crop" },
-				tint = options.tint,
-				scale = 0.5,
-			},
-			-- Highlights
-			{
-				filename = "__reskins-bobs__/graphics/equipment/equipment/solar-panel/solar-panel-equipment-highlights.png",
-				size = 64,
-				priority = "medium",
-				flags = { "no-crop" },
-				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				scale = 0.5,
-			},
-		},
-	}
+	Applicators.apply_sprite_set(equipment, EquipmentSolarPanelSprites.get_sprite_set({ tint = options.tint }))
 
 	::continue::
 end

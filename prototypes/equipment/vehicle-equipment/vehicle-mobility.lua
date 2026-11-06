@@ -10,6 +10,9 @@ end
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 local _assets = { icons = require("__reskins-assets-api__.api.icons") }
 
+local Applicators = require("__reskins-assets-api__.api.applicators")
+local EquipmentVehicleEngineSprites = require("__reskins-assets-api__.assets.bobs.equipment.equipment-vehicle-engine")
+local EquipmentVehicleMotorSprites = require("__reskins-assets-api__.assets.bobs.equipment.equipment-vehicle-motor")
 local Icons = require("__reskins-assets-api__.assets.bobs.items.icons")
 
 _framework.tiers.assign_icons_with_tier_labels("item", {
@@ -25,25 +28,15 @@ _framework.tiers.assign_icons_with_tier_labels("item", {
 	},
 })
 
-local equipment_list = {
-	"vehicle-motor",
-	"vehicle-engine",
+local sprites = {
+	["bob-vehicle-engine-equipment"] = EquipmentVehicleEngineSprites,
+	["bob-vehicle-motor-equipment"] = EquipmentVehicleMotorSprites,
 }
 
 -- Reskin the equipment.
-for _, icon_name in pairs(equipment_list) do
-	local name = "bob-" .. icon_name .. "-equipment"
+for name, module in pairs(sprites) do
 	local equipment = data.raw["movement-bonus-equipment"][name]
-	if not equipment then
-		goto continue
+	if equipment then
+		Applicators.apply_sprite_set(equipment, module.get_sprite_set())
 	end
-
-	equipment.sprite = {
-		filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/" .. icon_name .. "/" .. name .. ".png",
-		size = 128,
-		priority = "medium",
-		scale = 0.5,
-	}
-
-	::continue::
 end

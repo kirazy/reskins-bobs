@@ -13,10 +13,17 @@ end
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 local _assets = { icons = require("__reskins-assets-api__.api.icons") }
 
+local Applicators = require("__reskins-assets-api__.api.applicators")
 local EquipmentVehiclePartAntenna = require("__reskins-assets-api__.assets.bobs.items.equipment-vehicle-part-antenna")
+local EquipmentVehiclePartAntennaSprites =
+	require("__reskins-assets-api__.assets.bobs.equipment.equipment-vehicle-part-antenna")
 local EquipmentVehiclePartChargePad =
 	require("__reskins-assets-api__.assets.bobs.items.equipment-vehicle-part-charge-pad")
+local EquipmentVehiclePartChargePadSprites =
+	require("__reskins-assets-api__.assets.bobs.equipment.equipment-vehicle-part-charge-pad")
 local EquipmentVehiclePartRobot = require("__reskins-assets-api__.assets.bobs.items.equipment-vehicle-part-robot")
+local EquipmentVehiclePartRobotSprites =
+	require("__reskins-assets-api__.assets.bobs.equipment.equipment-vehicle-part-robot")
 
 local categories = {
 	"robot",
@@ -70,46 +77,16 @@ for _, category in pairs(categories) do
 			goto continue
 		end
 
-		local equipment_path
-		if category ~= "robot" then
-			equipment_path = "vehicle-part-" .. category .. "-" .. index
+		local sprite_set
+		if category == "robot" then
+			sprite_set = EquipmentVehiclePartRobotSprites.get_sprite_set({ tint = map.tint })
+		elseif category == "chargepad" then
+			sprite_set = EquipmentVehiclePartChargePadSprites.get_sprite_set({ tier = index, tint = map.tint })
 		else
-			equipment_path = "vehicle-part-" .. category
+			sprite_set = EquipmentVehiclePartAntennaSprites.get_sprite_set({ tier = index, tint = map.tint })
 		end
 
-		equipment.sprite = {
-			layers = {
-				-- Base
-				{
-				--stylua: ignore
-					filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-part-" .. category .. "/" .. equipment_path .. "-equipment-base.png",
-					size = 64,
-					priority = "medium",
-					flags = { "no-crop" },
-					scale = 0.5,
-				},
-				-- Mask
-				{
-				--stylua: ignore
-					filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-part-" .. category .. "/vehicle-part-" .. category .. "-equipment-mask.png",
-					size = 64,
-					priority = "medium",
-					flags = { "no-crop" },
-					tint = map.tint,
-					scale = 0.5,
-				},
-				-- Highlights
-				{
-				--stylua: ignore
-					filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-part-" .. category .. "/vehicle-part-" .. category .. "-equipment-highlights.png",
-					size = 64,
-					priority = "medium",
-					flags = { "no-crop" },
-					blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-					scale = 0.5,
-				},
-			},
-		}
+		Applicators.apply_sprite_set(equipment, sprite_set)
 
 		::continue::
 	end

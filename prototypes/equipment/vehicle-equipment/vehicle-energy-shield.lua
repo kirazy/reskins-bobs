@@ -13,7 +13,9 @@ end
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 local _assets = { icons = require("__reskins-assets-api__.api.icons") }
 
+local Applicators = require("__reskins-assets-api__.api.applicators")
 local EquipmentEnergyShield2 = require("__reskins-assets-api__.assets.base.items.equipment-energy-shield-2")
+local EquipmentEnergyShield2Sprites = require("__reskins-assets-api__.assets.base.equipment.equipment-energy-shield-2")
 
 local vehicle_shield = {
 	["bob-vehicle-shield-equipment-1"] = { tier = 1 },
@@ -48,36 +50,7 @@ for name, options in pairs(vehicle_shield) do
 		goto continue
 	end
 
-	equipment.sprite = {
-		layers = {
-			-- Base
-			{
-				filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-energy-shield/vehicle-energy-shield-equipment-base.png",
-				size = 128,
-				priority = "medium",
-				flags = { "no-crop" },
-				scale = 0.5,
-			},
-			-- Mask
-			{
-				filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-energy-shield/vehicle-energy-shield-equipment-mask.png",
-				size = 128,
-				priority = "medium",
-				flags = { "no-crop" },
-				tint = options.tint,
-				scale = 0.5,
-			},
-			-- Highlights
-			{
-				filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-energy-shield/vehicle-energy-shield-equipment-highlights.png",
-				size = 128,
-				priority = "medium",
-				flags = { "no-crop" },
-				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				scale = 0.5,
-			},
-		},
-	}
+	Applicators.apply_sprite_set(equipment, EquipmentEnergyShield2Sprites.get_sprite_set({ tint = options.tint }))
 
 	::continue::
 end

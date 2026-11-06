@@ -13,7 +13,10 @@ end
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 local _assets = { icons = require("__reskins-assets-api__.api.icons") }
 
+local Applicators = require("__reskins-assets-api__.api.applicators")
 local EquipmentVehiclePlasmaTurret = require("__reskins-assets-api__.assets.bobs.items.equipment-vehicle-plasma-turret")
+local EquipmentVehiclePlasmaTurretSprites =
+	require("__reskins-assets-api__.assets.bobs.equipment.equipment-vehicle-plasma-turret")
 
 local plasma_turret = {
 	["bob-vehicle-big-turret-equipment-1"] = { tier = 1, prog_tier = 3 },
@@ -46,36 +49,7 @@ for name, options in pairs(plasma_turret) do
 		goto continue
 	end
 
-	equipment.sprite = {
-		layers = {
-			-- Base
-			{
-				filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-plasma-turret/vehicle-plasma-turret-equipment-base.png",
-				size = 256,
-				priority = "medium",
-				flags = { "no-crop" },
-				scale = 0.5,
-			},
-			-- Mask
-			{
-				filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-plasma-turret/vehicle-plasma-turret-equipment-mask.png",
-				size = 256,
-				priority = "medium",
-				flags = { "no-crop" },
-				tint = options.tint,
-				scale = 0.5,
-			},
-			-- Highlights
-			{
-				filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-plasma-turret/vehicle-plasma-turret-equipment-highlights.png",
-				size = 256,
-				priority = "medium",
-				flags = { "no-crop" },
-				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				scale = 0.5,
-			},
-		},
-	}
+	Applicators.apply_sprite_set(equipment, EquipmentVehiclePlasmaTurretSprites.get_sprite_set({ tint = options.tint }))
 
 	::continue::
 end

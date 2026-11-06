@@ -13,7 +13,9 @@ end
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 local _assets = { icons = require("__reskins-assets-api__.api.icons") }
 
+local Applicators = require("__reskins-assets-api__.api.applicators")
 local EquipmentBattery2 = require("__reskins-assets-api__.assets.base.items.equipment-battery-2")
+local EquipmentVehicleBatterySprites = require("__reskins-assets-api__.assets.bobs.equipment.equipment-vehicle-battery")
 
 local batteries = {
 	["bob-vehicle-battery-equipment-1"] = { tier = 1 },
@@ -48,36 +50,7 @@ for name, options in pairs(batteries) do
 		goto continue
 	end
 
-	equipment.sprite = {
-		layers = {
-			-- Base
-			{
-				filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-battery/vehicle-battery-equipment-base.png",
-				size = 64,
-				priority = "medium",
-				flags = { "no-crop" },
-				scale = 0.5,
-			},
-			-- Mask
-			{
-				filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-battery/vehicle-battery-equipment-mask.png",
-				size = 64,
-				priority = "medium",
-				flags = { "no-crop" },
-				tint = options.tint,
-				scale = 0.5,
-			},
-			-- Highlights
-			{
-				filename = "__reskins-bobs__/graphics/equipment/vehicle-equipment/vehicle-battery/vehicle-battery-equipment-highlights.png",
-				size = 64,
-				priority = "medium",
-				flags = { "no-crop" },
-				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				scale = 0.5,
-			},
-		},
-	}
+	Applicators.apply_sprite_set(equipment, EquipmentVehicleBatterySprites.get_sprite_set({ tint = options.tint }))
 
 	::continue::
 end

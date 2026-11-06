@@ -12,7 +12,9 @@ end
 
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 
+local Applicators = require("__reskins-assets-api__.api.applicators")
 local EquipmentFissionReactor = require("__reskins-assets-api__.assets.bobs.items.equipment-fission-reactor")
+local EquipmentFissionReactorSprites = require("__reskins-assets-api__.assets.bobs.equipment.equipment-fission-reactor")
 
 local fission_reactors = {
 	["fission-reactor-equipment"] = { tier = 1, prog_tier = 3 },
@@ -40,36 +42,7 @@ for name, options in pairs(fission_reactors) do
 		goto continue
 	end
 
-	equipment.sprite = {
-		layers = {
-			-- Base
-			{
-				filename = "__reskins-bobs__/graphics/equipment/equipment/fission-reactor/fission-reactor-equipment-base.png",
-				size = 256,
-				priority = "medium",
-				flags = { "no-crop" },
-				scale = 0.5,
-			},
-			-- Mask
-			{
-				filename = "__reskins-bobs__/graphics/equipment/equipment/fission-reactor/fission-reactor-equipment-mask.png",
-				size = 256,
-				priority = "medium",
-				flags = { "no-crop" },
-				tint = options.tint,
-				scale = 0.5,
-			},
-			-- Highlights
-			{
-				filename = "__reskins-bobs__/graphics/equipment/equipment/fission-reactor/fission-reactor-equipment-highlights.png",
-				size = 256,
-				priority = "medium",
-				flags = { "no-crop" },
-				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				scale = 0.5,
-			},
-		},
-	}
+	Applicators.apply_sprite_set(equipment, EquipmentFissionReactorSprites.get_sprite_set({ tint = options.tint }))
 
 	::continue::
 end

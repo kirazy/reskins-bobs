@@ -12,7 +12,9 @@ end
 
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 
+local Applicators = require("__reskins-assets-api__.api.applicators")
 local EquipmentEnergyShield1 = require("__reskins-assets-api__.assets.base.items.equipment-energy-shield-1")
+local EquipmentEnergyShield1Sprites = require("__reskins-assets-api__.assets.base.equipment.equipment-energy-shield-1")
 
 local batteries = {
 	["energy-shield-equipment"] = { tier = 1 },
@@ -42,36 +44,7 @@ for name, options in pairs(batteries) do
 		goto continue
 	end
 
-	equipment.sprite = {
-		layers = {
-			-- Base
-			{
-				filename = "__reskins-bobs__/graphics/equipment/equipment/energy-shield/energy-shield-equipment-base.png",
-				size = 128,
-				priority = "medium",
-				flags = { "no-crop" },
-				scale = 0.5,
-			},
-			-- Mask
-			{
-				filename = "__reskins-bobs__/graphics/equipment/equipment/energy-shield/energy-shield-equipment-mask.png",
-				size = 128,
-				priority = "medium",
-				flags = { "no-crop" },
-				tint = options.tint,
-				scale = 0.5,
-			},
-			-- Highlights
-			{
-				filename = "__reskins-bobs__/graphics/equipment/equipment/energy-shield/energy-shield-equipment-highlights.png",
-				size = 128,
-				priority = "medium",
-				flags = { "no-crop" },
-				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				scale = 0.5,
-			},
-		},
-	}
+	Applicators.apply_sprite_set(equipment, EquipmentEnergyShield1Sprites.get_sprite_set({ tint = options.tint }))
 
 	::continue::
 end

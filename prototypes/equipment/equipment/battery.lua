@@ -12,7 +12,9 @@ end
 
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 
+local Applicators = require("__reskins-assets-api__.api.applicators")
 local EquipmentBattery1 = require("__reskins-assets-api__.assets.base.items.equipment-battery-1")
+local EquipmentBatterySprites = require("__reskins-assets-api__.assets.base.equipment.equipment-battery")
 
 local batteries = {
 	["battery-equipment"] = { tier = 1 },
@@ -41,40 +43,7 @@ for name, options in pairs(batteries) do
 		goto continue
 	end
 
-	---@type data.Sprite
-	equipment.sprite = {
-		layers = {
-			-- Base
-			{
-				filename = "__reskins-bobs__/graphics/equipment/equipment/battery/battery-equipment-base.png",
-				width = 64,
-				height = 128,
-				priority = "medium",
-				flags = { "no-crop" },
-				scale = 0.5,
-			},
-			-- Mask
-			{
-				filename = "__reskins-bobs__/graphics/equipment/equipment/battery/battery-equipment-mask.png",
-				width = 64,
-				height = 128,
-				priority = "medium",
-				flags = { "no-crop" },
-				tint = options.tint,
-				scale = 0.5,
-			},
-			-- Highlights
-			{
-				filename = "__reskins-bobs__/graphics/equipment/equipment/battery/battery-equipment-highlights.png",
-				width = 64,
-				height = 128,
-				priority = "medium",
-				flags = { "no-crop" },
-				blend_mode = reskins.lib.settings.blend_mode, -- "additive",
-				scale = 0.5,
-			},
-		},
-	}
+	Applicators.apply_sprite_set(equipment, EquipmentBatterySprites.get_sprite_set({ tint = options.tint }))
 
 	::continue::
 end
