@@ -75,9 +75,6 @@ require("prototypes.entity.power.steam-engine")
 require("prototypes.entity.power.steam-turbine")
 require("prototypes.entity.power.substation")
 
--- Bob's Technology
--- require("prototypes.entity.technology.lab") -- Partially implemented, not functional in normal resolution
-
 -- Bob's Warfare
 require("prototypes.entity.warfare.artillery-turret")
 require("prototypes.entity.warfare.artillery-wagon")
