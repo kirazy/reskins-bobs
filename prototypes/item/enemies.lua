@@ -16,31 +16,31 @@ local AlienArtifacts = require("__reskins-assets-api__.assets.bobs.items.alien-a
 local AlienArtifactsSmall = require("__reskins-assets-api__.assets.bobs.items.alien-artifacts-small")
 
 _framework.tiers.assign_icons_with_tier_labels("item", {
-	["bob-alien-artifact"] = { composition = AlienArtifacts.get_alien_artifact_icon_composition() },
-	["bob-alien-artifact-blue"] = { composition = AlienArtifacts.get_alien_artifact_blue_icon_composition() },
-	["bob-alien-artifact-green"] = { composition = AlienArtifacts.get_alien_artifact_green_icon_composition() },
-	["bob-alien-artifact-orange"] = { composition = AlienArtifacts.get_alien_artifact_orange_icon_composition() },
-	["bob-alien-artifact-purple"] = { composition = AlienArtifacts.get_alien_artifact_purple_icon_composition() },
-	["bob-alien-artifact-red"] = { composition = AlienArtifacts.get_alien_artifact_red_icon_composition() },
-	["bob-alien-artifact-yellow"] = { composition = AlienArtifacts.get_alien_artifact_yellow_icon_composition() },
+	["bob-alien-artifact"] = { composition = AlienArtifacts.get_icon_composition({ color = "pink" }) },
+	["bob-alien-artifact-blue"] = { composition = AlienArtifacts.get_icon_composition({ color = "blue" }) },
+	["bob-alien-artifact-green"] = { composition = AlienArtifacts.get_icon_composition({ color = "green" }) },
+	["bob-alien-artifact-orange"] = { composition = AlienArtifacts.get_icon_composition({ color = "orange" }) },
+	["bob-alien-artifact-purple"] = { composition = AlienArtifacts.get_icon_composition({ color = "purple" }) },
+	["bob-alien-artifact-red"] = { composition = AlienArtifacts.get_icon_composition({ color = "red" }) },
+	["bob-alien-artifact-yellow"] = { composition = AlienArtifacts.get_icon_composition({ color = "yellow" }) },
 
-	["bob-small-alien-artifact"] = { composition = AlienArtifactsSmall.get_alien_artifact_small_icon_composition() },
+	["bob-small-alien-artifact"] = { composition = AlienArtifactsSmall.get_icon_composition({ color = "pink" }) },
 	["bob-small-alien-artifact-blue"] = {
-		composition = AlienArtifactsSmall.get_alien_artifact_small_blue_icon_composition(),
+		composition = AlienArtifactsSmall.get_icon_composition({ color = "blue" }),
 	},
 	["bob-small-alien-artifact-green"] = {
-		composition = AlienArtifactsSmall.get_alien_artifact_small_green_icon_composition(),
+		composition = AlienArtifactsSmall.get_icon_composition({ color = "green" }),
 	},
 	["bob-small-alien-artifact-orange"] = {
-		composition = AlienArtifactsSmall.get_alien_artifact_small_orange_icon_composition(),
+		composition = AlienArtifactsSmall.get_icon_composition({ color = "orange" }),
 	},
 	["bob-small-alien-artifact-purple"] = {
-		composition = AlienArtifactsSmall.get_alien_artifact_small_purple_icon_composition(),
+		composition = AlienArtifactsSmall.get_icon_composition({ color = "purple" }),
 	},
 	["bob-small-alien-artifact-red"] = {
-		composition = AlienArtifactsSmall.get_alien_artifact_small_red_icon_composition(),
+		composition = AlienArtifactsSmall.get_icon_composition({ color = "red" }),
 	},
 	["bob-small-alien-artifact-yellow"] = {
-		composition = AlienArtifactsSmall.get_alien_artifact_small_yellow_icon_composition(),
+		composition = AlienArtifactsSmall.get_icon_composition({ color = "yellow" }),
 	},
 })

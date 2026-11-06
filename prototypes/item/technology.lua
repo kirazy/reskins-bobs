@@ -30,24 +30,24 @@ local items = {
 
 -- Alien science packs
 if _framework.settings.get_value("bobmods-enemies-enablenewartifacts") == true then
-	items["bob-alien-science-pack"] = { composition = AlienSciencePacks.get_alien_science_pack_icon_composition() }
+	items["bob-alien-science-pack"] = { composition = AlienSciencePacks.get_icon_composition({ color = "pink" }) }
 	items["bob-alien-science-pack-blue"] = {
-		composition = AlienSciencePacks.get_alien_science_pack_blue_icon_composition(),
+		composition = AlienSciencePacks.get_icon_composition({ color = "blue" }),
 	}
 	items["bob-alien-science-pack-orange"] = {
-		composition = AlienSciencePacks.get_alien_science_pack_orange_icon_composition(),
+		composition = AlienSciencePacks.get_icon_composition({ color = "orange" }),
 	}
 	items["bob-alien-science-pack-purple"] = {
-		composition = AlienSciencePacks.get_alien_science_pack_purple_icon_composition(),
+		composition = AlienSciencePacks.get_icon_composition({ color = "purple" }),
 	}
 	items["bob-alien-science-pack-yellow"] = {
-		composition = AlienSciencePacks.get_alien_science_pack_yellow_icon_composition(),
+		composition = AlienSciencePacks.get_icon_composition({ color = "yellow" }),
 	}
 	items["bob-alien-science-pack-green"] = {
-		composition = AlienSciencePacks.get_alien_science_pack_green_icon_composition(),
+		composition = AlienSciencePacks.get_icon_composition({ color = "green" }),
 	}
 	items["bob-alien-science-pack-red"] = {
-		composition = AlienSciencePacks.get_alien_science_pack_red_icon_composition(),
+		composition = AlienSciencePacks.get_icon_composition({ color = "red" }),
 	}
 	items["bob-science-pack-gold"] = { composition = Icons.get_science_pack_gold_icon_composition() }
 end
