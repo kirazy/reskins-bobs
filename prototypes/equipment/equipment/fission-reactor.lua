@@ -4,13 +4,13 @@
 -- See LICENSE in the project directory for license information.
 
 ---@using data
----@using Reskins.Framework
 
 if not mods["bobequipment"] then
 	return
 end
 
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
+local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 
 local Applicators = require("__reskins-assets-api__.api.applicators")
 local EquipmentFissionReactor = require("__reskins-assets-api__.assets.bobs.items.equipment-fission-reactor")
@@ -23,26 +23,26 @@ local fission_reactors = {
 	["bob-fission-reactor-equipment-4"] = { tier = 4, prog_tier = 6 },
 }
 
----@type table<string, TieredIconDefinition>
-local items = {}
+local TYPE = "generator-equipment"
 
 for name, options in pairs(fission_reactors) do
-	local tier = _framework.tiers.get_tier(options)
-
-	options.tint = _framework.tiers.get_tint(tier)
-	items[name] = { composition = EquipmentFissionReactor.get_icon_composition({ tint = options.tint }), tier = tier }
-end
-
-_framework.tiers.assign_icons_with_tier_labels("item", items)
-
--- Reskin the equipment.
-for name, options in pairs(fission_reactors) do
-	local equipment = data.raw["generator-equipment"][name]
+	local equipment = data.raw[TYPE][name]
 	if not equipment then
 		goto continue
 	end
 
-	Applicators.apply_sprite_set(equipment, EquipmentFissionReactorSprites.get_sprite_set({ tint = options.tint }))
+	local tier = _framework.tiers.get_tier(options)
+	local tint = _framework.tiers.get_tint(tier)
+
+	Applicators.apply_sprite_set(equipment, EquipmentFissionReactorSprites.get_sprite_set({ tint = tint }))
+
+	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
+		tier = tier,
+		name = equipment.name,
+		type_name = "item",
+		composition = EquipmentFissionReactor.get_icon_composition({ tint = tint }),
+	})
+	_sprite_utils.icons.apply_icon_assignment(icon_assignment)
 
 	::continue::
 end

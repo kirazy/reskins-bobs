@@ -4,13 +4,13 @@
 -- See LICENSE in the project directory for license information.
 
 ---@using data
----@using Reskins.Framework
 
 if not mods["bobequipment"] then
 	return
 end
 
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
+local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 
 local Applicators = require("__reskins-assets-api__.api.applicators")
 local EquipmentVehiclePartAntenna = require("__reskins-assets-api__.assets.bobs.items.equipment-vehicle-part-antenna")
@@ -24,10 +24,24 @@ local EquipmentVehiclePartRobot = require("__reskins-assets-api__.assets.bobs.it
 local EquipmentVehiclePartRobotSprites =
 	require("__reskins-assets-api__.assets.bobs.equipment.equipment-vehicle-part-robot")
 
+---The icon and sprite set creators for each kind of roboport part. A tiered part draws the artwork for the index of its
+---tier.
 local categories = {
-	"robot",
-	"chargepad",
-	"antenna",
+	robot = {
+		get_icon_composition = EquipmentVehiclePartRobot.get_icon_composition,
+		get_sprite_set = EquipmentVehiclePartRobotSprites.get_sprite_set,
+		is_tiered = false,
+	},
+	chargepad = {
+		get_icon_composition = EquipmentVehiclePartChargePad.get_icon_composition,
+		get_sprite_set = EquipmentVehiclePartChargePadSprites.get_sprite_set,
+		is_tiered = true,
+	},
+	antenna = {
+		get_icon_composition = EquipmentVehiclePartAntenna.get_icon_composition,
+		get_sprite_set = EquipmentVehiclePartAntennaSprites.get_sprite_set,
+		is_tiered = true,
+	},
 }
 
 local properties = {
@@ -37,49 +51,27 @@ local properties = {
 	{ suffix = "-4", tier = 4, prog_tier = 5 },
 }
 
----@type table<string, TieredIconDefinition>
-local items = {}
+local TYPE = "roboport-equipment"
 
-for index, map in pairs(properties) do
-	local tier = _framework.tiers.get_tier(map)
-
-	map.tint = _framework.tiers.get_tint(tier)
-	items["bob-personal-roboport-robot-equipment" .. map.suffix] = {
-		composition = EquipmentVehiclePartRobot.get_icon_composition({ tint = map.tint }),
-		tier = tier,
-	}
-	items["bob-personal-roboport-chargepad-equipment" .. map.suffix] = {
-		composition = EquipmentVehiclePartChargePad.get_icon_composition({ tier = index, tint = map.tint }),
-		tier = tier,
-	}
-	items["bob-personal-roboport-antenna-equipment" .. map.suffix] = {
-		composition = EquipmentVehiclePartAntenna.get_icon_composition({ tier = index, tint = map.tint }),
-		tier = tier,
-	}
-end
-
-_framework.tiers.assign_icons_with_tier_labels("item", items)
-
--- Reskin the equipment.
-for _, category in pairs(categories) do
-	for index, map in pairs(properties) do
-		local name = "bob-personal-roboport-" .. category .. "-equipment" .. map.suffix
-
-		local equipment = data.raw["roboport-equipment"][name]
+for category, part in pairs(categories) do
+	for index, options in pairs(properties) do
+		local equipment = data.raw[TYPE]["bob-personal-roboport-" .. category .. "-equipment" .. options.suffix]
 		if not equipment then
 			goto continue
 		end
 
-		local sprite_set
-		if category == "robot" then
-			sprite_set = EquipmentVehiclePartRobotSprites.get_sprite_set({ tint = map.tint })
-		elseif category == "chargepad" then
-			sprite_set = EquipmentVehiclePartChargePadSprites.get_sprite_set({ tier = index, tint = map.tint })
-		else
-			sprite_set = EquipmentVehiclePartAntennaSprites.get_sprite_set({ tier = index, tint = map.tint })
-		end
+		local tier = _framework.tiers.get_tier(options)
+		local params = { tier = part.is_tiered and index or nil, tint = _framework.tiers.get_tint(tier) }
 
-		Applicators.apply_sprite_set(equipment, sprite_set)
+		Applicators.apply_sprite_set(equipment, part.get_sprite_set(params))
+
+		local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
+			tier = tier,
+			name = equipment.name,
+			type_name = "item",
+			composition = part.get_icon_composition(params),
+		})
+		_sprite_utils.icons.apply_icon_assignment(icon_assignment)
 
 		::continue::
 	end
