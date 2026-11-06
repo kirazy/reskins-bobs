@@ -13,17 +13,13 @@ local _framework = {
 }
 
 ---Defines the entry of a nuclear reactor.
----@class NuclearReactorEntry
----The traditional tier of the reactor.
----@field tier Tier
----The progression tier of the reactor.
----@field prog_tier Tier
+---@class NuclearReactorEntry : PrototypeTierValue
 ---The material from which the reactor is built.
 ---@field material NuclearReactorMaterial
 ---The fuel the reactor burns.
 ---@field fuel NuclearReactorFuel
 ---The color of the reactor. It is the color of the fuel when the reactors are colored by their fuels, and the color of
----the tier of the reactor otherwise.
+---the tier for the reactor otherwise.
 ---@field tint Color
 
 ---@type table<NuclearReactorFuel, Color>
@@ -51,18 +47,21 @@ local nuclear_reactors = {
 		prog_tier = 3,
 		material = "aluminum-invar",
 		fuel = "uranium",
+		tint = {},
 	},
 	["bob-nuclear-reactor-2"] = {
 		tier = 2,
 		prog_tier = 4,
 		material = "silver-titanium",
 		fuel = has_fuel_per_tier and "thorium" or "uranium",
+		tint = {},
 	},
 	["bob-nuclear-reactor-3"] = {
 		tier = 3,
 		prog_tier = 5,
 		material = "gold-copper",
 		fuel = has_fuel_per_tier and deuterium or "uranium",
+		tint = {},
 	},
 }
 
