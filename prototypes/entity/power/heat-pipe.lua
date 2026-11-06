@@ -3,10 +3,7 @@
 --
 -- See LICENSE in the project directory for license information.
 
-local _framework = {
-	tiers = require("__reskins-framework__.api.tiers"),
-	settings = require("__reskins-framework__.api.settings"),
-}
+local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 
 local Applicators = require("__reskins-assets-api__.api.applicators")
@@ -41,8 +38,6 @@ local entities = {
 
 local TYPE = "heat-pipe"
 
-local do_labels = _framework.settings.get_value("reskins-bobs-do-pipe-tier-labeling") == true
-
 for name, options in pairs(entities) do
 	local entity = data.raw[TYPE][name]
 	if not entity then
@@ -51,7 +46,7 @@ for name, options in pairs(entities) do
 
 	-- Setup icons
 	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
-		tier = do_labels and _framework.tiers.get_tier(options) or 0,
+		tier = _framework.tiers.get_tier(options),
 		name = entity.name,
 		type_name = entity.type,
 		icon_data = HeatPipe.get_icon({ pipe_material = options.pipe_material }),

@@ -9,7 +9,7 @@ Date: ????
     - Transport belts, underground belts, and splitters now use the Artisanal Reskins: Assets API, with turbo belt sprites for belts of 60 items/s or more, frozen sprites, and belt reader sprites, and other entities that use the belt sprites of a reskinned belt, such as loaders, now use the reskinned sprites
     - The belt entities and logistics technologies of the base game are now reskinned when the custom tier colors of Artisanal Reskins: Framework are used, and the belt entities are labeled or reskinned whether or not Bob's Logistics is loaded
     - The logistics technologies of Bob's Logistics are now reskinned by this mod instead of Artisanal Reskins: Library, in the tier colors of Artisanal Reskins: Framework
-    - Removed the "Belt tier labels" setting; the "Show tier labels on belts" setting of Artisanal Reskins: Framework now shows or hides the tier labels of belt entities
+    - Removed the "Belt tier labels" and "Pipe tier labels" settings; the "Show tier labels on belts" and "Show tier labels on pipes" settings of Artisanal Reskins: Framework now show or hide the tier labels of belt entities and of pipes, underground pipes, and heat pipes
     - Dying explosions, particles, and remnants now come from the Artisanal Reskins: Assets API, with the sprites of each entity
     - Entities with generic remnants now use the generic remnants of the base game that match their size, and land mines now use the dying explosion and remnants of the base land mine
     - Removed support for Nauvis Day, which is not available for Factorio 2.0 or later

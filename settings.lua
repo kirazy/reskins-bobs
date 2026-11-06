@@ -93,18 +93,6 @@ if mods["bobelectronics"] then
 	})
 end
 
-if mods["boblogistics"] or mods["bobpower"] then
-	data:extend({
-		{
-			type = "bool-setting",
-			name = "reskins-bobs-do-pipe-tier-labeling",
-			setting_type = "startup",
-			order = "x",
-			default_value = true,
-		},
-	})
-end
-
 if mods["boblogistics"] then
 	data:extend({
 		{
