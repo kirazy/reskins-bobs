@@ -21,13 +21,6 @@ if not _framework.settings.get_value("bobmods-power-fluidgenerator") then
 	return
 end
 
--- Determine which tint we're using for the bob-hydrazine-generator
-if _framework.settings.get_value("reskins-bobs-hydrazine-is-blue") == true then
-	reskins.bobs.hydrazine_tint = util.color("#7ac1de")
-else
-	reskins.bobs.hydrazine_tint = nil
-end
-
 local entities = {
 	["bob-fluid-generator"] = { tier = 1, prog_tier = 2, frequency = 2 / 16 },
 	["bob-fluid-generator-2"] = { tier = 2, prog_tier = 3, frequency = 3 / 16 },
@@ -37,7 +30,7 @@ local entities = {
 		prog_tier = 5,
 		frequency = 5 / 16,
 		smoke_name = "light-smoke",
-		tint = reskins.bobs.hydrazine_tint,
+		tint = _framework.settings.get_value("reskins-bobs-hydrazine-is-blue") == true and util.color("#7ac1de") or nil,
 	},
 }
 

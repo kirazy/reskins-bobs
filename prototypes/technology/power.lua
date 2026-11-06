@@ -93,8 +93,12 @@ if _framework.settings.get_value("bobmods-power-fluidgenerator") then
 	technologies["bob-fluid-generator-1"] = { module = GeneratorFluid, tier = 1, prog_tier = 2 }
 	technologies["bob-fluid-generator-2"] = { module = GeneratorFluid, tier = 2, prog_tier = 3 }
 	technologies["bob-fluid-generator-3"] = { module = GeneratorFluid, tier = 3, prog_tier = 4 }
-	--stylua: ignore
-	technologies["bob-hydrazine-generator"] = { module = GeneratorFluid, tier = 4, prog_tier = 5, tint = reskins.bobs.hydrazine_tint }
+	technologies["bob-hydrazine-generator"] = {
+		module = GeneratorFluid,
+		tier = 4,
+		prog_tier = 5,
+		tint = _framework.settings.get_value("reskins-bobs-hydrazine-is-blue") == true and util.color("#7ac1de") or nil,
+	}
 end
 
 if _framework.settings.get_value("bobmods-power-heatsources") then

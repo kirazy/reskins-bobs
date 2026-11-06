@@ -3,10 +3,8 @@
 --
 -- See LICENSE in the project directory for license information.
 
--- Core functions
-require("prototypes.functions.functions")
+-- Add the sprites of the colored circuits setting.
 require("prototypes.functions.circuit-sprites")
-require("prototypes.functions.entity-functions")
 
 ----------------------------------------------------------------------------------------------------
 -- ENTITIES

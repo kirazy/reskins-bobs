@@ -11,6 +11,8 @@ local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 local Applicators = require("__reskins-assets-api__.api.applicators")
 local FurnaceStone = require("__reskins-assets-api__.assets.base.entities.furnace-stone")
 
+local furnace_tints = require("prototypes.functions.furnace-tints")
+
 if not (mods["bobassembly"] or mods["bobplates"]) then
 	return
 end
@@ -19,17 +21,17 @@ local entities = {
 	["stone-furnace"] = {
 		type = "furnace",
 		variant = "standard",
-		tint = reskins.bobs.furnace_tint_index.standard,
+		tint = furnace_tints.standard,
 	},
 	["bob-stone-mixing-furnace"] = {
 		type = "assembling-machine",
 		variant = "standard",
-		tint = reskins.bobs.furnace_tint_index.mixing,
+		tint = furnace_tints.mixing,
 	},
 	["bob-stone-chemical-furnace"] = {
 		type = "assembling-machine",
 		variant = "chemical",
-		tint = reskins.bobs.furnace_tint_index.chemical,
+		tint = furnace_tints.chemical,
 	},
 }
 

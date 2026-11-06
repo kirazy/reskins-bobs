@@ -11,6 +11,8 @@ local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 local Applicators = require("__reskins-assets-api__.api.applicators")
 local FurnaceSteel = require("__reskins-assets-api__.assets.base.entities.furnace-steel")
 
+local furnace_tints = require("prototypes.functions.furnace-tints")
+
 if not (mods["bobassembly"] or mods["bobplates"]) then
 	return
 end
@@ -20,34 +22,34 @@ local entities = {
 	["steel-furnace"] = {
 		type = "furnace",
 		variant = "standard",
-		tint = reskins.bobs.furnace_tint_index.standard,
+		tint = furnace_tints.standard,
 	},
 	["bob-fluid-furnace"] = {
 		type = "furnace",
 		variant = "fluid",
-		tint = reskins.bobs.furnace_tint_index.standard,
+		tint = furnace_tints.standard,
 	},
 	-- Mixing furnaces
 	["bob-steel-mixing-furnace"] = {
 		type = "assembling-machine",
 		variant = "standard",
-		tint = reskins.bobs.furnace_tint_index.mixing,
+		tint = furnace_tints.mixing,
 	},
 	["bob-fluid-mixing-furnace"] = {
 		type = "assembling-machine",
 		variant = "fluid",
-		tint = reskins.bobs.furnace_tint_index.mixing,
+		tint = furnace_tints.mixing,
 	},
 	-- Chemical furnaces
 	["bob-steel-chemical-furnace"] = {
 		type = "assembling-machine",
 		variant = "chemical",
-		tint = reskins.bobs.furnace_tint_index.chemical,
+		tint = furnace_tints.chemical,
 	},
 	["bob-fluid-chemical-furnace"] = {
 		type = "assembling-machine",
 		variant = "chemical-fluid",
-		tint = reskins.bobs.furnace_tint_index.chemical,
+		tint = furnace_tints.chemical,
 	},
 }
 

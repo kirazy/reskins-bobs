@@ -9,6 +9,8 @@ local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 local Applicators = require("__reskins-assets-api__.api.applicators")
 local FurnaceElectric = require("__reskins-assets-api__.assets.base.entities.furnace-electric")
 
+local furnace_tints = require("prototypes.functions.furnace-tints")
+
 if not (mods["bobassembly"] or mods["bobplates"]) then
 	return
 end
@@ -19,7 +21,7 @@ local entities = {
 		type = "furnace",
 		variant = "standard",
 		tier = 3,
-		tint = reskins.bobs.furnace_tint_index.standard,
+		tint = furnace_tints.standard,
 	},
 	["bob-electric-furnace-2"] = {
 		type = "furnace",
@@ -36,14 +38,14 @@ local entities = {
 		type = "assembling-machine",
 		variant = "mixing",
 		tier = 3,
-		tint = reskins.bobs.furnace_tint_index.mixing,
+		tint = furnace_tints.mixing,
 	},
 	-- Chemical furnace
 	["bob-electric-chemical-furnace"] = {
 		type = "assembling-machine",
 		variant = "chemical",
 		tier = 3,
-		tint = reskins.bobs.furnace_tint_index.chemical,
+		tint = furnace_tints.chemical,
 	},
 	-- Chemical mixing furnaces
 	["bob-electric-chemical-mixing-furnace"] = {
