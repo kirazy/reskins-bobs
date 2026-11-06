@@ -5,15 +5,26 @@
 
 ---@using data
 ---@using Reskins.Assets.Base.Entities
+---@using Reskins.Framework
 
-local _framework = { settings = require("__reskins-framework__.api.settings") }
+local _framework = {
+	settings = require("__reskins-framework__.api.settings"),
+	tiers = require("__reskins-framework__.api.tiers"),
+}
 
----Defines the fuel a nuclear reactor burns, and the color of that fuel.
----@class NuclearReactorFuelEntry
+---Defines the entry of a nuclear reactor.
+---@class NuclearReactorEntry
+---The traditional tier of the reactor.
+---@field tier Tier
+---The progression tier of the reactor.
+---@field prog_tier Tier
+---The material from which the reactor is built.
+---@field material NuclearReactorMaterial
 ---The fuel the reactor burns.
 ---@field fuel NuclearReactorFuel
----The color of the fuel. When `nil`, the reactor is colored according to its tier.
----@field tint? Color
+---The color of the reactor. It is the color of the fuel when the reactors are colored by their fuels, and the color of
+---the tier of the reactor otherwise.
+---@field tint Color
 
 ---@type table<NuclearReactorFuel, Color>
 local fuel_tints = {
@@ -32,21 +43,32 @@ local color_by_fuel = has_fuel_per_tier
 local deuterium = _framework.settings.get_value("bobmods-plates-bluedeuterium") == true and "deuterium-blue"
 	or "deuterium-pink"
 
----@type table<string, NuclearReactorFuel>
-local fuels = {
-	["nuclear-reactor"] = "uranium",
-	["bob-nuclear-reactor-2"] = has_fuel_per_tier and "thorium" or "uranium",
-	["bob-nuclear-reactor-3"] = has_fuel_per_tier and deuterium or "uranium",
+---The entry of each nuclear reactor, by the name of the reactor.
+---@type table<string, NuclearReactorEntry>
+local nuclear_reactors = {
+	["nuclear-reactor"] = {
+		tier = 1,
+		prog_tier = 3,
+		material = "aluminum-invar",
+		fuel = "uranium",
+	},
+	["bob-nuclear-reactor-2"] = {
+		tier = 2,
+		prog_tier = 4,
+		material = "silver-titanium",
+		fuel = has_fuel_per_tier and "thorium" or "uranium",
+	},
+	["bob-nuclear-reactor-3"] = {
+		tier = 3,
+		prog_tier = 5,
+		material = "gold-copper",
+		fuel = has_fuel_per_tier and deuterium or "uranium",
+	},
 }
 
----The fuel entry of each nuclear reactor, by the name of the reactor.
----@type table<string, NuclearReactorFuelEntry>
-local nuclear_reactors = {}
-for name, fuel in pairs(fuels) do
-	nuclear_reactors[name] = {
-		fuel = fuel,
-		tint = color_by_fuel and fuel_tints[fuel] or nil,
-	}
+for _, reactor in pairs(nuclear_reactors) do
+	reactor.tint = color_by_fuel and util.copy(fuel_tints[reactor.fuel])
+		or _framework.tiers.get_tint(_framework.tiers.get_tier(reactor))
 end
 
 return nuclear_reactors

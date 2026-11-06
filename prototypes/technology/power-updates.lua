@@ -27,36 +27,21 @@ local definitions = {
 
 -- Nuclear reactors
 if reskins.bobs.triggers.power.nuclear then
-	-- The technology of each reactor shows its fuel and material, in the color of its fuel or of its tier.
+	-- The technology of each reactor shows the fuel, material, and color of the reactor it unlocks.
 	local technologies = {
-		["nuclear-power"] = {
-			reactor = "nuclear-reactor",
-			material = "aluminum-invar",
-			tier = 1,
-			prog_tier = 3,
-		},
-		["bob-nuclear-power-2"] = {
-			reactor = "bob-nuclear-reactor-2",
-			material = "silver-titanium",
-			tier = 2,
-			prog_tier = 4,
-		},
-		["bob-nuclear-power-3"] = {
-			reactor = "bob-nuclear-reactor-3",
-			material = "gold-copper",
-			tier = 3,
-			prog_tier = 5,
-		},
+		["nuclear-power"] = "nuclear-reactor",
+		["bob-nuclear-power-2"] = "bob-nuclear-reactor-2",
+		["bob-nuclear-power-3"] = "bob-nuclear-reactor-3",
 	}
 
-	for name, options in pairs(technologies) do
-		local reactor = nuclear_reactors[options.reactor]
+	for name, reactor_name in pairs(technologies) do
+		local reactor = nuclear_reactors[reactor_name]
 
 		definitions[name] = {
 			composition = NuclearPower.get_fuel_icon_composition({
 				fuel = reactor.fuel,
-				material = options.material,
-				tint = reactor.tint or _framework.tiers.get_tint(_framework.tiers.get_tier(options)),
+				material = reactor.material,
+				tint = reactor.tint,
 			}),
 		}
 	end
