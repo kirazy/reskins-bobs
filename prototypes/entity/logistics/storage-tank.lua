@@ -13,11 +13,6 @@ if not (reskins.bobs and reskins.bobs.triggers.logistics.entities) then
 	return
 end
 
--- Flag available for Mini-Machines compatibility pass
-if reskins.compatibility then
-	reskins.compatibility.triggers.minimachines.storagetanks = true
-end
-
 local entities = {
 	["storage-tank"] = { tier = 1, prog_tier = 2 },
 	["bob-storage-tank-2"] = { tier = 2, prog_tier = 3 },

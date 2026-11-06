@@ -13,11 +13,6 @@ if not (reskins.bobs and reskins.bobs.triggers.warfare.entities) then
 	return
 end
 
--- Flag available for Mini-Machines compatibility pass
-if reskins.compatibility then
-	reskins.compatibility.triggers.minimachines.radar = true
-end
-
 local entities = {
 	["radar"] = { tier = 1 },
 	["bob-radar-2"] = { tier = 2 },

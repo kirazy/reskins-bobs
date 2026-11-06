@@ -20,11 +20,6 @@ if not (reskins.bobs and reskins.bobs.triggers.mining.entities) then
 	return
 end
 
--- Flag available for Mini-Machines compatibility pass
-if reskins.compatibility then
-	reskins.compatibility.triggers.minimachines.miners = true
-end
-
 local entities = {
 	["electric-mining-drill"] = { tier = 1, prog_tier = 1 },
 	["bob-mining-drill-1"] = { tier = 2, prog_tier = 2 },

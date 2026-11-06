@@ -16,11 +16,6 @@ if mods["classic-beacon"] or not (reskins.bobs and reskins.bobs.triggers.modules
 	return
 end
 
--- Flag available for Mini-Machines compatibility pass
-if reskins.compatibility then
-	reskins.compatibility.triggers.minimachines.beacons = true
-end
-
 local entities = {
 	["beacon"] = { tier = 1, prog_tier = 3 },
 	["bob-beacon-2"] = { tier = 2, prog_tier = 4 },

@@ -13,11 +13,6 @@ if not (reskins.bobs and (reskins.bobs.triggers.assembly.entities or reskins.bob
 	return
 end
 
--- Flag available for Mini-Machines compatibility pass
-if reskins.compatibility then
-	reskins.compatibility.triggers.minimachines.furnaces = true
-end
-
 local entities = {
 	-- Standard furnaces
 	["electric-furnace"] = {

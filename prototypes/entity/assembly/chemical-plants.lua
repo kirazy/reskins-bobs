@@ -23,11 +23,6 @@ if not _framework.settings.get_value("bobmods-assembly-chemicalplants") then
 	return
 end
 
--- Set flag for availability for Mini-Machines compatibility pass
-if reskins.compatibility then
-	reskins.compatibility.triggers.minimachines.chemplants.bobs = true
-end
-
 local entities = {
 	["chemical-plant"] = { tier = 1, prog_tier = 2 },
 	["bob-chemical-plant-2"] = { tier = 2, prog_tier = 3 },

@@ -13,11 +13,6 @@ if not (reskins.bobs and reskins.bobs.triggers.assembly.entities) then
 	return
 end
 
--- Flag available for Mini-Machines compatibility pass
-if reskins.compatibility then
-	reskins.compatibility.triggers.minimachines.electrolysers = true
-end
-
 local entities = {
 	["bob-electrolyser"] = { tier = 1 },
 	["bob-electrolyser-2"] = { tier = 2 },

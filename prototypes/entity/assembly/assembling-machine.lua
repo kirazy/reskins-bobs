@@ -15,11 +15,6 @@ if not (reskins.bobs and reskins.bobs.triggers.assembly.entities) then
 	return
 end
 
--- Flag available for Mini-Machines compatibility pass
-if reskins.compatibility then
-	reskins.compatibility.triggers.minimachines.assemblers = true
-end
-
 local entities = {
 	-- Standard assembly machines
 	["assembling-machine-1"] = {
