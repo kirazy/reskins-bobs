@@ -8,7 +8,7 @@
 	"homepage": "https://github.com/kirazy/reskins-bobs",
 	"dependencies": [
 		"base",
-		"reskins-library",
+		"! reskins-library",
 		"reskins-framework >= 0.2.1",
 		"reskins-assets-api >= 0.2.1",
 		"reskins-assets-assorted",
