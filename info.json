@@ -10,6 +10,7 @@
 		"base",
 		"reskins-library",
 		"reskins-assets-assorted >= 2.2.0",
+		"reskins-assets-base >= 2.2.0",
 		"reskins-assets-bobs >= 2.2.0",
 		"? bobassembly",
 		"? bobelectronics",
@@ -31,6 +32,6 @@
 		"! bobmods_gfxtweak"
 	],
 	"package": {
-		"git_publish_branch": "dev2.1"
+		"git_publish_branch": "master"
 	}
 }
