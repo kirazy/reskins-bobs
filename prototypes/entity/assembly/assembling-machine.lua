@@ -130,7 +130,8 @@ for name, options in pairs(entities) do
 
 	local icon_data = get_icon(tint, options)
 
-	if is_smaller_than_artwork(entity) then
+	-- The icons of the electronics assembling machines are drawn for their 2 x 2 size.
+	if options.use_burner_set and is_smaller_than_artwork(entity) then
 		icon_data = _sprite_utils.icons.minify_icon(icon_data, 0.8, "default")
 	end
 
