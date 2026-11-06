@@ -24,8 +24,8 @@ local EquipmentVehiclePartRobot = require("__reskins-assets-api__.assets.bobs.it
 local EquipmentVehiclePartRobotSprites =
 	require("__reskins-assets-api__.assets.bobs.equipment.equipment-vehicle-part-robot")
 
----The icon and sprite set creators for each kind of roboport part. A tiered part draws the artwork for the index of its
----tier.
+---Maps each category of roboport part to its icon and sprite set creators. A tiered part draws the artwork for the index
+---of its tier.
 local categories = {
 	robot = {
 		get_icon_composition = EquipmentVehiclePartRobot.get_icon_composition,
