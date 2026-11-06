@@ -134,10 +134,8 @@ require("prototypes.item.warfare")
 -- TECHNOLOGIES
 ----------------------------------------------------------------------------------------------------
 require("prototypes.technology.assembly")
--- require("prototypes.technology.classes")
 require("prototypes.technology.electronics")
 require("prototypes.technology.greenhouse")
--- require("prototypes.technology.inserters")
 require("prototypes.technology.logistics")
 require("prototypes.technology.mining")
 require("prototypes.technology.personal-equipment")
