@@ -20,6 +20,7 @@ local _assets = {
 }
 local IconComposition = require("__reskins-sprite-utils__.icon-composition")
 
+local BulkInserterEffect = require("__reskins-assets-api__.assets.bobs.ui-sprites.bulk-inserter-effect")
 local Icons = require("__reskins-assets-api__.assets.bobs.technologies.icons")
 local Inserter = require("__reskins-assets-api__.assets.base.technologies.inserter")
 local InserterBulk = require("__reskins-assets-api__.assets.base.technologies.inserter-bulk")
@@ -161,5 +162,4 @@ end
 _framework.tiers.assign_icons_with_tier_labels("technology", definitions)
 
 -- Overwrite icons for technology effects
-data.raw["utility-sprites"].default.bulk_inserter_capacity_bonus_modifier_icon.filename =
-	"__reskins-bobs__/graphics/icons/logistics/inserter/bulk-inserter-technology-effect-icon.png"
+data.raw["utility-sprites"].default.bulk_inserter_capacity_bonus_modifier_icon = BulkInserterEffect.get_sprite()

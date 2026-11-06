@@ -13,15 +13,16 @@ end
 local _framework = { tiers = require("__reskins-framework__.api.tiers") }
 
 local Ores = require("__reskins-assets-api__.assets.bobs.items.ores")
+local OreStages = require("__reskins-assets-api__.assets.bobs.entities.ores")
 
 local ores = {
 	-- Pure Bob's
 	-- ["gem-ore"] = { key = "bobs", subfolder = "ores" },
 	["bob-lead-ore"] = { ore = "lead-ore" }, -- 404040
 	["bob-rutile-ore"] = { ore = "rutile-ore" },
-	["bob-thorium-ore"] = {},
+	["bob-thorium-ore"] = { ore = "thorium-ore" },
 	["bob-tin-ore"] = { ore = "tin-ore" },
-	["tungsten-ore"] = { ore = "tungsten-ore", filename = "bob-tungsten-ore" },
+	["tungsten-ore"] = { ore = "tungsten-ore" },
 
 	-- Shared with Angel's
 	["bob-bauxite-ore"] = { ore = "bauxite-ore" },
@@ -43,39 +44,14 @@ for name, params in pairs(ores) do
 		goto continue
 	end
 
-	local sprite_name = params.filename or name
-	if params.ore then
-		resources[name] = { composition = Ores.get_icon_composition({ ore = params.ore }) }
-	else
-		resources[name] = { composition = Ores.get_thorium_ore_icon_composition() }
-	end
-
-	entity.stages = {
-		sheet = {
-			filename = "__reskins-bobs__/graphics/entity/ores/" .. sprite_name .. "/" .. sprite_name .. ".png",
-			priority = "extra-high",
-			size = 128,
-			frame_count = 8,
-			variation_count = 8,
-			scale = 0.5,
-		},
-	}
+	entity.stages = OreStages.get_stages({ ore = params.ore })
 
 	-- Radioactive glow
 	if name == "bob-thorium-ore" then
-		entity.stages_effect = {
-			sheet = {
-				filename = "__reskins-bobs__/graphics/entity/ores/" .. name .. "/" .. name .. "-glow.png",
-				priority = "extra-high",
-				width = 128,
-				height = 128,
-				frame_count = 8,
-				variation_count = 8,
-				scale = 0.5,
-				blend_mode = "additive",
-				flags = { "light" },
-			},
-		}
+		entity.stages_effect = OreStages.get_stages_effect({ ore = params.ore })
+		resources[name] = { composition = Ores.get_thorium_ore_icon_composition() }
+	else
+		resources[name] = { composition = Ores.get_icon_composition({ ore = params.ore }) }
 	end
 
 	::continue::
