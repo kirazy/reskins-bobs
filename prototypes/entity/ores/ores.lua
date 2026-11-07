@@ -22,7 +22,6 @@ local ores = {
 	["bob-rutile-ore"] = { ore = "rutile-ore" },
 	["bob-thorium-ore"] = { ore = "thorium-ore" },
 	["bob-tin-ore"] = { ore = "tin-ore" },
-	["tungsten-ore"] = { ore = "tungsten-ore" },
 
 	-- Shared with Angel's
 	["bob-bauxite-ore"] = { ore = "bauxite-ore" },
@@ -33,6 +32,12 @@ local ores = {
 	["bob-silver-ore"] = { ore = "silver-ore" },
 	["bob-zinc-ore"] = { ore = "zinc-ore" },
 }
+
+-- Bob's mods use the name of the tungsten ore from Space Age. When Space Age is loaded, the ore keeps the stages and
+-- icon from Space Age.
+if not mods["space-age"] then
+	ores["tungsten-ore"] = { ore = "tungsten-ore" }
+end
 
 -- The icon of a resource is assigned with its pictures to the item of the same name.
 ---@type table<string, TieredIconDefinition>

@@ -69,8 +69,6 @@ local items = {
 	["bob-solder-alloy"] = alloy("solder"), -- Shared with Bob's Electronics
 	["bob-tin-plate"] = plate("tin"),
 	["bob-titanium-plate"] = plate("titanium"),
-	["tungsten-carbide"] = plate("tungsten-carbide"),
-	["tungsten-plate"] = plate("tungsten"),
 	["bob-zinc-plate"] = plate("zinc"),
 	["bob-alien-orange-alloy"] = alloy("alien-orange"),
 	["bob-alien-blue-alloy"] = alloy("alien-blue"),
@@ -213,6 +211,13 @@ end
 -- Advanced processing unit absent Bob's Electronics
 if not mods["bobelectronics"] then
 	items["bob-advanced-processing-unit"] = { composition = Circuits.get_advanced_processing_unit_icon_composition() }
+end
+
+-- Bob's mods use the names of the tungsten plate and tungsten carbide from Space Age. When Space Age is loaded, both
+-- keep the icons from Space Age.
+if not mods["space-age"] then
+	items["tungsten-carbide"] = plate("tungsten-carbide")
+	items["tungsten-plate"] = plate("tungsten")
 end
 
 _framework.tiers.assign_icons_with_tier_labels("item", items)
