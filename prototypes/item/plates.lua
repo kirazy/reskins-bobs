@@ -31,6 +31,7 @@ local Gems = require("__reskins-assets-api__.assets.bobs.items.gems")
 local Icons = require("__reskins-assets-api__.assets.bobs.items.icons")
 local Isotopes = require("__reskins-assets-api__.assets.bobs.items.isotopes")
 local Plates = require("__reskins-assets-api__.assets.bobs.items.plates")
+local SpaceAgeIcons = require("__reskins-assets-api__.assets.base.items.space-age-icons")
 
 ---Gets the definition of the plate for the given `material`.
 ---@param material string
@@ -63,7 +64,6 @@ local items = {
 	["bob-copper-tungsten-alloy"] = alloy("copper-tungsten"),
 	["bob-gold-plate"] = plate("gold"), -- Shared with Angels
 	["bob-lead-plate"] = plate("lead"),
-	["lithium-plate"] = plate("lithium"),
 	["bob-nickel-plate"] = plate("nickel"),
 	["bob-silver-plate"] = plate("silver"),
 	["bob-solder-alloy"] = alloy("solder"), -- Shared with Bob's Electronics
@@ -112,7 +112,6 @@ local items = {
 	["bob-silicon-wafer"] = { composition = Icons.get_silicon_wafer_icon_composition() },
 	["bob-silicon-plate"] = { composition = Icons.get_silicon_icon_composition() },
 	["bob-glass"] = { composition = Icons.get_glass_icon_composition() },
-	["carbon"] = { composition = Icons.get_carbon_icon_composition() },
 	["bob-rubber"] = { composition = Icons.get_rubber_icon_composition() }, -- Shared with Bob's Electronics, Angels
 	["bob-resin"] = { composition = Icons.get_resin_icon_composition() }, -- Shared with Bob's Electronics
 	["bob-enriched-fuel"] = { composition = Icons.get_enriched_fuel_icon_composition() },
@@ -213,9 +212,16 @@ if not mods["bobelectronics"] then
 	items["bob-advanced-processing-unit"] = { composition = Circuits.get_advanced_processing_unit_icon_composition() }
 end
 
--- Bob's mods use the names of the tungsten plate and tungsten carbide from Space Age. When Space Age is loaded, both
--- keep the icons from Space Age.
-if not mods["space-age"] then
+-- Bob's mods use the names of the carbon, lithium plate, tungsten carbide, and tungsten plate from Space Age. When
+-- Space Age is loaded, these items use the icons from Space Age.
+if mods["space-age"] then
+	items["carbon"] = { composition = SpaceAgeIcons.get_carbon_icon_composition() }
+	items["lithium-plate"] = { composition = SpaceAgeIcons.get_lithium_plate_icon_composition() }
+	items["tungsten-carbide"] = { composition = SpaceAgeIcons.get_tungsten_carbide_icon_composition() }
+	items["tungsten-plate"] = { composition = SpaceAgeIcons.get_tungsten_plate_icon_composition() }
+else
+	items["carbon"] = { composition = Icons.get_carbon_icon_composition() }
+	items["lithium-plate"] = plate("lithium")
 	items["tungsten-carbide"] = plate("tungsten-carbide")
 	items["tungsten-plate"] = plate("tungsten")
 end
