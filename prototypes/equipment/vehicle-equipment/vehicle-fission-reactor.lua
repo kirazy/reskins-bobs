@@ -14,7 +14,8 @@ local _sprite_utils = { icons = require("__reskins-sprite-utils__.icons") }
 local _assets = { icons = require("__reskins-assets-api__.api.icons") }
 
 local Applicators = require("__reskins-assets-api__.api.applicators")
-local EquipmentFissionReactor = require("__reskins-assets-api__.assets.bobs.items.equipment-fission-reactor")
+local EquipmentVehicleFissionReactor =
+	require("__reskins-assets-api__.assets.bobs.items.equipment-vehicle-fission-reactor")
 local EquipmentVehicleFissionReactorSprites =
 	require("__reskins-assets-api__.assets.bobs.equipment.equipment-vehicle-fission-reactor")
 
@@ -44,7 +45,7 @@ for name, options in pairs(fission_reactors) do
 		tier = tier,
 		name = equipment.name,
 		type_name = "item",
-		composition = EquipmentFissionReactor.get_icon_composition({ tint = tint })
+		composition = EquipmentVehicleFissionReactor.get_icon_composition({ tint = tint })
 			:add(_assets.icons.equipment_background_group, _assets.icons.get_equipment_background_layer("energy"))
 			:outline(),
 	})
