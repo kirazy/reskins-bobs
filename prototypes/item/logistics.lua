@@ -21,7 +21,8 @@ local RepairPack = require("__reskins-assets-api__.assets.base.items.repair-pack
 local RoboportAntenna = require("__reskins-assets-api__.assets.bobs.items.roboport-antenna")
 local RoboportChargePad = require("__reskins-assets-api__.assets.bobs.items.roboport-charge-pad")
 local RoboportDoor = require("__reskins-assets-api__.assets.bobs.items.roboport-door")
-local RobotTool = require("__reskins-assets-api__.assets.bobs.items.robot-tool")
+local RobotToolLogistics = require("__reskins-assets-api__.assets.bobs.items.robot-tool-logistics")
+local RobotToolConstruction = require("__reskins-assets-api__.assets.bobs.items.robot-tool-construction")
 
 ---Gets the definition of the icon that the given `creator` returns in the tint of the tier given by `options`, with the
 ---tier label of that tier.
@@ -87,15 +88,15 @@ local items = {
 	["bob-flying-robot-frame-3"] = tinted(FlyingRobotFrame.get_icon_composition, { tier = 3, prog_tier = 4 }),
 	["bob-flying-robot-frame-4"] = tinted(FlyingRobotFrame.get_icon_composition, { tier = 4, prog_tier = 5 }),
 
-	["bob-robot-tool-logistic"] = tinted(RobotTool.get_icon_composition, { tier = 1, prog_tier = 2 }),
-	["bob-robot-tool-logistic-2"] = tinted(RobotTool.get_icon_composition, { tier = 2, prog_tier = 3 }),
-	["bob-robot-tool-logistic-3"] = tinted(RobotTool.get_icon_composition, { tier = 3, prog_tier = 4 }),
-	["bob-robot-tool-logistic-4"] = tinted(RobotTool.get_icon_composition, { tier = 4, prog_tier = 5 }),
+	["bob-robot-tool-logistic"] = tinted(RobotToolLogistics.get_icon_composition, { tier = 1, prog_tier = 2 }),
+	["bob-robot-tool-logistic-2"] = tinted(RobotToolLogistics.get_icon_composition, { tier = 2, prog_tier = 3 }),
+	["bob-robot-tool-logistic-3"] = tinted(RobotToolLogistics.get_icon_composition, { tier = 3, prog_tier = 4 }),
+	["bob-robot-tool-logistic-4"] = tinted(RobotToolLogistics.get_icon_composition, { tier = 4, prog_tier = 5 }),
 
-	["bob-robot-tool-construction"] = tinted(RobotTool.get_icon_composition, { tier = 1, prog_tier = 2 }),
-	["bob-robot-tool-construction-2"] = tinted(RobotTool.get_icon_composition, { tier = 2, prog_tier = 3 }),
-	["bob-robot-tool-construction-3"] = tinted(RobotTool.get_icon_composition, { tier = 3, prog_tier = 4 }),
-	["bob-robot-tool-construction-4"] = tinted(RobotTool.get_icon_composition, { tier = 4, prog_tier = 5 }),
+	["bob-robot-tool-construction"] = tinted(RobotToolConstruction.get_icon_composition, { tier = 1, prog_tier = 2 }),
+	["bob-robot-tool-construction-2"] = tinted(RobotToolConstruction.get_icon_composition, { tier = 2, prog_tier = 3 }),
+	["bob-robot-tool-construction-3"] = tinted(RobotToolConstruction.get_icon_composition, { tier = 3, prog_tier = 4 }),
+	["bob-robot-tool-construction-4"] = tinted(RobotToolConstruction.get_icon_composition, { tier = 4, prog_tier = 5 }),
 }
 
 -- Disable select items based on Bob's settings
