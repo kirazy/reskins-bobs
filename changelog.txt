@@ -2,43 +2,40 @@
 Version: 2.5.0
 Date: ????
   Features:
-    - Improved support for frozen entity states
+    - [space-age] Improved support for frozen entity states
+    - [space-age] Tungsten ore, tungsten plate, tungsten carbide, and lithium plate use native Space Age icons and variations
     - Added support for the new assembling machine and heat exchanger sprites
   Changes:
-    - Migrated some entity sprites to use the Artisanal Reskins: Assets API
-    - Transport belts, underground belts, and splitters now use the Artisanal Reskins: Assets API, with turbo belt sprites for belts of 60 items/s or more, frozen sprites, and belt reader sprites, and other entities that use the belt sprites of a reskinned belt, such as loaders, now use the reskinned sprites
-    - The belt entities and logistics technologies of the base game are now reskinned when the custom tier colors of Artisanal Reskins: Framework are used, and the belt entities are labeled or reskinned whether or not Bob's Logistics is loaded
-    - The logistics technologies of Bob's Logistics are now reskinned by this mod instead of Artisanal Reskins: Library, in the tier colors of Artisanal Reskins: Framework
-    - Removed the "Belt tier labels" and "Pipe tier labels" settings; the "Show tier labels on belts" and "Show tier labels on pipes" settings of Artisanal Reskins: Framework now show or hide the tier labels of belt entities and of pipes, underground pipes, and heat pipes
-    - Removed the "Enable custom basic belt coloring" and "Color: Basic belts" settings; the basic belts and their logistics technology use the tier 0 color of Artisanal Reskins: Framework
-    - Dying explosions, particles, and remnants now come from the Artisanal Reskins: Assets API, with the sprites of each entity
-    - Entities with generic remnants now use the generic remnants of the base game that match their size, and land mines now use the dying explosion and remnants of the base land mine
-    - Removed support for Nauvis Day, which is not available for Factorio 2.0 or later
-    - The in-world pictures of the items for entities that use the Artisanal Reskins: Assets API now have mipmaps
-    - The reactor color setting is now available with Bob's Metals, Chemicals and Intermediates and Bob's Power, instead of Bob's Revamp
-    - The sprites and icons of the personal and vehicle equipment and the icons of their technologies now come from the Artisanal Reskins: Assets API, and the in-world pictures of the equipment items now have mipmaps
-    - The other technology icons now come from the Artisanal Reskins: Assets API
-    - Each vehicle roboport now shows the artwork of its own tier
-    - The icons of the items, fluids, recipes, and ores, the sprites of the ores and fluid resources, and the icon of the bulk inserter capacity bonus now come from the Artisanal Reskins: Assets API, and the in-world pictures of the items now have mipmaps
-    - The colored circuits now follow the custom tier colors setting of Artisanal Reskins: Framework instead of Artisanal Reskins: Library
-    - Removed the settings that turned off the reskins of each of Bob's mods; every Bob's mod that is loaded is reskinned
-    - No longer depends on Artisanal Reskins: Library, and is incompatible with it
-    - Removed the graphics of this mod; every reskin draws the artwork of the asset mods, and other mods that drew files of this mod must draw the asset mods instead
+    - Migrated all artwork to the Artisanal Reskins: Assets API
+    - Migrated to use Artisanal Reskins: Framework; Artisanal Reskins: Library is no longer required, nor are the settings used
+    - Removed the settings to toggle reskinning for each of Bob's mods; every loaded Bob's mod is now reskinned
+    - Removed the "Enable custom basic belt coloring" and "Color: Basic belts" settings; basic belts and their technology now use the tier 0 color
+    - Vanilla belt entities are now marked with tier labels and respond to custom tier colors with or without Bob's Logistics
+    - Entities with generic remnants now use the vanilla generic remnants that match their size
+    - Land mines now use the dying explosion and remnants of the vanilla land mine
+    - Personal and vehicle fission equipment have been updated to use the nuclear reactor icons and sprites added in Factorio 2.0
   Bugfixes:
+    - Fixed that the reactor color setting was non-functional due to being changed by Bob's mods
+    - Fixed that the artillery turret cannons were not correctly aligned with the artillery turret base
+    - Fixed that select shotgun shells, bullet magazines, laser batteries, rockets and warheads did not glow on the ground as intended
     - Fixed that stone furnace and related entities did not display remnants when destroyed
-    - Fixed that reskinned robots did not play the death sounds of the base game
-    - Fixed that the remnants of inserters and of 2x2 assembling machines were drawn larger than the entity
-    - Fixed that the explosion and remnants of the base heat pipe showed the icon of another heat pipe
-    - Fixed that the thorium and deuterium reactors and their technologies were drawn as uranium reactors
+    - Fixed that the thorium and deuterium reactors and their technologies did not respect the reactor fuel color setting
     - Fixed that pumps did not draw shadows
-    - Fixed that area mining drills facing west drew the standard frame instead of the blue frame while mining with fluid
-    - Fixed that the battery MK3 equipment technology was not reskinned
-    - Fixed that the third exoskeleton technology did not use the tint of the exoskeleton it unlocks
-    - Fixed that the thorium and deuterium fuel reprocessing recipes and technologies showed the icons of the earlier nuclear processes, and that nuclear fuel reprocessing was not reskinned
-    - Fixed that the bulk inserter 2 technology without the inserter overhaul, and the electric mining drill technology with AAI Industry, were not reskinned
-    - Fixed that the shotgun pellets had no picture variations
-    - Fixed that the coal cracking recipe was not reskinned, nor were the items, fluids, and recipes that Bob's Electronics and Bob's Ores share without Bob's Metals, Chemicals and Intermediates
-    - Fixed that the nickel plate recipe kept the icon of Bob's mods, and that the ammonium chloride reprocessing recipe had a blank layer in place of ammonia
+    - Fixed that circuit connector locations across numerous entity types were incorrectly positioned for their sprites
+    - Fixed that the west orientation of area mining drills did not use the blue frame when mining with fluids
+    - Fixed that reskinned robots did not play death sounds and were missing several effects added in Factorio 2.0
+    - Fixed that the remnants of inserters and 2x2 assembling machines were oversized
+    - Fixed that the explosion and remnants of the vanilla heat pipe showed the wrong icons
+    - Fixed that the tier of the third exoskeleton technology did not match the tier of the exoskeleton it unlocked
+    - Fixed that several technologies were not correctly reskinned due to prototype name changes and setting name changes in Bob's mods and AAI Industry
+    - Fixed that the items, fluids, and recipes shared by Bob's Electronics and Bob's Ores were not reskinned without Bob's Metals, Chemicals and Intermediates
+    - Fixed that several recipes did not include the secondary smaller icons present in the original icons set by Bob's mods
+    - Fixed that the shotgun pellets item variations did not work
+  Deprecated:
+    - The `reskins` global, its utility methods, and any triggers are deprecated and will be removed in the next minor version. 
+      - Tier-related methods may be required from Artisanal Reskins: Framework
+      - Triggers are not being replaced
+    - All graphics files will be removed in the next minor version; any mods that rely on these files must migrate to the Artisanal Reskins: Assets mods
 ---------------------------------------------------------------------------------------------------
 Version: 2.4.2
 Date: 2026-11-05
