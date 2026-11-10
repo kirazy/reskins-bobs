@@ -56,6 +56,10 @@ local function fuel_cell(composition)
 	}
 end
 
+-- Handle deuterium color
+local is_deuterium_blue = _framework.settings.get_value("bobmods-plates-bluedeuterium") == true
+local deuterium_color = is_deuterium_blue and "blue" or "pink"
+
 ---@type table<string, TieredIconDefinition>
 local items = {
 	-- Plates
@@ -96,14 +100,22 @@ local items = {
 	["bob-tungsten-gear-wheel"] = { composition = Gears.get_icon_composition({ material = "tungsten" }) },
 
 	-- Nuclear
-	["bob-plutonium-fuel-cell"] = fuel_cell(FuelCells.get_plutonium_fuel_cell_icon_composition()),
-	["bob-thorium-fuel-cell"] = fuel_cell(FuelCells.get_thorium_fuel_cell_icon_composition()),
-	["bob-thorium-plutonium-fuel-cell"] = fuel_cell(FuelCells.get_thorium_plutonium_fuel_cell_icon_composition()),
-	["bob-deuterium-fuel-cell"] = fuel_cell(FuelCells.get_deuterium_fuel_cell_pink_icon_composition()),
-	["bob-deuterium-fuel-cell-2"] = fuel_cell(FuelCells.get_deuterium_fuel_cell_2_pink_icon_composition()),
-	["bob-depleted-thorium-fuel-cell"] = { composition = FuelCells.get_depleted_thorium_fuel_cell_icon_composition() },
+	["bob-plutonium-fuel-cell"] = fuel_cell(FuelCells.get_icon_composition({ fuel = "plutonium", color = "green" })),
+	["bob-thorium-fuel-cell"] = fuel_cell(FuelCells.get_icon_composition({ fuel = "thorium", color = "yellow" })),
+	["bob-thorium-plutonium-fuel-cell"] = fuel_cell(
+		FuelCells.get_icon_composition({ fuel = "thorium-plutonium", color = "orange" })
+	),
+	["bob-deuterium-fuel-cell"] = fuel_cell(
+		FuelCells.get_icon_composition({ fuel = "deuterium", color = deuterium_color })
+	),
+	["bob-deuterium-fuel-cell-2"] = fuel_cell(
+		FuelCells.get_icon_composition({ fuel = "deuterium-2", color = deuterium_color })
+	),
+	["bob-depleted-thorium-fuel-cell"] = {
+		composition = FuelCells.get_icon_composition({ fuel = "depleted-thorium", color = "yellow" }),
+	},
 	["bob-depleted-deuterium-fuel-cell"] = {
-		composition = FuelCells.get_depleted_deuterium_fuel_cell_pink_icon_composition(),
+		composition = FuelCells.get_icon_composition({ fuel = "depleted-deuterium", color = deuterium_color }),
 	},
 	["bob-plutonium-239"] = { composition = Isotopes.get_plutonium_239_icon_composition() },
 	["bob-thorium-232"] = { composition = Isotopes.get_thorium_232_icon_composition() },
@@ -188,17 +200,6 @@ local recipes = {
 	-- Shared with Bob's Electronics
 	["bob-synthetic-wood"] = { composition = Icons.get_synthetic_wood_icon_composition() },
 }
-
--- Handle deuterium color
-local is_deuterium_blue = _framework.settings.get_value("bobmods-plates-bluedeuterium") == true
-
-if is_deuterium_blue then
-	items["bob-deuterium-fuel-cell"] = fuel_cell(FuelCells.get_deuterium_fuel_cell_blue_icon_composition())
-	items["bob-deuterium-fuel-cell-2"] = fuel_cell(FuelCells.get_deuterium_fuel_cell_2_blue_icon_composition())
-	items["bob-depleted-deuterium-fuel-cell"] = {
-		composition = FuelCells.get_depleted_deuterium_fuel_cell_blue_icon_composition(),
-	}
-end
 
 -- Handle deuterium's default process color
 if is_deuterium_blue then
