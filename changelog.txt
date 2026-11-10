@@ -10,12 +10,12 @@ Date: ????
     - Migrated to use Artisanal Reskins: Framework; Artisanal Reskins: Library is no longer required, nor are the settings used
     - Removed the settings to toggle reskinning for each of Bob's mods; every loaded Bob's mod is now reskinned
     - Removed the "Enable custom basic belt coloring" and "Color: Basic belts" settings; basic belts and their technology now use the tier 0 color
-    - Vanilla belt entities are now marked with tier labels and respond to custom tier colors with or without Bob's Logistics
-    - Entities with generic remnants now use the vanilla generic remnants that match their size
+    - Belt entities are now marked with tier labels and respond to custom tier colors with or without Bob's Logistics
+    - Entities without bespoke remnant artwork now use generic remnants that match their size
     - Land mines now use the dying explosion and remnants of the vanilla land mine
     - Personal and vehicle fission equipment have been updated to use the nuclear reactor icons and sprites added in Factorio 2.0
   Bugfixes:
-    - Fixed that the reactor color setting was non-functional due to being changed by Bob's mods
+    - Fixed that the reactor color setting was non-functional due to changes in Bob's mods
     - Fixed that the artillery turret cannons were not correctly aligned with the artillery turret base
     - Fixed that select shotgun shells, bullet magazines, laser batteries, rockets and warheads did not glow on the ground as intended
     - Fixed that stone furnace and related entities did not display remnants when destroyed
