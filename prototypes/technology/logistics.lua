@@ -24,7 +24,7 @@ local BulkInserterEffect = require("__reskins-assets-api__.assets.bobs.ui-sprite
 local Icons = require("__reskins-assets-api__.assets.bobs.technologies.icons")
 local Inserter = require("__reskins-assets-api__.assets.base.technologies.inserter")
 local InserterBulk = require("__reskins-assets-api__.assets.base.technologies.inserter-bulk")
-local RepairPack = require("__reskins-assets-api__.assets.bobs.technologies.repair-pack")
+local RepairPack = require("__reskins-assets-api__.assets.base.technologies.repair-pack")
 local Robotics = require("__reskins-assets-api__.assets.base.technologies.robotics")
 local Robots = require("__reskins-assets-api__.assets.base.technologies.robots")
 
