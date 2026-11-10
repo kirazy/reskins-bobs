@@ -31,55 +31,55 @@ local entities = {
 		tier = 1,
 		prog_tier = 2,
 		variant = "high-capacity",
-		get_icon = Accumulator.get_high_capacity_icon,
+		get_icon_composition = Accumulator.get_high_capacity_icon_composition,
 	},
 	["bob-large-accumulator-2"] = {
 		tier = 2,
 		prog_tier = 3,
 		variant = "high-capacity",
-		get_icon = Accumulator.get_high_capacity_icon,
+		get_icon_composition = Accumulator.get_high_capacity_icon_composition,
 	},
 	["bob-large-accumulator-3"] = {
 		tier = 3,
 		prog_tier = 4,
 		variant = "high-capacity",
-		get_icon = Accumulator.get_high_capacity_icon,
+		get_icon_composition = Accumulator.get_high_capacity_icon_composition,
 	},
 	["bob-slow-accumulator"] = {
 		tier = 1,
 		prog_tier = 2,
 		variant = "slow",
-		get_icon = Accumulator.get_slow_icon,
+		get_icon_composition = Accumulator.get_slow_icon_composition,
 	},
 	["bob-slow-accumulator-2"] = {
 		tier = 2,
 		prog_tier = 3,
 		variant = "slow",
-		get_icon = Accumulator.get_slow_icon,
+		get_icon_composition = Accumulator.get_slow_icon_composition,
 	},
 	["bob-slow-accumulator-3"] = {
 		tier = 3,
 		prog_tier = 4,
 		variant = "slow",
-		get_icon = Accumulator.get_slow_icon,
+		get_icon_composition = Accumulator.get_slow_icon_composition,
 	},
 	["bob-fast-accumulator"] = {
 		tier = 1,
 		prog_tier = 2,
 		variant = "fast",
-		get_icon = Accumulator.get_fast_icon,
+		get_icon_composition = Accumulator.get_fast_icon_composition,
 	},
 	["bob-fast-accumulator-2"] = {
 		tier = 2,
 		prog_tier = 3,
 		variant = "fast",
-		get_icon = Accumulator.get_fast_icon,
+		get_icon_composition = Accumulator.get_fast_icon_composition,
 	},
 	["bob-fast-accumulator-3"] = {
 		tier = 3,
 		prog_tier = 4,
 		variant = "fast",
-		get_icon = Accumulator.get_fast_icon,
+		get_icon_composition = Accumulator.get_fast_icon_composition,
 	},
 }
 
@@ -97,16 +97,14 @@ for name, options in pairs(entities) do
 	local sprite_set = Accumulator.get_sprite_set({ tint = tint })
 	Applicators.apply_sprite_set(entity, sprite_set)
 
-	local icon_data = _sprite_utils.icons.compose_icons(
-		"default",
-		options.get_icon({ tint = tint }),
-		_assets.icons.get_letter(variant_to_letter_map[options.variant], tint)
-	)
+	local composition = options
+		.get_icon_composition({ tint = tint })
+		:add_label(_assets.icons.get_letter(variant_to_letter_map[options.variant], tint))
 	local icon_assignment = _framework.tiers.icon_assignment_with_tier_labels({
 		tier = tier,
 		name = entity.name,
 		type_name = entity.type,
-		icon_data = icon_data,
+		composition = composition,
 	})
 	_sprite_utils.icons.apply_icon_assignment(icon_assignment)
 
