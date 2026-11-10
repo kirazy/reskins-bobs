@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.5.0
-Date: ????
+Date: 2026-11-09
   Features:
     - [space-age] Improved support for frozen entity states
     - [space-age] Tungsten ore, tungsten plate, tungsten carbide, and lithium plate use native Space Age icons and variations
