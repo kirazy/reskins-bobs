@@ -7,7 +7,7 @@ Date: ????
     - Added support for the new assembling machine and heat exchanger sprites
   Changes:
     - Migrated all artwork to the Artisanal Reskins: Assets API
-    - Migrated to use Artisanal Reskins: Framework; Artisanal Reskins: Library is no longer required, nor are the settings used
+    - Migrated to use Artisanal Reskins: Framework; the settings of Artisanal Reskins: Library are no longer used
     - Removed the settings to toggle reskinning for each of Bob's mods; every loaded Bob's mod is now reskinned
     - Removed the "Enable custom basic belt coloring" and "Color: Basic belts" settings; basic belts and their technology now use the tier 0 color
     - Belt entities are now marked with tier labels and respond to custom tier colors with or without Bob's Logistics
@@ -32,10 +32,8 @@ Date: ????
     - Fixed that several recipes did not include the secondary smaller icons present in the original icons set by Bob's mods
     - Fixed that the shotgun pellets item variations did not work
   Deprecated:
-    - The `reskins` global, its utility methods, and any triggers are deprecated and will be removed in the next minor version. 
-      - Tier-related methods may be required from Artisanal Reskins: Framework
-      - Triggers are not being replaced
     - All graphics files will be removed in the next minor version; any mods that rely on these files must migrate to the Artisanal Reskins: Assets mods
+    - The required dependency on Artisanal Reskins: Library will be removed in the next minor version; any mods that rely on it must migrate to Artisanal Reskins: Sprite Utils, Artisanal Reskins: Assets API, or Artisanal Reskins: Framework, as appropriate
 ---------------------------------------------------------------------------------------------------
 Version: 2.4.2
 Date: 2026-11-05
